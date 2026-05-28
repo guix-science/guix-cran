@@ -10505,13 +10505,13 @@ tuning parameters.  Methodology is based on Fang et al. (2025)
 (define-public r-warden
   (package
     (name "r-warden")
-    (version "2.0.2")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WARDEN" version))
        (sha256
-        (base32 "19pvy1fzbc5nv7dq84f5crdzcnkgki4bxckixj9i7lwwv5dsa0wi"))))
+        (base32 "1wgbbz4ya631vdrswfqw55338xir4lfm91s580vqpxnmnfvj37k0"))))
     (properties `((upstream-name . "WARDEN")))
     (build-system r-build-system)
     (arguments
@@ -10523,7 +10523,6 @@ tuning parameters.  Methodology is based on Fang et al. (2025)
                              r-purrr
                              r-progressr
                              r-mass
-                             r-magrittr
                              r-lifecycle
                              r-future
                              r-foreach

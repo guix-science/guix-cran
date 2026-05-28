@@ -3248,6 +3248,34 @@ visualisations and automated report generation.  The calculation of likelihood
 ratios supports pairs of linked markers, and all common mutation models.")
     (license license:gpl3+)))
 
+(define-public r-kliner
+  (package
+    (name "r-kliner")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "klineR" version))
+       (sha256
+        (base32 "00znyg6y4bg1044d1155mzj348m5d0ldh0yd2qiqlnpy6bviwnm1"))))
+    (properties `((upstream-name . "klineR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/statlearner123/klineR")
+    (synopsis "Candlestick Pattern Detection and Stock Screening")
+    (description
+     "Detects classical candlestick patterns and structure-based chart patterns from
+open, high, low, close, and volume (OHLCV) time series and provides reusable
+stock-screening workflows.  Built-in detectors include single- and multi-candle
+patterns, trend structures such as double bottoms and ascending triangles, and a
+configurable \"golden pit\" recovery setup.  Includes a unified API to run pattern
+scans across one or many symbols.  Methods are informed by Nison (2001,
+ISBN:9780735201811) \"Japanese Candlestick Charting Techniques\" and Bulkowski
+(2021, ISBN:9781119739685) \"Encyclopedia of Chart Patterns\".")
+    (license license:expat)))
+
 (define-public r-klic
   (package
     (name "r-klic")

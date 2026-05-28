@@ -1242,13 +1242,13 @@ and longitudinal data.  Refer to the Journal of Statistical Software article:
 (define-public r-jskm
   (package
     (name "r-jskm")
-    (version "0.6.2")
+    (version "0.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jskm" version))
        (sha256
-        (base32 "1gz8ci4c91ci8yzdk4aldfmmlm9hsaxz4yyqiqkav4gcmhnig9w4"))))
+        (base32 "0isy9886ya9jfy88xbhpwkjbqn4cz2f2qdkgjhwhc12i5g7qab8m"))))
     (properties `((upstream-name . "jskm")))
     (build-system r-build-system)
     (arguments
@@ -3983,13 +3983,13 @@ Derks et al. (2025) <doi:10.31234/osf.io/b8tu2>.")
 (define-public r-jewel
   (package
     (name "r-jewel")
-    (version "2.0.2")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jewel" version))
        (sha256
-        (base32 "100lj4ydw7gx93lmnckxivb65yzjwi0cn5l070ss8532wrm297r3"))))
+        (base32 "06hxvhgryfmpvmzkack4vivwb0algakcrzhjlgdq0hlg4n7dz7bx"))))
     (properties `((upstream-name . "jewel")))
     (build-system r-build-system)
     (arguments

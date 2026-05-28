@@ -3045,29 +3045,24 @@ validation and publication.  Methods based on: Liu et al. (2008)
 (define-public r-autofc
   (package
     (name "r-autofc")
-    (version "0.2.0.1010")
+    (version "1.0.0.1000")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "autoFC" version))
        (sha256
-        (base32 "1ymxq6zhy2fdrnjxw9wzab0kpjgrjcmd2bli79zvrm7fw8aq7si6"))))
+        (base32 "14sj59c1m450a9f96y3ha7zfvnlzg421h5w4g1bib9q7q0rv2ryh"))))
     (properties `((upstream-name . "autoFC")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-thurstonianirt
-                             r-simdesign
-                             r-mplusautomation
-                             r-mass
-                             r-lavaan
-                             r-glue
-                             r-dplyr))
+    (propagated-inputs (list r-rstan r-pbapply r-mplusautomation r-mass
+                             r-lavaan))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/tspsyched/autoFC")
-    (synopsis "Automatic Construction of Forced-Choice Tests")
+    (home-page "https://cran.r-project.org/package=autoFC")
+    (synopsis
+     "Automatic Toolkit for Construction, Optimization, Scoring and Simulation of Forced-Choice Tests")
     (description
      "Forced-choice (FC) response has gained increasing popularity and interest for
 its resistance to faking when well-designed (Cao & Drasgow, 2019
@@ -3080,24 +3075,22 @@ desirability between items within a block (Pavlov et al., 2021
 to maximize factor loading differences (Brown & Maydeu-Olivares, 2011
 <doi:10.1177/0013164410375112>) or minimize item location differences (Cao &
 Drasgow, 2019 <doi:10.1037/apl0000414>) depending on scoring models.  Decision
-of which items should be assigned to the same block, termed item pairing, is
-thus critical to the quality of an FC test.  This pairing process is essentially
-an optimization process which is currently carried out manually.  However, given
-that we often need to simultaneously meet multiple objectives, manual pairing
+of which items should be assigned to the same block, also called as item
+pairing, is thus critical to the quality of an FC test.  Because such pairing
+process often requires researchers to meet multiple objectives, manual pairing
 becomes impractical or even not feasible once the number of latent traits and/or
-number of items per trait are relatively large.  To address these problems,
-@code{autoFC} is developed as a practical tool for facilitating the automatic
+number of items per elevates.  To address these problems, @code{autoFC} is
+developed as a automatic and efficient tool for facilitating the automatic
 construction of FC tests (Li et al., 2022 <doi:10.1177/01466216211051726>),
-essentially exempting users from the burden of manual item pairing and reducing
-the computational costs and biases induced by simple ranking methods.  Given
+essentially exempting users from the burden of manual item pairing.  Given
 characteristics of each item (and item responses), FC measures can be
 constructed either automatically based on user-defined pairing criteria and
 weights, or based on exact specifications of each block (i.e., blueprint; see Li
-et al., 2024 <doi:10.1177/10944281241229784>).  Users can also generate
+et al., 2025 <doi:10.1177/10944281241229784>).  Users can also generate
 simulated responses based on the Thurstonian Item Response Theory model (Brown &
 Maydeu-Olivares, 2011 <doi:10.1177/0013164410375112>) and predict trait scores
 of simulated/actual respondents based on an estimated model.")
-    (license license:gpl3)))
+    (license license:gpl3+)))
 
 (define-public r-autoensemble
   (package
@@ -4510,43 +4503,6 @@ with expected references such as linear or quadratic,
 includes functionality for measuring asymptotic memory and other quantities.")
     (license license:gpl3)))
 
-(define-public r-athlytics
-  (package
-    (name "r-athlytics")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Athlytics" version))
-       (sha256
-        (base32 "1a31xcri8j00gz61gls6mxrxhr9ky9hhjrk4aj65nj1l86k1q6k1"))))
-    (properties `((upstream-name . "Athlytics")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo
-                             r-viridis
-                             r-tidyr
-                             r-rstrava
-                             r-rlang
-                             r-purrr
-                             r-lubridate
-                             r-jsonlite
-                             r-httr
-                             r-ggplot2
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://hezhiang.com/Athlytics/")
-    (synopsis "Advanced Sports Performance Analysis for 'Strava' Data")
-    (description
-     "Advanced sports performance analysis and modeling for activity data retrieved
-from Strava'.  This package focuses on applying established sports science
-models and statistical methods to gain deeper insights into training load,
-performance prediction, recovery status, and identifying key performance
-factors, extending basic data analysis capabilities.")
-    (license license:expat)))
-
 (define-public r-atemevs
   (package
     (name "r-atemevs")
@@ -5128,6 +5084,40 @@ transits.  It is based on the VSOP87 planetary model and is accurate to within
 approximately one arcminute.  This package bundles the single-file C source so
 that other R packages can link against it via @code{LinkingTo} without shipping
 their own copy.")
+    (license license:expat)))
+
+(define-public r-astronomr
+  (package
+    (name "r-astronomr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "astronomR" version))
+       (sha256
+        (base32 "1jsd041irlbin9736hs98m6mjm8wmb32p19jp7dm585gk9nnq4m2"))))
+    (properties `((upstream-name . "astronomR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-readr
+                             r-pracma
+                             r-jsonlite
+                             r-httr
+                             r-dplyr))
+    (home-page "https://github.com/samrit2442/astronomR")
+    (synopsis "Cosmic Insights: Statistical Frameworks for Astronomers")
+    (description
+     "This package provides a comprehensive toolkit for astronomical and cosmological
+computations.  Provides functions for angular coordinate conversions (degrees,
+hours-minutes-seconds, degrees-minutes-seconds, and radians), access to
+fundamental physical constants, queries to the Gaia Archive TAP (Table Access
+Protocol) service, cosmological distance calculations, and early-universe
+thermal physics including photon density and Saha equation solutions.")
     (license license:expat)))
 
 (define-public r-astrofns
@@ -8431,13 +8421,13 @@ datasets from various domains.  For more details on the APIs, see:
 (define-public r-arg
   (package
     (name "r-arg")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arg" version))
        (sha256
-        (base32 "1v9smz1p6ss5rvag0n3al4k4icy4h9ish7q007ldx16122nkj3xy"))))
+        (base32 "15wzzfsc30lshbdahi42wmabkaxanmsmjxdw89h0sd2615fvqxb2"))))
     (properties `((upstream-name . "arg")))
     (build-system r-build-system)
     (arguments
@@ -19912,6 +19902,42 @@ follow-up period.  We use them only to illustrate methods, not to draw
 substantive conclusions.")
     (license license:gpl2+)))
 
+(define-public r-aigovernance
+  (package
+    (name "r-aigovernance")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AIGovernance" version))
+       (sha256
+        (base32 "032jw2iky1az8581kkkkh6mlhb1hnb93yzm0smj2y22mgy3zhgag"))))
+    (properties `((upstream-name . "AIGovernance")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-rlang r-dplyr r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/causalfragility-lab/AIGovernance")
+    (synopsis
+     "Statistical Auditing and Governance Reporting for Employment AI Systems")
+    (description
+     "This package provides statistical auditing, risk documentation, and reporting
+tools to support AI governance workflows for employment and hiring decision
+systems.  Implements the EEOC four-fifths adverse impact rule (Equal Employment
+Opportunity Commission, 1978,
+<https://www.ecfr.gov/current/title-29/subtitle-B/chapter-XIV/part-1607>), NYC
+Local Law 144 bias audit requirements (New York City, 2023,
+<https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page>),
+and the AI Risk Management Framework checklist items from the National Institute
+of Standards and Technology (2023, <doi:10.6028/NIST.AI.100-1>).  Optionally
+supports EU AI Act high-risk classification (European Parliament and Council,
+2024, <https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1689>).
+The package does not provide legal advice or certify legal compliance; it is a
+statistical and documentation support tool.")
+    (license license:expat)))
+
 (define-public r-aifftools
   (package
     (name "r-aifftools")
@@ -22822,13 +22848,13 @@ introduced by Dongming and Zinde-Walsh (2009)
 (define-public r-aemo
   (package
     (name "r-aemo")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aemo" version))
        (sha256
-        (base32 "1j19i8lhmd3w6fdcx428wgnsbqi0ah8m53865qwg5ic2chhh6905"))))
+        (base32 "0rp8cri7d0jqmkyzhi8v5krga1niv3162j8d2da64gl6y2zdjv34"))))
     (properties `((upstream-name . "aemo")))
     (build-system r-build-system)
     (arguments
@@ -22839,14 +22865,14 @@ introduced by Dongming and Zinde-Walsh (2009)
     (home-page "https://charlescoverdale.github.io/aemo/")
     (synopsis "Download Australian Energy Market Operator Data")
     (description
-     "Fetch Australian Energy Market Operator ('AEMO') public data from NEMweb
-<http://nemweb.com.au> and the Market Management System Data Model ('MMSDM')
+     "Fetch Australian Energy Market Operator (AEMO) public data from NEMweb
+<http://nemweb.com.au> and the Market Management System Data Model (MMSDM)
 historical archive.  Provides tidy access to 5-minute and 30-minute wholesale
 electricity prices, regional demand, dispatch-unit output, interconnector flows,
 rooftop photovoltaic generation, generator bids, predispatch forecasts,
 frequency control ancillary services markets, and gas market data across the
-National Electricity Market ('NEM') regions.  Data is published by AEMO under
-its Copyright Permissions Notice
+National Electricity Market (NEM) regions.  Data is published by AEMO under its
+Copyright Permissions Notice
 <https://www.aemo.com.au/privacy-and-legal-notices/copyright-permissions>.")
     (license license:expat)))
 
@@ -22976,6 +23002,36 @@ aimed towards epidemiologists, public health professionals, and researchers
 seeking to identify and respond to seasonal epidemics in a timely fashion.")
     (license license:expat)))
 
+(define-public r-aedl
+  (package
+    (name "r-aedl")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "aedl" version))
+       (sha256
+        (base32 "1y7fd23nzw6jgpis1h9icf5nkiv0bg9wdf1jfd2wz6cpl3yj97x2"))))
+    (properties `((upstream-name . "aedl")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr))
+    (home-page "https://cran.r-project.org/package=aedl")
+    (synopsis
+     "Almost-Exact Inference for the DerSimonian-Laird Test Statistic")
+    (description
+     "This package implements almost-exact inference for the @code{DerSimonian-Laird}
+test statistic in the normal-normal random-effects meta-analysis model, as
+described in Hanada and Sugimoto (2023) <doi:10.1007/s10463-022-00844-4>.  The
+method approximates the distribution of the @code{DerSimonian-Laird} test
+statistic by combining the distribution of the untruncated
+@code{DerSimonian-Laird} estimator of the between-study variance with a
+conditional normal approximation.  Methods based on a plug-in between-study
+variance and a corrected heterogeneity measure are provided.")
+    (license license:expat)))
+
 (define-public r-aedforecasting
   (package
     (name "r-aedforecasting")
@@ -23040,6 +23096,32 @@ disease outbreaks in a timely fashion.  For a detailed reference on hierarchical
 models, consult Henrik Madsen and Poul Thyregod's book (2011), ISBN:
 9781420091557.")
     (license license:expat)))
+
+(define-public r-aebdata
+  (package
+    (name "r-aebdata")
+    (version "0.1.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "aebdata" version))
+       (sha256
+        (base32 "0f0ih5v8lpjl6jv1qksb6vk2a31vc9y4h2xh11j742lq9wbnn1kn"))))
+    (properties `((upstream-name . "aebdata")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rvest r-readr r-httr2 r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ipea/aebdata")
+    (synopsis "Access Data from the Atlas do Estado Brasileiro")
+    (description
+     "Facilitates access to the data from the Atlas do Estado Brasileiro
+(<https://www.ipea.gov.br/atlasestado/>), maintained by the Instituto de
+Pesquisa EconÃ´mica Aplicada (Ipea).  It allows users to search for specific
+series, list series or themes, and download data when available.")
+    (license license:gpl3+)))
 
 (define-public r-adwave
   (package
@@ -24339,13 +24421,13 @@ area.")
 (define-public r-admiraldev
   (package
     (name "r-admiraldev")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admiraldev" version))
        (sha256
-        (base32 "0jazm86hkg56cz7mznvcmiqcw4rrs87fvkjqlpck9n91vfsiwhpz"))))
+        (base32 "0cry7l88c9cn5ajv525ggh5wrmq4h3hh8746lrwrf0dh2zd0snh2"))))
     (properties `((upstream-name . "admiraldev")))
     (build-system r-build-system)
     (arguments
@@ -27224,39 +27306,6 @@ interact with Praat using Praat'-scripts, and exchange data with the
 by other users.")
     (license license:gpl3)))
 
-(define-public r-acsspack
-  (package
-    (name "r-acsspack")
-    (version "1.0.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ACSSpack" version))
-       (sha256
-        (base32 "1alk08096dhz5whm5w53ys23bkpsckzk8p53bbl25qp1dyk7pr2f"))))
-    (properties `((upstream-name . "ACSSpack")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-mass r-hdci r-extradistr))
-    (home-page "https://cran.r-project.org/package=ACSSpack")
-    (synopsis "ACSS, Corresponding INSS, and GLP Algorithms")
-    (description
-     "Allow user to run the Adaptive Correlated Spike and Slab (ACSS) algorithm,
-corresponding INdependent Spike and Slab (INSS) algorithm, and Giannone, Lenza
-and Primiceri (GLP) algorithm with adaptive burn-in.  All of the three
-algorithms are used to fit high dimensional data set with either sparse
-structure, or dense structure with smaller contributions from all predictors.
-The state-of-the-art GLP algorithm is in Giannone, D., Lenza, M., & Primiceri,
-G. E. (2021, ISBN:978-92-899-4542-4) \"Economic predictions with big data: The
-illusion of sparsity\".  The two new algorithms, ACSS algorithm and INSS
-algorithm, and the discussion on their performance can be seen in Yang, Z.,
-Khare, K., & Michailidis, G. (2024, submitted to Journal of Business & Economic
-Statistics) \"Bayesian methodology for adaptive sparsity and shrinkage in
-regression\".")
-    (license license:gpl3)))
-
 (define-public r-acroname
   (package
     (name "r-acroname")
@@ -29070,13 +29119,13 @@ extendr'.")
 (define-public r-a11yshiny
   (package
     (name "r-a11yshiny")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "a11yShiny" version))
        (sha256
-        (base32 "1z9pw3jrqw4shcx3x06wsfy03c3wzax353wfdwf9cxgcsq1pq8nf"))))
+        (base32 "0rk800ljyr4f092wc36hp78jff4ckg162c6cg4ghy4bcik27hny2"))))
     (properties `((upstream-name . "a11yShiny")))
     (build-system r-build-system)
     (arguments

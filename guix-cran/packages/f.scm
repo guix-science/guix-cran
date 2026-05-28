@@ -9235,80 +9235,6 @@ evaluation.  Reference: Lei X, Fu L, Li H, et al (2018)
 <doi:10.3390/f8040119>.")
     (license license:gpl3+)))
 
-(define-public r-foresight
-  (package
-    (name "r-foresight")
-    (version "2.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "foreSIGHT" version))
-       (sha256
-        (base32 "0jsc1k2rn00zxxj29cd7z4zfd93xy2z2r3dkbxf5mdyl6brl4p0x"))))
-    (properties `((upstream-name . "foreSIGHT")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo
-                             r-viridislite
-                             r-tidyr
-                             r-soilhyp
-                             r-scales
-                             r-rlang
-                             r-rgn
-                             r-rcpp
-                             r-progress
-                             r-mvtnorm
-                             r-matrix
-                             r-lubridate
-                             r-lattice
-                             r-jsonlite
-                             r-ggplot2
-                             r-ga
-                             r-foreach
-                             r-fields
-                             r-dplyr
-                             r-doparallel
-                             r-directlabels
-                             r-dfoptim
-                             r-cowplot
-                             r-blrpm
-                             r-airgr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=foreSIGHT")
-    (synopsis "Systems Insights from Generation of Hydroclimatic Timeseries")
-    (description
-     "This package provides a tool to create hydroclimate scenarios, stress test
-systems and visualize system performance in scenario-neutral climate change
-impact assessments.  Scenario-neutral approaches stress-test the performance of
-a modelled system by applying a wide range of plausible hydroclimate conditions
-(see Brown & Wilby (2012) <doi:10.1029/2012EO410001> and Prudhomme et al. (2010)
-<doi:10.1016/j.jhydrol.2010.06.043>).  These approaches allow the identification
-of hydroclimatic variables that affect the vulnerability of a system to
-hydroclimate variation and change.  This tool enables the generation of
-perturbed time series using a range of approaches including simple scaling of
-observed time series (e.g. Culley et al. (2016) <doi:10.1002/2015WR018253>) and
-stochastic simulation of perturbed time series via an inverse approach (see Guo
-et al. (2018) <doi:10.1016/j.jhydrol.2016.03.025>).  It incorporates
-Richardson-type weather generator model configurations documented in Richardson
-(1981) <doi:10.1029/WR017i001p00182>, Richardson and Wright (1984), as well as
-latent variable type model configurations documented in Bennett et al. (2018)
-<doi:10.1016/j.jhydrol.2016.12.043>, Rasmussen (2013) <doi:10.1002/wrcr.20164>,
-Bennett et al. (2019) <doi:10.5194/hess-23-4783-2019> to generate hydroclimate
-variables on a daily basis (e.g. precipitation, temperature, potential
-evapotranspiration) and allows a variety of different hydroclimate variable
-properties, herein called attributes, to be perturbed.  Options are included for
-the easy integration of existing system models both internally in R and
-externally for seamless stress-testing'.  A suite of visualization options for
-the results of a scenario-neutral analysis (e.g. plotting performance spaces and
-overlaying climate projection information) are also included.  Version 1.0 of
-this package is described in Bennett et al. (2021)
-<doi:10.1016/j.envsoft.2021.104999>.  As further developments in
-scenario-neutral approaches occur the tool will be updated to incorporate these
-advances.")
-    (license license:gpl3)))
-
 (define-public r-forensim
   (package
     (name "r-forensim")
@@ -23803,6 +23729,40 @@ Mikolov, 2017, <doi:10.18653/v1/e17-2068>; (iii) \"@code{FastText.zip}:
 Compressing text classification models\", Armand Joulin, Edouard Grave, Piotr
 Bojanowski, Matthijs Douze, Herve Jegou, Tomas Mikolov, 2016,
 <doi:10.48550/@code{arXiv.1612.03651>}.")
+    (license license:expat)))
+
+(define-public r-fastsurvival
+  (package
+    (name "r-fastsurvival")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FastSurvival" version))
+       (sha256
+        (base32 "1fd4pwhssj8rpq7h8rcfxawf2dbzzknv7iz12wmg2bp44j7p0ah8"))))
+    (properties `((upstream-name . "FastSurvival")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp r-dqrng))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/gosukehommaEX/FastSurvival")
+    (synopsis
+     "Fast Kaplan-Meier, Log-Rank, and Hazard Ratio Estimation for Survival Analysis")
+    (description
+     "This package provides fast alternatives to standard survival analysis functions
+in the survival package.  The package implements a single-time-point
+Kaplan-Meier estimator @code{(survfit_fast()}), a log-rank test
+@code{(survdiff_fast()}), a closed-form hazard ratio estimator based on the
+Pike-Halley Estimator method @code{(coxph_fast()}), and a clinical trial data
+simulator @code{(simdata_fast()}).  All functions are designed for repeated
+evaluation inside large simulation loops, such as adaptive sample-size
+re-estimation, probability-of-success calculations, and regional consistency
+evaluation in multi-regional trials.  Core computations are implemented in C++
+via Rcpp for maximum performance.  Methodological background is described in
+Collett (2014, ISBN:9780429196294).")
     (license license:expat)))
 
 (define-public r-faststepgraph

@@ -468,31 +468,27 @@ twowaytests functions are designed for two-way layout (Dag et al., 2024,
 (define-public r-twowayfeweights
   (package
     (name "r-twowayfeweights")
-    (version "2.0.4")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TwoWayFEWeights" version))
        (sha256
-        (base32 "0jx12g2igyir50mq1wm2nl76lw02wf5gw837wvl19ffsji19mn4p"))))
+        (base32 "16g5vxq15ijh2ii3fnjvfqp9ajf24plsizcrq04qhnbv0g0f45b7"))))
     (properties `((upstream-name . "TwoWayFEWeights")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang
-                             r-magrittr
-                             r-haven
-                             r-fixest
-                             r-dplyr
-                             r-cli))
-    (home-page "https://github.com/chaisemartinPackages")
+    (propagated-inputs (list r-rcpp r-haven r-fixest r-data-table r-cli))
+    (home-page "https://github.com/Credible-Answers/twowayfeweights")
     (synopsis
      "Estimation of the Weights Attached to the Two-Way Fixed Effects Regressions")
     (description
-     "Estimates the weights and measure of robustness to treatment effect
-heterogeneity attached to two-way fixed effects regressions.  ClÃ©ment de
-Chaisemartin, Xavier D'HaultfÅuille (2020) <DOI: 10.1257/aer.20181169>.")
+     "Computes the implicit weights attached to two-way fixed effects regressions, as
+well as summary measures of these regressions robustness to heterogeneous
+treatment effects.  Based on de Chaisemartin and D'Haultfoeuille (2020)
+<DOI:10.1257/aer.20181169>.")
     (license license:expat)))
 
 (define-public r-twoway
@@ -796,6 +792,47 @@ motivation came from Hibbing PR, @code{LaMunion} SR, Kaplan AS, & Crouter SE
 supported.  Please see the associated references in the package documentation
 for full details of the algorithms that are supported.")
     (license license:gpl3)))
+
+(define-public r-twophasegas
+  (package
+    (name "r-twophasegas")
+    (version "1.2.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "twoPhaseGAS" version))
+       (sha256
+        (base32 "1hw1da28rvsfm35308k9ppiq3853qcy3li860zsblc2r2szmr3w7"))))
+    (properties `((upstream-name . "twoPhaseGAS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-nloptr
+                             r-matrix
+                             r-mass
+                             r-kofnga
+                             r-enrichwith
+                             r-dfoptim
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/egosv/twoPhaseGAS")
+    (synopsis
+     "Two-Phase Genetic Association Study Design and Analysis with Missing Covariates by Design")
+    (description
+     "This package provides functionality for designing and analysing two-phase
+genetic association studies.  Phase 1 data usually come from genome-wide
+association study (GWAS) results and we assume phase 2 data will be part of a
+targeted genome sequencing or fine-mapping study.  At design stage, the package
+assists in selecting a subset of individuals that will be sequenced for phase 2
+via alternative approaches, including a flexible genetic algorithm (GA) for
+near-optimal designs.  Once phase 2 data have been collected, the package
+implements methods to analyse phase 1 and phase 2 data together using
+semi-parametric regression models via the expectation-maximization (EM)
+algorithm.  For more details see Espin-Garcia, Craiu and Bull (2018)
+<doi:10.1002/gepi.22099> and Espin-Garcia, Craiu and Bull (2021)
+<doi:10.1002/sim.9211>.")
+    (license license:gpl2+)))
 
 (define-public r-twophasecorr
   (package
@@ -16461,13 +16498,13 @@ or a term-document matrix.")
 (define-public r-tlcar
   (package
     (name "r-tlcar")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TLCAR" version))
        (sha256
-        (base32 "18wzr7lgzffalvacbr1617d4v50mhd13wqbyr9iyhgc07z2pfncn"))))
+        (base32 "0f934l7zdlfnhpd3x3jd9cmknkqbkwd1mwgdy31zwnk4pvhx4hjg"))))
     (properties `((upstream-name . "TLCAR")))
     (build-system r-build-system)
     (arguments
@@ -17138,13 +17175,13 @@ unmeasured confounder may tip our result to insignificance.")
 (define-public r-tipmap
   (package
     (name "r-tipmap")
-    (version "0.5.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tipmap" version))
        (sha256
-        (base32 "11wznnhv1jf0g72ahdcxvxm4n3kpdbx6ivdx9cb0c5gdyjh482ss"))))
+        (base32 "1w75x84m7b4fjjjvx4fhzsizamh5glwj0lk2w1da90vbs8iv8apv"))))
     (properties `((upstream-name . "tipmap")))
     (build-system r-build-system)
     (arguments
@@ -17157,6 +17194,7 @@ unmeasured confounder may tip our result to insignificance.")
                              r-future
                              r-furrr
                              r-dplyr
+                             r-coda
                              r-assertthat))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Boehringer-Ingelheim/tipmap")
@@ -24099,6 +24137,41 @@ GUIs: Rgui', RStudio', Positron', VSCode', Jupyter', Emacs', and Rscript
 @code{knitr::knit()}', @code{plumber::plumb()}', @code{shiny::runApp()}',
 package:targets', and @code{testthat::source_file()}'.")
     (license license:expat)))
+
+(define-public r-thinr
+  (package
+    (name "r-thinr")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "thinr" version))
+       (sha256
+        (base32 "1w6574bmfkwih07iyvpd49c8p9ix6j3d2q328ag8r1nc5683m379"))))
+    (properties `((upstream-name . "thinr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/humanpred/thinr")
+    (synopsis "Binary Image Thinning Algorithms")
+    (description
+     "Thinning (skeletonization) algorithms for binary raster images.  Provides seven
+algorithms behind a single dispatching function: Zhang-Suen (Zhang and Suen
+1984) <doi:10.1145/357994.358023>, Guo-Hall (Guo and Hall 1989)
+<doi:10.1145/62065.62074>, a 2-D adaptation of Lee (Lee, Kashyap, and Chu 1994)
+<doi:10.1006/cgip.1994.1042>, K3M (Saeed, Tabedzki, Rybnik, and Adamski 2010)
+<doi:10.2478/v10006-010-0024-4>, the parallel form commonly attributed to
+Hilditch (1969, in Machine Intelligence 4'), OPTA / SPTA (Naccache and Shinghal
+1984), and Holt and colleagues (1987) <doi:10.1145/12527.12531>.  Also provides
+the medial axis transform (Blum 1967) and a distance transform implementation
+following Felzenszwalb and Huttenlocher (2012) <doi:10.4086/toc.2012.v008a019>.
+The drop-in @code{thinImage()} matches the signature of @code{thinImage()} in
+the EBImage package on Bioconductor so existing code can switch parsers without
+changes.  The wider @code{thin()} API selects the algorithm by name.")
+    (license license:lgpl3)))
 
 (define-public r-thinkr
   (package

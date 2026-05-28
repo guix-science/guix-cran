@@ -17535,13 +17535,13 @@ help narrow down the source of problems and differences.")
 (define-public r-diffcp
   (package
     (name "r-diffcp")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "diffcp" version))
        (sha256
-        (base32 "15gdi1a746fvlyv1vmjlg7dxipdnfma784mvb8qk6m3f42zs9l64"))))
+        (base32 "1d7jwwipqiqynm6w66vn3fgqmi18b1ggzq91pgddb5bbx8nmx7q1"))))
     (properties `((upstream-name . "diffcp")))
     (build-system r-build-system)
     (arguments
@@ -17549,10 +17549,10 @@ help narrow down the source of problems and differences.")
       #:tests? #f))
     (propagated-inputs (list r-rcppeigen r-rcpp r-matrix r-cli r-clarabel))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/bnaras/diffcp")
+    (home-page "https://bnaras.github.io/diffcp/")
     (synopsis "Differentiating Through Cone Programs")
     (description
-     "This package provides a pure-R port of the Python diffcp package.  Computes the
+     "This package provides a port of the python diffcp package.  Computes the
 derivative of the optimal solution map of a convex cone program, treating the
 program as an implicit function of its data (constraint matrix, offset,
 objective coefficients, and optionally a quadratic), mirroring Agrawal et al.
@@ -28931,6 +28931,51 @@ distances between individuals.  Distances can either be directly input as a
 distances matrix, a squared distances matrix, an inner-products matrix or
 computed from observed predictors.")
     (license license:gpl2)))
+
+(define-public r-dbspatial
+  (package
+    (name "r-dbspatial")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dbSpatial" version))
+       (sha256
+        (base32 "069jzl6q7dsarhbgnx22wj2jlb61slzr1nxj2ddkcrl90fnrjvd2"))))
+    (properties `((upstream-name . "dbSpatial")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-terra
+                             r-sf
+                             r-rlang
+                             r-lifecycle
+                             r-glue
+                             r-e1071
+                             r-duckdb
+                             r-dplyr
+                             r-dbproject
+                             r-dbplyr
+                             r-dbi
+                             r-crayon
+                             r-cli
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/dbverse-org/dbspatial-r")
+    (synopsis "Spatial Data Operations for Database-Backed Geometries")
+    (description
+     "This package provides database-backed spatial geometry classes and methods for
+working with vector spatial data in @code{DuckDB}'.  The package supports
+loading, converting, querying, joining, and measuring spatial geometries through
+familiar sf'-style interfaces while keeping geometry columns lazy inside the
+database.  It integrates with @code{dbProject} to preserve database paths, live
+connections, and spatial table metadata across interactive sessions.  The
+package follows the Simple Features framework described by Pebesma (2018)
+<doi:10.32614/RJ-2018-009> and uses @code{DuckDB's} spatial extension
+<https://duckdb.org/docs/stable/core_extensions/spatial/overview.html>.")
+    (license (list license:gpl3 license:expat))))
 
 (define-public r-dbrobust
   (package

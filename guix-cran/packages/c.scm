@@ -577,13 +577,13 @@ modular functions and modular curves.")
 (define-public r-cyclops
   (package
     (name "r-cyclops")
-    (version "3.7.0")
+    (version "3.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Cyclops" version))
        (sha256
-        (base32 "1jx1lcdpk0x9mmcg7svc107d3iw82k1kkf8cxq5pgn1i3fmhg442"))))
+        (base32 "0yiwnffsl5kf2kyjx628x9hj86hmpq8a7gpwxm1w71sd1s1g83kx"))))
     (properties `((upstream-name . "Cyclops")))
     (build-system r-build-system)
     (arguments
@@ -28409,6 +28409,33 @@ of event probabilities in multi-party electoral systems (Bender and Bauer (2018)
 <doi:10.21105/joss.00606>).")
     (license license:expat)))
 
+(define-public r-coalescentphylo
+  (package
+    (name "r-coalescentphylo")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CoalescentPhylo" version))
+       (sha256
+        (base32 "1yjfrjv94x1vhfsbmqx0r4i1vw2achmncrs0f2grwb0r6fi97gi6"))))
+    (properties `((upstream-name . "CoalescentPhylo")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rootsolve r-phangorn r-pbapply r-ape))
+    (home-page "https://github.com/ArindamRoyChoudhury/CoalescentPhylo")
+    (synopsis "Phylogenetics via Root Distances Method Under the Coalescent")
+    (description
+     "Estimates phylogenetic trees from allele count data using the root distance
+method under the Coalescent Model.  Given a matrix of allele counts across taxa
+and loci, the package estimates pairwise root distances under the Coalescent
+Model using maximum likelihood estimation.  Then, it estimates a labeled
+phylogenetic tree from the estimated root distances.  See Peng et al. (2021)
+<doi:10.1016/j.ympev.2021.107142>.")
+    (license license:agpl3)))
+
 (define-public r-coalescentmcmc
   (package
     (name "r-coalescentmcmc")
@@ -31510,6 +31537,41 @@ DNA sequence of cancer genome.  The extremely mutated zones are searched in the
 symmetric dissimilarity matrix using the anti-Robinson matrix properties.
 Different data sets are obtained to describe and plot the clustered mutations
 information.")
+    (license license:gpl3)))
+
+(define-public r-clusteredmsm
+  (package
+    (name "r-clusteredmsm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "clusteredMSM" version))
+       (sha256
+        (base32 "1wrz9klq320l5039b7ybr5jkxph1dl6rpcflill855s2j84l77xh"))))
+    (properties `((upstream-name . "clusteredMSM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/gbakoyannis/clusteredMSM")
+    (synopsis "Nonparametric Analysis of Clustered Multistate Processes")
+    (description
+     "Nonparametric estimation of population-averaged transition probabilities, with
+cluster-bootstrap pointwise confidence intervals, simultaneous confidence bands,
+and two-sample Kolmogorov-Smirnov-type tests for clustered or independent
+multistate process data.  Estimation follows Bakoyannis (2021)
+<doi:10.1111/biom.13327>; two-sample inference for the cluster-randomized and
+independent-samples designs follows Bakoyannis and Bandyopadhyay (2022)
+<doi:10.1007/s10463-021-00819-x>.  Both methods use the working-independence
+Aalen-Johansen estimator.  The package supports both progressive (acyclic) and
+non-monotone (e.g., illness-death with recovery) multistate processes, right
+censoring, left truncation, and informative cluster size.  The user supplies
+data in interval format (one row per mutually-exclusive time interval per
+subject) and interacts with the package through a single formula-based function,
+@code{patp()}.")
     (license license:gpl3)))
 
 (define-public r-clusterbootstrap
@@ -43945,13 +44007,13 @@ scripts to reproduce the VPCs in R.")
 (define-public r-certara-rsnlme-modelexecutor
   (package
     (name "r-certara-rsnlme-modelexecutor")
-    (version "3.0.2")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Certara.RsNLME.ModelExecutor" version))
        (sha256
-        (base32 "1w5rwwx9am5007ifn77xxx2dg4zgpdfyj9znzij0zhfbjij70cb6"))))
+        (base32 "135x9sahxfkkvjyi7w3kpgf70bvfw69fhxz99lfajlzhvfyin23c"))))
     (properties `((upstream-name . "Certara.RsNLME.ModelExecutor")))
     (build-system r-build-system)
     (arguments
@@ -45588,6 +45650,47 @@ in the vignettes: \"DDC_examples\", \"@code{MacroPCA_examples}\", \"wrap_example
 \"Correspondence_analysis_examples\", and \"cellwise_weights_examples\".")
     (license license:gpl2+)))
 
+(define-public r-cellwindx
+  (package
+    (name "r-cellwindx")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CellWindX" version))
+       (sha256
+        (base32 "1fzz3c42fj2vmbqgw3lv16y5xvl5jnj34347ixbcxq9knbc1zaip"))))
+    (properties `((upstream-name . "CellWindX")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-seurat
+                             r-patchwork
+                             r-matrix
+                             r-ggplot2
+                             r-dplyr
+                             r-complexheatmap
+                             r-circlize))
+    (home-page "https://cran.r-project.org/package=CellWindX")
+    (synopsis "Marker Gene Analysis and Visualization for Single-Cell Data")
+    (description
+     "This package provides a Seurat'-compatible toolkit for marker gene
+identification, expression summarization, and visualization of annotated
+single-cell transcriptomic data. @code{CellWindX} identifies top
+cell-type-enriched markers, calculates marker expression percentages and average
+expression values across cell groups, and generates publication-oriented
+dimensional reduction plots, marker heatmaps, and gene-level radar plots.  The
+package includes built-in aesthetic palettes and supports both exploratory
+analysis and downstream figure preparation for single-cell atlas studies.  The
+workflow is designed to complement single-cell analysis frameworks such as
+Seurat described by Satija et al. (2015) <doi:10.1038/nbt.3192> and Hao et al.
+(2021) <doi:10.1016/j.cell.2021.04.048>, as well as heatmap visualization
+methods implemented in @code{ComplexHeatmap} described by Gu et al. (2016)
+<doi:10.1093/bioinformatics/btw313>.")
+    (license license:gpl3)))
+
 (define-public r-cellvolumedist
   (package
     (name "r-cellvolumedist")
@@ -46494,19 +46597,19 @@ Difference-in-Differences\", Journal of Econometrics,
 (define-public r-cdghmm
   (package
     (name "r-cdghmm")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CDGHMM" version))
        (sha256
-        (base32 "1fqaavvfzd8f4hs0zc1pd51qrqyhfb20437dl58scrb40883d0kr"))))
+        (base32 "1ydczrplqxkxsqd13h7vzss23c8f6iqj29d07sidpxd2sdvgi0vi"))))
     (properties `((upstream-name . "CDGHMM")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-mvtnorm r-mass r-cluster))
+    (propagated-inputs (list r-mvtnorm r-matrix r-mass))
     (home-page "https://cran.r-project.org/package=CDGHMM")
     (synopsis "Hidden Markov Models for Multivariate Panel Data")
     (description

@@ -6312,6 +6312,37 @@ approximation, allowing for fast inference and flexible covariate effects
 package is described by Michelot (2025) <doi:10.18637/jss.v114.i05>.")
     (license license:gpl3)))
 
+(define-public r-hmmtensor
+  (package
+    (name "r-hmmtensor")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hmmTensor" version))
+       (sha256
+        (base32 "1xp6i9yhw31d8v83i2gzpphq7pv7pd62dashnrnjwjdnn6s4l4ws"))))
+    (properties `((upstream-name . "hmmTensor")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-symtensor r-rtensor))
+    (home-page "https://cran.r-project.org/package=hmmTensor")
+    (synopsis "Hidden Markov Model by Matrix and Tensor Decomposition")
+    (description
+     "Solves Hidden Markov Models (HMMs) via matrix and tensor decomposition.
+Converts observation sequences to co-occurrence matrices/tensors and applies
+Symmetric Non-negative Matrix Factorization (@code{symNMF}), Singular Value
+Decomposition (SVD), CANDECOMP/PARAFAC (CP) decomposition, or Tensor-Train (TT)
+decomposition to recover HMM parameters.  Also provides standard HMM algorithms
+(Forward, Backward, Viterbi, Baum-Welch) for comparison.  The spectral learning
+approach for HMMs is based on Hsu, Kakade, and Zhang (2012)
+<doi:10.1016/j.jcss.2011.12.025>.  The @code{symNMF} method is described in
+Kuang, Yun, and Park (2015) <doi:10.1007/s10898-014-0247-2>.  The Tensor-Train
+decomposition is described in Oseledets (2011) <doi:10.1137/090752286>.")
+    (license license:expat)))
+
 (define-public r-hmmrel
   (package
     (name "r-hmmrel")
@@ -8640,6 +8671,41 @@ due to sample sizes smaller than dimensionality.  In this case, the ZWL and ZWLm
 tests proposed by Zhang (2019) <http://hdl.handle.net/2097/40235>, referred to
 as @code{zwl_test()} in this package, provide a reliable and powerful test.")
     (license license:gpl2)))
+
+(define-public r-highdir
+  (package
+    (name "r-highdir")
+    (version "0.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "highdir" version))
+       (sha256
+        (base32 "1bixr34czbhx04drsayk9rnff7gscra26y8g0cdas8m2jjb4h4jy"))))
+    (properties `((upstream-name . "highdir")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridis
+                             r-shiny
+                             r-rlang
+                             r-jsonlite
+                             r-htmlwidgets
+                             r-highcharter
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://folkehelsestats.github.io/highdir/")
+    (synopsis
+     "Backend-Agnostic Figure Builder for 'highcharter' and 'ggplot2'")
+    (description
+     "This package provides a backend-agnostic API for creating data visualizations
+using highcharter (interactive) or ggplot2 (static).  Figures are defined once
+via a specification object and can be rendered to either backend without
+modifying the calling code.  Supports both declarative and layered workflows,
+flexible theming and colour palettes, optional @code{JavaScript} enhancements,
+and tools for exporting figures and interactive exploration via a shiny app.")
+    (license license:expat)))
 
 (define-public r-highd2means
   (package
@@ -11197,6 +11263,30 @@ use-case, see the gifski package on CRAN'.")
      "This package provides a dummy package to demonstrate how to interface to a jar
 file that resides inside an R package.")
     (license license:gpl3)))
+
+(define-public r-hellofrog
+  (package
+    (name "r-hellofrog")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HelloFrog" version))
+       (sha256
+        (base32 "1g31anls8mjiqrv9jkzmmj3sy5b478f5mkm40xd1ldpzfk5dxqky"))))
+    (properties `((upstream-name . "HelloFrog")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=HelloFrog")
+    (synopsis "Quirky ASCII-Art Frog Alternative to 'print'")
+    (description
+     "Prints a user-supplied message alongside a small ASCII-art frog in one of
+several moods (default, sleepy, angry, party, ninja).  Designed as a quirky
+alternative to print for adding visual flair to console output in scripts,
+demos, teaching materials, and command-line tools.")
+    (license license:expat)))
 
 (define-public r-hellodatascience
   (package
@@ -13884,38 +13974,6 @@ based on the assumption that high-dimensional data live in different subspaces
 with low dimensionality proposing a new parametrization of the Gaussian mixture
 model which combines the ideas of dimension reduction and constraints on the
 model.")
-    (license license:gpl2)))
-
-(define-public r-hdci
-  (package
-    (name "r-hdci")
-    (version "1.0-2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "HDCI" version))
-       (sha256
-        (base32 "0wxbv54kbygymhh4r7052vnbj603c1kya01ykvmqzzkjyyfzidkz"))))
-    (properties `((upstream-name . "HDCI")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-slam
-                             r-mvtnorm
-                             r-matrix
-                             r-lattice
-                             r-iterators
-                             r-glmnet
-                             r-foreach
-                             r-doparallel))
-    (home-page "https://cran.r-project.org/package=HDCI")
-    (synopsis
-     "High Dimensional Confidence Interval Based on Lasso and Bootstrap")
-    (description
-     "Fits regression models on high dimensional data to estimate coefficients and use
-bootstrap method to obtain confidence intervals.  Choices for regression models
-are Lasso, Lasso+OLS, Lasso partial ridge, Lasso+OLS partial ridge.")
     (license license:gpl2)))
 
 (define-public r-hdcd

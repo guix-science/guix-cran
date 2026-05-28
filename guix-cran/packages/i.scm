@@ -905,65 +905,6 @@ innovations algorithm can be found in the textbook \"Introduction to Time Series
 and Forecasting\" by Peter J. Brockwell and Richard A. Davis.")
     (license (license:fsdg-compatible "FreeBSD"))))
 
-(define-public r-itsdm
-  (package
-    (name "r-itsdm")
-    (version "0.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "itsdm" version))
-       (sha256
-        (base32 "180bjjfplhl3xkbkiq1p5i2m6wp3q7bnxx63ac5sgqbyr7ycpw74"))))
-    (properties `((upstream-name . "itsdm")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyselect
-                             r-stringr
-                             r-stars
-                             r-sf
-                             r-rocit
-                             r-rlang
-                             r-raster
-                             r-patchwork
-                             r-outliertree
-                             r-ncdf4
-                             r-mgcv
-                             r-isotree
-                             r-ggplot2
-                             r-fastshap
-                             r-dplyr
-                             r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/LLeiSong/itsdm")
-    (synopsis
-     "Isolation Forest-Based Presence-Only Species Distribution Modeling")
-    (description
-     "Collection of R functions to do purely presence-only species distribution
-modeling with isolation forest (@code{iForest}) and its variations such as
-Extended isolation forest and S@code{CiForest}.  See the details of these
-methods in references: Liu, F.T., Ting, K.M. and Zhou, Z.H. (2008)
-<doi:10.1109/ICDM.2008.17>, Hariri, S., Kind, M.C. and Brunner, R.J. (2019)
-<doi:10.1109/TKDE.2019.2947676>, Liu, F.T., Ting, K.M. and Zhou, Z.H. (2010)
-<doi:10.1007/978-3-642-15883-4_18>, Guha, S., Mishra, N., Roy, G. and
-Schrijvers, O. (2016) <https://proceedings.mlr.press/v48/guha16.html>, Cortes,
-D. (2021) <doi:10.48550/@code{arXiv.2110.13402>}.  Additionally, Shapley values
-are used to explain model inputs and outputs.  See details in references:
-Shapley, L.S. (1953) <doi:10.1515/9781400881970-018>, Lundberg, S.M. and Lee,
-S.I. (2017)
-<https://dm-gatech.github.io/CS8803-Fall2018-DML-Papers/shapley.pdf>, Molnar, C.
-(2020) <ISBN:978-0-244-76852-2>, Å trumbelj, E. and Kononenko, I. (2014)
-<doi:10.1007/s10115-013-0679-x>.  itsdm also provides functions to diagnose
-variable response, analyze variable importance, draw spatial dependence of
-variables and examine variable contribution.  As utilities, the package includes
-a few functions to download bioclimatic variables including @code{WorldClim}
-version 2.0 (see Fick, S.E. and Hijmans, R.J. (2017) <doi:10.1002/joc.5086>) and
-CMCC-@code{BioClimInd} (see Noce, S., Caporaso, L. and Santini, M. (2020)
-<doi:10.1038/s41597-020-00726-5>.")
-    (license license:expat)))
-
 (define-public r-itscalledsoccer
   (package
     (name "r-itscalledsoccer")
@@ -11322,6 +11263,35 @@ The tests included are t tests, variance tests, proportion tests, chi square
 tests, Levene's test, @code{McNemar} Test, Cochran's Q test and Runs test.")
     (license license:expat)))
 
+(define-public r-infermm
+  (package
+    (name "r-infermm")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "inferMM" version))
+       (sha256
+        (base32 "03hk5z8nbbrk2lvk4y4lxd5qcm73hwzamn3zffr7p7hyr7vnl0z6"))))
+    (properties `((upstream-name . "inferMM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=inferMM")
+    (synopsis "Variance-Aware Michaelis-Menten Estimation and Inference")
+    (description
+     "Variance-aware Michaelis-Menten estimation, model screening, grouped
+enzyme-kinetic analyses, and clustered repeated-measurement workflows.  The
+package implements profile-score estimators under working variance functions,
+together with a lightweight cluster-aware working-covariance extension, Wald and
+bootstrap confidence intervals, prediction utilities, and simulation helpers.
+Related methodology is discussed by Kim and Ma (2012)
+<doi:10.1007/s10463-011-0332-y>, Kim (2023) <doi:10.1002/sta4.606>, and Ma and
+Genton (2010) <doi:10.1111/j.1467-9868.2010.00741.x>.")
+    (license license:gpl3)))
+
 (define-public r-inferference
   (package
     (name "r-inferference")
@@ -19422,6 +19392,45 @@ model given by Castano et al. (2013) <doi:10.1007/s11063-012-9253-x>, from which
 the implemented ICA based algorithm is greatly inspired.")
     (license license:gpl3)))
 
+(define-public r-icomb
+  (package
+    (name "r-icomb")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "icomb" version))
+       (sha256
+        (base32 "0yqbnwflg765y7l358lhq9lly30csx9ckyamj5qh49jiakn6wzlj"))))
+    (properties `((upstream-name . "icomb")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs
+                             r-tsibble
+                             r-purrr
+                             r-progressr
+                             r-glmnet
+                             r-generics
+                             r-future-apply
+                             r-fabletools
+                             r-dplyr
+                             r-distributional
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://shanikalw.github.io/icomb/")
+    (synopsis
+     "Forecasting Hierarchical Time Series Using Information Combination")
+    (description
+     "This package implements the Information Combination (IComb) approach proposed by
+Nguyen, Vahid and Wickramasuriya
+(2025)<https://www.monash.edu/business/ebs/research/publications/ebs/2025/wp11-2025.pdf>
+for hierarchical forecast reconciliation.  The method combines information from
+base forecasts constructed using different information sets while ensuring
+coherence.  It is implemented using a penalized regression-based framework.")
+    (license license:gpl3+)))
+
 (define-public r-icods
   (package
     (name "r-icods")
@@ -20386,6 +20395,31 @@ manual injury severity scoring.  ICDPIC was originally developed in Stata', and
 icdpicr is an open-access update that accepts both ICD-9 and ICD-10 codes.")
     (license license:expat)))
 
+(define-public r-icdhelper
+  (package
+    (name "r-icdhelper")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "icdhelper" version))
+       (sha256
+        (base32 "1prajg4r1n2b2q0ffgnhjh21i7m0z2b9mfmhjzdxdbgfdslcwvbg"))))
+    (properties `((upstream-name . "icdhelper")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-readxl r-arules))
+    (home-page "https://cran.r-project.org/package=icdhelper")
+    (synopsis "Simple 'ICD-10' Code Descriptions")
+    (description
+     "This package provides utilities to retrieve and manage ICD-10 code descriptions
+from Excel files.  Supports vectors, data frame columns, and association rule
+outputs (e.g., arules objects) that require mapping to ICD-10 descriptions.
+Designed to simplify processing of healthcare datasets.")
+    (license license:expat)))
+
 (define-public r-icdglm
   (package
     (name "r-icdglm")
@@ -20585,6 +20619,40 @@ interval-censored survival data.  It also provides functions to tune the
 parameters and evaluate the model fit.  See Yao et al. (2019)
 <@code{arXiv:1901.04599>}.")
     (license license:gpl2+)))
+
+(define-public r-iccdesign
+  (package
+    (name "r-iccdesign")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ICCDesign" version))
+       (sha256
+        (base32 "1ishfh42ajanqx8lslg55hr7074h3d8ixjvb899s3f75lj4xzqwf"))))
+    (properties `((upstream-name . "ICCDesign")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny))
+    (home-page "https://github.com/KlariZhang/ICCDesign")
+    (synopsis
+     "Intraclass Correlation Coefficient (ICC) Design, Calculation and Interactive 'shiny' Toolkit")
+    (description
+     "This package provides a comprehensive toolkit for intraclass correlation
+coefficient (ICC) analysis, integrating three core functionalities: (1)
+Closed-form sample size calculation for ICC estimation with assurance
+probability, based on Zou (2012) <doi:10.1002/sim.5466>; (2) Full implementation
+of all 10 ICC types (6 common + 4 supplementary) for point estimation, exact
+confidence interval calculation, and formal hypothesis testing, following the
+methods of @code{McGraw} & Wong (1996) <doi:10.1037/1082-989X.1.1.30> and the
+standard decision framework; (3) An interactive shiny application that guides
+users through ICC type selection, performs calculations, and provides
+reliability evaluation based on the Koo & Li (2016)
+<doi:10.1016/j.jcm.2016.02.012> criteria.  Compared to existing packages, it
+provides a unified decision workflow and supports all less common ICC variants.")
+    (license license:gpl3+)))
 
 (define-public r-iccde
   (package

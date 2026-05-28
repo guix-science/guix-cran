@@ -1222,20 +1222,26 @@ mapping algorithms and additional functions described in Kang et al
 (define-public r-symmoments
   (package
     (name "r-symmoments")
-    (version "1.2.1.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "symmoments" version))
        (sha256
-        (base32 "1i2gr7nyq7f9j05kqyn29lpn4z0i4zdf4ifcnvwiwajwb2ibrj80"))))
+        (base32 "1vmdi3kvp3q0wjcvmnr9b1qmrvp4lxc1lm0gkxz5qids4wxbm5as"))))
     (properties `((upstream-name . "symmoments")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-mvtnorm r-multipol r-cubature r-combinat))
-    (home-page "https://cran.r-project.org/package=symmoments")
+    (propagated-inputs (list r-rdpack
+                             r-mvtnorm
+                             r-multipol
+                             r-mpoly
+                             r-cubature
+                             r-combinat))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/FloSchuberth/symmoments")
     (synopsis
      "Symbolic Central and Noncentral Moments of the Multivariate Normal Distribution")
     (description
@@ -5962,6 +5968,36 @@ project number: 101069264).  Views and opinions expressed are however those of
 the author(s) only and do not necessarily reflect those of the European Union or
 the European Research Council Executive Agency.  Neither the European Union nor
 the granting authority can be held responsible for them.")
+    (license license:expat)))
+
+(define-public r-surveyframe
+  (package
+    (name "r-surveyframe")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "surveyframe" version))
+       (sha256
+        (base32 "1rlbny3n41i1li88yymz3xqh1s519b75n9s1c0jd3za2pp6pbbhj"))))
+    (properties `((upstream-name . "surveyframe")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-openssl r-jsonlite))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/MohammedAliSharafuddin/surveyframe")
+    (synopsis "Survey Instrument Workflows")
+    (description
+     "Supports survey research workflows built around a typed instrument object (the
+sframe).  Features include visual instrument design via a browser-based builder
+or Shiny studio, export to a self-contained static HTML survey, an embeddable
+Shiny module, SHA-256 integrity-checked serialisation to the .sframe format,
+multi-page survey rendering, branching logic, response quality checking, scale
+scoring, psychometric diagnostics, analysis-plan execution, model syntax
+planning, an interactive response dashboard, codebook generation, and
+reproducible HTML reporting.")
     (license license:expat)))
 
 (define-public r-surveyexplorer
@@ -16776,6 +16812,31 @@ described in Kang et al. (2010), <doi:10.1038/ng.548>.  One of a series of
 statistical genetic packages for streamlining the analysis of typical plant
 breeding experiments developed by Biometris.")
     (license license:gpl3)))
+
+(define-public r-statgen
+  (package
+    (name "r-statgen")
+    (version "0.3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "statgen" version))
+       (sha256
+        (base32 "1cmza0fs2malyc3c213jy865iba4pv9h5xj9sa2hfx3wfhciy6b8"))))
+    (properties `((upstream-name . "statgen")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrix r-jsonlite r-digest r-data-table r-bit64))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/precimed/statgen")
+    (synopsis "Statistical Genetics Data Objects and Loaders")
+    (description
+     "Loads and manages statistical genetics data objects including reference panels,
+genotypes, LD matrices, annotations, and summary statistics.  Follows the
+statgen specification for use across Python', R', and MATLAB'/'Octave runtimes.")
+    (license license:expat)))
 
 (define-public r-statforbiology
   (package
@@ -55665,6 +55726,39 @@ elements into the bivalve shell.  Results of various modelling parameters can be
 exported in the form of XLSX files.")
     (license license:gpl3)))
 
+(define-public r-shellgame
+  (package
+    (name "r-shellgame")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "shellgame" version))
+       (sha256
+        (base32 "1hiiavkk2ih8h67zk2swjcxv7n6dadydakzd26c89m0jl4bd036l"))))
+    (properties `((upstream-name . "shellgame")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidycensus
+                             r-stringr
+                             r-rlang
+                             r-magrittr
+                             r-janitor
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/phinnphace/shellgame")
+    (synopsis "The Shell Game - Audit Geographic Data Transformations")
+    (description
+     "Reveals how data quality silently degrades during geographic transformations
+while variable labels remain unchanged.  Demonstrates that transformation error
+is agnostic to both the variable (population, income, etc.) and the tool ('R',
+Python', etc.).  Provides a reproducible audit framework for quantifying the
+shift from observed to imputed data at each transformation hop.")
+    (license license:expat)))
+
 (define-public r-shellchron
   (package
     (name "r-shellchron")
@@ -59230,13 +59324,13 @@ and descriptive tools.  For details on the implemented penalty method, see Ugba
 (define-public r-serotrackr
   (package
     (name "r-serotrackr")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SeroTrackR" version))
        (sha256
-        (base32 "10jhv7j1hal01bb4fpbbp34md5aljvdngklqamm8f7q2ixmcbll5"))))
+        (base32 "0in7fs5xm6v4nhgbs4n0i47yv0z80jpa2nsagm7w8kv3wpna8dsy"))))
     (properties `((upstream-name . "SeroTrackR")))
     (build-system r-build-system)
     (arguments
@@ -65143,13 +65237,13 @@ detector spacing.")
 (define-public r-secr
   (package
     (name "r-secr")
-    (version "5.4.2")
+    (version "5.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "secr" version))
        (sha256
-        (base32 "152rx028p3km7k8k2bxbdw5l8mhlabf0773jznhq00xdigvclxs3"))))
+        (base32 "1warnsihrvx88g5f8dj8lizwsynh3vhj0bjwrsm9mjxnn2cr0kn5"))))
     (properties `((upstream-name . "secr")))
     (build-system r-build-system)
     (arguments

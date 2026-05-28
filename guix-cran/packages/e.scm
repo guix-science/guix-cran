@@ -2294,6 +2294,59 @@ Selected References: Chang et al. (2021)
 exploration.")
     (license license:gpl3+)))
 
+(define-public r-explodemap
+  (package
+    (name "r-explodemap")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "explodemap" version))
+       (sha256
+        (base32 "0vx8hnziva3pgfsflqd7ndpfsn5yn3gjljf16xnz9dzar9am8j0q"))))
+    (properties `((upstream-name . "explodemap")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:modules '((guix build r-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (propagated-inputs (list r-sf
+                             r-rlang
+                             r-purrr
+                             r-htmlwidgets
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr esbuild))
+    (home-page "https://prigasg.github.io/explodemap/")
+    (synopsis "Hierarchical Exploded-View Cartography")
+    (description
+     "This package provides tools for generating hierarchical exploded-view maps from
+dense administrative boundary data.  The package applies rigid-body translations
+to polygon geometries using a centroid-driven vector field, preserving the
+internal geometry of each feature while separating units within and across
+regions.  Parameters can be derived analytically from dataset geometry using
+closed-form models for regional separation and local expansion.  The package
+also includes grouped layouts, optional bounded collision refinement, and an
+interactive focus-map widget for selected-area inspection in htmlwidgets and
+Shiny'.  It implements the methodology described in George Arthur (2026)
+<https://github.com/@code{PrigasG/explodemap>} \"A Hierarchical Vector-Based
+Framework for Multi-Scale Exploded-View Cartography\".")
+    (license license:expat)))
+
 (define-public r-explodelayout
   (package
     (name "r-explodelayout")
@@ -21042,35 +21095,6 @@ O'Connor (2000, <doi:10.3758/bf03200807>); O'Connor (2001, ISSN:0146-6216).")
 densities from multipass pass removal data.")
     (license license:expat)))
 
-(define-public r-eespca
-  (package
-    (name "r-eespca")
-    (version "0.8.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "EESPCA" version))
-       (sha256
-        (base32 "0hyznkl893bpqf3qq3b6q1clnb8hhgc0j801d42bxd50pwqswmgh"))))
-    (properties `((upstream-name . "EESPCA")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rifle r-pma r-mass))
-    (home-page "https://cran.r-project.org/package=EESPCA")
-    (synopsis
-     "Eigenvectors from Eigenvalues Sparse Principal Component Analysis (EESPCA)")
-    (description
-     "This package contains logic for computing sparse principal components via the
-EESPCA method, which is based on an approximation of the eigenvector/eigenvalue
-identity.  Includes logic to support execution of the TPower and rifle sparse
-PCA methods, as well as logic to estimate the sparsity parameters used by
-EESPCA, TPower and rifle via cross-validation to minimize the out-of-sample
-reconstruction error.  H. Robert Frost (2021)
-<doi:10.1080/10618600.2021.1987254>.")
-    (license license:gpl2+)))
-
 (define-public r-eeptools
   (package
     (name "r-eeptools")
@@ -21624,13 +21648,13 @@ Data API <https://educationdata.urban.org/> into a data.frame for analysis.")
 (define-public r-educabr
   (package
     (name "r-educabr")
-    (version "0.9.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "educabR" version))
        (sha256
-        (base32 "14gwm0s8y8raawk6bx389wbxbjlrdaznkws21mgs21ln9h674dwy"))))
+        (base32 "1a3d04z07x56aq4ixvyjpk1i7lx9wfq1l0w044iwhqdh56na685q"))))
     (properties `((upstream-name . "educabR")))
     (build-system r-build-system)
     (arguments
@@ -21638,6 +21662,7 @@ Data API <https://educationdata.urban.org/> into a data.frame for analysis.")
       #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
+                             r-stringi
                              r-rlang
                              r-readr
                              r-purrr

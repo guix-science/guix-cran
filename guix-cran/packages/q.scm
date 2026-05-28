@@ -6432,13 +6432,13 @@ resampling methods, as in Coraggio, L. and Coretto, P. (2023)
 (define-public r-qch
   (package
     (name "r-qch")
-    (version "2.1.2")
+    (version "2.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qch" version))
        (sha256
-        (base32 "16k193wx4jziajfrfa28fcfx9swpzs9xakvb5v5257vkl73jdyrw"))))
+        (base32 "17qlhdr7z9z6279b4dzzxm47h5c45m9xhlkhpasgg5nml6rjckvh"))))
     (properties `((upstream-name . "qch")))
     (build-system r-build-system)
     (arguments
@@ -6447,7 +6447,6 @@ resampling methods, as in Coraggio, L. and Coretto, P. (2023)
     (propagated-inputs (list r-stringr
                              r-rcpparmadillo
                              r-rcpp
-                             r-qvalue
                              r-purrr
                              r-ks
                              r-dplyr
@@ -6647,6 +6646,35 @@ a prespecified null and alternative hypothesis.  Reference for the article
 introducing power estimation for QCA is: Rohlfing, Ingo (2018)
 <doi:10.1017/pan.2017.30> (ungated version: <doi:10.17605/OSF.IO/PC4DF>).")
     (license license:gpl3)))
+
+(define-public r-qcaert
+  (package
+    (name "r-qcaert")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qcaERT" version))
+       (sha256
+        (base32 "0qs396k82i4zysqyna5kl98x4cvl37qfrjyqqiccnfv6hhxwmqrm"))))
+    (properties `((upstream-name . "qcaERT")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-qca))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://cran.r-project.org/package=qcaERT")
+    (synopsis "Enhanced Robustness Tests for Qualitative Comparative Analysis")
+    (description
+     "This package provides functions for assessing and visualizing robustness in
+Qualitative Comparative Analysis (QCA) workflows built with the QCA package,
+including calibration thresholds, inclusion cutoffs, frequency cutoffs, case
+influence, subsample stability, alternative analysis settings, theory-specific
+condition sets, cluster-specific patterns, and solution summaries.  Methods
+build on Dusa (2019) <doi:10.1007/978-3-319-75668-4> and Ragin (2014,
+ISBN:9780520280038).")
+    (license license:expat)))
 
 (define-public r-qcacluster
   (package

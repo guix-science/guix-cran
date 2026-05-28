@@ -7142,13 +7142,13 @@ method, see Wang & Mokhtarian (2024) <doi:10.1016/j.tra.2024.104072> or Chiburis
 (define-public r-oppr
   (package
     (name "r-oppr")
-    (version "1.0.5")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oppr" version))
        (sha256
-        (base32 "1ky2aicn4pgrs692snlps0cbzp6z1kjwvip7dnywx3d72x9426bv"))))
+        (base32 "02bjsbcbvcp7jg1wl72v8nzksjwdfmj1g4jhp92i94mjzp6988xh"))))
     (properties `((upstream-name . "oppr")))
     (build-system r-build-system)
     (arguments
@@ -7156,17 +7156,16 @@ method, see Wang & Mokhtarian (2024) <doi:10.1016/j.tra.2024.104072> or Chiburis
       #:tests? #f))
     (propagated-inputs (list r-withr
                              r-viridislite
-                             r-uuid
                              r-tidytree
                              r-tibble
                              r-rlang
                              r-rcppprogress
                              r-rcpparmadillo
                              r-rcpp
-                             r-proto
+                             r-r6
                              r-matrix
                              r-magrittr
-                             r-lpsolveapi
+                             r-highs
                              r-ggplot2
                              r-cli
                              r-assertthat
@@ -7185,8 +7184,11 @@ After defining a project prioritization problem, solutions can be obtained using
 exact algorithms, heuristic algorithms, or random processes.  In particular, it
 is recommended to install the Gurobi optimizer (available from
 <https://www.gurobi.com>) because it can identify optimal solutions very
-quickly.  Finally, methods are provided for comparing different prioritizations
-and evaluating their benefits.  For more information, see Hanson et al. (2019)
+quickly.  The rcbc R package (available at
+<https://github.com/dirkschumacher/rcbc>) can also be used to generate solutions
+using the CBC optimization software (<https://github.com/coin-or/Cbc>).
+Finally, methods are provided for comparing different prioritizations and
+evaluating their benefits.  For more information, see Hanson et al. (2019)
 <doi:10.1111/2041-210X.13264>.")
     (license license:gpl3)))
 
@@ -9171,13 +9173,13 @@ philosophy of the package is described in Guo G. (2018)
 (define-public r-opalr
   (package
     (name "r-opalr")
-    (version "3.6.0")
+    (version "3.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "opalr" version))
        (sha256
-        (base32 "09mz035vmk32padgywlcr17wjg111p3ca0yfhn9ipncfds3ic0yn"))))
+        (base32 "1sh3k8hsmpkvmni35n1vjhizshanvxvlxdlynl29682dzjhxwqca"))))
     (properties `((upstream-name . "opalr")))
     (build-system r-build-system)
     (arguments

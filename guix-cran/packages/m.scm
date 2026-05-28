@@ -14472,13 +14472,13 @@ over time.")
 (define-public r-movedesign
   (package
     (name "r-movedesign")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "movedesign" version))
        (sha256
-        (base32 "0xagcqf7yxbydpxydri19q0mh8bgiysilgiv9w2ldb5sak19iqni"))))
+        (base32 "032zrf9678ra8cv4zm0qclgrq8q8h0ibziic4mpdk0nlvic459kp"))))
     (properties `((upstream-name . "movedesign")))
     (build-system r-build-system)
     (arguments
@@ -14501,14 +14501,14 @@ over time.")
                              r-rintrojs
                              r-reactable
                              r-quarto
+                             r-patchwork
                              r-parsedate
                              r-lubridate
-                             r-gsl
                              r-golem
                              r-ggtext
-                             r-ggpubr
                              r-ggplot2
                              r-ggiraph
+                             r-gfonts
                              r-gdtools
                              r-fontawesome
                              r-dplyr
@@ -14516,7 +14516,6 @@ over time.")
                              r-ctmm
                              r-crayon
                              r-config
-                             r-combinat
                              r-bsplus
                              r-bayestestr))
     (native-inputs (list r-quarto r-knitr))
@@ -25512,31 +25511,6 @@ stable distribution.  Some of the implemented methods are described in Hajjaji,
 O., Manou-Abi, S. M., and Slaoui, Y. (2024) <doi:10.1080/02664763.2024.2434627>.")
     (license license:gpl3)))
 
-(define-public r-mixssg
-  (package
-    (name "r-mixssg")
-    (version "2.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mixSSG" version))
-       (sha256
-        (base32 "0aqzyfpq568vgk2rjh7i93azfa990mvapddcdjwh3xyyb3flsas4"))))
-    (properties `((upstream-name . "mixSSG")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rootsolve r-mass r-ars))
-    (home-page "https://cran.r-project.org/package=mixSSG")
-    (synopsis "Clustering Using Mixtures of Sub Gaussian Stable Distributions")
-    (description
-     "Developed for model-based clustering using the finite mixtures of skewed
-sub-Gaussian stable distributions developed by Teimouri (2022)
-<@code{arXiv:2205.14067>} and estimating parameters of the symmetric stable
-distribution within the Bayesian framework.")
-    (license license:gpl2+)))
-
 (define-public r-mixspe
   (package
     (name "r-mixspe")
@@ -29573,13 +29547,13 @@ only includes regularized (quasi-)newton optimization (Kanzow and Steck et al.
 (define-public r-mini007
   (package
     (name "r-mini007")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mini007" version))
        (sha256
-        (base32 "1qzmvc0swk4f4fbi0frfg8i4dvhnpwggwmgznn1hwi18xnml0sfd"))))
+        (base32 "1clbaavm81a6gq5z2hb6cz2f48rizan9kcqhddlxsyvp99z21vj0"))))
     (properties `((upstream-name . "mini007")))
     (build-system r-build-system)
     (arguments
@@ -29593,7 +29567,7 @@ only includes regularized (quasi-)newton optimization (Kanzow and Steck et al.
                              r-diagrammer
                              r-cli
                              r-checkmate))
-    (home-page "https://cran.r-project.org/package=mini007")
+    (home-page "https://github.com/feddelegrand7/mini007")
     (synopsis
      "Lightweight Framework for Orchestrating Multi-Agent Large Language Models")
     (description
@@ -33212,6 +33186,36 @@ in linear regression models, which were proposed by Johndrow et al. (2020)
 <https://www.jmlr.org/papers/v21/19-536.html>.")
     (license license:expat)))
 
+(define-public r-mhn
+  (package
+    (name "r-mhn")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mhn" version))
+       (sha256
+        (base32 "1v5hfcn1q2nvfc1prwblw1hcrndjgfdq89nsphxxixblzp3w6gcb"))))
+    (properties `((upstream-name . "mhn")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/t-momozaki/mhn")
+    (synopsis "The Modified Half-Normal Distribution")
+    (description
+     "This package provides density, distribution, quantile, and random generation
+functions for the Modified Half-Normal (MHN) distribution, along with moments,
+mode, and the Fox-Wright Psi function used as the normalizing constant.  The MHN
+distribution arises as a conditional posterior in Bayesian MCMC and generalizes
+the half-normal, truncated normal, and square-root gamma distributions.
+Implements efficient sampling via the Sun, Kong & Pal (2023)
+<doi:10.1080/03610926.2021.1934700> algorithms and the Gao & Wang (2025)
+<doi:10.1080/03610918.2025.2524551> RTDR method.")
+    (license license:expat)))
+
 (define-public r-mhmmbayes
   (package
     (name "r-mhmmbayes")
@@ -34074,13 +34078,13 @@ complex latent geometry underlying the relationship.")
 (define-public r-mgbt
   (package
     (name "r-mgbt")
-    (version "1.0.7")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MGBT" version))
        (sha256
-        (base32 "0wrw5yjaw3sgsw0l8q5gq95i5q1wxwgcffkxkxaa1cygblrrz12y"))))
+        (base32 "0q3ch5dcrc37ipwc2iaqd0kqb12m4l83375pajbw69pajqawr4iq"))))
     (properties `((upstream-name . "MGBT")))
     (build-system r-build-system)
     (arguments
@@ -34091,8 +34095,9 @@ complex latent geometry underlying the relationship.")
     (description
      "Compute the multiple Grubbs-Beck low-outlier test on positively distributed data
 and utilities for noninterpretive U.S. Geological Survey annual peak-streamflow
-data processing discussed in Cohn et al. (2013) <doi:10.1002/wrcr.20392> and
-England et al. (2017) <doi:10.3133/tm4B5>.")
+data processing discussed in Cohn et al. (2013) and England et al. (2017)
+<doi:10.3133/tm4B5>.  Other utilities for working with peak streamflow are
+provided.")
     (license license:cc0)))
 
 (define-public r-mgarchbekk
@@ -49852,6 +49857,35 @@ stochastic neighbor embedding) or UMAP (uniform manifold approximation and
 projection), with a focus on single-cell RNA-sequencing data.")
     (license license:expat)))
 
+(define-public r-masc
+  (package
+    (name "r-masc")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "masc" version))
+       (sha256
+        (base32 "0z2kkmvbp1hazjnfm5lz2bzcbxnl1889jw9w3vw3k5h8c39sp88k"))))
+    (properties `((upstream-name . "masc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/kiante-fernandez/masc")
+    (synopsis "Simulate the Multi-Attribute Search and Choice (MASC) Model")
+    (description
+     "Simulates the Multi-Attribute Search and Choice (MASC) model of Gluth, Deakin
+and Rieskamp (2026) <doi:10.1037/rev0000614> for multi-attribute
+decision-making, including sequential information search, Bayesian belief
+updating, and choice.  Beliefs may be treated as univariate (independent
+attributes), or multivariate over correlated attributes ('MASC-C'), in which
+observing one attribute updates beliefs about correlated attributes via a Kalman
+filter.")
+    (license license:expat)))
+
 (define-public r-masae
   (package
     (name "r-masae")
@@ -56145,6 +56179,38 @@ uses a network-based greedy algorithm to find communities (Clauset et al. (2004)
 <doi:10.1103/@code{PhysRevE.70.066111>}) and so automatically order the
 chromosomes on the plot to improve interpretability.")
     (license license:gpl3)))
+
+(define-public r-macrofilters
+  (package
+    (name "r-macrofilters")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MacroFilters" version))
+       (sha256
+        (base32 "1w6m3j7xnb6a3b2mv5wzmwmbpsxpqim46mq3rz7y1jvsc4vkdicv"))))
+    (properties `((upstream-name . "MacroFilters")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tseries r-mboost r-matrix))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/michal0091/MacroFilters")
+    (synopsis "Robust Trend-Cycle Decomposition for Macroeconomic Time Series")
+    (description
+     "This package provides high-performance tools for macroeconomic trend extraction
+and filtering, specifically designed to solve the end-point problem in
+real-time.  Implements the @code{MacroBoost} Hybrid (MBH) filter using penalized
+P-splines and gradient boosting.  Unlike the standard Hodrick-Prescott filter,
+@code{MacroFilters} utilizes component-wise L2-boosting with robust loss
+functions (Huber) to handle extreme transient shocks (e.g., COVID-19) without
+inducing spurious trend shifts.  The algorithm includes an automated two-layer
+diagnostic stage for unit roots and structural breaks, optimized via corrected
+AICc for computational efficiency.  Methodology detailed in Kinel (2026)
+<doi:10.2139/ssrn.6371138>.")
+    (license license:expat)))
 
 (define-public r-macrocol
   (package

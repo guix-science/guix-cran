@@ -443,6 +443,48 @@ powder diffraction, spectroscopy and other experimental methods.")
 study with RNA-seq data.")
     (license license:gpl2+)))
 
+(define-public r-rxref
+  (package
+    (name "r-rxref")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rxref" version))
+       (sha256
+        (base32 "07msi5hm5qdd63qjfgn4368sf6w24i3s6z86yk5f94n8prs2p99d"))))
+    (properties `((upstream-name . "rxref")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-memoise
+                             r-lifecycle
+                             r-jsonlite
+                             r-httr2
+                             r-dplyr
+                             r-digest
+                             r-cli
+                             r-cachem))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ssmithm/rxref")
+    (synopsis "Tidy Utilities for RxNorm and NDC Resolution")
+    (description
+     "This package provides a tidy, vectorized interface to the @code{RxNorm} /
+@code{RxNav} API for resolving drug names, @code{RxCUIs}, National Drug Codes
+(NDCs), and related drug concept metadata.  The package supports workflows for
+mapping between drug names, @code{RxCUIs}, NDCs, ingredients, products, drug
+classes, and related concepts using data from the National Library of Medicine's
+@code{RxNav} services <https://lhncbc.nlm.nih.gov/@code{RxNav/APIs/>} and
+@code{RxNorm} <https://www.nlm.nih.gov/research/umls/rxnorm/>.")
+    (license license:expat)))
+
 (define-public r-rxode2mrgsolvebridge
   (package
     (name "r-rxode2mrgsolvebridge")
@@ -1038,6 +1080,40 @@ Generation (WIG) model in Fangzhou Xie (2020)
 <doi:10.1016/j.econlet.2019.108874>.")
     (license license:expat)))
 
+(define-public r-rwicc
+  (package
+    (name "r-rwicc")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rwicc" version))
+       (sha256
+        (base32 "0cvy5bbk8az9is3ajld7qf5zf6bql0ghwhhdx5v45n1r8fqdaj3z"))))
+    (properties `((upstream-name . "rwicc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales
+                             r-rlang
+                             r-plotly
+                             r-lubridate
+                             r-lobstr
+                             r-ggrepel
+                             r-ggplot2
+                             r-dplyr
+                             r-biglm
+                             r-arm))
+    (native-inputs (list r-knitr))
+    (home-page "https://d-morrison.github.io/rwicc/")
+    (synopsis "Regression with Interval-Censored Covariates")
+    (description
+     "This package provides functions to simulate and analyze data for a regression
+model with an interval censored covariate, as described in Morrison et al.
+(2021) <doi:10.1111/biom.13472>.")
+    (license license:expat)))
+
 (define-public r-rwhois
   (package
     (name "r-rwhois")
@@ -1481,6 +1557,33 @@ packages can declare Imports: rvtk and obtain the correct compiler and linker
 flags at install time via @code{rvtk::CppFlags()} and
 @code{rvtk::LdFlagsFile()}.")
     (license license:expat)))
+
+(define-public r-rvoterdistance
+  (package
+    (name "r-rvoterdistance")
+    (version "2.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Rvoterdistance" version))
+       (sha256
+        (base32 "157m0pb0nvx3yyqwd36xvvljikjq1iswgyv6ga7j71cb04zlalmj"))))
+    (properties `((upstream-name . "Rvoterdistance")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lorenc5/Rvoterdistance")
+    (synopsis "Voter Distance to Polling Locations")
+    (description
+     "Calculates the distance between each voter in a voter file (given lat/long
+coordinates or sf point geometries) and multiple polling or vote-by-mail drop
+box locations.  Returns nearest location, k-nearest locations, or all locations
+within a distance threshold.  Core computation uses the Haversine formula
+implemented in C++ via Rcpp'.")
+    (license license:gpl2+)))
 
 (define-public r-rvolleydata
   (package
@@ -6983,13 +7086,13 @@ hexagonal .  Details refer to (Peter Wittek, et al (2017))
 (define-public r-rsolr
   (package
     (name "r-rsolr")
-    (version "0.0.13")
+    (version "0.0.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rsolr" version))
        (sha256
-        (base32 "1pky70f4w44xaz57ricq40c950l443q693h0wfvk684wcvgnga0s"))))
+        (base32 "10ivk6spp4pqxapzdb34iqfjkq1nzrw663ag96cg1lbz8gb73x9g"))))
     (properties `((upstream-name . "rsolr")))
     (build-system r-build-system)
     (arguments
@@ -28032,31 +28135,6 @@ provided.  Reference: Firpo, Sergio, Nicole M. Fortin, and Thomas Lemieux.
 (2009) <doi:10.3982/ECTA6822>. \"Unconditional Quantile Regressions.\".")
     (license license:gpl3+)))
 
-(define-public r-rifle
-  (package
-    (name "r-rifle")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rifle" version))
-       (sha256
-        (base32 "1r0cfj3vzndgiarl9sb38zmpnpm4p8v9l5cm9c1m6g2q9kvpgpbs"))))
-    (properties `((upstream-name . "rifle")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mass))
-    (home-page "https://cran.r-project.org/package=rifle")
-    (synopsis "Sparse Generalized Eigenvalue Problem")
-    (description
-     "This package implements the algorithms for solving sparse generalized eigenvalue
-problem by Tan, et.  al. (2018).  Sparse Generalized Eigenvalue Problem: Optimal
-Statistical Rates via Truncated Rayleigh Flow.  To appear in Journal of the
-Royal Statistical Society: Series B. <@code{arXiv:1604.08697>}.")
-    (license license:gpl2+)))
-
 (define-public r-riex
   (package
     (name "r-riex")
@@ -28329,6 +28407,35 @@ decomposition.  Auxiliary functions for evaluating, fitting, and sampling these
 models are also provided.  The package provides replicability to
 GarcÃ­a-PortuguÃ©s and Prieto-Tirado (2023) <doi:10.1007/s11222-023-10273-9>.")
     (license license:gpl3)))
+
+(define-public r-ridgebart
+  (package
+    (name "r-ridgebart")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ridgeBART" version))
+       (sha256
+        (base32 "09ci2mypxsxp4rlr2qzgsl0xp7cnwqgsn32ic24bssy6vbnnm9xq"))))
+    (properties `((upstream-name . "ridgeBART")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (home-page "https://github.com/ryanyee3/ridgeBART")
+    (synopsis "Bayesian Additive Regression Trees with Ridge Function Outputs")
+    (description
+     "This package implements an extension of Bayesian Additive Regression Trees
+(BART) in which each regression tree outputs a linear combination of random
+ridge functions (i.e., a composition of a non-linear function like cosine,
+hyperbolic tangent, the rectified linear unit with an affine transformation)
+instead of a constant.  Can be used to perform \"targeted smoothing\" in which
+trees split on certain covariates but output smooth functions in other
+covariates.  For more information, see Yee, Ghosh, and Deshpande (2026+)
+<doi:10.48550/@code{arXiv.2411.07984>}.")
+    (license license:gpl3+)))
 
 (define-public r-ridge
   (package
@@ -38606,13 +38713,13 @@ and applied statistical modeling.")
 (define-public r-reliaplotr
   (package
     (name "r-reliaplotr")
-    (version "0.5")
+    (version "0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ReliaPlotR" version))
        (sha256
-        (base32 "1r936kfz3xrhrwr2b7m2vyf7giw4vbbzdyh58mhvr6rlpyrdb1wc"))))
+        (base32 "0hq9xcvaqswda1gjc5sxchj0nh7fywrml9r8jh54vcm514jm0v09"))))
     (properties `((upstream-name . "ReliaPlotR")))
     (build-system r-build-system)
     (arguments
@@ -38629,13 +38736,13 @@ and applied statistical modeling.")
 (define-public r-relialearnr
   (package
     (name "r-relialearnr")
-    (version "0.3")
+    (version "0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ReliaLearnR" version))
        (sha256
-        (base32 "0s9zcj1n4yg13bc2sa5vqajvrh1smqp0i07hr0wibaa95cwcyr29"))))
+        (base32 "05qzjjwjdgx2k5r6hf76mz8v3lgynb6qawy8mffvpjfqnnrdvcx8"))))
     (properties `((upstream-name . "ReliaLearnR")))
     (build-system r-build-system)
     (arguments
@@ -38647,9 +38754,10 @@ and applied statistical modeling.")
     (synopsis "Learning Modules for Reliability Analysis")
     (description
      "Learning modules for reliability analysis including modules for Reliability,
-Availability, and Maintainability (RAM) Analysis, Life Data Analysis, and
-Reliability Testing.")
-    (license (license:fsdg-compatible "CC BY 4.0"))))
+Availability, and Maintainability (RAM) Analysis, Life Data Analysis,
+Reliability Testing, Repairable Systems Analysis, and Reliability Block
+Diagrams.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-reliagrowr
   (package
@@ -42235,13 +42343,13 @@ SPC program and gets the results as data frames @code{(redatam_query()},
 (define-public r-redatam
   (package
     (name "r-redatam")
-    (version "2.3.0")
+    (version "2.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "redatam" version))
        (sha256
-        (base32 "06fr0vjcyqxx692gynjvkq41prvlmvmh5ipxa4j7vm07hgbklq80"))))
+        (base32 "0dqxh9w2hqy8lhy60lpmrw0a9jq9hqadvkcckhnwisvwciiwlpja"))))
     (properties `((upstream-name . "redatam")))
     (build-system r-build-system)
     (arguments
@@ -43968,6 +44076,53 @@ projects for changes.")
      "This package provides tools for simulating synthetic survival data using a
 variety of methods, including kernel density estimation, parametric distribution
 fitting, and bootstrap resampling techniques for a desired sample size.")
+    (license license:expat)))
+
+(define-public r-realestatebr
+  (package
+    (name "r-realestatebr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "realestatebr" version))
+       (sha256
+        (base32 "1yxp7482vik1kq22wmqrh0ikvdnmc2p7dyp19jv6biziqa79r074"))))
+    (properties `((upstream-name . "realestatebr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-yaml
+                             r-xml2
+                             r-tidyxl
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rvest
+                             r-rlang
+                             r-readxl
+                             r-readr
+                             r-rbcb
+                             r-rappdirs
+                             r-purrr
+                             r-lubridate
+                             r-janitor
+                             r-httr
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/viniciusoike/realestatebr")
+    (synopsis "Import Brazilian Real Estate Data into R")
+    (description
+     "This package provides access to Brazilian real estate market data from multiple
+official sources: the Central Bank of Brazil (BCB) <https://www.bcb.gov.br/>,
+the Brazilian Association of Real Estate Developers (ABRAINC)
+<https://abrainc.org.br/>, the Brazilian Association of Real Estate Credit and
+Savings Entities (ABECIP) <https://www.abecip.org.br/>, the Getulio Vargas
+Foundation (FGV) <https://portalibre.fgv.br/>, and the Bank for International
+Settlements (BIS) <https://www.bis.org/>.")
     (license license:expat)))
 
 (define-public r-readyomics
@@ -56535,13 +56690,13 @@ system.")
 (define-public r-rappsflyer
   (package
     (name "r-rappsflyer")
-    (version "0.2.0")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rappsflyer" version))
        (sha256
-        (base32 "1n0h4iqnzb5xr531b6nvqsjx4mpsg1gp85av2b9gqg0wrbzzizm7"))))
+        (base32 "1ljy9x7cw7bdj5lfw4csxx1ai51hjmdl53cs70jdxhk9k7fn5qk9"))))
     (properties `((upstream-name . "rappsflyer")))
     (build-system r-build-system)
     (arguments
@@ -56558,7 +56713,7 @@ system.")
     (synopsis "Work with AppsFlyer API")
     (description
      "Loading data from @code{AppsFlyer} Pull API
-<https://support.appsflyer.com/hc/en-us/articles/207034346-Using-Pull-API-aggregate-data>.")
+<https://support.appsflyer.com/hc/en-us/articles/207034346-Pull-API-aggregate-data>.")
     (license license:expat)))
 
 (define-public r-rapport
@@ -60537,48 +60692,6 @@ the intake of or exposure to radionuclides in the workplace and the environment.
 and energies of radiations emitted in nuclear transformations of 1252
 radionuclides of 97 elements.")
     (license license:gpl2)))
-
-(define-public r-radarchart
-  (package
-    (name "r-radarchart")
-    (version "0.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "radarchart" version))
-       (sha256
-        (base32 "0gcxnbgj8ja1m4wzhbjy67m6zphf0c5ni9yx7sr7f0abm03ry753"))))
-    (properties `((upstream-name . "radarchart")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:modules '((guix build r-build-system)
-                  ((guix build minify-build-system)
-                   #:select (minify))
-                  (guix build utils)
-                  (ice-9 match))
-      #:imported-modules `(,@%r-build-system-modules (guix build
-                                                      minify-build-system))
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'process-javascript
-                    (lambda* (#:key inputs #:allow-other-keys)
-                      (with-directory-excursion "inst/"
-                        (for-each (match-lambda
-                                    ((source . target) (minify source
-                                                               #:target target)))
-                                  '())))))))
-    (propagated-inputs (list r-htmlwidgets r-htmltools))
-    (native-inputs (list r-knitr esbuild))
-    (home-page "https://github.com/mangothecat/radarchart")
-    (synopsis "Radar Chart from 'Chart.js'")
-    (description
-     "Create interactive radar charts using the Chart.js @code{JavaScript} library and
-the htmlwidgets package.  Chart.js <http://www.chartjs.org/> is a lightweight
-library that supports several types of simple chart using the HTML5 canvas
-element.  This package provides an R interface specifically to the radar chart,
-sometimes called a spider chart, for visualising multivariate data.")
-    (license license:expat)))
 
 (define-public r-radarboxplot
   (package

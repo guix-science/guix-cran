@@ -2829,43 +2829,6 @@ inference and post-selection adjustments.  Algeri S. and Zhang X. (2020)
     (description "Local Polynomial Regression with Ridging.")
     (license license:gpl2+)))
 
-(define-public r-lprelevance
-  (package
-    (name "r-lprelevance")
-    (version "3.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "LPRelevance" version))
-       (sha256
-        (base32 "1harwhgqd9swyljijj7bfir176an92kdy8mik1q0nbc061jdgx0i"))))
-    (properties `((upstream-name . "LPRelevance")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-reshape2
-                             r-polynom
-                             r-mass
-                             r-locfdr
-                             r-leaps
-                             r-glmnet
-                             r-ggplot2
-                             r-caret
-                             r-bolstad2
-                             r-bayesgof))
-    (home-page "https://cran.r-project.org/package=LPRelevance")
-    (synopsis "Relevance-Integrated Statistical Inference Engine")
-    (description
-     "Provide methods to perform customized inference at individual level by taking
-contextual covariates into account.  Three main functions are provided in this
-package: (i) @code{LASER()}: it generates specially-designed artificial relevant
-samples for a given case; (ii) @code{g2l.proc()}: computes customized fdr(z|x);
-and (iii) @code{rEB.proc()}: performs empirical Bayes inference based on LASERs.
- The details can be found in Mukhopadhyay, S., and Wang, K (2021,
-<@code{arXiv:2004.09588>}).")
-    (license license:gpl2)))
-
 (define-public r-lpmerge
   (package
     (name "r-lpmerge")
@@ -8970,20 +8933,20 @@ Caigny et al., (2018) <DOI:10.1016/j.ejor.2018.02.009>).")
 (define-public r-llamar
   (package
     (name "r-llamar")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "llamaR" version))
        (sha256
-        (base32 "1rya5fv8pkycrmv423gki1kav9fzzdjszp8bdw4p56daphfjsqda"))))
+        (base32 "00snvxrklfgcznglxivly7z7iwjmzlfashnckd7168bzvwbz3250"))))
     (properties `((upstream-name . "llamaR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-jsonlite r-ggmlr))
-    (native-inputs (list pkg-config))
+    (native-inputs (list pkg-config r-knitr))
     (home-page "https://github.com/Zabis13/llamaR")
     (synopsis "Interface for Large Language Models via 'llama.cpp'")
     (description
@@ -12826,6 +12789,33 @@ for model selection, probability estimates (logistic regression only) or weights
 for unbalanced data.  The estimation of the models is particularly fast as
 compared to other libraries.")
     (license license:gpl2)))
+
+(define-public r-libipldr
+  (package
+    (name "r-libipldr")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "libipldr" version))
+       (sha256
+        (base32 "1sb7xi5zzcf6gcw8hbhi143ncqwy89680gz5ffwlfrccc7d9mhq9"))))
+    (properties `((upstream-name . "libipldr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (home-page "https://github.com/JBGruber/libipldr")
+    (synopsis "R Bindings to the 'Rust' 'IPLD' Library")
+    (description
+     "This package provides R bindings to decode DAG-CBOR (Directed Acyclic Graph
+Concise Binary Object Representation) encoded data, CIDs (Content Identifiers),
+and CAR (Content Addressable @code{aRchive}) files using the Rust IPLD
+(@code{InterPlanetary} Linked Data) library <https://github.com/ipld/libipld>.
+This is especially useful for working with data from IPFS (@code{InterPlanetary}
+File System) and @code{AtProto} (Bluesky) applications.")
+    (license license:expat)))
 
 (define-public r-libimath
   (package
@@ -19516,6 +19506,50 @@ competing risks, either through cause-specific Cox regression or Fine-Gray
 regression.  To find out more about the methods in this package, please see
 <https://isobelbarrott.github.io/Landmarking/articles/Landmarking>.")
     (license license:gpl2+)))
+
+(define-public r-landmark
+  (package
+    (name "r-landmark")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "landmaRk" version))
+       (sha256
+        (base32 "16x3vj3sf3kw0qjiz7mypvlfzcvbaqk1wq7kp2gxibbi61az9x86"))))
+    (properties `((upstream-name . "landmaRk")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-timeroc
+                             r-survival
+                             r-rlang
+                             r-riskregression
+                             r-prodlim
+                             r-pec
+                             r-matrix
+                             r-lme4
+                             r-lcmm
+                             r-ggplot2
+                             r-foreach
+                             r-dplyr
+                             r-doparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://vallejosgroup.github.io/landmaRk/")
+    (synopsis
+     "Time-to-Event Landmark Analysis using an Array of Longitudinal and Survival Sub-Models")
+    (description
+     "This package provides a modular end-to-end framework for dynamic risk prediction
+based on time-to-event and longitudinal data.  This allows flexible
+specifications for the longitudinal and survival sub-models.  The
+@code{landmaRk} package enables reproducible benchmarks of different model
+choices, including cross-validation to assess out-of-sample predictive
+performance.  Methods are described in Velasco-Pardo, Constantine-Cooke, Lees
+and Vallejos (2026, manuscript under preparation) Landmarking with Latent Class
+Mixed Models for Dynamic Prediction of Time-to-event Data with Heterogeneous
+Biomarker Trajectories'.")
+    (license license:gpl3+)))
 
 (define-public r-landform
   (package

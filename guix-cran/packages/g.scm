@@ -485,13 +485,13 @@ Tsutsumida (2017) <doi:10.1553/giscience2017_01_s36>).")
 (define-public r-gwnorm
   (package
     (name "r-gwnorm")
-    (version "1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GWnorm" version))
        (sha256
-        (base32 "1ahgplijnhl4pp4zvz573fwrwxwnakzizh529cn1qhkswch5k89r"))))
+        (base32 "0q0wp2v4r6ikivwjk7cw954l8j65fcwifarfym5wnzkb98dbgq4z"))))
     (properties `((upstream-name . "GWnorm")))
     (build-system r-build-system)
     (arguments
@@ -502,6 +502,8 @@ Tsutsumida (2017) <doi:10.1553/giscience2017_01_s36>).")
                              r-mvtnorm
                              r-mass
                              r-igraph
+                             r-hypergeo
+                             r-gsl
                              r-cholwishart
                              r-bdgraph))
     (home-page "https://cran.r-project.org/package=GWnorm")
@@ -510,7 +512,9 @@ Tsutsumida (2017) <doi:10.1553/giscience2017_01_s36>).")
      "Computes G-Wishart normalising constants through a Fourier approach.  Either
 exact analytical results, numerical integration or Monte Carlo estimation are
 employed.  Details at C. Wong, G. Moffa and J. Kuipers (2024),
-<doi:10.48550/@code{arXiv.2404.06803>}.")
+<doi:10.48550/@code{arXiv.2404.06803>}.  Also includes approximations of the
+ratio of normalising constants, see details at C. Wong, G. Moffa and J. Kuipers
+(2025), <doi:10.48550/@code{arXiv.2503.13046>}.")
     (license license:gpl2+)))
 
 (define-public r-gwnnegpca
@@ -4998,34 +5002,6 @@ dplyr'.  It allows groups to be marked inapplicable, which is a simple but
 widely useful way to express structure in a dataset.  It also provides powerful
 pivoting and other group manipulation functions.")
     (license license:expat)))
-
-(define-public r-groupica
-  (package
-    (name "r-groupica")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "groupICA" version))
-       (sha256
-        (base32 "1wl828ligvvw55xic383gdn7aq4mbwsnkl4ym6f71jn5g3p36d0i"))))
-    (properties `((upstream-name . "groupICA")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mass))
-    (home-page "https://github.com/sweichwald/groupICA-R")
-    (synopsis "Independent Component Analysis for Grouped Data")
-    (description
-     "This package contains an implementation of an independent component analysis
-(ICA) for grouped data.  The main function @code{groupICA()} performs a blind
-source separation, by maximizing an independence across sources and allows to
-adjust for varying confounding for user-specified groups.  Additionally, the
-package contains the function @code{uwedge()} which can be used to approximately
-jointly diagonalize a list of matrices.  For more details see the project
-website <https://sweichwald.de/@code{groupICA/>}.")
-    (license license:agpl3)))
 
 (define-public r-grouper
   (package
@@ -19653,6 +19629,57 @@ visualization.  This style of plotting is particularly common in climatology and
 oceanography research communities.")
     (license license:expat)))
 
+(define-public r-ggsql
+  (package
+    (name "r-ggsql")
+    (version "0.3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggsql" version))
+       (sha256
+        (base32 "05fvi7zrjgz4q5002mxmapnzr2k10ffvybbp7w2r6jisasc77ms4"))))
+    (properties `((upstream-name . "ggsql")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:modules '((guix build r-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (inputs (list))
+    (propagated-inputs (list r-yaml
+                             r-rlang
+                             r-r6
+                             r-nanoarrow
+                             r-knitr
+                             r-jsonlite
+                             r-htmlwidgets
+                             r-htmltools
+                             r-cli))
+    (native-inputs (list r-quarto pkg-config esbuild))
+    (home-page "https://r.ggsql.org")
+    (synopsis "Grammar of Graphics for SQL")
+    (description
+     "Allows you to write queries that combine SQL (Structured Query Language) data
+retrieval with visualization specifications in a single, composable syntax.  The
+ggsql package binds directly with the ggsql Rust library and allows you to set
+up readers and writers and execute queries against it.  The package also offers
+knitr and shiny integration allowing the user to use ggsql in both frameworks.")
+    (license license:expat)))
+
 (define-public r-ggspectra
   (package
     (name "r-ggspectra")
@@ -24143,6 +24170,43 @@ System and the European System of Central Banks.")
      "It provides a custom ggplot2 geom to add day/night patterns to plots.  It
 visually distinguishes daytime and nighttime periods.  It is useful for
 visualizing data that spans multiple days and for highlighting diurnal patterns.")
+    (license license:expat)))
+
+(define-public r-ggcube
+  (package
+    (name "r-ggcube")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggcube" version))
+       (sha256
+        (base32 "1zhiiw8vf9dlfqrz7rh11lb5h3njslikdrl7jliiyh7kzpcr5br7"))))
+    (properties `((upstream-name . "ggcube")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-systemfonts
+                             r-stringr
+                             r-scales
+                             r-rlang
+                             r-purrr
+                             r-polyclip
+                             r-magrittr
+                             r-lifecycle
+                             r-labeling
+                             r-isoband
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/matthewkling/ggcube")
+    (synopsis "3D Plotting with 'ggplot2'")
+    (description
+     "This package provides a ggplot2 extension for creating 3D figures.  Provides 3D
+geoms, stats, and a @code{coord_3d()} coordinate system supporting rotation,
+perspective, and lighting.")
     (license license:expat)))
 
 (define-public r-ggcorrheatmap
@@ -32461,6 +32525,34 @@ using JAGS. Includes methods to assess heterogeneity and inconsistency, and a
 number of standard visualizations.  van Valkenhoef et al. (2012)
 <doi:10.1002/jrsm.1054>; van Valkenhoef et al. (2015) <doi:10.1002/jrsm.1167>.")
     (license license:gpl3)))
+
+(define-public r-gemss
+  (package
+    (name "r-gemss")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GEMSS" version))
+       (sha256
+        (base32 "1xib0wv70bpnjl07x365c2lzl93r4l3v1zrpjnwh9lqyh36kw2fa"))))
+    (properties `((upstream-name . "GEMSS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-twinning r-rcpparmadillo r-rcpp r-hetgp))
+    (home-page "https://cran.r-project.org/package=GEMSS")
+    (synopsis
+     "Generalization Error Minimization in SubSampling for Gaussian Processes")
+    (description
+     "This package implements the Generalization Error Minimization in
+@code{SubSampling} (GEMSS) algorithm for sequential subdata selection in
+large-scale Gaussian process modeling (Chang, Hua, and Wu, 2026)
+<doi:10.1080/00401706.2026.2670596>.  The method selects data points by a
+criterion consisting of predictive and space-filling parts, enabling efficient
+surrogate modeling for massive datasets.")
+    (license license:gpl3+)))
 
 (define-public r-gems
   (package

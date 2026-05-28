@@ -18376,6 +18376,32 @@ automatic bases aic and bic lags selection of independent variables proposed by
 (Shin, Yu & Greenwood-Nimmo, 2014 <doi:10.1007/978-1-4899-8008-3_9>).")
     (license license:gpl3)))
 
+(define-public r-nara
+  (package
+    (name "r-nara")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nara" version))
+       (sha256
+        (base32 "1zvn2c0h993hv5a2v4xdxbyl9i0kxrw47phbzrq8bc7iyg760cp8"))))
+    (properties `((upstream-name . "nara")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-colorfast))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/coolbutuseless/nara")
+    (synopsis "Native Raster Image Tools")
+    (description
+     "Native rasters are a core R image format which use a compact color
+representation.  This color representation closely aligns with graphics device
+internals meaning that these images can be rendered quickly.  This package
+provides functions to quickly create, manipulate and composite native rasters.")
+    (license license:expat)))
+
 (define-public r-naptime
   (package
     (name "r-naptime")

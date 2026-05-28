@@ -796,32 +796,6 @@ regression, ANOVA, mediation, and logistic regression.  Functions accompany
 Aberson (2019) <doi:10.4324/9781315171500>.")
     (license license:gpl2+)))
 
-(define-public r-pwr2
-  (package
-    (name "r-pwr2")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "pwr2" version))
-       (sha256
-        (base32 "0zfv7z5yymw310r1sqm8ivsc2pv6dgk2k4b1axmm92gsaj53cn7p"))))
-    (properties `((upstream-name . "pwr2")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=pwr2")
-    (synopsis
-     "Power and Sample Size Analysis for One-way and Two-way ANOVA Models")
-    (description
-     "User friendly functions for power and sample size analysis at one-way and
-two-way ANOVA settings take either effect size or delta and sigma as arguments.
-They are designed for both one-way and two-way ANOVA settings.  In addition, a
-function for plotting power curves is available for power comparison, which can
-be easily visualized by statisticians and clinical researchers.")
-    (license license:gpl2)))
-
 (define-public r-pwlmm
   (package
     (name "r-pwlmm")
@@ -4357,59 +4331,6 @@ structural similarity measure PSSIM of Wang, Maldonado and Silwal (2011)
 response and a covariate in presence of heteroscedastic treatment effects
 proposed by Wang, Tolos, and Wang (2010) <DOI:10.1002/cjs.10068>.")
     (license license:gpl2)))
-
-(define-public r-pss-health
-  (package
-    (name "r-pss-health")
-    (version "1.1.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PSS.Health" version))
-       (sha256
-        (base32 "0xb44baprriz5b7xhxi7mwa0drj8gdi67iczvii5wlwxvqc9frwy"))))
-    (properties `((upstream-name . "PSS.Health")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-writexl
-                             r-shinyhelper
-                             r-shinyfeedback
-                             r-shinycssloaders
-                             r-shiny
-                             r-pwr2
-                             r-pwr
-                             r-proc
-                             r-presize
-                             r-powersurvepi
-                             r-powermediation
-                             r-plotly
-                             r-longpower
-                             r-kappasize
-                             r-icc-sample-size
-                             r-ggplot2
-                             r-epir
-                             r-envstats
-                             r-easypower
-                             r-dt
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://hcpa-unidade-bioestatistica.shinyapps.io/PSS_Health/")
-    (synopsis "Power and Sample Size for Health Researchers via Shiny")
-    (description
-     "Power and Sample Size for Health Researchers is a Shiny application that brings
-together a series of functions related to sample size and power calculations for
-common analysis in the healthcare field.  There are functionalities to calculate
-the power, sample size to estimate or test hypotheses for means and proportions
-(including test for correlated groups, equivalence, non-inferiority and
-superiority), association, correlations coefficients, regression coefficients
-(linear, logistic, gamma, and Cox), linear mixed model, Cronbach's alpha,
-interobserver agreement, intraclass correlation coefficients, limit of agreement
-on Bland-Altman plots, area under the curve, sensitivity and specificity
-incorporating the prevalence of disease.  You can also use the online version at
-<https://hcpa-unidade-bioestatistica.shinyapps.io/PSS_Health/>.")
-    (license license:gpl2+)))
 
 (define-public r-psrwe
   (package
@@ -19532,13 +19453,13 @@ multiple phenotypes, for details see Kim and Pan (2017)
 (define-public r-pomade
   (package
     (name "r-pomade")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "POMADE" version))
        (sha256
-        (base32 "0jiiqgifdqicxh4dgpqhmizkazjgpsqp46ic7b78i7pdhlan2zj3"))))
+        (base32 "1xa0583xc07dnsrk3icd00qd7ynfhw4jb5xdq14wzlbxi53c8npy"))))
     (properties `((upstream-name . "POMADE")))
     (build-system r-build-system)
     (arguments
@@ -25291,49 +25212,6 @@ Rabe-Hesketh (2012) <doi:10.3102/1076998611417628> and Rockwood and Jeon (2019)
 <doi:10.1080/00273171.2018.1516541>.  Factor analysis and item response models
 can be extended to allow for an arbitrary number of nested and crossed random
 effects, making it useful for multilevel and cross-classified models.")
-    (license license:gpl2+)))
-
-(define-public r-plmix
-  (package
-    (name "r-plmix")
-    (version "2.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PLMIX" version))
-       (sha256
-        (base32 "1iqjs0p8hl5kca9habi2yfxwwdhh0759idrsvfb01kqqybzbara6"))))
-    (properties `((upstream-name . "PLMIX")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-reshape2
-                             r-rcpp
-                             r-rcdd
-                             r-radarchart
-                             r-plackettluce
-                             r-mcmcpack
-                             r-label-switching
-                             r-gridextra
-                             r-ggplot2
-                             r-ggmcmc
-                             r-foreach
-                             r-coda
-                             r-abind))
-    (home-page "https://cran.r-project.org/package=PLMIX")
-    (synopsis "Bayesian Analysis of Finite Mixture of Plackett-Luce Models")
-    (description
-     "Fit finite mixtures of Plackett-Luce models for partial top rankings/orderings
-within the Bayesian framework.  It provides MAP point estimates via EM algorithm
-and posterior MCMC simulations via Gibbs Sampling.  It also fits MLE as a
-special case of the noninformative Bayesian analysis with vague priors.  In
-addition to inferential techniques, the package assists other fundamental phases
-of a model-based analysis for partial rankings/orderings, by including functions
-for data manipulation, simulation, descriptive summary, model selection and
-goodness-of-fit evaluation.  Main references on the methods are Mollica and
-Tardella (2017) <doi:10.1007/s11336-016-9530-0> and Mollica and Tardella (2014)
-<doi:10.1002/sim.6224>.")
     (license license:gpl2+)))
 
 (define-public r-plis
@@ -31808,13 +31686,13 @@ Life Sciences, Vienna, Austria.")
 (define-public r-phenotyper
   (package
     (name "r-phenotyper")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PhenotypeR" version))
        (sha256
-        (base32 "1r9zf84ifb91f262d2pz9bfi8if1nd2j7wnwlaxvwd0kgflpr5bv"))))
+        (base32 "0y3p59p6jas1kpl8c5936j6l8kvxnnyl8vfkvq212j53crcmnarf"))))
     (properties `((upstream-name . "PhenotypeR")))
     (build-system r-build-system)
     (arguments
@@ -43628,6 +43506,29 @@ right-censored data, assessing fit, plotting survival functions, and summary
 statistics and probabilities.")
     (license license:gpl2)))
 
+(define-public r-parmoff
+  (package
+    (name "r-parmoff")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ParmOff" version))
+       (sha256
+        (base32 "1jifb8xmgwkd96l88k5vlhfap5kjfqlwaxyrhi2z0xy9fjzlvnwn"))))
+    (properties `((upstream-name . "ParmOff")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ParmOff")
+    (synopsis "Complex Argument Matching")
+    (description
+     "Allows for highly flexible and generic function argument matching.")
+    (license license:lgpl3)))
+
 (define-public r-parma
   (package
     (name "r-parma")
@@ -46368,13 +46269,13 @@ missing data for all analyses.")
 (define-public r-paleodiv
   (package
     (name "r-paleodiv")
-    (version "0.4.6")
+    (version "0.4.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "paleoDiv" version))
        (sha256
-        (base32 "0hra1icvv89dxdkr3q01jqxgcpaqm9j04a7450k21qwkr7xj33cc"))))
+        (base32 "0ssf1hbnbyqlnmjqnv60cw47ww80iy6lm1r762hk2ccz5gmg9db4"))))
     (properties `((upstream-name . "paleoDiv")))
     (build-system r-build-system)
     (arguments

@@ -3698,13 +3698,13 @@ International Meteor Organization <https://www.imo.net/>.")
 (define-public r-visitorcounts
   (package
     (name "r-visitorcounts")
-    (version "2.0.3")
+    (version "2.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VisitorCounts" version))
        (sha256
-        (base32 "19gqksyipmzhd0ck350kgpv4m3cm46qzqx5cy6hscr0zsk2y7n4g"))))
+        (base32 "04hhmmyjms0xkjpnbb99nhmwkk6iy7a63fs1yz94c8awfk0jj33d"))))
     (properties `((upstream-name . "VisitorCounts")))
     (build-system r-build-system)
     (arguments
@@ -3723,7 +3723,7 @@ forecasts of the visitor counts and percent changes in the visitor counts can be
 made.  A reference for the underlying model that @code{VisitorCounts} uses can
 be found at Russell Goebel, Austin Schmaltz, Beth Ann Brackett, Spencer A. Wood,
 Kimihiro Noguchi (2023) <doi:10.1002/for.2965> .")
-    (license license:gpl3)))
+    (license license:expat)))
 
 (define-public r-vise
   (package
@@ -6102,20 +6102,20 @@ managing capitalisations in tidy data.")
 (define-public r-venny
   (package
     (name "r-venny")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "venny" version))
        (sha256
-        (base32 "121s621c984alvs3224q7x7k3vgvipmv7lg5bf3cqy4n3qfpb7c0"))))
+        (base32 "0vmf7crh2dxkna5dab0vdcd3ag6hfgfz4qph146jdpygrrghd8p1"))))
     (properties `((upstream-name . "venny")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-polyclip r-ggplot2))
-    (home-page "https://cran.r-project.org/package=venny")
+    (home-page "https://github.com/P10911004-NPUST/venny")
     (synopsis "Venn Diagram")
     (description
      "Generate Venn plots, summary tables, and ellipse paths for polygon clipping.
