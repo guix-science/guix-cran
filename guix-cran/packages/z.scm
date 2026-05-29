@@ -1402,19 +1402,19 @@ ZIP Code Tabulation Areas (ZCTAs).")
 (define-public r-zarr
   (package
     (name "r-zarr")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "zarr" version))
        (sha256
-        (base32 "160i6ylghcn6rjf7iag943dg9bs0ajd56r70x1d0vrpsbnbs4dmg"))))
+        (base32 "05nmk54qb0xzywjvpxwa41dxxckc1xww4hj1fjwqmfcis5jwqpwy"))))
     (properties `((upstream-name . "zarr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-r6 r-jsonlite r-blosc))
+    (propagated-inputs (list r-rcpp r-r6 r-jsonlite r-blosc))
     (home-page "https://github.com/R-CF/zarr")
     (synopsis "Native and Extensible R Driver for 'Zarr'")
     (description

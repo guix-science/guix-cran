@@ -2659,13 +2659,13 @@ Concepts and diagnostics build on tidy data principles as described in Wickham
 (define-public r-joinpointr
   (package
     (name "r-joinpointr")
-    (version "0.6.0")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "joinpointR" version))
        (sha256
-        (base32 "0389n33rnryvsrq53gwdhbbx910b1f5ld940gy8kk5a8bv4wgpz9"))))
+        (base32 "01hi9ciid815sszjw5jmy8h4jzxk234m0k8a46n23s4cjcdrh5rc"))))
     (properties `((upstream-name . "joinpointR")))
     (build-system r-build-system)
     (arguments
@@ -2680,6 +2680,7 @@ Concepts and diagnostics build on tidy data principles as described in Wickham
                              r-purrr
                              r-officer
                              r-ggplot2
+                             r-forcats
                              r-flextable
                              r-dplyr))
     (home-page "https://github.com/datos-ine/joinpointR")

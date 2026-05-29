@@ -3126,30 +3126,30 @@ improve its generalizability.")
 (define-public r-autodeskr
   (package
     (name "r-autodeskr")
-    (version "0.1.5")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AutoDeskR" version))
        (sha256
-        (base32 "06rpcs9qpqrydqvbawsrnxjvkrbhd525f89i3y5l518yyk2ldpcj"))))
+        (base32 "02pqz9jn0zz5hkwyqxya2s5rgf8fmzjslsccsbd2nqxypi783rqw"))))
     (properties `((upstream-name . "AutoDeskR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-shiny r-jsonlite r-httr))
-    (native-inputs (list r-knitr))
+    (propagated-inputs (list r-shiny r-jsonlite r-httr2 r-curl))
     (home-page "https://aps.autodesk.com")
     (synopsis "An Interface to the 'AutoDesk' 'API' Platform")
     (description
-     "An interface to the @code{AutoDesk} API Platform including the Authentication
-API for obtaining authentication to the @code{AutoDesk} Forge Platform, Data
-Management API for managing data across the platform's cloud services, Design
-Automation API for performing automated tasks on design files in the cloud,
-Model Derivative API for translating design files into different formats,
-sending them to the viewer app, and extracting design data, and Viewer for
-rendering 2D and 3D models.")
+     "An interface to the @code{AutoDesk} Platform Services ('APS') API including the
+Authentication API for obtaining OAuth2 tokens with expiry tracking, Data
+Management API for managing buckets and objects across the platform's cloud
+services, Design Automation API for running automated tasks on design files in
+the cloud, Model Derivative API for translating design files into SVF', SVF2',
+OBJ', and STL formats and extracting model data, Reality Capture API for
+generating 3D models from photogrammetry image sets, and Viewer for rendering 2D
+and 3D models in Shiny applications.")
     (license (list (license:fsdg-compatible "Apache License")
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -4502,6 +4502,38 @@ with expected references such as linear or quadratic,
 <https://en.wikipedia.org/wiki/Asymptotic_computational_complexity> Also
 includes functionality for measuring asymptotic memory and other quantities.")
     (license license:gpl3)))
+
+(define-public r-athlytics
+  (package
+    (name "r-athlytics")
+    (version "1.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Athlytics" version))
+       (sha256
+        (base32 "0565dwd1h1s6idrrlk5yrx95gvihcrgaa06csky03qi2zkw4vg2f"))))
+    (properties `((upstream-name . "Athlytics")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-tidyr
+                             r-rlang
+                             r-lubridate
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://docs.ropensci.org/Athlytics/")
+    (synopsis "Sports Physiology Analysis from Local 'Strava' Data")
+    (description
+     "This package provides tools for reproducible, offline analysis of
+endurance-training data exported from Strava'.  Provides data import,
+quality-control, cohort-reference, and visualization helpers for sports-science
+indicators including acute:chronic workload ratio, aerobic efficiency,
+cardiovascular decoupling, exposure, and personal-best profiles.")
+    (license license:expat)))
 
 (define-public r-atemevs
   (package
@@ -13226,13 +13258,13 @@ visually explore the results of their simulations.")
 (define-public r-antaresread
   (package
     (name "r-antaresread")
-    (version "3.0.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "antaresRead" version))
        (sha256
-        (base32 "07a03vv43qx41zvk5436i3g7svyhbg1nm8c6m8zs43sxswfy64cx"))))
+        (base32 "118874v8228sf0va00111jn6lmzx4g2q8q3sxh486dhwvxyv5bmb"))))
     (properties `((upstream-name . "antaresRead")))
     (build-system r-build-system)
     (arguments
@@ -13515,6 +13547,40 @@ package function as well as at <https://kartikeyab.shinyapps.io/ANOVAShiny/>.")
 using rmarkdown and shiny packages.  Runtime examples are provided in the
 package function as well as at <https://kartikeyab.shinyapps.io/ANOVAShiny/>.")
     (license license:gpl2)))
+
+(define-public r-anovapowersim
+  (package
+    (name "r-anovapowersim")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "anovapowersim" version))
+       (sha256
+        (base32 "0hdliw1pf7p05a7as8280sysmmlx0p57ng96k62ylgh39jwls4nq"))))
+    (properties `((upstream-name . "anovapowersim")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-purrr
+                             r-mass
+                             r-ggplot2
+                             r-future-apply
+                             r-future
+                             r-dplyr
+                             r-car))
+    (native-inputs (list r-knitr))
+    (home-page "https://shaheedazaad.github.io/anovapowersim/")
+    (synopsis "Simple Power Simulations for ANOVAs")
+    (description
+     "A-priori power simulations and power-calculations for within, between and mixed
+ANOVAs based on target (partial) eta-squared values.  Supports complex designs
+with more than two factors and their interactions with a single function call.")
+    (license license:expat)))
 
 (define-public r-anovaireva
   (package
@@ -19041,45 +19107,6 @@ See the reference: Mengyang Gu, Yue He, Xubo Liu and Yimin Luo (2023),
 hazards model.")
     (license license:gpl2+)))
 
-(define-public r-aisdk
-  (package
-    (name "r-aisdk")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "aisdk" version))
-       (sha256
-        (base32 "17c45bad45ldanmkjx2naxc5d1rq5qllyrb9cxgkz6rvfxzbgv67"))))
-    (properties `((upstream-name . "aisdk")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-yaml
-                             r-rlang
-                             r-r6
-                             r-processx
-                             r-openssl
-                             r-memoise
-                             r-jsonlite
-                             r-httr2
-                             r-digest
-                             r-curl
-                             r-callr
-                             r-base64enc))
-    (home-page "https://github.com/YuLab-SMU/aisdk")
-    (synopsis "Unified Interface for AI Model Providers")
-    (description
-     "This package provides a production-grade AI toolkit for R featuring a layered
-architecture (Specification, Utilities, Providers, Core), request interception
-support, robust error handling with exponential retry delays, support for
-multiple AI model providers ('@code{OpenAI}', Anthropic', etc.), local small
-language model inference, distributed MCP ecosystem, multi-agent orchestration,
-progressive knowledge loading through skills, and a global skill store for
-sharing AI capabilities.")
-    (license license:expat)))
-
 (define-public r-aiscreenr
   (package
     (name "r-aiscreenr")
@@ -24483,13 +24510,13 @@ the admiral package.")
 (define-public r-admiral
   (package
     (name "r-admiral")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admiral" version))
        (sha256
-        (base32 "09xig98c5nr4xb4xiilzml35vz5ms5aps48d3zqcdwa8rp1iw0q5"))))
+        (base32 "0czfmvmjx2r57cyydl902nbz8zcjl5x2nr915r5n0z09pc8lv1vj"))))
     (properties `((upstream-name . "admiral")))
     (build-system r-build-system)
     (arguments
@@ -28176,6 +28203,30 @@ supported locally as well, including the linear methods of Hildebrand et al.
 Ellingson et al. (2017) <doi:10.1088/1361-6579/aa6d00>.  The package can combine
 output from different methods and produce standardized output in a range of
 units.")
+    (license license:expat)))
+
+(define-public r-accbaseballr
+  (package
+    (name "r-accbaseballr")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "accbaseballr" version))
+       (sha256
+        (base32 "06dbrglqjn9casw8b302a7vx42d09vdgyqzxyq05vyf8bdxyk30v"))))
+    (properties `((upstream-name . "accbaseballr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/hvb210/accbaseballr")
+    (synopsis "ACC Baseball Datasets with Advanced Sabermetric Metrics")
+    (description
+     "This package provides curated ACC (Atlantic Coast Conference) baseball datasets
+at the player-season level, including traditional statistics and advanced
+sabermetric metrics such as weighted on-base average (@code{wOBA}), weighted
+runs created plus (@code{wRC+}), and fielding-independent pitching (FIP).")
     (license license:expat)))
 
 (define-public r-acca

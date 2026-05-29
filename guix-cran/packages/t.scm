@@ -23057,13 +23057,13 @@ for regression and classification problems with a simple verb framework.")
 (define-public r-tidyactuarial
   (package
     (name "r-tidyactuarial")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyactuarial" version))
        (sha256
-        (base32 "0fhsmx0pjis86281ybrwqkyyl19040x9jw47pa1vsa364p4yfb73"))))
+        (base32 "0lhan02qqm9zb2prcwy20r9pyhz23bzh2qyix8lhbdgjw4qcpn13"))))
     (properties `((upstream-name . "tidyactuarial")))
     (build-system r-build-system)
     (arguments
@@ -23075,10 +23075,11 @@ for regression and classification problems with a simple verb framework.")
     (description
      "This package provides tidyverse-aligned tools for actuarial mathematics and life
 contingencies, including life tables, survival probabilities, actuarial present
-values of cash flows, life annuities, multi-life benefits, and related
-quantities.  The package emphasizes clear actuarial notation consistent with
-standard curricula (e.g. SOA exams) and supports reproducible workflows using
-modern R.")
+values of cash flows, life annuities, life insurance, premiums, reserves,
+multiple-life calculations, Monte Carlo simulation, and deterministic cash-flow
+diagrams.  The package emphasizes clear actuarial notation, reproducible
+workflows, and pipe-friendly tools for actuarial education and applied actuarial
+analysis.")
     (license license:expat)))
 
 (define-public r-tidier

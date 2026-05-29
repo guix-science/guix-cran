@@ -2430,6 +2430,36 @@ non-portable ones.  Supports Keychain on @code{macOS}', and Credential Manager
 on Windows'.  See the keyring package if you need a portable API'.")
     (license license:expat)))
 
+(define-public r-osircr
+  (package
+    (name "r-osircr")
+    (version "0.2.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OSIRCR" version))
+       (sha256
+        (base32 "0aw5012l7vbsj6xfrs2m4lacwhbmfklpcly19a8b4jjsay42xs0g"))))
+    (properties `((upstream-name . "OSIRCR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=OSIRCR")
+    (synopsis
+     "Cosine Regression-Based Online Sliced Inverse Regression Algorithm")
+    (description
+     "In high-dimensional streaming data analysis, extracting core periodic features
+under real-time constraints remains challenging.  Traditional dimension
+reduction methods fail to adapt to incremental data and yield low accuracy due
+to irrelevant variables.  This package provides the Online Sliced Inverse
+Regression framework for cosine regression with high-dimensional irrelevant
+variables.  It integrates subspace extraction of sliced inverse regression and
+incremental learning of online algorithms to efficiently handle periodic
+streaming data.  Cai, Z., Li, R., & Zhu, L. (2020)
+<doi:10.48550/@code{arXiv.2002.02795>}.")
+    (license license:expat)))
+
 (define-public r-osfr
   (package
     (name "r-osfr")

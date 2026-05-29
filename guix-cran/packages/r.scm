@@ -545,19 +545,20 @@ which runs the nlmixr2 models during estimation.")
 (define-public r-rxode2
   (package
     (name "r-rxode2")
-    (version "5.0.2")
+    (version "5.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rxode2" version))
        (sha256
-        (base32 "15sxj33s2jaiwr9l819wvdscpm92366yhs66srg9c0cjyh6hpvnv"))))
+        (base32 "00g402nhx93nm92ndvy419xia5x9vjcx6gmb35azda7aj318ww65"))))
     (properties `((upstream-name . "rxode2")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sys
+    (propagated-inputs (list r-vctrs
+                             r-sys
                              r-stanheaders
                              r-sitmo
                              r-rxode2ll
@@ -1207,6 +1208,41 @@ behaviour.  For more details, see Eddin et al. (2021)
      "Communications simulation package supporting forward error correction.")
     (license license:gpl2+)))
 
+(define-public r-rwetools
+  (package
+    (name "r-rwetools")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rwetools" version))
+       (sha256
+        (base32 "1lvhhlz5and1rblpp21fr1ymqzn4vwv3ydg2glzl6r99931nxixw"))))
+    (properties `((upstream-name . "rwetools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival r-survey))
+    (home-page "https://github.com/hanseul0618/rwetools")
+    (synopsis
+     "Estimating Propensity Scores (PS), PS-Based Weights, and Effects")
+    (description
+     "Toolbox that provides a streamlined, end-to-end workflow for propensity score
+analysis in generating real-world evidence from real-world data.  The package
+covers the full analytic pipeline - from estimating propensity scores via
+logistic regression, to calculating weights or creating a matched cohort, to
+generating publication-ready Table 1s with standardized mean differences and
+weighted balance diagnostics.  It also estimates incidence rates, hazard ratios,
+risk ratios, and risk differences with support for stratified and
+direct-standardized analyses.  All core functions produce formatted Excel
+reports with embedded README documentation, making results immediately shareable
+with collaborators and stakeholders.  Methods are based on Rosenbaum and Rubin
+(1983) <doi:10.1093/biomet/70.1.41>, Austin (2011)
+<doi:10.1080/00273171.2011.568786>, and Desai et al. (2017)
+<doi:10.1097/EDE.0000000000000595>.")
+    (license license:expat)))
+
 (define-public r-rwekajars
   (package
     (name "r-rwekajars")
@@ -1645,13 +1681,13 @@ are in Kang and Oh (2024) <doi:10.1007/s11222-024-10419-3>.")
 (define-public r-rvkstat
   (package
     (name "r-rvkstat")
-    (version "3.2.0")
+    (version "3.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rvkstat" version))
        (sha256
-        (base32 "0nk6bx04jnm55k5323w1n4zg7qgds6c53fvdz329kqfsrmpj4wgq"))))
+        (base32 "046sh8y1j4jk08c5i3rrdpyl4xpp78f8f5fib4gxp03mfgrs214v"))))
     (properties `((upstream-name . "rvkstat")))
     (build-system r-build-system)
     (arguments
@@ -6770,13 +6806,13 @@ Based on @code{SpinCalc} by John Fuller and @code{SpinConv} by Paolo de Leva.")
 (define-public r-rspectral
   (package
     (name "r-rspectral")
-    (version "1.0.0.14")
+    (version "1.0.0.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rSpectral" version))
        (sha256
-        (base32 "0vywq38ql4di7i9ma7hhm8kzamq8dn0hnxnrzwh8g2xh4qnp6gvx"))))
+        (base32 "0ddp6i0y62yq7hlv33lk8yif6gh8l2dr4ckxazq9lgwc3zva5w9b"))))
     (properties `((upstream-name . "rSpectral")))
     (build-system r-build-system)
     (arguments
@@ -8710,53 +8746,6 @@ surface probing techniques (+acceleration points), more plots (+line of
 congruence, +line of incongruence, both with extrema), and other useful
 functions for exporting results.")
     (license license:gpl2+)))
-
-(define-public r-rsat
-  (package
-    (name "r-rsat")
-    (version "0.1.21")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rsat" version))
-       (sha256
-        (base32 "1fi2xy9q49w77b0xgqqny8y5v53jxybdpysv0mw4nlfq0q8glvgx"))))
-    (properties `((upstream-name . "rsat")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zip
-                             r-xml2
-                             r-xml
-                             r-tmap
-                             r-terra
-                             r-stars
-                             r-sp
-                             r-sf
-                             r-rvest
-                             r-rjson
-                             r-rdpack
-                             r-raster
-                             r-leaflet
-                             r-leafem
-                             r-httr
-                             r-fields
-                             r-curl
-                             r-calendr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ropensci/rsat")
-    (synopsis "Dealing with Multiplatform Satellite Images")
-    (description
-     "Downloading, customizing, and processing time series of satellite images for a
-region of interest.  rsat functions allow a unified access to multispectral
-images from Landsat, MODIS and Sentinel repositories.  rsat also offers
-capabilities for customizing satellite images, such as tile mosaicking, image
-cropping and new variables computation.  Finally, rsat covers the processing,
-including cloud masking, compositing and gap-filling/smoothing time series of
-images (Militino et al., 2018 <doi:10.3390/rs10030398> and Militino et al., 2019
-<doi:10.1109/TGRS.2019.2904193>).")
-    (license license:gpl3)))
 
 (define-public r-rsamplr
   (package
@@ -26773,65 +26762,6 @@ log-binomial (Poisson) models with empirical variance (Zou 2004,
 models (Spiegelman and Hertzmark 2005, <doi:10.1093/aje/kwi188>), and others.")
     (license license:gpl3)))
 
-(define-public r-riskregression
-  (package
-    (name "r-riskregression")
-    (version "2026.03.11")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "riskRegression" version))
-       (sha256
-        (base32 "1kpmccr0xhriijw9gzx9mprkknpxs1jq17yd4hpj2rd1l7wllvkw"))))
-    (properties `((upstream-name . "riskRegression")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-timereg
-                             r-survival
-                             r-rms
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-ranger
-                             r-publish
-                             r-prodlim
-                             r-plotrix
-                             r-mvtnorm
-                             r-mets
-                             r-lava
-                             r-lattice
-                             r-hmisc
-                             r-glmnet
-                             r-ggplot2
-                             r-foreach
-                             r-doparallel
-                             r-data-table
-                             r-cmprsk))
-    (native-inputs (list r-r-rsp))
-    (home-page "https://github.com/tagteam/riskRegression")
-    (synopsis
-     "Risk Regression Models and Prediction Scores for Survival Analysis with Competing Risks")
-    (description
-     "Implementation of the following methods for event history analysis.  Risk
-regression models for survival endpoints also in the presence of competing risks
-are fitted using binomial regression based on a time sequence of binary event
-status variables.  A formula interface for the Fine-Gray regression model and an
-interface for the combination of cause-specific Cox regression models.  A
-toolbox for assessing and comparing performance of risk predictions (risk
-markers and risk prediction models).  Prediction performance is measured by the
-Brier score and the area under the ROC curve for binary possibly time-dependent
-outcome.  Inverse probability of censoring weighting and pseudo values are used
-to deal with right censored data.  Lists of risk markers and lists of risk
-models are assessed simultaneously.  Cross-validation repeatedly splits the
-data, trains the risk prediction models on one part of each split and then
-summarizes and compares the performance across splits.")
-    (license license:gpl2+)))
-
 (define-public r-riskpredictclustdata
   (package
     (name "r-riskpredictclustdata")
@@ -30784,34 +30714,6 @@ contributors (2023)
      "Implementation of some functions to create quizzes in the GIFT format.  This
 format is used by several Virtual Learning Environments such as Moodle.")
     (license license:gpl2+)))
-
-(define-public r-rghanacensus
-  (package
-    (name "r-rghanacensus")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rGhanaCensus" version))
-       (sha256
-        (base32 "1i8z2cfzk64yhvkia1khsmw666dflai1sj8bhd8n2d97a45nb230"))))
-    (properties `((upstream-name . "rGhanaCensus")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ktemadarko/rGhanaCensus")
-    (synopsis
-     "2021 Ghana Population and Housing Census Results as Data Frames")
-    (description
-     "Datasets from the 2021 Ghana Population and Housing Census Results.  Users can
-access results as tidyverse and sf'-Ready Data Frames.  The data in this package
-is scraped from pdf reports released by the Ghana Statistical Service website
-<https://census2021.statsghana.gov.gh/> .  The package currently only contains
-datasets from the literacy and education reports.  Namely, school attendance
-data for respondents aged 3 years and above.")
-    (license license:expat)))
 
 (define-public r-rgff
   (package
@@ -35390,13 +35292,13 @@ Software paper available at <doi:10.18637/jss.v112.i03>.")
 (define-public r-resevol
   (package
     (name "r-resevol")
-    (version "0.4.0.2")
+    (version "0.4.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "resevol" version))
        (sha256
-        (base32 "1ccgwk573dwsvj6xnmlz8mn6n8gykc59cbl2mv6727cq1im7n3l7"))))
+        (base32 "0b492i5r8gvn8gvy89kzpy8asfvscaij3grmj5frbk4m0zqckd5j"))))
     (properties `((upstream-name . "resevol")))
     (build-system r-build-system)
     (arguments
@@ -37816,6 +37718,34 @@ visualization tools and performance metrics, such as the Sharpe ratio,
 volatility, and maximum drawdown, to assess the results.")
     (license license:agpl3+)))
 
+(define-public r-remverse
+  (package
+    (name "r-remverse")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "remverse" version))
+       (sha256
+        (base32 "0sdff16w7nnsxslk2yhjfw777c8y9rlf56jz1ip6zlm6lacbzfg5"))))
+    (properties `((upstream-name . "remverse")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-remstimate r-remstats r-remify))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=remverse")
+    (synopsis "Meta-Package for Relational Event History Analysis")
+    (description
+     "This package provides a unified workflow for relational event modeling by
+re-exporting core functions from remify', remstats', and remstimate'.  Supports
+tie-oriented and actor-oriented modeling with frequentist and Bayesian
+estimation.  Methods are described in Butts (2008)
+<doi:10.1111/j.1467-9531.2008.00203.x> and Stadtfeld and Block (2017)
+<doi:10.1177/0081175017709295>.")
+    (license license:expat)))
+
 (define-public r-remulate
   (package
     (name "r-remulate")
@@ -38368,6 +38298,31 @@ using Markdown'.  For example, you can select a word, and put it in bold or in
 italics, or change the alignment of elements inside you Rmd.  The idea is to map
 all the functionalities from remedy on keyboard shortcuts, so that it provides
 an interface close to what you can find in any other text editor.")
+    (license license:expat)))
+
+(define-public r-remdata
+  (package
+    (name "r-remdata")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "remdata" version))
+       (sha256
+        (base32 "14q30xghj5l61bbnjvwzhbismf0myygmizn4kqslddmwgmqj13sj"))))
+    (properties `((upstream-name . "remdata")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=remdata")
+    (synopsis
+     "Collection of Empirical and Simulated Relational Event Data Sequences")
+    (description
+     "Empirical and simulated data for relational event analyses.  Each dataset
+consists of a relational event sequence and optional actor attributes.
+Individual datasets are redistributed under their original licenses as
+documented in inst/DATA_LICENSES.")
     (license license:expat)))
 
 (define-public r-remap
@@ -39664,36 +39619,6 @@ visual inference on diagnostics from model fits.")
 are plotly objects and can be customized using functions and arguments from the
 plotly package.")
     (license license:gpl3+)))
-
-(define-public r-regress
-  (package
-    (name "r-regress")
-    (version "1.3-22")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "regress" version))
-       (sha256
-        (base32 "0b22h610k75w9xsal3bdbbzd6x093pp457dzrvx80w363chfk2yw"))))
-    (properties `((upstream-name . "regress")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://github.com/kbroman/regress")
-    (synopsis "Gaussian Linear Models with Linear Covariance Structure")
-    (description
-     "This package provides functions to fit Gaussian linear model by maximising the
-residual log likelihood where the covariance structure can be written as a
-linear combination of known matrices.  Can be used for multivariate models and
-random effects models.  Easy straight forward manner to specify random effects
-models, including random interactions.  Code now optimised to use Sherman
-Morrison Woodbury identities for matrix inversion in random effects models.
-We've added the ability to fit models using any kernel as well as a function to
-return the mean and covariance of random effects conditional on the data (best
-linear unbiased predictors, BLUPs).  Clifford and @code{McCullagh} (2006)
-<https://www.r-project.org/doc/Rnews/Rnews_2006-2.pdf>.")
-    (license license:gpl2)))
 
 (define-public r-regreplacer
   (package
@@ -44078,53 +44003,6 @@ variety of methods, including kernel density estimation, parametric distribution
 fitting, and bootstrap resampling techniques for a desired sample size.")
     (license license:expat)))
 
-(define-public r-realestatebr
-  (package
-    (name "r-realestatebr")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "realestatebr" version))
-       (sha256
-        (base32 "1yxp7482vik1kq22wmqrh0ikvdnmc2p7dyp19jv6biziqa79r074"))))
-    (properties `((upstream-name . "realestatebr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo
-                             r-yaml
-                             r-xml2
-                             r-tidyxl
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rvest
-                             r-rlang
-                             r-readxl
-                             r-readr
-                             r-rbcb
-                             r-rappdirs
-                             r-purrr
-                             r-lubridate
-                             r-janitor
-                             r-httr
-                             r-dplyr
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/viniciusoike/realestatebr")
-    (synopsis "Import Brazilian Real Estate Data into R")
-    (description
-     "This package provides access to Brazilian real estate market data from multiple
-official sources: the Central Bank of Brazil (BCB) <https://www.bcb.gov.br/>,
-the Brazilian Association of Real Estate Developers (ABRAINC)
-<https://abrainc.org.br/>, the Brazilian Association of Real Estate Credit and
-Savings Entities (ABECIP) <https://www.abecip.org.br/>, the Getulio Vargas
-Foundation (FGV) <https://portalibre.fgv.br/>, and the Bank for International
-Settlements (BIS) <https://www.bis.org/>.")
-    (license license:expat)))
-
 (define-public r-readyomics
   (package
     (name "r-readyomics")
@@ -47606,13 +47484,13 @@ into a markdown version of the package reference manual.")
 (define-public r-rd2d
   (package
     (name "r-rd2d")
-    (version "0.2.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rd2d" version))
        (sha256
-        (base32 "1cr10i0k5w3ixc8ksx35vxn60jybgqn17myn3q0mxm48lqhplf8m"))))
+        (base32 "0w8xfbhr88n5gh58b92py03r6jpj44vdivqps82dicph1xldjg5b"))))
     (properties `((upstream-name . "rd2d")))
     (build-system r-build-system)
     (arguments
@@ -51619,13 +51497,13 @@ are also available for models based on latent variables (LVs)
 (define-public r-rchea3
   (package
     (name "r-rchea3")
-    (version "0.2.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rChEA3" version))
        (sha256
-        (base32 "1pvwa4rh2whc0nfm2riwyzln6a3z5z5dbwzq4pk9a4pspk25v731"))))
+        (base32 "072n9agbhg22lcyvqhr7rbqsv2bf2b5qrxzshsp89053mr059yjj"))))
     (properties `((upstream-name . "rChEA3")))
     (build-system r-build-system)
     (arguments
@@ -55756,13 +55634,13 @@ output.")
 (define-public r-rasterimage
   (package
     (name "r-rasterimage")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rasterImage" version))
        (sha256
-        (base32 "191m5k1rbbwziznmxbsq4g55afkw8gb5011i70f3wx3dscr3phxz"))))
+        (base32 "13b2dd0c6768l6sbapyl78lm3r8pc3acxzsr21kwj8djrx33y7xl"))))
     (properties `((upstream-name . "rasterImage")))
     (build-system r-build-system)
     (arguments

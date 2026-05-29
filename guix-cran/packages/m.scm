@@ -86,13 +86,13 @@ decomposition of total effect.")
 (define-public r-mytai
   (package
     (name "r-mytai")
-    (version "2.3.5")
+    (version "2.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "myTAI" version))
        (sha256
-        (base32 "0zwjb7g3f6l2dmkaqmzsyrwvxllnndfq9ii750mc93nkrhxxlj00"))))
+        (base32 "0vqvxxgwxqp7b7pfbk1b5vim2jhalb79h8h4q4ka6zhrrnh41cqb"))))
     (properties `((upstream-name . "myTAI")))
     (build-system r-build-system)
     (arguments
@@ -10705,13 +10705,13 @@ statistics, IEEE/ACM Trans Comput Biol Bioinformat, 20(2):1613â1618.
 (define-public r-mscquartets
   (package
     (name "r-mscquartets")
-    (version "3.2")
+    (version "3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MSCquartets" version))
        (sha256
-        (base32 "10zlw9z84c0x5n3qmqbcm1h5ga5bi2977ypkdqba97v9hq3m2xrm"))))
+        (base32 "1g1yzq1yjv50dl5chrp0ry01cc63pl2p3z16zsgmqi2q4gbwzi6v"))))
     (properties `((upstream-name . "MSCquartets")))
     (build-system r-build-system)
     (arguments
@@ -10742,9 +10742,11 @@ inference methods based on quartet distances of Rhodes (2019)
 <doi:10.1007/s11538-020-00773-4>, the NANUQ algorithm for inference of level-1
 species networks of Allman et al. (2019) <doi:10.1186/s13015-019-0159-2>, the
 TINNIK algorithm for inference of the tree of blobs of an arbitrary network of
-Allman et al.(2022) <doi:10.1007/s00285-022-01838-9>, and NANUQ+ routines for
-resolving multifurcations in the tree of blobs to cycles as in Allman et
-al.(2024) (forthcoming).  Software announcement by Rhodes et al. (2020)
+Allman et al.(2022) <doi:10.1007/s00285-022-01838-9>, NANUQ+ routines for
+resolving multifurcations in the tree of blobs to cycles as in Rhodes et
+al.(2024) <doi:10.1186/s13015-025-00274-w>, and the EC@code{ToBlob} algorithm
+for inference of a network with no anomalous quartets of Allman et al. (2026)
+(forthcoming).  Software announcement by Rhodes et al. (2020)
 <doi:10.1093/bioinformatics/btaa868>.")
     (license license:expat)))
 
@@ -19271,6 +19273,38 @@ University of Technology, Faculty of Mathematics and Information Science.")
 models.  Details can be found in Linse (2026) <doi:10.6339/26-JDS1222>.")
     (license license:gpl3)))
 
+(define-public r-modeldiag
+  (package
+    (name "r-modeldiag")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "modeldiag" version))
+       (sha256
+        (base32 "0gipzb2ccc2s7idkwdbkvv5vhlpglqbjxais4wav3fzyah2ymny8"))))
+    (properties `((upstream-name . "modeldiag")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival r-resourceselection r-lmtest r-car))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Teniola17/modeldiag")
+    (synopsis "Comprehensive Diagnostics for Statistical Models")
+    (description
+     "This package provides a unified framework for diagnosing common issues in
+statistical models including linear models, generalized linear models (logistic
+and Poisson regression), and survival models.  Implements tests for
+multicollinearity, heteroscedasticity, autocorrelation, normality, influential
+observations, overdispersion, zero-inflation, and proportional hazards
+assumptions.  Includes visualization methods for graphical diagnostics.  Methods
+are based on established approaches including Fox and Monette (1992)
+<doi:10.1080/01621459.1992.10475190>, Breusch and Pagan (1979)
+<doi:10.2307/1911963>, and Dean and Lawless (1989)
+<doi:10.1080/01621459.1989.10478792>.")
+    (license license:expat)))
+
 (define-public r-modeldb
   (package
     (name "r-modeldb")
@@ -22443,13 +22477,13 @@ such matrices (MLSBMs).")
 (define-public r-mls3
   (package
     (name "r-mls3")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlS3" version))
        (sha256
-        (base32 "1s1qkpvjmz23n03z1b0irp83i886sklfb9fsj6sp7k8nbjzvjld6"))))
+        (base32 "10kv1278vvwcxaf98dif9326ylxlcpx52239j8ki18ih0b1f96hc"))))
     (properties `((upstream-name . "mlS3")))
     (build-system r-build-system)
     (arguments
@@ -25510,6 +25544,31 @@ includes tools and statistical tests for analyzing whether a dataset follows a
 stable distribution.  Some of the implemented methods are described in Hajjaji,
 O., Manou-Abi, S. M., and Slaoui, Y. (2024) <doi:10.1080/02664763.2024.2434627>.")
     (license license:gpl3)))
+
+(define-public r-mixssg
+  (package
+    (name "r-mixssg")
+    (version "2.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mixSSG" version))
+       (sha256
+        (base32 "0aqzyfpq568vgk2rjh7i93azfa990mvapddcdjwh3xyyb3flsas4"))))
+    (properties `((upstream-name . "mixSSG")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rootsolve r-mass r-ars))
+    (home-page "https://cran.r-project.org/package=mixSSG")
+    (synopsis "Clustering Using Mixtures of Sub Gaussian Stable Distributions")
+    (description
+     "Developed for model-based clustering using the finite mixtures of skewed
+sub-Gaussian stable distributions developed by Teimouri (2022)
+<@code{arXiv:2205.14067>} and estimating parameters of the symmetric stable
+distribution within the Bayesian framework.")
+    (license license:gpl2+)))
 
 (define-public r-mixspe
   (package
@@ -32753,13 +32812,13 @@ Lott (2018) <doi:10.1080/00031305.2018.1473796>.  Grund (2021)
 (define-public r-miceadds
   (package
     (name "r-miceadds")
-    (version "3.19-16")
+    (version "3.20-10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "miceadds" version))
        (sha256
-        (base32 "15qf7id6932gc02v7wdi93ss30a1mwyip4x4hly98sij0qy296ri"))))
+        (base32 "127icwd0a7pgf3hrswdxvyr9zdpgq4896maqip7cpbzbqh1g305r"))))
     (properties `((upstream-name . "miceadds")))
     (build-system r-build-system)
     (arguments
@@ -35205,40 +35264,6 @@ data recorded every three hours on 62 French meteorological stations.")
 for a metabolomic experiment to achieve a desired statistical power.  Estimation
 is possible with or without available data from a pilot study.")
     (license license:gpl3+)))
-
-(define-public r-mets
-  (package
-    (name "r-mets")
-    (version "1.3.10")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mets" version))
-       (sha256
-        (base32 "1j7zkyik4dlfgvjr5a4hh58vmx77w34g0d77n68isa83j84l3lhb"))))
-    (properties `((upstream-name . "mets")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-timereg
-                             r-survival
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-numderiv
-                             r-mvtnorm
-                             r-lava))
-    (native-inputs (list r-knitr gfortran))
-    (home-page "https://kkholst.github.io/mets/")
-    (synopsis "Analysis of Multivariate Event Times")
-    (description
-     "Implementation of various statistical models for multivariate event history data
-<doi:10.1007/s10985-013-9244-x>.  Including multivariate cumulative incidence
-models <doi:10.1002/sim.6016>, and bivariate random effects probit models
-(Liability models) <doi:10.1016/j.csda.2015.01.014>.  Modern methods for
-survival analysis, including regression modelling (Cox, Fine-Gray, Ghosh-Lin,
-Binomial regression) with fast computation of influence functions.")
-    (license license:asl2.0)))
 
 (define-public r-metrosp
   (package
@@ -43340,13 +43365,13 @@ al. (2025, manuscript submitted).")
 (define-public r-mdbr
   (package
     (name "r-mdbr")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mdbr" version))
        (sha256
-        (base32 "1675g8z8ipfgwxr69pdh3b2akvbrnd7hjawbjjcy0bivjr6kg97a"))))
+        (base32 "1vmcadr9qcb715p4vaafqxh1aqfnbdrlxwfn6dsvlvs8925h01gy"))))
     (properties `((upstream-name . "mdbr")))
     (build-system r-build-system)
     (arguments
@@ -46805,20 +46830,20 @@ variables measured on the same individuals.")
 (define-public r-mba
   (package
     (name "r-mba")
-    (version "0.1-2")
+    (version "0.1-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MBA" version))
        (sha256
-        (base32 "14jfy9wqm4k2ljn2rz4lm1zzzkjm7nn4g92lrb1a7gm7gysa3dd5"))))
+        (base32 "1cj2yy9c2rwr86djj67pf9mnab5ml3wkydzchpwpqw6w60sl4r13"))))
     (properties `((upstream-name . "MBA")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-bh))
-    (home-page "https://cran.r-project.org/package=MBA")
+    (home-page "https://github.com/finleya/MBA")
     (synopsis "Multilevel B-Spline Approximation")
     (description
      "This package provides functions to interpolate irregularly and regularly spaced
@@ -49269,36 +49294,6 @@ format your input data.  Methods used are those described on page 56 the Stata
 documentation for \"Epitab - Tables for Epidemologists\"
 <https://www.stata.com/manuals/repitab.pdf>.")
     (license license:gpl3+)))
-
-(define-public r-matahari
-  (package
-    (name "r-matahari")
-    (version "0.1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "matahari" version))
-       (sha256
-        (base32 "1plmv9rjgari0xzdvq7larps51c9f5s40xvvk5sw1dp3h8qhp4y5"))))
-    (properties `((upstream-name . "matahari")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-rstudioapi
-                             r-rlang
-                             r-readr
-                             r-purrr
-                             r-jsonlite
-                             r-clipr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/jhudsl/matahari")
-    (synopsis "Spy on Your R Session")
-    (description
-     "Conveniently log everything you type into the R console.  Logs are are stored as
-tidy data frames which can then be analyzed using tidyverse style tools.")
-    (license license:expat)))
 
 (define-public r-mata
   (package

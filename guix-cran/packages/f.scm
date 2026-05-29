@@ -4134,31 +4134,6 @@ incidence of weather-related disorders in fruits (e.g. Snyder and de Melo-Abreu
 al (1998, ISBN:92-5-104219-5)).")
     (license license:gpl3+)))
 
-(define-public r-fru
-  (package
-    (name "r-fru")
-    (version "0.0.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fru" version))
-       (sha256
-        (base32 "012dzkbacrgjpch01ram3wv9v8vyhmsf7igvq8j758sf06x4i833"))))
-    (properties `((upstream-name . "fru")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://gitlab.com/mbq/fru")
-    (synopsis "Blazing Fast Implementation of Random Forest")
-    (description
-     "Yet another implementation of the Random Forest method by Breiman (2001)
-<doi:10.1023/A:1010933404324>, written in Rust and tailored towards stability,
-correctness, efficiency and scalability on modern multi-core machines.  Handles
-both classification and regression, as well as provides permutation feature
-importance via a novel, highly optimised algorithm.")
-    (license license:gpl3)))
-
 (define-public r-frscore
   (package
     (name "r-frscore")
@@ -8574,20 +8549,20 @@ tools.  Methods are described in LeÃ³n et al. (2024) <doi:10.1002/sim.10163>."
 (define-public r-forestsas
   (package
     (name "r-forestsas")
-    (version "2.0.4")
+    (version "2.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "forestSAS" version))
        (sha256
-        (base32 "06y1rlfjy9dyi4k23yzx4a0wrvrp3pgqna3lh339j53qpp7v6w94"))))
+        (base32 "1v6aq0rryw6llyhicajzp5j0mmxdk84rs1mnbm7lq876jw8fhr1r"))))
     (properties `((upstream-name . "forestSAS")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-spatstat-random r-spatstat-geom r-spatstat-data
-                             r-spatstat))
+    (propagated-inputs (list r-spatstat-random r-spatstat-geom r-reshape2
+                             r-ggimage))
     (home-page "https://cran.r-project.org/package=forestSAS")
     (synopsis "Forest Spatial Structure Analysis Systems")
     (description
@@ -20496,6 +20471,30 @@ imputation estimators. \"@code{HonestDiDFEct}\" is not on CRAN but can be obtain
 from <https://github.com/lzy318/@code{HonestDiDFEct>}.")
     (license license:expat)))
 
+(define-public r-fechner
+  (package
+    (name "r-fechner")
+    (version "1.0-4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fechner" version))
+       (sha256
+        (base32 "1m0c4sn685b6yaj3zn89ny7qhy127g38s88z4k38s1h7d5400i0l"))))
+    (properties `((upstream-name . "fechner")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=fechner")
+    (synopsis "Fechnerian Scaling of Discrete Object Sets")
+    (description
+     "This package provides functions and example datasets for Fechnerian scaling of
+discrete object sets.  User can compute Fechnerian distances among objects
+representing subjective dissimilarities, and other related information.  See
+package?fechner for an overview.")
+    (license license:gpl2+)))
+
 (define-public r-fec16
   (package
     (name "r-fec16")
@@ -21338,6 +21337,30 @@ robust, bootstrap, and jackknife variance; returns dynamic, pre/event/post
 aggregates and raw means; and includes helpers for data preparation and
 plotting.  Methodology follows Xu, Zhao and Ding (2026)
 <doi:10.1080/01621459.2026.2628343>.")
+    (license license:expat)))
+
+(define-public r-fdicdata
+  (package
+    (name "r-fdicdata")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fdicdata" version))
+       (sha256
+        (base32 "1zm4f49a94qpavzr5naxjzj2ygdylbn3jvg44n359pyqqnhx666b"))))
+    (properties `((upstream-name . "fdicdata")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml r-httr r-dplyr))
+    (home-page "https://github.com/visbanking/fdicdata")
+    (synopsis "Accessing FDIC Bank Data")
+    (description
+     "This package provides a system provides a set of functions for working with data
+from the Federal Deposit Insurance Corporation (FDIC), including retrieving
+financial data for FDIC-insured institutions and accessing the data taxonomy.")
     (license license:expat)))
 
 (define-public r-fdesigns
@@ -29023,6 +29046,43 @@ with the modelling interface of fabletools'.  This extends prophet to provide
 enhanced model specification and management, performance evaluation methods, and
 model combination tools.")
     (license license:gpl3)))
+
+(define-public r-fable-bayesrecon
+  (package
+    (name "r-fable-bayesrecon")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fable.bayesRecon" version))
+       (sha256
+        (base32 "185840x2jv2byfhbscxgr23d118qw4r7ng61x0gql16vdrvarnd7"))))
+    (properties `((upstream-name . "fable.bayesRecon")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs
+                             r-tsibble
+                             r-rlang
+                             r-purrr
+                             r-fabletools
+                             r-dplyr
+                             r-distributional
+                             r-bayesrecon))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/dazzimonti/fable.bayesRecon")
+    (synopsis "Bayesian Reconciliation in the 'fable' Framework")
+    (description
+     "This package implements the @code{bayesRecon} probabilistic reconciliation
+methods within the fable framework for hierarchical time series forecasting.
+Bayesian reconciliation (@code{bayesRecon}) methods are accessed via the
+reconcile verb, following fable conventions.  For methodological background, see
+Corani et al. (2021) <doi:10.1007/978-3-030-67664-3_13>, Zambon et al. (2024a)
+<doi:10.1007/s11222-023-10343-y>, Zambon et al. (2024b)
+<https://proceedings.mlr.press/v244/zambon24a.html>, and Carrara et al. (2025)
+<doi:10.48550/@code{arXiv.2506.19554>}.")
+    (license license:lgpl3+)))
 
 (define-public r-fable-ata
   (package

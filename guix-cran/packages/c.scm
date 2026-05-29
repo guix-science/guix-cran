@@ -4280,13 +4280,13 @@ details.")
 (define-public r-cstools
   (package
     (name "r-cstools")
-    (version "5.3.1")
+    (version "5.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CSTools" version))
        (sha256
-        (base32 "1q9qqp0h45nzf2yh7vwqiya4x35g2i8hn6saj61kcg67vmj12zfi"))))
+        (base32 "14ax50l8mipf0ry4zrmzzx3casy64xd95avic894kgqgs7xp8hh2"))))
     (properties `((upstream-name . "CSTools")))
     (build-system r-build-system)
     (arguments
@@ -5509,13 +5509,13 @@ statistical properties change across spatio-temporal continuum.")
 (define-public r-crystract
   (package
     (name "r-crystract")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crystract" version))
        (sha256
-        (base32 "0cgm19mr7dvmfd28prissg4hf4wmxagrj3mcswgjgfzxn7dfsj9r"))))
+        (base32 "05pwnva7kbs3db13s95dryjb8nz5547j6nlmzfajz8xiry599wvz"))))
     (properties `((upstream-name . "crystract")))
     (build-system r-build-system)
     (arguments
@@ -6236,39 +6236,6 @@ correlation robust standard errors.  The statistical tests in this package
 therefore accounts for potential biases arising from returns cross-sectional
 correlation, autocorrelation, and volatility clustering without power loss.")
     (license license:bsd-3)))
-
-(define-public r-crs
-  (package
-    (name "r-crs")
-    (version "0.15-43")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "crs" version))
-       (sha256
-        (base32 "0h35rak6ngkagjhx6qra3rm6spxv1cqblxs51sxllhbny221q3p5"))))
-    (properties `((upstream-name . "crs")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-quantreg r-boot))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/JeffreyRacine/R-Package-crs")
-    (synopsis "Categorical Regression Splines")
-    (description
-     "Regression splines that handle a mix of continuous and categorical (discrete)
-data often encountered in applied settings.  I would like to gratefully
-acknowledge support from the Natural Sciences and Engineering Research Council
-of Canada (NSERC, <https://www.nserc-crsng.gc.ca>), the Social Sciences and
-Humanities Research Council of Canada (SSHRC, <https://www.sshrc-crsh.gc.ca>),
-and the Shared Hierarchical Academic Research Computing Network (SHARCNET,
-<https://www.sharcnet.ca>).  We would also like to acknowledge the contributions
-of the GNU GSL authors.  In particular, we adapt the GNU GSL B-spline routine
-gsl_bspline.c adding automated support for quantile knots (in addition to
-uniform knots), providing missing functionality for derivatives, and for
-extending the splines beyond their endpoints.")
-    (license license:gpl3+)))
 
 (define-public r-crrstep
   (package
@@ -13448,13 +13415,13 @@ and ATAC-Seq signatures as described in the article by Giorgi lab (2020)
 (define-public r-corteza
   (package
     (name "r-corteza")
-    (version "0.6.3")
+    (version "0.6.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "corteza" version))
        (sha256
-        (base32 "13cqy3ja1z2328l3sxwlxkdpxr9galn312cy3z46nr945gxlv95n"))))
+        (base32 "0fn63g2ls68wm1xpjv17h63b5h6y6kbhnwqp9bm549ydm5n9la8q"))))
     (properties `((upstream-name . "corteza")))
     (build-system r-build-system)
     (arguments
@@ -35971,6 +35938,42 @@ buggy implementations.")
     (license (list license:gpl3+
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-cknnrld
+  (package
+    (name "r-cknnrld")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CKNNRLD" version))
+       (sha256
+        (base32 "053psckfxwxn0i3js2qv9x9c0qpkpmmlgdsmnrr330vwbfr9gkzd"))))
+    (properties `((upstream-name . "CKNNRLD")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rfast r-latrend r-directional))
+    (home-page "https://cran.r-project.org/package=CKNNRLD")
+    (synopsis
+     "Clustering-Based K-Nearest Neighbor Regression for Longitudinal Data")
+    (description
+     "This package implements the CKNNRLD algorithm (Clustering-Based K-Nearest
+Neighbor Regression for Longitudinal Data) for improving K-Nearest Neighbor
+('KNN') regression on longitudinal data through cluster-based partitioning and
+localized prediction.  Offers enhanced computational efficiency and accuracy for
+high-volume longitudinal datasets.  The clustering is performed using the
+latrend package, which provides a unified interface for various longitudinal
+clustering methods including KML (K-Means for Longitudinal data).  The acronym
+KNN stands for K-Nearest Neighbor.  The acronym KML stands for K-Means for
+Longitudinal data.  References: Loeloe MS, Tabatabaei SM, Sefidkar R, Mehrparvar
+AH, Jambarsang S (2025). \"Boosting K-nearest neighbor regression performance for
+longitudinal data through a novel learning approach.\" BMC Bioinformatics, 26,
+232. <doi:10.1186/s12859-025-06205-1>; Genolini C, Falissard B (2010).
+\"@code{KmL}: k-means for longitudinal data.\" Computational Statistics, 25(2),
+317-328. <doi:10.1007/s00180-009-0178-4>.")
+    (license license:gpl3)))
+
 (define-public r-ckmeans-1d-dp
   (package
     (name "r-ckmeans-1d-dp")
@@ -45788,6 +45791,33 @@ transcriptomes, and validation of identity and purity of flow-sorting and
 dissection sequencing products.")
     (license (license:fsdg-compatible "CC BY-NC-SA 4.0"))))
 
+(define-public r-cellkeyperturbation
+  (package
+    (name "r-cellkeyperturbation")
+    (version "3.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cellkeyperturbation" version))
+       (sha256
+        (base32 "1byqxgd3vgfnnpzp4yjg0yjrifb0awrfhs047l3gxwdnpa0xpsxh"))))
+    (properties `((upstream-name . "cellkeyperturbation")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ONSdigital/cell-key-perturbation-R")
+    (synopsis "Cell Key Perturbation")
+    (description
+     "This package provides functions to generate frequency tables and apply cell key
+perturbation to protect against statistical disclosure in tabular outputs.  The
+implemented methods are described in \"Cell Key Perturbation User Guide\"
+<https://github.com/ONSdigital/cell-key-perturbation-R/blob/main/documentation/SML_@code{UserDoc_CKP_R.md>}.
+ Developed at the UK Office for National Statistics.")
+    (license license:expat)))
+
 (define-public r-cellkey
   (package
     (name "r-cellkey")
@@ -46597,13 +46627,13 @@ Difference-in-Differences\", Journal of Econometrics,
 (define-public r-cdghmm
   (package
     (name "r-cdghmm")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CDGHMM" version))
        (sha256
-        (base32 "1ydczrplqxkxsqd13h7vzss23c8f6iqj29d07sidpxd2sdvgi0vi"))))
+        (base32 "19cbxqki3s1b91iq63hwdcr4f1i2crh7clmsz5g89ipim7qailz4"))))
     (properties `((upstream-name . "CDGHMM")))
     (build-system r-build-system)
     (arguments

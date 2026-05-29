@@ -5791,35 +5791,35 @@ guidelines of the Institute for Applied Economic Research (Ipea).")
 (define-public r-ipeadatar
   (package
     (name "r-ipeadatar")
-    (version "0.1.6")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ipeadatar" version))
        (sha256
-        (base32 "1j600mhvy023ry9hx8ib6wqdv4mip1cjbwzs9190v8qpc9r2a460"))))
+        (base32 "05k8vbaaywfi0pvpycpd3ipjcmdg1dy689v3ly5s7wi3m2qqnq9k"))))
     (properties `((upstream-name . "ipeadatar")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr
+    (propagated-inputs (list r-tibble
                              r-sjlabelled
                              r-rlang
                              r-purrr
-                             r-magrittr
                              r-lubridate
                              r-jsonlite
                              r-dplyr
-                             r-curl))
+                             r-curl
+                             r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/gomesleduardo/ipeadatar")
+    (home-page "https://github.com/ipea/ipeadatar")
     (synopsis "API Wrapper for 'Ipeadata'")
     (description
-     "Allows direct access to the macroeconomic, financial and regional database
-maintained by Brazilian Institute for Applied Economic Research ('Ipea').  This
-R package uses the Ipeadata API. For more information, see
-<http://www.ipeadata.gov.br/>.")
+     "This package provides direct access to the macroeconomic, financial, and
+regional database maintained by the Institute for Applied Economic Research
+(Ipea) via the Ipeadata API. For more information, see
+<https://www.ipeadata.gov.br/>.")
     (license license:expat)))
 
 (define-public r-ipdw
@@ -6422,53 +6422,6 @@ log-linear and Poisson regressions, offers several computational advantages, and
 corresponds to the correct way to perform the popular log(Y + 1) transformation.
  For more details about how to use it, see the notebook at:
 <https://www.davidbenatia.com/>.")
-    (license license:gpl3)))
-
-(define-public r-iobr
-  (package
-    (name "r-iobr")
-    (version "2.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "IOBR" version))
-       (sha256
-        (base32 "1smskav6qqhkm6a663mjcsnd3g45jl3c896vb3dcs5rcxwb6jsh6"))))
-    (properties `((upstream-name . "IOBR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-survminer
-                             r-survival
-                             r-stringr
-                             r-rlang
-                             r-purrr
-                             r-gsva
-                             r-glmnet
-                             r-ggplot2
-                             r-dplyr
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://doi.org/10.3389/fimmu.2021.687975")
-    (synopsis "Immune Oncology Biological Research")
-    (description
-     "This package provides six modules for tumor microenvironment (TME) analysis
-based on multi-omics data.  These modules cover data preprocessing, TME
-estimation, TME infiltrating patterns, cellular interactions, genome and TME
-interaction, and visualization for TME relevant features, as well as modelling
-based on key features.  It integrates multiple microenvironmental analysis
-algorithms and signature estimation methods, simplifying the analysis and
-downstream visualization of the TME. In addition to providing a quick and easy
-way to construct gene signatures from single-cell RNA-seq data, it also provides
-a way to construct a reference matrix for TME deconvolution from single-cell
-RNA-seq data.  The analysis pipeline and feature visualization are user-friendly
-and provide a comprehensive description of the complex TME, offering insights
-into tumour-immune interactions (Zeng D, et al. (2024)
-<doi:10.1016/j.crmeth.2024.100910>.  Fang Y, et al. (2025)
-<doi:10.1002/mdr2.70001>).")
     (license license:gpl3)))
 
 (define-public r-ioanalysis
@@ -10816,38 +10769,48 @@ provided.")
 (define-public r-influential
   (package
     (name "r-influential")
-    (version "2.3.0")
+    (version "2.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "influential" version))
        (sha256
-        (base32 "0f7x3r9i3f9akphq2bcjx5gczb14zisiln77cwq5xis7wrsh0wyc"))))
+        (base32 "01lqcy832wsrari3p43fni2gd4m8i912y6fpqzci7h2wvy24mn23"))))
     (properties `((upstream-name . "influential")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpp
+    (propagated-inputs (list r-tibble
+                             r-seuratobject
+                             r-rcpp
                              r-ranger
+                             r-matrix
                              r-janitor
+                             r-irlba
                              r-igraph
                              r-ggplot2
                              r-foreach
-                             r-doparallel))
+                             r-edger
+                             r-doparallel
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/asalavaty/influential")
     (synopsis
      "Identification and Classification of the Most Influential Nodes")
     (description
-     "This package provides functions for classification and ranking of candidate
-features, reconstruction of networks from adjacency matrices and data frames,
-topological analysis, and calculation of centrality measures.  The package
-includes the SIRIR model, which combines leave-one-out cross-validation with the
-conventional SIR model to rank vertex influence in an unsupervised manner.
-Additional functions support assessment of dependence and correlation between
-network centrality measures, as well as estimation of conditional probabilities
-of deviation from their corresponding means in opposite directions.")
+     "This package provides functions for the identification, classification, and
+ranking of influential nodes and candidate features from network and omics data.
+ The package implements the Integrated Value of Influence (IVI) for integrative
+network centrality analysis, the SIR-based Influence Ranking (SIRIR) model for
+unsupervised influence ranking, and the Experimental data-based Integrative
+Ranking (@code{ExIR}) model for prioritizing candidate driver, biomarker, and
+mediator features from experimental omics data.  Functions are provided for
+network reconstruction from adjacency matrices and data frames, topological
+analysis, centrality calculation, assessment of associations between centrality
+measures, and conditional probability analysis. @code{ExIR} supports bulk and
+single-cell omics data, including matrices, sparse matrices, data frames,
+tibbles, and Seurat objects.")
     (license license:gpl3)))
 
 (define-public r-influenceborrowing

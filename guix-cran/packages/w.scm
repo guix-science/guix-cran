@@ -4929,41 +4929,6 @@ network of over a hundred researchers covering more than seventy countries from
 all continents.")
     (license license:expat)))
 
-(define-public r-whsample
-  (package
-    (name "r-whsample")
-    (version "0.9.6.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "whSample" version))
-       (sha256
-        (base32 "1dkw155xk36r9vmkqxlg2vw45nbpypivd8q5v3i5995biyib4l2k"))))
-    (properties `((upstream-name . "whSample")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-purrr
-                             r-openxlsx
-                             r-magrittr
-                             r-dplyr
-                             r-data-table
-                             r-bit64))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=whSample")
-    (synopsis "Utilities for Sampling")
-    (description
-     "Interactive tools for generating random samples.  Users select an .xlsx, .csv,
-or delimited .txt file with population data and are walked through selecting the
-sample type (Simple Random Sample or Stratified), the number of backups desired,
-and a \"stratify_on\" value (if desired).  The sample size is determined using a
-normal approximation to the hypergeometric distribution based on Nicholson
-(1956) <doi:10.1214/aoms/1177728270>.  An .xlsx file is created with the sample
-and key metadata for reference.  It is menu-driven and lets users pick an output
-directory.  See vignettes for a detailed walk-through.")
-    (license license:gpl3)))
-
 (define-public r-whoriskcalculator
   (package
     (name "r-whoriskcalculator")
@@ -9939,33 +9904,6 @@ existence and effect size of of an intervention.  This package accompanies
      "This package provides Water Year Hydrologic Classification Indices based on
 measured unimpaired runoff (in million acre-feet).  Data is provided by
 California Department of Water Resources and subject to revision.")
-    (license license:expat)))
-
-(define-public r-waterquality
-  (package
-    (name "r-waterquality")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "waterquality" version))
-       (sha256
-        (base32 "06dj21zi3g7m93iq588w1c5cpvakd1mjra79y3p4ibwrkizdqzhl"))))
-    (properties `((upstream-name . "waterquality")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-terra r-purrr r-magrittr r-dplyr r-caret))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/RAJohansen/waterquality")
-    (synopsis "Satellite Derived Water Quality Detection Algorithms")
-    (description
-     "The main purpose of waterquality is to quickly and easily convert
-satellite-based reflectance imagery into one or many well-known water quality
-algorithms designed for the detection of harmful algal blooms or the following
-pigment proxies: chlorophyll-a, blue-green algae (phycocyanin), and turbidity.
-Johansen et al. (2019) <doi:10.21079/11681/35053>.")
     (license license:expat)))
 
 (define-public r-waterfalls

@@ -8583,6 +8583,40 @@ recommendations.  See Harkness et al. (2010) <doi:10.1002/9780470609927.ch7> and
 Wild et al. (2005) <doi:10.1111/j.1524-4733.2005.04054.x>.")
     (license license:expat)))
 
+(define-public r-llmshieldr
+  (package
+    (name "r-llmshieldr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "llmshieldr" version))
+       (sha256
+        (base32 "13k0sx4hqny3yxicrjfs89v8ysvv65d09y5hrxk4gsz3gs7prm34"))))
+    (properties `((upstream-name . "llmshieldr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringi r-rlang r-jsonlite r-digest r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://www.indraneelchakraborty.com/llmshieldr/")
+    (synopsis "Safety Guardrails for Large Language Model Workflows")
+    (description
+     "This package provides a model-agnostic safety layer for developers building with
+large language model (LLM) applications.  Maps starter controls to the Open
+Worldwide Application Security Project Top 10 for Large Language Model
+Applications 2025 risk categories <https://genai.owasp.org/llm-top-10/> via a
+modular rule engine.  Supports regular-expression rules, lightweight natural
+language processing (NLP) intent checks, optional scanners, and semantic large
+language model reviewer checks on prompts, conversations, retrieved context,
+tool inputs and outputs, streaming chunks, and model outputs.  Supports
+workflows with the Ollama local web service <https://ollama.com/> via ellmer',
+remote reviewer endpoints, and other chat interfaces callable from R'.  Intended
+as an experimental guardrail layer that teams should evaluate against their own
+workflows before relying on it in production.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-llmr
   (package
     (name "r-llmr")
@@ -19870,13 +19904,13 @@ Greenland, 2014; <doi:10.1093/aje/kwt245>).")
 (define-public r-lakhesis
   (package
     (name "r-lakhesis")
-    (version "1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lakhesis" version))
        (sha256
-        (base32 "10ll1z1wqblc2fdh1l68wy2akzjf45lahiw9zppz151mh9by6hng"))))
+        (base32 "179czsvw9gw8hgs9rwcfwdj3jjnfylhp9yxsfki0n47j1srhh2f6"))))
     (properties `((upstream-name . "lakhesis")))
     (build-system r-build-system)
     (arguments
@@ -19899,8 +19933,9 @@ Greenland, 2014; <doi:10.1093/aje/kwt245>).")
 process of Procrustes-fit correspondence analysis for heuristic selection of
 partial seriations and iterative regression to establish a single consensus.
 Contains the Lakhesis Calculator, a graphical platform for identifying seriated
-sequences.  Collins-Elliott (2024)
-<https://volweb.utk.edu/~scolli46/@code{sceLakhesis.pdf>}.")
+sequences.  Collins-Elliott (2026) \"Lakhesis: Consensus Seriation via Iterative
+Regression of Partial Rankings for Binary Data\"
+<doi:10.1080/02664763.2026.2672564>.")
     (license license:gpl3+)))
 
 (define-public r-lakemorpho

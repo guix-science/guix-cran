@@ -4927,13 +4927,13 @@ strings encrypted with the Windows Data Protection API.")
 (define-public r-keypress
   (package
     (name "r-keypress")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "keypress" version))
        (sha256
-        (base32 "1jc0l3x2yd4d1q0108vj0iz8nxsrdhdfymkmadzzc0px76gwxci6"))))
+        (base32 "146x6y7nlf2yaklxs1b6zv0bv31k30lw0sjpq7xmxh53qpbag5p9"))))
     (properties `((upstream-name . "keypress")))
     (build-system r-build-system)
     (arguments
@@ -4943,9 +4943,9 @@ strings encrypted with the Windows Data Protection API.")
     (synopsis "Wait for a Key Press in a Terminal")
     (description
      "Wait for a single key press at the R prompt.  This works in terminals, but does
-not currently work in the Windows GUI', the OS X GUI ('R.app'), in Emacs ESS',
-in an Emacs shell buffer or in R Studio'.  In these cases keypress stops with an
-error message.")
+not currently work in the Windows GUI', the @code{macOS} GUI ('R.app'), in Emacs
+ESS', in an Emacs shell buffer or in R Studio'.  In these cases keypress stops
+with an error message.")
     (license license:expat)))
 
 (define-public r-keyplayer

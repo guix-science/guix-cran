@@ -10069,37 +10069,6 @@ treatment effect.  And, a sample size calculation procedure for the subgroup
 detection test.")
     (license license:gpl3)))
 
-(define-public r-styperidge-reg
-  (package
-    (name "r-styperidge-reg")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Styperidge.reg" version))
-       (sha256
-        (base32 "0vsg27ymypbl9jbzbkfyi5ims8nj6ccm5aaf428m7942cn4px767"))))
-    (properties `((upstream-name . "Styperidge.reg")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stype-est r-ridgregextra r-mctest r-isdals))
-    (home-page "https://github.com/filizkrdg/Styperidge.reg")
-    (synopsis "S-Type Ridge Regression")
-    (description
-     "This package implements S-type ridge regression, a robust and
-multicollinearity-aware linear regression estimator that combines S-type robust
-weighting (via the Stype.est package) with ridge penalization; automatically
-selects the ridge parameter using the ridgregextra approach targeting a close to
-1 variance inflation factor (VIF), and returns comprehensive outputs
-(coefficients, fitted values, residuals, mean squared error (MSE), etc.) with an
-easy x/y interface and optional user-supplied weights.  See Sazak and Mutlu
-(2021) <doi:10.1080/03610918.2021.1928196>, Karadag et al. (2023)
-<https://CRAN.R-project.org/package=ridgregextra> and Sazak et al. (2025)
-<https://CRAN.R-project.org/package=Stype.est>.")
-    (license license:expat)))
-
 (define-public r-stype-est
   (package
     (name "r-stype-est")
@@ -10935,6 +10904,35 @@ staticimports package.")
     (description
      "Pass named and unnamed character vectors into specified positions in strings.
 This represents an attempt to replicate some of python's string formatting.")
+    (license license:expat)))
+
+(define-public r-stringart
+  (package
+    (name "r-stringart")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "stringArt" version))
+       (sha256
+        (base32 "0k7agnhphjx26p454sjbqbj8bbad4c5i9z732lcppqyxp06fa6dq"))))
+    (properties `((upstream-name . "stringArt")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/fsbmat-ufv/stringArt")
+    (synopsis "Tools for Generating String Art Figures")
+    (description
+     "This package provides tools to generate, visualize, and audit geometric string
+art figures for mathematics teaching.  The package includes functions for
+circular, cardioid-like, elliptical, triangular, polygonal, star, parabolic,
+net-based, radial, hexagonal, lotus-like, rose-like, spiral, Lissajous,
+grid-based, decimal, and contour-based string art patterns.  Each function
+returns peg coordinates, connection tables, total string length, audit
+information, and metadata, supporting educational applications in geometry,
+analytic geometry, modular arithmetic, trigonometry, rational numbers, and
+visual mathematics.")
     (license license:expat)))
 
 (define-public r-string2adjmatrix
@@ -19744,6 +19742,43 @@ transmitting infectious diseases.")
 Survival Time.")
     (license license:gpl2)))
 
+(define-public r-ssreliabilityclaytonmwd
+  (package
+    (name "r-ssreliabilityclaytonmwd")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SSReliabilityClaytonMWD" version))
+       (sha256
+        (base32 "0wslx1pvlqzpvdffcwdbw6sxkskjji6zp4424dv4fv9yi7wkb5ra"))))
+    (properties `((upstream-name . "SSReliabilityClaytonMWD")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-knitr r-dorng))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/fatihki/SSReliabilityClaytonMWD")
+    (synopsis
+     "Stress-Strength Reliability Model with MWD Marginals via Clayton Copula")
+    (description
+     "This package implements stress-strength reliability models under a dependent
+framework, where both stress and strength variables follow modified Weibull
+distributions and their dependence is modeled using a Clayton copula (Kizilaslan
+(2026) <doi:10.48550/@code{arXiv.2604.12130>}).  The package provides several
+estimation procedures for model parameters and the stress-strength reliability
+R, including two-step maximum likelihood estimation (MLE), least squares
+estimation (LSE), weighted least squares estimation (WLSE), and maximum product
+of spacings (MPS).  It also provides interval estimation using asymptotic
+confidence intervals based on MLE and bootstrap confidence intervals for all
+methods.  In addition, functions are included for parameter estimation of the
+modified Weibull distribution (Lai et al. (2003) <doi:10.1109/TR.2002.805788>)
+and the two-parameter Weibull distribution, along with utilities to compute
+their probability density function, cumulative distribution function, quantile
+function, and to generate random samples.")
+    (license license:gpl3+)))
+
 (define-public r-ssra
   (package
     (name "r-ssra")
@@ -23716,13 +23751,13 @@ Financial support from NSF and @code{DuPont} are acknowledged.")
 (define-public r-spray
   (package
     (name "r-spray")
-    (version "1.0-27")
+    (version "1.1-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spray" version))
        (sha256
-        (base32 "0980zmwjgzs3q7xg2smprsp01ia8xfsj2q86xdzy63jdj1nk28vs"))))
+        (base32 "1lpkdi99ryr4cmzfqgk5x98gx1jr3mlq3p6w4zhzib81zmgrynd5"))))
     (properties `((upstream-name . "spray")))
     (build-system r-build-system)
     (arguments
@@ -24556,13 +24591,13 @@ retrieving species occurrence data, and combining those data.")
 (define-public r-spnngp
   (package
     (name "r-spnngp")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spNNGP" version))
        (sha256
-        (base32 "1qanar1b3avlw8q18yisl4yjwbvzmz8kir8q21rnjdx612wmgsll"))))
+        (base32 "1pkcr4hlgjrwhngzn3parxq9nh9iqpihjc25lbh50a5s77ahxjpn"))))
     (properties `((upstream-name . "spNNGP")))
     (build-system r-build-system)
     (arguments
@@ -26162,6 +26197,31 @@ in Dietrich et al. (2012) <doi:10.1155/2012/351864> and Dietrich et al. (2016)
 <doi:10.3389/fendo.2016.00057>.")
     (license license:bsd-3)))
 
+(define-public r-spima
+  (package
+    (name "r-spima")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spima" version))
+       (sha256
+        (base32 "1s97n4rzcrjbjm35ca0hdmaci3dxqdhnjg2pls3g0q1qm11bxmgq"))))
+    (properties `((upstream-name . "spima")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-lme4))
+    (home-page "https://github.com/HaichuanYu0703/SPIMA")
+    (synopsis "Simulated Pseudo-Individual Data Meta-Analysis with ABC-SMC")
+    (description
+     "Meta-analysis via Approximate Bayesian Computation Sequential Monte Carlo
+(ABC-SMC) by simulating pseudo-individual data from published group-level
+summary statistics.  Handles binary, continuous, and generic effect-size
+outcomes within a one-stage mixed-model framework.  Supports subgroup analysis.")
+    (license license:expat)))
+
 (define-public r-spikeslabgam
   (package
     (name "r-spikeslabgam")
@@ -27266,6 +27326,34 @@ leveraging baseline predictors of the endpoint.  The inverse probability
 weighting technique of Robins, Rotnitzky, and Zhao (JASA, 1994) is used to
 provide unbiased estimation when the endpoint is missing at random.")
     (license license:gpl2)))
+
+(define-public r-spefa
+  (package
+    (name "r-spefa")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spefa" version))
+       (sha256
+        (base32 "1bjk24z9qkdnqh3izpb1j8avy1qy2n5vmnqawfby7vnpgzv2vpzj"))))
+    (properties `((upstream-name . "spefa")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=spefa")
+    (synopsis "Spatial Stochastic Frontier with Fixed Effects and Endogeneity")
+    (description
+     "Maximum-likelihood estimation of the spatial autoregressive stochastic frontier
+model with individual fixed effects (removed by first differencing) and
+endogenous regressors handled through a Gaussian control function, as in
+Giannini (2025) <doi:10.1080/17421772.2024.2414962>.  Returns coefficient
+estimates and standard errors, spatially-corrected technical (in)efficiency
+scores, and direct, indirect and total marginal impacts.  Depends only on base
+R.")
+    (license license:gpl3)))
 
 (define-public r-spef
   (package
@@ -28976,13 +29064,13 @@ Watanabe-Akaike information criterion (WAIC).  See Zhou, Hanson and Zhang (2020)
 (define-public r-spbayes
   (package
     (name "r-spbayes")
-    (version "0.4-8")
+    (version "0.4-9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spBayes" version))
        (sha256
-        (base32 "17jnbwafk5kky0zwjni9nvbcllxr5ww0jrrq5gzzddjrp1x1ybhd"))))
+        (base32 "0cbia1bmg1l659dcin441zaznmr1qxvwy69ddy62g5lqm8pczv1v"))))
     (properties `((upstream-name . "spBayes")))
     (build-system r-build-system)
     (arguments
@@ -39982,40 +40070,6 @@ Variables.")
      "An R-package for Estimating Semiparametric PH and AFT Mixture Cure Models.")
     (license license:gpl2)))
 
-(define-public r-smcfcs
-  (package
-    (name "r-smcfcs")
-    (version "2.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "smcfcs" version))
-       (sha256
-        (base32 "1kz297dhcdiazs6r13bkax8nqy61s8hb0lhk6psdm6ngbcs6i64n"))))
-    (properties `((upstream-name . "smcfcs")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vgam
-                             r-survival
-                             r-rlang
-                             r-mass
-                             r-checkmate
-                             r-brglm2
-                             r-abind))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/jwb133/smcfcs")
-    (synopsis
-     "Multiple Imputation of Covariates by Substantive Model Compatible Fully Conditional Specification")
-    (description
-     "This package implements multiple imputation of missing covariates by Substantive
-Model Compatible Fully Conditional Specification.  This is a modification of the
-popular FCS/chained equations multiple imputation approach, and allows
-imputation of missing covariate values from models which are compatible with the
-user specified substantive model.")
-    (license license:gpl3)))
-
 (define-public r-smccnet
   (package
     (name "r-smccnet")
@@ -41292,33 +41346,6 @@ The slm package is described in the paper by E. Caron, J. Dedecker and B. Michel
 (2019), \"Linear regression with stationary errors: the R package slm\",
 @code{arXiv} preprint <@code{arXiv:1906.06583>}.")
     (license license:gpl3)))
-
-(define-public r-slippymath
-  (package
-    (name "r-slippymath")
-    (version "0.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "slippymath" version))
-       (sha256
-        (base32 "0dqnv089mcfxvpsc1px7mblim6m77n59xpcysz75jrvpc5q4lsrg"))))
-    (properties `((upstream-name . "slippymath")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-raster r-purrr r-png))
-    (native-inputs (list r-knitr))
-    (home-page "https://www.github.com/milesmcbain/slippymath")
-    (synopsis "Slippy Map Tile Tools")
-    (description
-     "This package provides functions for performing common tasks when working with
-slippy map tile service APIs e.g. Google maps, Open Street Map, Mapbox, Stamen,
-among others.  Functionality includes converting from latitude and longitude to
-tile numbers, determining tile bounding boxes, and compositing tiles to a
-georeferenced raster image.")
-    (license license:expat)))
 
 (define-public r-slimr
   (package
@@ -64776,13 +64803,13 @@ the first stages of root water absorption.")
 (define-public r-seededlda
   (package
     (name "r-seededlda")
-    (version "1.4.3")
+    (version "1.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "seededlda" version))
        (sha256
-        (base32 "1cqh7v7n3vz0bgw3llwrpm287cz2xszk620jmqvbaim6y6hcqd8s"))))
+        (base32 "0v8zsqpkds210jplm7q4p4is22rnjxlqynvdvvds9q6l86pv60qg"))))
     (properties `((upstream-name . "seededlda")))
     (build-system r-build-system)
     (arguments
@@ -75881,16 +75908,55 @@ for researchers and analysts seeking to perform analyses and derive insights
 from classic data sets in R.")
     (license license:gpl3)))
 
+(define-public r-samplecore
+  (package
+    (name "r-samplecore")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SampleCore" version))
+       (sha256
+        (base32 "0fb3n05njxz4v3hbw84469l4i1gd62w3m58kx23g9vw8zw94h9rg"))))
+    (properties `((upstream-name . "SampleCore")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vegan
+                             r-rtsne
+                             r-rdpack
+                             r-prospectr
+                             r-mathjaxr
+                             r-mass
+                             r-igraph
+                             r-ggplot2
+                             r-diversitystats
+                             r-cluster))
+    (home-page "https://cran.r-project.org/package=SampleCore")
+    (synopsis "Sampling Strategies for Constructing Core Collections")
+    (description
+     "This package implements multiple allocation and selection strategies of sampling
+to construct core collections primarily from clustered or grouped germplasm
+collection data.  Provides methods for allocating entries to clusters/groups
+based on group sizes, group-wise distance-based diversity metrics, and
+group-wise diversity index estimates.  Includes procedures for selecting entries
+within clusters/groups through random sampling, genetic distance-based
+approaches, and optimized diversity metricâbased selection methods.  See the
+package documentation for more, including full list of references for the
+methods implemented.")
+    (license license:gpl2+)))
+
 (define-public r-sampcompr
   (package
     (name "r-sampcompr")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sampcompR" version))
        (sha256
-        (base32 "1vln2kk006398njsvbyca8grnk2kpr93rj34d2s5vryzg3fd4k63"))))
+        (base32 "10xhwa6ir6kg80jv5gghibky04d3ky4zlksrnrxlwqpjjbrvzd1l"))))
     (properties `((upstream-name . "sampcompR")))
     (build-system r-build-system)
     (arguments
@@ -76849,6 +76915,33 @@ coefficients across the frequency and severity components.  This enhancement not
 only increases model accuracy but also enhances its interpretability, making it
 more suitable for practical applications in risk assessment.")
     (license license:gpl2)))
+
+(define-public r-safemcn
+  (package
+    (name "r-safemcn")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SAFEMCN" version))
+       (sha256
+        (base32 "03n03kvxwgi2gnxi2w0lb5qzjzm1gqqycj8vh0lq2b9zmc11cfw1"))))
+    (properties `((upstream-name . "SAFEMCN")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-igraph r-hmisc r-ggplot2))
+    (home-page "https://cran.r-project.org/package=SAFEMCN")
+    (synopsis "Network Topology Parameter Analysis with Rarefaction")
+    (description
+     "Calculate network topology parameters from Operational Taxonomic Unit (OTU)
+tables with customizable correlation thresholds, parallel processing options,
+and visualization capabilities including trend fitting, prediction of future
+sample sizes, and lag-1 autocorrelation (AR1) analysis.  Methods are based on
+co-occurrence network construction via correlation thresholds and
+graph-theoretic metrics computed with igraph'.")
+    (license license:expat)))
 
 (define-public r-safejoin
   (package

@@ -2313,13 +2313,13 @@ tunes the quantile level to reflect class imbalance.")
 (define-public r-qualypso
   (package
     (name "r-qualypso")
-    (version "3.0")
+    (version "3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "QUALYPSO" version))
        (sha256
-        (base32 "00d3m5g41bzypgm4flal307xcz6casjlqs29abzwqfyxickg1rmz"))))
+        (base32 "1a45hj0nvc57jrx9q2n3g7p4j1ydsgjs3dm3vfp6n8n8y5rb4n1p"))))
     (properties `((upstream-name . "QUALYPSO")))
     (build-system r-build-system)
     (arguments
@@ -2335,12 +2335,15 @@ tunes the quantile level to reflect class imbalance.")
     (synopsis
      "Partitioning Uncertainty Components of an Incomplete Ensemble of Climate Projections")
     (description
-     "These functions use data augmentation and Bayesian techniques for the assessment
-of single-member and incomplete ensembles of climate projections.  It provides
-unbiased estimates of climate change responses of all simulation chains and of
-all uncertainty variables.  It additionally propagates uncertainty due to
-missing information in the estimates. - Evin, G., B. Hingray, J. Blanchet, N.
-Eckert, S. Morin, and D. Verfaillie. (2019) <doi:10.1175/JCLI-D-18-0606.1>.")
+     "These functions apply an analysis of variance to incomplete ensembles of climate
+projections.  It provides estimates of climate change responses of all
+simulation chains and of all uncertainty variables.  It has been applied to
+different ensembles of projections simulated to study the impact of climate
+change: for climate indicators in Evin et al. (2019)
+<doi:10.1175/JCLI-D-18-0606.1>; seasonal precipitation and temperature in Evin,
+Somot and Hingray (2021) <doi:10.5194/esd-12-1543-2021>; hydrological variables
+in Evin et al. (2026) <doi:10.5194/hess-30-1023-2026>; photovoltaic energy in
+Bichet et al. (2019) <doi:10.1088/1748-9326/ab500a>.")
     (license license:gpl3)))
 
 (define-public r-qualvar

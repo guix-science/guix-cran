@@ -6,8 +6,8 @@
                 #:prefix license:)
   #:use-module (gnu packages cran)
   #:use-module (gnu packages gcc)
-  #:use-module (gnu packages web)
   #:use-module (gnu packages statistics)
+  #:use-module (gnu packages web)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages duckdb)
@@ -555,6 +555,33 @@ empirical equivalence bound.  See Zhao et al. (2019) \"B-Value and Empirical
 Equivalence Bound: A New Procedure of Hypothesis Testing\"
 <@code{arXiv:1912.13084>} for details.")
     (license license:gpl2+)))
+
+(define-public r-buzzmed
+  (package
+    (name "r-buzzmed")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "buzzMed" version))
+       (sha256
+        (base32 "0bi54hzxsdjg3shzdn93z7p1d8hm44gpd67pwiyf2yq0h0vkq660"))))
+    (properties `((upstream-name . "buzzMed")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list jags))
+    (propagated-inputs (list r-rjags r-coda))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/olfactorybulb/buzzMed")
+    (synopsis "Bayesian Understanding for Mediator Selection Framework")
+    (description
+     "This package provides a collection of quantitative tools for selecting mediating
+effects within exploratory Bayesian mediation models.  The package accommodates
+both continuous and dichotomous outcomes, including the dependent variables and
+the mediators for identifying and analyzing mediation pathways.")
+    (license license:gpl3+)))
 
 (define-public r-buysetest
   (package
@@ -6534,13 +6561,13 @@ regression with high-dimensional data.")
 (define-public r-bpgmm
   (package
     (name "r-bpgmm")
-    (version "1.1.1")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bpgmm" version))
        (sha256
-        (base32 "178smwddybybdcpa0ph5dsah57ggr3l99pvmah9v51ksfzs8wms9"))))
+        (base32 "093qfjn8l6k66bzg08a5z2szvv7p7zz0pivq7crjjmz40b5c12gy"))))
     (properties `((upstream-name . "bpgmm")))
     (build-system r-build-system)
     (arguments
@@ -6556,7 +6583,8 @@ regression with high-dimensional data.")
                              r-label-switching
                              r-gtools
                              r-fabmix))
-    (home-page "https://cran.r-project.org/package=bpgmm")
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/YaoxiangLi/bpgmm")
     (synopsis
      "Bayesian Model Selection Approach for Parsimonious Gaussian Mixture Models")
     (description
@@ -23290,13 +23318,13 @@ al. (2023) <doi:10.1101/2023.06.30.547152> and package website - Dorey et al.
 (define-public r-bedrockbio
   (package
     (name "r-bedrockbio")
-    (version "1.3.1")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bedrockbio" version))
        (sha256
-        (base32 "1g35lcbk836fi6gh3nl8953csyivrn9lmh6ffbr9qnwpjaz6kksc"))))
+        (base32 "1xsp29lfp14xw8y4jwf9hqay3ya1hnrk82byy6d8fwpy5kyprkwr"))))
     (properties `((upstream-name . "bedrockbio")))
     (build-system r-build-system)
     (arguments
@@ -23318,31 +23346,6 @@ backend.  This enables quick, iterative access to otherwise massive, unwieldy
 datasets without downloading them in full.  See <https://bedrock.bio> for
 available datasets and documentation.")
     (license license:gpl3+)))
-
-(define-public r-bedmatrix
-  (package
-    (name "r-bedmatrix")
-    (version "2.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "BEDMatrix" version))
-       (sha256
-        (base32 "0dxkhag4jxjlbv8vx59l30rc9vc2m1szalapsxgm4mqd56llp52k"))))
-    (properties `((upstream-name . "BEDMatrix")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-crochet))
-    (home-page "https://github.com/QuantGen/BEDMatrix")
-    (synopsis "Extract Genotypes from a PLINK .bed File")
-    (description
-     "This package provides a matrix-like data structure that allows for efficient,
-convenient, and scalable subsetting of binary genotype/phenotype files generated
-by PLINK (<https://www.cog-genomics.org/plink2>), the whole genome association
-analysis toolset, without loading the entire file into memory.")
-    (license license:expat)))
 
 (define-public r-bedassle
   (package
@@ -30929,13 +30932,13 @@ original set of variables.")
 (define-public r-batss
   (package
     (name "r-batss")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BATSS" version))
        (sha256
-        (base32 "1zw8j8gx0qan4g98r4fm64sxi51mpz8527hqr7y8dbpgzb5a4cjn"))))
+        (base32 "00y072r9pm9lqsbbnz75sgsfm4pm1a51y4wm1sv4rbpz807qf1f0"))))
     (properties `((upstream-name . "BATSS")))
     (build-system r-build-system)
     (arguments

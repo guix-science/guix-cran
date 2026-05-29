@@ -15352,6 +15352,38 @@ Klotzke, K. (2018).  Generalized Linear Mixed Models for Randomized Responses.
 Methodology. <doi:10.1027/1614-2241/a000153>.")
     (license license:gpl3)))
 
+(define-public r-glmmrbase
+  (package
+    (name "r-glmmrbase")
+    (version "1.4.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "glmmrBase" version))
+       (sha256
+        (base32 "1jqb4ins8fwnlfyjxcwxxk822dlra94i564dx1l175n5m56y1a21"))))
+    (properties `((upstream-name . "glmmrBase")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-r6
+                             r-matrix
+                             r-bh))
+    (home-page "https://github.com/samuel-watson/glmmrBase")
+    (synopsis
+     "Monte Carlo Maximum Likelihood and Analysis of Generalised Linear Mixed Models")
+    (description
+     "Specification, analysis, simulation, and fitting of generalised linear mixed
+models.  Monte Carlo Maximum likelihood model fitting for a range of models,
+non-linear fixed effect specifications, a wide range of flexible covariance
+functions including Gaussian Process approximations.  Methods described in
+Watson, Wang, and Giorgi (2026) <doi:10.48550/@code{arXiv.2601.16022>}.")
+    (license license:gpl2+)))
+
 (define-public r-glmmpen
   (package
     (name "r-glmmpen")
@@ -16602,13 +16634,13 @@ not adequately captured by simpler models.")
 (define-public r-gkwdist
   (package
     (name "r-gkwdist")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gkwdist" version))
        (sha256
-        (base32 "02w99rapcvql4mwpyhmspnslj4jyjv7zpk25ls2k3mim7wfgxip8"))))
+        (base32 "02zlxd6wkdhfcp49d4z1lfxcx3vm4q3947amcq1nmdams7b4kvmn"))))
     (properties `((upstream-name . "gkwdist")))
     (build-system r-build-system)
     (arguments
@@ -19713,6 +19745,37 @@ with ggplot2', together with specializations of @code{ggplot()} and
 objects of classes defined in package photobiology'.  Part of the r4photobiology
 suite, Aphalo P. J. (2015) <doi:10.19232/uv4pb.2015.1.14>.")
     (license license:gpl2+)))
+
+(define-public r-ggspec
+  (package
+    (name "r-ggspec")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggspec" version))
+       (sha256
+        (base32 "0mfk7fvq9sx9jjgf8awzcb1rvg8cfdrq95vwnc9vhxq962zqaqsm"))))
+    (properties `((upstream-name . "ggspec")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-rlang r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/clement-lee/ggspec")
+    (synopsis
+     "Extract and Compare 'ggplot2' Plot Specifications as Tidy Data Frames")
+    (description
+     "Inspects ggplot objects by extracting their full declarative specification -
+layers, aesthetic mappings, scales, facets, coordinate systems, and labels - as
+tidy data frames.  A second tier of functions enables structural comparison of
+two ggplot objects, supporting automated plot testing, auditing, and
+framework-agnostic grading workflows.  Unlike ggcheck', which is designed
+exclusively for learnr'/'gradethis pipelines and returns ad-hoc objects, ggspec
+returns rectangular, pipeable output and does not require any grading framework
+as a dependency.")
+    (license license:expat)))
 
 (define-public r-ggspatial
   (package
@@ -28575,13 +28638,13 @@ ten parameters.")
 (define-public r-geogrid
   (package
     (name "r-geogrid")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geogrid" version))
        (sha256
-        (base32 "0jqqv5agnw071ysrmwz5r2z76f80rzm5bfl5g23gq1mbw85x8z8m"))))
+        (base32 "1bspz2np4h9bsmmvx6frdhasaha6amn7yaxdhjy18fvn7jjdjyhk"))))
     (properties `((upstream-name . "geogrid")))
     (build-system r-build-system)
     (arguments
@@ -29159,31 +29222,6 @@ to data source, variable type, and administrative geography, and is designed to
 quantify transformation-induced change without attributing blame to any specific
 boundary definition or allocation scheme.")
     (license license:expat)))
-
-(define-public r-geodata
-  (package
-    (name "r-geodata")
-    (version "0.6-9")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "geodata" version))
-       (sha256
-        (base32 "0qjkchq32rzg0pkxzw7ch6sz3cg1sp901m7idsd1zldzm44pk6j3"))))
-    (properties `((upstream-name . "geodata")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-terra r-rappdirs))
-    (home-page "https://rspatial.github.io/geodata/")
-    (synopsis "Access Geographic Data")
-    (description
-     "This package provides functions for downloading of geographic data for use in
-spatial analysis and mapping.  The package facilitates access to climate, crops,
-elevation, land use, soil, species occurrence, accessibility, administrative
-boundaries and other data.")
-    (license license:gpl3+)))
 
 (define-public r-geodadata
   (package
@@ -30672,36 +30710,6 @@ are given to improve stability and speed.  See Taylor Arnold and Ryan Tibshirani
 <https://docs.genius.com/>.  Search hosted content, extract associated metadata
 and retrieve lyrics with ease.")
     (license license:expat)))
-
-(define-public r-genio
-  (package
-    (name "r-genio")
-    (version "1.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "genio" version))
-       (sha256
-        (base32 "0izx8yv8mvnfxdqnqpnp2ldw1hzs6ggxi7jgmjlgxkgmm4vngbgl"))))
-    (properties `((upstream-name . "genio")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble r-readr r-rcpp r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/OchoaLab/genio")
-    (synopsis "Genetics Input/Output Functions")
-    (description
-     "This package implements readers and writers for file formats associated with
-genetics data.  Reading and writing Plink BED/BIM/FAM and GCTA binary GRM
-formats is fully supported, including a lightning-fast BED reader and writer
-implementations.  Other functions are readr wrappers that are more constrained,
-user-friendly, and efficient for these particular applications; handles Plink
-and Eigenstrat tables (FAM, BIM, IND, and SNP files).  There are also make
-functions for FAM and BIM tables with default values to go with simulated
-genotype data.")
-    (license license:gpl3)))
 
 (define-public r-genieclust
   (package
@@ -33585,6 +33593,31 @@ von Neumann Model of an Expanding Economy, Econometrica, 24, pp.  115-135) et
 al.  By the way, J. G. Kemeny is a co-inventor of the computer language BASIC.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-gdxtools
+  (package
+    (name "r-gdxtools")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gdxtools" version))
+       (sha256
+        (base32 "1qv13bhigra7s8rlla0ga7n05b93k8zh5jagv1p9zlbd2lpham6c"))))
+    (properties `((upstream-name . "gdxtools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-gamstransfer))
+    (home-page "https://github.com/lolow/gdxtools")
+    (synopsis "Manipulate 'GDX' Files")
+    (description
+     "Read and write GDX files ('GAMS data exchange) and convert parameters, sets and
+variables to data frames.  Backed by the GAMS'-maintained gamstransfer package;
+no compiled code is shipped.  See <https://www.gams.com/latest/docs/UG_GDX.html>
+for the GDX format.")
+    (license (license:fsdg-compatible "EPL-1.0"))))
+
 (define-public r-gdxdt
   (package
     (name "r-gdxdt")
@@ -34076,37 +34109,6 @@ inductive tests, bootstrap validation, etc.) and multiple-table analysis
 (Multiple Factor Analysis, between- and inter-class analysis, Principal
 Component Analysis and Correspondence Analysis with Instrumental Variables,
 etc.).")
-    (license license:gpl2+)))
-
-(define-public r-gdalutilities
-  (package
-    (name "r-gdalutilities")
-    (version "1.2.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gdalUtilities" version))
-       (sha256
-        (base32 "19vi6mr5jwlb00r33hkz7d0n9dar95hwdvbqbhh2dmha128fjwia"))))
-    (properties `((upstream-name . "gdalUtilities")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sf))
-    (home-page "https://github.com/JoshOBrien/gdalUtilities/")
-    (synopsis "Wrappers for 'GDAL' Utilities Executables")
-    (description
-     "R's sf package ships with self-contained GDAL executables, including a bare
-bones interface to several GDAL'-related utility programs collectively known as
-the GDAL utilities'.  For each of those utilities, this package provides an R
-wrapper whose formal arguments closely mirror those of the GDAL command line
-interface.  The utilities operate on data stored in files and typically write
-their output to other files.  Therefore, to process data stored in any of R's
-more common spatial formats (i.e.  those supported by the sf and terra
-packages), first write them to disk, then process them with the package's
-wrapper functions before reading the outputted results back into R. GDAL
-function arguments introduced in GDAL version 3.5.2 or earlier are supported.")
     (license license:gpl2+)))
 
 (define-public r-gdalraster

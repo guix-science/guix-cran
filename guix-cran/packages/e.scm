@@ -6406,6 +6406,41 @@ harmed by it.  Detailed reference in Imai and Li (2023)
 <doi:10.48550/@code{arXiv.2310.07973>}.")
     (license license:expat)))
 
+(define-public r-evacpath
+  (package
+    (name "r-evacpath")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "evacpath" version))
+       (sha256
+        (base32 "1bv96z947hn80bmvwx9gw1y4j3wz0yz58g2a3jvkb5wyhk5n8bdv"))))
+    (properties `((upstream-name . "evacpath")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra r-leastcostpath))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=evacpath")
+    (synopsis "Least-Cost Pedestrian Evacuation Modeling")
+    (description
+     "This package provides tools for road-constrained, least-cost pedestrian
+evacuation modeling.  The package provides reusable functions for preparing
+hazard zones, generating road-based evacuation origin points, identifying
+escape/safety points, creating slope-based conductance surfaces, calculating
+least-cost distance to safety, and converting distance outputs into
+evacuation-time polygons.  It is designed to support workflows like tsunami
+evacuation modeling while remaining adaptable to other regions and hazards.
+Tsunami-specific helpers support separate land-only hazard zones, water-combined
+escape zones, road-aware escape boundaries, and study-area inset cropping for
+quality assurance and quality control.  Methods build on Cordero et al. (2025)
+<doi:10.1007/s44367-025-00018-y>, Lewis (2021) <doi:10.1007/s10816-021-09522-w>,
+and Joseph Lewis's leastcostpath package (2023)
+<https://CRAN.R-project.org/package=leastcostpath>.")
+    (license license:expat)))
+
 (define-public r-evacluster
   (package
     (name "r-evacluster")
@@ -7500,13 +7535,13 @@ performed traditionally by the rule of proportion or with a functional approach.
 (define-public r-esviz
   (package
     (name "r-esviz")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "esviz" version))
        (sha256
-        (base32 "1d1vmwsib617yqlpc92npiwiyc4iyvhz47z4dhi0ask56ixi6bfj"))))
+        (base32 "067sdhbiag1cpl4r427dm7hhyp166nbr0n5n8np91n1ppgh5sra0"))))
     (properties `((upstream-name . "esviz")))
     (build-system r-build-system)
     (arguments
@@ -7514,6 +7549,7 @@ performed traditionally by the rule of proportion or with a functional approach.
       #:tests? #f))
     (inputs (list proj geos gdal))
     (propagated-inputs (list r-webshot2
+                             r-sp
                              r-sf
                              r-scales
                              r-s2dv
@@ -7524,6 +7560,7 @@ performed traditionally by the rule of proportion or with a functional approach.
                              r-plyr
                              r-maps
                              r-mapproj
+                             r-magrittr
                              r-kableextra
                              r-jsonlite
                              r-gtable
@@ -14841,34 +14878,6 @@ Amiri, S., Clarke, B., and Clarke, J. (2015).  Clustering categorical data via
 ensembling dissimilarity matrices.  Preprint <@code{arXiv:1506.07930>}.")
     (license license:gpl2+)))
 
-(define-public r-enrichit
-  (package
-    (name "r-enrichit")
-    (version "0.1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "enrichit" version))
-       (sha256
-        (base32 "1s7ddxpmi1x79216ib0lflkqcdc4dlcxf2s63n2i7hbjgppn1ncv"))))
-    (properties `((upstream-name . "enrichit")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-yulab-utils r-rcpp))
-    (native-inputs (list r-quarto))
-    (home-page "https://cran.r-project.org/package=enrichit")
-    (synopsis "'C++' Implementations of Functional Enrichment Analysis")
-    (description
-     "Fast implementations of functional enrichment analysis methods using C++ via
-Rcpp'.  Currently provides Over-Representation Analysis (ORA) and Gene Set
-Enrichment Analysis (GSEA).  The multilevel GSEA algorithm is derived from the
-fgsea package.  Methods are described in Subramanian et al. (2005)
-<doi:10.1073/pnas.0506580102> and Korotkevich et al. (2021)
-<doi:10.1101/060012>.")
-    (license license:artistic2.0)))
-
 (define-public r-enrichintersect
   (package
     (name "r-enrichintersect")
@@ -15034,13 +15043,13 @@ objects and coordinate reference systems.")
 (define-public r-enmpa
   (package
     (name "r-enmpa")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "enmpa" version))
        (sha256
-        (base32 "0l569kn9xv0636avd35wv02vhycnjq8a8q0fizjslrbsw6n8cq7s"))))
+        (base32 "092x3xcqhildjc2mikb4vzni5lm9kqqzj0kbni5prraz2xi217xl"))))
     (properties `((upstream-name . "enmpa")))
     (build-system r-build-system)
     (arguments
@@ -18440,48 +18449,6 @@ distribution proposed in Afify, A.Z. et al (2017) <doi:10.1214/16-BJPS322>.")
 fetching and parsing Associated Press election results.")
     (license license:expat)))
 
-(define-public r-elevatr
-  (package
-    (name "r-elevatr")
-    (version "0.99.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "elevatr" version))
-       (sha256
-        (base32 "0b41d2z58izi523ci1b9l1k0bv1sr75cwdwfx0rcw2s4cbypmbx9"))))
-    (properties `((upstream-name . "elevatr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-units
-                             r-terra
-                             r-slippymath
-                             r-sf
-                             r-raster
-                             r-purrr
-                             r-progressr
-                             r-jsonlite
-                             r-httr
-                             r-future
-                             r-furrr
-                             r-curl))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/usepa/elevatr/")
-    (synopsis "Access Elevation Data from Various APIs")
-    (description
-     "Several web services are available that provide access to elevation data.  This
-package provides access to many of those services and returns elevation data
-either as an sf simple features object from point elevation services or as a
-raster object from raster elevation services.  In future versions, elevatr will
-drop support for raster and will instead return terra objects.  Currently, the
-package supports access to the Amazon Web Services Terrain Tiles
-<https://registry.opendata.aws/terrain-tiles/>, the Open Topography Global
-Datasets API <https://opentopography.org/developers/>, and the USGS Elevation
-Point Query Service <https://apps.nationalmap.gov/epqs/>.")
-    (license license:expat)))
-
 (define-public r-electoral
   (package
     (name "r-electoral")
@@ -18844,6 +18811,48 @@ details on this framework see Srivastava and Klassen (2016,
 and algorithms see Steyer et al. (2023, <doi:10.1111/biom.13706>) and Steyer et
 al. (2023, <@code{arXiv:2305.02075>}).")
     (license license:gpl3)))
+
+(define-public r-elaplus
+  (package
+    (name "r-elaplus")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ELAplus" version))
+       (sha256
+        (base32 "0qzgfgkg196r08jwgg3l2fm4592fnzs1cvngswx2189k3jqy3q07"))))
+    (properties `((upstream-name . "ELAplus")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-stringdist
+                             r-rlang
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-rcolorbrewer
+                             r-purrr
+                             r-magrittr
+                             r-igraph
+                             r-gtools
+                             r-ggplot2
+                             r-foreach
+                             r-dplyr
+                             r-doparallel
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ELAplus")
+    (synopsis "Energy Landscape Analysis for Ecological Communities")
+    (description
+     "Energy landscape analysis (ELA) is a systematic method for analyzing an energy
+landscape represented as a weighted network.  This R package is especially
+designed to analyze ecological dynamics, i.e., transitions in community
+compositions.  For details of the analysis framework, please visit Suzuki K et
+al. (2021) <doi:10.1002/ecm.1469>.")
+    (license license:bsd-3)))
 
 (define-public r-elaborator
   (package
@@ -19936,34 +19945,6 @@ criterion (AIC), corrected Akaike's information criterion (CAIC), Mean Square
 Error (MSE), Bayesian Information Criterion (BIC) and Normalized Mean Square
 Error (NMSE).")
     (license license:gpl2)))
-
-(define-public r-eha
-  (package
-    (name "r-eha")
-    (version "2.11.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "eha" version))
-       (sha256
-        (base32 "0ps8a5q47m2yd67hap7886dwanlqlsdx1v2nh3immq61ym9zbrpv"))))
-    (properties `((upstream-name . "eha")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survival))
-    (native-inputs (list r-knitr gfortran))
-    (home-page "https://ehar.se/r/eha/")
-    (synopsis "Event History Analysis")
-    (description
-     "Parametric proportional hazards fitting with left truncation and right censoring
-for common families of distributions, piecewise constant hazards, and discrete
-models.  Parametric accelerated failure time models for left truncated and right
-censored data.  Proportional hazards models for tabular and register data.
-Sampling of risk sets in Cox regression, selections in the Lexis diagram,
-bootstrapping.  BrostrÃ¶m (2022) <doi:10.1201/9780429503764>.")
-    (license license:gpl2+)))
 
 (define-public r-egst
   (package
@@ -24600,31 +24581,6 @@ Souza et al. (2016) <doi:10.1002/hyp.10953>.")
      "Fit and sample from the ensemble model described in Spence et al (2018): \"A
 general framework for combining ecosystem models\"<doi:10.1111/faf.12310>.")
     (license license:gpl3+)))
-
-(define-public r-ecodive
-  (package
-    (name "r-ecodive")
-    (version "2.2.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ecodive" version))
-       (sha256
-        (base32 "1nkiaxhr29j663kvwy0mvwkknrmsy2qqx48dvr4cwg5nqcivayb6"))))
-    (properties `((upstream-name . "ecodive")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list r-knitr))
-    (home-page "https://cmmr.github.io/ecodive/")
-    (synopsis "Parallel and Memory-Efficient Ecological Diversity Metrics")
-    (description
-     "Computes alpha and beta diversity metrics using concurrent C threads.  Metrics
-include @code{UniFrac}', Faith's phylogenetic diversity, Bray-Curtis
-dissimilarity, Shannon diversity index, and many others.  Also parses newick
-trees into phylo objects and rarefies feature tables.")
-    (license license:expat)))
 
 (define-public r-ecodist
   (package

@@ -14423,13 +14423,13 @@ distributions.")
 (define-public r-discretetests
   (package
     (name "r-discretetests")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DiscreteTests" version))
        (sha256
-        (base32 "0mv0kc4z9ngm3nsxcxsl1cnhrdm23m6i9clnrba612nfzx244mzx"))))
+        (base32 "1d1zpnfnqh8dxlrdk9cphp258axcmfrh78ywi7dd9r1xlki6gxkf"))))
     (properties `((upstream-name . "DiscreteTests")))
     (build-system r-build-system)
     (arguments
@@ -18257,6 +18257,38 @@ processing for reading and saving DICOM images.")
      "View 2D/3D sections, contour plots, mesh of excursion sets for computer
 experiments designs, surrogates or test functions.")
     (license license:gpl3)))
+
+(define-public r-dicerclust
+  (package
+    (name "r-dicerclust")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DICErClust" version))
+       (sha256
+        (base32 "1v5j3fy6dab4yrjs3h74q6rd7pmmnqzwmsr1sng7z061lmdka23w"))))
+    (properties `((upstream-name . "DICErClust")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-torch r-proc r-ggplot2 r-argparser))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=DICErClust")
+    (synopsis "Deep Significance Clustering for Clinical Risk Stratification")
+    (description
+     "We provide an R implementation of Deep Significance Clustering (DICE), a
+self-supervised learning framework designed to identify clinically meaningful
+and risk-stratified patient subgroups from electronic health record (EHR) data.
+DICE jointly optimizes deep representation learning, clustering, and outcome
+prediction while enforcing statistical significance between predicted outcomes
+and cluster membership.  This integrated optimization produces subgroups that
+are both clinically coherent and predictive, addressing a gap where traditional
+unsupervised clustering methods and supervised risk prediction models alone may
+fail to generate actionable clinical groupings.  See Huang et al. (2021)
+<doi:10.1093/jamia/ocab203>.")
+    (license license:expat)))
 
 (define-public r-dicer
   (package
@@ -23620,6 +23652,34 @@ demulticoder R package see Sudermann et al. (2025)
 <doi:10.1094/PHYTO-02-25-0043-FI>.")
     (license license:expat)))
 
+(define-public r-demovuln
+  (package
+    (name "r-demovuln")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "demovuln" version))
+       (sha256
+        (base32 "1f79kaqc41ha25bzyrmfdwrvvgb5a27yjasqbs0q55xiyasvn1ap"))))
+    (properties `((upstream-name . "demovuln")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/agimenezromero/demovuln-r")
+    (synopsis "Demographic Vulnerability Metrics for Matrix Population Models")
+    (description
+     "Simulates temporally structured perturbations in matrix population models and
+computes population reduction and integrated demographic vulnerability across
+perturbation regimes.  Perturbations can be applied to adult survival, juvenile
+survival, fecundity, all demographic entries, or user-defined matrix elements.
+The package provides tools to simulate individual perturbation trajectories,
+evaluate perturbation grids, and summarize demographic vulnerability in
+structured populations.")
+    (license license:expat)))
+
 (define-public r-demoshiny
   (package
     (name "r-demoshiny")
@@ -27718,6 +27778,58 @@ references for details on the methods: Vickers (2006)
 Pfeiffer (2020) <doi:10.1002/bimj.201800240>.")
     (license license:expat)))
 
+(define-public r-dcurvature
+  (package
+    (name "r-dcurvature")
+    (version "0.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Dcurvature" version))
+       (sha256
+        (base32 "05pjz2rhhnxrpmsfypdxq621lp0pfh49y40bwcmlblpmj1sq9syp"))))
+    (properties `((upstream-name . "Dcurvature")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny r-readxl r-rcpp))
+    (home-page "https://cran.r-project.org/package=Dcurvature")
+    (synopsis "Discrete Curvature with 'shiny' Explorer")
+    (description
+     "This package implements discrete curvature estimation for ordered planar point
+sequences using circumcenter geometry on consecutive triplets, exposed through
+compiled C plus plus (C++) code via Rcpp for speed and numerical robustness.
+The package is useful for objective elbow detection in multivariate workflows,
+especially principal component analysis (PCA), where selecting the number of
+retained components can be subjective.  It provides a shiny interface that
+supports upload of raw datasets or explained-variance tables, computes
+Kaiser-Meyer-Olkin (KMO) sampling-adequacy diagnostics, evaluates individual and
+cumulative variance curves, and reports curvature- based decision rules (m* and
+m**) with visual summaries for reproducible component-selection decisions.
+References: Arney et al. (2001); Axler (2024) <doi:10.1007/978-3-031-41026-0>;
+Bjorklund (2019) <doi:10.1111/evo.13835>; Burden and Faires (2015); Chang et al.
+(2023) <https://CRAN.R-project.org/package=shiny>; Christensen (2019); Cui
+(2020) <doi:10.18637/jss.v040.i08>; Eddelbuettel and Sanderson (2014)
+<doi:10.1016/j.csda.2013.02.005>; Engelke et al. (2023)
+<doi:10.1016/j.jseint.2023.04.010>; Gniazdowski (2021)
+<doi:10.26348/znwwsi.24.35>; Haynes et al. (2017); Jameel and Al-Salami (2023)
+<doi:10.24086/cuejhss.v7n1y2023.pp121-125>; Jolliffe (2002); Jolliffe and Cadima
+(2016) <doi:10.1098/rsta.2015.0202>; Kaiser (1974); Lehnert et al. (2019)
+<doi:10.18637/jss.v089.i12>; Ma and Dai (2011) <doi:10.1093/bib/bbq090>;
+Milligan (1995); Onumanyi et al. (2022) <doi:10.3390/app12157515>; Park (2010);
+Revelle (2024) <https://CRAN.R-project.org/package=psych>; Rodionova et al.
+(2021) <doi:10.1016/j.chemolab.2021.104304>; Sen and Cohen (2025)
+<doi:10.1177/01466216251344288>; Serneels and Verdonck (2008)
+<doi:10.1016/j.csda.2007.05.024>; Shi et al. (2021)
+<doi:10.1186/s13638-021-01910-w>; Shaukat et al. (2016)
+<doi:10.1515/eko-2016-0014>; Syakur et al. (2018)
+<doi:10.1088/1757-899X/336/1/012017>; Wickham and Bryan (2023)
+<https://CRAN.R-project.org/package=readxl>; Wu et al. (2017)
+<doi:10.1088/1755-1315/61/1/012054>; Youssef et al. (2023)
+<doi:10.21303/2461-4262.2023.002582>.")
+    (license license:expat)))
+
 (define-public r-dcur
   (package
     (name "r-dcur")
@@ -31278,13 +31390,13 @@ and ANCOVA.")
 (define-public r-dataretrieval
   (package
     (name "r-dataretrieval")
-    (version "2.7.24")
+    (version "2.7.25")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dataRetrieval" version))
        (sha256
-        (base32 "1fq5bswpjzanqpxff1yrqnqsny54bja5ashh99ib2v8zz8zbvsja"))))
+        (base32 "10blifqp1qsgbp7f1rs4qp0pg5j9lbwr5yi17nrwc6s74100xm7y"))))
     (properties `((upstream-name . "dataRetrieval")))
     (build-system r-build-system)
     (arguments

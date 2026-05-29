@@ -8974,6 +8974,40 @@ added to facilitate example.  For more information refer Singh, R.K. and
 Chaudhary, B.D. (1977, ISBN:81766330709788176633079).")
     (license license:gpl3)))
 
+(define-public r-varguidts
+  (package
+    (name "r-varguidts")
+    (version "0.1.13")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "varGuidTS" version))
+       (sha256
+        (base32 "0k16v7rfzsqfpzr6pvfdxnw9hj5wg6qpbar9n60wx81rjsvrfg61"))))
+    (properties `((upstream-name . "varGuidTS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-glmnet))
+    (home-page "https://github.com/zionwzz/variance-guided-risk-demo")
+    (synopsis
+     "Variance-Guided Time-Series Modeling for Temporal Risk Detection")
+    (description
+     "Fits balanced-panel autoregressive models with conditional heteroscedasticity
+for temporal risk detection.  The main estimator combines autoregressive
+exogenous mean modeling with GARCH-X variance modeling, subject-specific
+baseline terms, shared population coefficients, and L1 penalization for
+high-dimensional covariates.  The package returns conditional mean and variance
+estimates, coefficient summaries, simulations, and exceedance-based risk scores
+defined as estimated conditional threshold-exceedance probabilities.  The
+implementation builds on the lasso of Tibshirani (1996)
+<doi:10.1111/j.2517-6161.1996.tb02080.x>, generalized autoregressive conditional
+heteroscedasticity of Bollerslev (1986) <doi:10.1016/0304-4076(86)90063-1>, and
+L1-regularized high-dimensional time-series modeling of Medeiros and Mendes
+(2016) <doi:10.1016/j.jeconom.2015.10.011>.")
+    (license license:expat)))
+
 (define-public r-varest
   (package
     (name "r-varest")

@@ -14192,13 +14192,13 @@ call @code{NetMHCIIpan} from R.")
 (define-public r-netmeta
   (package
     (name "r-netmeta")
-    (version "3.4-0")
+    (version "3.5-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "netmeta" version))
        (sha256
-        (base32 "1y9mbmlp3rapyhamhzd80babw9pbfrsap0k203s95irbvnsfqkl0"))))
+        (base32 "1wvld2v07afc28wjyig6f1lnsh2fm33fpz8adkrgw74nb542v8am"))))
     (properties `((upstream-name . "netmeta")))
     (build-system r-build-system)
     (arguments
@@ -14208,7 +14208,9 @@ call @code{NetMHCIIpan} from R.")
                   (add-after 'unpack 'set-HOME
                     (lambda _
                       (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-mvtnorm
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-mvtnorm
                              r-metafor
                              r-meta
                              r-matrix
@@ -14216,6 +14218,7 @@ call @code{NetMHCIIpan} from R.")
                              r-magrittr
                              r-magic
                              r-igraph
+                             r-ggrepel
                              r-ggplot2
                              r-dplyr
                              r-colorspace))
@@ -14239,19 +14242,21 @@ Surface under the cumulative ranking curve (SUCRA) (Salanti et al., 2013)
 (frequentist analogue of SUCRAs without resampling) according to RÃ¼cker &
 Schwarzer (2015) <doi:10.1186/s12874-015-0060-8>; - split direct and indirect
 evidence to check consistency (Dias et al., 2010) <doi:10.1002/sim.3767>,
-(Efthimiou et al., 2019) <doi:10.1002/sim.8158>; - league table with network
-meta-analysis results; - comparison-adjusted funnel plot (Chaimani & Salanti,
-2012) <doi:10.1002/jrsm.57>; - net heat plot and design-based decomposition of
-Cochran's Q according to Krahn et al. (2013) <doi:10.1186/1471-2288-13-35>; -
-measures characterizing the flow of evidence between two treatments by KÃ¶nig et
-al. (2013) <doi:10.1002/sim.6001>; - automated drawing of network graphs
-described in RÃ¼cker & Schwarzer (2016) <doi:10.1002/jrsm.1143>; - partial order
-of treatment rankings ('poset') and Hasse diagram for poset (Carlsen &
-Bruggemann, 2014) <doi:10.1002/cem.2569>; (RÃ¼cker & Schwarzer, 2017)
-<doi:10.1002/jrsm.1270>; - contribution matrix as described in Papakonstantinou
-et al. (2018) <doi:10.12688/f1000research.14770.3> and Davies et al. (2022)
-<doi:10.1002/sim.9346>; - network meta-regression with a single continuous or
-binary covariate; - subgroup network meta-analysis.")
+(Efthimiou et al., 2019) <doi:10.1002/sim.8158>; - scatter plot to visualize
+local inconsistency (Wilson et al., 2026) <doi:10.1017/rsm.2026.10082>; - league
+table with network meta-analysis results; - comparison-adjusted funnel plot
+(Chaimani & Salanti, 2012) <doi:10.1002/jrsm.57>; - net heat plot and
+design-based decomposition of Cochran's Q according to Krahn et al. (2013)
+<doi:10.1186/1471-2288-13-35>; - measures characterizing the flow of evidence
+between two treatments by KÃ¶nig et al. (2013) <doi:10.1002/sim.6001>; -
+automated drawing of network graphs described in RÃ¼cker & Schwarzer (2016)
+<doi:10.1002/jrsm.1143>; - partial order of treatment rankings ('poset') and
+Hasse diagram for poset (Carlsen & Bruggemann, 2014) <doi:10.1002/cem.2569>;
+(RÃ¼cker & Schwarzer, 2017) <doi:10.1002/jrsm.1270>; - contribution matrix as
+described in Papakonstantinou et al. (2018) <doi:10.12688/f1000research.14770.3>
+and Davies et al. (2022) <doi:10.1002/sim.9346>; - network meta-regression with
+a single continuous or binary covariate (Kwarteng et al., 2026)
+<doi:10.21203/rs.3.rs-8235913/v1>; - subgroup network meta-analysis.")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -15161,13 +15166,13 @@ This is useful for hierarchical choices (e.g. continent, country, city).")
 (define-public r-nestedlogit
   (package
     (name "r-nestedlogit")
-    (version "0.4.0")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nestedLogit" version))
        (sha256
-        (base32 "0y6fbyppycz5pahbc1qan0yg9yfar484770rignkz8psrjvgvf4j"))))
+        (base32 "12q7cf3w1xhmwch632mh2sq5mz8ra7d4ccd0yydig1kagh6193zx"))))
     (properties `((upstream-name . "nestedLogit")))
     (build-system r-build-system)
     (arguments
@@ -18379,13 +18384,13 @@ automatic bases aic and bic lags selection of independent variables proposed by
 (define-public r-nara
   (package
     (name "r-nara")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nara" version))
        (sha256
-        (base32 "1zvn2c0h993hv5a2v4xdxbyl9i0kxrw47phbzrq8bc7iyg760cp8"))))
+        (base32 "0jd9xq7wxr9cfi7b6vl289gkq6d0qr9h0zxk70sbazx9nin5m4iw"))))
     (properties `((upstream-name . "nara")))
     (build-system r-build-system)
     (arguments

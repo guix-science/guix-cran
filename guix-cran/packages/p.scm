@@ -2525,33 +2525,6 @@ of overlap patterns.  Based on the method described in Becker et al. (2003)
 <doi:10.1186/1471-2105-4-61>.")
     (license license:expat)))
 
-(define-public r-publish
-  (package
-    (name "r-publish")
-    (version "2025.07.24")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Publish" version))
-       (sha256
-        (base32 "1ay89c0ldxnavp9dlphawjcfbi3291wksdsfgrjv8x1wn7ziy57y"))))
-    (properties `((upstream-name . "Publish")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survival r-prodlim r-multcomp r-lava
-                             r-data-table))
-    (home-page "https://cran.r-project.org/package=Publish")
-    (synopsis
-     "Format Output of Various Routines in a Suitable Way for Reports and Publication")
-    (description
-     "This package provides a bunch of convenience functions that transform the
-results of some basic statistical analyses into table format nearly ready for
-publication.  This includes descriptive tables, tables of logistic regression
-and Cox regression results as well as forest plots.")
-    (license license:gpl2+)))
-
 (define-public r-publipha
   (package
     (name "r-publipha")
@@ -7874,30 +7847,6 @@ Truscott (2024)
 <https://joeornstein.github.io/publications/ornstein-blasingame-truscott.pdf>.")
     (license license:expat)))
 
-(define-public r-prompter
-  (package
-    (name "r-prompter")
-    (version "1.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "prompter" version))
-       (sha256
-        (base32 "1zm1sj22k78f5m1s20b440pgb5w9fjbmyvkcz491h8w2kx728nhp"))))
-    (properties `((upstream-name . "prompter")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-shiny))
-    (home-page "https://prompter.etiennebacher.com")
-    (synopsis "Add Tooltips in 'Shiny' Apps with 'Hint.css'")
-    (description
-     "In Shiny apps, it is sometimes useful to store information on a particular item
-in a tooltip.  Prompter allows you to easily create such tooltips, using
-Hint.css'.")
-    (license license:expat)))
-
 (define-public r-prompt
   (package
     (name "r-prompt")
@@ -10949,30 +10898,6 @@ for speed and convenience.")
 phylogenetic trees annotated with the taxonomies of the predicted amplification
 products.")
     (license license:gpl2)))
-
-(define-public r-primer
-  (package
-    (name "r-primer")
-    (version "1.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "primer" version))
-       (sha256
-        (base32 "0qs4bzh80a6058v3s25z0w64wqpscgcciqbyqdifixl51z2qadf4"))))
-    (properties `((upstream-name . "primer")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr r-ggplot2 r-desolve))
-    (home-page "https://cran.r-project.org/package=primer")
-    (synopsis "Functions and Data for the Book, a Primer of Ecology with R")
-    (description
-     "This package provides functions are primarily functions for systems of ordinary
-differential equations, difference equations, and eigenanalysis and projection
-of demographic matrices; data are for examples.")
-    (license license:gpl3)))
 
 (define-public r-primeplus
   (package
@@ -27657,6 +27582,30 @@ coefficients to new datasets; it does not itself estimate spline models or
 principal components.")
     (license license:expat)))
 
+(define-public r-pizzarr
+  (package
+    (name "r-pizzarr")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pizzarr" version))
+       (sha256
+        (base32 "14vay91bv101sg3wzs48c846dbw7qd0ydck2qri43fd7d6hcqkzx"))))
+    (properties `((upstream-name . "pizzarr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr r-r6 r-qs2 r-memoise r-jsonlite))
+    (native-inputs (list r-knitr))
+    (home-page "https://zarr.dev/pizzarr/")
+    (synopsis "Slice into 'Zarr' Arrays")
+    (description
+     "An implementation of chunked, compressed, N-dimensional arrays for R. Zarr spec
+V2 (2024) <doi:10.5281/zenodo.11320255>.")
+    (license license:expat)))
+
 (define-public r-pixr
   (package
     (name "r-pixr")
@@ -32711,20 +32660,20 @@ circular analysis are based on methods from - Batschelet (1981)
 (define-public r-pharmr
   (package
     (name "r-pharmr")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pharmr" version))
        (sha256
-        (base32 "0h7fznnhp69h9mar1hdmd61rdc7lkcqxg1yvm8cm9s90ikpkcab0"))))
+        (base32 "03jp1s85pmsiqf40wy60cyfznb95p78jlrprb7gvd7m48v7xkbkq"))))
     (properties `((upstream-name . "pharmr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list python))
-    (propagated-inputs (list r-vegawidget r-reticulate r-cli))
+    (propagated-inputs (list r-reticulate r-htmltools r-cli))
     (home-page "https://github.com/pharmpy/pharmr")
     (synopsis "Interface to the 'Pharmpy' 'Pharmacometrics' Library")
     (description

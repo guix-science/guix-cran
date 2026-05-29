@@ -2963,6 +2963,39 @@ midfield.  Furthermore, this package contains functions for computing the
 optimal usage of hardness in a game.")
     (license license:gpl2+)))
 
+(define-public r-unitcm
+  (package
+    (name "r-unitcm")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "unitcm" version))
+       (sha256
+        (base32 "0zd9lmzvwhr33iwjy5l8b6lii9s0jlklw13m64yg12i3fymwncn9"))))
+    (properties `((upstream-name . "unitcm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-httr2
+                             r-glue
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://zx122ty.github.io/UniTCM_R_Package/")
+    (synopsis "Client for the 'UniTCM' Traditional Chinese Medicine Platform")
+    (description
+     "This package provides functions to query the @code{UniTCM} API
+(<https://unitcm.qfxulab.com>), covering herb exploration, compound/ADMET
+(Absorption, Distribution, Metabolism, Excretion, and Toxicity) data,
+disease-formula associations, Traditional Chinese Medicine (TCM) ontology,
+transcriptomics, and gene-disease analysis (MIDAS, Mining Integrated Disease
+Association Sources).")
+    (license license:expat)))
+
 (define-public r-unitcircle
   (package
     (name "r-unitcircle")
