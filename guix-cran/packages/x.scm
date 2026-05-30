@@ -1935,13 +1935,13 @@ The reference for the methods implemented here is Chatterjee, Sourav (2020)
 (define-public r-xiacf
   (package
     (name "r-xiacf")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xiacf" version))
        (sha256
-        (base32 "01wi2p0kaf2i6msh21f3ydn5gklq8ghgbdkhlxfx85hsbpxvl13c"))))
+        (base32 "11k1swk2riql9qskw9lklm9vsl8dxzs3p4z4lkvp0mhv8a9vmqlx"))))
     (properties `((upstream-name . "xiacf")))
     (build-system r-build-system)
     (arguments
@@ -1961,13 +1961,15 @@ The reference for the methods implemented here is Chatterjee, Sourav (2020)
     (description
      "Computes Chatterjee's non-parametric correlation coefficient for time series
 data.  It extends the original metric to time series analysis by providing the
-Xi-Autocorrelation Function (Xi-ACF) and Xi-Cross-Correlation Function (Xi-CCF).
- The package allows users to test for non-linear dependence using Iterative
-Amplitude Adjusted Fourier Transform (IAAFT) surrogate data with strict
-Family-Wise Error Rate ('FWER') control via Max-statistic approaches.
-Methodologies are based on Chatterjee (2021) <doi:10.1080/01621459.2020.1758115>
-and surrogate data testing methods by Schreiber and Schmitz (1996)
-<doi:10.1103/@code{PhysRevLett.77.635>}.")
+univariate Xi-Autocorrelation Function (Xi-ACF), directional
+Xi-Cross-Correlation Function (Xi-CCF), and multivariate network evaluation
+matrices.  The package allows users to test for non-linear dependence using
+Iterative Amplitude Adjusted Fourier Transform (IAAFT) and Multivariate IAAFT
+(MIAAFT) surrogate data with strict Family-Wise Error Rate ('FWER') control via
+Max-statistic approaches.  Methodologies are based on Chatterjee (2021)
+<doi:10.1080/01621459.2020.1758115>, surrogate data testing methods by Schreiber
+and Schmitz (1996) <doi:10.1103/@code{PhysRevLett.77.635>}, and local structural
+identification by Watanabe (2026) <doi:10.2139/ssrn.6829431>.")
     (license license:expat)))
 
 (define-public r-xhaz

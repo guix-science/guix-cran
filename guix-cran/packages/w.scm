@@ -11140,20 +11140,20 @@ strings of text into numeric vectors and rectangular data structures.")
 (define-public r-wacs
   (package
     (name "r-wacs")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WACS" version))
        (sha256
-        (base32 "09fmdlpb99q9dw17lwp0bwpklgvgiqq7bfs9ryx5r54m0niklr9d"))))
+        (base32 "1kd5vlbp9vqixrps3ym3z1hlqpy5si05j5465h5a6sycq3j6grpz"))))
     (properties `((upstream-name . "WACS")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tmvtnorm r-mvtnorm r-mnormt r-mclust))
-    (home-page "https://miat.inrae.fr/site/Ronan_TREPOS")
+    (home-page "https://forge.inrae.fr/rtrepos/weathergen")
     (synopsis
      "Multivariate Weather-State Approach Conditionally Skew-Normal Generator")
     (description

@@ -6289,19 +6289,20 @@ Company (2019).")
 (define-public r-dream
   (package
     (name "r-dream")
-    (version "1.1.1")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dream" version))
        (sha256
-        (base32 "1qm9jigkj2v2ki1n3amvfb3vsydrfvdknbf2cp7swgngqpxml86g"))))
+        (base32 "0n3lsaaam1lpv89y4ddlyfipigj9vk7szkmpf4k82bhvxf3wnbfa"))))
     (properties `((upstream-name . "dream")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpp
+    (propagated-inputs (list r-rcpparmadillo
+                             r-rcpp
                              r-lifecycle
                              r-foreach
                              r-doparallel
@@ -16228,19 +16229,24 @@ function.")
 (define-public r-dipalm
   (package
     (name "r-dipalm")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DiPALM" version))
        (sha256
-        (base32 "0y6nzf7lkf0znp88r7k0myf5k1c7cqcc2gh5kgzj5q8savhr90ax"))))
+        (base32 "1qvlh5gq5d5b8f4pwj95bbsb2s7hxydgj43w68qm9g4h6a2q3hrz"))))
     (properties `((upstream-name . "DiPALM")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-wgcna r-limma r-ggplot2))
+    (propagated-inputs (list r-wgcna
+                             r-pwalign
+                             r-limma
+                             r-hashr
+                             r-ggplot2
+                             r-biostrings))
     (home-page "https://cran.r-project.org/package=DiPALM")
     (synopsis "Differential Pattern Analysis via Linear Modeling")
     (description

@@ -111,13 +111,13 @@ returned by the @code{BinaryDosage::getbdinfo()} routine.")
 (define-public r-gxeprs
   (package
     (name "r-gxeprs")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GxEprs" version))
        (sha256
-        (base32 "1yv4b99mm1az298idvsb9czx0cgvq5032dv0k3wwcsgc5bk7hwqw"))))
+        (base32 "01m866xvq4ql2ks5a08vc0xl2wi2bm2k00c85v905asqaz1b7vvv"))))
     (properties `((upstream-name . "GxEprs")))
     (build-system r-build-system)
     (arguments
@@ -403,6 +403,35 @@ with 2 indices (Renzetti et al. (2023) <doi:10.3389/fpubh.2023.1289579>) for
 continuous, binomial, multinomial, Poisson, quasi-Poisson and negative binomial
 outcomes.")
     (license license:gpl2+)))
+
+(define-public r-gwpr-light
+  (package
+    (name "r-gwpr-light")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GWPR.light" version))
+       (sha256
+        (base32 "1fd3vym8yz335q4vkv1gw9h2nfsg5lkfj86r8xsjkg12hmzprynh"))))
+    (properties `((upstream-name . "GWPR.light")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sf r-plm r-lmtest r-glmmtmb r-fixest))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/MichaelChaoLi-cpu/GWPR.light")
+    (synopsis "Geographically Weighted Panel Regression")
+    (description
+     "This package provides a modern, first implementation of Geographically Weighted
+Panel Regression (GWPR) for spatial panel data.  The package provides a unified
+public API supporting Gaussian and binomial family models, within/pooling/random
+panel effects, three bandwidth search strategies (grid, Stochastic Gradient
+Descent, random), five kernel functions, and optional parallel execution via the
+future framework.  Diagnostic tools include spatial Moran's I, local F-test,
+Hausman test, and Lagrange Multiplier test.")
+    (license license:agpl3+)))
 
 (define-public r-gwpcormapper
   (package
@@ -6490,25 +6519,55 @@ based on Global Human Settlement Layer population data, and calculating a set of
 greenspace morphology metrics at patch and landscape levels.")
     (license license:gpl3)))
 
+(define-public r-greenreg
+  (package
+    (name "r-greenreg")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GREENREG" version))
+       (sha256
+        (base32 "19k667dgp6in8a6a9bnjysi0varg4x1977q2dciv5shpm4a7kx14"))))
+    (properties `((upstream-name . "GREENREG")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-lmtest r-ggrepel r-ggplot2))
+    (home-page "https://cran.r-project.org/package=GREENREG")
+    (synopsis "Tool for Statistical and Environmental Analysis")
+    (description
+     "This package provides a set of accessible and automated functions to apply
+statistical models such as Simple Linear Regression (RLS, from the Spanish
+RegresiÃ³n Lineal Simple'), Multiple Linear Regression (RLM, from the Spanish
+RegresiÃ³n Lineal MÃºltiple'), Generalized Linear Models (GLM), and time series
+analysis through Autoregressive Integrated Moving Average (ARIMA) models.
+Designed to support teaching at the Universidad AutÃ³noma Chapingo, it
+facilitates results interpretation and assumption validation through automatic
+graphical diagnostics.  Methods for regression and time series are based on
+Montgomery et al. (2021, ISBN:978-1119570141) and Box & Jenkins (1970,
+ISBN:978-0816211043).")
+    (license license:gpl3)))
+
 (define-public r-greenr
   (package
     (name "r-greenr")
-    (version "0.0.1.6")
+    (version "0.0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "greenR" version))
        (sha256
-        (base32 "04blscv11zsnfs1bf4b7izhiivjd2aia72rgks55ri8vnimr7hyb"))))
+        (base32 "0ad35rnqn0x1jnanrvgd7qn4m76z8p2wmfyfirxl6c2kxnjsrb4f"))))
     (properties `((upstream-name . "greenR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-viridislite
-                             r-viridis
                              r-units
-                             r-tmap
+                             r-tidyterra
                              r-tibble
                              r-terra
                              r-superpixelimagesegmentation
@@ -6520,16 +6579,19 @@ greenspace morphology metrics at patch and landscape levels.")
                              r-scales
                              r-rstudioapi
                              r-rstac
+                             r-rcpp
                              r-rcolorbrewer
                              r-purrr
                              r-progress
+                             r-plotly
                              r-patchwork
                              r-osrm
                              r-osmdata
                              r-openimager
                              r-moments
-                             r-mapview
+                             r-maptiles
                              r-magrittr
+                             r-leaflet-extras
                              r-leaflet
                              r-jsonlite
                              r-ineq
@@ -6538,14 +6600,19 @@ greenspace morphology metrics at patch and landscape levels.")
                              r-htmlwidgets
                              r-htmltools
                              r-h3jsr
+                             r-ggspatial
                              r-ggplot2
+                             r-exactextractr
+                             r-elevatr
                              r-duckdb
                              r-dt
                              r-dplyr
                              r-dbi
                              r-data-table
                              r-curl
-                             r-classint))
+                             r-cowplot
+                             r-classint
+                             r-arrow))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=greenR")
     (synopsis "Green Index Quantification, Analysis and Visualization")
@@ -8423,30 +8490,6 @@ package <https://CRAN.R-project.org/package=randnet>.  For more details, see the
 \"proposed method\" section of Liu, Bi, and Li (2025)
 <doi:10.48550/@code{arXiv.2507.00402>}.")
     (license license:gpl3+)))
-
-(define-public r-grand
-  (package
-    (name "r-grand")
-    (version "0.9.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "grand" version))
-       (sha256
-        (base32 "0lrwzrpd15241q6wb78q3bx12zxfmqgxn2i9sa1bbaflakdkml8r"))))
-    (properties `((upstream-name . "grand")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-igraph))
-    (home-page "https://github.com/zpneal/grand")
-    (synopsis "Guidelines for Reporting About Network Data")
-    (description
-     "Interactively applies the Guidelines for Reporting About Network Data (GRAND) to
-an igraph object, and generates a uniform narrative or tabular description of
-the object.")
-    (license license:gpl3)))
 
 (define-public r-gramquad
   (package
@@ -23229,13 +23272,13 @@ issue.")
 (define-public r-ggforestplotr
   (package
     (name "r-ggforestplotr")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggforestplotR" version))
        (sha256
-        (base32 "1hypdp4wf8z90vllq774844rd5icsg8xzzm76pa1d8y8zbl5jrnz"))))
+        (base32 "0hb3x6vpcx5kc2mf3lj6nyaq7mjidn8mafaagyzm8qk0zax4210c"))))
     (properties `((upstream-name . "ggforestplotR")))
     (build-system r-build-system)
     (arguments
@@ -29506,13 +29549,13 @@ functions allow for seamless integration sf, @code{DuckDB} and Arrow.")
 (define-public r-geobounds
   (package
     (name "r-geobounds")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geobounds" version))
        (sha256
-        (base32 "0akckcbpk4jfli8zpy2dqsnha8p6nyawkpzl2226srippn6g1vdr"))))
+        (base32 "0bybzwhkdzamg7fvx59jc9sbng3y1zw750gldng0h491d6ndwmyy"))))
     (properties `((upstream-name . "geobounds")))
     (build-system r-build-system)
     (arguments
@@ -29521,12 +29564,13 @@ functions allow for seamless integration sf, @code{DuckDB} and Arrow.")
     (propagated-inputs (list r-sf r-httr2 r-dplyr r-countrycode r-cli))
     (native-inputs (list r-quarto))
     (home-page "https://dieghernan.github.io/geobounds/")
-    (synopsis "Download Map Data from 'geoBoundaries'")
+    (synopsis "Download Administrative Boundary Data from 'geoBoundaries'")
     (description
-     "This package provides tools to download data from @code{geoBoundaries}
-<https://www.geoboundaries.org/>.  Several administration levels available.  See
-Runfola, D. et al. (2020) @code{geoBoundaries}: A global database of political
-administrative boundaries.  PLOS ONE 15(4): 1-9.
+     "This package provides tools for downloading administrative boundary data from
+@code{geoBoundaries} <https://www.geoboundaries.org/> across multiple
+administrative levels.  Boundary data are returned as sf objects for mapping and
+spatial analysis.  See Runfola, D. et al. (2020) \"@code{geoBoundaries}: A global
+database of political administrative boundaries.\" PLOS ONE 15(4), e0231866.
 <doi:10.1371/journal.pone.0231866>.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
@@ -34175,13 +34219,13 @@ scalable, low-level I/O, or prefer a direct GDAL API.")
 (define-public r-gdalcubes
   (package
     (name "r-gdalcubes")
-    (version "0.7.3")
+    (version "0.7.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gdalcubes" version))
        (sha256
-        (base32 "0rpmb6mxdkyb7c61f068bgd92m6krxkba74wl5awdvgsrjv7fw5b"))))
+        (base32 "0agbh485yqgp4gmdf1a10dlfnkhrjmykb641iwyz8f0dl5rmr1jq"))))
     (properties `((upstream-name . "gdalcubes")))
     (build-system r-build-system)
     (arguments

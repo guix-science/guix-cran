@@ -11555,6 +11555,35 @@ Policastro et al. (2024) \"INet for network integration\"
 The package consists of wrappers for functions from the hdi package.")
     (license license:gpl2+)))
 
+(define-public r-inequantiles
+  (package
+    (name "r-inequantiles")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "inequantiles" version))
+       (sha256
+        (base32 "17dj0cidxzvqnzlyrpz55ilq9q9xmmp8yq7h0pmxdlxk6zy9c0yi"))))
+    (properties `((upstream-name . "inequantiles")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rdpack))
+    (native-inputs (list r-knitr))
+    (home-page "https://silviascarpa.github.io/inequantiles/")
+    (synopsis "Quantile-Based Inequality Indicators for Complex Survey Data")
+    (description
+     "Estimates quantile-based inequality indicators from complex survey data,
+including the quantile ratio index (QRI), quintile share Ratio (QSR), Palma
+ratio, and percentile ratios, together with the Gini coefficient.  Influence
+functions are provided for linearization and variance estimation, along with a
+rescaled bootstrap for complex sampling designs.  Estimation from grouped data
+is also supported.  See Scarpa et al. (2025) <doi:10.1093/jssam/smaf024> for
+details.")
+    (license license:expat)))
+
 (define-public r-inequality
   (package
     (name "r-inequality")

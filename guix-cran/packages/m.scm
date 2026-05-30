@@ -4380,6 +4380,35 @@ blueprint, you can model your data across all possible pipelines and summarize
 the results.")
     (license license:expat)))
 
+(define-public r-multiswc
+  (package
+    (name "r-multiswc")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "multiswc" version))
+       (sha256
+        (base32 "14hx1dky7aif8x59k0cgmlkbjlk6sp4yzky45di6xvnkwjkp6v2k"))))
+    (properties `((upstream-name . "multiswc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival r-nnet))
+    (home-page "https://github.com/tonyhbc/multiswc")
+    (synopsis
+     "Multi-Regime Marginal Structural Cox Model for Multi-Way Treatment Switching in Oncology Clinical Trials with Survival Endpoints")
+    (description
+     "Estimate the causal effect of sustained treatment strategies on overall survival
+in clinical trials with possible treatment crossover and switch to subsequent
+therapy.  Simulate faithful longitudinal clinical trials data with survival
+endpoints and multi-way treatment switches allowing for time-dependent
+prognostic factors.  For more on methodological background, please see: Keogh
+and colleagues (2021) <doi:10.1002/bimj.202000040> and Suarez and colleagues
+(2008) <doi:10.1016/j.jclinepi.2007.11.007>.")
+    (license license:expat)))
+
 (define-public r-multistatm
   (package
     (name "r-multistatm")
@@ -18146,6 +18175,35 @@ concept of modularity maximization.")
 calculate standard errors.  This is an R-based version of the margins command
 from Stata.")
     (license license:gpl3)))
+
+(define-public r-modlr
+  (package
+    (name "r-modlr")
+    (version "0.1.29")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ModLR" version))
+       (sha256
+        (base32 "02n7lzwqh859zzww1f3k6xlv4vn3sb4wnwwjsjyc8zb5mpj4c4lk"))))
+    (properties `((upstream-name . "ModLR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sandwich r-rlang r-lmtest r-ggplot2 r-broom))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ahdar1/ModLR")
+    (synopsis "Information-Theoretic Approach for Moderation Analysis")
+    (description
+     "This package provides a robust implementation of information-theoretic
+moderation analysis using multi-model inference based on Akaike's Information
+Criterion (AIC) and its small-sample corrected form (Corrected AIC).  The
+package enables researchers to compare competing model specifications and helps
+distinguish true interaction effects from nonlinear relationships that may
+produce spurious moderation.  The methods build on Daryanto (2019)
+<doi:10.1016/j.jbusres.2019.06.012>.")
+    (license license:expat)))
 
 (define-public r-modistools
   (package
@@ -35814,13 +35872,13 @@ extracted directly from BSseq and methrix objects.")
 (define-public r-methevolsim
   (package
     (name "r-methevolsim")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MethEvolSIM" version))
        (sha256
-        (base32 "1vji8k4f27biwfj56k41j3y1wsh6jxfj490y1kcm75k4nmjy94xi"))))
+        (base32 "0jwykcw8x93vqqz43lwixi9yx190dcp5nx28xqx91fzkdx2mph2h"))))
     (properties `((upstream-name . "MethEvolSIM")))
     (build-system r-build-system)
     (arguments
@@ -51667,13 +51725,13 @@ plugin and the ability of downloading and processing static tiles.")
 (define-public r-mapsf
   (package
     (name "r-mapsf")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapsf" version))
        (sha256
-        (base32 "10jg12y7225ylrrmhyv78hxs7q596qm5292k1q7pwk1bi6n9vspw"))))
+        (base32 "1fibmjx8pcazglzz031knc0c5614smyjyci8606kic6h6gb7b4jk"))))
     (properties `((upstream-name . "mapsf")))
     (build-system r-build-system)
     (arguments
@@ -55901,97 +55959,6 @@ estimates of GDP per capita for all countries in the world between AD 1 and
 2016.  See <https://www.rug.nl/ggdc/historicaldevelopment/maddison/> for more
 information.")
     (license license:cc0)))
-
-(define-public r-madantextnetwork
-  (package
-    (name "r-madantextnetwork")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MadanTextNetwork" version))
-       (sha256
-        (base32 "0691pwsgbmy2fmvcf6adqgasrdf70n5g0cgy6663wfavkdx5nni2"))))
-    (properties `((upstream-name . "MadanTextNetwork")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xlsx
-                             r-visnetwork
-                             r-udpipe
-                             r-topicmodels
-                             r-tm
-                             r-tidytext
-                             r-tidyr
-                             r-textminer
-                             r-stringr
-                             r-stringi
-                             r-stopwords
-                             r-shinythemes
-                             r-shiny
-                             r-persianstemmer
-                             r-ngram
-                             r-lattice
-                             r-igraph
-                             r-hwordcloud
-                             r-glue
-                             r-dplyr))
-    (home-page "https://cran.r-project.org/package=MadanTextNetwork")
-    (synopsis "Persian Text Mining Tool for Co-Occurrence Network")
-    (description
-     "This package provides an extension to @code{MadanText} for creating and
-analyzing co-occurrence networks in Persian text data.  This package mainly
-makes use of the @code{PersianStemmer} (Safshekan, R., et al. (2019).
-<https://CRAN.R-project.org/package=@code{PersianStemmer>}), udpipe (Wijffels,
-J., et al. (2023). <https://CRAN.R-project.org/package=udpipe>), and shiny
-(Chang, W., et al. (2023). <https://CRAN.R-project.org/package=shiny>) packages.")
-    (license license:gpl3)))
-
-(define-public r-madantext
-  (package
-    (name "r-madantext")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MadanText" version))
-       (sha256
-        (base32 "1sz3mwb74yvj5ijmpm7zdwsgyvhs6rs8fpy1mpw538r5jx4xbzg8"))))
-    (properties `((upstream-name . "MadanText")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xlsx
-                             r-udpipe
-                             r-topicmodels
-                             r-tm
-                             r-tidytext
-                             r-tidyr
-                             r-textminer
-                             r-stringr
-                             r-stringi
-                             r-stopwords
-                             r-shinythemes
-                             r-shiny
-                             r-persianstemmer
-                             r-lattice
-                             r-hwordcloud
-                             r-dplyr))
-    (home-page "https://cran.r-project.org/package=MadanText")
-    (synopsis
-     "Persian Text Mining Tool for Frequency Analysis, Statistical Analysis, and Word Clouds")
-    (description
-     "This is an open-source software designed specifically for text mining in the
-Persian language.  It allows users to examine word frequencies, download data
-for analysis, and generate word clouds.  This tool is particularly useful for
-researchers and analysts working with Persian language data.  This package
-mainly makes use of the @code{PersianStemmer} (Safshekan, R., et al. (2019).
-<https://CRAN.R-project.org/package=@code{PersianStemmer>}), udpipe (Wijffels,
-J., et al. (2023). <https://CRAN.R-project.org/package=udpipe>), and shiny
-(Chang, W., et al. (2023). <https://CRAN.R-project.org/package=shiny>) packages.")
-    (license license:gpl3)))
 
 (define-public r-mada
   (package

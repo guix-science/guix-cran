@@ -10069,6 +10069,37 @@ treatment effect.  And, a sample size calculation procedure for the subgroup
 detection test.")
     (license license:gpl3)))
 
+(define-public r-styperidge-reg
+  (package
+    (name "r-styperidge-reg")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Styperidge.reg" version))
+       (sha256
+        (base32 "0vsg27ymypbl9jbzbkfyi5ims8nj6ccm5aaf428m7942cn4px767"))))
+    (properties `((upstream-name . "Styperidge.reg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stype-est r-ridgregextra r-mctest r-isdals))
+    (home-page "https://github.com/filizkrdg/Styperidge.reg")
+    (synopsis "S-Type Ridge Regression")
+    (description
+     "This package implements S-type ridge regression, a robust and
+multicollinearity-aware linear regression estimator that combines S-type robust
+weighting (via the Stype.est package) with ridge penalization; automatically
+selects the ridge parameter using the ridgregextra approach targeting a close to
+1 variance inflation factor (VIF), and returns comprehensive outputs
+(coefficients, fitted values, residuals, mean squared error (MSE), etc.) with an
+easy x/y interface and optional user-supplied weights.  See Sazak and Mutlu
+(2021) <doi:10.1080/03610918.2021.1928196>, Karadag et al. (2023)
+<https://CRAN.R-project.org/package=ridgregextra> and Sazak et al. (2025)
+<https://CRAN.R-project.org/package=Stype.est>.")
+    (license license:expat)))
+
 (define-public r-stype-est
   (package
     (name "r-stype-est")
@@ -14117,13 +14148,13 @@ obtained/free fonts, simple forms of which are included in this package.")
 (define-public r-stevetemplates
   (package
     (name "r-stevetemplates")
-    (version "1.1.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stevetemplates" version))
        (sha256
-        (base32 "0a2s869g5cf2cdl93dyzy7b77f3003g5fw50xrkr4j9k801bb4mn"))))
+        (base32 "0r66ggq3nhrcxl4pk5ac078j35czayfy5shbl7nc3si47izhfwsj"))))
     (properties `((upstream-name . "stevetemplates")))
     (build-system r-build-system)
     (arguments
@@ -19492,13 +19523,13 @@ Bechhofer, Santner, and Goldsman (1995, ISBN:978-0-471-57427-9).")
 (define-public r-sstvars
   (package
     (name "r-sstvars")
-    (version "1.2.3")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sstvars" version))
        (sha256
-        (base32 "1hqyq5x7qa3gmj2qcb2ixjvygyd6w2b7mylcz1gb8z52gf0zs5g0"))))
+        (base32 "0hzh0l5467d34kv8qv2dkhl07b7qbignzk59wp9hfz1zidah76qi"))))
     (properties `((upstream-name . "sstvars")))
     (build-system r-build-system)
     (arguments
@@ -19521,8 +19552,8 @@ generalized forecast error variance decompositions, as well as historical
 decompositions.  See Heather Anderson, Farshid Vahid (1998)
 <doi:10.1016/S0304-4076(97)00076-6>, Helmut LÃ¼tkepohl, Aleksei NetÅ¡unajev
 (2017) <doi:10.1016/j.jedc.2017.09.001>, Markku Lanne, Savi Virolainen (2025)
-<doi:10.1016/j.jedc.2025.105162>, Savi Virolainen (2025)
-<doi:10.48550/@code{arXiv.2404.19707>}.")
+<doi:10.1016/j.jedc.2025.105162>, Savi Virolainen (in press)
+<doi:10.1080/07474938.2026.2673986>.")
     (license license:gpl3)))
 
 (define-public r-sstn
@@ -29435,13 +29466,13 @@ regularly or irregularly spaced data, including 1D, 2D, and 3D.")
 (define-public r-spatopic
   (package
     (name "r-spatopic")
-    (version "1.2.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SpaTopic" version))
        (sha256
-        (base32 "1pxzy3za72vy2ya4misf7yk2y90897iwxg2q625mi6nz8y86a7ay"))))
+        (base32 "1pyq74qs1fk3wjjlf0jnnnqwsjgrk84vagc93an0r15clca25gga"))))
     (properties `((upstream-name . "SpaTopic")))
     (build-system r-build-system)
     (arguments
@@ -29455,17 +29486,18 @@ regularly or irregularly spaced data, including 1D, 2D, and 3D.")
                              r-iterators
                              r-foreach))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/xiyupeng/SpaTopic")
+    (home-page "https://xiyupeng.github.io/SpaTopic/")
     (synopsis
      "Topic Inference to Identify Tissue Architecture in Multiplexed Images")
     (description
      "This package provides a novel spatial topic model to integrate both cell type
 and spatial information to identify the complex spatial tissue architecture on
 multiplexed tissue images without human intervention.  The Package implements a
-collapsed Gibbs sampling algorithm for inference. @code{SpaTopic} is scalable to
-large-scale image datasets without extracting neighborhood information for every
-single cell.  For more details on the methodology, see
-<https://xiyupeng.github.io/@code{SpaTopic/>}.")
+collapsed Gibbs sampling algorithm for inference.  The method is highly scalable
+to large-scale image datasets without extracting neighborhood information for
+every single cell.  The package supports spatially resolved cell-level data
+analysis, topic inference, visualization, and downstream biological
+interpretation of tissue microenvironments.")
     (license license:gpl3+)))
 
 (define-public r-spatmca
@@ -33750,13 +33782,13 @@ analysis.")
 (define-public r-sox
   (package
     (name "r-sox")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sox" version))
        (sha256
-        (base32 "02bbip7p6jd7nyn0pypdkmmkqbplij5cgsy4f4r40485grr08yi9"))))
+        (base32 "0h7h2yx40r6r51l1hwv09nayvrpgm69108bjch8n8x3ab93l99v6"))))
     (properties `((upstream-name . "sox")))
     (build-system r-build-system)
     (arguments
@@ -51961,6 +51993,37 @@ Refresh shiny applications and preserve user-inputs over multiple sessions.  A
 database-like storage format is implemented using Dexie.js <https://dexie.org>,
 a minimal wrapper for @code{IndexedDB}'.  Transfer browser link parameters to
 shiny input or output values.  Store app visitor views, likes and followers.")
+    (license license:expat)))
+
+(define-public r-shinystep
+  (package
+    (name "r-shinystep")
+    (version "0.5.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "shinyStep" version))
+       (sha256
+        (base32 "1ldlj2035fgwh0vb6iz1x29p75w5mzsipyw98gwk1l6hcxqlb2gb"))))
+    (properties `((upstream-name . "shinyStep")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shinyace r-shiny))
+    (home-page "https://github.com/zhangh12/shinyStep")
+    (synopsis "User-Editable R Functions in 'Shiny' Apps with a Step Debugger")
+    (description
+     "This package provides a pair of Shiny modules that let end users of a Shiny
+application author their own R functions directly in the browser.  Host apps can
+expose these modules as extension points where user-supplied code augments or
+replaces built-in logic, without requiring users to modify the app's source.
+Each module embeds an Ace editor with a structured argument table, an in-frame R
+console rooted in the paused function's local environment, and a step debugger
+that handles for, while, repeat, and if/else blocks at any nesting depth.  Two
+module flavours are provided: solo editors for testing a function in isolation
+with literal argument values, and embedded editors for pausing a function
+mid-execution inside a larger host program.")
     (license license:expat)))
 
 (define-public r-shinystate
@@ -70681,6 +70744,32 @@ technique.  This package can generate random 12-tone matrices and can generate
 matrices using a pre-determined sequence of notes.")
     (license license:gpl3+)))
 
+(define-public r-schmear
+  (package
+    (name "r-schmear")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "schmear" version))
+       (sha256
+        (base32 "040i705n776wmvnp5lda75mrmzdd8zsiic4pf3f3z8ba1x3v94jz"))))
+    (properties `((upstream-name . "schmear")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs r-rlang r-cli))
+    (home-page "https://corymccartan.com/schmear/")
+    (synopsis "Build Structured Data Frame Subtypes")
+    (description
+     "This package provides developer-focused helper functions and S3 classes to ease
+the creation of structured subtypes of data frames.  Developers can require
+certain columns and types to be present, and can enforce crossing and nesting
+relationships between values in different columns.  Type-specific metadata and
+attributes are preserved through common data frame manipulations.")
+    (license license:expat)))
+
 (define-public r-schemr
   (package
     (name "r-schemr")
@@ -73661,13 +73750,13 @@ empirical graphical methods to visualize tail dependence.")
 (define-public r-sassy
   (package
     (name "r-sassy")
-    (version "1.3.0")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sassy" version))
        (sha256
-        (base32 "08ricyi41kmk30l5pvwfi9dmcwrmizci89bi2dm5nmpvxqp5z9xf"))))
+        (base32 "1mirnpid86lclra0nm99372jxh3ymm5qwijws7hipc8xhi1wamqc"))))
     (properties `((upstream-name . "sassy")))
     (build-system r-build-system)
     (arguments
@@ -78193,6 +78282,30 @@ generated text.  It is based on the n-gram overlap between the generated text
 and reference texts.  Additionally, the package provides some smoothing methods
 as described in Chen and Cherry (2014) <doi:10.3115/v1/W14-3346>.")
     (license license:gpl2+)))
+
+(define-public r-saci
+  (package
+    (name "r-saci")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "saCI" version))
+       (sha256
+        (base32 "0f794fnzvcp6dm8l6j68zkxzf3mm6cz1x4qzrcydjgpdwdqd5k3r"))))
+    (properties `((upstream-name . "saCI")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mvtnorm r-mass r-boot))
+    (home-page "https://cran.r-project.org/package=saCI")
+    (synopsis "Stochastic Approximation Confidence Interval for Correlation")
+    (description
+     "This package implements stochastic approximation method for constructing
+nonparametric confidence intervals for correlation coefficient, based on Xiong &
+Xu (2016).")
+    (license license:gpl3+)))
 
 (define-public r-saccr
   (package

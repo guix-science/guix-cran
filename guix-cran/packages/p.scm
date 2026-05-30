@@ -9134,13 +9134,13 @@ can be found in \"Elements of Statistical Learning (2nd Edition)\" in Section
 (define-public r-procs
   (package
     (name "r-procs")
-    (version "1.0.8")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "procs" version))
        (sha256
-        (base32 "1m44rh9glhm9y4cyvqg6ga9lh64xz73hhnmrbnxj2f9ch190wij4"))))
+        (base32 "1j1zm5cgfjl82kb48d3zkyi8yhb93spwnq05gd3k5ffcjfh5hxa5"))))
     (properties `((upstream-name . "procs")))
     (build-system r-build-system)
     (arguments
@@ -14267,6 +14267,31 @@ Methods Comparison'.  The Journal of Applied Laboratory Medicine 11, 379-392
 <doi:10.1093/jalm/jfaf183>.")
     (license license:gpl3+)))
 
+(define-public r-ppts
+  (package
+    (name "r-ppts")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PPTS" version))
+       (sha256
+        (base32 "1bf2bmdbj6zw9bxy2kz3ygjk6xjkzh45yqfasac5b44kxyggd8bh"))))
+    (properties `((upstream-name . "PPTS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=PPTS")
+    (synopsis "Point Process Time Series")
+    (description
+     "This package provides functions for point process time series.  Autocorrelation
+functions for spatial and temporal time series, and estimation of
+trend-plus-seasonality models for temporal and spatial time series.  See Gervini
+(2025) <doi:10.1111/jtsa.70018> and Gervini and Kopischke (2026)
+<doi:10.48550/@code{arXiv.2605.21884>}.")
+    (license license:expat)))
+
 (define-public r-pptreeviz
   (package
     (name "r-pptreeviz")
@@ -16544,6 +16569,37 @@ meta-analysis.  POTH quantifies the certainty in a treatment hierarchy.  Subset
 POTH, POTH residuals, and best k treatments POTH can also be calculated to
 improve interpretation of treatment hierarchies.")
     (license license:gpl2+)))
+
+(define-public r-potentiomap
+  (package
+    (name "r-potentiomap")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "potentiomap" version))
+       (sha256
+        (base32 "1p2s8azxfg8ml7nr44lih0fcwyyqnrra75nzmqhc8yikc318rj66"))))
+    (properties `((upstream-name . "potentiomap")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra r-sf r-gstat r-fields))
+    (home-page "https://cran.r-project.org/package=potentiomap")
+    (synopsis "Build Potentiometric Surfaces and Flow Arrows")
+    (description
+     "Builds potentiometric surface products from groundwater monitoring data.  The
+package prepares groundwater observations from direct water-level measurements
+or depth-to-water data paired with land-surface elevations, interpolates
+thin-plate spline surfaces by default, supports alternative and user-supplied
+interpolation methods, exports raster and contour products, and derives
+hydraulic-gradient flow arrows.  Raster operations use methods from Hijmans
+(2025) <doi:10.32614/CRAN.package.terra>, thin-plate spline interpolation uses
+methods from Nychka et al. (2021) <doi:10.5065/D6W957CT>, and geostatistical
+interpolation uses methods from Pebesma (2004)
+<doi:10.1016/j.cageo.2004.03.012>.")
+    (license license:gpl3)))
 
 (define-public r-potential
   (package
@@ -34690,26 +34746,6 @@ objective function.  These subroutines have been used in Avellone et al.
 <doi:10.1007/s10288-023-00559-z>.")
     (license license:gpl2+)))
 
-(define-public r-persianstemmer
-  (package
-    (name "r-persianstemmer")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PersianStemmer" version))
-       (sha256
-        (base32 "1dpfkafijg7g7hzka93l1ymq5rcnjsfgvkvbpdx3vjnid05kh4v1"))))
-    (properties `((upstream-name . "PersianStemmer")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=PersianStemmer")
-    (synopsis "Persian Stemmer for Text Analysis")
-    (description "Allows users to stem Persian texts for text analysis.")
-    (license license:gpl2+)))
-
 (define-public r-persdx
   (package
     (name "r-persdx")
@@ -35471,13 +35507,13 @@ Guttman errors.")
 (define-public r-percentiles
   (package
     (name "r-percentiles")
-    (version "0.2.3")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "percentiles" version))
        (sha256
-        (base32 "1f3k7iss6qkl638xagz7rmz5syg5shlkprvhrwns3jab6z8vxj18"))))
+        (base32 "0wrbgbr3x76ryggav5zsya50m0zssalqzj0gxls3zsqvjgpjixdk"))))
     (properties `((upstream-name . "percentiles")))
     (build-system r-build-system)
     (arguments
@@ -39155,6 +39191,47 @@ Data may contain balanced or unbalanced panels.")
 subset of size t contains the true top t populations? This package finds this
 probability and offers three tuning parameters (G, d, L) to relax the
 definition.")
+    (license license:gpl3)))
+
+(define-public r-pcreg
+  (package
+    (name "r-pcreg")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pcreg" version))
+       (sha256
+        (base32 "0lihbc1agjjqgrwb1v9ri8i2y7xx2cls5hkg3gwqaw3a503qyd88"))))
+    (properties `((upstream-name . "pcreg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales
+                             r-robustbase
+                             r-psych
+                             r-gridextra
+                             r-ggrepel
+                             r-ggplot2
+                             r-elasticnet))
+    (home-page "https://cran.r-project.org/package=pcreg")
+    (synopsis
+     "Advanced Methods for Principal Component Analysis and Principal Component Regression")
+    (description
+     "This package provides a unified framework for principal component analysis (PCA)
+and principal component regression (PCR), including standard PCA, sparse PCA,
+robust PCA, and supervised PCA. The package supports automatic selection of the
+number of components using cumulative variance and elbow methods and integrates
+PCA with regression modelling through PCR models.  It includes tools for PCA
+suitability assessment using Bartlett's test of sphericity and the
+Kaiser-Meyer-Olkin (KMO) measure.  Visualisation utilities such as scree plots
+and biplots are provided for interpretation.  The methods are designed to handle
+multicollinearity, outliers, and high-dimensional data, making them suitable for
+applied statistical modelling and data analysis.  The methodology is based on
+established approaches described in Jolliffe (2002) <doi:10.1007/b98835>, Zou et
+al. (2006) <doi:10.1111/j.1467-9868.2005.00503.x>, and Hubert et al. (2005)
+<doi:10.1198/004017004000000563>.")
     (license license:gpl3)))
 
 (define-public r-pcredux

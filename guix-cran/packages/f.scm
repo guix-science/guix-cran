@@ -295,19 +295,19 @@ regression models.  The R Journal, 8 (1), 132-148. <doi:10.32614/RJ-2016-009>.")
 (define-public r-fwb
   (package
     (name "r-fwb")
-    (version "0.5.1")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fwb" version))
        (sha256
-        (base32 "0qc4h7rqjibv8p49fbz86njj31nsj36paxwip8hgzmcvff4r7z0y"))))
+        (base32 "17byhjxv851f6hxcakqgaxvg4z7822qvx0p43nx5gvapk47w226l"))))
     (properties `((upstream-name . "fwb")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang r-pbapply r-generics r-chk))
+    (propagated-inputs (list r-rlang r-pbapply r-generics r-arg))
     (native-inputs (list r-knitr))
     (home-page "https://ngreifer.github.io/fwb/")
     (synopsis "Fractional Weighted Bootstrap")
@@ -12083,13 +12083,13 @@ regulation by dams based on GarcÃ­a de Jalon et al.  2017
 (define-public r-flownet
   (package
     (name "r-flownet")
-    (version "0.2.2")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flownet" version))
        (sha256
-        (base32 "04jdf2r2jqny7llxrhk8acq7byn9vcw435315nnhq48iav7lnfny"))))
+        (base32 "0v51b6628mzzi1kmjcgx0nj5yxdh2cnvmihnsbsna3n0w2y8npsj"))))
     (properties `((upstream-name . "flownet")))
     (build-system r-build-system)
     (arguments

@@ -1985,13 +1985,13 @@ likelihood (PL) or penalized least squares (PLS).  For details, please see Huang
 (define-public r-lsirm12pl
   (package
     (name "r-lsirm12pl")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lsirm12pl" version))
        (sha256
-        (base32 "10shsj84kz7inszsm4lp4vspgvnsgn7lkxkl3iglr1wdjmnn0br6"))))
+        (base32 "0fvjvzp905bav05v6jmxjfnaryn9ssvf9glmk0hrang7s20750d4"))))
     (properties `((upstream-name . "lsirm12pl")))
     (build-system r-build-system)
     (arguments
@@ -7750,13 +7750,13 @@ to covariates only or also to outcome values.")
 (define-public r-lmmsolver
   (package
     (name "r-lmmsolver")
-    (version "1.0.12")
+    (version "1.0.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LMMsolver" version))
        (sha256
-        (base32 "0kn5273xv25cvjad59w5amr7cshglv3a9qjari1g5jqif0y5mwz9"))))
+        (base32 "1zf4fsnx3a57741srahx28bn21chp2n8qwnl4izk8kwb8758z9ay"))))
     (properties `((upstream-name . "LMMsolver")))
     (build-system r-build-system)
     (arguments
@@ -12854,13 +12854,13 @@ File System) and @code{AtProto} (Bluesky) applications.")
 (define-public r-libimath
   (package
     (name "r-libimath")
-    (version "3.2.2-0")
+    (version "3.2.2-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "libimath" version))
        (sha256
-        (base32 "07x7p5pr3png5llhpp2dhdm521rykml92s433pgdja19mki4a0ib"))))
+        (base32 "06pldq7r5qy5vnzkdrfk8183l512slh5sllc12iabl0msmh62561"))))
     (properties `((upstream-name . "libimath")))
     (build-system r-build-system)
     (arguments
@@ -19229,6 +19229,39 @@ within R, or included in a self-contained R Markdown or Quarto document or
 presentation, or used in a Shiny app.")
     (license license:expat)))
 
+(define-public r-langevinflow
+  (package
+    (name "r-langevinflow")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LangevinFlow" version))
+       (sha256
+        (base32 "0r4h0nzgvyzki7ansrsa2d1q14lxk6zq41v6nwxj0wg0d4fxwzyg"))))
+    (properties `((upstream-name . "LangevinFlow")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/BehroozMoosavi/LangevinFlow")
+    (synopsis "Langevin Diffusion Samplers with a C++ Backend")
+    (description
+     "This package provides lightweight, dependency-minimal implementations of
+Langevin diffusion based Markov chain Monte Carlo samplers, including the
+Unadjusted Langevin Algorithm (ULA) and the Metropolis-Adjusted Langevin
+Algorithm (MALA).  The core sampling loops are written in C++ via Rcpp and
+@code{RcppArmadillo} for performance, while exposing a simple R-level interface
+where the user supplies the gradient of the negative log-density (and, for MALA,
+the negative log-density itself).  Intended as a building block for Bayesian
+inference and stochastic optimization rather than a full probabilistic
+programming framework.  Methods follow Roberts and Tweedie (1996)
+<doi:10.2307/3318418> and Roberts and Rosenthal (1998)
+<doi:10.1111/1467-9868.00123>.")
+    (license license:expat)))
+
 (define-public r-langevin
   (package
     (name "r-langevin")
@@ -20632,13 +20665,13 @@ Improving Reproducibility\".  Cambridge University Press.")
 (define-public r-labstatr
   (package
     (name "r-labstatr")
-    (version "1.0.13")
+    (version "1.0.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "labstatR" version))
        (sha256
-        (base32 "0da891v97imx3x4d1lq5rbyxrwvsqdgfmgnxwqqlimls66zalh7k"))))
+        (base32 "0jl8bsxxwfpqm1mg16qcb8lb130f3ji27dciiqp7bria9xqhzd2q"))))
     (properties `((upstream-name . "labstatR")))
     (build-system r-build-system)
     (arguments

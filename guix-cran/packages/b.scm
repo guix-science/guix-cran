@@ -4278,13 +4278,13 @@ al (2020) <doi:10.1002/sim.8438> and Li et al (2021)
 (define-public r-broadcast
   (package
     (name "r-broadcast")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "broadcast" version))
        (sha256
-        (base32 "1ygkxzhc94y56dr3f5zwbaiiz4cqcvhgaiia3vvp05w9fzjrfn6c"))))
+        (base32 "1qmladja6bjrk2jdfs65h0p9wg5pk4dd5pfskr36s0m89f8i9lh4"))))
     (properties `((upstream-name . "broadcast")))
     (build-system r-build-system)
     (arguments
@@ -16051,6 +16051,51 @@ matrix, this evaluation can be useful if you want to test different strategies
 of normalization or analyze a particular biotype in a differential gene
 expression analysis.")
     (license license:gpl2+)))
+
+(define-public r-bioindex
+  (package
+    (name "r-bioindex")
+    (version "0.6.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BioIndex" version))
+       (sha256
+        (base32 "0ipdw83dcdx0p4xgwp3r9cvgwqp0rfb37xz5x0j15ch8fl462vha"))))
+    (properties `((upstream-name . "BioIndex")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zip
+                             r-tidyterra
+                             r-terra
+                             r-stringr
+                             r-shinyjs
+                             r-shiny
+                             r-reshape2
+                             r-mgcv
+                             r-marmap
+                             r-magrittr
+                             r-hms
+                             r-gridextra
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=BioIndex")
+    (synopsis "Biological Indicators and Indices for MEDITS Survey Data")
+    (description
+     "Supports the standardized analysis of Mediterranean International Bottom Trawl
+Survey (MEDITS) data and the calculation of biological indicators for selected
+species and population components.  The package provides functions to estimate
+abundance and biomass indices, analyse size structure and length frequency
+distributions, derive sex ratio and maturity related metrics, explore spatial
+patterns, and assess temporal trends across surveys.  Developed for integration
+within the Regional Database for Fisheries (RDBFIS) framework, it is intended to
+work on quality checked input data and to produce reproducible outputs that can
+support monitoring, comparative analyses among Geographical Sub-Areas (GSAs) and
+countries, and fishery management.")
+    (license license:gpl3)))
 
 (define-public r-bioinactivation
   (package

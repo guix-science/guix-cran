@@ -9008,6 +9008,34 @@ L1-regularized high-dimensional time-series modeling of Medeiros and Mendes
 (2016) <doi:10.1016/j.jeconom.2015.10.011>.")
     (license license:expat)))
 
+(define-public r-varguid
+  (package
+    (name "r-varguid")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "varGuid" version))
+       (sha256
+        (base32 "12jcaq089m555f03hx6dk6mn56ylggjb5xf4razvp3lv3hm4gpqj"))))
+    (properties `((upstream-name . "varGuid")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sandwich r-lmtest r-glmnet))
+    (home-page "https://github.com/luminwin/varGuid")
+    (synopsis "Variance-Guided Regression for Heteroscedastic Linear Models")
+    (description
+     "Fits variance-guided linear regression models for heteroscedastic data using an
+iteratively reweighted least squares estimator or an iteratively reweighted
+lasso estimator.  This CRAN release focuses on the global linear mean-variance
+model in Section 2 of the accompanying preprint
+<doi:10.36227/techrxiv.177004877.75352102/v1>.  The grouping-based nonlinear
+prediction extension from Section 3 is available in the development version on
+@code{GitHub}.")
+    (license license:gpl2+)))
+
 (define-public r-varest
   (package
     (name "r-varest")

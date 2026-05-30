@@ -15998,13 +15998,13 @@ on the source code (with permission) from Ram and Wickham (2015).")
 (define-public r-ameras
   (package
     (name "r-ameras")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ameras" version))
        (sha256
-        (base32 "1n37bak97aqcp6dbwsfa3cbxqvvn8323ymj4y7v289zsgl910lyc"))))
+        (base32 "1pab0ppy82mm6g4rchpgfnbvdjh877wf79y5np82g9ffc47l5j7s"))))
     (properties `((upstream-name . "ameras")))
     (build-system r-build-system)
     (arguments
@@ -24644,6 +24644,36 @@ multiple collection organizations and have been harmonized in both time and
 space for ease of reuse.")
     (license license:expat)))
 
+(define-public r-adjustr
+  (package
+    (name "r-adjustr")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "adjustr" version))
+       (sha256
+        (base32 "1xazhxqdaxbjlp3kj599wngyz9sqq1rkbba4vaa81qaangmm8m3y"))))
+    (properties `((upstream-name . "adjustr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect r-rstan r-rlang r-loo r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://corymccartan.com/adjustr/")
+    (synopsis
+     "Stan Model Adjustments and Sensitivity Analyses using Importance Sampling")
+    (description
+     "Assess the sensitivity of a Bayesian model (fitted using Stan via rstan', brms',
+or cmdstanr') to the specification of its likelihood and priors.  Users provide
+a series of alternate sampling specifications, and the package uses
+Pareto-smoothed importance sampling (PSIS) to estimate posterior quantities of
+interest under each specification, without needing to refit the model.  Methods
+are based on Vehtari, Simpson, Gelman, Yao, and Gabry (2024)
+<doi:10.48550/@code{arXiv.1507.02646>}.")
+    (license license:expat)))
+
 (define-public r-adjustedcurves
   (package
     (name "r-adjustedcurves")
@@ -27332,6 +27362,33 @@ interact with Praat using Praat'-scripts, and exchange data with the
 @code{rPraat} package.  The package is itself written in R and may be expanded
 by other users.")
     (license license:gpl3)))
+
+(define-public r-acsmoe
+  (package
+    (name "r-acsmoe")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "acsmoe" version))
+       (sha256
+        (base32 "0avva3nvjw57d2bxz1dagkwx1pg0r18vqr4pgc69hqgiahzv344n"))))
+    (properties `((upstream-name . "acsmoe")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://dshkol.github.io/acsmoe/")
+    (synopsis "Propagate Uncertainty for ACS Tabular Estimates")
+    (description
+     "Utilities for propagating uncertainty in American Community Survey tabular
+workflows that use published estimates and margins of error, following U.S.
+Census Bureau derived-estimate guidance and complementing tidycensus
+margin-of-error workflows.  Includes covariance-aware derived estimates,
+simulation helpers, geographic aggregation, confidence-interval conversion, and
+reliability diagnostics.")
+    (license license:expat)))
 
 (define-public r-acroname
   (package

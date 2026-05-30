@@ -16979,13 +16979,13 @@ property lists.  Uses the HDF5 library developed by The HDF Group
 (define-public r-h3sdm
   (package
     (name "r-h3sdm")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "h3sdm" version))
        (sha256
-        (base32 "1qsh4viwaamcgmxf7hl2dpgwncymhz75r2gdpvf8447hg59gjmvv"))))
+        (base32 "165fmxz2naq15xfkj63kc439vcy4lq23ncpap97fk1pr1337n94y"))))
     (properties `((upstream-name . "h3sdm")))
     (build-system r-build-system)
     (arguments

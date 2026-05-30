@@ -8011,13 +8011,13 @@ inference.")
 (define-public r-estempmm
   (package
     (name "r-estempmm")
-    (version "0.3.2")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EstemPMM" version))
        (sha256
-        (base32 "02iiaz28pq9m2c65f63p80z2wbs29skgysp10bdrm1kv6fwy23f4"))))
+        (base32 "1fnz7d5dm6biq5swd4d11dakrr6xxyjzp32vj5rhjn3d0hvb5haq"))))
     (properties `((upstream-name . "EstemPMM")))
     (build-system r-build-system)
     (arguments
@@ -8124,13 +8124,13 @@ official statistics of the Japanese government.")
 (define-public r-estar
   (package
     (name "r-estar")
-    (version "1.0-1")
+    (version "2.0-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "estar" version))
        (sha256
-        (base32 "1xbywrlfs3638iy44xqqcy6y009w4gfrjvvycavyfrvvzb7wkhm3"))))
+        (base32 "0a9nfsl134g28wrv28sdn47634r5cily3fm007i5r6gfgljmfzib"))))
     (properties `((upstream-name . "estar")))
     (build-system r-build-system)
     (arguments
@@ -8138,7 +8138,7 @@ official statistics of the Japanese government.")
       #:tests? #f))
     (propagated-inputs (list r-zoo r-vegan r-ggplot2))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=estar")
+    (home-page "https://github.com/ludmillafigueiredo/estar")
     (synopsis "Ecological Stability Metrics")
     (description
      "Standardises and facilitates the use of eleven established stability properties
@@ -10061,6 +10061,34 @@ names, matching scores and the integrated area of the compound for each sample.
 Package implementation is described in Domingo-Almenara et al. (2016)
 <doi:10.1021/acs.analchem.6b02927>.")
     (license license:gpl2+)))
+
+(define-public r-erabrewer
+  (package
+    (name "r-erabrewer")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EraBrewer" version))
+       (sha256
+        (base32 "1igv1jyr5fahxpxn0xd8nlpswnk824s77w8d232am09hqjghsdph"))))
+    (properties `((upstream-name . "EraBrewer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://s-m.ac/EraBrewer/")
+    (synopsis "Color Palettes from the Album Covers of Each Taylor Swift Era")
+    (description
+     "This package provides discrete and continuous color palettes derived from the
+album cover artwork of each Taylor Swift Era.  Each palette ships with a curated
+order-of-use so that smaller discrete subsets remain harmonious, and supports
+continuous interpolation via @code{grDevices::colorRampPalette()} for arbitrary
+n'.  Designed to plug into ggplot2 workflows through standard manual and
+gradient scales.")
+    (license license:cc0)))
 
 (define-public r-era
   (package
@@ -14881,19 +14909,21 @@ ensembling dissimilarity matrices.  Preprint <@code{arXiv:1506.07930>}.")
 (define-public r-enrichintersect
   (package
     (name "r-enrichintersect")
-    (version "0.7")
+    (version "1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EnrichIntersect" version))
        (sha256
-        (base32 "0hgiy7l2vpxs94xici7fx8xwkxi8r79513zqczy8143d889l43c6"))))
+        (base32 "0dpgdwwh1f7yy7d40fshi3jr28ij2mqawdr48ibngjz05ji3ga8d"))))
     (properties `((upstream-name . "EnrichIntersect")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-webshot2
+                             r-rcpparmadillo
+                             r-rcpp
                              r-networkd3
                              r-jsonlite
                              r-htmlwidgets
@@ -18284,6 +18314,39 @@ itself.")
 five- or four-parameter logistic model will be fitted for data of single ELISA.
 Moreover, the batch effect correction/normalization will be carried out, when
 there are more than one batches of ELISAs.  Feng (2018) <doi:10.1101/483800>.")
+    (license license:expat)))
+
+(define-public r-elicitationwizard
+  (package
+    (name "r-elicitationwizard")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ElicitationWizard" version))
+       (sha256
+        (base32 "0h9sbq1ds3q83za7lfzy3ybk4mqbgpzgp4wlbr27xaw30bmppw4a"))))
+    (properties `((upstream-name . "ElicitationWizard")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shinyjs
+                             r-shiny
+                             r-promises
+                             r-future
+                             r-ellmer
+                             r-commonmark
+                             r-bslib))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/JefferyAyiti/Automated_Elicitation")
+    (synopsis "LLM-Based Bayesian Prior Elicitation Wizard")
+    (description
+     "Shiny application for eliciting Bayesian prior distributions using large
+language models (LLMs).  Supports multiple LLM experts, linear opinion pooling,
+and the Delphi method for iterative consensus.  For more details see J. R.
+Falconer et al. (2022) <doi:10.1287/deca.2022.0451> and D. Selby et al. (2025)
+<doi:10.1002/sta4.70054>.")
     (license license:expat)))
 
 (define-public r-elic

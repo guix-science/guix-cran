@@ -8628,13 +8628,13 @@ total evidence dating analyses.")
 (define-public r-treess
   (package
     (name "r-treess")
-    (version "0.1.44")
+    (version "0.1.50")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "treeSS" version))
        (sha256
-        (base32 "0khydicgkav7za4kcc3f0k77p610fbcf2wd51hwa37p0dc4xzx6z"))))
+        (base32 "12w9yiwpzflyxswaavns3w9mncsn7w7pi2sa92h4kr4p6f7z1b01"))))
     (properties `((upstream-name . "treeSS")))
     (build-system r-build-system)
     (arguments

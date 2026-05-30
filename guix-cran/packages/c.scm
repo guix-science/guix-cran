@@ -9773,13 +9773,13 @@ of the objective function.  For more details see de Paz (2024)
 (define-public r-cpop
   (package
     (name "r-cpop")
-    (version "1.0.8")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cpop" version))
        (sha256
-        (base32 "09jyv0a84c72nmn4azb4zfyf781yh8rpx2xpsn15nyp6dzak2dmc"))))
+        (base32 "1jknih73hd09hkarm98znv2p6l2nw2mw9pg9c79zs5h0jbpfga4d"))))
     (properties `((upstream-name . "cpop")))
     (build-system r-build-system)
     (arguments
@@ -19758,13 +19758,13 @@ of confidence curves and drapery plots to summarize evidence across studies.")
 (define-public r-confmatrix
   (package
     (name "r-confmatrix")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ConfMatrix" version))
        (sha256
-        (base32 "0rx3863wddn2c5g812y1fpf50jkyd41cpqy1l6k67dmb2g9gvrl4"))))
+        (base32 "01jkhph2zb08ay5scqq4yv1z802331riipli9l2aw7z1l2zzkbiy"))))
     (properties `((upstream-name . "ConfMatrix")))
     (build-system r-build-system)
     (arguments
@@ -21508,13 +21508,13 @@ multivariate random forest of Rahman R., Otridge J. and Pal R. (2017),
 (define-public r-compositionalnaimp
   (package
     (name "r-compositionalnaimp")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CompositionalNAimp" version))
        (sha256
-        (base32 "09cfg0mw9z8iqmjrfz4dq0s7yawlxf96kjabch7sdl0siqawd5bx"))))
+        (base32 "15z6lw8b77jnz238h3phxyv9adi9isjyc3ha5nr63kv8w0f7k8ax"))))
     (properties `((upstream-name . "CompositionalNAimp")))
     (build-system r-build-system)
     (arguments
@@ -21528,8 +21528,8 @@ multivariate random forest of Rahman R., Otridge J. and Pal R. (2017),
 compositional data using the Jensen-Shannon divergence based k--NN and a--k--NN
 algorithms.  The functions are based on the following paper: Tsagris M., Alenazi
 A. and Stewart C. (2026). \"A Jensen--Shannon divergence based k--NN algorithm
-for missing value imputation in compositional data\".  Journal of Applied
-Statistics (Accepted for publication).")
+for missing value imputation in compositional data\",
+<doi:10.1080/02664763.2026.2677908>.")
     (license license:gpl2+)))
 
 (define-public r-compositionalml
@@ -33840,6 +33840,33 @@ new, but the main method is based on a workflow from Meyer (2019)
 <doi:10.1016/j.ecolmodel.2019.108815> and Meyer (2022)
 <doi:10.1038/s41467-022-29838-9> , however, it was generalized and adjusted in
 the context of this package.")
+    (license license:gpl3+)))
+
+(define-public r-climniche
+  (package
+    (name "r-climniche")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "climniche" version))
+       (sha256
+        (base32 "1xf5b13ilymps452zqzziaml8d9y01fdyccj0sakwd4554w7bncl"))))
+    (properties `((upstream-name . "climniche")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Bohao0813/climniche")
+    (synopsis "Niche Climate Exposure")
+    (description
+     "Assesses niche climate exposure by interpreting projected climate change
+relative to the climate conditions a species currently occupies.  Using
+occurrence records, range data or thresholded SDM suitability maps, current
+environmental rasters and future projections, the package separates climate
+change amount, change in distance to the current niche centre, composition
+change and exceedance beyond an empirical niche boundary.")
     (license license:gpl3+)))
 
 (define-public r-climmobtools

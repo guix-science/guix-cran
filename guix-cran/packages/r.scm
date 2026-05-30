@@ -5453,13 +5453,13 @@ summarizing model outputs.  rsyncrosim requires @code{SyncroSim} 2.3.5 or higher
 (define-public r-rswipl
   (package
     (name "r-rswipl")
-    (version "10.1.7")
+    (version "10.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rswipl" version))
        (sha256
-        (base32 "1x09hq1gcl127irb4n0488z752qj4pxfh2120yxch523bcnm8dip"))))
+        (base32 "1f4xn1dsrpwfx1ca3bp4rjfs0lcgpb0xl3hhvhma6vyaz6h5hxgs"))))
     (properties `((upstream-name . "rswipl")))
     (build-system r-build-system)
     (arguments
@@ -6298,6 +6298,30 @@ Ozdemir Y.A., Ebegil M., & Gokpinar F. (2019), <doi:10.1007/s40995-018-0558-0>
 Ozdemir Y.A., Ebegil M., & Gokpinar F. (2017),
 <doi:10.1080/03610918.2016.1263736>.")
     (license license:gpl2)))
+
+(define-public r-rssrmr
+  (package
+    (name "r-rssrmr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RSSRMR" version))
+       (sha256
+        (base32 "0v3jnjygc53ad2jkn9i80gq5wnmf15pylzsv83adv6vvh6b7q76v"))))
+    (properties `((upstream-name . "RSSRMR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-robustbase))
+    (home-page "https://cran.r-project.org/package=RSSRMR")
+    (synopsis
+     "Robust Self-Representation Sparse Reconstruction and Manifold Regularization")
+    (description
+     "Feature selection and clustering classification under the presence of
+multivariate outliers in high-dimensional unlabeled data.")
+    (license license:gpl3)))
 
 (define-public r-rssop
   (package
@@ -7788,51 +7812,6 @@ Sample data sets lake_data & lake_RSI processed from Bush, Silman & Urrego
 (2004) <doi:10.1126/science.1090795> Sample data set January_PDO from NOAA:
 <https://www.ncei.noaa.gov/access/monitoring/pdo/>.")
     (license license:expat)))
-
-(define-public r-rsghb
-  (package
-    (name "r-rsghb")
-    (version "1.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RSGHB" version))
-       (sha256
-        (base32 "16s9iahbcdqykavm5cq8n76hlpfqlljl17xwh0vrz5ac7z4z3rdz"))))
-    (properties `((upstream-name . "RSGHB")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mcmcpack))
-    (home-page "https://github.com/RSGInc/RSGHB")
-    (synopsis
-     "Functions for Hierarchical Bayesian Estimation: A Flexible Approach")
-    (description
-     "This package provides functions for estimating models using a Hierarchical
-Bayesian (HB) framework.  The flexibility comes in allowing the user to specify
-the likelihood function directly instead of assuming predetermined model
-structures.  Types of models that can be estimated with this code include the
-family of discrete choice models (Multinomial Logit, Mixed Logit, Nested Logit,
-Error Components Logit and Latent Class) as well ordered response models like
-ordered probit and ordered logit.  In addition, the package allows for
-flexibility in specifying parameters as either fixed (non-varying across
-individuals) or random with continuous distributions.  Parameter distributions
-supported include normal, positive/negative log-normal, positive/negative
-censored normal, and the Johnson SB distribution.  Kenneth Train's Matlab and
-Gauss code for doing Hierarchical Bayesian estimation has served as the basis
-for a few of the functions included in this package.  These Matlab/Gauss
-functions have been rewritten to be optimized within R. Considerable code has
-been added to increase the flexibility and usability of the code base.  Train's
-original Gauss and Matlab code can be found here:
-<http://elsa.berkeley.edu/Software/abstracts/train1006mxlhb.html> See Train's
-chapter on HB in Discrete Choice with Simulation here:
-<http://elsa.berkeley.edu/books/choice2.html>; and his paper on using HB with
-non-normal distributions here:
-<http://eml.berkeley.edu//~train/trainsonnier.pdf>.  The authors would also like
-to thank the invaluable contributions of Stephane Hess and the Choice Modelling
-Centre: <https://cmc.leeds.ac.uk/>.")
-    (license license:gpl3)))
 
 (define-public r-rsgf
   (package
@@ -17899,13 +17878,13 @@ described in more detail in Jiao (2019)
 (define-public r-robust-prioritizr
   (package
     (name "r-robust-prioritizr")
-    (version "1.0.3")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "robust.prioritizr" version))
        (sha256
-        (base32 "0fcn3vkifdln1b59nc3m790j7q9v20adqysmza0zyc1kl2qx3k6k"))))
+        (base32 "04s965q6gff52czdp1zqcxf2145cp358s3bhp59jfisvhbyxs9h9"))))
     (properties `((upstream-name . "robust.prioritizr")))
     (build-system r-build-system)
     (arguments
@@ -34903,13 +34882,13 @@ elevation variance spectral density.")
 (define-public r-resmush
   (package
     (name "r-resmush")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "resmush" version))
        (sha256
-        (base32 "1n32raxdv6ixz3nl9142iz1c30hbc9na0nic63vmvwmqhbbyc15k"))))
+        (base32 "0yygkw15bvyp65r5v5sfdzsrq6m4l86m53flmddg7n60m61wxq06"))))
     (properties `((upstream-name . "resmush")))
     (build-system r-build-system)
     (arguments
@@ -34920,8 +34899,9 @@ elevation variance spectral density.")
     (home-page "https://dieghernan.github.io/resmush/")
     (synopsis "Optimize and Compress Image Files with 'reSmush.it'")
     (description
-     "Compress local and online images using the @code{reSmush.it} API service
-<https://resmush.it/>.")
+     "Optimize and compress local image files, directories and online images with the
+@code{reSmush.it} API <https://resmush.it/>.  Supports png', jpg/jpeg', gif',
+bmp and tiff files.")
     (license license:expat)))
 
 (define-public r-reslr
@@ -45625,13 +45605,13 @@ This project is not affiliated with the Arduino company,
 (define-public r-rduckhts
   (package
     (name "r-rduckhts")
-    (version "1.2.1-0.1.0")
+    (version "1.3.0-0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rduckhts" version))
        (sha256
-        (base32 "05zahirzl239jhal14dh44gky198amzqdby5wb1wwa46xgnpk8nm"))))
+        (base32 "1yfzibqc867zq1l7ld1vvzf6vhm45l3qknb9c2ixhdn2i0a80yqc"))))
     (properties `((upstream-name . "Rduckhts")))
     (build-system r-build-system)
     (arguments
@@ -45653,7 +45633,8 @@ This project is not affiliated with the Arduino company,
 Sequencing file formats with @code{DuckDB}'.  The @code{DuckDB} C extension API
 <https://duckdb.org/docs/stable/clients/c/api> and its htslib dependency are
 compiled from vendored sources during package installation.  James K Bonfield
-and co-authors (2021) <doi:10.1093/gigascience/giab007>.")
+and co-authors (2021) <doi:10.1093/gigascience/giab007>. @code{VariantKey} /
+@code{RegionKey} support follows Nicola Asuni (2018) <doi:10.1101/473744>.")
     (license license:gpl3)))
 
 (define-public r-rdtlite
@@ -52833,35 +52814,6 @@ interval.  The implementation follows the @code{StatXact} 9 manual (Cytel 2010)
 and \"Refining Binomial Confidence Intervals\" by George Casella (1986)
 <doi:10.2307/3314658>.")
     (license license:gpl3+)))
-
-(define-public r-rbrsa
-  (package
-    (name "r-rbrsa")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rbrsa" version))
-       (sha256
-        (base32 "1hpvwa17a98q0d4x969vbnhrjswajxmmq549f6lhmcqmn4wm6gni"))))
-    (properties `((upstream-name . "rbrsa")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-writexl r-rlang r-jsonlite r-httr2))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/obakis/rbrsa")
-    (synopsis
-     "Fetch Turkish Banking Sector Data from the Turkish Banking Regulation and Supervision Agency")
-    (description
-     "The goal of the rbrsa package is to provide automated access to banking sector
-data from the Turkish Banking Regulation and Supervision Agency (BRSA, known as
-BDDK in Turkish).  The package retrieves tables from two distinct publication
-portals maintained by the BRSA: The Monthly Bulletin Portal
-<https://www.bddk.org.tr/bultenaylik> and The @code{FinTurk} Data System
-<https://www.bddk.org.tr/@code{BultenFinturk>}.")
-    (license license:expat)))
 
 (define-public r-rbreak
   (package
