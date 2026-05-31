@@ -1032,6 +1032,34 @@ with the log uniform and mixture distributions.")
 tool to determine the optimal number of components to retain in PCA.")
     (license license:gpl2)))
 
+(define-public r-kronxnbc
+  (package
+    (name "r-kronxnbc")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "kronxNBC" version))
+       (sha256
+        (base32 "01k9r5g2qwk4j6kdwvsiq7pc858rx210bh8ivzx6rk7slkrwn7j2"))))
+    (properties `((upstream-name . "kronxNBC")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-naivebayes))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=kronxNBC")
+    (synopsis "Clock of Regimes Naive Bayes Classifier (Student-t)")
+    (description
+     "Computes and fits a heavy-tailed Student-t Naive Bayes classifier for
+non-stationary financial market regime analysis (Clock of Regimes, COR).  The
+core innovation is a profile grid search over the degrees-of-freedom parameter
+nu that prevents numerical underflow and structural classification failures when
+identifying fat-tailed Stress regimes.  Provides S3 methods for fitting,
+prediction, summarising, plotting, and parameter extraction.")
+    (license license:expat)))
+
 (define-public r-kronx
   (package
     (name "r-kronx")

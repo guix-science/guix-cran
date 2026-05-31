@@ -16408,6 +16408,49 @@ including @code{OpenAI} <https://openai.com/>, Google AI Studio
 keys are required and managed via ellmer').")
     (license license:gpl2+)))
 
+(define-public r-statisticteach1
+  (package
+    (name "r-statisticteach1")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "StatisticTeach1" version))
+       (sha256
+        (base32 "0p08b1dab92756aa9ahk8r6w549nlqgj0pr20bg8ff5j1bj1y2i5"))))
+    (properties `((upstream-name . "StatisticTeach1")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-shinywidgets
+                             r-shinyjs
+                             r-shinydashboard
+                             r-shinybs
+                             r-shiny
+                             r-rlang
+                             r-readxl
+                             r-rcolorbrewer
+                             r-mixdist
+                             r-magrittr
+                             r-ggplot2
+                             r-dt
+                             r-dplyr
+                             r-desctools
+                             r-descriptr
+                             r-colourpicker))
+    (home-page "https://cran.r-project.org/package=StatisticTeach1")
+    (synopsis "Interactive Tool for Statistics and Probability")
+    (description
+     "This package provides a Shiny application designed to support the learning of
+basic concepts in statistics and probability.  The tool provides an interactive
+interface that allows students to explore and visualize different statistical
+concepts intuitively, including descriptive statistics for continuous and
+qualitative variables, and probability distributions.")
+    (license license:gpl3)))
+
 (define-public r-statisr
   (package
     (name "r-statisr")
@@ -20301,20 +20344,19 @@ C++ library for Bayesian estimation.")
 (define-public r-ssmodels
   (package
     (name "r-ssmodels")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ssmodels" version))
        (sha256
-        (base32 "195vl4ni1wwlw1m0ibfnvcdrfp8594l812mcjp5pw8j1lav8403b"))))
+        (base32 "14v9m05fdynfc16byqpcj8sc7c0dksdbvbccs1amakk2iv3p2s90"))))
     (properties `((upstream-name . "ssmodels")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sn r-rdpack r-pracma r-numderiv r-misctools))
-    (native-inputs (list r-knitr))
+    (propagated-inputs (list r-sn r-rdpack r-misctools r-mass))
     (home-page "https://fsbmat-ufv.github.io/ssmodels/")
     (synopsis "Sample Selection Models")
     (description
@@ -23778,6 +23820,41 @@ package also contains functions that can be used for analyzing time-to-event
 data with right censoring, and with left truncation and right censoring.
 Financial support from NSF and @code{DuPont} are acknowledged.")
     (license license:gpl2)))
+
+(define-public r-spreadr
+  (package
+    (name "r-spreadr")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spreadr" version))
+       (sha256
+        (base32 "0sfz5qycg7spia5h6gjzqhgdpxm6r2gg144nrsfpd0pbdqjjiq5g"))))
+    (properties `((upstream-name . "spreadr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp r-matrix r-igraph r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://csqsiew.github.io/spreadr/")
+    (synopsis "Simulating Spreading Activation in a Network")
+    (description
+     "The notion of spreading activation is a prevalent metaphor in the cognitive
+sciences.  This package provides the tools for cognitive scientists and
+psychologists to conduct computer simulations that implement spreading
+activation in a network representation.  The algorithmic method implemented in
+spreadr subroutines follows the approach described in Vitevitch, Ercal, and
+Adagarla (2011, Frontiers), who viewed activation as a fixed cognitive resource
+that could spread among nodes that were connected to each other via edges or
+connections (i.e., a network).  See Vitevitch, M. S., Ercal, G., & Adagarla, B.
+(2011).  Simulating retrieval from a highly clustered network: Implications for
+spoken word recognition.  Frontiers in Psychology, 2, 369.
+<doi:10.3389/fpsyg.2011.00369> and Siew, C. S. Q. (2019).  spreadr: A R package
+to simulate spreading activation in a network.  Behavior Research Methods, 51,
+910-929. <doi: 10.3758/s13428-018-1186-5>.")
+    (license license:gpl3)))
 
 (define-public r-spray
   (package
@@ -43502,13 +43579,13 @@ of smoothing bandwidths.")
 (define-public r-sizemat
   (package
     (name "r-sizemat")
-    (version "1.1.2")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sizeMat" version))
        (sha256
-        (base32 "1vbndadsn80ddrg471vp1qxf0gan38w6dkjk1p2npvfb47wdjj2h"))))
+        (base32 "1ibz69hras157xri1hikg13cq8sck6vlvy6bspvc06f3qhc9fx73"))))
     (properties `((upstream-name . "sizeMat")))
     (build-system r-build-system)
     (arguments
@@ -43523,7 +43600,8 @@ of smoothing bandwidths.")
 fish and invertebrates.  It includes methods for classification based on
 relative growth (using principal components analysis, hierarchical clustering,
 discriminant analysis), logistic regression (Frequentist or Bayes), parameters
-estimation and some basic plots.")
+estimation and some basic plots.  Optional ggplot-style graphics are available
+for selected plot methods.")
     (license license:gpl2)))
 
 (define-public r-sixtyfour
@@ -72280,6 +72358,42 @@ model fitting on training data, and cell classification on test data.  See
 Xiangling Ji,Danielle Tsao, Kailun Bai, Min Tsao, Li Xing, Xuekui
 Zhang.(2022)<doi:10.1101/2022.02.19.481159> for more details.")
     (license license:gpl3)))
+
+(define-public r-scancp
+  (package
+    (name "r-scancp")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "scanCP" version))
+       (sha256
+        (base32 "1m4jx7qpzd70qkc0c08g6j32bzxds1jciclmmbdn4saj1a6y37l9"))))
+    (properties `((upstream-name . "scanCP")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-rsnns
+                             r-pracma
+                             r-plotly
+                             r-magrittr
+                             r-foreach
+                             r-dosnow))
+    (home-page "https://cran.r-project.org/package=scanCP")
+    (synopsis
+     "Deep LearningâBased Changepoint Detection with Local Neural Models")
+    (description
+     "Implementation of deep learningâbased changepoint detection algorithm designed
+for time series with smooth local fluctuations.  The method fits localized
+feedâforward neural networks to approximate the underlying smooth component
+and constructs a residualâbased detector that isolates abrupt structural
+changes.  A fully dataâadaptive empirical cumulative distribution function
+(ECDF) based thresholding rule and refinement procedures yield accurate
+changepoint localization without parametric assumptions on noise or trend
+structure.")
+    (license license:gpl2)))
 
 (define-public r-scan
   (package

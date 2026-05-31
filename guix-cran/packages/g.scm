@@ -1887,13 +1887,13 @@ regression analysis.")
 (define-public r-gtsummary
   (package
     (name "r-gtsummary")
-    (version "2.5.0")
+    (version "2.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gtsummary" version))
        (sha256
-        (base32 "0y4ia58kby8gz1hy8fwjf9ayznp9r3d4g2c1fwmcr9x5jyr5pb9g"))))
+        (base32 "0qpcx2fkfvya3hlc3g5zcykambinafbyqxvng80k03cvh3ay84nr"))))
     (properties `((upstream-name . "gtsummary")))
     (build-system r-build-system)
     (arguments
@@ -5929,6 +5929,43 @@ viewports and grobs that @code{gridGraphviz} produces.")
      "This package provides functions for performing polygon geometry with grid grobs.
  This allows complex shapes to be defined by combining simpler shapes.")
     (license license:gpl2+)))
+
+(define-public r-griddy
+  (package
+    (name "r-griddy")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "griddy" version))
+       (sha256
+        (base32 "0krh1dz3cqkikspwrr0bmmqfwshfm6vilx7kpf1brk6xrz13xdyg"))))
+    (properties `((upstream-name . "griddy")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-spdep
+                             r-sf
+                             r-scales
+                             r-rlang
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/dshkol/griddy")
+    (synopsis "Geospatial Distribution Dynamics for Simple Features")
+    (description
+     "This package provides tools for exploratory geospatial distribution dynamics
+with sf objects and tidy data.  Provides pooled and time-specific classification
+of longitudinal spatial values, classic discrete Markov transition matrices,
+spatial Markov matrices conditioned on spatial-lag classes, endpoint and
+adjacent rank mobility summaries, and ggplot2 visualizations.  Methods follow
+Rey (2001) <doi:10.1111/j.1538-4632.2001.tb00444.x> and Rey et al. (2016)
+<doi:10.1007/s10109-016-0234-x>; design is inspired by the Python @code{PySAL}
+giddy package <https://pysal.org/giddy/>.")
+    (license license:expat)))
 
 (define-public r-griddebug
   (package
@@ -21429,13 +21466,13 @@ the fly.")
 (define-public r-ggpedigree
   (package
     (name "r-ggpedigree")
-    (version "1.1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggpedigree" version))
        (sha256
-        (base32 "0k0kvc8a11lxp079c67dig0p64qvyms0376xwpsm5kmn7x6lwwbm"))))
+        (base32 "16xhpignbb6xzk1pvfb7wfpfkwcsd85wppfhd9hahdjc71c0z7qp"))))
     (properties `((upstream-name . "ggpedigree")))
     (build-system r-build-system)
     (arguments

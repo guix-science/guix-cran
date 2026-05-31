@@ -42016,13 +42016,13 @@ endpoints require the use of an API key which can be obtained at
 (define-public r-pathling
   (package
     (name "r-pathling")
-    (version "9.6.0")
+    (version "9.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pathling" version))
        (sha256
-        (base32 "0lzcbkaly16avm78g7pk8mi3ljc1jqqcxfgck7mdzxcpiabrwpf2"))))
+        (base32 "1mz2x7nykafv65l7qmv30gcgp4a5gri8mbmm8bl1sb8412g1hpk0"))))
     (properties `((upstream-name . "pathling")))
     (build-system r-build-system)
     (arguments

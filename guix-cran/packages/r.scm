@@ -31636,13 +31636,13 @@ interactions and their lower order terms.")
 (define-public r-rfriend
   (package
     (name "r-rfriend")
-    (version "3.0.0")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rfriend" version))
        (sha256
-        (base32 "12ihbh4g7fdp6f3hk1rk9j2fz1jvcpkw22w88rx5dm23bavb7zh2"))))
+        (base32 "107hpxdn9dnfad8xnan7s3qy0p66fy4g2w477anibdyf03j774vp"))))
     (properties `((upstream-name . "rfriend")))
     (build-system r-build-system)
     (arguments
@@ -31653,7 +31653,6 @@ interactions and their lower order terms.")
                              r-writexl
                              r-tidyr
                              r-this-path
-                             r-stringr
                              r-rstudioapi
                              r-rstatix
                              r-rmarkdown
@@ -31664,7 +31663,6 @@ interactions and their lower order terms.")
                              r-mumin
                              r-multcompview
                              r-multcomp
-                             r-magrittr
                              r-magick
                              r-lmertest
                              r-lme4
@@ -33323,64 +33321,6 @@ generated revision letters.  Provides an R markdown template based on
 for managing multiple sections of extracted text, and a way to automatically
 determine the page number of quoted sections from PDF manuscripts.")
     (license (license:fsdg-compatible "MIT + file LICENCE"))))
-
-(define-public r-reviewr
-  (package
-    (name "r-reviewr")
-    (version "2.3.10")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ReviewR" version))
-       (sha256
-        (base32 "1h5vgqxvx5cjcwgrj7ayc7b1xzkgyndif46pjfmaz4pw1sz8990h"))))
-    (properties `((upstream-name . "ReviewR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-snakecase
-                             r-shinywidgets
-                             r-shinyjs
-                             r-shinydashboardplus
-                             r-shinydashboard
-                             r-shinycssloaders
-                             r-shiny
-                             r-rsqlite
-                             r-rpostgres
-                             r-rlang
-                             r-redcapr
-                             r-redcapapi
-                             r-purrr
-                             r-magrittr
-                             r-jsonlite
-                             r-httr
-                             r-golem
-                             r-glue
-                             r-gargle
-                             r-dt
-                             r-dplyr
-                             r-dbplyr
-                             r-dbi
-                             r-config
-                             r-bigrquery))
-    (native-inputs (list r-knitr))
-    (home-page "https://reviewr.thewileylab.org/")
-    (synopsis
-     "Light-Weight, Portable Tool for Reviewing Individual Patient Records")
-    (description
-     "This package provides a portable Shiny tool to explore patient-level electronic
-health record data and perform chart review in a single integrated framework.
-This tool supports browsing clinical data in many different formats including
-multiple versions of the OMOP common data model as well as the MIMIC-III data
-model.  In addition, chart review information is captured and stored securely
-via the Shiny interface in a REDCap (Research Electronic Data Capture) project
-using the REDCap API. See the @code{ReviewR} website for additional information,
-documentation, and examples.")
-    (license license:bsd-3)))
 
 (define-public r-revgadgets
   (package
@@ -46167,13 +46107,13 @@ Shallalist data to learn about the kind of content hosted by a domain.")
 (define-public r-rdocdump
   (package
     (name "r-rdocdump")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rdocdump" version))
        (sha256
-        (base32 "06257avya8myfhnj6yqrbvgxhldjsmh51xy8aqmk3gcssq206rj9"))))
+        (base32 "1ci5ypnjxfp6crr9kaknp8sz84ngn68sg060laxfyxhgb1k8b27g"))))
     (properties `((upstream-name . "rdocdump")))
     (build-system r-build-system)
     (arguments
@@ -51848,33 +51788,25 @@ user to view structures in 2D.")
 (define-public r-rcdf
   (package
     (name "r-rcdf")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rcdf" version))
        (sha256
-        (base32 "0yfvv1dcv5rchlp6rv2z6rylkax3227wlmzawl3p31wm7kpm7120"))))
+        (base32 "17i1k5pbb95ryz0yi85ayviqyfkjjdqzfzr414r3f3sygji1fyq7"))))
     (properties `((upstream-name . "rcdf")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-zip
-                             r-uuid
-                             r-stringr
-                             r-rsqlite
-                             r-openxlsx
                              r-openssl
-                             r-lifecycle
                              r-jsonlite
                              r-haven
-                             r-glue
-                             r-fs
                              r-duckdb
                              r-dplyr
-                             r-dbi
-                             r-arrow))
+                             r-dbi))
     (native-inputs (list r-knitr))
     (home-page "https://yng-me.github.io/rcdf/")
     (synopsis "Comprehensive Toolkit for Working with Encrypted Parquet Files")
@@ -54663,13 +54595,13 @@ Massidda, D., & Noventa, S. (2010)
 (define-public r-ravepipeline
   (package
     (name "r-ravepipeline")
-    (version "0.0.3")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ravepipeline" version))
        (sha256
-        (base32 "1kwhy7c476ccl4pjd33fsrl68vzi0hy31d0zdxif7sqfhf6qqrl2"))))
+        (base32 "1b4xqp18jmq96x9bz5iqc61vvsqkgvv015rvz7mq6g32q2adyy55"))))
     (properties `((upstream-name . "ravepipeline")))
     (build-system r-build-system)
     (arguments

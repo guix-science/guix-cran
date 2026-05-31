@@ -3807,13 +3807,13 @@ GPH estimator proposed by Reisen et al. (2017) <doi:10.1016/j.jspi.2017.02.008>.
 (define-public r-tsqca
   (package
     (name "r-tsqca")
-    (version "1.3.2")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TSQCA" version))
        (sha256
-        (base32 "08dbqxrwck2qrqwszbhk0gxv7fg4gqhsfrkjkwlh2d8cgg01y7n4"))))
+        (base32 "1q7875x78fay2rqsaw0z7p0688kb1x6lmh5ygz3p6rd2b7i3f2gy"))))
     (properties `((upstream-name . "TSQCA")))
     (build-system r-build-system)
     (arguments
@@ -3821,17 +3821,18 @@ GPH estimator proposed by Reisen et al. (2017) <doi:10.1016/j.jspi.2017.02.008>.
       #:tests? #f))
     (propagated-inputs (list r-qca))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/im-research-yt/TSQCA")
+    (home-page "https://github.com/im-research-yt/ThSQCA")
     (synopsis
-     "Threshold Sweep Extensions for Qualitative Comparative Analysis")
+     "DEPRECATED: Threshold Sweep Extensions for Qualitative Comparative Analysis")
     (description
-     "This package provides threshold sweep methods for Qualitative Comparative
-Analysis (QCA).  Implements Condition Threshold Sweep-Single (CTS-S), Condition
-Threshold Sweep-Multiple (CTS-M), Outcome Threshold Sweep (OTS), and Dual
-Threshold Sweep (DTS) for systematic exploration of threshold calibration
-effects on crisp-set QCA results.  These methods extend traditional robustness
-approaches by treating threshold variation as an exploratory tool for
-discovering causal structures.  Also provides Fiss (2011)
+     "DEPRECATED: This package has been superseded by @code{ThSQCA}'.  Please use
+install.packages('@code{ThSQCA}') instead.  Provides threshold sweep methods for
+Qualitative Comparative Analysis (QCA).  Implements Condition Threshold
+Sweep-Single (CTS-S), Condition Threshold Sweep-Multiple (CTS-M), Outcome
+Threshold Sweep (OTS), and Dual Threshold Sweep (DTS) for systematic exploration
+of threshold calibration effects on crisp-set QCA results.  These methods extend
+traditional robustness approaches by treating threshold variation as an
+exploratory tool for discovering causal structures.  Also provides Fiss (2011)
 <doi:10.5465/amj.2011.60263120> core/peripheral condition classification via
 @code{compute_fiss_core()} and @code{generate_fiss_chart()}, enabling
 four-symbol configuration charts that distinguish core conditions (present in
@@ -15678,6 +15679,51 @@ These methods may be summarized in the following references: Yoshida, et al.
 with gene expression data.")
     (license license:gpl3)))
 
+(define-public r-tmfast
+  (package
+    (name "r-tmfast")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tmfast" version))
+       (sha256
+        (base32 "1zzpdsqs9spdshpgwqyx9yvsphmjyiwhmnm7m3kf9dvvryksm6sh"))))
+    (properties `((upstream-name . "tmfast")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidytext
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-psych
+                             r-matrix
+                             r-magrittr
+                             r-irlba
+                             r-glue
+                             r-generics
+                             r-dplyr
+                             r-cli
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://dhicks.github.io/tmfast/")
+    (synopsis "Fast Topic Models Using Varimax")
+    (description
+     "Fits topic models using varimax-rotated principal component analysis (PCA),
+following the \"vintage factor analysis\" approach of Rohe & Zheng (2020)
+<doi:10.48550/@code{arXiv.2004.05387>}.  Leverages truncated PCA via irlba for
+sparse matrices, enabling fast model fitting on large corpora.  Includes an
+information-theoretic approach to vocabulary selection, broom'-compatible
+tidiers for extracting word-topic and topic-document matrices into a tidy data
+workflow, and samplers for constructing simulated corpora for benchmarking and
+method evaluation.")
+    (license license:gpl3+)))
+
 (define-public r-tmdb
   (package
     (name "r-tmdb")
@@ -23500,6 +23546,45 @@ methods used in the package based on the following publications Stipanuk (1973)
 <doi:10.1016/j.wace.2022.100474>.")
     (license license:gpl2+)))
 
+(define-public r-thsqca
+  (package
+    (name "r-thsqca")
+    (version "2.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ThSQCA" version))
+       (sha256
+        (base32 "0vsfk4ixq96kvjq3d3f4aribv1w5lwawisrxj9p1993m07xb4dfq"))))
+    (properties `((upstream-name . "ThSQCA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-qca))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/im-research-yt/ThSQCA")
+    (synopsis "Threshold-Sweep QCA")
+    (description
+     "This package provides threshold sweep methods for Qualitative Comparative
+Analysis ('QCA').  Implements Condition Threshold Sweep-Single (CTS-S),
+Condition Threshold Sweep-Multiple (CTS-M), Outcome Threshold Sweep (OTS), and
+Dual Threshold Sweep (DTS) for systematic exploration of threshold calibration
+effects on crisp-set QCA results.  These methods extend traditional robustness
+approaches by treating threshold variation as an exploratory tool for
+discovering causal structures.  Also provides Fiss (2011)
+<doi:10.5465/amj.2011.60263120> core/peripheral condition classification via
+@code{compute_fiss_core()} and @code{generate_fiss_chart()}, enabling
+four-symbol configuration charts that distinguish core conditions (present in
+both parsimonious and intermediate solutions) from peripheral conditions
+(intermediate only).  Built on top of the QCA package by Dusa (2019)
+<doi:10.1007/978-3-319-75668-4>, with function arguments following QCA
+conventions.  Based on set-theoretic methods by Ragin (2008)
+<doi:10.7208/chicago/9780226702797.001.0001> and established robustness
+protocols by Rubinson et al. (2019) <doi:10.1177/00491241211036158>.  This
+package supersedes TSQCA'; see the NEWS file for migration guidance.")
+    (license license:expat)))
+
 (define-public r-thriftr
   (package
     (name "r-thriftr")
@@ -26823,6 +26908,36 @@ errors, incorrect quotation marks.  Also provides useful functions for parsing
 and linting bibliography files.")
     (license license:gpl2)))
 
+(define-public r-texanshootr
+  (package
+    (name "r-texanshootr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "texanshootR" version))
+       (sha256
+        (base32 "00cdg4kd7jc5iz1nmda040cmlqp5dhpixak1slrbd75xfcdfij8b"))))
+    (properties `((upstream-name . "texanshootR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml r-rcpp r-jsonlite r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://gillescolling.com/texanshootR/")
+    (synopsis "Reproducible Audit Trails for Indefensible Research")
+    (description
+     "This package provides a structured, terminal-first interface for exploratory
+model search, including transformation grids, predictor-subset enumeration,
+interaction screening, principled- sounding sample restrictions, outcome
+engineering, and model-form escalation (polynomial / spline wraps, robust
+M-estimation, generalized linear model (GLM) family swaps, random-intercept
+lifts).  Persistent run history, achievement tracking, and reportable output
+generators (manuscript, presentation, funding letter, graphical abstract,
+reviewer response) are included.")
+    (license license:expat)))
+
 (define-public r-tex4exams
   (package
     (name "r-tex4exams")
@@ -29041,6 +29156,40 @@ GimÃ©nez, A., and Ares, G. (2016) <doi:10.1016/j.foodqual.2015.06.017>, Castur
 Baker, and Ross (2016) <doi:10.1016/j.foodqual.2016.06.011>, and Pineau et al.
 (2009) <doi:10.1016/j.foodqual.2009.04.005>.")
     (license license:gpl2+)))
+
+(define-public r-temporalhazard
+  (package
+    (name "r-temporalhazard")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TemporalHazard" version))
+       (sha256
+        (base32 "1x5g437k6pbmlc285xl6h4f1wyl07m2z6fnc8v20naaqy0n3h84r"))))
+    (properties `((upstream-name . "TemporalHazard")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival))
+    (native-inputs (list r-quarto))
+    (home-page "https://ehrlinger.github.io/temporal_hazard/")
+    (synopsis "Temporal Parametric Hazard Modeling")
+    (description
+     "This package provides native R implementations of the multiphase parametric
+hazard model of Blackstone, Naftel, and Turner (1986)
+<doi:10.1080/01621459.1986.10478314> with a focus on behavioral parity,
+transparent numerics, and reproducible validation against reference outputs from
+the original C'/'SAS HAZARD program, originally developed at the University of
+Alabama at Birmingham (UAB).  The SAS'/'C code and this R package are currently
+developed and maintained at The Cleveland Clinic Foundation, and the R code was
+wholly developed at The Cleveland Clinic Foundation.  The generalized temporal
+decomposition family extends to longitudinal mixed-effects settings (Rajeswaran
+et al.  2018 <doi:10.1177/0962280215623583>).  The package is intentionally
+implemented in pure R first; performance-critical paths may later be accelerated
+with Rcpp without changing the public interface.")
+    (license license:expat)))
 
 (define-public r-temporalgssa
   (package

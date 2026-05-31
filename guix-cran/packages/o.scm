@@ -11356,30 +11356,27 @@ applying functions before combining).")
 (define-public r-omisc
   (package
     (name "r-omisc")
-    (version "0.1.5")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Omisc" version))
        (sha256
-        (base32 "0p0iraascyx16y05rpc2c9k25s4crc0wrxy58dpj7jd47g2360ar"))))
+        (base32 "0dz58i40spya7qdygys0p8yb01d4ziwaxf6c8c0pnhhik2jjg11a"))))
     (properties `((upstream-name . "Omisc")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-psych r-mass r-copula))
+    (propagated-inputs (list r-psych r-mass))
     (home-page "https://cran.r-project.org/package=Omisc")
-    (synopsis "Univariate Bootstrapping and Other Things")
+    (synopsis "DeFries-Fulker Analysis and Univariate Bootstrapping")
     (description
-     "Primarily devoted to implementing the Univariate Bootstrap (as well as the
-Traditional Bootstrap).  In addition there are multiple functions for
-@code{DeFries-Fulker} behavioral genetics models.  The univariate bootstrapping
-functions, @code{DeFries-Fulker} functions, regression and traditional
-bootstrapping functions form the original core.  Additional features may come
-online later, however this software is a work in progress.  For more information
-about univariate bootstrapping see: Lee and Rodgers (1998) and Beasley et al
-(2007) <doi:10.1037/1082-989X.12.4.414>.")
+     "This package implements the Univariate Bootstrap and the Traditional (Naive)
+Bootstrap for resampling multivariate data while preserving covariance
+structure.  Also provides functions for @code{DeFries-Fulker} behavioral
+genetics models, including the Rodgers-Kohler formulation with robust standard
+errors.")
     (license license:gpl3)))
 
 (define-public r-omicwas

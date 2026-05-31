@@ -9818,13 +9818,13 @@ masterpieces from the worlds greatest artists.  For more information, see
 (define-public r-liqueuer
   (package
     (name "r-liqueuer")
-    (version "0.0.1")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "liqueueR" version))
        (sha256
-        (base32 "0rpjib0dz39la63gy9bw9gmdfq2fcx40y4y4wcb6ky41qcjdp1nd"))))
+        (base32 "1rj35ks316wwxqnwvb3l5jlinanprwykxamnqx43lr5xq4dh8r6l"))))
     (properties `((upstream-name . "liqueueR")))
     (build-system r-build-system)
     (arguments
@@ -18089,19 +18089,20 @@ lavaan package.")
 (define-public r-latticekrig
   (package
     (name "r-latticekrig")
-    (version "9.3.0")
+    (version "9.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LatticeKrig" version))
        (sha256
-        (base32 "0spkbbpf6x990mv4s1dk9mhhavkjnn30m5q70gl34763flnbr0vm"))))
+        (base32 "0zf7fhkdgw43084xpllqa600frignc50x91n02drvzdc5v923qi7"))))
     (properties `((upstream-name . "LatticeKrig")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-spam64 r-spam r-fields r-fftwtools))
+    (propagated-inputs (list r-viridislite r-spam64 r-spam r-fields
+                             r-fftwtools))
     (native-inputs (list gfortran))
     (home-page "https://www.r-project.org")
     (synopsis "Multi-Resolution Kriging Based on Markov Random Fields")

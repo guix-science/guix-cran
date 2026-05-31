@@ -9627,19 +9627,20 @@ amplification curve is 40 cycles long.  Original raw data file:
 (define-public r-boe
   (package
     (name "r-boe")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "boe" version))
        (sha256
-        (base32 "1cnn2f7v2m2li2cad2fdaib5cvhlni0xdnhrxzn1gp7879abldgy"))))
+        (base32 "028m5gk2mqarlnpylzvdhlrc23h1p8vm2hf177lah04q19073p6r"))))
     (properties `((upstream-name . "boe")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-httr2 r-cli))
+    (native-inputs (list r-knitr))
     (home-page "https://charlescoverdale.github.io/boe/")
     (synopsis "Download Data from the 'Bank of England' Statistical Database")
     (description
@@ -23742,6 +23743,40 @@ Institute (\"Chartered Financial Analyst Program Curriculum 2020 Level I Volumes
     (description
      "These data contain morphological image measurements for dried beans from Koklu
 and Ozkan (2020) <doi:10.1016/j.compag.2020.105507>.")
+    (license license:expat)))
+
+(define-public r-bean
+  (package
+    (name "r-bean")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bean" version))
+       (sha256
+        (base32 "10sn8xy7md9zsp601hl65w5azf6mpn2vw1qsl0z95y94lxwjqnz0"))))
+    (properties `((upstream-name . "bean")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra r-mass))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/paanwaris/bean")
+    (synopsis "Data Thinning of Species Occurrences in Environmental Space")
+    (description
+     "This package provides a suite of tools to mitigate sampling bias in species
+occurrence records by thinning data in the environmental space (E-space).  This
+process can improve the accuracy and precision of species distribution models
+(SDM, also known as ecological niche models, ENM).  The package offers a
+data-driven protocol to determine thinning parameters using kernel-density
+bandwidth selection.  Two thinning methods are provided (stochastic and
+deterministic) to reduce over-sampled environmental conditions and down-weight
+outlier observations.  The name bean reflects the core principle of the method:
+each pod (a grid cell in E-space) is allowed to contain only a limited number of
+beans (occurrence points).  See Silverman (1986, ISBN:978-0-412-24620-3) and
+Rousseeuw and Leroy (2003, ISBN:978-0-471-48855-2) for the underlying
+statistical methods.")
     (license license:expat)))
 
 (define-public r-beam

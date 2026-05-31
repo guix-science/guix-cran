@@ -6043,6 +6043,29 @@ conversion to cardinals, ordinals, numerators, and denominators.  Supports
 negative and non-integer numbers.")
     (license license:expat)))
 
+(define-public r-nomads
+  (package
+    (name "r-nomads")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nomads" version))
+       (sha256
+        (base32 "1rf2d6ha223zag42whqyadzsbj6h9z7s05v771ghq7iwwbhvkwg8"))))
+    (properties `((upstream-name . "nomads")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=nomads")
+    (synopsis "Nomadic Pectoral Sandpiper Movement Data")
+    (description
+     "This package provides satellite tracking data from nomadic pectoral sandpipers
+published in Kempenaers and Valcu (2017) <doi:10.1038/nature20813>.  The data
+can also serve as benchmark data for clustering movement tracks.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
+
 (define-public r-nolock
   (package
     (name "r-nolock")

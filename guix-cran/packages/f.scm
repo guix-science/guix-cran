@@ -18666,6 +18666,38 @@ partially appear in the increment core, being the generalized gamma and the log
 normal densities.")
     (license license:gpl2+)))
 
+(define-public r-fiber
+  (package
+    (name "r-fiber")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fiber" version))
+       (sha256
+        (base32 "1a500pirjgz2r3n9k9mh10105whzz310f1dm7xh6y1zj7d0vm5hd"))))
+    (properties `((upstream-name . "fiber")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-s7 r-cpp11 r-cli))
+    (home-page "https://github.com/tractoverse/fiber")
+    (synopsis "S7 Data Structures for Diffusion MRI Tractography")
+    (description
+     "This package provides three S7 classes â streamline, bundle, and bundle_set
+â for representing diffusion MRI tractography data in R, together with a
+concise set of methods for computing shape descriptors (arc-length, curvature,
+torsion, sinuosity), the Hausdorff distance between streamlines, arc-length
+reparametrization of streamlines and bundles onto uniform grids, combination of
+streamlines or bundles into a single bundle, combination of bundles from
+multiple subjects or sessions into a bundle_set, and coercion to and from the
+@code{dwiFiber} S4 class of the dti package.  See Dell'Acqua, F., Descoteaux, M.
+and Leemans, A. (2024) \"Handbook of Diffusion MR Tractography\"
+<doi:10.1016/C2018-0-02520-7> for more about the mathematical and computational
+underpinnings of diffusion MRI tractography.")
+    (license license:expat)))
+
 (define-public r-fi
   (package
     (name "r-fi")
@@ -20421,13 +20453,13 @@ USGS).")
 (define-public r-fect
   (package
     (name "r-fect")
-    (version "2.4.1")
+    (version "2.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fect" version))
        (sha256
-        (base32 "0b6716n8hd7625l426wg58mckj6vcf80gl4mjsiwni53r7p9mjzh"))))
+        (base32 "1qhh1ac7a579bfwwdy5b8sjc4px24g1ri9biwm40s2xqcxi585p4"))))
     (properties `((upstream-name . "fect")))
     (build-system r-build-system)
     (arguments

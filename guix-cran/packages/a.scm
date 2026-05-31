@@ -24131,13 +24131,13 @@ format is also provided.")
 (define-public r-admix
   (package
     (name "r-admix")
-    (version "2.5.2")
+    (version "2.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admix" version))
        (sha256
-        (base32 "0rlnbd3kd9bbvabcqj9cm7i7k7l20wgvyd0szwsm9ygi5b53a17w"))))
+        (base32 "1a7g5dn3arbkqq29b6f9xy8zb6gf7bw86qp3inx7dl7b1gfq7gi9"))))
     (properties `((upstream-name . "admix")))
     (build-system r-build-system)
     (arguments
@@ -24150,7 +24150,6 @@ format is also provided.")
                              r-mass
                              r-iso
                              r-fdrtool
-                             r-envstats
                              r-cubature))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/XavierMilhaud/admix-Rpackage")

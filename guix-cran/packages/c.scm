@@ -12107,6 +12107,46 @@ imbalance measures.  See Baldi Antognini A, Frieri R, Zagoraiou M and Novelli M
 (2022) <doi:10.1007/s00362-022-01381-1> for details.")
     (license license:gpl3+)))
 
+(define-public r-courier
+  (package
+    (name "r-courier")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "courieR" version))
+       (sha256
+        (base32 "152ahr2mij86njp99f8y35vcdvx6b125mxsx3sw54vrqj4lf3lxh"))))
+    (properties `((upstream-name . "courieR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-shiny
+                             r-processx
+                             r-pak
+                             r-jsonlite
+                             r-fs
+                             r-dt
+                             r-desc
+                             r-data-table
+                             r-cli
+                             r-callr
+                             r-bslib
+                             r-bsicons))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lennon-li/courieR")
+    (synopsis "Migrate Installed R Packages Between R Versions")
+    (description
+     "Detects all R installations on the current machine and migrates installed R
+packages between them.  Provides @code{find_routes()} to discover R versions,
+@code{manifest()} to scan package libraries via subprocess', @code{inventory()}
+to compare two libraries, and @code{ship()} to install packages into a target R
+version using pak'.  Includes a Shiny dashboard @code{(open_hub()}) for
+interactive one-way and two-way migration.")
+    (license license:expat)))
+
 (define-public r-couplr
   (package
     (name "r-couplr")
@@ -28189,13 +28229,13 @@ patient enrichment in two-stage clinical designs.  Technical Report.")
 (define-public r-cobalt
   (package
     (name "r-cobalt")
-    (version "4.6.2")
+    (version "4.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cobalt" version))
        (sha256
-        (base32 "1y9wa2r0plhvkx3nz2rhfqa31jwn25s08lyjjzi14vkvsg1a49hm"))))
+        (base32 "0wiqfail5rn7dym7rcvcbyvmy1bkd9igjs80qgs0yynkaf2qvcmd"))))
     (properties `((upstream-name . "cobalt")))
     (build-system r-build-system)
     (arguments
@@ -28206,7 +28246,7 @@ patient enrichment in two-stage clinical designs.  Technical Report.")
                              r-gridextra
                              r-ggplot2
                              r-cli
-                             r-chk))
+                             r-arg))
     (native-inputs (list r-knitr))
     (home-page "https://ngreifer.github.io/cobalt/")
     (synopsis "Covariate Balance Tables and Plots")
@@ -42873,32 +42913,47 @@ Umpierrez GE, P. Kovatchev B (2018) <doi:10.1016/j.amjms.2018.09.010>.")
 (define-public r-cgmissingdatar
   (package
     (name "r-cgmissingdatar")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CGMissingDataR" version))
        (sha256
-        (base32 "19ksbribacchnfc2dkd9m2rhgk61q1dj0pbrbdrbrq5dq0zg3dgm"))))
+        (base32 "087fz5sdg3izxr60vr7m8098bjn2ls7cm2nb311dvhsixmyz7c2c"))))
     (properties `((upstream-name . "CGMissingDataR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-ranger r-mice r-metrics r-fnn))
+    (propagated-inputs (list r-xgboost
+                             r-shiny
+                             r-reticulate
+                             r-ranger
+                             r-mice
+                             r-lightgbm
+                             r-lifecycle
+                             r-forecast
+                             r-fnn
+                             r-data-table
+                             r-cgmanalyzer))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/saraswatsh/CGMissingDataR")
-    (synopsis "Missingness Benchmark for Continuous Glucose Monitoring Data")
+    (home-page "https://zhanglabuky.github.io/CGMmissingDataR/")
+    (synopsis "Impute Missing Glucose Values in CGM Data")
     (description
-     "Evaluates predictive performance under feature-level missingness in
-repeated-measures continuous glucose monitoring-like data.  The benchmark
-injects missing values at user-specified rates, imputes incomplete feature
-matrices using an iterative chained-equations approach inspired by multivariate
-imputation by chained equations (MICE; Azur et al. (2011)
-<doi:10.1002/mpr.329>), fits Random Forest regression models (Breiman (2001)
-<doi:10.1023/A:1010933404324>) and k-nearest-neighbor regression models (Zhang
-(2016) <doi:10.21037/atm.2016.03.37>), and reports mean absolute percentage
-error and R-squared across missingness rates.")
+     "Imputes missing glucose values in repeated-measures continuous glucose
+monitoring (CGM) data.  Workflows create time-series features from raw
+timestamps, support model selection, and return the user's original columns plus
+an imputed glucose column.  Methods include multiple imputation by chained
+equations (MICE; Azur et al. (2011) <doi:10.1002/mpr.329>), Random Forest
+regression (Breiman (2001) <doi:10.1023/A:1010933404324>), k-nearest-neighbor
+regression (Zhang (2016) <doi:10.21037/atm.2016.03.37>), XGBoost (Chen and
+Guestrin (2016) <doi:10.1145/2939672.2939785>), @code{LightGBM} (Ke et al.
+(2017)
+<https://papers.nips.cc/paper/6907-lightgbm-a-highly-efficient-gradient-boosting-decision>),
+and ARIMA forecasting with the forecast framework (Hyndman and Khandakar (2008)
+<doi:10.18637/jss.v027.i03>).  A Python-compatible backend uses reticulate to
+call pandas', scikit-learn', statsmodels', Python xgboost', and optional Python
+lightgbm'.")
     (license license:gpl2+)))
 
 (define-public r-cgmguru
@@ -43505,13 +43560,13 @@ Guo G. (2023) <doi:10.1007/s00180-022-01270-z>.")
 (define-public r-cfilt
   (package
     (name "r-cfilt")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CFilt" version))
        (sha256
-        (base32 "0i73pgxmxlwjaa38bwjjj4p0lww9qvj1hn326d9wjy6r95ar8rcd"))))
+        (base32 "1wriq3w7hh6hsb68gj2v0n6jylpwy2fjdi2jsf2whyxkg58mf8r5"))))
     (properties `((upstream-name . "CFilt")))
     (build-system r-build-system)
     (arguments

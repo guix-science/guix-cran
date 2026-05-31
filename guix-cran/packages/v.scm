@@ -4292,6 +4292,65 @@ reproducible research in biostatistics and computational biology for the benefit
 of understanding HIV dynamics.")
     (license license:expat)))
 
+(define-public r-viralentropr
+  (package
+    (name "r-viralentropr")
+    (version "0.6.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ViralEntropR" version))
+       (sha256
+        (base32 "0miqmfv352mwzqk9w5flhiq7ay96izl4kmwg2xrkslcbgkxzg2kq"))))
+    (properties `((upstream-name . "ViralEntropR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
+    (propagated-inputs (list r-zoo
+                             r-stringr
+                             r-rlang
+                             r-mclust
+                             r-magrittr
+                             r-lubridate
+                             r-kableextra
+                             r-hdcpdetect
+                             r-ggplot2
+                             r-ecp))
+    (native-inputs (list r-r-rsp r-knitr))
+    (home-page "https://github.com/vadimtyuryaev/ViralEntropR")
+    (synopsis
+     "Computational Pipeline for Entropy-Informed Detection of Emerging Viral Variants")
+    (description
+     "This package implements an entropy-informed pipeline for detecting emerging
+variants in viral amino acid sequence data, extending prior clustering-based
+approaches including hemagglutinin clustering methods (Li et al., 2015)
+<doi:10.1142/9789814667944_0018>.  Provides a fully vectorized FASTA
+preprocessing toolkit covering header parsing, two-pass date and country
+extraction, ambiguous-residue filtering, and integer encoding under a 25-symbol
+amino acid alphabet.  Computes per-site Shannon entropy across user-defined
+cumulative, sliding, or disjoint temporal partitions and clusters per-site
+entropy values using Gaussian mixture models via mclust (Scrucca et al., 2016)
+<doi:10.32614/RJ-2016-021>.  Quantifies temporal distributional shifts between
+partitions using the Hellinger distance (van der Vaart, 1998)
+<doi:10.1017/CBO9780511802256>, and detects temporal change points
+non-parametrically using energy statistics (Matteson and James, 2014)
+<doi:10.1080/01621459.2013.849605> via ecp or wild binary segmentation
+(Fryzlewicz, 2014) <doi:10.1214/14-AOS1245> via H@code{DcpDetect}'.  Per-site
+amino-acid frequency tables and entropy trajectory plots characterize sequence
+composition and evolutionary dynamics across time.  A configurable multi-variant
+simulation engine generates synthetic sequence time series with known ground
+truth for benchmarking detection pipelines.  A curated dataset of
+SARS-@code{CoV-2} Variants of Concern and Variants of Interest with associated
+lineage and surveillance metadata is included, along with a bundled National
+Center for Biotechnology Information (NCBI) Spike protein sample and vignettes
+demonstrating the full workflow.")
+    (license license:expat)))
+
 (define-public r-viprodesign
   (package
     (name "r-viprodesign")

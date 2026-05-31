@@ -773,13 +773,13 @@ correlation coefficient with this package.")
 (define-public r-ivcheck
   (package
     (name "r-ivcheck")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ivcheck" version))
        (sha256
-        (base32 "19q8b80lrdm386yfx2s5yxwqkrxkdhwcm9da9bdvqrhhlr8d98ih"))))
+        (base32 "0my12k5396hrxfvv557qr5qbyvc5bgzj30yc3ygcwckaxj342hi6"))))
     (properties `((upstream-name . "ivcheck")))
     (build-system r-build-system)
     (arguments
@@ -787,7 +787,7 @@ correlation coefficient with this package.")
       #:tests? #f))
     (propagated-inputs (list r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/charlescoverdale/ivcheck")
+    (home-page "https://charlescoverdale.github.io/ivcheck/")
     (synopsis "Tests for Instrumental Variable Validity")
     (description
      "This package implements tests for the identifying assumptions of instrumental
@@ -6422,6 +6422,53 @@ log-linear and Poisson regressions, offers several computational advantages, and
 corresponds to the correct way to perform the popular log(Y + 1) transformation.
  For more details about how to use it, see the notebook at:
 <https://www.davidbenatia.com/>.")
+    (license license:gpl3)))
+
+(define-public r-iobr
+  (package
+    (name "r-iobr")
+    (version "2.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IOBR" version))
+       (sha256
+        (base32 "13xg0wwc87vl2i6mab4wyw5fr69nplc6y4fdr09gfisq777cfphb"))))
+    (properties `((upstream-name . "IOBR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-survminer
+                             r-survival
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-gsva
+                             r-glmnet
+                             r-ggplot2
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://doi.org/10.3389/fimmu.2021.687975")
+    (synopsis "Immune Oncology Biological Research")
+    (description
+     "This package provides six modules for tumor microenvironment (TME) analysis
+based on multi-omics data.  These modules cover data preprocessing, TME
+estimation, TME infiltrating patterns, cellular interactions, genome and TME
+interaction, and visualization for TME relevant features, as well as modelling
+based on key features.  It integrates multiple microenvironmental analysis
+algorithms and signature estimation methods, simplifying the analysis and
+downstream visualization of the TME. In addition to providing a quick and easy
+way to construct gene signatures from single-cell RNA-seq data, it also provides
+a way to construct a reference matrix for TME deconvolution from single-cell
+RNA-seq data.  The analysis pipeline and feature visualization are user-friendly
+and provide a comprehensive description of the complex TME, offering insights
+into tumour-immune interactions (Zeng D, et al. (2024)
+<doi:10.1016/j.crmeth.2024.100910>.  Fang Y, et al. (2025)
+<doi:10.1002/mdr2.70001>).")
     (license license:gpl3)))
 
 (define-public r-ioanalysis

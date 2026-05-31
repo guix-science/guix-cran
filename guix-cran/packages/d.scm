@@ -6077,23 +6077,28 @@ crisp-set, multi-value, and fuzzy-set variants.")
 (define-public r-drhur
   (package
     (name "r-drhur")
-    (version "1.1.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "drhur" version))
        (sha256
-        (base32 "06zy2acgmhfc1criid35ci1802zl77qcif2vrhn0w8syixsbjiq8"))))
+        (base32 "1vj3nvgqbqv3z7nwvhxcsllqlc8w431nk9x1ns8fybcxxzc51l8r"))))
     (properties `((upstream-name . "drhur")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-learnr))
+    (propagated-inputs (list r-quarto))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=drhur")
+    (home-page "https://www.drhuyue.site/drhur/")
     (synopsis "Learning R with Dr. Hu")
-    (description "Tutarials of R learning easily and happily.")
+    (description
+     "This package provides interactive workshops for learning R easily and happily.
+Each workshop is a self-contained Quarto Live document whose code cells run in
+the browser via @code{WebAssembly}', so learners can read the instructions and
+run the exercises side by side without a local R setup.  The materials accompany
+the \"Learning R with Dr. Hu\" workshop series.")
     (license license:expat)))
 
 (define-public r-drhotnet
