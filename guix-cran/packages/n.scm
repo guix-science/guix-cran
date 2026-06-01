@@ -8923,13 +8923,13 @@ covariate selection.")
 (define-public r-nlmixr2est
   (package
     (name "r-nlmixr2est")
-    (version "5.0.2")
+    (version "6.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmixr2est" version))
        (sha256
-        (base32 "0i1zf60l96kkqz63frcwvcil9kdz9h7w0ybfjxnp5g66cy70vy9a"))))
+        (base32 "1ck2a0ljj7a2py27rpjwfmzrlvgkmyq1jhznabbs1ajf6g69yjl1"))))
     (properties `((upstream-name . "nlmixr2est")))
     (build-system r-build-system)
     (arguments
@@ -8946,7 +8946,6 @@ covariate selection.")
                              r-n1qn1
                              r-minqa
                              r-matrix
-                             r-magrittr
                              r-lotri
                              r-lbfgsb3c
                              r-knitr
@@ -15067,20 +15066,25 @@ methods, please refer to the paper by H Du, S Wen, Y Guo, F Jin, BD Gallas
 (define-public r-nestimate
   (package
     (name "r-nestimate")
-    (version "0.4.3")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Nestimate" version))
        (sha256
-        (base32 "0gn81rgnwpskf44raq9pq3lzx7mp5jl3ziac2wynb54vll676l52"))))
+        (base32 "1l94i321abi1s52bxgw8bjrzpmvmj8xn9111wj1n99l91nzhss11"))))
     (properties `((upstream-name . "Nestimate")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-scales r-glasso r-ggplot2 r-data-table
-                             r-cluster))
+    (propagated-inputs (list r-scales
+                             r-nnet
+                             r-glasso
+                             r-ggplot2
+                             r-data-table
+                             r-cluster
+                             r-brglm2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mohsaqr/Nestimate")
     (synopsis "Network Estimation, Bootstrap, and Higher-Order Analysis")

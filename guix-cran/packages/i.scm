@@ -17384,13 +17384,13 @@ the reference sources, respectively.")
 (define-public r-ieegio
   (package
     (name "r-ieegio")
-    (version "0.0.9")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ieegio" version))
        (sha256
-        (base32 "08kwwig2mfbm0h3ksfhbcvgw53cadhmj1fjs836q7s3yp1vzb957"))))
+        (base32 "00qz9nmp84lgxw155g5np73y84amc4ngvglar8n51h84d4v63wbs"))))
     (properties `((upstream-name . "ieegio")))
     (build-system r-build-system)
     (arguments

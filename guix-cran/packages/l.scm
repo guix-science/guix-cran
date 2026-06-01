@@ -12768,13 +12768,13 @@ processing.")
 (define-public r-libopenexr
   (package
     (name "r-libopenexr")
-    (version "3.4.4-2")
+    (version "3.4.12-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "libopenexr" version))
        (sha256
-        (base32 "0b3xdqn01mfgn1p4rvkfkpkq5mmh7zv8pxqxxxhh3la5imsklvxs"))))
+        (base32 "0nnyfblxlqs743sxs8n4pj7bxamhl203apcms0qwkl9chvpdrmwi"))))
     (properties `((upstream-name . "libopenexr")))
     (build-system r-build-system)
     (arguments

@@ -26312,13 +26312,13 @@ Meta-Learners.\" A tutorial for this package can be found at
 (define-public r-cograph
   (package
     (name "r-cograph")
-    (version "2.1.1")
+    (version "2.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cograph" version))
        (sha256
-        (base32 "19vs3vzzqi90xkbpn8kfzfvkg5wdjplndxbjsxf7aadr47darp03"))))
+        (base32 "1f7yn8bn94x6by2ryh1v68p210dq7xlfx3wp2smxqxisw0wy4d54"))))
     (properties `((upstream-name . "cograph")))
     (build-system r-build-system)
     (arguments
@@ -39081,13 +39081,13 @@ package is part of the R@code{OpenSci} suite (<https://ropensci.org>).")
 (define-public r-chromconverter
   (package
     (name "r-chromconverter")
-    (version "0.7.5")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chromConverter" version))
        (sha256
-        (base32 "0669xdsddalfc37gjr0wl9sdn9c7g6gk16zk7vabdlcvbdd7f3zf"))))
+        (base32 "0hkdy4223xcjvgsifk97mbwphsw89ghxslgd50asr0zd4frgk194"))))
     (properties `((upstream-name . "chromConverter")))
     (build-system r-build-system)
     (arguments
@@ -39112,13 +39112,13 @@ package is part of the R@code{OpenSci} suite (<https://ropensci.org>).")
     (synopsis "Chromatographic File Converter")
     (description
      "Reads chromatograms from binary formats into R objects.  Currently supports
-conversion of Agilent @code{ChemStation}', Agilent @code{MassHunter}', Shimadzu
-@code{LabSolutions}', @code{ThermoRaw}', and Varian Workstation files as well as
-various text-based formats.  In addition to its internal parsers,
-@code{chromConverter} contains bindings to parsers in external libraries, such
-as Aston <https://github.com/bovee/aston>, Entab
-<https://github.com/bovee/entab>, rainbow <https://rainbow-api.readthedocs.io/>,
-and @code{ThermoRawFileParser}
+conversion of Agilent @code{ChemStation}', Agilent @code{MassHunter}', Agilent
+@code{OpenLab}', Shimadzu @code{LabSolutions}', @code{ThermoRaw}', Varian
+Workstation', and Waters Empower files as well as various other formats.  In
+addition to its internal parsers, @code{chromConverter} contains bindings to
+parsers in external libraries, such as Aston <https://github.com/bovee/aston>,
+Entab <https://github.com/bovee/entab>, rainbow
+<https://rainbow-api.readthedocs.io/>, and @code{ThermoRawFileParser}
 <https://github.com/compomics/@code{ThermoRawFileParser>}.")
     (license license:gpl3+)))
 

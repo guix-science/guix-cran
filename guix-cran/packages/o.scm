@@ -6151,13 +6151,13 @@ implemented.  Other methods will be implemented in the future.")
 (define-public r-optimflex
   (package
     (name "r-optimflex")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "optimflex" version))
        (sha256
-        (base32 "14fq820gp6h3vkgnxpwl1jcvn586y9nc669ak4wbpb0921lpna4l"))))
+        (base32 "1k1yxjnx8m1hnmd6iijlvzyzmxghyagy4hl32knz6fnnisvhypd0"))))
     (properties `((upstream-name . "optimflex")))
     (build-system r-build-system)
     (arguments

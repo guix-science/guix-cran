@@ -8520,20 +8520,20 @@ the proj4 package.")
 (define-public r-progressify
   (package
     (name "r-progressify")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "progressify" version))
        (sha256
-        (base32 "0pd1jllyvymlzfvm07pywjr84w3vp8qdp3g64pb4br7kypax229v"))))
+        (base32 "06cnzpqzjrv0k4f7mqn1vdcm3n00n4iqa5sgipzccd690axmlncn"))))
     (properties `((upstream-name . "progressify")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-progressr))
-    (home-page "https://cran.r-project.org/package=progressify")
+    (home-page "https://progressify.futureverse.org")
     (synopsis "Progress Reporting of Common Functions via One Magic Function")
     (description
      "The @code{progressify()} function rewrites (transpiles) calls to sequential and
@@ -8543,10 +8543,11 @@ signal progress updates.  By combining this function with R's native pipe
 operator, you have a straightforward way to report progress on iterative
 computations with minimal refactoring, e.g. lapply(x, fcn) |>
 @code{progressify()} and purrr::map(x, fcn) |> @code{progressify()}'.  It is
-compatible with the futurize package for parallelization, e.g. lapply(x, fcn) |>
-@code{progressify()} |> @code{futurize()} and purrr::map(x, fcn) |>
-@code{futurize()} |> @code{progressify()}'.")
-    (license license:gpl3+)))
+compatible with the parallel-processing map-reduce packages future.apply',
+furrr', crossmap', foreach', @code{doFuture}', and futurize'.  It also supports
+domain-specific packages including boot', fwb', lme4', partykit', sandwich', and
+@code{SimDesign}', e.g. boot::boot(data, stat, R) |> @code{progressify()}'.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-proftools
   (package
@@ -11081,27 +11082,39 @@ simplex method, see Haotian Pang (2017)
 (define-public r-pridit
   (package
     (name "r-pridit")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pridit" version))
        (sha256
-        (base32 "1q15dz0918ln3zrw149vg7m42sf21zj7c0h090896lshncdq64y2"))))
+        (base32 "1bcjmrpwvkdh75h9549f6hphk5i36a6xbmbl7fs5pkrbdprjhqk5"))))
     (properties `((upstream-name . "pridit")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-rlang r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/rlieberthal/PRIDIT")
-    (synopsis "Principal Component Analysis Applied to Ridit Scoring")
+    (synopsis
+     "Composite Scoring via Principal Component Analysis of Ridit Scores")
     (description
-     "This package implements the PRIDIT (Principal Component Analysis applied to
-RIDITs') scoring system described in Brockett et al. (2002)
-<doi:10.1111/1539-6975.00027>.  Provides functions for ridit scoring originally
-developed by Bross (1958) <doi:10.2307/2527727>, calculating PRIDIT weights, and
-computing final PRIDIT scores for multivariate analysis of ordinal data.")
+     "This package implements PRIDIT (Principal Component Analysis applied to
+RIDITs'), an unsupervised, nonparametric method for aggregating ordinal,
+categorical, and continuous indicators into a single interpretable composite
+score.  Originally proposed by Brockett et al. (2002)
+<doi:10.1111/1539-6975.00027> for insurance fraud detection and extended to
+hospital quality measurement by Lieberthal (2008)
+<doi:10.1111/j.1475-6773.2007.00821.x> and Lieberthal and Comer (2013)
+<doi:10.1111/rmir.12009>.  The package provides: (1) low-level functions
+@code{ridit()}, @code{PRIDITweight()}, and @code{PRIDITscore()}; (2) a unified
+@code{pridit()} entry point returning a classed object with print, summary,
+autoplot', and coef methods; (3) @code{pridit_boot()} for bootstrap confidence
+intervals on scores and weights; (4) a @code{step_pridit()} recipe step for
+out-of-sample scoring within the tidymodels framework; and (5)
+@code{pridit_longitudinal()} for panel data, computing cross-period stability of
+scores and weights.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-prider
@@ -39196,13 +39209,13 @@ definition.")
 (define-public r-pcreg
   (package
     (name "r-pcreg")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pcreg" version))
        (sha256
-        (base32 "0lihbc1agjjqgrwb1v9ri8i2y7xx2cls5hkg3gwqaw3a503qyd88"))))
+        (base32 "1220b4f2aixymr74p9yfqky34jqw038wxlm558mb8v6rls84v550"))))
     (properties `((upstream-name . "pcreg")))
     (build-system r-build-system)
     (arguments
@@ -41154,13 +41167,13 @@ elimination of heterogeneity.  R. C. Bose and K. R. Nair (1939)
 (define-public r-pbdslap
   (package
     (name "r-pbdslap")
-    (version "0.3-7")
+    (version "0.3-8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pbdSLAP" version))
        (sha256
-        (base32 "1cdrd7cvrmd9jw32m988hbc5dhn7n2lrifn9l5v54g77h42v43ch"))))
+        (base32 "08znl11pk2xs3v5cjgkayp85kw7injaz34plyycm5gxpxggxj6p7"))))
     (properties `((upstream-name . "pbdSLAP")))
     (build-system r-build-system)
     (arguments

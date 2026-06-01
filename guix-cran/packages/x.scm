@@ -1935,13 +1935,13 @@ The reference for the methods implemented here is Chatterjee, Sourav (2020)
 (define-public r-xiacf
   (package
     (name "r-xiacf")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xiacf" version))
        (sha256
-        (base32 "11k1swk2riql9qskw9lklm9vsl8dxzs3p4z4lkvp0mhv8a9vmqlx"))))
+        (base32 "0h2hs6n6i97qxly0s2lxchbc0hik0jrdciz1ay7wq50n3kapmi53"))))
     (properties `((upstream-name . "xiacf")))
     (build-system r-build-system)
     (arguments

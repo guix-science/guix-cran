@@ -33322,6 +33322,64 @@ for managing multiple sections of extracted text, and a way to automatically
 determine the page number of quoted sections from PDF manuscripts.")
     (license (license:fsdg-compatible "MIT + file LICENCE"))))
 
+(define-public r-reviewr
+  (package
+    (name "r-reviewr")
+    (version "2.3.10")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ReviewR" version))
+       (sha256
+        (base32 "1h5vgqxvx5cjcwgrj7ayc7b1xzkgyndif46pjfmaz4pw1sz8990h"))))
+    (properties `((upstream-name . "ReviewR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-snakecase
+                             r-shinywidgets
+                             r-shinyjs
+                             r-shinydashboardplus
+                             r-shinydashboard
+                             r-shinycssloaders
+                             r-shiny
+                             r-rsqlite
+                             r-rpostgres
+                             r-rlang
+                             r-redcapr
+                             r-redcapapi
+                             r-purrr
+                             r-magrittr
+                             r-jsonlite
+                             r-httr
+                             r-golem
+                             r-glue
+                             r-gargle
+                             r-dt
+                             r-dplyr
+                             r-dbplyr
+                             r-dbi
+                             r-config
+                             r-bigrquery))
+    (native-inputs (list r-knitr))
+    (home-page "https://reviewr.thewileylab.org/")
+    (synopsis
+     "Light-Weight, Portable Tool for Reviewing Individual Patient Records")
+    (description
+     "This package provides a portable Shiny tool to explore patient-level electronic
+health record data and perform chart review in a single integrated framework.
+This tool supports browsing clinical data in many different formats including
+multiple versions of the OMOP common data model as well as the MIMIC-III data
+model.  In addition, chart review information is captured and stored securely
+via the Shiny interface in a REDCap (Research Electronic Data Capture) project
+using the REDCap API. See the @code{ReviewR} website for additional information,
+documentation, and examples.")
+    (license license:bsd-3)))
+
 (define-public r-revgadgets
   (package
     (name "r-revgadgets")
@@ -44575,13 +44633,13 @@ formats: akterm, dmna, Scintec Format-1, and Campbell Scientific TOA5.")
 (define-public r-readmdtable
   (package
     (name "r-readmdtable")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "readMDTable" version))
        (sha256
-        (base32 "04cmkr9mkqnklbsrfsgfzgc9hi5dr77vys0brl3g203f27490fgg"))))
+        (base32 "18pfv4ppc4jfcim6c7nf6im478qpb83k6kxyqzsbrf3324x77srk"))))
     (properties `((upstream-name . "readMDTable")))
     (build-system r-build-system)
     (arguments
@@ -49873,19 +49931,19 @@ endpoints.")
 (define-public r-rcognito
   (package
     (name "r-rcognito")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RCognito" version))
        (sha256
-        (base32 "0b8mhclwp5lx948nlglnx5h5hdykixs1fz6big5liz88218phxg4"))))
+        (base32 "07klrliqv2jyx75viqa2afafcw9wrxky7d735krxbxv3pnfimwzq"))))
     (properties `((upstream-name . "RCognito")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-paws))
+    (propagated-inputs (list r-paws-security-identity))
     (home-page "https://cran.r-project.org/package=RCognito")
     (synopsis "Simplified Interface for 'Amazon Cognito'")
     (description
@@ -54531,13 +54589,13 @@ routinely.  Finally, there is an R markdown skeleton for basic reserve analysis.
 (define-public r-ravetools
   (package
     (name "r-ravetools")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ravetools" version))
        (sha256
-        (base32 "0hah9m4n98d42pacc6jhansr62vxnnirah9crc8n2gpb3g367b42"))))
+        (base32 "1fjjg88ahfq3v6lfgf5vmdwc388x9v2a1wq6x2l45c72p643d1lc"))))
     (properties `((upstream-name . "ravetools")))
     (build-system r-build-system)
     (arguments

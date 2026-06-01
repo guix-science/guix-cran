@@ -39882,19 +39882,19 @@ into soil matric potential and volumetric soil moisture.")
 (define-public r-mertools
   (package
     (name "r-mertools")
-    (version "0.6.4")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "merTools" version))
        (sha256
-        (base32 "0paj046hb6l3fcq4h30jp3i82x8diw0a68n7bwyis4nyaw12hwsc"))))
+        (base32 "08yn183j8lppigqcx0954798y9nr5vwbkg1wa8qnbl588xjmww0l"))))
     (properties `((upstream-name . "merTools")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-shiny
+    (propagated-inputs (list r-reformulas
                              r-mvtnorm
                              r-matrix
                              r-lme4
@@ -39906,7 +39906,7 @@ into soil matric potential and volumetric soil moisture.")
                              r-arm
                              r-abind))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=merTools")
+    (home-page "https://jknowles.github.io/merTools/")
     (synopsis "Tools for Analyzing Mixed Effect Regression Models")
     (description
      "This package provides methods for extracting results from mixed-effect model
@@ -48401,6 +48401,56 @@ method is the Similarity of Matrices Index, while various related measures like
 r1, r2, r3, r4, Yanai's GCD, RV, RV2, adjusted RV, Rozeboom's linear correlation
 and Coxhead's coefficient are included for comparison and flexibility.")
     (license license:gpl2)))
+
+(define-public r-matrixcorr
+  (package
+    (name "r-matrixcorr")
+    (version "0.12.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "matrixCorr" version))
+       (sha256
+        (base32 "0vjbhzn45iq45v77bcsg850i67fa9sgniywvj9374p9lvyq9y3c4"))))
+    (properties `((upstream-name . "matrixCorr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-matrix
+                             r-ggplot2
+                             r-generics
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Prof-ThiagoOliveira/matrixCorr")
+    (synopsis
+     "Collection of Correlation, Agreement, and Reliability Estimators")
+    (description
+     "Compute correlation, association, agreement, and reliability measures for small
+to high-dimensional datasets through a consistent matrix-oriented interface.
+Supports classical correlations (Pearson, Spearman, Kendall, Chatterjee's rank
+correlation), distance correlation, partial correlation with regularised
+estimators, shrinkage correlation for p >= n settings, robust correlations
+including biweight mid-correlation, percentage-bend, Winsorized, and skipped
+correlation, latent-variable methods for binary and ordinal data, pairwise and
+overall intraclass correlation for wide data, repeated-measures correlation, and
+agreement/reliability analyses based on Cohen's kappa, weighted kappa,
+multi-rater kappa, Gwet's AC1/AC2, Krippendorff's alpha, Bland-Altman methods,
+Lin's concordance correlation coefficient, Poisson GLMM concordance for count
+data, and repeated-measures intraclass/concordance correlation.  Implemented
+with optimized C++ backends using BLAS/@code{OpenMP} and memory-aware symmetric
+updates, and returns standard R objects with print/summary/plot methods plus
+optional Shiny viewers for matrix inspection.  Methods based on Ledoit and Wolf
+(2004) <doi:10.1016/S0047-259X(03)00096-4>; high-dimensional shrinkage
+covariance estimation <doi:10.2202/1544-6115.1175>; Lin (1989)
+<doi:10.2307/2532051>; Wilcox (1994) <doi:10.1007/BF02294395>; Wilcox (2004)
+<doi:10.1080/0266476032000148821>; Hayes and Krippendorff (2007)
+<doi:10.1080/19312450709336664>; weighted repeated-measures correlation by Kondo
+et al. (2025) <doi:10.1002/sim.70046>.")
+    (license license:gpl3+)))
 
 (define-public r-matrisk
   (package

@@ -21954,13 +21954,13 @@ classification algorithms on grouped data.")
 (define-public r-tidyfinance
   (package
     (name "r-tidyfinance")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyfinance" version))
        (sha256
-        (base32 "0hfy48jg3qj9yfj6zaz183ndjvn7jdycsrmgfgin48w78pxrdi1w"))))
+        (base32 "0yy24qnq3ss2x2xvi8ik4a1i2yd57q3y9xhmim9nyldxsprw9l93"))))
     (properties `((upstream-name . "tidyfinance")))
     (build-system r-build-system)
     (arguments
@@ -21968,24 +21968,20 @@ classification algorithms on grouped data.")
       #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
-                             r-stringr
                              r-slider
                              r-sandwich
                              r-rpostgres
                              r-rlang
                              r-purrr
+                             r-nanoparquet
                              r-lubridate
                              r-lifecycle
                              r-jsonlite
                              r-httr2
-                             r-glue
-                             r-frenchdata
                              r-dplyr
                              r-dbplyr
                              r-dbi
-                             r-cli
-                             r-arrow))
-    (native-inputs (list r-knitr))
+                             r-cli))
     (home-page "https://www.tidy-finance.org/r/")
     (synopsis "Tidy Finance Helper Functions")
     (description

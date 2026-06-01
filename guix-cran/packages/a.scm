@@ -13551,13 +13551,13 @@ package function as well as at <https://kartikeyab.shinyapps.io/ANOVAShiny/>.")
 (define-public r-anovapowersim
   (package
     (name "r-anovapowersim")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "anovapowersim" version))
        (sha256
-        (base32 "0hdliw1pf7p05a7as8280sysmmlx0p57ng96k62ylgh39jwls4nq"))))
+        (base32 "1rz6wlsy5404dw1k5gzz15nwvh78j52i29mn0n9z89ilid48dq8b"))))
     (properties `((upstream-name . "anovapowersim")))
     (build-system r-build-system)
     (arguments
