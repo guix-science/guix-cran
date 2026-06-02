@@ -6084,13 +6084,13 @@ the impact of missing fields and fully missing observations.")
 (define-public r-verdadecu
   (package
     (name "r-verdadecu")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "verdadecu" version))
        (sha256
-        (base32 "1kxgmwrg82b2xvxjindmf35f0fm3jivbisyd9j2rglf0vrvm55zf"))))
+        (base32 "0ip9pjmdwklfiwm80khhx6naqfrayib04cj2h6zldldg423j4ckv"))))
     (properties `((upstream-name . "verdadecu")))
     (build-system r-build-system)
     (arguments

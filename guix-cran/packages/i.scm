@@ -10607,36 +10607,6 @@ The package also provide a specific function to construct rolling windows of
 different length size and overlapping time.")
     (license license:gpl2+)))
 
-(define-public r-informedsen
-  (package
-    (name "r-informedsen")
-    (version "1.0.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "informedSen" version))
-       (sha256
-        (base32 "1zb93289jszyj57ji00r35hx8ralxw2n6i384h6myxddgl377qfv"))))
-    (properties `((upstream-name . "informedSen")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sensitivitymult))
-    (home-page "https://cran.r-project.org/package=informedSen")
-    (synopsis "Sensitivity Analysis Informed by a Test for Bias")
-    (description
-     "After testing for biased treatment assignment in an observational study using an
-unaffected outcome, the sensitivity analysis is constrained to be compatible
-with that test.  The package uses the optimization software gurobi obtainable
-from <https://www.gurobi.com/>, together with its associated R package, also
-called gurobi; see:
-<https://www.gurobi.com/documentation/7.0/refman/installing_the_r_package.html>.
- The method is a substantial computational and practical enhancement of a
-concept introduced in Rosenbaum (1992) Detecting bias with confidence in
-observational studies Biometrika, 79(2), 367-374 <doi:10.1093/biomet/79.2.367>.")
-    (license license:gpl2)))
-
 (define-public r-informativesci
   (package
     (name "r-informativesci")
@@ -11743,35 +11713,6 @@ squared coefficient of variation is based on Garcia-Penalosa, C., & Orgiazzi, E.
 (Instituto Nacional de Estatistica - INE) API
 (<https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_api&INST=322751522&xlang=en>).")
     (license license:expat)))
-
-(define-public r-inegir
-  (package
-    (name "r-inegir")
-    (version "3.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "inegiR" version))
-       (sha256
-        (base32 "1rhkdmpz7mxi7ddyygss5rlh3c8hgxhzdk3fnvnlizc1l55cc6c0"))))
-    (properties `((upstream-name . "inegiR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo
-                             r-xml
-                             r-tibbletime
-                             r-plyr
-                             r-lubridate
-                             r-jsonlite))
-    (home-page "https://cran.r-project.org/package=inegiR")
-    (synopsis "Integrate INEGIâs (Mexican Stats Office) API with R")
-    (description
-     "This package provides functions to download and parse information from INEGI
-(Official Mexican statistics agency).  To learn more about the API, see
-<https://www.inegi.org.mx/servicios/api_indicadores.html>.")
-    (license license:cc0)))
 
 (define-public r-inecolr
   (package

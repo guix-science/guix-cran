@@ -292,6 +292,31 @@ functionality.")
     (license (list license:gpl3+
                    (license:fsdg-compatible "file LICENCE")))))
 
+(define-public r-nvennr2
+  (package
+    (name "r-nvennr2")
+    (version "2.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nVennR2" version))
+       (sha256
+        (base32 "1xfgqz5zx57gljlkl308jiv2jihykkm4sx0xs0iwbwja5xvmw892"))))
+    (properties `((upstream-name . "nVennR2")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/vqf/nVennR2")
+    (synopsis "An Interface to 'nVenn2'")
+    (description
+     "This package creates quasi-proportional Venn diagrams with an arbitrary number
+of sets.  It is related to the old @code{nVennR} package, but the algorithm and
+use have been reworked.")
+    (license license:expat)))
+
 (define-public r-nvctr
   (package
     (name "r-nvctr")
@@ -5962,39 +5987,6 @@ addresses, find places near a set of coordinates and return spatial objects on
 sf format.")
     (license license:expat)))
 
-(define-public r-nomesbr
-  (package
-    (name "r-nomesbr")
-    (version "0.0.9")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "nomesbr" version))
-       (sha256
-        (base32 "1fk23fffqshk4isbcppb46skgym9zrxk5r5j2kzkkbvgzlilamix"))))
-    (properties `((upstream-name . "nomesbr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tictoc r-stringr r-httr2 r-dplyr r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ipeadata-lab/nomesbr")
-    (synopsis
-     "Limpa e Simplifica Nomes de Pessoas (Name Cleaner and Simplifier)")
-    (description
-     "Limpa e simplifica nomes de pessoas para auxiliar no pareamento de banco de
-dados na ausÃªncia de chaves Ãºnicas nÃ£o ambÃ­guas.  Detecta e corrige erros
-tipogrÃ¡ficos mais comuns, simplifica opcionalmente termos sujeitos
-eventualmente a omissÃ£o em cadastros, e simplifica foneticamente suas palavras,
-aplicando variaÃ§Ã£o prÃ³pria do algoritmo @code{metaphoneBR}. (Cleans and
-simplifies person names to assist in database matching when unambiguous unique
-keys are unavailable.  Detects and corrects common typos, optionally simplifies
-terms prone to omission in records, and applies phonetic simplification using a
-custom variation of the @code{metaphoneBR} algorithm.) Mation (2025)
-<doi:10.6082/uchicago.15104>.")
-    (license license:expat)))
-
 (define-public r-nomclust
   (package
     (name "r-nomclust")
@@ -6416,13 +6408,13 @@ connecting to Amazon Web Service ('AWS') Athena
 (define-public r-nobbs
   (package
     (name "r-nobbs")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NobBS" version))
        (sha256
-        (base32 "0f3fx14m03vy9bkwsg3vjnrv3zs4yyx71bh5nzr7d7k9x349r7fv"))))
+        (base32 "1nfg2a4xcvcm3s6i2b9y6b6vrfzk1nb0hwln87adhp51j9m4zrkc"))))
     (properties `((upstream-name . "NobBS")))
     (build-system r-build-system)
     (arguments
@@ -10387,39 +10379,6 @@ multivariate niche region.  The article by Swanson et al. (2015)
 the package vignette for a worked example using fish stable isotope data.")
     (license license:gpl3)))
 
-(define-public r-nichebarcoding
-  (package
-    (name "r-nichebarcoding")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "NicheBarcoding" version))
-       (sha256
-        (base32 "16jkznc4624ww7vwid6f3m90wm2ds2c7zf1j1sw16dyrqmlyk9w3"))))
-    (properties `((upstream-name . "NicheBarcoding")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vegan
-                             r-spider
-                             r-rjava
-                             r-raster
-                             r-randomforest
-                             r-proc
-                             r-maps
-                             r-e1071
-                             r-dismo
-                             r-ape))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/Yangcq-Ivy/NicheBarcoding")
-    (synopsis "Niche-model-Based Species Identification")
-    (description
-     "Species Identification using DNA Barcodes Integrated with Environmental Niche
-Models.")
-    (license license:gpl3+)))
-
 (define-public r-nice
   (package
     (name "r-nice")
@@ -11661,52 +11620,6 @@ construct a hierarchy of temporal intervals with data.  The R API supports
 loading rules from a file or mining them from historical data.  Traces of events
 or pools of intervals are provided as data frames.")
     (license license:gpl3+)))
-
-(define-public r-nfcp
-  (package
-    (name "r-nfcp")
-    (version "1.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "NFCP" version))
-       (sha256
-        (base32 "07wxxmcvclygid88cxl0raphmc858h92dfq7gacq9gvkdcrcn022"))))
-    (properties `((upstream-name . "NFCP")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rgenoud
-                             r-rdpack
-                             r-numderiv
-                             r-mathjaxr
-                             r-mass
-                             r-lsmrealoptions
-                             r-fkf-sp))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=NFCP")
-    (synopsis "N-Factor Commodity Pricing Through Term Structure Estimation")
-    (description
-     "Commodity pricing models are (systems of) stochastic differential equations that
-are utilized for the valuation and hedging of commodity contingent claims (i.e.
-derivative products on the commodity) and other commodity related investments.
-Commodity pricing models that capture market dynamics are of great importance to
-commodity market participants in order to exercise sound investment and
-risk-management strategies.  Parameters of commodity pricing models are
-estimated through maximum likelihood estimation, using available term structure
-futures data of a commodity.  NFCP (n-factor commodity pricing) provides a
-framework for the modeling, parameter estimation, probabilistic forecasting,
-option valuation and simulation of commodity prices through state space and
-Monte Carlo methods, risk-neutral valuation and Kalman filtering.  NFCP allows
-the commodity pricing model to consist of n correlated factors, with both random
-walk and mean-reverting elements.  The n-factor commodity pricing model
-framework was first presented in the work of Cortazar and Naranjo (2006)
-<doi:10.1002/fut.20198>.  Examples presented in NFCP replicate the two-factor
-crude oil commodity pricing model presented in the prolific work of Schwartz and
-Smith (2000) <doi:10.1287/mnsc.46.7.893.12034> with the approximate term
-structure futures data applied within this study provided in the NFCP package.")
-    (license license:gpl3)))
 
 (define-public r-nfactors
   (package

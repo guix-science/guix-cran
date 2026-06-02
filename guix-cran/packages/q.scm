@@ -1203,13 +1203,13 @@ columns of a data.frame.")
 (define-public r-querychat
   (package
     (name "r-querychat")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "querychat" version))
        (sha256
-        (base32 "1ddr1lmcpa9djsadhx2rydr1xql9c5q92i4z8mdfm24rngyfhrkd"))))
+        (base32 "1cd1zzs8k3s7nbliq6lnpin9ncpzmr0azdq6qc6pmy9ja2j70zza"))))
     (properties `((upstream-name . "querychat")))
     (build-system r-build-system)
     (arguments
@@ -1227,7 +1227,8 @@ columns of a data.frame.")
                              r-ellmer
                              r-dbi
                              r-cli
-                             r-bslib))
+                             r-bslib
+                             r-bsicons))
     (native-inputs (list r-knitr))
     (home-page "https://posit-dev.github.io/querychat/r/")
     (synopsis
@@ -4611,6 +4612,37 @@ Esquivel (2024) <doi:10.1093/jalm/jfad109>.")
     (description "Extensions of ggplot2 Q-Q plot functionalities.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-qqkrls
+  (package
+    (name "r-qqkrls")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qqkrls" version))
+       (sha256
+        (base32 "0zxdbal7vddj4zm3ly2gbj1iy4lay9lfpcnmx0n4q7nr37pd9z1h"))))
+    (properties `((upstream-name . "qqkrls")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-plotly r-krls))
+    (home-page "https://github.com/merwanroudane/qqkrlsr")
+    (synopsis "Quantile-on-Quantile Kernel Regularized Least Squares")
+    (description
+     "This package implements Quantile-on-Quantile Kernel-Based Regularized Least
+Squares (QQKRLS) as in Adebayo, Ozkan and Eweade (2024)
+<doi:10.1016/j.jclepro.2024.140832>.  Combines Kernel-Based Regularized Least
+Squares (KRLS) of Hainmueller and Hazlett (2014) <doi:10.1093/pan/mpt019> with
+the Quantile-on-Quantile regression of Sim and Zhou (2015)
+<doi:10.1016/j.jbankfin.2015.01.013>: for each quantile theta of the independent
+variable the response is fit by KRLS on the corresponding sub-sample and the
+tau-quantile of the resulting pointwise marginal effects yields beta(theta,
+tau).  Standard errors come from a paired bootstrap.  Visualisations use the
+MATLAB Parula colour map by default.")
+    (license license:gpl3)))
 
 (define-public r-qpraentry
   (package

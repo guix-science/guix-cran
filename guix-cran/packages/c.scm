@@ -4105,6 +4105,29 @@ t-distribution approach to compute confidence intervals, similar to SPSS
 (Statistical Package for the Social Sciences) software.")
     (license license:gpl3+)))
 
+(define-public r-cswr
+  (package
+    (name "r-cswr")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CSwR" version))
+       (sha256
+        (base32 "18si5cda01zsscl7a0h0wb67xz80wl19z8r9wc4wl6wfnbpfwzfv"))))
+    (properties `((upstream-name . "CSwR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-ggplot2 r-bench))
+    (home-page "https://jolars.github.io/CSwR-Package/")
+    (synopsis "Companion to the Book \"Computational Statistics with R\"")
+    (description
+     "This package provides data sets and functions used in the book \"Computational
+Statistics with R\" (<https://cswr.nrhstat.org>).")
+    (license license:expat)))
+
 (define-public r-csvy
   (package
     (name "r-csvy")
@@ -5102,6 +5125,35 @@ with our novel method (Little et al. (2023) <doi:10.1038/s41467-023-38795-w>).")
     (synopsis "Frequent Contiguous Sequential Pattern Mining of Text")
     (description "Mines contiguous sequential patterns in text.")
     (license license:expat)))
+
+(define-public r-csemgt
+  (package
+    (name "r-csemgt")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "csemGT" version))
+       (sha256
+        (base32 "0x4d2rpgri0ra8rz8spm0nccbpksf8clvdlnik4figqvj16h1yzh"))))
+    (properties `((upstream-name . "csemGT")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/rgempp/csemGT")
+    (synopsis
+     "Conditional Standard Error of Measurement in Generalizability Theory")
+    (description
+     "Estimates the per-person conditional standard error of measurement (CSEM) under
+the persons-by-items single-facet crossed design of Generalizability Theory,
+following Brennan (1998) <doi:10.1177/014662169802200401>.  Implements three
+estimators of the relative error variance (full, large_a, uncorrelated) and the
+closed-form absolute error variance, with both analytical and item-resampling
+bootstrap sampling variances, quadratic smoothing of CSEMs on observed score,
+D-study extrapolation, and base-graphics plotting.")
+    (license license:gpl3+)))
 
 (define-public r-csem
   (package
@@ -14701,6 +14753,31 @@ distribution, described in Martin et al. (2020) <doi:10.1214/19-AOAS1283>.  It
 allows for both mean and overdispersion covariates.")
     (license license:gpl2+)))
 
+(define-public r-cormlpe
+  (package
+    (name "r-cormlpe")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "corMLPE" version))
+       (sha256
+        (base32 "1qixk3vqgasayr8nnlhv2136yhx9whcr31cyr6vqnqf860iz2ynx"))))
+    (properties `((upstream-name . "corMLPE")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-nlme r-matrix r-mass))
+    (home-page "https://cran.r-project.org/package=corMLPE")
+    (synopsis "Correlation Structures for Symmetric Relational Data")
+    (description
+     "This package implements correlation structures for symmetric relational data
+(e.g. pairwise distances and dissimilarities) that interface with models using
+nlme'-style correlation structures.  The maximum likelihood population effects
+method is described by Clarke et al. (2002) <doi:10.1198/108571102320>.")
+    (license license:gpl2)))
+
 (define-public r-cormid
   (package
     (name "r-cormid")
@@ -18722,6 +18799,41 @@ Grid, Table, Search, and Filter can be used to produce a showcase page or
 gallery contained within a static or interactive R Markdown page.")
     (license license:expat)))
 
+(define-public r-connector-sharepoint
+  (package
+    (name "r-connector-sharepoint")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "connector.sharepoint" version))
+       (sha256
+        (base32 "0zyx0b7m7a95jbpi5ys5vvmk3x3rbr0vfbdaspll3gkpfx64zslx"))))
+    (properties `((upstream-name . "connector.sharepoint")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zephyr
+                             r-rlang
+                             r-r6
+                             r-microsoft365r
+                             r-connector
+                             r-cli
+                             r-checkmate
+                             r-azureauth))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page
+     "https://novonordisk-opensource.github.io/connector.sharepoint/")
+    (synopsis "'Microsoft SharePoint' Interface for the 'connector' Package")
+    (description
+     "Extends the connector package to provide a convenient interface for accessing
+and interacting with Microsoft @code{SharePoint} directly from R'.  Supports
+listing, reading, writing, uploading, downloading, and removing files and
+directories on @code{SharePoint} document libraries.  Authentication is handled
+through Azure tokens via the @code{AzureAuth} package.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-connector-databricks
   (package
     (name "r-connector-databricks")
@@ -20033,33 +20145,6 @@ inspired by Pythons @code{ConfigParser} module) and the keys can be read, where
 %(....)s instances are interpolated by other included options or outside
 variables.")
     (license license:gpl3)))
-
-(define-public r-confidencesim
-  (package
-    (name "r-confidencesim")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "confidenceSim" version))
-       (sha256
-        (base32 "1ida6xbalx9ny8j2dfdz7y5v5iy1zki1x1h296gg657nn42j2c6f"))))
-    (properties `((upstream-name . "confidenceSim")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rpact r-genodds r-confidencecurves))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=confidenceSim")
-    (synopsis
-     "Highly Customizable, Parallelized Simulations of Frequentist Confidence Clinical Trials")
-    (description
-     "Simulate one or many frequentist confidence clinical trials based on a specified
-set of parameters.  From a two-arm, single-stage trial to a perpetually run
-Adaptive Platform Trial, this package offers vast flexibility to customize your
-trial and observe operational characterisitics over thousands of instances.")
-    (license license:expat)))
 
 (define-public r-confidenceellipse
   (package
@@ -22907,24 +22992,31 @@ in C/C++ to ensure good performance.")
 (define-public r-comorosmaps
   (package
     (name "r-comorosmaps")
-    (version "1.0.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "comorosmaps" version))
        (sha256
-        (base32 "1rjsgvln5wa7bbh4iqpfvmdqvmx4cgl8mxxkar76rkam9r54hwhv"))))
+        (base32 "0n6xplkg1b14m3svvbas8a634npfxp85c2a0s9rkm0g2fxvq61lz"))))
     (properties `((upstream-name . "comorosmaps")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sf r-magrittr r-dplyr))
+    (propagated-inputs (list r-sf
+                             r-magrittr
+                             r-leaflet
+                             r-ggrepel
+                             r-ggplot2
+                             r-dplyr))
     (home-page "https://github.com/hhousni/comorosmaps")
     (synopsis "Comoro Islands Maps")
     (description
-     "Maps of Comoro Islands.  Layers include the country coastline, each island
-coastline and administrative regions boundaries.")
+     "This package provides static and interactive maps of the Comoro Islands at four
+administrative levels: country, island, prefecture, and commune.  Includes tools
+for choropleth visualisation using ggplot2 and leaflet', and functions to
+retrieve the underlying spatial datasets as sf objects.")
     (license license:expat)))
 
 (define-public r-comorbidpgs
@@ -32460,6 +32552,33 @@ systems.")
 navigate Cloudstor from R.")
     (license license:gpl3+)))
 
+(define-public r-cloudosr
+  (package
+    (name "r-cloudosr")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cloudosR" version))
+       (sha256
+        (base32 "13jz8m00a3ir4apa0irzaddnckb9ngy3v0jv8rdxnwx0jncdganl"))))
+    (properties `((upstream-name . "cloudosR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite r-httr2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=cloudosR")
+    (synopsis "'Lifebit' Platform 'API' Client")
+    (description
+     "Interacts with the Lifebit Platform Cohort Browser API
+<https://cloudos.lifebit.ai>.  Enables schema discovery, table exploration, and
+read-only SQL query execution with policy-aware behavior and team-based access
+control for cohort data analysis.  Requires bastion-enabled workspaces for API
+access.")
+    (license license:expat)))
+
 (define-public r-cloudml
   (package
     (name "r-cloudml")
@@ -40237,43 +40356,6 @@ ISSN:0031-9368), Jones Model (Jones et al., 2013
 <DOI:10.1111/gcb.13383>) and Heat Restriction model.")
     (license license:gpl3)))
 
-(define-public r-chilemapas
-  (package
-    (name "r-chilemapas")
-    (version "0.4.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "chilemapas" version))
-       (sha256
-        (base32 "1lcsa2694a9rhcmjsxzlvjssvq9q49ddyfr79fifz31xawkfhj3q"))))
-    (properties `((upstream-name . "chilemapas")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr r-sf r-rlang r-magrittr r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://pacha.dev/chilemapas/")
-    (synopsis
-     "Mapas de las Divisiones Politicas y Administrativas de Chile (Maps of the Political and Administrative Divisions of Chile)")
-    (description
-     "Mapas terrestres con topologias simplificadas.  Estos mapas no tienen precision
-geodesica, por lo que aplica el DFL-83 de 1979 de la Republica de Chile y se
-consideran referenciales sin validez legal.  No se incluyen los territorios
-antarticos y bajo ningun evento estos mapas significan que exista una cesion u
-ocupacion de territorios soberanos en contra del Derecho Internacional por parte
-de Chile.  Esta paquete esta documentado intencionalmente en castellano
-asciificado para que funcione sin problema en diferentes plataformas.
-(Terrestrial maps with simplified toplogies.  These maps lack geodesic
-precision, therefore DFL-83 1979 of the Republic of Chile applies and are
-considered to have no legal validity.  Antartic territories are excluded and
-under no event these maps mean there is a cession or occupation of sovereign
-territories against International Laws from Chile.  This package was
-intentionally documented in asciified spanish to make it work without problem on
-different platforms.).")
-    (license license:gpl3)))
-
 (define-public r-chiledataapi
   (package
     (name "r-chiledataapi")
@@ -45413,44 +45495,6 @@ SPSS and SAS. Census data must be downloaded directly from the official INDEC
 portal (<https://www.indec.gob.ar>).  This package does not distribute census
 data.  Duran (2026) <doi:10.5281/zenodo.19560728>.")
     (license license:gpl3+)))
-
-(define-public r-censo2017
-  (package
-    (name "r-censo2017")
-    (version "0.6.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "censo2017" version))
-       (sha256
-        (base32 "0rj3a9i6faqsrx641p1nacdprfnzp8q45khpdrakmfnc7l40xh87"))))
-    (properties `((upstream-name . "censo2017")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-rstudioapi
-                             r-purrr
-                             r-httr
-                             r-duckdb
-                             r-dbi
-                             r-crayon
-                             r-cli))
-    (home-page "https://docs.ropensci.org/censo2017/")
-    (synopsis
-     "Base de Datos de Facil Acceso del Censo 2017 de Chile (2017 Chilean Census Easy Access Database)")
-    (description
-     "Provee un acceso conveniente a mas de 17 millones de registros de la base de
-datos del Censo 2017.  Los datos fueron importados desde el DVD oficial del INE
-usando el Convertidor REDATAM creado por Pablo De Grande.  Esta paquete esta
-documentado intencionalmente en castellano asciificado para que funcione sin
-problema en diferentes plataformas. (Provides convenient access to more than 17
-million records from the Chilean Census 2017 database.  The datasets were
-imported from the official DVD provided by the Chilean National Bureau of
-Statistics by using the REDATAM converter created by Pablo De Grande and in
-addition it includes the maps accompanying these datasets.).")
-    (license license:cc0)))
 
 (define-public r-censmfm
   (package

@@ -8801,32 +8801,6 @@ clusters for @code{fMRI} cluster analysis.  Details may be found in Vesely,
 Finos, and Goeman (2020) <@code{arXiv:2102.11759>}.")
     (license license:gpl2+)))
 
-(define-public r-sumr
-  (package
-    (name "r-sumr")
-    (version "0.4.16")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "sumR" version))
-       (sha256
-        (base32 "1dyv1k2zbyzql8kh1jszkfn8mgd6l3vwify5zsp6v0glfncxqgjd"))))
-    (properties `((upstream-name . "sumR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-matrixstats))
-    (home-page "https://cran.r-project.org/package=sumR")
-    (synopsis "Approximate Summation of Series")
-    (description
-     "Application of theoretical results which ensure that the summation of an
-infinite discrete series is within an arbitrary margin of error of its true
-value.  The C code under the hood is shared through header files to allow users
-to sum their own low level functions as well.  Based on the paper by Braden
-(1992) <doi: 10.2307/2324995>.")
-    (license license:gpl3+)))
-
 (define-public r-sumo
   (package
     (name "r-sumo")
@@ -13276,6 +13250,44 @@ grow-from-root algorithm for accelerated forest sampling (He and Hahn (2021)
 heteroskedasticity (Murray (2020) <doi:10.1080/01621459.2020.1813587>), and the
 cloglog BART model of Alam and Linero (2025)
 <doi:10.48550/@code{arXiv.2502.00606>} for ordinal outcomes.")
+    (license license:expat)))
+
+(define-public r-stochsimr
+  (package
+    (name "r-stochsimr")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "StochSimR" version))
+       (sha256
+        (base32 "1cfvj2i2nls1g94dpdq9fv7iqw7f6nq2bg403w8j8gh25li5ynzm"))))
+    (properties `((upstream-name . "StochSimR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-ggplot2 r-future-apply r-future))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Ayush291202/StochSimR")
+    (synopsis "Stochastic Process Simulation Engine")
+    (description
+     "This package provides a modular simulation engine for a wide range of stochastic
+processes.  Provides exact and approximate simulation methods for Poisson
+processes (homogeneous and inhomogeneous), Brownian motion (standard, drifted,
+and bridge), discrete- and continuous-time Markov chains, birth-death processes,
+the Yule pure-birth process, infinitesimal generator matrix utilities, Markovian
+queuing systems (M/M/1, M/M/c, M/M/c/K) with exact steady-state statistics, Levy
+processes (gamma, normal inverse Gaussian, variance-gamma, alpha-stable), Merton
+jump-diffusion models, Hawkes self-exciting processes, geometric Brownian
+motion, and Ornstein-Uhlenbeck mean-reverting diffusions.  Includes variance
+reduction techniques (antithetic variates, control variates, importance
+sampling, stratified sampling), parallel simulation via the future framework,
+rare-event simulation (cross-entropy and multilevel splitting), path
+visualisation, and summary statistics.  Methods are based on Glasserman (2003)
+<doi:10.1007/978-0-387-21617-1>, Asmussen & Glynn (2007)
+<doi:10.1007/978-0-387-69033-9>, Norris (1997) <doi:10.1017/CBO9780511810633>,
+and Kleinrock (1975, ISBN:0471491101).")
     (license license:expat)))
 
 (define-public r-stochqn
@@ -20341,6 +20353,31 @@ experiments using the rstan package, which provides the R interface to the Stan
 C++ library for Bayesian estimation.")
     (license license:gpl3+)))
 
+(define-public r-ssmooth
+  (package
+    (name "r-ssmooth")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ssmooth" version))
+       (sha256
+        (base32 "0ab4pfr7sy31b1k903lg5qphmv4grgdfn4wn1i8klfdwjwb6n8qf"))))
+    (properties `((upstream-name . "ssmooth")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra r-rcpp))
+    (home-page "https://github.com/Biodiversity-Futures-Lab/ssmooth")
+    (synopsis "Smooth Raster Time Series")
+    (description
+     "Smooth a sequence of terra rasters using various algorithms (currently moving
+average, weighted moving average, and exponential smoothing).  Also includes
+wrappers to smooth a vector time-series using these same algorithms.  All
+smoothers use Rcpp implementations for performance.")
+    (license license:expat)))
+
 (define-public r-ssmodels
   (package
     (name "r-ssmodels")
@@ -22397,43 +22434,6 @@ structures and embedded R expressions.")
 quantile normalization using negative control features'.  Wu Z, Aryee MJ, J
 Comput Biol.  2010 Oct;17(10):1385-95 [PMID 20976876].")
     (license license:lgpl2.0+)))
-
-(define-public r-sqmtools
-  (package
-    (name "r-sqmtools")
-    (version "1.7.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SQMtools" version))
-       (sha256
-        (base32 "12x8f12fy1a8kg8167jyk79bdpnzbxabw6xa5prd2y0srxykj81i"))))
-    (properties `((upstream-name . "SQMtools")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zip
-                             r-reshape2
-                             r-pathview
-                             r-ggplot2
-                             r-data-table
-                             r-biostrings))
-    (home-page "https://github.com/jtamames/SqueezeMeta")
-    (synopsis "Analyze Results Generated by the 'SqueezeMeta' Pipeline")
-    (description
-     "@code{SqueezeMeta} is a versatile pipeline for the automated analysis of
-metagenomics/metatranscriptomics data
-(<https://github.com/jtamames/@code{SqueezeMeta>}).  This package provides
-functions loading @code{SqueezeMeta} results into R, filtering them based on
-different criteria, and visualizing the results using basic plots.  The
-@code{SqueezeMeta} project (and any subsets of it generated by the different
-filtering functions) is parsed into a single object, whose different components
-(e.g. tables with the taxonomic or functional composition across samples,
-contig/gene abundance profiles) can be easily analyzed using other R packages
-such as vegan or DESeq2'.  The methods in this package are further described in
-Puente-SÃ¡nchez et al., (2020) <doi:10.1186/s12859-020-03703-2>.")
-    (license license:gpl3)))
 
 (define-public r-sqltargets
   (package
@@ -26908,6 +26908,33 @@ to gender, age, socioeconomic status, domicile, literacy, physics identity, and
 test results administered using teachers developed items are also reported in
 this dataset.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
+
+(define-public r-sphereclust
+  (package
+    (name "r-sphereclust")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sphereclust" version))
+       (sha256
+        (base32 "0njmv2xfxc8qwhbgczqjqnvki9dd1cc2fwj4nm96b2r5zvvhmyrz"))))
+    (properties `((upstream-name . "sphereclust")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rgl r-rfast r-rangen r-mixture r-directional))
+    (home-page "https://cran.r-project.org/package=sphereclust")
+    (synopsis
+     "Model Based Clustering for Spherical Data Using Elliptically Symmetric Distributions")
+    (description
+     "Model based clustering with spherical data using mixtures of elliptically
+symmetric distributions, namely mixtures of spherical elliptically symmetric
+projected Cauchy (SESPC) or mixtures of elliptically symmetric angular Gaussian
+(ESAG) distributions.  The relevant paper is: Perdikis T., Alharbi N. and
+Tsagris M. (2026). <doi:10.48550/@code{arXiv.2605.27496>}.")
+    (license license:gpl2+)))
 
 (define-public r-spgwr
   (package
@@ -34515,33 +34542,6 @@ provides an optional method of using the graphical user interface (GUI) R
 package tcltk to ensure that it is user friendly.")
     (license license:gpl2)))
 
-(define-public r-sopie
-  (package
-    (name "r-sopie")
-    (version "1.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SOPIE" version))
-       (sha256
-        (base32 "1q6991l1wldywv685dv1pkd8ma8jlx4inqr6p1fw1xr7ymm8b1q2"))))
-    (properties `((upstream-name . "SOPIE")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-circular r-adgoftest))
-    (home-page "https://cran.r-project.org/package=SOPIE")
-    (synopsis
-     "Non-Parametric Estimation of the Off-Pulse Interval of a Pulsar")
-    (description
-     "This package provides functions to non-parametrically estimate the off-pulse
-interval of a source function originating from a pulsar.  The technique is based
-on a sequential application of P-values obtained from goodness-of-fit tests for
-the uniform distribution, such as the Kolmogorov-Smirnov, Cramer-von Mises,
-Anderson-Darling and Rayleigh goodness-of-fit tests.")
-    (license license:gpl3)))
-
 (define-public r-sopc
   (package
     (name "r-sopc")
@@ -38579,6 +38579,29 @@ skew to preserve structural variance.")
 generates random numbers.")
     (license license:gpl2+)))
 
+(define-public r-smqf
+  (package
+    (name "r-smqf")
+    (version "1.1-1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "smqf" version))
+       (sha256
+        (base32 "0kwkss8g316hbc03bb2g1xb5vbhzcql4dpgm72k78f42gm46050f"))))
+    (properties `((upstream-name . "smqf")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xts r-pracma r-nloptr))
+    (home-page "https://github.com/ArdiaD/smqf-package")
+    (synopsis "Statistical Methods in Quantitative Finance")
+    (description
+     "This package provides data and functions used in the book \"Statistical Methods
+in Quantitative Finance\" by David Ardia (2026).")
+    (license license:gpl3)))
+
 (define-public r-smplot2
   (package
     (name "r-smplot2")
@@ -39200,6 +39223,40 @@ the data source.  The package also supports settings where outcomes are
 truncated by death, i.e.  some individuals die during follow-up which renders
 the outcome of interest undefined at the follow-up time of interest.")
     (license license:gpl3+)))
+
+(define-public r-smoothbp
+  (package
+    (name "r-smoothbp")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "smoothbp" version))
+       (sha256
+        (base32 "148pw0xbzs40fbxplpacfs4mbfqp0al8fpirhzj3my9vcyw268f6"))))
+    (properties `((upstream-name . "smoothbp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-posterior r-loo r-ggplot2 r-bridgesampling
+                             r-bayesplot))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ABindoff/smoothbp")
+    (synopsis "Hierarchical Piecewise Regression with Smoothed Change-Points")
+    (description
+     "Fits Bayesian hierarchical piecewise regression models with multiple
+logistic-smoothed change-points.  Non-linear parameters (change-point locations
+and transition sharpness) and linear parameters can each be conditioned on
+covariates and factors via flexible design matrices.  A random-intercept
+structure is supported for any parameter.  Spike-and-slab regularization is
+supported for selecting the number of breakpoints.  Posterior inference uses a
+Metropolis-within-Gibbs sampler implemented in Rust for speed.  Methods are
+based on the smooth transition piecewise regression model of Bacon and Watts
+(1971) <doi:10.2307/2334389> and variable selection spike-and-slab priors of Kuo
+and Mallick (1998) <https://www.jstor.org/stable/25053023>.")
+    (license license:expat)))
 
 (define-public r-smooth
   (package
@@ -54768,13 +54825,13 @@ be stored in a database or a .rds file.")
 (define-public r-shinychat
   (package
     (name "r-shinychat")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinychat" version))
        (sha256
-        (base32 "0h93gcad2l0nac71z00xixja8zpbc3jifhxqnbgin9nnc08r53m3"))))
+        (base32 "0nb65h75g6y2c67x0gqnhrljbm5n7wnybw7a4inagn8bwg4yzdgf"))))
     (properties `((upstream-name . "shinychat")))
     (build-system r-build-system)
     (arguments
@@ -55352,32 +55409,6 @@ ollama', visit <https://ollama.com>.")
 standalone translation package to translate reports, interactive visualizations
 or graphical elements as well.")
     (license license:expat)))
-
-(define-public r-shiny-fluent
-  (package
-    (name "r-shiny-fluent")
-    (version "0.4.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "shiny.fluent" version))
-       (sha256
-        (base32 "0d6925apv6vwbhyzxlzli7j18yzz4raxf32p7mgwsrwirjkhj21s"))))
-    (properties `((upstream-name . "shiny.fluent")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-shiny-react r-shiny r-purrr r-jsonlite
-                             r-htmltools))
-    (home-page "https://appsilon.github.io/shiny.fluent/")
-    (synopsis "Microsoft Fluent UI for Shiny Apps")
-    (description
-     "This package provides a rich set of UI components for building Shiny
-applications, including inputs, containers, overlays, menus, and various
-utilities.  All components from Fluent UI (the underlying @code{JavaScript}
-library) are available and have usage examples in R.")
-    (license license:lgpl3)))
 
 (define-public r-shiny-exe
   (package
@@ -72329,35 +72360,6 @@ methodology.  Focuses on prospective surveillance of data streams, scanning for
 clusters with ongoing anomalies.  Hypothesis testing is made possible by Monte
 Carlo simulation.  AllÃ©vius (2018) <doi:10.21105/joss.00515>.")
     (license license:gpl3+)))
-
-(define-public r-scannotate
-  (package
-    (name "r-scannotate")
-    (version "0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "scAnnotate" version))
-       (sha256
-        (base32 "02hrfs5ci2ii3hr4d4ks5bj80n5ajdnx71m6swmdciiy72sdm1lc"))))
-    (properties `((upstream-name . "scAnnotate")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-seuratobject r-seurat r-harmony r-glmnet))
-    (native-inputs (list r-knitr))
-    (home-page "https://doi.org/10.1101/2022.02.19.481159")
-    (synopsis
-     "An Automated Cell Type Annotation Tool for Single-Cell RNA-Sequencing Data")
-    (description
-     "An entirely data-driven cell type annotation tools, which requires training data
-to learn the classifier, but not biological knowledge to make subjective
-decisions.  It consists of three steps: preprocessing training and test data,
-model fitting on training data, and cell classification on test data.  See
-Xiangling Ji,Danielle Tsao, Kailun Bai, Min Tsao, Li Xing, Xuekui
-Zhang.(2022)<doi:10.1101/2022.02.19.481159> for more details.")
-    (license license:gpl3)))
 
 (define-public r-scancp
   (package

@@ -2723,36 +2723,6 @@ random, ridge using least asymmetric weighed squares / absolutes as well as
 boosting; also supplies expectiles for common distributions.")
     (license license:gpl2)))
 
-(define-public r-expdes-pt
-  (package
-    (name "r-expdes-pt")
-    (version "1.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ExpDes.pt" version))
-       (sha256
-        (base32 "05s7j3afs97x0k4w9rsjic1519ilzri250x5rl6l6smqivjaplci"))))
-    (properties `((upstream-name . "ExpDes.pt")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stargazer))
-    (home-page "https://cran.r-project.org/package=ExpDes.pt")
-    (synopsis "Pacote Experimental Designs (Portugues)")
-    (description
-     "Pacote para anÃ¡lise de delineamentos experimentais (DIC, DBC e DQL),
-experimentos em esquema fatorial duplo (em DIC e DBC), experimentos em parcelas
-subdivididas (em DIC e DBC), experimentos em esquema fatorial duplo com um
-tratamento adicional (em DIC e DBC), experimentos em fatorial triplo (em DIC e
-DBC) e experimentos em esquema fatorial triplo com um tratamento adicional (em
-DIC e DBC), fazendo analise de variancia e comparacao de multiplas medias (para
-tratamentos qualitativos), ou ajustando modelos de regressao ate a terceira
-potencia (para tratamentos quantitativos); analise de residuos (Ferreira,
-Cavalcanti and Nogueira, 2014) <doi:10.4236/am.2014.519280>.")
-    (license license:gpl2+)))
-
 (define-public r-expdes
   (package
     (name "r-expdes")
@@ -19452,6 +19422,41 @@ eikosograms are given in R.W. Oldford (2003)
 <https://math.uwaterloo.ca/~rwoldfor/papers/eikosograms/examples/paper.pdf>.")
     (license license:gpl3)))
 
+(define-public r-eiit
+  (package
+    (name "r-eiit")
+    (version "0.0.1-1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "eiIT" version))
+       (sha256
+        (base32 "067y0h9yyw7yj9vmf8yr3xa74qapv2v6j006qn0aryh09mqnbahn"))))
+    (properties `((upstream-name . "eiIT")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-nloptr))
+    (home-page "https://cran.r-project.org/package=eiIT")
+    (synopsis "Ecological Inference via Information Theory")
+    (description
+     "Estimates @code{RxC} transfer matrices from aggregated marginal data using a
+two-stage (GME+IPF) information-theoretic approach within a two-step
+(global+local) estimation procedure.  The resulting matrices are consistent with
+observed row and column marginals across collections of subtables (e.g.
+precincts, polling stations, or districts).  References: Golan, A., Judge, G., &
+Miller, D. (1996).  Maximum Entropy Econometrics: Robust Estimation with Limited
+Data.  Wiley.  Judge, G., Miller, D.J., & Cho, W.K.T. (2004).  An information
+theoretic approach to ecological estimation and inference.  In G. King, O.
+Rosen, & M. A. Tanner (Eds.), Ecological Inference: New Methodological
+Strategies (pp.  162â187).  Cambridge University Press.  Mittelhammer, R.,
+Judge, G., & Miller, D. (2000).  Econometric Foundations.  Cambridge University
+Press.  Pavia, J.M. (2023) <doi:10.1007/s43545-023-00658-y> Acknowledgements:
+The author wish to thank Conselleria de Economia, Hacienda y Administracion
+Publica (grant CIACIO/2023/031) for supporting this research.")
+    (license license:gpl2+)))
+
 (define-public r-eigenmodel
   (package
     (name "r-eigenmodel")
@@ -25063,13 +25068,13 @@ described in Naderi et al. (2025) <doi:10.48550/@code{arXiv.2510.20617>}.")
 (define-public r-eclosure
   (package
     (name "r-eclosure")
-    (version "0.9.4")
+    (version "0.9.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eClosure" version))
        (sha256
-        (base32 "12wl5v31nfkrlwn6n616jpkp0v8dn5bcrggvz2skv40qf1kl9gap"))))
+        (base32 "19m9b760arz50hssxijws6lhic1bs02b86fp11l8n34gb7yyk06x"))))
     (properties `((upstream-name . "eClosure")))
     (build-system r-build-system)
     (arguments

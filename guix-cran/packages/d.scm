@@ -3993,13 +3993,13 @@ and obtain the matching confidence interval using a choice of methods.")
 (define-public r-dsrocrate
   (package
     (name "r-dsrocrate")
-    (version "0.0.2")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dsROCrate" version))
        (sha256
-        (base32 "0cafp4d8iq14qs5ygq4si9ss3pi50pc6c14x0d1p3g16kzrfqmlv"))))
+        (base32 "1f8a01bx2l1jxq8pyxrraa7m73nd44j1bdrf3zimiazdqizk1bhc"))))
     (properties `((upstream-name . "dsROCrate")))
     (build-system r-build-system)
     (arguments
@@ -7095,13 +7095,13 @@ Zhang YW, Zuo JF, Liu JY, Zhang YM (2022, <doi: 10.1016/j.xplc.2022.100319>).")
 (define-public r-dqcheckr
   (package
     (name "r-dqcheckr")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dqcheckr" version))
        (sha256
-        (base32 "1irpfkqk80apw4w0000k8alw0diwkhivjqr5x226l3gc350bs86w"))))
+        (base32 "0kcssmxw17w0ly51854xvqayv0qvk2m8015xypy3ph10zffi7fr6"))))
     (properties `((upstream-name . "dqcheckr")))
     (build-system r-build-system)
     (arguments
@@ -7110,9 +7110,9 @@ Zhang YW, Zuo JF, Liu JY, Zhang YM (2022, <doi: 10.1016/j.xplc.2022.100319>).")
     (propagated-inputs (list r-yaml
                              r-tidyr
                              r-rsqlite
-                             r-rmarkdown
                              r-rlang
                              r-readr
+                             r-quarto
                              r-knitr
                              r-kableextra
                              r-gridextra
@@ -16267,26 +16267,26 @@ S, Lou P, Mockler TC and @code{McClung} CR. @code{eLife}.  2020 Sep 30;9(4).
 (define-public r-diner
   (package
     (name "r-diner")
-    (version "1.0.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dineR" version))
        (sha256
-        (base32 "1nnfg4kylb8ivwij1qdn9qv5jciinl4jk4gghfw97jphp4da91pw"))))
+        (base32 "06af4p4h3ian4lq9w5hyql1ywyrydgjn1r0dwvvr9klgmd2avx7m"))))
     (properties `((upstream-name . "dineR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-progress r-matrix r-mass))
+    (propagated-inputs (list r-progress r-matrix r-mass r-foreach r-dosnow))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/RicSalgado/dineR")
+    (home-page "https://ricsalgado.github.io/dineR/")
     (synopsis "Differential Network Estimation in R")
     (description
      "An efficient and convenient set of functions to perform differential network
 estimation through the use of alternating direction method of multipliers
-optimization with a variety of loss functions.")
+optimization with a variety of different loss functions.")
     (license license:expat)))
 
 (define-public r-dineq
@@ -22458,31 +22458,29 @@ special, roxygen'-style comments.")
 (define-public r-deprivater
   (package
     (name "r-deprivater")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "deprivateR" version))
        (sha256
-        (base32 "0x3gqk1sxysws7rig1m2igihcp2dl52gznf6kfzh9pgz7s5cy1bj"))))
+        (base32 "1pl95g5g2j3g4ncq22vgbikrv6z9c80k5b0jwcmw9rj602lbzn0c"))))
     (properties `((upstream-name . "deprivateR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-zipper
-                             r-tidyselect
                              r-tidyr
                              r-tidycensus
-                             r-tibble
-                             r-stringr
                              r-sociome
                              r-sf
                              r-rlang
                              r-ndi
-                             r-english
                              r-dplyr
+                             r-cli
                              r-classint))
+    (native-inputs (list r-knitr))
     (home-page "https://pfizer-opensource.github.io/deprivateR/")
     (synopsis
      "Calculating and Analyzing Measures of Deprivation in the United States")

@@ -5571,35 +5571,6 @@ Chris (2015) \"Bayesian A/B Testing at VWO\"
 <https://vwo.com/downloads/VWO_@code{SmartStats_technical_whitepaper.pdf>}.")
     (license license:expat)))
 
-(define-public r-gripp
-  (package
-    (name "r-gripp")
-    (version "0.2.21")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gripp" version))
-       (sha256
-        (base32 "0h9lnx457d42s3dm5a2mywb7q9vgd41xph10qlrbxx7smzmf7y3g"))))
-    (properties `((upstream-name . "gripp")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-gensa r-ga))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=gripp")
-    (synopsis "General Inverse Problem Platform")
-    (description
-     "Set of functions designed to solve inverse problems.  The direct problem is used
-to calculate a cost function to be minimized.  Here are listed some papers using
-Inverse Problems solvers and sensitivity analysis: (Jader Lugon Jr.; Antonio J.
-Silva Neto 2011) <doi:10.1590/S1678-58782011000400003>. (Jader Lugon Jr.;
-Antonio J. Silva Neto; Pedro P.G.W. Rodrigues 2008)
-<doi:10.1080/17415970802082864>. (Jader Lugon Jr.; Antonio J. Silva Neto; Cesar
-C. Santana 2008) <doi:10.1080/17415970802082922>.")
-    (license license:gpl3)))
-
 (define-public r-grin2
   (package
     (name "r-grin2")
@@ -5828,13 +5799,13 @@ function, or causality.")
 (define-public r-gridmicrotex
   (package
     (name "r-gridmicrotex")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gridmicrotex" version))
        (sha256
-        (base32 "075r5wf5y2lyivd7qjfsqdwq7drk5n730cqdg9gccg065v7k0fha"))))
+        (base32 "140glkvm1b2hswp6spfi0rknvcwmjwzfjnpxblvkvn5mvk3gjrv6"))))
     (properties `((upstream-name . "gridmicrotex")))
     (build-system r-build-system)
     (arguments
@@ -11677,33 +11648,6 @@ Data is returned in tidy tibble format ready for analysis.  Supports local
 storage via RDS or Apache Arrow Parquet files for fast repeated access.
 Designed for golf analytics, data journalism, and fantasy sports research.")
     (license license:expat)))
-
-(define-public r-goldprice
-  (package
-    (name "r-goldprice")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GOLDprice" version))
-       (sha256
-        (base32 "0mr132l59xg91zcr1681xkkrp5r63irm89vh3yvxc7kdx7dxjs83"))))
-    (properties `((upstream-name . "GOLDprice")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-readxl))
-    (home-page "https://cran.r-project.org/package=GOLDprice")
-    (synopsis "Gold Price Data")
-    (description
-     "This package provides a collection of gold price data in various currencies in
-the form of USD, EUR, JPY, GBP, CAD, CHF, INR, CNY, TRY, SAR, IDR, AED, THB,
-VND, EGP, KRW, RUB, ZAR, and AUD. This data comes from the World Gold Council.
-In addition, the data is in the form of daily, weekly, monthly (average and the
-end of period), quarterly (average and the end of period), and yearly (average
-and the end of period).")
-    (license license:gpl3)))
 
 (define-public r-goldilocks
   (package
@@ -20171,13 +20115,13 @@ added and tweaked using + and regular ggplot2 functions.")
 (define-public r-ggsem
   (package
     (name "r-ggsem")
-    (version "1.0.0")
+    (version "1.0.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggsem" version))
        (sha256
-        (base32 "02mmd7mbv3ji87crphipak1l0ab2jdcpf6qvrgjxx0gj9bmhjx70"))))
+        (base32 "0v3lz0z010rx86s824pif48h7mh36zpkyfm287jf5lji13vy28ig"))))
     (properties `((upstream-name . "ggsem")))
     (build-system r-build-system)
     (arguments
@@ -20213,7 +20157,7 @@ figures while maintaining statistical model integrity.  Supports integration
 with lavaan', @code{OpenMx}', @code{tidySEM}', and blavaan etc.  Features
 include parameter-based aesthetic mapping, generative AI assistance, and
 complete reproducibility by exporting metadata for script-based workflows.")
-    (license license:gpl2)))
+    (license license:expat)))
 
 (define-public r-ggsegmentedtotalbar
   (package
@@ -37871,53 +37815,6 @@ Formulae for Calculators\".  The @code{galsat_animate()} function creates an
 animation of the Galilean satellites positions.  You provide the starting time,
 duration, the time step between frames, and the pause between frames.  The
 function @code{delta_t()} returns the value of delta-T in units of seconds.")
-    (license license:expat)))
-
-(define-public r-galigor
-  (package
-    (name "r-galigor")
-    (version "0.2.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "galigor" version))
-       (sha256
-        (base32 "1lfw1kikf90nv9g0xrb656fbilmxdk64zrzi43wrz7y2y55sd5xv"))))
-    (properties `((upstream-name . "galigor")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-rym
-                             r-ryandexdirect
-                             r-rvkstat
-                             r-rstudioapi
-                             r-rmytarget
-                             r-rgoogleads
-                             r-rfacebookstat
-                             r-rappsflyer
-                             r-purrr
-                             r-magrittr
-                             r-getproxy
-                             r-gargle
-                             r-dplyr
-                             r-crayon
-                             r-cli))
-    (home-page "https://selesnow.github.io")
-    (synopsis "Collection of Packages for Internet Marketing")
-    (description
-     "Collection of packages for work with API Google Ads
-<https://developers.google.com/google-ads/api/docs/start>, Yandex Direct
-<https://yandex.ru/dev/direct/>, Yandex Metrica
-<https://yandex.ru/dev/metrika/>, @code{MyTarget}
-<https://target.my.com/help/advertisers/api_arrangement/ru>, Vkontakte
-<https://vk.com/dev/methods>, Facebook
-<https://developers.facebook.com/docs/marketing-apis/> and @code{AppsFlyer}
-<https://support.appsflyer.com/hc/en-us/articles/207034346-Using-Pull-API-aggregate-data>.
- This packages allows you loading data from ads account and manage your ads
-materials.")
     (license license:expat)))
 
 (define-public r-galaxyr

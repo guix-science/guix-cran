@@ -586,13 +586,13 @@ the mediators for identifying and analyzing mediation pathways.")
 (define-public r-buysetest
   (package
     (name "r-buysetest")
-    (version "3.3.4")
+    (version "3.3.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BuyseTest" version))
        (sha256
-        (base32 "0whn8gzyki2m7z33p0wkq22v2rixdzic8f4pwq90nmi2x35a1kcy"))))
+        (base32 "0gp63b5s58n9ra9xj90qh04fg60jfw83jdjgy5jaxb2f7fhvsf7s"))))
     (properties `((upstream-name . "BuyseTest")))
     (build-system r-build-system)
     (arguments
@@ -10414,39 +10414,6 @@ and WAIC, and K-fold cross-validation where the user is free to select their own
 subset of data rows for validation.  Sahu (2022) <doi:10.1201/9780429318443>
 describes the methods in detail.")
     (license license:gpl2)))
-
-(define-public r-bmscstan
-  (package
-    (name "r-bmscstan")
-    (version "1.2.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bmscstan" version))
-       (sha256
-        (base32 "05w6pz0mwqighhdl36f2ya1b4dw0xdhpfcbq6saw73ag5hvl57i9"))))
-    (properties `((upstream-name . "bmscstan")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rstan
-                             r-loo
-                             r-logspline
-                             r-laplacesdemon
-                             r-ggplot2
-                             r-bayesplot))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/michelescandola/bmscstan")
-    (synopsis "Bayesian Multilevel Single Case Models using 'Stan'")
-    (description
-     "Analyse single case analyses against a control group.  Its purpose is to provide
-a flexible, with good power and low first type error approach that can manage at
-the same time controls and patient's data.  The use of Bayesian statistics
-allows to test both the alternative and null hypothesis.  Scandola, M., &
-Romano, D. (2020, August 3). <doi:10.31234/osf.io/sajdq> Scandola, M., & Romano,
-D. (2021). <doi:10.1016/j.neuropsychologia.2021.107834>.")
-    (license license:gpl2+)))
 
 (define-public r-bms
   (package
@@ -21335,27 +21302,29 @@ Back Filling Design for dose escalation in early-phase oncology trials.")
 (define-public r-bfbin2arm
   (package
     (name "r-bfbin2arm")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bfbin2arm" version))
        (sha256
-        (base32 "0mgsk73m5nzhl871v5a6amq7kprhci6rnp1n66vlyq5psqlazvva"))))
+        (base32 "0vs4ra5ab23swrn6pkw246hic7z7d44mj1k7l7r8k4ciz60lmkxa"))))
     (properties `((upstream-name . "bfbin2arm")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-vgam r-patchwork r-ggplot2 r-dplyr))
+    (propagated-inputs (list r-vgam r-rlang r-patchwork r-ggplot2 r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://arxiv.org/abs/2511.23144")
     (synopsis "Bayes Factor Design for Two-Arm Binomial Trials")
     (description
-     "Design and analysis of one- and two-stage two-arm binomial clinical phase II
-trials using Bayes factors.  Implements Bayes factors for point-null and
-directional hypotheses, predictive densities under different hypotheses, and
-power and sample size calibration.")
+     "Design and analysis of one- and two-stage binomial clinical phase II trials
+using Bayes factors.  Implements Bayes factors for point-null and directional
+hypotheses, predictive densities under different hypotheses, and power and
+sample size calibration.  Both one-arm trials with only a single treatment arm
+and two-arm trials with treatment and control arm are implemented for the one-
+and two-stage designs.")
     (license license:gpl3)))
 
 (define-public r-bfast
@@ -26957,6 +26926,37 @@ some conjugate families and another set of functions for evaluation of some
 Bayesian models.")
     (license license:gpl3+)))
 
+(define-public r-bayesrtmb
+  (package
+    (name "r-bayesrtmb")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BayesRTMB" version))
+       (sha256
+        (base32 "1g8a32hhcbc08li4q4ww10hqvj15pb240nz5cm7nnfj42wam3p0v"))))
+    (properties `((upstream-name . "BayesRTMB")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rtmb r-r6 r-mass))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/norimune/BayesRTMB")
+    (synopsis "Bayesian Inference Using 'RTMB'")
+    (description
+     "This package provides tools for Markov chain Monte Carlo (MCMC) and Maximum A
+Posteriori (MAP) estimation utilizing the RTMB package.  It supports various
+statistical models including generalized linear mixed models, factor analysis,
+item response theory, and multidimensional unfolding.  The package allows users
+to easily transition between frequentist and Bayesian paradigms using a unified
+interface.  Automatic differentiation and Laplace approximation follow
+Kristensen et al. (2016) <doi:10.18637/jss.v070.i05>, and MCMC sampling uses the
+No-U-Turn Sampler described by Hoffman and Gelman (2014)
+<https://jmlr.org/papers/v15/hoffman14a.html>.")
+    (license license:expat)))
+
 (define-public r-bayesrs
   (package
     (name "r-bayesrs")
@@ -27947,13 +27947,13 @@ rank normalization, which are proposed in Vehtari et al. (2021)
 (define-public r-bayesmultimode
   (package
     (name "r-bayesmultimode")
-    (version "0.7.5")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesMultiMode" version))
        (sha256
-        (base32 "1mmfz5mnpymc7dfw8awg3anpcd7zmxf0cgywpdsmqqh065mf19qw"))))
+        (base32 "00r5clqs9w4gv6lh3hhzp2yh5bh3b6k75w5wb69i72pggrfz1y26"))))
     (properties `((upstream-name . "BayesMultiMode")))
     (build-system r-build-system)
     (arguments
@@ -27976,16 +27976,15 @@ rank normalization, which are proposed in Vehtari et al. (2021)
     (home-page "https://github.com/paullabonne/BayesMultiMode")
     (synopsis "Bayesian Mode Inference")
     (description
-     "This package provides a two-step Bayesian approach for mode inference following
-Cross, Hoogerheide, Labonne and van Dijk (2024)
-<doi:10.1016/j.econlet.2024.111579>).  First, a mixture distribution is fitted
-on the data using a sparse finite mixture (SFM) Markov chain Monte Carlo (MCMC)
-algorithm.  The number of mixture components does not have to be known; the size
-of the mixture is estimated endogenously through the SFM approach.  Second, the
-modes of the estimated mixture at each MCMC draw are retrieved using algorithms
-specifically tailored for mode detection.  These estimates are then used to
-construct posterior probabilities for the number of modes, their locations and
-uncertainties, providing a powerful tool for mode inference.")
+     "This package provides a two-step Bayesian approach for mode inference (BaÅtÃ¼rk
+et al., 2026) <doi:10.18637/jss.v116.i03>.  First, a mixture distribution is
+fitted on the data using a sparse finite mixture (SFM) Markov chain Monte Carlo
+(MCMC) algorithm.  The number of mixture components does not have to be known;
+the size of the mixture is estimated endogenously through the SFM approach.
+Second, the modes of the estimated mixture at each MCMC draw are retrieved using
+algorithms specifically tailored for mode detection.  These estimates are then
+used to construct posterior probabilities for the number of modes, their
+locations and uncertainties, providing a powerful tool for mode inference.")
     (license license:gpl3+)))
 
 (define-public r-bayesmsm

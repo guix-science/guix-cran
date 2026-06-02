@@ -13330,19 +13330,20 @@ surpluses of consumers, producers and sectors.")
 (define-public r-antareseditobject
   (package
     (name "r-antareseditobject")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "antaresEditObject" version))
        (sha256
-        (base32 "1yjhz2cyw7wvz9mp0f15xl7mxi26ggwbagfzzfn7dsnwfq1hg3sq"))))
+        (base32 "1papwvvs2150pnk224lvngp852awvsgaixbmrm2q94rmnz2iq878"))))
     (properties `((upstream-name . "antaresEditObject")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-yaml
+    (propagated-inputs (list r-zip
+                             r-yaml
                              r-whisker
                              r-progressr
                              r-plyr
@@ -20077,13 +20078,13 @@ research.")
 (define-public r-aieconindex
   (package
     (name "r-aieconindex")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aieconindex" version))
        (sha256
-        (base32 "13p6r1n1h7xqwy58gc8489bzrb3in2g661113dxsg738ak482di5"))))
+        (base32 "0qa29pzpda30k54jny0bdfpzif9jz3a4nvvzyaff07qzlddx6xhl"))))
     (properties `((upstream-name . "aieconindex")))
     (build-system r-build-system)
     (arguments
@@ -22048,13 +22049,13 @@ contains a some varieties of reference tables, especially for The Netherlands.")
 (define-public r-agcounts
   (package
     (name "r-agcounts")
-    (version "0.6.6")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "agcounts" version))
        (sha256
-        (base32 "1q993a7m639zn5cl8lv300qbqgh8wycqckaynvv9lc6a6j60ygjv"))))
+        (base32 "0lz35b06a6rp673w98lf28gzbwid9plxxr8a2m0hshfximxh00xp"))))
     (properties `((upstream-name . "agcounts")))
     (build-system r-build-system)
     (arguments
@@ -22078,7 +22079,7 @@ contains a some varieties of reference tables, especially for The Netherlands.")
                              r-dbi
                              r-data-table
                              r-bslib))
-    (home-page "https://cran.r-project.org/package=agcounts")
+    (home-page "https://github.com/bhelsel/agcounts")
     (synopsis "Calculate 'ActiGraph' Counts from Accelerometer Data")
     (description
      "Calculate @code{ActiGraph} counts from the X, Y, and Z axes of a triaxial
@@ -25916,32 +25917,6 @@ power, stopping boundaries (sample size) calculation functions for two-group
 group sequential designs, adaptive design with coprimary endpoints,
 biomarker-informed adaptive design, etc.")
     (license license:gpl2+)))
-
-(define-public r-adcontabil
-  (package
-    (name "r-adcontabil")
-    (version "1.1.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "adcontabil" version))
-       (sha256
-        (base32 "1yf9d5nfyjp787hqzbs7psxrl771941zkbcbp0p8zzcmh9p151hb"))))
-    (properties `((upstream-name . "adcontabil")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringi r-magrittr r-dplyr r-data-table))
-    (home-page "https://github.com/LissandroSousa/adcontabil.R")
-    (synopsis "Accounting Analysis")
-    (description
-     "This package provides methods for processing corporate balance sheets with a
-focus on the Brazilian reporting format.  Includes data standardization,
-classification by accounting categories, and aggregation of values.  Supports
-accounting and financial analyses of companies, improving efficiency and
-ensuring reproducibility of empirical studies.")
-    (license license:expat)))
 
 (define-public r-adc
   (package

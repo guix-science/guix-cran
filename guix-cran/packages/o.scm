@@ -8726,6 +8726,39 @@ website.  The package includes functions to search for surveys, survey questions
 and timeseries, and import the data directly to R.")
     (license license:gpl3+)))
 
+(define-public r-opencesp
+  (package
+    (name "r-opencesp")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "opencesp" version))
+       (sha256
+        (base32 "1by8gddbd6gyxqdhnq4yk4z6xp5gs0dgmkx5yv7mfl75ksr6maz6"))))
+    (properties `((upstream-name . "opencesp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rpart
+                             r-randomforest
+                             r-pcamixdata
+                             r-mice
+                             r-fastmap
+                             r-cluster))
+    (home-page "https://opencesp.vjf.inserm.fr/en")
+    (synopsis "Generation and Evaluation of Synthetic Tabular Datasets")
+    (description
+     "Various tools developed as part of the Open-CESP (Centre de recherche en
+EpidÃ©miologie et SantÃ© des Populations) initiative to generate and evaluate
+synthetic datasets for statistical disclosure control.  This includes tools to
+investigate the risk-utility tradeoff achievable with given synthesis methods,
+as well as statistical tools to estimate (conditional) probability
+distributions.  The main eventual aim is to help researchers and statisticians
+disseminate open research data.")
+    (license license:gpl3)))
+
 (define-public r-opencast
   (package
     (name "r-opencast")
@@ -11189,13 +11222,13 @@ functionality is supported.")
 (define-public r-omophub
   (package
     (name "r-omophub")
-    (version "1.8.0")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "omophub" version))
        (sha256
-        (base32 "0dibgw44rp4hxqv2w63vf67b73q5h0gbr0z98l2flxvxwv1v57zk"))))
+        (base32 "11v14pkscpwww4h8wfh0yd5pfypqny539kjn4j7l9121hxy4zgy0"))))
     (properties `((upstream-name . "omophub")))
     (build-system r-build-system)
     (arguments

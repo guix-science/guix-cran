@@ -13329,38 +13329,6 @@ predictive models.  The ROC method implemented in this package is described by
 Kamiran, Karim and Zhang (2012) <https://ieeexplore.ieee.org/document/6413831/>.")
     (license license:gpl2+)))
 
-(define-public r-precviasbr
-  (package
-    (name "r-precviasbr")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "precviasBR" version))
-       (sha256
-        (base32 "03n58s2lsvw75q5qddk609m5dx1azlr0zkai55hhhl8l3qz6q7gp"))))
-    (properties `((upstream-name . "precviasBR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rlang r-dplyr r-arrow))
-    (home-page "https://cran.r-project.org/package=precviasBR")
-    (synopsis "Spatial Data of Road Precariousness in Brazil")
-    (description
-     "Fornece acesso eficiente Ã  malha espacial de precariedade viÃ¡ria brasileira.
-O pacote realiza o download em cache e a leitura otimizada (via Apache Arrow) de
-arquivos Parquet particionados, contendo o cruzamento de variÃ¡veis de
-infraestrutura do Entorno do Censo DemogrÃ¡fico 2022 (IBGE) com a malha viÃ¡ria
-aberta do Overture Maps. [English] Provides efficient access to the spatial
-network of road precariousness in Brazil.  The package performs cached downloads
-and optimized reading (via Apache Arrow) of partitioned Parquet files.  These
-files contain the intersection of infrastructure variables from the 2022
-Demographic Census (IBGE) with the open street network from Overture Maps.
-Methodology and datasets are detailed in Passos (2026)
-<doi:10.5281/zenodo.19711448>.")
-    (license license:expat)))
-
 (define-public r-precommit
   (package
     (name "r-precommit")
@@ -15221,6 +15189,39 @@ point process model.")
 (<https://www.pbs.gov.pk/content/population-census>).  It uses data from R
 package @code{PakPC2017}'.")
     (license license:gpl3)))
+
+(define-public r-ppcsexrx
+  (package
+    (name "r-ppcsexrx")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PPCSexRx" version))
+       (sha256
+        (base32 "06nmvvyx43cqn1sgvnq6v9hrjm74pr9k25blfq8b2z95605l7czs"))))
+    (properties `((upstream-name . "PPCSexRx")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/guangl10/PPCSexRx")
+    (synopsis "Prescribe Sub-Symptom Exercise for Adolescent Concussion")
+    (description
+     "This package provides a clinical decision support system for sub-symptom
+threshold aerobic exercise (SSTAE) prescription in adolescents with persistent
+post-concussion symptoms (PPCS).  Implements an evidence-based protocol derived
+from a systematic review of seven studies (Li, 2026;
+<doi:10.17605/osf.io/kvuf6>), encoding safety screening, Buffalo Concussion
+Treadmill Test (BCTT)-guided heart rate prescription, session-level progress
+tracking, and evidence disclosure using the Grading of Recommendations,
+Assessment, Development and Evaluation (GRADE) framework into an open-source
+tool for athletic trainers and clinicians.  Designed to support implementation
+in resource-limited settings where BCTT equipment may be unavailable.  GRADE
+certainty of evidence: LOW. For clinician use only; not a substitute for
+clinical judgement.")
+    (license license:expat)))
 
 (define-public r-ppclust
   (package
@@ -21838,34 +21839,6 @@ adapted for use with other model simulators by utilizing its extendable
 (inheritable) base classes.")
     (license license:gpl3)))
 
-(define-public r-podes
-  (package
-    (name "r-podes")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PODES" version))
-       (sha256
-        (base32 "095nv66a5ayikw1sv8xcjpr1jd6f8qdm7qx7i7z3k1jwd1pci9rs"))))
-    (properties `((upstream-name . "PODES")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-readxl))
-    (home-page "https://cran.r-project.org/package=PODES")
-    (synopsis "Village Potential Statistics of Indonesia")
-    (description
-     "Village potential statistics (PODES) collects various information on village
-potential and challenges faced by villages in Indonesia.  Information related to
-village potential includes economy, security, health, employment, communication
-and information, sports, entertainment, development, community empowerment,
-education, socio-culture, transportation in the village.  Information related to
-challenges includes natural disasters, public health, environmental pollution,
-social problems and security disturbances that occur in the village.")
-    (license license:gpl3)))
-
 (define-public r-podbay
   (package
     (name "r-podbay")
@@ -23640,13 +23613,13 @@ regression and classification is supported.")
 (define-public r-plssem
   (package
     (name "r-plssem")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plssem" version))
        (sha256
-        (base32 "0p4l46s7xrpfy713h06a6hla3sj3c49fszn9l9p8kbs18985ha5v"))))
+        (base32 "0gi34q6z1c8hkb1rl4if4gfwg2n769056lxpph8npx1d2sjn40gx"))))
     (properties `((upstream-name . "plssem")))
     (build-system r-build-system)
     (arguments
@@ -23656,11 +23629,15 @@ regression and classification is supported.")
                              r-rfast
                              r-reformulas
                              r-purrr
+                             r-progressr
                              r-mvnfast
                              r-modsem
                              r-matrixstats
+                             r-mass
                              r-lme4
                              r-lavaan
+                             r-future-apply
+                             r-future
                              r-fnn
                              r-collapse))
     (native-inputs (list r-knitr))
@@ -26891,13 +26868,13 @@ package directory, and/or a vector of verbs implement via the usethis
 (define-public r-pkgstats
   (package
     (name "r-pkgstats")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pkgstats" version))
        (sha256
-        (base32 "0r9qrj9naglj6b7ln8iy80nl1942q7v6f7cbm4gh0ivdyjwy9921"))))
+        (base32 "0f4fp63kc7bajn5mgd6pnyq619rr7a99pr43w3rvz64ngzqjck4l"))))
     (properties `((upstream-name . "pkgstats")))
     (build-system r-build-system)
     (arguments
@@ -26906,6 +26883,7 @@ package directory, and/or a vector of verbs implement via the usethis
     (inputs (list global))
     (propagated-inputs (list r-withr
                              r-sys
+                             r-rprojroot
                              r-roxygen2
                              r-readr
                              r-memoise
@@ -26914,8 +26892,7 @@ package directory, and/or a vector of verbs implement via the usethis
                              r-dplyr
                              r-cpp11
                              r-checkmate
-                             r-brio
-                             r-ami))
+                             r-brio))
     (native-inputs (list r-knitr))
     (home-page "https://docs.ropensci.org/pkgstats/")
     (synopsis "Metrics of R Packages")
@@ -37599,13 +37576,13 @@ Most of the pec functionality has been moved to @code{riskRegression}'.")
 (define-public r-peaxai
   (package
     (name "r-peaxai")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PEAXAI" version))
        (sha256
-        (base32 "0irw00l2m1mkz1skslgz2fnxdgnbld5kdbgb1rm4hgn8vpcf1rv0"))))
+        (base32 "1i8xiw1gr11g2k2fsybvg2mzaa1wvz05lcdm6h38278s2y82rxsi"))))
     (properties `((upstream-name . "PEAXAI")))
     (build-system r-build-system)
     (arguments

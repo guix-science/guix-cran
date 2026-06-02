@@ -2814,6 +2814,31 @@ stochastic (more time consuming but optimal) algorithm.  Tool functions
 facilitate the model interpretation.")
     (license license:gpl2+)))
 
+(define-public r-mvbayes
+  (package
+    (name "r-mvbayes")
+    (version "1.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mvBayes" version))
+       (sha256
+        (base32 "1yrjwm3w4g65mhf6rgy3ww4ncc8swc2w2aiwnl9flhfisvmffcsc"))))
+    (properties `((upstream-name . "mvBayes")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mass r-latex2exp r-cli r-bass))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/sandialabs/mvBayesR")
+    (synopsis "Multivariate Bayesian Regression")
+    (description
+     "Fit, plot, and predict a multivariate response, using an arbitrary univariate
+Bayesian regression model to independently fit basis components (e.g., principal
+components) of the response (Francom et al., 2025 <DOI:10.1137/24M1644092>).")
+    (license license:expat)))
+
 (define-public r-mvardlurt
   (package
     (name "r-mvardlurt")
@@ -13053,6 +13078,72 @@ Contingent Risks\".")
      "Parametric modeling of M-quantile regression coefficient functions.")
     (license license:gpl2)))
 
+(define-public r-mqqr
+  (package
+    (name "r-mqqr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mqqr" version))
+       (sha256
+        (base32 "0zb6azfnj455nlylrkxby3vbcvd2hif1bfdwb3dsijhqd4d17fyd"))))
+    (properties `((upstream-name . "mqqr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-quantreg r-plotly))
+    (home-page "https://github.com/merwanroudane/multiqqr")
+    (synopsis "Multivariate Quantile-on-Quantile Regression")
+    (description
+     "This package implements Multivariate Quantile-on-Quantile Regression (m-QQR) of
+Sinha, Ghosh, Hussain, Nguyen and Das (2023) <doi:10.1016/j.eneco.2023.107021>,
+extending the bivariate Quantile-on-Quantile regression of Sim and Zhou (2015)
+<doi:10.1016/j.jbankfin.2015.01.013> to include exogenous moderators and
+controls with optional interaction terms.  For each pair of quantile levels
+(theta of the response and tau of the regressor) the package fits a
+locally-weighted quantile regression of y on the principal regressor x, a lagged
+dependent variable, moderators Z and the x*Z interaction terms, using Gaussian
+kernel weights on the empirical cumulative distribution function (CDF) distance.
+ Bootstrap standard errors and Koenker-Machado pseudo R-squared are reported.
+Visualisations include MATLAB'-style Parula and Jet 3D surfaces, heatmaps and
+contour plots through plotly'.")
+    (license license:gpl3)))
+
+(define-public r-mqqcause
+  (package
+    (name "r-mqqcause")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mqqcause" version))
+       (sha256
+        (base32 "1rnwcqqglxgr3lb0pajxncqi8xmq1sx336z9nqi2jlmpkjc8z9wx"))))
+    (properties `((upstream-name . "mqqcause")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-quantreg r-plotly))
+    (home-page "https://github.com/merwanroudane/qqcaus")
+    (synopsis "Multivariate Quantile-on-Quantile Granger Causality")
+    (description
+     "This package implements bivariate and Multivariate Quantile-on-Quantile Granger
+causality tests building on the Quantile-on-Quantile regression framework of Sim
+and Zhou (2015) <doi:10.1016/j.jbankfin.2015.01.013> and the quantile Granger
+causality test of Troster (2018) <doi:10.1080/07474938.2016.1172400>.  The
+bivariate test estimates the local-linear slope in the quantile regression of
+y_t on lagged x_t with lagged y_t as control, using Gaussian kernel weights, and
+tests it against zero by paired bootstrap.  The multivariate (conditional) test
+additionally conditions on a set of moderators Z and optional x times Z
+interaction terms, in the spirit of Sinha, Ghosh, Hussain, Nguyen and Das (2023)
+<doi:10.1016/j.eneco.2023.107021>.  A Sup-Wald summary across the quantile grid
+is also provided.  Heatmaps and 3D surfaces default to the MATLAB Parula colour
+map.")
+    (license license:gpl3)))
+
 (define-public r-mqmf
   (package
     (name "r-mqmf")
@@ -17964,13 +18055,13 @@ instance on pokemon, world of warcraft, house tasks or food nutrition analyses."
 (define-public r-modsem
   (package
     (name "r-modsem")
-    (version "1.0.19")
+    (version "1.0.20")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modsem" version))
        (sha256
-        (base32 "0ccgq56824fgxjcf2whsmwj910p006ipwqfzlcy9iz59z07c4r50"))))
+        (base32 "1f6xj25mkk14icb9nbxfbyj0dqwd65v6mxinil6p3199rk2a8gsb"))))
     (properties `((upstream-name . "modsem")))
     (build-system r-build-system)
     (arguments
@@ -17987,6 +18078,7 @@ instance on pokemon, world of warcraft, house tasks or food nutrition analyses."
                              r-mvtnorm
                              r-mvnfast
                              r-mplusautomation
+                             r-memoise
                              r-mass
                              r-lavaan
                              r-ggplot2
@@ -20252,13 +20344,13 @@ inference on a random-effects model with multivariate normal observations.")
 (define-public r-mnirs
   (package
     (name "r-mnirs")
-    (version "0.6.4")
+    (version "0.6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mnirs" version))
        (sha256
-        (base32 "154bl4pmlrkvgqjal1sgfrsbpg9rabz12vxaj0l7jvzjkcrp07sa"))))
+        (base32 "0jz5kzzsgrvhnirl9vldfq42xmm7abqdmg90wj9apvf75acfsy3w"))))
     (properties `((upstream-name . "mnirs")))
     (build-system r-build-system)
     (arguments
@@ -22984,13 +23076,13 @@ with more upload options, see the @code{OpenML} package.")
 (define-public r-mlr3fda
   (package
     (name "r-mlr3fda")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3fda" version))
        (sha256
-        (base32 "0r9znmpslp5x95446219an0zj7kvwcmjnva2hdwavjy54vgwp7wa"))))
+        (base32 "1y707zyp3jfy5axsjryrpbzx4y295451x2y52aa6zjzfm8112rg1"))))
     (properties `((upstream-name . "mlr3fda")))
     (build-system r-build-system)
     (arguments
@@ -27768,13 +27860,13 @@ A.M.Gun,M.K.Gupta,B.Dasgupta(2019,ISBN:81-87567-81-3).")
 (define-public r-missinghe
   (package
     (name "r-missinghe")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "missingHE" version))
        (sha256
-        (base32 "1w3h8anwx5wxznws2xm5wqqaa2j79511j2nrlavn76qp7r76ycnv"))))
+        (base32 "0l8dqj2xl3abv6450zpkfx9rmjx724w20bc0lz5d4x4lcp5brhd4"))))
     (properties `((upstream-name . "missingHE")))
     (build-system r-build-system)
     (arguments
@@ -31455,13 +31547,13 @@ J.L (2004)
 (define-public r-micsr
   (package
     (name "r-micsr")
-    (version "0.1-4")
+    (version "0.1-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "micsr" version))
        (sha256
-        (base32 "14w5vhhap7ricy5nqxwjd462qnydhd64bh5kriliy0d2n19ndkv6"))))
+        (base32 "15h742f7gacmixz14b1w3kzndi5p769zk18vl2ckc78qrjpl2mg4"))))
     (properties `((upstream-name . "micsr")))
     (build-system r-build-system)
     (arguments
@@ -32660,6 +32752,32 @@ evaluation of a quantitative model for the multiple imputations is another major
 enhancement.  A new major improvement is one of the fastest predictive mean
 matching in the R world because of presorting and binary search.")
     (license license:gpl2+)))
+
+(define-public r-micedrf
+  (package
+    (name "r-micedrf")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "miceDRF" version))
+       (sha256
+        (base32 "0k6pp4df1wwbjk90pzmhkl5js7li45l9a9b2sa8cq0lw1cr1khgy"))))
+    (properties `((upstream-name . "miceDRF")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-drf))
+    (home-page "https://github.com/KrystynaGrzesiak/miceDRF")
+    (synopsis "Imputation with 'mice' and Distributional Random Forests")
+    (description
+     "This package provides a custom imputation method for the mice package based on
+distributional random forests.  The package implements the mice.impute.DRF
+method, which can be used within the standard mice workflow.  Missing values are
+imputed by estimating conditional distributions with distributional random
+forests and sampling observed responses using forest weights.")
+    (license license:gpl3)))
 
 (define-public r-miceconsnqp
   (package
@@ -43087,32 +43205,6 @@ citation.  The primary method is Multi-MA'.  Other fitting functions on MA
 coordinates can also be employed e.g. loess.")
     (license license:gpl3)))
 
-(define-public r-mdhglm
-  (package
-    (name "r-mdhglm")
-    (version "1.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mdhglm" version))
-       (sha256
-        (base32 "1myky8d2ilwdliqrzd2i5qvja82iz7w6qbigl7h4znpk8pdgrjb3"))))
-    (properties `((upstream-name . "mdhglm")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mvtnorm r-matrix r-boot))
-    (home-page "https://cran.r-project.org/package=mdhglm")
-    (synopsis "Multivariate Double Hierarchical Generalized Linear Models")
-    (description
-     "Allows various models for multivariate response variables where each response is
-assumed to follow double hierarchical generalized linear models.  In double
-hierarchical generalized linear models, the mean, dispersion parameters for
-variance of random effects, and residual variance can be further modeled as
-random-effect models.")
-    (license (license:fsdg-compatible "Unlimited"))))
-
 (define-public r-mdgof
   (package
     (name "r-mdgof")
@@ -52726,37 +52818,6 @@ county/district-level.")
 choropleth maps as well as choropleth alternatives in ggplot2'.")
     (license license:expat)))
 
-(define-public r-mapboxer
-  (package
-    (name "r-mapboxer")
-    (version "0.4.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mapboxer" version))
-       (sha256
-        (base32 "0f873js87dgk8nqnhpxh88svvsbnk81vkm7gycb62mkr4xqsgqs7"))))
-    (properties `((upstream-name . "mapboxer")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-yaml
-                             r-purrr
-                             r-magrittr
-                             r-htmlwidgets
-                             r-htmltools
-                             r-geojsonsf))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/crazycapivara/mapboxer")
-    (synopsis "An R Interface to 'Mapbox GL JS'")
-    (description
-     "Makes Mapbox GL JS <https://docs.mapbox.com/mapbox-gl-js/api/>, an open source
-@code{JavaScript} library that uses @code{WebGL} to render interactive maps,
-available within R via the htmlwidgets package.  Visualizations can be used from
-the R console, in R Markdown documents and in Shiny apps.")
-    (license license:expat)))
-
 (define-public r-mapboxapi
   (package
     (name "r-mapboxapi")
@@ -53140,19 +53201,21 @@ and node and tie attributes, and describing networks with sensible defaults.")
 (define-public r-manymome
   (package
     (name "r-manymome")
-    (version "0.3.4")
+    (version "0.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "manymome" version))
        (sha256
-        (base32 "0bqfp74ajl9fy4m3sclpdjs0xh8wy17p94sqz41mkmmr1x8xjmf1"))))
+        (base32 "1zjw5s41ilqbjjbffg6j4wbp2rki85g6cm5xda165wq19c3rdjy5"))))
     (properties `((upstream-name . "manymome")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-pbapply
+    (propagated-inputs (list r-semtools
+                             r-psych
+                             r-pbapply
                              r-mass
                              r-lmhelprs
                              r-lavaan

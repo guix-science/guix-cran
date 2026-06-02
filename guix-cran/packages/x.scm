@@ -1272,6 +1272,39 @@ uncertainty, and optimizing hyperparameters using Bayesian, coarse-to-fine, or
 random search strategies.")
     (license license:gpl3)))
 
+(define-public r-xomultinom
+  (package
+    (name "r-xomultinom")
+    (version "0.8.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "XOMultinom" version))
+       (sha256
+        (base32 "0fm8dznbhxmndfh9bscsblapgq5q0zp99prf5sdqchgps9qv8fvg"))))
+    (properties `((upstream-name . "XOMultinom")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-rcppprogress r-rcpp r-ggplot2))
+    (home-page "https://github.com/sergioventurini/XOMultinom")
+    (synopsis
+     "Exact Distributions of Some Functions of the Ordered Multinomial Counts")
+    (description
+     "This package implements exact algorithms for computing the distributions of the
+maximum, the minimum, the range, and the sum of the J largest order statistics
+of a multinomial random vector.  Two complementary algorithm families are
+provided: the recursive tree-traversal method of Bonetti, Cirillo, and Ogay
+(2019) <doi:10.1098/rsos.190198>, which covers all four statistics under the
+equiprobable hypothesis; and the stochastic matrix method of Corrado (2011)
+<doi:10.1007/s11222-010-9174-3>, which handles the maximum, minimum, and range
+for arbitrary probability vectors.  Functions for power evaluation and sample
+size determination for goodness-of-fit tests based on these order statistics are
+also provided.  Computationally intensive routines are implemented in C++ for
+efficiency.")
+    (license license:gpl3)))
+
 (define-public r-xoi
   (package
     (name "r-xoi")

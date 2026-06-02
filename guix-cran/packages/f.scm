@@ -26821,13 +26821,13 @@ implementation is described in Egeland, Mostad and Olaisen (1997)
 (define-public r-familiar
   (package
     (name "r-familiar")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "familiar" version))
        (sha256
-        (base32 "14cyh09n63gjin8ikzvmm26b607z65hakqrm6dzbygvrj7jkmbw5"))))
+        (base32 "108bxnzzpc1dvdliwk4pdr5f9hz0zih0dyay40yqkz0mf8cd984y"))))
     (properties `((upstream-name . "familiar")))
     (build-system r-build-system)
     (arguments

@@ -8340,32 +8340,6 @@ from Gates (1980) <doi:10.1007/978-1-4612-6024-0> and Campbell and Norman (1988)
 <isbn:9780387949376>.")
     (license license:expat)))
 
-(define-public r-tremendousr
-  (package
-    (name "r-tremendousr")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tremendousr" version))
-       (sha256
-        (base32 "0jkhpb7q1kg8n2fjj7n3khzwdsz0kh9w7q2wd9xf5mn69066m3f1"))))
-    (properties `((upstream-name . "tremendousr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-jsonlite r-crul r-crayon r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=tremendousr")
-    (synopsis "Easily Send Rewards and Incentives with 'Tremendous' from R")
-    (description
-     "This package provides a slightly-opinionated R interface for the Tremendous API
-(<https://www.tremendous.com/>).  In addition to supporting GET and POST
-requests, tremendousr has, dare I say, tremendously intuitive functions for
-sending digital rewards and incentives directly from R.")
-    (license license:expat)))
-
 (define-public r-trelliscopejs
   (package
     (name "r-trelliscopejs")
@@ -11789,44 +11763,6 @@ effects of tariffs and quotas under different competitive regimes.  These tools
 are derived from Anderson et al. (2001) <doi:10.1016/S0047-2727(00)00085-2> and
 Froeb et al. (2003) <doi:10.1016/S0304-4076(02)00166-5>.")
     (license license:cc0)))
-
-(define-public r-tractortsbox
-  (package
-    (name "r-tractortsbox")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "TractorTsbox" version))
-       (sha256
-        (base32 "05xqmpcdmlnn5x0jx4cgqddcmfbf3y79lam65l6c3zlsf39m8iia"))))
-    (properties `((upstream-name . "TractorTsbox")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-checkmate))
-    (home-page "https://github.com/TractorTom/TractorTsbox")
-    (synopsis
-     "Wrangle and Modify Ts Object with Classic Frequencies and Exact Dates")
-    (description
-     "The ts objects in R are managed using a very specific date format (in the form
-c(2022, 9) for September 2022 or c(2021, 2) for the second quarter of 2021,
-depending on the frequency, for example).  We focus solely on monthly and
-quarterly series to manage the dates of ts objects.  The general idea is to
-offer a set of functions to manage this date format without it being too
-restrictive or too imprecise depending on the rounding.  This is a compromise
-between simplicity, precision and use of the basic stats functions for creating
-and managing time series @code{(ts()}, @code{window()}).  Les objets ts en R
-sont gÃ©rÃ©s par un format de date trÃ¨s particulier (sous la forme c(2022, 9)
-pour septembre 2022 ou c(2021, 2) pour le deuxiÃ¨me trimestre 2021 selon la
-frÃ©quence par exemple).  On se concentre uniquement sur les sÃ©ries mensuelles
-et trimestrielles pour gÃ©rer les dates des objets ts.  LidÃ©e gÃ©nÃ©rale est de
-proposer un ensemble de fonctions pour gÃ©rer ce format de date sans que ce soit
-trop contraignant ou trop imprÃ©cis selon les arrondis.  Cest un compromis entre
-simplicitÃ©, prÃ©cision et utilisation des fonctions du package stats de
-crÃ©ation et de gestion des sÃ©ries temporelles @code{(ts()}, @code{window()}).")
-    (license license:gpl3+)))
 
 (define-public r-tracktrap
   (package
@@ -15887,6 +15823,38 @@ collection is designed for thematic mapping workflows and does not include the
 full set of packages from the R-spatial ecosystem.")
     (license license:gpl3)))
 
+(define-public r-tmap-sources
+  (package
+    (name "r-tmap-sources")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tmap.sources" version))
+       (sha256
+        (base32 "0zqwqfzf35bl5ccmhnhs3f8xb6325w7w21c0823b6kpjy04v23d2"))))
+    (properties `((upstream-name . "tmap.sources")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tmap
+                             r-sf
+                             r-servr
+                             r-jsonlite
+                             r-httr2
+                             r-freestiler
+                             r-data-table
+                             r-cli))
+    (home-page "https://github.com/r-tmap/tmap.sources")
+    (synopsis "Data Sources for 'tmap'")
+    (description
+     "This package provides support for a variety of spatial data sources in tmap',
+including remote, tiled, and streaming formats.  Enables the use of external
+vector and raster data without requiring full data import, facilitating
+efficient visualization workflows.")
+    (license license:gpl3)))
+
 (define-public r-tmap-networks
   (package
     (name "r-tmap-networks")
@@ -19452,13 +19420,13 @@ Tchobanoglous, G., Borchardt, J. H. (2012, ISBN:9781118131473), USEPA. (2001)
 (define-public r-tidyvpc
   (package
     (name "r-tidyvpc")
-    (version "1.5.2")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyvpc" version))
        (sha256
-        (base32 "0wlq423mirs2jcjfb1bqxrl923dkwkswhj0ib08z3k8al4dq2y65"))))
+        (base32 "0358jb939qsywcnn69f6b559vfvnvbz13bk9v4a4fyy9c7jg174i"))))
     (properties `((upstream-name . "tidyvpc")))
     (build-system r-build-system)
     (arguments
@@ -23099,13 +23067,13 @@ for regression and classification problems with a simple verb framework.")
 (define-public r-tidyactuarial
   (package
     (name "r-tidyactuarial")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyactuarial" version))
        (sha256
-        (base32 "0lhan02qqm9zb2prcwy20r9pyhz23bzh2qyix8lhbdgjw4qcpn13"))))
+        (base32 "1zpdawqqcxil1kjrxz4cbpicgy6jwgpycgbzixh9nf1zydhs7gf1"))))
     (properties `((upstream-name . "tidyactuarial")))
     (build-system r-build-system)
     (arguments
@@ -31677,6 +31645,43 @@ expansion to achieve a better approximation to the true percentiles.  The
 sampling distribution become more symmetric.  For more technical details, please
 refer to Zhang (2019) <http://hdl.handle.net/2097/40235>.")
     (license license:gpl2)))
+
+(define-public r-tceper
+  (package
+    (name "r-tceper")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tceper" version))
+       (sha256
+        (base32 "1a80d2vdqgnrfyb9lh8yb621arvzhsichnmsdkbid8xrjnr8hjci"))))
+    (properties `((upstream-name . "tceper")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-purrr
+                             r-jsonlite
+                             r-janitor
+                             r-httr2
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://strategicprojects.github.io/tceper/")
+    (synopsis "Access the 'Open Data API' of Pernambuco Court of Accounts")
+    (description
+     "An R interface to the Open Data API of the Tribunal de Contas do Estado de
+Pernambuco (TCE-PE), the Court of Accounts of the State of Pernambuco, Brazil.
+Provides tidy, ready-to-use functions to query public data on revenues,
+expenditures, commitments, procurement, contracts, agreements, public works,
+legal processes, personnel and reference tables for all state and municipal
+government entities in Pernambuco.  All results are returned as tibbles with
+column names converted to snake_case by default.  Uses httr2 for HTTP requests
+and cli for user-friendly messages.  See
+<https://sistemas.tcepe.tc.br/@code{DadosAbertos/>} for the API documentation.")
+    (license license:expat)))
 
 (define-public r-tca
   (package

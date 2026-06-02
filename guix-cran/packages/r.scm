@@ -7677,6 +7677,34 @@ simsum user-written command in Stata (White I.R., 2010
 it with additional performance measures and functionality.")
     (license license:gpl3+)))
 
+(define-public r-rsimddispatch
+  (package
+    (name "r-rsimddispatch")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RsimdDispatch" version))
+       (sha256
+        (base32 "18hv6sps2pq6f47kr557j6ssbwj0jidkh4zhm6ivxbazwa4sr6c6"))))
+    (properties `((upstream-name . "RsimdDispatch")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/sounkou-bioinfo/RsimdDispatch")
+    (synopsis "Runtime 'SIMD' Dispatch Templates for 'C' Code in 'R' Packages")
+    (description
+     "This package provides templates and a working example for runtime Single
+Instruction Multiple Data ('SIMD') dispatch in C code used by R packages.
+Packages can stage scalar and architecture-specific kernel objects during
+configuration, then select a compiled and CPU-supported implementation at
+runtime through guarded function pointers.  The package also vendors the
+header-only SIMDe library for downstream packages through the @code{LinkingTo}
+field.")
+    (license license:gpl2+)))
+
 (define-public r-rsiena
   (package
     (name "r-rsiena")
@@ -20765,38 +20793,6 @@ quality metrics derived from biological mass spectrometry data, as defined by
 the HUPO-PSI (Human Proteome Organisation - Proteomics Standards Initiative)
 Quality Control working group.  See <https://hupo-psi.github.io/@code{mzQC/>}
 for details.")
-    (license license:expat)))
-
-(define-public r-rmytarget
-  (package
-    (name "r-rmytarget")
-    (version "2.4.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rmytarget" version))
-       (sha256
-        (base32 "1csl5b76r706gzvzhqgg4pdznbdl4i3b0srazwa7xdfc6zbrzljp"))))
-    (properties `((upstream-name . "rmytarget")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-stringr
-                             r-purrr
-                             r-lubridate
-                             r-httr
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://selesnow.github.io/rmytarget/")
-    (synopsis "Load Data from 'MyTarget API v2 and v3'")
-    (description
-     "Allows work with @code{MyTarget} Statistics API v2
-<https://target.my.com/adv/api-marketing/doc/stat-v2> and @code{MyTarget}
-Statistics API v3
-<https://target.my.com/adv/api-marketing/doc/stat-v2#statisticsv3> load data by
-ads, campaigns, agency clients and statistic from your ads account.")
     (license license:expat)))
 
 (define-public r-rmx
@@ -34473,13 +34469,13 @@ on id.")
 (define-public r-restatis
   (package
     (name "r-restatis")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "restatis" version))
        (sha256
-        (base32 "17md9azrdg8k145v3y485fk040npif1jwdgxsm8q1ilk1jjq0s7g"))))
+        (base32 "0mpwsrqbbm6jckdqhi6dvzsa6ydlwpm921xrnf9cv667zsppnrga"))))
     (properties `((upstream-name . "restatis")))
     (build-system r-build-system)
     (arguments
@@ -45072,13 +45068,13 @@ sequence, source of the sequence...).  An example of record can be found at
 (define-public r-read-abares
   (package
     (name "r-read-abares")
-    (version "2.0.0")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "read.abares" version))
        (sha256
-        (base32 "0m62h32g1id11qp6fvjsmzyrwfyw11kdflhc42i52y9cb6fp9mhh"))))
+        (base32 "0gv78w2ir5zaldd31hn0zs3aiz2zwccjys90v487f5dgvakxkkif"))))
     (properties `((upstream-name . "read.abares")))
     (build-system r-build-system)
     (arguments
@@ -45102,19 +45098,19 @@ sequence, source of the sequence...).  An example of record can be found at
                              r-cli
                              r-brio))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/ropensci/read.abares")
-    (synopsis
-     "Read Data from the Australian Bureau of Agricultural and Resource Economics and Sciences (ABARES) and Australian Bureau of Statistics (ABS)")
+    (home-page "https://docs.ropensci.org/read.abares/")
+    (synopsis "Read Australian Agricultural Data from Government Agencies")
     (description
-     "Download and import agricultural data from the Australian Bureau of Agricultural
-and Resource Economics and Sciences (ABARES)
-<https://www.agriculture.gov.au/abares> and Australian Bureau of Statistics
-(ABS) <https://www.abs.gov.au>.  Data types serviced include spreadsheets, comma
-separated value (CSV) files, geospatial data including shape files and geotiffs
-covering topics including broadacre crops, livestock, soil data, commodities and
-more.  Unifies field names and formats for data interoperability making analysis
-easier by standardising names between data formats.  Also simplifies importing
-geospatial data as well as correcting issues in the geospatial data upon import.")
+     "Downloads and imports agricultural data from the Australian Bureau of
+Agricultural and Resource Economics and Sciences (ABARES)
+<https://www.agriculture.gov.au/abares> and the Australian Bureau of Statistics
+(ABS) <https://www.abs.gov.au>.  Supports multiple data formats including
+spreadsheets, commaâseparated value (CSV) files, and geospatial data such as
+shapefiles and @code{GeoTIFFs}.  Covers topics such as broadacre crops,
+livestock, soils, commodities and related agricultural information.  The package
+standardises field names and data formats to improve interoperability and
+simplify analysis.  It also streamlines the import of geospatial data and
+corrects common issues found in these data sources upon loading.")
     (license license:expat)))
 
 (define-public r-read
@@ -46891,6 +46887,55 @@ dimensional portfolio selection (see Pun (2018)
 sparse linear discriminant analysis (see Pun and Hadimaja (2019)
 <https://ssrn.com/abstract=3422590>).")
     (license license:gpl2)))
+
+(define-public r-rdeckgl
+  (package
+    (name "r-rdeckgl")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rDeckgl" version))
+       (sha256
+        (base32 "09i5ky1dqqdb64x0a5n8csk1cincjb0cbpghvk6c7kn3hkrgdlvk"))))
+    (properties `((upstream-name . "rDeckgl")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:modules '((guix build r-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (propagated-inputs (list r-yaml
+                             r-shiny
+                             r-jsonlite
+                             r-htmlwidgets
+                             r-duckdb
+                             r-dbi
+                             r-base64enc
+                             r-arrow))
+    (native-inputs (list r-knitr esbuild))
+    (home-page "https://github.com/TiRizvanov/rDeckgl")
+    (synopsis "R Bindings to 'Deck.gl'")
+    (description
+     "This package provides R bindings for deck.gl', a @code{WebGL} framework for
+rendering large interactive spatial and tabular visualizations.  The package
+supplies htmlwidgets and shiny bindings, supports @code{DuckDB'-backed} data
+hydration, and bundles the @code{JavaScript} assets needed to render deck.gl
+specifications from R.")
+    (license license:expat)))
 
 (define-public r-rdecision
   (package
@@ -51104,50 +51149,6 @@ petabytes of data.  Methods are provided that enable working with Yandex
 Clickhouse databases via DBI methods and using dplyr'/'dbplyr idioms.")
     (license license:gpl2)))
 
-(define-public r-rcldf
-  (package
-    (name "r-rcldf")
-    (version "1.6.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rcldf" version))
-       (sha256
-        (base32 "14lm54sy7h0fn292m31p891vm5v7b0fnmxqfcl9r8nc2q7qnm7da"))))
-    (properties `((upstream-name . "rcldf")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-versionsort
-                             r-urltools
-                             r-rlang
-                             r-remotes
-                             r-readr
-                             r-purrr
-                             r-magrittr
-                             r-logger
-                             r-leaflet
-                             r-jsonlite
-                             r-dplyr
-                             r-digest
-                             r-csvwr
-                             r-bib2df
-                             r-archive))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/SimonGreenhill/rcldf")
-    (synopsis
-     "Read Linguistic Data in the Cross Linguistic Data Format (CLDF)")
-    (description
-     "Cross-Linguistic Data Format (CLDF) is a framework for storing cross-linguistic
-data, ensuring compatibility and ease of data exchange between different
-linguistic datasets see Forkel et al. (2018) <doi:10.1038/sdata.2018.205>.  The
-rcldf package is designed to facilitate the manipulation and analysis of these
-datasets by simplifying the loading, querying, and visualisation of CLDF
-datasets making it easier to conduct comparative linguistic analyses, manage
-language data, and apply statistical methods directly within R.")
-    (license license:asl2.0)))
-
 (define-public r-rclabels
   (package
     (name "r-rclabels")
@@ -51614,30 +51615,6 @@ data <https://land.copernicus.eu/global/>.  The manifest files are available at:
 <https://land.copernicus.eu/global/access/>.  Before you can download the data,
 you will first need to register to create a username and password.")
     (license license:expat)))
-
-(define-public r-rcexttools
-  (package
-    (name "r-rcexttools")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RcextTools" version))
-       (sha256
-        (base32 "1rrij4ryspff9mn1c3jlzjprnipak7nzlb488pk0ci0awaccp5ga"))))
-    (properties `((upstream-name . "RcextTools")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-visnetwork r-sqldf r-igraph r-data-table))
-    (home-page "http://github.com/brunomssmelo/RcextTools/")
-    (synopsis
-     "Analytical Procedures in Support of Brazilian Public Sector External Auditing")
-    (description
-     "Set of analytical procedures based on advanced data analysis in support of
-Brazil's public sector external control activity.")
-    (license license:gpl2+)))
 
 (define-public r-rcereal
   (package
@@ -59454,35 +59431,6 @@ and Renard et al. (1997) \"Predicting Soil Erosion by Water: A Guide to
 Conservation Planning with the Revised Universal Soil Loss Equation (RUSLE)\"
 (USDA Agriculture Handbook No.  703).")
     (license license:expat)))
-
-(define-public r-raincin
-  (package
-    (name "r-raincin")
-    (version "1.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "raincin" version))
-       (sha256
-        (base32 "1wi430vsp5c0vm9p1srrs0nrbdb8x31qh7zph4v3fy7j0z226cwh"))))
-    (properties `((upstream-name . "raincin")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-popdemo r-lme4))
-    (home-page "https://cran.r-project.org/package=raincin")
-    (synopsis "Ranking with Incomplete Information")
-    (description
-     "Various statistical and mathematical ranking and rating methods with incomplete
-information are included.  This package is initially designed for the scoring
-system in a high school project showcase to rank student research projects,
-where each judge can only evaluate a set of projects in a limited time period.
-See Langville, A. N. and Meyer, C. D. (2012), Who is Number 1: The Science of
-Rating and Ranking, Princeton University Press <doi:10.1515/9781400841677>, and
-Gou, J. and Wu, S. (2020), A Judging System for Project Showcase: Rating and
-Ranking with Incomplete Information, Technical Report.")
-    (license license:gpl3)))
 
 (define-public r-rainbowr
   (package

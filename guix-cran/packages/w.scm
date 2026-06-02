@@ -8992,13 +8992,13 @@ path, not just a handler function.")
 (define-public r-waypoint
   (package
     (name "r-waypoint")
-    (version "1.2.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Waypoint" version))
        (sha256
-        (base32 "1l1arjs5wiz9rmp0kc743cq6an7x5vkwracrabgh23s4pbq5n6zj"))))
+        (base32 "0dav2pv50k7g34p61pqy5970806i6gac7hzr6flc7xcjxvy6z9vl"))))
     (properties `((upstream-name . "Waypoint")))
     (build-system r-build-system)
     (arguments

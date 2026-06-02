@@ -10383,13 +10383,13 @@ Biometrics, In press.")
 (define-public r-hetseq
   (package
     (name "r-hetseq")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HetSeq" version))
        (sha256
-        (base32 "1pd4b1dkvpb9xn9fv46sc4yi3xwgvpmhvyxhg794nwwx4jlvafc2"))))
+        (base32 "0q72d6sw5c13l7n86r8cdhxzwr7xwjiag923y9a2fai0krrxmg39"))))
     (properties `((upstream-name . "HetSeq")))
     (build-system r-build-system)
     (arguments
@@ -14871,13 +14871,13 @@ models.")
 (define-public r-hbsaems
   (package
     (name "r-hbsaems")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hbsaems" version))
        (sha256
-        (base32 "051fwqyc10m3gj3hr5ashc67sl89si72dc454h015z53q6l2xh7m"))))
+        (base32 "1cz92k02w42g16g6gbgib52bk7d2wzjyzmd31hdm27cpgqswh4sz"))))
     (properties `((upstream-name . "hbsaems")))
     (build-system r-build-system)
     (arguments
