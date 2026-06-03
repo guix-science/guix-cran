@@ -978,13 +978,13 @@ package is implementation of method proposed in Xu et al (2019)
 (define-public r-gwas2crispr
   (package
     (name "r-gwas2crispr")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gwas2crispr" version))
        (sha256
-        (base32 "0xf31flnhzs1n4fnbwnn9a2fn64bnjfa55kvyjhk23gh0g97yi63"))))
+        (base32 "0v422vxmix85n2a05ic74vv0p7zrw9vxn2bcbvzv7cgns7nfqras"))))
     (properties `((upstream-name . "gwas2crispr")))
     (build-system r-build-system)
     (arguments
@@ -1007,16 +1007,17 @@ package is implementation of method proposed in Xu et al (2019)
 studies (GWAS) and extract single-nucleotide polymorphisms (SNPs) for a human
 trait or disease.  Given aggregated GWAS dataset(s) and a user-defined
 significance threshold, the package retrieves significant SNPs from the GWAS
-Catalog and the Experimental Factor Ontology (EFO), annotates their gene
-context, and can write a harmonised metadata table in comma-separated values
-(CSV) format, genomic intervals in the Browser Extensible Data (BED) format, and
-sequences in the FASTA (text-based sequence) format with user-defined flanking
-regions for clustered regularly interspaced short palindromic repeats (CRISPR)
-guide design.  For details on the resources and methods see: Buniello et al.
-(2019) <doi:10.1093/nar/gky1120>; Sollis et al. (2023)
-<doi:10.1093/nar/gkac1010>; Jinek et al. (2012) <doi:10.1126/science.1225829>;
-Malone et al. (2010) <doi:10.1093/bioinformatics/btq099>; Experimental Factor
-Ontology (EFO) <https://www.ebi.ac.uk/efo>.")
+Catalog using supported trait identifiers, annotates their gene context, and can
+write a harmonised metadata table in comma-separated values (CSV) format,
+genomic intervals in the Browser Extensible Data (BED) format, and sequences in
+the FASTA (text-based sequence) format with user-defined flanking regions for
+clustered regularly interspaced short palindromic repeats (CRISPR) guide design.
+ The existing efo_id argument is retained for backward compatibility.  The
+package prepares computational artifacts for downstream workflows; it does not
+perform biological causality testing, clinical interpretation, therapeutic
+design, or wet-lab validation.  For details on the resources and methods see:
+Buniello et al. (2019) <doi:10.1093/nar/gky1120>; Sollis et al. (2023)
+<doi:10.1093/nar/gkac1010>; Jinek et al. (2012) <doi:10.1126/science.1225829>.")
     (license license:expat)))
 
 (define-public r-gwars
@@ -5105,19 +5106,19 @@ the C++ code file from John Burkardt and John Denker (Brent, 2002).")
 (define-public r-groupedhyperframe-random
   (package
     (name "r-groupedhyperframe-random")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "groupedHyperframe.random" version))
        (sha256
-        (base32 "0l2fvqw60l5pnv4mjf85bvxfn5dvxmhynns16yahac0ppj2g896n"))))
+        (base32 "0blxzr43w28m6p0c57p208fsv698m01q7gkjbnd5agv75algws6m"))))
     (properties `((upstream-name . "groupedHyperframe.random")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-spatstat-random r-spatstat-geom r-cli))
+    (propagated-inputs (list r-spatstat-random r-spatstat-geom))
     (home-page "https://github.com/tingtingzhan/rppp")
     (synopsis "Simulated Point-Pattern via Vectorized Parameterization")
     (description

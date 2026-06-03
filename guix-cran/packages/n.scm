@@ -18115,13 +18115,13 @@ related data sets.")
 (define-public r-nasapower
   (package
     (name "r-nasapower")
-    (version "4.2.5")
+    (version "4.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nasapower" version))
        (sha256
-        (base32 "1k1jp8knvsxh14xrrnpx5dv90xmcbgdkpw9pr01aqwh03pr9km3n"))))
+        (base32 "0m47jibsk6n68j0d4w59p730877yl99v7c7q6hc28dqz8g6d5y0r"))))
     (properties `((upstream-name . "nasapower")))
     (build-system r-build-system)
     (arguments
@@ -18135,7 +18135,7 @@ related data sets.")
                              r-crul
                              r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://docs.ropensci.org/nasapower/")
+    (home-page "https://codeberg.org/ropensci/nasapower")
     (synopsis "NASA POWER API Client")
     (description
      "An API client for NASA POWER global meteorology, surface solar energy and

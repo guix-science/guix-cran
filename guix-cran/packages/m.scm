@@ -52231,6 +52231,30 @@ Mapper, an algorithm from this area developed by Singh, MÃ©moli and Carlsson
 <https://en.wikipedia.org/wiki/Reeb_graph>.")
     (license license:expat)))
 
+(define-public r-mapnhanespa
+  (package
+    (name "r-mapnhanespa")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mapnhanespa" version))
+       (sha256
+        (base32 "1zr1q4jvjgbp2ikg9l9nz75lym2dbadyd1i7gsyb03qr9rzz7zaz"))))
+    (properties `((upstream-name . "mapnhanespa")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survey r-purrr r-magrittr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jhuwit/mapnhanespa")
+    (synopsis "Map Quantiles for Physical Activity from 'NHANES'")
+    (description
+     "Maps physical activity from the National Health and Nutrition Examination Survey
+('NHANES') study into population-based quantiles.")
+    (license license:expat)))
+
 (define-public r-mapmixture
   (package
     (name "r-mapmixture")

@@ -44,29 +44,29 @@
 (define-public r-hzip
   (package
     (name "r-hzip")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HZIP" version))
        (sha256
-        (base32 "0d65b69ak15vyfniq01633ygjpavhj1dgakqpmsifg1m86dhmi77"))))
+        (base32 "181l02vd9r87jp5clz2qyqgglcf3ljkmfjfba4fx4q87nm8h6j6n"))))
     (properties `((upstream-name . "HZIP")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-vgam
-                             r-tibble
+    (propagated-inputs (list r-tibble
                              r-statmod
+                             r-rlang
                              r-rcppparallel
                              r-rcpparmadillo
                              r-rcpp
                              r-pscl
+                             r-numderiv
                              r-ggplot2
                              r-formula
-                             r-dplyr
-                             r-cubature))
+                             r-dplyr))
     (home-page "https://github.com/carrascojalmar/HZIP")
     (synopsis
      "Likelihood-Based Inference for Joint Modeling of Correlated Count and Binary Outcomes with Extra Variability and Zeros")
@@ -77,7 +77,7 @@ Bernoulli component while providing a more accurate assessment of the
 Hierarchical Zero-Inflated Poisson's parsimony (Lizandra C. Fabio, Jalmar M. F.
 Carrasco, Victor H. Lachos and Ming-Hui Chen, Likelihood-based inference for
 joint modeling of correlated count and binary outcomes with extra variability
-and zeros, 2025, under submission).")
+and zeros, 2026, under submission).")
     (license license:gpl3)))
 
 (define-public r-hytest
@@ -5494,6 +5494,38 @@ have been described in detail in Goeman et al (Biometrika 106, 841-856, 2019).")
 with a blank center.  The package is named after Homer Simpson - arguably the
 best-known lover of doughnuts.")
     (license license:gpl2)))
+
+(define-public r-home
+  (package
+    (name "r-home")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HOME" version))
+       (sha256
+        (base32 "1mwjb3ga58aj2kw5kfycyblzjhgvk9l4n7yj9mcf9f7zx6zc8297"))))
+    (properties `((upstream-name . "HOME")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-gridextra r-ggplot2))
+    (home-page "https://github.com/tamaravaz/HOME")
+    (synopsis "Harmonized Orphanhood Mortality Estimation")
+    (description
+     "This package implements indirect demographic methods for estimating adult
+mortality from orphanhood data.  The package includes the standard Brass and
+Hill (1973) method
+<https://scholar.google.com/scholar_lookup?&title=Estimating%20Adult%20Mortality%20from%20Orphanhood&pages=111-23&publication_year=1973&author=Brass%2CW.&author=Hill.%2CK.>,
+the regression-based approach developed by Timaeus (1992)
+<https://pubmed.ncbi.nlm.nih.gov/12317481/>, and the adjustments proposed by Luy
+(2012) <doi:10.1007/s13524-012-0101-4> for low-mortality populations.  A
+relational model is used to harmonize estimates into comparable adult mortality
+indicators.  The package also provides diagnostic tools to assess the
+sensitivity of results to assumptions about the mean age of childbearing and the
+choice of model life table family.")
+    (license license:expat)))
 
 (define-public r-homals
   (package
@@ -12304,47 +12336,6 @@ analysis, motion sensing, and biomechanics experiments.  Designed for
 researchers, analysts, and students, the package facilitates exploration and
 analysis of data related to health monitoring, physical activity, and
 rehabilitation.")
-    (license license:expat)))
-
-(define-public r-healthmarkers
-  (package
-    (name "r-healthmarkers")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "HealthMarkers" version))
-       (sha256
-        (base32 "1ccg0dlghc5sfg9znlja8np8702y0jwazaq0k87ic8d39mlvbk1f"))))
-    (properties `((upstream-name . "HealthMarkers")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vctrs r-tibble r-rlang r-rdpack r-dplyr))
-    (home-page "https://sufyansuleman.github.io/HealthMarkers/")
-    (synopsis
-     "Toolkit for Clinical, Metabolic, and Cardiovascular Biomarker Calculations")
-    (description
-     "Computes over 50 specialist health marker functions covering insulin sensitivity
-and resistance indices (fasting, oral glucose tolerance test, adipose-tissue,
-tracer, and dual-energy X-ray absorptiometry (DXA)-based), glycaemic and lipid
-markers, atherogenic and metabolic syndrome scores, liver steatosis and fibrosis
-scores, and cardiovascular risk algorithms (Framingham Heart Study equations,
-atherosclerotic cardiovascular disease (ASCVD) Pooled Cohort Equations, the
-QRISK3 cardiac risk score, and Systematic Coronary Risk Evaluation 2 (SCORE2)
-including the Older Persons variant (SCORE2-OP)).  Also implements renal
-function (estimated glomerular filtration rate (@code{eGFR}), Kidney Failure
-Risk Equation (KFRE), chronic kidney disease (CKD) staging), pulmonary function
-(spirometry z-scores, Body-mass index, airflow Obstruction, Dyspnea, and
-Exercise capacity index (BODE)), inflammatory markers and the inflammatory age
-clock (@code{iAge}), hormonal panels, body composition and anthropometric
-z-scores, bone turnover markers and fracture risk (Fracture Risk Assessment Tool
-(FRAX)), frailty and comorbidity indices (Rockwood, Charlson), psychiatric
-rating scales, and biomarker panels from alternative biofluids (urine, saliva,
-sweat).  Missing value imputation helpers, pre or post computation normalization
-and a unified @code{all_health_markers()} dispatcher that returns all requested
-marker groups as a single wide tibble are included.")
     (license license:expat)))
 
 (define-public r-healthiar

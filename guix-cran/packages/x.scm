@@ -1968,13 +1968,13 @@ The reference for the methods implemented here is Chatterjee, Sourav (2020)
 (define-public r-xiacf
   (package
     (name "r-xiacf")
-    (version "0.6.1")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xiacf" version))
        (sha256
-        (base32 "0h2hs6n6i97qxly0s2lxchbc0hik0jrdciz1ay7wq50n3kapmi53"))))
+        (base32 "19imnhm69bx69r113frs65cwyi3gsk5rnwdilp3rr4lx123j1jpi"))))
     (properties `((upstream-name . "xiacf")))
     (build-system r-build-system)
     (arguments
@@ -1984,6 +1984,7 @@ The reference for the methods implemented here is Chatterjee, Sourav (2020)
                              r-rcpp
                              r-progressr
                              r-patchwork
+                             r-parallelly
                              r-ggplot2
                              r-future
                              r-foreach

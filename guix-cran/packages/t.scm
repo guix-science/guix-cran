@@ -24,6 +24,7 @@
   #:use-module (gnu packages imagemagick)
   #:use-module (gnu packages perl)
   #:use-module (gnu packages tex)
+  #:use-module (gnu packages tls)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages cmake)
   #:use-module (guix-cran packages z)
@@ -8477,13 +8478,13 @@ quantitative structure models (QSMs).")
 (define-public r-treetools
   (package
     (name "r-treetools")
-    (version "2.3.0")
+    (version "2.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TreeTools" version))
        (sha256
-        (base32 "1bz1jbdm95rf8vln2yvn58fsvyg2f2g6k1sjziwsrmj34z7y54mi"))))
+        (base32 "0wmwfj7rbqbixpdxpgg6lkqj94mrrj4pwab8k4xn0dc23shh256h"))))
     (properties `((upstream-name . "TreeTools")))
     (build-system r-build-system)
     (arguments
@@ -12603,6 +12604,30 @@ manipulation necessary to create clinical summaries.")
      "Uses thresholded partial least squares algorithm to create a regression or
 classification model.  For more information, see Lee, Bradlow, and Kable
 <doi:10.1016/j.crmeth.2022.100227>.")
+    (license license:gpl3)))
+
+(define-public r-tpglp
+  (package
+    (name "r-tpglp")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tpglp" version))
+       (sha256
+        (base32 "0zli0khgvc6fh7z58pbb26srw52nypy8rjb73sh6yspihm2zclrd"))))
+    (properties `((upstream-name . "tpglp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=tpglp")
+    (synopsis
+     "Three-Parameter Generalized Lindley-Poisson Distribution Functions")
+    (description
+     "This package provides functions for random generation, density, cumulative
+distribution, quantile function, moments, and log-likelihood for a
+three-parameter generalized Lindley-Poisson mixture model.")
     (license license:gpl3)))
 
 (define-public r-tpfp
@@ -27204,6 +27229,34 @@ further statistical analysis.  The user can define his own tests and scoring
 procedures through a GUI.")
     (license license:gpl2)))
 
+(define-public r-testnet
+  (package
+    (name "r-testnet")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TestNet" version))
+       (sha256
+        (base32 "1ljbll14nsr9midwvadcw1nx6ymrn4ibwvij6ibqhhjc03kxi21h"))))
+    (properties `((upstream-name . "TestNet")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-permute r-matrixstats r-dcov))
+    (home-page "https://github.com/yijuanhu/TestNet")
+    (synopsis "Method for Inferring Microbial Networks with FDR Control")
+    (description
+     "This package provides a testing method for inferring microbial networks.  It
+differs from existing microbial network analyses in that it provides calibrated
+results by controlling the false discovery rate.  The method accounts for the
+complex features of taxa count data.  It also accommodates both independent and
+clustered samples, offers separate linear and nonlinear tests for each pair of
+taxa, and includes an omnibus test that bypasses the need to specify the type of
+relationship for each pair of taxa.")
+    (license license:gpl2+)))
+
 (define-public r-testingsimilarity
   (package
     (name "r-testingsimilarity")
@@ -29600,6 +29653,53 @@ maximum blanking period as defined in Capello et al (2015)
 their manuscript description, but have not been reviewed by the authors for
 accuracy.  It is included here as is, without warranty.")
     (license license:gpl3+)))
+
+(define-public r-telegramr
+  (package
+    (name "r-telegramr")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "telegramR" version))
+       (sha256
+        (base32 "0a65slindcw781gayvpann1j1y81ynz2xprkg60w2hgjf9adc8i1"))))
+    (properties `((upstream-name . "telegramR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list zlib openssl))
+    (propagated-inputs (list r-xml2
+                             r-tibble
+                             r-rcpp
+                             r-r6
+                             r-promises
+                             r-openssl
+                             r-mime
+                             r-logger
+                             r-later
+                             r-jsonlite
+                             r-httr
+                             r-gmp
+                             r-future
+                             r-dplyr
+                             r-digest
+                             r-callr
+                             r-bitops
+                             r-base64enc))
+    (native-inputs (list pkg-config r-knitr))
+    (home-page "https://romankyrychenko.github.io/telegramR/")
+    (synopsis "Interact with the 'Telegram' 'MTProto' API")
+    (description
+     "This package provides a full-featured client for the Telegram MTProto protocol
+(<https://core.telegram.org/api>), enabling programmatic access to Telegram
+chats, channels, messages, media, and stories.  Implements binary encoding and
+decoding of the Telegram TL (Type Language) schema, authentication (including
+two-factor), encrypted transport, and high-level helpers for downloading channel
+history and reactions at scale.  Intended for social-science research and data
+collection tasks that require direct API access rather than the Bot API'.")
+    (license license:expat)))
 
 (define-public r-telegram-bot
   (package
@@ -32173,13 +32273,13 @@ and local taxonomic assignment.")
 (define-public r-taxodist
   (package
     (name "r-taxodist")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "taxodist" version))
        (sha256
-        (base32 "11sqgj14w904bd3p0nq9rvsx8fllgngvkzf6mhahmgnkjiam91rh"))))
+        (base32 "0mqqsb8p40q4gkpadyxnvh0d9cnb21jf50bdvlw7fdxcixwbk6xn"))))
     (properties `((upstream-name . "taxodist")))
     (build-system r-build-system)
     (arguments

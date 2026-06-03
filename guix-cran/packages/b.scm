@@ -12530,6 +12530,39 @@ is also available.  Grollemund P-M., Abraham C., Baragatti M., Pudlo P. (2019)
 <doi:10.1214/18-BA1095>.")
     (license license:gpl3)))
 
+(define-public r-blisa
+  (package
+    (name "r-blisa")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "blisa" version))
+       (sha256
+        (base32 "00fkjdwl649k6gslc2i574k7cv40r7xnafiqs16gmnw1iksxc5p1"))))
+    (properties `((upstream-name . "blisa")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridislite
+                             r-summarizedexperiment
+                             r-spdep
+                             r-spatialexperiment
+                             r-sf
+                             r-matrix
+                             r-ggplot2
+                             r-complexheatmap))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=blisa")
+    (synopsis "Infer Cell-Cell Communication from Spatial Transcriptomics")
+    (description
+     "Identifies cell-cell communication hotspots in spatial transcriptomics data
+using bivariate Local Moran's I statistics on hexagonally binned cells.
+Provides functions for spatial weighting, ligand-receptor pair filtering,
+hotspot detection, and visualisation of sender-receiver cell-type interactions.")
+    (license license:gpl3+)))
+
 (define-public r-blink
   (package
     (name "r-blink")

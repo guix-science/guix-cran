@@ -9190,13 +9190,13 @@ sample.  For more details see RaphaÃ«l Jauslin and Yves TillÃ© (2019)
 (define-public r-waves
   (package
     (name "r-waves")
-    (version "0.2.6")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "waves" version))
        (sha256
-        (base32 "09nz6bvq22rc6i1kghiz0dz5ag2rzj0f8q6vwg653ssmx3mamqma"))))
+        (base32 "06r2rmdd1zvvs3f3hdkncfabpa3lnz94xii59qhghdwdhmdiik1a"))))
     (properties `((upstream-name . "waves")))
     (build-system r-build-system)
     (arguments

@@ -8233,13 +8233,13 @@ mixtures of both.  For details see Li, Munk, Sieling and Walther (2016)
 (define-public r-essentialstools
   (package
     (name "r-essentialstools")
-    (version "0.1.4")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "essentialstools" version))
        (sha256
-        (base32 "1iyyswbv0wnzaxizx0ymvfqcn69v63j3jwdycjc43w8vywj7ybwf"))))
+        (base32 "0z38k8i9mnb07nsdns9ddq1bpy9cv2jxf5mpgciaynrl5g0p40zh"))))
     (properties `((upstream-name . "essentialstools")))
     (build-system r-build-system)
     (arguments
@@ -13263,13 +13263,13 @@ that produces a graph similar to an age pyramid.")
 (define-public r-epidatr
   (package
     (name "r-epidatr")
-    (version "1.2.2")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epidatr" version))
        (sha256
-        (base32 "10sq8rfxwrajyrwf2s9mj4khisz19azik3cwg889g7iwrsvi9f44"))))
+        (base32 "0ings9z18n2j9k3w0wkv7abfgv56rz9x09z8i63dr84bl40h9qby"))))
     (properties `((upstream-name . "epidatr")))
     (build-system r-build-system)
     (arguments
@@ -13279,13 +13279,15 @@ that produces a graph similar to an age pyramid.")
                              r-usethis
                              r-tibble
                              r-rlang
+                             r-readr
                              r-rappdirs
                              r-purrr
                              r-openssl
                              r-mmwrweek
                              r-magrittr
+                             r-lifecycle
                              r-jsonlite
-                             r-httr
+                             r-httr2
                              r-glue
                              r-cli
                              r-checkmate
@@ -28106,19 +28108,27 @@ solution so that these kinds of models can be simulated simply.")
 (define-public r-earthui
   (package
     (name "r-earthui")
-    (version "0.1.3")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "earthUI" version))
        (sha256
-        (base32 "1yv1s2gfixs1w8ifr4xyiylwinmjf8ccjvf7adahjnsi2jjvif1m"))))
+        (base32 "1k38vbg184slxyhqh9r04bnvlwk26s2n5shr4v5c60qwyk9l7bzy"))))
     (properties `((upstream-name . "earthUI")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-shiny r-readxl r-ggplot2 r-earth))
+    (propagated-inputs (list r-shiny
+                             r-rsqlite
+                             r-readxl
+                             r-plotly
+                             r-openxlsx
+                             r-jsonlite
+                             r-ggplot2
+                             r-earth
+                             r-dbi))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/wcraytor/earthUI")
     (synopsis "Interactive 'shiny' GUI for the 'earth' Package")

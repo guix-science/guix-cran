@@ -9263,13 +9263,13 @@ are described in Gastaldelli (2022). <doi:10.1002/oby.23503> and Lorenzo (2010).
 (define-public r-insurancerating
   (package
     (name "r-insurancerating")
-    (version "0.7.5")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "insurancerating" version))
        (sha256
-        (base32 "1s71g9663s44ixnp9wn9isciwxkdnyn1ywx8p9rr4s2vs69ywwjz"))))
+        (base32 "0lrnr73jbrr6qjkx041gbf0yb635vk1pykj7l1s5rly1q0f5q2z0"))))
     (properties `((upstream-name . "insurancerating")))
     (build-system r-build-system)
     (arguments
@@ -9278,27 +9278,28 @@ are described in Gastaldelli (2022). <doi:10.1002/oby.23503> and Lorenzo (2010).
     (propagated-inputs (list r-stringr
                              r-scam
                              r-scales
+                             r-rlang
                              r-patchwork
                              r-mgcv
                              r-lubridate
-                             r-insight
+                             r-lifecycle
                              r-ggplot2
                              r-fitdistrplus
                              r-evtree
                              r-dplyr
                              r-dharma
                              r-data-table
-                             r-colorspace
-                             r-classint
                              r-citools))
+    (native-inputs (list r-knitr))
     (home-page "https://mharinga.github.io/insurancerating/")
-    (synopsis "Analytic Insurance Rating Techniques")
+    (synopsis "Actuarial Tools for Insurance Pricing Models")
     (description
-     "This package provides functions to build, evaluate, and visualize insurance
-rating models.  It simplifies the process of modeling premiums, and allows to
-analyze insurance risk factors effectively.  The package employs a data-driven
-strategy for constructing insurance tariff classes, drawing on the work of
-Antonio and Valdez (2012) <doi:10.1007/s10182-011-0152-7>.")
+     "This package provides actuarial tools and building blocks for analysing,
+modelling, refining, and validating insurance rating models.  Designed to
+support common GLM-based pricing tasks and the translation of statistical model
+output into practical tariff structures.  The package supports the construction
+of insurance tariff classes using a data-driven approach, based on the
+methodology of Antonio and Valdez (2012) <doi:10.1007/s10182-011-0152-7>.")
     (license license:gpl2+)))
 
 (define-public r-insurancedata
@@ -10274,13 +10275,13 @@ package.")
 (define-public r-inlajoint
   (package
     (name "r-inlajoint")
-    (version "25.11.10")
+    (version "26.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "INLAjoint" version))
        (sha256
-        (base32 "120cal4asm94cql6xzdp97lz4q3k0mzmh86hypncq4zbhdiqpwh3"))))
+        (base32 "0x7hi2pya5xip8wghdnlr3wx72wg16ryds6w0x82qib3f65c5cq2"))))
     (properties `((upstream-name . "INLAjoint")))
     (build-system r-build-system)
     (arguments
@@ -10290,10 +10291,10 @@ package.")
                   (add-after 'unpack 'set-HOME
                     (lambda _
                       (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-numderiv
+    (propagated-inputs (list r-reformulas
+                             r-numderiv
                              r-nlme
                              r-matrix
-                             r-lme4
                              r-ggplot2
                              r-data-table))
     (native-inputs (list r-r-rsp))
@@ -20603,13 +20604,13 @@ parameters and evaluate the model fit.  See Yao et al. (2019)
 (define-public r-iccdesign
   (package
     (name "r-iccdesign")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ICCDesign" version))
        (sha256
-        (base32 "1ishfh42ajanqx8lslg55hr7074h3d8ixjvb899s3f75lj4xzqwf"))))
+        (base32 "1hknr1sspy49zg912p72dlb2x53kf2jf97f0w39g9hrhmsfx1sz2"))))
     (properties `((upstream-name . "ICCDesign")))
     (build-system r-build-system)
     (arguments
@@ -21275,13 +21276,13 @@ API.")
 (define-public r-ibr
   (package
     (name "r-ibr")
-    (version "2.4-1")
+    (version "2.4-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ibr" version))
        (sha256
-        (base32 "1i02xz08iy009dicl1jaspr6d6i0hh92729k5mpqyjv3bh7yqb28"))))
+        (base32 "1jx00h7n44v9rai4zpr26f48l97kir86qx7ki4di8flyxcqkgpfp"))))
     (properties `((upstream-name . "ibr")))
     (build-system r-build-system)
     (arguments

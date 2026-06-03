@@ -16123,13 +16123,13 @@ details.")
 (define-public r-powerbrmsinla
   (package
     (name "r-powerbrmsinla")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "powerbrmsINLA" version))
        (sha256
-        (base32 "02wpdp0jdw43rx08hpfrb7mcyxf4pa339yzr9j7k0l7cswf3320k"))))
+        (base32 "1ynn9cj060b603lb33fp6pamj7r6pvnawf6x2h59dlqxy0zangd5"))))
     (properties `((upstream-name . "powerbrmsINLA")))
     (build-system r-build-system)
     (arguments
@@ -16144,6 +16144,7 @@ details.")
                              r-ggplot2
                              r-dplyr
                              r-brms))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/Tony-Myers/powerbrmsINLA")
     (synopsis "Bayesian Power Analysis Using 'brms' and 'INLA'")
     (description
@@ -22674,13 +22675,13 @@ supported by this package.")
 (define-public r-pmparser
   (package
     (name "r-pmparser")
-    (version "1.0.25")
+    (version "1.0.26")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pmparser" version))
        (sha256
-        (base32 "0q26qkcx8nahwsav6dl20liiwiqfszif0yv7wq7992nq44s0s6wr"))))
+        (base32 "12rzzcsn5rm1wxr10lh1zjbl5l0xim72vmqbaxjbinkvwrf9qz4w"))))
     (properties `((upstream-name . "pmparser")))
     (build-system r-build-system)
     (arguments
@@ -33864,6 +33865,38 @@ regularised Mahalanobis distance with per-cluster covariance matrices.  Both
 plain fuzzy clustering and cluster-wise linear regression are provided.  The
 corresponding paper can be found at Nguyen P.T., Tortora C., and Punzo A. (2026)
 <doi:10.1109/TFUZZ.2026.3683998>.")
+    (license license:expat)))
+
+(define-public r-pfci
+  (package
+    (name "r-pfci")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PFCI" version))
+       (sha256
+        (base32 "0h7g3ni85bym7jq1v86sm04djaqwsma0lyq1nl5amwndrln9n2k8"))))
+    (properties `((upstream-name . "PFCI")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-glasso))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/djghosh1123/PFCI")
+    (synopsis
+     "Penalized Fast Causal Inference for High-Dimensional Structure Learning")
+    (description
+     "This package implements Penalized Fast Causal Inference (PFCI), a two-stage
+causal structure learning procedure for high-dimensional settings with potential
+latent variables and selection bias.  In the first stage, neighborhood selection
+via the Lasso constructs a sparse undirected skeleton.  In the second stage, the
+Fast Causal Inference (FCI) algorithm orients edges on this reduced graph,
+producing a Partial Ancestral Graph (PAG) that accounts for latent confounders.
+The method is consistent under sparsity assumptions and substantially faster
+than standard FCI and RFCI in high dimensions.  See Pal, Ghosh, and Yang (2025)
+<doi:10.48550/@code{arXiv.2507.00173>} for the underlying theory.")
     (license license:expat)))
 
 (define-public r-pez

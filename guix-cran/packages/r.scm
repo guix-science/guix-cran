@@ -545,13 +545,13 @@ which runs the nlmixr2 models during estimation.")
 (define-public r-rxode2
   (package
     (name "r-rxode2")
-    (version "5.1.1")
+    (version "5.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rxode2" version))
        (sha256
-        (base32 "00g402nhx93nm92ndvy419xia5x9vjcx6gmb35azda7aj318ww65"))))
+        (base32 "16xma9c69wsvn6iyjgn1w5s02xbc9c3wkf3h1ib5yq5f544km41m"))))
     (properties `((upstream-name . "rxode2")))
     (build-system r-build-system)
     (arguments
@@ -7621,13 +7621,13 @@ compatible terminal emulators.")
 (define-public r-rsinaica
   (package
     (name "r-rsinaica")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rsinaica" version))
        (sha256
-        (base32 "12ylzi08zn4r82385wzdhp3d5a0id00s8kq0bl99sk4nlx4y9m10"))))
+        (base32 "0zy3yk4v73pw5qf2imwbj1z407igrzlvcfjynphks928q4sjx76y"))))
     (properties `((upstream-name . "rsinaica")))
     (build-system r-build-system)
     (arguments
@@ -16811,13 +16811,13 @@ ground-truth calibration to account for causation.")
 (define-public r-robvis
   (package
     (name "r-robvis")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "robvis" version))
        (sha256
-        (base32 "0xzvx3230ydd082jmdlm70vyhjizknngfzhvcbqpdcm403klni5h"))))
+        (base32 "0kf478j17lvaq1gpnsjb10fl79kp7mz5w07dbh224plkwh67n335"))))
     (properties `((upstream-name . "robvis")))
     (build-system r-build-system)
     (arguments
@@ -18628,13 +18628,13 @@ parameters to be zero.")
 (define-public r-robmixreg
   (package
     (name "r-robmixreg")
-    (version "1.1.0")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RobMixReg" version))
        (sha256
-        (base32 "13w6zvncwh561wzzqy548x0w25rnzf0pfvi5cc6mzn71x5l7cmh2"))))
+        (base32 "07kf45m7nywljyq6x34i2kp4gbpz8v4xy9jzznaia3fk3xxh00k1"))))
     (properties `((upstream-name . "RobMixReg")))
     (build-system r-build-system)
     (arguments
@@ -18649,7 +18649,6 @@ parameters to be zero.")
                              r-lars
                              r-gtools
                              r-gplots
-                             r-glmnet
                              r-flexmix
                              r-dplyr))
     (home-page "https://changwn.github.io/RobMixReg/")
@@ -18673,7 +18672,7 @@ references.  Reference: Chun Yu, Weixin Yao, Kun Chen (2017)
 <doi:10.1002/cjs.11310>. @code{NeyKov} N, Filzmoser P, Dimova R et al. (2007)
 <doi:10.1016/j.csda.2006.12.024>.  Bai X, Yao W. Boyer JE (2012)
 <doi:10.1016/j.csda.2012.01.016>.  Wennan Chang, Xinyu Zhou, Yong Zang, Chi
-Zhang, Sha Cao (2020) <@code{arXiv:2005.11599>}.")
+Zhang, Sha Cao (2020) <doi:10.48550/@code{arXiv.2005.11599>}.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-robmixglm
@@ -24479,13 +24478,13 @@ Based on \"Robust Likelihood Cross-Validation for Kernel Density Estimation,\" W
 (define-public r-rlas
   (package
     (name "r-rlas")
-    (version "1.9.2")
+    (version "1.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rlas" version))
        (sha256
-        (base32 "19j56l4x2r0i418kml4v0k5izs8mhrp210vmlr51421pmawbai1m"))))
+        (base32 "01apax9zhd8ivc60qxxv3j48hshm6fxfi18ab3899ddwzxvnxxhz"))))
     (properties `((upstream-name . "rlas")))
     (build-system r-build-system)
     (arguments
@@ -47759,6 +47758,42 @@ parametric assumptions.  We present functions for non-parametric RCT recruitment
 prediction under several scenarios.")
     (license license:expat)))
 
+(define-public r-rctest
+  (package
+    (name "r-rctest")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RCtest" version))
+       (sha256
+        (base32 "1f4k48nrf40va7miqka9cgsix9x3n1dbxq0pd16i18l5hxzdpryx"))))
+    (properties `((upstream-name . "RCtest")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-gridextra r-ggrepel r-ggplot2))
+    (home-page "https://cran.r-project.org/package=RCtest")
+    (synopsis
+     "Reality Check and Predictive Ability Tests for Forecast Evaluation")
+    (description
+     "This package implements a comprehensive suite of statistical tests for
+evaluating the accuracy of forecasting models against a benchmark.  The package
+is grounded in the reality check framework of White (2000)
+<doi:10.1111/1468-0262.00152>, extended by Hansen (2005)
+<doi:10.1198/073500105000000063> for Superior Predictive Ability (SPA),
+Giacomini & White (2006) <doi:10.1111/j.1468-0262.2006.00718.x> for Conditional
+Predictive Ability (CPA), and Corradi & Swanson (2006)
+<doi:10.1016/j.jeconom.2005.07.026> for predictive density evaluation via the
+Kullback'-'Leibler Information Criterion ('KLIC') and ZP Quantile Loss test, the
+Continuous Ranked Probability Score ('CRPS') ('Gneiting & Raftery', 2007)
+<doi:10.1198/016214506000001437>, coverage tests ('Kupiec', 1995)
+<doi:10.3905/jod.1995.407942>, HAC covariance estimation ('Newey & West, 1987)
+<doi:10.2307/1913610>, and Moving Block Bootstrap resampling ('Kunsch', 1989)
+<doi:10.1214/aos/1176347265>.")
+    (license license:gpl3)))
+
 (define-public r-rct3
   (package
     (name "r-rct3")
@@ -56122,6 +56157,44 @@ richness and species abundance distributions.  Functions are described in L.
 Cayuela, N.J. Gotelli & R.K. Colwell (2015) <doi:10.1890/14-1261.1>.")
     (license license:gpl2+)))
 
+(define-public r-rarefun
+  (package
+    (name "r-rarefun")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rarefun" version))
+       (sha256
+        (base32 "0f69pld3sl49hj16ay3pz5bv5sz2x7kim52xz88aga4s496n5ziv"))))
+    (properties `((upstream-name . "rarefun")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rdpack
+                             r-rann
+                             r-pdp
+                             r-isotree
+                             r-geosphere
+                             r-dbscan
+                             r-boot))
+    (home-page "https://github.com/vlyubchich/rarefun")
+    (synopsis "Functions for Rare Events Analysis")
+    (description
+     "This package provides functions for detecting and analyzing rare events in data.
+ Implements isolation forest (Liu et al., 2008, <doi:10.1109/ICDM.2008.17>) and
+clustering for anomaly detection in time series residuals.  Decomposes time
+series using LOESS (Locally Estimated Scatterplot Smoothing) or STL
+(Seasonal-Trend decomposition using LOESS).  Detects marine heatwaves and cold
+spells following Hobday et al. (2016) <doi:10.1016/j.pocean.2015.12.014>.
+Provides goodness-of-fit tests for quantile regression (Haupt et al., 2011,
+<doi:10.1080/02664763.2011.573542>), partial dependence with quantile random
+forests, MCC (Matthews Correlation Coefficient) computation and testing,
+knee-point detection via the Kneedle algorithm (Satopaa et al., 2011,
+<doi:10.1109/ICDCSW.2011.20>), and spatial point matching.")
+    (license license:expat)))
+
 (define-public r-rareflow
   (package
     (name "r-rareflow")
@@ -60779,6 +60852,39 @@ Nowosad (2020) <doi:10.1016/j.apgeog.2020.102239>).  It is a reimagined approach
 for analyzing residential segregation and racial diversity based on the concept
 of landscapeâ used in the domain of landscape ecology.")
     (license license:expat)))
+
+(define-public r-race-nma
+  (package
+    (name "r-race-nma")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RaCE.NMA" version))
+       (sha256
+        (base32 "038c3ic1zi6gkb36j1p08x3bjxs7nnzn1zq5b03lb9f3rhw87jpj"))))
+    (properties `((upstream-name . "RaCE.NMA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-reshape2
+                             r-mvtnorm
+                             r-magrittr
+                             r-invgamma
+                             r-ggplot2
+                             r-dplyr
+                             r-coda))
+    (native-inputs (list r-knitr))
+    (home-page "https://pearce790.github.io/RaCE.NMA/")
+    (synopsis "Rank-Clustered Estimation for Network Meta-Analysis")
+    (description
+     "An implementation of the @code{RaCE-NMA} (Rank-Clustered Estimation for Network
+Meta-Analysis) model for post-hoc clustering of treatments or interventions by
+rank in network meta-analysis data.  Functions for model estimation, assessment,
+and displaying results are provided.  For more details, see Pearce and Zhou
+(2025) <doi:10.1017/rsm.2025.10049>.")
+    (license license:gpl3+)))
 
 (define-public r-raccess
   (package

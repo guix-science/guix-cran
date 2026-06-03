@@ -1216,6 +1216,36 @@ endpoint at a specified timepoint.  Plotting functions are provided for
 graphical display of results.")
     (license license:gpl2)))
 
+(define-public r-fussclust
+  (package
+    (name "r-fussclust")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fussclust" version))
+       (sha256
+        (base32 "1dx9rzrqrw67d5balrb52vlgq978kd4w1f9f7jdgbqblqraaavw0"))))
+    (properties `((upstream-name . "fussclust")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rdist))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=fussclust")
+    (synopsis "Fuzzy Unsupervised and Semi-Supervised Clustering")
+    (description
+     "This package provides methods for distance-based fuzzy unsupervised and
+semi-supervised clustering, including fuzzy and possibilistic models based on
+alternating optimization (AO) algorithm.  The package introduces a vectorized
+estimation framework for prototype-based fuzzy clustering algorithms, enabling
+modular algorithm design and extensibility.  It also supports storage and
+retrieval of intermediate AO optimization results for downstream analysis and
+processing.  For more details see Kmita et al. (2024)
+<doi:10.1109/TFUZZ.2024.3370768>.")
+    (license license:expat)))
+
 (define-public r-fusionlearn
   (package
     (name "r-fusionlearn")
@@ -11531,13 +11561,13 @@ R script for reproducibility.  Reference: Key (2025)
 (define-public r-fluxseparator
   (package
     (name "r-fluxseparator")
-    (version "1.0.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FluxSeparator" version))
        (sha256
-        (base32 "19hfnlf27qa72pg9h83gyld2bbmpqarhqq6b65q7bzfg6qyswwb8"))))
+        (base32 "0czwdxswv6nqaxmvw46yqx7dysv27yhjdq2lkk1ivhd6yraws8fc"))))
     (properties `((upstream-name . "FluxSeparator")))
     (build-system r-build-system)
     (arguments
@@ -11546,14 +11576,18 @@ R script for reproducibility.  Reference: Key (2025)
     (propagated-inputs (list r-ttr
                              r-tidyr
                              r-stringr
+                             r-shinydashboard
+                             r-shiny
                              r-rlang
                              r-readr
                              r-purrr
+                             r-patchwork
                              r-magrittr
                              r-lubridate
                              r-hmr
                              r-ggpubr
                              r-ggplot2
+                             r-dt
                              r-dplyr
                              r-broom))
     (native-inputs (list r-knitr))
@@ -14701,6 +14735,40 @@ inequality conditions, plus cross joins.  Specific support for data.table',
 (grouped) tibble, and sf'/'sfc objects and their attributes; returns a plain
 data frame otherwise.  Avoids data-copying of inputs and outputs.  Allows
 displaying the data.table code instead of (or as well as) executing it.")
+    (license license:expat)))
+
+(define-public r-fjohansen
+  (package
+    (name "r-fjohansen")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fjohansen" version))
+       (sha256
+        (base32 "0bvv9l61dshk5cbjj2xbxb3b3j0r88kg98wvgdxhjcnwv6l7cbym"))))
+    (properties `((upstream-name . "fjohansen")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales r-ggplot2))
+    (home-page "https://github.com/merwanroudane/fjohansen")
+    (synopsis
+     "Johansen Cointegration Test with Fourier-Type Smooth Nonlinear Trends")
+    (description
+     "This package implements the Johansen cointegration test with Fourier-type smooth
+nonlinear deterministic trends restricted to cointegrating relations, as
+developed by Kurita and Shintani (2025) <doi:10.1080/07474938.2025.2530640>.
+Six model variants are supported: CNR (constant plus nonlinear, restricted in
+the cointegrating space), LNR (linear plus nonlinear, restricted), CNU (constant
+restricted, nonlinear unrestricted), LNU (linear restricted, nonlinear
+unrestricted), plus the standard constant- and linear-trend restricted Johansen
+models.  The package also bundles the feasible generalised least squares (FGLS)
+Wald test of Perron, Shintani and Yabu (2017) <doi:10.1111/obes.12169> used as a
+frequency-selection pre-step, together with bundled critical-value tables, a
+vectorised simulator for the limiting distribution, publication-quality table
+exports (@code{LaTeX} and HTML) and ggplot2 figures matching those of the paper.")
     (license license:expat)))
 
 (define-public r-fizzbuzzr

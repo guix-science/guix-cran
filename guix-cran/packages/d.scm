@@ -23210,6 +23210,35 @@ with a focus on forestry use of resistance drilling in standing trees.")
 functional principal component analysis.")
     (license license:gpl2)))
 
+(define-public r-densaftertransform
+  (package
+    (name "r-densaftertransform")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DENSaftertransform" version))
+       (sha256
+        (base32 "1bhmlaagacg1nnyq178gcrgimbqf73s88i4raz60wdj627vky4nf"))))
+    (properties `((upstream-name . "DENSaftertransform")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=DENSaftertransform")
+    (synopsis
+     "Estimating Density after Logarithmic or Power Transformation of Data")
+    (description
+     "This package provides functions for computing: (1) the adaptive normal PI
+estimate for data after the logarithmic transformation; (2) single-bandwidth PI
+density estimate for data after the logarithmic transformation; (3) single
+bandwidth PI estimate for data after the power transformation.  See the
+articles: (1) Savchuk, O. (2026, under review).  Density estimation for
+log-transformed data; (2) Savchuk, O., Schick A. (2013).  Density estimation for
+power transformations.  Journal of Nonparametric Statistics, 25(3), 545-559
+<doi:10.1080/10485252.2013.811788>.")
+    (license license:gpl2)))
+
 (define-public r-denovolyzer
   (package
     (name "r-denovolyzer")
@@ -29164,13 +29193,13 @@ using a Gibbs wrapper around univariate slice sampler (Neal (2003)
 (define-public r-dbproject
   (package
     (name "r-dbproject")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dbProject" version))
        (sha256
-        (base32 "1vcpan92lfcdqkczirkpay4xr2hckx6ma1ypl27kln2l3pfn002l"))))
+        (base32 "0bf94rxybpafbhwxqnpgs0rw237rp1667d1rqjzl8fkyanqf5j2s"))))
     (properties `((upstream-name . "dbProject")))
     (build-system r-build-system)
     (arguments
@@ -29878,6 +29907,39 @@ change point regression with autoregressive errors is based on S. Chakar et al.
 (2017) <doi:10.3150/15-BEJ782>.  It also includes a general projection-based
 method for covariance matrix estimation.")
     (license license:gpl2+)))
+
+(define-public r-db2pq
+  (package
+    (name "r-db2pq")
+    (version "0.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "db2pq" version))
+       (sha256
+        (base32 "182932pis9wg9kgf5hdmc90njhfxsmnwjyqbnhz9yksbix769pwg"))))
+    (properties `((upstream-name . "db2pq")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-wrds
+                             r-tibble
+                             r-rpostgres
+                             r-keyring
+                             r-dbi
+                             r-arrow))
+    (home-page "https://github.com/iangow/db2pqr")
+    (synopsis "Export Database Tables to 'Parquet'")
+    (description
+     "This package provides tools for exporting @code{PostgreSQL} tables to Parquet
+files, with support for chunked writes, column type overrides, and
+timezone-aware timestamp handling.  Includes functions for maintaining a local
+Parquet data library sourced from WRDS (Wharton Research Data Services), with
+update-checking based on table metadata, and archive management utilities for
+versioning local data files.  See Gow and Ding (2024) \"Empirical Research in
+Accounting: Tools and Methods\" <doi:10.1201/9781003456230>.")
+    (license license:expat)))
 
 (define-public r-daysupply
   (package

@@ -484,29 +484,24 @@ cbind.")
 (define-public r-zipper
   (package
     (name "r-zipper")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "zippeR" version))
        (sha256
-        (base32 "1snypy2bf7hc12y61ynyilfjkj3p9863pymans6jc7w85607wc5p"))))
+        (base32 "03cqjvbrynwdjsq743skzy1phwpl3si4ay69d8hpv93nri0vab11"))))
     (properties `((upstream-name . "zippeR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tigris
-                             r-tidyr
                              r-tidycensus
                              r-tibble
-                             r-stringr
-                             r-spatstat-univar
                              r-sf
-                             r-readr
-                             r-purrr
                              r-jsonlite
-                             r-httr
+                             r-httr2
                              r-dplyr
                              r-cli))
     (native-inputs (list r-knitr))

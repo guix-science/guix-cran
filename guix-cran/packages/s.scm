@@ -3676,13 +3676,13 @@ data [dissertation].  Stockholm: Almqvist & Wiksell International; 1993.")
 (define-public r-svemnet
   (package
     (name "r-svemnet")
-    (version "3.2.0")
+    (version "3.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SVEMnet" version))
        (sha256
-        (base32 "155yzdz5qkx3hdpplah355khjhc0dm48s4n1habrf7blbn86bkn1"))))
+        (base32 "06i7iganmljpmsngq10svmqni35dqvz1cb67sf02j9p4z7iasryd"))))
     (properties `((upstream-name . "SVEMnet")))
     (build-system r-build-system)
     (arguments
@@ -5973,13 +5973,13 @@ the granting authority can be held responsible for them.")
 (define-public r-surveyframe
   (package
     (name "r-surveyframe")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "surveyframe" version))
        (sha256
-        (base32 "1rlbny3n41i1li88yymz3xqh1s519b75n9s1c0jd3za2pp6pbbhj"))))
+        (base32 "0m03pnhq4b2b1rigpf2z6g6wikj7zvjwmayaqsm7aglkkin4xlm9"))))
     (properties `((upstream-name . "surveyframe")))
     (build-system r-build-system)
     (arguments
@@ -17073,32 +17073,35 @@ manually specified colors depending on what is needed for the underlying data.")
 (define-public r-statease
   (package
     (name "r-statease")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statease" version))
        (sha256
-        (base32 "1s0lf67d3sr17amny920cfa2clahr7zs1yp97j4ss5waq1baq020"))))
+        (base32 "05k4diqhw333qps1i8g1dz69xrl911g48b0kwpnp49gqvfxg3lky"))))
     (properties `((upstream-name . "statease")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-car))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/DevWebWacky/statease")
     (synopsis
      "Simplified Statistical Analysis with Plain-English Interpretation")
     (description
      "This package provides a toolkit for common statistical analyses including
 descriptive statistics, Student's t-tests (one-sample, independent, and paired),
-one-way and two-way Analysis of Variance (ANOVA), chi-square tests, correlation
-analysis, and simple linear regression.  Each function automatically interprets
-results in plain English, reporting effect sizes (Cohen's d, eta-squared,
-Cramer's V, R-squared), confidence intervals, and p-value interpretations.
-Post-hoc Tukey Honestly Significant Difference (HSD) tests are automatically
-applied following significant ANOVA results.  A master function automatically
-detects the appropriate test based on the structure of the input data.  Methods
-are based on Cohen, J. (1988) <doi:10.4324/9780203771587>, Tukey, J. W. (1949)
+one-way and two-way Analysis of Variance (ANOVA), Multivariate Analysis of
+Variance (MANOVA), chi-square tests, correlation analysis, simple and multiple
+linear regression, logistic regression, and non-parametric tests (Mann-Whitney
+U, Wilcoxon Signed Rank, and Kruskal-Wallis).  Each function automatically
+interprets results in plain English, reporting effect sizes, confidence
+intervals, and p-value interpretations.  Post-hoc tests are automatically
+applied following significant results.  A master function automatically detects
+the appropriate test based on the structure of the input data.  Methods are
+based on Cohen, J. (1988) <doi:10.4324/9780203771587>, Tukey, J. W. (1949)
 <doi:10.2307/3001913>, and Shapiro and Wilk (1965) <doi:10.2307/2333709>.")
     (license license:expat)))
 
@@ -39227,13 +39230,13 @@ the outcome of interest undefined at the follow-up time of interest.")
 (define-public r-smoothbp
   (package
     (name "r-smoothbp")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smoothbp" version))
        (sha256
-        (base32 "148pw0xbzs40fbxplpacfs4mbfqp0al8fpirhzj3my9vcyw268f6"))))
+        (base32 "1vz2qzbrwh3jrwwbfp32mhlicld0g6dnxafn2zw70i5gv6zffv8q"))))
     (properties `((upstream-name . "smoothbp")))
     (build-system r-build-system)
     (arguments
@@ -59743,6 +59746,49 @@ rate, as well as methods to assess model convergence and comparison criteria
 along with useful visualisation functions.")
     (license license:expat)))
 
+(define-public r-serodynamics
+  (package
+    (name "r-serodynamics")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "serodynamics" version))
+       (sha256
+        (base32 "13rdgn4g0zcz6d9v59lvv0lgzsnbclcb6j034h2xccyr02rfkxjf"))))
+    (properties `((upstream-name . "serodynamics")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list jags))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-serocalculator
+                             r-scales
+                             r-runjags
+                             r-rlang
+                             r-purrr
+                             r-ggplot2
+                             r-ggmcmc
+                             r-dplyr
+                             r-coda
+                             r-cli))
+    (native-inputs (list r-quarto r-knitr))
+    (home-page "https://github.com/UCD-SERG/serodynamics")
+    (synopsis "Modeling Longitudinal Antibody Responses to Infection")
+    (description
+     "This package implements Bayesian hierarchical models for estimating antibody
+kinetic parameters from longitudinal serological data.  Fits two-phase
+within-host models capturing antibody rise, peak, and decay following pathogen
+infection, using JAGS for posterior inference.  Designed as the upstream
+companion to the serocalculator package for end-to-end seroepidemiological
+analysis.  Methods are described in Teunis and colleagues (2016)
+<doi:10.1016/j.epidem.2016.04.001> and Teunis and van Eijkeren (2020)
+<doi:10.1002/sim.8578>.")
+    (license license:expat)))
+
 (define-public r-serocalculator
   (package
     (name "r-serocalculator")
@@ -59908,6 +59954,43 @@ scaling to petabytes of data.  Methods are provided that enable working with
 Apache Drill instances via the REST API, DBI methods and using dplyr'/'dbplyr
 idioms.  Helper functions are included to facilitate using official Drill Docker
 images/containers.")
+    (license license:expat)))
+
+(define-public r-serad
+  (package
+    (name "r-serad")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "serad" version))
+       (sha256
+        (base32 "15bjclrzfybkiqklc1dcvg65h3l5fs9yz3wp40d6jx7zbjx63sll"))))
+    (properties `((upstream-name . "serad")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=serad")
+    (synopsis
+     "Standardized Economic Reporting and Automated Dynamic Writing / SynthÃ¨se d'Ãcrits Avec des RÃ¨gles AutomatisÃ©es et Dynamiques")
+    (description
+     "This package provides tools for generating dynamic and standardized economic
+narratives in R Markdown documents.  The package is primarily designed for
+French-language statistical and economic publications.  It includes functions to
+describe changes in levels, percentages, trends, accelerations and short-term
+economic developments using consistent linguistic rules.  The package supports
+automated reporting workflows and reproducible economic writing.  Fournit des
+outils permettant de gÃ©nÃ©rer des textes Ã©conomiques dynamiques et
+standardisÃ©s dans des documents R Markdown.  Le package est principalement
+conÃ§u pour les publications statistiques et Ã©conomiques en franÃ§ais.  Il
+propose des fonctions permettant de dÃ©crire les Ã©volutions de niveaux, de
+pourcentages, de tendances, d'accÃ©lÃ©rations et les Ã©volutions conjoncturelles
+Ã  l'aide de rÃ¨gles linguistiques homogÃ¨nes.  Le package facilite
+l'automatisation de la rÃ©daction et la reproductibilitÃ© des publications
+Ã©conomiques.")
     (license license:expat)))
 
 (define-public r-seqwrap
@@ -63535,6 +63618,35 @@ reproducible code, with no visible impact on the experience of the programmer.")
     (description
      "Detection of outliers and influential errors using a latent variable model.")
     (license (license:fsdg-compatible "EUPL"))))
+
+(define-public r-selecttwfe
+  (package
+    (name "r-selecttwfe")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "selectTWFE" version))
+       (sha256
+        (base32 "115ns6z03pdjf34wqc4gr0nzicj74i3w2g0ck8ywwc7frl581ig1"))))
+    (properties `((upstream-name . "selectTWFE")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales r-ggplot2 r-fixest r-etwfe))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=selectTWFE")
+    (synopsis "Model Selection Between TWFE and ETWFE")
+    (description
+     "Estimates both a vanilla two-way fixed effects (TWFE) model and an extended TWFE
+(ETWFE) model, then selects between them using Cochran's Q test for
+heterogeneity.  When ETWFE wins, reports the heterogeneity fraction (I-squared)
+and cohort-time estimates with empirical Bayes shrinkage and Bonferroni
+multiplicity correction.  Methods build on Wooldridge (2025)
+<doi:10.1007/s00181-025-02807-z> and Callaway and Sant'Anna (2021)
+<doi:10.1016/j.jeconom.2020.12.001>.")
+    (license license:expat)))
 
 (define-public r-selectspm
   (package

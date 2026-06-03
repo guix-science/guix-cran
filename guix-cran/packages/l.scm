@@ -837,13 +837,13 @@ programmers working with date-time data.")
 (define-public r-luajr
   (package
     (name "r-luajr")
-    (version "0.2.2")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "luajr" version))
        (sha256
-        (base32 "1vym0ixm7ymmzslc75nc8q3ns99m0cl4rnhlkpfhy33vdsh3lik2"))))
+        (base32 "0m4z20q0ac9iz3dy8ixxa6avz9xzvdgnzdayn7hmpvrckg1hi9nl"))))
     (properties `((upstream-name . "luajr")))
     (build-system r-build-system)
     (arguments
@@ -13939,6 +13939,32 @@ thefuzz package.  Compare strings by edit distance, similarity ratio, best
 matching substring, ordered token matching and set-based token matching.  A
 range of edit distance measures are available thanks to the stringdist package.")
     (license license:gpl3)))
+
+(define-public r-leunbachr
+  (package
+    (name "r-leunbachr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "leunbachR" version))
+       (sha256
+        (base32 "0z0mlbhrxy0jkfpjggmn4sr1xdgz8cjb00fcdlah1zc891f5z419"))))
+    (properties `((upstream-name . "leunbachR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/pgmj/leunbachR")
+    (synopsis "Leunbach Test Equating")
+    (description
+     "This package implements the Leunbach test equating method, following the DIGRAM
+software written by Svend Kreiner.  Both direct and indirect equating are
+available, with parametric bootstrap standard errors and diagnostic statistics
+including the Goodman-Kruskal gamma test and orbit analysis for person fit.  See
+Adroher et al. (2019) <doi:10.1186/s12874-019-0768-y> for details of the method.")
+    (license license:gpl3+)))
 
 (define-public r-lettervalue
   (package

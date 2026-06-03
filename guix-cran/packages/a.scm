@@ -20567,6 +20567,36 @@ sequences use at most 26 distinct characters and usually only 20.  UTF-8
 (Unicode) matching is not currently supported.")
     (license license:asl2.0)))
 
+(define-public r-ahocorasick
+  (package
+    (name "r-ahocorasick")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ahocorasick" version))
+       (sha256
+        (base32 "1z8r40dhkxk8108hzvp0390m777dlgwahcpajd64ki49sl86i61l"))))
+    (properties `((upstream-name . "ahocorasick")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list xz))
+    (propagated-inputs (list r-rlang r-fs r-cli r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://yousa-mirage.github.io/r-ahocorasick/")
+    (synopsis
+     "Fast Multi-Pattern String Matching with the 'Aho-Corasick' Algorithm")
+    (description
+     "Provide fast multi-pattern string matching for R using the Aho-Corasick
+algorithm, powered by the Rust aho-corasick crate.  It builds reusable
+automatons for detecting matches, counting matches, locating character,
+extracting matched text, and replacing matches in character vectors.  For more
+details on the Aho-Corasick algorithm, please see Aho and Corasick (1975)
+<doi:10.1145/360825.360855>.")
+    (license license:expat)))
+
 (define-public r-ahnr
   (package
     (name "r-ahnr")
@@ -24094,6 +24124,43 @@ of Multipliers (ADMM).  See Boyd et al (2010) <doi:10.1561/2200000016> for
 complete introduction to the method.")
     (license license:gpl3+)))
 
+(define-public r-admixr2
+  (package
+    (name "r-admixr2")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "admixr2" version))
+       (sha256
+        (base32 "10qgwryarm51p97xnyzyfpk9qkh7w26f3m2j6jwlb9i4j9fyya1b"))))
+    (properties `((upstream-name . "admixr2")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rxode2
+                             r-rcppeigen
+                             r-rcpp
+                             r-randtoolbox
+                             r-qs2
+                             r-nloptr
+                             r-nlmixr2est
+                             r-digest
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://leidenpharmacology.github.io/admixr2/")
+    (synopsis "Aggregate Data Modelling")
+    (description
+     "Fit pharmacokinetic/pharmacodynamic (PK/PD) models to aggregate-level data (mean
+vector and covariance matrix per study) rather than individual-level data.
+Integrates with the nlmixr2'/'rxode2 ecosystem via three estimation methods: a
+First-Order ('FO') analytical estimator, a Monte Carlo (MC) estimator, and an
+Iterative Reweighting Monte Carlo ('IRMC') estimator.  Methods are based on
+VÃ¤litalo (2021) <doi:10.1007/s10928-021-09760-1>; software described in van de
+Beek et al. (2025) <doi:10.1007/s10928-025-10011-w>.")
+    (license license:gpl3+)))
+
 (define-public r-admixr
   (package
     (name "r-admixr")
@@ -24621,13 +24688,13 @@ neighbourhood regression, from Nunes et al. (2006)
 (define-public r-adklakedata
   (package
     (name "r-adklakedata")
-    (version "0.6.4")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adklakedata" version))
        (sha256
-        (base32 "0hp0s8r489a5qbpfszqcqm1z9jnir41m6v5jp27b00qqi43wa6af"))))
+        (base32 "1if3yl6pxvz2pwf18jh4dh500l9wj45dgqcp7cwwzv6hpzh7v27b"))))
     (properties `((upstream-name . "adklakedata")))
     (build-system r-build-system)
     (arguments
@@ -24637,11 +24704,16 @@ neighbourhood regression, from Nunes et al. (2006)
     (home-page "https://github.com/jeremylfarrell/adklakedata")
     (synopsis "Adirondack Long-Term Lake Data")
     (description
-     "Package for the access and distribution of long-term lake datasets from lakes in
-the Adirondack Park, northern New York state.  Includes a wide variety of
-physical, chemical, and biological parameters from 28 lakes.  Data are from
-multiple collection organizations and have been harmonized in both time and
-space for ease of reuse.")
+     "Package for the access and distribution of long-term lake datasets from 28 lakes
+in the Adirondack Park, northern New York state.  Includes a wide variety of
+physical, chemical, and biological parameters originally described in Farrell et
+al.  2018 <doi:10.1038/sdata.2018.59>.  Water chemistry and nutrient records are
+extended through 2024 using data from the USGS AQ Samples database, including
+new columns for surface temperature, UV-254 absorbance, and a program flag
+distinguishing AEAP integrated samples from ALTM surface grabs.  The underlying
+figshare archive <doi:10.6084/m9.figshare.32305479> additionally contains
+chemistry records for 25 ALTM-only lakes; the package restricts to the 28
+originals for consistency with the published dataset.")
     (license license:expat)))
 
 (define-public r-adjustr
@@ -27169,6 +27241,49 @@ of the python package agcounts <https://github.com/actigraph/agcounts>.  This
 tool allows the processing of data from any accelerometer brand, with a more
 flexible approach to handle different sampling frequencies.")
     (license license:lgpl3+)))
+
+(define-public r-actigraph-sleepr
+  (package
+    (name "r-actigraph-sleepr")
+    (version "0.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "actigraph.sleepr" version))
+       (sha256
+        (base32 "12vmd0kyhc1sylrhjikq7ax3d8ic52250qi2c46zhh8j30xlz54g"))))
+    (properties `((upstream-name . "actigraph.sleepr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-rsqlite
+                             r-rlang
+                             r-rcpproll
+                             r-rcpp
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-ggplot2
+                             r-dplyr
+                             r-dbi
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/dipetkov/actigraph.sleepr")
+    (synopsis "Detect Periods of Sleep and Non-Wear in 'ActiGraph' Data")
+    (description
+     "Reads *.agd files exported from @code{ActiGraph} devices; implements the Troiano
+(2008) <doi:10.1249/mss.0b013e31815a51b3> and Choi (2011)
+<doi:10.1249/MSS.0b013e3181ed61a3> algorithms for detecting periods on non-wear;
+implements the Sadeh (1994) <doi:10.1093/sleep/17.3.201> and Cole-Kripke (1992)
+<doi:10.1093/sleep/15.5.461> algorithms for detecting asleep/awake state and the
+Tudor-Locke (2014) <doi:10.1139/apnm-2013-0173> algorithm to detect sleep
+periods from asleep/awake states.")
+    (license license:gpl2+)))
 
 (define-public r-actfts
   (package
