@@ -6294,13 +6294,13 @@ Company (2019).")
 (define-public r-dream
   (package
     (name "r-dream")
-    (version "2.1.1")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dream" version))
        (sha256
-        (base32 "0n3lsaaam1lpv89y4ddlyfipigj9vk7szkmpf4k82bhvxf3wnbfa"))))
+        (base32 "17qa3c1382l9d3dqs5di58bxn7dxcm366g8nzvdimm4mdgfkfwkv"))))
     (properties `((upstream-name . "dream")))
     (build-system r-build-system)
     (arguments
@@ -31335,13 +31335,13 @@ Dataset JSON schema file, as described in CDISC (2023)
 (define-public r-dataset
   (package
     (name "r-dataset")
-    (version "0.4.4")
+    (version "0.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dataset" version))
        (sha256
-        (base32 "1wzd317a1x44w5jkblaw84d17rip8c35f55wrh2gnpg7f2afxm5l"))))
+        (base32 "1kna9p8298psldsrp1irr5xsnsrj98kl90pckx1rjpb5whj0fcwj"))))
     (properties `((upstream-name . "dataset")))
     (build-system r-build-system)
     (arguments
@@ -31358,10 +31358,12 @@ Dataset JSON schema file, as described in CDISC (2023)
     (home-page "https://docs.ropensci.org/dataset/")
     (synopsis "Create Data Frames for Exchange and Reuse")
     (description
-     "The dataset package helps create semantically rich, machine-readable, and
-interoperable datasets in R. It extends tidy data frames with metadata that
-preserves meaning, improves interoperability, and makes datasets easier to
-publish, exchange, and reuse in line with ISO and W3C standards.")
+     "The dataset package extends tidy data frames with machine-readable metadata,
+semantic definitions, and provenance information.  It supports incremental
+semantic stabilization, interoperable dataset exchange, and FAIR-oriented
+publication workflows by preserving contextual metadata directly within R
+objects.  The package facilitates the creation, exchange, reuse, and RDF
+serialization of datasets in line with ISO and W3C standards.")
     (license license:gpl3+)))
 
 (define-public r-dataseries

@@ -20537,6 +20537,47 @@ shiny apps.  See <https://polished.tech> for additional documentation and
 examples.")
     (license license:expat)))
 
+(define-public r-polish
+  (package
+    (name "r-polish")
+    (version "0.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "polish" version))
+       (sha256
+        (base32 "0gqimmg0bda06bp14zbxmqcr5k10sw3bzaxja6im0zv83n91i221"))))
+    (properties `((upstream-name . "polish")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-webshot2
+                             r-tibble
+                             r-sloop
+                             r-rmarkdown
+                             r-rlang
+                             r-purrr
+                             r-officer
+                             r-magick
+                             r-htmltools
+                             r-gt
+                             r-glue
+                             r-ggplot2
+                             r-flextable
+                             r-dplyr
+                             r-commonmark
+                             r-cli))
+    (home-page "https://gsk-biostatistics.github.io/polish/")
+    (synopsis "Polishing Content for 'Word' and 'PowerPoint'")
+    (description
+     "Set of functions to polish content for Microsoft Word and @code{PowerPoint} into
+OOXML'.  Polishing is the conversion of the R object into an OOXML
+representation of the object that can then be added to Word or @code{PowerPoint}
+files.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-poliscidata
   (package
     (name "r-poliscidata")
@@ -29168,6 +29209,40 @@ contains code for designed experiments, data sets and other convenience
 functions used in the book.")
     (license license:bsd-2)))
 
+(define-public r-picreg
+  (package
+    (name "r-picreg")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "picreg" version))
+       (sha256
+        (base32 "12jzy804zxaca1r978bvpq0v3fw211yh4wdf6dy5ymi5cmg7y62d"))))
+    (properties `((upstream-name . "picreg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-future-apply r-future))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/VcMaxouuu/picreg")
+    (synopsis "Variable Selection using the Pivotal Information Criterion")
+    (description
+     "Sparse regression and classification via the Pivotal Information Criterion
+(PIC), an alternative to the Bayesian Information Criterion (BIC),
+cross-validation, and Lasso-based tuning.  The regularisation parameter is
+selected from a pivotal null-distribution statistic, eliminating the need for
+cross-validation and yielding sharper support recovery.  Provides Fast Iterative
+Shrinkage-Thresholding Algorithm (FISTA) optimisation for the L1, Smoothly
+Clipped Absolute Deviation (SCAD), and Minimax Concave Penalty (MCP) penalties
+across six response distributions: Gaussian, binomial, Poisson, exponential,
+Gumbel, and Cox.  Under standard sparsity assumptions, the selector achieves a
+phase transition for exact support recovery, analogous to results in compressed
+sensing.  See Sardy, van Cutsem and van de Geer (2026)
+<doi:10.48550/@code{arXiv.2603.04172>}.")
+    (license license:gpl2)))
+
 (define-public r-picr
   (package
     (name "r-picr")
@@ -33870,13 +33945,13 @@ corresponding paper can be found at Nguyen P.T., Tortora C., and Punzo A. (2026)
 (define-public r-pfci
   (package
     (name "r-pfci")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PFCI" version))
        (sha256
-        (base32 "0h7g3ni85bym7jq1v86sm04djaqwsma0lyq1nl5amwndrln9n2k8"))))
+        (base32 "1fq2sd7d7i20zw795xf7jachiixwk7hfdz4l51kp0dr11gcqpfvg"))))
     (properties `((upstream-name . "PFCI")))
     (build-system r-build-system)
     (arguments
@@ -42039,13 +42114,13 @@ endpoints require the use of an API key which can be obtained at
 (define-public r-pathling
   (package
     (name "r-pathling")
-    (version "9.7.0")
+    (version "9.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pathling" version))
        (sha256
-        (base32 "1mz2x7nykafv65l7qmv30gcgp4a5gri8mbmm8bl1sb8412g1hpk0"))))
+        (base32 "1nfycb6j7ban5vzmi8z5vxq87mgrwjkx9zkvg47x8073x5qqmpik"))))
     (properties `((upstream-name . "pathling")))
     (build-system r-build-system)
     (arguments
@@ -42136,6 +42211,37 @@ analysis results.  The enrichment, clustering and other methods implemented in
 Enriched Pathways in Omics Data Through Active Subnetworks.  Front.  Genet.
 <doi:10.3389/fgene.2019.00858>.")
     (license license:expat)))
+
+(define-public r-pathdb
+  (package
+    (name "r-pathdb")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pathdb" version))
+       (sha256
+        (base32 "0c4sr67kjxcy19bs3w4bc48g2pcd23wba6iig5x3m1kpm98fx14s"))))
+    (properties `((upstream-name . "pathdb")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rsqlite r-r-utils r-edger r-dplyr r-dbi))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/aidanfred24/pathdb")
+    (synopsis "Comprehensive Database for Pathway Enrichment Analysis")
+    (description
+     "This package provides access to large-scale genomics data from the South Dakota
+State University's bioinformatics database, a unified platform for pathway
+analysis of over 13,000 organisms.  It includes various gene mappings, gene
+characteristics, and pathway mapping data from KEGG, GOBP, GOCC, and many more
+pathway databases.  Also provides various helper functions for processing
+RNA-Seq data for differential expression analysis and pathway enrichment
+analysis, occasionally sourced from code from Integrated Differential Expression
+& Pathway analysis (@code{iDEP}), developed by Ge, S.X., Son, E.W. & Yao, R.
+(2018) <doi:10.1186/s12859-018-2486-6>.")
+    (license license:gpl3+)))
 
 (define-public r-path-chain
   (package
@@ -44338,6 +44444,35 @@ parameters.  To solve the distribution parameters based on user-provided mean,
 standard deviation, skewness and kurtosis.  Normal, skew-normal, skew-t and
 Tukey g-&-h distributions are supported, for now.")
     (license license:gpl2)))
+
+(define-public r-paralleltree
+  (package
+    (name "r-paralleltree")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ParallelTree" version))
+       (sha256
+        (base32 "004jjwxnkzarrzj5pj3fmzyxqnnsnlf9h9ifr6q4wdwyc4nifyhl"))))
+    (properties `((upstream-name . "ParallelTree")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2))
+    (home-page "https://cran.r-project.org/package=ParallelTree")
+    (synopsis "Visualizing Multilevel Data with Parallel Tree Plots")
+    (description
+     "This package provides two functions: @code{Group_function()} and
+@code{Parallel_Tree()}. @code{Group_function()} applies a given function (e.g.,
+@code{mean()}) to input variable(s) by group across levels of a multilevel data
+structure, with additional data management options. @code{Parallel_Tree()} uses
+ggplot2 to create parallel coordinate plots (technically a facsimile of parallel
+coordinate plots in a Cartesian coordinate system).  Used in combination, these
+functions can create parallel tree plots, a variant of parallel coordinate plots
+useful for visualizing multilevel data.")
+    (license license:gpl3)))
 
 (define-public r-parallelplot
   (package

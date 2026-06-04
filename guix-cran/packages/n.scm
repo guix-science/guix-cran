@@ -2412,20 +2412,20 @@ numerical features are described in Calonico, Cattaneo and Farrell (2019,
 (define-public r-nprmpi
   (package
     (name "r-nprmpi")
-    (version "0.70-2")
+    (version "0.70-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "npRmpi" version))
        (sha256
-        (base32 "034npwc1rk2wlah8zhhgnkf6v01z9k3i5awi6qbk9ps7ryxcpd4j"))))
+        (base32 "101pv0fmm62a50c7va2ks1xs3mh3y6m28wifzk3g6j4jqrj9xgsg"))))
     (properties `((upstream-name . "npRmpi")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list))
-    (propagated-inputs (list r-quantreg r-quadprog r-cubature r-boot))
+    (propagated-inputs (list r-quantreg r-quadprog r-cubature r-crs r-boot))
     (native-inputs (list pkg-config r-knitr))
     (home-page "https://github.com/JeffreyRacine/R-Package-np")
     (synopsis
@@ -5457,13 +5457,13 @@ modified Polak-Ribiere-Polyak formula as described in (Li, Can, 2013,
 (define-public r-nonmemica
   (package
     (name "r-nonmemica")
-    (version "1.0.11")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nonmemica" version))
        (sha256
-        (base32 "097lglq9xns7kbrlz8p36hx68p8zysdg58nbxyl9rp3x7hjkspzp"))))
+        (base32 "09l07hn65q662wzk6d977m4n8xcja39wzf0m923q7isy3n7l8gh9"))))
     (properties `((upstream-name . "nonmemica")))
     (build-system r-build-system)
     (arguments
@@ -5964,27 +5964,27 @@ nationalities.  Updated to work with current API endpoints.")
 (define-public r-nominatimlite
   (package
     (name "r-nominatimlite")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nominatimlite" version))
        (sha256
-        (base32 "1qa5bgssn5igbdkq8hj8hzbmmzhc62xj5ri35glywlqv646zmrn5"))))
+        (base32 "1g7vdjq6cx4wl4vrw6yahlp95s8hf71knzx44dmjwjdc8ks1cl6j"))))
     (properties `((upstream-name . "nominatimlite")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-testthat r-sf r-jsonlite r-dplyr))
+    (propagated-inputs (list r-sf r-jsonlite r-dplyr))
     (native-inputs (list r-quarto))
     (home-page "https://dieghernan.github.io/nominatimlite/")
-    (synopsis "Interface with 'Nominatim' API Service")
+    (synopsis "Interface to the 'Nominatim' API")
     (description
-     "Lite interface for getting data from OSM service Nominatim
+     "Lightweight interface to the @code{OpenStreetMap} Nominatim API
 <https://nominatim.org/release-docs/latest/>.  Extract coordinates from
-addresses, find places near a set of coordinates and return spatial objects on
-sf format.")
+addresses, retrieve addresses from coordinates, look up amenities and addresses,
+and return results as tibble or sf objects.")
     (license license:expat)))
 
 (define-public r-nomclust
@@ -8915,13 +8915,13 @@ covariate selection.")
 (define-public r-nlmixr2est
   (package
     (name "r-nlmixr2est")
-    (version "6.0.0")
+    (version "6.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmixr2est" version))
        (sha256
-        (base32 "1ck2a0ljj7a2py27rpjwfmzrlvgkmyq1jhznabbs1ajf6g69yjl1"))))
+        (base32 "0676k9i8004hl3i6ldagwfyk1y6g6qjhyykycqfpiqgyy5q9w221"))))
     (properties `((upstream-name . "nlmixr2est")))
     (build-system r-build-system)
     (arguments

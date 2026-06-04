@@ -3158,13 +3158,13 @@ licensed CC BY 4.0.")
 (define-public r-island
   (package
     (name "r-island")
-    (version "0.2.10")
+    (version "0.2.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "island" version))
        (sha256
-        (base32 "1g28kgayvh1l4zf504i3mziq5y04xadq603py6x2vy218vdd2gf7"))))
+        (base32 "13yhy9zsafzzy2hqaxssx8k55wx1ryzp4a6lmlzzmq14g9ra37cf"))))
     (properties `((upstream-name . "island")))
     (build-system r-build-system)
     (arguments

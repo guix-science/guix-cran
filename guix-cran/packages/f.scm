@@ -3582,6 +3582,42 @@ profile segmentation is required, the procedure can be parallelized using the
 future package.")
     (license license:gpl2+)))
 
+(define-public r-fssg
+  (package
+    (name "r-fssg")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fssg" version))
+       (sha256
+        (base32 "139p1nm82algj2s61n5ajwf8aa9dk4m57kbnlmfd3b59s5f9s714"))))
+    (properties `((upstream-name . "fssg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vgam
+                             r-tictoc
+                             r-survmetrics
+                             r-survival
+                             r-survauc
+                             r-rstudioapi
+                             r-rcpp
+                             r-magrittr
+                             r-flexsurv
+                             r-extradistr
+                             r-dplyr
+                             r-actuar))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jmrothen/fssg")
+    (synopsis "Parametric Survival Modeling in Bulk")
+    (description
+     "This package provides a simple tool for the bulk creation and testing of
+parametric survival models.  Simply provide fssg with a formula and some data,
+and let it identify the best distributions for you.")
+    (license license:expat)))
+
 (define-public r-fssf
   (package
     (name "r-fssf")

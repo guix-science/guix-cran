@@ -305,6 +305,36 @@ automatically identified jumps.  See Maranzano and Pelagatti (2024)
 <doi:10.2139/ssrn.4896170> for details.")
     (license license:gpl3)))
 
+(define-public r-jumpdiffsim
+  (package
+    (name "r-jumpdiffsim")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "JumpDiffSim" version))
+       (sha256
+        (base32 "1qk8vn2ldcbr7nz1krpvl28rp3wpyk3cv3lg66yhhy4m77b4z9sh"))))
+    (properties `((upstream-name . "JumpDiffSim")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-numderiv r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://kennedy2244.github.io/JumpDiffSim/")
+    (synopsis
+     "Jump Diffusion Simulation and Calibration for Merton and Kou Models")
+    (description
+     "This package implements the Merton (1976) <doi:10.1016/0304-405X(76)90022-2> and
+Kou (2002) <doi:10.1287/mnsc.48.8.1086.166> jump-diffusion models through a
+unified S4 object-oriented interface.  Provides exact compound-Poisson asset
+price simulation, maximum likelihood parameter estimation with Hessian-based
+standard errors, Wald-type confidence intervals, European option pricing via the
+Merton analytic series expansion, and publication-quality diagnostic plots.  All
+functionality operates entirely offline without market data dependencies.")
+    (license license:gpl3+)))
+
 (define-public r-jump
   (package
     (name "r-jump")

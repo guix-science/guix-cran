@@ -8745,32 +8745,6 @@ orientation.  The shoelace formula is described at
 <https://en.wikipedia.org/wiki/Shoelace_formula>.")
     (license license:gpl3)))
 
-(define-public r-ards
-  (package
-    (name "r-ards")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ards" version))
-       (sha256
-        (base32 "1wgf85flbk664gk7lg5hijvbcfd7arnp3xrr3f5kladazj9abzrf"))))
-    (properties `((upstream-name . "ards")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list r-knitr))
-    (home-page "https://ards.r-sassy.org")
-    (synopsis "Creates Analysis Results Datasets")
-    (description
-     "This package contains functions to help create an Analysis Results Dataset.  The
-dataset follows industry recommended structure.  The dataset can be created in
-multiple passes, using different data frames as input.  Analysis Results
-Datasets are used in the pharmaceutical and biotech industries to capture
-analysis in a common tabular data structure.")
-    (license license:cc0)))
-
 (define-public r-ardlverse
   (package
     (name "r-ardlverse")
@@ -9066,13 +9040,13 @@ manipulating and converting @code{ArcGIS} objects from R are also provided.")
 (define-public r-arcpullr
   (package
     (name "r-arcpullr")
-    (version "0.3.2")
+    (version "0.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arcpullr" version))
        (sha256
-        (base32 "0z9ssdzfr7bi3354an9i1xnv86z5mac0sf6hj1lc9w6wi68y2gwq"))))
+        (base32 "1kvz0lph4by4m3i9qc2364nc7p1if7nhzd6dgafd7rjfmc591r0f"))))
     (properties `((upstream-name . "arcpullr")))
     (build-system r-build-system)
     (arguments
@@ -9842,13 +9816,13 @@ Platform'.  Learn more about the arcgis meta-package at
 (define-public r-arcgeocoder
   (package
     (name "r-arcgeocoder")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arcgeocoder" version))
        (sha256
-        (base32 "18n0icvxhng4fj46wdr8v83f8p55zbjdmfjvr9v33xa47y1r0hlm"))))
+        (base32 "162lfpaia1x9gvywcxkjl1mbl5z56nf7408kfyfk7hjr4f7diq8q"))))
     (properties `((upstream-name . "arcgeocoder")))
     (build-system r-build-system)
     (arguments
@@ -9859,11 +9833,11 @@ Platform'.  Learn more about the arcgis meta-package at
     (home-page "https://dieghernan.github.io/arcgeocoder/")
     (synopsis "Geocoding with the 'ArcGIS' REST API Service")
     (description
-     "Lite interface for finding locations of addresses or businesses around the world
-using the @code{ArcGIS} REST API service
+     "Lightweight interface for converting addresses into geographic coordinates and
+coordinates into addresses using the @code{ArcGIS} REST API service
 <https://developers.arcgis.com/rest/geocode/api-reference/overview-world-geocoding-service.htm>.
- Address text can be converted to location candidates and a location can be
-converted into an address.  No API key required.")
+ Address text can be converted to location candidates and locations can be
+converted into addresses.  No API key is required.")
     (license license:expat)))
 
 (define-public r-arcensreg
@@ -19930,6 +19904,36 @@ follow-up period.  We use them only to illustrate methods, not to draw
 substantive conclusions.")
     (license license:gpl2+)))
 
+(define-public r-aigra
+  (package
+    (name "r-aigra")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AIGRA" version))
+       (sha256
+        (base32 "13rmjjwhi4g8af57gw2ns5v6b8vm0hpm50v0fj5xqqa9vvwpza6w"))))
+    (properties `((upstream-name . "AIGRA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-reticulate))
+    (home-page "https://cran.r-project.org/package=AIGRA")
+    (synopsis "Agentic Item Generation, Review, and Analysis")
+    (description
+     "This package provides tools for validating, generating, reviewing, reporting,
+and visualising assessment item generation workflows.  The package supports
+tabular item-bank templates, item-bank validation, Python'-backed agentic
+generation workflows, multimodal diagram generation, quality summaries, and HTML
+reporting.  External artificial intelligence services and related API calls
+require user-supplied credentials and are not called during package checks.  The
+workflow is informed by automatic item generation methods described by Gierl and
+Haladyna (2013, ISBN:9780415897518) and evidence-centered assessment design
+described by Mislevy et al. (2003) <doi:10.1002/j.2333-8504.2003.tb01908.x>.")
+    (license license:expat)))
+
 (define-public r-aigovernance
   (package
     (name "r-aigovernance")
@@ -25463,13 +25467,13 @@ autocorrelation.  The package is described in Jombart et al (2010)
 (define-public r-adelie
   (package
     (name "r-adelie")
-    (version "1.0.9")
+    (version "1.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adelie" version))
        (sha256
-        (base32 "1b9wd6jyfa14rnxwi6fbq1aganzi8nw4488hsylr8iw0wnrkmgja"))))
+        (base32 "18hd1hf610cbqp6dl1l1xafrj99kxam2xhlg09dl4cg4sfax1imx"))))
     (properties `((upstream-name . "adelie")))
     (build-system r-build-system)
     (arguments
@@ -26046,13 +26050,13 @@ for analytical applications.")
 (define-public r-adbcsqlite
   (package
     (name "r-adbcsqlite")
-    (version "0.23.0")
+    (version "0.23.0-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adbcsqlite" version))
        (sha256
-        (base32 "0h9l41nhin73bwq9ppvrypz3bnh9d8lyw9j2b15f20xr8ng4hadi"))))
+        (base32 "1r318kcyibs0cglzx2vw474arv9gyr4cb7r5zqpxkw6xd9x9pxsd"))))
     (properties `((upstream-name . "adbcsqlite")))
     (build-system r-build-system)
     (arguments
@@ -26073,13 +26077,13 @@ parameters.")
 (define-public r-adbcpostgresql
   (package
     (name "r-adbcpostgresql")
-    (version "0.23.0")
+    (version "0.23.0-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adbcpostgresql" version))
        (sha256
-        (base32 "01galmyjy0skfnw45rm5z29cyn82zw0kcm4yjnxi518slrrjj2n7"))))
+        (base32 "0k6qc95mankfrwv2k6fm9dknvj5gg5r54r0rba17pslkaazk8h11"))))
     (properties `((upstream-name . "adbcpostgresql")))
     (build-system r-build-system)
     (arguments

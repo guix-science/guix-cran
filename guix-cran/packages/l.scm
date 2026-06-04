@@ -20485,6 +20485,34 @@ most computations such maps are converted into raster images.  The package is
 based on research conducted during the author's @code{PhD} studies.")
     (license license:gpl2+)))
 
+(define-public r-lacunarity
+  (package
+    (name "r-lacunarity")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lacunarity" version))
+       (sha256
+        (base32 "1n5a0fl9n6anzs3b3q0dw8i14w4rw59xj0jiqjq7ml74md31x0zc"))))
+    (properties `((upstream-name . "lacunarity")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo r-plyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Ikarobarreto/lacunarity")
+    (synopsis "Standard and Generalized Lacunarity for Binary Time Series")
+    (description
+     "Estimates lacunarity and generalized lacunarity for unidimensional binary time
+series.  The lacunarity index summarizes the similarity of parts from different
+regions of a series at a given scale by averaging the behavior of variable size
+structures of zeros and ones.  The generalized lacunarity concept provides an
+enhanced measure of the organization of the gaps over all measured scales and
+over the different arrangements of smaller and larger gaps in the series.")
+    (license license:gpl2+)))
+
 (define-public r-lactcurvemodels
   (package
     (name "r-lactcurvemodels")

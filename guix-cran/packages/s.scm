@@ -7343,13 +7343,13 @@ Duan and Parast (2023) <doi:10.1002/sim.9986>.")
 (define-public r-surrogate
   (package
     (name "r-surrogate")
-    (version "3.4.1")
+    (version "3.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Surrogate" version))
        (sha256
-        (base32 "1ws0g154wh988q6dzq5li095cvrm4p7kf6l19ayl44zkgig0lczw"))))
+        (base32 "0s9wsxyw722k4w8jsny2n61k14a7bmgandxbc4yfdchs3a64vyyv"))))
     (properties `((upstream-name . "Surrogate")))
     (build-system r-build-system)
     (arguments
@@ -7363,8 +7363,10 @@ Duan and Parast (2023) <doi:10.1002/sim.9986>.")
                              r-purrr
                              r-pbapply
                              r-nlme
+                             r-mratios
                              r-mbess
                              r-maxlik
+                             r-matrix
                              r-mass
                              r-logistf
                              r-lme4
@@ -7373,6 +7375,7 @@ Duan and Parast (2023) <doi:10.1002/sim.9986>.")
                              r-lattice
                              r-ks
                              r-flexsurv
+                             r-fastmatrix
                              r-extradistr
                              r-dplyr))
     (home-page "https://github.com/florianstijven/Surrogate-development")
@@ -17938,13 +17941,13 @@ providing the user with options to create and customise plots and tables.")
 (define-public r-starnet
   (package
     (name "r-starnet")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "starnet" version))
        (sha256
-        (base32 "00j6krhhig1f4s15ingsv6xxk04jkrmnks03bb1l47jll9vaa1sz"))))
+        (base32 "1vbrw4zrz1hd4mmp577r2qgjp14asd40qd7r9v4nja1kvdsnisdg"))))
     (properties `((upstream-name . "starnet")))
     (build-system r-build-system)
     (arguments
@@ -26621,13 +26624,13 @@ effects of functional variables -Application to agri-environmental issues\"
 (define-public r-sphunif
   (package
     (name "r-sphunif")
-    (version "1.4.3")
+    (version "1.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sphunif" version))
        (sha256
-        (base32 "1v1jdjd21mpwxdq9k45gll3x0n0lm0kksk5bvv3px6gz5hqlx5n1"))))
+        (base32 "1a6w968iib32vcnv34w80xlslg9yl4kymd79jgs48rl3917iz653"))))
     (properties `((upstream-name . "sphunif")))
     (build-system r-build-system)
     (arguments
@@ -33172,13 +33175,13 @@ the millions range.  Geocoding via Cadastral web site.")
 (define-public r-spam64
   (package
     (name "r-spam64")
-    (version "2.10-0")
+    (version "2.11-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spam64" version))
        (sha256
-        (base32 "0kb7jz12xb0i45b70x3p785md01s7wbwl8lgisq4i83jvlz016ln"))))
+        (base32 "0cphc1yqvgykfb433a03c6k80gncg0h3nlgvzd35ph6ip8sqpjc3"))))
     (properties `((upstream-name . "spam64")))
     (build-system r-build-system)
     (arguments
@@ -36587,13 +36590,13 @@ types, including spatial data returned as sf objects.")
 (define-public r-sociome
   (package
     (name "r-sociome")
-    (version "3.0.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sociome" version))
        (sha256
-        (base32 "1gw5h6cpi0a6qnjcjaxlcpdlka5ggl64mdsv6xqjinc5ayz8j186"))))
+        (base32 "08d9qi1y41xc7qsybg6grhv6wy29hhhgf208lpqsfg0b99wcvzp3"))))
     (properties `((upstream-name . "sociome")))
     (build-system r-build-system)
     (arguments
@@ -41519,13 +41522,13 @@ The slm package is described in the paper by E. Caron, J. Dedecker and B. Michel
 (define-public r-slimr
   (package
     (name "r-slimr")
-    (version "1.1.3")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SlimR" version))
        (sha256
-        (base32 "0x02ynjif094q2ijn1ijjsm6rmpl6ngwmr31bib3cranr8ar0fc4"))))
+        (base32 "1bsk6jxpcgcbmf6n2v8r6xkbzqrzzmqx40njny6ql5hv7nnnfray"))))
     (properties `((upstream-name . "SlimR")))
     (build-system r-build-system)
     (arguments
@@ -52220,13 +52223,13 @@ Stripe framework.")
 (define-public r-shinyseo
   (package
     (name "r-shinyseo")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyseo" version))
        (sha256
-        (base32 "0gj91xw89jdnh5vykml1fnqbl60bjz01hbmax89j71jbiyc12bhx"))))
+        (base32 "0alzzlafqra9knsmw5bpn9czzlp52fhjizr2ar3gh6jrq6gzrsd3"))))
     (properties `((upstream-name . "shinyseo")))
     (build-system r-build-system)
     (arguments
@@ -52234,12 +52237,13 @@ Stripe framework.")
       #:tests? #f))
     (propagated-inputs (list r-yaml r-shiny r-jsonlite))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=shinyseo")
+    (home-page "https://CRAN.R-project.org/package=shinyseo")
     (synopsis
-     "Search Engine Optimization and Social Metadata Helpers for 'Shiny' Apps")
+     "Search Engine Optimization, Social Metadata, and Site Verification Helpers for 'Shiny' Apps")
     (description
      "Utilities for injecting search engine optimization (SEO), Open Graph, Twitter,
-and schema.org metadata into Shiny applications from YAML files or named lists.")
+site verification, and schema.org metadata into Shiny applications from YAML
+files or named lists.")
     (license license:gpl3+)))
 
 (define-public r-shinyselect
@@ -57646,6 +57650,31 @@ moments of a Markov process.  Merton, Robert C (1971)
 ISBN:978-0-387-98140-6 ).")
     (license license:gpl3)))
 
+(define-public r-sgmean
+  (package
+    (name "r-sgmean")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sgmean" version))
+       (sha256
+        (base32 "1a4yd9mpyfyvkdgvy52lzv5llnxj1rgmb565zn9d2pgnrjgpv877"))))
+    (properties `((upstream-name . "sgmean")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jcarlosgaviria/sgmean")
+    (synopsis "Trimmed Mean Compatible with 'Statgraphics' Method")
+    (description
+     "Computes the trimmed mean using a proportional discount method on the extremes,
+replicating the behavior of Statgraphics software.  Unlike R's built-in
+@code{mean()} with trim, this method applies a weighted reduction to boundary
+values rather than removing them entirely.")
+    (license license:expat)))
+
 (define-public r-sglr
   (package
     (name "r-sglr")
@@ -60225,25 +60254,19 @@ al. (2023, <https://hal.inrae.fr/hal-04388845v1>).")
 (define-public r-seqtrie
   (package
     (name "r-seqtrie")
-    (version "0.3.5")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "seqtrie" version))
        (sha256
-        (base32 "1jpvs6hl75wr16578fj30vfhhgqcaw5gk2vc9m09xxd17xi3afpp"))))
+        (base32 "0q1859r8yas4lnr9arimilm9chapwcx19j194agx3z811y99gpkj"))))
     (properties `((upstream-name . "seqtrie")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringi
-                             r-rlang
-                             r-rcppparallel
-                             r-rcpp
-                             r-r6
-                             r-dplyr
-                             r-bh))
+    (propagated-inputs (list r-s7 r-rcppparallel r-rcpp r-r6))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/traversc/seqtrie")
     (synopsis "Radix Tree and Trie-Based String Distances")
@@ -60252,7 +60275,9 @@ al. (2023, <https://hal.inrae.fr/hal-04388845v1>).")
 similar sequences and calculating sequence distances (Levenshtein and other
 distance metrics).  This work was inspired by a trie implementation in Python:
 \"Fast and Easy Levenshtein distance using a Trie.\" Hanov (2011)
-<https://stevehanov.ca/blog/index.php?id=114>.")
+<https://stevehanov.ca/blog/index.php?id=114>.  It also includes a modified
+version of the Starcode all-pairs search algorithm (Zorita, CuscÃ³, and Filion
+2015) <doi:10.1093/bioinformatics/btv053>.")
     (license license:gpl3)))
 
 (define-public r-seqtest
@@ -68964,13 +68989,13 @@ sequencing) data <https://github.com/fumi-github/@code{scPloidy>}.")
 (define-public r-scpi
   (package
     (name "r-scpi")
-    (version "3.0.2")
+    (version "4.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scpi" version))
        (sha256
-        (base32 "1g69n97gn4gz9sfbzla9p3hnbdi68w4fplfgnd6xzd7vbm3969d7"))))
+        (base32 "1p2v8mnx7m5n8qwcq25lm0n2gwx0v4k97q6f6a5mfqfnh9k2jy0w"))))
     (properties `((upstream-name . "scpi")))
     (build-system r-build-system)
     (arguments
@@ -68996,18 +69021,17 @@ sequencing) data <https://github.com/fumi-github/@code{scPloidy>}.")
                              r-cvxr
                              r-abind))
     (home-page "https://nppackages.github.io/scpi/")
-    (synopsis
-     "Prediction Intervals for Synthetic Control Methods with Multiple Treated Units and Staggered Adoption")
+    (synopsis "Synthetic Control Methods")
     (description
      "Implementation of prediction and inference procedures for Synthetic Control
 methods using least square, lasso, ridge, or simplex-type constraints.
 Uncertainty is quantified with prediction intervals as developed in Cattaneo,
 Feng, and Titiunik (2021) <doi:10.1080/01621459.2021.1979561> for a single
-treated unit and in Cattaneo, Feng, Palomba, and Titiunik (2025)
+treated unit and in Cattaneo, Feng, Palomba, and Titiunik (2027)
 <doi:10.1162/rest_a_01588> for multiple treated units and staggered adoption.
 More details about the software implementation can be found in Cattaneo, Feng,
 Palomba, and Titiunik (2025) <doi:10.18637/jss.v113.i01>.")
-    (license license:gpl2)))
+    (license license:gpl3)))
 
 (define-public r-scperturbr
   (package
@@ -76522,13 +76546,13 @@ application of absorbing Markov chains.")
 (define-public r-samba
   (package
     (name "r-samba")
-    (version "0.9.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SAMBA" version))
        (sha256
-        (base32 "0gxc1s82bfhqj1rpmp0fm87frv77rgr8qjqai7zdgfz3jm474any"))))
+        (base32 "04flm9b09yzf01lnrllnk63fy7226gpsir87smf1lcp9pj3x2mhb"))))
     (properties `((upstream-name . "SAMBA")))
     (build-system r-build-system)
     (arguments
@@ -76548,7 +76572,7 @@ the assumed target of inference is the relationship between binary disease
 status and predictors modeled using a logistic regression model.  SAMBA
 implements several methods for obtaining bias-corrected point estimates along
 with valid standard errors as proposed in Beesley and Mukherjee (2020)
-<doi:10.1101/2019.12.26.19015859>, currently under review.")
+<doi:10.1111/biom.13400>, Biometrics.")
     (license license:gpl3)))
 
 (define-public r-samadb

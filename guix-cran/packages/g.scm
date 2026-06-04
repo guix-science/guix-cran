@@ -5827,13 +5827,13 @@ no external @code{LaTeX} installation required.")
 (define-public r-gridify
   (package
     (name "r-gridify")
-    (version "0.7.7")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gridify" version))
        (sha256
-        (base32 "0vgbws5lijs13mk17292z2lwj0p54fnfxskjs8k8rykf9dmdzyml"))))
+        (base32 "1rr8lxb5ys7s920v69aifs4hqxfb1k363rib251j7z2k1jbb5p7j"))))
     (properties `((upstream-name . "gridify")))
     (build-system r-build-system)
     (arguments
@@ -9303,13 +9303,13 @@ References: Hoffmann and Onnela (2025) <doi:10.18637/jss.v112.i02>.")
 (define-public r-gptcm
   (package
     (name "r-gptcm")
-    (version "1.1.3")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GPTCM" version))
        (sha256
-        (base32 "0mmj1x8ylqgw8zgda8zwq0znm4h1k8y095h9nay7ihxsrkvnaiys"))))
+        (base32 "0h9rwqx57x2bqp8y7va13nsza44xyls7lmy36z0pxgb75l8y6bm8"))))
     (properties `((upstream-name . "GPTCM")))
     (build-system r-build-system)
     (arguments
@@ -19689,13 +19689,13 @@ oceanography research communities.")
 (define-public r-ggsql
   (package
     (name "r-ggsql")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggsql" version))
        (sha256
-        (base32 "05fvi7zrjgz4q5002mxmapnzr2k10ffvybbp7w2r6jisasc77ms4"))))
+        (base32 "1mg09vflp3cqagzc30l740fh303w7m0drk9h8dqy31pmlslxv4gg"))))
     (properties `((upstream-name . "ggsql")))
     (build-system r-build-system)
     (arguments
@@ -26151,13 +26151,13 @@ exported to XML format.")
 (define-public r-getfredata
   (package
     (name "r-getfredata")
-    (version "0.8.1")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GetFREData" version))
        (sha256
-        (base32 "15rca6pfsx5hcl1lnz49904b2ps0312mwjv8d4f0g76jhkvqfvss"))))
+        (base32 "1ma994mk1dvd3ybgmm0kxyr2z0jr4b47xc5m4g0r19n1jhj3xp74"))))
     (properties `((upstream-name . "GetFREData")))
     (build-system r-build-system)
     (arguments
@@ -26171,8 +26171,13 @@ exported to XML format.")
                              r-purrr
                              r-magrittr
                              r-lubridate
+                             r-lifecycle
+                             r-janitor
+                             r-glue
                              r-getdfpdata2
-                             r-dplyr))
+                             r-fs
+                             r-dplyr
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/msperlin/GetFREData/")
     (synopsis "Reading FRE Corporate Data of Public Traded Companies from B3")
@@ -26180,7 +26185,7 @@ exported to XML format.")
      "Reads corporate data such as board composition and compensation for companies
 traded at B3, the Brazilian exchange <https://www.b3.com.br/>.  All data is
 downloaded and imported from the ftp site
-<http://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/FRE/>.")
+<https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/FRE/>.")
     (license license:gpl2)))
 
 (define-public r-getdteval

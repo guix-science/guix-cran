@@ -8870,22 +8870,23 @@ sorting.")
 (define-public r-crane
   (package
     (name "r-crane")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crane" version))
        (sha256
-        (base32 "0785zk4rxdzgmw2ljad8jcig40kjnnap83gf9aabk7xhnrwq2jcv"))))
+        (base32 "1cqnayz06xgsakgdgd1vqm5f7h7z3gvg49fgh52jfbmingd6ha9q"))))
     (properties `((upstream-name . "crane")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyr
+                             r-tibble
                              r-survival
+                             r-scales
                              r-rlang
-                             r-patchwork
                              r-lifecycle
                              r-labeling
                              r-gtsummary
@@ -8898,7 +8899,6 @@ sorting.")
                              r-cli
                              r-cardx
                              r-cards
-                             r-broom-helpers
                              r-broom))
     (home-page "https://github.com/insightsengineering/crane")
     (synopsis
@@ -17734,13 +17734,13 @@ Green et al. (2025) <doi:10.1017/pan.2024.22>.")
 (define-public r-contentvalidity
   (package
     (name "r-contentvalidity")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "contentValidity" version))
        (sha256
-        (base32 "1wqyjjvqfg7rv4fh16ffwyg6x85bmqpsiza12d1xpc7g8zpayws0"))))
+        (base32 "0yqfwnvjs4gr2w3vxv7pgqfacr63pwlybyb3ay1qsah47c93hhlk"))))
     (properties `((upstream-name . "contentValidity")))
     (build-system r-build-system)
     (arguments
@@ -50796,13 +50796,13 @@ tibbles, lists, etc..")
 (define-public r-catastro
   (package
     (name "r-catastro")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CatastRo" version))
        (sha256
-        (base32 "0m86ykjavgh2yhzaj4cxh34wlk5gjbr4yanaql167686hq2zhzal"))))
+        (base32 "16zqbgc1c8y59jy1sbpnrjacnl41pnym0g76hhnzj6bly84wn6gn"))))
     (properties `((upstream-name . "CatastRo")))
     (build-system r-build-system)
     (arguments
@@ -50820,10 +50820,11 @@ tibbles, lists, etc..")
                              r-cli))
     (native-inputs (list r-quarto))
     (home-page "https://ropenspain.github.io/CatastRo/")
-    (synopsis "Interface to the API 'Sede Electronica Del Catastro'")
+    (synopsis "Interface to the Spanish 'Catastro' Web Services")
     (description
-     "Access public spatial data available under the INSPIRE directive.  Tools for
-downloading references and addresses of properties, as well as map images.")
+     "Access public spatial data from the Spanish Catastro through its INSPIRE and
+related web services.  Retrieve parcel, building, address and map image data,
+and convert between parcel references and coordinates.")
     (license license:gpl2)))
 
 (define-public r-catalytic

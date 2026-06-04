@@ -21926,13 +21926,13 @@ package and code examples are presented in Pesigan, Sun, and Cheung (2023)
 (define-public r-betadanish
   (package
     (name "r-betadanish")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BetaDanish" version))
        (sha256
-        (base32 "13jlz09fzvwhgqcnc9ahmz8n5a7wkpqmxhwmqzcaxb7aidmdlhh6"))))
+        (base32 "1cqjbb0qkhv7zcx9yx1hp41qd3rzgza1q25h52n67iq039lfyph7"))))
     (properties `((upstream-name . "BetaDanish")))
     (build-system r-build-system)
     (arguments
@@ -21940,7 +21940,7 @@ package and code examples are presented in Pesigan, Sun, and Cheung (2023)
       #:tests? #f))
     (propagated-inputs (list r-survival r-maxlik))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/bilal-aiou/BetaDanish")
+    (home-page "https://bilal-aiou.github.io/BetaDanish/")
     (synopsis "The Beta-Danish Distribution for Lifetime Data Analysis")
     (description
      "This package implements the four-parameter Beta-Danish distribution and its
@@ -26024,6 +26024,55 @@ models for genotype Ã environment interaction.  The method is explained in
 Perez-Elizalde, S., Jarquin, D., and Crossa, J. (2011)
 (<doi:10.1007/s13253-011-0063-9>).")
     (license license:gpl2)))
+
+(define-public r-bayprior
+  (package
+    (name "r-bayprior")
+    (version "0.2.12")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bayprior" version))
+       (sha256
+        (base32 "12hmbi4c359iypsw5cfaifjqrgc3q03rb1sm589z63i1icpa059v"))))
+    (properties `((upstream-name . "bayprior")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shinywidgets
+                             r-shinyjs
+                             r-shinydashboard
+                             r-shinycssloaders
+                             r-shiny
+                             r-rlang
+                             r-purrr
+                             r-plotly
+                             r-golem
+                             r-glue
+                             r-ggplot2
+                             r-dt
+                             r-dplyr
+                             r-config
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ndohpenngit/bayprior")
+    (synopsis "Bayesian Prior Elicitation and Diagnostics for Clinical Trials")
+    (description
+     "This package provides a toolkit for constructing, validating, and justifying
+Bayesian priors in clinical trial settings.  Implements expert elicitation via
+quantile matching, the roulette method, and moment matching across six
+distribution families, linear and logarithmic expert pooling, prior-data
+conflict diagnostics including the Box p-value, surprise index, information
+divergence, and Mahalanobis distance, sensitivity analyses with tornado and
+influence heatmap plots, sceptical, robust, and power priors, and automated
+prior justification reports.  Includes a fully modular Shiny application for
+interactive use.  Methods based on O'Hagan et al. (2006, ISBN:9780470029886),
+Box (1980) <doi:10.2307/2982063>, Oakley and O'Hagan (2010)
+<https://tonyohagan.co.uk/shelf/>, Schmidli et al. (2014)
+<doi:10.1111/biom.12242>, Ibrahim and Chen (2000) <doi:10.1214/ss/1009212673>,
+Spiegelhalter et al. (1994) <doi:10.2307/2983527>.")
+    (license license:gpl3)))
 
 (define-public r-bayou
   (package

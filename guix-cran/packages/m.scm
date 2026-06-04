@@ -43208,13 +43208,13 @@ coordinates can also be employed e.g. loess.")
 (define-public r-mdgof
   (package
     (name "r-mdgof")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MDgof" version))
        (sha256
-        (base32 "1f3354kglrnig9ka9cbmxmap9x6rk14cxx4md3rzc4lzrcbafhic"))))
+        (base32 "141i9yhwwd7alrl83fcx9hdad2zfgp38lzwyzs6i7rncf3b9752l"))))
     (properties `((upstream-name . "MDgof")))
     (build-system r-build-system)
     (arguments

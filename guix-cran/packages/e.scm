@@ -13825,13 +13825,13 @@ systems.")
 (define-public r-epanet2toolkit
   (package
     (name "r-epanet2toolkit")
-    (version "1.0.8")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epanet2toolkit" version))
        (sha256
-        (base32 "0fjhlhnb2a3y7m2hxgya48pgrzk5g5jxjiq38qbxbqcbj11knpdg"))))
+        (base32 "0m8agiyv4llrqn6g4dm2zzk1285z2mfrky0vkw8jds0s46g4ggab"))))
     (properties `((upstream-name . "epanet2toolkit")))
     (build-system r-build-system)
     (arguments

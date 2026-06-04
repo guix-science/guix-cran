@@ -4833,13 +4833,13 @@ based on the work of Franklin & Ray. (1994)
 (define-public r-viewr
   (package
     (name "r-viewr")
-    (version "1.0.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ViewR" version))
        (sha256
-        (base32 "0vfcyrfkkj5320p0wdd98rxnjb0qal7in9al8nlgh7wgswhwij9k"))))
+        (base32 "0yb5qrn4czz6fw8i51mdr6bx5lgvpgwk79g10bp88a66ywizxavy"))))
     (properties `((upstream-name . "ViewR")))
     (build-system r-build-system)
     (arguments
@@ -4850,25 +4850,26 @@ based on the work of Franklin & Ray. (1994)
                              r-shiny
                              r-rhandsontable
                              r-jsonlite
+                             r-htmlwidgets
                              r-htmltools
                              r-dt))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/itsmdivakaran/viewR")
-    (synopsis "Interactive Data Viewer, Filter, and Editor")
+    (synopsis "Advanced Interactive Data Tables and Data Explorer")
     (description
-     "This package provides a feature-rich, popup-based interactive interface for
-viewing, exploring, filtering, sorting, editing, analysing, and plotting R data
-frames.  Key features include: a searchable, paginated data table with
-drag-and-drop column reordering and variable-label tooltips'; multi-condition
-filters (AND/OR) with live preview; multi-column sorting; column visibility
-management with search; an Excel-like cell editor powered by rhandsontable';
-find-and-replace across one or all columns (literal or regex) with automatic
-live preview; a Plots tab with auto-detected histograms and bar charts for every
-column; automatic dplyr code generation reflecting every operation performed in
-the UI'; one-click CSV export; and a Variable Info tab with type, missing
-values, and summary statistics.  The entire interface is launched with a single
-call to @code{ViewR()} and works as a popup dialog, in the RStudio Viewer pane,
-or in the system browser.")
+     "An advanced, interactive data table and data explorer for R, delivered as a
+modern, self-contained htmlwidget with a high-performance virtualized grid.
+@code{ViewR} renders Kaggle'-style micro-dashboard column headers complete with
+data-type badges, mini distribution spark-histograms, and data-completeness
+(missingness) bars.  It provides hover metadata cards, a sliding Data Insights
+drawer with interactive histograms and Pareto category charts, a multi-condition
+visual query builder (AND/OR), a column visibility picker, and a reproducible
+code generator that emits dplyr', base R, and SQL that matches the active filter
+and column state.  The interface is implemented entirely in dependency-free
+vanilla @code{JavaScript} (no React or build toolchain) and works in the
+RStudio'/'Positron Viewer, inside Shiny apps, in R Markdown'/'Quarto', or as a
+portable standalone HTML file.  A single call to @code{viewr()} opens the
+explorer; the legacy Shiny'-gadget @code{ViewR()} editor remains available.")
     (license license:expat)))
 
 (define-public r-viewpoly

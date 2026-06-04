@@ -18,6 +18,7 @@
   #:use-module (gnu packages xml)
   #:use-module (gnu packages pdf)
   #:use-module (gnu packages java)
+  #:use-module (gnu packages tbb)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages image)
   #:use-module (gnu packages imagemagick)
@@ -8668,6 +8669,36 @@ camera device.")
     (description
      "Non-spatial and spatial open-population capture-recapture analysis.")
     (license license:gpl2+)))
+
+(define-public r-opencltools
+  (package
+    (name "r-opencltools")
+    (version "0.8.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "opencltools" version))
+       (sha256
+        (base32 "1djza55n07kxpj1r6akzhlgdxrpmghkj3acaw35krv537r0q4s06"))))
+    (properties `((upstream-name . "opencltools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list tbb))
+    (propagated-inputs (list r-rdpack r-rcppparallel r-rcpparmadillo r-rcpp
+                             r-jsonlite))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/knygren/opencltools")
+    (synopsis "'OpenCL' Tools for R Package Developers")
+    (description
+     "Runtime @code{OpenCL} support for R package developers: probe hardware and
+drivers, load and concatenate kernel sources, and manage dependency-annotated
+.cl libraries, so packages like nmathopencl and other ported libraries can offer
+GPU acceleration without each re-implementing the same plumbing.  Vignettes use
+the glmbayes envelope-gradient example and likelihood subgradient methodology
+(Nygren and Nygren, 2006, <doi:10.1198/016214506000000357>).")
+    (license license:gpl2)))
 
 (define-public r-opencl
   (package

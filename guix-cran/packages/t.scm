@@ -399,6 +399,35 @@ would be the fluorescence intensity and the independent variable the cycle
 number.  This package then would calculate the TWW cycle threshold.")
     (license license:gpl3)))
 
+(define-public r-twscraper
+  (package
+    (name "r-twscraper")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "twscrapeR" version))
+       (sha256
+        (base32 "0ygnq1kjcagakranq6ac5x4dc1zyr88lad483086dkggqp8bk964"))))
+    (properties `((upstream-name . "twscrapeR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-reticulate r-jsonlite r-cli))
+    (home-page "https://github.com/agusnieto77/twscrapeR")
+    (synopsis "Twitter/X Scraping via Python's 'twscrape' Library")
+    (description
+     "This package provides a comprehensive R interface to Python's twscrape library
+for scraping Twitter/X data.  This package uses reticulate to provide a seamless
+R interface to the fully functional Python twscrape library.  Supports searching
+tweets, user timelines, followers, and more, with built-in rate limiting and
+multi-account support.  Built on top of twscrape by vladkens
+<https://github.com/vladkens/twscrape> and inspired by snscrape by
+@code{JustAnotherArchivist}
+<https://github.com/@code{JustAnotherArchivist/snscrape>}.")
+    (license license:expat)))
+
 (define-public r-twoxtwo
   (package
     (name "r-twoxtwo")
@@ -10114,13 +10143,13 @@ regression analysis.")
 (define-public r-transreg
   (package
     (name "r-transreg")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "transreg" version))
        (sha256
-        (base32 "1xi2xxs72r8pl0756ps4mhpgfj0v1lyr25naqa36jxqdp6ql3p17"))))
+        (base32 "15x1z48qnvkjrac1c92mw6c4rdskrjr8z2wp0pwa1m4ai5ly2yhx"))))
     (properties `((upstream-name . "transreg")))
     (build-system r-build-system)
     (arguments
@@ -26900,13 +26929,13 @@ and linting bibliography files.")
 (define-public r-texanshootr
   (package
     (name "r-texanshootr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "texanshootR" version))
        (sha256
-        (base32 "00cdg4kd7jc5iz1nmda040cmlqp5dhpixak1slrbd75xfcdfij8b"))))
+        (base32 "0yib4zr3qgyqinzsjnf30fapqrvydxb4crix93gw79fnn3f5m9i0"))))
     (properties `((upstream-name . "texanshootR")))
     (build-system r-build-system)
     (arguments
