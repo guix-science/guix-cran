@@ -11,7 +11,6 @@
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages multiprecision)
-  #:use-module (gnu packages web)
   #:use-module (gnu packages duckdb)
   #:use-module (gnu packages cmake)
   #:use-module (gnu packages python-xyz)
@@ -20,6 +19,7 @@
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages tls)
   #:use-module (gnu packages compression)
+  #:use-module (gnu packages web)
   #:use-module (gnu packages xml)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages tbb)
@@ -1809,25 +1809,28 @@ data.")
 (define-public r-mvngmod
   (package
     (name "r-mvngmod")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MVNGmod" version))
        (sha256
-        (base32 "02yrjz70jqsmmmp1q1dby5i3n23hf0ls1dq181vsgj8kypz5641y"))))
+        (base32 "10rnkrjywjidi0b6fpkxcxxmj6l20y8swdjw43cwmaaz5jp8s4r0"))))
     (properties `((upstream-name . "MVNGmod")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-truncnorm
+                             r-purrr
                              r-pracma
                              r-maxlik
+                             r-matrixcalc
                              r-matlib
                              r-distributionutils
                              r-clustergeneration
                              r-bessel))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/soonsk-vcu/MVNGmod")
     (synopsis "Matrix-Variate Non-Gaussian Linear Regression Models")
     (description
@@ -8406,42 +8409,25 @@ explore or document a data set using a tree structure.")
 (define-public r-muimaterial
   (package
     (name "r-muimaterial")
-    (version "0.1.3")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "muiMaterial" version))
        (sha256
-        (base32 "0in6q9dz82276yik1xhc889ld3p31jpvhif8nc1rjycsjq6180h6"))))
+        (base32 "0ilfkygkfvjmz1m1cda1a86cycj1l2vmxca9dap9n2nanmjh640q"))))
     (properties `((upstream-name . "muiMaterial")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f
-      #:modules '((guix build r-build-system)
-                  ((guix build minify-build-system)
-                   #:select (minify))
-                  (guix build utils)
-                  (ice-9 match))
-      #:imported-modules `(,@%r-build-system-modules (guix build
-                                                      minify-build-system))
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'process-javascript
-                    (lambda* (#:key inputs #:allow-other-keys)
-                      (with-directory-excursion "inst/"
-                        (for-each (match-lambda
-                                    ((source . target) (minify source
-                                                               #:target target)))
-                                  '())))))))
+      #:tests? #f))
     (propagated-inputs (list r-shiny-react r-shiny r-htmltools r-checkmate))
-    (native-inputs (list esbuild))
     (home-page "https://felixluginbuhl.com/muiMaterial/")
     (synopsis "'Material UI' for 'shiny' Apps and 'Quarto'")
     (description
-     "This package provides a set of user interface components for building shiny
-applications and quarto documents, including inputs, layouts, navigation,
-surfaces, and various utilities.  All components Material UI from the company
-MUI <https://mui.com/> are available and all inputs have usage examples in R.")
+     "Wraps the Material UI React components <https://mui.com/> for use in R, shiny
+applications and quarto documents, including inputs, layouts, navigation, and
+surfaces.  All inputs come with R usage examples.")
     (license license:expat)))
 
 (define-public r-mugs
@@ -9927,6 +9913,34 @@ serves as a companion package for the STAT 571: Multivariate Analysis course
 offered by the Department of Statistics at the University of Illinois at
 Urbana-Champaign ('UIUC').")
     (license license:expat)))
+
+(define-public r-msn
+  (package
+    (name "r-msn")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MSN" version))
+       (sha256
+        (base32 "10raj2s7lf85mcldj48qlg6g3fwy9crfr0nvkg2yf2xxzzg0l2hd"))))
+    (properties `((upstream-name . "MSN")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival r-mass r-glasso))
+    (home-page "https://cran.r-project.org/package=MSN")
+    (synopsis "Multivariate Survival Data with Network Structures")
+    (description
+     "This package implements a semi-parametric estimation framework combined with a
+boosting algorithm to marginally estimate the conditional cumulative
+distribution function of survival times given informative covariates.  It then
+utilizes the graphical lasso method to reconstruct network structures among
+multivariate time-to-event variables, accommodating both multivariate outcomes
+measured within a single dataset and survival times integrated from
+heterogeneous (multi-source) datasets..")
+    (license license:gpl3)))
 
 (define-public r-msmwra
   (package
@@ -18429,20 +18443,21 @@ methods are described in Bill and Hulliger (2016) <doi:10.17713/ajs.v45i1.86>.")
 (define-public r-modgo
   (package
     (name "r-modgo")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modgo" version))
        (sha256
-        (base32 "03c48akfdmnr47i88pzix7kz11nyrmppb94grjvy98yp4c1phnl9"))))
+        (base32 "0q6na0zhgcnv7jnfly4grskkxgf2w6q94kmwvw7s7cyk2879xdps"))))
     (properties `((upstream-name . "modgo")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-wesanderson
-                             r-survival
+                             r-wcorr
+                             r-survey
                              r-psych
                              r-patchwork
                              r-matrix
@@ -18453,17 +18468,12 @@ methods are described in Bill and Hulliger (2016) <doi:10.17713/ajs.v45i1.86>.")
                              r-ggplot2
                              r-ggcorrplot))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=modgo")
+    (home-page "https://github.com/GeorgeKoliopanos/modgo")
     (synopsis "Mock Data Generation")
     (description
-     "Generation of synthetic data from a real dataset using the combination of rank
-normal inverse transformation with the calculation of correlation matrix
-<doi:10.1055/a-2048-7692>.  Completely artificial data may be generated through
-the use of Generalized Lambda Distribution and Generalized Poisson Distribution
-<doi:10.1201/9781420038040>.  Quantitative, binary, ordinal categorical, and
-survival data may be simulated.  Functionalities are offered to generate
-synthetic data sets according to user's needs.")
-    (license license:gpl3)))
+     "Generation of mock data from a real dataset using rank normal inverse
+transformation.")
+    (license license:gpl3+)))
 
 (define-public r-modeva
   (package
@@ -45677,13 +45687,13 @@ and Galin L. Jones (2005) <DOI:10.1111/j.1467-9868.2005.00499.x>.")
 (define-public r-mcdabench
   (package
     (name "r-mcdabench")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mcdabench" version))
        (sha256
-        (base32 "12chkl2wv3lrfmymbddms9k5ghm3qr7hdfrcacjx2pwzxgdxwc42"))))
+        (base32 "1wmcndx7pgd80zmyi4475fd6i6nav4fl9igf9lb3bhzx6snf548z"))))
     (properties `((upstream-name . "mcdabench")))
     (build-system r-build-system)
     (arguments

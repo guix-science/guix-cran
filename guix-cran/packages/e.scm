@@ -3234,13 +3234,13 @@ R and shiny on their system.")
 (define-public r-exdqlm
   (package
     (name "r-exdqlm")
-    (version "0.4.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "exdqlm" version))
        (sha256
-        (base32 "0aiavwmlc4x4s7lb3462yk3qkcphkh5jxg5mnizbnkxss51sq9dx"))))
+        (base32 "0d4nl3h8772ckhbc4mpdgksxc0gdh02fi7nfbram5572s9i63mx3"))))
     (properties `((upstream-name . "exdqlm")))
     (build-system r-build-system)
     (arguments
@@ -3256,7 +3256,6 @@ R and shiny on their system.")
                              r-matrixstats
                              r-magic
                              r-laplacesdemon
-                             r-fnn
                              r-crch
                              r-coda
                              r-bh))
@@ -8233,13 +8232,13 @@ mixtures of both.  For details see Li, Munk, Sieling and Walther (2016)
 (define-public r-essentialstools
   (package
     (name "r-essentialstools")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "essentialstools" version))
        (sha256
-        (base32 "0z38k8i9mnb07nsdns9ddq1bpy9cv2jxf5mpgciaynrl5g0p40zh"))))
+        (base32 "0864kd5dx1wpylrrqlckzrckcpfnxgqnn9d9bl9di0hgaxnx8v88"))))
     (properties `((upstream-name . "essentialstools")))
     (build-system r-build-system)
     (arguments

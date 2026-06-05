@@ -38632,19 +38632,20 @@ and applied statistical modeling.")
 (define-public r-reliaplotr
   (package
     (name "r-reliaplotr")
-    (version "0.6")
+    (version "0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ReliaPlotR" version))
        (sha256
-        (base32 "0hq9xcvaqswda1gjc5sxchj0nh7fywrml9r8jh54vcm514jm0v09"))))
+        (base32 "1ps4y347r0158hnly4rs2w879zllwz7i4nkbj8ixbamhrycx89vx"))))
     (properties `((upstream-name . "ReliaPlotR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-weibullr-alt r-weibullr r-reliagrowr r-plotly))
+    (native-inputs (list r-knitr))
     (home-page "https://paulgovan.github.io/ReliaPlotR/")
     (synopsis "Interactive Reliability Probability Plots")
     (description
@@ -41944,51 +41945,6 @@ documents, e.g. using Sweave'.")
      "Convert REDCap exports into tidy tables for easy handling of REDCap repeat
 instruments and event arms.")
     (license license:expat)))
-
-(define-public r-redcapsync
-  (package
-    (name "r-redcapsync")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "REDCapSync" version))
-       (sha256
-        (base32 "1im1xzsk00a30k5sidih77nkajj7wz6s6d8m6vy6j9pcxaxycqy5"))))
-    (properties `((upstream-name . "REDCapSync")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-skimr
-                             r-redcapr
-                             r-redcapapi
-                             r-readxl
-                             r-r6
-                             r-openxlsx
-                             r-lubridate
-                             r-hoardr
-                             r-dplyr
-                             r-cli
-                             r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/thecodingdocs/REDCapSync")
-    (synopsis "Encapsulated 'REDCap' Projects for Synchronized Data Pipelines")
-    (description
-     "Wraps dozens of REDCap API endpoints into a standardized R6 object.  Research
-Electronic Data Capture ('REDCap') is a survey and database web application
-software maintained by Vanderbilt University.  It has a robust application
-programming interface (API) utilized by several R packages.  RED@code{CapSync}
-uses @code{redcapAPI} and RED@code{CapR} behind-the-scenes to retrieve all
-metadata, data, and log details for a project.  To minimize unnecessary server
-calls, the interim REDCap log is analyzed and used to only update necessary
-records.  Furthermore, the user can define custom datasets that save to a
-directory.  Those datasets continue to refresh when projects are synced.  Having
-a secure, standardized, API-efficient, project-agnostic R object for REDCap
-projects, streamlines downstream use in scripts, functions, and shiny
-applications.")
-    (license license:gpl3+)))
 
 (define-public r-redcapr
   (package
@@ -47558,13 +47514,13 @@ software article is Cattaneo, Titiunik, and Yu (2025)
 (define-public r-rczechia
   (package
     (name "r-rczechia")
-    (version "1.12.8")
+    (version "1.12.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RCzechia" version))
        (sha256
-        (base32 "0ll0sazywr76312rjf18v8i20cdyh6k31s13zkmxdv07279ad23b"))))
+        (base32 "1m77hlm2nfasv08c3f27xpp6jj17prfqqdg04b53f02pl53rf53y"))))
     (properties `((upstream-name . "RCzechia")))
     (build-system r-build-system)
     (arguments
@@ -51695,45 +51651,6 @@ extend - it has no external dependencies and can be easily bundled with other
 code or used standalone.  Please see <https://uscilab.github.io/cereal/> for
 more information.")
     (license license:bsd-2)))
-
-(define-public r-rcensuspkg
-  (package
-    (name "r-rcensuspkg")
-    (version "0.1.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RcensusPkg" version))
-       (sha256
-        (base32 "02hxr7z158ni6a9dh9n2xbm77vdbbqq5f12nqmfxdmj8l91yp3ab"))))
-    (properties `((upstream-name . "RcensusPkg")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-sf
-                             r-rplotterpkg
-                             r-purrr
-                             r-jsonlite
-                             r-httr2
-                             r-gtable
-                             r-ggplotify
-                             r-ggplot2
-                             r-downloader
-                             r-data-table))
-    (home-page "https://github.com/deandevl/RcensusPkg")
-    (synopsis "Easily Access US Census Bureau Survey and Geographic Data")
-    (description
-     "The key function @code{get_vintage_data()} returns a dataframe and is the window
-into the Census Bureau API requiring just a dataset name, vintage(year), and
-vector of variable names for survey estimates/percentages.  Other functions
-assist in searching for available datasets, geographies, group/variable concepts
-of interest.  Also provided are functions to access and layer (via standard
-piping) displayable geometries for the US, states, counties, blocks/tracts,
-roads, landmarks, places, and bodies of water.  Joining survey data with many of
-the geometry functions is built-in to produce choropleth maps.")
-    (license license:expat)))
 
 (define-public r-rcens
   (package

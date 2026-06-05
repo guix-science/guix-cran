@@ -14484,13 +14484,13 @@ the ability to export results in common formats.")
 (define-public r-stepreg
   (package
     (name "r-stepreg")
-    (version "1.6.5")
+    (version "1.6.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "StepReg" version))
        (sha256
-        (base32 "1p95knp3lwb6222b7hjrsc2ihgm921ji52zm06fya45i9041yfvc"))))
+        (base32 "0270sdsjjaiqwwq8n4spladi6hrna6q0zrnr8vkzpqba3a83sgml"))))
     (properties `((upstream-name . "StepReg")))
     (build-system r-build-system)
     (arguments
@@ -50605,13 +50605,13 @@ execution, and monitoring of federal discretionary transfers in Brazil.")
 (define-public r-sicher
   (package
     (name "r-sicher")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sicher" version))
        (sha256
-        (base32 "0q6kw3dz9gjk3i639lahsscy5ssz356h6b2nz0rqhr77pv5rab3x"))))
+        (base32 "0m5h9j0m1g5la84z4ng2xlqybca28fb71aar00wvfyfx61pdixrh"))))
     (properties `((upstream-name . "sicher")))
     (build-system r-build-system)
     (arguments
@@ -51370,13 +51370,13 @@ psychometric instrument.")
 (define-public r-shortirt
   (package
     (name "r-shortirt")
-    (version "1.0.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shortIRT" version))
        (sha256
-        (base32 "1mhp7sw8ama1sgc8cvbdrl2pa0r87kk5gh6zrnnrcpvd40wf9vsr"))))
+        (base32 "0pvhdh3spg94apbw5slsj5p96c4r75g87ib9hlnvi0raw0zw7bfw"))))
     (properties `((upstream-name . "shortIRT")))
     (build-system r-build-system)
     (arguments
@@ -51388,20 +51388,23 @@ psychometric instrument.")
      "Procedures Based on Item Response Theory Models for the Development of Short Test Forms")
     (description
      "Implement different Item Response Theory (IRT) based procedures for the
-development of static short test forms (STFs) from a test.  Two main procedures
-are considered (Epifania, Anselmi & Robusto, 2022
-<doi:10.1007/978-3-031-27781-8_7>).  The procedures differ in how the most
-informative items are selected for the inclusion in the STF, either by
-considering their item information functions without any reference to any
-specific latent trait level (benchmark procedure) or by considering their
-information with respect to specific latent trait levels, denoted as theta
-targets (theta target procedure).  Three methods are implemented for the
-definition of the theta targets: (i) as the midpoints of equal intervals on the
-latent trait, (ii) as the centroids of the clusters obtained by clustering the
-latent trait, and (iii) as user-defined values.  Importantly, the number of
-theta targets defines the number of items included in the STF. For further
-details on the procedure, please refer to Epifania, Anselmi & Robusto (2022)
-<doi:10.1007/978-3-031-27781-8_7>.")
+development of tests from item bank.  The procedures are flexible enough to be
+adopted for the development of short forms of full-length tests.  Different
+procedures are considered (Epifania, Anselmi & Robusto, 2022
+<doi:10.1007/978-3-031-27781-8_7> and Epifania & Finos, 2025
+<doi:10.1007/978-3-031-95995-0_32>).  The main difference between the presented
+procedures refers to the degree of control that they allow for targeting
+specific latent trait levels.  The simplest procedure, denoted as benchmark
+procedure, does not allow for any control on the latent trait levels of
+interest, while the other procedures allow for specifying either discrete latent
+trait levels for which the information needs to be maximized (theta-target
+procedure, <doi:10.1007/978-3-031-27781-8_7>) or a target information function
+that needs to be recreated with the selected items (item selection algorithm
+-ISA- denoted as Frank in <doi:10.1007/978-3-031-95995-0_32>).  Another
+difference concerns the definition of the number of items to be selected.  In
+the benchmark and theta-target procedures, the number of items must be defined a
+priori, while in ISA the number of items is determined automatically by the
+algorithm.")
     (license license:expat)))
 
 (define-public r-shortform
@@ -51466,13 +51469,13 @@ within a R script and returns all valid arguments of a selected function.")
 (define-public r-shorm
   (package
     (name "r-shorm")
-    (version "0.1.3")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shorm" version))
        (sha256
-        (base32 "13ci1xpn3szs6332fq803qcmz8zcvgg5286pzvslcm8v8f8q3pqw"))))
+        (base32 "17prkcwvcvxbwanqxyf116xi9l28gd8wfkfh8zh8pj392jk5kca9"))))
     (properties `((upstream-name . "shorm")))
     (build-system r-build-system)
     (arguments
@@ -54451,6 +54454,32 @@ processes manually in individual steps or at customizable speeds.  The timer can
 be paused, resumed, or restarted.  This control is particularly well-suited for
 simulations, animations, countdowns, or interactive visualizations.")
     (license license:gpl3)))
+
+(define-public r-shinyds
+  (package
+    (name "r-shinyds")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "shinyds" version))
+       (sha256
+        (base32 "0w9mc9v113a68zv291hawm09s0dq7rd1bwlhfzp2v65b31lri3a3"))))
+    (properties `((upstream-name . "shinyds")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny r-htmltools))
+    (native-inputs (list r-quarto))
+    (home-page "https://github.com/novica/shinyds")
+    (synopsis "'Shiny' Bindings for Designsystemet Components")
+    (description
+     "This package provides R wrappers for the Designsystemet component library
+<https://designsystemet.no>, enabling use of Norwegian government design system
+components in Shiny applications.  Includes web components and CSS-based HTML
+components with full Shiny input binding support.")
+    (license license:expat)))
 
 (define-public r-shinydrive
   (package
@@ -59927,13 +59956,13 @@ follow Barlow and Proschan (1975, ISBN:0898713692).")
 (define-public r-serial
   (package
     (name "r-serial")
-    (version "3.0")
+    (version "3.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "serial" version))
        (sha256
-        (base32 "1y1gj0lcdn5apiv6c6arks6pqhsbvnrfym6n2izjarx2c27ijrjj"))))
+        (base32 "1n90wn1xyhxrjm82sc0ngfrgkhcg25jgx4c3bvvzlsg5dj41pam6"))))
     (properties `((upstream-name . "serial")))
     (build-system r-build-system)
     (arguments
@@ -70901,13 +70930,13 @@ DOI, PMID, PMCID, @code{arXiv}, and ORCID.")
 (define-public r-scholid
   (package
     (name "r-scholid")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scholid" version))
        (sha256
-        (base32 "12i7zpa84hvkg27wzdxbkbllsffsw34hq3wxpy9if6z0chbbp3fz"))))
+        (base32 "0gl2d7dr5jpzsch0czak5akpjm1f1pwq5gbv14zsznd0ls3a3snf"))))
     (properties `((upstream-name . "scholid")))
     (build-system r-build-system)
     (arguments
@@ -70918,12 +70947,15 @@ DOI, PMID, PMCID, @code{arXiv}, and ORCID.")
     (synopsis "Scholarly and Academic Identifier Utilities")
     (description
      "Detects, normalizes, classifies, and extracts scholarly identifier strings.
-Provides lightweight, dependency-free helpers for common identifier systems such
-as DOIs, ORCID @code{iDs}, ISBNs, ISSNs, @code{arXiv} identifiers, and
-@code{PubMed} identifiers.  Functions are vectorized, predictable, and suitable
-as low-level building blocks for other R packages and data workflows.  For
-online lookup, conversion, metadata retrieval, and linked identifier discovery,
-see scholidonline'.")
+Provides lightweight, dependency-free helpers for twenty identifier types,
+including DOIs, ORCID @code{iDs}, ISBNs, ISSNs, @code{arXiv} and @code{PubMed}
+identifiers, ROR and ISNI, @code{OpenAlex} and ADS bibcodes, RRID, ARK, SWHID,
+and selected life-science accessions (@code{UniProt}, @code{RefSeq}, SRA, GEO,
+@code{BioProject}, and genome assemblies).  Functions are vectorized,
+predictable, and suitable as low-level building blocks for other R packages and
+data workflows.  Use @code{scholid_types()} for the authoritative type list.
+For online lookup, conversion, metadata retrieval, and linked identifier
+discovery, see scholidonline'.")
     (license license:expat)))
 
 (define-public r-scholar

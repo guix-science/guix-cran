@@ -11247,13 +11247,13 @@ tests, Levene's test, @code{McNemar} Test, Cochran's Q test and Runs test.")
 (define-public r-infermm
   (package
     (name "r-infermm")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inferMM" version))
        (sha256
-        (base32 "03hk5z8nbbrk2lvk4y4lxd5qcm73hwzamn3zffr7p7hyr7vnl0z6"))))
+        (base32 "04qjj6ia61bqpm1w9qznlk6wy195xc4q7shwcq9mc9mh94038bkp"))))
     (properties `((upstream-name . "inferMM")))
     (build-system r-build-system)
     (arguments
@@ -16148,36 +16148,27 @@ information is provided.")
 (define-public r-ihsmw
   (package
     (name "r-ihsmw")
-    (version "0.1.5")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ihsMW" version))
        (sha256
-        (base32 "1fc99lkz1zc24h12rwkjgbbcqz1333mifz42ilihf0nz5llmwld4"))))
+        (base32 "1cprsr2zwav3c4il5g3ip1z17z7ya84v4wlq8ci43fcmap536zaq"))))
     (properties `((upstream-name . "ihsMW")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-vctrs
-                             r-stringdist
-                             r-rlang
-                             r-readr
-                             r-rappdirs
-                             r-httr2
-                             r-dplyr
-                             r-cli
-                             r-arrow))
+    (propagated-inputs (list r-rlang r-readr r-dplyr r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/vituk123/ihsMW")
-    (synopsis "Access 'Malawi Integrated Household Survey' Data")
+    (synopsis "Clean and Harmonise 'Malawi Integrated Household Survey' Data")
     (description
-     "This package provides programmatic access to the Malawi Integrated Household
-Survey ('IHS') via the World Bank Microdata Library API
-<https://microdata.worldbank.org/api-documentation/>.  Users can search
-variables, download data for IHS rounds 2 through 5, and work with complex
-survey designs, with no manual file management required.")
+     "An offline suite of tools to clean, aggregate, and harmonise data from the
+Malawi Integrated Household Survey ('IHS').  Provides crop-specific unit
+conversions, stratified winsorization, and automatic cross-round harmonisation
+for complex survey designs.")
     (license license:expat)))
 
 (define-public r-ihsep

@@ -31015,13 +31015,13 @@ implemented in this package are described in Roman-Palacios et al. (2021)
 (define-public r-bawir
   (package
     (name "r-bawir")
-    (version "1.5")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BAwiR" version))
        (sha256
-        (base32 "1c8lpiicjp0i2zxbybdihp6rp0fq6xapz1mb400sq0ss8fn129ln"))))
+        (base32 "08yamypdgj8xph3021imd98r7bljhj6iai6iasd5z2q6q33zazfc"))))
     (properties `((upstream-name . "BAwiR")))
     (build-system r-build-system)
     (arguments
@@ -31275,13 +31275,13 @@ downloading and uploading and record operation log.")
 (define-public r-batchmix
   (package
     (name "r-batchmix")
-    (version "2.2.1")
+    (version "2.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "batchmix" version))
        (sha256
-        (base32 "1vsr4p3a03dx3kr2clzcnyvf6xfzyisfk87famfvssjb4g58bzrv"))))
+        (base32 "09mkjfikciwn3dfizly20fssljf7wnhc5dlc46zw0pjn4w6k1j09"))))
     (properties `((upstream-name . "batchmix")))
     (build-system r-build-system)
     (arguments

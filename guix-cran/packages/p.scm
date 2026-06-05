@@ -288,6 +288,47 @@ regression.  The procedure is described in detail in Pena, D., & Yohai, V.
 (1999) <doi:10.2307/2670164>.")
     (license license:gpl2+)))
 
+(define-public r-pye
+  (package
+    (name "r-pye")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pye" version))
+       (sha256
+        (base32 "18zy2yz5gn0l32jaznhz8nk10y151c9c77g13xvkighgw2jqx662"))))
+    (properties `((upstream-name . "pye")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival
+                             r-sparsesvm
+                             r-rocnreg
+                             r-rmpfr
+                             r-proc
+                             r-plyr
+                             r-penalizedsvm
+                             r-optimalcutpoints
+                             r-ncvreg
+                             r-matrix
+                             r-mass
+                             r-glmnet
+                             r-ggplot2
+                             r-evmix))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=pye")
+    (synopsis "Penalized Youden Index Estimator")
+    (description
+     "This package implements the Penalized Youden Index Estimator (PYE) and the
+Covariate-Adjusted Youden Index Estimator (@code{covYI}), providing a novel
+framework for feature and covariate selection and combination in
+high-dimensional binary classification problems.  Methodologies are based on
+Salaroli and Pardo (2023) <doi:10.1016/j.chemolab.2023.104786> and an
+unpublished manuscript by Salaroli and Pardo (2026) under review.")
+    (license license:gpl2+)))
+
 (define-public r-pycno
   (package
     (name "r-pycno")
@@ -8936,13 +8977,13 @@ for different versions of same question list.")
 (define-public r-profast
   (package
     (name "r-profast")
-    (version "1.8")
+    (version "1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ProFAST" version))
        (sha256
-        (base32 "07hdg3yn387g6pznak7nda12pkg7m7lzp3xr2m1ld5a9dk0m9s5a"))))
+        (base32 "02g37dwl6sjwkd24d5yh4j255r5k71ki0ac33k652kc1x4n16fmz"))))
     (properties `((upstream-name . "ProFAST")))
     (build-system r-build-system)
     (arguments
@@ -8951,12 +8992,11 @@ for different versions of same question list.")
     (propagated-inputs (list r-seurat
                              r-rcpparmadillo
                              r-rcpp
-                             r-precast
+                             r-purrr
                              r-pbapply
                              r-mclust
                              r-matrix
                              r-irlba
-                             r-harmony
                              r-gtools
                              r-ggplot2
                              r-future
@@ -10997,19 +11037,18 @@ aggregation of these tabular inputs.")
 (define-public r-primarycensored
   (package
     (name "r-primarycensored")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "primarycensored" version))
        (sha256
-        (base32 "1ks3xjiwldsnjjy93hny1b2im2h4shjnl00hb3fqq9z562hhbapx"))))
+        (base32 "1n1hbz9h95ba9s43fv43hjvc8g9cyl80lfv9yrqi17yhwspl83nm"))))
     (properties `((upstream-name . "primarycensored")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-pracma))
     (native-inputs (list r-knitr))
     (home-page "https://primarycensored.epinowcast.org")
     (synopsis "Primary Event Censored Distributions")
@@ -29212,29 +29251,30 @@ functions used in the book.")
 (define-public r-picreg
   (package
     (name "r-picreg")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "picreg" version))
        (sha256
-        (base32 "12jzy804zxaca1r978bvpq0v3fw211yh4wdf6dy5ymi5cmg7y62d"))))
+        (base32 "1z25f2xzjq3zpx1ddr6mq6k754kz1ikl1fz1i2z5a51h92z2qj5s"))))
     (properties `((upstream-name . "picreg")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-future-apply r-future))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix r-future-apply
+                             r-future))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/VcMaxouuu/picreg")
     (synopsis "Variable Selection using the Pivotal Information Criterion")
     (description
      "Sparse regression and classification via the Pivotal Information Criterion
 (PIC), an alternative to the Bayesian Information Criterion (BIC),
-cross-validation, and Lasso-based tuning.  The regularisation parameter is
+cross-validation, and Lasso-based tuning.  The regularization parameter is
 selected from a pivotal null-distribution statistic, eliminating the need for
 cross-validation and yielding sharper support recovery.  Provides Fast Iterative
-Shrinkage-Thresholding Algorithm (FISTA) optimisation for the L1, Smoothly
+Shrinkage-Thresholding Algorithm (FISTA) optimization for the L1, Smoothly
 Clipped Absolute Deviation (SCAD), and Minimax Concave Penalty (MCP) penalties
 across six response distributions: Gaussian, binomial, Poisson, exponential,
 Gumbel, and Cox.  Under standard sparsity assumptions, the selector achieves a
@@ -30452,6 +30492,37 @@ more.")
 directly from the R console, from RStudio', in Shiny apps, and in R Markdown
 documents.  See <http://phylocanvas.org/> for more information on the
 phylocanvas library.")
+    (license license:expat)))
+
+(define-public r-phyloatlas
+  (package
+    (name "r-phyloatlas")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "phyloatlas" version))
+       (sha256
+        (base32 "05q77xj82fx6cyzszialzwykblwgnqxkqlm9r1sj4ggv9bpv1q8z"))))
+    (properties `((upstream-name . "phyloatlas")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/franciscorichter/phylo-species-atlas")
+    (synopsis "Access to the 'Phylo-Species Atlas' of Empirical Phylogenies")
+    (description
+     "This package provides convenience functions to fetch standardized phylogenetic
+trees and per-tree provenance metadata from the Phylo-Species Atlas
+<https://github.com/franciscorichter/phylo-species-atlas> directly from R. The
+atlas is a curated collection of empirical species-level trees covering
+Bacteria, Archaea, and Eukaryota, organized into 62 partitions of life with tip
+labels normalized against a shared dictionary of standardized species
+identifiers.  Functions load any of the standardized trees with species labels
+resolved from the dictionary, list available trees, and inspect per-tree
+provenance.")
     (license license:expat)))
 
 (define-public r-phylin

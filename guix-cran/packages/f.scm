@@ -18869,13 +18869,13 @@ Software) <doi:10.18637/jss.v109.i09>.")
 (define-public r-fhircrackr
   (package
     (name "r-fhircrackr")
-    (version "2.3.0")
+    (version "2.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fhircrackr" version))
        (sha256
-        (base32 "00v405p302cmiigb9xfcs0arwliiab3fx4zhdzrgb3889476wnk4"))))
+        (base32 "1jr2dlgp9ib79v00slrbb2gbj8yz2k5b2f43j6r218z11lssh9z5"))))
     (properties `((upstream-name . "fhircrackr")))
     (build-system r-build-system)
     (arguments
@@ -18892,12 +18892,12 @@ Software) <doi:10.18637/jss.v109.i09>.")
     (synopsis "Handling HL7 FHIRÂ® Resources in R")
     (description
      "Useful tools for conveniently downloading FHIR resources in xml format and
-converting them to R data.frames.  The package uses FHIR-search to download
-bundles from a FHIR server, provides functions to save and read xml-files
-containing such bundles and allows flattening the bundles to data.frames using
-XPath expressions.  FHIRÂ® is the registered trademark of HL7 and is used with
-the permission of HL7.  Use of the FHIR trademark does not constitute
-endorsement of this product by HL7.")
+converting them to R data.frames.  Uses FHIR-search to download bundles from a
+FHIR server, provides functions to save and read xml-files containing such
+bundles and allows flattening the bundles to data.frames using XPath
+expressions.  FHIRÂ® is the registered trademark of HL7 and is used with the
+permission of HL7.  Use of the FHIR trademark does not constitute endorsement of
+this product by HL7.")
     (license license:gpl3)))
 
 (define-public r-fhdi
@@ -21806,13 +21806,13 @@ depths\", TEST, <doi:10.1007/s11749-024-00954-6>.")
 (define-public r-fdapde
   (package
     (name "r-fdapde")
-    (version "1.1-21")
+    (version "1.1-24")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fdaPDE" version))
        (sha256
-        (base32 "1khw2k9dagpd8q8l6kv3h95wgj2q296a4n34z6yczz0lid27770s"))))
+        (base32 "08dmhd23lsffk0azq9bs48jwrfb45yj067pm8nkwxqbzppmxmmh9"))))
     (properties `((upstream-name . "fdaPDE")))
     (build-system r-build-system)
     (arguments
@@ -24192,19 +24192,20 @@ tables and summaries of data.")
 (define-public r-fastreg
   (package
     (name "r-fastreg")
-    (version "0.8.17")
+    (version "0.13.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastreg" version))
        (sha256
-        (base32 "1jdrah3gf9d6jfd8j3c5l54bvlj499qfsdy2clbxx2hwmp8arcfk"))))
+        (base32 "1acl08x1bssw6gvf6rrzjnin0i4rqwli2r28gy8yzkx4lj4pcgnm"))))
     (properties `((upstream-name . "fastreg")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-uuid
+                             r-tibble
                              r-stringr
                              r-rlang
                              r-purrr
@@ -26755,6 +26756,39 @@ Estimation of Feature Allocations\" <doi:10.1080/10618600.2023.2204136>.")
 except you can mix left open and right open intervals with point values,
 intervals that are closed on both ends and intervals that are open on both ends.")
     (license license:cc0)))
+
+(define-public r-fanc
+  (package
+    (name "r-fanc")
+    (version "2.3.13")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fanc" version))
+       (sha256
+        (base32 "1fv5zqqi987ihdf59khib7mp5xmhcfpanar46374s3wldjm640mg"))))
+    (properties `((upstream-name . "fanc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrix r-ellipse))
+    (home-page "https://doi.org/10.1007/s11222-014-9458-0")
+    (synopsis "Penalized Likelihood Factor Analysis via Nonconvex Penalty")
+    (description
+     "Computes the penalized maximum likelihood estimates of factor loadings and
+unique variances for various tuning parameters.  The pathwise coordinate descent
+along with EM algorithm is used.  This package also includes a new graphical
+tool which outputs path diagram, goodness-of-fit indices and model selection
+criteria for each regularization parameter (Yamamoto, M., Hirose, K. and Nagata,
+H., 2017 <doi:10.1007/s41237-016-0007-3>).  The user can change the
+regularization parameter by manipulating scrollbars, which is helpful to find a
+suitable value of regularization parameter.  As a penalty, we can choose either
+the minimax concave penalty (Hirose, K. and Yamamoto, M., 2015
+<doi:10.1007/s11222-014-9458-0>; Hirose, K. and Yamamoto, M., 2014
+<doi:10.1016/j.csda.2014.05.011>) or the product-based elastic net penalty
+(Hirose, K. and Terada, Y., 2023 <doi:10.1007/s11336-022-09868-4>).")
+    (license license:gpl2+)))
 
 (define-public r-famskatrc
   (package

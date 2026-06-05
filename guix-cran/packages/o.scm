@@ -2574,13 +2574,13 @@ For additional detail see: Haneuse S, Saegusa T and Lumley T
 (define-public r-osdc
   (package
     (name "r-osdc")
-    (version "0.9.19")
+    (version "0.11.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "osdc" version))
        (sha256
-        (base32 "1yz6zpq2bdsh36g2cxld195gkr2734s4wbi8kywqp6ya573c41sr"))))
+        (base32 "0pbz2bmagi8s5mxppmlf2v1d8rpivqzr1nh8arf5l9fqgc901lpw"))))
     (properties `((upstream-name . "osdc")))
     (build-system r-build-system)
     (arguments

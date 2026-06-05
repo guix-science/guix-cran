@@ -6036,13 +6036,13 @@ by Richter, Ulrich, and Janczyk (2023, <doi:10.1016/j.jmp.2023.102756>).")
 (define-public r-drhutools
   (package
     (name "r-drhutools")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "drhutools" version))
        (sha256
-        (base32 "10knmvx329mq93pv20a52vwxf5071a9hdxhn05qj9nnrfxnr9f5g"))))
+        (base32 "143pv1cd7y4d6xblqpvhnr7qnyzx23jnkbrg05ya0vygyhx0lz9k"))))
     (properties `((upstream-name . "drhutools")))
     (build-system r-build-system)
     (arguments
@@ -7433,6 +7433,50 @@ use in order to improve standard R @code{pbeta()}, @code{qgamma()}, ..., etc:
 promote the discovery of parsimonious components from observed data.  See Xu,
 Mueller, Telesca (2016) <doi:10.1111/biom.12482>.")
     (license license:gpl3+)))
+
+(define-public r-dppca
+  (package
+    (name "r-dppca")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dppca" version))
+       (sha256
+        (base32 "1j1l2ay85i9iikjfdj8rh8g21w9spcqzdg5zaps6wkb7isy35pn6"))))
+    (properties `((upstream-name . "dppca")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vgam
+                             r-rlang
+                             r-rdpack
+                             r-rarpack
+                             r-patchwork
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/yejinjo0220/dppca")
+    (synopsis
+     "Differentially Private Principal Component Analysis Visualization")
+    (description
+     "This package provides tools for differentially private principal component
+analysis (PCA) visualization.  It includes functions for estimating private
+principal component directions, constructing private scree and proportion of
+variance explained summaries, and visualizing two-dimensional PCA score
+summaries using additive and sparse histogram mechanisms.  Group-wise score
+visualizations and an interactive shiny app are also provided.  Private
+principal component directions are based on Kim and Jung (2025)
+<doi:10.1002/sam.70053>.  Private scree summaries use mechanisms motivated by
+Dwork and Roth (2014) <doi:10.1561/0400000042>, Ramsay and Spicker (2025)
+<doi:10.48550/@code{arXiv.2501.14095>}, and Yu, Ren and Zhou (2024)
+<doi:10.3150/23-BEJ1706>.  Private score plot frames use smooth sensitivity
+quantiles from Nissim, Raskhodnikova and Smith (2007)
+<doi:10.1145/1250790.1250803>.  Private score histograms use additive and sparse
+histogram ideas from Wasserman and Zhou (2010) <doi:10.1198/jasa.2009.tm08651>
+and Karwa and Vadhan (2018) <doi:10.4230/LIPIcs.ITCS.2018.44>.")
+    (license license:expat)))
 
 (define-public r-dppack
   (package
@@ -20596,13 +20640,13 @@ maintainability of your code.")
 (define-public r-devemf
   (package
     (name "r-devemf")
-    (version "4.5-1")
+    (version "4.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "devEMF" version))
        (sha256
-        (base32 "1rzqvhczm2qq3kpk4fsbd48776pl030xw35d8v2sgkjrvlrgic6b"))))
+        (base32 "1lb1yibyslnph52i6hf300fppvrlw4nniq8m4ispi6mja7bfi94i"))))
     (properties `((upstream-name . "devEMF")))
     (build-system r-build-system)
     (arguments

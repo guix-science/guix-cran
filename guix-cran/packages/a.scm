@@ -8745,6 +8745,32 @@ orientation.  The shoelace formula is described at
 <https://en.wikipedia.org/wiki/Shoelace_formula>.")
     (license license:gpl3)))
 
+(define-public r-ards
+  (package
+    (name "r-ards")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ards" version))
+       (sha256
+        (base32 "1wgf85flbk664gk7lg5hijvbcfd7arnp3xrr3f5kladazj9abzrf"))))
+    (properties `((upstream-name . "ards")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://ards.r-sassy.org")
+    (synopsis "Creates Analysis Results Datasets")
+    (description
+     "This package contains functions to help create an Analysis Results Dataset.  The
+dataset follows industry recommended structure.  The dataset can be created in
+multiple passes, using different data frames as input.  Analysis Results
+Datasets are used in the pharmaceutical and biotech industries to capture
+analysis in a common tabular data structure.")
+    (license license:cc0)))
+
 (define-public r-ardlverse
   (package
     (name "r-ardlverse")

@@ -15766,13 +15766,13 @@ package in Chinese.")
 (define-public r-tmcalculator
   (package
     (name "r-tmcalculator")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TmCalculator" version))
        (sha256
-        (base32 "186wgj17lyvmcz4xb1s9s9pm09zwpnnq788gdjvxmlhnicn3l3f0"))))
+        (base32 "1k091agij95lgqw6xv4yjy2q3bd13f0vwpd2b7b0jpsq0gzmbcn3"))))
     (properties `((upstream-name . "TmCalculator")))
     (build-system r-build-system)
     (arguments
@@ -15791,22 +15791,37 @@ package in Chinese.")
                              r-genomicranges
                              r-genomeinfodb
                              r-dplyr
+                             r-circlize
                              r-bsgenome
                              r-biostrings))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=TmCalculator")
-    (synopsis "Calculator for Melting Temperature of Nucleic Acid Sequences")
+    (synopsis
+     "Extending Nucleic Acid Melting Temperature Analysis from Sequence-Level Computation to Genome-Wide Thermodynamic Profiling")
     (description
-     "This package provides a comprehensive R package for calculating melting
-temperatures of nucleic acid sequences.  Implements three calculation methods:
-1.  Wallace rule (Thein & Wallace, 1986) 2.  Empirical formulas based on GC
-content (Marmur, 1962; Schildkraut, 2010; Wetmur, 1991; Untergasser, 2012; von
-Ahsen, 2001) 3.  Nearest neighbor thermodynamics (Breslauer, 1986; Sugimoto,
-1996; Allawi, 1998; @code{SantaLucia}, 2004; Freier, 1986; Xia, 1998; Chen,
-2012; Bommarito, 2000; Turner, 2010; Sugimoto, 1995; Allawi, 1997; Santalucia,
-2005) Includes corrections for: - Salt ions (@code{SantaLucia}, 1996, 1998;
-Owczarzy, 2004, 2008) - Chemical compounds (dimethyl sulfoxide, formamide)
-Supports both direct sequence input and FASTA file input.")
+     "Accurate calculation of nucleic acid melting temperature (Tm) is fundamental to
+many molecular biology applications, and this software scales Tm analysis from
+individual sequences to genomeâwide thermodynamic profiling.  This package
+extends Tm analysis from simple sequence level computation to comprehensive
+genome-wide thermodynamic profiling.  It takes multiple input formats including
+sequence strings, FASTA files, genomic coordinates.  The implementation provides
+three Tm calculation methods: the Wallace rule (Thein & Wallace, 1986),
+empirical GCâcontent formulas (Marmur, 1962; Schildkraut, 2010; Wetmur, 1991;
+Untergasser, 2012; von Ahsen, 2001), and nearestâneighbor thermodynamics
+(Breslauer, 1986; Sugimoto, 1996; Allawi, 1998; @code{SantaLucia}, 2004; Freier,
+1986; Xia, 1998; Chen, 2012; Bommarito, 2000; Turner, 2010; Sugimoto, 1995;
+Allawi, 1997; @code{SantaLucia}, 2005).  Corrections are supported for salt ions
+(@code{SantaLucia}, 1996, 1998; Owczarzy, 2004, 2008) and for chemical
+conditions such as dimethyl sulfoxide and formamide.  This package returns
+result as a GRanges object for interoperability with Bioconductor workflows and
+downstream multi-omics analyses.  Data-level integration reconciles Tm windows
+with external multi-omics GRanges objects through overlap, nearest-feature,
+windowed-count, and binned-average strategies, returning a single unified
+GRanges object ready for downstream analysis.  Visualization-level integration
+renders multiple feature layers as independent concentric tracks on a shared
+genomic axis, each retaining its native coordinate resolution.  Group comparison
+supports Wilcoxon rank-sum and Student's t-tests with multiple available
+correction methods for contrasting Tm and other features across region classes.")
     (license license:expat)))
 
 (define-public r-tmbstan
@@ -28205,13 +28220,13 @@ forecasts, as discussed in the paper by Jupp (2012)
 (define-public r-terntables
   (package
     (name "r-terntables")
-    (version "1.6.4")
+    (version "1.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TernTables" version))
        (sha256
-        (base32 "176bi5xbhgxh9cgvpg6kbb2sy5dib9pngq0b4srd7y144qj39d3f"))))
+        (base32 "03cgkid3z5bmi030mwp9366w02g2ks7sbjzrvm62qm2p2g42mhrj"))))
     (properties `((upstream-name . "TernTables")))
     (build-system r-build-system)
     (arguments
@@ -28221,17 +28236,19 @@ forecasts, as discussed in the paper by Jupp (2012)
                              r-withr
                              r-tibble
                              r-stringr
+                             r-rstatix
                              r-rlang
                              r-officer
+                             r-multcompview
                              r-magrittr
                              r-flextable
                              r-epitools
                              r-dplyr
                              r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/jdpreston30/TernTables")
+    (home-page "https://cran.r-project.org/package=TernTables")
     (synopsis
-     "Publication-Ready Summary Tables and Statistical Testing for Clinical Research")
+     "Automated Statistical Analysis and Table Generation for Biomedical Research")
     (description
      "Generates publication-ready summary tables for clinical research, supporting
 descriptive summaries and comparisons across two or three groups.  The package
@@ -28249,19 +28266,19 @@ cancer trial described in Moertel et al. (1990)
 (define-public r-ternary
   (package
     (name "r-ternary")
-    (version "2.3.6")
+    (version "2.3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Ternary" version))
        (sha256
-        (base32 "1hj3kmydax7x39xzb7c7h36nd6ff8w5r6056xqm222iiiv5kk3xr"))))
+        (base32 "13hml4nw1qc0libd572cy8dyz22yb0y4c42cy839789b8mprgrx0"))))
     (properties `((upstream-name . "Ternary")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-treedist r-sp r-shiny r-plottools))
+    (propagated-inputs (list r-sp r-shiny r-plottools r-clue))
     (native-inputs (list r-knitr))
     (home-page "https://ms609.github.io/Ternary/")
     (synopsis "Create Ternary and Holdridge Plots")
@@ -30090,13 +30107,13 @@ facilitates dataset merging in teal framework.")
 (define-public r-teal-slice
   (package
     (name "r-teal-slice")
-    (version "0.7.1")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal.slice" version))
        (sha256
-        (base32 "0gdmva44psfdqlq9k5r003mby99k3aj2x1ykp7lpbgbdyxnx15c8"))))
+        (base32 "1p0q1m60zmyyanzlyhaf7xinhiv10xpgp3hdg6g1s5q8a91h5ryr"))))
     (properties `((upstream-name . "teal.slice")))
     (build-system r-build-system)
     (arguments
@@ -33564,6 +33581,39 @@ summarizing, illustrating and manipulating the cluster objects are also
 available.")
     (license (list license:gpl3+
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-tamd
+  (package
+    (name "r-tamd")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tamd" version))
+       (sha256
+        (base32 "0ag9vb278djw10kb5p3h2r1ssa03nfn6n1y5akx7hi736ybsnk5m"))))
+    (properties `((upstream-name . "tamd")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mvtnorm r-mass))
+    (home-page "https://cran.r-project.org/package=tamd")
+    (synopsis "Transcendental Algorithm for Mixtures of Distributions")
+    (description
+     "This package implements the Transcendental Algorithm for Mixtures of
+Distributions (TAMD), a penalized likelihood framework for fitting finite
+Gaussian mixture models.  TAMD augments the Expectation-Maximization (EM)
+algorithm with analytic barrier terms built from the Hellinger affinity that
+diverge on the singular locus, actively preventing component coalescence and
+weight degeneracy.  Provides the core TAMD fitting function, closed-form
+Hellinger affinity and gradient computations, the Transcendental Affinity
+Criterion (TAC) for geometry-aware model selection, the regularity index rho (a
+scalar diagnostic for mixture fit quality), and reproduction scripts for all
+simulation studies.  Methods are described in Fokoue (2024)
+<doi:10.48550/@code{arXiv.2602.03889>}.  See also Titterington, Smith and Makov
+(1985, ISBN:0-471-90510-4) and Watanabe (2009, ISBN:978-0-521-86408-7).")
+    (license license:gpl3)))
 
 (define-public r-tall
   (package

@@ -5211,13 +5211,13 @@ the model fit, test the model fit etc.).")
 (define-public r-csdownscale
   (package
     (name "r-csdownscale")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CSDownscale" version))
        (sha256
-        (base32 "0sib7xx67csmkrihb2iisvjadm7mqr7350s2366nzwa850n63y1s"))))
+        (base32 "04x4y334cdidajbbsxv7sa6gx3311w02g6kadsydf5vajc5qa631"))))
     (properties `((upstream-name . "CSDownscale")))
     (build-system r-build-system)
     (arguments
@@ -5248,7 +5248,11 @@ The package was developed within the framework of the European Union Horizon
 Europe projects Impetus4Change (101081555) and ASPECT (101081460), the Wellcome
 Trust supported HARMONIZE project (224694/Z/21/Z), and the Spanish national
 project BOREAS (PID2022-140673OA-I00).  Implements the methods described in
-Duzenli et al. (2024) <doi:10.5194/egusphere-egu24-19420>.")
+Ramon et al. (2021) <doi:10.1088/1748-9326/abe491>', Duzenli et al. (2024)
+<doi:10.5194/egusphere-egu24-19420>', Moreno-Montes et al. (2026)
+<doi:10.1016/j.cliser.2026.100639>', Duzenli et al. (2026)
+<doi:10.1038/s41598-026-45067-2>', Duzenli et al. (2026)
+<doi:10.1088/1748-9326/ae5c22>'.")
     (license license:gpl3)))
 
 (define-public r-csdm
@@ -12166,31 +12170,26 @@ imbalance measures.  See Baldi Antognini A, Frieri R, Zagoraiou M and Novelli M
 (define-public r-courier
   (package
     (name "r-courier")
-    (version "0.2.0")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "courieR" version))
        (sha256
-        (base32 "152ahr2mij86njp99f8y35vcdvx6b125mxsx3sw54vrqj4lf3lxh"))))
+        (base32 "0r3jb905y6llwaa07c1bb1sxllvjx9vmpd81w72cfpvasblqhiv2"))))
     (properties `((upstream-name . "courieR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-shiny
-                             r-processx
+    (propagated-inputs (list r-processx
                              r-pak
                              r-jsonlite
                              r-fs
-                             r-dt
                              r-desc
                              r-data-table
                              r-cli
-                             r-callr
-                             r-bslib
-                             r-bsicons))
+                             r-callr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/lennon-li/courieR")
     (synopsis "Migrate Installed R Packages Between R Versions")
@@ -25311,13 +25310,13 @@ gradient-matching, generalized profiling and forwards prediction error methods."
 (define-public r-collinear
   (package
     (name "r-collinear")
-    (version "3.0.1")
+    (version "3.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "collinear" version))
        (sha256
-        (base32 "0c4cfpfh45yvgxh7c5nwgaifi90yyi3vxiqx0rqxavyjqw78ikp7"))))
+        (base32 "1y6qmwcx5vw4xaq78kph9zq704h57w5jm81ax9qmg5nd1027npwq"))))
     (properties `((upstream-name . "collinear")))
     (build-system r-build-system)
     (arguments
@@ -26717,13 +26716,13 @@ et al.  2024 <doi:10.1017/RDC.2024.56>.")
 (define-public r-cofast
   (package
     (name "r-cofast")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coFAST" version))
        (sha256
-        (base32 "08qqrb39gls9ghwb73l9sb33id2k2xcl9lklw8xagzh6sl3cjgkl"))))
+        (base32 "03fh6anl700sx1lkrzfw3c0vn9gzr66vlylbc8565h3s2zjwsvpb"))))
     (properties `((upstream-name . "coFAST")))
     (build-system r-build-system)
     (arguments
@@ -26732,9 +26731,9 @@ et al.  2024 <doi:10.1017/RDC.2024.56>.")
     (propagated-inputs (list r-seurat
                              r-rcpparmadillo
                              r-rcpp
+                             r-purrr
                              r-progress
                              r-profast
-                             r-precast
                              r-pbapply
                              r-matrix
                              r-irlba
@@ -31389,13 +31388,13 @@ clusters that exist across the datasets.")
 (define-public r-clustermq
   (package
     (name "r-clustermq")
-    (version "0.10.0")
+    (version "0.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clustermq" version))
        (sha256
-        (base32 "0ackzznm4ql0zyn36zfzcgpaxs34rgqvda5jay3f2kn24ka7h7ih"))))
+        (base32 "1cn767whajy9hiqd9f3c1zsxxqlwpgdfmjw2bfkng0abshap8imd"))))
     (properties `((upstream-name . "clustermq")))
     (build-system r-build-system)
     (arguments
@@ -31901,13 +31900,13 @@ Valkiers, Nicky de Vrij, Benson Ogunjimi, Kris Laukens, Pieter Meysman (2023)
 (define-public r-clustblock
   (package
     (name "r-clustblock")
-    (version "5.0.0")
+    (version "6.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ClustBlock" version))
        (sha256
-        (base32 "154i4s4izlplxsc3dqsys2zw1dwqdgykgvkg7kijyfhrzw00zwqm"))))
+        (base32 "03w3crkh78kixy47nlqrcvgla2fsfrkkr7862c0jc3bm164gl4fd"))))
     (properties `((upstream-name . "ClustBlock")))
     (build-system r-build-system)
     (arguments
@@ -31934,7 +31933,9 @@ are available.  Clustering of observations (products in sensory analysis) in
 multi-block context (notably with @code{ClusMB} strategy) is also included
 (Llobell & Giacalone (2025) <doi:10.1111/joss.70024>).Performing clustering
 based on CATA and liking at the same time is possible thanks to cluscata_liking
-function (Llobell & Giacalone (2025) <doi:10.1016/j.foodqual.2021.104358>).")
+function (Vigneau, Cariou, Giacalone, Berget & Llobell (2022)
+<doi:10.1016/j.foodqual.2021.104358>).  Clustering of variables (quantitative,
+qualitative or mixed) can be done thanks to the @code{MixCluStatis()} function.")
     (license license:expat)))
 
 (define-public r-clustassess
@@ -42247,24 +42248,24 @@ architecture underlying complex traits.")
 (define-public r-chapensk
   (package
     (name "r-chapensk")
-    (version "0.4")
+    (version "0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chapensk" version))
        (sha256
-        (base32 "0s52wnb3k9qvv16i31c04nyhrq8jbvszad6nsxc06lpnj18294ma"))))
+        (base32 "0a2h1qckzh5avpxxy8vl9pqv197q1mdj4bnzdrvzm91zbrp4k3vy"))))
     (properties `((upstream-name . "chapensk")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-bessel))
-    (home-page "https://github.com/langenbergstefan/chapensk")
+    (home-page "https://cran.r-project.org/package=chapensk")
     (synopsis "Estimation of Gas Properties from the Lennard-Jones Potential")
     (description
-     "Estimation of gas transport properties (viscosity, diffusion, thermal
-conductivity) using Chapman-Enskok theory (Chapman and Larmor 1918,
+     "Calculation of gas transport properties (viscosity, diffusion, thermal
+conductivity) using Chapman-Enskok theory (Chapman 1918,
 <doi:10.1098/rsta.1918.0005>) and of the second virial coefficient (Vargas et
 al.  2001, <doi:10.1016/s0378-4371(00)00362-9>) using the Lennard-Jones (12-6)
 potential.  Up to the third order correction is taken into account for viscosity
@@ -46782,13 +46783,13 @@ Difference-in-Differences\", Journal of Econometrics,
 (define-public r-cdghmm
   (package
     (name "r-cdghmm")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CDGHMM" version))
        (sha256
-        (base32 "19cbxqki3s1b91iq63hwdcr4f1i2crh7clmsz5g89ipim7qailz4"))))
+        (base32 "17m5qh02mchxkzy3vwgpvkix0621q9zh71c3aqq1wrinz43gx1n4"))))
     (properties `((upstream-name . "CDGHMM")))
     (build-system r-build-system)
     (arguments

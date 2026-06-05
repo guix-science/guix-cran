@@ -1049,35 +1049,6 @@ Buniello et al. (2019) <doi:10.1093/nar/gky1120>; Sollis et al. (2023)
      "Generate Manhattan, Q-Q, and PCA plots from GWAS and PCA results using ggplot2'.")
     (license (license:fsdg-compatible "MIT + file LICENCE"))))
 
-(define-public r-gwalkr
-  (package
-    (name "r-gwalkr")
-    (version "0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GWalkR" version))
-       (sha256
-        (base32 "1m6jcqsgmvkp9q3rm63q9jwvxizgm80kmchvi9y9im0d4q1fa8gq"))))
-    (properties `((upstream-name . "GWalkR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-shinycssloaders
-                             r-shiny
-                             r-openssl
-                             r-jsonlite
-                             r-htmlwidgets
-                             r-dbi))
-    (home-page "https://github.com/Kanaries/GWalkR/")
-    (synopsis "Interactive Exploratory Data Analysis Tool")
-    (description
-     "Simplify your R data analysis and data visualization workflow by turning your
-data frame into an interactive Tableau'-like interface, leveraging the
-graphic-walker @code{JavaScript} library and the htmlwidgets package.")
-    (license (license:fsdg-compatible "Apache License (>= 2)"))))
-
 (define-public r-gvs
   (package
     (name "r-gvs")
@@ -21996,13 +21967,13 @@ coefficients, and statistical inference (JankovÃ¡ and van de Geer, 2015)
 (define-public r-ggmlr
   (package
     (name "r-ggmlr")
-    (version "0.7.7")
+    (version "0.7.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggmlR" version))
        (sha256
-        (base32 "0kz4x6ibc87kpb0sidywrln50ads35dvd50d4xnsr8pj08a3caab"))))
+        (base32 "1iqdgl33zwwvqidkwvj31jh2sf4q6b3dbkyg41rwx79qkrr19x7p"))))
     (properties `((upstream-name . "ggmlR")))
     (build-system r-build-system)
     (arguments
@@ -24423,6 +24394,36 @@ based on Gabriel Graph.  References for this method can be found in L.C.B.
 Torres et al. (2015) <doi:10.1049/el.2015.1644>.")
     (license license:gpl2+)))
 
+(define-public r-ggcircular
+  (package
+    (name "r-ggcircular")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggcircular" version))
+       (sha256
+        (base32 "0q2ly8a7sm8yylnb5p4zjfzgw05265ppqyz874dc3fi8741n6dbb"))))
+    (properties `((upstream-name . "ggcircular")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs
+                             r-tibble
+                             r-scales
+                             r-rlang
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/AurelienNicosiaULaval/ggcircular")
+    (synopsis "'ggplot2' Extension for Circular and Directional Data")
+    (description
+     "This package provides a ggplot2 grammar for circular, axial and directional
+data, including rose diagrams, circular densities, mean directions, confidence
+arcs, theoretical circular distributions and movement data visualizations.")
+    (license license:expat)))
+
 (define-public r-ggchord
   (package
     (name "r-ggchord")
@@ -25827,13 +25828,13 @@ builds on Windows, but just returns NULL.")
 (define-public r-gettddata
   (package
     (name "r-gettddata")
-    (version "1.5.7")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GetTDData" version))
        (sha256
-        (base32 "1q1qg61fb8z361mdsagcbi172a5cz4d5zi7ij9zy31wgk2x4dh8m"))))
+        (base32 "0sayhja2mlwab45l8lrba2hbbwbycbkg7s01hicc3ijclb06z13r"))))
     (properties `((upstream-name . "GetTDData")))
     (build-system r-build-system)
     (arguments
@@ -25841,11 +25842,9 @@ builds on Windows, but just returns NULL.")
       #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-tidyr
-                             r-tibble
                              r-stringr
                              r-rvest
                              r-readxl
-                             r-purrr
                              r-jsonlite
                              r-fs
                              r-dplyr
@@ -26219,13 +26218,13 @@ return a coding result, or provide both of these outputs.")
 (define-public r-getdfpdata2
   (package
     (name "r-getdfpdata2")
-    (version "0.6.3")
+    (version "0.6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GetDFPData2" version))
        (sha256
-        (base32 "1dc1ks9mrwc8sjmp6fh47hlhhfwvfign6jmf4cxik28q3253al01"))))
+        (base32 "0xzvjdqq6m97djpxwixy8d3k4d619rw09z4x6yf6xs76caiqhg7g"))))
     (properties `((upstream-name . "GetDFPData2")))
     (build-system r-build-system)
     (arguments
@@ -26243,7 +26242,10 @@ return a coding result, or provide both of these outputs.")
                              r-memoise
                              r-magrittr
                              r-lubridate
-                             r-dplyr))
+                             r-janitor
+                             r-glue
+                             r-dplyr
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/msperlin/GetDFPData2/")
     (synopsis "Reading Annual and Quarterly Financial Reports from B3")
@@ -29639,13 +29641,13 @@ functionality and @code{JavaScript} bindings to consume @code{GeoParquet}
 (define-public r-geoarrow
   (package
     (name "r-geoarrow")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geoarrow" version))
        (sha256
-        (base32 "1lic7h48h6206xpca0qcii54wpyqhzd2f4c01nxxzx8pbpahwn97"))))
+        (base32 "1a1fmk1afdlmiwxr4mp1r8ax1zsqqrm1prv3jpi90f0am6n19jys"))))
     (properties `((upstream-name . "geoarrow")))
     (build-system r-build-system)
     (arguments

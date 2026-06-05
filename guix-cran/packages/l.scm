@@ -837,13 +837,13 @@ programmers working with date-time data.")
 (define-public r-luajr
   (package
     (name "r-luajr")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "luajr" version))
        (sha256
-        (base32 "0m4z20q0ac9iz3dy8ixxa6avz9xzvdgnzdayn7hmpvrckg1hi9nl"))))
+        (base32 "0dfxfnxrs2n6p3vs7d17s1i0iwwhwjyh4dzzlrbd1kjby9j7xida"))))
     (properties `((upstream-name . "luajr")))
     (build-system r-build-system)
     (arguments
@@ -14926,6 +14926,33 @@ computation by exact and randomized algorithms, fixed effect estimation helpers,
 and companion model-fit summaries for matched worker-firm panels in the spirit
 of Abowd, Kramarz, and Margolis (1999) <doi:10.1111/1468-0262.00020>.")
     (license license:expat)))
+
+(define-public r-leavcore
+  (package
+    (name "r-leavcore")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LEAVcore" version))
+       (sha256
+        (base32 "1cgp5r8rzw02ilw2hr0i9lcwqqzq6gvcmisn3csm27k4s13a6qb8"))))
+    (properties `((upstream-name . "LEAVcore")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stratification r-rdpack r-mathjaxr r-dplyr))
+    (home-page "https://cran.r-project.org/package=LEAVcore")
+    (synopsis
+     "Constitution of Core Collections using Length of Encoded Attribute Values")
+    (description
+     "Construct core collections using the information measure Length of Encoded
+Attribute Values (LEAV) using qualitative and/or quantitative trait data as
+described by Balakrishnan and Suresh (2001a)
+<https://indianjournals.com/article/ijpgr-14-1-006> and (2001b)
+<https://indianjournals.com/article/ijpgr-14-3-005>.")
+    (license license:gpl2+)))
 
 (define-public r-leastcostpath
   (package

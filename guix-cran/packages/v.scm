@@ -6728,13 +6728,13 @@ systems, and helpful in examining its impact in the time series analysis domain.
 (define-public r-vecvec
   (package
     (name "r-vecvec")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vecvec" version))
        (sha256
-        (base32 "0kl5m87lii84l39a97l5fywzw7vbprmvvisdp3cld0n79wq9h8yv"))))
+        (base32 "0gyivqsxprn54qrkzia3jm4rp5a9yqvb6dd1jy5cn08sq3hmalvj"))))
     (properties `((upstream-name . "vecvec")))
     (build-system r-build-system)
     (arguments
