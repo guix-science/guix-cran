@@ -1049,6 +1049,35 @@ Buniello et al. (2019) <doi:10.1093/nar/gky1120>; Sollis et al. (2023)
      "Generate Manhattan, Q-Q, and PCA plots from GWAS and PCA results using ggplot2'.")
     (license (license:fsdg-compatible "MIT + file LICENCE"))))
 
+(define-public r-gwalkr
+  (package
+    (name "r-gwalkr")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GWalkR" version))
+       (sha256
+        (base32 "1m6jcqsgmvkp9q3rm63q9jwvxizgm80kmchvi9y9im0d4q1fa8gq"))))
+    (properties `((upstream-name . "GWalkR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shinycssloaders
+                             r-shiny
+                             r-openssl
+                             r-jsonlite
+                             r-htmlwidgets
+                             r-dbi))
+    (home-page "https://github.com/Kanaries/GWalkR/")
+    (synopsis "Interactive Exploratory Data Analysis Tool")
+    (description
+     "Simplify your R data analysis and data visualization workflow by turning your
+data frame into an interactive Tableau'-like interface, leveraging the
+graphic-walker @code{JavaScript} library and the htmlwidgets package.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-gvs
   (package
     (name "r-gvs")
@@ -11295,32 +11324,35 @@ analysts, and book enthusiasts who want to gain insights from Goodreads data.")
 (define-public r-goodpractice
   (package
     (name "r-goodpractice")
-    (version "1.0.5")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "goodpractice" version))
        (sha256
-        (base32 "1sz5np8lgs2s1rlswrjfw20x8c9lxdz1r0wxybrgakzlfpj1i85w"))))
+        (base32 "1pnfrkzp19040cdk2ib5il6wrhc9iz0gkawz3kczpgk1682vr824"))))
     (properties `((upstream-name . "goodpractice")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xmlparsedata
-                             r-xml2
-                             r-withr
+    (propagated-inputs (list r-withr
                              r-whoami
+                             r-urlchecker
+                             r-treesitter-r
+                             r-treesitter
+                             r-spelling
                              r-rstudioapi
+                             r-roxygen2
                              r-rcmdcheck
                              r-praise
                              r-lintr
                              r-jsonlite
                              r-desc
                              r-cyclocomp
-                             r-crayon
+                             r-curl
                              r-covr
-                             r-clisymbols))
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://docs.ropensci.org/goodpractice/")
     (synopsis "Advice on R Package Building")
@@ -23225,13 +23257,13 @@ issue.")
 (define-public r-ggforestplotr
   (package
     (name "r-ggforestplotr")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggforestplotR" version))
        (sha256
-        (base32 "0hb3x6vpcx5kc2mf3lj6nyaq7mjidn8mafaagyzm8qk0zax4210c"))))
+        (base32 "1a59js0x1vjg6yg6n6smng2qfhn6dh8b4frismn09274cq8rxk0h"))))
     (properties `((upstream-name . "ggforestplotR")))
     (build-system r-build-system)
     (arguments
@@ -29226,6 +29258,33 @@ interaction between two explanatory variables X1 and X2 to a dependent variable
 Y (Wang et al 2014 <doi:10.1080/13658810802443457>, Wang, Zhang, and Fu 2016
 <doi:10.1016/j.ecolind.2016.02.052>).")
     (license license:gpl2+)))
+
+(define-public r-geodensityr
+  (package
+    (name "r-geodensityr")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GeoDensityR" version))
+       (sha256
+        (base32 "17cqd5xz4qg3i1a1004sibiz4d7gkxb0pjzmq1fs480vya405zav"))))
+    (properties `((upstream-name . "GeoDensityR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra))
+    (home-page "https://github.com/sahalpaladan/GeoDensityR")
+    (synopsis "Generate Density Rasters from Polygon and Census Data")
+    (description
+     "This package creates density rasters from polygon vector data and tabular census
+or survey data.  The package joins polygon boundaries with attribute data,
+calculates densities, rasterizes outputs, and exports ASCII Grid or
+@code{GeoTiff} rasters.  Methods are based on spatial rasterization workflows
+implemented in the terra package Hijmans (2025)
+<https://rspatial.github.io/terra/>.")
+    (license license:expat)))
 
 (define-public r-geodeltaaudit
   (package

@@ -38540,26 +38540,26 @@ Manly BFJ, Navarro Alberto JA & Gerow K (2024) <doi:10.1201/9781003453482>.")
 (define-public r-smriti
   (package
     (name "r-smriti")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smriti" version))
        (sha256
-        (base32 "0fn6hkr9g9q7d1cfcs6lclnbs8qkmzm4nr9n0i3z4zmrnadcrh13"))))
+        (base32 "1dnn5pxcw6fs11sqn6x68h1mi9d26prz9qlpgx4ywdqhs8d2add2"))))
     (properties `((upstream-name . "smriti")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-missforest r-mass))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=smriti")
     (synopsis "Automated Routing Engine for Longitudinal Missing Data")
     (description
-     "An automated routing engine for longitudinal missing data.  It utilizes a
-Lagrange-constrained Random Forest based on sample size, missingness rate, and
-skew to preserve structural variance.")
+     "This package provides an automated routing engine for longitudinal missing data.
+ It utilizes a Lagrange-constrained Random Forest based on sample size,
+missingness rate, and skew to preserve structural variance.")
     (license license:expat)))
 
 (define-public r-smr
@@ -57732,13 +57732,13 @@ Lai, Heyse and Chen (2010, <doi:10.1002/sim.4036>).")
 (define-public r-sglg
   (package
     (name "r-sglg")
-    (version "0.2.6")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sglg" version))
        (sha256
-        (base32 "02flq52bslzb07kwmxp4ycqyg9p8hd798m5lbq48kcsdklj7ckw4"))))
+        (base32 "1nhpabc8wngd6rbs4217fj7nspp0xxa7h2157c21f4vjbigxqba7"))))
     (properties `((upstream-name . "sglg")))
     (build-system r-build-system)
     (arguments
@@ -69978,6 +69978,45 @@ methods that accounts for potential spillover effects between units.  Based on
 the methodology of Cao and Dowd (2019) <doi:10.48550/@code{arXiv.1902.07343>}
 \"Estimation and Inference for Synthetic Control Methods with Spillover Effects\".")
     (license license:expat)))
+
+(define-public r-scmodels
+  (package
+    (name "r-scmodels")
+    (version "1.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "scModels" version))
+       (sha256
+        (base32 "1dk88d4nvnnhydl4m4nvd3iydk15746fj8k1m3hbr4dwff0psh7d"))))
+    (properties `((upstream-name . "scModels")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list mpfr gmp))
+    (propagated-inputs (list r-rcpp r-gamlss-dist))
+    (home-page "https://cran.r-project.org/package=scModels")
+    (synopsis "Fitting Discrete Distribution Models to Count Data")
+    (description
+     "This package provides functions for fitting discrete distribution models to
+count data.  Included are the Poisson, the negative binomial, the
+Poisson-inverse gaussian and, most importantly, a new implementation of the
+Poisson-beta distribution (density, distribution and quantile functions, and
+random number generator) together with a needed new implementation of Kummer's
+function (also: confluent hypergeometric function of the first kind).  Three
+different implementations of the Gillespie algorithm allow data simulation based
+on the basic, switching or bursting @code{mRNA} generating processes.  Moreover,
+likelihood functions for four variants of each of the three aforementioned
+distributions are also available.  The variants include one population and two
+population mixtures, both with and without zero-inflation.  The package depends
+on the MPFR libraries (<https://www.mpfr.org/>) which need to be installed
+separately (see description at <https://github.com/fuchslab/@code{scModels>}).
+This package is supplement to the paper \"A mechanistic model for the negative
+binomial distribution of single-cell @code{mRNA} counts\" by Lisa Amrhein, Kumar
+Harsha and Christiane Fuchs (2019) <doi:10.1101/657619> available on
+@code{bioRxiv}.")
+    (license license:gpl3)))
 
 (define-public r-scmetatraj
   (package

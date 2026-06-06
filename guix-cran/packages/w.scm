@@ -3335,24 +3335,25 @@ Macmillian et al (2000)
 (define-public r-wmap
   (package
     (name "r-wmap")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WMAP" version))
        (sha256
-        (base32 "1j0fkxar850s4sgjz1hjlljanp2y1dayjpr2kn9r7n0zdnb2z7px"))))
+        (base32 "0lxji1vi14asal967q2129nbhjmif0gdgwx7krg6qlcz6glrynix"))))
     (properties `((upstream-name . "WMAP")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-zeallot
+                             r-ranger
                              r-randomforest
                              r-pkgcond
                              r-ggplot2
-                             r-forcats
-                             r-caret))
+                             r-forcats))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=WMAP")
     (synopsis "Weighted Meta-Analysis with Pseudo-Populations")
     (description

@@ -10940,6 +10940,29 @@ phylogenetic trees annotated with the taxonomies of the predicted amplification
 products.")
     (license license:gpl2)))
 
+(define-public r-primer
+  (package
+    (name "r-primer")
+    (version "1.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "primer" version))
+       (sha256
+        (base32 "1b6hiwar8xdqjrc2i3w80g1i3djdqm8i52adszvavgvan933cvnd"))))
+    (properties `((upstream-name . "primer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2 r-desolve))
+    (home-page "https://cran.r-project.org/package=primer")
+    (synopsis "Functions and Data for the Book, a Primer of Ecology with R")
+    (description
+     "This package provides data and functions for \"A Primer of Ecology with R\" by M.
+Henry H. Stevens (2009) <doi:10.1007/978-0-387-89882-7>.")
+    (license license:gpl3)))
+
 (define-public r-primeplus
   (package
     (name "r-primeplus")
@@ -13575,13 +13598,13 @@ implementation can be found in Vargas Godoy and Markonis (2023,
 (define-public r-precast
   (package
     (name "r-precast")
-    (version "1.8")
+    (version "1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PRECAST" version))
        (sha256
-        (base32 "1srcfcf5dz16987qy5f6nqkf3qkxa2ngg87vmxsw82yk99ifz86a"))))
+        (base32 "1x3f0qa8mgsc3fvllrsk0h03l57bdc25x9nzh850msq47x4wmiq8"))))
     (properties `((upstream-name . "PRECAST")))
     (build-system r-build-system)
     (arguments
@@ -13599,7 +13622,6 @@ implementation can be found in Vargas Godoy and Markonis (2023,
                              r-matrix
                              r-mass
                              r-irlba
-                             r-harmony
                              r-gtools
                              r-ggthemes
                              r-ggpubr
@@ -33617,13 +33639,13 @@ inference on diversity indexes, writing data.frame with Chinese characters.")
 (define-public r-pgenlibr
   (package
     (name "r-pgenlibr")
-    (version "0.6.1")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pgenlibr" version))
        (sha256
-        (base32 "0n134ziy8h7k69mf8z1ssp2aky8kd3ylbfza566hixvs129ma3zx"))))
+        (base32 "1gv2a8kq8gjz0cgzcs2xhxr43vzd3c2smvvvy1d5s9qdi8w20dg7"))))
     (properties `((upstream-name . "pgenlibr")))
     (build-system r-build-system)
     (arguments

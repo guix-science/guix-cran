@@ -452,6 +452,44 @@ in Dusseldorp, E., Doove, L., & Van Mechelen, I. (2016)
 <doi:10.3758/s13428-015-0594-z>.")
     (license license:gpl3+)))
 
+(define-public r-quincunx
+  (package
+    (name "r-quincunx")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quincunx" version))
+       (sha256
+        (base32 "0hv60viwzn8i27qdbn1csn5pnbnxidys4v6nsjah1wiycbvvzzzz"))))
+    (properties `((upstream-name . "quincunx")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-writexl
+                             r-vroom
+                             r-tidyr
+                             r-tidyjson
+                             r-tibble
+                             r-stringr
+                             r-rvest
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-progress
+                             r-memoise
+                             r-lubridate
+                             r-httr
+                             r-glue
+                             r-dplyr))
+    (home-page "https://github.com/ascentsoftware/quincunx/")
+    (synopsis "REST API Client for the 'PGS' Catalog")
+    (description
+     "Programmatic access to the PGS Catalog.  This package provides easy access to
+PGS Catalog data by accessing the REST API <https://www.pgscatalog.org/rest/>.")
+    (license license:expat)))
+
 (define-public r-quiltr
   (package
     (name "r-quiltr")
@@ -2651,31 +2689,37 @@ models, and construct networks with partial derivatives.")
 (define-public r-quadrupen
   (package
     (name "r-quadrupen")
-    (version "0.2-13")
+    (version "1.0-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quadrupen" version))
        (sha256
-        (base32 "03wmv69ckzbgp845a98dpms8gj8hymgv0v1l5lnhqysqnmrb7lxm"))))
+        (base32 "0ld45gyhlakrr7nbh32ibmrrg7qbapg2xs92b6qbydvh11fp286l"))))
     (properties `((upstream-name . "quadrupen")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-scales
-                             r-reshape2
+    (propagated-inputs (list r-tidyr
+                             r-scales
+                             r-rlang
                              r-rcpparmadillo
                              r-rcpp
+                             r-r6
                              r-matrix
-                             r-ggplot2))
-    (home-page "https://github.com/jchiquet/quadrupenCRAN")
-    (synopsis "Sparsity by Worst-Case Quadratic Penalties")
+                             r-lifecycle
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jchiquet/quadrupen")
+    (synopsis "Sparse and Group Sparse Linear Models")
     (description
-     "Fits classical sparse regression models with efficient active set algorithms by
-solving quadratic problems as described by Grandvalet, Chiquet and Ambroise
-(2017) <doi:10.48550/@code{arXiv.1210.2077>}.  Also provides a few methods for
-model selection purpose (cross-validation, stability selection).")
+     "Fits the solution paths of classical sparse regression models with efficient
+active set algorithms by solving small sub-problems.  Include LASSO, SCAD, MCP,
+(Sparse) Group-LASSO, Cooperative-LASSO, (Group) LAVA, (Generalized) Fused-Lasso
+and (Generalized) Elastic-Net.  Also provides methods for model selection
+purpose (information criteria, cross-validation, stability selection).")
     (license license:gpl3+)))
 
 (define-public r-quadroot
@@ -6441,13 +6485,13 @@ among constructs and between constructs and observed variables.")
 (define-public r-qcluster
   (package
     (name "r-qcluster")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qcluster" version))
        (sha256
-        (base32 "032ay8nwraz4dhvxdzn2vnpfqv7j0130hvp9wbl3dzwyivzj6ac0"))))
+        (base32 "15spg24hr34pzdslf92r3my0qm4824c8lh3i34b3mm4dx0p2dy1k"))))
     (properties `((upstream-name . "qcluster")))
     (build-system r-build-system)
     (arguments

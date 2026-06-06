@@ -86,13 +86,13 @@ approaches can be misleading.")
 (define-public r-eztrack
   (package
     (name "r-eztrack")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ezTrack" version))
        (sha256
-        (base32 "0yxrk0hyl0g1b9p8ccqc8n5la3g8n6bjfr11x7y6y2qk51f92mxh"))))
+        (base32 "1yzr8s7ya2v8aw5i8gbh5vkclpryka51fqfv7ilpjk0cp0vv87ja"))))
     (properties `((upstream-name . "ezTrack")))
     (build-system r-build-system)
     (arguments
@@ -103,7 +103,6 @@ approaches can be misleading.")
                              r-readxl
                              r-magrittr
                              r-leaflet
-                             r-kableextra
                              r-htmltools
                              r-ggplot2
                              r-geosphere
@@ -111,13 +110,11 @@ approaches can be misleading.")
                              r-adehabitathr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/taylorbcraft/ezTrack")
-    (synopsis "Exploring Animal Movement Data")
+    (synopsis "Tools for Exploring Animal Movement Data")
     (description
-     "Streamlines common steps for working with animal tracking data, from raw
-telemetry points to summaries, interactive maps, and home range estimates.
-Designed to be beginner-friendly, it enables rapid exploration of spatial and
-movement data with minimal wrangling, providing a unified workflow for
-importing, summarizing, and visualizing, and analyzing animal movement datasets.")
+     "This package provides tools for exploring animal tracking data, from raw
+telemetry points to summaries, interactive maps, and home range estimates.  It
+is designed to be beginner-friendly and requires minimal data wrangling.")
     (license license:expat)))
 
 (define-public r-ezr
@@ -588,13 +585,13 @@ proposed by Salvucci and Goldberg (2000) <doi:10.1145/355017.355028>.")
 (define-public r-eyeris
   (package
     (name "r-eyeris")
-    (version "3.0.1")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eyeris" version))
        (sha256
-        (base32 "1hh7wskpvq1827wq54x23ppzja8wlys5lhf1pd0lp5gh8af01af7"))))
+        (base32 "1v5k8xnvq0py6nzx3afdg7nc2kvinqhhzrjhzw5h83ffnjh3g3f7"))))
     (properties `((upstream-name . "eyeris")))
     (build-system r-build-system)
     (arguments
@@ -5741,13 +5738,13 @@ existence of cured population are as described in : Chen, Tai-Tsang(2016)
 (define-public r-eventpred
   (package
     (name "r-eventpred")
-    (version "0.2.9")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eventPred" version))
        (sha256
-        (base32 "15jd10fax8bjsrx9hls50njd5q4amsag90c4qln8k9ypr6kl6fpa"))))
+        (base32 "1k5sknpg5jgbgnx6gbldawxv3w8mwqvljgpw9lm37ax491dix5gf"))))
     (properties `((upstream-name . "eventPred")))
     (build-system r-build-system)
     (arguments
@@ -5769,7 +5766,7 @@ existence of cured population are as described in : Chen, Tai-Tsang(2016)
                              r-erify
                              r-data-table))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/kaifenglu/eventPred")
+    (home-page "https://kaifenglu.github.io/eventPred/")
     (synopsis "Event Prediction")
     (description
      "Predicts enrollment and events at the design or analysis stage using specified
@@ -14827,6 +14824,38 @@ the book chapter is provided.")
      "Ensemble Model Output Statistics to create probabilistic forecasts from ensemble
 forecasts and weather observations.")
     (license license:gpl2+)))
+
+(define-public r-ensembleml
+  (package
+    (name "r-ensembleml")
+    (version "0.2.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ensembleML" version))
+       (sha256
+        (base32 "0b0jpm2gshj6arbx9i97niwxawyz7fysw9y6qra7vamq26z5xmj9"))))
+    (properties `((upstream-name . "ensembleML")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xgboost r-rlang r-randomforest r-ggplot2
+                             r-adabag))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ensembleML")
+    (synopsis "Unified Interface for Ensemble Machine Learning Methods")
+    (description
+     "This package provides a clean, unified interface for training, predicting, and
+evaluating ensemble machine learning models including Random Forest, Gradient
+Boosting ('XGBoost'), @code{AdaBoost}', and Bagging'.  All algorithms share a
+consistent API: @code{em_fit()}, @code{em_predict()}, @code{em_evaluate()}, and
+@code{em_tune()}.  Includes built-in cross-validation, feature importance,
+calibration diagnostics, partial dependence plots, and model comparison
+utilities.  Methods: Breiman (2001) <doi:10.1023/A:1010933404324>; Chen and
+Guestrin (2016) <doi:10.1145/2939672.2939785>; Freund and Schapire (1997)
+<doi:10.1006/jcss.1997.1504>; Breiman (1996) <doi:10.1007/BF00058655>.")
+    (license license:expat)))
 
 (define-public r-ensemblebma
   (package

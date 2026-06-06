@@ -1172,18 +1172,19 @@ sequence.  This package is described in Fong et al. (2015)
 (define-public r-krls
   (package
     (name "r-krls")
-    (version "1.1-0")
+    (version "1.7-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "KRLS" version))
        (sha256
-        (base32 "0jc8jar8zrfrjqm87caji31rbdnbk90vlcyq33nx3mhi12xwnchk"))))
+        (base32 "0ifq43d55x95yixiasyg04ccc10znfr3dhhvkz35kq5v3vz6zs84"))))
     (properties `((upstream-name . "KRLS")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (native-inputs (list r-knitr))
     (home-page "https://web.stanford.edu/~jhain/")
     (synopsis "Kernel-Based Regularized Least Squares")
     (description

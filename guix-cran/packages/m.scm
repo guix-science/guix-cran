@@ -3598,13 +3598,13 @@ installed at the system level.")
 (define-public r-mumarinex
   (package
     (name "r-mumarinex")
-    (version "1.0")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mumarinex" version))
        (sha256
-        (base32 "1kbhqkxxpc37nnm1fs95sfi48i2lr15qh40aa04mdx03dmqi97k4"))))
+        (base32 "1cnk7hqr87gsp9l5whjnym5d0xq08ragqx3j13m352419r9avbvn"))))
     (properties `((upstream-name . "mumarinex")))
     (build-system r-build-system)
     (arguments
@@ -3612,16 +3612,16 @@ installed at the system level.")
       #:tests? #f))
     (propagated-inputs (list r-vegan r-knitr))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=mumarinex")
+    (home-page "https://github.com/Nathan-Chauvel/mumarinex")
     (synopsis "Computation of the Multivariate Marine Recovery Index")
     (description
      "Computation of the multivariate marine recovery index, including functions for
 data visualization and ecological diagnostics of marine ecosystems.  The
 computational details are described in the original publication.  Reference:
-Chauvel, N., Grall, J., ThiÃ©baut, E., Houbin, C., Pezy, J.P. (in press). \"A
-general-purpose Multivariate Marine Recovery Index for quantifying the influence
-of human activities on benthic habitat ecological status\".  Ecological
-Indicators.")
+Chauvel, N., Grall, J., ThiÃ©baut, E., Houbin, C., Pezy, J.-P., 2026.  A
+general-purpose multivariate marine recovery index (MUMARINEX) for quantifying
+the influence of human activities on benthic habitat ecological status.
+Ecological Indicators 188, 115002.")
     (license license:gpl3)))
 
 (define-public r-mulvariaterandomforestvarimp
@@ -4081,45 +4081,26 @@ ways of performing an analysis step, in R and R Notebooks.")
 (define-public r-multivarious
   (package
     (name "r-multivarious")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multivarious" version))
        (sha256
-        (base32 "1jn364hm7hj802lvxyspkxm7sm7prc6v5ps8yfqdpj6g0ncl3amh"))))
+        (base32 "163cnix04q3yijyrj4gl23zv1pkyd0j1yj4f3npky2gj0z4bfpjp"))))
     (properties `((upstream-name . "multivarious")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-withr
-                             r-tibble
-                             r-svd
-                             r-rsvd
-                             r-rspectra
+    (propagated-inputs (list r-tibble
                              r-rlang
-                             r-proxy
-                             r-primme
-                             r-pls
-                             r-matrixstats
                              r-matrix
-                             r-mass
                              r-lifecycle
-                             r-irlba
-                             r-gparotation
-                             r-glmnet
-                             r-ggrepel
-                             r-ggplot2
                              r-geigen
-                             r-future-apply
-                             r-future
-                             r-dplyr
-                             r-crayon
                              r-corpcor
                              r-cli
-                             r-chk
-                             r-assertthat))
+                             r-chk))
     (native-inputs (list r-knitr))
     (home-page "https://bbuchsbaum.github.io/multivarious/")
     (synopsis "Extensible Data Structures for Multivariate Analysis")
@@ -17821,13 +17802,13 @@ is supported by a U.S. National Science Foundation (NSF) grant CMMI-1921646
 (define-public r-moewishart
   (package
     (name "r-moewishart")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "moewishart" version))
        (sha256
-        (base32 "06hvb5w1ql9dzkvbclhg1sdngrwy061qlr3jzbynrzn8fq4p45mq"))))
+        (base32 "0066ds7hf7jkjv9manyyrgx713wn0h6di0nnqi8bdfqfak1wcvhz"))))
     (properties `((upstream-name . "moewishart")))
     (build-system r-build-system)
     (arguments

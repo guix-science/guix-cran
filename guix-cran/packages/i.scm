@@ -425,13 +425,13 @@ panic disorder).")
 (define-public r-ivolcano
   (package
     (name "r-ivolcano")
-    (version "0.0.5")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ivolcano" version))
        (sha256
-        (base32 "1658qixh5gqygg4nd7yvd1wvbcyqpyc12wpmvvimkg8g6ldq2m04"))))
+        (base32 "070nny7qlvhn7n6xqdh4wki6va99sb4ydrwj639wcfwjb0bik1r1"))))
     (properties `((upstream-name . "ivolcano")))
     (build-system r-build-system)
     (arguments

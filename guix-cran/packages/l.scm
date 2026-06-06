@@ -19342,13 +19342,13 @@ time series from given drift and diffusion coefficients.")
 (define-public r-lang
   (package
     (name "r-lang")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lang" version))
        (sha256
-        (base32 "0n8y1dci18jv0j19lg7ssm33s0fd4k8766d0bavm3cr8jgjsjmzz"))))
+        (base32 "0kaszhl46yy6p8329xbkwp1ql190bigi2ican1z9i2j6f7x1m2ii"))))
     (properties `((upstream-name . "lang")))
     (build-system r-build-system)
     (arguments
@@ -19358,6 +19358,7 @@ time series from given drift and diffusion coefficients.")
                              r-rstudioapi
                              r-rlang
                              r-mall
+                             r-lifecycle
                              r-glue
                              r-fs
                              r-cli

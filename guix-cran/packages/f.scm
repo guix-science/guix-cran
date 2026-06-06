@@ -26879,13 +26879,13 @@ likelihood and Bayesian methods.")
 (define-public r-famish
   (package
     (name "r-famish")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "famish" version))
        (sha256
-        (base32 "0bjwwhax7aipv8qprn5jwlhbprifhx8j4j1cqpaxsclmrqb9avaf"))))
+        (base32 "1d9yzjdbk9gx3b0ipdmyg6rx3i0180id9fcq3cvq5crxpjs5cw7s"))))
     (properties `((upstream-name . "famish")))
     (build-system r-build-system)
     (arguments

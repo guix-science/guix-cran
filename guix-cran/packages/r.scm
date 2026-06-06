@@ -7236,6 +7236,32 @@ contains Fortran 90 modules for the P-model (Stocker et al. (2020)
 <doi:10.5194/bg-12-2655-2015>).")
     (license license:gpl3)))
 
+(define-public r-rsocsim
+  (package
+    (name "r-rsocsim")
+    (version "1.9.18")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rsocsim" version))
+       (sha256
+        (base32 "1x6f8hmxrh9a83mjaf56x2fwf81bz9dzmpvhl4qm8lv048hvvsvk"))))
+    (properties `((upstream-name . "rsocsim")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-rcpp r-magrittr r-dplyr))
+    (home-page "https://github.com/MPIDR/rsocsim")
+    (synopsis "SOCSIM")
+    (description
+     "This package provides tools for preparing inputs, running SOCSIM (SOCial
+SIMulator) demographic kinship microsimulations, and reading simulation outputs
+from R. The package includes helpers for creating simulation folders,
+downloading demographic rate schedules, starting simulations, and loading
+population and marriage result files.")
+    (license license:gpl3)))
+
 (define-public r-rsocialwatcher
   (package
     (name "r-rsocialwatcher")
@@ -9674,13 +9700,13 @@ supported by National Institutes of Health grants R37 GM-046255.")
 (define-public r-rrepest
   (package
     (name "r-rrepest")
-    (version "1.6.12")
+    (version "1.6.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rrepest" version))
        (sha256
-        (base32 "101k28dlwbca2d7hkh1byfvfc1jm0vm3xixys32bmrc5hvzkw2i9"))))
+        (base32 "07sa30i5qab3q2yirg5n32w2bb7fsinwqx0ap7hcmnaxdrhdfr66"))))
     (properties `((upstream-name . "Rrepest")))
     (build-system r-build-system)
     (arguments
@@ -26608,6 +26634,42 @@ interplay between key parameters and renders teaching and training programs on
 risk literacy more transparent (see <doi:10.3389/fpsyg.2020.567817>, for
 details).")
     (license (list license:gpl2 license:gpl3))))
+
+(define-public r-riskycnv
+  (package
+    (name "r-riskycnv")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RiskyCNV" version))
+       (sha256
+        (base32 "0lx90pviwbzjn6sd6nghaijkgmlxxypjdrpph3kh58mrpbifh21n"))))
+    (properties `((upstream-name . "RiskyCNV")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-s4vectors r-rlang r-genomicranges
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=RiskyCNV")
+    (synopsis "Risk Analysis of Genomic Copy Number Variation")
+    (description
+     "This package provides a complete seven-step workflow for copy number variation
+(CNV) analysis applicable to any disease or condition where samples with genomic
+copy number data is available.  Supports built-in grading and risk
+stratification presets for seven major cancers (viz.  prostate, breast,
+colorectal, lung, cervical, lymphoma, melanoma) based on clinically validated
+systems including ISUP Grade Groups, Nottingham Grading System, Dukes staging,
+IASLC TNM, FIGO, Ann Arbor/Lugano classification, and Breslow depth.
+Generalizable to other disease types.  An automatic mode derives a normalised
+Risk Score from the data using min-max normalisation and adaptive binning.
+Custom user-defined thresholds are supported for any other disease type.
+Downstream functions for CNV aberration detection, recurrence analysis, gene
+annotation, CNV matrix generation, and CNV-RNA expression correlation are
+disease-type agnostic.")
+    (license license:expat)))
 
 (define-public r-risksimul
   (package
@@ -43947,6 +44009,50 @@ projects for changes.")
      "This package provides tools for simulating synthetic survival data using a
 variety of methods, including kernel density estimation, parametric distribution
 fitting, and bootstrap resampling techniques for a desired sample size.")
+    (license license:expat)))
+
+(define-public r-realestatebr
+  (package
+    (name "r-realestatebr")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "realestatebr" version))
+       (sha256
+        (base32 "080q16jrnqiasig9mjkxb1igx339y4rgpwzk1ncf0j2d9y940lys"))))
+    (properties `((upstream-name . "realestatebr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-yaml
+                             r-xml2
+                             r-tidyxl
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rvest
+                             r-rlang
+                             r-readxl
+                             r-readr
+                             r-rbcb
+                             r-purrr
+                             r-lubridate
+                             r-janitor
+                             r-httr
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/viniciusoike/realestatebr")
+    (synopsis "Import Brazilian Real Estate Data into R")
+    (description
+     "This package provides access to Brazilian real estate market data from multiple
+official sources: the Central Bank of Brazil (BCB), the Brazilian Association of
+Real Estate Developers (ABRAINC), the Brazilian Association of Real Estate
+Credit and Savings Entities (ABECIP), the Getulio Vargas Foundation (FGV), and
+the Bank for International Settlements (BIS).")
     (license license:expat)))
 
 (define-public r-readyomics

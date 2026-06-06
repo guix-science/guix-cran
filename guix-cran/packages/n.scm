@@ -6680,13 +6680,13 @@ and De Jong (1997)<doi:10.1002/(SICI)1099-128X(199709/10)11:53.0.CO;2-L>.")
 (define-public r-nns
   (package
     (name "r-nns")
-    (version "12.0")
+    (version "12.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NNS" version))
        (sha256
-        (base32 "19aahr5wmllzkylq71cxa79w3s4prjz7a36dxqr7rlmv6vdkm57k"))))
+        (base32 "0glzi98rkzbgykj9jhfi478y5w6yx4hr295va8kap8jb5q6pnvyv"))))
     (properties `((upstream-name . "NNS")))
     (build-system r-build-system)
     (arguments
@@ -6698,7 +6698,6 @@ and De Jong (1997)<doi:10.1002/(SICI)1099-128X(199709/10)11:53.0.CO;2-L>.")
                              r-rfast
                              r-rcppparallel
                              r-rcpp
-                             r-quantmod
                              r-foreach
                              r-doparallel
                              r-data-table))
@@ -8763,6 +8762,33 @@ normal random effects and Laplace errors (NL), Laplace random effects and normal
 errors (LN), and Laplace random effects and Laplace errors (LL).  The methods
 are described in Geraci and Farcomeni (2020, Statistical Methods in Medical
 Research) <doi:10.1177/0962280220903763>.")
+    (license license:gpl2+)))
+
+(define-public r-nlmixr2targets
+  (package
+    (name "r-nlmixr2targets")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nlmixr2targets" version))
+       (sha256
+        (base32 "0bylvnqxdk7cp2lkhklm2q0mx4zwhpsa3al9bv5rgfhx2m62mpn6"))))
+    (properties `((upstream-name . "nlmixr2targets")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-targets r-rxode2 r-nlmixr2est r-digest
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://nlmixr2.github.io/nlmixr2targets/")
+    (synopsis "Targets for 'nlmixr2' Pipelines")
+    (description
+     "nlmixr2 often has long runtimes.  A pipeline toolkit tailored to nlmixr2
+workflows leverages targets and nlmixr2 to ease reproducible workflows.
+nlmixr2targets ensures minimal rework in model development with nlmixr2 and
+targets by simplifying and standardizing models and datasets.")
     (license license:gpl2+)))
 
 (define-public r-nlmixr2rpt
@@ -12176,6 +12202,34 @@ analysis including metric calculations for survey data.")
      "Analyzes data involving imprecise and vague information.  Provides summary
 statistics and describes the characteristics of neutrosophic data, as defined by
 Florentin Smarandache (2013).<ISBN:9781599732749>.")
+    (license license:gpl2+)))
+
+(define-public r-neutroibdanalysis
+  (package
+    (name "r-neutroibdanalysis")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NeutroIBDAnalysis" version))
+       (sha256
+        (base32 "1hfixz408w93fbk9h2xi05hccc0maxcdhcad7f7ri5il86vx669d"))))
+    (properties `((upstream-name . "NeutroIBDAnalysis")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mass))
+    (home-page "https://cran.r-project.org/package=NeutroIBDAnalysis")
+    (synopsis "Neutrosophic Analysis of Incomplete Block Designs")
+    (description
+     "This package provides methods for neutrosophic analysis of variance (NANOVA) and
+neutrosophic analysis of covariance (NANCOVA) for interval-valued data arising
+from incomplete block design experiments.  The package supports balanced
+incomplete block designs (BIBDs), partially balanced incomplete block designs
+(PBIBDs), and lattice designs.  Functions are included for treatment
+comparisons, least significant difference (LSD) tests, and interval-based
+statistical inference under neutrosophic environments.")
     (license license:gpl2+)))
 
 (define-public r-neutralitytestr

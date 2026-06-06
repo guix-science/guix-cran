@@ -9484,13 +9484,13 @@ as described in Fukuyama et al. (2017) <doi:10.1371/journal.pcbi.1005706>.")
 (define-public r-treeclim
   (package
     (name "r-treeclim")
-    (version "2.0.7.1")
+    (version "2.0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "treeclim" version))
        (sha256
-        (base32 "1bmb2ccqm47x1lzp8c7pg61j74x01n98p0sfs6ih8svvgydq4fk1"))))
+        (base32 "1x135jd5lxvnw5n885lwwf8x83fklakjjfwzbgmi0224i1n90cc7"))))
     (properties `((upstream-name . "treeclim")))
     (build-system r-build-system)
     (arguments
@@ -10748,13 +10748,13 @@ al. (2021) <doi:10.1093/biostatistics/kxab009>.")
 (define-public r-transform
   (package
     (name "r-transform")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Transform" version))
        (sha256
-        (base32 "0dynxrmpyji2dn42l4s87waz7m77ci0h7rnsc3zm6a3ya9gxgdfv"))))
+        (base32 "0mhssd6mds3j2ynar31l0sd43i7j3pzjy8wkn5r4rcw9d0bavd26"))))
     (properties `((upstream-name . "Transform")))
     (build-system r-build-system)
     (arguments
@@ -11104,13 +11104,13 @@ in Kook et al. (2023, <doi:10.1080/01621459.2024.2395588>).")
 (define-public r-tram
   (package
     (name "r-tram")
-    (version "1.4-2")
+    (version "1.4-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tram" version))
        (sha256
-        (base32 "1y2bj6nahx34nmh1ix11sb0f565wzamgp5m2zfzc8bs47kqbqpdz"))))
+        (base32 "1l80r3rhif3acdcsh05myy9v5jwlsjk1navblb9vq9k7rxm3080r"))))
     (properties `((upstream-name . "tram")))
     (build-system r-build-system)
     (arguments
@@ -14855,13 +14855,13 @@ strings, pasting and combining rows together across columns, etc.")
 (define-public r-tongfen
   (package
     (name "r-tongfen")
-    (version "0.3.6")
+    (version "0.3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tongfen" version))
        (sha256
-        (base32 "1gy9b8f87a8swqrbnzx93fmyrj800g5xa6ahmc5kvq9n5k2a73b0"))))
+        (base32 "1sv4wvaskdr77smyk90isnd1k234zh791l0w7dzn8x6zdsyh1m9b"))))
     (properties `((upstream-name . "tongfen")))
     (build-system r-build-system)
     (arguments
@@ -17258,13 +17258,13 @@ unmeasured confounder may tip our result to insignificance.")
 (define-public r-tipmap
   (package
     (name "r-tipmap")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tipmap" version))
        (sha256
-        (base32 "1w75x84m7b4fjjjvx4fhzsizamh5glwj0lk2w1da90vbs8iv8apv"))))
+        (base32 "1brzcs8x22467l7h945988wid4jpnq6wi9xn2n6cggmwc4cq9jm5"))))
     (properties `((upstream-name . "tipmap")))
     (build-system r-build-system)
     (arguments
@@ -34883,13 +34883,13 @@ data into machine-readable @code{LongForm} Dataframes.")
 (define-public r-tablet
   (package
     (name "r-tablet")
-    (version "0.7.1")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tablet" version))
        (sha256
-        (base32 "0ijj978h87c38w3g8ijf4z1s7jhiyivc345k03czg9wz80n5w5pm"))))
+        (base32 "0pjhg01bdr2px7lvbgawb8h706bx2lk9qs6v9qg391h0v6wn1kbk"))))
     (properties `((upstream-name . "tablet")))
     (build-system r-build-system)
     (arguments

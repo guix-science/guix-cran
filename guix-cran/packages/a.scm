@@ -19933,13 +19933,13 @@ substantive conclusions.")
 (define-public r-aigra
   (package
     (name "r-aigra")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AIGRA" version))
        (sha256
-        (base32 "13rmjjwhi4g8af57gw2ns5v6b8vm0hpm50v0fj5xqqa9vvwpza6w"))))
+        (base32 "10454kssgls56fj425m1madic5dhbj063fmj0if54iq0d5mhd171"))))
     (properties `((upstream-name . "AIGRA")))
     (build-system r-build-system)
     (arguments

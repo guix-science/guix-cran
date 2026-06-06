@@ -942,13 +942,13 @@ Association (AHA) as described in Dâagostino, et al (2008)
 (define-public r-cvms
   (package
     (name "r-cvms")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cvms" version))
        (sha256
-        (base32 "1i1r45ffn8qaa87g659lh0w722v7darwmw8845azri5ay1rdlci5"))))
+        (base32 "1ay6yzr31bwbl61i3li2nqjy3bkpifmnk4jc79qj4wl82hfyivfj"))))
     (properties `((upstream-name . "cvms")))
     (build-system r-build-system)
     (arguments
@@ -958,6 +958,7 @@ Association (AHA) as described in Dâagostino, et al (2008)
                              r-tibble
                              r-stringr
                              r-rlang
+                             r-reformulas
                              r-recipes
                              r-rearrr
                              r-purrr
@@ -5462,6 +5463,35 @@ bootstrap method.  The p value was calculated by using the Z testing method.
 Please refer to the article of Peter Ganz et al. (2016)
 <doi:10.1001/jama.2016.5951>.")
     (license license:gpl3)))
+
+(define-public r-csbewma
+  (package
+    (name "r-csbewma")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "csbewma" version))
+       (sha256
+        (base32 "0yidiclqi1ll0jrg3bz9f9ih9ka1cq5h4iwpf1y4ssaks1mmj067"))))
+    (properties `((upstream-name . "csbewma")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-patchwork r-ggplot2))
+    (home-page "https://cran.r-project.org/package=csbewma")
+    (synopsis
+     "Cumulative Standardized Binomial EWMA for Multiple Stream Processes")
+    (description
+     "This package implements the Cumulative Standardized Binomial Exponentially
+Weighted Moving Average (CSB-EWMA) control chart for monitoring multiple
+independent streams with binomial outcomes.  Provides exact variance
+calculations, adaptive control limits, post-hoc identification with multiple
+testing corrections (Bonferroni, Holm, Benjamini-Hochberg), and visualization
+tools.  The method is described in Muritala et al. (2026)
+<doi:10.48550/@code{arXiv.2601.09968>}.")
+    (license license:expat)))
 
 (define-public r-csampling
   (package
@@ -21728,13 +21758,13 @@ Discriminant Analysis (HDDA) algorithm of Bouveyron C. Girard S. and Schmid C.
 (define-public r-compositionalclust
   (package
     (name "r-compositionalclust")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CompositionalClust" version))
        (sha256
-        (base32 "0iawh6mzn29lqxk79311lp2hxk9x8i0jpzsvihlzvh5swqpdc4n6"))))
+        (base32 "0852p9p5lwcgyr5739hp9qy6nhmh4d3i652kai47h2fy3kxj9jqd"))))
     (properties `((upstream-name . "CompositionalClust")))
     (build-system r-build-system)
     (arguments
@@ -21744,19 +21774,17 @@ Discriminant Analysis (HDDA) algorithm of Bouveyron C. Girard S. and Schmid C.
                              r-rfast
                              r-mixture
                              r-lowmemtkmeans
-                             r-foreach
                              r-factoextra
-                             r-doparallel
                              r-compositional))
     (home-page "https://cran.r-project.org/package=CompositionalClust")
     (synopsis "Clustering with Compositional Data")
     (description
      "Cluster analysis with compositional data using the alpha--transformation.
-Relevant papers include: Tsagris M. and Kontemeniotis N. (2025),
-<doi:10.48550/@code{arXiv.2509.05945>}.  Tsagris M.T., Preston S. and Wood
-A.T.A. (2011), <doi:10.48550/@code{arXiv.1106.1451>}.  Garcia-Escudero Luis A.,
-Gordaliza Alfonso, Matran Carlos, Mayo-Iscar Agustin. (2008),
-<doi:10.1214/07-AOS515>.")
+Relevant papers include: Tsagris M. and Kontemeniotis N. (2025).  Lobachevskii
+Journal of Mathematics <doi:10.1134/S1995080225613700>.  Tsagris M.T., Preston
+S. and Wood A.T.A. (2011), <doi:10.48550/@code{arXiv.1106.1451>}.
+Garcia-Escudero Luis A., Gordaliza Alfonso, Matran Carlos, Mayo-Iscar Agustin.
+(2008), <doi:10.1214/07-AOS515>.")
     (license license:gpl2+)))
 
 (define-public r-compositional-mle
@@ -47568,13 +47596,13 @@ for an overview.")
 (define-public r-ccmnet
   (package
     (name "r-ccmnet")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CCMnet" version))
        (sha256
-        (base32 "1vrpd8dvaqsl1g496q92jmdqjg7v5hqkjivyv3sbzcff57bapzb2"))))
+        (base32 "0gl5gdba9q8b1pjcr20zsm6pvwvlcpky89a7i85nfp23wwdj42bk"))))
     (properties `((upstream-name . "CCMnet")))
     (build-system r-build-system)
     (arguments
@@ -53759,13 +53787,13 @@ settings.")
 (define-public r-candisc
   (package
     (name "r-candisc")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "candisc" version))
        (sha256
-        (base32 "0mnnjhdyvgynrz1986liy16y3sjz7f9jckjlm8lm09jvwqipk1bm"))))
+        (base32 "02wfk5mwvaik7ayg253pybw6cj4iiw26yiv5ns6zsw75hk05bph8"))))
     (properties `((upstream-name . "candisc")))
     (build-system r-build-system)
     (arguments

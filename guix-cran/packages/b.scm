@@ -354,13 +354,13 @@ bounded-variable least squares.")
 (define-public r-bvhar
   (package
     (name "r-bvhar")
-    (version "2.4.0")
+    (version "2.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bvhar" version))
        (sha256
-        (base32 "0q48gyp6apcff6hwy0qbl6fzri4g1nmcsrv9svkszx2k7c93q95s"))))
+        (base32 "1b60af37abzmwk7in4sqsflw2bjkfqxvrqa8qkinxdhhiz5fsfcz"))))
     (properties `((upstream-name . "bvhar")))
     (build-system r-build-system)
     (arguments
@@ -5832,13 +5832,13 @@ and @code{JavaScript} commands.  This package relies on the X toolkit ('XTK',
 (define-public r-brainnettest
   (package
     (name "r-brainnettest")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BrainNetTest" version))
        (sha256
-        (base32 "00vhk03wz28fl5b87q8qa1kpzc91wc9q9brdrx965aik7hr06z7y"))))
+        (base32 "1rhs7sn7fm2h50ikqxigx1bvj7aw6jav0ahq8svdy83m9cj1bnf1"))))
     (properties `((upstream-name . "BrainNetTest")))
     (build-system r-build-system)
     (arguments
@@ -10486,13 +10486,13 @@ Wu et al., (2022) <doi:10.1093/biostatistics/kxac050>.")
 (define-public r-bmm
   (package
     (name "r-bmm")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bmm" version))
        (sha256
-        (base32 "1dl3wr9yrfqn7pvrabsrwp4s9yq4my6b9bavksgjnslc3xidxpgi"))))
+        (base32 "1898bwxicikcqiiy0yncw7qa477sbmrhy1myd2jibbi046dfii9b"))))
     (properties `((upstream-name . "bmm")))
     (build-system r-build-system)
     (arguments
@@ -10516,7 +10516,7 @@ domain-specific models into brms syntax, a powerful and flexible framework for
 fitting Bayesian regression models using Stan'.  The package is designed so that
 users can easily apply state-of-the-art models in various research fields, and
 so that researchers can use it as a new model development framework.
-References: Frischkorn and Popov (2023) <doi:10.31234/osf.io/umt57>.")
+References: Frischkorn and Popov (2025) <doi:10.3758/s13428-025-02643-0>.")
     (license license:gpl2)))
 
 (define-public r-bmlm
@@ -21609,6 +21609,41 @@ methods can be found in Zhao et al. (2020) <@code{arXiv:2004.07743>}.")
 with leverage (one-component, two-component, skewed versions).")
     (license license:gpl2)))
 
+(define-public r-betastability
+  (package
+    (name "r-betastability")
+    (version "0.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "betaStability" version))
+       (sha256
+        (base32 "10cg268d75i89xxqkbnh7ld4dvc7x5j936dwkbagy8z2vlqdmm2c"))))
+    (properties `((upstream-name . "betaStability")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xgboost
+                             r-vegan
+                             r-usedist
+                             r-reshape2
+                             r-randomforest
+                             r-mgcv
+                             r-glmnet
+                             r-ggplot2
+                             r-gdm
+                             r-bbmisc))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/gaoyu19920914/betaStability/")
+    (synopsis
+     "Quantify the Compositional Stability of Each Community Based on a Single Sampling Event")
+    (description
+     "Quantify the stability of each community based on the beta diversity between
+communities gathered in a single sampling event rather than a series of
+continuous sampling activities.")
+    (license license:expat)))
+
 (define-public r-betaselectr
   (package
     (name "r-betaselectr")
@@ -27667,13 +27702,13 @@ this package.")
 (define-public r-bayespmtools
   (package
     (name "r-bayespmtools")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayespmtools" version))
        (sha256
-        (base32 "1rd90074zfwdyh834b5d63h752k3r3y20s4sff11bmj6w4746wx4"))))
+        (base32 "02kiypbxhr64hn5q5x8fx6x9bc0yn8bslmdb69d4rlbx9a5z9i4m"))))
     (properties `((upstream-name . "bayespmtools")))
     (build-system r-build-system)
     (arguments
@@ -27688,13 +27723,13 @@ this package.")
                              r-fastlogisticregressionwrap
                              r-cobs))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=bayespmtools")
+    (home-page "https://github.com/resplab/bayespmtools")
     (synopsis
      "Bayesian Sample Size and Precision Considerations for Risk Prediction Models")
     (description
      "This package performs Bayesian sample size, precision, and value-of-information
 analysis for external validation of existing multi-variable prediction models
-using the approach proposed by Sadatsafavi and colleagues (2025)
+using the approach proposed by Sadatsafavi and colleagues (2026)
 <doi:10.1002/sim.70389>.")
     (license license:gpl3)))
 
