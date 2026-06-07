@@ -10125,13 +10125,13 @@ and normality of data in each group via tests and plots (Dag et al., 2018,
 (define-public r-onetwosamples
   (package
     (name "r-onetwosamples")
-    (version "1.2-0")
+    (version "1.3-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OneTwoSamples" version))
        (sha256
-        (base32 "08f02nyg5jpq69mkwfal9xghqymhz81m3jzbvv92m8s0h99cirqd"))))
+        (base32 "0mci2i281rjsgahh02gw1a38xm9yz20wjlb1q32xxm6cms0jriw3"))))
     (properties `((upstream-name . "OneTwoSamples")))
     (build-system r-build-system)
     (arguments

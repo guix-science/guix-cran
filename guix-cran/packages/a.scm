@@ -4087,13 +4087,13 @@ ARIMA in SAS.")
 (define-public r-atrrr
   (package
     (name "r-atrrr")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "atrrr" version))
        (sha256
-        (base32 "1n5d5dmim3hns9ckbkascl1b9f3kim8m5nivn2xynql5w0lnf8rh"))))
+        (base32 "0sw2k9shvckl4pqfjyj1cj4y3gqfc09zqg7wb6q3zl1d2jjsaf2g"))))
     (properties `((upstream-name . "atrrr")))
     (build-system r-build-system)
     (arguments
@@ -4104,6 +4104,7 @@ ARIMA in SAS.")
                              r-snakecase
                              r-rlang
                              r-purrr
+                             r-lifecycle
                              r-httr2
                              r-glue
                              r-cli))
@@ -19296,13 +19297,13 @@ Joudah, Muller and Zhu (2025) <doi:10.1007/s11222-025-10599-6>.")
 (define-public r-airr
   (package
     (name "r-airr")
-    (version "1.6.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "airr" version))
        (sha256
-        (base32 "0l92ihjsmzs71hjj7faqwyp29nxjn8g1v8vfmf0f37q8s5gsqrp4"))))
+        (base32 "0lns8awkwizxb4pzyarrnrvmc2cm9fisanmb4xrx6imd9p42x4z4"))))
     (properties `((upstream-name . "airr")))
     (build-system r-build-system)
     (arguments

@@ -28595,13 +28595,13 @@ autoregressive moving average of order (1,1) ARMA (1,1).")
 (define-public r-bayeslogit
   (package
     (name "r-bayeslogit")
-    (version "2.3")
+    (version "2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesLogit" version))
        (sha256
-        (base32 "197j5wqs1q0h0xpsp45ld3x4qjv0p0zxw1hdhv0ffpblvsvvi65a"))))
+        (base32 "04nvz1ck4jdn8xaxzbc17k4gpvb5ggwinp1xdrjx8czjd5awrfh0"))))
     (properties `((upstream-name . "BayesLogit")))
     (build-system r-build-system)
     (arguments
@@ -33786,13 +33786,13 @@ on flat priors as input.")
 (define-public r-bamp
   (package
     (name "r-bamp")
-    (version "2.1.3")
+    (version "2.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bamp" version))
        (sha256
-        (base32 "0qzcndjdwbgiwyvc7ikb7jr0n7cmn78v56h5in22j24jjj740l2z"))))
+        (base32 "02hzgnyp91dbc5bxs4hvkgz5fq4xpwmz6b8d4101gcgx01gry1ji"))))
     (properties `((upstream-name . "bamp")))
     (build-system r-build-system)
     (arguments

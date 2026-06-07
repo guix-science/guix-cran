@@ -2078,13 +2078,13 @@ on human communication dynamics.")
 (define-public r-duckspatial
   (package
     (name "r-duckspatial")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "duckspatial" version))
        (sha256
-        (base32 "1cymmhqva6r97bxl4zwnxzkl5zc6jbjkwpwxrzdh6qfb9xicpdk1"))))
+        (base32 "1fnrglwxb5gj4qv4kip17wydbn7zcpqmcimamsa85fl49chr8n1y"))))
     (properties `((upstream-name . "duckspatial")))
     (build-system r-build-system)
     (arguments
@@ -5998,13 +5998,13 @@ profiles for two models, @code{check_drift()} executes all checks against drift.
 (define-public r-driftdm
   (package
     (name "r-driftdm")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dRiftDM" version))
        (sha256
-        (base32 "033b99pssfrzjfh3jvd5wk8pjpm7pv19kpw6s8vxfqrmdaslafvv"))))
+        (base32 "0bdqr86xkiv7921qs3008nmjamvaz9kl45vsvslqqn9gnz7x6wkh"))))
     (properties `((upstream-name . "dRiftDM")))
     (build-system r-build-system)
     (arguments

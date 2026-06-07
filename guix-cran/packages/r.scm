@@ -22570,13 +22570,13 @@ measures (RIT, RID).")
 (define-public r-rmedpower2
   (package
     (name "r-rmedpower2")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RMeDPower2" version))
        (sha256
-        (base32 "0ks1rm81algv56xk2w002pnb9i4w581k7ri7i7dpd1s9nnx5ixmq"))))
+        (base32 "0dh66nnwhg4dxdkfbrwl2mvyrnr6j5y0irj1z1rp7hwqwihmf8z6"))))
     (properties `((upstream-name . "RMeDPower2")))
     (build-system r-build-system)
     (arguments
