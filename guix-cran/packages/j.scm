@@ -5024,13 +5024,13 @@ methodology, please refer to the documentation of targets
 (define-public r-jagshelper
   (package
     (name "r-jagshelper")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jagshelper" version))
        (sha256
-        (base32 "1i214hkg0g2zbln5cy9s175w1jf3akz3jpzf9wydd9wcbl9j0qa2"))))
+        (base32 "1y1kbijmr0ckjl9hj823d4m4rkawj2qay0wisbwi6zg0iwll198v"))))
     (properties `((upstream-name . "jagshelper")))
     (build-system r-build-system)
     (arguments

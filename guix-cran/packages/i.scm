@@ -3741,13 +3741,13 @@ models from data with different shape and using different software.")
 (define-public r-irtq
   (package
     (name "r-irtq")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "irtQ" version))
        (sha256
-        (base32 "1cg9rxbk7xsbaj4qx9gvda4q3zxlxbq5v8pfng1kpwcsja8bysla"))))
+        (base32 "15gaxazhbh903277n2f0l55kj335229xnr3djpqq7ppzdb0r27j8"))))
     (properties `((upstream-name . "irtQ")))
     (build-system r-build-system)
     (arguments
@@ -3766,7 +3766,7 @@ models from data with different shape and using different software.")
                              r-gridextra
                              r-ggplot2
                              r-dplyr))
-    (home-page "https://cran.r-project.org/package=irtQ")
+    (home-page "https://hwangQ.github.io/irtQ/")
     (synopsis "Unidimensional Item Response Theory Modeling")
     (description
      "Fit unidimensional item response theory (IRT) models to test data, which

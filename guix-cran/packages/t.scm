@@ -7233,13 +7233,13 @@ summaries binned by time interval from Markov Chain Monte Carlo simulations.")
 (define-public r-tripack
   (package
     (name "r-tripack")
-    (version "1.3-9.3")
+    (version "1.3-9.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tripack" version))
        (sha256
-        (base32 "0ximarlnrgldny2wf1ygzh2id72cvrx8fplk49kq1qwbvjf21sj0"))))
+        (base32 "1pklhwgdg5w1dqsiqwbzrpziia2angjkfags4cfrsm9qcaf7sl89"))))
     (properties `((upstream-name . "tripack")))
     (build-system r-build-system)
     (arguments
@@ -17605,20 +17605,20 @@ framework, and @code{LaTeX} code with the tabularray package.")
 (define-public r-tinyspotifyr
   (package
     (name "r-tinyspotifyr")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinyspotifyr" version))
        (sha256
-        (base32 "19nicp1ml73lylja2np52rcc070maxm9286fjm7bfx3zsblxmakc"))))
+        (base32 "0l886h8h8ih993p80260q954ympvv42scp9iydaasxk5qx9x88v4"))))
     (properties `((upstream-name . "tinyspotifyr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-jsonlite r-httr))
-    (home-page "https://github.com/TroyHernandez/tinyspotifyr")
+    (home-page "https://github.com/cornball-ai/tinyspotifyr")
     (synopsis "Tinyverse R Wrapper for the 'Spotify' Web API")
     (description
      "An R wrapper for the Spotify Web API <https://developer.spotify.com/web-api/>.")

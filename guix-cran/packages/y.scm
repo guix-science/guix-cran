@@ -1380,3 +1380,44 @@ associated print, plot, and summary methods.  A method for generating helio
 plots is also included.")
     (license license:gpl3+)))
 
+(define-public r-yaap
+  (package
+    (name "r-yaap")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "yaap" version))
+       (sha256
+        (base32 "07my1qfvcf0xssj4068b3dsksfan6c50n6d94vygxk2b3rjn8bap"))))
+    (properties `((upstream-name . "yaap")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs
+                             r-tibble
+                             r-rlang
+                             r-nnls
+                             r-matrixstats
+                             r-matrix
+                             r-generics))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=yaap")
+    (synopsis "Toolkit for Archetypal Analysis Methods")
+    (description
+     "Fits archetypal analysis models, including Euclidean, probabilistic, kernel, and
+directional variants.  Methods include classical archetypal analysis from Cutler
+and Breiman (1994) <doi:10.1080/00401706.1994.10485840>, PCHA and kernel
+variants from MÃ¸rup and Hansen (2012) <doi:10.1016/j.neucom.2011.06.033>,
+probabilistic archetypal analysis from Seth and Eugster (2016)
+<doi:10.1007/s10994-015-5498-8>, directional archetypal analysis from Olsen et
+al. (2022) <doi:10.3389/fnins.2022.911034>, AA++ initialization from Mair and
+SjÃ¶lund (2023) <doi:10.48550/@code{arXiv.2301.13748>}, coreset-style
+initialization from Mair and Brefeld (2019)
+<https://proceedings.neurips.cc/paper_files/paper/2019/file/7f278ad602c7f47aa76d1bfc90f20263-Paper.pdf>,
+and adapted AIC from Suleman (2017) <doi:10.1109/FUZZ-IEEE.2017.8015385>.
+Provides initialization helpers, model selection paths, plotting methods, broom
+methods, and a tidymodels recipe step.")
+    (license license:gpl3+)))
+

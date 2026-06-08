@@ -10147,19 +10147,25 @@ package is used to speed up the computation.")
 (define-public r-bnns
   (package
     (name "r-bnns")
-    (version "0.1.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bnns" version))
        (sha256
-        (base32 "1m6ndah3pki5i6yrixg147b0cd08zfai4da4pagi4flvnn0g4w0h"))))
+        (base32 "1rw8cir9dkifbpc6fs1x9xcvx6zz37rvb5yhmzw08d6m21wwbsvn"))))
     (properties `((upstream-name . "bnns")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rstan r-rcppeigen r-proc r-bh))
+    (propagated-inputs (list r-tibble
+                             r-rstan
+                             r-rcppeigen
+                             r-proc
+                             r-loo
+                             r-digest
+                             r-bh))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/swarnendu-stat/bnns")
     (synopsis "Bayesian Neural Network with 'Stan'")
@@ -20222,34 +20228,6 @@ part of a Rutherford Fund Fellowship at Health Data Research (UK), Medical
 Research Council (UK) award reference MR/S003967/1 (<https://gtr.ukri.org/>).
 Principal Investigator: Raymond Carragher.")
     (license license:gpl3)))
-
-(define-public r-bhmsmafmri
-  (package
-    (name "r-bhmsmafmri")
-    (version "2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "BHMSMAfMRI" version))
-       (sha256
-        (base32 "13cvc1d3dgl8mkw8sqs7ixx41yn9afbn4mcwrahy0cz6y09pic42"))))
-    (properties `((upstream-name . "BHMSMAfMRI")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-wavethresh r-rcpparmadillo r-rcpp r-oro-nifti))
-    (native-inputs (list r-knitr))
-    (home-page "https://nilotpalsanyal.github.io/BHMSMAfMRI/")
-    (synopsis
-     "Bayesian Hierarchical Multi-Subject Multiscale Analysis of Functional MRI (fMRI) Data")
-    (description
-     "Package BHMSM@code{AfMRI} performs Bayesian hierarchical multi-subject
-multiscale analysis of @code{fMRI} data as described in Sanyal & Ferreira (2012)
-<DOI:10.1016/j.neuroimage.2012.08.041>, or other multiscale data, using
-wavelet-based prior that borrows strength across subjects and provides posterior
-smoothed images of the effect sizes and samples from the posterior distribution.")
-    (license license:gpl2+)))
 
 (define-public r-bhmbasket
   (package

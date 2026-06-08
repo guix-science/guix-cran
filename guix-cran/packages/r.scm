@@ -3286,6 +3286,52 @@ sequential designs are based on Jennison and Turnbull (1999,
 ISBN:9780849303166).")
     (license license:gpl2+)))
 
+(define-public r-rts2
+  (package
+    (name "r-rts2")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rts2" version))
+       (sha256
+        (base32 "0mb5vkmffi5v9sd306nkdkwxv7jwkv4m3sspm7zwg8v0np1dp4fa"))))
+    (properties `((upstream-name . "rts2")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stars
+                             r-stanheaders
+                             r-spdep
+                             r-sf
+                             r-rstantools
+                             r-rstan
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-raster
+                             r-r6
+                             r-quadprog
+                             r-lubridate
+                             r-glmmrbase
+                             r-fnn
+                             r-fmesher
+                             r-bh))
+    (home-page "https://cran.r-project.org/package=rts2")
+    (synopsis "Log-Gaussian Cox Process Models with Approximations")
+    (description
+     "Supports modelling case data to facilitate.  The package provides automated
+computational grid generation over an area of interest with methods to map
+covariates between geographies, model fitting including spatially aggregated
+case counts, and predictions and visualisation.  Monte Carlo maximum likelihood
+is the main fitting method with a low-rank approximation for Gaussian processes
+described by Solin and SÃ¤rkkÃ¤ (2020) <doi:10.1007/s11222-019-09886-w> and a
+stochastic partial differential equation approximation.  Bayesian methods are
+also provided for some methods.  Log-Gaussian Cox Processes are described by
+Diggle et al. (2013) <doi:10.1214/13-STS441>.")
+    (license license:cc-by-sa4.0)))
+
 (define-public r-rts
   (package
     (name "r-rts")
@@ -3937,13 +3983,13 @@ RT-MPTs).")
 (define-public r-rtmpinvi
   (package
     (name "r-rtmpinvi")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtmpinvi" version))
        (sha256
-        (base32 "1zf77vf87ch5k40c9b5f1wn9sq5575xi7mqzq127xp2822vri6gh"))))
+        (base32 "0n1yybby5vlrc0kdc54jgph4xyd0j6kmvg97ard2c52dma1lasi3"))))
     (properties `((upstream-name . "rtmpinvi")))
     (build-system r-build-system)
     (arguments
@@ -3971,13 +4017,13 @@ fit, coherence, and regularization (e.g., via Lasso, Ridge, or Elastic Net).")
 (define-public r-rtmpinv
   (package
     (name "r-rtmpinv")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtmpinv" version))
        (sha256
-        (base32 "0dzdp66ys847raps3fi9lsqglg08scqypajdq3mmsv47vkck3fpf"))))
+        (base32 "0q6291v7alkvi8n8snlzz9qjwxzh2ixyiw55p8rih8w0l8i1ph44"))))
     (properties `((upstream-name . "rtmpinv")))
     (build-system r-build-system)
     (arguments
@@ -10402,13 +10448,13 @@ optimal fertilizer application rates.")
 (define-public r-rquantlib
   (package
     (name "r-rquantlib")
-    (version "0.4.26")
+    (version "0.4.27")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RQuantLib" version))
        (sha256
-        (base32 "1bj17wh1cbvy4wx9g2w9qxyvcvwqc72igiga0l69p1s6znviry63"))))
+        (base32 "0cr4b7chd29cq1cqqxk3j9j9qfmfzg6w6askjmljvwkipn412r5a"))))
     (properties `((upstream-name . "RQuantLib")))
     (build-system r-build-system)
     (arguments
@@ -23846,13 +23892,13 @@ weight, variable weight, tracking subjects used in each tree, etc.")
 (define-public r-rlppinv
   (package
     (name "r-rlppinv")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rlppinv" version))
        (sha256
-        (base32 "18riy88c7j9f77ih5giylhw363facva6mxlsbkznxjv1qvad8bvx"))))
+        (base32 "1qbq6idmika2bn95ndj51jh4v94q3b91938yn4lc7p9qh0ihnjyq"))))
     (properties `((upstream-name . "rlppinv")))
     (build-system r-build-system)
     (arguments
@@ -49676,13 +49722,13 @@ endogeneity problems in nonexperimental data without requiring IVs.")
 (define-public r-rconvertu
   (package
     (name "r-rconvertu")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rconvertu" version))
        (sha256
-        (base32 "1mszbj64ah4nskqg40p1i5z49cy1w888jl8qspxg3037maz0f5d3"))))
+        (base32 "0bbdxlcjawzrqdjzzknakss4qmvqdc8z5bn40ks6kwz2fvdyqzxx"))))
     (properties `((upstream-name . "rconvertu")))
     (build-system r-build-system)
     (arguments
@@ -51100,13 +51146,13 @@ user interface) for R, based on the tcltk package.")
 (define-public r-rclsp
   (package
     (name "r-rclsp")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rclsp" version))
        (sha256
-        (base32 "17ny16gjqid04nh7y093lm9aaxjiikvy93qgz0j9wc581fmzhvn1"))))
+        (base32 "1zljsizria3j9jp3zaw9s5k9x4j64qpd872ffkwb7gg1dpghv0sh"))))
     (properties `((upstream-name . "rclsp")))
     (build-system r-build-system)
     (arguments

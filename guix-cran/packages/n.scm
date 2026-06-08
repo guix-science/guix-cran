@@ -1867,6 +1867,55 @@ method and a minimum distance estimator.  Mayoral, L. (2007)
 <doi:10.1111/j.2517-6161.1995.tb02054.x>.")
     (license license:gpl3+)))
 
+(define-public r-nrmstatsml
+  (package
+    (name "r-nrmstatsml")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NRMstatsML" version))
+       (sha256
+        (base32 "04gsk2h80d30b8i6wx31cmvpnccpfckba9c9p47pygh24w9bj464"))))
+    (properties `((upstream-name . "NRMstatsML")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-trend
+                             r-strucchange
+                             r-rlang
+                             r-pls
+                             r-plm
+                             r-lavaan
+                             r-kendall
+                             r-ggplot2
+                             r-forecast
+                             r-caret
+                             r-boot))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=NRMstatsML")
+    (synopsis
+     "Statistical and Machine Learning Engine for Long-Term Natural Resource Management Data")
+    (description
+     "This package provides a comprehensive toolkit for statistical and machine
+learning-based analysis of long-term Natural Resource Management (NRM) datasets.
+ Integrates formula-driven approaches, statistical inference, and machine
+learning (ML) models for advanced analytics.  Modules cover trend and structural
+analysis (Mann-Kendall test, slope estimation, Chow test, structural break
+detection), multivariate system modelling (Partial Least Squares (PLS),
+Structural Equation Modelling (SEM)), response curve optimisation, time-series
+forecasting (Autoregressive Integrated Moving Average (ARIMA), hybrid models),
+panel data and treatment effects (Difference-in-Differences (@code{DiD}), causal
+machine learning), uncertainty and sensitivity analysis (bootstrap, Monte Carlo,
+Bayesian), and automated model selection and performance comparison.  Designed
+for long-term datasets covering soil, water, crop, and climate domains.  Key
+references: Mann and Kendall (1945) <doi:10.2307/1907187>; Sen (1968)
+<doi:10.1080/01621459.1968.10480934>; Bai and Perron (2003)
+<doi:10.1002/jae.659>; Rosseel (2012) <doi:10.18637/jss.v048.i02>; Croissant and
+Millo (2008) <doi:10.18637/jss.v027.i02>.")
+    (license license:gpl3+)))
+
 (define-public r-nrmsampling
   (package
     (name "r-nrmsampling")
@@ -3164,13 +3213,13 @@ Thiebaut (2019) <doi: 10.1214/18-AOAS1209>.")
 (define-public r-npfd
   (package
     (name "r-npfd")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NPFD" version))
        (sha256
-        (base32 "08yim6328xfrpacc43l9ayl3rkrqrwv2s5jqc32z0n6fh0i5zqaj"))))
+        (base32 "0b090xvqa8qysp32k5vnx3w755shciq7dnajq9rgg8gc5pbxikd1"))))
     (properties `((upstream-name . "NPFD")))
     (build-system r-build-system)
     (arguments
@@ -8896,13 +8945,13 @@ composition and modification functions to make model updates easier.")
 (define-public r-nlmixr2extra
   (package
     (name "r-nlmixr2extra")
-    (version "5.0.0")
+    (version "5.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmixr2extra" version))
        (sha256
-        (base32 "07qgnnx9kqmgrqk0d79idv21lnvbv7niflzd8p12wiqmyipr7q73"))))
+        (base32 "17039zyhijsnx4dzrpl6xany7w951k490ii76jarnykcn79jk0js"))))
     (properties `((upstream-name . "nlmixr2extra")))
     (build-system r-build-system)
     (arguments
@@ -8914,6 +8963,7 @@ composition and modification functions to make model updates easier.")
                              r-rcpp
                              r-nlmixr2est
                              r-nlme
+                             r-magrittr
                              r-lotri
                              r-knitr
                              r-ggtext
@@ -12019,13 +12069,13 @@ distributions, and exponentiated exponential Poisson G distributions.")
 (define-public r-new-dist
   (package
     (name "r-new-dist")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "new.dist" version))
        (sha256
-        (base32 "1zkmwqhamrw7g4d1hffsyhcsjf0z0nmmgnixc7wny0qqpmyqlb2n"))))
+        (base32 "1dv8f779477svmzcfv8lssb3z0b784dzix4fdapkw3lwh9h0mz2q"))))
     (properties `((upstream-name . "new.dist")))
     (build-system r-build-system)
     (arguments

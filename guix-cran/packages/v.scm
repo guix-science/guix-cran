@@ -7251,19 +7251,19 @@ Selection Uncertainty\" <https://homepages.uc.edu/~qinyn/VDSM/VDSM.html>.")
 (define-public r-vdpo
   (package
     (name "r-vdpo")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VDPO" version))
        (sha256
-        (base32 "0x3sv4f4v2wnnhs02dq3fw9lrqif4qkq9bl16rs804vlmw8npb47"))))
+        (base32 "07516y72arn9gabqhvj54n15pvg92vi3ilkaib7v4g1fiy0ln5yb"))))
     (properties `((upstream-name . "VDPO")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sop r-matrix))
+    (propagated-inputs (list r-sop r-proc r-mgcv r-matrix r-fda))
     (native-inputs (list r-knitr))
     (home-page "https://pavel-hernadez-amaro.github.io/VDPO/")
     (synopsis "Working with and Analyzing Functional Data of Varying Lengths")
@@ -7274,7 +7274,9 @@ data analysis: Variable Domain Data, where the observation domain differs across
 samples, and Partially Observed Data, where observations are incomplete over the
 domain of interest.  VDPO enhances the flexibility and applicability of
 functional data analysis in R'.  See Amaro et al. (2024)
-<doi:10.48550/@code{arXiv.2401.05839>}.")
+<doi:10.48550/@code{arXiv.2401.05839>}, Hernandez-Amaro et al. (2025)
+<doi:10.48550/@code{arXiv.2510.26917>}, and Hernandez-Amaro et al. (2026)
+<doi:10.48550/@code{arXiv.2605.03633>}.")
     (license license:expat)))
 
 (define-public r-vdjgermlines
@@ -7674,13 +7676,13 @@ details on the specifications used see Danecek et al. (2021)
 (define-public r-vcdextra
   (package
     (name "r-vcdextra")
-    (version "0.9.3")
+    (version "0.9.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vcdExtra" version))
        (sha256
-        (base32 "07774z7cps33x1ggg5lpq6hakalz8dpg2d632hp4dbj61zgi0wcy"))))
+        (base32 "1l138rnyc45kzgin8dn8qs20pqg42drxgrjd7xmfkwq228g3260m"))))
     (properties `((upstream-name . "vcdExtra")))
     (build-system r-build-system)
     (arguments
@@ -7689,12 +7691,14 @@ details on the specifications used see Danecek et al. (2021)
     (propagated-inputs (list r-webshot2
                              r-vcd
                              r-scales
+                             r-rlang
                              r-mass
                              r-knitr
                              r-igraph
                              r-htmlwidgets
                              r-gt
                              r-gnm
+                             r-forcats
                              r-dplyr
                              r-colorspace
                              r-ca))
@@ -9964,6 +9968,47 @@ significantly separates two of the estimated clusters.  Methods are detailed in:
 Hivert B, Agniel D, Thiebaut R & Hejblum BP (2022). \"Post-clustering difference
 testing: valid inference and practical considerations\",
 <@code{arXiv:2210.13172>}.")
+    (license license:expat)))
+
+(define-public r-validationexplorer
+  (package
+    (name "r-validationexplorer")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ValidationExplorer" version))
+       (sha256
+        (base32 "1hbkr95w9vscfzh1w9shxmprraw1xy3fzdyfxzppyzimq73cc49l"))))
+    (properties `((upstream-name . "ValidationExplorer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridis
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rstan
+                             r-rlang
+                             r-purrr
+                             r-nimble
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr
+                             r-coda))
+    (home-page "https://j-oram.github.io/ValidationExplorer/")
+    (synopsis "Simulation-Based Tools for Bioacoustic Study Design")
+    (description
+     "Many bioacoustic data workflows rely on manual review (i.e., validation) of a
+subset of call files to provide information to statistical models that account
+for misclassification by automated algorithms.  Because manual review can be
+prohibitively expensive, simulation can be a valuable tool to aid the design of
+studies that use validation.  This package provides user-friendly functions to
+reduce the programming burden of simulation studies that compare validation
+sampling designs.  Simulations assume the count-detection model, which is a
+realistic model for bioacoustic data, especially for bats.  For more
+information, see Oram et al. (2025) <doi:10.1214/25-AOAS2096>.")
     (license license:expat)))
 
 (define-public r-validatetools

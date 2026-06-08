@@ -2509,6 +2509,53 @@ Related methods are described by Burgess (2013) <doi:10.1002/gepi.21758>, Bowden
 <https://github.com/aj-grant/mrhorse>.")
     (license license:gpl3)))
 
+(define-public r-automlr
+  (package
+    (name "r-automlr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AutoMLR" version))
+       (sha256
+        (base32 "1gv9flbjz0vy2457nwjmsr1b93c40mbxkja9gfc3p44jbvib5zrx"))))
+    (properties `((upstream-name . "AutoMLR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival))
+    (home-page "https://cran.r-project.org/package=AutoMLR")
+    (synopsis "Automated Multi-Outcome Machine Learning Combination Models")
+    (description
+     "This package provides automated machine learning workflows for survival
+analysis, binary classification, continuous outcomes, and ordinal outcomes.  The
+package trains and combines model variants across user-supplied multi-cohort
+data, evaluates survival models by leave-one-out cross-validation using
+Harrell's concordance index, binary models by leave-one-out cross-validation
+using receiver operating characteristic area under the curve, continuous models
+by out-of-fold root mean squared error and R-squared, and ordinal models by
+out-of-fold quadratic weighted kappa.  It renders reproducible reports in
+Hypertext Markup Language (HTML) with figures and diagnostics.  The survival
+workflow supports penalized and tree-based Cox proportional hazards models,
+stepwise Cox models, partial least squares regression for Cox models, supervised
+principal components, gradient boosting machine Cox models, survival support
+vector machines (survival-SVM), random survival forests, and optional
+@code{CoxBoost}'.  The binary workflow supports penalized logistic regression,
+logistic baselines, gradient boosting machines, random forests, principal
+component analysis (PCA) logistic regression, and Gaussian naive Bayes variants.
+ Continuous and ordinal workflows reuse an 18-variant regression registry with
+penalized, linear, boosted, forest, PCA, and baseline families.  The optional
+@code{CoxBoost} model is enabled when the suggested @code{CoxBoost} package is
+installed; it is used conditionally and is not a strong dependency.  Optional
+model backends are checked at run time so missing backend packages skip only the
+affected model variants rather than blocking installation of the whole package.
+Methods build on Friedman et al. (2010) <doi:10.18637/jss.v033.i01>, Bair and
+Tibshirani (2004) <doi:10.1371/journal.pbio.0020108>, Ishwaran et al. (2008)
+<doi:10.1214/08-AOAS169>, Blanche et al. (2013) <doi:10.1002/sim.5958>, and
+Binder and Schumacher (2008) <doi:10.1186/1471-2105-9-14>.")
+    (license license:expat)))
+
 (define-public r-automl
   (package
     (name "r-automl")
@@ -18856,13 +18903,13 @@ Fraiman and Li (2020) <@code{arXiv:2009.04550>}.")
 (define-public r-akin
   (package
     (name "r-akin")
-    (version "0.3.3")
+    (version "0.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "akin" version))
        (sha256
-        (base32 "1r9lwii9qh69wskslg539gx4sbphc0860bh9535016cx28jd6627"))))
+        (base32 "1jrvbmnm8cnfia0bvvpfn99n8mz62zfjv9kdmh8pjpjgr015xvv7"))))
     (properties `((upstream-name . "akin")))
     (build-system r-build-system)
     (arguments
@@ -18883,8 +18930,8 @@ large data files, data tiling, one-hot encoding and decoding of data tiles,
 stratified proportional (random or probabilistic) data sampling, data
 normalization and thresholding, substring location and commonalities inside
 strings, and location and tabulation of amino acids, modifications or associated
-monoisotopic masses inside modified peptides.  The extractor utility implements
-code from Matrix.utils', Varrichio C (2020),
+monoisotopic masses inside modified peptides.  The extractor implements code
+from Matrix.utils', Varrichio C (2020),
 <https://cran.r-project.org/package=Matrix.utils>.")
     (license license:gpl3+)))
 
@@ -26610,13 +26657,13 @@ score-based signal detection approaches are also supplied.  See Courtois et al
 (define-public r-adapt3
   (package
     (name "r-adapt3")
-    (version "2.0.7")
+    (version "2.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adapt3" version))
        (sha256
-        (base32 "0nm7dj0h6z9g7kxnpvdylh519ls0zz0z3wdv7xrz47njvr9h2ngf"))))
+        (base32 "155wb7lqqayfwnz89ys5j60lbz8fr1cs1qpd51s4n1v77dnpj07z"))))
     (properties `((upstream-name . "adapt3")))
     (build-system r-build-system)
     (arguments

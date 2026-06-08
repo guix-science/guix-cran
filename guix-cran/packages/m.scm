@@ -15269,13 +15269,13 @@ solutions and statistical tests to assess their significance are provided.")
 (define-public r-mosalloc
   (package
     (name "r-mosalloc")
-    (version "1.2.5")
+    (version "1.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MOSAlloc" version))
        (sha256
-        (base32 "1902rm210qwy6l0j0yn3a7dz9vas9i290vpy2affs0qrfw3zf0p7"))))
+        (base32 "03zac3j3qla9wvc70v2fjdpx54ganmpzfdv51vspwj5n50s6mna6"))))
     (properties `((upstream-name . "MOSAlloc")))
     (build-system r-build-system)
     (arguments
@@ -28171,25 +28171,30 @@ optimization literature.")
 (define-public r-misreparma
   (package
     (name "r-misreparma")
-    (version "0.0.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MisRepARMA" version))
        (sha256
-        (base32 "0bay8grq49yin9yy9h9ynb8flsbrb10h4lp7sdzp9ih5b9w21y7z"))))
+        (base32 "1r3z0jfc82lfjjw3jvbchz07361c1qcir69503z3rbrf9dzlk77a"))))
     (properties `((upstream-name . "MisRepARMA")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tseries r-mixtools r-boot))
+    (propagated-inputs (list r-tseries r-r2jags r-mixtools r-boot))
     (home-page "https://cran.r-project.org/package=MisRepARMA")
     (synopsis "Misreported Time Series Analysis")
     (description
      "This package provides a simple and trustworthy methodology for the analysis of
-misreported continuous time series.  See MoriÃ±a, D, FernÃ¡ndez-Fontelo, A,
-CabaÃ±a, A, Puig P. (2021) <@code{arXiv:2003.09202v2>}.")
+misreported continuous time series using either a frequentist (bootstrap-based
+EM algorithm) or a Bayesian (MCMC via JAGS) approach.  The frequentist method is
+described in Morina et al. (2021) <doi:10.1038/s41598-021-02620-5>.  The
+Bayesian extension fits the same ARMA model with misreporting structure using a
+full posterior distribution, providing credible intervals and DIC for model
+comparison, as described in Morina et al. (2024)
+<doi:10.1101/2024.02.26.24303373>.")
     (license license:gpl2+)))
 
 (define-public r-misprime
@@ -51205,6 +51210,31 @@ conditional proportions of a second categorical variable.")
      "An R port of the margins command from Stata', which can be used to calculate
 marginal (or partial) effects from model objects.")
     (license license:expat)))
+
+(define-public r-marginme
+  (package
+    (name "r-marginme")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "marginme" version))
+       (sha256
+        (base32 "08qvz15x8zkm99gh9g6gh6nq9jqn32vrx29y0kdbwl6y2zdaqp5j"))))
+    (properties `((upstream-name . "marginme")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-glmmrbase))
+    (home-page "https://github.com/samuel-watson/marginme")
+    (synopsis
+     "Estimation of Relative Risks, Risk Differences, and Marginal Effects from Mixed Models Using Marginal Standardization")
+    (description
+     "Estimation of relative risks, risk differences, and partial effects from mixed
+model.  Marginalisation over random effect terms is accomplished using Markov
+Chain Monte Carlo.")
+    (license license:gpl2+)))
 
 (define-public r-marginalmediation
   (package

@@ -25167,13 +25167,13 @@ coloc'.")
 (define-public r-colocboost
   (package
     (name "r-colocboost")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "colocboost" version))
        (sha256
-        (base32 "1lmiws1l18nwjc4zzw3fafd3ybhsqci0b9sqn3wjjb2kf9cnvxw8"))))
+        (base32 "1gixa8ar7b3p63jh2xqdillihw3mw7kihcfv7am7n4rv68qvn1ws"))))
     (properties `((upstream-name . "colocboost")))
     (build-system r-build-system)
     (arguments
@@ -39370,40 +39370,6 @@ subdivision of a country.  This package was created for use with the choroplethr
 package.")
     (license license:bsd-3)))
 
-(define-public r-choroplethr
-  (package
-    (name "r-choroplethr")
-    (version "5.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "choroplethr" version))
-       (sha256
-        (base32 "17br5a7yg88dblqmffkp070ap8rj7pnpa622zli3js3lg03njhil"))))
-    (properties `((upstream-name . "choroplethr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tigris
-                             r-tidycensus
-                             r-stringr
-                             r-sf
-                             r-r6
-                             r-hmisc
-                             r-ggrepel
-                             r-ggplot2
-                             r-dplyr))
-    (home-page "<https://github.com/eastnile/choroplethr>")
-    (synopsis "Create Color-Coded Choropleth Maps in R")
-    (description
-     "Easily create color-coded (choropleth) maps in R. No knowledge of cartography or
-shapefiles needed; go directly from your geographically identified data to a
-highly customizable map with a single line of code! Supported geographies: U.S.
-states, counties, census tracts, and zip codes, world countries and sub-country
-regions (e.g., provinces, prefectures, etc.).")
-    (license license:bsd-3)))
-
 (define-public r-chores
   (package
     (name "r-chores")
@@ -44092,13 +44058,13 @@ linear coefficients in regression models with grouped data.")
 (define-public r-ces
   (package
     (name "r-ces")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ces" version))
        (sha256
-        (base32 "1jn6ibs2q9hdsqpzyyvk3264xq94hhi7vn1h9gsfzhcq9sayq788"))))
+        (base32 "1w3whb180cawd3axqf65sm90h00l5v0sck67ygxnswcmyrnbvz1l"))))
     (properties `((upstream-name . "ces")))
     (build-system r-build-system)
     (arguments

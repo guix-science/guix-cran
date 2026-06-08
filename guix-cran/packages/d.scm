@@ -35352,13 +35352,13 @@ partition chart, ...")
 (define-public r-d3mirt
   (package
     (name "r-d3mirt")
-    (version "2.0.4")
+    (version "2.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "D3mirt" version))
        (sha256
-        (base32 "0mdiirc0k8hlqyj9fq62bpgin6nk2jl604qdrcfh2ympwkm54iz6"))))
+        (base32 "1jzkp9m47pfk7i1xl6sxjpwnm9jqbhla3vhk06k66jm6qcc44n05"))))
     (properties `((upstream-name . "D3mirt")))
     (build-system r-build-system)
     (arguments
@@ -35371,13 +35371,13 @@ partition chart, ...")
     (propagated-inputs (list r-rgl r-mirt))
     (native-inputs (list r-r-rsp))
     (home-page "https://github.com/ForsbergPyschometrics/D3mirt")
-    (synopsis "Descriptive 3D Multidimensional Item Response Theory Modelling")
+    (synopsis "Descriptive 3D Multidimensional Item Response Theory Modeling")
     (description
      "For identifying, estimating, and plotting descriptive multidimensional item
 response theory models, restricted to 3D and dichotomous or polytomous data that
 fit the two-parameter logistic model or the graded response model.  The method
-is foremost explorative and centered around the plot function that exposes item
-characteristics and constructs, represented by vector arrows, located in a
+is primarily exploratory and centered on the plot function, which exposes item
+characteristics and constructs, represented by vector arrows, within a
 three-dimensional interactive latent space.  The results can be useful for
 item-level analysis as well as test development.")
     (license license:gpl3+)))

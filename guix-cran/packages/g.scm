@@ -15380,6 +15380,44 @@ Klotzke, K. (2018).  Generalized Linear Mixed Models for Randomized Responses.
 Methodology. <doi:10.1027/1614-2241/a000153>.")
     (license license:gpl3)))
 
+(define-public r-glmmroptim
+  (package
+    (name "r-glmmroptim")
+    (version "0.5.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "glmmrOptim" version))
+       (sha256
+        (base32 "0k4w3xc229g0hvhfa39pbk05i3ylvvn8malpgkbam5fx63q9rqf3"))))
+    (properties `((upstream-name . "glmmrOptim")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sparsechol
+                             r-rminqa
+                             r-rcppprogress
+                             r-rcppeigen
+                             r-rcpp
+                             r-matrix
+                             r-glmmrbase
+                             r-digest
+                             r-bh))
+    (home-page "https://github.com/samuel-watson/glmmrOptim")
+    (synopsis
+     "Approximate Optimal Experimental Designs Using Generalised Linear Mixed Models")
+    (description
+     "Optimal design analysis algorithms for any study design that can be represented
+or modelled as a generalised linear mixed model including cluster randomised
+trials, cohort studies, spatial and temporal epidemiological studies, and
+split-plot designs.  See
+<https://github.com/samuel-watson/@code{glmmrBase/blob/master/README.md>} for a
+detailed manual on model specification.  A detailed discussion of the methods in
+this package can be found in Watson, Hemming, and Girling (2023)
+<doi:10.1177/09622802231202379>.")
+    (license license:gpl2+)))
+
 (define-public r-glmmrbase
   (package
     (name "r-glmmrbase")
@@ -18977,19 +19015,20 @@ width appearance across plots.")
 (define-public r-ggwebgl
   (package
     (name "r-ggwebgl")
-    (version "0.4.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggWebGL" version))
        (sha256
-        (base32 "12r4asjzq2iqcbv6v1hvgfm3c6jbaskqmbclb769lqyhm53m77b4"))))
+        (base32 "1x8dchabkndw03lvdyil43iw97df531f86h1r4qikaqwaymkpwql"))))
     (properties `((upstream-name . "ggWebGL")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang r-htmlwidgets r-htmltools r-ggplot2))
+    (propagated-inputs (list r-rlang r-jsonlite r-htmlwidgets r-htmltools
+                             r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://fbertran.github.io/ggWebGL/")
     (synopsis "Browser-Native 'WebGL' Rendering for R Graphics")
@@ -34929,13 +34968,13 @@ services like Google Trends'.")
 (define-public r-gcestim
   (package
     (name "r-gcestim")
-    (version "0.1.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GCEstim" version))
        (sha256
-        (base32 "0q0jr2xzbwdrxrbphfqnqjl6vw3k4s2p5pnwgbp6zfrllk1z9ay4"))))
+        (base32 "1xb0l3xp9lqz6yqwfnjrw0lx2xb18pfyxcd84rrkqj4i56v548wf"))))
     (properties `((upstream-name . "GCEstim")))
     (build-system r-build-system)
     (arguments

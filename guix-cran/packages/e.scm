@@ -23964,13 +23964,13 @@ Engineers).")
 (define-public r-ecoregime
   (package
     (name "r-ecoregime")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecoregime" version))
        (sha256
-        (base32 "0qcpdrngxmg3ayjm4dindffjc6wzzyz57xfk2dhj8lgra4awpda2"))))
+        (base32 "0abg1md8512g7c88gm90h4lzfd38g4yg8yiq9svdg4xphnwj7vig"))))
     (properties `((upstream-name . "ecoregime")))
     (build-system r-build-system)
     (arguments

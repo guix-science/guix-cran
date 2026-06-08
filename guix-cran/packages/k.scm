@@ -786,19 +786,20 @@ and Levy (2016) <@code{arXiv:1701.07266>}.")
 (define-public r-ksm
   (package
     (name "r-ksm")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ksm" version))
        (sha256
-        (base32 "12qw0cf65k6dy0y4pidxl87wr3vnjkxpkhzj85ry2r11s1phn6k8"))))
+        (base32 "1adsh9ra998lwax66xrrh13wkh8fdmxihbmh430ph2z03yll865z"))))
     (properties `((upstream-name . "ksm")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ksm")
     (synopsis
      "Kernel Density Estimation for Random Symmetric Positive Definite Matrices")

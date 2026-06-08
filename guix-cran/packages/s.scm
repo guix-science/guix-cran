@@ -17076,13 +17076,13 @@ manually specified colors depending on what is needed for the underlying data.")
 (define-public r-statease
   (package
     (name "r-statease")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statease" version))
        (sha256
-        (base32 "05k4diqhw333qps1i8g1dz69xrl911g48b0kwpnp49gqvfxg3lky"))))
+        (base32 "1mswlhfbznxi1fm0bwr7x60m1ipw75za03qhg9q3rcbiwrvhrln0"))))
     (properties `((upstream-name . "statease")))
     (build-system r-build-system)
     (arguments
@@ -33094,13 +33094,13 @@ thresholds.  Built on @code{lidR} (Roussel et al., 2020)
 (define-public r-spanishoddata
   (package
     (name "r-spanishoddata")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spanishoddata" version))
        (sha256
-        (base32 "1lb2imr1bvwb5b0nfg6v5iw20xy8w9fj17q60wkbmwmhcrvy241a"))))
+        (base32 "0aqhb9yym98gdn6j53nz8klxcsj42p9gz7k667nr888i5fj7qrl1"))))
     (properties `((upstream-name . "spanishoddata")))
     (build-system r-build-system)
     (arguments
@@ -43439,6 +43439,33 @@ such as those of White (1980) <doi:10.2307/1912934>, @code{MacKinnon} and White
 <doi:10.1080/00949655.2016.1198906>.")
     (license license:expat)))
 
+(define-public r-skbd
+  (package
+    (name "r-skbd")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SKBD" version))
+       (sha256
+        (base32 "1bxfkgv280bjlrh7vr2y8amj2725vv734y7i9661hdkazp4c8lny"))))
+    (properties `((upstream-name . "SKBD")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny))
+    (home-page "https://github.com/Jiangyan-Zhao/SKBD")
+    (synopsis "Shared Keyboard Designs for Phase I Dose-Finding Trials")
+    (description
+     "This package implements the shared keyboard design (SKBD) for model-assisted
+phase I dose-finding, including decision-boundary construction,
+operating-characteristic simulation, and extensions for dose insertion and
+time-to-event settings.  The package also provides an interactive Shiny
+interface for trial-planning workflows.  For more details, see Zhao, Shi, and Xu
+(2026) <doi:10.48550/@code{arXiv.2605.25043>}.")
+    (license license:gpl3+)))
+
 (define-public r-skater
   (package
     (name "r-skater")
@@ -52854,6 +52881,31 @@ debugging of @code{ShinyProxy} deployments.")
     (description
      "Shiny Module to create, visualize, customize and export Excel-like pivot table.")
     (license license:gpl3)))
+
+(define-public r-shinyphaser
+  (package
+    (name "r-shinyphaser")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "shinyphaser" version))
+       (sha256
+        (base32 "0lam2n50j4wx8k9khvymcxld07sap0jn68l0asffwvvbpw0lcscp"))))
+    (properties `((upstream-name . "shinyphaser")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny r-rlang r-r6 r-htmltools))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/maciekbanas/shinyphaser")
+    (synopsis "An Interface to the 'Phaser.js' Game Framework")
+    (description
+     "An API to build and control 2D games using the Phaser @code{JavaScript} engine.
+It enables integration with shiny applications, allowing to create interactive
+games and simulations.")
+    (license license:expat)))
 
 (define-public r-shinypayload
   (package

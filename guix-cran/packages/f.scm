@@ -16716,13 +16716,13 @@ data objects.")
 (define-public r-fio
   (package
     (name "r-fio")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fio" version))
        (sha256
-        (base32 "055jsf119rirwqwbb8q2jl7vqd1wnk39k7nn9jf6z9xf75dvkbql"))))
+        (base32 "06aj6xwbi7p6rnrkz4pcz6vdkfv0fkgag190fn39nkz4vr68n9y4"))))
     (properties `((upstream-name . "fio")))
     (build-system r-build-system)
     (arguments

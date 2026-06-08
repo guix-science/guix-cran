@@ -4973,6 +4973,33 @@ efficiency and fit\".  Applied Health Economics and Health Policy.")
 survey 2014-15 from Pakistan Bureau of Statistics (<http://www.pbs.gov.pk/>).")
     (license license:gpl2)))
 
+(define-public r-psiuenginerl
+  (package
+    (name "r-psiuenginerl")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PsiUEngineRL" version))
+       (sha256
+        (base32 "144l776xajxxxh0vh8pbqdl6892mrcvv9zcl9fdhnqwnhcmf25hh"))))
+    (properties `((upstream-name . "PsiUEngineRL")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=PsiUEngineRL")
+    (synopsis "Homotopy Type Theory Engine for Reinforcement Learning")
+    (description
+     "Core architecture for interpreting continuous data streams as homotopy types.
+It evaluates identity paths against the Gnomonic Ratio ('Lombardi', 2026)
+<doi:10.5281/zenodo.20385840> and processes them via a dynamic Tableau
+Refutation Tree'.  The engine categorizes data into necessity (BOX), possibility
+(DIAMOND), or noise based on deviation thresholds from the invariant value.
+Includes adaptive auto-tuning and native high-contrast Cartesian graphics for
+structural entropy isolation.")
+    (license license:expat)))
+
 (define-public r-psinference
   (package
     (name "r-psinference")
@@ -10842,37 +10869,6 @@ in undersampling and prediction, and ranking of predictors in ensembles\"
 <doi:10.48550/@code{arXiv.2108.05129>}.")
     (license license:gpl2)))
 
-(define-public r-primme
-  (package
-    (name "r-primme")
-    (version "3.2-6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PRIMME" version))
-       (sha256
-        (base32 "0r3wxpi6prn8z8bb5jqbdba18qlnkvkasx0qp0b5r41jqznkg1m0"))))
-    (properties `((upstream-name . "PRIMME")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp r-matrix))
-    (home-page "https://cran.r-project.org/package=PRIMME")
-    (synopsis
-     "Eigenvalues and Singular Values and Vectors from Large Matrices")
-    (description
-     "R interface to PRIMME <https://www.cs.wm.edu/~andreas/software/>, a C library
-for computing a few eigenvalues and their corresponding eigenvectors of a real
-symmetric or complex Hermitian matrix, or generalized Hermitian eigenproblem.
-It can also compute singular values and vectors of a square or rectangular
-matrix.  PRIMME finds largest, smallest, or interior singular/eigenvalues and
-can use preconditioning to accelerate convergence.  General description of the
-methods are provided in the papers Stathopoulos (2010,
-<doi:10.1145/1731022.1731031>) and Wu (2017, <doi:10.1137/16M1082214>).  See
-citation(\"PRIMME\") for details.")
-    (license license:gpl3)))
-
 (define-public r-primes
   (package
     (name "r-primes")
@@ -13390,6 +13386,38 @@ models.  This package aims to provide an alternative to fairness treatment in
 predictive models.  The ROC method implemented in this package is described by
 Kamiran, Karim and Zhang (2012) <https://ieeexplore.ieee.org/document/6413831/>.")
     (license license:gpl2+)))
+
+(define-public r-precviasbr
+  (package
+    (name "r-precviasbr")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "precviasBR" version))
+       (sha256
+        (base32 "04a30q6zv454qs463fyf29xa325lccpyfshgd66981g73mj6wil1"))))
+    (properties `((upstream-name . "precviasBR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-dplyr r-arrow))
+    (home-page "https://cran.r-project.org/package=precviasBR")
+    (synopsis "Spatial Data of Road Precariousness in Brazil")
+    (description
+     "Fornece acesso eficiente Ã  malha espacial de precariedade viÃ¡ria brasileira.
+O pacote realiza o download em cache e a leitura otimizada (via Apache Arrow) de
+arquivos Parquet particionados, contendo o cruzamento de variÃ¡veis de
+infraestrutura do Entorno do Censo DemogrÃ¡fico 2022 (IBGE) com a malha viÃ¡ria
+aberta do Overture Maps. [English] Provides efficient access to the spatial
+network of road precariousness in Brazil.  The package performs cached downloads
+and optimized reading (via Apache Arrow) of partitioned Parquet files.  These
+files contain the intersection of infrastructure variables from the 2022
+Demographic Census (IBGE) with the open street network from Overture Maps.
+Methodology and datasets are detailed in Passos (2026)
+<doi:10.5281/zenodo.19711448>.")
+    (license license:expat)))
 
 (define-public r-precommit
   (package
