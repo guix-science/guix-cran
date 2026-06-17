@@ -1017,13 +1017,13 @@ summarizing messages, warnings, errors, and returned values.")
 (define-public r-futurize
   (package
     (name "r-futurize")
-    (version "0.3.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "futurize" version))
        (sha256
-        (base32 "1lr32s37rg2cc30hjmkf0nq546zc74mrhw4d71hzw5fq9xp4c5s1"))))
+        (base32 "0d03c2kkfzrmz5535nd92sp7167i5jrk67riyywqzc1qsbmb94xf"))))
     (properties `((upstream-name . "futurize")))
     (build-system r-build-system)
     (arguments
@@ -1033,24 +1033,26 @@ summarizing messages, warnings, errors, and returned values.")
     (home-page "https://futurize.futureverse.org")
     (synopsis "Parallelize Common Functions via One Magic Function")
     (description
-     "The @code{futurize()} function transpiles calls to sequential map-reduce
-functions such as @code{base::lapply()}, @code{purrr::map()},
-@code{foreach::foreach()} %do% { ... } into concurrent alternatives, providing
-you with a simple, straightforward path to scalable parallel computing via the
-future ecosystem <doi:10.32614/RJ-2021-048>.  By combining this function with
-R's native pipe operator, you have a convenient way for speeding up iterative
+     "The @code{futurize()} function turns sequential map-reduce functions such as
+@code{base::lapply()}, @code{purrr::map()}, @code{foreach::foreach()} %do% { ...
+} into concurrent alternatives, providing you with a simple, straightforward
+path to scalable parallel computing via the future ecosystem
+<doi:10.32614/RJ-2021-048>.  By combining this transpiler function with R's
+native pipe operator, you have a convenient way for speeding up iterative
 computations with minimal refactoring, e.g. lapply(xs, fcn) |>
 @code{futurize()}', purrr::map(xs, fcn) |> @code{futurize()}', and
 foreach::foreach(x = xs) %do% { fcn(x) } |> @code{futurize()}'.  Other
 map-reduce packages that can be \"futurized\" are @code{BiocParallel}', plyr',
 crossmap', pbapply packages.  There is also support for a growing set of
-domain-specific packages on CRAN (e.g. boot', caret', fgsea', fwb', gamlss',
-@code{glmmTMB}', glmnet', kernelshap', lme4', metafor', mgcv', partykit',
-@code{riskRegression}', seriation', shapr', @code{SimDesign}', strucchange',
-tm', TSP', and vegan') and on Bioconductor (e.g. DESeq2',
+domain-specific packages on CRAN (e.g. boot', caret', @code{DiceKriging}', ez',
+fgsea', fwb', gamlss', @code{glmmTMB}', glmnet', kernelshap', lme4', metafor',
+mgcv', modelsummary', parameters', partykit', pls', pvclust',
+@code{riskRegression}', rugarch', sandwich', seriation', shapr',
+Sim.@code{DiffProc}', @code{SimDesign}', stars', strucchange',
+@code{SuperLearner}', tm', TSP', and vegan') and on Bioconductor (e.g. DESeq2',
 @code{GenomicAlignments}', GSVA', Rsamtools', scater', scuttle',
 @code{SingleCellExperiment}', and sva').")
-    (license license:gpl3+)))
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-futureverse
   (package
@@ -5574,19 +5576,19 @@ in publications please use Hankin (2022) <doi:10.48550/ARXIV.2211.04002>.")
 (define-public r-free1way-docreg
   (package
     (name "r-free1way-docreg")
-    (version "1.0-0")
+    (version "1.0-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "free1way.docreg" version))
        (sha256
-        (base32 "1885p3cngf801hqfvp6hxx9pw699hgpkqz1hij7j9s4iwsn4855l"))))
+        (base32 "0dcsbg847js0g5xdhdvmalbfcnzgj3p4j7xjvgdbchyknj4yjjkx"))))
     (properties `((upstream-name . "free1way.docreg")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://cran.r-project.org/package=free1way.docreg")
+    (home-page "https://codeberg.org/thothorn/coin/")
     (synopsis
      "Additional Documentation and Regression Tests for 'stats::free1way()'")
     (description
@@ -8007,56 +8009,6 @@ result sets and time-series analysis of island performance.  The API endpoint is
 <https://api.fortnite.com/ecosystem/v1>.")
     (license license:expat)))
 
-(define-public r-fortls
-  (package
-    (name "r-fortls")
-    (version "2.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "FORTLS" version))
-       (sha256
-        (base32 "0fi7l416f8g9p3vcby72rink99j4d0i95y9bafsl43j4ks03hgmx"))))
-    (properties `((upstream-name . "FORTLS")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vroom
-                             r-voxr
-                             r-tidyr
-                             r-sf
-                             r-scales
-                             r-reticulate
-                             r-rcsf
-                             r-rcppeigen
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-raster
-                             r-progress
-                             r-plotly
-                             r-moments
-                             r-lidr
-                             r-htmlwidgets
-                             r-distance
-                             r-dbscan
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://molina-valero.github.io/FORTLS/")
-    (synopsis
-     "Automatic Processing of Terrestrial-Based Technologies Point Cloud Data for Forestry Purposes")
-    (description
-     "Process automation of point cloud data derived from terrestrial-based
-technologies such as Terrestrial Laser Scanner (TLS) or Mobile Laser Scanner.
-FORTLS enables (i) detection of trees and estimation of tree-level attributes
-(e.g. diameters and heights), (ii) estimation of stand-level variables (e.g.
-density, basal area, mean and dominant height), (iii) computation of metrics
-related to important forest attributes estimated in Forest Inventories at
-stand-level, and (iv) optimization of plot design for combining TLS data and
-field measured data.  Documentation about FORTLS is described in Molina-Valero
-et al. (2022, <doi:10.1016/j.envsoft.2022.105337>).")
-    (license license:gpl3)))
-
 (define-public r-forstringr
   (package
     (name "r-forstringr")
@@ -8287,6 +8239,51 @@ App': <https://github.com/qlands/@code{FormShare} >= 2.22.0> .  Analytics
 plugin: <https://github.com/qlands/formshare_analytics_plugin> .  Remote SQL
 plugin: <https://github.com/qlands/formshare_sql_plugin> .")
     (license license:gpl3)))
+
+(define-public r-formr
+  (package
+    (name "r-formr")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "formr" version))
+       (sha256
+        (base32 "106nf10xm8kfiz4wi3r2y1dkhxfnwv8ghb809v3l71bl8077awmd"))))
+    (properties `((upstream-name . "formr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-scales
+                             r-rmarkdown
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-otp
+                             r-lubridate
+                             r-knitr
+                             r-keyring
+                             r-jsonlite
+                             r-httr
+                             r-haven
+                             r-ggplot2
+                             r-dplyr
+                             r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://rubenarslan.github.io/formr/")
+    (synopsis "Companion R Package for the 'formr' Survey Framework")
+    (description
+     "Serves as a companion toolkit for the formr survey framework
+(<https://rforms.org>).  The package acts as a bridge between a formr server and
+a local R environment.  Key features include an API client for fetching,
+type-casting, and automatically scoring data; a project management workflow for
+syncing study assets (surveys, CSS) for local editing; and functions for use
+within formr runs to generate dynamic, personalized feedback plots and to
+simplify survey logic.")
+    (license license:expat)))
 
 (define-public r-formods
   (package
@@ -8795,13 +8792,13 @@ Husch (2016). <doi:10.1002/9781118902028>.")
 (define-public r-forestly
   (package
     (name "r-forestly")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "forestly" version))
        (sha256
-        (base32 "0c57704ai7hlk76jjr4pbhrqbg7lj68zrvqaw2xyw7kb3bhdzdk0"))))
+        (base32 "0f73v3km48c77q93q99adslfdznrqcbkpyfaiqcvmlldgfr5bicm"))))
     (properties `((upstream-name . "forestly")))
     (build-system r-build-system)
     (arguments
@@ -9356,13 +9353,13 @@ analyze likelihood ratio distributions.")
 (define-public r-forectheta
   (package
     (name "r-forectheta")
-    (version "3.0")
+    (version "3.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "forecTheta" version))
        (sha256
-        (base32 "1nsmdzsp9005rkr9cgnv8ahsix01zm3ihlvl4w6jx22b4rfffx7k"))))
+        (base32 "1b19841lqlch2m2h8i00sswpal5ikkj71vwdgwnh17pvy5bbq9fi"))))
     (properties `((upstream-name . "forecTheta")))
     (build-system r-build-system)
     (arguments
@@ -10481,13 +10478,13 @@ interactive introduction, see
 (define-public r-focus
   (package
     (name "r-focus")
-    (version "0.1.5")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "focus" version))
        (sha256
-        (base32 "0sbwlnrrrmzpny7a7ikx8p985ms1bw0qzjal998navp2izjsmd65"))))
+        (base32 "0haa51i54bq416xv4v08wvdgvv584sdv8garqnsw54ahj6n8ynr5"))))
     (properties `((upstream-name . "focus")))
     (build-system r-build-system)
     (arguments
@@ -11887,13 +11884,13 @@ interface.  The implemented calculations are based on Strasser et al. (2004)
 (define-public r-fluidsynth
   (package
     (name "r-fluidsynth")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fluidsynth" version))
        (sha256
-        (base32 "1b9csw8kq3dy8lmz6a4cb0yzgyn6c3dc9vwdv8qwnpdz00p5fmb4"))))
+        (base32 "1a5hch0wyzwfrxhn3nmffsmvs0pdmi9d3z040afka8dbzxnxclhy"))))
     (properties `((upstream-name . "fluidsynth")))
     (build-system r-build-system)
     (arguments
@@ -11936,6 +11933,32 @@ It includes functions for converting Fluidigm data to format used by PLINK',
 estimating errors, calculating pairwise similarities, determining pairwise
 similarity loci, and generating a similarity matrix.")
     (license license:gpl3)))
+
+(define-public r-fluffy
+  (package
+    (name "r-fluffy")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fluffy" version))
+       (sha256
+        (base32 "1xzpq0di7r1yvawy0zg93f65hrawjk6prqz2j42814fiagdqb4zb"))))
+    (properties `((upstream-name . "fluffy")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-s7))
+    (native-inputs (list r-knitr))
+    (home-page "https://lj-jenkins.github.io/fluffy/")
+    (synopsis "Schema-Based Validation of 'R' Objects with User-Defined Rules")
+    (description
+     "This package provides a schema-based validation framework for R objects using
+user-defined rules.  Provides three S7 classes Registry', Schema', and Validator
+to manage rules, define list-based schemas, and validate data in a flexible and
+extensible manner.")
+    (license license:expat)))
 
 (define-public r-flsss
   (package
@@ -13046,13 +13069,13 @@ domestic flights within the country.")
 (define-public r-flightr
   (package
     (name "r-flightr")
-    (version "0.5.5")
+    (version "0.5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FLightR" version))
        (sha256
-        (base32 "0sw6qls30gr2hp7mwvjyh9h7cqga0ahkzg61d8pgdrc1fgbvsx0x"))))
+        (base32 "0incc31w1a70x0n9bb1q9zs6hqs9i4qbydhzdcimm63kw7zx0kh9"))))
     (properties `((upstream-name . "FLightR")))
     (build-system r-build-system)
     (arguments
@@ -13674,13 +13697,13 @@ Fisher-Scoring algorithm.  Overall the estimation relies on the mgcv'-package.")
 (define-public r-flexfitr
   (package
     (name "r-flexfitr")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flexFitR" version))
        (sha256
-        (base32 "0m2vqijbp53wnw0n14qm939z0z30kjv34pwsyl9v01gpwb6n74pw"))))
+        (base32 "0laxd0wrq6ss0w54s78jrn3zdy9rvx12p9wmr7pz55qpb4jwr39x"))))
     (properties `((upstream-name . "flexFitR")))
     (build-system r-build-system)
     (arguments
@@ -14503,37 +14526,6 @@ Applications, see Qian Y (2023) <doi:10.14711/thesis-991013223054603412>, Qian
 Y, Hu X, Yang C (2023) <doi:10.48550/@code{arXiv.2306.17584>}.")
     (license license:expat)))
 
-(define-public r-flacco
-  (package
-    (name "r-flacco")
-    (version "1.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "flacco" version))
-       (sha256
-        (base32 "15h2q9xgddy7gw6r52c2nk618f3z1mjn4xz9pzdvhm1d3kqggwa4"))))
-    (properties `((upstream-name . "flacco")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-mlr r-checkmate r-bbmisc))
-    (native-inputs (list r-r-rsp))
-    (home-page "https://github.com/kerschke/flacco")
-    (synopsis
-     "Feature-Based Landscape Analysis of Continuous and Constrained Optimization Problems")
-    (description
-     "This package provides tools and features for \"Exploratory Landscape Analysis
-(ELA)\" of single-objective continuous optimization problems.  Those features are
-able to quantify rather complex properties, such as the global structure,
-separability, etc., of the optimization problems.")
-    (license license:bsd-2)))
-
 (define-public r-fksum
   (package
     (name "r-fksum")
@@ -14596,37 +14588,6 @@ settings, particularly those with time delays, variations in trajectory speed,
 irregular sampling intervals, and noise.  This package implements methods
 derived from Kang et al. (2023) <doi:10.1007/s11222-023-10237-z>.")
     (license license:gpl2+)))
-
-(define-public r-fkf-sp
-  (package
-    (name "r-fkf-sp")
-    (version "0.3.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "FKF.SP" version))
-       (sha256
-        (base32 "13qvlw23flnbi2w2ibksjl9c7k5a4qsn6naas9i6ga98j3a0yrps"))))
-    (properties `((upstream-name . "FKF.SP")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mathjaxr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/TomAspinall/FKF.SP")
-    (synopsis "Fast Kalman Filtering Through Sequential Processing")
-    (description
-     "Fast and flexible Kalman filtering and smoothing implementation utilizing
-sequential processing, designed for efficient parameter estimation through
-maximum likelihood estimation.  Sequential processing is a univariate treatment
-of a multivariate series of observations and can benefit from computational
-efficiency over traditional Kalman filtering when independence is assumed in the
-variance of the disturbances of the measurement equation.  Sequential processing
-is described in the textbook of Durbin and Koopman (2001,
-ISBN:978-0-19-964117-8).  FKF.SP was built upon the existing FKF package and is,
-in general, a faster Kalman filter/smoother.")
-    (license license:gpl3)))
 
 (define-public r-fkf
   (package
@@ -14896,20 +14857,22 @@ quality, reliability, and structure.")
 (define-public r-fixes
   (package
     (name "r-fixes")
-    (version "0.8.1")
+    (version "0.11.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fixes" version))
        (sha256
-        (base32 "1akv890nh55hrirf7cs02969x2dcnfpqz7gd91n9kg98iwkiyga1"))))
+        (base32 "0fhpvrgyfyfya95s6wh95bf4lh7cx7p3wm195bp6m1dlwpfc3fpy"))))
     (properties `((upstream-name . "fixes")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tibble
+                             r-scales
                              r-rlang
+                             r-rcpparmadillo
                              r-rcpp
                              r-ggplot2
                              r-fixest
@@ -14917,13 +14880,14 @@ quality, reliability, and structure.")
                              r-broom))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/yo5uke/fixes")
-    (synopsis
-     "Tools for Creating and Visualizing Fixed-Effects Event Study Models")
+    (synopsis "Staggered DiD Tools: Event Studies and ATT Aggregation")
     (description
-     "This package provides functions for creating, analyzing, and visualizing event
-study models using fixed-effects regression.  Supports staggered adoption,
-multiple confidence intervals, flexible clustering, and panel/time
-transformations in a simple workflow.")
+     "This package provides tools for difference-in-differences (@code{DiD})
+estimation and visualization with staggered adoption.  Includes @code{run_es()}
+for event-study curves (dynamic effects by relative time) and @code{calc_att()}
+for aggregated ATT estimation (overall, by cohort, by calendar time).  Supports
+multiple modern estimators: Callaway-Sant'Anna (2021), Sun-Abraham (2021),
+Borusyak-Jaravel-Spiess (2024), Wooldridge TWM, and Deb et al.  FLEX.")
     (license license:expat)))
 
 (define-public r-fixerapi
@@ -15226,13 +15190,13 @@ packages modeling fitness landscapes and fitness seascapes will depend.")
 (define-public r-fitps
   (package
     (name "r-fitps")
-    (version "1.0.1")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fitPS" version))
        (sha256
-        (base32 "12qqr3d1fzypk0xsjnswhfp52phnhhqzwvj5grfgacjs5h41bz11"))))
+        (base32 "1s8q2v7ry47y1p60n6nvzb2qdrjpqqfls4c22s43bnhw55r144i3"))))
     (properties `((upstream-name . "fitPS")))
     (build-system r-build-system)
     (arguments
@@ -23170,13 +23134,13 @@ and dynamic multiplier analysis.")
 (define-public r-fb4package
   (package
     (name "r-fb4package")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fb4package" version))
        (sha256
-        (base32 "198jhg3pq4rxs0g011hbfxskpknj9167np53hwg3f08kh8hqw4zk"))))
+        (base32 "1jv4zjygyr38kyj31g7y1xifvw3sbhqplvni3rz6yjpby6f7319h"))))
     (properties `((upstream-name . "fb4package")))
     (build-system r-build-system)
     (arguments
@@ -23184,7 +23148,7 @@ and dynamic multiplier analysis.")
       #:tests? #f))
     (propagated-inputs (list r-tmb r-rcppeigen r-rcpp))
     (native-inputs (list r-knitr))
-    (home-page "https://hansttito.github.io/fb4package/")
+    (home-page "https://CRAN.R-project.org/package=fb4package")
     (synopsis
      "'Fish Bioenergetics 4.0' Model Implementation with High-Performance 'TMB' Backend")
     (description
@@ -23950,6 +23914,32 @@ from high-dimensional data.  Zamar, R., Ruiz, M., Lafit, G. and Nogales, J.
 (2021) <doi:10.52933/jdssv.v1i2.11>.")
     (license license:expat)))
 
+(define-public r-fastsegmentation
+  (package
+    (name "r-fastsegmentation")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FastSegmentation" version))
+       (sha256
+        (base32 "00vjj5q4kxq4grp81drd1hn3kffh8imkzrni9prkqhqpns2hcsif"))))
+    (properties `((upstream-name . "FastSegmentation")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-robustgasp r-pracma r-magick r-ebimage))
+    (home-page "https://cran.r-project.org/package=FastSegmentation")
+    (synopsis "Unsupervised Cell Segmentation by Fast Gaussian Processes")
+    (description
+     "This package performs fast Gaussian process-based segmentation of microscopy
+images using spatial smoothing and data-driven thresholding.  Code based on
+Baracaldo, L., King, B., Yan, H., Lin, Y., Miolane, N., & Gu, M. (2025).
+\"Unsupervised cell segmentation by fast Gaussian processes.\" @code{arXiv}
+preprint <doi:10.48550/@code{arXiv.2505.18902>}.")
+    (license license:expat)))
+
 (define-public r-fastrweb
   (package
     (name "r-fastrweb")
@@ -24192,13 +24182,13 @@ tables and summaries of data.")
 (define-public r-fastreg
   (package
     (name "r-fastreg")
-    (version "0.13.0")
+    (version "0.13.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastreg" version))
        (sha256
-        (base32 "1acl08x1bssw6gvf6rrzjnin0i4rqwli2r28gy8yzkx4lj4pcgnm"))))
+        (base32 "1wxn3k9n9j9fikqv1n2nxhlrksigjkwiwk98y1bd2zg39zmbj96m"))))
     (properties `((upstream-name . "fastreg")))
     (build-system r-build-system)
     (arguments
@@ -25726,26 +25716,25 @@ computational point of view.")
 (define-public r-fastcpd
   (package
     (name "r-fastcpd")
-    (version "0.16.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastcpd" version))
        (sha256
-        (base32 "1ql27ns5rp6xy0w4jq6qd8hfp3md64ph01qmfyvwhkwx6gazx7a2"))))
+        (base32 "0bh85r3y7l6v3w9iwyy69xnvpjsgh76a36pzi8nb602pwd64blbj"))))
     (properties `((upstream-name . "fastcpd")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-testthat
-                             r-rcppeigen
                              r-rcpparmadillo
                              r-rcpp
                              r-progress
                              r-matrix
                              r-glmnet))
-    (native-inputs (list r-knitr gfortran))
+    (native-inputs (list r-knitr))
     (home-page "https://fastcpd.xingchi.li")
     (synopsis "Fast Change Point Detection via Sequential Gradient Descent")
     (description
@@ -25753,13 +25742,9 @@ computational point of view.")
 \"Sequential Gradient Descent and Quasi-Newton's Method for Change-Point
 Analysis\" by Xianyang Zhang, Trisha Dawn
 <https://proceedings.mlr.press/v206/zhang23b.html>.  The algorithm is based on
-dynamic programming with pruning and sequential gradient descent.  It is able to
-detect change points a magnitude faster than the vanilla Pruned Exact Linear
-Time(PELT).  The package includes examples of linear regression, logistic
-regression, Poisson regression, penalized linear regression data, and whole lot
-more examples with custom cost function in case the user wants to use their own
-cost function.")
-    (license license:gpl3+)))
+dynamic programming with pruning and sequential gradient descent.  See Li and
+Zhang (2026) <doi:10.18637/jss.v116.i06> for details.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-fastcox
   (package
@@ -28346,13 +28331,13 @@ ISBN:9781473756540).")
 (define-public r-factorana
   (package
     (name "r-factorana")
-    (version "1.3.4")
+    (version "1.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "factorana" version))
        (sha256
-        (base32 "1lyqvwmgn6hj46kbbdjsh5g43n72ykc4svm4q97r56yl42z2h26h"))))
+        (base32 "0yf0mmv5mj396dv1l402g7wczawgk0arnh7v9xazx902skn9xyj8"))))
     (properties `((upstream-name . "factorana")))
     (build-system r-build-system)
     (arguments

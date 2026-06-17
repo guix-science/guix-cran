@@ -185,13 +185,13 @@ channel including geography, traffic sources, time period, etc.")
 (define-public r-yrnd
   (package
     (name "r-yrnd")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "yrnd" version))
        (sha256
-        (base32 "08ijhkb3vyg41zg1pi4s2dcwph6bivjp6123wgx2crh3cmqlhl73"))))
+        (base32 "1qpirsm91jx0p46cgb2s817d7cjrlirfiw7bb0dhx0mvd28vf4v0"))))
     (properties `((upstream-name . "yrnd")))
     (build-system r-build-system)
     (arguments
@@ -210,16 +210,17 @@ channel including geography, traffic sources, time period, etc.")
     (synopsis
      "Extracts Risk Neutral Densities of Prices, Money Market Rates and Government Bond Yields from Interest Rates Futures Options Prices")
     (description
-     "This package provides with parametric risk neutral densities and cumulative
-densities for futures prices on fixed-income products.  It relies on options on
-Short Term Interest Rate futures contracts or options on government bond futures
-contracts.  It models the price of the underlying asset as a mixture of either
-two or three lognormal densities.  It also offers new functions which provide
-with risk neutral densities and cumulative densities of the money market rate or
-the government bond yield inferred from the futures contract's price, using the
-density of the futures price.  The package leverages on the works of Melick, W.
-R. and Thomas, C. P. (1997) <doi:10.2307/2331318> and B. Bahra (1998)
-<doi:10.2139/ssrn.77429>.")
+     "This package provides with parametric Risk Neutral Densities (RNDs) and
+cumulative densities of futures prices on fixed-income products.  It relies on
+options on Short Term Interest Rate futures or options on government bond
+futures.  It models the futures price as a mixture of lognormal densities.  It
+also provides with the RNDs and cumulative densities of the money market rate or
+the government bond yield inferred from the futures price, using the RND of the
+futures price.  It eventually provides with the probability attached to each
+bond in the delivery basket of a government bond futures to be the cheapest at
+maturity, using the RND of the bond futures price.  The package leverages on the
+works of Melick, W. R. and Thomas, C. P. (1997) <doi:10.2307/2331318> and B.
+Bahra (1998) <doi:10.2139/ssrn.77429>.")
     (license license:gpl3)))
 
 (define-public r-ypr

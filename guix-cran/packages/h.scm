@@ -846,13 +846,13 @@ Generalized Plackett-Luce likelihoods use Hankin 2024
 (define-public r-hyper-gam
   (package
     (name "r-hyper-gam")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hyper.gam" version))
        (sha256
-        (base32 "17drikcl2krz584x493nbi2sbg8r66j0yn3sgn5n7x48klarrfcw"))))
+        (base32 "1v0l8hj6j6wj0fry29k74ajw8wzc76h6xj2klhcp1pdjkmdz0fcd"))))
     (properties `((upstream-name . "hyper.gam")))
     (build-system r-build-system)
     (arguments
@@ -863,7 +863,10 @@ Generalized Plackett-Luce likelihoods use Hankin 2024
     (synopsis "Generalized Additive Models with Hyper Column")
     (description
      "An interactive HTML widget of the perspective plot for generalized additive
-models.  An alternative solution of the function @code{mgcv::vis.gam()}.")
+models.  An alternative solution of the function @code{mgcv::vis.gam()}.  The
+author has retired from academic research.  Accordingly, this package should not
+be considered a validated tool for use in peer-reviewed publications or as the
+basis for grant applications.")
     (license license:gpl2)))
 
 (define-public r-hyper-fit
@@ -1498,6 +1501,31 @@ based on: Yilmaz et al., (2008) <DOI:10.1029/2007WR006716>.")
      "Pfafstetter Hydrological Codes as cited in Verdin and Verdin (1999) <doi:
 10.1016/S0022-1694(99)00011-6> are decoded for upstream or downstream queries.")
     (license license:gpl3)))
+
+(define-public r-hydrocan
+  (package
+    (name "r-hydrocan")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hydrocan" version))
+       (sha256
+        (base32 "118ck2p3fhxgh7qd5bhjds291dlanplbz4s8mjja7gvk52iv2sjg"))))
+    (properties `((upstream-name . "hydrocan")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-httr2 r-dplyr r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/HakaiInstitute/hydrocan")
+    (synopsis "Unified Access to Canadian Hydrometric Data")
+    (description
+     "This package provides a unified interface for accessing diverse web-published
+hydrometric data sources across Canada, presenting users with consistent tabular
+output regardless of the underlying data source.")
+    (license license:expat)))
 
 (define-public r-hydrocal
   (package
@@ -7369,35 +7397,6 @@ in Hong Kong by Survey and Mapping Office Lands Department, Hong Kong Government
 (1995).")
     (license license:gpl2)))
 
-(define-public r-hjam
-  (package
-    (name "r-hjam")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "hJAM" version))
-       (sha256
-        (base32 "1pnjcn54zi4d7h9zc9wr1gv51dzb0vasfcrw4c1kqymhxsq2yfh3"))))
-    (properties `((upstream-name . "hJAM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-reshape2 r-ggpubr r-ggplot2 r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/lailylajiang/hJAM")
-    (synopsis "Hierarchical Joint Analysis of Marginal Summary Statistics")
-    (description
-     "This package provides functions to implement a hierarchical approach which is
-designed to perform joint analysis of summary statistics using the framework of
-Mendelian Randomization or transcriptome analysis.  Reference: Lai Jiang,
-Shujing Xu, Nicholas Mancuso, Paul J. Newcombe, David V. Conti (2020). \"A
-Hierarchical Approach Using Marginal Summary Statistics for Multiple
-Intermediates in a Mendelian Randomization or Transcriptome Analysis.\"
-<@code{bioRxiv><doi:10.1101/2020.02.03.924241>}.")
-    (license license:expat)))
-
 (define-public r-hiviz
   (package
     (name "r-hiviz")
@@ -10982,13 +10981,13 @@ article by Schmidt et al. (2019) <doi:10.1534/genetics.119.302134>.")
 (define-public r-heritability
   (package
     (name "r-heritability")
-    (version "1.4")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "heritability" version))
        (sha256
-        (base32 "053fqjc8772gqhxnm2gn7yz747432kizn5q5060g5bd77v15jlhp"))))
+        (base32 "0s7iqg7plbchwif1zfz06wcycni6fp05psnb2yc7fwjlmqnjjkg5"))))
     (properties `((upstream-name . "heritability")))
     (build-system r-build-system)
     (arguments
@@ -11355,13 +11354,13 @@ demos, teaching materials, and command-line tools.")
 (define-public r-hellodatascience
   (package
     (name "r-hellodatascience")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hellodatascience" version))
        (sha256
-        (base32 "0f46n9y958yh4i97b4gf1479rzwpapk3d9cwckvg6brlrbcr9p4f"))))
+        (base32 "1wlynf7fcqbais3k0mw6yrsgsbgwn9ppdqknhp893217vyr8d2m4"))))
     (properties `((upstream-name . "hellodatascience")))
     (build-system r-build-system)
     (arguments
@@ -14619,6 +14618,40 @@ choices of a linkage function in O(n*log n) time.  The better algorithmic time
 complexity is paired with an efficient C++ implementation.")
     (license license:gpl3+)))
 
+(define-public r-hcinfer
+  (package
+    (name "r-hcinfer")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hcinfer" version))
+       (sha256
+        (base32 "0n2hjs10cpcm8psp3c6zhw5pk0lfkcicxr0g4nwmhspxphi8n3ab"))))
+    (properties `((upstream-name . "hcinfer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-rlang r-purrr r-ggplot2 r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://prdm0.github.io/hcinfer/")
+    (synopsis "Heteroskedasticity-Consistent Inference for Linear Models")
+    (description
+     "Computes heteroskedasticity-consistent covariance matrix estimators for ordinary
+least squares regression models.  The published HC0 through HC5m estimators
+implemented in the package follow White (1980) <doi:10.2307/1912934>, Hinkley
+(1977) <doi:10.1080/00401706.1977.10489550>, Horn et al. (1975)
+<doi:10.1080/01621459.1975.10479877>, @code{MacKinnon} and White (1985)
+<doi:10.1016/0304-4076(85)90158-7>, Cribari-Neto (2004)
+<doi:10.1016/S0167-9473(02)00366-3>, Cribari-Neto and da Silva (2011)
+<doi:10.1007/s10182-010-0141-2>, Cribari-Neto et al. (2007)
+<doi:10.1080/03610920601126589>, and Li et al. (2016)
+<doi:10.1080/00949655.2016.1198906>.  The package also includes HCbeta, a new
+estimator proposed by the package authors.  It provides normal Wald tests,
+confidence intervals, diagnostics, and S3 output for applied inference.")
+    (license license:expat)))
+
 (define-public r-hcidata
   (package
     (name "r-hcidata")
@@ -15676,6 +15709,35 @@ tools.  The processed data can be exported and used in R', Stata', Python',
 Julia', or any software that supports Text, CSV, or Excel formats.")
     (license license:expat)))
 
+(define-public r-harness
+  (package
+    (name "r-harness")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "harness" version))
+       (sha256
+        (base32 "1y3a8v2g314xq1b3njl2rm889kab9skcldv3cdh6n9p1fi99jk2k"))))
+    (properties `((upstream-name . "harness")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml r-jsonlite))
+    (home-page "https://github.com/pcbrom/harness")
+    (synopsis "Curated Agentic Harnesses for R Professional Roles")
+    (description
+     "This package provides a bootstrapper that launches a command-line coding agent
+of the user's choice in a terminal tab pre-configured for a professional R role.
+ Each role is described by a curated harness: a subset of community skills, a
+system prompt, a folder layout, and quality gates.  The package does not run an
+agent loop and does not call a language model; it discovers the chosen coder
+binary, generates its configuration, links the curated skills, and opens the
+terminal.  Code written by the agent is run manually by the user, by design, so
+that every generated script passes through a human audit gate before execution.")
+    (license license:expat)))
+
 (define-public r-harmonydata
   (package
     (name "r-harmonydata")
@@ -15993,13 +16055,13 @@ strictly haplo-diploid and fully diploid systems.")
 (define-public r-haplocatcher
   (package
     (name "r-haplocatcher")
-    (version "1.0.4")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HaploCatcher" version))
        (sha256
-        (base32 "182ihr45s2g452h054c6m8lgvj629spq1rd9vglzyy8ymg0l6w4j"))))
+        (base32 "1v3nakg9c5x1cpvnqj66z6swqhkhqjcw1wpgqv7czgiq11xnf26w"))))
     (properties `((upstream-name . "HaploCatcher")))
     (build-system r-build-system)
     (arguments
@@ -16007,17 +16069,16 @@ strictly haplo-diploid and fully diploid systems.")
       #:tests? #f))
     (propagated-inputs (list r-randomforest
                              r-patchwork
-                             r-lattice
                              r-knitr
                              r-ggplot2
                              r-foreach
                              r-doparallel
                              r-caret))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=HaploCatcher")
+    (home-page "https://github.com/zjwinn/HaploCatcher")
     (synopsis "Predictive Haplotyping Package")
     (description
-     "Used for predicting a genotypeâs allelic state at a specific locus/QTL/gene.
+     "Used for predicting a genotype's allelic state at a specific locus/QTL/gene.
 This is accomplished by using both a genotype matrix and a separate file which
 has categorizations about loci/QTL/genes of interest for the individuals in the
 genotypic matrix.  A training population can be created from a panel of
@@ -16406,6 +16467,33 @@ for both read and write.")
      "Shiny-App that allows to annotate vectors of texts to predefined categories by
 hand.")
     (license license:asl2.0)))
+
+(define-public r-hammer
+  (package
+    (name "r-hammer")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HAMMER" version))
+       (sha256
+        (base32 "1wy39wbzqypj9fvczl0mib4mrvs2nbyf5a2gwk2w2b7f7slli8q5"))))
+    (properties `((upstream-name . "HAMMER")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rspectra))
+    (home-page "https://cran.r-project.org/package=HAMMER")
+    (synopsis
+     "High-Dimensional Factor-Analytic Representation Modeling and Metrics")
+    (description
+     "The goal of HAMMER is to provide factor analytic representation learningand
+associated determinacy metrics for very-high-dimensional data.  It projects
+high-dimensional data onto low-dimensional generative latent sources and
+assesses the uncertainty in the projection.  The projection is
+distribution-free, scale-equivariant, and efficient.")
+    (license license:gpl2+)))
 
 (define-public r-hamlet
   (package
@@ -17002,13 +17090,13 @@ property lists.  Uses the HDF5 library developed by The HDF Group
 (define-public r-h3sdm
   (package
     (name "r-h3sdm")
-    (version "0.1.4")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "h3sdm" version))
        (sha256
-        (base32 "165fmxz2naq15xfkj63kc439vcy4lq23ncpap97fk1pr1337n94y"))))
+        (base32 "1da7m9p6316acg6kp943q5j6xpkmfs6495v22cxbw6zar0z3hrl0"))))
     (properties `((upstream-name . "h3sdm")))
     (build-system r-build-system)
     (arguments
@@ -17016,19 +17104,27 @@ property lists.  Uses the HDF5 library developed by The HDF Group
       #:tests? #f))
     (propagated-inputs (list r-yardstick
                              r-workflows
+                             r-vip
                              r-tune
+                             r-tidyr
                              r-tibble
                              r-terra
                              r-stacks
+                             r-spocc
                              r-spatialsample
                              r-sf
                              r-rsample
                              r-rlang
                              r-recipes
+                             r-rbiodatacr
                              r-purrr
+                             r-landscapemetrics
+                             r-h3jsr
+                             r-exactextractr
                              r-ecospat
                              r-dplyr
-                             r-dalex))
+                             r-dalex
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ManuelSpinola/h3sdm")
     (synopsis "Species Distribution Modeling with H3 Grids")

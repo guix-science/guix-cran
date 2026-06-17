@@ -836,19 +836,20 @@ al (2012).")
 (define-public r-outstandr
   (package
     (name "r-outstandr")
-    (version "1.0.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "outstandR" version))
        (sha256
-        (base32 "0v4hk4j0j4bm5gmhwaqyhwnx5hrfmwzdpd1bfrh79qnj95i7jfch"))))
+        (base32 "10fnlyck9yazalxi0l26b2dwz7rgyaqd2ss0hfrprmqvb6q50za6"))))
     (properties `((upstream-name . "outstandR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyselect
+    (propagated-inputs (list r-withr
+                             r-tidyselect
                              r-tidyr
                              r-tibble
                              r-stringr
@@ -857,6 +858,7 @@ al (2012).")
                              r-rdpack
                              r-purrr
                              r-pillar
+                             r-lifecycle
                              r-glue
                              r-ggplot2
                              r-dplyr
@@ -871,9 +873,9 @@ al (2012).")
      "For the problem of indirect treatment comparison with limited subject-level
 data, this package provides tools for model-based standardisation with several
 different computation approaches.  See RemiroâAzÃ³car A, Heath A, Baio G
-(2022) \"Parametric Gâcomputation for compatible indirect treatment comparisons
-with limited individual patient data\", Res.  Synth.  Methods, 1â31.  ISSN
-1759-2879, <doi:10.1002/jrsm.1565>.")
+(2022) ``Parametric Gâcomputation for compatible indirect treatment
+comparisons with limited individual patient data'', Res.  Synth.  Methods,
+1â31.  ISSN 1759-2879, <doi:10.1002/jrsm.1565>.")
     (license license:gpl3+)))
 
 (define-public r-outseekr
@@ -2255,13 +2257,13 @@ several providers.")
 (define-public r-osmdata
   (package
     (name "r-osmdata")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "osmdata" version))
        (sha256
-        (base32 "05gmxizy4c8rgvgi27dv19jczxg6vf7srfd45zrl0n8wgw6ygjr6"))))
+        (base32 "0dbw3f54ndr1g8gdbjzin984v0l8h33rxz96cq85smfz2y6jjala"))))
     (properties `((upstream-name . "osmdata")))
     (build-system r-build-system)
     (arguments
@@ -6598,13 +6600,13 @@ computations.")
 (define-public r-opticskxi
   (package
     (name "r-opticskxi")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "opticskxi" version))
        (sha256
-        (base32 "01bkbrh0d0s4k41z761nqqsv9d37v4gwwah75w72dm8336kghx8l"))))
+        (base32 "1wz1y53yv7apxlygz4kqf1bh6a5p9kwkq66iq25v137hsqdwjmc3"))))
     (properties `((upstream-name . "opticskxi")))
     (build-system r-build-system)
     (arguments
@@ -7372,13 +7374,13 @@ Journal of Pain (in minor revision).")
 (define-public r-opi
   (package
     (name "r-opi")
-    (version "3.1.0")
+    (version "3.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OPI" version))
        (sha256
-        (base32 "16ldg23f63i4fpwvpvgy13g1crfqm39d7blrdk3qjha5k2pcibvh"))))
+        (base32 "0725qs1jb4rgkxbbj1pknrf18nki63vrlx2csyky9v6wmn2in1q3"))))
     (properties `((upstream-name . "OPI")))
     (build-system r-build-system)
     (arguments
@@ -9798,6 +9800,35 @@ Margalef, Menhinick, Simpson, Shannon, Shannon-Wiener, Sheldon, Heip, Hill
 Numbers, Geometric Mean and Cressie and Read statistics.")
     (license license:gpl2)))
 
+(define-public r-onnxr
+  (package
+    (name "r-onnxr")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "onnxr" version))
+       (sha256
+        (base32 "1wiq4spk35zhngs5f052v9nvs5x87n0jlj7f68qy6b2rnzjwwyky"))))
+    (properties `((upstream-name . "onnxr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-cpp11))
+    (native-inputs (list r-knitr))
+    (home-page "https://corymccartan.com/onnxr/")
+    (synopsis "Bindings to 'ONNX' Runtime")
+    (description
+     "This package provides native access to the Open Neural Network Exchange (ONNX)
+Runtime <https://onnxruntime.ai/>, which is a performant engine for running
+machine learning models that are saved to a standardized format.  Rather than
+interfacing with ONNX via Python', as in the official onnx package, onnxr
+directly interfaces with the runtime's C++ API via cpp11'.  Models saved to
+.onnx files can be loaded and run on various backends, including CPUs and
+Apple's @code{CoreML} library.")
+    (license license:expat)))
+
 (define-public r-onnx
   (package
     (name "r-onnx")
@@ -11183,19 +11214,20 @@ for collaboration and version control.")
 (define-public r-omopsketch
   (package
     (name "r-omopsketch")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OmopSketch" version))
        (sha256
-        (base32 "12fzyhh2w34rbdf2crrbk6r5gy7vdsy5ic6zsgla2mq6prqvy91z"))))
+        (base32 "0prp23fcms0mr5lhr6k46d7fqjh2wlfazg1zi3ddz8ajkcxb4f6a"))))
     (properties `((upstream-name . "OmopSketch")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyr
+                             r-tibble
                              r-stringr
                              r-rlang
                              r-purrr
@@ -12096,6 +12128,36 @@ different authors in the recent years.  See Alizadeh (2019)
 you run open-source large language models locally on your machine.")
     (license license:expat)))
 
+(define-public r-olinkanalyzevignettes
+  (package
+    (name "r-olinkanalyzevignettes")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OlinkAnalyzeVignettes" version))
+       (sha256
+        (base32 "0s5m16pdif0cwn9pq3fc9c1bmzp8nyj8apc871ky9h5l0ym7485m"))))
+    (properties `((upstream-name . "OlinkAnalyzeVignettes")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=OlinkAnalyzeVignettes")
+    (synopsis "Vignettes for Analyzing Data using 'OlinkAnalyze'")
+    (description
+     "Exemplifying analysis of large-scale protein data from the Olink platform',
+primarily relative protein expression data that has been exported from Olink NPX
+Software', as well as QUANT data from Olink'.  QUANT data is log-transformed.
+Materials focus on reading data, demonstrating data wrangling and quality
+control analysis, performing statistical analysis and generating figures to
+visualize the results of the statistical analysis.  The goal of this package is
+to guide users extract biological insights from large-scale protein data run on
+the Olink platform'.  More information on Olink data can be found at
+<https://olink.com/>.")
+    (license license:agpl3+)))
+
 (define-public r-olinkanalyze
   (package
     (name "r-olinkanalyze")
@@ -12918,6 +12980,34 @@ ofpetrial how to design a trial, and get readily-usable trial design files and a
 report checks the validity and reliability of the trial design.")
     (license license:gpl3+)))
 
+(define-public r-ofhsyn
+  (package
+    (name "r-ofhsyn")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ofhsyn" version))
+       (sha256
+        (base32 "1673gwn912rbsjjsrrdl9rnsp03nf4pdch0nf8bj5d1zdjib3d41"))))
+    (properties `((upstream-name . "ofhsyn")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ofhsyn")
+    (synopsis "Synthetic Our Future Health Data Generator")
+    (description
+     "Generates synthetic Our Future Health cohort datasets for method development,
+including participant, questionnaire, clinic measurements, outpatient,
+inpatient, emergency, mortality, primary care medication, and geography outputs.
+ Supports reproducible generation with configurable cohort size and user-defined
+International Classification of Diseases, Tenth Revision (ICD-10), Office of
+Population Censuses and Surveys Classification of Interventions and Procedures,
+version 4 (OPCS-4), and British National Formulary (BNF) code pools.")
+    (license license:expat)))
+
 (define-public r-ofgem
   (package
     (name "r-ofgem")
@@ -13296,19 +13386,19 @@ Development (OECD).")
 (define-public r-odyssey
   (package
     (name "r-odyssey")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "odyssey" version))
        (sha256
-        (base32 "1q7q2g0p5shhr0x02mbcq87ydvfvjqs55ww50rz9hxwkxqbj9wq2"))))
+        (base32 "0rvk61al16s1x6r511pbm2kib8axb60rp3f64sjnljym1kb0qd1v"))))
     (properties `((upstream-name . "odyssey")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang r-httr2))
+    (propagated-inputs (list r-rlang r-httr2 r-dplyr))
     (home-page "https://codeberg.org/nfrerebeau/odyssey")
     (synopsis "Interface to the HAL Open Archive API")
     (description

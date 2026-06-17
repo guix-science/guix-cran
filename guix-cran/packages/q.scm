@@ -7,6 +7,7 @@
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages cran)
   #:use-module (gnu packages xdisorg)
+  #:use-module (gnu packages duckdb)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages web)
   #:use-module (gnu packages maths)
@@ -2649,6 +2650,39 @@ various range of functions that allow to establish an adaptable data quality
 control.")
     (license license:expat)))
 
+(define-public r-quak
+  (package
+    (name "r-quak")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quak" version))
+       (sha256
+        (base32 "0yss6fxri5mml67qw1dkpi9756qjns5cwjcaxxlmyb8k5w5jrq4v"))))
+    (properties `((upstream-name . "quak")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang
+                             r-glue
+                             r-fs
+                             r-duckdb
+                             r-dbi
+                             r-curl
+                             r-cli))
+    (home-page "https://github.com/pedrobtz/quak")
+    (synopsis "Query 'Azure Data Lake Storage Gen2' with 'DuckDB'")
+    (description
+     "This package provides convenience utilities for using @code{DuckDB} directly
+over datasets stored in Azure Data Lake Storage Gen2 (ADLS Gen2, abfss://').
+Opens connections configured for Azure-backed Delta Lake and Parquet data,
+registers Azure credentials as @code{DuckDB} secrets, and supports optional
+repository mirrors for restricted networks.  Integrates well with DBI for SQL
+workflows and with dplyr and dbplyr for lazy table queries.")
+    (license license:expat)))
+
 (define-public r-quadvar
   (package
     (name "r-quadvar")
@@ -3430,13 +3464,13 @@ reduced memory usage with only a modest increase in computation time.")
 (define-public r-qtl2convert
   (package
     (name "r-qtl2convert")
-    (version "0.32")
+    (version "0.34")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qtl2convert" version))
        (sha256
-        (base32 "0y6d1bhvmrjsmb15gs024dvkgm5rs0qb50b38jaw4yhydxp8mipb"))))
+        (base32 "0g5l4fiyqdrl6mb8wkbhg15q76rfx1cj770lbcpw9p8fxbbb1fyf"))))
     (properties `((upstream-name . "qtl2convert")))
     (build-system r-build-system)
     (arguments
@@ -3636,6 +3670,31 @@ package e.g. Athey and Imbens (2006) <doi:10.1111/j.1468-0262.2006.00668.x>
 Callaway and Li (2019) <doi:10.3982/QE935>, Callaway, Li, and Oka (2018)
 <doi:10.1016/j.jeconom.2018.06.008>).")
     (license license:gpl2)))
+
+(define-public r-qtbi
+  (package
+    (name "r-qtbi")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qtbi" version))
+       (sha256
+        (base32 "0vsap9a50phw43iki96fygfi00ardjmqwmj66wlhnamwi10s5b65"))))
+    (properties `((upstream-name . "qtbi")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/january-msemakweli/qtbi")
+    (synopsis "Quantum Toxic Burden Index")
+    (description
+     "Compute the Quantum Toxic Burden Index from multi-exposure panels using a fixed
+quantum-inspired entanglement encoder; method reference (2026)
+<doi:10.5281/zenodo.20476574>.  Provides percentile encoding, optional
+potency-weighted readout, and synergy diagnostics for environmental mixture
+burden scores.")
+    (license license:expat)))
 
 (define-public r-qsub
   (package
@@ -4923,13 +4982,13 @@ original data set.")
 (define-public r-qol
   (package
     (name "r-qol")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qol" version))
        (sha256
-        (base32 "1r46gcvw1k6njcahxc19h4ml460240amcd0w1bv3ly9n1fpiq9wj"))))
+        (base32 "11f6xyd8sjbcfxajr6qvfr691i9w8pa8p99dbp4vyw91jrq7a344"))))
     (properties `((upstream-name . "qol")))
     (build-system r-build-system)
     (arguments
@@ -6104,28 +6163,6 @@ predicted matrix that satisfies regular minimality [Colonius & Dzhafarov, 2006,
 Measurement and representations of sensations, Erlbaum].  From such a matrix,
 Fechnerian distances can be computed.")
     (license license:gpl2+)))
-
-(define-public r-qdiabetes
-  (package
-    (name "r-qdiabetes")
-    (version "1.0-2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "QDiabetes" version))
-       (sha256
-        (base32 "0r1rbg3azh7y4f5r9w0zj6qa658f63gyq6b007q514iivkzxib1c"))))
-    (properties `((upstream-name . "QDiabetes")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://github.com/Feakster/qdiabetes")
-    (synopsis "Type 2 Diabetes Risk Calculator")
-    (description
-     "Calculate the risk of developing type 2 diabetes using risk prediction
-algorithms derived by @code{ClinRisk}'.")
-    (license (license:fsdg-compatible "AGPL-3 + file LICENSE"))))
 
 (define-public r-qdea
   (package

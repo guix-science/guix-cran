@@ -6,6 +6,8 @@
                 #:prefix license:)
   #:use-module (gnu packages cran)
   #:use-module (gnu packages pcre)
+  #:use-module (gnu packages gcc)
+  #:use-module (gnu packages cmake)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages apparmor)
   #:use-module (gnu packages bioconductor)
@@ -2456,6 +2458,37 @@ distribution is generated using kernel density estimation and a Gaussian copula
 framework.  A dimension reduction strategy and sparse covariance estimation
 optimize this method for the high-dimensional, low-sample size setting.  This
 method is described in Helgeson, Vock, and Bair (2021) <doi:10.1111/biom.13376>.")
+    (license license:expat)))
+
+(define-public r-uno
+  (package
+    (name "r-uno")
+    (version "2.7.3-1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Uno" version))
+       (sha256
+        (base32 "1pvq86ic12jf7zxkscklqrih4cayda0js7186fxby0rpm0pgwc0s"))))
+    (properties `((upstream-name . "Uno")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list cmake))
+    (propagated-inputs (list r-rmumps r-cpp11))
+    (native-inputs (list r-knitr gfortran))
+    (home-page "https://bnaras.github.io/Uno/")
+    (synopsis "R Interface to the 'Uno' Nonlinear Optimization Solver")
+    (description
+     "Bindings to Uno (Unifying Nonlinear Optimization), a C++ solver for smooth
+nonlinearly constrained optimization.  Uno unifies Lagrange-Newton methods,
+including sequential quadratic programming and interior-point methods, by
+decomposing them into interacting building blocks (constraint-relaxation,
+inequality-handling, Hessian, and globalization strategies) that can be freely
+combined, either through options or through presets that reproduce established
+solvers such as @code{filterSQP} and IPOPT'.  The framework is described in
+Vanaret and Leyffer (2024) <doi:10.48550/@code{arXiv.2406.13454>}.")
     (license license:expat)))
 
 (define-public r-unnest

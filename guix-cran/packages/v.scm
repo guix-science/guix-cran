@@ -1334,41 +1334,6 @@ plurality, condorcet and two-round runoff methods (Raftery et al., 2021
 <doi:10.32614/RJ-2021-086>).")
     (license license:gpl2+)))
 
-(define-public r-vostokr
-  (package
-    (name "r-vostokr")
-    (version "0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "vostokR" version))
-       (sha256
-        (base32 "0c67b546sy1jwn80c9bdzgb9rq97zbmlya0kinjng3iyz1i32y74"))))
-    (properties `((upstream-name . "vostokR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list))
-    (propagated-inputs (list r-terra
-                             r-sf
-                             r-rcppeigen
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-lidr
-                             r-data-table))
-    (home-page "https://github.com/bi0m3trics/vostokR")
-    (synopsis "Solar Potential Calculation for Point Clouds using 'VOSTOK'")
-    (description
-     "Calculate solar potential for @code{LiDAR} point clouds using the VOSTOK (Voxel
-Octree Solar Toolkit) algorithm.  This R program provides an interface to the
-original VOSTOK C++ implementation by Bechtold and Hofle (2020), enabling
-efficient ray casting and solar position algorithms to compute solar irradiance
-for each point while accounting for shadowing effects.  Integrates seamlessly
-with the @code{lidR} package for @code{LiDAR} data processing workflows.  The
-original VOSTOK toolkit is available at <doi:10.11588/data/QNA02B>.")
-    (license license:gpl3+)))
-
 (define-public r-voss
   (package
     (name "r-voss")
@@ -1851,13 +1816,13 @@ Futures, and Other Derivatives (11th ed.)â, 2022, ISBN: 9780136939979).")
 (define-public r-vol2birdr
   (package
     (name "r-vol2birdr")
-    (version "1.2.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vol2birdR" version))
        (sha256
-        (base32 "0pbcwr822jwmny0a16aaqigpn6v0jw1kb4gh34m5nrzkdzj01d2g"))))
+        (base32 "09f5w6zjkp4y5nwrbywffkkdgxx0q54yvadyc59s947gnkvn097x"))))
     (properties `((upstream-name . "vol2birdR")))
     (build-system r-build-system)
     (arguments
@@ -1911,62 +1876,6 @@ framework.  The estimating function allows flexible prior specification,
 specification of fixed parameters and several options for Markov Chain Monte
 Carlo posterior simulation.  A basic version of the algorithm is described in:
 Cannas M. and Piras, N. (2025) <doi:10.1007/978-3-031-96303-2_53>.")
-    (license license:gpl2)))
-
-(define-public r-voicer
-  (package
-    (name "r-voicer")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "voiceR" version))
-       (sha256
-        (base32 "1bc2h04i9l76wqrw93brg5ivpgd0pq20zq2nq8x7p851jfxz84p4"))))
-    (properties `((upstream-name . "voiceR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xfun
-                             r-tuner
-                             r-stringr
-                             r-soundgen
-                             r-shinyjs
-                             r-shinyfiles
-                             r-shiny
-                             r-seewave
-                             r-rmarkdown
-                             r-rlang
-                             r-rcompanion
-                             r-plotly
-                             r-phia
-                             r-mass
-                             r-knitr
-                             r-kableextra
-                             r-gtable
-                             r-gridextra
-                             r-ggthemes
-                             r-ggpubr
-                             r-ggplot2
-                             r-fsa
-                             r-foreach
-                             r-dt
-                             r-doparallel))
-    (home-page "https://cran.r-project.org/package=voiceR")
-    (synopsis "Voice Analytics for Social Scientists")
-    (description
-     "Simplifies and largely automates practical voice analytics for social science
-research.  This package offers an accessible and easy-to-use interface,
-including an interactive Shiny app, that simplifies the processing, extraction,
-analysis, and reporting of voice recording data in the behavioral and social
-sciences.  The package includes batch processing capabilities to read and
-analyze multiple voice files in parallel, automates the extraction of key vocal
-features for further analysis, and automatically generates APA formatted reports
-for typical between-group comparisons in experimental social science research.
-A more extensive methodological introduction that inspired the development of
-the @code{voiceR} package is provided in Hildebrand et al.  2020
-<doi:10.1016/j.jbusres.2020.09.020>.")
     (license license:gpl2)))
 
 (define-public r-voice
@@ -2518,19 +2427,20 @@ pairwise tests as suggested by Armstrong and Poirier (2025)
 (define-public r-vizmodules
   (package
     (name "r-vizmodules")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VizModules" version))
        (sha256
-        (base32 "1vkgz3nr7xji6v4gz0ykyqb0p27xgp830vmhq1vw0s0dbgv96x3m"))))
+        (base32 "1g7lylkal16ac7alq3mmxkjal07lr7rm1yy5w5ww1h39sigdm4qs"))))
     (properties `((upstream-name . "VizModules")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-shinywidgets
+    (propagated-inputs (list r-zip
+                             r-shinywidgets
                              r-shinyjs
                              r-shinyjqui
                              r-shinybs
@@ -2559,7 +2469,8 @@ construction of shiny apps with very few lines of code and decouple plotting
 from the underlying data.  These modules allow for full plot aesthetic
 customization by the end user through UI inputs.  Utility functions for simple
 UI organization, automated UI tooltips, and additional plot enhancements are
-also provided.")
+also provided.  Includes a multi-panel figure builder app for arranging multiple
+modules together in a free-form layout.")
     (license license:expat)))
 
 (define-public r-vizdraws
@@ -2602,6 +2513,42 @@ package facilitates an animated transition between prior and posterior
 distributions.  Additionally, it splits the distribution into bars based on the
 provided breaks, displaying the probability for each region.  If no breaks are
 provided, it defaults to zero.")
+    (license license:gpl3)))
+
+(define-public r-vizclust
+  (package
+    (name "r-vizclust")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vizClust" version))
+       (sha256
+        (base32 "1ww9l771svz48xksfjqm39v4mx5lwxgk1m27n354v4yd04ja13a0"))))
+    (properties `((upstream-name . "vizClust")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-reshape2
+                             r-ggplot2
+                             r-ggiraph
+                             r-fnn
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=vizClust")
+    (synopsis "Visualization and Exploration of Cluster Transitions")
+    (description
+     "This package provides tools to explore and visualize transitions between
+clusters in multivariate data.  The package generates pseudo-samples by
+interpolating between cluster medoids, enabling the study of gradual changes in
+feature space.  It also computes k-nearest neighbors (KNN)-based statistics to
+relate pseudo-samples to real data and summarize variable behavior using mean,
+median, or standard deviation.  Finally, the package offers interactive
+visualizations of variable trajectories along cluster transitions, including
+both direct trajectory plots and bootstrap-based interactive plots with
+confidence intervals to assess variability and uncertainty across the transition
+path.")
     (license license:gpl3)))
 
 (define-public r-vivo
@@ -6254,22 +6201,24 @@ further customisations.")
 (define-public r-venndiagramlab
   (package
     (name "r-venndiagramlab")
-    (version "2.0.5")
+    (version "2.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vennDiagramLab" version))
        (sha256
-        (base32 "0j3jq33l95jm6kk7g5zh8hvr9advgpc0zqvabdldpnpfw0bygq6p"))))
+        (base32 "0akvaaazmpnlny4z6jpmna8mq56qngffnn4kvhnkyzn3isnrg29a"))))
     (properties `((upstream-name . "vennDiagramLab")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xml2
+    (propagated-inputs (list r-zip
+                             r-xml2
                              r-tidygraph
                              r-rsvg
                              r-patchwork
+                             r-openxlsx
                              r-jsonlite
                              r-gridextra
                              r-ggraph
@@ -6792,13 +6741,13 @@ Yashunin (2018) <doi:10.1109/TPAMI.2018.2889473>.")
 (define-public r-vectra
   (package
     (name "r-vectra")
-    (version "0.6.2")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vectra" version))
        (sha256
-        (base32 "1m7z8apn6zvmpz815svjp8qpn140bsvrc2ykas90rv8hcprw87sd"))))
+        (base32 "1yf698s1rhiapidaqp3khanxlpq9x9s8gb0v4c83g32ld04mxlhg"))))
     (properties `((upstream-name . "vectra")))
     (build-system r-build-system)
     (arguments

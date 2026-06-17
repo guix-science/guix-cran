@@ -167,71 +167,6 @@ information about @code{LaBB-CAT}', see Robert Fromont and Jennifer Hay (2008)
 clean the data once in R.")
     (license license:expat)))
 
-(define-public r-nysopendata
-  (package
-    (name "r-nysopendata")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "nysOpenData" version))
-       (sha256
-        (base32 "0y2wxb4jfsqsdd8rpzwgd1prr2ndd5r9qlngw9488978f50fhfs8"))))
-    (properties `((upstream-name . "nysOpenData")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-stringr
-                             r-rlang
-                             r-jsonlite
-                             r-janitor
-                             r-httr
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://martinezc1.github.io/nysOpenData/")
-    (synopsis "Convenient Access to NYS Open Data API Endpoints")
-    (description
-     "This package provides helper functions to access datasets from the NYS Open Data
-platform <https://data.ny.gov/>.  Functions return results as tidy tibbles and
-support optional filtering, sorting, and row limits via the Socrata API.")
-    (license license:expat)))
-
-(define-public r-nycopendata
-  (package
-    (name "r-nycopendata")
-    (version "0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "nycOpenData" version))
-       (sha256
-        (base32 "14bw61dik9g0v2ns4rbri61ip0fljlk53yh68k5y83c7l030rqw8"))))
-    (properties `((upstream-name . "nycOpenData")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-rlang
-                             r-jsonlite
-                             r-janitor
-                             r-httr
-                             r-dplyr
-                             r-curl))
-    (native-inputs (list r-knitr))
-    (home-page "https://martinezc1.github.io/nycOpenData/")
-    (synopsis "Convenient Access to NYC Open Data API Endpoints")
-    (description
-     "This package provides a unified set of helper functions to access datasets from
-the NYC Open Data platform <https://opendata.cityofnewyork.us/>.  Functions
-return results as tidy tibbles and support optional filtering, sorting, and row
-limits via the Socrata API. The package includes endpoints for 311 service
-requests, DOB job applications, juvenile justice metrics, school safety,
-environmental data, event permitting, and additional citywide datasets.")
-    (license license:expat)))
-
 (define-public r-nycflights23
   (package
     (name "r-nycflights23")
@@ -845,13 +780,13 @@ lineup, and examine the distributions of metrics.")
 (define-public r-nuggets
   (package
     (name "r-nuggets")
-    (version "2.2.0")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nuggets" version))
        (sha256
-        (base32 "0709jy9d80x33s8zv54dvflzdswhajbkvzif3vzqh93p0dl1zdnz"))))
+        (base32 "0kirs5ahmcz50i42lzbpnbvdil429bgsn72jr2g4mmfmikg94bgn"))))
     (properties `((upstream-name . "nuggets")))
     (build-system r-build-system)
     (arguments
@@ -4956,6 +4891,31 @@ Columns or rows can be ignored when normalizing or be normalized jointly.")
 visually.")
     (license license:expat)))
 
+(define-public r-normality
+  (package
+    (name "r-normality")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "normality" version))
+       (sha256
+        (base32 "023y3h0gzvvpkm0ll523ni6n6zihadhiya7v90m2if269p17rmv5"))))
+    (properties `((upstream-name . "normality")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/P10911004-NPUST/normality")
+    (synopsis "Tests for Departure from Normality")
+    (description
+     "This package provides a toolkit for assessing data normality using a
+comprehensive collection of statistical methods.  It includes descriptive
+measures and formal hypothesis tests, such as skewness and kurtosis tests, the
+AndersonâDarling test, the ShapiroâWilk test, and the D'AgostinoâPearson
+K2 omnibus test.")
+    (license license:expat)))
+
 (define-public r-normaliser
   (package
     (name "r-normaliser")
@@ -7189,13 +7149,13 @@ a tool for interpretability or @code{eXplainable} Artificial Intelligence (XAI).
 (define-public r-nmw
   (package
     (name "r-nmw")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nmw" version))
        (sha256
-        (base32 "16qdkrni98628zcwmsm4xl8fx8f6xj0p572202nz4hl4njixcqjx"))))
+        (base32 "18dfialr0z8fgd6aid591za2fjhnbanb25f06rs9ciw6181d5ha4"))))
     (properties `((upstream-name . "nmw")))
     (build-system r-build-system)
     (arguments
@@ -7206,14 +7166,16 @@ a tool for interpretability or @code{eXplainable} Artificial Intelligence (XAI).
     (synopsis
      "Understanding Nonlinear Mixed Effects Modeling for Population Pharmacokinetics")
     (description
-     "This shows how NONMEM(R) software works.  NONMEM's classical estimation methods
-like First Order(FO) approximation', First Order Conditional Estimation(FOCE)',
-and Laplacian approximation are explained.  Additionally, provides functions for
-post-run processing of NONMEM output files, generating comprehensive PDF
+     "This shows how NONMEM (Beal SL, Sheiner LB, Boeckmann AJ, Bauer RJ. NONMEM 7.5
+Users Guides.  Icon plc, 2020) software works.  NONMEM classical estimation
+methods such as First Order (FO) approximation', First Order Conditional
+Estimation (FOCE)', and Laplacian approximation are explained.  Functions are
+also provided for post-run processing of NONMEM output files, generating PDF
 diagnostic reports including objective function value analysis, parameter
-estimates, prediction diagnostics, residual diagnostics, empirical Bayes
-estimate (EBE) analysis, input data summary, and individual pharmacokinetic
-parameter distributions.")
+estimates, prediction and residual diagnostics, empirical Bayes estimate (EBE)
+analysis, input data summary, and individual pharmacokinetic parameter
+distributions.  Helper utilities for building NONMEM-ready datasets from
+SDTM-style source tables are also included.")
     (license license:gpl3)))
 
 (define-public r-nmvanova
@@ -7571,13 +7533,13 @@ projects.")
 (define-public r-nmfkc
   (package
     (name "r-nmfkc")
-    (version "0.7.3")
+    (version "0.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nmfkc" version))
        (sha256
-        (base32 "0wrr8541cxx5kv6v67yjyb590468g72lpksbaxnksv9g6mnw9r62"))))
+        (base32 "1xr2vbzp6cdk1js5jb8yighqkkzv3wjjvq1p1ayvrblfn0w1s936"))))
     (properties `((upstream-name . "nmfkc")))
     (build-system r-build-system)
     (arguments
@@ -7894,13 +7856,13 @@ evidence flow decomposition.")
 (define-public r-nmadta
   (package
     (name "r-nmadta")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMADTA" version))
        (sha256
-        (base32 "00jxkgfz91bm7qq4pq426xadybg20k7gq94pndhxrcmp2mv89yrb"))))
+        (base32 "1mayv0pwrslk6y9m25yk1nzwlcc4smlbl2srch0p4ahqb7dyd9xi"))))
     (properties `((upstream-name . "NMADTA")))
     (build-system r-build-system)
     (arguments
@@ -8884,13 +8846,13 @@ outputs (e.g. R Markdown).")
 (define-public r-nlmixr2plot
   (package
     (name "r-nlmixr2plot")
-    (version "5.0.1")
+    (version "5.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmixr2plot" version))
        (sha256
-        (base32 "00inp37jclw4nccxlqkyi4kgahpb2cpfgdzs52r2cjpx45khnf8f"))))
+        (base32 "1jb6p42gc5myxzd2w4zr5hjcl68iagnir4xnp94wvf6bjryf3y2d"))))
     (properties `((upstream-name . "nlmixr2plot")))
     (build-system r-build-system)
     (arguments
@@ -9062,13 +9024,13 @@ Hallow, and James 2015 <doi:10.1002/psp4.12052>).")
 (define-public r-nlmixr2autoinit
   (package
     (name "r-nlmixr2autoinit")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmixr2autoinit" version))
        (sha256
-        (base32 "1126pa2682hiq731l09rgljakmb93p7n3c1cm45vs43k10zs7gnr"))))
+        (base32 "0m56n8zmiw9h9vyslhs6pb7dc9kfgpklq93a8cjhbn74d791rpd4"))))
     (properties `((upstream-name . "nlmixr2autoinit")))
     (build-system r-build-system)
     (arguments
@@ -9087,7 +9049,7 @@ Hallow, and James 2015 <doi:10.1002/psp4.12052>).")
                              r-knitr
                              r-dplyr
                              r-crayon))
-    (home-page "https://github.com/ucl-pharmacometrics/nlmixr2autoinit")
+    (home-page "https://ucl-pharmacometrics.github.io/nlmixr2autoinit/")
     (synopsis
      "Automatic Generation of Initial Estimates for Population Pharmacokinetic Modeling")
     (description
@@ -9395,6 +9357,32 @@ approach\".  BMC medical research methodology, 21(1), 1-11.
 geographical objects.  Included is an utility function for displaying leaflet
 tiles restricted to the Netherlands.")
     (license license:gpl2)))
+
+(define-public r-nlfh
+  (package
+    (name "r-nlfh")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nlfh" version))
+       (sha256
+        (base32 "04xfx6707d1fcn6pqrj3lbv23jskkb7v9dlwsd2c78pybggmyc98"))))
+    (properties `((upstream-name . "nlfh")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-dbarts))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/paparker/nlfh")
+    (synopsis "Nonlinear Fay-Herriot Models for Small Area Estimation")
+    (description
+     "Fits nonlinear Bayesian extensions of the Fay-Herriot model for small area
+estimation using area-level direct estimates and corresponding sampling
+variances.  The package provides model fitting, prediction, uncertainty
+summaries, and diagnostic tools for nonlinear small area estimation workflows.")
+    (license license:expat)))
 
 (define-public r-nlcv
   (package
@@ -10454,6 +10442,43 @@ multivariate niche region.  The article by Swanson et al. (2015)
 <doi:10.1890/14-0235.1> provides a detailed description of the methodology.  See
 the package vignette for a worked example using fish stable isotope data.")
     (license license:gpl3)))
+
+(define-public r-nicher
+  (package
+    (name "r-nicher")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nicheR" version))
+       (sha256
+        (base32 "1bjqqi83prjx85rfxskb68ggarcihml0is2g3vp180z8x9wm3m6d"))))
+    (properties `((upstream-name . "nicheR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/castanedaM/nicheR")
+    (synopsis "Ellipsoid-Based Virtual Niches and Visualization")
+    (description
+     "This package provides a robust set of tools for researchers and modelers to
+construct and define virtual ecological niches using ellipsoid geometries.  It
+enables the identification and extraction of suitable environmental areas,
+simulation of species occurrence points with various sampling strategies, and
+visualization of niche boundaries and simulated occurrences in both
+environmental and geographic space.  Inspired by methodologies in @code{NicheA}
+and the virtualspecies R package, @code{nicheR} aims to streamline the process
+of niche conceptualization and data generation for ecological studies.
+Methodological and theoretical foundations are described in Peterson et al.
+(2011, ISBN:9780691136882), Etherington et al. (2009)
+<doi:10.1111/j.1365-2699.2008.02041.x>, Qiao et al. (2015)
+<doi:10.1111/ecog.01961>, Nunez-Penichet et al. (2021)
+<doi:10.21425/F5FBG52142>, Cobos and Peterson (2022)
+<doi:10.17161/bi.v17i.15985>, Alkishe et al. (2022) <doi:10.5194/we-22-33-2022>,
+and Leroy et al. (2015) <doi:10.1111/ecog.01388>.")
+    (license license:expat)))
 
 (define-public r-nice
   (package
@@ -12254,6 +12279,37 @@ statistics and describes the characteristics of neutrosophic data, as defined by
 Florentin Smarandache (2013).<ISBN:9781599732749>.")
     (license license:gpl2+)))
 
+(define-public r-neutrorcdsanalysis
+  (package
+    (name "r-neutrorcdsanalysis")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NeutroRCDsAnalysis" version))
+       (sha256
+        (base32 "1wx1iy3h5chki19v06sgif1qpbbl7ri673qiy0kkh8ir2k7nkrk4"))))
+    (properties `((upstream-name . "NeutroRCDsAnalysis")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mass))
+    (home-page "https://cran.r-project.org/package=NeutroRCDsAnalysis")
+    (synopsis "Neutrosophic Analysis of Row Column Designs")
+    (description
+     "Description: Provides methods for Neutrosophic Analysis of Variance (NANOVA) and
+Neutrosophic Analysis of Covariance (NANCOVA) for row-column designs, including
+Latin square designs and Youden square designs, using interval-valued
+observations.  The package computes neutrosophic sums of squares, mean squares,
+interval-valued F-statistics, significance tests, and multiple comparisons using
+Least Significant Difference (LSD) procedures.  For crisp data, users may enter
+identical lower and upper values of responses to obtain classical Analysis of
+Variance (ANOVA) results.  Similarly, users may enter identical lower and upper
+values for both responses and covariates to obtain classical Analysis of
+Covariance (ANCOVA) results.")
+    (license license:gpl3)))
+
 (define-public r-neutroibdanalysis
   (package
     (name "r-neutroibdanalysis")
@@ -12280,6 +12336,37 @@ incomplete block designs (BIBDs), partially balanced incomplete block designs
 (PBIBDs), and lattice designs.  Functions are included for treatment
 comparisons, least significant difference (LSD) tests, and interval-based
 statistical inference under neutrosophic environments.")
+    (license license:gpl2+)))
+
+(define-public r-neutrocodsanalysis
+  (package
+    (name "r-neutrocodsanalysis")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NeutroCODsAnalysis" version))
+       (sha256
+        (base32 "1384i5y6d5xnr3f0xx6hh6fzcbh7n91mbkp4xcknf84la215g5h8"))))
+    (properties `((upstream-name . "NeutroCODsAnalysis")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mass))
+    (home-page "https://cran.r-project.org/package=NeutroCODsAnalysis")
+    (synopsis "Neutrosophic Analysis Crossover Designs")
+    (description
+     "This package provides methods for Neutrosophic Analysis of Variance (NANOVA) for
+crossover designs and multi-session designs with direct and residual effects
+using interval-valued observations.  The package computes neutrosophic sums of
+squares, mean squares, interval-valued F-statistics, significance tests, and
+multiple comparisons using Least Significant Difference (LSD) procedures.  For
+crisp data, users may enter identical lower and upper response values to obtain
+classical Analysis of Variance (ANOVA) results.  The basic idea of neutrosophic
+statistics is obtained from Smarandache (2014)
+<https://fs.unm.edu/@code{NeutrosophicStatistics.pdf>}, while the analysis
+procedures implemented in this package are newly developed.")
     (license license:gpl2+)))
 
 (define-public r-neutralitytestr
@@ -13634,13 +13721,13 @@ model via heatmaps.")
 (define-public r-netutils
   (package
     (name "r-netutils")
-    (version "0.8.5")
+    (version "0.8.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "netUtils" version))
        (sha256
-        (base32 "1568nzc48g16dz4la7zlfxk6ivv871zr63r49rdcmp8gir39zvys"))))
+        (base32 "05z1bnq8lss3b3i7h6yi74g2id1ac0v4kxjwmw2n61lk02qfw09b"))))
     (properties `((upstream-name . "netUtils")))
     (build-system r-build-system)
     (arguments
@@ -13714,6 +13801,63 @@ Implements the following: Amini, Chen, Bickel and Levina (2013)
 Zhang and Amini (2020) <@code{arXiv:2012.15047>} Le and Levina (2022)
 <doi:10.1214/21-EJS1971>.")
     (license license:expat)))
+
+(define-public r-netsurvprox
+  (package
+    (name "r-netsurvprox")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NetSurvProx" version))
+       (sha256
+        (base32 "0zqjazvdvbcm15fsfm3lc2p2wv709z5q9521wsx201s4f7lma2rz"))))
+    (properties `((upstream-name . "NetSurvProx")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survminer
+                             r-survival
+                             r-survauc
+                             r-rmarkdown
+                             r-rcolorbrewer
+                             r-openxlsx
+                             r-magic
+                             r-igraph
+                             r-httr
+                             r-hmisc
+                             r-glmnet
+                             r-ggpubr
+                             r-ggplot2
+                             r-foreach
+                             r-flexsurv
+                             r-dplyr
+                             r-cvtools
+                             r-curl
+                             r-annotationdbi))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=NetSurvProx")
+    (synopsis
+     "'NetSurvProx': Network-Based Survival Analysis via Proximal Methods")
+    (description
+     "Introduces a novel network-constrained survival analysis framework for variable
+selection and parameter estimation in penalized survival models with convex
+penalties.  The package extends two classical survival models, the Cox
+Proportional Hazards (PH) model and the Accelerated Failure Time (AFT) model, by
+incorporating prior biological knowledge from curated interaction networks
+(e.g., KEGG) into a double-penalty framework.  The first penalty enforces
+variable selection through a LASSO penalty, while the second preserves gene-gene
+correlations by incorporating Laplacian-based constraints, ensuring that
+biologically relevant network structures are maintained.  Using censored
+survival data, the method enables the identification of predictive biomarkers
+and pathways with potential relevance for target therapies.  Model estimation is
+performed via proximal optimization algorithms combined with cross-validation
+for reliable tuning.  To enhance interpretability, dedicated utility functions
+are implemented to consolidate results, yielding biologically coherent insights
+that can support personalized medicine and contribute to improved patient
+outcomes.")
+    (license license:gpl3+)))
 
 (define-public r-netsubsamp
   (package
@@ -14231,13 +14375,13 @@ call @code{NetMHCIIpan} from R.")
 (define-public r-netmeta
   (package
     (name "r-netmeta")
-    (version "3.5-0")
+    (version "3.6-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "netmeta" version))
        (sha256
-        (base32 "1wvld2v07afc28wjyig6f1lnsh2fm33fpz8adkrgw74nb542v8am"))))
+        (base32 "1lj4qgnv59wcki17qxhdc8pavjhwk85j765m7bh5ylkrziwmqidb"))))
     (properties `((upstream-name . "netmeta")))
     (build-system r-build-system)
     (arguments
@@ -15303,20 +15447,20 @@ rates.")
 (define-public r-nestable
   (package
     (name "r-nestable")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nestable" version))
        (sha256
-        (base32 "02fifj4nzzdqbyywypmjpaqc0v82gwvc841di2b7x19vka16m9ry"))))
+        (base32 "0q9qr82b4cqbrgdqa0m5280d87f62qm7c6hd972726sjsvwvkgqx"))))
     (properties `((upstream-name . "nestable")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-htmltools))
-    (home-page "https://cran.r-project.org/package=nestable")
+    (home-page "https://github.com/derekunderwood/nestable")
     (synopsis "Collapsible 'HTML' Tables from Hierarchical Data")
     (description
      "This package creates collapsible, expandable HTML tables from hierarchical data.
@@ -15831,13 +15975,13 @@ are out of control.")
 (define-public r-nemsqar
   (package
     (name "r-nemsqar")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nemsqar" version))
        (sha256
-        (base32 "105ih7djkrmhahh9k3f1nr1h45xbamvyqqkpl8my0bkwj7aawgqj"))))
+        (base32 "111wx0pannlcmabcm5j86f4nvwxwz7b6wszhacyf76v6mg2lp9f3"))))
     (properties `((upstream-name . "nemsqar")))
     (build-system r-build-system)
     (arguments
@@ -17708,49 +17852,6 @@ for hierarchical data structures.  By activating the menu items, you can perform
 operations on each item while maintaining the overall structure in attributes.")
     (license license:expat)))
 
-(define-public r-navigation
-  (package
-    (name "r-navigation")
-    (version "0.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "navigation" version))
-       (sha256
-        (base32 "129f2snh2mjp9mcifcxzh37zjhny8wlqhq00225pakl79kfzyyim"))))
-    (properties `((upstream-name . "navigation")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-simts
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-rbenchmark
-                             r-plotly
-                             r-pbmcapply
-                             r-mass
-                             r-magrittr
-                             r-leaflet
-                             r-expm))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/SMAC-Group/navigation")
-    (synopsis
-     "Analyze the Impact of Sensor Error Modelling on Navigation Performance")
-    (description
-     "This package implements the framework presented in Cucci, D. A., Voirol, L.,
-Khaghani, M. and Guerrier, S. (2023) <doi:10.1109/TIM.2023.3267360> which allows
-to analyze the impact of sensor error modeling on the performance of integrated
-navigation (sensor fusion) based on inertial measurement unit (IMU), Global
-Positioning System (GPS), and barometer data.  The framework relies on Monte
-Carlo simulations in which a Vanilla Extended Kalman filter is coupled with
-realistic and user-configurable noise generation mechanisms to recover a
-reference trajectory from noisy measurements.  The evaluation of several
-statistical metrics of the solution, aggregated over hundreds of simulated
-realizations, provides reasonable estimates of the expected performances of the
-system in real-world conditions.")
-    (license license:agpl3)))
-
 (define-public r-navaeci
   (package
     (name "r-navaeci")
@@ -18164,13 +18265,13 @@ Artificial Bee Colony algorithm.")
 (define-public r-nascar-data
   (package
     (name "r-nascar-data")
-    (version "3.0.1")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nascaR.data" version))
        (sha256
-        (base32 "06rpvyds4hz5lhyvbl1mz0bqbnk3x7ks3p95bqv0dgj60l13sfjk"))))
+        (base32 "0hnjrfqyg89cn00vmn59sa611k5b2haxgc79xw5i05a93qkfmyh2"))))
     (properties `((upstream-name . "nascaR.data")))
     (build-system r-build-system)
     (arguments

@@ -1535,13 +1535,13 @@ pricing and Greeks are also provided.")
 (define-public r-jrt
   (package
     (name "r-jrt")
-    (version "1.1.3")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jrt" version))
        (sha256
-        (base32 "0k6jxjpvscc0yw0dhk33fcd5k6al8fbai7zwf9cbkwaxjr65wc4m"))))
+        (base32 "03yqm0n6wy7569qvag8wrph0r871hjn1awzyprbajqy357rwiwjw"))))
     (properties `((upstream-name . "jrt")))
     (build-system r-build-system)
     (arguments
@@ -1550,7 +1550,6 @@ pricing and Greeks are also provided.")
     (propagated-inputs (list r-tidyr
                              r-psych
                              r-mirt
-                             r-irr
                              r-ggsci
                              r-ggplot2
                              r-dplyr
@@ -2661,13 +2660,13 @@ also available.")
 (define-public r-joinspy
   (package
     (name "r-joinspy")
-    (version "0.8.0")
+    (version "0.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "joinspy" version))
        (sha256
-        (base32 "1pngd3h23pb9c47iqs2cv17ww4asag3mb9i9xd4nkdlrrld3k6zl"))))
+        (base32 "1gd3c0jkgy22g9z04znqra492m9zlfhcpzrqvzzn2a8rv6vaf77g"))))
     (properties `((upstream-name . "joinspy")))
     (build-system r-build-system)
     (arguments
@@ -2689,13 +2688,13 @@ Concepts and diagnostics build on tidy data principles as described in Wickham
 (define-public r-joinpointr
   (package
     (name "r-joinpointr")
-    (version "0.6.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "joinpointR" version))
        (sha256
-        (base32 "01hi9ciid815sszjw5jmy8h4jzxk234m0k8a46n23s4cjcdrh5rc"))))
+        (base32 "0318rx4gjpmb9wj6azsil1l6y425w06xh56an7hc4pspgchhj203"))))
     (properties `((upstream-name . "joinpointR")))
     (build-system r-build-system)
     (arguments
@@ -2712,7 +2711,9 @@ Concepts and diagnostics build on tidy data principles as described in Wickham
                              r-ggplot2
                              r-forcats
                              r-flextable
-                             r-dplyr))
+                             r-dplyr
+                             r-cols4all))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/datos-ine/joinpointR")
     (synopsis "Tidy Tools for Joinpoint Regression Models")
     (description
@@ -2782,13 +2783,13 @@ comparisons, install @code{remMap} from @code{GitHub}
 (define-public r-joinerml
   (package
     (name "r-joinerml")
-    (version "0.4.7")
+    (version "0.4.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "joineRML" version))
        (sha256
-        (base32 "15kj34czlgbwcykf6zmfvpmb9iyy1h2x6r18nbvf53n6hbx4ggan"))))
+        (base32 "1hxnvqpz152aa6k7cn65zlp2a33vfd818h2w3srw2m29cxcv14ak"))))
     (properties `((upstream-name . "joineRML")))
     (build-system r-build-system)
     (arguments
@@ -2810,7 +2811,7 @@ comparisons, install @code{remMap} from @code{GitHub}
                              r-doparallel
                              r-cobs))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/graemeleehickey/joineRML")
+    (home-page "https://graemeleehickey.github.io/joineRML/")
     (synopsis
      "Joint Modelling of Multivariate Longitudinal Data and Time-to-Event Outcomes")
     (description
@@ -4293,22 +4294,22 @@ reduce user dependencies.")
 (define-public r-jdcruncher
   (package
     (name "r-jdcruncher")
-    (version "0.3.6")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JDCruncheR" version))
        (sha256
-        (base32 "011lx1pwp3mrnzx7psg2chmlxhk4nak09w3nf154q5g5dvgjxhxa"))))
+        (base32 "07sy4md7lw7wqpi70b1hi32qikmw8cpx46c8apsadqs7ym1ac15y"))))
     (properties `((upstream-name . "JDCruncheR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-openxlsx))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/InseeFr/JDCruncheR")
-    (synopsis
-     "Interface Between the 'JDemetra+' Cruncher and R, and Quality Report Generator")
+    (synopsis "'JDemetra+' Quality Report Generator")
     (description
      "Tool for generating quality reports from cruncher outputs (and calculating
 series scores).  The latest version of the cruncher can be downloaded here:

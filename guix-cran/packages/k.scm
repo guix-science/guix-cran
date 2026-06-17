@@ -1441,28 +1441,6 @@ initial cluster centers shows that KQM is almost always getting clustering
 results with smaller total sum squares of distances.")
     (license license:gpl2)))
 
-(define-public r-kpodclustr
-  (package
-    (name "r-kpodclustr")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "kpodclustr" version))
-       (sha256
-        (base32 "1gwy59sh4gp06hr3il3hz0iiwdrzrlya5b026qxvz5q62msf6q5a"))))
-    (properties `((upstream-name . "kpodclustr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "http://jocelynchi.com/kpodclustr")
-    (synopsis "Method for Clustering Partially Observed Data")
-    (description
-     "Software for k-means clustering of partially observed data from Chi, Chi, and
-Baraniuk (2016) <doi:10.1080/00031305.2015.1086685>.")
-    (license license:expat)))
-
 (define-public r-kpiwidget
   (package
     (name "r-kpiwidget")
@@ -3306,38 +3284,6 @@ ISBN:9780735201811) \"Japanese Candlestick Charting Techniques\" and Bulkowski
 (2021, ISBN:9781119739685) \"Encyclopedia of Chart Patterns\".")
     (license license:expat)))
 
-(define-public r-klic
-  (package
-    (name "r-klic")
-    (version "1.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "klic" version))
-       (sha256
-        (base32 "1ggsdq8xcg6hi12rq356myhngx3j475gpwlvpynm1581r4z0lkbk"))))
-    (properties `((upstream-name . "klic")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcolorbrewer r-pheatmap r-matrix r-coca
-                             r-cluster))
-    (native-inputs (list r-knitr))
-    (home-page "http://github.com/acabassi/klic")
-    (synopsis "Kernel Learning Integrative Clustering")
-    (description
-     "Kernel Learning Integrative Clustering (KLIC) is an algorithm that allows to
-combine multiple kernels, each representing a different measure of the
-similarity between a set of observations.  The contribution of each kernel on
-the final clustering is weighted according to the amount of information carried
-by it.  As well as providing the functions required to perform the kernel-based
-clustering, this package also allows the user to simply give the data as input:
-the kernels are then built using consensus clustering.  Different strategies to
-choose the best number of clusters are also available.  For further details
-please see Cabassi and Kirk (2020) <doi:10.1093/bioinformatics/btaa593>.")
-    (license license:expat)))
-
 (define-public r-klexp
   (package
     (name "r-klexp")
@@ -3446,13 +3392,13 @@ project homepage.")
 (define-public r-klassr
   (package
     (name "r-klassr")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "klassR" version))
        (sha256
-        (base32 "061id06ncq7bq5wfj0fqcl3m1qhrm2fcs521c7p73f7ryik2cz95"))))
+        (base32 "1cpqj9ylpad7ssy5xc1na0pl0q7z5va5rhddvadfssqard0an10v"))))
     (properties `((upstream-name . "klassR")))
     (build-system r-build-system)
     (arguments
@@ -3807,13 +3753,13 @@ be used in ranking results from other packs.")
 (define-public r-kinsimu
   (package
     (name "r-kinsimu")
-    (version "0.1.3")
+    (version "0.1.3-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "KINSIMU" version))
        (sha256
-        (base32 "01p0fg00323s1v6b2j04xay5j75wydl8l1sjigdc969zy13byf4z"))))
+        (base32 "058xfcv9bxf2a4jg6m7vq112m45zfl598wvg9pp2vn2sxhi9kzc1"))))
     (properties `((upstream-name . "KINSIMU")))
     (build-system r-build-system)
     (arguments

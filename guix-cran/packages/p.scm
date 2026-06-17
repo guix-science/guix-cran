@@ -10,10 +10,10 @@
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages statistics)
+  #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages algebra)
   #:use-module (gnu packages web)
   #:use-module (gnu packages curl)
-  #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages ssh)
   #:use-module (gnu packages tls)
   #:use-module (gnu packages geo)
@@ -1170,13 +1170,13 @@ closure can be derived.  Methods adapted from Bartlett, Scoffoni, Sack (2012)
 (define-public r-pvebayes
   (package
     (name "r-pvebayes")
-    (version "0.2.2")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pvEBayes" version))
        (sha256
-        (base32 "199xms5vpik9iwqkmzlj4fnirwj3gd7799d7085ganjdm8n3mhmz"))))
+        (base32 "1vavgfk4iikcybfpphhnmsds6yc2700zqd62zkrihwg6bj2kj8r0"))))
     (properties `((upstream-name . "pvEBayes")))
     (build-system r-build-system)
     (arguments
@@ -1191,17 +1191,17 @@ closure can be derived.  Methods adapted from Bartlett, Scoffoni, Sack (2012)
                              r-ggfittext
                              r-ggdist
                              r-data-table
-                             r-cvxr))
+                             r-cvxr
+                             r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/YihaoTancn/pvEBayes")
+    (home-page "https://github.com/ropensci/pvEBayes")
     (synopsis "Empirical Bayes Methods for Pharmacovigilance")
     (description
      "This package provides a suite of empirical Bayes methods to use in
 pharmacovigilance.  Contains various model fitting and post-processing
-functions.  For more details see Tan et al. (2025)
-<doi:10.48550/@code{arXiv.2502.09816>}, <doi:10.48550/@code{arXiv.2512.01057>};
-Koenker and Mizera (2014) <doi:10.1080/01621459.2013.869224>; Efron (2016)
-<doi:10.1093/biomet/asv068>.")
+functions.  For more details see Tan et al. (2025) <doi:10.1002/sim.70195>,
+<doi:10.48550/@code{arXiv.2512.01057>}; Koenker and Mizera (2014)
+<doi:10.1080/01621459.2013.869224>; Efron (2016) <doi:10.1093/biomet/asv068>.")
     (license license:gpl3)))
 
 (define-public r-pvda
@@ -1378,6 +1378,37 @@ cointegrating vectors by Breitung (2005, <doi:10.1081/ETC-200067895>), and (3)
 the pooled identification based on independent component analysis by Herwartz
 and Wang (2024, <doi:10.1002/jae.3044>).")
     (license license:expat)))
+
+(define-public r-pvarife
+  (package
+    (name "r-pvarife")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pvarife" version))
+       (sha256
+        (base32 "117cvbrm2rmdl369rzv9d30gckjpsn1ykr1jfv67f5spvf0l0rlm"))))
+    (properties `((upstream-name . "pvarife")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-mvtnorm r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Rickchen0910/pvarife")
+    (synopsis "Panel VAR Models with Interactive Fixed Effects")
+    (description
+     "This package implements the estimator of Tugan (2021) <doi:10.1093/ectj/utaa021>
+for panel vector autoregression (VAR) models with interactive fixed effects.
+Provides joint estimation of VAR coefficients, latent common factors, and factor
+loadings via an iterative algorithm that alternates between principal component
+estimation of the factors and least squares estimation of the VAR coefficients,
+following the approach of Bai (2009) <doi:10.3982/ECTA6135>.  Supports impulse
+response functions under recursive (Cholesky) identification, parametric
+confidence bands from the joint asymptotic distribution of the estimator
+(Theorem 2.3), and a classical residual bootstrap for robustness checks.")
+    (license license:gpl3)))
 
 (define-public r-pvar
   (package
@@ -2012,6 +2043,33 @@ where the statistical errors of each model are ranked for a more straightforward
 determination of the best fit model.")
     (license license:gpl2)))
 
+(define-public r-punycoder
+  (package
+    (name "r-punycoder")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "punycoder" version))
+       (sha256
+        (base32 "09j3k2jvniz78c2hdbnimc1mwv1c09455hy0z5c0x9adl8i8k76p"))))
+    (properties `((upstream-name . "punycoder")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (native-inputs (list pkg-config r-knitr))
+    (home-page "https://github.com/bart-turczynski/punycoder")
+    (synopsis "Unicode and Punycode Domain Name Processing")
+    (description
+     "High-performance Unicode and Punycode encoding/decoding for internationalized
+domain names.  Provides RFC 3492 compliant conversion functions with a focus on
+URL processing and data analysis workflows.  Addresses limitations in existing R
+packages for handling international domain names in web scraping and URL parsing
+applications.")
+    (license license:expat)))
+
 (define-public r-pump
   (package
     (name "r-pump")
@@ -2113,6 +2171,42 @@ also be applied in other contexts where non-monotonic responses are expected.
 For methodological details, see Shi et al. (2025)
 <doi:10.48550/@code{arXiv.2504.00423>}.")
     (license license:gpl3)))
+
+(define-public r-pulso
+  (package
+    (name "r-pulso")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pulso" version))
+       (sha256
+        (base32 "1szjwicycavyaqpqqkw6fanh1zkzqady41bxrl760zac77kmsfyg"))))
+    (properties `((upstream-name . "pulso")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-tibble
+                             r-rlang
+                             r-readxl
+                             r-jsonlite
+                             r-httr2
+                             r-fs
+                             r-dplyr
+                             r-digest
+                             r-data-table
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Stebandido77/pulso")
+    (synopsis "Load Microdata from Colombia's 'GEIH' ('DANE')")
+    (description
+     "Programmatic access to microdata from Colombia's Gran Encuesta Integrada de
+Hogares ('GEIH'), published by DANE'.  Provides a tidy interface to download,
+parse, and harmonize labor market surveys from 2007 to present.  R companion to
+the pulso-co Python package.")
+    (license license:expat)))
 
 (define-public r-pulsar
   (package
@@ -5793,13 +5887,13 @@ studies.")
 (define-public r-psc
   (package
     (name "r-psc")
-    (version "2.0.1")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psc" version))
        (sha256
-        (base32 "0xvby0clmyv8yjrvmz6s29rrbna09xlvrnmabz763106sj4qkdg1"))))
+        (base32 "0hbnaxvl5xx8s6zryh67gkyn0fbppxsd09i798cb2d6bpnnm7zs0"))))
     (properties `((upstream-name . "psc")))
     (build-system r-build-system)
     (arguments
@@ -9741,13 +9835,13 @@ autocorrelation for big datasets.")
 (define-public r-probedeveloper
   (package
     (name "r-probedeveloper")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ProbeDeveloper" version))
        (sha256
-        (base32 "1v4jha6mqbmhx3q6b2d0pxxw42rz718dgd11n9i7c9c3rza9g9av"))))
+        (base32 "1d9bsixabvbhl0v54r4mixx5vl1ql1bic2mm0dw9avwpr4q71n74"))))
     (properties `((upstream-name . "ProbeDeveloper")))
     (build-system r-build-system)
     (arguments
@@ -10379,13 +10473,13 @@ visualizations are also provided.")
 (define-public r-prioritylasso
   (package
     (name "r-prioritylasso")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "prioritylasso" version))
        (sha256
-        (base32 "1vn4i7rg1nsir98lgaxnw4851rwyv8kx25z8nc942qsr3r7cvdf6"))))
+        (base32 "1kwgp9k9kkda0fdvgqayy36dpch3xxfnjwramvvgyask4mr9rpps"))))
     (properties `((upstream-name . "prioritylasso")))
     (build-system r-build-system)
     (arguments
@@ -10449,13 +10543,13 @@ the model in the presence of incomplete datasets.")
 (define-public r-prioritizrdata
   (package
     (name "r-prioritizrdata")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "prioritizrdata" version))
        (sha256
-        (base32 "0dvxh43dk9mhsqdj89zilh3r91cqngl07ggw5r5rj761xl3km10w"))))
+        (base32 "1fi59mgw1kxhk7px48dwxzg00dyr64lvrzmf1gnffc44w07i1bb1"))))
     (properties `((upstream-name . "prioritizrdata")))
     (build-system r-build-system)
     (arguments
@@ -11056,13 +11150,13 @@ aggregation of these tabular inputs.")
 (define-public r-primarycensored
   (package
     (name "r-primarycensored")
-    (version "1.5.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "primarycensored" version))
        (sha256
-        (base32 "1n1hbz9h95ba9s43fv43hjvc8g9cyl80lfv9yrqi17yhwspl83nm"))))
+        (base32 "1j98n9np09n7d7b27m26cc5h3m02ybb7pzd3995qmgf15ysfgnr3"))))
     (properties `((upstream-name . "primarycensored")))
     (build-system r-build-system)
     (arguments
@@ -13674,13 +13768,13 @@ clusters across datasets.  More details can be referred to Wei Liu, et al.
 (define-public r-pre
   (package
     (name "r-pre")
-    (version "1.0.8")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pre" version))
        (sha256
-        (base32 "0hxfgnaqnx2y1dsrpc9fhgd5alnn2s8w98nmky2zkg3w8ny84cfp"))))
+        (base32 "0iwwhyj3m0cfr93q859qxz9cjjlzln4nphz0784z0j7igacybicr"))))
     (properties `((upstream-name . "pre")))
     (build-system r-build-system)
     (arguments
@@ -15181,13 +15275,13 @@ classification.")
 (define-public r-ppendemic
   (package
     (name "r-ppendemic")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ppendemic" version))
        (sha256
-        (base32 "1g3rfklzpn4accg30hqm13mdnpijki9biv73hrvk395pdyza79lb"))))
+        (base32 "0hlwp19yzmxi7aww18ivp1hw6z584iab9hzl1vqamv4cbg7l03kz"))))
     (properties `((upstream-name . "ppendemic")))
     (build-system r-build-system)
     (arguments
@@ -15204,16 +15298,16 @@ classification.")
                              r-dplyr
                              r-cli
                              r-assertthat))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/PaulESantos/ppendemic/")
     (synopsis "Glimpse at the Diversity of Peru's Endemic Plants")
     (description
-     "Introducing a novel and updated database showcasing Peru's endemic plants.  This
-meticulously compiled and revised botanical collection encompasses a remarkable
-assemblage of over 7,898 distinct species.  The data for this resource was
-sourced from the work of Govaerts, R., Nic Lughadha, E., Black, N. et al.,
-titled The World Checklist of Vascular Plants: A continuously updated resource
-for exploring global plant diversity', published in Sci Data 8, 215 (2021)
-<doi:10.1038/s41597-021-00997-6>.")
+     "This package provides an updated database of accepted endemic plant taxa from
+Peru.  The current collection contains over 8,000 taxonomic records at species
+and infraspecific ranks.  Data are derived from Govaerts, R., Nic Lughadha, E.,
+Black, N. et al., The World Checklist of Vascular Plants: A continuously updated
+resource for exploring global plant diversity', published in Sci Data 8, 215
+(2021) <doi:10.1038/s41597-021-00997-6>.")
     (license license:expat)))
 
 (define-public r-ppdiag
@@ -15282,13 +15376,13 @@ package @code{PakPC2017}'.")
 (define-public r-ppcsexrx
   (package
     (name "r-ppcsexrx")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PPCSexRx" version))
        (sha256
-        (base32 "06nmvvyx43cqn1sgvnq6v9hrjm74pr9k25blfq8b2z95605l7czs"))))
+        (base32 "08k6i5sxpjaj12m5pfh38siyspzzib5a43r99s7ywfvpw9mkhx19"))))
     (properties `((upstream-name . "PPCSexRx")))
     (build-system r-build-system)
     (arguments
@@ -16403,6 +16497,50 @@ test for central normality allows for rejecting transformations that fail to
 produce a suitably normal distribution, independent of sample number.")
     (license (license:fsdg-compatible "EUPL"))))
 
+(define-public r-power-nb
+  (package
+    (name "r-power-nb")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "power.nb" version))
+       (sha256
+        (base32 "1w00s0h7hd76bq654w2h5ayv3yi9hg0m03bm5j5mczfis0dgkwvk"))))
+    (properties `((upstream-name . "power.nb")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-scam
+                             r-rlang
+                             r-purrr
+                             r-mixtools
+                             r-minpack-lm
+                             r-metr
+                             r-latex2exp
+                             r-ggrastr
+                             r-ggplot2
+                             r-foreach
+                             r-fitdistrplus
+                             r-doparallel
+                             r-deseq2
+                             r-deoptim))
+    (native-inputs (list r-knitr))
+    (home-page "https://michaelagronah.com/power.nb/")
+    (synopsis
+     "Power and Sample Size Calculation for Differential Abundance Microbiome Studies")
+    (description
+     "This package provides functions for estimating statistical power and required
+sample sizes in differential abundance microbiome studies using negative
+binomial models.  The methods are based on Agronah and Bolker (2025)
+<doi:10.1371/journal.pone.0318820>.  The package includes tools for
+simulation-based power analysis and sample size estimation using generalized
+additive models (GAMs), and visualization utilities for exploring the
+relationship between power, effect size, abundance, and sample size.")
+    (license license:expat)))
+
 (define-public r-power
   (package
     (name "r-power")
@@ -16975,54 +17113,6 @@ graph.  Includes also non-parametric toos for post-hoc analysis.  It has S3
 methods for printing summarizing, and producing plots, line and barplots
 suitable for post-hoc analyses.")
     (license license:gpl3+)))
-
-(define-public r-postggir
-  (package
-    (name "r-postggir")
-    (version "2.4.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "postGGIR" version))
-       (sha256
-        (base32 "1jxmvgzq4hv7sy2zcs8jicp0223mhv3mywhxbay2nv3bl0h4xfgs"))))
-    (properties `((upstream-name . "postGGIR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo
-                             r-xlsx
-                             r-tidyr
-                             r-survival
-                             r-refund
-                             r-minpack-lm
-                             r-kableextra
-                             r-ineq
-                             r-ggir
-                             r-dplyr
-                             r-denseflmm
-                             r-cosinor2
-                             r-cosinor
-                             r-actfrag
-                             r-actcr
-                             r-accelerometry
-                             r-abind))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/dora201888/postGGIR")
-    (synopsis "Data Processing after Running 'GGIR' for Accelerometer Data")
-    (description
-     "Generate all necessary R/Rmd/shell files for data processing after running GGIR
-(v2.4.0) for accelerometer data.  In part 1, all csv files in the GGIR output
-directory were read, transformed and then merged.  In part 2, the GGIR output
-files were checked and summarized in one excel sheet.  In part 3, the merged
-data was cleaned according to the number of valid hours on each night and the
-number of valid days for each subject.  In part 4, the cleaned activity data was
-imputed by the average Euclidean norm minus one (ENMO) over all the valid days
-for each subject.  Finally, a comprehensive report of data processing was
-created using Rmarkdown, and the report includes few exploratory plots and
-multiple commonly used features extracted from minute level actigraphy data.")
-    (license license:gpl3)))
 
 (define-public r-posteriorbootstrap
   (package
@@ -18618,13 +18708,13 @@ risk of treating patients at subtherapeutic or overly toxic doses.")
 (define-public r-popdemo
   (package
     (name "r-popdemo")
-    (version "1.3-3")
+    (version "1.3-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "popdemo" version))
        (sha256
-        (base32 "0xmdxrgs424j0s09yh3lgc37qd254mq1f3h2404s5ab6wvjmrnb4"))))
+        (base32 "02hncfwdgp5k90zxg5pbll9lgsf2sa4030phx2v4hl8ggq9wwjfz"))))
     (properties `((upstream-name . "popdemo")))
     (build-system r-build-system)
     (arguments
@@ -20124,13 +20214,13 @@ based on bi-allelic marker dosage data.  Submitted to BMC Bioinformatics (2021).
 (define-public r-polyglotr
   (package
     (name "r-polyglotr")
-    (version "1.7.1")
+    (version "1.7.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "polyglotr" version))
        (sha256
-        (base32 "1kr2zh766rrmfkvq0r2cvz32za56lnfd338x0z0kbv40x5pq322v"))))
+        (base32 "0nw2d80yyx6r551yy7c6yq65xx6xw4m6h5w8pmpmdiskpf3h4w08"))))
     (properties `((upstream-name . "polyglotr")))
     (build-system r-build-system)
     (arguments
@@ -22903,6 +22993,35 @@ Normal, Laplace or Beta distributed error.  For unknown error distribution, a
 pure error sample independent from the data is used.")
     (license license:gpl3+)))
 
+(define-public r-pmle4scr
+  (package
+    (name "r-pmle4scr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PMLE4SCR" version))
+       (sha256
+        (base32 "1vyah1m3i45g3d7ffj3nqd70snxk67r42mj3gxgmhb7rw783kf7w"))))
+    (properties `((upstream-name . "PMLE4SCR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vinecopula r-trust r-rlang r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=PMLE4SCR")
+    (synopsis
+     "Pseudo Maximum Likelihood Estimation for Semi-Competing Risks Data")
+    (description
+     "This package implements two-stage pseudo maximum likelihood estimation (PMLE)
+for copula-based regression models with semi-competing risks data.  The marginal
+distributions are modeled by semiparametric transformation regression models,
+and the dependence between bivariate event times is specified by a parametric
+copula function.  See Arachchige, Chen and Zhou (2025)
+<doi:10.1007/s10985-024-09640-z> for details.")
+    (license license:expat)))
+
 (define-public r-pmlbr
   (package
     (name "r-pmlbr")
@@ -23037,13 +23156,13 @@ Project Management Institute, Newtown Square, PA, ISBN 9781628256673 (pdf)).")
 (define-public r-pmetar
   (package
     (name "r-pmetar")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pmetar" version))
        (sha256
-        (base32 "1qd6qxjzdx3h1firibs86ajl0jzw47vqkhlbd3dw39f2494sif4r"))))
+        (base32 "1h7dbp0vbdmy8bvq2g5ixg2mp291jlnbg99dwqd0bhcr9dgy23ic"))))
     (properties `((upstream-name . "pmetar")))
     (build-system r-build-system)
     (arguments
@@ -24256,13 +24375,13 @@ palettes for colour-blind viewers.")
 (define-public r-plotthis
   (package
     (name "r-plotthis")
-    (version "0.12.0")
+    (version "0.12.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plotthis" version))
        (sha256
-        (base32 "1376kc7yx1ca09msm817q2jgdyixa1x04fmypwk7fwnfsd1awn45"))))
+        (base32 "0s67f6yb5zlwhgdlfng0wsdwhpvmadlyycixhyr2yirh0kdcbhad"))))
     (properties `((upstream-name . "plotthis")))
     (build-system r-build-system)
     (arguments
@@ -25249,13 +25368,13 @@ response theory (IRT) models.")
 (define-public r-plmmr
   (package
     (name "r-plmmr")
-    (version "4.2.3")
+    (version "4.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plmmr" version))
        (sha256
-        (base32 "1c4zl174q753jw96gcjz9125qpmw5yma4j16ddji9ga0ba11ph9f"))))
+        (base32 "1s5zjrnrm5i2wqz0bb6dzk3fabxlyzvzcc6hl0hcb3q019bmphd4"))))
     (properties `((upstream-name . "plmmr")))
     (build-system r-build-system)
     (arguments
@@ -25283,7 +25402,7 @@ for the multivariate analysis of single nucleotide polymorphisms (SNPs) measured
 in a genome-wide association study (GWAS), plmmr eliminates the need for
 subpopulation-specific analyses and post-analysis p-value adjustments.
 Functions for the appropriate processing of PLINK files are also supplied.  For
-examples, see the package homepage. <https://pbreheny.github.io/plmmr/>.")
+examples, see the package homepage <https://pbreheny.github.io/plmmr/>.")
     (license license:gpl3)))
 
 (define-public r-plmixed
@@ -25730,13 +25849,13 @@ vignette.")
 (define-public r-pleioh2g
   (package
     (name "r-pleioh2g")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pleioh2g" version))
        (sha256
-        (base32 "07jr4zgjljk726hhh4rbqfig1pm0337jlmp9rxgm9w47qd8hm741"))))
+        (base32 "1vh7jvn1scfd14rfrnbyx9h1450j1a4jy4qay4n67c64s5pg6zva"))))
     (properties `((upstream-name . "pleioh2g")))
     (build-system r-build-system)
     (arguments
@@ -26300,6 +26419,43 @@ al.(1978)<doi:10.1071/AR9780897>, STI by Fernandez
 al.(1997)<doi:10.4141/P96-130>.")
     (license license:gpl3+)))
 
+(define-public r-plantmix
+  (package
+    (name "r-plantmix")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "plantmix" version))
+       (sha256
+        (base32 "193jskibpxws5szikkdnd1c06l7na0sxghqzj5hfjkn4vvdxjzgh"))))
+    (properties `((upstream-name . "plantmix")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tmb
+                             r-rcppeigen
+                             r-rcpp
+                             r-matrix
+                             r-mass
+                             r-lme4
+                             r-igraph
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=plantmix")
+    (synopsis "Genetic Study of Plant Mixtures")
+    (description
+     "Fit linear mixed models dedicated to the genetic study of plant mixtures, such
+as those based on general and specific mixing abilities (GMA-SMA) as well as
+direct and social breeding values (DBV-SBV), also known as direct and indirect
+genetic effects (DGE-IGE).  More details in Forst et al (2019,
+<doi:10.1016/j.fcr.2019.107571>) for GMA-SMA models, and Salomon et al (2026,
+<doi:10.64898/2026.03.27.714849>) for DBV-SBV models.  The package also provides
+functions to optimize experimental designs, simulate data sets and compute
+interaction indices.")
+    (license license:agpl3)))
+
 (define-public r-plantecophys
   (package
     (name "r-plantecophys")
@@ -26789,13 +26945,13 @@ analytical equations is also supported (Abuhelwa et al. (2015)
 (define-public r-pkpdindex
   (package
     (name "r-pkpdindex")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PKPDindex" version))
        (sha256
-        (base32 "0yg8wf1n6lp032r4w4yxgjpl44xcxnxa994dkpv551rzhylwsshy"))))
+        (base32 "00r094jacdgwl5im6ckw9pj8nc48slvdxv352g5yd98lvlmah8m3"))))
     (properties `((upstream-name . "PKPDindex")))
     (build-system r-build-system)
     (arguments
@@ -27168,16 +27324,61 @@ heaviness analysis on the CRAN/Bioconductor package ecosystem, described in
 <doi:10.1016/j.jss.2023.111610>.")
     (license license:expat)))
 
+(define-public r-pkgmatch
+  (package
+    (name "r-pkgmatch")
+    (version "0.5.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pkgmatch" version))
+       (sha256
+        (base32 "0k5b32i1l1r2f5klqhqqzr07ydd51j4nvbpinbwjv35047v6s66k"))))
+    (properties `((upstream-name . "pkgmatch")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs
+                             r-treesitter-r
+                             r-treesitter
+                             r-tokenizers
+                             r-tidyr
+                             r-tibble
+                             r-rvest
+                             r-rcpp
+                             r-piggyback
+                             r-memoise
+                             r-httr2
+                             r-fs
+                             r-dplyr
+                             r-curl
+                             r-cli
+                             r-checkmate
+                             r-brio))
+    (native-inputs (list r-knitr))
+    (home-page "https://docs.ropensci.org/pkgmatch/")
+    (synopsis
+     "Find R Packages Matching Either Descriptions or Other R Packages")
+    (description
+     "Find R packages from CRAN, @code{rOpenSci}', or Bioconductor corpora.  Packages
+can be matched to general text descriptions, to names of installed packages, or
+to local paths to entire source repositories.  The package is used to list the
+most similar packages for each new submission to the @code{rOpenSci} software
+peer-review program ('@code{rOpenSci} authors, 2026;
+<doi:10.5281/zenodo.18885936>).")
+    (license license:expat)))
+
 (define-public r-pkglite
   (package
     (name "r-pkglite")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pkglite" version))
        (sha256
-        (base32 "1qnfbsv57ly2d1d4q449n45wkcm3zsg9qv88651i5vxl3dz36kk0"))))
+        (base32 "1vcc40q8kcq1ild3dargmdshrf02jk3yfad97fk3lhsaqi78g6dc"))))
     (properties `((upstream-name . "pkglite")))
     (build-system r-build-system)
     (arguments
@@ -28358,31 +28559,29 @@ to predicted output.")
 (define-public r-pipeflow
   (package
     (name "r-pipeflow")
-    (version "0.2.3")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pipeflow" version))
        (sha256
-        (base32 "091f7mphw1d453gflyvxsw3256p7sqyqgc3q3i88bc3wjknxwj8m"))))
+        (base32 "1ih39kn0i33llm0b34wn74y7fbz390cixh541ywwbbc74s274rjf"))))
     (properties `((upstream-name . "pipeflow")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-r6 r-lgr r-jsonlite r-data-table))
+    (propagated-inputs (list r-rcpp r-r6 r-lgr r-jsonlite r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://rpahl.github.io/pipeflow/")
-    (synopsis "Lightweight, General-Purpose Data Analysis Pipelines")
+    (synopsis "Fast Interactive Data Analysis Pipelines")
     (description
-     "This package provides a lightweight yet powerful framework for building robust
-data analysis pipelines.  With pipeflow', you initialize a pipeline with your
-dataset and construct workflows step by step by adding R functions.  You can
-modify, remove, or insert steps and parameters at any stage, while pipeflow
-ensures the pipeline's integrity.  Overall, this package offers a
-beginner-friendly framework that simplifies and streamlines the development of
-data analysis pipelines by making them modular, intuitive, and adaptable.")
-    (license license:gpl3)))
+     "This package provides a lightweight and intuitive framework for building
+interactive data analysis pipelines.  You add R functions one by one, and
+pipeflow wires them into a pipeline that stays consistent as you go.  Modify,
+remove, or insert steps at any stage, manage all parameters in one place, fast
+execution (C++-powered DAG) for interactive use and Shiny backends.")
+    (license license:expat)))
 
 (define-public r-pipefittr
   (package
@@ -28858,13 +29057,13 @@ has changed in this new version.  The old version is still available at R-Forge.
 (define-public r-pikchr
   (package
     (name "r-pikchr")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pikchr" version))
        (sha256
-        (base32 "0w2g5g7k9lnkgqhvdnhi66ay2i1913m486n7a46fig5n304myi6b"))))
+        (base32 "0wk07kykqfqggwyj0sd1l2zj14xpqcjdy7c3ma3hm9ma192vwjfg"))))
     (properties `((upstream-name . "pikchr")))
     (build-system r-build-system)
     (arguments
@@ -44900,38 +45099,6 @@ that same node.  This package, named after the Greek aphorism Panta Rhei
 using data in tables (or spread sheets) and a simple syntax.")
     (license (license:fsdg-compatible "EUPL"))))
 
-(define-public r-panstarrs
-  (package
-    (name "r-panstarrs")
-    (version "0.2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "panstarrs" version))
-       (sha256
-        (base32 "1wfa8jr54hrspjnl5wmyfmgglrwxf81z80pm0qag8726iy5d2x8k"))))
-    (properties `((upstream-name . "panstarrs")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-jsonlite
-                             r-httr
-                             r-data-table
-                             r-curl
-                             r-checkmate
-                             r-bit64))
-    (native-inputs (list r-knitr))
-    (home-page "https://uskovgs.github.io/PanSTARRS/")
-    (synopsis "Interface to the Pan-STARRS API")
-    (description
-     "An interface to the API for Pan-STARRS1', a data archive of the PS1 wide-field
-astronomical survey.  The package allows access to the PS1 catalog and to the
-PS1 images. (see <https://outerspace.stsci.edu/display/PANSTARRS/> for more
-information).  You can use it to plan astronomical observations, make guidance
-pictures, find magnitudes in five broadband filters (g, r, i, z, y) and more.")
-    (license license:expat)))
-
 (define-public r-panprsnext
   (package
     (name "r-panprsnext")
@@ -46744,13 +46911,13 @@ ashr (<https://github.com/stephens999/ashr>) and @code{CorShrink}
 (define-public r-palaeoverse
   (package
     (name "r-palaeoverse")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "palaeoverse" version))
        (sha256
-        (base32 "1i2dqlql24nsgnz0i3lc9f0s1lr2wig6xyp7la9dk2pzm16ars7g"))))
+        (base32 "1289jn1y9zlzrn14zpkd8wz159kl7wc6jqwj996brlnh9iy2y34m"))))
     (properties `((upstream-name . "palaeoverse")))
     (build-system r-build-system)
     (arguments
@@ -46775,7 +46942,7 @@ for palaeobiological analyses, improving code reproducibility and accessibility.
 together to establish agreed standards.  The package currently includes
 functionality for data cleaning, binning (time and space), exploration,
 summarisation and visualisation.  Reference datasets (i.e.  Geological Time
-Scales <https://stratigraphy.org/chart>) and auxiliary functions are also
+Scales <https://stratigraphy.org/chart/>) and auxiliary functions are also
 provided.  Details can be found in: Jones et al., (2023) <doi:
 10.1111/2041-210X.14099>.")
     (license license:gpl3+)))
@@ -47278,13 +47445,13 @@ Population Census 2017 (<http://www.pbscensus.gov.pk/>).")
 (define-public r-paisaje
   (package
     (name "r-paisaje")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "paisaje" version))
        (sha256
-        (base32 "1zqv98i468ligw6y1ia0yjgaa5dvxdx0xdf13ga86wv6z21h8csh"))))
+        (base32 "0syqbngirl8jfpgcnbmz2q5fxrhykz0mlrb90rr28bf51c2293hf"))))
     (properties `((upstream-name . "paisaje")))
     (build-system r-build-system)
     (arguments
@@ -47294,26 +47461,30 @@ Population Census 2017 (<http://www.pbscensus.gov.pk/>).")
                              r-terra
                              r-spocc
                              r-sf
-                             r-rvest
                              r-progress
-                             r-magrittr
                              r-landscapemetrics
                              r-httr
                              r-h3jsr
+                             r-geodata
                              r-exactextractr
-                             r-dplyr))
+                             r-dplyr
+                             r-blackmarbler))
     (native-inputs (list r-knitr))
     (home-page "https://manuelspinola.github.io/paisaje/")
     (synopsis "Spatial and Environmental Data Tools for Landscape Ecology")
     (description
      "This package provides functions for landscape analysis and data retrieval.  The
 package allows users to download environmental variables from global datasets
-(e.g., @code{WorldClim}, ESA @code{WorldCover}, Nighttime Lights), and to
-compute spatial and landscape metrics using a hexagonal grid system based on the
-H3 spatial index.  It is useful for ecological modeling, biodiversity studies,
-and spatial data processing in landscape ecology.  Fick and Hijmans (2017)
-<doi:10.1002/joc.5086>.  Zanaga et al. (2022) <doi:10.5281/zenodo.7254221>.
-Uber Technologies Inc. (2022) \"H3: Hexagonal hierarchical spatial index\".")
+(e.g., @code{WorldClim}, CHELSA, ESA @code{WorldCover}, Nighttime Lights), and
+to compute spatial and landscape metrics using a hexagonal grid system based on
+the H3 spatial index.  It is useful for ecological modeling, biodiversity
+studies, and spatial data processing in landscape ecology.  Fick and Hijmans
+(2017) <doi:10.1002/joc.5086>.  Zanaga et al. (2022)
+<doi:10.5281/zenodo.7254221>.  Uber Technologies Inc. (2022) \"H3: Hexagonal
+hierarchical spatial index\".  RomÃ¡n et al. (2018)
+<doi:10.1016/j.rse.2018.03.017>.  Karger et al. (2017)
+<doi:10.1038/sdata.2017.122>.  Brun et al. (2022)
+<doi:10.5194/essd-14-5573-2022>.")
     (license license:expat)))
 
 (define-public r-pairwisellm

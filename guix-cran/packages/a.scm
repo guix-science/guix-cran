@@ -17,8 +17,8 @@
   #:use-module (gnu packages tls)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages duckdb)
   #:use-module (gnu packages python)
+  #:use-module (gnu packages duckdb)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages sqlite)
   #:use-module (gnu packages parallel)
@@ -2466,13 +2466,13 @@ history using conventional commit messages
 (define-public r-automr
   (package
     (name "r-automr")
-    (version "1.1.2")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "autoMR" version))
        (sha256
-        (base32 "0f22f8rxrzwrrn4qwdc32hsc9dax5in0bqj3yzh6ay210ypd52wy"))))
+        (base32 "1pzvq6hmag7fp3zjd3liwx2jnfdvdagj3ry8hwwpvc59m2shxj76"))))
     (properties `((upstream-name . "autoMR")))
     (build-system r-build-system)
     (arguments
@@ -2703,6 +2703,32 @@ Sugiyama et al. (2008) <doi:10.1007/s10463-008-0197-x>.")
 from CRAN or @code{GitHub}.  Optionally use a dependencies file for tighter
 control over which package versions to install.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-autolibload
+  (package
+    (name "r-autolibload")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "autoLibLoad" version))
+       (sha256
+        (base32 "1qwxfarc272rjib49h46imf0nm8qkpybwnxbzkpdpp5x3jp7p240"))))
+    (properties `((upstream-name . "autoLibLoad")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vprint r-stringr r-devtools))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=autoLibLoad")
+    (synopsis
+     "Automate Retrieving, Building, Installing and Loading Specified Packages")
+    (description
+     "Packages required for the search path may be located in the CRAN repository, the
+system library, or a local directory.  We automate determining the disposition
+of each required package, retrieving it, and loading it as needed.")
+    (license license:gpl2+)))
 
 (define-public r-autokeras
   (package
@@ -3092,13 +3118,13 @@ validation and publication.  Methods based on: Liu et al. (2008)
 (define-public r-autofc
   (package
     (name "r-autofc")
-    (version "1.0.0.1000")
+    (version "1.0.0.1001")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "autoFC" version))
        (sha256
-        (base32 "14sj59c1m450a9f96y3ha7zfvnlzg421h5w4g1bib9q7q0rv2ryh"))))
+        (base32 "08b9srddlwmlq12xk0inz20nyh598q56hdif6c7lcg5frdh7jphg"))))
     (properties `((upstream-name . "autoFC")))
     (build-system r-build-system)
     (arguments
@@ -3299,6 +3325,39 @@ described by Schneeweiss et.al. (2009) <doi:10.1097/EDE.0b013e3181a663cc> .")
     (description
      "Automatically calculates cognostic groups for plot objects and list column plot
 objects.  Results are returned in a nested data frame.")
+    (license license:expat)))
+
+(define-public r-autocodebook
+  (package
+    (name "r-autocodebook")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "autocodebook" version))
+       (sha256
+        (base32 "1nw88dc91rm0ik7rs6li0j3dnmj9dddd186cxya8f564lfsdlxqb"))))
+    (properties `((upstream-name . "autocodebook")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-rlang r-gt r-dplyr))
+    (home-page "https://github.com/patriciafortesm/autocodebook")
+    (synopsis
+     "Automatic Codebook and Tracking for 'Spark' and 'dplyr' Pipelines")
+    (description
+     "Wraps dplyr verbs (mutate, summarise, filter) to automatically capture variable
+metadata (type, source columns, categories, and source code), producing a
+codebook and eligibility tracking table with zero manual documentation.  Works
+with both sparklyr (tbl_spark) and local data frames.  Adds big-data
+optimizations (caching, assume-unique counting, checkpointing) and a
+standardized report module with an eligibility flowchart, editable codebook
+export (HTML, DOCX, XLSX), and cross-sectional or longitudinal variable
+inspection.  The eligibility flowchart follows the CONSORT statement (Schulz,
+Altman and Moher (2010) <doi:10.1136/bmj.c332>) and the reporting of
+observational cohort studies follows the STROBE recommendations (von Elm and
+others (2007) <doi:10.1371/journal.pmed.0040296>).")
     (license license:expat)))
 
 (define-public r-autobagging
@@ -3950,32 +4009,6 @@ system according to standards, given e.  g.  in American Speech-Language-Hearing
 Association (2005), <doi:10.1044/policy.GL2005-00014>.")
     (license license:gpl3)))
 
-(define-public r-auctionr
-  (package
-    (name "r-auctionr")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "auctionr" version))
-       (sha256
-        (base32 "0kfx81irqr9mfp4n86z7q5nclcci8vlpvq9zid7miyw3rci7dfvi"))))
-    (properties `((upstream-name . "auctionr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-numderiv))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ajmack/auctionr")
-    (synopsis "Estimate First-Price Auction Model")
-    (description
-     "Estimates a first-price auction model with conditionally independent private
-values as described in @code{MacKay} (2020) <doi:10.2139/ssrn.3096534>.  The
-model allows for unobserved heterogeneity that is common to all bidders in
-addition to observable heterogeneity.")
-    (license license:gpl3)))
-
 (define-public r-attrib
   (package
     (name "r-attrib")
@@ -4014,29 +4047,6 @@ disease due to risk factors.  The posterior simulation is performed using
 arm::sim as described in Gelman, Hill (2012) <doi:10.1017/CBO9780511790942> and
 the attributable burden method is based on Nielsen, Krause, Molbak
 <doi:10.1111/irv.12564>.")
-    (license license:expat)))
-
-(define-public r-attenuation
-  (package
-    (name "r-attenuation")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "attenuation" version))
-       (sha256
-        (base32 "0ys4psvkvimmym4qj9cmhq8y7x10kv0x6bsvpjkrsc3l8p2g3474"))))
-    (properties `((upstream-name . "attenuation")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://github.com/JonasMoss/attenuation/")
-    (synopsis "Correcting for Attenuation Due to Measurement Error")
-    (description
-     "Confidence curves, confidence intervals and p-values for correlation
-coefficients corrected for attenuation due to measurement error.  Implements the
-methods described in Moss (2019, <arxiv:1911.01576>).")
     (license license:expat)))
 
 (define-public r-attention
@@ -7816,13 +7826,13 @@ Hochreiter and Schmidhuber (1997) <doi:10.1162/neco.1997.9.8.1735>.")
 (define-public r-armadillo4r
   (package
     (name "r-armadillo4r")
-    (version "0.9.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "armadillo4r" version))
        (sha256
-        (base32 "10mazh72s8p2lc7fzw9r2bwxbcbylfqd3a4zakl7kmnci6591j45"))))
+        (base32 "0g18kkpaik57p4bpr6w1ylz3rp5l4f22l23238ild1cgn3xqf4ln"))))
     (properties `((upstream-name . "armadillo4r")))
     (build-system r-build-system)
     (arguments
@@ -14294,21 +14304,23 @@ exploratory data analysis, and perhaps for preparation of presentations.")
 (define-public r-animl
   (package
     (name "r-animl")
-    (version "3.2.0")
+    (version "3.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "animl" version))
        (sha256
-        (base32 "0shymjnf7rks03h936mbvidd4nra5ijbli544ln93rip6apnk2vl"))))
+        (base32 "0nsxims700lw4rnk0d4lskps3hxgm91dxrrqkk5kvgp5d31jjzwb"))))
     (properties `((upstream-name . "animl")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (inputs (list python))
     (propagated-inputs (list r-reticulate r-pbapply))
     (home-page "https://cran.r-project.org/package=animl")
-    (synopsis "Collection of ML Tools for Conservation Research")
+    (synopsis
+     "Collection of ML Tools for Species Detection and Classification in Camera Trap Images and Videos")
     (description
      "This package provides functions required to classify subjects within camera trap
 field data.  The package can handle both images and videos.  The authors
@@ -14691,13 +14703,13 @@ variety of simple weighted statistics that were previously in this package
 (define-public r-andromeda
   (package
     (name "r-andromeda")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Andromeda" version))
        (sha256
-        (base32 "1a9njg97r0hj9wqw0fbn9qzzc36x6sd2p37nckjj22qk3mgk7klk"))))
+        (base32 "18j7hhgwj0568kapd2skwfrc6ivvsnnkwbnlv9bj9sz2662rvv1m"))))
     (properties `((upstream-name . "Andromeda")))
     (build-system r-build-system)
     (arguments
@@ -14944,13 +14956,13 @@ snakemake'.  Finally, incorporate results for visualization and interpretation."
 (define-public r-ananke
   (package
     (name "r-ananke")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ananke" version))
        (sha256
-        (base32 "0db1w1lkpkrk8y6cs9vy3639fc5a4df2glh7fmhzs2prd7yg9xz0"))))
+        (base32 "0cr0ngyillqscmr933bld89n2d6i7czcxcnp7kiycjrljg8cg79l"))))
     (properties `((upstream-name . "ananke")))
     (build-system r-build-system)
     (arguments
@@ -18903,13 +18915,13 @@ Fraiman and Li (2020) <@code{arXiv:2009.04550>}.")
 (define-public r-akin
   (package
     (name "r-akin")
-    (version "0.3.6")
+    (version "0.3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "akin" version))
        (sha256
-        (base32 "1jrvbmnm8cnfia0bvvpfn99n8mz62zfjv9kdmh8pjpjgr015xvv7"))))
+        (base32 "0qhjfh83w4a1d3dz5fiz1b0gcjbgd52r6as19lcy843bf5ypkmgi"))))
     (properties `((upstream-name . "akin")))
     (build-system r-build-system)
     (arguments
@@ -19106,13 +19118,13 @@ will automatically be reflected in the original expression.")
 (define-public r-aiuq
   (package
     (name "r-aiuq")
-    (version "0.5.4")
+    (version "0.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AIUQ" version))
        (sha256
-        (base32 "122kbz3v4fznhh1sndlvpwdgs1g9ra1n8wkk3ij8chjy1kziyn1k"))))
+        (base32 "08iy6qh4c78vw9fyzym8wbcsjd8fhk0gpcrqfmy7w4fimb3kgmrr"))))
     (properties `((upstream-name . "AIUQ")))
     (build-system r-build-system)
     (arguments
@@ -19130,7 +19142,9 @@ method for inverse estimation in scattering analysis of microscopy videos.  It
 does not require specifying a certain range of Fourier bases and it
 substantially reduces computational cost via the generalized Schur algorithm.
 See the reference: Mengyang Gu, Yue He, Xubo Liu and Yimin Luo (2023),
-<doi:10.48550/@code{arXiv.2309.02468>}.")
+<doi:10.48550/@code{arXiv.2309.02468>}, and Tong Lin, Jinseok Lee, Matt
+Helgeson, Megan T Valentine, Yimin Luo, Mengyang Gu (2026),
+<doi:10.48550/@code{arXiv.2605.29424>}.")
     (license license:gpl3+)))
 
 (define-public r-aisoph
@@ -19155,6 +19169,37 @@ See the reference: Mengyang Gu, Yue He, Xubo Liu and Yimin Luo (2023),
      "Nonparametric estimation of additive isotonic covariate effects for proportional
 hazards model.")
     (license license:gpl2+)))
+
+(define-public r-aisdk-providers
+  (package
+    (name "r-aisdk-providers")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "aisdk.providers" version))
+       (sha256
+        (base32 "0kavp92s7jmc173g4rd7z7nn62fql4shh3r05zc44j1fizwn0ysn"))))
+    (properties `((upstream-name . "aisdk.providers")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang
+                             r-r6
+                             r-jsonlite
+                             r-curl
+                             r-base64enc
+                             r-aisdk))
+    (home-page "https://github.com/YuLab-SMU/aisdk.providers")
+    (synopsis "Additional Model Provider Adapters for the 'aisdk' Toolkit")
+    (description
+     "Additional AI model provider adapters for the aisdk toolkit, covering
+@code{OpenAI-compatible} and Anthropic-compatible services such as
+@code{DeepSeek}', Moonshot'/'Kimi', Stepfun', Volcengine', @code{AiHubMix}',
+@code{xAI}', @code{OpenRouter}', Bailian', and NVIDIA'.  Providers register
+themselves with the core aisdk provider registry on load.")
+    (license license:expat)))
 
 (define-public r-aiscreenr
   (package
@@ -24274,6 +24319,40 @@ complementary functions for processing and filtering of data in the EIGENSTRAT
 format is also provided.")
     (license license:expat)))
 
+(define-public r-admixpoly
+  (package
+    (name "r-admixpoly")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AdmixPoly" version))
+       (sha256
+        (base32 "15jj8ykcjx0fjq29m73cv0kfz7phz3fh3ysiq05gzfghxlw05pdn"))))
+    (properties `((upstream-name . "AdmixPoly")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-purrr
+                             r-matrix
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=AdmixPoly")
+    (synopsis "Global and Local Admixture Inference in Polyploids")
+    (description
+     "This package provides functions to perform global (genome-wide) and local
+admixture inference from bi- and multi-allelic marker dosages (discrete or
+continuous) in polyploid species.")
+    (license license:gpl3+)))
+
 (define-public r-admix
   (package
     (name "r-admix")
@@ -24431,13 +24510,13 @@ extension package of the admiral package for pediatric clinical trials.")
 (define-public r-admiralophtha
   (package
     (name "r-admiralophtha")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admiralophtha" version))
        (sha256
-        (base32 "0bbzl1bb9934pjxjy9ll7g7vb0xgi6cg7cq4b6h7vs81sbw30m40"))))
+        (base32 "0v506nz4771hcl8sd38161hdmylba2r2x3d5bs7wbmrfkyhhd3qs"))))
     (properties `((upstream-name . "admiralophtha")))
     (build-system r-build-system)
     (arguments
@@ -24593,13 +24672,13 @@ area.")
 (define-public r-admiraldev
   (package
     (name "r-admiraldev")
-    (version "1.4.1")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admiraldev" version))
        (sha256
-        (base32 "0cry7l88c9cn5ajv525ggh5wrmq4h3hh8746lrwrf0dh2zd0snh2"))))
+        (base32 "116crqh8nb3lz2vmccpz45sivqvcjdx8qyb17aal62h5hmp8pwvf"))))
     (properties `((upstream-name . "admiraldev")))
     (build-system r-build-system)
     (arguments
@@ -24655,13 +24734,13 @@ the admiral package.")
 (define-public r-admiral
   (package
     (name "r-admiral")
-    (version "1.4.2")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admiral" version))
        (sha256
-        (base32 "0czfmvmjx2r57cyydl902nbz8zcjl5x2nr915r5n0z09pc8lv1vj"))))
+        (base32 "1p70s0b4lx5j5yndz8y3pg4r08q6ymx1s4p0jhmi0g5fxrqbzkkm"))))
     (properties `((upstream-name . "admiral")))
     (build-system r-build-system)
     (arguments
@@ -25439,31 +25518,6 @@ function.")
     (description
      "Created to host raw accelerometry data sets and their derivatives which are used
 in the corresponding adept package.")
-    (license license:gpl3)))
-
-(define-public r-adept
-  (package
-    (name "r-adept")
-    (version "1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "adept" version))
-       (sha256
-        (base32 "1dpfmfnqzci6p7wqwpp8y0cisx11r8kdsqjm85skb512n35m0i3a"))))
-    (properties `((upstream-name . "adept")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-pracma r-magrittr r-dvmisc r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/martakarass/adept")
-    (synopsis "Adaptive Empirical Pattern Transformation")
-    (description
-     "Designed for optimal use in performing fast, accurate walking strides
-segmentation from high-density data collected from a wearable accelerometer worn
-during continuous walking activity.")
     (license license:gpl3)))
 
 (define-public r-adepro
@@ -27260,41 +27314,6 @@ actigraph.sleepr package developed by Petkova (2021)
 <https://github.com/dipetkov/actigraph.sleepr/>.")
     (license license:gpl3+)))
 
-(define-public r-actisleep
-  (package
-    (name "r-actisleep")
-    (version "0.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ActiSleep" version))
-       (sha256
-        (base32 "0byms52rk9snsr6z400qidbvpnfxxn0idv1hr9k3whbadr3nxyxi"))))
-    (properties `((upstream-name . "ActiSleep")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-stringr
-                             r-rsqlite
-                             r-lubridate
-                             r-lazyeval
-                             r-dplyr
-                             r-dbi
-                             r-accelerometry))
-    (home-page "https://cran.r-project.org/package=ActiSleep")
-    (synopsis "Sleep Duration Estimate Algorithm")
-    (description
-     "This package provides sleep duration estimates using a Pruned Dynamic
-Programming (PDP) algorithm that efficiently identifies change-points.  PDP
-applied to physical activity data can identify transitions from wakefulness to
-sleep and vice versa.  Baek, Jonggyu, Banker, Margaret, Jansen, Erica C., She,
-Xichen, Peterson, Karen E., Pitchford, E. Andrew, Song, Peter X. K. (2021) An
-Efficient Segmentation Algorithm to Estimate Sleep Duration from Actigraphy Data
-<doi:10.1007/s12561-021-09309-3>.")
-    (license license:gpl3)))
-
 (define-public r-actilifecounts
   (package
     (name "r-actilifecounts")
@@ -27932,13 +27951,13 @@ available at <https://shahlab.stanford.edu/start>.")
 (define-public r-acep
   (package
     (name "r-acep")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ACEP" version))
        (sha256
-        (base32 "02f0n141b6qrzx06bz9kcbbh9qsfripiwwmrxphkwzmjjcpkg55v"))))
+        (base32 "1r80q20d033zmrdy9a7l1wi0608kvnbhd5k50mrrf79hbkd8vr8n"))))
     (properties `((upstream-name . "ACEP")))
     (build-system r-build-system)
     (arguments
@@ -28801,39 +28820,6 @@ non-tradable services, thereby reducing non-classical measurement error.  The
 <https://econpapers.repec.org/@code{RePEc:boc:bocode:s459382>} \"Measuring
 Quality of Life under Spatial Frictions\".  When using this programme or the
 toolkit in your work, please cite the paper.")
-    (license license:expat)))
-
-(define-public r-abover
-  (package
-    (name "r-abover")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "aboveR" version))
-       (sha256
-        (base32 "08cx2ml6frcbg00n5m3lpx0lcs69g4mfy4glzyi5fckcb0xq1yf1"))))
-    (properties `((upstream-name . "aboveR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-terra r-sf r-lidr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/chrislyonsKY/aboveR")
-    (synopsis "'LiDAR' Terrain Analysis and Change Detection from Above")
-    (description
-     "Terrain change detection, cut and fill volume estimation, terrain profiling,
-flood inundation analysis, slope and aspect computation, hillshade generation,
-contour extraction, reclamation monitoring, erosion analysis, and engineering
-export (@code{LandXML}, STL) from @code{LiDAR} (Light Detection and Ranging)
-point clouds and digital elevation models ('DEMs').  Applications include
-surface mine reclamation monitoring, sediment pond capacity tracking, highwall
-safety classification, and erosion channel detection.  Built on @code{lidR} for
-point cloud I/O and terra for raster operations.  Includes access utilities for
-@code{KyFromAbove} cloud-native elevation data on Amazon Web Services ('AWS')
-<https://kyfromabove.ky.gov/>.  Methods for terrain change detection and volume
-estimation follow Li and others (2005) <doi:10.1016/j.geomorph.2004.10.007>.")
     (license license:expat)))
 
 (define-public r-abms

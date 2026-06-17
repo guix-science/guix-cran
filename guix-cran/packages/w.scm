@@ -971,13 +971,13 @@ heterologous spike-in proteins.")
 (define-public r-wrmisc
   (package
     (name "r-wrmisc")
-    (version "2.0.2")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wrMisc" version))
        (sha256
-        (base32 "01ln1jj6fsx68gj4jaxn7161r81xv7xhs3b1xcmq3yj9fyph3gq6"))))
+        (base32 "1y8bhsjajcxgbwb5zv92g8zb69a7ym0qfss5b7558bg0aigb3vnh"))))
     (properties `((upstream-name . "wrMisc")))
     (build-system r-build-system)
     (arguments
@@ -1190,13 +1190,13 @@ Wasserstein autoregressive models.")
 (define-public r-wrgraph
   (package
     (name "r-wrgraph")
-    (version "1.3.15")
+    (version "1.3.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wrGraph" version))
        (sha256
-        (base32 "1swzfp75ixnk1vq9r1rf72y4vnwpsbj5zxgh1mph5rbfaxja089n"))))
+        (base32 "1f8qp3g3ymcqxyva7d3nr6lwyal2gmxvzk6f4qv32rg3iqk5qq57"))))
     (properties `((upstream-name . "wrGraph")))
     (build-system r-build-system)
     (arguments
@@ -1551,6 +1551,43 @@ low false positive rate when utilizing WQS regression (Day et al.  2022
 <doi:10.1289/EHP10570>).")
     (license license:gpl3)))
 
+(define-public r-wqrr
+  (package
+    (name "r-wqrr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "wqrr" version))
+       (sha256
+        (base32 "0hq8igaqxrdbafw7q20axpsqpvc07r5xclb6pgza7jiwijzsxsww"))))
+    (properties `((upstream-name . "wqrr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-waveslim r-quantreg r-plotly))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/merwanroudane/wqrr")
+    (synopsis "Wavelet Quantile Regression Toolbox")
+    (description
+     "This package provides a comprehensive toolbox for wavelet-domain quantile
+analyses of bivariate and multivariate time series.  Provides Wavelet Quantile
+Regression and Multivariate Wavelet Quantile Regression after Adebayo and Ozkan
+(2024) <doi:10.1016/j.jclepro.2024.140832>, Wavelet Quantile-on-Quantile
+regression with bootstrap p-values extending Sim and Zhou (2015)
+<doi:10.1016/j.jbankfin.2015.01.013>, the nonparametric Causality-in-Quantiles
+test of Balcilar, Gupta and Pierdzioch (2016)
+<doi:10.1016/j.resourpol.2016.04.004> together with its wavelet variant, Wavelet
+Quantile Mediation and Moderation, Wavelet Quantile Correlation, and a
+wavelet-based nonparametric Quantile Density estimator.  The Maximal Overlap
+Discrete Wavelet Transform (MODWT) decomposition is performed via waveslim and
+Short / Medium / Long band aggregation is supported throughout.  For plain
+Quantile-on-Quantile regression see the companion CRAN package
+@code{QuantileOnQuantile}'.  All interactive 3D surfaces, heatmaps and contour
+plots default to the MATLAB Parula colour map.")
+    (license license:gpl3)))
+
 (define-public r-wqm
   (package
     (name "r-wqm")
@@ -1880,13 +1917,13 @@ interface.")
 (define-public r-wper
   (package
     (name "r-wper")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wpeR" version))
        (sha256
-        (base32 "0lzqx60zmr4zczl2rm8pr56jv1pmbk5hd909lnf1ksa357dnrpb4"))))
+        (base32 "1lzhz0c0njikb73fvx9lv3hf8ipzj58fcq50fg5dagn6jsa0jmr4"))))
     (properties `((upstream-name . "wpeR")))
     (build-system r-build-system)
     (arguments
@@ -3335,13 +3372,13 @@ Macmillian et al (2000)
 (define-public r-wmap
   (package
     (name "r-wmap")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WMAP" version))
        (sha256
-        (base32 "0lxji1vi14asal967q2129nbhjmif0gdgwx7krg6qlcz6glrynix"))))
+        (base32 "192835s2wpgchmx03y5r3mjyfn4g2k6sfy4yd81dq2z6sqcwaz3x"))))
     (properties `((upstream-name . "WMAP")))
     (build-system r-build-system)
     (arguments
@@ -3533,13 +3570,13 @@ Spotfire'.")
 (define-public r-wjake
   (package
     (name "r-wjake")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wjake" version))
        (sha256
-        (base32 "1lipxaazckhnqcl849xhk2c11fhhb45vdkjh5zcbrdfnh11ra2wd"))))
+        (base32 "1ggi03pigqyr1chjccgghg6bz9rmvk8sz2hb7l4z8xr27wy1lw79"))))
     (properties `((upstream-name . "wjake")))
     (build-system r-build-system)
     (arguments
@@ -3576,13 +3613,13 @@ automatic formatting for tables created with gt'.")
 (define-public r-wizardry
   (package
     (name "r-wizardry")
-    (version "0.6.8")
+    (version "0.6.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wizaRdry" version))
        (sha256
-        (base32 "1w7nlrizh55i5szwnwm1y82bj33xbkc95n5qy4i38f7cmzfn0yvy"))))
+        (base32 "00a2ssx60z3rwxvq2ksqlp8f6f9cj4ivfn6n56bwlqy7bra183fy"))))
     (properties `((upstream-name . "wizaRdry")))
     (build-system r-build-system)
     (arguments
@@ -8884,6 +8921,37 @@ and bootstrap methods (Efron and Narasimhan, 2020
 <doi:10.1080/10618600.2020.1714633>) for calculating confidence intervals.")
     (license license:expat)))
 
+(define-public r-wbcorr
+  (package
+    (name "r-wbcorr")
+    (version "0.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "wbCorr" version))
+       (sha256
+        (base32 "03id96nnrfr7wa1ikjnhaxg15c98cm1kshhx67sb86c5drmh1qm6"))))
+    (properties `((upstream-name . "wbCorr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-writexl))
+    (home-page "https://github.com/Pascal-Kueng/wbCorr")
+    (synopsis "Bivariate Within- and Between-Cluster Correlations")
+    (description
+     "Separates supplied variables into within- and between-cluster components and
+calculates bivariate correlations for each level separately.  The centered-score
+decomposition corresponds to commonly used between- and within-cluster
+correlations discussed by Tu et al. (2025) <doi:10.1002/sim.10326>.  The package
+is also motivated by the distinction between within- and between-person
+variation described by Curran and Bauer (2011)
+<doi:10.1146/annurev.psych.093008.100356> and by Hamaker (2024)
+<doi:10.1080/00273171.2022.2155930>.  The package is intended for longitudinal
+or otherwise clustered data where researchers need transparent correlation
+matrices before fitting more complex multilevel models.")
+    (license license:expat)))
+
 (define-public r-wbacon
   (package
     (name "r-wbacon")
@@ -11253,13 +11321,13 @@ Delporte et al (2025) <doi:10.1002/cpz1.70095> for more details.")
 (define-public r-w3cmarkupvalidator
   (package
     (name "r-w3cmarkupvalidator")
-    (version "0.2-3")
+    (version "0.2-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "W3CMarkupValidator" version))
        (sha256
-        (base32 "0qbin07d78rqx2z5lywksqg268lckd2z44cqwqcxfvdky001jngf"))))
+        (base32 "1xbqa858w4mf876fafawd4lvprpip4621nz55p4iw51f0dzd56ms"))))
     (properties `((upstream-name . "W3CMarkupValidator")))
     (build-system r-build-system)
     (arguments

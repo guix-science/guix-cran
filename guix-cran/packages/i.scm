@@ -3428,6 +3428,39 @@ Analysis for the Life Sciences, Second edition\" by EkstrÃ¸m and SÃ¸rensen
 (2014).")
     (license license:gpl2)))
 
+(define-public r-iscores
+  (package
+    (name "r-iscores")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Iscores" version))
+       (sha256
+        (base32 "1c154mzgn063a7wnf5ygks8xbhja25mn5p53dkxrr93x02j83b4y"))))
+    (properties `((upstream-name . "Iscores")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scoringrules
+                             r-ranger
+                             r-pbmcapply
+                             r-pbapply
+                             r-kernlab
+                             r-energy))
+    (native-inputs (list r-knitr))
+    (home-page "https://krystynagrzesiak.github.io/Iscores/")
+    (synopsis "Proper Scoring Rules for Missing Value Imputation")
+    (description
+     "This package provides tools for evaluating and ranking missing value imputation
+methods using proper scoring rules.  Implements the Energy-I-Score and the
+DR-I-Score for the assessment of deterministic, stochastic and multiple
+imputation methods for numerical and mixed datasets, following NÃ¤f et al.
+(2022) <doi:10.48550/@code{arXiv.2106.03742>} and NÃ¤f et al. (2025)
+<doi:10.48550/@code{arXiv.2507.11297>}.")
+    (license license:gpl3)))
+
 (define-public r-isco08conversions
   (package
     (name "r-isco08conversions")
@@ -3983,6 +4016,32 @@ versions proposed by Zheng, Meng, Guo, & Liu (2018)
 likelihood estimates are available.")
     (license license:gpl2+)))
 
+(define-public r-irtbem2pl
+  (package
+    (name "r-irtbem2pl")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "irtbem2pl" version))
+       (sha256
+        (base32 "1z8zlypdbf65plg2qfmrpvkmcvy4ljplnjmfy4z2lnfai1q6bqb0"))))
+    (properties `((upstream-name . "irtbem2pl")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-irtbemm))
+    (home-page "https://github.com/juanluislegorretatorres/irtbem2pl")
+    (synopsis "Marginalized Bayesian Item Parameter Estimation, 2pl Model IRT")
+    (description
+     "Estimates item parameters of the two-parameter logistic (2PL) model in Item
+Response Theory (IRT) using the marginal Bayesian modal estimation via the
+Expectation-Maximization (EM) algorithm.  The package calibrates item
+discrimination and difficulty parameters, yielding results comparable to
+software like BILOG-MG'.")
+    (license license:gpl2+)))
+
 (define-public r-irtawsi
   (package
     (name "r-irtawsi")
@@ -4484,13 +4543,13 @@ rate of green (IRG) according to methods described in Bischoff et al. (2012)
 (define-public r-irfcb
   (package
     (name "r-irfcb")
-    (version "0.8.1")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iRfcb" version))
        (sha256
-        (base32 "18g7bfsq2blx0ra2p7qfx5gxkq5gyl11nh1akhc1lsfya5vk996i"))))
+        (base32 "0b0xqndxqkp39c5p0is0jmgaw1mmgnqnrppgxk8yyy445kxjk8rk"))))
     (properties `((upstream-name . "iRfcb")))
     (build-system r-build-system)
     (arguments
@@ -4511,7 +4570,8 @@ rate of green (IRG) according to methods described in Bischoff et al. (2012)
                              r-jsonlite
                              r-ggplot2
                              r-dplyr
-                             r-curl))
+                             r-curl
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://europeanifcbgroup.github.io/iRfcb/")
     (synopsis "Tools for Managing Imaging FlowCytobot (IFCB) Data")
@@ -7651,13 +7711,13 @@ wrappers to functions in the gstat and sp packages.")
 (define-public r-inti
   (package
     (name "r-inti")
-    (version "0.6.92")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inti" version))
        (sha256
-        (base32 "1sw2pc6kgmk4qlrkh8w33x2cn66albf4ajv0iqf926i2hp9qy9a5"))))
+        (base32 "01kixndbfcma79bqwkl15xcpb9z2fl21ypi5whi110033jbmil10"))))
     (properties `((upstream-name . "inti")))
     (build-system r-build-system)
     (arguments
@@ -9234,30 +9294,30 @@ introduction can be found in Krause (2026)
 (define-public r-insusenscalc
   (package
     (name "r-insusenscalc")
-    (version "0.0.1")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "InsuSensCalc" version))
        (sha256
-        (base32 "0spgqwxn1bnbmlv7vfx10mls3mrdss5sk0zvriba5zd8v0ljc6sx"))))
+        (base32 "19d3dvp67qdan63g6lgv1hcmcns2shwbmhhlsyjpp9wkwgvzpzg5"))))
     (properties `((upstream-name . "InsuSensCalc")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr r-tibble r-magrittr r-dplyr))
+    (propagated-inputs (list r-tibble r-magrittr r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/sufyansuleman/InsuSensCalc")
     (synopsis "Insulin Sensitivity Indices Calculator")
     (description
-     "It facilitates the calculation of 40 different insulin sensitivity indices based
-on fasting, oral glucose tolerance test (OGTT), lipid (adipose), and tracer
-(palmitate and glycerol rate) and dxa (fat mass) measurement values.  It enables
-easy and accurate assessment of insulin sensitivity, critical for understanding
-and managing metabolic disorders like diabetes and obesity.  Indices calculated
-are described in Gastaldelli (2022). <doi:10.1002/oby.23503> and Lorenzo (2010).
-<doi:10.1210/jc.2010-1144>.")
+     "Facilitates the calculation of 40 different insulin sensitivity indices based on
+fasting, oral glucose tolerance test (OGTT), lipid (adipose), tracer (palmitate
+and glycerol rate), and DXA (fat mass) measurement values.  Enables easy and
+accurate assessment of insulin sensitivity, critical for understanding and
+managing metabolic disorders like diabetes and obesity.  Indices calculated are
+described in Gastaldelli (2022) <doi:10.1002/oby.23503>, Suleman (2024)
+<doi:10.1210/clinem/dgae275>, and Lorenzo (2010) <doi:10.1210/jc.2010-1144>.")
     (license license:expat)))
 
 (define-public r-insurancerating
@@ -10150,13 +10210,13 @@ Geological Survey (USGS) Idaho National Laboratory Project Office.")
 (define-public r-inlavaan
   (package
     (name "r-inlavaan")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "INLAvaan" version))
        (sha256
-        (base32 "0x6d5vyhgx40ychzirmzdy5zjw159nm5snbf4v3wyar2rs9d4nqw"))))
+        (base32 "0daqwyyg3nqvwg5zn44vsaidpfq3fdhdjxv3v2axz2fnn7jmpnb3"))))
     (properties `((upstream-name . "INLAvaan")))
     (build-system r-build-system)
     (arguments
@@ -12549,13 +12609,13 @@ simulation utilities for SBM, RDPG, and latent space models.")
 (define-public r-incubate
   (package
     (name "r-incubate")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "incubate" version))
        (sha256
-        (base32 "09wj9nnc4ymfz7vl8d5v21qxb78cc6bx7x2fdris5pjnbzlbgwm6"))))
+        (base32 "14y3r2c2hr9s16g2laiimxiw2gy48ikxq6gvd9y938jpv71k19il"))))
     (properties `((upstream-name . "incubate")))
     (build-system r-build-system)
     (arguments
@@ -12577,7 +12637,7 @@ simulation utilities for SBM, RDPG, and latent space models.")
      "Parametric Time-to-Event Analysis with Variable Incubation Phases")
     (description
      "Fit parametric models for time-to-event data that show an initial incubation
-period', i.e., a variable delay phase where no events occur.  The delayed
+period', i.e.  a variable delay phase where no events occur.  The delayed
 Weibull distribution serves as the foundational data model.  For parameter
 estimation, different flavours of maximum likelihood estimation ('MLE') and the
 method of maximum product of spacings estimation ('MPSE') are implemented.
@@ -13675,6 +13735,39 @@ ignorance and imprecision are discussed in lower and upper probabilities.
 Representation invariance principle, hypothesis testing, decision-making, and
 further generalization are also illustrated.")
     (license license:gpl3)))
+
+(define-public r-impower133
+  (package
+    (name "r-impower133")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "impower133" version))
+       (sha256
+        (base32 "000mn45yy63fll55q5ynqg4iabvcmlmsf502qhl4vmyiik1r18sh"))))
+    (properties `((upstream-name . "impower133")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survminer
+                             r-survival
+                             r-ipdfromkm
+                             r-gt
+                             r-ggplot2
+                             r-forestplot
+                             r-dplyr))
+    (home-page "https://github.com/fanfande131/impower133")
+    (synopsis "Reproduce IMpower133 Clinical Trial Results")
+    (description
+     "This package provides functions to simulate baseline characteristics,
+reconstruct overall survival data from published Kaplan-Meier curves, and
+generate publication-ready tables and forest plots reproducing the IMpower133
+clinical trial results (Horn et al., 2018, <doi:10.1056/NEJMoa1809064>).  The
+IPD reconstruction method is based on Liu et al.(2021,
+<doi:10.1186/s12874-021-01308-8>).")
+    (license license:expat)))
 
 (define-public r-importinegi
   (package
@@ -15729,19 +15822,19 @@ multilevel regressions.")
 (define-public r-ilsamerge
   (package
     (name "r-ilsamerge")
-    (version "1.4.0")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ILSAmerge" version))
        (sha256
-        (base32 "1a9d1ry6fp2nlvharm984wn0596qpca4lvd9dh21jf8b6yybf7va"))))
+        (base32 "1a7g8l3b2xbaimy1xpb0l3z4jkd6lqkryjw2clbp45iafk6x21b3"))))
     (properties `((upstream-name . "ILSAmerge")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-haven))
+    (propagated-inputs (list r-httr2 r-haven))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/dopatendo/ILSAmerge")
     (synopsis
@@ -15750,7 +15843,7 @@ multilevel regressions.")
      "Merges and downloads SPSS data from different International Large-Scale
 Assessments (ILSA), including: Trends in International Mathematics and Science
 Study (TIMSS), Progress in International Reading Literacy Study (PIRLS), and
-others.")
+other studies from <https://www.iea.nl/>.")
     (license license:gpl3+)))
 
 (define-public r-ils
@@ -17288,6 +17381,30 @@ to characteristics of independent rainfall events.  Adams B, Papa F (2000)
 Restrepo-Posada P, Eagleson P (1982) <doi:10.1016/0022-1694(82)90136-6>.")
     (license license:gpl3)))
 
+(define-public r-ierd
+  (package
+    (name "r-ierd")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ierd" version))
+       (sha256
+        (base32 "1k9wb6rl5yw6fwl3n23x0s3ykqa40x7xigq83djilskr5mpj32iz"))))
+    (properties `((upstream-name . "ierd")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-magrittr r-ggplot2 r-dplyr))
+    (home-page "https://github.com/SudiptaPal0709/ierd")
+    (synopsis "Inverted Exponentiated Rayleigh Distribution Tools")
+    (description
+     "This package provides the density, distribution function, quantile function,
+random generation, and visualization tools for the Inverted Exponentiated
+Rayleigh Distribution.")
+    (license license:expat)))
+
 (define-public r-iemisctext
   (package
     (name "r-iemisctext")
@@ -18207,6 +18324,46 @@ Class et.  al., (2018) <doi:10.1093/bioinformatics/btx750> and Ha et.  al.,
 (2015) <doi:10.1093/bioinformatics/btv406>.")
     (license license:gpl2)))
 
+(define-public r-idifr
+  (package
+    (name "r-idifr")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iDIFr" version))
+       (sha256
+        (base32 "181lfimbhdylimmh7i00if1cx5h07njc6m39f8f693ixfi82n94p"))))
+    (properties `((upstream-name . "iDIFr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-strucchange
+                             r-rlang
+                             r-rcpp
+                             r-ggplot2
+                             r-generics
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/thmsrgrs/iDIFr")
+    (synopsis "Intersectional Differential Item Functioning Analysis")
+    (description
+     "This package provides a toolkit for detecting Differential Item Functioning
+(DIF) using Logistic Regression (LR) as described in Swaminathan and Rogers
+(1990) <doi:10.1111/j.1745-3984.1990.tb00754.x>, the IRT Likelihood Ratio Test
+(LRT) following Thissen, Steinberg & Wainer (1993, ISBN:0-8058-0972-4), and
+model-based recursive partitioning (MOB) as implemented in strucchange following
+Strobl, Kopf and Zeileis (2015) <doi:10.1007/s11336-013-9388-3>.  Designed for
+both standard two-group and intersectional multi-group designs, @code{iDIFr}
+prioritises effect size reporting alongside statistical significance, clear
+guidance on group construction, and interpretable output suitable for applied
+testing contexts.  Built-in Intersectional Contrast Analysis (ICA) classifies
+items as amplified, pure-intersection, obscured, or none by comparing
+single-variable and intersectional analyses.")
+    (license license:expat)))
+
 (define-public r-idiffomix
   (package
     (name "r-idiffomix")
@@ -19081,13 +19238,13 @@ only a small percentage of outliers.")
 (define-public r-icsnp
   (package
     (name "r-icsnp")
-    (version "1.1-2")
+    (version "1.1-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ICSNP" version))
        (sha256
-        (base32 "1hyndbnfpvkdxgjihh3m8wd1hpdb0n346bl03z9ry2blppci2jvs"))))
+        (base32 "0b6lzhjip4mv6hla2lb84xcx2wgb9gkj4h7dfk96grsbgbpq3hpf"))))
     (properties `((upstream-name . "ICSNP")))
     (build-system r-build-system)
     (arguments
@@ -19901,13 +20058,13 @@ VMS database, the ICES DATSU web services, and the ICES @code{SharePoint} site
 (define-public r-icesat2r
   (package
     (name "r-icesat2r")
-    (version "1.0.9")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IceSat2R" version))
        (sha256
-        (base32 "009vigj0v5cjk3h9lj5zvfk99fpy5q97n3mdhd8aa4dhds774wsl"))))
+        (base32 "0j8mkm27rcrqf5bbck8xsqh98kl0h3hdqp3kbfb1fxvv93dl0ggb"))))
     (properties `((upstream-name . "IceSat2R")))
     (build-system r-build-system)
     (arguments
@@ -20629,13 +20786,13 @@ provides a unified decision workflow and supports all less common ICC variants."
 (define-public r-iccde
   (package
     (name "r-iccde")
-    (version "0.3.8")
+    (version "0.3.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iccde" version))
        (sha256
-        (base32 "0b4zyc2ylgydzlidwbg960q8p9lvm7v9q00p0x5nhcrx4vgdsg30"))))
+        (base32 "1r1sm3aqx6i1404wdjb6z7afi4iqa0mfw1fgkqnswhkr8qp88x1r"))))
     (properties `((upstream-name . "iccde")))
     (build-system r-build-system)
     (arguments
@@ -21523,13 +21680,13 @@ explaining and analyzing these models.  For more details see Gawlowski and Wang
 (define-public r-ibkrcp
   (package
     (name "r-ibkrcp")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ibkrcp" version))
        (sha256
-        (base32 "042gprmn6hw2fq0nrcagkpxi7nqjnzv13rpdkjxxdx3pgk8wmx8c"))))
+        (base32 "05mi1vbsdw3lw8qrvzb51354kh3vz7kqp9sp5z6wy5dk2bar68g7"))))
     (properties `((upstream-name . "ibkrcp")))
     (build-system r-build-system)
     (arguments
