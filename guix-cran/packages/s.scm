@@ -5959,13 +5959,13 @@ the granting authority can be held responsible for them.")
 (define-public r-surveyframe
   (package
     (name "r-surveyframe")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "surveyframe" version))
        (sha256
-        (base32 "0m03pnhq4b2b1rigpf2z6g6wikj7zvjwmayaqsm7aglkkin4xlm9"))))
+        (base32 "1l0sdxnk81icrayp6dqcyknviqlslhmdm8iy75ali412ibgsa5p1"))))
     (properties `((upstream-name . "surveyframe")))
     (build-system r-build-system)
     (arguments
@@ -23847,6 +23847,50 @@ discipline (Hankin, 2022, <doi:10.48550/ARXIV.2210.03856>).  To cite the package
 in publications please use Hankin (2022) <doi:10.48550/ARXIV.2210.10848>.")
     (license license:gpl2+)))
 
+(define-public r-spqrp
+  (package
+    (name "r-spqrp")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spqrp" version))
+       (sha256
+        (base32 "0jiyz096rqlr2bn0xiqf3xrkiv15gszidafad0pa0pbg46hjy0h2"))))
+    (properties `((upstream-name . "spqrp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-tidyr
+                             r-tibble
+                             r-solitude
+                             r-rlang
+                             r-ranger
+                             r-randomforest
+                             r-proc
+                             r-lgr
+                             r-igraph
+                             r-ggplot2
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/fhradilak/spqrp_r")
+    (synopsis "Sample Provenance Quality Resolver in Proteomics")
+    (description
+     "Detect sample-provenance inconsistencies and potential mix-ups in
+mass-spectrometry-based plasma-proteome cohorts.  Provides a clustering-based
+approach (build a nearest-neighbour graph in a dimensionality-reduced space and
+iteratively split large components by edge weight), a threshold-based approach
+(classify sample pairs as belonging or not-belonging from a pairwise distance
+cutoff), parameter optimization over distance metrics and cutoffs, and a
+pairwise random-forest classifier for protein importance ranking.  This is a
+native R port of the author's Python package spqrp
+(<https://github.com/fhradilak/spqrp>), implementing methods from an associated
+manuscript currently in preparation.")
+    (license license:gpl3)))
+
 (define-public r-spqdep
   (package
     (name "r-spqdep")
@@ -24014,13 +24058,13 @@ Statistical Association, 109:505, 11-23, <doi:10.1080/01621459.2013.870904>.")
 (define-public r-spower
   (package
     (name "r-spower")
-    (version "0.6.3")
+    (version "0.6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Spower" version))
        (sha256
-        (base32 "1y06sc66xhvlrpk5zx232gyz38pfjx2z0ya6plimb7lx27w636wq"))))
+        (base32 "0gp7c16dg685kpik36qrwd3zxmii0dlgjnd64sjz7ib9x2k6albf"))))
     (properties `((upstream-name . "Spower")))
     (build-system r-build-system)
     (arguments
@@ -41454,6 +41498,35 @@ et al. (2022)<https://pubmed.ncbi.nlm.nih.gov/35988701/>, Peres et al.
 <https://github.com/igor-peres/ICU-Length-of-Stay-Prediction>.")
     (license license:expat)))
 
+(define-public r-slopes
+  (package
+    (name "r-slopes")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "slopes" version))
+       (sha256
+        (base32 "1g0bbsqpywrva7dggd61rnxyvl52qvdgawc2rchkmypazph35jpr"))))
+    (properties `((upstream-name . "slopes")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra r-sf r-pbapply r-geodist r-colorspace))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ropensci/slopes/")
+    (synopsis "Calculate Slopes of Roads, Rivers and Trajectories")
+    (description
+     "Calculates the slope (longitudinal gradient or steepness) of linear geographic
+features such as roads (for more details, see Ariza-LÃ³pez et al. (2019)
+<doi:10.1038/s41597-019-0147-x>) and rivers (for more details, see Cohen et al.
+(2018) <doi:10.1016/j.jhydrol.2018.06.066>).  It can use local Digital Elevation
+Model (DEM) data or download DEM data via the ceramic package.  The package also
+provides functions to add elevation data to linestrings and visualize elevation
+profiles.")
+    (license license:gpl3)))
+
 (define-public r-slope
   (package
     (name "r-slope")
@@ -50362,13 +50435,13 @@ batch problems.  Details of the methods can be found in:
 (define-public r-siera
   (package
     (name "r-siera")
-    (version "0.5.5")
+    (version "0.5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "siera" version))
        (sha256
-        (base32 "1fw36pijhxm3k44yxf27zly3qn9dym5vj48wjsl720xwxxm2ls5f"))))
+        (base32 "0yvwj77x8dvjknyrg4vmfd99m4n4759305pvv56l4xrnrj51h6mp"))))
     (properties `((upstream-name . "siera")))
     (build-system r-build-system)
     (arguments
@@ -50390,8 +50463,10 @@ batch problems.  Details of the methods can be found in:
 Interchange Standards Consortium), provides a logical data model for metadata
 describing all components to calculate Analysis Results.
 <https://www.cdisc.org/standards/foundational/analysis-results-standard> Using
-siera package, ARS metadata is ingested (JSON or Excel format), producing
-programmes to generate Analysis Results Datasets (ARDs).")
+siera', ARS metadata is ingested (JSON or Excel format), producing R programmes
+to generate Analysis Results Datasets (ARDs).  Supports arbitrary-depth table
+structures, multi-value conditions, data-driven groupings, and CDISC-compliant
+ARD column stamping.")
     (license license:expat)))
 
 (define-public r-sier
@@ -59163,13 +59238,13 @@ publicly at <https://docs.sevenbridges.com/docs/the-api>.")
 (define-public r-seuratexplorer
   (package
     (name "r-seuratexplorer")
-    (version "0.1.4")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SeuratExplorer" version))
        (sha256
-        (base32 "1m92p3b2zvbj453n3y8wj91hlyi0l7qff7a7lw1b7jfnl4rwyb6y"))))
+        (base32 "0h9hnxcwy7dgrgbsa2h35if0frw12l0qww4jzwry0f344xqn2ils"))))
     (properties `((upstream-name . "SeuratExplorer")))
     (build-system r-build-system)
     (arguments
@@ -59178,7 +59253,6 @@ publicly at <https://docs.sevenbridges.com/docs/the-api>.")
     (propagated-inputs (list r-shinywidgets
                              r-shinyjs
                              r-shinyjqui
-                             r-shinydashboardplus
                              r-shinydashboard
                              r-shinycssloaders
                              r-shinybs
@@ -59186,6 +59260,7 @@ publicly at <https://docs.sevenbridges.com/docs/the-api>.")
                              r-seuratobject
                              r-seurat
                              r-scales
+                             r-rlang
                              r-reshape2
                              r-qs2
                              r-markdown
@@ -60085,13 +60160,13 @@ images/containers.")
 (define-public r-serad
   (package
     (name "r-serad")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "serad" version))
        (sha256
-        (base32 "15bjclrzfybkiqklc1dcvg65h3l5fs9yz3wp40d6jx7zbjx63sll"))))
+        (base32 "1b5mwiyjijbrc8rz4g0yb091glznmfakhjzir12185rc5qa9aw7v"))))
     (properties `((upstream-name . "serad")))
     (build-system r-build-system)
     (arguments
@@ -63620,6 +63695,44 @@ genotypes in the F2 to F7 selfing generations.  The conditional probabilities
 are derived automatically and in symbolic form.  The package also provides
 functionality to extract and evaluate the relevant probabilities.")
     (license license:bsd-3)))
+
+(define-public r-selfcontrolledcohort
+  (package
+    (name "r-selfcontrolledcohort")
+    (version "2.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SelfControlledCohort" version))
+       (sha256
+        (base32 "1jrpy02lb4l60n3mjgh8p3gc7kzmignv43ffcpjpnlgxp6kwsfs0"))))
+    (properties `((upstream-name . "SelfControlledCohort")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sqlrender
+                             r-rlang
+                             r-resultmodelmanager
+                             r-readr
+                             r-rateratio-test
+                             r-parallellogger
+                             r-empiricalcalibration
+                             r-dplyr
+                             r-databaseconnector
+                             r-cli
+                             r-checkmate
+                             r-andromeda))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/OHDSI/SelfControlledCohort")
+    (synopsis "Self-Controlled Cohort Population-Level Estimation")
+    (description
+     "Estimates incidence rate ratios by comparing time exposed with time unexposed
+among an exposed cohort using self-controlled cohort methodology as described in
+Ryan et al. (2013) <doi:10.1002/pds.3457>.  Functions used for empirical
+calibration of effect estimates, confidence intervals, and p-values are included
+to control for residual bias.")
+    (license license:asl2.0)))
 
 (define-public r-selfcontrolledcaseseries
   (package

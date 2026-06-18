@@ -2463,13 +2463,13 @@ method is described in Helgeson, Vock, and Bair (2021) <doi:10.1111/biom.13376>.
 (define-public r-uno
   (package
     (name "r-uno")
-    (version "2.7.3-1")
+    (version "2.7.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Uno" version))
        (sha256
-        (base32 "1pvq86ic12jf7zxkscklqrih4cayda0js7186fxby0rpm0pgwc0s"))))
+        (base32 "00as5ljh0gn78l9cyg6xbavh4d3blrxhhqml7kn6w6zngcfhmpq1"))))
     (properties `((upstream-name . "Uno")))
     (build-system r-build-system)
     (arguments

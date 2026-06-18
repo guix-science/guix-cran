@@ -16452,13 +16452,13 @@ et al (1997) <doi:10.1080/01621459.1997.10473658>; Clogg and Goodman (1985)
 (define-public r-glbfp
   (package
     (name "r-glbfp")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GLBFP" version))
        (sha256
-        (base32 "1iwzq7rcg208lahqf51mm785g3qvfd7wjdmaxw3qfh2ky6lh7kyk"))))
+        (base32 "1zrrj2rwimizfzy8k2ph4gw6041pjqnkj7y9h7jc4nkn6d1b980s"))))
     (properties `((upstream-name . "GLBFP")))
     (build-system r-build-system)
     (arguments
@@ -16744,6 +16744,41 @@ percentages, and indices exhibiting complex features such as asymmetry, or heavy
 tails and other shapes not adequately captured by standard distributions like
 simple Beta or Kumaraswamy.")
     (license license:expat)))
+
+(define-public r-gkrreg
+  (package
+    (name "r-gkrreg")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gkrreg" version))
+       (sha256
+        (base32 "0216lqi5vvscl966j9z0md6pgq2f99jbc00n1bd6yp6jq7yzl9mx"))))
+    (properties `((upstream-name . "gkrreg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sm r-mass))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/marcelorpf/gkrreg")
+    (synopsis "Gaussian Kernel Robust Regression (GKRReg)")
+    (description
+     "This package implements the Gaussian Kernel Robust Regression (GKRReg / GKRR)
+method proposed by De Carvalho, Lima Neto and Ferreira (2017)
+<doi:10.1016/j.neucom.2016.12.035>.  The method re-weights observations
+iteratively using the Gaussian kernel so that poorly-fitted observations
+(outliers, leverage points) receive small weights, yielding resistance to
+Y-space outliers, X-space outliers and leverage points.  Convergence is
+guaranteed by Propositions 4.1 and 4.2 of the original paper.  Three estimators
+for the kernel width hyper-parameter are provided (S1: Caputo, S2: pairwise
+median, S3: residual variance).  Inference is provided via an analytic sandwich
+variance estimator (default) or via bootstrap (percentile, normal and BCa
+intervals with p-values) through @code{gkrr_boot()}.  Six real datasets from the
+robust regression literature are included to facilitate reproducible
+comparisons.")
+    (license license:gpl3)))
 
 (define-public r-gkrls
   (package
@@ -17481,20 +17516,19 @@ that the data are optimally primed for precise and thorough analysis.")
 (define-public r-giscor
   (package
     (name "r-giscor")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "giscoR" version))
        (sha256
-        (base32 "11962n1flqnlg11nfj7pzn2xv2js198ws14mwl401md3l8d9bnq3"))))
+        (base32 "1lyz0y1gdim88vvr0xbs149d84nrxmvdgmaf9x43kc2vmp48dg5y"))))
     (properties `((upstream-name . "giscoR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tibble
-                             r-testthat
                              r-sf
                              r-rappdirs
                              r-lifecycle
@@ -17504,13 +17538,14 @@ that the data are optimally primed for precise and thorough analysis.")
                              r-cli))
     (native-inputs (list r-quarto))
     (home-page "https://ropengov.github.io/giscoR/")
-    (synopsis "Download Map Data from GISCO API - Eurostat")
+    (synopsis "Download 'Eurostat' 'GISCO' Spatial Data")
     (description
-     "This package provides tools to download data from the GISCO (Geographic
-Information System of the Commission) Eurostat database
-<https://ec.europa.eu/eurostat/web/gisco>.  Global and European map data
-available.  This package is in no way officially related to or endorsed by
-Eurostat.")
+     "This package provides tools to download global and European spatial data from
+the Eurostat GISCO (Geographic Information System of the Commission) data
+distribution <https://ec.europa.eu/eurostat/web/gisco>.  The package provides
+helpers for country boundaries, NUTS regions, administrative units, statistical
+units, transport networks, basic service locations and other GISCO datasets.
+This package is not officially related to or endorsed by Eurostat'.")
     (license license:gpl3)))
 
 (define-public r-giraf
@@ -21255,6 +21290,37 @@ the Monolix installation, as described at the following url
  When @code{lixoftConnectors} is available, R can use Monolix directly to create
 the required Chart Data instead of exporting it from the Monolix gui.")
     (license license:gpl2)))
+
+(define-public r-ggplotplus
+  (package
+    (name "r-ggplotplus")
+    (version "0.5.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggplotplus" version))
+       (sha256
+        (base32 "0winfyybcd52mj8kca7sgpxiyk1k7ip30py60wxpy3pr34sndx61"))))
+    (properties `((upstream-name . "ggplotplus")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridislite
+                             r-scales
+                             r-s7
+                             r-rlang
+                             r-polyclip
+                             r-gtable
+                             r-ggrepel
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://github.com/MAISRC/ggplotplus")
+    (synopsis "Universal Design-Oriented Enhancements for 'ggplot2'")
+    (description
+     "This package provides a collection of enhancements to ggplot2', with a focus on
+creating Universally Designed, accessible graphs easily and quickly.")
+    (license license:expat)))
 
 (define-public r-ggplotgui
   (package
@@ -29710,13 +29776,13 @@ database of political administrative boundaries.\" PLOS ONE 15(4), e0231866.
 (define-public r-geobayes
   (package
     (name "r-geobayes")
-    (version "0.7.6")
+    (version "0.7.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geoBayes" version))
        (sha256
-        (base32 "1l964xv4s0x7fz9d7v4i2pi1cf2djxqdjdn8nqlx4s84cvvicrkn"))))
+        (base32 "0faawsvaq2zsf8hs2c3vhiaq8iisba20nh7prv1r8dn6gca33dzv"))))
     (properties `((upstream-name . "geoBayes")))
     (build-system r-build-system)
     (arguments
@@ -35845,6 +35911,34 @@ package, the mixture case is complemented with new functions for variance
 estimation by linearization and comparative density plots.")
     (license license:gpl2+)))
 
+(define-public r-gazepath
+  (package
+    (name "r-gazepath")
+    (version "1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gazepath" version))
+       (sha256
+        (base32 "1d2r1v6vh975qn59d4mzpgha2b24wdiwgyz4iw2ghw8x9kb1qixg"))))
+    (properties `((upstream-name . "gazepath")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo r-sp r-shiny r-scales r-jpeg))
+    (home-page "https://cran.r-project.org/package=gazepath")
+    (synopsis "Parse Eye-Tracking Data into Fixations")
+    (description
+     "Eye-tracking data must be transformed into fixations and saccades before it can
+be analyzed.  This package provides a non-parametric speed-based approach to do
+this on a trial basis.  The method is especially useful when there are large
+differences in data quality, as the thresholds are adjusted accordingly.  The
+same pre-processing procedure can be applied to all participants, while
+accounting for individual differences in data quality.  The method is described
+in van Renswoude et al. (2018) <doi:10.3758/s13428-017-0909-3>.")
+    (license license:gpl2)))
+
 (define-public r-gawdis
   (package
     (name "r-gawdis")
@@ -38552,13 +38646,13 @@ graphic parameters.")
 (define-public r-gaawr2
   (package
     (name "r-gaawr2")
-    (version "0.0.7")
+    (version "0.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gaawr2" version))
        (sha256
-        (base32 "05c6dbs743i9g434aqs56w1i487rkbnxd3r56snfj4c68sayyhw1"))))
+        (base32 "0c31j104994hg47ackzgjl99c0hw2hihich8mpadafx17xrxv97i"))))
     (properties `((upstream-name . "gaawr2")))
     (build-system r-build-system)
     (arguments
@@ -38570,6 +38664,7 @@ graphic parameters.")
                              r-gap-datasets
                              r-gap
                              r-dplyr))
+    (native-inputs (list r-knitr))
     (home-page "https://jinghuazhao.github.io/gaawr2/")
     (synopsis "Genetic Association Analysis")
     (description

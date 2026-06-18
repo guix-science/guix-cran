@@ -24,6 +24,7 @@
   #:use-module (gnu packages perl)
   #:use-module (gnu packages tex)
   #:use-module (gnu packages tls)
+  #:use-module (gnu packages docker)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages cmake)
   #:use-module (guix-cran packages z)
@@ -17812,6 +17813,34 @@ Bryan (2023, ISBN:9781098134945), \"Writing R Extensions\"
 Policy <https://cran.r-project.org/web/packages/policies.html>.")
     (license license:gpl3)))
 
+(define-public r-tinyoauth
+  (package
+    (name "r-tinyoauth")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tinyoauth" version))
+       (sha256
+        (base32 "10hqnsh0amr0zpkb0f4vv7jhpw15nw6s4bslvz2csnsghasqz3xv"))))
+    (properties `((upstream-name . "tinyoauth")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite r-curl))
+    (home-page "https://github.com/cornball-ai/tinyoauth")
+    (synopsis "Minimal OAuth 2.0 Client")
+    (description
+     "This package provides a dependency-light OAuth 2.0
+<https://www.rfc-editor.org/rfc/rfc6749> client supporting the
+client-credentials and authorization-code grants with token refresh.  Built on
+curl and jsonlite', with base R's socket server for the redirect listener,
+avoiding heavier HTTP stacks.  Includes a helper for the @code{OpenAI}
+<https://openai.com/> Codex device login, a similar but non-standard variant of
+the OAuth 2.0 device authorization grant.")
+    (license license:expat)))
+
 (define-public r-tinylens
   (package
     (name "r-tinylens")
@@ -19831,13 +19860,13 @@ cases.")
 (define-public r-tidyterra
   (package
     (name "r-tidyterra")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyterra" version))
        (sha256
-        (base32 "0ff2q0kh8hg4jrqxhxjczhyhs4bfazxd74p9bdjvw0685wgq598b"))))
+        (base32 "0fga7krjq0hrjay79ngvyba34cp40pqz5xi4ndnsvrh1y75gzczd"))))
     (properties `((upstream-name . "tidyterra")))
     (build-system r-build-system)
     (arguments
@@ -19862,9 +19891,9 @@ cases.")
     (home-page "https://dieghernan.github.io/tidyterra/")
     (synopsis "'tidyverse' Methods and 'ggplot2' Helpers for 'terra' Objects")
     (description
-     "Extension of the tidyverse for @code{SpatRaster} and @code{SpatVector} objects
-of the terra package.  It includes also new geom_ functions that provide a
-convenient way of visualizing terra objects with ggplot2'.")
+     "This package provides methods from tidyverse packages for @code{SpatRaster} and
+@code{SpatVector} objects created with terra', plus ggplot2 geoms and scales for
+plotting those objects.")
     (license license:expat)))
 
 (define-public r-tidytable
@@ -22157,32 +22186,32 @@ ESTIMATE (2013) <doi:10.1038/ncomms3612>.")
 (define-public r-tidyemoji
   (package
     (name "r-tidyemoji")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyEmoji" version))
        (sha256
-        (base32 "0gy178kdj5c2mdxmczhbh3wai8lk9d2fk6c8qn8fpz3mc97zlx7p"))))
+        (base32 "069p5i9jw3pn73qc6vq8ik7x4i10v3v3mjmcz1nwhxcczmlzildy"))))
     (properties `((upstream-name . "tidyEmoji")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-purrr
-                             r-emoji
-                             r-dplyr))
+    (propagated-inputs (list r-tidyr r-tibble r-lifecycle r-emoji r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://pursuitofdatascience.github.io/tidyEmoji/")
-    (synopsis "Discovers Emoji from Text")
+    (synopsis "Discover, Count and Score Emoji in Text")
     (description
-     "Unicodes are not friendly to work with, and not all Unicodes are Emoji per se,
-making obtaining Emoji statistics a difficult task.  This tool can help your
-experience of working with Emoji as smooth as possible, as it has the tidyverse
-style.")
+     "This package provides a tidy toolkit for working with the emoji in any text
+column, such as social-media posts, product reviews, chat logs or survey
+responses.  Unicode is awkward to handle and not every code point is an emoji,
+which makes emoji statistics fiddly to obtain. @code{tidyEmoji} extracts,
+counts, categorises and sentiment-scores emoji with grapheme-aware detection (so
+skin-tone and multi-person sequences stay intact), returning tidy data frames
+that slot straight into a tidyverse workflow.  The bundled emoji sentiment
+lexicon is from the Emoji Sentiment Ranking of Kralj Novak et al. (2015)
+<doi:10.1371/journal.pone.0144296>, released under CC BY-SA 4.0.")
     (license license:gpl3+)))
 
 (define-public r-tidyedsurvey
@@ -29956,6 +29985,38 @@ falsely detecting a differential effect when the conditional average treatment
 effect is uniform across the study population using parameter selection methods
 proposed in Wolf et al. (2022) <doi:10.1177/17407745221095855>.")
     (license license:gpl3+)))
+
+(define-public r-teems
+  (package
+    (name "r-teems")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "teems" version))
+       (sha256
+        (base32 "13v0yjs8fp3f4100f7y95hhka5r12k8k0nwmg198hrkwm6yim7pj"))))
+    (properties `((upstream-name . "teems")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list docker))
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-r6
+                             r-purrr
+                             r-data-table
+                             r-cpp11
+                             r-cli))
+    (home-page "https://teemsphere.github.io/")
+    (synopsis "Trade and Environment Equilibrium Modeling System")
+    (description
+     "Equilibrium models are frequently employed to examine the potential impacts of
+economic, energy, and trade policies as well as form the foundation of most
+integrated assessment models.  The teems package handles all aspects of running
+equilibrium models while facilitating transparent and reproducible workflows.")
+    (license license:agpl3+)))
 
 (define-public r-tedm
   (package

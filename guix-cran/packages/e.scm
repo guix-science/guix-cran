@@ -25979,13 +25979,13 @@ rank-loss functions are also given.")
 (define-public r-ebrahim-gof
   (package
     (name "r-ebrahim-gof")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ebrahim.gof" version))
        (sha256
-        (base32 "1jyksi236ckhfc022jvcgyqdfh2s3l740abnj9pbg40b83fgj0nk"))))
+        (base32 "1fc47wkaznbfd0cyja2grhl4309p7i3ih8hlba2vrz91a00r0xq5"))))
     (properties `((upstream-name . "ebrahim.gof")))
     (build-system r-build-system)
     (arguments
@@ -26005,9 +26005,12 @@ simplified for practical implementation with binary data.  Includes functions
 for both the original Farrington test (for grouped data) and the new
 Ebrahim-Farrington test (for binary data with automatic grouping), the Directed
 Ebrahim-Farrington (DEF) test that targets calibration-shape departures, and an
-ensemble that combines the DEF bases via the Cauchy combination test.  For more
-details see Hosmer (1980) <doi:10.1080/03610928008827941> and Farrington (1996)
-<doi:10.1111/j.2517-6161.1996.tb02086.x>.")
+ensemble that combines the DEF bases via the Cauchy combination test.  Also
+provides @code{run.all.gof()}', which runs a battery of classical and modern
+goodness-of-fit and calibration tests (including @code{McCullagh}, Osius-Rojek,
+le Cessie-van Houwelingen, Stute-Zhu, and the @code{GiViTI} calibration test) in
+one call.  For more details see Hosmer (1980) <doi:10.1080/03610928008827941>
+and Farrington (1996) <doi:10.1111/j.2517-6161.1996.tb02086.x>.")
     (license license:gpl3)))
 
 (define-public r-ebnm

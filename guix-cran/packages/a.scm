@@ -6834,13 +6834,13 @@ Dirk F. Moore, Springer, 2016, ISBN: 978-3-319-31243-9,
 (define-public r-arxiv
   (package
     (name "r-arxiv")
-    (version "0.18")
+    (version "0.20")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aRxiv" version))
        (sha256
-        (base32 "1drf9kdvyp4v768iphh639kxhzkii5i0n0cq87mpz7hqhzdpi7mb"))))
+        (base32 "0hl4dkh2zy25xs1njipyqbsibd91ydi6bddi4jjjw4lnxf93pz80"))))
     (properties `((upstream-name . "aRxiv")))
     (build-system r-build-system)
     (arguments
@@ -13209,13 +13209,13 @@ confidence intervals based on Louis identity and profile likelihood.")
 (define-public r-antclassify
   (package
     (name "r-antclassify")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AntClassify" version))
        (sha256
-        (base32 "1b6pdivswc2g99ar5ypr29z5wfhy0ghjhfqsmrh3l097ng170wsd"))))
+        (base32 "05dvdr3fy6plrc5dqpig7vyw0z8nf818jabs1radqx3cibzci41r"))))
     (properties `((upstream-name . "AntClassify")))
     (build-system r-build-system)
     (arguments
@@ -24322,13 +24322,13 @@ format is also provided.")
 (define-public r-admixpoly
   (package
     (name "r-admixpoly")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AdmixPoly" version))
        (sha256
-        (base32 "15jj8ykcjx0fjq29m73cv0kfz7phz3fh3ysiq05gzfghxlw05pdn"))))
+        (base32 "17bjs073184nwf1jy6zmwrcggqkypv0w6ra4xh47z9i2xz45n02r"))))
     (properties `((upstream-name . "AdmixPoly")))
     (build-system r-build-system)
     (arguments

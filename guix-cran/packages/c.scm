@@ -12373,13 +12373,13 @@ models as in the article Faddy and Smith (2011) <doi:10.18637/jss.v069.i06> .")
 (define-public r-countries
   (package
     (name "r-countries")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "countries" version))
        (sha256
-        (base32 "1c9nc4z6i08m4ijsxjhyw1h89q8nr2s95n6lxybckmr5z0gasc6v"))))
+        (base32 "0i8xzvzb2ifhprva0vn2jchs4p9bg60v2bx78ips5dbzckfb4vvm"))))
     (properties `((upstream-name . "countries")))
     (build-system r-build-system)
     (arguments
@@ -19229,13 +19229,13 @@ see Bodner et al.(2021) <doi:10.3758/s13428-021-01760-w>.")
 (define-public r-conmition
   (package
     (name "r-conmition")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "conMItion" version))
        (sha256
-        (base32 "05074wwj9sfy0aba1mf4f0982c4ws8z60s3764a7wrj8ddy466dc"))))
+        (base32 "1lwmvx2gv9jh2h5xczdp2jycjnmmrwb5vvrcg50jafxh8zrz74gz"))))
     (properties `((upstream-name . "conMItion")))
     (build-system r-build-system)
     (arguments
@@ -28824,13 +28824,13 @@ genomic regions where the copy number differs from the norm.")
 (define-public r-cnorm
   (package
     (name "r-cnorm")
-    (version "3.5.4")
+    (version "3.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cNORM" version))
        (sha256
-        (base32 "06ychfshm0y9ipfqa70cafwvbgvf3vap4f9jlqk7qnm4ifdgihvk"))))
+        (base32 "0bqwls6p9ykc2b3lyqg5g7iijclppm0s1b4blhnp1ji8cx22yaik"))))
     (properties `((upstream-name . "cNORM")))
     (build-system r-build-system)
     (arguments
@@ -28841,21 +28841,20 @@ genomic regions where the copy number differs from the norm.")
     (home-page "https://www.psychometrica.de/cNorm_en.html")
     (synopsis "Continuous Norming")
     (description
-     "This package provides a comprehensive toolkit for generating continuous test
-norms in psychometrics and biometrics, and analyzing model fit.  The package
-offers both distribution-free modeling using Taylor polynomials and parametric
-modeling using the beta-binomial and the Sinh-Arcsinh distribution.  Originally
-developed for achievement tests, it is applicable to a wide range of mental,
-physical, or other test scores dependent on continuous or discrete explanatory
-variables.  The package provides several advantages: It minimizes deviations
-from representativeness in subsamples, interpolates between discrete levels of
-explanatory variables, and significantly reduces the required sample size
-compared to conventional norming per age group. @code{cNORM} enables graphical
-and analytical evaluation of model fit, accommodates a wide range of scales
-including those with negative and descending values, and even supports
+     "Generates continuous test norms in psychometrics and biometrics, and analyzing
+model fit.  The package offers both distribution-free modeling using Taylor
+polynomials and parametric modeling using the beta-binomial and the Sinh-Arcsinh
+distribution.  Originally developed for achievement tests, it is applicable to a
+wide range of mental, physical, or other test scores dependent on continuous or
+discrete explanatory variables.  The package provides several advantages: It
+minimizes deviations from representativeness in subsamples, interpolates between
+discrete levels of explanatory variables, and significantly reduces the required
+sample size compared to conventional norming per age group. @code{cNORM} enables
+graphical and analytical evaluation of model fit, accommodates a wide range of
+scales including those with negative and descending values, and as well supports
 conventional norming.  It generates norm tables including confidence intervals.
-It also includes methods for addressing representativeness issues through
-Iterative Proportional Fitting.  Based on Lenhard et al. (2016)
+Methods for addressing representativeness issues are available through Iterative
+Proportional Fitting.  Based on Lenhard et al. (2016)
 <doi:10.1177/1073191116656437>, Lenhard et al. (2019)
 <doi:10.1371/journal.pone.0222279>, Lenhard and Lenhard (2021)
 <doi:10.1177/0013164420928457> and Gary et al. (2023)
@@ -36475,6 +36474,49 @@ Civis Platform API <https://www.civisanalytics.com/platform>.  Full
 documentation available here <https://civisanalytics.github.io/civis-r/>.")
     (license license:bsd-3)))
 
+(define-public r-civic-icarm
+  (package
+    (name "r-civic-icarm")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "civic.icarm" version))
+       (sha256
+        (base32 "16f68qkavm6l8zw74i6nyc10174b44jh0jf28vyigap3dzzf2nbk"))))
+    (properties `((upstream-name . "civic.icarm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rpart
+                             r-rlang
+                             r-purrr
+                             r-jsonlite
+                             r-ggplot2
+                             r-dplyr
+                             r-digest))
+    (home-page "https://cran.r-project.org/package=civic.icarm")
+    (synopsis
+     "Interpretable Civic-Accountable and Responsible Machine Learning")
+    (description
+     "This package provides a general-purpose framework for Interpretable
+Civic-Accountable and Responsible Machine Learning (ICARM).  Works with any
+clean tabular data and automatically detects whether a task is binary
+classification, multi-class classification, or regression from the target
+variable type.  Provides a single unified entry point @code{civic_fit()}
+alongside tidy interfaces for global and local model explanations, group-level
+fairness auditing, probability calibration, multi-model comparison, threshold
+analysis, and reproducible audit trails.  Designed to support the
+@code{DataCitizen-Pro} research agenda at Ludwigsburg University of Education:
+developing data literacy, statistical reasoning, and democratic judgment
+formation in civic and political teacher education.  References: Biecek (2018)
+<doi:10.18637/jss.v085.i04>, Kuhn (2008) <doi:10.18637/jss.v028.i05>, Awe (2025)
+<https://github.com/Olawaleawe/civic.icarm>.")
+    (license license:expat)))
+
 (define-public r-civ
   (package
     (name "r-civ")
@@ -43794,13 +43836,13 @@ based on the counterfactual query and the causal diagram.  See Tikka, S. (2023)
 (define-public r-cffr
   (package
     (name "r-cffr")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cffr" version))
        (sha256
-        (base32 "11l58qvvr6q3wrax9xqdy648r3aa7h4xvl6v1jjdz739k573xg1v"))))
+        (base32 "0j4fgbpzmfjd4z8hbk76w60fxcr4k887k1dac2slvl425rjlrv04"))))
     (properties `((upstream-name . "cffr")))
     (build-system r-build-system)
     (arguments
@@ -43809,11 +43851,12 @@ based on the counterfactual query and the causal diagram.  See Tikka, S. (2023)
     (propagated-inputs (list r-yaml r-jsonvalidate r-jsonlite r-desc r-cli))
     (native-inputs (list r-quarto))
     (home-page "https://docs.ropensci.org/cffr/")
-    (synopsis "Generate Citation File Format ('cff') Metadata for R Packages")
+    (synopsis "Generate Citation File Format ('CFF') Metadata for R Packages")
     (description
-     "The Citation File Format version 1.2.0 <doi:10.5281/zenodo.5171937> is a human
-and machine readable file format which provides citation metadata for software.
-This package provides core utilities to generate and validate this metadata.")
+     "Citation File Format ('CFF') version 1.2.0 <doi:10.5281/zenodo.5171937> is a
+human- and machine-readable file format for software citation metadata.  Core
+utilities generate, read, write and validate Citation File Format metadata for R
+packages.")
     (license license:gpl3+)))
 
 (define-public r-cffdrs

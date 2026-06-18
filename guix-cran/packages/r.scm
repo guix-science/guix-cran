@@ -12009,31 +12009,6 @@ underlying rplum are derived from the rbacon package by the same authors, and
 there remains a degree of overlap between the two packages.")
     (license license:gpl2+)))
 
-(define-public r-rpls
-  (package
-    (name "r-rpls")
-    (version "0.6.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rpls" version))
-       (sha256
-        (base32 "0r3y63pi4d7hfzs53d9w23ymmk86gvm85v0dx7n1gicha5nn1mk8"))))
-    (properties `((upstream-name . "rpls")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-robustbase r-pcapp))
-    (home-page "https://cran.r-project.org/package=rpls")
-    (synopsis "Robust Partial Least Squares")
-    (description
-     "This package provides a robust Partial Least-Squares (PLS) method is implemented
-that is robust to outliers in the residuals as well as to leverage points.  A
-specific weighting scheme is applied which avoids iterations, and leads to a
-highly efficient robust PLS estimator.")
-    (license license:gpl3+)))
-
 (define-public r-rplotterpkg
   (package
     (name "r-rplotterpkg")
@@ -14710,6 +14685,46 @@ the classical framework of Romney, Weller, and Batchelder (1986)
 <doi:10.1525/aa.1986.88.2.02a00020>, Romney, Batchelder, and Weller (1987)
 <doi:10.1177/000276487031002003>, and Weller (2007)
 <doi:10.1177/1525822X07303502>.")
+    (license license:expat)))
+
+(define-public r-romic
+  (package
+    (name "r-romic")
+    (version "1.3.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "romic" version))
+       (sha256
+        (base32 "1ijhnl2vxhgrybpnvmg5jf1ip0328gjzhgkwihmxlm4ld4d28ly1"))))
+    (properties `((upstream-name . "romic")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-shiny
+                             r-rlang
+                             r-reshape2
+                             r-readr
+                             r-purrr
+                             r-glue
+                             r-ggplot2
+                             r-dplyr
+                             r-cli
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://www.shackett.org/external/romic-docs/")
+    (synopsis "R for High-Dimensional Molecular Data")
+    (description
+     "Represents high-dimensional data as tables of features, samples and
+measurements, and a design list for tracking the meaning of individual
+variables.  Using this format, filtering, normalization, and other
+transformations of a dataset can be carried out in a flexible manner.  romic
+takes advantage of these transformations to create interactive shiny apps for
+exploratory data analysis such as an interactive heatmap.")
     (license license:expat)))
 
 (define-public r-romeb
@@ -20030,13 +20045,13 @@ et al. (2017) <@code{arXiv:1702.04690>} based on Rosenbaum and Rubin (1983)
 (define-public r-rnpn
   (package
     (name "r-rnpn")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rnpn" version))
        (sha256
-        (base32 "0da1pr294f393510i04b85y6h8cfwhxll9602q1zan3vlh7b9v7w"))))
+        (base32 "0n8zka1r8v71i9vz6z4vjlsk2hfcvmdh1305jcwc1hmn9mgr1xsy"))))
     (properties `((upstream-name . "rnpn")))
     (build-system r-build-system)
     (arguments
@@ -20053,9 +20068,9 @@ et al. (2017) <@code{arXiv:1702.04690>} based on Rosenbaum and Rubin (1983)
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/usa-npn/rnpn")
-    (synopsis "Interface to the National 'Phenology' Network 'API'")
+    (synopsis "Interface to the USA National 'Phenology' Network 'API'")
     (description
-     "Programmatic interface to the Web Service methods provided by the National
+     "Programmatic interface to the Web Service methods provided by the USA National
 Phenology Network (<https://usanpn.org/>), which includes data on various life
 history events that occur at specific times.")
     (license license:expat)))
@@ -34482,47 +34497,6 @@ maximization algorithm.  Further details on the methods can be found in L. Del
 Core et al., (2022) <doi:10.1101/2022.05.31.494100>.")
     (license license:gpl3)))
 
-(define-public r-restoptr
-  (package
-    (name "r-restoptr")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "restoptr" version))
-       (sha256
-        (base32 "1rld23qqx1fhrry4qn7z8xsc65ys2jmwsjivv79nq06idam6df41"))))
-    (properties `((upstream-name . "restoptr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list openjdk))
-    (propagated-inputs (list r-units
-                             r-terra
-                             r-rjava
-                             r-magrittr
-                             r-crayon
-                             r-assertthat))
-    (native-inputs (list r-knitr))
-    (home-page "https://dimitri-justeau.github.io/restoptr/")
-    (synopsis "Ecological Restoration Planning")
-    (description
-     "Flexible framework for ecological restoration planning.  It aims to identify
-priority areas for restoration efforts using optimization algorithms (based on
-Justeau-Allaire et al.  2021 <doi:10.1111/1365-2664.13803>).  Priority areas can
-be identified by maximizing landscape indices, such as the effective mesh size
-(Jaeger 2000 <doi:10.1023/A:1008129329289>), or the integral index of
-connectivity (Pascual-Hortal & Saura 2006 <doi:10.1007/s10980-006-0013-z>).
-Additionally, constraints can be used to ensure that priority areas exhibit
-particular characteristics (e.g., ensure that particular places are not selected
-for restoration, ensure that priority areas form a single contiguous network).
-Furthermore, multiple near-optimal solutions can be generated to explore
-multiple options in restoration planning.  The package leverages the
-Choco-solver software to perform optimization using constraint programming (CP)
-techniques (<https://choco-solver.org/>).")
-    (license license:gpl3+)))
-
 (define-public r-restk
   (package
     (name "r-restk")
@@ -42214,27 +42188,27 @@ programming.")
 (define-public r-redcapexporter
   (package
     (name "r-redcapexporter")
-    (version "0.3.4")
+    (version "0.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "REDCapExporter" version))
        (sha256
-        (base32 "1zjnd2xn0xpxq4d4rh90h1yf77ivlxvkr9pn0wlgvwl56yqa6f1a"))))
+        (base32 "06r77bkk180ghgpr18adlbxid2faii3px7phq2cn2kippqapmkzp"))))
     (properties `((upstream-name . "REDCapExporter")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rjson r-lubridate r-keyring r-curl))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/dewittpe/REDCapExporter")
     (synopsis "Automated Construction of R Data Packages from REDCap Projects")
     (description
      "Export all data, including metadata, from a REDCap (Research Electronic Data
 Capture) Project via the REDCap API
 <https://projectredcap.org/wp-content/resources/RED@code{CapTechnicalOverview.pdf>}.
- The exported (meta)data will be processed and formatted into a stand alone R
+ The exported (meta)data will be processed and formatted into a stand-alone R
 data package which can be installed and shared between researchers.  Several
 default reports are generated as vignettes in the resulting package.")
     (license license:gpl2)))

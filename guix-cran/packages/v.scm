@@ -5164,13 +5164,13 @@ Geosci.  Model Dev., 11, 3481-3496, <doi:10.5194/gmd-11-3481-2018>\".")
 (define-public r-vibass
   (package
     (name "r-vibass")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vibass" version))
        (sha256
-        (base32 "1hwsrm6fxk6v7f242j8vjg1r0g96r1a946qpd33j7742drkf5grb"))))
+        (base32 "1k4ph1hwmn5fqkx1djljabhaimld3mgahlhkibfzr74bd9dim1xq"))))
     (properties `((upstream-name . "vibass")))
     (build-system r-build-system)
     (arguments
@@ -5191,7 +5191,7 @@ Geosci.  Model Dev., 11, 3481-3496, <doi:10.5194/gmd-11-3481-2018>\".")
                              r-dplyr
                              r-cli))
     (native-inputs (list r-knitr))
-    (home-page "http://vabar.es/vibass/")
+    (home-page "https://vabar.github.io/vibass/")
     (synopsis "Materials for Introductory Course on Bayesian Learning")
     (description
      "Practicals, data sets, helper functions and interactive Shiny apps used in the

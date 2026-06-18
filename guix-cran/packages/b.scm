@@ -3878,26 +3878,30 @@ conducting spatial studies.")
 (define-public r-brulee
   (package
     (name "r-brulee")
-    (version "0.6.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "brulee" version))
        (sha256
-        (base32 "0m9bsknzgp7rr7nzvvbn7av08kzhwwk9bnpiyqx8w997jm89km4k"))))
+        (base32 "18jx3azyfqxrnidwpni49b918p6ad2srsfalgfxrmcpw434hhgx2"))))
     (properties `((upstream-name . "brulee")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-torch
+                             r-tidyselect
                              r-tibble
+                             r-safetensors
                              r-rlang
+                             r-purrr
+                             r-jsonlite
                              r-hardhat
-                             r-glue
                              r-ggplot2
                              r-generics
                              r-dplyr
+                             r-curl
                              r-coro
                              r-cli))
     (home-page "https://github.com/tidymodels/brulee")
@@ -15815,32 +15819,31 @@ visualisation tools are also available within the package.")
 (define-public r-biometryassist
   (package
     (name "r-biometryassist")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biometryassist" version))
        (sha256
-        (base32 "1x05z69cbzrz9rxkmifqgvjy6dj9in7k1vvdbb9q1xf1vmd07484"))))
+        (base32 "0kx2qi4z6mdgb0yk4p65v6cj2yvcxgf86rk3xdv6189bjhshgr40"))))
     (properties `((upstream-name . "biometryassist")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xml2
-                             r-stringi
+    (propagated-inputs (list r-stringi
                              r-scales
                              r-rlang
                              r-pracma
                              r-patchwork
                              r-multcompview
                              r-lattice
+                             r-jsonlite
                              r-ggplot2
                              r-emmeans
                              r-curl
-                             r-askpass
                              r-agricolae))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-quarto))
     (home-page "https://biometryhub.github.io/biometryassist/")
     (synopsis
      "Functions to Assist Design and Analysis of Agronomic Experiments")
@@ -15851,7 +15854,7 @@ functions, especially for users who are learning these concepts.  While not
 required for most functionality, this package enhances the `asreml` package
 which provides a computationally efficient algorithm for fitting mixed models
 using Residual Maximum Likelihood.  It is a commercial package that can be
-purchased as asreml-R from VSNi <https://vsni.co.uk/>, who will supply a zip
+purchased as ASReml-R from VSNi <https://vsni.co.uk/>, who will supply a zip
 file for local installation/updating (see <https://asreml.kb.vsni.co.uk/>).")
     (license license:expat)))
 
@@ -27543,6 +27546,37 @@ Chain Monte Carlo core of all algorithms is programmed in Fortran and called
 from R.")
     (license license:gpl2+)))
 
+(define-public r-bayesqm
+  (package
+    (name "r-bayesqm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bayesqm" version))
+       (sha256
+        (base32 "0y8z8zbrik2hjh9c11ng7rl3drh40qsc5az85xvagwglv48h77qs"))))
+    (properties `((upstream-name . "bayesqm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rstantools))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/rdazadda/bayesqm")
+    (synopsis "Bayesian Q Methodology: Probabilistic Factor Analysis")
+    (description
+     "This package provides a Bayesian factor-analytic framework for Q methodology.
+Fits a low-rank factor model to Q-sort data with a Student-t likelihood and a
+hierarchical normal prior on loadings, samples the posterior with Stan, resolves
+rotational ambiguity via the @code{MatchAlign} post-processing of Poworoznek et
+al. (2025) <doi:10.1214/25-BA1544>, and returns posterior summaries including
+credible intervals for loadings and factor scores, probabilistic dominant-factor
+membership, distinguishing and consensus statements, and PSIS-LOO-based factor
+enumeration following Vehtari et al. (2017) <doi:10.1007/s11222-016-9696-4> with
+the Sivula et al. (2025) <doi:10.1214/25-BA1569> parsimony rule.")
+    (license license:gpl3+)))
+
 (define-public r-bayesproject
   (package
     (name "r-bayesproject")
@@ -29696,13 +29730,13 @@ economic disaggregation represents an original methodological contribution.")
 (define-public r-bayesiandeb
   (package
     (name "r-bayesiandeb")
-    (version "0.1.4")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesianDEB" version))
        (sha256
-        (base32 "0q8h2j3z8zrdgiy8jzxb1kn9mbhv6mqhy4dx1r1wqq37955zq13s"))))
+        (base32 "1gklr7sl22g3ayb6bb8lrl70jxjawmyg80b9mwc21wnysf8qlbbj"))))
     (properties `((upstream-name . "BayesianDEB")))
     (build-system r-build-system)
     (arguments

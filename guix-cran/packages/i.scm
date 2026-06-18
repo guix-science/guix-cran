@@ -1661,13 +1661,13 @@ and similarity calculations.  See Fox et al. (2024)
 (define-public r-istay
   (package
     (name "r-istay")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iSTAY" version))
        (sha256
-        (base32 "02l3df041zrwpmcldmpcw5qhaiskby7yjbzl0si5m7vagnj60z7v"))))
+        (base32 "0lnkzaw4glivc23s1k9jb8qc47wdf5ky80jizzm2i187x9dn425j"))))
     (properties `((upstream-name . "iSTAY")))
     (build-system r-build-system)
     (arguments
@@ -1683,14 +1683,15 @@ and similarity calculations.  See Fox et al. (2024)
     (home-page "https://cran.r-project.org/package=iSTAY")
     (synopsis "Information-Based Stability and Synchrony Measures")
     (description
-     "This package provides functions to to compute a continuum of information-based
+     "This package provides functions to compute a continuum of information-based
 measures for quantifying the temporal stability of populations, communities, and
 ecosystems, as well as their associated synchrony, based on species (or species
-assemblage) biomass or other key variables.  When biodiversity data are
+assemblage) biomass, or other key variables.  When biodiversity data are
 available, the package also enables the assessment of the corresponding
-diversityâstability relationships.  All measures are applicable in both
-temporal and spatial contexts.  The theoretical and methodological background is
-detailed in Chao et al. (2025) <doi:10.1101/2025.08.20.671203>.")
+diversityâstability and diversityâsynchrony relationships.  All measures are
+applicable in both temporal and spatial contexts.  The theoretical and
+methodological background is detailed in Chao et al. (2025)
+<doi:10.1101/2025.08.20.671203>.")
     (license license:gpl3+)))
 
 (define-public r-istats
@@ -4248,13 +4249,13 @@ reliability based on BartoÅ¡ & MartinkovÃ¡ (2024) <doi:10.1111/bmsp.12343>."
 (define-public r-irr
   (package
     (name "r-irr")
-    (version "0.84.1")
+    (version "0.85")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "irr" version))
        (sha256
-        (base32 "1hs4ylqm51smrmgsph7z9arwkz5px2a320acar324fkjdd3yifp7"))))
+        (base32 "0anlis8fjny3llcwrkn7y13xzq5z98gyx5srr65a9i8671q5lbpk"))))
     (properties `((upstream-name . "irr")))
     (build-system r-build-system)
     (arguments
@@ -16925,13 +16926,13 @@ Instagram is a web photo sharing service.  It can be found at:
 (define-public r-ig-degree-betweenness
   (package
     (name "r-ig-degree-betweenness")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ig.degree.betweenness" version))
        (sha256
-        (base32 "1gf6mji6ifsn0vm4bahyyakgy2j1yvpd39jkmk327v0l2i7kx9wk"))))
+        (base32 "11gsm6cd0hd7rvyjqn7rl0lgrhvxbnr9pz9il2yz1pdsd2v62jpy"))))
     (properties `((upstream-name . "ig.degree.betweenness")))
     (build-system r-build-system)
     (arguments
@@ -16941,6 +16942,7 @@ Instagram is a web photo sharing service.  It can be found at:
                              r-tibble
                              r-rlist
                              r-qgraph
+                             r-lifecycle
                              r-igraphdata
                              r-igraph
                              r-ggplot2
@@ -16948,15 +16950,16 @@ Instagram is a web photo sharing service.  It can be found at:
                              r-bbmisc))
     (home-page "https://github.com/benyamindsmith/ig.degree.betweenness")
     (synopsis
-     "\"Smith-Pittman Community Detection Algorithm for 'igraph' Objects (2024)\"")
+     "\"Node+Edge Betweenness Community Detection Algorithm for 'igraph' Objects\"")
     (description
-     "This package implements the \"Smith-Pittman\" community detection algorithm for
-network analysis using igraph objects.  This algorithm combines node degree and
-betweenness centrality measures to identify communities within networks, with a
-gradient evident in social partitioning.  The package provides functions for
-community detection, visualization, and analysis of the resulting community
-structure.  Methods are based on results from Smith, Pittman and Xu (2024)
-<doi:10.48550/@code{arXiv.2411.01394>}.")
+     "This package implements the \"Node + Edge Betweenness\" community detection
+algorithm for network analysis using igraph objects.  This algorithm combines
+node degree and betweenness centrality measures to identify communities within
+networks, with a gradient evident in social partitioning.  The package provides
+functions for implementation of the algorithm, visualization, and analysis of
+the resulting community structure along with the original dataset used in the
+publication.  Methods are based on results from Smith, Pittman and Xu (2026)
+<doi:10.1002/cjs.70060>.")
     (license license:expat)))
 
 (define-public r-iftpredictor

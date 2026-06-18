@@ -7592,13 +7592,13 @@ the updating process.  See e.g. TomÃ© et al (2015)
 (define-public r-nmdata
   (package
     (name "r-nmdata")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMdata" version))
        (sha256
-        (base32 "1k2v04qgsd12c0s1ysp6w3mam51ixgxpm8caki4pd6gpn5bdpl27"))))
+        (base32 "0jc7007x3gnpr3lkw4z1r1yis979g9bch16h942sjfkd7l6xnpic"))))
     (properties `((upstream-name . "NMdata")))
     (build-system r-build-system)
     (arguments
@@ -8801,6 +8801,41 @@ workflows leverages targets and nlmixr2 to ease reproducible workflows.
 nlmixr2targets ensures minimal rework in model development with nlmixr2 and
 targets by simplifying and standardizing models and datasets.")
     (license license:gpl2+)))
+
+(define-public r-nlmixr2save
+  (package
+    (name "r-nlmixr2save")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nlmixr2save" version))
+       (sha256
+        (base32 "1lfhjg789xc83d012250np1wrqxdidfml8lv7mjx5sw3hf07m91q"))))
+    (properties `((upstream-name . "nlmixr2save")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zip
+                             r-rxode2
+                             r-rcpp
+                             r-digest
+                             r-cli
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=nlmixr2save")
+    (synopsis "Save 'nlmixr2' Fits in a Format Readable Outside 'nlmixr2'")
+    (description
+     "This package provides tools to save nlmixr2 fitted models in a portable format
+readable outside of nlmixr2 and independent of the package version.  nlmixr2
+fits and compares nonlinear mixed-effects models in differential equations with
+flexible dosing information commonly seen in pharmacokinetics and
+pharmacodynamics (Almquist, Leander, and Jirstrand 2015
+<doi:10.1007/s10928-015-9409-1>).  Differential equation solving uses compiled C
+code from the rxode2 package (Wang, Hallow, and James 2015
+<doi:10.1002/psp4.12052>).")
+    (license license:expat)))
 
 (define-public r-nlmixr2rpt
   (package
@@ -17099,13 +17134,13 @@ statistics for teams, conferences, divisions, or custom groups of teams.")
 (define-public r-nca
   (package
     (name "r-nca")
-    (version "5.0.1")
+    (version "5.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NCA" version))
        (sha256
-        (base32 "01nhgcs8b83gbrml3vw0xmsjrarhr0xq3l3pk0i8b9l2kwwvsf5a"))))
+        (base32 "0cp85glpixkcrlirj7y6gd5f96n089sqiiwihxhi7r6l3hnh6fqh"))))
     (properties `((upstream-name . "NCA")))
     (build-system r-build-system)
     (arguments
@@ -17505,6 +17540,35 @@ to the sparse case by shrinking overdispersion towards 0 (Yu et al., 2013, ISSN:
 1367-4803) and offset parameter towards 1 (as proposed by Witten DM, 2011).  We
 support only the classification task with this version.")
     (license license:gpl2+)))
+
+(define-public r-nbkp
+  (package
+    (name "r-nbkp")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NBKP" version))
+       (sha256
+        (base32 "01v87hn27iqbjgh1jxnd24zp7rv5mshsa5sipzp868ys5554npjv"))))
+    (properties `((upstream-name . "NBKP")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tgp
+                             r-optimx
+                             r-lhs
+                             r-lattice
+                             r-gridextra
+                             r-dirmult))
+    (home-page "https://cran.r-project.org/package=NBKP")
+    (synopsis "Beta Kernel Process Modeling with Negative Binomial Response")
+    (description
+     "An extension of the Beta Kernel Process model designed to handle negative
+binomial responses for count data modeling, building upon Zhao, Qing and Xu
+(2025) <doi:10.48550/@code{arXiv.2508.10447>}.")
+    (license license:gpl3)))
 
 (define-public r-nberwp
   (package

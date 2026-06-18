@@ -8576,13 +8576,13 @@ workflows before relying on it in production.")
 (define-public r-llmr
   (package
     (name "r-llmr")
-    (version "0.6.4")
+    (version "0.8.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LLMR" version))
        (sha256
-        (base32 "0zzs98qjsdkci949j32gn67zqv0hkpmshwy4mlg2y7lh4cr99gym"))))
+        (base32 "0ip4a0ahs1vyrng6qrvz90960g767a5w3zhdl2niaf9i67bkn90q"))))
     (properties `((upstream-name . "LLMR")))
     (build-system r-build-system)
     (arguments
@@ -8601,6 +8601,8 @@ workflows before relying on it in production.")
                              r-future-apply
                              r-future
                              r-dplyr
+                             r-digest
+                             r-curl
                              r-cli
                              r-base64enc))
     (native-inputs (list r-knitr))

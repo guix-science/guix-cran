@@ -9944,18 +9944,19 @@ for functions provided by packages as well.")
 (define-public r-docovt
   (package
     (name "r-docovt")
-    (version "0.3")
+    (version "0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Docovt" version))
        (sha256
-        (base32 "05w3fgxp3zwmphz25vqir6s5jh7s0ff0gg85k559plvlx1ja0bcc"))))
+        (base32 "1qqrw8iiayzvascii3ygnyar9wbfabb55b93dzg84gka55vfs165"))))
     (properties `((upstream-name . "Docovt")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-rspectra r-rdpack))
     (home-page "https://cran.r-project.org/package=Docovt")
     (synopsis "Distributed Online Covariance Matrix Tests")
     (description
@@ -15886,13 +15887,13 @@ microarray, RNA-seq, proteomics, or phosphoproteomics data.  See Yang P et al
 (define-public r-directional
   (package
     (name "r-directional")
-    (version "7.5")
+    (version "7.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Directional" version))
        (sha256
-        (base32 "04kv5srw3jln8kd8fwfb8lqx512lcd7czkg49xbvwbz5jw6d8kbb"))))
+        (base32 "0dqzbqwp42fwcnm75w6vzdhxwnxk3kgfym1pw3c7i207d34g2qz9"))))
     (properties `((upstream-name . "Directional")))
     (build-system r-build-system)
     (arguments
@@ -15904,6 +15905,7 @@ microarray, RNA-seq, proteomics, or phosphoproteomics data.  See Yang P et al
                              r-rgl
                              r-rfast2
                              r-rfast
+                             r-rangen
                              r-magrittr
                              r-ggplot2
                              r-foreach
@@ -15937,9 +15939,9 @@ Directional Data Modeling\".  Australian & New Zealand Journal of Statistics,
 67(1): 77--103. <doi:10.1111/anzs.12434>.  g) Tsagris M., Papastamoulis P. and
 Kato S. (2025). \"Directional data analysis: spherical Cauchy or Poisson
 kernel-based distribution\".  Statistics and Computing, 35:51.
-<doi:10.1007/s11222-025-10583-0>.  h) Alzeley O. and Tsagris (2026).  On the
-generalized circular projected Cauchy distribution.
-<doi:10.48550/@code{arXiv.2603.04030>}.")
+<doi:10.1007/s11222-025-10583-0>.  h) Alzeley O. and Tsagris (2026). \"On the
+generalized circular projected Cauchy distribution\".  Mathematics, 14(11): 1934.
+<doi:10.3390/math14111934>.")
     (license license:gpl2+)))
 
 (define-public r-directeffects
@@ -18323,13 +18325,13 @@ processing for reading and saving DICOM images.")
 (define-public r-diceview
   (package
     (name "r-diceview")
-    (version "3.2")
+    (version "4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DiceView" version))
        (sha256
-        (base32 "0dhx2x5rh1c1yxk4lmxrllc3cis59jphjfgr80znqqlmqli40c11"))))
+        (base32 "17rddczfhngm2s6bplys29cqxz09p1anc921vmyfixpch4bw60zj"))))
     (properties `((upstream-name . "DiceView")))
     (build-system r-build-system)
     (arguments
@@ -24434,13 +24436,13 @@ software at <https://legallab.github.io/delimtools/articles/install.html>.")
 (define-public r-deliberr
   (package
     (name "r-deliberr")
-    (version "0.1.0")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "deliberr" version))
        (sha256
-        (base32 "0gggyhfc0a7fq0az6g4yfkkii1pvzcz1bx4f386q02lar9cnmaav"))))
+        (base32 "1wlsx4ipykdnlr8c59pf41vry49rgp4p9x4rr1790qhb3j628yyk"))))
     (properties `((upstream-name . "deliberr")))
     (build-system r-build-system)
     (arguments
@@ -24470,7 +24472,8 @@ intersubjective correlations (IC), generation of large-language model (LLM)
 survey data, and permutation tests are supported.  Example datasets and a
 graphical user interface (GUI) are also available to support analysis.  For more
 information, see Niemeyer and Veri (2022)
-<doi:10.1093/oso/9780192848925.003.0007>.")
+<doi:10.1093/oso/9780192848925.003.0007>.  For an alternative version of this
+dataset, see Niemeyer et al. (2024) <doi:10.1017/S0003055423000023>.")
     (license license:expat)))
 
 (define-public r-delayedeffect-design

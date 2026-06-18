@@ -10851,13 +10851,13 @@ print some objects using an appropriate format such as Markdown or @code{LaTeX}.
 (define-public r-printify
   (package
     (name "r-printify")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "printify" version))
        (sha256
-        (base32 "0xp7llx68gwx8lrl91nfxribyvvawmz07yhcq8lfqi1adc9zc71m"))))
+        (base32 "04z5d7azrpy05b8w5g03zzrnglw6h9zn74y0nw6hxfs6z3fj4bsr"))))
     (properties `((upstream-name . "printify")))
     (build-system r-build-system)
     (arguments
@@ -23920,13 +23920,13 @@ Ordinal Indicators.\".")
 (define-public r-plsrglm
   (package
     (name "r-plsrglm")
-    (version "1.7.0")
+    (version "1.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plsRglm" version))
        (sha256
-        (base32 "1hrx9idfv9xbkap2yzp710y0a2zbr6r238gyz40mzkrbnv7fiwp1"))))
+        (base32 "1693vl7zvgxvxplgyj4092cs0rcgrq8gdzi40fragznv5gwchnl3"))))
     (properties `((upstream-name . "plsRglm")))
     (build-system r-build-system)
     (arguments
@@ -27191,6 +27191,31 @@ database generating by applying the main function to the full CRAN archive,
 enabling the statistical properties of any package to be compared with all other
 CRAN packages.")
     (license license:gpl3)))
+
+(define-public r-pkgsite
+  (package
+    (name "r-pkgsite")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pkgsite" version))
+       (sha256
+        (base32 "058fx13bkjdgir3zvba4rlc9hg81bpxdrj3bbi4x0zdix4r6z7z4"))))
+    (properties `((upstream-name . "pkgsite")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml r-rlang r-purrr r-fs r-cli))
+    (home-page "https://github.com/edgararuiz/pkgsite")
+    (synopsis "Convert the Reference Pages into 'Quarto' Files")
+    (description
+     "Makes it easier to create a Quarto website for an R package.  Converts R
+documentation ('Rd') files into Quarto Markdown documents individually.
+Supports configuration via the _quarto.yml file and groups functions using
+roxygen2 family tags.")
+    (license license:expat)))
 
 (define-public r-pkgsearch
   (package
@@ -37273,13 +37298,13 @@ parameters are included.")
 (define-public r-peiman2
   (package
     (name "r-peiman2")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PEIMAN2" version))
        (sha256
-        (base32 "0whspw4d8qvjmhw91i76kx0zjfj1f0s7hpnzpj2524gw0pg1y4g7"))))
+        (base32 "1mbcdm0q3smdk57njr861kzq5054pspbpmpy5bka9jkgmbz4axgd"))))
     (properties `((upstream-name . "PEIMAN2")))
     (build-system r-build-system)
     (arguments
@@ -37290,6 +37315,7 @@ parameters are included.")
                              r-purrr
                              r-magrittr
                              r-lifecycle
+                             r-jsonlite
                              r-glue
                              r-ggplot2
                              r-forcats
@@ -39743,13 +39769,13 @@ several S&P 500 data sets.")
 (define-public r-pcps
   (package
     (name "r-pcps")
-    (version "1.0.8")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PCPS" version))
        (sha256
-        (base32 "0b96fgmh9qqywipd1py70n7x3v2490p82arxrbykps65wiaklj87"))))
+        (base32 "0i1cmcnjmgnxpw2mvpp9shy3lzay8g0z2qdhsvs9h6jp8mky1xsl"))))
     (properties `((upstream-name . "PCPS")))
     (build-system r-build-system)
     (arguments

@@ -3912,13 +3912,13 @@ Wickham et al (2019) <doi:10.21105/joss.01686>.")
 (define-public r-ordpanel
   (package
     (name "r-ordpanel")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ordPanel" version))
        (sha256
-        (base32 "16d0l28ak8mpl08ansg29gpx5h982hflqs32p10sd4yysxjjwkyr"))))
+        (base32 "0jzgij7arb3wlax08bf125vx9psliy5gcisn565dnnlw31zwm2fi"))))
     (properties `((upstream-name . "ordPanel")))
     (build-system r-build-system)
     (arguments
@@ -10640,6 +10640,45 @@ a dataset.  Funded by the National Renewable Energy Laboratory and Possibility
 Lab, maintained by the Moore Institute for Plastic Pollution Research.")
     (license license:expat)))
 
+(define-public r-ondisc
+  (package
+    (name "r-ondisc")
+    (version "1.3.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ondisc" version))
+       (sha256
+        (base32 "1xzj9qa44p43hhak33gjj1fqzmi4jbs54kwncbgx9mkhzanqhk6i"))))
+    (properties `((upstream-name . "ondisc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rhdf5lib
+                             r-readr
+                             r-rcpp
+                             r-matrix
+                             r-dplyr
+                             r-data-table
+                             r-crayon))
+    (native-inputs (list r-knitr))
+    (home-page "https://timothy-barry.github.io/ondisc/")
+    (synopsis
+     "Algorithms and Data Structures for Large Single-Cell Expression Matrices")
+    (description
+     "Single-cell datasets are growing in size, posing challenges as well as
+opportunities for genomics researchers.  ondisc is an R package that facilitates
+analysis of large-scale single-cell data out-of-core on a laptop or distributed
+across tens to hundreds of processors on a cluster or cloud.  In both of these
+settings, ondisc requires only a few gigabytes of memory, even if the input data
+are tens of gigabytes in size.  ondisc mainly is oriented toward single-cell
+CRISPR screen analysis, but also can be used for single-cell differential
+expression and single-cell co-expression analyses.  ondisc is powered by several
+new, efficient algorithms for manipulating and querying large, sparse expression
+matrices.")
+    (license license:expat)))
+
 (define-public r-oncotree
   (package
     (name "r-oncotree")
@@ -11319,13 +11358,13 @@ concept resolution with automatic pagination.")
 (define-public r-omopgenerics
   (package
     (name "r-omopgenerics")
-    (version "1.3.7")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "omopgenerics" version))
        (sha256
-        (base32 "1pb6n2qmqi2jygcw10xbpj1i6iy7iaamnf1s160sp69h8ycxbdpx"))))
+        (base32 "0pszwpzz9r4ljvjr7l850iczs0rainyra3sv62zkp8ij8lq9yzrn"))))
     (properties `((upstream-name . "omopgenerics")))
     (build-system r-build-system)
     (arguments
@@ -14199,6 +14238,34 @@ stored in a MS SQL Server database.  For more details see Marcon (2021)
     (description
      "Make querying on OData easier.  It exposes an O@code{DataQuery} object that can
 be manipulated and provides features such as selection, filtering and ordering.")
+    (license license:gpl3)))
+
+(define-public r-oda
+  (package
+    (name "r-oda")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oda" version))
+       (sha256
+        (base32 "05s4c1kmrxrrfavs3wb0j0bg9kvr8dswnnzryvfl7knsnprk9yns"))))
+    (properties `((upstream-name . "oda")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://njrhodes.github.io/oda_r/")
+    (synopsis "Pure-R Core Engine for Optimal Data Analysis (ODA / MultiODA)")
+    (description
+     "Pure-R implementation of univariate binary-class ODA (@code{UniODA}), univariate
+multiclass ODA (@code{MultiODA}), and binary Classification Tree Analysis (CTA).
+ Supports ordered and categorical attributes, priors-on inverse-frequency
+weighting, MAXSENS / SAMPLEREP / first-identified tie-breaking, true
+leave-one-out cross-validation, and Monte Carlo Fisher-randomization p-values.
+Covered @code{UniODA}, @code{MultiODA}, and binary CTA fixtures are tested for
+parity against @code{MegaODA.exe} and CTA.exe outputs.")
     (license license:gpl3)))
 
 (define-public r-od

@@ -16463,6 +16463,41 @@ symmetric Vorob'ev expectation and deviation, M. Binois, D. Ginsbourger, O.
 Roustant (2015) <doi:10.1016/j.ejor.2014.07.032>, among others.")
     (license license:lgpl2.0+)))
 
+(define-public r-moonshiner
+  (package
+    (name "r-moonshiner")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MoonShineR" version))
+       (sha256
+        (base32 "18s34skhniiz9hs2hp5p07jyli01nrjgh7cmzxndk56yk8m5901h"))))
+    (properties `((upstream-name . "MoonShineR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-suncalc
+                             r-redas
+                             r-progress
+                             r-magrittr
+                             r-lubridate
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=MoonShineR")
+    (synopsis
+     "Predict Moonlight, Sunlight, and/or Twilight Ground Illuminance")
+    (description
+     "Predicts ground-level illuminance from moonlight, sunlight, and twilight for
+specified locations and time periods.  The package is intended for field studies
+in ecology and behavior where natural light levels are used as predictor
+variables.  See Poon et al. (2024) <doi:10.1111/2041-210X.14299>.  Calculations
+use astronomical quantities from suncalc and published illuminance models,
+including Austin et al. (1976) <doi:10.2307/2402251> and Seidelmann (1992)
+<ISBN:0935702687>.")
+    (license license:gpl3)))
+
 (define-public r-moonlit
   (package
     (name "r-moonlit")
@@ -26908,6 +26943,32 @@ based on the C-matrix and custom contrast vectors is used to compute
 efficiencies.  The output includes the generated design, finite-field metadata,
 confounding summaries, OFS diagnostics, and efficiency results.")
     (license license:gpl3)))
+
+(define-public r-mixedclust
+  (package
+    (name "r-mixedclust")
+    (version "1.0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mixedClust" version))
+       (sha256
+        (base32 "1khl2x72c12s59vzgb48vbl3s9nd467n9mk9h7v0ki8mik4h2sm1"))))
+    (properties `((upstream-name . "mixedClust")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppprogress r-rcpparmadillo r-rcpp r-fda))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=mixedClust")
+    (synopsis "Co-Clustering of Mixed Type Data")
+    (description
+     "Implementation of the co-clustering method for mixed type data proposed in M.
+Selosse, J. Jacques, C. Biernacki (2018) <https://hal.science/hal-01893457>.  It
+consists in clustering simultaneously the rows (observations) and the columns
+(features) of a heterogeneous data set.")
+    (license license:gpl2+)))
 
 (define-public r-mixedcca
   (package
@@ -52069,20 +52130,19 @@ departments, provinces and districts of Peru.")
 (define-public r-mapspain
   (package
     (name "r-mapspain")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapSpain" version))
        (sha256
-        (base32 "19klzlcf27zv20q8s2jk2v7vv7bwj6247qn5wgfqy9q0zi5p0yjz"))))
+        (base32 "0c2l5m96w4z93r55q94d28a0jfcqa6lzbjalbm95mh2wzkag5sgs"))))
     (properties `((upstream-name . "mapSpain")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tibble
-                             r-testthat
                              r-terra
                              r-sf
                              r-rappdirs
@@ -52095,13 +52155,14 @@ departments, provinces and districts of Peru.")
                              r-cli))
     (native-inputs (list r-quarto))
     (home-page "https://ropenspain.github.io/mapSpain/")
-    (synopsis "Administrative Boundaries of Spain")
+    (synopsis "Administrative Boundaries and Static Map Tiles for Spain")
     (description
-     "Administrative Boundaries of Spain at several levels (Autonomous Communities,
-Provinces, Municipalities) based on the GISCO Eurostat database
-<https://ec.europa.eu/eurostat/web/gisco> and @code{CartoBase} SIANE from
-Instituto Geografico Nacional <https://www.ign.es/>.  It also provides a leaflet
-plugin and the ability of downloading and processing static tiles.")
+     "Administrative boundaries of Spain at several levels (Autonomous Communities and
+Cities, provinces, municipalities and NUTS'), based on GISCO from Eurostat
+<https://ec.europa.eu/eurostat/web/gisco> and @code{CartoBase} ANE from
+Instituto GeogrÃ¡fico Nacional <https://www.ign.es/>.  Includes tools to
+download and process static map tiles and a leaflet plugin for Spanish public
+administration tile providers.")
     (license license:gpl3)))
 
 (define-public r-mapsf

@@ -5526,19 +5526,20 @@ best-known lover of doughnuts.")
 (define-public r-home
   (package
     (name "r-home")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HOME" version))
        (sha256
-        (base32 "1mwjb3ga58aj2kw5kfycyblzjhgvk9l4n7yj9mcf9f7zx6zc8297"))))
+        (base32 "1r2yqp27h66rx0391ddz2gylp79kchjgc87l7zak2pqx0fclwya6"))))
     (properties `((upstream-name . "HOME")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-gridextra r-ggplot2))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/tamaravaz/HOME")
     (synopsis "Harmonized Orphanhood Mortality Estimation")
     (description
@@ -11303,6 +11304,26 @@ R-Rust integration <https://jeroen.github.io/erum2018/>; for a real world
 use-case, see the gifski package on CRAN'.")
     (license license:expat)))
 
+(define-public r-hellokitty
+  (package
+    (name "r-hellokitty")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hellokitty" version))
+       (sha256
+        (base32 "1b9hrga9jbr0d8gn6angxhxaqx32k0l7q5ahdhnrfwizkxhir0cw"))))
+    (properties `((upstream-name . "hellokitty")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/abigailkeller/hellokitty")
+    (synopsis "Hello Kitty Color Palette Generator")
+    (description "Palettes generated from Hello Kitty cartoon.")
+    (license license:expat)))
+
 (define-public r-hellojavaworld
   (package
     (name "r-hellojavaworld")
@@ -12367,6 +12388,33 @@ analysis, motion sensing, and biomechanics experiments.  Designed for
 researchers, analysts, and students, the package facilitates exploration and
 analysis of data related to health monitoring, physical activity, and
 rehabilitation.")
+    (license license:expat)))
+
+(define-public r-healthmarkers
+  (package
+    (name "r-healthmarkers")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HealthMarkers" version))
+       (sha256
+        (base32 "0n5fgbiqag3w07dszwc23cc02kbcc1x3xcrpsjzcyagdfkbfd8r9"))))
+    (properties `((upstream-name . "HealthMarkers")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs r-tibble r-rlang r-rdpack r-dplyr))
+    (home-page "https://sufyansuleman.github.io/HealthMarkers/")
+    (synopsis "Clinical and Metabolic Biomarker Calculation Toolkit")
+    (description
+     "Computes specialist biomarker indices and risk scores for metabolic,
+cardiovascular, renal, hepatic, inflammatory, frailty, and psychiatric health
+assessment.  Includes fasting and OGTT insulin sensitivity/resistance indices,
+ASCVD/QRISK3/KFRE risk equations, liver and kidney markers, frailty and
+comorbidity indices, biofluid marker panels, and utilities for column mapping,
+normalization, imputation, and combined marker dispatch.")
     (license license:expat)))
 
 (define-public r-healthiar

@@ -18184,6 +18184,30 @@ with super fast gigabyte-level multi-threaded reading/writing via
 complex, integer, logical, and raw).")
     (license license:lgpl3)))
 
+(define-public r-fileaccess
+  (package
+    (name "r-fileaccess")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fileaccess" version))
+       (sha256
+        (base32 "05zsf19i40isycchizyfnxzpqqxwksk276fjvncc3wdy027fj1az"))))
+    (properties `((upstream-name . "fileaccess")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=fileaccess")
+    (synopsis "File and Directory Access Validation")
+    (description
+     "This package provides utility functions to validate read, write, execute,
+network, directory, and file access for local and Universal Naming Convention
+(UNC) network paths.  Useful for pre-flight checks before file operations in
+data pipelines.")
+    (license license:expat)))
+
 (define-public r-file2meco
   (package
     (name "r-file2meco")
