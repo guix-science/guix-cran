@@ -2077,13 +2077,13 @@ Serrano, and Foster (2004) <doi:10.1890/02-4057>.")
 (define-public r-export
   (package
     (name "r-export")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "export" version))
        (sha256
-        (base32 "18wnz1z7wl20k4vkbnb9bzcnxlcwwr33qcbar7hwfrhdkxnh81ys"))))
+        (base32 "1l1vhf8krv5abrrpk0nk31an3cbahyrm4s1bp3mlzbck3pbsmsjy"))))
     (properties `((upstream-name . "export")))
     (build-system r-build-system)
     (arguments
@@ -5938,13 +5938,13 @@ Monzingo (2005) \"Hand and Suit Patterns\"
 (define-public r-eve
   (package
     (name "r-eve")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eve" version))
        (sha256
-        (base32 "1miyh27fpa0q2ban4cq7slk27bx54m6phl4jjr12z1vkj18jlpl9"))))
+        (base32 "059nhqcnnfxzi6r78zl1n4bihmwx960yrfa18r7k2q20da9brwqq"))))
     (properties `((upstream-name . "eve")))
     (build-system r-build-system)
     (arguments
@@ -6656,13 +6656,13 @@ teams, players and games.")
 (define-public r-eurodata
   (package
     (name "r-eurodata")
-    (version "1.7.0")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eurodata" version))
        (sha256
-        (base32 "0xw6b178jpg4dlgx6af1bh6z2m6apd12lbz03yzp7ay93ghf7zsi"))))
+        (base32 "01bhcgvln2rsp3l37n5cklgrc1f21s568zp9ija0ll4gm05rj90q"))))
     (properties `((upstream-name . "eurodata")))
     (build-system r-build-system)
     (arguments
@@ -6675,7 +6675,8 @@ teams, players and games.")
                              r-r-utils
                              r-memoise
                              r-magrittr
-                             r-data-table))
+                             r-data-table
+                             r-curl))
     (home-page "https://github.com/alekrutkowski/eurodata/")
     (synopsis "Fast and Easy Eurostat Data Import and Search")
     (description
@@ -9565,13 +9566,13 @@ networks, developed in Vu et al. (2013)
 (define-public r-ergmargins
   (package
     (name "r-ergmargins")
-    (version "1.6.1")
+    (version "1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ergMargins" version))
        (sha256
-        (base32 "1v700vqhkrin2nq3sv9q18xlipyj27y1lg2s7jh6qxyr3a0qx5hj"))))
+        (base32 "166ksyza1kxaa3sh3kqwz4spqi09d40br58xyr1yv4lanswdzz2n"))))
     (properties `((upstream-name . "ergMargins")))
     (build-system r-build-system)
     (arguments
@@ -16035,13 +16036,13 @@ data.")
 (define-public r-empiricaldynamics
   (package
     (name "r-empiricaldynamics")
-    (version "0.1.3")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EmpiricalDynamics" version))
        (sha256
-        (base32 "1sid4x1v8yvssn5fqa2zfsxhpdm8i4bfhq87f42kgcyfgd06h6xr"))))
+        (base32 "0962nykv9003g1ki5xxkcs5x385yxmxy1mvi4dvca5irnqa8906s"))))
     (properties `((upstream-name . "EmpiricalDynamics")))
     (build-system r-build-system)
     (arguments
@@ -16052,7 +16053,6 @@ data.")
                              r-signal
                              r-minpack-lm
                              r-lmtest
-                             r-juliacall
                              r-gridextra
                              r-ggplot2
                              r-cvxr))
@@ -21777,6 +21777,44 @@ Computer and Information Literacy Study (ICILS), and Civic Education Study
      "Streamlines the fitting of common Bayesian item response models using Stan.")
     (license license:bsd-3)))
 
+(define-public r-edr4r
+  (package
+    (name "r-edr4r")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "edr4r" version))
+       (sha256
+        (base32 "0ym2vq84him1aypi5wn714y3pyxdqs0lk82jickn1hwc4gqmkgbc"))))
+    (properties `((upstream-name . "edr4r")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs
+                             r-tibble
+                             r-rlang
+                             r-purrr
+                             r-jsonlite
+                             r-httr2
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ksonda/edr4r")
+    (synopsis
+     "Client for the 'OGC API - Environmental Data Retrieval' Standard")
+    (description
+     "This package provides a tidy R client for services implementing the OGC API -
+Environmental Data Retrieval ('EDR') standard.  It is general purpose, but most
+of its real-world use is against in-situ monitoring networks (stream gauges,
+weather stations, snow and reservoir telemetry) that expose their stations and
+time series as EDR collections.  Known working endpoints include the USGS
+waterdata OGC API and the Western Water Datahub'.  Provides discovery, query,
+and parsing helpers for the locations, items, position, area, cube, radius,
+trajectory, and corridor query types.  Returns @code{CoverageJSON} as tidy
+tibble rows and @code{GeoJSON} as sf objects.")
+    (license license:expat)))
+
 (define-public r-edotrans
   (package
     (name "r-edotrans")
@@ -23358,13 +23396,13 @@ variables.")
 (define-public r-ecotraj
   (package
     (name "r-ecotraj")
-    (version "1.2.0")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecotraj" version))
        (sha256
-        (base32 "0rhj4sjpvy3lfg4ixgw2bm2vbg16jyvxryr58qi7wx34qhigp1rz"))))
+        (base32 "02lma2kp5q4w938bpdk1gwq5i03n0ydva53cvyx4zsbqn25cp7f3"))))
     (properties `((upstream-name . "ecotraj")))
     (build-system r-build-system)
     (arguments
@@ -23378,12 +23416,13 @@ variables.")
 trajectories on a chosen multivariate space, by providing a set of trajectory
 metrics and visual representations [De Caceres et al. (2019)
 <doi:10.1002/ecm.1350>; and Sturbois et al. (2021)
-<doi:10.1016/j.ecolmodel.2020.109400>].  Includes functions to estimate metrics
-for individual trajectories (length, directionality, angles, ...) as well as
-metrics to relate pairs of trajectories (dissimilarity and convergence).
-Functions are also provided to estimate the ecological quality of ecosystem with
-respect to reference conditions [Sturbois et al. (2023)
-<doi:10.1002/ecs2.4726>].")
+<doi:10.1016/j.ecolmodel.2020.109400>; Djeghri et al. (2026a)
+<doi:10.1002/ecm.70058>; Djeghri et al. (2026b) <doi:10.24072/pcjournal.736>].
+Includes functions to estimate metrics for individual trajectories (length,
+directionality, angles, ...) as well as metrics to relate pairs of trajectories
+(dissimilarity and convergence).  Functions are also provided to estimate the
+ecological quality of ecosystem with respect to reference conditions [Sturbois
+et al. (2023) <doi:10.1002/ecs2.4726>].")
     (license license:gpl2+)))
 
 (define-public r-ecotoxr
@@ -27159,13 +27198,13 @@ interface for batch processing.")
 (define-public r-easyraschbayes
   (package
     (name "r-easyraschbayes")
-    (version "0.2.0.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "easyRaschBayes" version))
        (sha256
-        (base32 "0nhlcc1mj0jicn1avr075g3a6bhkymv1f93rwrgzbqsi5dyvzp50"))))
+        (base32 "0675gnzj0w80clb0sqlsn0ax72c8lijdchclnmpm70lgl7smd61h"))))
     (properties `((upstream-name . "easyRaschBayes")))
     (build-system r-build-system)
     (arguments

@@ -16943,20 +16943,22 @@ efficiency, and cascade-failure analysis.")
 (define-public r-finna
   (package
     (name "r-finna")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "finna" version))
        (sha256
-        (base32 "0km33va3l3frjq1wb73s3v2krczq2hb0axnhdyg5mravayz6cqni"))))
+        (base32 "168i9lp3026c9k5rbp09r6lvccj9mvyz836v4hy9l928g016fib3"))))
     (properties `((upstream-name . "finna")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-xml2
+                             r-tidyr
                              r-tibble
+                             r-reshape2
                              r-readr
                              r-purrr
                              r-progress
@@ -16967,7 +16969,7 @@ efficiency, and cascade-failure analysis.")
                              r-dplyr
                              r-curl))
     (native-inputs (list r-knitr))
-    (home-page "https://ropengov.github.io/finna/")
+    (home-page "https://fennicahub.github.io/finna/")
     (synopsis "Access the 'Finna' API")
     (description
      "This package provides functions to access and retrieve metadata from the Finna
@@ -24206,13 +24208,13 @@ tables and summaries of data.")
 (define-public r-fastreg
   (package
     (name "r-fastreg")
-    (version "0.13.8")
+    (version "0.14.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastreg" version))
        (sha256
-        (base32 "1wxn3k9n9j9fikqv1n2nxhlrksigjkwiwk98y1bd2zg39zmbj96m"))))
+        (base32 "1fc7dcmz03qdy5rsaypl66d488q8nzq35yqwvpf9lqf7q34rsawx"))))
     (properties `((upstream-name . "fastreg")))
     (build-system r-build-system)
     (arguments
@@ -29225,6 +29227,47 @@ with the modelling interface of fabletools'.  This extends prophet to provide
 enhanced model specification and management, performance evaluation methods, and
 model combination tools.")
     (license license:gpl3)))
+
+(define-public r-fable-intermittent
+  (package
+    (name "r-fable-intermittent")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fable.intermittent" version))
+       (sha256
+        (base32 "1ybjcgng5mi5wp5s30akjlck3qvvb9s13i4djxbs6b1zwwafwdxl"))))
+    (properties `((upstream-name . "fable.intermittent")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tsibble
+                             r-rlang
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-nloptr
+                             r-fabletools
+                             r-distributional))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/StefanoDamato/fable.intermittent")
+    (synopsis "Forecasting Models for Intermittent Time Series")
+    (description
+     "Extends the fable framework to support forecasting methods specifically designed
+for intermittent time series data, where demand occurs sporadically with many
+zero values.  All methods produce probabilistic forecasts returned as
+distributional objects.  The returned forecasts can be used to evaluate
+accuracy, plot and print the results seamlessly with fable'.  The methods
+include: Harvey, Fernandes (1989) <doi:10.1080/07350015.1989.10509750>,
+Willemain, Smart, Schwarz (2004) <doi:10.1016/S0169-2070(03)00013-X>, Zhou,
+Viswanathan (2011) <doi:10.1016/j.ijpe.2010.09.021>, Snyder, Ord, Beaumont
+(2012) <doi:10.1016/j.ijforecast.2011.03.009>, Kolassa (2016)
+<doi:10.1016/j.ijforecast.2015.12.004>, Hasni, Aguir, Babai, Jemai (2019)
+<doi:10.1080/00207543.2018.1424375>, Damato, Azzimonti, Corani (2025)
+<doi:10.1016/j.ijforecast.2025.10.001>, Sbrana (2025)
+<doi:10.1080/01605682.2025.2569661>.")
+    (license license:lgpl3+)))
 
 (define-public r-fable-bayesrecon
   (package

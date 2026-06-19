@@ -27,6 +27,7 @@
   #:use-module (gnu packages tcl)
   #:use-module (gnu packages python)
   #:use-module (gnu packages statistics)
+  #:use-module (gnu packages prolog)
   #:use-module (gnu packages tbb)
   #:use-module (gnu packages package-management)
   #:use-module (gnu packages machine-learning)
@@ -11794,6 +11795,38 @@ performance.  For more information see, Markowitz, H.M. (1952),
 <http://poppler.freedesktop.org/> for more information on Poppler.")
     (license license:gpl2)))
 
+(define-public r-rpolyhedra
+  (package
+    (name "r-rpolyhedra")
+    (version "0.6.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Rpolyhedra" version))
+       (sha256
+        (base32 "1phh2xc56v3zznv655bb461kyx4pb14pbpi3mblmr84p6w4iw7lw"))))
+    (properties `((upstream-name . "Rpolyhedra")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml
+                             r-stringr
+                             r-rgl
+                             r-r6
+                             r-lgr
+                             r-jsonlite
+                             r-geometry
+                             r-dplyr
+                             r-digest))
+    (native-inputs (list r-knitr))
+    (home-page "https://docs.ropensci.org/Rpolyhedra/")
+    (synopsis "Polyhedra Database")
+    (description
+     "This package provides a polyhedra database scraped from various sources as R6
+objects and rgl visualizing capabilities.")
+    (license license:expat)))
+
 (define-public r-rpointcloud
   (package
     (name "r-rpointcloud")
@@ -12008,6 +12041,31 @@ al. (2018) <doi:10.1007/s13253-018-0328-7>.  Note that parts of the code
 underlying rplum are derived from the rbacon package by the same authors, and
 there remains a degree of overlap between the two packages.")
     (license license:gpl2+)))
+
+(define-public r-rpls
+  (package
+    (name "r-rpls")
+    (version "0.6.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rpls" version))
+       (sha256
+        (base32 "0r3y63pi4d7hfzs53d9w23ymmk86gvm85v0dx7n1gicha5nn1mk8"))))
+    (properties `((upstream-name . "rpls")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-robustbase r-pcapp))
+    (home-page "https://cran.r-project.org/package=rpls")
+    (synopsis "Robust Partial Least Squares")
+    (description
+     "This package provides a robust Partial Least-Squares (PLS) method is implemented
+that is robust to outliers in the residuals as well as to leverage points.  A
+specific weighting scheme is applied which avoids iterations, and leads to a
+highly efficient robust PLS estimator.")
+    (license license:gpl3+)))
 
 (define-public r-rplotterpkg
   (package
@@ -14962,6 +15020,32 @@ analysis of continuous outcomes introduced by Tan et al. (2017)
 residuals and estimates in linear scales are available from the package, and
 outcomes with ties are supported.")
     (license license:lgpl3)))
+
+(define-public r-rolog
+  (package
+    (name "r-rolog")
+    (version "0.9.27")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rolog" version))
+       (sha256
+        (base32 "1ckkqh6dm3d1p8dgm0adyd2plgwi06fsh2id1yfsz5b3ld4zibkq"))))
+    (properties `((upstream-name . "rolog")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list swi-prolog))
+    (propagated-inputs (list r-rcpp))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/mgondan/rolog")
+    (synopsis "Query 'SWI'-'Prolog' from R")
+    (description
+     "This R package connects to SWI-Prolog, <https://www.swi-prolog.org/>, so that R
+can send deterministic and non-deterministic queries to prolog (consult,
+query/submit, once, findall).")
+    (license (license:fsdg-compatible "FreeBSD"))))
 
 (define-public r-rolocisccnbs
   (package
@@ -57515,6 +57599,33 @@ of ranks scaled to interval [0,1].  The relative hazard is plotted in respect to
 the reference hazard, which can bee.g. the hazard related to the median of the
 covariate.")
     (license license:gpl2)))
+
+(define-public r-rankgwask
+  (package
+    (name "r-rankgwask")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RankGWASK" version))
+       (sha256
+        (base32 "0zzifqdm2p7igfnnjf8hah1qcwylbhl8jabw8if5k48mzw2k6vjh"))))
+    (properties `((upstream-name . "RankGWASK")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-qqman))
+    (home-page "https://cran.r-project.org/package=RankGWASK")
+    (synopsis "Ranked Set Sampling Genome-Wide Association Studies Toolkit")
+    (description
+     "This package provides methods for genome-wide association studies (GWAS) using
+ranked set sampling (RSS) designs.  The package includes tools for ranked set
+sample selection, standard and RSS-based association analyses, simulation of
+genotype and phenotype data, statistical comparison of RSS and simple random
+sampling (SRS) approaches, visualization of GWAS results, and power analysis
+under alternative sampling schemes.")
+    (license license:gpl3)))
 
 (define-public r-rankfd
   (package

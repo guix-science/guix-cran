@@ -8964,6 +8964,54 @@ Stock and Yogo (2005) <doi:10.1017/CBO9780511614491.006> tests for weak
 instruments in R.")
     (license license:gpl3+)))
 
+(define-public r-craftgrn
+  (package
+    (name "r-craftgrn")
+    (version "0.1.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "craftgrn" version))
+       (sha256
+        (base32 "0w7lynq6pji4mc9amh9h55ccnq1m7wqm49aqf5mv1g2fvk2h9w4z"))))
+    (properties `((upstream-name . "craftgrn")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml
+                             r-tidyr
+                             r-tibble
+                             r-readr
+                             r-rcpp
+                             r-pheatmap
+                             r-ldavis
+                             r-jsonlite
+                             r-ggplot2
+                             r-future-apply
+                             r-future
+                             r-enrichr
+                             r-dplyr
+                             r-digest
+                             r-data-table
+                             r-config
+                             r-cluster
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://oncologylab.github.io/craftgrn/")
+    (synopsis
+     "Integrative Chromatin Accessibility and RNA Framework for Gene Regulatory Networks")
+    (description
+     "This package provides a reproducible framework for constructing and comparing
+gene regulatory networks by integrating chromatin accessibility footprint scores
+with matched RNA expression data.  It implements context-specific enhancer-gene
+linking, transcription factor focused network analysis, differential network
+analysis, and regulatory topic modeling workflows for systematic exploration of
+gene regulation across conditions.  Methodological background is available at
+<doi:10.1038/s41467-020-18035-1>, <https://www.jmlr.org/papers/v3/blei03a.html>,
+and <doi:10.48550/@code{arXiv.1510.08628>}.")
+    (license license:gpl3+)))
+
 (define-public r-crabs
   (package
     (name "r-crabs")
@@ -34249,6 +34297,43 @@ Bagnouls-Gaussen.")
      "Supports analysis of trends in climate change, ecological and crop modelling.")
     (license license:expat)))
 
+(define-public r-climatestatsr
+  (package
+    (name "r-climatestatsr")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "climatestatsr" version))
+       (sha256
+        (base32 "143y2hyd1c07ic0av944jvrjlsf1hi8g76mp1invlp6xvm1cy3xl"))))
+    (properties `((upstream-name . "climatestatsr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=climatestatsr")
+    (synopsis "Statistical Tools for Climate Change Analysis")
+    (description
+     "This package provides a comprehensive collection of statistical functions for
+climate change research.  Provides tools for temporal trend detection based on
+the Mann-Kendall (MK) test (Mann 1945 <doi:10.2307/1907187>; Kendall 1975,
+ISBN:0852641990) and Sen's slope (Sen 1968 <doi:10.2307/2285891>), spatial
+autocorrelation using Moran's I (Moran 1950 <doi:10.2307/2332142>), extreme
+value analysis using the Generalised Extreme Value (GEV) distribution and
+Peaks-Over-Threshold (POT) method (Coles 2001 <doi:10.1007/978-1-4471-3675-0>),
+standardised drought indices including the Standardised Precipitation Index
+(SPI; @code{McKee} et al.  1993) and the Standardised Precipitation
+Evapotranspiration Index (SPEI; Vicente-Serrano et al.  2010
+<doi:10.1175/2009JCLI2909.1>), and formal detection-attribution methods via
+optimal fingerprint regression and Empirical Orthogonal Function (EOF) analysis
+(Allen and Tett 1999 <doi:10.1007/s003820050291>), and apparent temperature via
+the heat index (Steadman 1979
+<doi:10.1175/1520-0450(1979)018%3C0861:TAOSPI%3E2.0.CO;2>).  Suitable for both
+station-level time series and gridded climate fields.")
+    (license license:gpl3)))
+
 (define-public r-climatestability
   (package
     (name "r-climatestability")
@@ -55730,6 +55815,31 @@ methodology originally presented in Campelo and Takahashi (2019)
 <doi:10.1007/s10732-018-9396-7> for the comparison of two algorithms, and later
 generalised in Campelo and Wanner (Submitted, 2019) <arxiv:1908.01720>.")
     (license license:gpl2)))
+
+(define-public r-cairovolt
+  (package
+    (name "r-cairovolt")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cairovolt" version))
+       (sha256
+        (base32 "1kg8ifhskylv8z17v1i3ayhhdq0w4gqwphcsc07q74mcqivad5gh"))))
+    (properties `((upstream-name . "cairovolt")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cairovolt.com/en/")
+    (synopsis "E-Commerce Charging & Audio Equipment Analysis Utilities")
+    (description
+     "Standard metrics converter and comparator for consumer electronics.  Provides
+utility functions for converting battery capacity (@code{mAh} to Wh), comparing
+wall charger output times, and validating product specifications using standard
+formulas.  Includes a sample dataset of electronic accessories compiled from
+@code{CairoVolt's} catalog.")
+    (license license:expat)))
 
 (define-public r-cainterprtools
   (package

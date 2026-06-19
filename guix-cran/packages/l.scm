@@ -1560,13 +1560,13 @@ Sobrino JA, Jimenez-Munoz JC, Soria G, Julien Y, Mattar C, CristÃ³bal J. (2014
 (define-public r-lssdoc
   (package
     (name "r-lssdoc")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lssdoc" version))
        (sha256
-        (base32 "1min26bij8r8rl6rk50gn8phz1dcs1j3npdnhr2sxm8hwkhj2am4"))))
+        (base32 "1785qzv8skbj2rhbj688f9vqf2ygdnavg4dpy4ylqxnhr2jf3w2j"))))
     (properties `((upstream-name . "lssdoc")))
     (build-system r-build-system)
     (arguments
@@ -7474,19 +7474,19 @@ Cancers.  Cancer informatics, 13, CIN-S14021.")
 (define-public r-lmpdata
   (package
     (name "r-lmpdata")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LMPdata" version))
        (sha256
-        (base32 "0d2g0w1ail82vknj9pwisxswmns9zsa24cnlm1yqhc7bqry23vgj"))))
+        (base32 "1xpc31ckcrn5nkps38zb8rm1f6p4fkmiravpnlc982vccygcx2g7"))))
     (properties `((upstream-name . "LMPdata")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-magrittr r-data-table))
+    (propagated-inputs (list r-xml2 r-magrittr r-data-table r-curl))
     (home-page "https://github.com/alekrutkowski/LMPdata")
     (synopsis "Easy Import of the EU Labour Market Policy Data")
     (description
@@ -8512,13 +8512,13 @@ median of the distribution.")
 (define-public r-llmtranslate
   (package
     (name "r-llmtranslate")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LLMTranslate" version))
        (sha256
-        (base32 "1bh9hy77ig2lba2qlyki1djgzqwmi7p9sn3jsrpap6dfzklnb21n"))))
+        (base32 "13rwx90q99a2airjp2ycvb12a3c0ardvsmlvxm8p3a07x6fzih55"))))
     (properties `((upstream-name . "LLMTranslate")))
     (build-system r-build-system)
     (arguments
@@ -9321,20 +9321,19 @@ In _Digital Humanities 2022: Conference Abstracts_, 636-637.")
 (define-public r-litfetchr
   (package
     (name "r-litfetchr")
-    (version "0.2.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LitFetchR" version))
        (sha256
-        (base32 "0xf7ia0zsn3cshicqqyc9pbx67b2yb07psx8bhfpamw2nmhzmij3"))))
+        (base32 "05s02x81153qvgm3s32xnkdngjgfi6w4p2r7ydamv3rinafi05m5"))))
     (properties `((upstream-name . "LitFetchR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-xml2
-                             r-readxl
                              r-purrr
                              r-openxlsx
                              r-jsonlite

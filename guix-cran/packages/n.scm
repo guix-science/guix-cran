@@ -167,6 +167,40 @@ information about @code{LaBB-CAT}', see Robert Fromont and Jennifer Hay (2008)
 clean the data once in R.")
     (license license:expat)))
 
+(define-public r-nycopendata
+  (package
+    (name "r-nycopendata")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nycOpenData" version))
+       (sha256
+        (base32 "19wmvgvpfj30xrk2b0444z7h9i29i3albmm72z39b72vck4smjzj"))))
+    (properties `((upstream-name . "nycOpenData")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-jsonlite
+                             r-janitor
+                             r-httr
+                             r-dplyr
+                             r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://martinezc1.github.io/nycOpenData/")
+    (synopsis "Lightweight Interface to NYC Open Data APIs")
+    (description
+     "This package provides a unified set of helper functions to access datasets from
+the NYC Open Data platform <https://opendata.cityofnewyork.us/>.  Functions
+return results as tidy tibbles and support optional filtering, sorting, and row
+limits via the Socrata API. The package includes endpoints for 311 service
+requests, DOB job applications, juvenile justice metrics, school safety,
+environmental data, event permitting, and additional citywide datasets.")
+    (license license:expat)))
+
 (define-public r-nycflights23
   (package
     (name "r-nycflights23")
@@ -5794,6 +5828,54 @@ AUCs with linear or log interpolation method * Reference: Gabrielsson J, Weiner
 D. Pharmacokinetic and Pharmacodynamic Data Analysis - Concepts and
 Applications.  5th ed.  2016. (ISBN:9198299107).")
     (license license:gpl3)))
+
+(define-public r-nonabsdid
+  (package
+    (name "r-nonabsdid")
+    (version "0.3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nonabsdid" version))
+       (sha256
+        (base32 "0xl8zmh35fmgy5vs3m4w9bdkr1rw5jn31m20b83xr66lzbf46pkh"))))
+    (properties `((upstream-name . "nonabsdid")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-rlang r-ggplot2 r-dplyr r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/takuma1102/nonabsdid")
+    (synopsis
+     "Visualize Heterogeneity-Robust Event Studies for Non-Absorbing Treatments")
+    (description
+     "Runs several heterogeneity-robust difference-in-differences (DID) event-study
+estimators for non-absorbing (i.e., treatment can switch on and off) binary
+treatments through their own packages, harmonizes their output onto a common
+time axis and tidy data structure, and overlays them in a single ggplot2 panel
+for visual comparison.  Supported estimators include those provided by
+DI@code{DmultiplegtDYN}', @code{PanelMatch}', and fect', with an optional naive
+two-way fixed-effects reference series via fixest'.  The underlying methods are
+respectively described in Clement de Chaisemartin and Xavier D'Haultfoeuille.
+\"Difference-in-Differences Estimators of Intertemporal Treatment Effects.\" The
+Review of Economics and Statistics (2026) <doi:10.1162/rest_a_01414>, Kosuke
+Imai, In Song Kim, and Erik H. Wang. \"Matching methods for causal inference with
+timeâseries crossâsectional data.\" American Journal of Political Science
+67.3 (2023) <doi:10.1111/ajps.12685>, Licheng Liu, Ye Wang, and Yiqing Xu. \"A
+practical guide to counterfactual estimators for causal inference with
+timeâseries crossâsectional data.\" American Journal of Political Science
+68.1 (2024) <doi:10.1111/ajps.12723>, and Laurent R. BergÃ©, Kyle Butts, and
+Grant @code{McDermott}. \"Fast and user-friendly econometrics estimations: The R
+package fixest'.\" @code{arXiv} preprint (2026)
+<doi:10.48550/@code{arXiv.2601.21749>}.  A single @code{nabs_event_study()}
+wrapper runs any supported estimator with a common interface;
+@code{nabs_event_study_simple()} provides a one-line front door for quick
+exploratory runs; the S3 generic @code{as_nabs_event_study()} coerces estimator
+output into a tidy stable schema; and @code{nabs_event_plot()} overlays multiple
+methods on a single ggplot2 panel, with optional naive two-way fixed effects
+drawn in a neutral color as a reference.")
+    (license license:expat)))
 
 (define-public r-nomogramformula
   (package
@@ -16644,6 +16726,47 @@ outlined in further detail in Rigdon, Baiocchi, and Basu (2018)
 interactive animations, or other representations of changing relational
 structures and attributes.")
     (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
+
+(define-public r-ndpalette
+  (package
+    (name "r-ndpalette")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NDPalette" version))
+       (sha256
+        (base32 "18179cslv8w2z91j4jjk6g4ajr37v2zr3fs4vn5vmisg03pjh604"))))
+    (properties `((upstream-name . "NDPalette")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://kenkelley.org")
+    (synopsis "Notre Dame Color Palettes for R")
+    (description
+     "This package provides color palettes that approximate the University of Notre
+Dame brand colors, together with ggplot2 discrete color and fill scales.  The
+default palette leads with six Notre Dame brand colors that read clearly on a
+white background and extends through seven former Notre Dame brand colors,
+interpolating when more colors are needed than the brand supplies.  The palette
+is intended for statistical visualization and psychometric analysis: the
+white-safe ordering keeps plotted categories legible, and the near-white-to-navy
+ramps suit continuous quantities such as correlations and factor loadings.  A
+colorblind-friendly ordering of the Notre Dame colors themselves (arranged so
+the colors stay distinguishable under simulated deuteranopia, protanopia, and
+tritanopia), the former colors as a standalone palette, the four near-white
+brand tints (plus six informal soft backgrounds) for backgrounds and sequential
+ramps, a reference table of every color with brand and role labels, and a
+palette-preview helper are also provided.  A matching R Markdown stylesheet,
+built from the same colors so a report and its figures share one brand palette,
+themes HTML and shiny output.  The colors approximate those described in the
+University's branding guidelines
+(<https://onmessage.nd.edu/university-branding/colors/>).  This is an
+independent project and is not affiliated with or endorsed by the University of
+Notre Dame.")
+    (license license:gpl3+)))
 
 (define-public r-ndp
   (package

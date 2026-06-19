@@ -7880,13 +7880,13 @@ likelihood estimation and Bayesian inference.")
 (define-public r-multiatsm
   (package
     (name "r-multiatsm")
-    (version "1.5.1-1")
+    (version "1.5.1-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MultiATSM" version))
        (sha256
-        (base32 "10z0d37nmqka2gd6rj9qrlwnz3xmz4gb61m7rf4dhncwrb5gyhac"))))
+        (base32 "12x6k1sciq4kmjbi5qacfb0gy5gxr9b1kcl807zl7vdrfnkiq5cg"))))
     (properties `((upstream-name . "MultiATSM")))
     (build-system r-build-system)
     (arguments
@@ -21891,6 +21891,80 @@ on Bayesian models.  Furthermore, these measures can be facilitated on
 neighborhood searches, and to estimate the similarity and distance between data
 points.  Related work is by Bayes (1763) <doi:10.1098/rstl.1763.0053> and by
 Scutari (2010) <doi:10.18637/jss.v035.i03>.")
+    (license license:gpl3)))
+
+(define-public r-mmarch-ac
+  (package
+    (name "r-mmarch-ac")
+    (version "3.3.4.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mMARCH.AC" version))
+       (sha256
+        (base32 "1rvhanm3p6n56am1plqw033hppgqi3ils3qffyaw11ylpmaass26"))))
+    (properties `((upstream-name . "mMARCH.AC")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-xlsx
+                             r-tidyr
+                             r-survival
+                             r-refund
+                             r-minpack-lm
+                             r-kableextra
+                             r-ineq
+                             r-ggir
+                             r-dplyr
+                             r-denseflmm
+                             r-cosinor2
+                             r-cosinor
+                             r-abind))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/WeiGuoNIMH/mMARCH.AC")
+    (synopsis "Processing of Accelerometry Data with 'GGIR' in mMARCH")
+    (description
+     "Mobile Motor Activity Research Consortium for Health (@code{mMARCH}) is a
+collaborative network of studies of clinical and community samples that employ
+common clinical, biological, and digital mobile measures across involved
+studies.  One of the main scientific goals of @code{mMARCH} sites is developing
+a better understanding of the inter-relationships between accelerometry-measured
+physical activity (PA), sleep (SL), and circadian rhythmicity (CR) and mental
+and physical health in children, adolescents, and adults.  Currently, there is
+no consensus on a standard procedure for a data processing pipeline of raw
+accelerometry data, and few open-source tools to facilitate their development.
+The R package GGIR is the most prominent open-source software package that
+offers great functionality and tremendous user flexibility to process raw
+accelerometry data.  However, even with GGIR', processing done in a harmonized
+and reproducible fashion requires a non-trivial amount of expertise combined
+with a careful implementation.  In addition, novel accelerometry-derived
+features of PA/SL/CR capturing multiscale, time-series, functional,
+distributional and other complimentary aspects of accelerometry data being
+constantly proposed and become available via non-GGIR R implementations.  To
+address these issues, @code{mMARCH} developed a streamlined harmonized and
+reproducible pipeline for loading and cleaning raw accelerometry data,
+extracting features available through GGIR as well as through non-GGIR R
+packages, implementing several data and feature quality checks, merging all
+features of PA/SL/CR together, and performing multiple analyses including Joint
+Individual Variation Explained (JIVE), an unsupervised machine learning
+dimension reduction technique that identifies latent factors capturing joint
+across and individual to each of three domains of PA/SL/CR. In detail, the
+pipeline generates all necessary R/Rmd/shell files for data processing after
+running GGIR for accelerometer data.  In module 1, all csv files in the GGIR
+output directory were read, transformed and then merged.  In module 2, the GGIR
+output files were checked and summarized in one excel sheet.  In module 3, the
+merged data was cleaned according to the number of valid hours on each night and
+the number of valid days for each subject.  In module 4, the cleaned activity
+data was imputed by the average Euclidean norm minus one (ENMO) over all the
+valid days for each subject.  Finally, a comprehensive report of data processing
+was created using Rmarkdown, and the report includes few exploratory plots and
+multiple commonly used features extracted from minute level actigraphy data.
+Reference: Guo W, Leroux A, Shou S, Cui L, Kang S, Strippoli MP, Preisig M,
+Zipunnikov V, Merikangas K (2022) Processing of accelerometry data with GGIR in
+Motor Activity Research Consortium for Health (@code{mMARCH}) Journal for the
+Measurement of Physical Behaviour, 6(1): 37-44.")
     (license license:gpl3)))
 
 (define-public r-mmaqshiny
@@ -38461,19 +38535,20 @@ gravitational based search (Rashedi et al., 2009) and black hole optimization
 (define-public r-metahelper
   (package
     (name "r-metahelper")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metaHelper" version))
        (sha256
-        (base32 "0nsrsaklxbr4clg3ka8rrpp162bl9qcxkffqkmdz5ha4dfs028vm"))))
+        (base32 "0mffflfrcsn36lgrdz57i0nrqw7b3fpn1dm0v9xxg6dni2xadn3h"))))
     (properties `((upstream-name . "metaHelper")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-magrittr r-confintr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/RobertEmprechtinger/metaHelper")
     (synopsis
      "Transforms Statistical Measures Commonly Used for Meta-Analysis")
@@ -38485,7 +38560,8 @@ methods used in this package are described in the following references: Altman D
 G, Bland J M. (2011) <doi:10.1136/bmj.d2090> Borenstein, M., Hedges, L.V.,
 Higgins, J.P.T. and Rothstein, H.R. (2009) <doi:10.1002/9780470743386.ch4> Chinn
 S. (2000) <doi:10.1002/1097-0258(20001130)19:22%3C3127::aid-sim784%3E3.0.co;2-m>
-Cochrane Handbook (2011) <https://handbook-5-1.cochrane.org/front_page.htm>
+Cochrane Handbook (2011)
+<https://www.cochrane.org/authors/handbooks-and-manuals/handbook/archive/v5.1.0>
 Cooper, H., Hedges, L. V., & Valentine, J. C. (2009)
 <https://psycnet.apa.org/record/2009-05060-000> Cohen, J. (1977)
 <https://psycnet.apa.org/record/1987-98267-000> Ellis, P.D. (2009)
@@ -41988,6 +42064,37 @@ Lange, Vansteelandt and Bekaert (2012) <DOI:10.1093/aje/kwr525>, Vansteelandt,
 Bekaert and Lange (2012) <DOI:10.1515/2161-962X.1014> and Loeys, Moerkerke, De
 Smet, Buysse, Steen and Vansteelandt (2013) <DOI:10.1080/00273171.2013.832132>.")
     (license license:gpl2)))
+
+(define-public r-medfit
+  (package
+    (name "r-medfit")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "medfit" version))
+       (sha256
+        (base32 "0gg8wrhzrc5xh31kxbq1wj2z4avnq278qpa7xg6001k1zlnwnwr0"))))
+    (properties `((upstream-name . "medfit")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-s7 r-mass r-generics r-checkmate))
+    (home-page "https://data-wise.github.io/medfit/")
+    (synopsis "Infrastructure for Mediation Model Fitting and Extraction")
+    (description
+     "This package provides S7-based infrastructure for fitting mediation models,
+extracting path coefficients, and performing bootstrap inference.  Designed as a
+foundation package for the mediation analysis ecosystem, supporting probmed',
+RMediation', and medrobust packages.  Implements unified interfaces for model
+fitting across different engines (currently generalized linear models, with
+future support for mixed models and Bayesian methods), standardized extraction
+of mediation paths from various model types, and robust bootstrap inference
+methods.  Mediation inference methods are described in @code{MacKinnon},
+Lockwood and Williams (2004) <doi:10.1207/s15327906mbr3901_4> and Tofighi and
+@code{MacKinnon} (2011) <doi:10.3758/s13428-011-0076-x>.")
+    (license license:gpl3+)))
 
 (define-public r-medfateland
   (package
@@ -55340,13 +55447,13 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
 (define-public r-maihda
   (package
     (name "r-maihda")
-    (version "0.1.8")
+    (version "0.1.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MAIHDA" version))
        (sha256
-        (base32 "0syyq4x58g45jy852lhypzvh08xdl3df5s12y0c6n2v4la63qcdd"))))
+        (base32 "1g7cf1xm572j2i5vy00dcxlalk70hlaiiqfy59kk697j0gj8yz10"))))
     (properties `((upstream-name . "MAIHDA")))
     (build-system r-build-system)
     (arguments
@@ -55361,6 +55468,7 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
                              r-lme4
                              r-ggrepel
                              r-ggplot2
+                             r-generics
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/hdbt/MAIHDA")
@@ -55369,7 +55477,7 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
     (description
      "This package provides a comprehensive toolkit for conducting Multilevel Analysis
 of Individual Heterogeneity and Discriminatory Accuracy (MAIHDA).  Methods are
-described in Merlo (2018) <doi:10.1016/j.socscimed.2017.12.018> and Evans et al.
+described in Merlo (2018) <doi:10.1016/j.socscimed.2017.12.026> and Evans et al.
 (2018) <doi:10.1016/j.socscimed.2017.11.011>.  Automatically generates
 intersectional strata, fits analytical models, extracts statistics, and produces
 visualizations.")

@@ -12485,41 +12485,6 @@ EPA Hydrologic and Water Quality System ('HAWQS'; <https://hawqs.tamu.edu>) in a
 two-model nutrient management workflow.")
     (license license:expat)))
 
-(define-public r-ojsr
-  (package
-    (name "r-ojsr")
-    (version "0.1.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ojsr" version))
-       (sha256
-        (base32 "0jmz9zmzbaass3l8w5gvcg2ywa2mwmz7ngq5xb11in8gckbpn7cs"))))
-    (properties `((upstream-name . "ojsr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml2
-                             r-urltools
-                             r-tidyr
-                             r-rvest
-                             r-rlang
-                             r-rcurl
-                             r-purrr
-                             r-magrittr
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/gastonbecerra/ojsr")
-    (synopsis "Crawler and Data Scraper for Open Journal System ('OJS')")
-    (description
-     "Crawler for OJS pages and scraper for meta-data from articles.  You can crawl
-OJS archives, issues, articles, galleys, and search results.  You can scrape
-articles metadata from their head tag in html, or from Open Archives Initiative
-('OAI') records.  Most of these functions rely on OJS routing conventions
-(<https://docs.pkp.sfu.ca/dev/documentation/en/architecture-routes>).")
-    (license license:gpl3)))
-
 (define-public r-oii
   (package
     (name "r-oii")

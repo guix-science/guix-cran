@@ -5,6 +5,7 @@
   #:use-module ((guix licenses)
                 #:prefix license:)
   #:use-module (gnu packages cran)
+  #:use-module (gnu packages python-xyz)
   #:use-module (gnu packages pcre)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages cmake)
@@ -545,6 +546,39 @@ the update date from the service.")
     (synopsis "API Client for US Treasury Fiscal Data")
     (description
      "Make requests from the US Treasury Fiscal Data API endpoints.")
+    (license license:expat)))
+
+(define-public r-ustats
+  (package
+    (name "r-ustats")
+    (version "0.1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ustats" version))
+       (sha256
+        (base32 "1p26dlbnwycpccf6lhwpf7bilk2v99bfraplm7085w2pi7qmik8f"))))
+    (properties `((upstream-name . "ustats")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list python-numpy))
+    (propagated-inputs (list r-reticulate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/cxy0714/U-Statistics-R")
+    (synopsis
+     "R Interface to Python Tools for Computing Higher-Order U-Statistics")
+    (description
+     "This package provides an R interface to the Python package u-stats
+<https://pypi.org/project/u-stats/> for efficient computation of higher-order
+U-statistics using Einstein summation notation, implementing the methods of
+Chen, Zhang, and Liu (2025) <doi:10.48550/@code{arXiv.2508.12627>}.  The package
+automatically converts R objects to @code{NumPy} or @code{PyTorch} tensors via
+reticulate and supports GPU acceleration when @code{PyTorch} with CUDA is
+available.  Python dependencies are declared via reticulate and can be installed
+automatically on first use.  Designed for large-scale statistical estimation
+where numerical stability and performance are critical.")
     (license license:expat)))
 
 (define-public r-ustatbookabsc
@@ -4115,22 +4149,29 @@ Equation and Twin Modelling in R. Twin Research and Human Genetics, 22, 27-41.
 (define-public r-umweltapir
   (package
     (name "r-umweltapir")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "umweltapir" version))
        (sha256
-        (base32 "0r78fl8d1jlhg36kgj1nvhsnjl0vyj04cmx9dcgac0qymm12pfd0"))))
+        (base32 "14z6vax1sf6x35hflibwr00br6c2xmi8ypn56i1lw0q65y6ybwpy"))))
     (properties `((upstream-name . "umweltapir")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr r-jsonlite r-httr2))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-purrr
+                             r-jsonlite
+                             r-httr2
+                             r-dplyr
+                             r-arrow))
     (home-page
      "https://gitlab.opencode.de/umwelt-info/packages/-/tree/main/umweltapir?ref_type=heads")
-    (synopsis "Access Umwelt.Info API")
+    (synopsis "Access 'umwelt.info' API")
     (description
      "This package provides an R-based access to the datasets including their
 resources from the portal <https://umwelt.info>.  The package allows for an easy

@@ -69,20 +69,20 @@ precision of LAPACK library (version 3.10.0 or later).")
 (define-public r-qwraps2
   (package
     (name "r-qwraps2")
-    (version "0.6.2")
+    (version "0.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qwraps2" version))
        (sha256
-        (base32 "0brs44g9jc2f2q22w7bcv4yy7r05r45dq4wzqba93yjsv039bz3h"))))
+        (base32 "1nab2fq6r77vx5lbwfylhsp7hkgj8cd3x97bkr78z6i02p2yf017"))))
     (properties `((upstream-name . "qwraps2")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-xfun r-rcpparmadillo r-rcpp r-knitr r-ggplot2))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/dewittpe/qwraps2/")
     (synopsis "Quick Wraps 2")
     (description
@@ -1863,13 +1863,13 @@ vignettes; see citation(\"quantities\") for details.")
 (define-public r-quantilogram
   (package
     (name "r-quantilogram")
-    (version "3.1.1")
+    (version "3.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quantilogram" version))
        (sha256
-        (base32 "1r5fg0jj1f7knabbr7h13sjniy6f6jnk4lnq41acq5sllxm565ip"))))
+        (base32 "1s4f556xhfrmyys5ighi98cg10b0hrjgx9vi49fdgw4mc4cpvckn"))))
     (properties `((upstream-name . "quantilogram")))
     (build-system r-build-system)
     (arguments

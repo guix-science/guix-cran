@@ -7737,42 +7737,6 @@ distributions, sample sizes, number of bootstrap resamples, and confidence
 intervals.")
     (license license:expat)))
 
-(define-public r-bootur
-  (package
-    (name "r-bootur")
-    (version "1.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bootUR" version))
-       (sha256
-        (base32 "19sjh9hwx9hcqyrjx5kc2id1ml1sfd6c37g412vzfgk931bm0lbs"))))
-    (properties `((upstream-name . "bootUR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-urca
-                             r-rcppthread
-                             r-rcppparallel
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-parallelly))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/smeekes/bootUR")
-    (synopsis "Bootstrap Unit Root Tests")
-    (description
-     "Set of functions to perform various bootstrap unit root tests for both
-individual time series (including augmented Dickey-Fuller test and union tests),
-multiple time series and panel data; see Smeekes and Wilms (2023)
-<doi:10.18637/jss.v106.i12>, Palm, Smeekes and Urbain (2008)
-<doi:10.1111/j.1467-9892.2007.00565.x>, Palm, Smeekes and Urbain (2011)
-<doi:10.1016/j.jeconom.2010.11.010>, Moon and Perron (2012)
-<doi:10.1016/j.jeconom.2012.01.008>, Smeekes and Taylor (2012)
-<doi:10.1017/S0266466611000387> and Smeekes (2015) <doi:10.1111/jtsa.12110> for
-key references.")
-    (license license:gpl2+)))
-
 (define-public r-bootsvd
   (package
     (name "r-bootsvd")
@@ -19916,13 +19880,13 @@ Further extension to more plot variants is planned.")
 (define-public r-bibnets
   (package
     (name "r-bibnets")
-    (version "0.4.4")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bibnets" version))
        (sha256
-        (base32 "12dhkpj9nsm3fr59dc4nhgzr22xa3v7ix4f7ix1i7x0qchpswl0a"))))
+        (base32 "1d01753his3kwimlm5mzk7rjdycxnxgmlcai83wjk8iwp3xm546w"))))
     (properties `((upstream-name . "bibnets")))
     (build-system r-build-system)
     (arguments
@@ -29367,19 +29331,20 @@ effect in platform trial are described in: Saville et al. (2022)
 (define-public r-bayesianou
   (package
     (name "r-bayesianou")
-    (version "0.1.3")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesianOU" version))
        (sha256
-        (base32 "0ib674ymylrmy1309jl048aclnxlkhgqp9yjxvs5r451n0anx78c"))))
+        (base32 "023630l4ijpq4dzn72cyviz5lab151cnlg054l8jg8pgdfrrqwiv"))))
     (properties `((upstream-name . "bayesianOU")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://github.com/isadorenabi/bayesianOU")
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/IsadoreNabi/bayesianOU")
     (synopsis
      "Bayesian Nonlinear Ornstein-Uhlenbeck Models with Stochastic Volatility")
     (description
@@ -29691,40 +29656,36 @@ given an earthquake catalogue.  The methods are described in Ross (2021)
 (define-public r-bayesiandisaggregation
   (package
     (name "r-bayesiandisaggregation")
-    (version "0.1.2")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesianDisaggregation" version))
        (sha256
-        (base32 "0vfbhpyi9c29bwzyy0nqvwikgvmh8q6k0h9lyhy5fl1p89kr691j"))))
+        (base32 "03v2p1x3h0dl01y51xdqsim54bvx9dljdd0p5jayqhl6dl974anm"))))
     (properties `((upstream-name . "BayesianDisaggregation")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-readxl
-                             r-openxlsx
-                             r-magrittr
-                             r-foreach
-                             r-dplyr
-                             r-doparallel))
+    (propagated-inputs (list r-tidyr r-stringr r-readxl r-magrittr r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=BayesianDisaggregation")
-    (synopsis "Bayesian Methods for Economic Data Disaggregation")
+    (synopsis "Evidence-Based Bayesian Disaggregation of Aggregate Indices")
     (description
-     "This package implements a novel Bayesian disaggregation framework that combines
-Principal Component Analysis (PCA) and Singular Value Decomposition (SVD)
-dimension reduction of prior weight matrices with deterministic Bayesian
-updating rules.  The method provides Markov Chain Monte Carlo (MCMC) free
-posterior estimation with built-in diagnostic metrics.  While based on
-established PCA (Jolliffe, 2002) <doi:10.1007/b98835> and Bayesian principles
-(Gelman et al., 2013) <doi:10.1201/b16018>, the specific integration for
-economic disaggregation represents an original methodological contribution.")
+     "Disaggregates an observed aggregate price index into sectoral components with a
+Bayesian state-space model in which the aggregate enters as a genuine
+observation density rather than as a renormalization identity.  A
+random-walk-with-drift transition in log space (with partial pooling on the
+drift and the innovation scale) and an estimable cross-sectional concentration
+produce posterior draws of the sectoral indices with credible intervals,
+suitable as multiple-imputation input for downstream dynamic models.  The
+Hamiltonian Monte Carlo engine follows Stan (Carpenter et al., 2017)
+<doi:10.18637/jss.v076.i01>; model comparison uses Pareto Smoothed Importance
+Sampling Leave-One-Out cross-validation (Vehtari, Gelman and Gabry, 2017)
+<doi:10.1007/s11222-016-9696-4>.  A closed-form linear-Gaussian Kalman/RTS
+smoother provides an exact, MCMC-free Bayesian alternative for the same
+aggregate evidence.")
     (license license:expat)))
 
 (define-public r-bayesiandeb

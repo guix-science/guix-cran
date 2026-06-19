@@ -3321,6 +3321,32 @@ machine <doi:10.1007/s11634-008-0020-9>.  This algorithm uses two efficient
 updates, one for linear kernel and one for the nonlinear kernel.")
     (license license:gpl2)))
 
+(define-public r-svmf
+  (package
+    (name "r-svmf")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "svmf" version))
+       (sha256
+        (base32 "0rjb6p8ga97ax034xdz4843kxicigbhrcx3g71r0ps4zhz7kf5wv"))))
+    (properties `((upstream-name . "svmf")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rfast))
+    (home-page "https://cran.r-project.org/package=svmf")
+    (synopsis "The Scaled von Mises-Fisher Distribution")
+    (description
+     "This package provides functions to perform maximum likelihood estimation of and
+random value simulation from the scaled von Mises-Fisher distribution.  The
+distribution is elliptical symmetric and can be applied to spherical and
+hyper-spherical data.  The reference paper is Scealy J.L. and Wood A.T.A.
+(2019), <doi:10.1080/01621459.2019.1585249>.")
+    (license license:gpl2+)))
+
 (define-public r-svmd
   (package
     (name "r-svmd")
@@ -7204,28 +7230,38 @@ surrogate outcome to improve inference on a partially missing target outcome\"
 (define-public r-surrogaterank
   (package
     (name "r-surrogaterank")
-    (version "2.2")
+    (version "3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SurrogateRank" version))
        (sha256
-        (base32 "0i4b7mvad8vvlc5fbqq6xsc62n99imzklwh75zf3cjq097isiv19"))))
+        (base32 "033ffc5ak45729ziivams7zfpardfpqhx5mnkxwi7kv6whkrkkbw"))))
     (properties `((upstream-name . "SurrogateRank")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-pbmcapply r-ggplot2 r-dplyr))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-scales
+                             r-pbmcapply
+                             r-mass
+                             r-glue
+                             r-ggvenndiagram
+                             r-ggplot2
+                             r-dplyr
+                             r-cowplot
+                             r-complexupset))
     (home-page "https://cran.r-project.org/package=SurrogateRank")
     (synopsis "Rank-Based Test to Evaluate a Surrogate Marker")
     (description
      "Uses a novel rank-based nonparametric approach to evaluate a surrogate marker in
 a small sample size setting.  Details are described in Parast et al (2024)
-<doi:10.1093/biomtc/ujad035> and Hughes A et al (2025) <doi:10.1002/sim.70241>.
-A tutorial for this package can be found at
-<https://www.laylaparast.com/surrogaterank> and a Shiny App implementing the
-package can be found at
+<doi:10.1093/biomtc/ujad035>, in Hughes A et al (2025) <doi:10.1002/sim.70241>,
+and in Hughes A et al (2026) <doi:10.48550/@code{arXiv.2605.03819>}.  A tutorial
+for this package can be found at <https://www.laylaparast.com/surrogaterank> and
+a Shiny App implementing the package can be found at
 <https://parastlab.shinyapps.io/@code{SurrogateRankApp/>}.")
     (license (list license:gpl2+ license:gpl3+))))
 
@@ -67850,6 +67886,33 @@ adding, removing and renaming nodes) and convert nested hierarchies between
 different formats.  These tree like structures can be used to define for example
 complex hierarchical tables used for statistical disclosure control.")
     (license license:gpl3)))
+
+(define-public r-sdc-redistribute
+  (package
+    (name "r-sdc-redistribute")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sdc.redistribute" version))
+       (sha256
+        (base32 "145k6ncz5jzxyqzcvc88kci9s8jrn5xmxla03md9s2bdx2w0sg9a"))))
+    (properties `((upstream-name . "sdc.redistribute")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sf))
+    (native-inputs (list r-knitr))
+    (home-page "https://dads2busy.github.io/sdc.redistribute/")
+    (synopsis "Redistribute Values Between Geographic Areas")
+    (description
+     "Estimate attribute values for one set of polygons from values measured on a
+different, misaligned set.  Provides area-weighted areal interpolation and a
+dasymetric method that distributes values across a point layer (such as parcel
+centroids).  Count (extensive) measures are total-preserving; rate (intensive)
+measures use area-weighted means.")
+    (license license:expat)))
 
 (define-public r-sdbuildr
   (package

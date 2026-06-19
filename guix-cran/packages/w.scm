@@ -3146,6 +3146,42 @@ various data sets.  The methodology is based on \"The Whale Optimization
 Algorithm\" by Mirjalili and Lewis (2016) <doi:10.1016/j.advengsoft.2016.01.008>.")
     (license license:gpl2+)))
 
+(define-public r-wnpmle
+  (package
+    (name "r-wnpmle")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "wnpmle" version))
+       (sha256
+        (base32 "1sjfpd4dili7qrivfxsgs5f8w0f5v91iqc27q8155i7fqqz0s5c1"))))
+    (properties `((upstream-name . "wnpmle")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tmb r-survival r-mass))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/abellach/wnpmle")
+    (synopsis
+     "Weighted NPMLE for Recurrent Events with a Competing Terminal Event")
+    (description
+     "This package provides regression modeling and prediction for the marginal mean
+of recurrent events in the presence of a competing terminal event using the
+weighted nonparametric maximum likelihood estimator (@code{wNPMLE}) of Bellach
+and Kosorok (2026) <doi:10.48550/@code{arXiv.2605.25934>}.  Two classes of
+transformation models are implemented: Box-Cox transformation models and
+logarithmic transformation models.  These extend the proportional means model of
+Ghosh and Lin (2002) <doi:10.17615/pt0g-y207> and the transformation model
+framework of Zeng and Lin (2006) <doi:10.1093/biomet/93.3.627>.  Parameter
+estimation is performed using automatic differentiation through the Template
+Model Builder (TMB) framework.  Standard errors are computed using sandwich
+variance estimators that account for estimation of the inverse-probability
+censoring weights following Bellach, Kosorok, RÃ¼schendorf and Fine (2019)
+<doi:10.1080/01621459.2017.1401540>.")
+    (license license:gpl3+)))
+
 (define-public r-wnominate
   (package
     (name "r-wnominate")
@@ -3873,6 +3909,33 @@ composite endpoints in clinical trials,\" by Troendle et al.
 (2024)<https://pubmed.ncbi.nlm.nih.gov/38417455/>.  For more information, see
 the package documentation or the vignette titled \"Introduction to wintime.\".")
     (license license:expat)))
+
+(define-public r-winscrt
+  (package
+    (name "r-winscrt")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "WinsCRT" version))
+       (sha256
+        (base32 "141cn864dmcyvl2jjgcagljf7yjy9sph9qvrnvkmgrjl3354zr25"))))
+    (properties `((upstream-name . "WinsCRT")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://cran.r-project.org/package=WinsCRT")
+    (synopsis "Win Statistics Inference for Cluster-Randomized Trials")
+    (description
+     "This package provides estimation and inference for win statistics in
+cluster-randomized trials with prioritized (hierarchical) composite outcomes.
+Supported summaries include the win ratio, win odds, net benefit, and
+desirability of outcome ranking (DOOR), with variance estimation and testing
+procedures that account for within-cluster correlation.  Methods are described
+in the accompanying manuscript (2026) <doi:10.48550/@code{arXiv.2604.18341>}.")
+    (license license:gpl3)))
 
 (define-public r-wins
   (package

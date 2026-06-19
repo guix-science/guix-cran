@@ -27382,6 +27382,38 @@ Tudor-Locke (2014) <doi:10.1139/apnm-2013-0173> algorithm to detect sleep
 periods from asleep/awake states.")
     (license license:gpl2+)))
 
+(define-public r-actibase
+  (package
+    (name "r-actibase")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "actibase" version))
+       (sha256
+        (base32 "1f71d9048s9ykjgjvk5i3cxy5yizjn5n66czd248bnbpipji22gg"))))
+    (properties `((upstream-name . "actibase")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs
+                             r-tidyr
+                             r-magrittr
+                             r-lubridate
+                             r-janitor
+                             r-hms
+                             r-dplyr
+                             r-assertthat))
+    (home-page "https://github.com/jhuwit/actibase")
+    (synopsis
+     "Baseline Functions for Actigraphy and Activity Processing and Analysis")
+    (description
+     "This package provides baseline functions for actigraphy and activity data.  This
+package is intended to be extended by downstream overlays such as actiread',
+actimetrics', and stepcount'.")
+    (license license:gpl3)))
+
 (define-public r-actfts
   (package
     (name "r-actfts")
@@ -28094,6 +28126,35 @@ Database (TED).  Download the databases using @code{download_acdc()} or
 filter arguments via @code{add_argument()} and query the database via
 @code{query_db()}.")
     (license license:gpl3+)))
+
+(define-public r-accuracylevel
+  (package
+    (name "r-accuracylevel")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "accuracylevel" version))
+       (sha256
+        (base32 "04l0z92fhwgvw7ix5gwp1kqhlbdghfhjvzn9xwrrislgj66is3fj"))))
+    (properties `((upstream-name . "accuracylevel")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/madsyair/accuracylevel")
+    (synopsis "Robust Accuracy-Level Metrics for Predictive Model Evaluation")
+    (description
+     "This package implements novel accuracy-level metrics for evaluating continuous
+data prediction models.  Four metrics are provided: Counted Squared Error (CSE),
+Counted Absolute Error (CAE), Counted Absolute Percentage Error (CAPE), and
+Symmetric Counted Absolute Percentage Error (SCAPE).  These metrics offer
+robust, consistent, and interpretable evaluation on a 0-100% scale, addressing
+limitations of conventional metrics like RMSE, MAE, and MAPE. The package
+integrates with caret', tidymodels', and common forecasting frameworks.  Based
+on Agustini, Fithriasari, and Prastyo (2026) <doi:10.1016/j.dajour.2025.100661>.")
+    (license license:gpl3)))
 
 (define-public r-accumulate
   (package

@@ -12986,6 +12986,63 @@ rapidly visualizing subsets and summaries of geographic data, while performing
 statistical analysis in the R console.")
     (license license:gpl3)))
 
+(define-public r-gmsp
+  (package
+    (name "r-gmsp")
+    (version "0.4.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gmsp" version))
+       (sha256
+        (base32 "1r7gzvmb5m3zdzqzngprd7rs466m4cn3ipf7xyy2s1d5i6dv93nq"))))
+    (properties `((upstream-name . "gmsp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vmdecomp
+                             r-stringr
+                             r-spectral
+                             r-signal
+                             r-seewave
+                             r-purrr
+                             r-pracma
+                             r-openssl
+                             r-jsonlite
+                             r-hht
+                             r-expm
+                             r-emd
+                             r-digest
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://averriK.github.io/gmsp/")
+    (synopsis "Ground Motion Signal Processing")
+    (description
+     "This package implements short-time Fourier transform (STFT) based processing of
+strong-motion time series: time-grid regularisation, STFT-window and
+anti-alias-resampling strategy selection, edge tapering, and frequency-domain
+integration and differentiation, mapping a single input (acceleration, velocity,
+or displacement) to a consistent triplet under a chosen analysis bandwidth.
+Also provides intrinsic-mode-function decomposition via empirical mode
+decomposition (EMD), ensemble EMD (EEMD), and variational mode decomposition
+(VMD) with optional band-rule filtering; elastic single-degree-of-freedom (SDOF)
+response spectra (pseudo-spectral acceleration, velocity, and displacement) by
+exact state-space integration; intensity measures including peak,
+root-mean-square (RMS), Arias intensity, significant-duration, cumulative
+absolute velocity, mean period, and the derived indices earthquake
+destructiveness potential (EPI) and power-of-input (PDI); and D50 and D100
+horizontal response spectra.  Methods: Huang et al. (1998)
+<doi:10.1098/rspa.1998.0193>, Wu and Huang (2009)
+<doi:10.1142/S1793536909000047>, Dragomiretskiy and Zosso (2014)
+<doi:10.1109/TSP.2013.2288675>, Boore (2010) <doi:10.1785/0120090179>.  An
+optional indexing layer parses provider files in formats including PEER
+NGA-West2 AT2', CESMD V2'/'V2c', NWZ V2A', Geological Survey of Canada TR',
+IGP'/'UCR AC variants, and generic two-column ASCII text, normalises components,
+writes per-record CSV (comma-separated values) and JSON (@code{JavaScript}
+Object Notation) pairs, and assembles a master record table.")
+    (license license:expat)))
+
 (define-public r-gmsimpute
   (package
     (name "r-gmsimpute")
@@ -19173,21 +19230,24 @@ These dimensions will then be used when you save the plot.")
 (define-public r-ggvfields
   (package
     (name "r-ggvfields")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggvfields" version))
        (sha256
-        (base32 "1wszwfqmb1vff8zibx95ai84fdyk117f9hmaz2pk3cs7j6ahlv05"))))
+        (base32 "11i8ilwlviaag7d9ppxb0cgw5n0rjd4z1mfci6jy5kqvv5bxg8f5"))))
     (properties `((upstream-name . "ggvfields")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tibble
+                             r-sp
                              r-scales
                              r-numderiv
+                             r-mgcv
+                             r-gstat
                              r-ggplot2
                              r-farver
                              r-desolve
@@ -20362,32 +20422,26 @@ vertices/faces data frame format used by ggseg.formats and ggseg3d'.")
 (define-public r-ggseg-formats
   (package
     (name "r-ggseg-formats")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggseg.formats" version))
        (sha256
-        (base32 "1r9b4yjj2la7xjs31fy49rv4gzgs1xcj0pn44p0dfmasmdi2ahp5"))))
+        (base32 "1k5sa9hc7dxrjwka1safn8vik6ckympv5gapdzkdkffag3b27c3d"))))
     (properties `((upstream-name . "ggseg.formats")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-sf
-                             r-rlang
-                             r-lifecycle
-                             r-ggplot2
-                             r-dplyr
-                             r-cli))
+    (propagated-inputs (list r-sfheaders r-rlang r-lifecycle r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ggsegverse/ggseg.formats")
-    (synopsis "Brain Atlas Data Structures for the 'ggseg' Ecosystem")
+    (synopsis "Brain Atlas Data Structures for the 'ggsegverse' Ecosystem")
     (description
-     "This package provides the ggseg_atlas S3 class used across the ggseg ecosystem
-for 2D and 3D brain visualisation.  Ships three bundled atlases
-('Desikan-Killiany', @code{FreeSurfer} aseg', TRACULA') and functions for
+     "This package provides the ggseg_atlas S3 class used across the ggsegverse
+ecosystem for 2D and 3D brain visualisation.  Ships four bundled atlases
+('Desikan-Killiany', @code{FreeSurfer} aseg', TRACULA', SUIT') and functions for
 querying, subsetting, renaming, and enriching atlas objects.  Also includes
 readers for @code{FreeSurfer} statistics files.")
     (license license:expat)))
@@ -32253,6 +32307,37 @@ following general models : mixture models, composite models, folded models,
 skewed symmetric models and arc tan models.")
     (license license:gpl2+)))
 
+(define-public r-gendertext
+  (package
+    (name "r-gendertext")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gendertext" version))
+       (sha256
+        (base32 "1jw94p0hizamwpyz49jfk0ww2844l70n2mcnssd1167idnxvnrb5"))))
+    (properties `((upstream-name . "gendertext")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mashrur-ayon/gendertext")
+    (synopsis "Detect Gendered Words in Text and Suggest Neutral Alternatives")
+    (description
+     "Identifies gendered words and phrases in text using a built in dictionary of
+more than two hundred gendered terms paired with gender neutral alternatives.
+Reports the share of gendered language in a text, lists every gendered term
+found together with its suggested neutral replacement, and can rewrite a text in
+gender neutral form.  Plain text files are read with base R, while other
+document formats such as PDF and Word are supported through the optional
+readtext package.  The dictionary is informed by published guidance on gender
+inclusive language, including the United Nations guidelines
+<https://www.un.org/en/gender-inclusive-language/> and the European Parliament
+guidance on gender neutral language.")
+    (license license:expat)))
+
 (define-public r-genderstat
   (package
     (name "r-genderstat")
@@ -37447,6 +37532,58 @@ follows lineal regression structures.")
      "Identifies biomarkers that exhibit differential response dynamics by time across
 groups and estimates kinetic properties of biomarkers.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-gammafrailty
+  (package
+    (name "r-gammafrailty")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GammaFrailty" version))
+       (sha256
+        (base32 "17nm8cij6s6035s59a9pxfd54dm1yj23nkdmykfy2vswhlmb2irp"))))
+    (properties `((upstream-name . "GammaFrailty")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival r-numderiv r-maxlik r-mass))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=GammaFrailty")
+    (synopsis
+     "Gamma Frailty Regression Models with Multiple Baseline Distributions")
+    (description
+     "This package implements univariate gamma frailty regression models for survival
+data with six different baseline distributions: the Arvind distribution (Pandey
+et al., 2024), the Lindley distribution (Lindley, 1958), the Linear Failure Rate
+distribution (Bain, 1974), the Power Xgamma distribution (Tyagi et al., 2022),
+the Modified Topp-Leone distribution (Singh et al., 2025), and the Power Failure
+Rate distribution (Mugdadi, 2005).  The package supports uncensored (complete)
+and censored data (right, left, interval, and progressive censoring) with and
+without covariates.  It provides maximum likelihood estimation, standard errors,
+confidence intervals, t-statistics, p-values, Akaike Information Criterion
+(AIC), Bayesian Information Criterion (BIC), a bootstrap approximation of the
+Widely Applicable Information Criterion (WAIC), k-fold cross-validation,
+variance inflation factors, R-squared, adjusted R-squared, Mean Squared Error
+(MSE), Mean Absolute Error (MAE), Root Mean Squared Error (RMSE), an overall
+model F-test, frailty variance estimation, survival probabilities at
+user-specified time points, median survival, expected survival within a fixed
+window, risk predictions, marginal predictions, martingale and deviance
+residuals, standardized and studentized residuals, leverage values, Cook's
+distance, Difference in Fits (DFFITS), Difference in Betas (DFBETAS), and a
+comprehensive suite of diagnostic and survival plots including Kaplan-Meier
+overlays and coefficient forest plots.  Random number generation is available
+for each baseline distribution and the full frailty model, and a simulation
+study function evaluates parameter recovery across sample sizes and censoring
+scenarios.  References are Lindley (1958)
+<doi:10.1111/j.2517-6161.1958.tb00278.x>, Mugdadi (2005)
+<doi:10.1016/j.amc.2004.09.064>, Bain (1974)
+<doi:10.1080/00401706.1974.10489237>, Singh, Tyagi, Singh, and Tyagi (2025)
+<https://ph02.tci-thaijo.org/index.php/thaistat/article/view/257215>, Pandey,
+Singh, Tyagi, and Tyagi (2024) <https://ssca.org.in/journal.html>, and Tyagi,
+Kumar, Pandey, Saha, and Bagariya (2022) <https://ijsreg.com/>.")
+    (license license:gpl3)))
 
 (define-public r-gamma
   (package

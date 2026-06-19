@@ -7608,6 +7608,31 @@ studies (see Najera-Zuloaga J., Lee D.-J. and Arostegui I. (2019)
 <doi:10.1002/bimj.201700251>).")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-proratar
+  (package
+    (name "r-proratar")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "proratar" version))
+       (sha256
+        (base32 "08z1g78bqypkrvidbx4w31b6ag4jjy4dgd3n04cqhfavaszrlpjw"))))
+    (properties `((upstream-name . "proratar")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=proratar")
+    (synopsis "Proportional Allocation with Sum Consistency")
+    (description
+     "This package provides robust functions for proportional allocation of numeric
+values.  It guarantees sum consistency after rounding or integer truncation
+using one of two adjustment methods: the largest remainder method or max-value
+adjustment.  Handles edge cases like NA weights and vector total values
+seamlessly.")
+    (license license:expat)))
+
 (define-public r-propublicar
   (package
     (name "r-propublicar")
@@ -9178,13 +9203,13 @@ are implemented using lp_solve'.")
 (define-public r-producer
   (package
     (name "r-producer")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ProduceR" version))
        (sha256
-        (base32 "07n48yjs9rw60ir6jbskf0f6flpa5h6z0wah6f887f92wl4hqk94"))))
+        (base32 "1rmgmb5yycd6i2ha3xxq3r8wrxvnd9rf5rfr7ing9b9zxxk9555q"))))
     (properties `((upstream-name . "ProduceR")))
     (build-system r-build-system)
     (arguments

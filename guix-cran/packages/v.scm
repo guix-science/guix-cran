@@ -6986,6 +6986,34 @@ argument multiple which, when set to FALSE, reverts them to the base::sets
 (alias for all the items) tools functionality.")
     (license license:lgpl3)))
 
+(define-public r-vecrep
+  (package
+    (name "r-vecrep")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vecrep" version))
+       (sha256
+        (base32 "02npnkww03pndlfrs88cbyp3lnwizbmxx444pyyw09zqz08vfc12"))))
+    (properties `((upstream-name . "vecrep")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://pkg.mitchelloharawild.com/vecrep/")
+    (synopsis "Compact Vector Replication")
+    (description
+     "Replicates vectors using ALTREP (Alternative Representations for R Objects),
+avoiding unnecessary memory allocation.  When a vector is repeated many times,
+only a reference to the original data is stored rather than copying the full
+expanded replicates into memory.  The expanded data is only materialised if it
+is modified, making repeated vectors cheap to create and pass around.  This is
+particularly useful when working with large repeated sequences, such as
+replicated index vectors, simulation inputs, or repeated reference values in
+data pipelines.")
+    (license license:expat)))
+
 (define-public r-vecmatch
   (package
     (name "r-vecmatch")
@@ -8442,13 +8470,13 @@ homogeneity.")
 (define-public r-varshrink
   (package
     (name "r-varshrink")
-    (version "0.3.3")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VARshrink" version))
        (sha256
-        (base32 "0izdy68lck0v9gp0n5syd0qsgahmr2ffbw13n40dw52zxfr1wprp"))))
+        (base32 "133biq342l5nqkgcngpiy6dvp6kj040y440wp0byp4nqzqrlc0cb"))))
     (properties `((upstream-name . "VARshrink")))
     (build-system r-build-system)
     (arguments
@@ -8457,6 +8485,7 @@ homogeneity.")
     (propagated-inputs (list r-vars
                              r-strucchange
                              r-mvtnorm
+                             r-mcmcpack
                              r-mass
                              r-corpcor
                              r-ars))
@@ -9024,13 +9053,13 @@ L1-regularized high-dimensional time-series modeling of Medeiros and Mendes
 (define-public r-varguid
   (package
     (name "r-varguid")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "varGuid" version))
        (sha256
-        (base32 "12jcaq089m555f03hx6dk6mn56ylggjb5xf4razvp3lv3hm4gpqj"))))
+        (base32 "038vsy9ylhf6iydm49zsi73mqggwxbjr5ymgds8dic3xpwlhqs78"))))
     (properties `((upstream-name . "varGuid")))
     (build-system r-build-system)
     (arguments
@@ -9038,15 +9067,18 @@ L1-regularized high-dimensional time-series modeling of Medeiros and Mendes
       #:tests? #f))
     (propagated-inputs (list r-sandwich r-lmtest r-glmnet))
     (home-page "https://github.com/luminwin/varGuid")
-    (synopsis "Variance-Guided Regression for Heteroscedastic Linear Models")
+    (synopsis "Variance-Guided Regression Improving Upon OLS and ANOVA")
     (description
-     "Fits variance-guided linear regression models for heteroscedastic data using an
-iteratively reweighted least squares estimator or an iteratively reweighted
-lasso estimator.  This CRAN release focuses on the global linear mean-variance
-model in Section 2 of the accompanying preprint
-<doi:10.36227/techrxiv.177004877.75352102/v1>.  The grouping-based nonlinear
-prediction extension from Section 3 is available in the development version on
-@code{GitHub}.")
+     "Fits variance-guided linear regression models that provide an alternative to
+ordinary least squares (OLS) for general linear-model design matrices, including
+ANOVA-style encodings.  The methods use an iteratively reweighted least squares
+estimator or an iteratively reweighted lasso estimator and implement the global
+linear mean-variance model from the associated 2026 Statistics in Medicine
+article <doi:10.1002/sim.70632>.  Under the assumptions in that paper, the
+estimator matches the homoscedastic baseline in population predictive quasi-risk
+when variance is constant and improves on it when the variance depends on
+covariates.  The grouping-based nonlinear prediction extension from Section 3 is
+available in the development version on @code{GitHub}.")
     (license license:gpl2+)))
 
 (define-public r-varest

@@ -5084,13 +5084,13 @@ to create many different drum patterns.")
 (define-public r-drugutilisation
   (package
     (name "r-drugutilisation")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DrugUtilisation" version))
        (sha256
-        (base32 "0adyajcv345hll3fghhlqk52psnfipf76wmgmqxa5rrgb1sc5ki2"))))
+        (base32 "0whrld2k9jqbk0m258dg2cx5ljhqspjlvh7ygrayb09h3f8101qk"))))
     (properties `((upstream-name . "DrugUtilisation")))
     (build-system r-build-system)
     (arguments
@@ -7099,13 +7099,13 @@ Zhang YW, Zuo JF, Liu JY, Zhang YM (2022, <doi: 10.1016/j.xplc.2022.100319>).")
 (define-public r-dqcheckr
   (package
     (name "r-dqcheckr")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dqcheckr" version))
        (sha256
-        (base32 "1rbxp7sh414ipma3f78icrqqq39sivmap01yfck0snlx6shpmhqi"))))
+        (base32 "16by9m2hg7k4gi4sx5w79wa2d1kgsajcgrsnhbb7zrgmzzknqg1w"))))
     (properties `((upstream-name . "dqcheckr")))
     (build-system r-build-system)
     (arguments
@@ -19944,13 +19944,13 @@ Riviere Marie-Karelle et al. (2016) <doi:10.1177/0962280216631763>.")
 (define-public r-dfms
   (package
     (name "r-dfms")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dfms" version))
        (sha256
-        (base32 "163x5p9iw3djm853vymflrv5p2izf883rq28m0wzjjjikzlbl544"))))
+        (base32 "0vbg4lriqh1gp22jhqbmd7j51iglqpdka1q4vi5k6brhkc0q44g6"))))
     (properties `((upstream-name . "dfms")))
     (build-system r-build-system)
     (arguments
@@ -32711,13 +32711,13 @@ reports.")
 (define-public r-datadiff
   (package
     (name "r-datadiff")
-    (version "0.4.4")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datadiff" version))
        (sha256
-        (base32 "04l6s8giw96c5f53361bwy7b44sijykpgiss58cb4g4v72xfa60s"))))
+        (base32 "1cffna42g1mwwn9dcq79dp72c7k1rpc2snib21q0kmmxkrcc168s"))))
     (properties `((upstream-name . "datadiff")))
     (build-system r-build-system)
     (arguments
@@ -32726,7 +32726,7 @@ reports.")
     (propagated-inputs (list r-yaml r-tidyselect r-rlang r-pointblank r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ThinkR-open/datadiff")
-    (synopsis "Data Validation Based on YAML Rules")
+    (synopsis "Data Validation Based on 'YAML' Rules")
     (description
      "This package provides a comprehensive data validation package that allows
 comparing datasets using configurable validation rules defined in YAML files.

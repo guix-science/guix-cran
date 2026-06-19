@@ -4429,13 +4429,13 @@ column-wise fashion.")
 (define-public r-irisseismic
   (package
     (name "r-irisseismic")
-    (version "1.8.0")
+    (version "1.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IRISSeismic" version))
        (sha256
-        (base32 "1m09jcckssl9w6mf0axq8f7hg9jrajmhymp0xlcc1rnib0v0wq8k"))))
+        (base32 "0m6blr90kb2fpn8kndikkz17c8xsssjhnjnfyh6pz87csmnd3027"))))
     (properties `((upstream-name . "IRISSeismic")))
     (build-system r-build-system)
     (arguments

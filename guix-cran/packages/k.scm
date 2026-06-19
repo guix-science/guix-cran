@@ -3896,13 +3896,13 @@ individuals, aids in variant prioritization.  Methodology is described in Nugent
 (define-public r-kinesis
   (package
     (name "r-kinesis")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kinesis" version))
        (sha256
-        (base32 "16nzxij7lkjrhaxfzm3anrja22bbczz6xxnb64p7flc3sf39p8q2"))))
+        (base32 "05z8rpnwy307sh509wkjdxz9z8abbawwh1f6hm8xiszgkacm0ilj"))))
     (properties `((upstream-name . "kinesis")))
     (build-system r-build-system)
     (arguments
@@ -3921,6 +3921,7 @@ individuals, aids in variant prioritization.  Methodology is described in Nugent
                              r-config
                              r-bslib
                              r-arkhe
+                             r-ananke
                              r-aion))
     (home-page "https://codeberg.org/tesselle/kinesis")
     (synopsis "'shiny' Applications for the 'tesselle' Packages")

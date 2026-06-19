@@ -1455,13 +1455,13 @@ terrestrial water cycle data across various spatio-temporal scales.")
 (define-public r-twbparser
   (package
     (name "r-twbparser")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "twbparser" version))
        (sha256
-        (base32 "0ixhav16f61mrrw8310jk26w0c4vjzcxwgpvjbpj4f9gwrrkl84s"))))
+        (base32 "1f1j7r5ssfanqx2wj0p2s4wclgpaasxi94w6pf4vjc0ah04ng0lk"))))
     (properties `((upstream-name . "twbparser")))
     (build-system r-build-system)
     (arguments
@@ -1479,11 +1479,12 @@ terrestrial water cycle data across various spatio-temporal scales.")
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://prigasg.github.io/twbparser/")
-    (synopsis "Parse 'Tableau' Workbooks into Functional Data")
+    (synopsis "Parse 'Tableau' Workbooks into Tidy Data and Dependency Graphs")
     (description
      "High-performance parsing of Tableau workbook files into tidy data frames and
 dependency graphs for other visualization tools like R Shiny or Power BI
-replication.")
+replication, plus an interactive Shiny workbook inspector for uploaded .twb and
+.twbx files.")
     (license license:expat)))
 
 (define-public r-twangmediation
@@ -9972,13 +9973,13 @@ personalisation and delivers a more relevant search.")
 (define-public r-traumar
   (package
     (name "r-traumar")
-    (version "1.2.6")
+    (version "1.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "traumar" version))
        (sha256
-        (base32 "004grg09j45v5bpr8qprvd1f9yk8ahgmc228h9szgq64k0cqs1k3"))))
+        (base32 "1w4wd7ylpx6kjdxnsazih4jcz9mmk96nkg39bjqpc7ab65vq4a45"))))
     (properties `((upstream-name . "traumar")))
     (build-system r-build-system)
     (arguments
@@ -10520,6 +10521,37 @@ Ukrainian strings into Latin symbols.")
      "Translation of logit models coefficients into percentages, following Deauvieau
 (2010) <doi:10.1177/0759106309352586>.")
     (license license:gpl2+)))
+
+(define-public r-transitiontrees
+  (package
+    (name "r-transitiontrees")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "transitiontrees" version))
+       (sha256
+        (base32 "0qas1znggchvgv9ls2p2h2r1z9j63d3zss4cx1mxm163d0jp5p8v"))))
+    (properties `((upstream-name . "transitiontrees")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mohsaqr/transitiontrees")
+    (synopsis
+     "Transition Trajectories and Dynamics of Variable-Length Pathways or Sequences")
+    (description
+     "Analyzes transition trajectories in event, sequence, and ordered data, focusing
+on how states follow one another, how far processes unfold, and where pathways
+branch or converge.  Trajectories are modeled using variable-order prediction
+suffix trees (Ron, Singer, & Tishby, 1996) <doi:10.1023/A:1026490906255>,
+implemented in both frequency-based and prediction-based forms.  The framework
+includes multiple pruning, validation, and smoothing techniques to ensure model
+robustness.  Visualization options include transition trees, radial sunburst
+diagrams, transition heatmaps, and forward trajectory trees.")
+    (license license:gpl3)))
 
 (define-public r-transition
   (package
