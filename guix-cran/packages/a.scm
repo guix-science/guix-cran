@@ -11373,6 +11373,38 @@ and create documentation to support regulatory submission and internal
 communication.")
     (license license:gpl3+)))
 
+(define-public r-apml0
+  (package
+    (name "r-apml0")
+    (version "0.11")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "APML0" version))
+       (sha256
+        (base32 "0c3hcy55n43cljqvnkzgkhv02wpz0i8vjc4mrmvhhh50rsmi6xlj"))))
+    (properties `((upstream-name . "APML0")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppeigen r-rcpp r-matrix))
+    (home-page "https://github.com/LeeSprite/APML0")
+    (synopsis "Augmented and Penalized Minimization Method L0")
+    (description
+     "Fit linear, logistic and Cox models regularized with L0, lasso (L1), elastic-net
+(L1 and L2), or net (L1 and Laplacian) penalty, and their adaptive forms, such
+as adaptive lasso / elastic-net and net adjusting for signs of linked
+coefficients.  It solves the L0 penalty problem by simultaneously selecting
+regularization parameters and performing hard-thresholding or selecting the
+number of non-zeros.  This augmented and penalized minimization method provides
+an approximation solution to the L0 penalty problem, but runs as fast as L1
+regularization.  The package uses a one-step coordinate descent algorithm and
+runs extremely fast by taking into account the sparsity structure of
+coefficients.  It can handle very high dimensional data and has superior
+selection performance.")
+    (license license:gpl2+)))
+
 (define-public r-apm
   (package
     (name "r-apm")

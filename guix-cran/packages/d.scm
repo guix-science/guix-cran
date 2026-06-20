@@ -5188,13 +5188,13 @@ for drug sensitivity analysis in patient-derived cancer models.")
 (define-public r-drugexposurediagnostics
   (package
     (name "r-drugexposurediagnostics")
-    (version "1.1.7")
+    (version "1.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DrugExposureDiagnostics" version))
        (sha256
-        (base32 "11mi7fnkq1fdvrsxfd6p07q3rs0h2ya163qsgn3ffzyxrakw2r9x"))))
+        (base32 "1vfpji6gpv5z4glcyfyy25rrhizjrhzx7p2j0xwjdd1vvq07lh5c"))))
     (properties `((upstream-name . "DrugExposureDiagnostics")))
     (build-system r-build-system)
     (arguments
@@ -7909,6 +7909,57 @@ and c-means (Bezdek et al. (1981) <doi:10.1007/978-1-4757-0450-1>) algorithms.
 The analysis is independent of multiplexing geometry, @code{dPCR} system, and
 input amount.  The details about input data and parameters are available in the
 vignette.")
+    (license license:expat)))
+
+(define-public r-dpcomb
+  (package
+    (name "r-dpcomb")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DPComb" version))
+       (sha256
+        (base32 "07hlvxb8js2kr3vdsrc6hh8nk8rrxrrxj98fv91pv92pbjdfn69k"))))
+    (properties `((upstream-name . "DPComb")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mcmcpack))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=DPComb")
+    (synopsis "Discrete p-Value Combination Tests")
+    (description
+     "This package provides tools for performing p-value combination tests with
+discrete input p-values.  These tests combine significance evidence derived from
+independent discrete statistics to test a global null hypothesis, which is
+defined by the specified null distribution(s) of these discrete statistics.  The
+testing procedure involves two main steps: (1) Wasserstein Adjustment: Each
+component of the combination statistic is replaced by an adjusted Z statistic.
+This adjustment, based on the minimum Wasserstein distance, preserves the
+discrete nature of the original statistics while better aligning them with their
+counterparts under continuity. (2) Calculation of the Significance of the
+Combination Statistic: A continuous distribution that optimally matches the
+discrete distribution of the combination statistic is obtained, and the testing
+p-value for the global null hypothesis is computed.  The first step is analogous
+to Lancaster's approach but is generalized based on Wasserstein optimization.
+The second step allows for asymptotic control of Type I error with higher
+statistical power.  The package implements several p-value combination methods,
+including Fisherâs, Pearsonâs, Georgeâs, Stoufferâs, and Edgingtonâs
+methods.  The individual tests to be combined can be right-sided, left-sided, or
+two-sided, and can be based on binomial, Poisson, hypergeometric, noncentral
+hypergeometric, negative binomial, or geometric distributions, or a mixture of
+them.  The underlying methodology and its foundations are described in the
+following references: Contador, Gonzalo and Wu, Zheyang (2025).  A minimum
+Wasserstein distance approach to Fisher's combination of independent, discrete
+p-values.  Scandinavian Journal of Statistics, 52(3), 1281-1300.
+<doi:10.1111/sjos.12787> Contador, Gonzalo and Wu, Zheyang (2026).  Optimal
+Adjustment and Combination of Independent Discrete p-Values.  Under revision at
+the Journal of Computational and Graphical Statistics.
+<doi:10.48550/@code{arXiv.2508.02647>} Lancaster, HO (1949).  The combination of
+probabilities arising from data in discrete distributions.  Biometrika, 36(3/4),
+370-382. <doi:10.1093/biomet/36.3-4.370>.")
     (license license:expat)))
 
 (define-public r-dpcid
@@ -14644,42 +14695,6 @@ generation and parameter estimation for the discrete inverse Weibull
 distribution.")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-discretegapstatistic
-  (package
-    (name "r-discretegapstatistic")
-    (version "1.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DiscreteGapStatistic" version))
-       (sha256
-        (base32 "04f7v49i1swaq3cfkp26akkkkq2j3ph4b5l6119k9v5ck0vg3z9d"))))
-    (properties `((upstream-name . "DiscreteGapStatistic")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-reshape2
-                             r-rcolorbrewer
-                             r-polychrome
-                             r-pheatmap
-                             r-magrittr
-                             r-ggplot2
-                             r-dplyr
-                             r-cultevo
-                             r-complexheatmap
-                             r-cluster))
-    (home-page "https://github.com/ecortesgomez/DiscreteGapStatistic")
-    (synopsis "An Extension of the Gap Statistic for Ordinal/Categorical Data")
-    (description
-     "The gap statistic approach is extended to estimate the number of clusters for
-categorical response format data.  This approach and accompanying software is
-designed to be used with the output of any clustering algorithm and with
-distances specifically designed for categorical (i.e.  multiple choice) or
-ordinal survey response data.")
-    (license license:expat)))
-
 (define-public r-discretefwer
   (package
     (name "r-discretefwer")
@@ -20617,6 +20632,35 @@ graphics device used during benchmarking.  The devoid package implements a
 graphic device that accepts all the required calls from R's graphic engine but
 performs no action.  Apart from benchmarking it is unlikely that this device has
 any practical use.")
+    (license license:expat)))
+
+(define-public r-devkit
+  (package
+    (name "r-devkit")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "devkit" version))
+       (sha256
+        (base32 "1ksx121fnijjs43h6hvpz6hhrgcjci321djy495cdyg86ikjzrsj"))))
+    (properties `((upstream-name . "devkit")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://zankrut20.github.io/devkit/")
+    (synopsis
+     "Practical Utilities for Package Development and Session Auditing")
+    (description
+     "This package provides a comprehensive collection of practical R utilities
+designed to streamline the full life cycle of package development, interactive
+data analysis, and session management.  It offers tools for package management,
+development workflows, debugging, data processing, and system optimization.
+These utilities help R developers and data scientists automate release tasks,
+manage and scan dependencies, audit session states, optimize memory usage, and
+scramble sensitive Personally Identifiable Information ('PII').")
     (license license:expat)))
 
 (define-public r-devianlm
@@ -33917,6 +33961,32 @@ rstan ecosystem.  For methodological details on the sampler see Ju et al. (2022)
 <doi:10.48550/@code{arXiv.2206.00710>}, and for details on the discrete Gaussian
 and discrete Laplacian distributions see Canonne et al. (2020)
 <doi:10.48550/@code{arXiv.2004.00010>}.")
+    (license license:expat)))
+
+(define-public r-daoh
+  (package
+    (name "r-daoh")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "daoh" version))
+       (sha256
+        (base32 "0q5mpx55nlqmx8k9y293ym09w2k3k95kfymjmax64rag4gih3s0z"))))
+    (properties `((upstream-name . "daoh")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/davecumin/daoh")
+    (synopsis "Days Alive and Out of Hospital (DAOH) Calculation")
+    (description
+     "Calculates Days Alive and Out of Hospital (DAOH) from administrative
+admission/discharge/mortality data using three algorithms (nights, days, exact)
+and three death-handling approaches (midday, midnight, zero).  Includes tools
+for comparing methods (Bland-Altman, ICC, reclassification), and plotting.")
     (license license:expat)))
 
 (define-public r-dann

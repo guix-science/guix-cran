@@ -4361,6 +4361,32 @@ functions are currently implemented.  Such models are described in Manuguerra et
 al (2020) <doi:10.18637/jss.v096.i08>.")
     (license license:gpl2+)))
 
+(define-public r-ordinalcompositions
+  (package
+    (name "r-ordinalcompositions")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OrdinalCompositions" version))
+       (sha256
+        (base32 "1apwqhf826k2sqsdy9zskiln7xrhla4j5mg1w6sbrgrnsqwdj0nc"))))
+    (properties `((upstream-name . "OrdinalCompositions")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-lpsolveapi r-extradistr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=OrdinalCompositions")
+    (synopsis "Wasserstein-Based Regression for Ordinal Compositional Data")
+    (description
+     "This package provides tools analyzing regression models for ordinal
+compositional data using Wasserstein-based distances.  The package includes
+linear programming solvers under simplex constraints, tensor product
+constructions and performance metrics.")
+    (license license:gpl2)))
+
 (define-public r-ordinalclust
   (package
     (name "r-ordinalclust")
@@ -11428,13 +11454,13 @@ as observation period and drug era, among others.")
 (define-public r-omock
   (package
     (name "r-omock")
-    (version "0.6.2")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "omock" version))
        (sha256
-        (base32 "0dp4d1bsl7y30cc3zmw8j3jvaiy1l3gs8dh8ip3h0lwb7drvn810"))))
+        (base32 "1vyyrqynyjgjqxg3zipgm4zqk49w1pd8ddz40vq65d1visiiskl4"))))
     (properties `((upstream-name . "omock")))
     (build-system r-build-system)
     (arguments

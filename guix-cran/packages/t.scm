@@ -8759,13 +8759,13 @@ phylogenetic indexes, which can be quickly displayed graphically.")
 (define-public r-treesitter-r
   (package
     (name "r-treesitter-r")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "treesitter.r" version))
        (sha256
-        (base32 "14wvxbzd3a9bkgpracyxprb9b028lm46v4qxdcyiz02i3c91npqp"))))
+        (base32 "036y1f0gscfzzq7dfxgvy17p8iimalci2izr54p5n30nymr37w1x"))))
     (properties `((upstream-name . "treesitter.r")))
     (build-system r-build-system)
     (arguments
@@ -18910,6 +18910,48 @@ Tak et al. (2017) <doi:10.1214/17-AOAS1027>, Tak et al. (2018)
      "Displays processing time in a clear and structured way.  One function supports
 iterative workflows by predicting and showing the total time required, while
 another reports the time taken for individual steps within a process.")
+    (license license:gpl3)))
+
+(define-public r-time-r
+  (package
+    (name "r-time-r")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Time.R" version))
+       (sha256
+        (base32 "0pwzyy1dqxagcz1clxdy3i8amva4jx46acg5ppslvix23dmyjw9p"))))
+    (properties `((upstream-name . "Time.R")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-readxl r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=Time.R")
+    (synopsis "Estimates Time of Concentration and Lag Time for Watersheds")
+    (description
+     "Estimation of time of concentration and lag times for watersheds based on their
+morphometric characteristics.  It includes various methods for calculation and
+offers plotting functionalities for comparative analysis.  For more details see
+Bransby-Williams (1922, ISSN 2214-5818), Kirpich (1940)
+<https://hess.copernicus.org/articles/24/2655/2020/>, Kerby (1959, ISBN-13,
+979-8355357214), Johnstone & Cross (1949, ISBN:9780823211234), California
+Division of Highways (1942, ISSN:0012-7353), Clark (1945)
+<doi:10.1061/TACEAT.0005800>, Giandotti (1934)
+<doi:10.1080/02626667.2017.1384549>, Passini (1972, ISBN:84-7433-040-8), TÃ©mez
+(1978, ISBN:84-7433-040-8), PÃ©rez (1962, ISSN:0012-7353), Pilgrim (1977)
+<doi:10.1029/WR013i003p00587>, Bureau of Reclamation (1973, ISBN:9780913232123),
+Valencia-Zuluaga (1983) <https://repositorio.unal.edu.co/>, Ventura & Heras
+(1964) <doi:10.1061/9780784413548.005>, Soil Conservation Service (1972,
+ISBN:OL15009517M), Soil Conservation Service (1986)
+<https://www.ars.usda.gov/research/software/download/?softwareid=527>, US Navy -
+Technical Publication Navdocks (1972) <ISBN:978-1289256234>, Federal Aviation
+Administration (1970, ISBN:9780913236543), Natural Environment Research Council
+(1975, ISBN:9780114501234), Mimikou (1984) <doi:10.1080/02626668409490922>, Watt
+& Chow (1985) <doi:10.1139/l85-031>, Haktanir & Sezen (1990)
+<doi:10.1080/02626669009492423>.")
     (license license:gpl3)))
 
 (define-public r-timbr

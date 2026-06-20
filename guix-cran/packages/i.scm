@@ -14105,6 +14105,33 @@ for the true discovery proportion, rather than a single lower bound from
 @code{pARI}'.  For more details see Andreella.  A (2023) <doi:10.1002/sim.9725>.")
     (license license:gpl2+)))
 
+(define-public r-impala
+  (package
+    (name "r-impala")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "impala" version))
+       (sha256
+        (base32 "1gnl6llcaf0d3ja8113hcqvcy9mfb9lm8jspsrzsll974phwimj7"))))
+    (properties `((upstream-name . "impala")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-progress r-einsum r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/sandialabs/rImpala")
+    (synopsis "Bayesian Model Calibration")
+    (description
+     "Package provides tools for modular Bayesian model calibration.  these tools
+allow for posterior exploration with sampling methods including tempering and
+adaptive Markov Chain Monte Carlo (MCMC).  Allows for pooled calibration or
+hierarchal calibration of parameters.  For more information see Francom et al.,
+2025 <DOI:10.1137/24M1644092>.")
+    (license license:expat)))
+
 (define-public r-impactr
   (package
     (name "r-impactr")

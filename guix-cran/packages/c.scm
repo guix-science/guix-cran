@@ -2535,35 +2535,6 @@ monthly interest rate, and term of loan.")
 Detecting Pleiotropy.")
     (license license:gpl2+)))
 
-(define-public r-cultevo
-  (package
-    (name "r-cultevo")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cultevo" version))
-       (sha256
-        (base32 "0rmncp4mrdpf3izhhqn9406i36j3d3d7i8cglip04lkfbypl9jvy"))))
-    (properties `((upstream-name . "cultevo")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringi r-pspearman r-hmisc r-combinat))
-    (native-inputs (list r-knitr))
-    (home-page "https://kevinstadler.github.io/cultevo/")
-    (synopsis "Tools, Measures and Statistical Tests for Cultural Evolution")
-    (description
-     "This package provides tools for measuring the compositionality of signalling
-systems (in particular the information-theoretic measure due to Spike (2016)
-<http://hdl.handle.net/1842/25930> and the Mantel test for distance matrix
-correlation (after Dietz 1983) <doi:10.1093/sysbio/32.1.21>), functions for
-computing string and meaning distance matrices as well as an implementation of
-the Page test for monotonicity of ranks (Page 1963)
-<doi:10.1080/01621459.1963.10500843> with exact p-values up to k = 22.")
-    (license license:expat)))
-
 (define-public r-cuff
   (package
     (name "r-cuff")
@@ -6689,13 +6660,13 @@ as well as from literature and a GUI to access them.")
 (define-public r-crossnma
   (package
     (name "r-crossnma")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crossnma" version))
        (sha256
-        (base32 "1z3q831769cd25fpnzbp6jvya872zdq56bxqpk1iav2gwp0m1kfn"))))
+        (base32 "18k1h6sjikd2i78jsh14frn26gdyy1gi515k93h03kp9fxb5yx76"))))
     (properties `((upstream-name . "crossnma")))
     (build-system r-build-system)
     (arguments
@@ -6712,7 +6683,7 @@ as well as from literature and a GUI to access them.")
                              r-dplyr
                              r-coda))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/htx-r/crossnma")
+    (home-page "https://github.com/guido-s/crossnma")
     (synopsis
      "Cross-Design & Cross-Format Network Meta-Analysis and Regression")
     (description
@@ -8967,13 +8938,13 @@ instruments in R.")
 (define-public r-craftgrn
   (package
     (name "r-craftgrn")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "craftgrn" version))
        (sha256
-        (base32 "0w7lynq6pji4mc9amh9h55ccnq1m7wqm49aqf5mv1g2fvk2h9w4z"))))
+        (base32 "0p35kdnn3f1idpi48v4daifdg89dwg81b5wzkrncwijaqh6ivln3"))))
     (properties `((upstream-name . "craftgrn")))
     (build-system r-build-system)
     (arguments
@@ -9007,9 +8978,10 @@ gene regulatory networks by integrating chromatin accessibility footprint scores
 with matched RNA expression data.  It implements context-specific enhancer-gene
 linking, transcription factor focused network analysis, differential network
 analysis, and regulatory topic modeling workflows for systematic exploration of
-gene regulation across conditions.  Methodological background is available at
-<doi:10.1038/s41467-020-18035-1>, <https://www.jmlr.org/papers/v3/blei03a.html>,
-and <doi:10.48550/@code{arXiv.1510.08628>}.")
+gene regulation across conditions.  Methodological background is described in
+Bentsen and others (2020) <doi:10.1038/s41467-020-18035-1>, Blei, Ng and Jordan
+(2003) <https://www.jmlr.org/papers/v3/blei03a.html>, and Chen, Li, Zhu and Chen
+(2015) <doi:10.48550/@code{arXiv.1510.08628>}.")
     (license license:gpl3+)))
 
 (define-public r-crabs
@@ -20969,20 +20941,19 @@ Derumigny (2025) <doi:10.48550/@code{arXiv.2504.07704>}).")
 (define-public r-condathis
   (package
     (name "r-condathis")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "condathis" version))
        (sha256
-        (base32 "05bdzi2dl3gian6lpki0y54ixzyr5cr0wsh5j4bxrzhsxpyknbrd"))))
+        (base32 "04mvjwakh4zffhdqd3fkn32b6jzljyzryk2bz5bnh53rayf761x4"))))
     (properties `((upstream-name . "condathis")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-withr
-                             r-tibble
                              r-stringr
                              r-rlang
                              r-processx
@@ -51410,13 +51381,13 @@ more details, see Sandercock et al. (2024) <doi:10.1073/pnas.2403505121>.")
 (define-public r-cast
   (package
     (name "r-cast")
-    (version "1.0.4")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CAST" version))
        (sha256
-        (base32 "1xsbf81bm9h37sx8643qsv6h2bmiglqdy0y489q968l3p1vj8p9p"))))
+        (base32 "1hpxkc93scyrx4hh95x5px86l96836mgbwjwbqb39d7a35m0ng4d"))))
     (properties `((upstream-name . "CAST")))
     (build-system r-build-system)
     (arguments
@@ -51425,11 +51396,8 @@ more details, see Sandercock et al. (2024) <doi:10.1073/pnas.2403505121>.")
     (propagated-inputs (list r-zoo
                              r-twosamples
                              r-terra
-                             r-sp
                              r-sf
-                             r-plyr
                              r-ggplot2
-                             r-forcats
                              r-fnn
                              r-data-table
                              r-caret))
@@ -52094,13 +52062,13 @@ graphic presentation of maps, for instance, map palettes, layout elements
 (define-public r-cartographr
   (package
     (name "r-cartographr")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cartographr" version))
        (sha256
-        (base32 "147kxwms9irhw37hpiwi2spi7n3d6lhq3x28b3k20a9ypssg0wk2"))))
+        (base32 "1r8bjvid4kvc4kd5hj5yiiqm2axrn72xcszz6c10f9j3n76zb00p"))))
     (properties `((upstream-name . "cartographr")))
     (build-system r-build-system)
     (arguments
@@ -54381,13 +54349,13 @@ and can be further refined as needed by the user.")
 (define-public r-cancensus
   (package
     (name "r-cancensus")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cancensus" version))
        (sha256
-        (base32 "1dv15my94fikask49mkp0fismy21bg4mwzdgfrxrrq1fvwmfhkk1"))))
+        (base32 "0skikjw1p0r3vmjf3cz4i39gmywny8yarhjqry8wgc4ddihg3ddl"))))
     (properties `((upstream-name . "cancensus")))
     (build-system r-build-system)
     (arguments

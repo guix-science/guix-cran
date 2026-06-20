@@ -10233,6 +10233,41 @@ electoral systems.  For more information on these methods, see Michael Gallagher
 (1991)<doi:10.1016/0261-3794(91)90004-C>.")
     (license license:expat)))
 
+(define-public r-prlogistic
+  (package
+    (name "r-prlogistic")
+    (version "2.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "prLogistic" version))
+       (sha256
+        (base32 "1mkgawf1hsp8ks39fm0xmlwndmnf76x3gh2351233wlnfq4gx08b"))))
+    (properties `((upstream-name . "prLogistic")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-lme4 r-boot))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Raydonal/prLogistic")
+    (synopsis "Estimation of Prevalence Ratios via Logistic Regression Models")
+    (description
+     "Estimates adjusted prevalence ratios (PR) and their confidence intervals from
+logistic regression models, addressing the well-known limitation of odds ratios
+(OR) as approximations to PR in cross-sectional studies with common outcomes.
+Supports independent observations @code{(glm()}), clustered/multilevel data
+@code{(glmer()} from lme4'), longitudinal data via Generalised Estimating
+Equations @code{(geeglm()} from geepack'), and complex survey designs
+@code{(svyglm()} from survey').  Inference is available via the delta method
+(conditional and marginal standardisation) and via bootstrap
+(normal-approximation and percentile intervals).  Continuous covariates are
+handled through user-specified or median-based reference values; flexible
+baseline specification allows any reference category to be chosen for factor
+predictors.  Based on the methodology described in Amorim & Ospina (2021)
+<doi:10.1590/0001-3765202120190316>.")
+    (license license:gpl2+)))
+
 (define-public r-privatelr
   (package
     (name "r-privatelr")
@@ -12944,6 +12979,66 @@ multivariate analyses of quantitative behavioral data based on machine learning
 models.")
     (license license:gpl3)))
 
+(define-public r-predmicror
+  (package
+    (name "r-predmicror")
+    (version "1.3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "predmicror" version))
+       (sha256
+        (base32 "0l0067yldrllyjf40fwwjr7m078vif0rqxkaj7zgp4n75p8hj00v"))))
+    (properties `((upstream-name . "predmicror")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:modules '((guix build r-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (propagated-inputs (list r-rdpack r-nlme r-gslnls))
+    (native-inputs (list r-knitr esbuild))
+    (home-page "https://fsqanalytics.github.io/predmicror/")
+    (synopsis "Fitting Predictive Microbiology Models")
+    (description
+     "This package provides predictive microbiology model functions and convenience
+wrappers for fitting primary growth, microbial inactivation, dynamic, omnibus,
+and cardinal parameter models to experimental data using nonlinear least squares
+and related mixed-effects or time-varying workflows.  Includes helper functions
+for extracting fitted values, calculating model diagnostics, and comparing
+fitted models.  Implemented model families include those described by:
+Zwietering et al. (1990) <doi:10.1128/AEM.56.6.1875-1881.1990>, Baranyi and
+Roberts (1994) <doi:10.1016/0168-1605(94)90157-0>, Baranyi and Roberts (1995)
+<doi:10.1016/0168-1605(94)00121-L>, Buchanan et al. (1997)
+<doi:10.1006/fmic.1997.0125>, Richards (1959) <doi:10.1093/jxb/10.2.290>, Fang
+et al. (2012) <doi:10.1111/j.1750-3841.2012.02873.x>, Fang et al. (2013)
+<doi:10.1016/j.fm.2012.12.005>, Huang (2008)
+<doi:10.1111/j.1750-3841.2008.00785.x>, Huang (2009)
+<doi:10.1016/j.jfoodeng.2008.07.011>, Huang (2013)
+<doi:10.1016/j.foodcont.2012.11.019>, Geeraerd et al. (2005)
+<doi:10.1016/j.ijfoodmicro.2004.11.038>, van Boekel (2002)
+<doi:10.1016/S0168-1605(01)00742-5>, Peleg (1999)
+<doi:10.1016/S0963-9969(99)00081-2>, Mafart et al. (2002)
+<doi:10.1016/S0168-1605(01)00624-9>, Albert and Mafart (2005)
+<doi:10.1016/j.ijfoodmicro.2004.10.016>, Rosso et al. (1993)
+<doi:10.1006/jtbi.1993.1099>, Rosso et al. (1995)
+<doi:10.1128/AEM.61.2.610-616.1995>, and Rosso et al. (1996)
+<doi:10.4315/0362-028X-59.9.944>.")
+    (license license:gpl3+)))
+
 (define-public r-predint
   (package
     (name "r-predint")
@@ -14913,6 +15008,44 @@ models that are detailed in Quinlan, J.J.; Page, G.L.; Castro, L.M. (2023)
 bivariate functional data model that employs a PPM or a PPMx to cluster curves
 based on B-spline coefficients is provided.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-ppmsdr
+  (package
+    (name "r-ppmsdr")
+    (version "2.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ppmSDR" version))
+       (sha256
+        (base32 "0ywf48s9pidbp4kyjx19svpm9w7y5w8mrwx7yydp4a15h2rgpz81"))))
+    (properties `((upstream-name . "ppmSDR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrix r-grpreg r-energy))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/c16267/ppmSDR")
+    (synopsis "Penalized Principal Machine for Sufficient Dimension Reduction")
+    (description
+     "This package provides a unified, computation-friendly framework for penalized
+principal machines (P2M), a class of sparse sufficient dimension reduction (SDR)
+estimators for regression and binary classification.  Principal machines (PM)
+estimate the central subspace by solving a family of convex-loss problems over
+several cutoffs; their penalized counterparts (P2M) add a row-group sparsity
+penalty so that dimension reduction and variable selection are performed
+simultaneously.  All estimators are fitted by a single group coordinate descent
+(GCD) algorithm that accommodates least squares, logistic, asymmetric least
+squares, L2-hinge, hinge (support vector machine, SVM) and quantile losses,
+together with the least absolute shrinkage and selection operator (LASSO), the
+smoothly clipped absolute deviation (SCAD) penalty and the minimax concave
+penalty (MCP).  Methods are described in Li, Artemiou and Li (2011)
+<doi:10.1214/11-AOS932>, Shin and Artemiou (2017)
+<doi:10.1016/j.csda.2016.12.003>, Artemiou, Dong and Shin (2021)
+<doi:10.1016/j.patcog.2020.107768> and Breheny and Huang (2015)
+<doi:10.1007/s11222-013-9424-2>.")
+    (license license:gpl3)))
 
 (define-public r-ppmr
   (package
@@ -21811,6 +21944,49 @@ the \"lon\" column is the original longitude data; the \"count\" is the density
 count of the number of points within a radius of radius*grid_size (the
 neighborhood); and the date_avg column includes the average date of each point
 in the neighborhood.")
+    (license license:expat)))
+
+(define-public r-pointcoral
+  (package
+    (name "r-pointcoral")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pointcoral" version))
+       (sha256
+        (base32 "1fh7frd7qk23sravcj3msfd6d76h1gpkjypl7yh7qn8s2nfbyvvd"))))
+    (properties `((upstream-name . "pointcoral")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-rlang
+                             r-readxl
+                             r-readr
+                             r-purrr
+                             r-png
+                             r-magick
+                             r-janitor
+                             r-fs
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/el-cordero/pointcoral")
+    (synopsis "Local Point-Count Processing for Coral Photoquadrats")
+    (description
+     "Imports Coral Point Count with Excel extensions (CPCe) point-count annotations
+and related exported tables, standardizes labels with a user-supplied crosswalk,
+creates ecological cover summaries, writes quality-control overlays, and exports
+machine-learning-ready point labels, image patches, sparse masks, and
+train/validation/test splits.  The package is fully local and does not depend on
+third-party web platforms, user accounts, or other closed services.  CPCe
+methods are described by Kohler and Gill (2006) \"Coral Point Count with Excel
+extensions (CPCe): A Visual Basic program for the determination of coral and
+substrate coverage using random point count methodology\"
+<doi:10.1016/j.cageo.2005.11.009>.")
     (license license:expat)))
 
 (define-public r-pointblank
@@ -37472,13 +37648,13 @@ methods developed by Morrissey and Wilson (2010) <doi:
 (define-public r-pedtools
   (package
     (name "r-pedtools")
-    (version "2.10.0")
+    (version "2.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pedtools" version))
        (sha256
-        (base32 "08x8bmcii902mpasdcn06zx90bl8ixl1c5xb0ffnanzri7nyl7dq"))))
+        (base32 "0hgnf1lq1j40wmq90g1hkdlflh2v95fnqy6gnvxwsnaaa4ayw9pd"))))
     (properties `((upstream-name . "pedtools")))
     (build-system r-build-system)
     (arguments
@@ -41862,6 +42038,31 @@ of colour described in Maia, Eliason, Bitton, Doucet & Shawkey (2013)
 <doi:10.1111/2041-210X.12069> and Maia, Gruson, Endler & White (2019)
 <doi:10.1111/2041-210X.13174>.")
     (license license:gpl2+)))
+
+(define-public r-pavdata
+  (package
+    (name "r-pavdata")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pavdata" version))
+       (sha256
+        (base32 "0s0xhgk00g7qrfcpx74sz5zk9i40br7y4rwzi58yy0s8rx1bbl94"))))
+    (properties `((upstream-name . "pavdata")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-uuid r-jsonlite))
+    (home-page "https://cran.r-project.org/package=pavdata")
+    (synopsis "Transportation Infrastructure Data Toolbox")
+    (description
+     "An open-source toolbox for storing, validating, managing, and exploring
+transportation infrastructure data.  Provides a relational data model for
+binders, aggregates, mixtures, and test results, with a human-readable file
+format (.pavdata) aligned with FAIR principles.")
+    (license license:expat)))
 
 (define-public r-pautilities
   (package

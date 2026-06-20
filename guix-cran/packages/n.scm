@@ -9774,6 +9774,32 @@ conducted by a nested permutation approach within imputation.  Refer to Guo et
 al (2018) <doi:10.1177/0962280218786302> for further details.")
     (license license:gpl2)))
 
+(define-public r-nirs4alldatasets
+  (package
+    (name "r-nirs4alldatasets")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nirs4alldatasets" version))
+       (sha256
+        (base32 "1mvphf9ycwx5zbvrf09vjbm4xz4ma0fv33v7s15rnvnyc6ls4xcq"))))
+    (properties `((upstream-name . "nirs4alldatasets")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (home-page "https://cran.r-project.org/package=nirs4alldatasets")
+    (synopsis "Acquire Curated NIRS Reference Datasets ('nirs4all-datasets')")
+    (description
+     "R binding over the nirs4all-datasets C ABI ('n4ds_*'): resolve a dataset id from
+the distributable catalog index into a version-pinned download contract, fetch
+the canonical Parquet ('Dataverse / Zenodo / figshare') with SHA-256
+verification into a local cache, and re-verify a cached directory offline.  JSON
+crosses the stable C ABI'; analysis of the data is left to the host.")
+    (license license:expat)))
+
 (define-public r-nipter
   (package
     (name "r-nipter")
@@ -10877,6 +10903,58 @@ maintained.  This package was commissioned by the NHS-R community
 <https://nhsrcommunity.com/> to provide this consistency of lookups.  The
 @code{OpenSafely} lookups have now been added
 <https://www.opencodelists.org/docs/>.")
+    (license license:expat)))
+
+(define-public r-nhscancerwaits
+  (package
+    (name "r-nhscancerwaits")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nhscancerwaits" version))
+       (sha256
+        (base32 "0ll1vmzzvwpfqswlyv38if4mzkf99f3hh8kdfiw2zp8g7jhmcysf"))))
+    (properties `((upstream-name . "nhscancerwaits")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-writexl
+                             r-tidyr
+                             r-stringr
+                             r-scales
+                             r-rlang
+                             r-readxl
+                             r-readr
+                             r-performance
+                             r-lubridate
+                             r-lme4
+                             r-ggplot2
+                             r-dplyr
+                             r-cluster
+                             r-broom-mixed))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/zerish12/nhscancerwaits")
+    (synopsis
+     "NHS Cancer Waiting-Time Analysis, Benchmarking and Multilevel Modelling")
+    (description
+     "This package provides tools for importing, harmonising, cleaning, analysing,
+benchmarking and visualising National Health Service (NHS) England Cancer
+Waiting Times data.  The package supports national performance monitoring,
+provider-level benchmarking and cancer pathway comparisons through key
+performance indicator summaries, provider filtering, clustering analyses,
+mixed-effects regression models, variance decomposition, intraclass correlation
+coefficient estimation, adjusted provider performance estimation and sensitivity
+analyses.  Functions are included for exploratory analysis, publication-ready
+visualisations and spreadsheet exports, supporting reproducible health services
+research, cancer services evaluation, quality improvement and assessment of
+waiting-time performance across healthcare organisations.  Mixed-effects
+modelling functionality is based on Bates et al. (2015)
+<doi:10.18637/jss.v067.i01>.  Multilevel modelling concepts and variance
+decomposition follow Gelman and Hill (2007, ISBN:9780521686891).  Cancer Waiting
+Times definitions and reporting standards follow NHS England
+<https://www.england.nhs.uk/statistics/statistical-work-areas/cancer-waiting-times/>.")
     (license license:expat)))
 
 (define-public r-nhs-predict
@@ -15715,13 +15793,13 @@ avoid API calls during CRAN checks.")
 (define-public r-neonutilities
   (package
     (name "r-neonutilities")
-    (version "3.0.3")
+    (version "4.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "neonUtilities" version))
        (sha256
-        (base32 "1mna62sn0620ab9jnnpkpmc3mj43ymq0w7s5gci033y11dxcjwp4"))))
+        (base32 "1ii884minfa7srqxcqhdcigphqry6q1iyyd8w61f8scxn480bibj"))))
     (properties `((upstream-name . "neonUtilities")))
     (build-system r-build-system)
     (arguments
@@ -15734,6 +15812,7 @@ avoid API calls during CRAN checks.")
                              r-jsonlite
                              r-jose
                              r-httr
+                             r-duckdbfs
                              r-dplyr
                              r-downloader
                              r-data-table
@@ -17171,6 +17250,33 @@ Roig et al. (2022) <doi:10.1186/s12874-022-01683-w>, Saville et al. (2022)
     (description
      "Makes NCBI taxonomic data locally available and searchable as an R object.")
     (license license:gpl2+)))
+
+(define-public r-ncar
+  (package
+    (name "r-ncar")
+    (version "0.6.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ncar" version))
+       (sha256
+        (base32 "06h0pdp94p8bm132w9fr5j4ygc5ssdyc833wv6ldraa3rmg07ixm"))))
+    (properties `((upstream-name . "ncar")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-r-oo r-r-methodss3 r-noncompart))
+    (home-page "https://cran.r-project.org/package=ncar")
+    (synopsis "Noncompartmental Analysis for Pharmacokinetic Report")
+    (description
+     "Conduct a noncompartmental analysis with industrial strength.  Some features are
+1) CDISC SDTM terms 2) Automatic or manual slope selection 3) Supporting both
+linear-up linear-down and linear-up log-down method 4) Interval(partial) AUCs
+with linear or log interpolation method 5) Produce pdf, rtf, text report files.
+* Reference: Gabrielsson J, Weiner D. Pharmacokinetic and Pharmacodynamic Data
+Analysis - Concepts and Applications.  5th ed.  2016. (ISBN:9198299107).")
+    (license license:gpl3)))
 
 (define-public r-ncappc
   (package

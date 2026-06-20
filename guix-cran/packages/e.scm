@@ -585,13 +585,13 @@ proposed by Salvucci and Goldberg (2000) <doi:10.1145/355017.355028>.")
 (define-public r-eyeris
   (package
     (name "r-eyeris")
-    (version "3.1.0")
+    (version "3.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eyeris" version))
        (sha256
-        (base32 "1v5k8xnvq0py6nzx3afdg7nc2kvinqhhzrjhzw5h83ffnjh3g3f7"))))
+        (base32 "0hfg75dfmma7vrqla1n80aqamhm7l1js7mi213hp2i13vrf420r7"))))
     (properties `((upstream-name . "eyeris")))
     (build-system r-build-system)
     (arguments
@@ -23756,13 +23756,13 @@ priors for parameters.")
 (define-public r-ecospat
   (package
     (name "r-ecospat")
-    (version "4.1.3")
+    (version "4.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecospat" version))
        (sha256
-        (base32 "04kyc30wa99gybv6py56w3cmyj7bsbiq7k9nv39f6hcg2mpcphyy"))))
+        (base32 "1rzhsi04pfqq9blhk16v73v3mnx3am32hhwv0i9b6y3ysayxclqv"))))
     (properties `((upstream-name . "ecospat")))
     (build-system r-build-system)
     (arguments
@@ -23771,7 +23771,6 @@ priors for parameters.")
     (propagated-inputs (list r-vegan
                              r-terra
                              r-presenceabsence
-                             r-poibin
                              r-nabor
                              r-matrixstats
                              r-ks
@@ -23798,7 +23797,7 @@ and former members and collaborators of the ecospat group of Antoine Guisan,
 Department of Ecology and Evolution (DEE) and Institute of Earth Surface
 Dynamics (IDYST), University of Lausanne, Switzerland.  Read Di Cola et al.
 (2016) <doi:10.1111/ecog.02671> for details.")
-    (license (list license:gpl2+ license:gpl3+))))
+    (license license:gpl2+)))
 
 (define-public r-ecospace
   (package
@@ -28270,13 +28269,13 @@ tidal catalogs.")
 (define-public r-earthdatalogin
   (package
     (name "r-earthdatalogin")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "earthdatalogin" version))
        (sha256
-        (base32 "1yyjzmd8wx0iv23rqjknx7pni7pxsy04srqqz65z96rhmyy5v8sn"))))
+        (base32 "0mhcd1fwcxsc41y6sv3rndnnz6ynhm0dmavjjmyk4j18b6hs5j90"))))
     (properties `((upstream-name . "earthdatalogin")))
     (build-system r-build-system)
     (arguments

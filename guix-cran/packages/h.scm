@@ -846,13 +846,13 @@ Generalized Plackett-Luce likelihoods use Hankin 2024
 (define-public r-hyper-gam
   (package
     (name "r-hyper-gam")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hyper.gam" version))
        (sha256
-        (base32 "1v0l8hj6j6wj0fry29k74ajw8wzc76h6xj2klhcp1pdjkmdz0fcd"))))
+        (base32 "0bid5x5k1szfwn737057jgiwwy17rna8vagak1fx3afvmc78sl9p"))))
     (properties `((upstream-name . "hyper.gam")))
     (build-system r-build-system)
     (arguments
@@ -863,10 +863,14 @@ Generalized Plackett-Luce likelihoods use Hankin 2024
     (synopsis "Generalized Additive Models with Hyper Column")
     (description
      "An interactive HTML widget of the perspective plot for generalized additive
-models.  An alternative solution of the function @code{mgcv::vis.gam()}.  The
-author has retired from academic research.  Accordingly, this package should not
-be considered a validated tool for use in peer-reviewed publications or as the
-basis for grant applications.")
+models.  An alternative solution of the function @code{mgcv::vis.gam()}.  This R
+package author has retired from academic research.  Accordingly, this package
+should not be considered a validated tool for use in peer-reviewed publications
+or as the basis for grant applications.  Backward compatibility with user-code
+published in <doi:10.1093/bioinformatics/btaf182> and
+<doi:10.1093/bioinformatics/btaf430> is not maintained in versions >= 0.3.0 of
+this package.  The authors of those publications are the appropriate contacts
+for reproducibility inquiries.")
     (license license:gpl2)))
 
 (define-public r-hyper-fit

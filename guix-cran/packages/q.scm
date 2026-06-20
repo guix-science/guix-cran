@@ -3245,13 +3245,13 @@ provides tools to help make such choices.  Sen and others (2007)
 (define-public r-qtlcharts
   (package
     (name "r-qtlcharts")
-    (version "0.20")
+    (version "0.22")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qtlcharts" version))
        (sha256
-        (base32 "08pbadpvyrvhv5x0va9pz66kc31ngzmgnzd3xwkzhfa1mv1jn0w2"))))
+        (base32 "0ig4gi971hf9d23w3gxc81g9frbpg4gyls80scnpfri2l5z7v54q"))))
     (properties `((upstream-name . "qtlcharts")))
     (build-system r-build-system)
     (arguments

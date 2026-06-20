@@ -5992,35 +5992,6 @@ giddy package <https://pysal.org/giddy/>.")
 have been drawn using grid graphics.")
     (license license:gpl2+)))
 
-(define-public r-gridcopula
-  (package
-    (name "r-gridcopula")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GRIDCOPULA" version))
-       (sha256
-        (base32 "1pq5xsm8iksp7flrxf70v1cifr1hazclcdy7n0a0hyhayflvv08n"))))
-    (properties `((upstream-name . "GRIDCOPULA")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rsolnp
-                             r-reshape2
-                             r-pracma
-                             r-limsolve
-                             r-ggplot2
-                             r-fields
-                             r-evmix))
-    (home-page "https://cran.r-project.org/package=GRIDCOPULA")
-    (synopsis "Bivariate Copula Functions Based on Regular Grid")
-    (description
-     "Estimates grid type bivariate copula functions, calculates some association
-measures and provides several copula graphics.")
-    (license license:gpl3)))
-
 (define-public r-gridbezier
   (package
     (name "r-gridbezier")
@@ -13986,13 +13957,13 @@ R Markdown documents, and R Jupyter Notebooks'.  Internally, uses
 (define-public r-glyrepr
   (package
     (name "r-glyrepr")
-    (version "0.12.0")
+    (version "0.12.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glyrepr" version))
        (sha256
-        (base32 "1bc7wb3p56njiy1npw2jv9zzr0lzg0q53div26lhldggmipyyhd6"))))
+        (base32 "1mblf82rzz42ay276z69p7igg50p181xf48ca3n1xg6s59cvgd61"))))
     (properties `((upstream-name . "glyrepr")))
     (build-system r-build-system)
     (arguments

@@ -2260,6 +2260,33 @@ beautifies itself by varying the number of points and the multiplication table
 you use.")
     (license license:gpl3)))
 
+(define-public r-rurl
+  (package
+    (name "r-rurl")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rurl" version))
+       (sha256
+        (base32 "0ai1xgkfz6l1nkbchm7d2ixk095bmi4iyrygqvryswja2msk141r"))))
+    (properties `((upstream-name . "rurl")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringi r-punycoder r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/bart-turczynski/rurl")
+    (synopsis "Parse, Clean, and Normalize URLs")
+    (description
+     "This package provides a lightweight toolkit for extracting structured
+information from URLs.  Includes functions for parsing, normalizing protocols,
+extracting domains, and constructing clean URLs.  The package includes a
+processed copy of the Public Suffix List from <https://publicsuffix.org> for
+domain extraction.")
+    (license license:expat)))
+
 (define-public r-rurality
   (package
     (name "r-rurality")
@@ -5837,13 +5864,13 @@ distributions.")
 (define-public r-rstudiothemes
   (package
     (name "r-rstudiothemes")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rstudiothemes" version))
        (sha256
-        (base32 "09bma68l3yzq082q3mv7apm11md79vjh3kpfx2q74348s3x70axb"))))
+        (base32 "09fwqc4jlsgm1yc3b7hxs9091wxxi6q41j06s2rjmasv8ck00hqb"))))
     (properties `((upstream-name . "rstudiothemes")))
     (build-system r-build-system)
     (arguments
@@ -5859,13 +5886,12 @@ distributions.")
                              r-cli))
     (native-inputs (list r-quarto))
     (home-page "https://dieghernan.github.io/rstudiothemes/")
-    (synopsis
-     "Create 'RStudio' Themes from Visual Studio Code, Positron and 'TextMate' Themes")
+    (synopsis "Create and Install Custom 'RStudio' Themes")
     (description
-     "Create and install RStudio themes derived from Visual Studio Code, Positron and
-@code{TextMate} themes.  Provides functions to convert between @code{TextMate}
-and Visual Studio Code or Positron themes, as well as ports of several Visual
-Studio Code themes.")
+     "Create, convert and install custom RStudio editor themes from Visual Studio
+Code', Positron and @code{TextMate} theme files.  Convert themes between
+@code{TextMate}', Visual Studio Code and Positron formats and install bundled
+ports of popular themes for use in RStudio'.")
     (license license:expat)))
 
 (define-public r-rstudio-prefs
@@ -9288,13 +9314,13 @@ included in the package.")
 (define-public r-rrtable
   (package
     (name "r-rrtable")
-    (version "0.3.0")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rrtable" version))
        (sha256
-        (base32 "1y1hfscnw466azxk1c2kpa486xn8561zl5inv7yk5q8926ls2zc3"))))
+        (base32 "06pr4hk38cd527y12q2kq81i3kfv3yqqpzac5rhxra286prb938f"))))
     (properties `((upstream-name . "rrtable")))
     (build-system r-build-system)
     (arguments
@@ -13773,6 +13799,35 @@ match taxonomic names to Open Tree identifiers'.  The Open Tree of Life aims at
 assembling a comprehensive phylogenetic tree for all named species.")
     (license license:bsd-2)))
 
+(define-public r-rotio
+  (package
+    (name "r-rotio")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rotio" version))
+       (sha256
+        (base32 "01pxbmr8n93655377x853nsk4sx8i4iay7nkd1b40py9mql2rrk7"))))
+    (properties `((upstream-name . "rotio")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite))
+    (home-page "https://github.com/cornball-ai/rotio")
+    (synopsis "Pure-R 'OpenTimelineIO' Document Model")
+    (description
+     "This package provides a dependency-light @code{OpenTimelineIO} (OTIO)
+<https://github.com/@code{AcademySoftwareFoundation/OpenTimelineIO>} document
+layer in pure R. Provides constructors for the OTIO object model (timelines,
+tracks, clips, gaps, media references, rational times and time ranges),
+functional builders that return new objects, and readers and writers for
+canonical .otio files through jsonlite'.  The optional @code{RcppOTIO} package
+validates output against the real @code{OpenTimelineIO} C++ library.  No
+compiled code.")
+    (license license:asl2.0)))
+
 (define-public r-rotatogram
   (package
     (name "r-rotatogram")
@@ -15262,6 +15317,44 @@ are consistent with previous states of LDA models.  After an initial modeling,
 updates can be computed efficiently, allowing for real-time monitoring and
 detection of events or structural breaks.")
     (license license:gpl3+)))
+
+(define-public r-rolleigen
+  (package
+    (name "r-rolleigen")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rolleigen" version))
+       (sha256
+        (base32 "1pmk9yiwpld7hqlrmgr1sbh6xrjzv2vzrg192zp889w9778dbhys"))))
+    (properties `((upstream-name . "rolleigen")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-roll r-rcppparallel r-rcpparmadillo r-rcpp))
+    (home-page "https://github.com/jasonjfoster/rolleigen")
+    (synopsis "Rolling Eigenanalysis")
+    (description
+     "Fast and efficient computation of rolling and expanding eigenanalysis for
+time-series data.  The rolleigen package decomposes the covariance matrix of the
+explanatory variables into eigenvalues and eigenvectors to perform principal
+component analysis (Pearson, 1901, <doi:10.1080/14786440109462720>; Hotelling,
+1933, <doi:10.1037/h0071325>) and principal component regression (Massy, 1965,
+<doi:10.1080/01621459.1965.10480787>) over rolling and expanding windows.  For
+each window, the eigenvalues and eigenvectors are computed from the covariance
+matrix and, optionally, ordered from largest to smallest to summarize the
+directions of greatest variation in the data.  A subset of leading components is
+then used to fit a regression that mitigates collinearity in the explanatory
+variables.  Use cases include dimensionality reduction, factor extraction, and
+regression on collinear explanatory variables.  The package supports rolling and
+expanding windows, weights, and handling of missing values via the min_obs,
+complete_obs, and na_restore arguments.  The implementation uses the online and
+offline algorithms from the roll package to compute rolling and expanding
+cross-products efficiently, with parallelism across columns and windows provided
+by @code{RcppParallel}'.")
+    (license license:gpl2+)))
 
 (define-public r-rolldown
   (package
@@ -18076,19 +18169,19 @@ proposed by Tiku(1967, 1968) <doi:10.2307/2333859>,
 (define-public r-robustaft
   (package
     (name "r-robustaft")
-    (version "1.4-7")
+    (version "1.4-10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RobustAFT" version))
        (sha256
-        (base32 "1i000j6d4s0yb99dxyq610a1znkiai9xc9l16wdb7lmnrhixz5qp"))))
+        (base32 "1r4sbki36qqnw71mv96fxli1lc1pm590rfiblq2iqxccnx9jmkm9"))))
     (properties `((upstream-name . "RobustAFT")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-survival r-robustbase r-deoptimr))
+    (propagated-inputs (list r-v8 r-survival r-robustbase r-deoptimr))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=RobustAFT")
     (synopsis
@@ -22816,25 +22909,20 @@ Nieuwenhuis et al. (2012) <doi:10.32614/RJ-2012-011>, Millard (2013)
 (define-public r-rmediation
   (package
     (name "r-rmediation")
-    (version "1.3.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RMediation" version))
        (sha256
-        (base32 "133s869dlvcqmrjyyy114194fw4z8z7l09sxa4mapz8yxh6p4v7n"))))
+        (base32 "10j2d57cxmfcf4q8scnqa0kp7kgiggp4p54lvc6adk966c8lq71a"))))
     (properties `((upstream-name . "RMediation")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-openmx
-                             r-modelr
-                             r-mass
-                             r-lavaan
-                             r-generics
-                             r-e1071
-                             r-checkmate))
+    (propagated-inputs (list r-s7 r-mass r-lavaan r-checkmate))
+    (native-inputs (list r-knitr))
     (home-page "https://data-wise.github.io/rmediation/")
     (synopsis "Mediation Analysis Confidence Intervals")
     (description
@@ -24313,13 +24401,13 @@ information about using the API please visit <https://developer.linkedin.com/>."
 (define-public r-rlifting
   (package
     (name "r-rlifting")
-    (version "0.9.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rLifting" version))
        (sha256
-        (base32 "1i0fk4lj3376lg7ck89mbvclzq0sgacxnarkh2xhibz0rr30rh3m"))))
+        (base32 "14yp7hqhfs2cbxb8cinf71zgkc2y9bdnjwfymcpvgx4i1gf058vk"))))
     (properties `((upstream-name . "rLifting")))
     (build-system r-build-system)
     (arguments
@@ -34883,6 +34971,40 @@ analysis.  This package provides functions that make it easier to explore
 responses and identify those that may be problematic.  See Gottfried et al.
 (2022) <doi:10.7275/vyxb-gt24> for more information.")
     (license license:expat)))
+
+(define-public r-responder
+  (package
+    (name "r-responder")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "respondeR" version))
+       (sha256
+        (base32 "1njv4zmy77f5xpx4xrqqa85qc319bssdpkpmck112ryy3lw6nwxb"))))
+    (properties `((upstream-name . "respondeR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/choxos/respondeR")
+    (synopsis "Imputing Responder Proportions from Continuous Outcomes")
+    (description
+     "Express meta-analyses of continuous trial outcomes in terms of responder risks,
+following the interpretability tutorial of Thorlund, Walter, Johnston, Furukawa
+and Guyatt (2011) <doi:10.1002/jrsm.46>.  Given the mean change, standard
+deviation and sample size per arm across studies, @code{respondeR} estimates the
+proportion of patients who cross a minimal important difference (MID) threshold
+under a parametric model for the change scores, and contrasts the arms as a risk
+difference, risk ratio, odds ratio or number needed to treat.  It provides
+median, unweighted-mean, weighted-mean and per-study (fixed- or random-effects)
+pooling, the standardized-mean-difference to odds-ratio bridge of
+Anzures-Cabrera, Sarpatwari and Higgins (2011) <doi:10.1002/sim.4298>, a
+threshold-free common-language effect size, and a point-and-click Shiny
+application.  The estimation methods were evaluated in a simulation study by
+Sofi-Mahmudi (2024) <https://hdl.handle.net/11375/30210>.")
+    (license license:gpl3)))
 
 (define-public r-respirometry
   (package
@@ -51274,13 +51396,13 @@ package in the R Commander GUI for R.")
 (define-public r-rcmdr
   (package
     (name "r-rcmdr")
-    (version "2.12.3")
+    (version "2.13.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rcmdr" version))
        (sha256
-        (base32 "0mjy42v6c3qld3ahs6q49lqid47lcp511jln8dw9cj8n5ggdxzn0"))))
+        (base32 "1b4v4599g4jqa1bdryxrwyw3pwpvihbbkgf715lrq6s083yyw1cl"))))
     (properties `((upstream-name . "Rcmdr")))
     (build-system r-build-system)
     (arguments
@@ -59176,13 +59298,13 @@ change score models.")
 (define-public r-rampage
   (package
     (name "r-rampage")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rampage" version))
        (sha256
-        (base32 "1kmz6dg912irzrzwk03xsgai5qzfal44qac0zvy4ry77danpc0iz"))))
+        (base32 "1plkb0vb2bb1lwb8mfk450s0ch4n8apsh59bym0qzcqpklzy76rm"))))
     (properties `((upstream-name . "rampage")))
     (build-system r-build-system)
     (arguments

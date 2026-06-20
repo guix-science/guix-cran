@@ -4284,6 +4284,33 @@ Wang(2000) <doi:10.1080/01621459.2000.10474236>; Demarqui and Mayrink (2021)
 <doi:10.1214/20-BJPS471>.")
     (license license:expat)))
 
+(define-public r-survspro
+  (package
+    (name "r-survspro")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SurvSPro" version))
+       (sha256
+        (base32 "0cpid8l65jan1v7nap0khqj9z5vayl269szk1yrcamyawawqzqal"))))
+    (properties `((upstream-name . "SurvSPro")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival r-sp r-mgcv r-dplyr))
+    (home-page "https://cran.r-project.org/package=SurvSPro")
+    (synopsis "Survival Prediction with Spatially Adjusted Protein Summaries")
+    (description
+     "This package provides a survival prediction framework using spatially adjusted
+protein summaries from spatial proteomics data, including imaging mass cytometry
+data.  Cell-level protein intensities are modeled with spatial spline regression
+to estimate spatially adjusted mean expression and residual variance.
+Methodological details are described in Ahn et al. (2026)
+<doi:10.64898/2026.06.08.730964>.")
+    (license license:gpl3)))
+
 (define-public r-survspearman
   (package
     (name "r-survspearman")
@@ -5886,13 +5913,13 @@ under <https://statistikat.github.io/surveysd/articles/methodology.html>.")
 (define-public r-surveyprev
   (package
     (name "r-surveyprev")
-    (version "1.0.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "surveyPrev" version))
        (sha256
-        (base32 "1vp4v27vj9w0vsab6jjy9hvx36lrn01qkx3d0idmx0zwbd0bxy50"))))
+        (base32 "01ni01z5kl5qvfhfykggzvi3dqq2dxv1yws9lirs75wynwzxyjzl"))))
     (properties `((upstream-name . "surveyPrev")))
     (build-system r-build-system)
     (arguments
@@ -5902,7 +5929,7 @@ under <https://statistikat.github.io/surveysd/articles/methodology.html>.")
                   (add-after 'unpack 'set-HOME
                     (lambda _
                       (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-tidyverse
+    (propagated-inputs (list r-terra
                              r-survey
                              r-summer
                              r-stringr
@@ -5910,12 +5937,17 @@ under <https://statistikat.github.io/surveysd/articles/methodology.html>.")
                              r-sp
                              r-sjlabelled
                              r-sf
+                             r-scales
+                             r-rlang
                              r-rdhs
                              r-raster
                              r-naniar
                              r-matrixstats
                              r-labelled
+                             r-jsonlite
+                             r-ggridges
                              r-ggplot2
+                             r-expss
                              r-dplyr
                              r-data-table))
     (native-inputs (list r-r-rsp r-knitr))
@@ -5925,8 +5957,9 @@ under <https://statistikat.github.io/surveysd/articles/methodology.html>.")
     (description
      "This package provides a pipeline to perform small area estimation and prevalence
 mapping of binary indicators using health and demographic survey data, described
-in Fuglstad et al. (2022) <doi:10.48550/@code{arXiv.2110.09576>} and Wakefield
-et al. (2020) <doi:10.1111/insr.12400>.")
+in Dong et al. (2026) <doi:10.1093/jssam/smaf048>, Wakefield et al. (2025)
+<doi:10.48550/@code{arXiv.2110.09576>} and Wakefield et al. (2020)
+<doi:10.1111/insr.12400>.")
     (license license:gpl2+)))
 
 (define-public r-surveyplanning
@@ -10370,13 +10403,13 @@ genetic algorithms, brute force, or random sampling.  Schultze (2017)
 (define-public r-stt-api
   (package
     (name "r-stt-api")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stt.api" version))
        (sha256
-        (base32 "1x8gjaqp5rb3f8v22bb3kp7wgj9zacgni6gkpxdds65mg5zisjn9"))))
+        (base32 "1s9d77srj9rcawn1ixfq1608xsqrkm52qb6rx6kz33skhz68wal7"))))
     (properties `((upstream-name . "stt.api")))
     (build-system r-build-system)
     (arguments
@@ -46723,6 +46756,42 @@ related to biclustering frameworks as reviewed by Madeira and Oliveira (2004)
 <doi:10.1109/TCBB.2004.2>.")
     (license license:gpl3)))
 
+(define-public r-simplexgof
+  (package
+    (name "r-simplexgof")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "simplexgof" version))
+       (sha256
+        (base32 "1j53d83j7a1n2pcz0wvk4qkhmxlmc0hlw1n0ni7ny3scc0rlwr00"))))
+    (properties `((upstream-name . "simplexgof")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Raydonal/simplexgof")
+    (synopsis
+     "Bootstrap-Calibrated Goodness-of-Fit Test for Simplex Regression")
+    (description
+     "This package implements the bootstrap-calibrated local-influence goodness-of-fit
+test for simplex regression models with constant or varying dispersion,
+following the local influence approach of Zhu and Zhang (2004)
+<doi:10.1093/biomet/91.3.579> and the simplex regression model of
+Barndorff-Nielsen and Jorgensen (1991) <doi:10.1016/0047-259X(91)90008-P>.  The
+test statistic aggregates individual local-influence measures under case-weight
+perturbation.  Because the first-order asymptotic normal calibration is severely
+liberal in finite samples, a parametric bootstrap calibration is provided that
+restores accurate size control and delivers high power against omitted
+covariates, neglected dispersion, and distributional misspecification.  Plotting
+functions reproduce the figures and tables of the companion methodological
+paper.  Computational kernels are implemented in C++ via Rcpp and
+@code{RcppArmadillo} for speed, and two real datasets are bundled.")
+    (license license:gpl3)))
+
 (define-public r-simpleupset
   (package
     (name "r-simpleupset")
@@ -68155,42 +68224,35 @@ error is controlled using false non-discovery rates or higher criticism.")
 (define-public r-sd2r
   (package
     (name "r-sd2r")
-    (version "0.1.9")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sd2R" version))
        (sha256
-        (base32 "0l836ihcxxk99hh4ngn9bdh1fqhq9yhlisfyi4jpwap1jn71lr8j"))))
+        (base32 "0n8m6yvv0b973i3pm5bgd6kkjpcsqp4a699m8rg3sx5fkc5gwgs6"))))
     (properties `((upstream-name . "sd2R")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpp r-ggmlr))
+    (propagated-inputs (list r-shiny
+                             r-rcpp
+                             r-png
+                             r-later
+                             r-jsonlite
+                             r-ggmlr
+                             r-base64enc))
     (native-inputs (list pkg-config))
     (home-page "https://github.com/Zabis13/sd2R")
     (synopsis "Stable Diffusion Image Generation")
     (description
-     "This package provides Stable Diffusion image generation in R using the
-@code{ggmlR} tensor library.  Supports text-to-image and image-to-image
-generation with multiple model versions (SD 1.x, SD 2.x, SDXL', Flux).
-Implements the full inference pipeline including CLIP text encoding, UNet noise
-removal, and VAE encoding/decoding.  Unified @code{sd_generate()} entry point
-with automatic strategy selection (direct, tiled sampling, high-resolution fix)
-based on output resolution and available VRAM'.  High-resolution generation (2K,
-4K+) via tiled VAE decoding, tiled diffusion sampling ('@code{MultiDiffusion}'),
-and classic two-pass refinement (text-to-image, then upscale with
-image-to-image).  Multi-GPU parallel generation via
-@code{sd_generate_multi_gpu()}.  Multi-GPU model parallelism via device_layout
-in @code{sd_ctx()}: distribute diffusion, text encoders, and VAE across separate
-Vulkan devices.  Built-in profiling @code{(sd_profile_start()},
-@code{sd_profile_summary()}) for per-stage timing of text encoding, sampling,
-and VAE decode.  Interactive Shiny GUI via @code{sd_app()} with non-blocking
-asynchronous generation (C++ std::thread), live progress bar, auto-detection of
-model architecture, and ETA display.  Supports CPU and Vulkan GPU. No Python or
-external API dependencies required.  Cross-platform: Linux, @code{macOS},
-Windows.")
+     "This package provides Stable Diffusion image generation using the @code{ggmlR}
+library, with no Python or external API dependencies.  Supports text-to-image
+and image-to-image generation for SD 1.x, SD 2.x, SDXL', Flux, and FLUX.2'.  A
+single @code{sd_generate()} function handles the entire pipeline, including
+sampling and high-resolution output.  Features multi-GPU support, a Shiny GUI,
+and runs on CPU or Vulkan GPU across Linux, @code{macOS}, and Windows.")
     (license license:expat)))
 
 (define-public r-scutr
@@ -70276,26 +70338,25 @@ curated ontology labels are great inputs to this package.")
 (define-public r-scmspillover
   (package
     (name "r-scmspillover")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scmSpillover" version))
        (sha256
-        (base32 "1g0r7k854mqhlm6qsvmhji3sjdal185dgnji20ci7assnf1bk4sv"))))
+        (base32 "058pi0kf3zqnrj3i6j4v4vsmar9g3qz5vgi40dpbyhffsskfirk5"))))
     (properties `((upstream-name . "scmSpillover")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-mass r-limsolve r-ggplot2))
+    (propagated-inputs (list r-quadprog r-mass r-ggplot2))
     (home-page "https://cran.r-project.org/package=scmSpillover")
     (synopsis "Synthetic Control Method with Spillover Effects")
     (description
      "This package provides a general-purpose implementation of synthetic control
 methods that accounts for potential spillover effects between units.  Based on
-the methodology of Cao and Dowd (2019) <doi:10.48550/@code{arXiv.1902.07343>}
-\"Estimation and Inference for Synthetic Control Methods with Spillover Effects\".")
+the methodology of Cao and Dowd (2019).")
     (license license:expat)))
 
 (define-public r-scmodels
@@ -75843,13 +75904,13 @@ cancer data <@code{arXiv:2012.06093>}.")
 (define-public r-samtool
   (package
     (name "r-samtool")
-    (version "1.9.1")
+    (version "1.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SAMtool" version))
        (sha256
-        (base32 "19dpzl7msm4jrv3c4zf6hz2msw9n7k50idqrgkzy9prxfjcickfd"))))
+        (base32 "1xicdmlv7wx3ja9l45s3qy0dq06kwivrq29kcm941daaf8x62yhj"))))
     (properties `((upstream-name . "SAMtool")))
     (build-system r-build-system)
     (arguments

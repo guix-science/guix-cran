@@ -4739,20 +4739,21 @@ electric power transmission network) in the UK since 2011.")
 (define-public r-ukfe
   (package
     (name "r-ukfe")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "UKFE" version))
        (sha256
-        (base32 "140ibj0ymhpyjrsl6v9qvf4nd05y6aqmrhnra3ckwmp3zn5plb7y"))))
+        (base32 "1mbk5q1icfgnfm26fjnmfv5wyaslq58744kcv5nn4fnzliwckal6"))))
     (properties `((upstream-name . "UKFE")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-xml2 r-sf))
-    (home-page "https://cran.r-project.org/package=UKFE")
+    (native-inputs (list r-knitr))
+    (home-page "https://agqhammond.github.io/UKFE/")
     (synopsis "UK Flood Estimation")
     (description
      "This package provides functions to implement the methods of the Flood Estimation

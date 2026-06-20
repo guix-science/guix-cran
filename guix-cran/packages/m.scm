@@ -719,6 +719,34 @@ generation, one-time-key management, 1:1 Olm sessions, and Megolm group
 sessions.  Pairs with the mx.api package, which handles Matrix HTTP transport.")
     (license (list license:expat license:asl2.0))))
 
+(define-public r-mx-client
+  (package
+    (name "r-mx-client")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mx.client" version))
+       (sha256
+        (base32 "18pv36h60zfmd1pb8i2gxzsln3yz3kyjl3g12v9qzspj2z6l9y4q"))))
+    (properties `((upstream-name . "mx.client")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mx-api r-jsonlite))
+    (native-inputs (list r-simplermarkdown))
+    (home-page "https://github.com/cornball-ai/mx.client")
+    (synopsis "Stateful Matrix Client Helpers")
+    (description
+     "Stateful helpers for building Matrix (<https://matrix.org>) chat clients in R.
+Builds on the low-level mx.api Client-Server API bindings, adding local
+configuration persistence, room resolution, sync cursor handling, sync-event
+extraction, invite acceptance, a conservative Markdown-to-HTML converter for
+formatted messages, and Olm'/'Megolm end-to-end encryption orchestration over
+the optional mx.crypto package.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-mx-api
   (package
     (name "r-mx-api")
@@ -20882,13 +20910,13 @@ Rosenbaum and Rubin (1985).")
 (define-public r-mmrm
   (package
     (name "r-mmrm")
-    (version "0.3.17")
+    (version "0.3.18")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mmrm" version))
        (sha256
-        (base32 "0j9f728cm4b9cz4rcvmyd7867f38l11yn4cm7a1fiphasvalvy47"))))
+        (base32 "0zh538wkbq8m7zrlixgq0g7a2zrb4bkz801k4cy51b5inqjnipp6"))))
     (properties `((upstream-name . "mmrm")))
     (build-system r-build-system)
     (arguments
@@ -24739,36 +24767,6 @@ tasks.  It will contain datasets for supervised machine learning Jiang
 classification and regression.  The aim of this package is to use data generated
 around health and other domains.")
     (license license:expat)))
-
-(define-public r-mlcopula
-  (package
-    (name "r-mlcopula")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MLCOPULA" version))
-       (sha256
-        (base32 "1brym2nxzd4b3q4ipi3gsarq8cn8p9xasm8aknlvw3law900jf4x"))))
-    (properties `((upstream-name . "MLCOPULA")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tsp
-                             r-pracma
-                             r-kde1d
-                             r-igraph
-                             r-gridcopula
-                             r-copula))
-    (home-page "https://cran.r-project.org/package=MLCOPULA")
-    (synopsis "Classification Models with Copula Functions")
-    (description
-     "This package provides several classifiers based on probabilistic models.  These
-classifiers allow to model the dependence structure of continuous features
-through bivariate copula functions and graphical models, see Salinas-GutiÃ©rrez
-et al. (2014) <doi:10.1007/s00180-013-0457-y>.")
-    (license license:gpl3)))
 
 (define-public r-mlcm
   (package
@@ -37078,13 +37076,13 @@ climate-friendly diets\" Epidemiology <doi:10.1097/EDE.0000000000001932>.")
 (define-public r-metasnf
   (package
     (name "r-metasnf")
-    (version "2.1.2")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metasnf" version))
        (sha256
-        (base32 "0cdsr1yplqqggcvnqxa00iqnnddskj0jn605vw36dnb063ank7cb"))))
+        (base32 "1z3mpnxxiksw98mr0vh23qca75mz65r2bd2dhkngrj4g9arw0085"))))
     (properties `((upstream-name . "metasnf")))
     (build-system r-build-system)
     (arguments

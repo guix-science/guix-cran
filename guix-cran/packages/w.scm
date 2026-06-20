@@ -5355,13 +5355,13 @@ citation: Lindsay (2016) <doi:10.1016/j.cageo.2016.07.003>.")
 (define-public r-whisper
   (package
     (name "r-whisper")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "whisper" version))
        (sha256
-        (base32 "1qdn38wlilqlscjrqvvldwxf35fhdmbzssmjsddd1s7zv3lc0ymc"))))
+        (base32 "150zw935niqy386nfdpbz77mr6pghkkyahxw1w16xqvxdllz4d27"))))
     (properties `((upstream-name . "whisper")))
     (build-system r-build-system)
     (arguments

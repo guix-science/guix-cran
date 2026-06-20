@@ -2009,6 +2009,46 @@ best solutions from one generation to the next.  Population objective function
 values may optionally be evaluated in parallel.")
     (license license:gpl2)))
 
+(define-public r-kofn
+  (package
+    (name "r-kofn")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "kofn" version))
+       (sha256
+        (base32 "1z6z8pvjp7c5mh7ps7by65x741b0dkvffz993w0xn5hxzqwla9m1"))))
+    (properties `((upstream-name . "kofn")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-numderiv
+                             r-likelihood-model
+                             r-generics
+                             r-flexhaz
+                             r-dist-structure
+                             r-compositional-mle
+                             r-algebraic-dist))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/queelius/kofn")
+    (synopsis "Maximum Likelihood Estimation for k-Out-of-n System Data")
+    (description
+     "Maximum likelihood estimation of component lifetime parameters from system-level
+observations of k-out-of-n systems.  Supports exponential and Weibull component
+distributions under multiple observation schemes: Scheme 0 (system lifetime
+only), Scheme 1 (periodic inspection), and Scheme 2 (complete monitoring).
+Provides an EM algorithm for Weibull parallel systems and Fisher information
+comparison across schemes.  The k-out-of-n framework unifies series (k=1) and
+parallel (k=m) systems as a censoring problem on component lifetimes.  Conforms
+to the likelihood.model generics and returns fitted objects compatible with
+algebraic.mle'.  The data-generating process and topology infrastructure (system
+survival, density, signature, structure function, importance measures) are
+delegated to the dist.structure package; kofn focuses exclusively on inference
+for the k-out-of-n family.")
+    (license license:expat)))
+
 (define-public r-kofm
   (package
     (name "r-kofm")

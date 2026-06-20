@@ -7539,6 +7539,33 @@ time computing other summary statistics which are summarily ignored.")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-vcmoe
+  (package
+    (name "r-vcmoe")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VCMoE" version))
+       (sha256
+        (base32 "1qa6nm6p1g5lic2jgqzgcc3nwd28fdpizk6b22yaw880f5kpwpba"))))
+    (properties `((upstream-name . "VCMoE")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://qc-zhao.github.io/VCMoE/")
+    (synopsis "Varying-Coefficient Mixture-of-Experts Models")
+    (description
+     "Fits Gaussian, Binomial, and Negative-Binomial varying-coefficient
+mixture-of-experts models with local-linear estimation, explicit label
+alignment, bandwidth selection, diagnostics, bootstrap inference, analytic-style
+confidence bands, and coefficient-specific analytic GLRT diagnostics with
+optional bootstrap calibration.")
+    (license license:expat)))
+
 (define-public r-vcmeta
   (package
     (name "r-vcmeta")

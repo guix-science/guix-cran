@@ -7737,6 +7737,42 @@ distributions, sample sizes, number of bootstrap resamples, and confidence
 intervals.")
     (license license:expat)))
 
+(define-public r-bootur
+  (package
+    (name "r-bootur")
+    (version "1.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bootUR" version))
+       (sha256
+        (base32 "19sjh9hwx9hcqyrjx5kc2id1ml1sfd6c37g412vzfgk931bm0lbs"))))
+    (properties `((upstream-name . "bootUR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-urca
+                             r-rcppthread
+                             r-rcppparallel
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-parallelly))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/smeekes/bootUR")
+    (synopsis "Bootstrap Unit Root Tests")
+    (description
+     "Set of functions to perform various bootstrap unit root tests for both
+individual time series (including augmented Dickey-Fuller test and union tests),
+multiple time series and panel data; see Smeekes and Wilms (2023)
+<doi:10.18637/jss.v106.i12>, Palm, Smeekes and Urbain (2008)
+<doi:10.1111/j.1467-9892.2007.00565.x>, Palm, Smeekes and Urbain (2011)
+<doi:10.1016/j.jeconom.2010.11.010>, Moon and Perron (2012)
+<doi:10.1016/j.jeconom.2012.01.008>, Smeekes and Taylor (2012)
+<doi:10.1017/S0266466611000387> and Smeekes (2015) <doi:10.1111/jtsa.12110> for
+key references.")
+    (license license:gpl2+)))
+
 (define-public r-bootsvd
   (package
     (name "r-bootsvd")
@@ -11574,13 +11610,13 @@ Research. <doi:10.1080/19466315.2019.1701546>.")
 (define-public r-blogdown
   (package
     (name "r-blogdown")
-    (version "1.23")
+    (version "1.24")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "blogdown" version))
        (sha256
-        (base32 "019cb5jxy082ivkp9jaihwqn4q3wlb6wa3hw7qwk5kcksrvjj35l"))))
+        (base32 "0y4qzsrcww061ms6l9kxcky0hgaxy6q710cadb73477spsymhgkn"))))
     (properties `((upstream-name . "blogdown")))
     (build-system r-build-system)
     (arguments
@@ -23826,13 +23862,13 @@ and Ozkan (2020) <doi:10.1016/j.compag.2020.105507>.")
 (define-public r-bean
   (package
     (name "r-bean")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bean" version))
        (sha256
-        (base32 "0mbg03f99b22pnh8mhp6qg8jyf8z56zq3yjvvackal4i0650zx6w"))))
+        (base32 "1mdy0rbwfv4h5gdpbmcqayiql8gi2zb4hpvfn0njs91zifv96knr"))))
     (properties `((upstream-name . "bean")))
     (build-system r-build-system)
     (arguments
@@ -24337,13 +24373,13 @@ generate artificial data in a transparent and reproducible manner.")
 (define-public r-bdlnm
   (package
     (name "r-bdlnm")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bdlnm" version))
        (sha256
-        (base32 "1skp9x4qn7x0x8d925b89ywsan5pvpw3sm82k9amxaci9f8gbngv"))))
+        (base32 "0q783p9p0srqsscqzis4rdxqr2d8zp4ipwdg9f29f6dvbd6za6wa"))))
     (properties `((upstream-name . "bdlnm")))
     (build-system r-build-system)
     (arguments
