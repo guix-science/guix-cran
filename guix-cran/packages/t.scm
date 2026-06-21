@@ -11050,13 +11050,13 @@ in Tamasi (2025) <doi:10.18637/jss.v114.i11>.")
 (define-public r-traminerextras
   (package
     (name "r-traminerextras")
-    (version "0.6.8")
+    (version "0.6.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TraMineRextras" version))
        (sha256
-        (base32 "1nwhy0l9af9k320bwzd0klrz3n7kad95j2pr813x4b5jb7nxrr92"))))
+        (base32 "0ywbjn8d925m8a09chz343wba19v1dp6bcvmayf6cqr0r9dj3w3b"))))
     (properties `((upstream-name . "TraMineRextras")))
     (build-system r-build-system)
     (arguments
@@ -11065,6 +11065,7 @@ in Tamasi (2025) <doi:10.18637/jss.v114.i11>.")
     (propagated-inputs (list r-traminer
                              r-survival
                              r-rcolorbrewer
+                             r-parallelly
                              r-foreach
                              r-doparallel
                              r-colorspace
@@ -20883,36 +20884,6 @@ and performing operations on them in chunks, without ever loading all data in
 memory.  The full functionalities of the package are described in Carter et al.
 (2025) <doi:10.1111/2041-210x.70204>.")
     (license license:gpl3+)))
-
-(define-public r-tidypmc
-  (package
-    (name "r-tidypmc")
-    (version "2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tidypmc" version))
-       (sha256
-        (base32 "03zs394raq0igpps5y2bvzs0kvlcsxrv1njp7ardglan9jnfvmjc"))))
-    (properties `((upstream-name . "tidypmc")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml2
-                             r-tokenizers
-                             r-tibble
-                             r-stringr
-                             r-readr
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ropensci/tidypmc")
-    (synopsis "Parse Full Text XML Documents from PubMed Central")
-    (description
-     "Parse XML documents from the Open Access subset of Europe @code{PubMed} Central
-<https://europepmc.org> including section paragraphs, tables, captions and
-references.")
-    (license license:gpl3)))
 
 (define-public r-tidyplus
   (package

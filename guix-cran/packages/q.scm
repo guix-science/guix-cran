@@ -2266,36 +2266,6 @@ See Fan and Gijbels (1996) <doi:10.1201/9780203748725> and Perperoglou et
 al.(2019) <doi:10.1186/s12874-019-0666-3>.")
     (license license:cecill)))
 
-(define-public r-quantbondcurves
-  (package
-    (name "r-quantbondcurves")
-    (version "0.3.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "QuantBondCurves" version))
-       (sha256
-        (base32 "0jkr1fmmv4hf3d07l723cyfbj8092gx8842fv6iwddzl0q9hs28v"))))
-    (properties `((upstream-name . "QuantBondCurves")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rsolnp r-quantdates r-lubridate))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=QuantBondCurves")
-    (synopsis "Calculates Bond Values and Interest Rate Curves for Finance")
-    (description
-     "Values different types of assets and calibrates discount curves for quantitative
-financial analysis.  It covers fixed coupon assets, floating note assets,
-interest and cross currency swaps with different payment frequencies.  Enables
-the calibration of spot, instantaneous forward and basis curves, making it a
-powerful tool for accurate and flexible bond valuation and curve generation.
-The valuation and calibration techniques presented here are consistent with
-industry standards and incorporates author's own calculations.  Tuckman, B.,
-Serrat, A. (2022, ISBN: 978-1-119-83555-4).")
-    (license license:gpl3+)))
-
 (define-public r-quantbayes
   (package
     (name "r-quantbayes")

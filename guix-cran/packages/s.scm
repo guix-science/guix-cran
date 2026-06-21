@@ -4447,6 +4447,35 @@ competing risks outcomes.  Huang, R., Xu, R. and Dulai, P.S.(2020)
 <doi:10.1002/sim.8672>.")
     (license license:gpl2)))
 
+(define-public r-survsamplesize
+  (package
+    (name "r-survsamplesize")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "survSampleSize" version))
+       (sha256
+        (base32 "01y5cmm2gccf9wdaad6j17z26bhgvj8rinxd4m6qnshr0469k4k2"))))
+    (properties `((upstream-name . "survSampleSize")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny r-powersurvepi r-lrstat))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=survSampleSize")
+    (synopsis "Sample Size Calculator for Survival Endpoint Clinical Trials")
+    (description
+     "An interactive shiny application for sample size and power calculation under
+general conditions for clinical trials with survival endpoints.  Implements the
+weighted log-rank method of Lu (2021) <doi:10.1002/pst.2069> via the lrstat
+package, supporting non-proportional hazards, delayed treatment effects, unequal
+allocation and dropout, as well as the classic method of Freedman (1982)
+<doi:10.1002/sim.4780010204> via the @code{powerSurvEpi} package.  Results are
+presented interactively with survival curves and event-prediction timelines.")
+    (license license:expat)))
+
 (define-public r-survsakk
   (package
     (name "r-survsakk")
@@ -32859,13 +32888,13 @@ with nested data.")
 (define-public r-sparklyr
   (package
     (name "r-sparklyr")
-    (version "1.9.4")
+    (version "1.9.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sparklyr" version))
        (sha256
-        (base32 "1a0gnbc7czzy5a5w4m9vr9l70wl1hk5n3lk8yjzvqdjawjv329yc"))))
+        (base32 "1x82p1b6dhfhg8rpg839fflwhycm50bvmxl6yr16h1fl1yhc1k9j"))))
     (properties `((upstream-name . "sparklyr")))
     (build-system r-build-system)
     (arguments
@@ -33138,13 +33167,13 @@ and Yamagata (2024) <doi:10.1093/jjfinec/nbad002>, and Gungor and Luger (2016)
 (define-public r-spant
   (package
     (name "r-spant")
-    (version "4.1.0")
+    (version "4.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spant" version))
        (sha256
-        (base32 "0645gyc7qwl92hicd7iv06bsqhpx8vzf7jn55d06bv4jzbk20f2n"))))
+        (base32 "1rlfp4iimsdzq25x876p15qcylrb4z529mjmhcwlbzx0y1y2qff6"))))
     (properties `((upstream-name . "spant")))
     (build-system r-build-system)
     (arguments
@@ -33812,6 +33841,43 @@ analysis using spatial transcriptomics data.  Integrates with databases like
 pairs, visualize interactions through heatmaps, chord diagrams, and infer
 interactions on different spatial scales.")
     (license license:gpl2+)))
+
+(define-public r-spacc
+  (package
+    (name "r-spacc")
+    (version "0.8.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spacc" version))
+       (sha256
+        (base32 "0yz5n2hlxndnvhqx529xap811mvxvbvvxg2zdvc8sz13byqyvzx6"))))
+    (properties `((upstream-name . "spacc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppparallel r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://gillescolling.com/spacc/")
+    (synopsis "Fast Spatial Species Accumulation Curves")
+    (description
+     "High-performance spatial species accumulation curves using nearest-neighbor
+algorithms.  Implements @code{kNN} and @code{kNCN} sampling methods with a C++
+backend for speed.  Supports Hill numbers (q=0,1,2), beta diversity partitioning
+(turnover/nestedness), coverage-based rarefaction and extrapolation,
+phylogenetic diversity (Faith's PD, mean pairwise distance, mean nearest taxon
+distance), functional diversity accumulation, diversity-area relationships
+(DAR), endemism-area curves, sampling-effort correction and fragmentation
+analysis, and species-area relationship (SAR) models based on extreme value
+theory (EVT).  Multiple starting points (seeds) provide uncertainty
+quantification.  Methods are described in Chao et al. (2014)
+<doi:10.1890/13-0133.1>, Baselga (2010) <doi:10.1111/j.1466-8238.2009.00490.x>,
+Chao and Jost (2012) <doi:10.1890/11-1952.1>, Faith (1992)
+<doi:10.1016/0006-3207(92)91201-3>, Ma (2018) <doi:10.1002/ece3.4526>,
+Borda-de-Agua et al. (2025) <doi:10.1038/s41467-025-59239-7>, Hanski et al.
+(2013) <doi:10.1073/pnas.1311190110>, and Jost (2007) <doi:10.1890/06-1736.1>.")
+    (license license:expat)))
 
 (define-public r-spabundance
   (package
@@ -70197,6 +70263,39 @@ function under the criterion, combination of variables are on the surface of a
 unit sphere, as described in the paper : Das et al. (2019)
 <@code{arXiv:1909.04024>} .")
     (license license:gpl3)))
+
+(define-public r-scopusflow
+  (package
+    (name "r-scopusflow")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "scopusflow" version))
+       (sha256
+        (base32 "143g84sgyfnm9qzppkn791j0mvayvigwps4c4y29y0gkg9wqifpy"))))
+    (properties `((upstream-name . "scopusflow")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-rlang r-jsonlite r-httr2 r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/pablobernabeu/scopusflow")
+    (synopsis
+     "Reproducible Workflow Layer for 'Scopus' Bibliographic Searches")
+    (description
+     "This package provides a coherent, quota-aware workflow layer over the Elsevier
+Scopus Search API <https://dev.elsevier.com/sc_apis.html>.  It builds
+reproducible search plans, retrieves records with rate-limit handling, retry
+with back-off and optional resumable caching, normalises results to a stable
+tidy schema, extracts and tracks changes in Digital Object Identifiers (DOIs),
+compares publication trends across topics and exports to formats compatible with
+downstream bibliometric tools.  Network and API errors are surfaced as typed
+conditions so that callers can respond to them programmatically.  Scopus is a
+trademark of Elsevier.  This package is an independent client and is not
+affiliated with or endorsed by Elsevier.")
+    (license license:expat)))
 
 (define-public r-scopro
   (package

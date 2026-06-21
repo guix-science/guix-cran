@@ -30163,25 +30163,31 @@ to use and research on Bayesian Neural Networks.")
 (define-public r-bayesfbhborrow
   (package
     (name "r-bayesfbhborrow")
-    (version "2.0.2")
+    (version "2.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesFBHborrow" version))
        (sha256
-        (base32 "0kaw4pmy2mjawsfs8s0h2m32p0cvg8wg33vfznpzvc40xymy2g4l"))))
+        (base32 "0adqqni036iyryvjy46brrrhmwcpf131xp467vgsj6cg5w8cpywb"))))
     (properties `((upstream-name . "BayesFBHborrow")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-survival
+    (propagated-inputs (list r-survminer
+                             r-survival
+                             r-rlang
+                             r-patchwork
                              r-mvtnorm
                              r-magrittr
+                             r-kableextra
                              r-invgamma
                              r-ggplot2
+                             r-extradistr
                              r-dplyr
-                             r-checkmate))
+                             r-checkmate
+                             r-bayestestr))
     (home-page "https://cran.r-project.org/package=BayesFBHborrow")
     (synopsis
      "Bayesian Dynamic Borrowing with Flexible Baseline Hazard Function")
@@ -30189,9 +30195,10 @@ to use and research on Bayesian Neural Networks.")
      "Allows Bayesian borrowing from a historical dataset for time-to- event data.  A
 flexible baseline hazard function is achieved via a piecewise exponential
 likelihood with time varying split points and smoothing prior on the historic
-baseline hazards.  The method is described in Scott and Lewin (2024)
-<doi:10.48550/@code{arXiv.2401.06082>}, and the software paper is in Axillus et
-al. (2024) <doi:10.48550/@code{arXiv.2408.04327>}.")
+baseline hazards.  The method is described in Scott and Lewin (2026)
+<doi:10.1093/biostatistics/kxag006>, and a paper focused on the software is in
+Scott, Axillus, Lewin and Izmirlian (2026)
+<doi:10.48550/@code{arXiv.2408.04327>}.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-bayesestdft

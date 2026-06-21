@@ -8560,6 +8560,32 @@ applications and quarto documents, including inputs, layouts, navigation, and
 surfaces.  All inputs come with R usage examples.")
     (license license:expat)))
 
+(define-public r-muidatagrid
+  (package
+    (name "r-muidatagrid")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "muiDataGrid" version))
+       (sha256
+        (base32 "003qxxc3hjj1102zljybrfgglf0393lwgn1xkkn08dcqaw5pa37z"))))
+    (properties `((upstream-name . "muiDataGrid")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny-react r-shiny r-muimaterial r-htmltools))
+    (home-page "https://felixluginbuhl.com/muiDataGrid/")
+    (synopsis "'MUI X Data Grid' for 'shiny' Apps and 'Quarto'")
+    (description
+     "This package provides access to MUI X Data Grid', a fast and extensible React
+data table and React data grid, with filtering, sorting, pagination, and more.
+Bundles the MIT-licensed community edition of the @@mui/x-data-grid
+@code{JavaScript} library (the commercial Pro and Premium tiers are not
+included).")
+    (license license:expat)))
+
 (define-public r-mugs
   (package
     (name "r-mugs")
@@ -13897,31 +13923,6 @@ consistent reproductive values in the lambda framework and cohort reproductive
 values in the R0 framework.  Aggregation can take the form of general-to-general
 MPM (mpm_aggregate) or Leslie-to-Leslie MPM (leslie_aggregate).")
     (license license:expat)))
-
-(define-public r-mplustrees
-  (package
-    (name "r-mplustrees")
-    (version "0.2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MplusTrees" version))
-       (sha256
-        (base32 "17rzg9gc8v95g6pa7aparl8ci9kl6sk21fk9kkch1i3jr2abz51b"))))
-    (properties `((upstream-name . "MplusTrees")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list))
-    (propagated-inputs (list r-rpart-plot r-rpart r-nlme r-mplusautomation))
-    (home-page "https://cran.r-project.org/package=MplusTrees")
-    (synopsis "Decision Trees with Structural Equation Models Fit in 'Mplus'")
-    (description
-     "Uses recursive partitioning to create homogeneous subgroups based on structural
-equation models fit in Mplus', a stand-alone program developed by Muthen and
-Muthen.")
-    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-mplusparallel-automation
   (package
@@ -24591,19 +24592,20 @@ corresponding MLEs.  Further details and explanations of MLEces can be found in.
 (define-public r-mle
   (package
     (name "r-mle")
-    (version "1.7")
+    (version "1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MLE" version))
        (sha256
-        (base32 "1zhyvwpv3djrkh7prdh33fwhd55nzyk2naix4cjl2np1wwdn14l6"))))
+        (base32 "1nd5xwgvwjzh7lvmgvxb4zvklaz7pn7h6bwr5lnmimavfdx9bbdl"))))
     (properties `((upstream-name . "MLE")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rfast2
+    (propagated-inputs (list r-svmf
+                             r-rfast2
                              r-rfast
                              r-mn
                              r-gp
@@ -29180,36 +29182,31 @@ distributions.")
 (define-public r-mintyr
   (package
     (name "r-mintyr")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mintyr" version))
        (sha256
-        (base32 "0sdsqnddiqfg22d0jdpr2f8vm285xqr544blqjcdhjdi549ilvza"))))
+        (base32 "10cbw3rz7mbwbmmvb2clh9skn1k2xs2hp0mk1xq9rdls5m55l0vg"))))
     (properties `((upstream-name . "mintyr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-rstatix
-                             r-rsample
-                             r-rlang
-                             r-readxl
-                             r-purrr
-                             r-dplyr
-                             r-data-table
-                             r-arrow))
+    (propagated-inputs (list r-writexl r-rsample r-readxl r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://tony2015116.github.io/mintyr/")
-    (synopsis "Streamlined Data Processing Tools for Genomic Selection")
+    (synopsis "High-Performance Phenotypic Data Pipelines for Breeding")
     (description
-     "This package provides a toolkit for genomic selection in animal breeding with
-emphasis on multi-breed and multi-trait nested grouping operations.  Streamlines
-iterative analysis workflows when working with ASReml-R package.  Includes
-utility functions for phenotypic data processing commonly used by animal
-breeders.")
+     "This package provides a streamlined toolkit specifically designed for genomic
+selection and quantitative genetics in animal breeding.  It provides
+high-performance data manipulation backed by data.table', focusing on
+multi-breed and multi-trait nested grouping operations.  Features include
+zero-copy data importing, automated cross-validation splitting, and robust tools
+to generate and batch-export formatted phenotypic files required by various
+breeding software (e.g., ASReml-R', HIBLUP', DMU'), heavily optimizing iterative
+variance component analysis and large-scale evaluation pipelines.")
     (license license:expat)))
 
 (define-public r-mintriadic
@@ -52974,13 +52971,13 @@ samples.")
 (define-public r-mapgl
   (package
     (name "r-mapgl")
-    (version "0.4.6")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapgl" version))
        (sha256
-        (base32 "12skzykw4rjrlsgjgg7fczh00fshxypnifazp2n5p3c5kx62vi2d"))))
+        (base32 "1nzcbx4wvygzqgmn5s0hpnqy7iffl1fi1gh9cd8nk4550myw68ps"))))
     (properties `((upstream-name . "mapgl")))
     (build-system r-build-system)
     (arguments
@@ -53008,6 +53005,7 @@ samples.")
                              r-rlang
                              r-png
                              r-jsonlite
+                             r-httpuv
                              r-htmlwidgets
                              r-htmltools
                              r-geojsonsf

@@ -14000,13 +14000,13 @@ glycoproteomics analysis workflows.")
 (define-public r-glyparse
   (package
     (name "r-glyparse")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glyparse" version))
        (sha256
-        (base32 "1m82kqhj3izcxk59bmj9x4sg4narc57zfj24qypgn6qf383mzi7p"))))
+        (base32 "1my07hjnp2ip02g47k11f99y2hda7i57k46nw9vvmx4j75xnry6g"))))
     (properties `((upstream-name . "glyparse")))
     (build-system r-build-system)
     (arguments
@@ -16293,6 +16293,33 @@ can easily specify their own sub-models, or re-parameterizations, and obtain the
 maximum-likelihood estimates and confidence intervals of their own custom
 models.")
     (license license:gpl3)))
+
+(define-public r-gleifr
+  (package
+    (name "r-gleifr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gleifr" version))
+       (sha256
+        (base32 "0kwp1a9yxvhll8xb6gyvhqx0qbr3kmlgdkvw65h3c4vi6zx7aiq3"))))
+    (properties `((upstream-name . "gleifr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rvest r-httr2 r-curl))
+    (home-page "https://m-muecke.github.io/gleifr/")
+    (synopsis "Client for the 'GLEIF' API")
+    (description
+     "Download legal entity reference data from the Global Legal Entity Identifier
+Foundation ('GLEIF') API. Retrieve Legal Entity Identifier ('LEI') records,
+their direct and ultimate parent and child relationships, accredited issuers
+('Local Operating Units'), and mappings from LEI codes to other identifiers such
+as ISIN', BIC', and MIC'.  See <https://www.gleif.org/en/lei-data/gleif-api> for
+further details.")
+    (license license:expat)))
 
 (define-public r-gleam
   (package
@@ -22619,6 +22646,33 @@ for efficiently computing the solution paths of the group-lasso penalized least
 squares, logistic regression, Huberized SVM and squared SVM. The package is an
 implementation of Yang, Y. and Zou, H. (2015) <doi:10.1007/s11222-014-9498-5>.")
     (license license:gpl2)))
+
+(define-public r-ggkodom
+  (package
+    (name "r-ggkodom")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggkodom" version))
+       (sha256
+        (base32 "1x7fij2k3lv8y57avdwr55zs5z5niabl3s967p2qcds79bchql6h"))))
+    (properties `((upstream-name . "ggkodom")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales r-rlang r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ggkodom")
+    (synopsis "Visualize Individual Longitudinal Trajectories")
+    (description
+     "This package provides a ggplot2'-based toolkit for visualizing individual-level
+longitudinal trajectories.  Creates linear kodom plots, circular kodom plots,
+heatmaps, and state-ribbon charts for repeated-measures data.  Each subject gets
+its own visual lane with measurements colored by value, revealing patterns
+across subjects and time.  The circular variant resembles the Kodom flower.")
+    (license license:expat)))
 
 (define-public r-ggisotonic
   (package

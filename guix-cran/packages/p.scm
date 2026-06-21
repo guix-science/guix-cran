@@ -5188,13 +5188,13 @@ Selection Index Method can be found in Maniya K. and Bhatt M. G.(2010)
 (define-public r-psidread
   (package
     (name "r-psidread")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psidread" version))
        (sha256
-        (base32 "1s3cpcpq7mywk6r91jiplcw2c7w432kk4pwvpnri1rh6p4b2gq29"))))
+        (base32 "0q7829wag7qzz0plzgr8vcksmd5rbsh2hadgv2q1qv25qdbqw248"))))
     (properties `((upstream-name . "psidread")))
     (build-system r-build-system)
     (arguments
@@ -26623,13 +26623,13 @@ al.(1997)<doi:10.4141/P96-130>.")
 (define-public r-plantmix
   (package
     (name "r-plantmix")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plantmix" version))
        (sha256
-        (base32 "193jskibpxws5szikkdnd1c06l7na0sxghqzj5hfjkn4vvdxjzgh"))))
+        (base32 "1lk3qc18hirpdr63m0fwj6da2sikz1w0xi06k20dhmw0f1dgb87j"))))
     (properties `((upstream-name . "plantmix")))
     (build-system r-build-system)
     (arguments

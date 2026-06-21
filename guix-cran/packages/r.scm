@@ -36551,6 +36551,36 @@ provided by the GDAL library, a limitation which users of this package should be
 aware of.) The PROJ library is available at <https://proj.org/>.")
     (license license:gpl3)))
 
+(define-public r-reproducr
+  (package
+    (name "r-reproducr")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "reproducr" version))
+       (sha256
+        (base32 "0xpimaq8zi9lh545p8iyfipl0rcqnd0skw8j5d0xd8bya4ji19xc"))))
+    (properties `((upstream-name . "reproducr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/repro-stats/reproducr")
+    (synopsis "Behavioural Reproducibility Auditing for R Projects")
+    (description
+     "Audits R scripts for behavioural reproducibility risk.  Scans scripts for
+qualified package::function calls and checks them against a curated database of
+known silent breaking changes across popular CRAN packages.  Flags stochastic
+calls lacking @code{set.seed()} and detects locale-sensitive operations that may
+produce different results across systems.  Supports baseline certification of
+analytical outputs so that silent numerical drift can be detected across package
+upgrades or platform changes.  Generates human-readable audit reports suitable
+for academic submission or pharmaceutical QC workflows.  For more details see
+<https://github.com/repro-stats/reproducr>.")
+    (license license:expat)))
+
 (define-public r-reproduciblerchunks
   (package
     (name "r-reproduciblerchunks")
@@ -37168,6 +37198,33 @@ users have the needed packages, an RStudio project with the right directories
 and the proper data.  The repo can then be used for hosting code taught during
 the workshop.")
     (license license:expat)))
+
+(define-public r-repo-data
+  (package
+    (name "r-repo-data")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "repo.data" version))
+       (sha256
+        (base32 "0qj90zfahnz7ywhs5v3kg0xy59cz04bq18m13bsn6bk653d4rh5g"))))
+    (properties `((upstream-name . "repo.data")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/llrs/repo.data")
+    (synopsis "R Repositories Data")
+    (description
+     "Retrieve metadata about packages from repositories to explore package
+dependencies, links between help pages, aliases, package availability on a given
+date, and other repository-dependent outcome.  In addition, it provides access
+to information about the processes at CRAN. This metadata can be used to help
+package maintainers and users navigate changes to dependencies and with
+reproducibility.")
+    (license license:gpl3+)))
 
 (define-public r-repmod
   (package
@@ -59950,19 +60007,19 @@ Stine, and Foster (2019) <@code{arXiv:1510.06322>}.")
 (define-public r-ragtop
   (package
     (name "r-ragtop")
-    (version "1.2.1")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ragtop" version))
        (sha256
-        (base32 "0cvay5j7axn8j913vhfpqzchifq70c231bvxq25c4w0v8dc81wxi"))))
+        (base32 "12k2gzhcwgr2czsir8ywsczjx0p87428glrdalsiwgmxdmivwgdd"))))
     (properties `((upstream-name . "ragtop")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-limsolve r-futile-logger))
+    (propagated-inputs (list r-futile-logger))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ragtop")
     (synopsis "Pricing Equity Derivatives with Extensions of Black-Scholes")

@@ -11447,24 +11447,25 @@ Swiderski and ML Zelditch (2022) <doi:10.1111/2041-210X.13914>.")
 (define-public r-eplusr
   (package
     (name "r-eplusr")
-    (version "0.16.3")
+    (version "0.17.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eplusr" version))
        (sha256
-        (base32 "11jsn941135i18xr8ya7j2rp7ffx5smsiw5r49gh8h6wvxjn3bj2"))))
+        (base32 "02m596sylvsyki7x3g5fh420qhxqdjcm3xda3npz0qnx2gb36rh3"))))
     (properties `((upstream-name . "eplusr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-units
-                             r-stringi
+    (propagated-inputs (list r-stringi
+                             r-s7
                              r-rsqlite
                              r-r6
                              r-processx
                              r-lubridate
+                             r-jsonlite
                              r-data-table
                              r-cli
                              r-checkmate
@@ -15959,13 +15960,13 @@ Reliability in Educational Measurement chapter of the 5th edition of
 (define-public r-emplikcs
   (package
     (name "r-emplikcs")
-    (version "0.3")
+    (version "0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "emplikCS" version))
        (sha256
-        (base32 "07mr6mgdqwbiqdmp1q6jfwgpa6insxhw6qsa7p0cci4hy13bwmqm"))))
+        (base32 "0d2jj8hkq9cdd7psb1xn13937afjxj7vr7z7r8w6qww57a7ffnls"))))
     (properties `((upstream-name . "emplikCS")))
     (build-system r-build-system)
     (arguments

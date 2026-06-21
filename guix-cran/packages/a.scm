@@ -2305,13 +2305,13 @@ minimum distance estimator of the parameters in the model.")
 (define-public r-autoreg
   (package
     (name "r-autoreg")
-    (version "0.3.3")
+    (version "0.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "autoReg" version))
        (sha256
-        (base32 "0r26h2ik6cx21dlilpcx9a60dj1fw3zq06f2prmxw7ybk1ix19zm"))))
+        (base32 "02fclhqnih974qd55mlh0xn6ik3zn2iw5n0fm50x87x2whlqwqd6"))))
     (properties `((upstream-name . "autoReg")))
     (build-system r-build-system)
     (arguments

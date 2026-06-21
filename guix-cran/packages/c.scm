@@ -10429,6 +10429,32 @@ different models in survival time analysis within randomized clinical trials
 with two different treatments to be compared and survival as an endpoint.")
     (license license:gpl3)))
 
+(define-public r-coxstream
+  (package
+    (name "r-coxstream")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "coxstream" version))
+       (sha256
+        (base32 "1wmaghhbwm339bcsvf4f9m873vqijdsbcca92fyrwxzxjnglyfxk"))))
+    (properties `((upstream-name . "coxstream")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival r-rcpp))
+    (home-page "https://github.com/tommycarstensen/coxstream-r")
+    (synopsis
+     "Memory-Efficient Cox Proportional Hazards via Streaming Newton-Raphson")
+    (description
+     "Fits the Cox proportional hazards model using a single descending-order pass per
+Newton-Raphson iteration.  Peak RAM is O(p^2) regardless of the number of rows,
+making it suitable for datasets that do not fit in memory.  Produces identical
+coefficients to @code{survival::coxph()} with Efron tie correction.")
+    (license license:expat)))
+
 (define-public r-coxsei
   (package
     (name "r-coxsei")
@@ -54802,6 +54828,42 @@ chapter sections and page numbers where the datasets are used.")
      "This package implements the board game @code{CamelUp} for use in introductory
 statistics classes using a Shiny app.")
     (license license:gpl3)))
+
+(define-public r-camelratiosindex
+  (package
+    (name "r-camelratiosindex")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CamelRatiosIndex" version))
+       (sha256
+        (base32 "0n1921nfkax2aby32kpji63pxk59smn3ddmj1dhpmkgmwl359gx5"))))
+    (properties `((upstream-name . "CamelRatiosIndex")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-rrcov
+                             r-robustfa
+                             r-ggplot2
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/JC-Ayimah/CamelRatiosIndex")
+    (synopsis
+     "Multivariate-Weighted Indexing of CAMEL Ratios for Bank Performance")
+    (description
+     "Computes a composite year-on-year index for bank performance assessment using
+the CAMEL framework (Capital Adequacy, Asset Quality, Management Efficiency,
+Earnings, Liquidity).  The multivariate weighting scheme employs factor analysis
+with robust covariance estimation to derive communality-based weights from the
+correlation matrix of CAMEL ratios.  Provides functions for index computation,
+visualization, and comparison across banks and time periods.The methodology is
+described in Ayimah et al. (2023a) <doi:10.9734/bpi/mono/978-81-19315-32-1> and
+Ayimah et al. (2023b) <https://ajtem.com/index.php/ajtem/article/view/53>.")
+    (license license:expat)))
 
 (define-public r-camea
   (package

@@ -1838,13 +1838,13 @@ easily.")
 (define-public r-issuetracker
   (package
     (name "r-issuetracker")
-    (version "1.3.1")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IssueTrackeR" version))
        (sha256
-        (base32 "13pxa7w44xknqbv98yikgjyjinhjr4naxagh4gnpmny87pz5dc73"))))
+        (base32 "18f89bcf9h01samgl7zdnpk3cjg734fm3ni6j2k0p99xd87ygfib"))))
     (properties `((upstream-name . "IssueTrackeR")))
     (build-system r-build-system)
     (arguments

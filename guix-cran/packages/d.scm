@@ -2541,6 +2541,34 @@ Date/times are considered discrete and are floored whenever encountered.  Times
 are wrapped and time zones are maintained unless explicitly altered by the user.")
     (license license:expat)))
 
+(define-public r-dtsr
+  (package
+    (name "r-dtsr")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DTSR" version))
+       (sha256
+        (base32 "0almfbdxd5xhkx1rvsfbg039bhzdsmpbb8q980js44f504cshhz0"))))
+    (properties `((upstream-name . "DTSR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vim r-mvdalab r-mass r-cluster))
+    (home-page "https://cran.r-project.org/package=DTSR")
+    (synopsis
+     "Distributed Trimmed Scores Regression for Handling Missing Data")
+    (description
+     "This package provides functions for handling missing data using Distributed
+Trimmed Scores Regression and other imputation methods.  It includes facilities
+for data imputation, evaluation metrics, and clustering analysis.  It is
+designed to work in distributed computing environments to handle large datasets
+efficiently.  The philosophy of the package is described in Guo G. (2024)
+<doi:10.1080/03610918.2022.2091779>.")
+    (license license:gpl3)))
+
 (define-public r-dtsmartr
   (package
     (name "r-dtsmartr")

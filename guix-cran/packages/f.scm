@@ -22170,6 +22170,37 @@ available for estimating the distribution of the autocorrelation functions under
 the assumption of strong functional white noise.")
     (license license:gpl2+)))
 
+(define-public r-fda-vi
+  (package
+    (name "r-fda-vi")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fda.vi" version))
+       (sha256
+        (base32 "1gk1fqmjbnnw7w5b9n0jh9bbfkl90cxy8xgyi03kabpz0p4391xp"))))
+    (properties `((upstream-name . "fda.vi")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales r-mass r-fda))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/desouzalab/fda.vi")
+    (synopsis "Functional Data Analysis using Variational Inference")
+    (description
+     "This package implements a variational Expectation-Maximization (VEM) algorithm
+for smoothing one or multiple functional observations via basis function
+selection.  The algorithm estimates all model parameters simultaneously and
+automatically, while accounting for within-curve correlation.  The approach
+provides a flexible and computationally efficient framework for smoothing
+correlated functional data.  The algorithm is described in da Cruz, A. C., de
+Souza, C. P., and Sousa, P. H. (2024).  Fast Bayesian basis selection for
+functional data representation with correlated errors.
+<doi:10.48550/@code{arXiv.2405.20758>}.")
+    (license license:expat)))
+
 (define-public r-fda-usc
   (package
     (name "r-fda-usc")
