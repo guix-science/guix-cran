@@ -548,19 +548,19 @@ species distribution modeling.")
 (define-public r-hypertext
   (package
     (name "r-hypertext")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hypertext" version))
        (sha256
-        (base32 "11r25gcgf2p1naifw5qiixasghw73fb92k47gjl6g25iwsx84mgy"))))
+        (base32 "1xlan81kl934f4rzlk3z79wyicim0wswl3kk2ja8p8v490962ynf"))))
     (properties `((upstream-name . "hypertext")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://github.com/sigflux/hypertext")
+    (home-page "https://sigflux.github.io/hypertext/")
     (synopsis "'HTML' Element Construction")
     (description
      "This package provides a deterministic, framework-agnostic Domain-Specific

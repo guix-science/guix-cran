@@ -1183,13 +1183,13 @@ behaviour.  For more details, see Eddin et al. (2021)
 (define-public r-rwetools
   (package
     (name "r-rwetools")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rwetools" version))
        (sha256
-        (base32 "1lvhhlz5and1rblpp21fr1ymqzn4vwv3ydg2glzl6r99931nxixw"))))
+        (base32 "0qwclp97960lsbk3dw2xmkmxihxbc1zlyahhcgbryrd61bc057vc"))))
     (properties `((upstream-name . "rwetools")))
     (build-system r-build-system)
     (arguments
@@ -1994,13 +1994,13 @@ to build expressions in a chain-like fashion.")
 (define-public r-rveg
   (package
     (name "r-rveg")
-    (version "0.1.9")
+    (version "0.1.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rveg" version))
        (sha256
-        (base32 "0lm3yy0zcjjh6i9c830hadcs0r23y0p827v16d99h3y0h7g5fs67"))))
+        (base32 "11h5i4vg49h887hibry7ajbc0jxp7zg3fxbvkr31m7wp9d6z8n7n"))))
     (properties `((upstream-name . "Rveg")))
     (build-system r-build-system)
     (arguments
@@ -17588,13 +17588,13 @@ Kronecker-covariance structure using the Matrix Minimum Covariance Determinant
 (define-public r-robustlmm
   (package
     (name "r-robustlmm")
-    (version "3.4-3")
+    (version "3.4-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "robustlmm" version))
        (sha256
-        (base32 "0i86kbwfvm8jxwfrn2yi87qfnqary6dmwr22wz9ilx8fbakirf5z"))))
+        (base32 "0w1r3nlilvhrvn83spfn1nmfhcpk9xk7mrb9bqh53rg1jbz59civ"))))
     (properties `((upstream-name . "robustlmm")))
     (build-system r-build-system)
     (arguments
@@ -17605,6 +17605,7 @@ Kronecker-covariance structure using the Matrix Minimum Covariance Determinant
                              r-rlang
                              r-reformulas
                              r-rcpp
+                             r-numderiv
                              r-nlme
                              r-matrix
                              r-lme4

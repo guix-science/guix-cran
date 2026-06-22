@@ -3002,13 +3002,13 @@ multivariada.")
 (define-public r-mvar
   (package
     (name "r-mvar")
-    (version "2.2.9")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MVar" version))
        (sha256
-        (base32 "1qpg6x6f5nyw9l9cd1pd2wf89xsfy3yz5069qx86gmrzmyga7mfn"))))
+        (base32 "1cdxdzz8qhwl073jjk14615baaaxsfi3b6f9xlw8zjvbxj7kx38r"))))
     (properties `((upstream-name . "MVar")))
     (build-system r-build-system)
     (arguments
@@ -3380,13 +3380,13 @@ Acoustic detection of NMR experiments.  OMICS. 2015;19(3):147-56.
 (define-public r-musicmct
   (package
     (name "r-musicmct")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "musicMCT" version))
        (sha256
-        (base32 "1f9g5cvn6lkkbi42kqddi3yq0gzwprazzjlm56i0dxcczmj3xp4n"))))
+        (base32 "1mmkbr78klmppv9hkv1697gydb8djvvywkrnvfy6hx5571j7iij6"))))
     (properties `((upstream-name . "musicMCT")))
     (build-system r-build-system)
     (arguments
@@ -13923,6 +13923,31 @@ consistent reproductive values in the lambda framework and cohort reproductive
 values in the R0 framework.  Aggregation can take the form of general-to-general
 MPM (mpm_aggregate) or Leslie-to-Leslie MPM (leslie_aggregate).")
     (license license:expat)))
+
+(define-public r-mplustrees
+  (package
+    (name "r-mplustrees")
+    (version "0.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MplusTrees" version))
+       (sha256
+        (base32 "17rzg9gc8v95g6pa7aparl8ci9kl6sk21fk9kkch1i3jr2abz51b"))))
+    (properties `((upstream-name . "MplusTrees")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-rpart-plot r-rpart r-nlme r-mplusautomation))
+    (home-page "https://cran.r-project.org/package=MplusTrees")
+    (synopsis "Decision Trees with Structural Equation Models Fit in 'Mplus'")
+    (description
+     "Uses recursive partitioning to create homogeneous subgroups based on structural
+equation models fit in Mplus', a stand-alone program developed by Muthen and
+Muthen.")
+    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-mplusparallel-automation
   (package
@@ -53573,13 +53598,13 @@ generating fictional state names.")
 (define-public r-manynet
   (package
     (name "r-manynet")
-    (version "2.0.1")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "manynet" version))
        (sha256
-        (base32 "1p8rfy3rqzpm5filnxdg95arvj0sxasljhsndzrfw9y2gvkpa0iy"))))
+        (base32 "0llkcnyg1bnm90qfjwacfrs31xknj1zcphz2a3qjn2z3bdfmll0d"))))
     (properties `((upstream-name . "manynet")))
     (build-system r-build-system)
     (arguments
@@ -53592,14 +53617,14 @@ generating fictional state names.")
                              r-dplyr
                              r-cli))
     (home-page "https://stocnet.github.io/manynet/")
-    (synopsis "Many Ways to Make, Modify, Mark, and Measure Myriad Networks")
+    (synopsis "Many Ways to Make, Manipulate, and Modify Myriad Networks")
     (description
-     "Many tools for making, modifying, marking, measuring, and motifs and memberships
-of many different types of networks.  All functions operate with matrices, edge
-lists, and igraph', network', and tidygraph objects, on directed, multiplex,
-multimodal, signed, and other networks.  The package includes functions for
-importing and exporting, creating and generating networks, modifying networks
-and node and tie attributes, and describing networks with sensible defaults.")
+     "Many tools for making, manipulating, and modifying many different types of
+networks.  All functions operate with matrices, edge lists, and igraph',
+network', and tidygraph objects, on directed, multiplex, multimodal, signed, and
+other networks.  The package includes functions for importing and exporting,
+creating and generating networks, modifying networks and node and tie
+attributes, and describing networks with sensible defaults.")
     (license license:expat)))
 
 (define-public r-manymome-table

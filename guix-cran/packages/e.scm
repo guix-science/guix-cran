@@ -6527,19 +6527,19 @@ surface stations) and grid (i.e.  satellite) observations.")
 (define-public r-eva
   (package
     (name "r-eva")
-    (version "0.2.6")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eva" version))
        (sha256
-        (base32 "1b5hrwgdbw19c63ywhkvxlz3843c0mgvsxlmab6zv6r2lrrdkf62"))))
+        (base32 "1san6l7hskcq7l2rrywsp0yiabnhxq0h14qfsmmv7hfsdwzqjyf3"))))
     (properties `((upstream-name . "eva")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-matrix r-envstats))
+    (propagated-inputs (list r-matrix))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/brianbader/eva_package")
     (synopsis "Extreme Value Analysis with Goodness-of-Fit Testing")

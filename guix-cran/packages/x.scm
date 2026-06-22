@@ -1275,13 +1275,13 @@ random search strategies.")
 (define-public r-xomultinom
   (package
     (name "r-xomultinom")
-    (version "0.8.7")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "XOMultinom" version))
        (sha256
-        (base32 "0fm8dznbhxmndfh9bscsblapgq5q0zp99prf5sdqchgps9qv8fvg"))))
+        (base32 "1xx5s12wl16ycpvmz13if3v41fqw3cvll0r3y9bsr8rpkpsbblga"))))
     (properties `((upstream-name . "XOMultinom")))
     (build-system r-build-system)
     (arguments

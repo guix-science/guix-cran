@@ -22564,13 +22564,13 @@ Institute for the World Economy <https://www.ifw-kiel.de/>.")
 (define-public r-afr
   (package
     (name "r-afr")
-    (version "0.3.8")
+    (version "0.3.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AFR" version))
        (sha256
-        (base32 "1dwn9zddshwn76lydi5d310apmx6scmgl9pjbb99l002q5mg8llq"))))
+        (base32 "1nlljwnllvqcj5957xf8lcnphrg5szkybkib5qmrw2avg8g33a3c"))))
     (properties `((upstream-name . "AFR")))
     (build-system r-build-system)
     (arguments
@@ -22589,7 +22589,8 @@ Institute for the World Economy <https://www.ifw-kiel.de/>.")
                              r-ggplot2
                              r-forecast
                              r-cli
-                             r-car))
+                             r-car
+                             r-arrow))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=AFR")
     (synopsis
@@ -22599,7 +22600,9 @@ Institute for the World Economy <https://www.ifw-kiel.de/>.")
 macroeconomic and credit data.  The package includes functions from existing R
 packages adapted for banking sector of Kazakhstan.  The purpose of the package
 is to optimize statistical functions for easier interpretation for bank analysts
-and non-statisticians.")
+and non-statisticians.  The package also provides helper functions for loading
+an insurance scoring dataset, a past case competition dataset for insurance risk
+scoring and fair pricing.")
     (license license:gpl2)))
 
 (define-public r-afmtoolkit
@@ -28865,24 +28868,26 @@ details.")
 (define-public r-abseil
   (package
     (name "r-abseil")
-    (version "2023.8.2.1")
+    (version "2026.5.26.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "abseil" version))
        (sha256
-        (base32 "1a65zwkrxqidbcfpin9k119zip8vb0vnl87akimjn3xnynb3i5br"))))
+        (base32 "1vjf5baln2jfwwpzpracw0xgm0laigigc3lchdl8kfxcyq6hpvfg"))))
     (properties `((upstream-name . "abseil")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (home-page "https://abseil.xingchi.li")
-    (synopsis "'C++' Header Files from 'Abseil'")
+    (synopsis "'C++' Header Files and Compiled Library from 'Abseil'")
     (description
-     "Wraps the Abseil C++ library for use by R packages.  Original files are from
-<https://github.com/abseil/abseil-cpp>.  Patches are located at
-<https://github.com/doccstat/abseil-r/tree/main/local/patches>.")
+     "Wraps the Abseil C++ library for use by R packages.  Provides both header files
+and a compiled static library ('libabsl.a') so that downstream packages can link
+non-header-only Abseil components without recompiling the library themselves.
+Original files are from <https://github.com/abseil/abseil-cpp>.  Patches are
+located at <https://github.com/doccstat/abseil-r/tree/main/local/patches>.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-abrsqol

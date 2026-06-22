@@ -4450,13 +4450,13 @@ competing risks outcomes.  Huang, R., Xu, R. and Dulai, P.S.(2020)
 (define-public r-survsamplesize
   (package
     (name "r-survsamplesize")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "survSampleSize" version))
        (sha256
-        (base32 "01y5cmm2gccf9wdaad6j17z26bhgvj8rinxd4m6qnshr0469k4k2"))))
+        (base32 "0n5751mdm9rac5ihw57cym12yh17597qg30wjjfdll3lwdjy0kw9"))))
     (properties `((upstream-name . "survSampleSize")))
     (build-system r-build-system)
     (arguments
@@ -9856,13 +9856,13 @@ assess the local independence assumption of IRT with Yen's Q3 statistic (Yen,
 (define-public r-subsampling
   (package
     (name "r-subsampling")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "subsampling" version))
        (sha256
-        (base32 "1qzgcghjvn49jqli4ly3mzx9vyw5ql2rcqmavsd8nansgm76aycj"))))
+        (base32 "10vp3fg64flzpp0rrmvcaznxgfzf6naggpsqfcisz6lp52f430p8"))))
     (properties `((upstream-name . "subsampling")))
     (build-system r-build-system)
     (arguments
@@ -15454,13 +15454,13 @@ effects.")
 (define-public r-stdistance
   (package
     (name "r-stdistance")
-    (version "0.6.6")
+    (version "0.6.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "STDistance" version))
        (sha256
-        (base32 "18scd94v91awi4q261q8nqpqvi9hsw4rby6zraafqsqz63mlakd2"))))
+        (base32 "0vfcw96isygwlkjv1ii2hi1cvxasl5f88pyk1zklj1d2g0v0zj5f"))))
     (properties `((upstream-name . "STDistance")))
     (build-system r-build-system)
     (arguments
@@ -39433,13 +39433,13 @@ and Mallick (1998) <https://www.jstor.org/stable/25053023>.")
 (define-public r-smooth
   (package
     (name "r-smooth")
-    (version "4.4.0")
+    (version "4.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smooth" version))
        (sha256
-        (base32 "15zlp0nbld81hkjpabv4v8nqsw0dvmpb6ziln111yp0jmph28bl7"))))
+        (base32 "1rkvsic7b44c0l0hndc7kz61996c9ra4yq1bgzfkm78jq77f3c3s"))))
     (properties `((upstream-name . "smooth")))
     (build-system r-build-system)
     (arguments
@@ -39450,7 +39450,6 @@ and Mallick (1998) <https://www.jstor.org/stable/25053023>.")
                              r-statmod
                              r-rcpparmadillo
                              r-rcpp
-                             r-pracma
                              r-nloptr
                              r-mass
                              r-greybox

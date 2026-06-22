@@ -7425,13 +7425,13 @@ and various Amazon access logs.")
 (define-public r-webr
   (package
     (name "r-webr")
-    (version "0.1.5")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "webr" version))
        (sha256
-        (base32 "03yhlla74i71nphrfhr5sd57ykj7rjanh2a8nw3cq22rg9g668jk"))))
+        (base32 "117hi5kfbs1h4xmlbcpigizgjn3a2mal9w0jbbzxyv777m0mbx88"))))
     (properties `((upstream-name . "webr")))
     (build-system r-build-system)
     (arguments
@@ -7439,12 +7439,10 @@ and various Amazon access logs.")
       #:tests? #f))
     (propagated-inputs (list r-ztable
                              r-vcd
-                             r-tidyselect
                              r-tidyr
                              r-tibble
                              r-stringr
                              r-sjlabelled
-                             r-shiny
                              r-scales
                              r-rrtable
                              r-rlang
@@ -9124,13 +9122,13 @@ path, not just a handler function.")
 (define-public r-waypoint
   (package
     (name "r-waypoint")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Waypoint" version))
        (sha256
-        (base32 "0dav2pv50k7g34p61pqy5970806i6gac7hzr6flc7xcjxvy6z9vl"))))
+        (base32 "0y61jsjs3bz1d89r9hx7n8hd6akv11mw4j90x4xiz440dw3h75wj"))))
     (properties `((upstream-name . "Waypoint")))
     (build-system r-build-system)
     (arguments

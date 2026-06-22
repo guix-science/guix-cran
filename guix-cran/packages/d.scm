@@ -1362,13 +1362,13 @@ details.")
 (define-public r-dyadicmarkov
   (package
     (name "r-dyadicmarkov")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dyadicMarkov" version))
        (sha256
-        (base32 "07wj6iwcyg25nhv51cihy4vnwsxl69h0b7dlp0mxyyivmgmpgrp5"))))
+        (base32 "12yjxblgi0xbfpv8p386y5vn67w9icp8qfhn2qbbpi95hkilb6xd"))))
     (properties `((upstream-name . "dyadicMarkov")))
     (build-system r-build-system)
     (arguments
@@ -1377,13 +1377,13 @@ details.")
     (native-inputs (list r-knitr))
     (home-page "https://github.com/BoellenruecherM/dyadicMarkov-public")
     (synopsis
-     "Pattern Identification for Dyadic Sequences Using Transition Matrices")
+     "Pattern Estimation and Identification for Dyadic Sequences Using Transition Matrices in R")
     (description
-     "This package provides methods for analyzing dyadic interaction sequences using
-transition matrices within the Actor-Partner Interdependence Model.  The package
-supports the computation of empirical transition counts, maximum likelihood
-estimation of transition probabilities and identification of interaction
-patterns in univariate and bivariate dyadic interaction sequences.")
+     "This package provides methods for analyzing categorical dyadic sequences using
+transition matrices within the Longitudinal Actor-Partner Interdependence Model
+and Markov-chain framework.  The package supports empirical transition counts,
+maximum likelihood estimation of transition probabilities, and identification of
+univariate and bivariate patterns of interaction in dyadic sequences.")
     (license license:expat)))
 
 (define-public r-dyadicarma

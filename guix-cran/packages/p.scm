@@ -39120,6 +39120,34 @@ file as input, uploading it to PDFTables, and returning a file with the
 extracted data.")
     (license license:cc0)))
 
+(define-public r-pdfsigner
+  (package
+    (name "r-pdfsigner")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pdfsigner" version))
+       (sha256
+        (base32 "0jw8n90vqvjhvxlz29ld1qdmk1prp4a9syidwra4c3s3gnjavi1p"))))
+    (properties `((upstream-name . "pdfsigner")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (home-page "https://github.com/StrategicProjects/pdfsigner")
+    (synopsis "Digitally Sign and Verify PDF Documents")
+    (description
+     "Digitally sign PDF documents with a PKCS#12 keystore and verify their
+signatures.  Signing produces a detached PKCS#7 / CMS signature
+('adbe.pkcs7.detached') over the document and is applied as an incremental
+update, so existing signatures remain valid.  The cryptography and PDF
+manipulation are performed by a bundled, pure-'Rust backend (the pdf_signer
+crate); no Java runtime, @code{OpenSSL}', or external command-line tools are
+required.  Visible signature appearances with custom text are supported.")
+    (license license:gpl3)))
+
 (define-public r-pdfsearch
   (package
     (name "r-pdfsearch")
@@ -39317,13 +39345,13 @@ book.")
 (define-public r-pdenaivebayes
   (package
     (name "r-pdenaivebayes")
-    (version "0.2.9")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PDEnaiveBayes" version))
        (sha256
-        (base32 "1zdsixd5mmvcs8yr431wal7wbq3s1xlyjy62d8w6d9qyx4pmcssp"))))
+        (base32 "0wci263n8h74paymv17vrdqdby54gd0lp1nk813dhj7vz09zqgak"))))
     (properties `((upstream-name . "PDEnaiveBayes")))
     (build-system r-build-system)
     (arguments
@@ -39341,11 +39369,12 @@ book.")
     (synopsis "Plausible Naive Bayes Classifier Using PDE")
     (description
      "This package provides a nonparametric, multicore-capable plausible naive Bayes
-classifier based on the Pareto density estimation (PDE) featuring a plausible
-approach to a pitfall in the Bayesian theorem covering low evidence cases.
-Stier, Q., Hoffmann, J., and Thrun, M.C.: \"Classifying with the Fine Structure
-of Distributions: Leveraging Distributional Information for Robust and Plausible
-Naive Bayes\" (2026), Machine Learning and Knowledge Extraction (MAKE),
+classifier based on the Pareto density estimation (PDE), supporting memory
+sharing within multicore computations and featuring a plausible approach to a
+pitfall in the Bayesian theorem covering low evidence cases Stier, Q., Hoffmann,
+J., and Thrun, M.C.: \"Classifying with the Fine Structure of Distributions:
+Leveraging Distributional Information for Robust and Plausible Naive Bayes\"
+(2026), Machine Learning and Knowledge Extraction (MAKE),
 <DOI:10.3390/make8010013>.")
     (license license:gpl3)))
 

@@ -8,6 +8,7 @@
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages pkg-config)
+  #:use-module (gnu packages tbb)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages java)
   #:use-module (gnu packages xml)
@@ -5806,13 +5807,13 @@ that there are only Compliers and Never Takers in the population.")
 (define-public r-noncompart
   (package
     (name "r-noncompart")
-    (version "0.8.0")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NonCompart" version))
        (sha256
-        (base32 "0hfrhcahr0l8pqhsv70f162jxmvik0g8hlajbzp2l93y9kqhf8sg"))))
+        (base32 "0bxyrgfk2xjrzihkm81scrmlw7h4wjyfmsjfgwz0416k2yifji7x"))))
     (properties `((upstream-name . "NonCompart")))
     (build-system r-build-system)
     (arguments
@@ -5824,9 +5825,17 @@ that there are only Compliers and Never Takers in the population.")
      "Conduct a noncompartmental analysis with industrial strength.  Some features are
 1) Use of CDISC SDTM terms 2) Automatic or manual slope selection 3) Supporting
 both linear-up linear-down and linear-up log-down method 4) Interval(partial)
-AUCs with linear or log interpolation method * Reference: Gabrielsson J, Weiner
-D. Pharmacokinetic and Pharmacodynamic Data Analysis - Concepts and
-Applications.  5th ed.  2016. (ISBN:9198299107).")
+AUCs with linear or log interpolation method 5) Installation/Operational
+Qualification (IQ/OQ) reports in pdf.  After installation, qualify the package
+in your own environment: run @code{IQNCA()} for Installation Qualification and
+@code{OQNCA()} for Operational Qualification.  Run @code{writeMD5NCA()} once
+after installation so the IQ file-integrity check passes.  To approve a report,
+sign it digitally in Adobe Acrobat Reader (generate with @code{sigField=TRUE},
+or run @code{addSigFieldNCA()}, to add click-to-sign fields), instead of
+printing and scanning; or use @code{signPDFNCA()/verifyPDFNCA()} for a
+scriptable signature. * Reference: Gabrielsson J, Weiner D. Pharmacokinetic and
+Pharmacodynamic Data Analysis - Concepts and Applications.  5th ed.  2016.
+(ISBN:9198299107).")
     (license license:gpl3)))
 
 (define-public r-nonabsdid
@@ -7747,6 +7756,48 @@ and intervals for Network Meta-Analysis, as described by Phillippo et al. (2018)
 <doi:10.1111/rssa.12341>.  These describe the smallest changes to the data that
 would result in a change of decision.")
     (license license:gpl3)))
+
+(define-public r-nmathopencl
+  (package
+    (name "r-nmathopencl")
+    (version "0.8.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nmathopencl" version))
+       (sha256
+        (base32 "0xdvj844apm1frgh9wifz1hg3mr8iklp7sslzk4va2fna4bspdgh"))))
+    (properties `((upstream-name . "nmathopencl")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list tbb))
+    (propagated-inputs (list r-rdpack
+                             r-rcppparallel
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-opencltools
+                             r-mass))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/knygren/nmathopencl")
+    (synopsis "'OpenCL'-Ported R 'Mathlib' for GPU-Accelerated Packages")
+    (description
+     "Ships statistical and mathematical routines from R internal nmath ('Mathlib') as
+@code{OpenCL} C sources under directory inst/cl/', with R wrappers that use the
+GPU when @code{OpenCL} is available at compile time and fall back to stats
+equivalents otherwise.  Aimed at package developers building custom kernels (for
+example Bayesian GLMs via suggested package glmbayes') using opencltools kernel
+loaders and related helpers.  Contains translated shims, an illustrative
+GLM-related kernel subsystem, vignettes, and optional GPU acceleration.  The
+ported routines are translated from the nmath ('Mathlib') and Rmath sources of R
+Core Team (2026) \"R: A Language and Environment for Statistical Computing\"
+<doi:10.32614/R.manuals>. @code{OpenCL} GPU execution follows the standard
+described in Stone, Gohara, and Shi (2010) <doi:10.1109/MCSE.2010.69>.  The
+likelihood subgradient simulation methodology implemented by the illustrative
+GLM kernel subsystem is described in Nygren and Nygren (2006)
+<doi:10.1198/016214506000000357>.")
+    (license license:gpl2+)))
 
 (define-public r-nmarank
   (package

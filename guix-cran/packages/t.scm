@@ -15068,6 +15068,32 @@ obtained from text analyses (e.g., topic modeling, word scaling) can be used to
 annotate the texts.")
     (license license:gpl3)))
 
+(define-public r-tok
+  (package
+    (name "r-tok")
+    (version "0.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tok" version))
+       (sha256
+        (base32 "001icnmayb2vfrv3hz143x2mv7rkr4j1b91q51qw4icixw0j29jv"))))
+    (properties `((upstream-name . "tok")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-r6 r-cli))
+    (home-page "https://github.com/mlverse/tok")
+    (synopsis "Fast Text Tokenization")
+    (description
+     "Interfaces with the Hugging Face tokenizers library to provide implementations
+of today's most used tokenizers such as the Byte-Pair Encoding algorithm
+<https://huggingface.co/docs/tokenizers/index>.  It's extremely fast for both
+training new vocabularies and tokenizing texts.")
+    (license license:expat)))
+
 (define-public r-tohm
   (package
     (name "r-tohm")

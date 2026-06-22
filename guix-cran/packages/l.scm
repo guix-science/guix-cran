@@ -14134,13 +14134,13 @@ package is heavily inspired by the
 (define-public r-lessr
   (package
     (name "r-lessr")
-    (version "4.5.4")
+    (version "4.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lessR" version))
        (sha256
-        (base32 "1z4spxsy936mi91hk5f4046xbyxlzpysm49j17sd84pzv9mj7i3j"))))
+        (base32 "1kjfazc95k2ihf0m5s22my99wjcdf9brjdgwmk4abwg8rjw58rzs"))))
     (properties `((upstream-name . "lessR")))
     (build-system r-build-system)
     (arguments

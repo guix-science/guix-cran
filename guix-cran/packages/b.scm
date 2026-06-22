@@ -25385,13 +25385,13 @@ Service ('WFS') using dplyr syntax.")
 (define-public r-bcdag
   (package
     (name "r-bcdag")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BCDAG" version))
        (sha256
-        (base32 "1jr11jsc38vksvzdj802whprmbdairksbgfrqsmdbbim9gj5q79s"))))
+        (base32 "1hqg0zbswz471wb76d9r0ygmlsrck9xfbiccrp5gl9lwkpvfxva3"))))
     (properties `((upstream-name . "BCDAG")))
     (build-system r-build-system)
     (arguments
@@ -25409,7 +25409,8 @@ data.  Main algorithm consists of a Markov chain Monte Carlo scheme for
 posterior inference of causal structures, parameters and causal effects between
 variables.  References: F. Castelletti and A. Mascaro (2021)
 <doi:10.1007/s10260-021-00579-1>, F. Castelletti and A. Mascaro (2022)
-<doi:10.48550/@code{arXiv.2201.12003>}.")
+<doi:10.48550/@code{arXiv.2201.12003>}, F. Castelletti and A. Mascaro (2026)
+<doi:10.18637/jss.v116.i05>.")
     (license license:expat)))
 
 (define-public r-bcd
@@ -34038,13 +34039,13 @@ on flat priors as input.")
 (define-public r-bamp
   (package
     (name "r-bamp")
-    (version "2.1.5")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bamp" version))
        (sha256
-        (base32 "02hzgnyp91dbc5bxs4hvkgz5fq4xpwmz6b8d4101gcgx01gry1ji"))))
+        (base32 "0z4j7nc454i8dc9l187d6vl0ncdaln3bhrwbfgndhsda1dh8agki"))))
     (properties `((upstream-name . "bamp")))
     (build-system r-build-system)
     (arguments
