@@ -7712,13 +7712,13 @@ wrappers to functions in the gstat and sp packages.")
 (define-public r-inti
   (package
     (name "r-inti")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inti" version))
        (sha256
-        (base32 "01kixndbfcma79bqwkl15xcpb9z2fl21ypi5whi110033jbmil10"))))
+        (base32 "1d67gx11azmb9qynyiad7g3nabl3qzhlhji9365xxl7cnw17x9r0"))))
     (properties `((upstream-name . "inti")))
     (build-system r-build-system)
     (arguments
@@ -13161,6 +13161,43 @@ those of a competing model, and is estimated via k-fold cross-validation.
 Methods are provided for generalized linear models, mixed-effects models
 ('lme4'), and item response theory models ('mirt').  See
 <doi:10.1371/journal.pone.0316491>.")
+    (license license:expat)))
+
+(define-public r-imugap
+  (package
+    (name "r-imugap")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "imuGAP" version))
+       (sha256
+        (base32 "0qfkk2yscv9c5kc6zbd52vxbhdmf16yw2w8x2kmyl0axxdw0cr2i"))))
+    (properties `((upstream-name . "imuGAP")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stanheaders
+                             r-rstantools
+                             r-rstan
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-data-table
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://accidda.github.io/imuGAP/")
+    (synopsis "Immunity: Geographic and Age-Based Projection")
+    (description
+     "Fits Bayesian hierarchical models of vaccine coverage by location, birth cohort,
+and age.  Observations of vaccination status (which may span cohorts, ages, and
+doses) are used to fit a latent survival-style process model that decomposes
+coverage into a lifetime propensity to vaccinate and a time-varying force of
+vaccination.  Hierarchical spatial structure (e.g., state, county, school)
+supports partial pooling via random effects.  Models are implemented in Stan and
+fit via rstan'.  Provides helpers to validate user-supplied input data, and to
+predict coverage from fitted models.")
     (license license:expat)))
 
 (define-public r-imuf

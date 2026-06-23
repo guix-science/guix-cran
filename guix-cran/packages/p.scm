@@ -28,7 +28,6 @@
   #:use-module (gnu packages maths)
   #:use-module (gnu packages pdf)
   #:use-module (gnu packages gtk)
-  #:use-module (gnu packages java)
   #:use-module (gnu packages bison)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -599,25 +598,26 @@ Cambridge University Press.")
 (define-public r-pwrss
   (package
     (name "r-pwrss")
-    (version "1.0.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pwrss" version))
        (sha256
-        (base32 "1nbdda5c5kidcfixm4qaij73fikg0gzamz2m7spnznix0nfjw0gb"))))
+        (base32 "1xaqm8lmhj381v8768qfdr07awsb6yl04ph3vhnq58sgiyjgi8zn"))))
     (properties `((upstream-name . "pwrss")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=pwrss")
-    (synopsis "Statistical Power and Sample Size Calculation Tools")
+    (native-inputs (list r-knitr gfortran))
+    (home-page "https://metinbulus.github.io/pwrss/")
+    (synopsis
+     "Statistical Power, Sample Size, and Detectable Effect Calculations")
     (description
-     "The pwrss R package provides flexible and comprehensive functions for
-statistical power and minimum required sample size calculations across a wide
-range of commonly used hypothesis tests in psychological, biomedical, and social
+     "Flexible and comprehensive functions for statistical power, minimum required
+sample size, and minimum detectable effect calculations across a wide range of
+commonly used hypothesis tests in psychological, biomedical, and social
 sciences.")
     (license license:gpl3+)))
 
@@ -2175,13 +2175,13 @@ For methodological details, see Shi et al. (2025)
 (define-public r-pulso
   (package
     (name "r-pulso")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pulso" version))
        (sha256
-        (base32 "1szjwicycavyaqpqqkw6fanh1zkzqady41bxrl760zac77kmsfyg"))))
+        (base32 "00w9996d5wyxm993fdly6gvk60zvz8gy8h9jbbfagqidxpmaf64z"))))
     (properties `((upstream-name . "pulso")))
     (build-system r-build-system)
     (arguments
@@ -5042,6 +5042,35 @@ advanced/metastatic cancer indications.  Muston (2024). \"Informing structural
 assumptions for three state oncology cost-effectiveness models through model
 efficiency and fit\".  Applied Health Economics and Health Policy.")
     (license license:gpl3+)))
+
+(define-public r-pslr
+  (package
+    (name "r-pslr")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pslr" version))
+       (sha256
+        (base32 "05a2kiafhmsjvb4w1xivr8jn2mymi70d8qi5vi6fqlrjc2igzvjl"))))
+    (properties `((upstream-name . "pslr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-punycoder r-cpp11))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/bart-turczynski/pslr")
+    (synopsis "Public Suffix List Engine")
+    (description
+     "This package provides a focused implementation of the Public Suffix List (PSL).
+Bundles a reproducible, pinned PSL snapshot and implements the official
+prevailing-rule algorithm to answer public-suffix (@code{eTLD}) and
+registrable-domain (@code{eTLD+1}) queries.  Distinguishes ICANN and PRIVATE
+rule sections, accepts Unicode and ASCII hostnames via punycoder
+canonicalization, and supports an explicit, validated offline refresh path.  The
+matcher is compiled with cpp11 and requires no external system library.")
+    (license license:expat)))
 
 (define-public r-pslm2015
   (package
@@ -37786,13 +37815,13 @@ and etc packages.")
 (define-public r-pedprobr
   (package
     (name "r-pedprobr")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pedprobr" version))
        (sha256
-        (base32 "025jdflj1z2aahnqy5h8yrlwfrcbjbcd0gzf7l90cmvfsmixd4ck"))))
+        (base32 "0qmfcz65b7bvl9fy59h03fi5s62g4qwsjw4z86rcn08bly7s20vb"))))
     (properties `((upstream-name . "pedprobr")))
     (build-system r-build-system)
     (arguments
@@ -42763,20 +42792,20 @@ data related to gene sets and example input/output data.")
 (define-public r-pathfindr
   (package
     (name "r-pathfindr")
-    (version "2.7.0")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pathfindR" version))
        (sha256
-        (base32 "16y294xx129yln9y1543nq6lqpbjzw5w5ybpwf98m0ig1zwpwjbw"))))
+        (base32 "1j724iz9fk8k1y6kgwk4wyrrp5lmp8hsa4im9qsqf69qbdc2bpxq"))))
     (properties `((upstream-name . "pathfindR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (inputs (list openjdk))
     (propagated-inputs (list r-rmarkdown
+                             r-rcpp
                              r-r-utils
                              r-pathfindr-data
                              r-msigdbr
@@ -42786,6 +42815,7 @@ data related to gene sets and example input/output data.")
                              r-ggupset
                              r-ggraph
                              r-ggplot2
+                             r-ggnewscale
                              r-fpc
                              r-foreach
                              r-doparallel
@@ -46353,13 +46383,13 @@ Baumann-Pickering et al (2010) <doi:10.1121/1.3479549>.")
 (define-public r-pammtools
   (package
     (name "r-pammtools")
-    (version "0.7.4")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pammtools" version))
        (sha256
-        (base32 "08fa8hhnc3c94jm0kmzwqg59f2nfxnapardlhn5nlp8znyng4q9p"))))
+        (base32 "036x1w20cvm6pcjh43j1rsvj2mk0q9dm68xpylphisppqgq0c0ra"))))
     (properties `((upstream-name . "pammtools")))
     (build-system r-build-system)
     (arguments

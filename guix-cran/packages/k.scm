@@ -374,6 +374,41 @@ Extreme Kurtosis\".  Loperfido, N. (2017,ISSN:0024-3795). \"A New Kurtosis Matri
 with Statistical Applications\".")
     (license license:gpl2+)))
 
+(define-public r-kumquat
+  (package
+    (name "r-kumquat")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "kumquat" version))
+       (sha256
+        (base32 "0q3cxq940vgzg8z96bhg735v8gbk2as9dk6ji3ns4ii2pr49cmr6"))))
+    (properties `((upstream-name . "kumquat")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-rlang
+                             r-logger
+                             r-glue
+                             r-glmnet
+                             r-ggplot2
+                             r-dplyr
+                             r-bundle))
+    (native-inputs (list r-knitr))
+    (home-page "https://janithwanni.github.io/kumquat/")
+    (synopsis "Smaller Version of LIME")
+    (description
+     "The existing implementation of lime can be quite limiting in understanding the
+underlying components that make Local Local interpretable model-agnostic
+explanations (LIME) work.  kumquat is a simpler implementation of lime that is
+easier to understand and is more transparent on the pieces that come together to
+make LIME work.  For more details on LIME, see Ribeiro, Singh, and Guestrin
+(2016) <doi:10.1145/2939672.2939778>.")
+    (license license:expat)))
+
 (define-public r-kuiper-2samp
   (package
     (name "r-kuiper-2samp")

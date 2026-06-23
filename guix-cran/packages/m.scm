@@ -422,13 +422,13 @@ defaults.")
 (define-public r-mychisq
   (package
     (name "r-mychisq")
-    (version "0.1.3")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Mychisq" version))
        (sha256
-        (base32 "0667ldi1qm47cpdr0j7gv7c6f8s5wj7naqcgv9harrsmm4vsr4w6"))))
+        (base32 "0wfyvylb4v62zkmxsbf2zq9s2mscgsg4al863ak4cv4c2bfynac2"))))
     (properties `((upstream-name . "Mychisq")))
     (build-system r-build-system)
     (arguments
@@ -437,7 +437,10 @@ defaults.")
     (home-page "https://cran.r-project.org/package=Mychisq")
     (synopsis "Chi-Squared Test for Goodness of Fit and Independence Test")
     (description
-     "The chi-squared test for goodness of fit and independence test.")
+     "The chi-squared test for goodness of fit and an independence test.  In addition,
+the chi-squared test for the population variance, the function for computing a
+confidence interval for the population variance, and the function for
+calculating the population standard deviation are provided.")
     (license license:gpl3)))
 
 (define-public r-mycaas
@@ -2972,13 +2975,13 @@ comprehensive inference tables following the four-case framework.")
 (define-public r-mvar-pt
   (package
     (name "r-mvar-pt")
-    (version "2.2.9")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MVar.pt" version))
        (sha256
-        (base32 "0bsgimrpdxwxppl2q71pn9czfdbjl6rzd1mfhz3z0g08d3l4wspv"))))
+        (base32 "1ncjvrsywh1hxi3g4mygv8a3pp5m6ncssg6v7bk46ii8grrk9q30"))))
     (properties `((upstream-name . "MVar.pt")))
     (build-system r-build-system)
     (arguments
@@ -5009,13 +5012,13 @@ digital terrain models using a variable focal windows size (Ilich et al. (2023)
 (define-public r-multisa
   (package
     (name "r-multisa")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multiSA" version))
        (sha256
-        (base32 "1wkdxv5xnp1j8jzk0yhis3llii4wgmbz7gpb9j3m284ywd4psd1n"))))
+        (base32 "1hfd7ra1xkkwglq4kw9w2vx6x09n1khknaf9mjxapnqqgp569w2h"))))
     (properties `((upstream-name . "multiSA")))
     (build-system r-build-system)
     (arguments
@@ -5023,13 +5026,11 @@ digital terrain models using a variable focal windows size (Ilich et al. (2023)
       #:tests? #f))
     (propagated-inputs (list r-tmb
                              r-tinyplot
-                             r-snowfall
                              r-rtmb
                              r-rmarkdown
                              r-reshape2
                              r-pbapply
-                             r-gplots
-                             r-dplyr))
+                             r-gplots))
     (home-page "https://blue-matter.github.io/multiSA/")
     (synopsis "Multi-Stock Assessment")
     (description
@@ -14198,40 +14199,6 @@ Chatterjee, M., Conconi, A., Seth, S. and Ana Vaz (2014)
 <doi:10.35648/20.500.12413/11781/ii039> for The Alkire-Foster methodology.")
     (license license:expat)))
 
-(define-public r-mpge
-  (package
-    (name "r-mpge")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MPGE" version))
-       (sha256
-        (base32 "0g9ls0kydxbx19wb664m6nycgxb285akgfz4yxyfdn01aqdj95f2"))))
-    (properties `((upstream-name . "MPGE")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-purrr r-car))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ArunabhaCodes/MPGE")
-    (synopsis
-     "Two-Step Approach to Testing Overall Effect of Gene-Environment Interaction for Multiple Phenotypes")
-    (description
-     "Interaction between a genetic variant (e.g., a single nucleotide polymorphism)
-and an environmental variable (e.g., physical activity) can have a shared effect
-on multiple phenotypes (e.g., blood lipids).  We implement a two-step method to
-test for an overall interaction effect on multiple phenotypes.  In first step,
-the method tests for an overall marginal genetic association between the genetic
-variant and the multivariate phenotype.  The genetic variants which show an
-evidence of marginal overall genetic effect in the first step are prioritized
-while testing for an overall gene-environment interaction effect in the second
-step.  Methodology is available from: A Majumdar, KS Burch, T Haldar, S
-Sankararaman, B Pasaniuc, WJ Gauderman, JS Witte (2020)
-<doi:10.1093/bioinformatics/btaa1083>.")
-    (license license:gpl3)))
-
 (define-public r-mpdir
   (package
     (name "r-mpdir")
@@ -17675,6 +17642,39 @@ unified skew-normal (SUN), extended skew-normal (ESN), skew-normal (SN), and
 symmetric normal (N) are also included.  Density, probabilities and random
 deviates are also offered for these members.")
     (license license:gpl2+)))
+
+(define-public r-momst
+  (package
+    (name "r-momst")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "momst" version))
+       (sha256
+        (base32 "0jypvcmpya512hs4cqvp18wsdpfj4jd88qwxd86vblj2h7vq7ada"))))
+    (properties `((upstream-name . "momst")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jorgeklz/momst")
+    (synopsis
+     "Multi-Objective Minimum Spanning Tree via NSGA-II with Local Search")
+    (description
+     "Solves the Multi-Criteria Minimum Spanning Tree (mc-MST) problem on complete
+weighted graphs by combining the Non-dominated Sorting Genetic Algorithm II
+(NSGA-II) with optional Pareto local search operators.  Chromosomes are
+represented as Prufer sequences so that every random individual decodes to a
+valid spanning tree (Cayley's theorem), avoiding repair operators.  Four solver
+variants are provided: pure NSGA-II (\"base\"), Path Relinking (\"PR\"), Pareto
+Local Search (\"PLS\"), and Tabu Search (\"TS\").  The package supports 2 and 3
+objective formulations and provides convenience functions to plot Pareto fronts
+and best-compromise spanning trees.  This package is the reference
+implementation of the method described in Parraga-Alava, Inostroza-Ponta and
+Dorn (2017) <doi:10.1109/CEC.2017.7969432>.")
+    (license license:gpl3+)))
 
 (define-public r-momentuhmm
   (package
@@ -34421,36 +34421,6 @@ Gomez-Villegas and Marin (1998) <doi:10.1080/03610929808832115> and Pascal,
 Bombrun, Tourneret and Berthoumieu (2013) <doi:10.1109/TSP.2013.2282909>).")
     (license license:gpl3+)))
 
-(define-public r-mgee2
-  (package
-    (name "r-mgee2")
-    (version "0.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mgee2" version))
-       (sha256
-        (base32 "19h1y6bnqgvvdd9hp1dgvyjmiqd3xpbd1bpxfq0j6hnwr7mwjmp1"))))
-    (properties `((upstream-name . "mgee2")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mass r-ggplot2))
-    (home-page "https://cran.r-project.org/package=mgee2")
-    (synopsis "Marginal Analysis of Misclassified Longitudinal Ordinal Data")
-    (description
-     "Three estimating equation methods are provided in this package for marginal
-analysis of longitudinal ordinal data with misclassified responses and
-covariates.  The naive analysis which is solely based on the observed data
-without adjustment may lead to bias.  The corrected generalized estimating
-equations (GEE2) method which is unbiased requires the misclassification
-parameters to be known beforehand.  The corrected generalized estimating
-equations (GEE2) with validation subsample method estimates the
-misclassification parameters based on a given validation set.  This package is
-an implementation of Chen (2013) <doi:10.1002/bimj.201200195>.")
-    (license license:gpl2+)))
-
 (define-public r-mgdrive2
   (package
     (name "r-mgdrive2")
@@ -43443,13 +43413,13 @@ Laplacian matrix.")
 (define-public r-mdp2
   (package
     (name "r-mdp2")
-    (version "2.2.2.0")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MDP2" version))
        (sha256
-        (base32 "0qbxk9bp12aqzmi364v23zn77bwf3k7s50y3kdqmmvpi6d0w94gy"))))
+        (base32 "1g6wada6hpdarw6zpmqymz8cd3r3nggp1ah4jqspmz911darmv69"))))
     (properties `((upstream-name . "MDP2")))
     (build-system r-build-system)
     (arguments
@@ -52965,13 +52935,13 @@ codes.")
 (define-public r-mapi
   (package
     (name "r-mapi")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapi" version))
        (sha256
-        (base32 "0qwaqgwms2qx5zz5c9n0zziyc5snvfpvsyvjinb64myghyk7d3nj"))))
+        (base32 "0wsad6pa03ddbzrjchnalcsim77z3qg50dmps1zxk57svqsl2kqn"))))
     (properties `((upstream-name . "mapi")))
     (build-system r-build-system)
     (arguments

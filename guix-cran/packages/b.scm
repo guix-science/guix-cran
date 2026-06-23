@@ -13237,6 +13237,32 @@ new data.  It provides the similar functionality as the Python package
 <https://github.com/CAHLR/@code{pyBKT>}.")
     (license license:expat)))
 
+(define-public r-bkpc
+  (package
+    (name "r-bkpc")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BKPC" version))
+       (sha256
+        (base32 "09cr8p792379nw525nxmbfnca4r54azl5030vwj66cddwzh9j24c"))))
+    (properties `((upstream-name . "BKPC")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-kernlab))
+    (home-page "https://github.com/domijan/BKPC")
+    (synopsis "Bayesian Kernel Projection Classifier")
+    (description
+     "Bayesian kernel projection classifier (Domijan and Wilson,2011)
+<doi:10.1007/s11222-009-9161-8> is a nonlinear multicategory classifier which
+performs the classification of the projections of the data to the principal axes
+of the feature space.  A Gibbs sampler is implemented to find the posterior
+distributions of the parameters.")
+    (license license:expat)))
+
 (define-public r-bkp
   (package
     (name "r-bkp")

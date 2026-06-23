@@ -6478,6 +6478,48 @@ Scalable Feature Learning for Networks\" by Aditya Grover, Jure
 Leskovec(2016),available at <@code{arXiv:1607.00653>}.")
     (license license:gpl3+)))
 
+(define-public r-nocturn
+  (package
+    (name "r-nocturn")
+    (version "1.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nocturn" version))
+       (sha256
+        (base32 "0zgkcb89mf3dzgkw772kq4q8m43kw0mvxb6lyvfrw06yxgqn44q2"))))
+    (properties `((upstream-name . "nocturn")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-svgedit
+                             r-stringr
+                             r-shinyalert
+                             r-shiny
+                             r-scales
+                             r-rsvg
+                             r-rlang
+                             r-readxl
+                             r-qpdf
+                             r-lubridate
+                             r-ggplot2
+                             r-ggnewscale
+                             r-edfreader
+                             r-dplyr
+                             r-cli
+                             r-circular))
+    (home-page "https://github.com/chronopsychiatry/AMBIENT-BD-nocturn")
+    (synopsis "Sleep Data Filtering and Visualisation")
+    (description
+     "An online app and command-line utility to import, filter and visualise sleep
+data.  Can be used with sleep data collected from any type of device (e.g.
+radar, sleep diary,...) as long as the data contains sleep onset and wake-up
+times for each sleep session.")
+    (license license:expat)))
+
 (define-public r-noctua
   (package
     (name "r-noctua")
@@ -11968,6 +12010,31 @@ loading rules from a file or mining them from historical data.  Traces of events
 or pools of intervals are provided as data frames.")
     (license license:gpl3+)))
 
+(define-public r-nfcore-utils
+  (package
+    (name "r-nfcore-utils")
+    (version "0.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nfcore.utils" version))
+       (sha256
+        (base32 "1gbqwsjvnajqahn34hdlvizwfzcywl5z57z59xhk2ry0gdind278"))))
+    (properties `((upstream-name . "nfcore.utils")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/nf-core/r-nf-core-utils")
+    (synopsis "Utilities for 'nf-core' Modules")
+    (description
+     "This package provides utility functions to facilitate the use of R within
+nf-core modules.  The package helps parse Nextflow inputs and perform validation
+checks to ensure correct parameter handling and reproducible execution.  For
+more details see Ewels (2020) <doi:10.1038/s41587-020-0439-x>.")
+    (license license:expat)))
+
 (define-public r-nfactors
   (package
     (name "r-nfactors")
@@ -12524,6 +12591,38 @@ analysis including metric calculations for survey data.")
 statistics and describes the characteristics of neutrosophic data, as defined by
 Florentin Smarandache (2013).<ISBN:9781599732749>.")
     (license license:gpl2+)))
+
+(define-public r-neutrosplitstripanalysis
+  (package
+    (name "r-neutrosplitstripanalysis")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NeutroSplitStripAnalysis" version))
+       (sha256
+        (base32 "1kl5jib9pfnac90rb4w94rxkybvpbv30i9brq7mjw0nlhk1z50vh"))))
+    (properties `((upstream-name . "NeutroSplitStripAnalysis")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mass))
+    (home-page "https://cran.r-project.org/package=NeutroSplitStripAnalysis")
+    (synopsis "Neutrosophic Analysis of Split-Plot and Strip-Plot Designs")
+    (description
+     "This package provides methods for Neutrosophic Analysis of Variance (NANOVA) for
+split-plot and strip-plot experimental designs using interval-valued
+observations.  The package computes neutrosophic sums of squares, mean squares,
+interval-valued F-statistics, significance tests, and Least Significant
+Difference (LSD) based multiple comparisons for main plot, sub plot, horizontal
+factor, vertical factor, and interaction effects.  For crisp data, users may
+provide identical lower and upper response values to obtain results equivalent
+to classical analysis of variance.  The basic idea of neutrosophic statistics is
+obtained from Smarandache (2014)
+<https://fs.unm.edu/@code{NeutrosophicStatistics.pdf>}, while the analysis
+procedures implemented in this package are newly developed.")
+    (license license:gpl3)))
 
 (define-public r-neutrorcdsanalysis
   (package
@@ -18230,6 +18329,48 @@ average outcomes in missing outcome cases.")
 for hierarchical data structures.  By activating the menu items, you can perform
 operations on each item while maintaining the overall structure in attributes.")
     (license license:expat)))
+
+(define-public r-navigation
+  (package
+    (name "r-navigation")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "navigation" version))
+       (sha256
+        (base32 "1ng1n0wig0685pichz17i3p7sk85j1sl71ip8z6d5shlg48ffl9n"))))
+    (properties `((upstream-name . "navigation")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-simts
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-plotly
+                             r-pbmcapply
+                             r-mass
+                             r-magrittr
+                             r-leaflet
+                             r-expm))
+    (native-inputs (list r-knitr))
+    (home-page "https://smac-group.github.io/navigation/")
+    (synopsis
+     "Analyze the Impact of Sensor Error Modelling on Navigation Performance")
+    (description
+     "This package implements the framework presented in Cucci, D. A., Voirol, L.,
+Khaghani, M. and Guerrier, S. (2023) <doi:10.1109/TIM.2023.3267360> which allows
+to analyze the impact of sensor error modeling on the performance of integrated
+navigation (sensor fusion) based on inertial measurement unit (IMU), Global
+Positioning System (GPS), and barometer data.  The framework relies on Monte
+Carlo simulations in which a Vanilla Extended Kalman filter is coupled with
+realistic and user-configurable noise generation mechanisms to recover a
+reference trajectory from noisy measurements.  The evaluation of several
+statistical metrics of the solution, aggregated over hundreds of simulated
+realizations, provides reasonable estimates of the expected performances of the
+system in real-world conditions.")
+    (license license:agpl3)))
 
 (define-public r-navaeci
   (package

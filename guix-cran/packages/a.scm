@@ -7554,6 +7554,60 @@ continuous duration recording, event counting, momentary time sampling, partial
 interval recording, whole interval recording, and augmented interval recording.")
     (license license:gpl3)))
 
+(define-public r-arpaldata
+  (package
+    (name "r-arpaldata")
+    (version "2.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ARPALData" version))
+       (sha256
+        (base32 "0yr29blbkyvkfr7960b13v56z7pws0kx3inmpkhjl9f28a5jikpg"))))
+    (properties `((upstream-name . "ARPALData")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tm
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-sf
+                             r-rlang
+                             r-readr
+                             r-lubridate
+                             r-jsonlite
+                             r-httr2
+                             r-ggplot2
+                             r-future-apply
+                             r-future
+                             r-eurostat
+                             r-dplyr
+                             r-curl
+                             r-aweek))
+    (home-page "https://cran.r-project.org/package=ARPALData")
+    (synopsis
+     "Retrieving and Analyzing Air Quality and Weather Data from ARPA Lombardia")
+    (description
+     "This package contains functions for retrieving, managing, and analyzing air
+quality and weather data from the Regione Lombardia open database
+(<https://www.dati.lombardia.it/>).  Data are collected by ARPA Lombardia
+(Lombardia Environmental Protection Agency), Italy, through its ground
+monitoring network (<https://www.dati.lombardia.it/stories/s/auv9-c2sj>).  See
+the website <https://www.arpalombardia.it/> for further information on ARPA
+Lombardia's activities and history.  Data quality (e.g., missing values, extreme
+values, and graphical mapping) has been checked in collaboration with members of
+ARPA Lombardia's air quality control office.  The package provides observations
+since 1989 (for weather) and 1968 (for air quality), and these data are updated
+daily by the regional agency.  A full description of the package is available in
+the companion paper Maranzano \\& Algieri (2024), \"ARPALData: an R package for
+retrieving and analyzing air quality and weather data from ARPA Lombardia
+(Italy)\", Environmental and Ecological Statistics,
+<doi:10.1007/s10651-024-00599-6>.")
+    (license license:gpl2+)))
+
 (define-public r-arothron
   (package
     (name "r-arothron")
@@ -16013,31 +16067,6 @@ systems (<= 3.0).  It will read and write specific file formats and coerces them
 into more contemporary data.")
     (license license:gpl3)))
 
-(define-public r-ami
-  (package
-    (name "r-ami")
-    (version "0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ami" version))
-       (sha256
-        (base32 "03yhfn0qfwb8z1qnnsb7lvn6d71brhqd1blskhyza07hmlxbqzmd"))))
-    (properties `((upstream-name . "ami")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rstudioapi r-rlang r-lifecycle r-glue r-curl))
-    (home-page "https://github.com/briandconnelly/ami")
-    (synopsis "Checks for Various Computing Environments")
-    (description
-     "This package provides a collection of lightweight functions that can be used to
-determine the computing environment in which your code is running.  This
-includes operating systems, continuous integration (CI) environments,
-containers, and more.")
-    (license license:expat)))
-
 (define-public r-ameshousing
   (package
     (name "r-ameshousing")
@@ -17066,37 +17095,51 @@ website for more information.")
 (define-public r-alphavantagepf
   (package
     (name "r-alphavantagepf")
-    (version "0.3.2")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "alphavantagepf" version))
        (sha256
-        (base32 "1pazqjpj0hj7x504fmckly3c7kdaxwcww01x16rljkr1d74z2cmw"))))
+        (base32 "0l2byzmrfprp423vq43qx1l1a32m9i8ld0w2shhf88f7ahqvs35b"))))
     (properties `((upstream-name . "alphavantagepf")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-timedate
+    (propagated-inputs (list r-usethis
+                             r-ttr
+                             r-timedate
                              r-tidyr
                              r-stringr
+                             r-shinyjs
+                             r-shinyfeedback
+                             r-shiny
+                             r-rlang
                              r-readr
                              r-purrr
                              r-lubridate
                              r-jsonlite
                              r-httr
+                             r-gtextras
+                             r-gt
                              r-glue
+                             r-fst
+                             r-financegraphs
+                             r-dygraphs
                              r-dplyr
-                             r-data-table))
+                             r-data-table
+                             r-clipr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/derekholmes0/alphavantagepf")
-    (synopsis "Comprehensive R Wrapper for 'Alphavantage Financial Data' API")
+    (synopsis
+     "Comprehensive R Wrapper and Shiny Interface for 'Alphavantage Financial Data' API")
     (description
-     "Download Alphavantage financial data
-<https://www.alphavantage.co/documentation/> to reduced data.table objects.
-Includes support functions to extract and simplify complex data returned from
-API calls.")
+     "Download, manage, and visualize via Shiny App Alphavantage financial data
+<https://www.alphavantage.co/documentation/>.  Data is downloaded and organized
+into `data.table` objects using a single calling function with optional helper
+functions to extract and simplify more complex data.  A Shiny interface is also
+provided to download, manage, and graph asset prices and characteristics.")
     (license license:gpl3+)))
 
 (define-public r-alphastable
@@ -22275,6 +22318,35 @@ Wearables\" on February 24, 2022.  The link to the article
 code (<https://github.com/actigraph/agcounts>).")
     (license license:expat)))
 
+(define-public r-agbqr
+  (package
+    (name "r-agbqr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AGBQR" version))
+       (sha256
+        (base32 "0pnb4bizvzcdpl8l8397nyk4i6npwrf8ki5xvgdhhl5yyfp8cw4p"))))
+    (properties `((upstream-name . "AGBQR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-quantreg r-mass))
+    (home-page "https://cran.r-project.org/package=AGBQR")
+    (synopsis "Adaptive Generalized Bayesian Quantile Regression")
+    (description
+     "This package implements adaptive generalized Bayesian quantile regression with
+quantile-specific learning rates, HAC-based calibration, Gibbs posterior
+simulation, posterior summaries, predictive evaluation, and visualization tools.
+ The package builds on the generalized Bayesian composite quantile regression
+framework of Hardy and Korobilis (2026) <doi:10.2139/ssrn.6618603> by allowing
+learning rates to vary across quantile levels.  The implementation is designed
+for empirical work with small and moderate time-series samples where posterior
+calibration and tail-specific inference are important.")
+    (license license:expat)))
+
 (define-public r-ag5tools
   (package
     (name "r-ag5tools")
@@ -25279,13 +25351,13 @@ It is implemented using Shiny and HTML/CSS/@code{JavaScript}.")
 (define-public r-adherer
   (package
     (name "r-adherer")
-    (version "0.8.2")
+    (version "0.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AdhereR" version))
        (sha256
-        (base32 "1r7ybvhyzpx060rngsi1ffg79dc2887dym5m8ihx6zx1k5m3v8cn"))))
+        (base32 "1lvj8wjjjfcb22pslc6aj3z6pi7jy58fh2kwr1kng8w922nywp62"))))
     (properties `((upstream-name . "AdhereR")))
     (build-system r-build-system)
     (arguments

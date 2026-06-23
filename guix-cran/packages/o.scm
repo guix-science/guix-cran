@@ -8244,13 +8244,13 @@ metrics of their own.")
 (define-public r-openintro
   (package
     (name "r-openintro")
-    (version "2.5.0")
+    (version "2.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openintro" version))
        (sha256
-        (base32 "0d9x109806ylay80ih6zrfqqjylbi0ralr9k7rz6xar40rimzb5z"))))
+        (base32 "1a3nxqvm5xbqk7zr2svpsvc4wflk0jv0kgcbyc6g56zg3qp3zidi"))))
     (properties `((upstream-name . "openintro")))
     (build-system r-build-system)
     (arguments
@@ -8264,7 +8264,7 @@ metrics of their own.")
                              r-cherryblossom
                              r-airports))
     (native-inputs (list r-knitr))
-    (home-page "http://openintrostat.github.io/openintro/")
+    (home-page "https://openintrostat.github.io/openintro/")
     (synopsis
      "Datasets and Supplemental Functions from 'OpenIntro' Textbooks and Labs")
     (description

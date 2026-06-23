@@ -3864,6 +3864,44 @@ Yeo-Johnson), and forecasting accuracy measures are implemented.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-tsqr
+  (package
+    (name "r-tsqr")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tsqr" version))
+       (sha256
+        (base32 "1bjrj7f9hcbm9l9n04r4wnmm1cavfmnwxgci2qa6swj445jz3506"))))
+    (properties `((upstream-name . "tsqr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-spdep r-spatialreg r-quantreg r-plm r-ggplot2))
+    (home-page "https://cran.r-project.org/package=tsqr")
+    (synopsis "Sequential Threshold-Spatial-Quantile Panel Estimation")
+    (description
+     "This package implements a sequential panel estimation protocol for regional
+economic panels that combines three estimation layers in a fixed order.  The
+first layer applies a two-way fixed effects baseline.  The second layer applies
+the panel threshold regression method of Hansen (1999)
+<doi:10.1016/S0304-4076(99)00025-1> to identify structural breaks at an unknown
+threshold of a moderating variable, with bootstrap inference following Hansen
+(2000) <doi:10.1111/1468-0262.00124>.  The third layer applies a spatial Durbin
+model with an impact decomposition following @code{LeSage} and Pace (2009,
+ISBN:978-1-4200-6424-7) to quantify direct and indirect spillover effects.  The
+fourth layer applies the two-step panel quantile estimator of Canay (2011)
+<doi:10.1111/j.1368-423X.2011.00349.x> to document distributional heterogeneity
+in the outcome.  The threshold identified in the second layer defines a
+subsample used as structured input to the fourth layer, and a consistency check
+evaluates whether the three sets of results are jointly compatible with a common
+underlying structural relationship.  An illustrative panel of 33 districts of
+the state of Maharashtra, India, observed over 10 agricultural years, is
+included with the package.")
+    (license license:gpl3)))
+
 (define-public r-tsqn
   (package
     (name "r-tsqn")
@@ -16769,6 +16807,33 @@ compute stopping boundaries using software that assumes that the estimators/test
 statistics have independent increments.  Tsiatis, A. A. and Davidian, M., (2022)
 <doi:10.1002/sim.9580> .")
     (license license:gpl2)))
+
+(define-public r-tl
+  (package
+    (name "r-tl")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tl" version))
+       (sha256
+        (base32 "1kn1gc8mkcfh69n9i0diz9svcbw5myzniw2swc7xp368bg2bs82j"))))
+    (properties `((upstream-name . "tl")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rspdlite))
+    (home-page "https://github.com/eddelbuettel/tl")
+    (synopsis
+     "Tiny Logging Interface to 'rspdlite' Wrapping 'spdlite' C++20 Logging")
+    (description
+     "Just how spdl provides a nice and consistent interface to spdlog (via
+@code{RcppSpdlog}'), this package does so for spdlite', the lightweight
+header-only C++-20 logging library that provides a lighter version of spdlog'.
+This package is essentially a thin shim around it for a more compact interface
+from both R and C++.")
+    (license license:gpl2+)))
 
 (define-public r-tkrplotr
   (package

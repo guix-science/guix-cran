@@ -2157,6 +2157,43 @@ items-within-person nested design, along with design-study summaries for
 relative and absolute decisions.")
     (license license:expat)))
 
+(define-public r-gtfswizard
+  (package
+    (name "r-gtfswizard")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GTFSwizard" version))
+       (sha256
+        (base32 "0ahf9r62p31ak6lm2bs7gh0sdkby9d7q97xn8p15ivgg1dpz61k4"))))
+    (properties `((upstream-name . "GTFSwizard")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-sf
+                             r-rlang
+                             r-gtfsio
+                             r-ggplot2
+                             r-dplyr
+                             r-checkmate))
+    (home-page "https://github.com/OPATP/GTFSwizard")
+    (synopsis "Creating, Exploring and Manipulating 'GTFS' Files")
+    (description
+     "Creating, exploring, analyzing, and manipulating General Transit Feed
+Specification (GTFS) files, which represent public transportation schedules and
+geographic data.  The package allows users to filter data by routes, trips,
+stops, service dates, and time, generate spatial visualizations, and perform
+detailed analyses of transit networks, including headway, dwell times, route
+frequencies, service span, scheduled vehicle-hours, and trip duration.  Methods
+follow common public transport planning and operation concepts described in
+Ceder (2007, ISBN:978-0-7506-6166-6), Vuchic (2005, ISBN:978-0-471-63265-8), and
+Vuchic (2007, ISBN:978-0-471-75823-5).")
+    (license license:gpl3)))
+
 (define-public r-gtfstools
   (package
     (name "r-gtfstools")
@@ -16165,13 +16202,13 @@ generated.")
 (define-public r-gllvm
   (package
     (name "r-gllvm")
-    (version "2.0.10")
+    (version "2.0.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gllvm" version))
        (sha256
-        (base32 "1pvm8vn5npbl0jvxppbqwxhvy12xympm1svrsszhybv1s49npga6"))))
+        (base32 "0n84xh06g0rvy2ikmac8a76kq3205dqj3944171a6jyqsag78qk3"))))
     (properties `((upstream-name . "gllvm")))
     (build-system r-build-system)
     (arguments
@@ -20451,21 +20488,20 @@ readers for @code{FreeSurfer} statistics files.")
 (define-public r-ggseg
   (package
     (name "r-ggseg")
-    (version "2.1.1")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggseg" version))
        (sha256
-        (base32 "1n5d3kpkk38gw1k8jrixl2rzamvmhm5z971wyrxvk50hcyx09gxi"))))
+        (base32 "1lc5j53s1qsv36j7f6msqf4m9j086ii020lpbyb6q0vphlxk26hd"))))
     (properties `((upstream-name . "ggseg")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (inputs (list proj geos gdal))
     (propagated-inputs (list r-tidyr
-                             r-sf
+                             r-rlang
                              r-lifecycle
                              r-ggseg-formats
                              r-ggplot2
@@ -20477,9 +20513,9 @@ readers for @code{FreeSurfer} statistics files.")
     (description
      "This package provides a ggplot2 geom and position for visualizing brain region
 data on cortical, subcortical, and white matter tract atlases.  Brain atlas
-geometries are stored as simple features ('sf'), enabling seamless integration
-with the ggplot2 ecosystem including faceting, custom scales, and themes.
-Mowinckel & Vidal-PiÃ±eiro (2020) <doi:10.1177/2515245920928009>.")
+geometries are stored as polygon data, enabling seamless integration with the
+ggplot2 ecosystem including faceting, custom scales, and themes.  Mowinckel &
+Vidal-PiÃ±eiro (2020) <doi:10.1177/2515245920928009>.")
     (license license:expat)))
 
 (define-public r-ggscribe
@@ -21907,13 +21943,13 @@ easily use the Okabe-Ito palette in your data visualizations.")
 (define-public r-ggoceanmaps
   (package
     (name "r-ggoceanmaps")
-    (version "2.3.0")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggOceanMaps" version))
        (sha256
-        (base32 "0dhd9vmc7gxv3pcqj01vm1x6skbpcrq1x9c0pbxb7lbls4xf8q42"))))
+        (base32 "0b1ahxip20ghp645z4rqxwwhszizdwy7c0z12pky9sfb9qh2ki5a"))))
     (properties `((upstream-name . "ggOceanMaps")))
     (build-system r-build-system)
     (arguments
@@ -28736,6 +28772,38 @@ problems, such as linking different levels of spatial units or estimating how to
 break up units.  Functions exist for creating redistricting-focused data for the
 US.")
     (license (license:fsdg-compatible "MIT + file LICENCE"))))
+
+(define-public r-geokmeans
+  (package
+    (name "r-geokmeans")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geokmeans" version))
+       (sha256
+        (base32 "0fxkvgpr1y7hx950mak5gszb5iq1i1d0wxl583xrypfla4aci535"))))
+    (properties `((upstream-name . "geokmeans")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppeigen r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/parichit/Geometric-k-means")
+    (synopsis
+     "Collection of Fast, Exact and Eco-Friendly k-Means Clustering Algorithms")
+    (description
+     "This package provides a collection of fast k-means clustering algorithms under a
+single, uniform interface.  The core method is Geometric-k-means, a bound-free
+algorithm of Sharma et al. (2026) <doi:10.1007/s10994-025-06891-1> that uses
+geometry to restrict computation to the data points able to change clusters,
+substantially reducing distance computations and runtime while returning the
+same result as standard k-means.  Also included are Lloyd's algorithm, Elkan,
+Hamerly, Annulus, Exponion, and Ball k-means.  All algorithms are implemented in
+C++ via Rcpp and @code{RcppEigen} and return the final centroids, optional
+per-point cluster assignments, and computational statistics.")
+    (license license:gpl3)))
 
 (define-public r-geojsonio
   (package

@@ -2053,13 +2053,13 @@ on human communication dynamics.")
 (define-public r-duckspatial
   (package
     (name "r-duckspatial")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "duckspatial" version))
        (sha256
-        (base32 "1fnrglwxb5gj4qv4kip17wydbn7zcpqmcimamsa85fl49chr8n1y"))))
+        (base32 "0228bhkx40y6xpbkygqm2da4zbgz0lin4zjk0byj7azj2gk0dj0q"))))
     (properties `((upstream-name . "duckspatial")))
     (build-system r-build-system)
     (arguments
@@ -6947,6 +6947,63 @@ language around its contents.")
 dragon kings (DKs).  The statistical methods in this package were reviewed in
 Wheatley & Sornette (2015) <doi:10.2139/ssrn.2645709>.")
     (license license:gpl3)))
+
+(define-public r-dragmapr
+  (package
+    (name "r-dragmapr")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dragmapr" version))
+       (sha256
+        (base32 "1k3ar6bks9a3jn1cpbk0ybjd6v9zwq5yms57mls9z9k4fdcp680s"))))
+    (properties `((upstream-name . "dragmapr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:modules '((guix build r-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (propagated-inputs (list r-sf r-rlang r-jsonlite r-ggplot2))
+    (native-inputs (list r-knitr esbuild))
+    (home-page "https://prigasg.github.io/dragmapr/")
+    (synopsis "Create Draggable Plots from Projected Geometry")
+    (description
+     "This package creates interactive draggable plots from grouped projected sf
+geometry.  The primary deliverable is a browser-based D3 helper where regions
+and labels can be moved freely; users drag, then copy or download the resulting
+offset tables.  Labels can be derived automatically with
+@code{make_region_labels()}, supplied directly with @code{as_drag_labels()}, and
+their moved positions saved and restored with @code{read_label_state()} and
+@code{apply_label_state()}.  Hierarchical spatial datasets are supported via
+hierarchy detection, upload profiling, @code{make_hierarchy_key()}, and
+@code{inherit_layout()}, which recommend parent-child groupings and propagate
+parent-level drag offsets to finer child groupings.  Automatic starting layouts
+are provided by @code{suggest_offsets()} using radial, grid, or directional
+algorithms.  Spatial file diagnostics are available through
+@code{dragmapr_diagnostics()}.  When a reproducible static image is also needed,
+@code{render_dragged_map()} reconstructs the layout as a ggplot2 plot from the
+source geometry plus the exported offset tables.  Project bundles can be written
+with @code{write_dragmapr_project()} and rendered with
+@code{render_dragmapr_project()}.  The interactive layer is built on the D3
+library: Bostock, Ogievetsky and Heer (2011) <doi:10.1109/TVCG.2011.185>.
+Spatial data handling uses the sf package: Pebesma (2018)
+<doi:10.32614/RJ-2018-009>.")
+    (license license:expat)))
 
 (define-public r-dracor
   (package
@@ -16737,13 +16794,13 @@ Digital Science Dimensions using DSL API
 (define-public r-dimensio
   (package
     (name "r-dimensio")
-    (version "0.14.1")
+    (version "0.14.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dimensio" version))
        (sha256
-        (base32 "1rsjd37xk1fvrq31qnwd87mw5ra33f88gpzymhrhsmj8dv64zsli"))))
+        (base32 "17fa84b71s6wspbfql8n6wd47jn897hqrhri2sllvhmk1gs4cd3m"))))
     (properties `((upstream-name . "dimensio")))
     (build-system r-build-system)
     (arguments

@@ -856,18 +856,22 @@ linkage.  Methods are described in Ornstein (2025) <doi:10.1017/pan.2025.10016>.
 (define-public r-fuzzyimputationtest
   (package
     (name "r-fuzzyimputationtest")
-    (version "0.5.2")
+    (version "0.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FuzzyImputationTest" version))
        (sha256
-        (base32 "1kbfv42yvmrn3ygpf7arq7z2na5prfqz52awql744q4pps79rj8k"))))
+        (base32 "1y56y2rl5dcbcszpcx2h641fwpkxjdsiiyccwl8yd5ad8wq5m81v"))))
     (properties `((upstream-name . "FuzzyImputationTest")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-vim
                              r-missforest
                              r-miceranger
@@ -875,6 +879,7 @@ linkage.  Methods are described in Ornstein (2025) <doi:10.1017/pan.2025.10016>.
                              r-fuzzysimres
                              r-fuzzyresampling
                              r-fuzzynumbers))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=FuzzyImputationTest")
     (synopsis "Imputation Procedures and Quality Tests for Fuzzy Data")
     (description
@@ -1118,13 +1123,13 @@ Integration (CI) pipelines.")
 (define-public r-future-mirai
   (package
     (name "r-future-mirai")
-    (version "0.10.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "future.mirai" version))
        (sha256
-        (base32 "1kzcdm2w98xc4gk8rc94lbspag5nxaji80rvsn703kli9bccryji"))))
+        (base32 "0a44gfx96y7gknv1kp209hildjls1a25jzaqvzkcsxyczw31q4iv"))))
     (properties `((upstream-name . "future.mirai")))
     (build-system r-build-system)
     (arguments
@@ -1144,7 +1149,7 @@ multisession') and socket connections, mirai_cluster and mirai_multisession',
 provided here, can run more than 125 parallel R processes.  As a reminder,
 regardless which future backend is used by the user, the code does not have to
 change, it gives identical results, and behaves exactly the same.")
-    (license license:gpl3+)))
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-future-batchtools
   (package
@@ -9447,19 +9452,23 @@ frameworks.")
 (define-public r-foreco
   (package
     (name "r-foreco")
-    (version "1.2.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FoReco" version))
        (sha256
-        (base32 "1mzicnvmpdmazhj30fpkm4a6i09c1kzx7zri1f8aalp2h2zbcmkl"))))
+        (base32 "139hkl2zdhajlw695rg6mmj4sbjwkw01lckyk7qpi4ll1gp6p9j0"))))
     (properties `((upstream-name . "FoReco")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-osqp r-matrix r-lifecycle r-distributional
+    (propagated-inputs (list r-osqp
+                             r-matrix
+                             r-lifecycle
+                             r-generics
+                             r-distributional
                              r-cli))
     (home-page "https://github.com/danigiro/FoReco")
     (synopsis "Forecast Reconciliation")
@@ -12361,13 +12370,13 @@ used to cluster flows for applied transportation research.")
 (define-public r-flowchart
   (package
     (name "r-flowchart")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flowchart" version))
        (sha256
-        (base32 "0124dldgwwx5hmldjvxs4dxpasw39kxwnxx6lbf7ljwg8a84hcg3"))))
+        (base32 "06lgmim01al1chl1fqqik772d8s5zv2k4mbwqdp416c4gs7p660h"))))
     (properties `((upstream-name . "flowchart")))
     (build-system r-build-system)
     (arguments
@@ -12630,13 +12639,13 @@ based on homogeneity assumptions and computed from multivariate observations
 (define-public r-flocker
   (package
     (name "r-flocker")
-    (version "1.0-0")
+    (version "1.0-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flocker" version))
        (sha256
-        (base32 "19029by01jgwdlc0m4d05cfia8v0zfxf6k4aqm6wpvlbi7ap6hi6"))))
+        (base32 "0j7ggibwb9ip1lasj01cvhk5ml5n6dajz0n47jkzamk4awbhj3b5"))))
     (properties `((upstream-name . "flocker")))
     (build-system r-build-system)
     (arguments
@@ -17638,28 +17647,29 @@ Economics exam.")
 (define-public r-financegraphs
   (package
     (name "r-financegraphs")
-    (version "0.8.0")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FinanceGraphs" version))
        (sha256
-        (base32 "1m129al4ln2psbk19i02x5llpac905hshh77n3zx3xvahnhcvxas"))))
+        (base32 "078xpq2w916jxiy2y3yh2c8fjlgykdrqin0a587hwvyjpmgkljsm"))))
     (properties `((upstream-name . "FinanceGraphs")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-xts
-                             r-timedate
+                             r-usethis
                              r-tidyr
                              r-tibble
                              r-stringr
                              r-scales
+                             r-regimechange
+                             r-qlcal
                              r-purrr
                              r-lubridate
                              r-knitr
-                             r-hexbin
                              r-ggtext
                              r-ggrepel
                              r-ggplot2
@@ -22949,6 +22959,42 @@ a typical desktop computer the time needed for the calculation of 100000
 bootstrap replicates given 500 observations requires time on the order of
 magnitude of one second.")
     (license license:gpl2)))
+
+(define-public r-fbrglm
+  (package
+    (name "r-fbrglm")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fbrglm" version))
+       (sha256
+        (base32 "1i4mglx00y3j3v4zahlwajj462lzwrm5zhj9mrmihm6vm2igfvzy"))))
+    (properties `((upstream-name . "fbrglm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-glmnet))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/dsc-chiba-u/fbrglm")
+    (synopsis "Safe Formula-Based Regularized Generalized Linear Models")
+    (description
+     "This package provides a formula-based wrapper around glmnet that brings the
+@code{glm()}'-compatible modeling workflow to regularized generalized linear
+models.  Training-time terms', xlevels', and contrasts are stored on the fit
+object and reused at predict time, so the design matrix is reconstructed
+consistently across sessions.  Complete-case bookkeeping is exposed via
+nobs_info', and linearly dependent columns are detected by a QR pivot and
+reported as NA in @code{coef()} and @code{summary()} (the @code{stats::glm()}
+convention), distinguishing \"not identifiable\" from \"shrunk to zero by the
+penalty\".  Novel factor levels at predict time raise the same error
+@code{stats::predict.glm()} does by default, with on_new_levels = \"na\" as a
+production-style opt-in.  Accepts character family strings ('gaussian',
+binomial', poisson', cox', multinomial', mgaussian') and any glm family object
+the underlying glmnet itself accepts, including Gamma and fixed-theta negative
+binomial via MASS::negative.binomial'.")
+    (license license:expat)))
 
 (define-public r-fbrads
   (package

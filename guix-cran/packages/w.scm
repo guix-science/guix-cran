@@ -10117,13 +10117,13 @@ irrigation information.  For more details see Piernicke et al. (2025)
 (define-public r-watcher
   (package
     (name "r-watcher")
-    (version "0.1.6")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "watcher" version))
        (sha256
-        (base32 "0cy7ma3bs1y617id4ndi60bbcvsviir75s4zwgymzqvf0x3csnw0"))))
+        (base32 "08i6xw8s38057p0zsl0vc0qcr8rmrn2dbjhqn80xnl8yvad3hc5x"))))
     (properties `((upstream-name . "watcher")))
     (build-system r-build-system)
     (arguments

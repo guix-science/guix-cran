@@ -1299,6 +1299,30 @@ local (and global) association is accessed using p-values estimated by
 permutations.")
     (license license:gpl3)))
 
+(define-public r-zebook
+  (package
+    (name "r-zebook")
+    (version "1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ZeBook" version))
+       (sha256
+        (base32 "0s0w6nkg1svc0896wyhyfiq6hj115bslmqzvys4jhfwnh85nlmyv"))))
+    (properties `((upstream-name . "ZeBook")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-triangle r-desolve))
+    (home-page "https://cran.r-project.org/package=ZeBook")
+    (synopsis "Working with Dynamic Models for Agriculture and Environment")
+    (description
+     "R package accompanying the book Working with dynamic models for agriculture and
+environment, by Daniel Wallach (INRAE), David Makowski (INRAE), James W. Jones
+(U.of Florida), Francois Brun (ACTA), 2019.")
+    (license license:lgpl3)))
+
 (define-public r-zdeskr
   (package
     (name "r-zdeskr")

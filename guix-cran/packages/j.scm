@@ -3760,6 +3760,32 @@ with RStudio', modeling, formatting, determining users operating system, feature
 scaling, and more!")
     (license license:gpl2+)))
 
+(define-public r-jirar
+  (package
+    (name "r-jirar")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jirar" version))
+       (sha256
+        (base32 "0hf88nncswy0583a72iaxbq3vh6xy23bqpgcsyq97brq2fy9phjr"))))
+    (properties `((upstream-name . "jirar")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs r-tibble r-rlang r-httr2 r-cli))
+    (home-page "https://github.com/JanWein/jirar")
+    (synopsis "Modern R Client for the Jira REST API")
+    (description
+     "This package provides a modern, tidy interface to the Jira REST API for both
+Jira Cloud and Jira Server / Data Center.  Authenticate once, query issues with
+the Jira Query Language (JQL), and retrieve projects, fields, dashboards and
+more as tibbles.  Built on httr2 with automatic pagination, informative errors
+and support for API tokens and personal access tokens.")
+    (license license:expat)))
+
 (define-public r-jipapprox
   (package
     (name "r-jipapprox")

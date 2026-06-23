@@ -17504,6 +17504,37 @@ construction, GWAS analysis, Manhattan and QQ plotting.s.")
 dependencies.")
     (license license:gpl3)))
 
+(define-public r-ematools
+  (package
+    (name "r-ematools")
+    (version "0.1.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EMAtools" version))
+       (sha256
+        (base32 "0f37hmk66ja66s146zp5a7ykmgdc8ccq2v10qydwcirhanlhhcmm"))))
+    (properties `((upstream-name . "EMAtools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sjstats r-plyr r-lmertest r-ggplot2 r-anytime))
+    (home-page "https://cran.r-project.org/package=EMAtools")
+    (synopsis
+     "Data Management Tools for Real-Time Monitoring/Ecological Momentary Assessment Data")
+    (description
+     "Do data management functions common in real-time monitoring (also called:
+ecological momentary assessment, experience sampling, micro-longitudinal) data,
+including creating power curves for multilevel data, centering on participant
+means and merging event-level data into momentary data sets where you need the
+events to correspond to the nearest data point in the momentary data.  For
+background on this data type see Shiffman, Stone and Hufford (2008)
+<doi:10.1146/annurev.clinpsy.3.022806.091415>, and on the centering methods see
+Enders and Tofighi (2007) <doi:10.1037/1082-989X.12.2.121>.  This is VERY early
+release software, and more features will be added over time.")
+    (license license:expat)))
+
 (define-public r-emas
   (package
     (name "r-emas")
@@ -21108,13 +21139,13 @@ densities from multipass pass removal data.")
 (define-public r-eeptools
   (package
     (name "r-eeptools")
-    (version "1.2.7")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eeptools" version))
        (sha256
-        (base32 "03w72vdkbjqqlz80kc0sq2f4zbcrzrn99pqwk7cp2psspz00pwlg"))))
+        (base32 "0cj2cpyav788d5ny3jziwhwk6wbvzb1790dyckz7916crrj832ny"))))
     (properties `((upstream-name . "eeptools")))
     (build-system r-build-system)
     (arguments

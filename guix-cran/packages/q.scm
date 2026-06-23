@@ -4397,13 +4397,13 @@ functions.  Sottile G, Frumento P, Chiodi M and Bottai M (2020)
 (define-public r-qrcm
   (package
     (name "r-qrcm")
-    (version "3.2")
+    (version "3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qrcm" version))
        (sha256
-        (base32 "0ci6949nkqhcn8d7mf5wb4c2wlnpi5qj3g7394c1q723grmaj5lh"))))
+        (base32 "15sv76ahyhpsd2iwxjj02wg4m396c7mifdh9l8q35y5c97qb0riq"))))
     (properties `((upstream-name . "qrcm")))
     (build-system r-build-system)
     (arguments

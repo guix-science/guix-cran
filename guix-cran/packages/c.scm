@@ -25460,13 +25460,13 @@ name) and half a million packages and functions on CRAN.")
 (define-public r-colleyrstats
   (package
     (name "r-colleyrstats")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "colleyRstats" version))
        (sha256
-        (base32 "0ah9rpxlv8g6xzvdba1g12i30x8imcgxwp2d7p7kyjpprhdllmcy"))))
+        (base32 "1mf5177qfm5mnksi3clmhmp2dggqylp2bxrh93azrhshyjq7z2rr"))))
     (properties `((upstream-name . "colleyRstats")))
     (build-system r-build-system)
     (arguments
@@ -25817,13 +25817,13 @@ cointegration tests with structural breaks using the Common Correlated Effects
 (define-public r-coint
   (package
     (name "r-coint")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "COINT" version))
        (sha256
-        (base32 "0qd8cz9v5mmzq97fj347sh8231mngy5bnmr098lsr6v0sknd7gy2"))))
+        (base32 "0gfldb4ppkvb5hazg3c9lsq0vpn807kbck1lrmzd71ryxy95r6q2"))))
     (properties `((upstream-name . "COINT")))
     (build-system r-build-system)
     (arguments
@@ -26164,13 +26164,13 @@ et al. <DOI:10.1002/pst.2194> and a manual in Meyer et al.
 (define-public r-cohortmethod
   (package
     (name "r-cohortmethod")
-    (version "6.0.2")
+    (version "6.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortMethod" version))
        (sha256
-        (base32 "04rvcxs22q4pnibvfh2y7903fbif7kbcm1j9rl4x18xkhlcpjniq"))))
+        (base32 "0ral0h17ll2pr8mp3i9pjmrcq6ppf9jxfz931h298qyv6i8cqv93"))))
     (properties `((upstream-name . "CohortMethod")))
     (build-system r-build-system)
     (arguments
@@ -31294,13 +31294,13 @@ interval-valued data). (MILLIGAN, G.W., COOPER, M.C. (1985)
 (define-public r-clusterses
   (package
     (name "r-clusterses")
-    (version "2.6.5")
+    (version "2.6.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clusterSEs" version))
        (sha256
-        (base32 "0d8b79mg0wxfpmx3xq22p9apa2cs2ylbml7lf37w386s6kdgz7ns"))))
+        (base32 "0cqbdynf36jncixiqj3agz5mwmlsr78wpjah1crcy367bdz20wbl"))))
     (properties `((upstream-name . "clusterSEs")))
     (build-system r-build-system)
     (arguments
@@ -31311,8 +31311,7 @@ interval-valued data). (MILLIGAN, G.W., COOPER, M.C. (1985)
                              r-mlogit
                              r-lmtest
                              r-formula
-                             r-dfidx
-                             r-aer))
+                             r-dfidx))
     (home-page "https://cran.r-project.org/package=clusterSEs")
     (synopsis "Calculate Cluster-Robust p-Values and Confidence Intervals")
     (description
@@ -31320,8 +31319,8 @@ interval-valued data). (MILLIGAN, G.W., COOPER, M.C. (1985)
 (based on Ibragimov and Muller (2010) <DOI:10.1198/jbes.2009.08046>, pairs
 cluster bootstrapped t-statistics, and wild cluster bootstrapped t-statistics
 (the latter two techniques based on Cameron, Gelbach, and Miller (2008)
-<DOI:10.1162/rest.90.3.414>.  Procedures are included for use with GLM, ivreg,
-plm (pooling or fixed effects), and mlogit models.")
+<DOI:10.1162/rest.90.3.414>.  Procedures are included for use with GLM, plm
+(pooling or fixed effects), and mlogit models.")
     (license license:gpl2+)))
 
 (define-public r-clusterrepro
@@ -34513,13 +34512,13 @@ distances to the nearest stations.")
 (define-public r-climarep
   (package
     (name "r-climarep")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ClimaRep" version))
        (sha256
-        (base32 "1w8kxk6dg0iq2iyi9mydmilcwgljk9l107q1zkvrdzn1ykchfcmq"))))
+        (base32 "1ncjypk6fjrfypmnrakf4nkgnghpva7b98ybspb13gcbp36k2jf3"))))
     (properties `((upstream-name . "ClimaRep")))
     (build-system r-build-system)
     (arguments
@@ -34527,10 +34526,10 @@ distances to the nearest stations.")
       #:tests? #f))
     (propagated-inputs (list r-tidyterra r-terra r-sf r-ggplot2))
     (home-page "https://cran.r-project.org/package=ClimaRep")
-    (synopsis "Estimating Climate Representativeness")
+    (synopsis "Estimating Climate Analogue Areas")
     (description
-     "Offers tools to estimate the climate representativeness of reference polygons
-and quantifies its transformation under future climate change scenarios.
+     "Offers tools to identify the climate analogues of reference polygons and
+quantifies their transformation under future climate change scenarios.
 Approaches described in Mingarro and Lobo (2018) <doi:10.32800/abc.2018.41.0333>
 and Mingarro and Lobo (2022) <doi:10.1017/S037689292100014X>.")
     (license license:expat)))
@@ -36559,13 +36558,13 @@ documentation available here <https://civisanalytics.github.io/civis-r/>.")
 (define-public r-civic-icarm
   (package
     (name "r-civic-icarm")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "civic.icarm" version))
        (sha256
-        (base32 "16f68qkavm6l8zw74i6nyc10174b44jh0jf28vyigap3dzzf2nbk"))))
+        (base32 "1hydipiljwgg02ggrc80j1nmxswnv4p287qapcn4xb9nzrykl2z3"))))
     (properties `((upstream-name . "civic.icarm")))
     (build-system r-build-system)
     (arguments
@@ -41749,13 +41748,13 @@ been applied.")
 (define-public r-checked
   (package
     (name "r-checked")
-    (version "0.5.1")
+    (version "0.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "checked" version))
        (sha256
-        (base32 "09b69g955swhp40x0mbhhr04bfgjlzh5dswra3zrcjj7qskmvw1f"))))
+        (base32 "12690ncqi21rlf63fv1ny6a8v3fqbigzkwwqlzsgz4i9kr6y3kp3"))))
     (properties `((upstream-name . "checked")))
     (build-system r-build-system)
     (arguments

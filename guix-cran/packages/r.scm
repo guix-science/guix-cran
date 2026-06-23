@@ -15474,6 +15474,37 @@ generative large language models locally.")
 time-series data.")
     (license license:gpl2+)))
 
+(define-public r-rolescry
+  (package
+    (name "r-rolescry")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rolescry" version))
+       (sha256
+        (base32 "1wx81p6gvi6am819vd6kza5795m5fbd32nabgyn7sl080q58qnvb"))))
+    (properties `((upstream-name . "rolescry")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/canboynukara/rolescry")
+    (synopsis "Name-Blind Variable-Role Detection by Data Signature")
+    (description
+     "Deterministic, name-blind detection of variable roles (group, outcome, survival
+time and event, paired and agreement measurements, repeated measures, scale
+items, subject identifier, covariate) in tabular data.  Roles are assigned from
+each column's information-theoretic signature -- Shannon entropy, normalized
+mutual information, and distributional shape -- rather than from column names,
+so renaming columns to col_1', col_2', ...  does not change the result (\"Data
+inspice, non nomen\").  An optional, capped name-based hint and automatic
+header-row detection are also provided.  No large language models and no
+external data transmission.  Extracted from the MD@code{StatR} biostatistics
+engine; see Boynukara (2026) <doi:10.5281/zenodo.20707791>.")
+    (license license:asl2.0)))
+
 (define-public r-rolap
   (package
     (name "r-rolap")
@@ -26920,6 +26951,46 @@ annotation, CNV matrix generation, and CNV-RNA expression correlation are
 disease-type agnostic.")
     (license license:expat)))
 
+(define-public r-riskutility
+  (package
+    (name "r-riskutility")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "riskutility" version))
+       (sha256
+        (base32 "0yllglnrp4nvxyprfxgfp1qk6c4sf132aj67009npzj24ry6y01k"))))
+    (properties `((upstream-name . "riskutility")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vim
+                             r-reshape2
+                             r-ranger
+                             r-randomforest
+                             r-mass
+                             r-ggplot2
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/matthias-da/riskutility")
+    (synopsis
+     "Disclosure Risk and Data Utility Metrics for Synthetic and Anonymized Data")
+    (description
+     "This package provides comprehensive methods to measure disclosure risk and data
+utility for anonymized and synthetic data.  Implements attribution-based risk
+metrics including Correct Attribution Probability (CAP), Targeted CAP (TCAP),
+Within Equivalence Class Attribution Probability (WEAP), and RAPID (Risk of
+Attribute Prediction-Induced Disclosure).  Also provides distance-based privacy
+metrics such as Distance to Closest Record (DCR), Nearest Neighbor Distance
+Ratio (NNDR), and Identical Match Share (IMS).  Utility assessment includes
+propensity score analysis, distribution comparisons, and various statistical
+tests.  Methods are based on Taub et al. (2018)
+<doi:10.1007/978-3-319-99771-1_9> and related literature.  Designed for
+integration with @code{simPop} S4 classes.")
+    (license license:gpl3)))
+
 (define-public r-risksimul
   (package
     (name "r-risksimul")
@@ -31903,6 +31974,38 @@ impurities for inbag and OOB data are combined in three different ways, after
 which the information gain is computed at each split.  This gain is aggregated
 for each split variable in a tree and averaged across trees.")
     (license license:gpl2+)))
+
+(define-public r-rfuzzydid
+  (package
+    (name "r-rfuzzydid")
+    (version "1.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Rfuzzydid" version))
+       (sha256
+        (base32 "1csf5n6ba5hh2919k2z7hi8446h1kb59kmfm1n914ks2rdq65wx2"))))
+    (properties `((upstream-name . "Rfuzzydid")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rmarkdown r-knitr r-generics))
+    (native-inputs (list r-knitr))
+    (home-page "https://kmfrick.github.io/Rfuzzydid/")
+    (synopsis "Fuzzy Difference in Differences")
+    (description
+     "Differences in differences is a methodology to measure the impact of a treatment
+by comparing a control group, which remains untreated at two different time
+periods, with a treatment group, which receives the treatment at the later date.
+ In many cases, this approach is used in situations where the intervention
+doesn't fully apply the treatment to the entire treatment group but rather
+increases the treatment rate.  In response to such fuzzy scenarios, de
+Chaisemartin and D'Haultfoeuille (2018) <doi:10.1093/restud/rdx049> introduce
+estimands capable of identifying local average and quantile treatment effects
+under various assumptions.  This R package computes the estimators they are
+proposing.")
+    (license license:agpl3)))
 
 (define-public r-rfuzzycoco
   (package
@@ -42103,6 +42206,40 @@ control of the decreasing influence of workload over time.  Various functions
 are provided to format data, compute REDI, and visualise results in a simple and
 convenient way.")
     (license license:expat)))
+
+(define-public r-redeem
+  (package
+    (name "r-redeem")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "redeem" version))
+       (sha256
+        (base32 "0lbhhx8lkn6zms5c8c55dwkxbay142r437wx529z7d3slwxpsr37"))))
+    (properties `((upstream-name . "redeem")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival
+                             r-rcppprogress
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-mass
+                             r-digest
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://corneliusfritz.github.io/redeem/")
+    (synopsis "Relational Event and Durational Event Models")
+    (description
+     "Model relational and durational events in a counting process framework, with
+functions for estimating and simulating Relational Event Models (REM) and
+Durational Event Models (DEM).  Includes support for time-varying covariates,
+windowed statistics, and high-dimensional node-level fixed effects.  References
+include Fritz et al. (2026) \"Scalable Durational Event Models: Application to
+Physical and Digital Interactions\" <doi:10.48550/@code{arXiv.2504.00049>}.")
+    (license license:gpl3)))
 
 (define-public r-redeagroradar
   (package
@@ -63674,34 +63811,6 @@ variance attributed to each data source: a bar plot that shows the percentages
 of the variability attributable to joint and individual structure, a heatmap
 that shows the structure of the variability, and principal component plots.")
     (license license:gpl3)))
-
-(define-public r-r-comdim
-  (package
-    (name "r-r-comdim")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "R.ComDim" version))
-       (sha256
-        (base32 "0lh37wa0wq68xpwxhnli377m417wwgdzzin1frjj0haglx9hsz34"))))
-    (properties `((upstream-name . "R.ComDim")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-pracma r-ggplot2 r-consensusopls))
-    (home-page "https://cran.r-project.org/package=R.ComDim")
-    (synopsis "Common Dimensions (ComDim) Multi-Block Analysis")
-    (description
-     "Common Dimensions (@code{ComDim}) is a multi-block method that simultaneously
-considers multiple data tables to find latent components that are common to all
-the tables as well as those specific to each data table, along with the
-contribution of each table to each component.  See Jouan-Rimbaud Bouveresse and
-Rutledge (2024) <doi:10.1002/cem.3454>, Boccard and Rutledge (2013)
-<doi:10.1016/j.aca.2013.01.022>, and Puig-CastellvÃ­ et al. (2021)
-<doi:10.1016/j.chemolab.2021.104422>.")
-    (license license:expat)))
 
 (define-public r-r-alpha-home
   (package

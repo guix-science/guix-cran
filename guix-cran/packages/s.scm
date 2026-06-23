@@ -18520,13 +18520,13 @@ and risks of chemical concentrations found in the environment.")
 (define-public r-standardlastprofile
   (package
     (name "r-standardlastprofile")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "standardlastprofile" version))
        (sha256
-        (base32 "1bhbg21px4wb4sd185znj26ijpighkvz4xi91gci8n6iqkmsbq3l"))))
+        (base32 "10qcmhvvxi3qkqnbf7026kab6h717lsj6f7jwwn8asg7zmcchv6a"))))
     (properties `((upstream-name . "standardlastprofile")))
     (build-system r-build-system)
     (arguments
@@ -18536,24 +18536,19 @@ and risks of chemical concentrations found in the environment.")
     (home-page "https://github.com/flrd/standardlastprofile")
     (synopsis "BDEW Standard Load Profiles for Electricity and Gas")
     (description
-     "This package provides representative standard load profiles (SLPs) for
-electricity and gas published by the German Association of Energy and Water
-Industries (BDEW Bundesverband der Energie- und Wasserwirtschaft e.V.) in a tidy
-format.  The electricity profiles cover the 1999 profiles â households (H0),
-commercial (G0âG6), and agriculture (L0âL2) â and the updated 2025
-profiles (H25, G25, L25, P25, S25), which additionally represent households with
-photovoltaic systems and battery storage.  An interface generates an electricity
-load profile over a user-defined date range.  A second interface generates daily
-gas load profiles using the BDEW/VKU/GEODE synthetic @code{SigLinDe} procedure
-from daily temperatures and a customer value ('Kundenwert').  The 1999 data and
-methodology are described in VDEW (1999), \"ReprÃ¤sentative VDEW-Lastprofile\",
-<https://www.bdew.de/media/documents/1999_Repraesentative-VDEW-Lastprofile.pdf>.
- The electricity generation algorithm is described in VDEW (2000), \"Anwendung
-der ReprÃ¤sentativen VDEW-Lastprofile step-by-step\",
-<https://www.bdew.de/media/documents/2000131_Anwendung-repraesentativen_Lastprofile-Step-by-step.pdf>.
- The 2025 profiles are described in BDEW (2025), \"Standardlastprofile Strom\",
-<https://www.bdew.de/energie/standardlastprofile-strom/>.  The gas procedure is
-described in BDEW (2025), \"Standardlastprofile Gas\",
+     "This package provides standard load profiles (SLPs) for electricity and gas
+published by the German Association of Energy and Water Industries (BDEW
+Bundesverband der Energie- und Wasserwirtschaft e.V.) in a tidy format.  The
+electricity profiles cover the 1999 profiles â households (H0), commercial
+(G0âG6), and agriculture (L0âL2) â and the updated 2025 profiles (H25,
+G25, L25, P25, S25), which additionally represent households with photovoltaic
+systems and battery storage.  An interface generates an electricity load profile
+over a user-defined date range.  A second interface generates daily standard
+load profiles for gas using the synthetic @code{SigLinDe} method.  More
+information on the data and methodology for electricity is described in
+\"Standardlastprofile Strom\",
+<https://www.bdew.de/energie/standardlastprofile-strom/>, and for gas in
+\"Standardlastprofile Gas\",
 <https://www.bdew.de/energie/standardlastprofile-gas/>.")
     (license license:cc0)))
 
@@ -36059,47 +36054,35 @@ collect the management data.")
 (define-public r-soilkey
   (package
     (name "r-soilkey")
-    (version "0.9.97")
+    (version "0.9.155")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "soilKey" version))
        (sha256
-        (base32 "09rx9px0vh0rvd04mqc4y1jpa4z8q1pacxzi9asjqdb1g2kvq110"))))
+        (base32 "0ijppvwfamig8bcszhsvyz9bgqdmdf61nh1xv89wpgvaxh80jdhf"))))
     (properties `((upstream-name . "soilKey")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-yaml
-                             r-withr
-                             r-rlang
-                             r-r6
-                             r-data-table
-                             r-cli))
+    (propagated-inputs (list r-yaml r-rlang r-r6 r-data-table r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/HugoMachadoRodrigues/soilKey")
     (synopsis
-     "Automated Soil Profile Classification per 'WRB' 2022, 'SiBCS' 5 and 'USDA' Soil Taxonomy 13")
+     "Automated Soil Profile Classification per WRB 2022, 'SiBCS' 5 and USDA Soil Taxonomy 13")
     (description
      "This package implements deterministic classification keys for the World
-Reference Base for Soil Resources ('WRB') 2022, 4th edition (IUSS Working Group
-WRB, 2022, ISBN:979-8-9862451-1-9), the Brazilian System of Soil Classification
-('@code{SiBCS}') 5th edition (Santos et al., 2018, ISBN:978-85-7035-800-4) and
-the United States Department of Agriculture ('USDA') Soil Taxonomy 13th edition
-(Soil Survey Staff, 2022,
-<https://www.nrcs.usda.gov/resources/guides-and-instructions/keys-to-soil-taxonomy>).
- Provides a unified profile representation with explicit per-attribute
-provenance, multimodal extraction from field reports and photos via
-vision-language models (VLM), spatial priors from @code{SoilGrids} (Poggio et
-al., 2021, <doi:10.5194/soil-7-217-2021>) and national soil maps, and
-gap-filling of soil attributes from visible-near-infrared (Vis-NIR) or
-mid-infrared (MIR) spectra via the Open Soil Spectral Library ('OSSL'; Safanelli
-et al., 2025, <doi:10.7717/peerj.18908>).  The taxonomic key itself is never
-delegated to a large language model (LLM); LLMs are restricted to
-schema-validated extraction.  Each classification result reports a key trace, a
-provenance-aware evidence grade, and ambiguities that further measurement would
-resolve.")
+Reference Base for Soil Resources 2022 (4th edition) and the Brazilian System of
+Soil Classification ('@code{SiBCS}', 5th edition).  Provides a unified profile
+representation with explicit per-attribute provenance, multimodal extraction
+from field reports and photos via vision-language models, spatial priors from
+@code{SoilGrids} and national soil maps, and gap-filling of soil attributes from
+Vis-NIR or MIR spectra via the Open Soil Spectral Library ('OSSL').  The
+taxonomic key itself is never delegated to a language model; LLMs are restricted
+to schema-validated extraction.  Each classification result reports a key trace,
+a provenance-aware evidence grade, and ambiguities that further measurement
+would resolve.")
     (license license:expat)))
 
 (define-public r-soilhypfit
@@ -47778,13 +47761,13 @@ procedure.")
 (define-public r-simlandr
   (package
     (name "r-simlandr")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simlandr" version))
        (sha256
-        (base32 "1qhar31s0s2056qrp3vn9h6l0kxs02kdn48hjf1hsnyg7286pbi5"))))
+        (base32 "1ppxlam9zq6d81wfcn6nkqa221bhvw74gb1sbx00318674al92pf"))))
     (properties `((upstream-name . "simlandr")))
     (build-system r-build-system)
     (arguments
@@ -47794,6 +47777,7 @@ procedure.")
                              r-tibble
                              r-sim-diffproc
                              r-rlang
+                             r-rcpp
                              r-purrr
                              r-progress
                              r-plotly
@@ -47803,12 +47787,12 @@ procedure.")
                              r-ks
                              r-htmlwidgets
                              r-ggplot2
-                             r-gganimate
                              r-furrr
                              r-forcats
                              r-dplyr
                              r-digest
                              r-coda
+                             r-cli
                              r-bigmemory))
     (native-inputs (list r-knitr))
     (home-page "https://sciurus365.github.io/simlandr/")
@@ -72310,13 +72294,13 @@ Ho (2022) <doi:10.1111/biom.13457>.")
 (define-public r-scdb
   (package
     (name "r-scdb")
-    (version "0.6.1")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SCDB" version))
        (sha256
-        (base32 "1fmzqjwy69ilxc3hf9yxjzfwayklrmyyyrl9l7vchhwb3ar217xs"))))
+        (base32 "0vxbqnxj2gm0dg7zr05l0x40pa27b31iix5qqb1920nl5n2anh31"))))
     (properties `((upstream-name . "SCDB")))
     (build-system r-build-system)
     (arguments

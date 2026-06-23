@@ -6,6 +6,7 @@
                 #:prefix license:)
   #:use-module (gnu packages cran)
   #:use-module (gnu packages gcc)
+  #:use-module (gnu packages compression)
   #:use-module (gnu packages python-xyz)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages algebra)
@@ -71,6 +72,44 @@
 (LZ) based compression and decompression of strings.")
     (license license:expat)))
 
+(define-public r-lzrq
+  (package
+    (name "r-lzrq")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lzrq" version))
+       (sha256
+        (base32 "1jiccs9c67phsp5pyb3vzr53j76y4lrafjzzdgb4isrs05jgxkqh"))))
+    (properties `((upstream-name . "lzrq")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-quantreg r-mass))
+    (home-page "https://github.com/jack-fitzgerald/lzrq")
+    (synopsis
+     "Quantile Regression for Logarithmic Relationships with Non-Positive Outcome Values")
+    (description
+     "This package provides the @code{lzrq()} function for estimating logarithmic
+regression slopes in quantile regression models, permitting the outcome variable
+to take on non-positive values. @code{lzrq()} conducts regression after
+replacing non-positive values with a sufficiently negative value.  If the fitted
+values of a quantile regression on this transformed outcome are all greater than
+the negative value, then results are displayed.  The resulting coefficients can
+be meaningfully interpreted as logarithmic intensive-margin relationships
+between the outcome variable and the independent variables, even with
+non-positive values in the outcome variable.  If the condition does not hold for
+the specified quantile, then the command iteratively makes the value larger and
+checks again.  After ten iterations where the condition does not hold, the
+functions return an error and suppress results.  This is an automated adaptation
+of the algorithm described by Liu & Kaplan (2025)
+<https://drive.google.com/file/d/1F3dnhm8@code{MrlO5aRrGt48rBWAEaBqdCBH-/view>}
+and implemented in the companion Stata command lzqreg', described in Fitzgerald
+et al. (2026) <doi:10.31222/osf.io/juda7_v1>.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
+
 (define-public r-lzerospikeinference
   (package
     (name "r-lzerospikeinference")
@@ -92,6 +131,38 @@
      "An implementation of algorithms described in Jewell and Witten (2017)
 <@code{arXiv:1703.08644>}.")
     (license license:gpl3)))
+
+(define-public r-lyubishchev
+  (package
+    (name "r-lyubishchev")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lyubishchev" version))
+       (sha256
+        (base32 "1c6if88z20zhhazwnxw4rjk39vmj4d36r32lyrajrzmcx0wdb7hn"))))
+    (properties `((upstream-name . "lyubishchev")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/AkzhanBerdi/lyubishchev-r")
+    (synopsis "Quantitative Taxonomy Methods of A.A. Lyubishchev (1943)")
+    (description
+     "This package implements the multivariate classification methods of Alexander
+Alexandrovich Lyubishchev (1890-1972), as described in his 1943 manuscript
+Programma obshchey sistematiki Lyubishchev (1943)
+<https://www.zin.ru/animalia/coleoptera/rus/lyubis05.htm> and published in
+Lubischew (1962) <https://www.jstor.org/stable/2527894>.  Provides
+@code{divergence_coefficient()} for measuring separation between groups on
+continuous features, @code{scatter_ellipse()} for fitting covariance ellipses
+per class, @code{transgression()} for detecting ellipse overlap, and
+@code{classify()} for Bayesian posterior classification.  These methods predate
+and are more general than the binary-character similarity coefficients of Sokal
+and Sneath (1963) that appear in other R packages.")
+    (license license:expat)))
 
 (define-public r-lwfbrook90r
   (package
@@ -1516,6 +1587,36 @@ a first or second course in statistics that embraces data wrangling, causal
 reasoning, modeling, statistical adjustment, and simulation.  LSTbook supports
 the student-centered, tidy, pipeline-oriented computing style featured in the
 book.")
+    (license license:expat)))
+
+(define-public r-lstar
+  (package
+    (name "r-lstar")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lstar" version))
+       (sha256
+        (base32 "0pr8fihka77l98wgmzd6dbjfip5rwvddqcvma2djayma4j11icxv"))))
+    (properties `((upstream-name . "lstar")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list zlib))
+    (propagated-inputs (list r-matrix r-cpp11))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/kharchenkolab/lstar")
+    (synopsis
+     "Uniform Data Model and 'Zarr' Interchange for Single-Cell Omics")
+    (description
+     "This package provides a lightweight interchange layer for single-cell and
+spatial omics data, built on the L-star model of labelled axes and typed fields
+over them, serialized to the Zarr format.  Provides bidirectional converters
+(\"profiles\") for Seurat', @code{SingleCellExperiment}', Conos', and pagoda2
+objects, including collections of heterogeneous samples, via a shared C++ core
+('libstar') so the same store is readable from R, Python', and C++.")
     (license license:expat)))
 
 (define-public r-lst
@@ -13900,6 +14001,44 @@ matching substring, ordered token matching and set-based token matching.  A
 range of edit distance measures are available thanks to the stringdist package.")
     (license license:gpl3)))
 
+(define-public r-levelsets
+  (package
+    (name "r-levelsets")
+    (version "0.8.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "levelSets" version))
+       (sha256
+        (base32 "1ppvjg42b7yf3q977gvkdypmmrpaxbgap3fmyhlkf1hyqhcwj6ai"))))
+    (properties `((upstream-name . "levelSets")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr r-proxy))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://cran.r-project.org/package=levelSets")
+    (synopsis
+     "Ray-Based Mapping and Visualization of Level Sets (Excursion Sets)")
+    (description
+     "An (upper) level set of a function is the set of inputs for which the function
+value is at or above a specified threshold. (Also called an excursion set).
+Applications of level sets include confidence or credible regions for parameters
+of statistical models, where the function is the likelihood or posterior
+density; regions where classification rules assign high probability to a given
+class; and scientific or engineering models where one is interested in input
+regions for which model output is above a threshold.  This package maps out the
+boundary of a level set by finding its intersections with collections of
+1-dimensional rays, generalizing a proposal by Kim and Lindsay (Statistica
+Sinica 21:923-948, 2011).  Tools are provided to generate rays, find
+intersections, and visualize results.  The package makes few assumptions about
+the studied function: it may be discontinuous, it may have a complicated
+feasible region, and the target level set may be non-convex or have multiple,
+disconnected parts.  Vignettes describe package usage and show examples with two
+to five input space dimensions.")
+    (license license:gpl3+)))
+
 (define-public r-leunbachr
   (package
     (name "r-leunbachr")
@@ -13953,13 +14092,13 @@ textbook of Tukey (1977) <ISBN: 978-0201076165>.")
 (define-public r-letsrept
   (package
     (name "r-letsrept")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "letsRept" version))
        (sha256
-        (base32 "0lif667nz4vcjr3i0m7lia5vc9pcrka6vjz1nwfw389crzgxq4a6"))))
+        (base32 "1ajzx36k365rcdnx6k8nawqkyadb58qy14jp7hgmcwy1l6bmlqr4"))))
     (properties `((upstream-name . "letsRept")))
     (build-system r-build-system)
     (arguments
