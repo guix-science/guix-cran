@@ -2904,6 +2904,34 @@ framework (not described at Bootstrap site).  Please note this package was
 designed for Bootstrap 3.3.")
     (license license:expat)))
 
+(define-public r-bsplinequantreg
+  (package
+    (name "r-bsplinequantreg")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BsplineQuantReg" version))
+       (sha256
+        (base32 "0slsscwz95z6l33904bg2vc565abz09fxwl62h7w1y14gia5qfnh"))))
+    (properties `((upstream-name . "BsplineQuantReg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-cvxr))
+    (home-page "https://github.com/alexandreabbes/BsplineQuantReg")
+    (synopsis "'Constrained Quantile Regression with Cubic B-Splines'")
+    (description
+     "Quantile regression with cubic B-splines under monotonicity and convexity
+constraints using the Karlin-Studden SOCP formulation.  The method is described
+in Abbes (2026) <doi:10.5281/zenodo.17427913>.  This R implementation is
+intended for demonstration and prototyping; all B-spline and polynomial
+functions have been rewritten for consistency.  A faster version written in
+Python is available at
+<https://github.com/alexandreabbes/Constrained-Quantile-Regression-with-cubic-splines>.")
+    (license license:gpl3)))
+
 (define-public r-bspline
   (package
     (name "r-bspline")
@@ -4142,13 +4170,13 @@ the original data such as predictions, residuals and cluster assignments; and
 (define-public r-broman
   (package
     (name "r-broman")
-    (version "0.94")
+    (version "0.96")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "broman" version))
        (sha256
-        (base32 "0bbb2pb5clc7gfqb0vvfz8iwrzq0h6xwxwhyi3127j7wxdd86qky"))))
+        (base32 "0phvh9pmk7lbppzpzj76v1szh7136ccmq4pw9c95w3vl4kzivk12"))))
     (properties `((upstream-name . "broman")))
     (build-system r-build-system)
     (arguments
@@ -21437,13 +21465,13 @@ Back Filling Design for dose escalation in early-phase oncology trials.")
 (define-public r-bfbin2arm
   (package
     (name "r-bfbin2arm")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bfbin2arm" version))
        (sha256
-        (base32 "0vs4ra5ab23swrn6pkw246hic7z7d44mj1k7l7r8k4ciz60lmkxa"))))
+        (base32 "1515bgz003m95q859r2n6xw1xghxzzqliwb4ykb5dsyyxw906jjz"))))
     (properties `((upstream-name . "bfbin2arm")))
     (build-system r-build-system)
     (arguments
@@ -21451,7 +21479,7 @@ Back Filling Design for dose escalation in early-phase oncology trials.")
       #:tests? #f))
     (propagated-inputs (list r-vgam r-rlang r-patchwork r-ggplot2 r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://arxiv.org/abs/2511.23144")
+    (home-page "https://rikokelter.github.io/bfbin2arm/")
     (synopsis "Bayes Factor Design for Two-Arm Binomial Trials")
     (description
      "Design and analysis of one- and two-stage binomial clinical phase II trials
@@ -27234,13 +27262,13 @@ Bayesian models.")
 (define-public r-bayesrtmb
   (package
     (name "r-bayesrtmb")
-    (version "0.1.1")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesRTMB" version))
        (sha256
-        (base32 "1g8a32hhcbc08li4q4ww10hqvj15pb240nz5cm7nnfj42wam3p0v"))))
+        (base32 "0z0q43ivcrisw77iwia0bqwx09yj7kxkxcmwk9b2f77ngz70mxqv"))))
     (properties `((upstream-name . "BayesRTMB")))
     (build-system r-build-system)
     (arguments
@@ -30011,6 +30039,43 @@ application can be found at Yimer et al. (2022)
 Bayesian estimation of the GARCH(1,1) model with Student's t innovations as
 described in Ardia (2008) <doi:10.1007/978-3-540-78657-3>.")
     (license license:gpl2+)))
+
+(define-public r-bayesfr
+  (package
+    (name "r-bayesfr")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BayesFR" version))
+       (sha256
+        (base32 "0paxi4cpax4g81ccjhgg15qxvx2jhqypv25gn51lwslrya66103m"))))
+    (properties `((upstream-name . "BayesFR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-ggplot2 r-brms))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/benjamin-rosenbaum/BayesFR")
+    (synopsis "Fitting Functional Responses in 1- and 2-Prey Systems")
+    (description
+     "Easy application of Bayesian inference for functional responses via brms'.  This
+package allows to fit various FR models for single- and multi-prey experiments
+by providing nonlinear prediction functions for brms'.  It uses dynamical
+prediction models to correct for prey depletion.  The brms framework facilitates
+statistical modeling and enables users to conveniently incorporate covariates
+such as temperature gradients, experimental treatment variables, or random
+effects that account for grouping in experimental units.  Default brms functions
+make it easy to perform model checking, model comparison and hypothesis testing.
+ Potential statistical issues with data from feeding trials, such as
+overdispersion, can be resolved by effortlessly switching between likelihood
+functions.  This package, together with its tutorials, should provide students
+and researchers with a comprehensive and integrated statistical framework for
+easily testing their hypotheses on trophic interactions.  References: Rosenbaum
+and Rall (2018) <doi:10.1111/2041-210X.13039>; Rosenbaum et al. (2024)
+<doi:10.1111/2041-210X.14372>.")
+    (license license:gpl3+)))
 
 (define-public r-bayesforge
   (package
@@ -35575,13 +35640,13 @@ Reference: Nan Chen and J. Jack Lee (2019) <doi:10.1002/bimj.201700275>.")
 (define-public r-bacenr
   (package
     (name "r-bacenr")
-    (version "0.3.1")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bacenR" version))
        (sha256
-        (base32 "0z3s3j2ngfrda67zz09pcdgvl6xp0bjsrbgq0kc1nryqc8b1sb6q"))))
+        (base32 "0h69bh5k68zi92sp0gbklnz4i2d7xmqz7am47fdaxgsgp4sjknky"))))
     (properties `((upstream-name . "bacenR")))
     (build-system r-build-system)
     (arguments
@@ -35603,7 +35668,8 @@ Reference: Nan Chen and J. Jack Lee (2019) <doi:10.1002/bimj.201700275>.")
                              r-glue
                              r-fs
                              r-dplyr
-                             r-data-table))
+                             r-data-table
+                             r-arrow))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/rtheodoro/bacenR")
     (synopsis

@@ -5841,13 +5841,13 @@ Pharmacodynamic Data Analysis - Concepts and Applications.  5th ed.  2016.
 (define-public r-nonabsdid
   (package
     (name "r-nonabsdid")
-    (version "0.3.2")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nonabsdid" version))
        (sha256
-        (base32 "0xl8zmh35fmgy5vs3m4w9bdkr1rw5jn31m20b83xr66lzbf46pkh"))))
+        (base32 "0q7gxnpr2kzyycrazqdmqqi3y8dy595978k2as6hpgjsdvbpm7jc"))))
     (properties `((upstream-name . "nonabsdid")))
     (build-system r-build-system)
     (arguments
@@ -5860,13 +5860,14 @@ Pharmacodynamic Data Analysis - Concepts and Applications.  5th ed.  2016.
      "Visualize Heterogeneity-Robust Event Studies for Non-Absorbing Treatments")
     (description
      "Runs several heterogeneity-robust difference-in-differences (DID) event-study
-estimators for non-absorbing (i.e., treatment can switch on and off) binary
-treatments through their own packages, harmonizes their output onto a common
-time axis and tidy data structure, and overlays them in a single ggplot2 panel
-for visual comparison.  Supported estimators include those provided by
-DI@code{DmultiplegtDYN}', @code{PanelMatch}', and fect', with an optional naive
-two-way fixed-effects reference series via fixest'.  The underlying methods are
-respectively described in Clement de Chaisemartin and Xavier D'Haultfoeuille.
+estimators for non-absorbing (i.e., treatment can switch on and off over time,
+allowing treatment reversal) binary treatments through their respective
+packages, harmonizes their output onto a common time axis and tidy data
+structure, and overlays them in a single ggplot2 panel for visual comparison.
+Supported estimators include those provided by DI@code{DmultiplegtDYN}',
+@code{PanelMatch}', and fect', with an optional naive two-way fixed-effects
+reference series via fixest'.  The underlying methods are respectively described
+in Clement de Chaisemartin and Xavier D'Haultfoeuille.
 \"Difference-in-Differences Estimators of Intertemporal Treatment Effects.\" The
 Review of Economics and Statistics (2026) <doi:10.1162/rest_a_01414>, Kosuke
 Imai, In Song Kim, and Erik H. Wang. \"Matching methods for causal inference with
@@ -9667,13 +9668,13 @@ parameters as a constrained matrix.")
 (define-public r-nixtlar
   (package
     (name "r-nixtlar")
-    (version "0.6.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nixtlar" version))
        (sha256
-        (base32 "0gi8v0l3032di8ph7x0x9yqsmip7fyams8bpznphg75h4wlalvlv"))))
+        (base32 "1px2d4m63qcbsfl76ma94sks21ywqzwm0r800hah8kklr7cvh0xc"))))
     (properties `((upstream-name . "nixtlar")))
     (build-system r-build-system)
     (arguments
@@ -9686,8 +9687,6 @@ parameters as a constrained matrix.")
                              r-lubridate
                              r-httr2
                              r-ggplot2
-                             r-future-apply
-                             r-future
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://nixtla.github.io/nixtlar/")
@@ -9698,7 +9697,7 @@ parameters as a constrained matrix.")
 acronym for application programming interface'; this package allows users to
 interact with @code{TimeGPT} via the API'.  You can set and validate API keys
 and generate forecasts via API calls.  It is compatible with tsibble and base R.
-For more details visit <https://docs.nixtla.io/>.")
+For more details visit <https://www.nixtla.io/docs>.")
     (license license:asl2.0)))
 
 (define-public r-nixmass
@@ -12063,13 +12062,13 @@ component analysis.")
 (define-public r-nexus
   (package
     (name "r-nexus")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nexus" version))
        (sha256
-        (base32 "0796ysfvk5yf90dyn2j4n7jgpdlw97njpg40wpjn2y2bmzmd4458"))))
+        (base32 "14d809ihvr8l4iqrd7ivi41x6ixl865akwrc6izr5c62xgicv0gl"))))
     (properties `((upstream-name . "nexus")))
     (build-system r-build-system)
     (arguments
@@ -14535,13 +14534,13 @@ randomization and non-degree preserving.")
 (define-public r-netrics
   (package
     (name "r-netrics")
-    (version "0.2.1")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "netrics" version))
        (sha256
-        (base32 "1d3rz5ry5ywsidyrpxkr0bij9276dyinlf0nhpcf0bp0likkggfp"))))
+        (base32 "104hc8xhpvm30ya3qlhhxkpjbnclhz9k7qc9rd1415nv3b5dwwba"))))
     (properties `((upstream-name . "netrics")))
     (build-system r-build-system)
     (arguments

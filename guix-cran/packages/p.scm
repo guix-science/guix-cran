@@ -38166,13 +38166,13 @@ two-samples t-tests in a multivariate framework.")
 (define-public r-pecanr
   (package
     (name "r-pecanr")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pecanr" version))
        (sha256
-        (base32 "01l6cplx20xjhcx7xh8nna1khc93cncz3pliiv6azsljqn9v78sd"))))
+        (base32 "05lqdnnry4081ajs8xk4mh15fa1pqzi8ycdn6cw9isv1dc78ac6q"))))
     (properties `((upstream-name . "pecanr")))
     (build-system r-build-system)
     (arguments
@@ -38188,10 +38188,14 @@ models fitted with the lme4 package.  Supports crossed, nested, and mixed
 (crossed-and-nested) random effects structures with any number of grouping
 factors.  Mixed designs handle cases where grouping factors are simultaneously
 crossed with some variables and nested within others (e.g., photos nested within
-models, but both crossed with participants).  Random slope variances are
+models, but both crossed with participants).  Factor predictors are supported
+directly, and a single factor-level (omnibus) effect size can be obtained for a
+multi-level factor or multi-df interaction.  Random slope variances are
 translated to the outcome scale using a variance decomposition approach,
 correctly accounting for predictor scaling and interaction terms.  Both general
-and operative effect sizes are provided.  Methods are based on Correll,
+and operative effect sizes are provided, with optional parametric bootstrap
+confidence intervals.  For correlated predictors, per-predictor effect sizes use
+unique (semipartial) variance by default.  Methods are based on Correll,
 Mellinger, @code{McClelland}, and Judd (2020) <doi:10.1016/j.tics.2019.12.009>,
 Correll, Mellinger, and Pedersen (2022) <doi:10.3758/s13428-021-01687-2>, and
 Rights and Sterba (2019) <doi:10.1037/met0000184>.")
@@ -39548,13 +39552,13 @@ more information, please visit our software websites:
 (define-public r-pcvr
   (package
     (name "r-pcvr")
-    (version "1.3.1")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pcvr" version))
        (sha256
-        (base32 "1kr6lh7yjr5fjfrqsq8v53k18d5bf2r7cq4ki0lmlglj1b34pnjp"))))
+        (base32 "11rnkrljph2hhh34xgc2rr5wzv3syx0jqmh7381vlpbapj96ajrz"))))
     (properties `((upstream-name . "pcvr")))
     (build-system r-build-system)
     (arguments

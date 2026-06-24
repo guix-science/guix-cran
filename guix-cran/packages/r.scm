@@ -12362,6 +12362,40 @@ Ornstein-Uhlenbeck, Early-Burst, Pagel's lambda, kappa, or delta, or a star
 phylogeny.")
     (license license:gpl2+)))
 
+(define-public r-rphylo
+  (package
+    (name "r-rphylo")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rphylo" version))
+       (sha256
+        (base32 "0w150k0vd4rw0j844ah03r8fbf9i62k2rm3brg3lflsj108hd7xf"))))
+    (properties `((upstream-name . "rphylo")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-phangorn r-expm r-ape))
+    (home-page "https://cran.r-project.org/package=rphylo")
+    (synopsis "Phylogenetic Analysis with Dependent Discrete Models")
+    (description
+     "Implementation of dependent discrete models (with reversible jump MCMC) derived
+from @code{BayesTraits} V5.0.3
+<https://github.com/@code{AndrewPMeade/BayesTraits-Release/tree/Release>}.
+Original software copyright Andrew Meade and contributors, distributed under
+GPL-3.  Modifications for this package by Vivian G. Li
+<liguo.vivian@@gmail.com>.  The following articles should be referenced when
+using this package: Pagel, M., A. Meade and D. Barker (2004) \"Bayesian
+estimation of ancestral character states on phylogenies\"
+<doi:10.1080/10635150490522232>; Pagel, M. (1994) \"Detecting correlated
+evolution on phylogenies: a general method for the comparative analysis of
+discrete characters\" <doi:10.1098/rspb.1994.0006>; Pagel, M. and A. Meade (2006)
+\"Bayesian analysis of correlated evolution of discrete characters by
+reversible-jump Markov chain Monte Carlo\" <doi:10.1086/503444>.")
+    (license license:gpl3)))
+
 (define-public r-rphosfate
   (package
     (name "r-rphosfate")
@@ -27854,13 +27888,13 @@ information.")
 (define-public r-rintcal
   (package
     (name "r-rintcal")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rintcal" version))
        (sha256
-        (base32 "1pfisd3dgz4ls9iqwdxxi98kqz5rvfj68yxvpz322i0izfmm169y"))))
+        (base32 "133sav971i1xbrwzazkxp3jc6mqsjhfxp17m4cm2jsqs47bk95pc"))))
     (properties `((upstream-name . "rintcal")))
     (build-system r-build-system)
     (arguments
@@ -38817,13 +38851,13 @@ documented in inst/DATA_LICENSES.")
 (define-public r-remap
   (package
     (name "r-remap")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "remap" version))
        (sha256
-        (base32 "0gh83xxcj306pj7hkrxbacdhnc8i0bz3yypw6b8a8cprd0ihdlrd"))))
+        (base32 "05iaid7bsgy9gqcdyamrdy3938khq5lvv7ialivp5rdvisf0jbs1"))))
     (properties `((upstream-name . "remap")))
     (build-system r-build-system)
     (arguments
@@ -51756,13 +51790,13 @@ package requires a valid API key.  See vignettes for instructions on use.")
 (define-public r-rclickhouse
   (package
     (name "r-rclickhouse")
-    (version "0.6.10")
+    (version "0.6.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RClickhouse" version))
        (sha256
-        (base32 "1ickdgwba3m1mv8745lh65szkxiw27051niga16hny6h28d3dp0b"))))
+        (base32 "1ljvjgzxr9h2hgzxcms9bf91i0gjwh9xvvfp0dl0iv1cfcx2pw92"))))
     (properties `((upstream-name . "RClickhouse")))
     (build-system r-build-system)
     (arguments
@@ -55992,28 +56026,29 @@ in research.  Trends in Ecology and Evolution, 37: 725-728.")
 (define-public r-rasterpic
   (package
     (name "r-rasterpic")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rasterpic" version))
        (sha256
-        (base32 "0zp9nhn1dm85ix2ni5sa7qgcyp6wsl744kj57vnkd3mm35dbmv4f"))))
+        (base32 "0fz75qmd723pdb5fhzk29c1kvbhkxfc19pg3hrc2zkk22rq5ghk3"))))
     (properties `((upstream-name . "rasterpic")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-terra r-sf r-png))
+    (propagated-inputs (list r-terra r-sf r-png r-cli))
     (native-inputs (list r-quarto))
     (home-page "https://dieghernan.github.io/rasterpic/")
-    (synopsis "Convert Digital Images into 'SpatRaster' Objects")
+    (synopsis
+     "Convert Digital Images to Spatially Referenced 'SpatRaster' Objects")
     (description
-     "Create @code{SpatRaster} objects, as defined by the terra package, from digital
-images using a spatial object as a geographic reference.  Supported inputs
-include objects from the sf', terra and stars packages.  The main function is an
-S3 generic, so other packages can provide methods for additional spatial
-classes.")
+     "Convert digital images to spatially referenced @code{SpatRaster} objects, as
+defined by the terra package, using coordinates from supported spatial input
+classes.  Supported inputs include numeric coordinate vectors and objects from
+the sf', terra and stars packages.  The main function is an S3 generic, allowing
+other packages to extend support to additional spatial classes.")
     (license license:expat)))
 
 (define-public r-rasterpdf
@@ -63811,6 +63846,34 @@ variance attributed to each data source: a bar plot that shows the percentages
 of the variability attributable to joint and individual structure, a heatmap
 that shows the structure of the variability, and principal component plots.")
     (license license:gpl3)))
+
+(define-public r-r-comdim
+  (package
+    (name "r-r-comdim")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "R.ComDim" version))
+       (sha256
+        (base32 "0lh37wa0wq68xpwxhnli377m417wwgdzzin1frjj0haglx9hsz34"))))
+    (properties `((upstream-name . "R.ComDim")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-pracma r-ggplot2 r-consensusopls))
+    (home-page "https://cran.r-project.org/package=R.ComDim")
+    (synopsis "Common Dimensions (ComDim) Multi-Block Analysis")
+    (description
+     "Common Dimensions (@code{ComDim}) is a multi-block method that simultaneously
+considers multiple data tables to find latent components that are common to all
+the tables as well as those specific to each data table, along with the
+contribution of each table to each component.  See Jouan-Rimbaud Bouveresse and
+Rutledge (2024) <doi:10.1002/cem.3454>, Boccard and Rutledge (2013)
+<doi:10.1016/j.aca.2013.01.022>, and Puig-CastellvÃ­ et al. (2021)
+<doi:10.1016/j.chemolab.2021.104422>.")
+    (license license:expat)))
 
 (define-public r-r-alpha-home
   (package

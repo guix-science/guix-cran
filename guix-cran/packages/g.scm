@@ -20986,13 +20986,13 @@ visualizations through a web browser GUI without writing any code.")
 (define-public r-ggrandomforests
   (package
     (name "r-ggrandomforests")
-    (version "3.1.2")
+    (version "3.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggRandomForests" version))
        (sha256
-        (base32 "01g27yvzi4jf4w6zj9fcsjq8nf4z5xbzqxbaha27j4a3yrz7f51f"))))
+        (base32 "0zgm6k4krz22zbcsr5n70zh76zg5ri0myhgpnpvg2kgwqwqfi9sy"))))
     (properties `((upstream-name . "ggRandomForests")))
     (build-system r-build-system)
     (arguments
@@ -24145,13 +24145,13 @@ projections of a latin hypercube design.")
 (define-public r-ggdnavis
   (package
     (name "r-ggdnavis")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggDNAvis" version))
        (sha256
-        (base32 "1m76bhfnrh7dzp8mzzmffrw6mnls48swkyzwqgigdicg0dh3k2i6"))))
+        (base32 "0crn3qvmck7n5k5xklzxvxql3qhrxbk7xqw339n571rgjafnygjy"))))
     (properties `((upstream-name . "ggDNAvis")))
     (build-system r-build-system)
     (arguments
@@ -24162,7 +24162,6 @@ projections of a latin hypercube design.")
                              r-rlang
                              r-ragg
                              r-png
-                             r-magick
                              r-ggplot2
                              r-ggnewscale
                              r-dplyr
@@ -29868,13 +29867,13 @@ other Geocaching-related tasks.")
 (define-public r-geobr
   (package
     (name "r-geobr")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geobr" version))
        (sha256
-        (base32 "0lpp9dy4y7jbl3m7ar8ynp496357xvakd647yq295f9b9is6x4q9"))))
+        (base32 "156r1r2z36b1v4g2p3876w9dj6r3cc7gyg8piar458jxzig5gba9"))))
     (properties `((upstream-name . "geobr")))
     (build-system r-build-system)
     (arguments
@@ -29884,7 +29883,6 @@ other Geocaching-related tasks.")
                              r-sfheaders
                              r-sf
                              r-rlang
-                             r-piggyback
                              r-nanoarrow
                              r-httr2
                              r-glue
@@ -29895,7 +29893,8 @@ other Geocaching-related tasks.")
                              r-dbi
                              r-curl
                              r-cli
-                             r-checkmate))
+                             r-checkmate
+                             r-arrow))
     (native-inputs (list r-knitr))
     (home-page "https://ipeagit.github.io/geobr/")
     (synopsis "Download Official Spatial Data Sets of Brazil")
@@ -33592,6 +33591,33 @@ provides any combination of three modified generalized estimating equations and
 proposed by Liang and Zeger (1986), and eight types of more recent modified
 variance estimators for improving the finite small-sample performance.")
     (license license:gpl3+)))
+
+(define-public r-geer
+  (package
+    (name "r-geer")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geer" version))
+       (sha256
+        (base32 "0lkpcyciq656mhc91b5yd3f1ad4vzjvzrpy7sc0dqpw1k8smgni5"))))
+    (properties `((upstream-name . "geer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-generics r-brglm2))
+    (home-page "https://github.com/AnestisTouloumis/geer")
+    (synopsis "Bias-Reduced and Penalized Generalized Estimating Equations")
+    (description
+     "Fits marginal regression models for repeated or clustered responses using
+generalized estimating equations (GEE).  Provides ordinary GEE estimators,
+bias-reduced and bias-corrected GEE estimators, and Jeffreys-type penalized GEE
+estimators for binary, count and continuous responses.  Methods are described in
+Touloumis (2026a) <doi:10.48550/@code{arXiv.2606.16043>} and Touloumis (2026b)
+<doi:10.48550/@code{arXiv.2606.16058>}.")
+    (license license:gpl3)))
 
 (define-public r-geemediate
   (package

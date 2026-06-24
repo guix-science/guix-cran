@@ -6677,13 +6677,13 @@ systems, and helpful in examining its impact in the time series analysis domain.
 (define-public r-vecvec
   (package
     (name "r-vecvec")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vecvec" version))
        (sha256
-        (base32 "0gyivqsxprn54qrkzia3jm4rp5a9yqvb6dd1jy5cn08sq3hmalvj"))))
+        (base32 "0r4vjvljsz8nbcd4n2zv5n0zssdyq3qayn2ypjw8q0lkbsibck03"))))
     (properties `((upstream-name . "vecvec")))
     (build-system r-build-system)
     (arguments

@@ -8803,6 +8803,48 @@ subspace approach described by Zhang, Lin, and Karim (2015) and a text
 generation method. <doi:10.1016/j.ress.2015.05.025>.")
     (license license:expat)))
 
+(define-public r-llmimpute
+  (package
+    (name "r-llmimpute")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "llmimpute" version))
+       (sha256
+        (base32 "1c44ry7prw9yyr269fxpc3zaxcnl900jc358z09ga1f4r39f82fp"))))
+    (properties `((upstream-name . "llmimpute")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite r-httr2 r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=llmimpute")
+    (synopsis "Missing Data Imputation via Language Models and Statistics")
+    (description
+     "This package provides missing data imputation through two complementary engines:
+a large language model engine that communicates with the Anthropic Claude
+application programming interface for context-aware semantic imputation, and a
+fully self-contained offline engine implementing nineteen statistical and
+machine learning algorithms entirely in base R with no additional package
+dependencies.  Offline methods include mean, median, mode, last observation
+carried forward, next observation carried backward, hot-deck, predictive mean
+matching, k-nearest neighbours, ordinary least-squares regression, Lasso with
+coordinate descent, Ridge with closed-form solution, Bayesian Ridge regression
+with evidence approximation following @code{MacKay} (1992), support vector
+regression with a radial basis function kernel, classification and regression
+trees, random forests, gradient boosting, iterative random forest imputation,
+principal component analysis imputation via iterative singular value
+decomposition, and nuclear-norm minimisation via singular value thresholding.
+When no API key is available the package automatically falls back to the offline
+engine, ensuring full operation in environments without internet access.  Every
+imputed value is accompanied by a confidence score and a plain-language
+reasoning string, producing reproducible audit trails.  The automatic method
+selector chooses the best algorithm per column based on data type, skewness,
+missingness rate, and inter-column correlations.")
+    (license license:expat)))
+
 (define-public r-llmhelper
   (package
     (name "r-llmhelper")
@@ -18451,6 +18493,31 @@ for counting lattice points and integration inside convex polytopes and 4ti2
 (<http://www.4ti2.de/>) for algebraic, geometric, and combinatorial problems on
 linear spaces and front-end tools facilitating their use in the R ecosystem.")
     (license license:gpl2)))
+
+(define-public r-latsquare
+  (package
+    (name "r-latsquare")
+    (version "0.4.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LatSquare" version))
+       (sha256
+        (base32 "19frcrz8hj0vfbjibvfj7pjakq0mmhvsb5ispyy54jm9jqhhvayb"))))
+    (properties `((upstream-name . "LatSquare")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-openxlsx))
+    (home-page "https://cran.r-project.org/package=LatSquare")
+    (synopsis "Analysis of Latin Square and Semi-Latin Square Designs")
+    (description
+     "This package provides functions for the analysis of Latin Square and Semi-Latin
+Square (Latin Rectangle) experimental designs, including analysis of variance
+(ANOVA), least significant difference (LSD) tests, and calculation of summary
+statistics.  The implemented methods follow Munzert (1992, ISBN: 3-489-53410-7).")
+    (license license:gpl3)))
 
 (define-public r-latrend
   (package

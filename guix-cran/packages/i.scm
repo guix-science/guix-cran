@@ -15018,6 +15018,42 @@ response errors.")
      "This package implements likelihood based methods for mediation analysis.")
     (license license:gpl2+)))
 
+(define-public r-imdr
+  (package
+    (name "r-imdr")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "imdR" version))
+       (sha256
+        (base32 "1z0s83nikq6kki0mk9rz9y86r55j4z12br3416krsg4zavm87z72"))))
+    (properties `((upstream-name . "imdR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-tidyterra
+                             r-terra
+                             r-sf
+                             r-rlang
+                             r-ncdf4
+                             r-kendall
+                             r-httr2
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Subhradip25/imdR")
+    (synopsis
+     "Download, Process and Visualize IMD Gridded Meteorological Data")
+    (description
+     "Interface to India Meteorological Department (IMD) gridded daily rainfall (0.25
+degree, 1901-present) and temperature (1.0 degree, 1951-present) binary data.
+Provides functions to download, read, extract by point or boundary, compute
+climate indices, perform trend analysis, and produce publication-quality maps
+with Survey of India approved boundaries.")
+    (license license:expat)))
+
 (define-public r-imdbapi
   (package
     (name "r-imdbapi")

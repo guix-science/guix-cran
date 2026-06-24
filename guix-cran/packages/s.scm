@@ -6111,13 +6111,13 @@ weights.  Ideal for quickly uncovering descriptive patterns in survey data.")
 (define-public r-surveydown
   (package
     (name "r-surveydown")
-    (version "1.0.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "surveydown" version))
        (sha256
-        (base32 "13y7ahdnisb7wi19ml8knx9pxfv8qrsvr0xcd6a0gxbzdwxyld0r"))))
+        (base32 "095fax6ndqqgjs0hg5kj8jj1n1gddldyi7gwd7ln4n3i07cmhm76"))))
     (properties `((upstream-name . "surveydown")))
     (build-system r-build-system)
     (arguments
@@ -10144,13 +10144,13 @@ easy x/y interface and optional user-supplied weights.  See Sazak and Mutlu
 (define-public r-stype-est
   (package
     (name "r-stype-est")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Stype.est" version))
        (sha256
-        (base32 "0jxh9w7n78g3f91drf9gqyiwsrhm26mlphv7l0a8x88075nf6iql"))))
+        (base32 "0vqjkcrzjw5py4rnwqlncc5f3c6ylc74q930rs3vrak5hkhrvsbm"))))
     (properties `((upstream-name . "Stype.est")))
     (build-system r-build-system)
     (arguments
@@ -11725,6 +11725,52 @@ and Allmendinger, R. W., 2013, Spherical projections with OSXStereonet:
 Computers & Geosciences, v.  51, no.  0, p.  193 - 205, <doi:
 10.1016/j.cageo.2012.07.021>.")
     (license license:gpl3)))
+
+(define-public r-stratifyr
+  (package
+    (name "r-stratifyr")
+    (version "1.0-5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "stratifyR" version))
+       (sha256
+        (base32 "0p3n9s2vqbbij6kjflkdc8322l66z3sfqxyyc0q42lilbrb7mn6s"))))
+    (properties `((upstream-name . "stratifyR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zipfr
+                             r-triangle
+                             r-mc2d
+                             r-kableextra
+                             r-fitdistrplus
+                             r-crayon
+                             r-actuar))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=stratifyR")
+    (synopsis "Optimal Stratification of Univariate Populations")
+    (description
+     "The stratification of univariate populations under stratified sampling designs
+is implemented according to Khan et al. (2002) <doi:10.1177/0008068320020518>
+and Khan et al. (2015) <doi:10.1080/02664763.2015.1018674> in this library.  It
+determines the Optimum Strata Boundaries (OSB) and Optimum Sample Sizes (OSS)
+for the study variable, y, using the best-fit frequency distribution of a survey
+variable (if data is available) or a hypothetical distribution (if data is not
+available).  The method formulates the problem of determining the OSB as
+mathematical programming problem which is solved by using a dynamic programming
+technique.  If a dataset of the population is available to the surveyor, the
+method estimates its best-fit distribution and determines the OSB and OSS under
+Neyman allocation directly.  When the dataset is not available, stratification
+is made based on the assumption that the values of the study variable, y, are
+available as hypothetical realizations of proxy values of y from recent surveys.
+ Thus, it requires certain distributional assumptions about the study variable.
+At present, it handles stratification for the populations where the study
+variable follows a continuous distribution, namely, Pareto, Triangular,
+Right-triangular, Weibull, Gamma, Exponential, Uniform, Normal, Log-normal and
+Cauchy distributions.")
+    (license license:gpl2)))
 
 (define-public r-stratifiedyh
   (package
@@ -21765,6 +21811,39 @@ of normalization on the relative frequencies of OTUs.  OTUs with identical Cfrag
 as well as Cint are sampled randomly without replacement.  See Beule & Karlovsky
 (2020) <doi:10.7717/peerj.9593> for details.")
     (license license:cc-by-sa4.0)))
+
+(define-public r-srr
+  (package
+    (name "r-srr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "srr" version))
+       (sha256
+        (base32 "16ci7h8ji34n51y0d4db4r5xphjmxj4vk8j9is1afklranxa0vs0"))))
+    (properties `((upstream-name . "srr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rprojroot
+                             r-roxygen2
+                             r-rcpp
+                             r-here
+                             r-gert
+                             r-fs
+                             r-clipr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://docs.ropensci.org/srr/")
+    (synopsis "'rOpenSci' Software Review 'Roclets'")
+    (description
+     "Companion package to @code{rOpenSci} statistical software review project
+('@code{rOpenSci} authors, 2021; <doi:10.5281/zenodo.5556756>), to facilitate
+documenting software compliance with statistical standards using Roxygen2
+roclets'.")
+    (license license:expat)))
 
 (define-public r-srppp
   (package
@@ -60631,13 +60710,13 @@ proportions in one- and two-samples, and the Pearson's correlation coefficient."
 (define-public r-seqtarget
   (package
     (name "r-seqtarget")
-    (version "1.4.2")
+    (version "1.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SEQTaRget" version))
        (sha256
-        (base32 "0mhbraysvwpzh474zznc2qyzdwfwym1vzhbr352jpj0wxwnlahrr"))))
+        (base32 "0v00yhk3jv189y5zl71y5ymn7i4zyk9s343ya8asqarcrw739z7g"))))
     (properties `((upstream-name . "SEQTaRget")))
     (build-system r-build-system)
     (arguments
@@ -69159,34 +69238,39 @@ contents, using XPath or CSS selectors.")
 (define-public r-scr
   (package
     (name "r-scr")
-    (version "0.4.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scR" version))
        (sha256
-        (base32 "1fb3n4n77i2yss9g08mm1vdma5v35a0m898gic7spyg8qrkn3pfp"))))
+        (base32 "02xqz27pasqlcw1kmfkjkz8i5827lld8q4ix0vb5n7g93kq94yic"))))
     (properties `((upstream-name . "scR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyr
+                             r-progressr
                              r-plotly
                              r-pbapply
+                             r-parallelly
+                             r-minpack-lm
+                             r-matrix
                              r-ggplot2
-                             r-dplyr
-                             r-caret))
+                             r-future
+                             r-furrr
+                             r-dplyr))
     (home-page "https://github.com/pjesscarter/scR")
-    (synopsis "Estimate Vapnik-Chervonenkis Dimension and Sample Complexity")
+    (synopsis "Empirical Sample Complexity Bounds")
     (description
-     "We provide a suite of tools for estimating the sample complexity of a chosen
-model through theoretical bounds and simulation.  The package incorporates
-methods for estimating the Vapnik-Chervonenkis dimension (VCD) of a chosen
-algorithm, which can be used to estimate its sample complexity.  Alternatively,
-we provide simulation methods to estimate sample complexity directly.  For more
-details, see Carter, P & Choi, D (2024). \"Learning from Noise: Applying Sample
-Complexity for Political Science Research\" <doi:10.31219/osf.io/evrcj>.")
+     "This package provides tools for estimating empirical sample complexity bounds
+for supervised learning tasks.  The package supports simulation-based estimates
+of generalization curves, parametric extrapolation of empirical sample
+complexity bounds, theoretical bounds based on Vapnik-Chervonenkis dimension,
+and optional monotone Gaussian process extrapolation for users who install the
+external cmdstanr workflow.  For more details, see Carter and Choi (2024)
+<doi:10.31219/osf.io/evrcj>.")
     (license license:expat)))
 
 (define-public r-scquantum

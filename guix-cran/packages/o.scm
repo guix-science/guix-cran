@@ -6848,13 +6848,13 @@ forward, central and backward gradient approximation codes.")
 (define-public r-optedr
   (package
     (name "r-optedr")
-    (version "2.2.0")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "optedr" version))
        (sha256
-        (base32 "1s77d70qzjandnddh91nc1hrk9jbcg900qr9c4labfrc55pi1q1s"))))
+        (base32 "1id2hiqcq5j1synnkc2xd592z7dr5x6khyhcyjkhj91pnhxh3srv"))))
     (properties `((upstream-name . "optedr")))
     (build-system r-build-system)
     (arguments
@@ -6863,19 +6863,22 @@ forward, central and backward gradient approximation codes.")
     (propagated-inputs (list r-shiny
                              r-rlang
                              r-purrr
-                             r-nleqslv
                              r-ggplot2
-                             r-dplyr
                              r-crayon
                              r-cli))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/kezrael/optedr")
-    (synopsis "Calculating Optimal and D-Augmented Designs")
+    (synopsis
+     "Calculating Optimal and D-Augmented Designs for Single- and Multi-Factor Models")
     (description
-     "Calculates D-, Ds-, A-, I- and L-optimal designs for non-linear models, via an
-implementation of the cocktail algorithm (Yu, 2011,
-<doi:10.1007/s11222-010-9183-2>).  Compares designs via their efficiency, and
-augments any design with a controlled efficiency.  An efficient rounding
-function has been provided to transform approximate designs to exact designs.")
+     "Calculates D-, Ds-, A-, I- and L-optimal designs, weighted combinations of these
+via a Compound criterion, and KL-optimal designs for model discrimination, for
+non-linear single- and multi-factor models, via an implementation of the
+cocktail algorithm (Yu, 2011, <doi:10.1007/s11222-010-9183-2>).  Multi-factor
+models use design variables x1, x2, â¦ with a named-list design space;
+single-factor models remain backward compatible.  Compares designs via their
+efficiency, augments any design with a controlled efficiency loss, and provides
+efficient rounding functions to convert approximate designs to exact ones.")
     (license license:gpl3)))
 
 (define-public r-optecd
@@ -12226,13 +12229,13 @@ the Olink platform'.  More information on Olink data can be found at
 (define-public r-olinkanalyze
   (package
     (name "r-olinkanalyze")
-    (version "5.0.0")
+    (version "5.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OlinkAnalyze" version))
        (sha256
-        (base32 "1pysgs0m528yh751mrl1hx9v715g8v32y66nm7vw10b9jby87kda"))))
+        (base32 "1zc5xnmy97nchjpyvrsc8afki5c347yjs20mz7ybx7v9lgib8ycy"))))
     (properties `((upstream-name . "OlinkAnalyze")))
     (build-system r-build-system)
     (arguments

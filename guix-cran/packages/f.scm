@@ -9418,13 +9418,13 @@ testing outcomes are to its choice.")
 (define-public r-forecoml
   (package
     (name "r-forecoml")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FoRecoML" version))
        (sha256
-        (base32 "0zrbbmjl98m5alhwwsdmmhijhcfa2byb5ga0pgghyzkh7w9y0qbk"))))
+        (base32 "067m60170zrb01y8wfwpv8fbwgr664h2wcaf0fws50djdn1qrdyv"))))
     (properties `((upstream-name . "FoRecoML")))
     (build-system r-build-system)
     (arguments
@@ -10515,13 +10515,13 @@ inst/COPYRIGHTS for details.")
 (define-public r-foco2
   (package
     (name "r-foco2")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FoCo2" version))
        (sha256
-        (base32 "0739kqdsrkvnn1fh4j13fw7cf3dmlz3da97kqlxv3wr1hlr83vy8"))))
+        (base32 "1n9k26jr9xc7i3m3l1xc1kvn4bmndjiiyrp15zq0dm0z0v0dz430"))))
     (properties `((upstream-name . "FoCo2")))
     (build-system r-build-system)
     (arguments

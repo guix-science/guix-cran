@@ -811,13 +811,13 @@ non-linear profitability estimation built upon the DEA framework.")
 (define-public r-hyper2
   (package
     (name "r-hyper2")
-    (version "3.2")
+    (version "3.2-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hyper2" version))
        (sha256
-        (base32 "1nspnwsbpsvpq7ifpjykkh734rii7n4a9cj3wiwm8al9sdgr1xf4"))))
+        (base32 "00k6nhxj4y5wi4hdkqgvpkg24rc80f6mrc5qb2c434v8ir7a714w"))))
     (properties `((upstream-name . "hyper2")))
     (build-system r-build-system)
     (arguments
@@ -827,8 +827,10 @@ non-linear profitability estimation built upon the DEA framework.")
                              r-rcpp
                              r-partitions
                              r-magrittr
+                             r-frab
                              r-disordr
                              r-cubature
+                             r-crayon
                              r-calibrator
                              r-alabama))
     (native-inputs (list r-knitr))
@@ -12780,13 +12782,13 @@ elastic net methods.")
 (define-public r-hdtsa
   (package
     (name "r-hdtsa")
-    (version "1.0.6")
+    (version "1.0.6-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HDTSA" version))
        (sha256
-        (base32 "049dqly6ziprxzhjrksnhfcmq6skpwiqcr3bv63mksy0w438fifh"))))
+        (base32 "11lnqhscaf54wcyy0v7fxl70zzjd389wjpn7diap1pm9d0n16b5r"))))
     (properties `((upstream-name . "HDTSA")))
     (build-system r-build-system)
     (arguments
@@ -12794,6 +12796,7 @@ elastic net methods.")
       #:tests? #f))
     (propagated-inputs (list r-vars
                              r-sandwich
+                             r-rtensor
                              r-rcppeigen
                              r-rcpparmadillo
                              r-rcpp
@@ -12817,9 +12820,10 @@ Chang, Cheng and Yao (2022) <doi:10.1093/biomet/asab034>, white noise tests
 proposed by Chang, Yao and Zhou (2017) <doi:10.1093/biomet/asw066> and Chang et
 al. (2026+), CP-decomposition for matrix time series proposed by Chang et al.
 (2023) <doi:10.1093/jrsssb/qkac011> and Chang et al. (2026+)
-<doi:10.48550/@code{arXiv.2410.05634>}, and statistical inference for spectral
-density matrix proposed by Chang et al. (2025)
-<doi:10.1080/01621459.2025.2468013>.")
+<doi:10.48550/@code{arXiv.2410.05634>}, CP-decomposition for tensor time series
+proposed by Chang et al. (2026+) <doi:10.48550/@code{arXiv.2606.08560>}, and
+statistical inference for spectral density matrix proposed by Chang et al.
+(2025) <doi:10.1080/01621459.2025.2468013>.")
     (license license:gpl3)))
 
 (define-public r-hdthreshold
@@ -15114,13 +15118,13 @@ al. (2019) <DOI:10.1080/19466315.2018.1527248>.")
 (define-public r-hbamr
   (package
     (name "r-hbamr")
-    (version "2.4.6")
+    (version "2.4.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hbamr" version))
        (sha256
-        (base32 "16b83w5x36fjv3z1zr80yca2pbzb4rcr8d13270h6k2qbzb19ddj"))))
+        (base32 "1l041cadxivnk7pj2xzpcarl5rj3lwpwbzxdncl167w1pmd2a771"))))
     (properties `((upstream-name . "hbamr")))
     (build-system r-build-system)
     (arguments
@@ -15151,9 +15155,9 @@ al. (2019) <DOI:10.1080/19466315.2018.1527248>.")
     (description
      "Perform hierarchical Bayesian Aldrich-@code{McKelvey} scaling using Hamiltonian
 Monte Carlo via Stan'.  Aldrich-@code{McKelvey} ('AM') scaling is a method for
-estimating the ideological positions of survey respondents and political actors
-on a common scale using positional survey data.  The hierarchical versions of
-the Bayesian AM model included in this package outperform other versions both in
+estimating the latent positions of survey respondents and external objects on a
+common scale using positional survey data.  The hierarchical versions of the
+Bayesian AM model included in this package outperform other versions both in
 terms of yielding meaningful posterior distributions for respondent positions
 and in terms of recovering true respondent positions in simulations.  The
 package contains functions for preparing data, fitting models, extracting

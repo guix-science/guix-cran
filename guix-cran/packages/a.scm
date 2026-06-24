@@ -11857,13 +11857,13 @@ methods can be found in Quatto P, Margaritella N, et al. (2019)
 (define-public r-apexcharter
   (package
     (name "r-apexcharter")
-    (version "0.4.5")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "apexcharter" version))
        (sha256
-        (base32 "10zl3cgnxvm6496xir86rl2n65sz49bgz3cvhh1zw9b8h6qx92ah"))))
+        (base32 "1f21swwpshvr07ims2sbj53xwyj8d3jq3qrj1y6pk08lrdqqqd2v"))))
     (properties `((upstream-name . "apexcharter")))
     (build-system r-build-system)
     (arguments
@@ -15094,13 +15094,13 @@ function call.  The notebook can be made interactive.")
 (define-public r-analyzefmri
   (package
     (name "r-analyzefmri")
-    (version "1.1-25")
+    (version "1.1-26")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AnalyzeFMRI" version))
        (sha256
-        (base32 "13k41766iz2qmx07h06wn9566m156h6v6y8yb0bjvc2z499jz53j"))))
+        (base32 "0lbv5bf5izggjdixlygn2bxjiz3kcsb4702fv8jfa8sv4i5ykb4s"))))
     (properties `((upstream-name . "AnalyzeFMRI")))
     (build-system r-build-system)
     (arguments
@@ -19969,13 +19969,13 @@ Visit: <https://yqzhong7.github.io/AIPW/> for more information.")
 (define-public r-aion
   (package
     (name "r-aion")
-    (version "1.7.0")
+    (version "1.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aion" version))
        (sha256
-        (base32 "1ibcg2q2c16vf7hr457qhc2m9c5agx2qw2vxmrj8s6rqkbi18b5d"))))
+        (base32 "1w8jfq3r3lxp094q36bnn6lax6dji90x51dh5p4zfjm6abdm2si7"))))
     (properties `((upstream-name . "aion")))
     (build-system r-build-system)
     (arguments

@@ -7960,13 +7960,13 @@ Supports data formats of commercial systems (Bio-Rad QX100 and QX200; Fluidigm
 (define-public r-dpcp
   (package
     (name "r-dpcp")
-    (version "2.0.1")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dPCP" version))
        (sha256
-        (base32 "023m9qzn64m7f992f12y4vf67jpj4zpajvwqyw4qlf4grsr9qfv5"))))
+        (base32 "0zsv3wjmpmf446zp5l2z99wz9xhfcv6kz11hgm35i1f85c3l85v3"))))
     (properties `((upstream-name . "dPCP")))
     (build-system r-build-system)
     (arguments
@@ -29360,13 +29360,13 @@ computed from observed predictors.")
 (define-public r-dbspatial
   (package
     (name "r-dbspatial")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dbSpatial" version))
        (sha256
-        (base32 "069jzl6q7dsarhbgnx22wj2jlb61slzr1nxj2ddkcrl90fnrjvd2"))))
+        (base32 "0fnrwi0np509wmnj6h5w9xzxw83dc6gidx33ipc0lpm30rl8i2is"))))
     (properties `((upstream-name . "dbSpatial")))
     (build-system r-build-system)
     (arguments

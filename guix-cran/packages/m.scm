@@ -9988,6 +9988,36 @@ this package is provided below.  One can also refer to the supplemental
 information for the same.")
     (license license:gpl2+)))
 
+(define-public r-msprog
+  (package
+    (name "r-msprog")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "msprog" version))
+       (sha256
+        (base32 "0m9ffk1d6ijq8yjz71dyqjnh3az1jddr459wsr6f4c22rhdyzbg1"))))
+    (properties `((upstream-name . "msprog")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=msprog")
+    (synopsis
+     "Reproducible Assessment of Disability Course in Multiple Sclerosis")
+    (description
+     "Analyse disability course in multiple sclerosis (MS) from longitudinal data.
+The package provides a flexible framework for identifying disability events
+under user-specified criteria, allowing adaptation to different study designs
+and endpoints.  Tools are included to facilitate transparent and reproducible
+reporting of the settings used in the analysis.  For an introduction to the
+package and illustrative applications, see Montobbio et al. (2024)
+<doi:10.1177/13524585241243157>.")
+    (license license:expat)))
+
 (define-public r-mspca
   (package
     (name "r-mspca")
@@ -14198,6 +14228,40 @@ if almost no people are deprived in any indicator.  Please see Alkire S.,
 Chatterjee, M., Conconi, A., Seth, S. and Ana Vaz (2014)
 <doi:10.35648/20.500.12413/11781/ii039> for The Alkire-Foster methodology.")
     (license license:expat)))
+
+(define-public r-mpge
+  (package
+    (name "r-mpge")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MPGE" version))
+       (sha256
+        (base32 "0g9ls0kydxbx19wb664m6nycgxb285akgfz4yxyfdn01aqdj95f2"))))
+    (properties `((upstream-name . "MPGE")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-purrr r-car))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ArunabhaCodes/MPGE")
+    (synopsis
+     "Two-Step Approach to Testing Overall Effect of Gene-Environment Interaction for Multiple Phenotypes")
+    (description
+     "Interaction between a genetic variant (e.g., a single nucleotide polymorphism)
+and an environmental variable (e.g., physical activity) can have a shared effect
+on multiple phenotypes (e.g., blood lipids).  We implement a two-step method to
+test for an overall interaction effect on multiple phenotypes.  In first step,
+the method tests for an overall marginal genetic association between the genetic
+variant and the multivariate phenotype.  The genetic variants which show an
+evidence of marginal overall genetic effect in the first step are prioritized
+while testing for an overall gene-environment interaction effect in the second
+step.  Methodology is available from: A Majumdar, KS Burch, T Haldar, S
+Sankararaman, B Pasaniuc, WJ Gauderman, JS Witte (2020)
+<doi:10.1093/bioinformatics/btaa1083>.")
+    (license license:gpl3)))
 
 (define-public r-mpdir
   (package
@@ -34420,6 +34484,36 @@ of multivariate generalised Gaussian distributions (methods presented by Gomez,
 Gomez-Villegas and Marin (1998) <doi:10.1080/03610929808832115> and Pascal,
 Bombrun, Tourneret and Berthoumieu (2013) <doi:10.1109/TSP.2013.2282909>).")
     (license license:gpl3+)))
+
+(define-public r-mgee2
+  (package
+    (name "r-mgee2")
+    (version "0.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mgee2" version))
+       (sha256
+        (base32 "19h1y6bnqgvvdd9hp1dgvyjmiqd3xpbd1bpxfq0j6hnwr7mwjmp1"))))
+    (properties `((upstream-name . "mgee2")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mass r-ggplot2))
+    (home-page "https://cran.r-project.org/package=mgee2")
+    (synopsis "Marginal Analysis of Misclassified Longitudinal Ordinal Data")
+    (description
+     "Three estimating equation methods are provided in this package for marginal
+analysis of longitudinal ordinal data with misclassified responses and
+covariates.  The naive analysis which is solely based on the observed data
+without adjustment may lead to bias.  The corrected generalized estimating
+equations (GEE2) method which is unbiased requires the misclassification
+parameters to be known beforehand.  The corrected generalized estimating
+equations (GEE2) with validation subsample method estimates the
+misclassification parameters based on a given validation set.  This package is
+an implementation of Chen (2013) <doi:10.1002/bimj.201200195>.")
+    (license license:gpl2+)))
 
 (define-public r-mgdrive2
   (package
@@ -54680,13 +54774,13 @@ different file formats of mass spectrometry data into/from MALDIquant objects.")
 (define-public r-maldipickr
   (package
     (name "r-maldipickr")
-    (version "1.3.1")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maldipickr" version))
        (sha256
-        (base32 "1324dgmkigdynkph52afwyn5iycw37ndl6jfsqjgarm9hyr72dy2"))))
+        (base32 "0fbma9wf99rifwn2iyln99wqwb99970ygjkkaz4igam6jx8816yl"))))
     (properties `((upstream-name . "maldipickr")))
     (build-system r-build-system)
     (arguments

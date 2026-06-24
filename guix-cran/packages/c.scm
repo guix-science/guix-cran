@@ -28767,13 +28767,13 @@ Decimal Multiples and Submultiples\" Ministry of Economic Affairs (2019)
 (define-public r-cnsigs
   (package
     (name "r-cnsigs")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CNSigs" version))
        (sha256
-        (base32 "0dc0a3cx3xqrzgf0zcmizp3r15m4f0s0856mv0540xdms877lwyx"))))
+        (base32 "1y5fx17p4bhn95h2inn89h2x4r6nh9i0kc0r3gc7cq9rcbp3hfd1"))))
     (properties `((upstream-name . "CNSigs")))
     (build-system r-build-system)
     (arguments
@@ -28784,7 +28784,7 @@ Decimal Multiples and Submultiples\" Ministry of Economic Affairs (2019)
                              r-rcolorbrewer
                              r-pheatmap
                              r-nmf
-                             r-limsolve
+                             r-lsei
                              r-ggplot2
                              r-foreach
                              r-flexmix

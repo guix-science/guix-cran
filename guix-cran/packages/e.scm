@@ -9319,13 +9319,13 @@ updating of the dependence modelling (see Sheu et al., 2016,
 (define-public r-ernm
   (package
     (name "r-ernm")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ernm" version))
        (sha256
-        (base32 "01y417h585l5xj0hfahj8jr4mwvmv5iwi1w7plsacgdzsnaps2m3"))))
+        (base32 "10mzbn5nak2bfy9cdn43y9ganvirxm01ih6mjk8qk3nsxramvj03"))))
     (properties `((upstream-name . "ernm")))
     (build-system r-build-system)
     (arguments
