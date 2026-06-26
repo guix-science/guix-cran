@@ -6408,6 +6408,30 @@ series.\" Journal of the Royal Statistical Society, Series B, 75, 879-904.
 <doi:10.1111/rssb.12015>.")
     (license license:gpl2+)))
 
+(define-public r-locdiff
+  (package
+    (name "r-locdiff")
+    (version "1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "locdiff" version))
+       (sha256
+        (base32 "0r3wdx7a2g3z0cadjsnwfr1128baq9b6fr3cks6plpka4p1601cv"))))
+    (properties `((upstream-name . "locdiff")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mass r-igraph))
+    (home-page "https://cran.r-project.org/package=locdiff")
+    (synopsis "Local Diffusion Exponent")
+    (description
+     "The local diffusion exponent for undirected, unweighted networks characterizes
+the speed of local diffusion from a specified node and depends on the resistance
+distance.")
+    (license license:gpl3)))
+
 (define-public r-locatt
   (package
     (name "r-locatt")

@@ -1986,6 +1986,44 @@ nonparametric confidence intervals for quantiles using fractional order
 statistics\", Journal of Applied Statistics, 26:3, 343-353.")
     (license license:gpl3)))
 
+(define-public r-quantilemodels
+  (package
+    (name "r-quantilemodels")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QuantileModels" version))
+       (sha256
+        (base32 "0zzgvlid9nxffxlpm0pxm6njx36cvyk4ils7xq2v2wrgw2rrr1r0"))))
+    (properties `((upstream-name . "QuantileModels")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-xts
+                             r-ufrisk
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-quantreg
+                             r-numderiv
+                             r-nloptr
+                             r-gensa))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=QuantileModels")
+    (synopsis "Estimation of Different Quantile Related Models")
+    (description
+     "Estimation of different quantile models, at the moment only Conditional
+autoregressive value at risk (CA@code{ViaR}) proposed by Engle & Manganelli
+(2004) <doi:10.1198/073500104000000370> with also the specification proposed in
+Huang et al. (2009) <doi:10.1016/j.eneco.2008.12.006> and it's multivariate
+extension, Multi-variate multi-quantile CA@code{ViaR} (MVMQ-CA@code{ViaR})
+proposed by White et al. (2015) <doi:10.1016/j.jeconom.2015.02.004> are
+available, however, in further updates, other models and extensions will be
+included.")
+    (license license:gpl3+)))
+
 (define-public r-quantilegh
   (package
     (name "r-quantilegh")
@@ -2383,13 +2421,13 @@ Bichet et al. (2019) <doi:10.1088/1748-9326/ab500a>.")
 (define-public r-qualtrics
   (package
     (name "r-qualtrics")
-    (version "3.2.2")
+    (version "3.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qualtRics" version))
        (sha256
-        (base32 "1q40hlx983lrm4xak7gx2z1hkbnqaa7g109ssysdqk6x0l9ic4m0"))))
+        (base32 "1y4r5h3d11pn483kia93jwhjvjq0q51bg8rz5ypljm6j5z16rds5"))))
     (properties `((upstream-name . "qualtRics")))
     (build-system r-build-system)
     (arguments

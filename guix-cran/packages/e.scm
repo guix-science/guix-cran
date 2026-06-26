@@ -1111,6 +1111,39 @@ probabilities, extreme conditional quantile, adaptive estimation, quantile
 regression, survival probabilities.")
     (license license:gpl2)))
 
+(define-public r-extremeconformal
+  (package
+    (name "r-extremeconformal")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ExtremeConformal" version))
+       (sha256
+        (base32 "1yxvx3l91m8gzvhrlcmnslsag87z4xrr9bm03ilhsfn6p840pwb7"))))
+    (properties `((upstream-name . "ExtremeConformal")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ismev r-extremes r-extremeci))
+    (home-page "https://github.com/opasche/ExtremeConformal")
+    (synopsis "Extreme Conformal Prediction Intervals")
+    (description
+     "This new extreme conformal prediction framework provides informative prediction
+intervals at the high-confidence levels for which classical conformal methods
+fail.  In applications with potentially high-impact events, a very high level of
+confidence is often required for predictions.  If that level is too large
+relative to the amount of data used for calibration, classical conformal methods
+provide infinitely wide, thus, uninformative prediction intervals.  Our extreme
+conformal procedure bridges extreme value statistics and conformal prediction to
+provide reliable and informative prediction intervals with high-confidence
+coverage, which can be constructed using any black-box extreme quantile
+regression method.  A weighted version of the approach can account for
+nonstationary data.  The methodology was introduced in Pasche, Lam, and Engelke
+(2026) <doi:10.1007/s10687-026-00536-9>.")
+    (license license:gpl3+)))
+
 (define-public r-extremeci
   (package
     (name "r-extremeci")
@@ -6747,33 +6780,6 @@ identified by specific codes, names and descriptions and come with schema
 crosswalks to other habitat typologies.")
     (license license:cc0)))
 
-(define-public r-eummd
-  (package
-    (name "r-eummd")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "eummd" version))
-       (sha256
-        (base32 "0rdx4gynr0369ax7q8sgrla0fzqc82vg27npz4g3qixam1y50vvk"))))
-    (properties `((upstream-name . "eummd")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://cran.r-project.org/package=eummd")
-    (synopsis "Efficient Univariate Maximum Mean Discrepancy")
-    (description
-     "Computes maximum mean discrepancy two-sample test for univariate data using the
-Laplacian kernel, as described in Bodenham and Kawahara (2023)
-<doi:10.1007/s11222-023-10271-x>.  The p-value is computed using permutations.
-Also includes implementation for computing the robust median difference
-statistic Q_n from Croux and Rousseeuw (1992) <doi:10.1007/978-3-662-26811-7_58>
-based on Johnson and Mizoguchi (1978) <doi:10.1137/0207013>.")
-    (license (list license:gpl2 license:gpl3))))
-
 (define-public r-eufootball
   (package
     (name "r-eufootball")
@@ -12363,38 +12369,6 @@ for infectious diseases.  Epidemiological parameters extracted from the
 literature are loaded from the @code{epiparameterDB} R package.")
     (license license:expat)))
 
-(define-public r-epiomics
-  (package
-    (name "r-epiomics")
-    (version "1.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "epiomics" version))
-       (sha256
-        (base32 "1mfkh2wl2wd36ba1w0nd1klvbv8lmdls530bz8mzrvppy0glx7qi"))))
-    (properties `((upstream-name . "epiomics")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survival r-qgcomp r-ggrepel r-ggplot2
-                             r-data-table))
-    (home-page "https://cran.r-project.org/package=epiomics")
-    (synopsis "Analysis of Omics Data in Observational Studies")
-    (description
-     "This package provides a collection of fast and flexible functions for analyzing
-omics data in observational studies.  Multiple different approaches for
-integrating multiple environmental/genetic factors, omics data, and/or phenotype
-data are implemented.  This includes functions for performing omics wide
-association studies with one or more variables of interest as the exposure or
-outcome; a function for performing a meet in the middle analysis for linking
-exposures, omics, and outcomes (as described by Chadeau-Hyam et al., (2010)
-<doi:10.3109/1354750X.2010.533285>); and a function for performing a mixtures
-analysis across all omics features using quantile-based g-Computation (as
-described by Keil et al., (2019) <doi:10.1289/EHP5838>).")
-    (license license:gpl3+)))
-
 (define-public r-epinow2
   (package
     (name "r-epinow2")
@@ -15031,13 +15005,13 @@ objects and coordinate reference systems.")
 (define-public r-enmpa
   (package
     (name "r-enmpa")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "enmpa" version))
        (sha256
-        (base32 "092x3xcqhildjc2mikb4vzni5lm9kqqzj0kbni5prraz2xi217xl"))))
+        (base32 "06697wf15a5nkrnryk7hnmrkbj60r3r02bc7xzs3df4qb0wgr6dg"))))
     (properties `((upstream-name . "enmpa")))
     (build-system r-build-system)
     (arguments

@@ -5170,13 +5170,13 @@ the C++ code file from John Burkardt and John Denker (Brent, 2002).")
 (define-public r-groupedhyperframe-random
   (package
     (name "r-groupedhyperframe-random")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "groupedHyperframe.random" version))
        (sha256
-        (base32 "0blxzr43w28m6p0c57p208fsv698m01q7gkjbnd5agv75algws6m"))))
+        (base32 "07dkbf6x8xijcl75anmfcbc2givd83qrqdg6h9zfljqpy5ah86pb"))))
     (properties `((upstream-name . "groupedHyperframe.random")))
     (build-system r-build-system)
     (arguments
@@ -5187,7 +5187,10 @@ the C++ code file from John Burkardt and John Denker (Brent, 2002).")
     (synopsis "Simulated Point-Pattern via Vectorized Parameterization")
     (description
      "An intuitive interface to simulate superimposed (marked) point patterns with
-vectorized parameterization of random point pattern and distribution of marks.")
+vectorized parameterization of random point pattern and distribution of marks.
+The author has retired from academic research.  Accordingly, this package should
+not be considered a validated tool for use in peer-reviewed publications or as
+the basis for grant applications.")
     (license license:gpl2)))
 
 (define-public r-groupedhyperframe
@@ -6518,6 +6521,54 @@ model.")
     (description
      "Computes Gregory weights for a given number nodes and function order.  Anthony
 Ralston and Philip Rabinowitz (2001) <ISBN:9780486414546>.")
+    (license license:gpl3)))
+
+(define-public r-greensd
+  (package
+    (name "r-greensd")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "greenSD" version))
+       (sha256
+        (base32 "1zbyinry85p0jrjqskjghy6v2yhhp06x5qd0wy55nflicp3s6mbk"))))
+    (properties `((upstream-name . "greenSD")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-terra
+                             r-stringr
+                             r-sf
+                             r-rstac
+                             r-rlang
+                             r-purrr
+                             r-nominatimlite
+                             r-maptiles
+                             r-magick
+                             r-landscapemetrics
+                             r-future
+                             r-furrr
+                             r-dsmsearch
+                             r-dplyr
+                             r-cli
+                             r-aws-s3))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/billbillbilly/greenSD")
+    (synopsis "Access and Analyze Global GreenSpace Spatial Data")
+    (description
+     "Access and analyze multi-band greenspace seasonality data cubes (available for
+1,028 major global cities), global Normalized Difference Vegetation Index / land
+cover data from the European Space Agency @code{WorldCover} 10m Dataset, and
+Sentinel-2-l2a images.  Users can download data using bounding boxes, city
+names, and filter by year or seasonal time window.  The package also supports
+calculating human exposure to greenspace using a population-weighted greenspace
+exposure model introduced by Chen et al. (2022) <doi:10.1038/s41467-022-32258-4>
+based on Global Human Settlement Layer population data, and calculating a set of
+greenspace morphology metrics at patch and landscape levels.")
     (license license:gpl3)))
 
 (define-public r-greenreg
@@ -10150,13 +10201,13 @@ Griffing, B. (1956) <https://www.publish.csiro.au/bi/pdf/BI9560463>.")
 (define-public r-gpboost
   (package
     (name "r-gpboost")
-    (version "1.6.7")
+    (version "1.6.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gpboost" version))
        (sha256
-        (base32 "0nf0wn67snyp78hj2gj76qinaszndj5m0plqw44vzq1zqis1yfj8"))))
+        (base32 "1qqwd23svi61lnb0gwdp3lbkbvcl6x28bi9f4qbqg37hzr7m9ya7"))))
     (properties `((upstream-name . "gpboost")))
     (build-system r-build-system)
     (arguments
@@ -11273,47 +11324,6 @@ Multi-Channel Funnel API.")
      "Collect marketing data from Google Ads using the Windsor.ai API
 <https://windsor.ai/api-fields/>.")
     (license license:expat)))
-
-(define-public r-goodreader
-  (package
-    (name "r-goodreader")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Goodreader" version))
-       (sha256
-        (base32 "1zcsfhp8h1qk67y421ayj7nm5lz03cm5zax9zilyy6pin2azqzpv"))))
-    (properties `((upstream-name . "Goodreader")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-wordcloud2
-                             r-topicmodels
-                             r-tm
-                             r-tidytext
-                             r-tidyr
-                             r-stringr
-                             r-rvest
-                             r-rlang
-                             r-purrr
-                             r-magrittr
-                             r-lubridate
-                             r-httr
-                             r-ggplot2
-                             r-dplyr
-                             r-cld2))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/chaoliu-cl/Goodreader")
-    (synopsis "Scrape and Analyze 'Goodreads' Book Data")
-    (description
-     "This package provides a comprehensive toolkit for scraping and analyzing book
-data from <https://www.goodreads.com/>.  This package provides functions to
-search for books, scrape book details and reviews, perform sentiment analysis on
-reviews, and conduct topic modeling.  It's designed for researchers, data
-analysts, and book enthusiasts who want to gain insights from Goodreads data.")
-    (license license:gpl3)))
 
 (define-public r-goodpractice
   (package
@@ -16578,13 +16588,13 @@ Scott (1992) <doi:10.1002/9780470316849>, Terrell and Scott (1985)
 (define-public r-glasstabs
   (package
     (name "r-glasstabs")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glasstabs" version))
        (sha256
-        (base32 "1cgsxpccijaj0hbbd9ipii8fl6444kf1zln0wkpd691dxqnvaal9"))))
+        (base32 "0rij618jfagk880daqdqiakibbypff6v4xfa2bs5aqadax1zjnwp"))))
     (properties `((upstream-name . "glasstabs")))
     (build-system r-build-system)
     (arguments
@@ -16598,7 +16608,7 @@ Scott (1992) <doi:10.1002/9780470316849>, Terrell and Scott (1985)
      "This package provides tools for creating animated glassmorphism-style tab
 navigation and select filter widgets in Shiny applications.  Provides a tab
 navigation component with a sliding glass halo animation, a searchable
-multi-select dropdown, and a single-select dropdown â all with multiple colour
+multi-select dropdown, and a single-select dropdown - all with multiple colour
 themes and server-side update helpers.  Tabs support icons, numeric badges,
 disable/enable toggling, runtime append/remove, reactive rendering via
 @code{renderGlassTabs()}', URL bookmarking, and compact mode for dashboard card
@@ -16606,8 +16616,8 @@ layouts. @code{glassTabCondition()} generates @code{conditionalPanel()}
 condition strings without needing to recall the internal input key pattern.
 @code{glasstabs_news()} displays the release notes from the R console.  Built-in
 example apps can be launched with @code{runGlassExample()}'.  All widgets are
-compatible with standard Shiny layouts and bs4Dash dashboards.  For full
-documentation and examples see Arthur (2026)
+compatible with standard Shiny layouts and bs4Dash dashboards and bslib themed
+applications.  For full documentation and examples see Arthur (2026)
 <https://prigasg.github.io/glasstabs/>.")
     (license license:expat)))
 
@@ -19683,6 +19693,32 @@ the University of Ljubljana.")
     (description
      "This package provides a collection of palettes and themes for ggplot2', offering
 a light, pastel aesthetic.  Syntax follows the viridis package.")
+    (license license:gpl3+)))
+
+(define-public r-ggtaichi
+  (package
+    (name "r-ggtaichi")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggtaichi" version))
+       (sha256
+        (base32 "044yay14hcsp3098zz9x9yxp3a0bwm4jk2092j2h6h2jf838lr14"))))
+    (properties `((upstream-name . "ggtaichi")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-ggplot2 r-ggnewscale))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/PursuitOfDataScience/ggtaichi")
+    (synopsis "Taichi-Diagram Visualization for Two Data Sources")
+    (description
+     "This package provides a data visualization design that compares two (usually on
+a par with each other) data sources on one grid of taichi (yin-yang) diagrams,
+where the two interlocking fish of every symbol are filled by the two sources,
+while inheriting ggplot2 features.")
     (license license:gpl3+)))
 
 (define-public r-ggswissmaps
@@ -25017,6 +25053,38 @@ text. @code{stat_brace()} plots braces/brackets to embrace data.
 overlapping lines - Draw more realistic worms.")
     (license license:expat)))
 
+(define-public r-ggbond
+  (package
+    (name "r-ggbond")
+    (version "0.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggbond" version))
+       (sha256
+        (base32 "0nd226phwqyhzn24c0a2picp35g65c4gng8qb5r6vhapsf6p6ivi"))))
+    (properties `((upstream-name . "ggbond")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tiff
+                             r-shiny
+                             r-png
+                             r-jsonlite
+                             r-jpeg
+                             r-gridgraphics
+                             r-ggplot2))
+    (home-page "https://cran.r-project.org/package=ggbond")
+    (synopsis "Interactive Layout Editor for 'R' Plots")
+    (description
+     "This package provides a shiny'-based layout editor for arranging R plot objects
+on a fixed-size canvas.  It supports ggplot2 plots, graphics functions and
+recorded plots, pheatmap objects, @code{ComplexHeatmap} objects, grid grobs,
+gtable objects, and local raster images, with live preview and PDF or PNG
+export.")
+    (license license:gpl3+)))
+
 (define-public r-ggblend
   (package
     (name "r-ggblend")
@@ -25241,6 +25309,31 @@ built-in many line-based geom layers.")
 end; position function to shift starts and ends of arrows to avoid exactly
 intersecting points.")
     (license license:gpl3)))
+
+(define-public r-ggalttext
+  (package
+    (name "r-ggalttext")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggalttext" version))
+       (sha256
+        (base32 "1j842whfnnkl502bz8g5jllrp9rxf64ndvhr44lhal8dakhcid89"))))
+    (properties `((upstream-name . "ggalttext")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-knitr r-ggplot2))
+    (home-page "https://cran.r-project.org/package=ggalttext")
+    (synopsis "Make 'ggplot2' Fully Accessible by Generating Alternative Text")
+    (description
+     "Generates concise alternative text for data visualizations created with
+ggplot2'.  Descriptions are produced by inspecting plot layers, labels, scales,
+and facets, with support for multiple languages and alternative text stored in
+plot metadata.")
+    (license license:expat)))
 
 (define-public r-ggallin
   (package
@@ -27316,6 +27409,51 @@ is carried out as a maximization-maximization procedure, where GEOVOL and the
 GEOVOL loadings are estimated iteratively until convergence.")
     (license license:gpl2+)))
 
+(define-public r-geovizr
+  (package
+    (name "r-geovizr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geovizr" version))
+       (sha256
+        (base32 "0a545avw4r40i3q2zxd8g1v378y2idrf43m47hbppj6x3hmfjm79"))))
+    (properties `((upstream-name . "geovizr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:modules '((guix build r-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (propagated-inputs (list r-sf r-jsonlite r-htmlwidgets r-geojsonsf))
+    (native-inputs (list esbuild))
+    (home-page "https://riatelab.github.io/geovizr/")
+    (synopsis "Interactive Cartography")
+    (description
+     "Create a wide range of interactive, zoomable vector maps.  This package is an R
+binding for the geoviz @code{JavaScript} library
+<https://github.com/riatelab/geoviz/>, itself based on the d3.js ecosystem
+<doi:10.1109/TVCG.2011.185>.  Like the original @code{JavaScript} library, the
+package takes advantage of the many features provided by d3.js': proportional
+symbols, pictograms, typologies, choropleth maps, spikes, tiles, Dorling
+cartograms, and more.  It can also be used to create pretty static vectorial
+maps in svg format, suitable for editorial cartography.")
+    (license license:gpl3+)))
+
 (define-public r-geots
   (package
     (name "r-geots")
@@ -28549,13 +28687,13 @@ reduction (Buja and Eyuboglu (1992) <doi:10.1207/s15327906mbr2704_2>).")
 (define-public r-geometa
   (package
     (name "r-geometa")
-    (version "0.10.0")
+    (version "0.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geometa" version))
        (sha256
-        (base32 "1s8pfvaclbmii3g3kdqd80chxg3v3s73r0c10v6xdhrqs38yz2w6"))))
+        (base32 "0wm2g5qz6dyx1dkq7y6i5njchh5xcmjsi11i0g8xfgwahgbvajh3"))))
     (properties `((upstream-name . "geometa")))
     (build-system r-build-system)
     (arguments
@@ -37047,6 +37185,50 @@ covariates returning the p-values, and performs stepwise variable selection on
 the exogenous covariates, and uses False Discovery Rate p-value corrections to
 select the exogenous variables.")
     (license license:gpl2+)))
+
+(define-public r-gaqsar
+  (package
+    (name "r-gaqsar")
+    (version "1.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gaQSAR" version))
+       (sha256
+        (base32 "1jyg4wbbq44pqwf2b0smpmwpizfhlp1sszihszaff3z4nc8j134f"))))
+    (properties `((upstream-name . "gaQSAR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales
+                             r-reshape2
+                             r-prospectr
+                             r-ggrepel
+                             r-ggplot2
+                             r-ga
+                             r-future-apply
+                             r-future))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/joshageman/gaQSAR")
+    (synopsis
+     "QSAR Modelling Using Genetic Algorithm Based Variable Selection")
+    (description
+     "This package implements genetic algorithm-based variable selection for building
+quantitative structure-activity relationship (QSAR) models.  The package
+provides a workflow for selecting optimal predictor subsets from large
+descriptor spaces using leave-one-out cross-validation (LOOCV) with Q2 as the
+fitness criterion.  Features include automatic handling of multicollinearity via
+variance inflation factor (VIF) thresholding, customizable genetic algorithm
+operators, and diagnostic tools for model evaluation.  Supports both training
+set optimization and external validation, plus nested (double) cross-validation
+for unbiased performance estimation and predictor stability diagnostics.
+Built-in visualization functions include Q2 curves and Williams plots to assess
+model applicability domain.  The method is demonstrated in papers predicting
+antibacterial activity by Araya-Cloutier et al. (2018)
+<doi:10.1038/s41598-018-27545-4> and Kalli et al. (2021)
+<doi:10.1038/s41598-021-92964-9>.")
+    (license license:gpl3)))
 
 (define-public r-gapr
   (package

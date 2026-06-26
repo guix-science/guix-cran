@@ -4149,13 +4149,13 @@ Equation and Twin Modelling in R. Twin Research and Human Genetics, 22, 27-41.
 (define-public r-umweltapir
   (package
     (name "r-umweltapir")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "umweltapir" version))
        (sha256
-        (base32 "14z6vax1sf6x35hflibwr00br6c2xmi8ypn56i1lw0q65y6ybwpy"))))
+        (base32 "1vc7g391rqidaxaq48hxxmblhrjalgd3hp7k45pv2whk55x48gxs"))))
     (properties `((upstream-name . "umweltapir")))
     (build-system r-build-system)
     (arguments
@@ -4975,32 +4975,39 @@ technology, culture, and communication.")
 (define-public r-ui
   (package
     (name "r-ui")
-    (version "0.1.1")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ui" version))
        (sha256
-        (base32 "15hcdzaj75ip6j7yglx8rqhp4y3yf3aw5cpbjgk1mjr4cya7lvzi"))))
+        (base32 "0dqvg8q4ipyc3dcqz2612dlmlxhsw2dr14ibh65k002z5si8mx7a"))))
     (properties `((upstream-name . "ui")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-numderiv r-mvtnorm r-maxlik r-matrix))
+    (propagated-inputs (list r-plotly
+                             r-numderiv
+                             r-mvtnorm
+                             r-maxlik
+                             r-matrix
+                             r-ggplot2
+                             r-dplyr))
     (home-page "https://cran.r-project.org/package=ui")
     (synopsis
      "Uncertainty Intervals and Sensitivity Analysis for Missing Data")
     (description
      "This package implements functions to derive uncertainty intervals for (i)
-regression (linear and probit) parameters when outcome is missing not at random
-(non-ignorable missingness) introduced in Genbaeck, M., Stanghellini, E., de
-Luna, X. (2015) <doi:10.1007/s00362-014-0610-x> and Genbaeck, M., Ng, N.,
-Stanghellini, E., de Luna, X. (2018) <doi:10.1007/s10433-017-0448-x>; and (ii)
-double robust and outcome regression estimators of average causal effects (on
-the treated) with possibly unobserved confounding introduced in Genbaeck, M., de
-Luna, X. (2018) <doi:10.1111/biom.13001>.")
-    (license license:gpl2)))
+regression (linear and probit) parameters under missing not at random
+(non-ignorable missingness) as introduced in GenbÃ¤ck, M., Stanghellini, E., and
+de Luna, X. (2015) <doi:10.1007/s00362-014-0610-x> and GenbÃ¤ck, M., Ng, N.,
+Stanghellini, E., and de Luna, X. (2018) <doi:10.1007/s10433-017-0448-x>.  Also
+includes methods for doubly robust and outcome regression estimators of average
+causal effects under unobserved confounding as in GenbÃ¤ck, M. and de Luna, X.
+(2018) <doi:10.1111/biom.13001>, and for partial correlation analysis following
+Gorbach, T. and de Luna, X. (2018) <doi:10.1016/j.spl.2018.05.027>.")
+    (license license:gpl3)))
 
 (define-public r-uhm
   (package

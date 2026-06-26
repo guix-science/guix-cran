@@ -3181,13 +3181,13 @@ separate clusters.")
 (define-public r-muttest
   (package
     (name "r-muttest")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "muttest" version))
        (sha256
-        (base32 "0his1bmlla83ll3w34ky51k9pgfsj13kcvwriq2ss8nyqfn56qpx"))))
+        (base32 "0xzfv071b4gj1kcr78xx1dwna69kwlks4xk1jylz671g7h97k680"))))
     (properties `((upstream-name . "muttest")))
     (build-system r-build-system)
     (arguments
@@ -3701,13 +3701,13 @@ installed at the system level.")
 (define-public r-mums2
   (package
     (name "r-mums2")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mums2" version))
        (sha256
-        (base32 "0krwyhjhdvwpgychdh6xvw90y5niq11v6jia46qx5sl01611cvi8"))))
+        (base32 "0kmqfy0iqaihdla6k7kk3xs4way9qx6hkqs9zqg3ksmjazxccp0q"))))
     (properties `((upstream-name . "mums2")))
     (build-system r-build-system)
     (arguments
@@ -3719,6 +3719,7 @@ installed at the system level.")
                              r-rcppthread
                              r-rcppprogress
                              r-rcpp
+                             r-rams
                              r-mpactr
                              r-data-table
                              r-clustur))
@@ -10021,13 +10022,13 @@ package and illustrative applications, see Montobbio et al. (2024)
 (define-public r-mspca
   (package
     (name "r-mspca")
-    (version "0.4.1")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "msPCA" version))
        (sha256
-        (base32 "1y8xyg3zhfhgh1v3k67qd94gm2lh7rfbm1nbl85xy3j702vwq0l3"))))
+        (base32 "0cb5xm50r6xzahgzqka9kjdbcr3h8468dslqzkivkg3zb21gwmkw"))))
     (properties `((upstream-name . "msPCA")))
     (build-system r-build-system)
     (arguments
@@ -10035,16 +10036,16 @@ package and illustrative applications, see Montobbio et al. (2024)
       #:tests? #f))
     (propagated-inputs (list r-rcppeigen r-rcpp))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=msPCA")
+    (home-page "https://jeanpauphilet.github.io/msPCA/")
     (synopsis
      "Sparse Principal Component Analysis with Multiple Principal Components")
     (description
      "This package implements an algorithm for computing multiple sparse principal
 components of a dataset.  The method is based on Cory-Wright and Pauphilet
 \"Sparse PCA with Multiple Principal Components\" (2026)
-<doi:10.48550/@code{arXiv.2209.14790>}.  The algorithm uses an iterative
-deflation heuristic with a truncated power method applied at each iteration to
-compute sparse principal components with controlled sparsity.")
+<doi:10.1287/opre.2023.0598>.  The algorithm uses an iterative deflation
+heuristic with a truncated power method applied at each iteration to compute
+sparse principal components with controlled sparsity.")
     (license license:expat)))
 
 (define-public r-msoutcomes
@@ -12445,13 +12446,13 @@ Bertalanffy formula, the Gompertz formula, and a logistic formula.")
 (define-public r-mrg
   (package
     (name "r-mrg")
-    (version "0.3.25")
+    (version "0.3.29")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MRG" version))
        (sha256
-        (base32 "0pc8dym0fj4hj61c9lxykd4x1bavslnrwpcdnzy8x0zj2yih5hrl"))))
+        (base32 "18r39nhfaaadc88xi7ln5wa9n8c40vh8qbapwmf89dxdgnq86j3r"))))
     (properties `((upstream-name . "MRG")))
     (build-system r-build-system)
     (arguments
@@ -14050,13 +14051,13 @@ Research, 43, Article 100323. <doi:10.1016/j.alcr.2019.100323>.")
 (define-public r-mplusautomation
   (package
     (name "r-mplusautomation")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MplusAutomation" version))
        (sha256
-        (base32 "1zm3hcf6wkbhaci1dmffdv4rk7b2f96g47ishrh6g5m904djkkph"))))
+        (base32 "1g7sw98br0hmpm3agb6c9vakp4dndbfzh53vfk83x611zbi82mz4"))))
     (properties `((upstream-name . "MplusAutomation")))
     (build-system r-build-system)
     (arguments
@@ -18982,6 +18983,40 @@ schools effectiveness.  The standard value-added model is also an option.")
      "Datasets and wrapper functions for tidyverse-friendly introductory linear
 regression, used in \"Statistical Inference via Data Science: A @code{ModernDive}
 into R and the Tidyverse\" available at <https://moderndive.com/>.")
+    (license license:gpl3)))
+
+(define-public r-moderncor
+  (package
+    (name "r-moderncor")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "moderncor" version))
+       (sha256
+        (base32 "0wg1g3w98asmhh0n8lca2vcja3phk2q2r5vhpm64d0cr9s15kai5"))))
+    (properties `((upstream-name . "moderncor")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xicor r-energy))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ToshihiroIguchi/moderncor")
+    (synopsis
+     "Unified Interface for Modern and Classical Correlation Coefficients")
+    (description
+     "This package provides a single unified interface for computing a wide variety of
+classical and modern correlation and association measures.  Continuous methods
+include classical correlations (Pearson, Spearman, Kendall), modern dependence
+measures (distance correlation, maximal information coefficient, Hilbert-Schmidt
+independence criterion, Chatterjee's xi, Hoeffding's D, mutual information),
+robust correlations (biweight midcorrelation, percentage bend, Winsorized),
+ordinal correlations (polychoric, tetrachoric), partial and semi-partial
+correlations, and nonparametric measures (ball correlation, Bergsma-Dassios
+tau*).  Categorical association measures (Cramer's V, phi coefficient,
+Goodman-Kruskal gamma, Somers D, contingency coefficient, Tschuprow's T) are
+available via @code{moderncor_cat()}.")
     (license license:gpl3)))
 
 (define-public r-modernboot
@@ -26252,16 +26287,54 @@ fitting can be raw data or binned data.  The model fitting process is
 accelerated by using R package Rcpp'.")
     (license license:gpl2+)))
 
+(define-public r-mixqr
+  (package
+    (name "r-mixqr")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mixqr" version))
+       (sha256
+        (base32 "1m6928m9d4fbd91gkzqnaqsjr21r9wk3lzif4r5rj8g7b1jcyccd"))))
+    (properties `((upstream-name . "mixqr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-quantreg))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/kvenkita/mixqr")
+    (synopsis
+     "Extensible Finite Mixtures of Quantile and Expectile Regressions")
+    (description
+     "An extensible expectation-maximization (EM) framework for finite mixtures of
+quantile regressions (clusterwise / mixture-of-experts quantile regression).  A
+single EM substrate with an engine/extension contract carries a family of
+capabilities: the core free-weight mixture of Wu and Yao (2016)
+<doi:10.1016/j.csda.2014.04.014> -- a fast asymmetric-Laplace path and the
+nonparametric kernel-density EM with components constrained to have their
+tau-quantile equal to zero (Hall and Presnell 1999 device); expectile and
+M-quantile component-loss families (Newey and Powell 1987; Breckling and
+Chambers 1988); component-specific penalized variable selection (SCAD /
+adaptive-LASSO, the quantile analogue of Khalili and Chen 2007); and joint
+multi-quantile estimation with a shared latent classification and non-crossing
+component curves.  Provides classification-aware standard errors (sparsity and
+stochastic-EM multiple imputation), multi-start estimation, component-count
+selection, and prediction.  The companion package mixqrgate adds
+location-varying gating.")
+    (license license:expat)))
+
 (define-public r-mixpower
   (package
     (name "r-mixpower")
-    (version "0.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mixpower" version))
        (sha256
-        (base32 "11rh959wpc6aq48ij1m4yfqflarg20dv3zh0y4kd2ikvdqxrym3c"))))
+        (base32 "0mw3ip2y69zxz7r59pmnny9x0ip82p8pd0l3pl19lim2map17zzn"))))
     (properties `((upstream-name . "mixpower")))
     (build-system r-build-system)
     (arguments
@@ -26818,6 +26891,42 @@ data.")
     (description
      "We provide detailed functions for univariate Mixed Tempered Stable distribution.")
     (license license:gpl2+)))
+
+(define-public r-mixedsubjectsirt
+  (package
+    (name "r-mixedsubjectsirt")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mixedsubjectsirt" version))
+       (sha256
+        (base32 "155pvvxlaqwpv7qwl1vgpv40yvrw61481csxbxp0lrad0kzw8yvq"))))
+    (properties `((upstream-name . "mixedsubjectsirt")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rmutil r-mirt))
+    (native-inputs (list r-knitr))
+    (home-page "https://klintkanopka.com/mixedsubjectsirt/")
+    (synopsis "Item Response Theory Calibration with a Mixed Subjects Design")
+    (description
+     "Integrates large language model generated item responses into psychometric
+calibration studies through a mixed-subjects design for unidimensional
+two-parameter and one-parameter logistic item response theory models.  Human
+pilot responses are augmented with model-generated responses using a
+prediction-powered inference estimator (Angelopoulos, Bates, Fannjiang, Jordan
+and Zrnic (2023) <doi:10.1126/science.adi6000>; Angelopoulos, Duchi and Zrnic
+(2023) <doi:10.48550/@code{arXiv.2311.01453>}) adapted to marginal
+maximum-likelihood estimation, following the mixed-subjects design of Broska,
+Howes and van Loon (2025) <doi:10.1177/00491241251326865>.  The estimator is
+anchored to the human responses and is asymptotically unbiased for the human
+item parameters at any tuning weight; the weight on the synthetic responses is
+chosen to minimize propagated ability-score risk, down-weighting uninformative
+or biased generated responses.  Louis-corrected sandwich standard errors,
+ability scoring, cross-fitted tuning, and scale linking are also provided.")
+    (license license:expat)))
 
 (define-public r-mixedsde
   (package
@@ -31095,13 +31204,13 @@ Perederiy, V. (2017) <doi:10.48550/@code{arXiv.1708.00062>}.")
 (define-public r-migraph
   (package
     (name "r-migraph")
-    (version "1.6.2")
+    (version "1.6.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "migraph" version))
        (sha256
-        (base32 "1lvwd8wy3s0jj8kh8iv5crccv75jw89qj6bva9h5wq393v48wv7h"))))
+        (base32 "0ix0nljjw9089cwv0idr4v8kyxsb0pk8y69xc5g830g5myl2d471"))))
     (properties `((upstream-name . "migraph")))
     (build-system r-build-system)
     (arguments
@@ -40698,6 +40807,36 @@ features a user-friendly chat interface, enabling users to interact with the AI
 agent and extract valuable insights from their data effortlessly.")
     (license license:expat)))
 
+(define-public r-mergegridr
+  (package
+    (name "r-mergegridr")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mergeGridR" version))
+       (sha256
+        (base32 "1rfspn7qkpfk4073xw0i6i0j9ilzsfjs89ab7yc3xpl85xg0bfc4"))))
+    (properties `((upstream-name . "mergeGridR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny r-rcpp r-ggwebgl r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/fbertran/mergeGridR/")
+    (synopsis "Grid-Based Number Merge Puzzle Simulation")
+    (description
+     "This package provides tools to simulate, analyse, visualise, and benchmark
+grid-based number merge puzzles.  The package implements generic grid mechanics,
+tile-spawning rules, merge rules, scoring functions, reproducible simulation
+utilities, and local Shiny and @code{WebGL} interfaces for interactive use.  It
+is intended for teaching, algorithmic experimentation, and game-theoretic
+examples.  The autoplay helpers use standard heuristic search and Monte Carlo
+simulation ideas described in Russell and Norvig (2021, ISBN:9780134610993) and
+Robert and Casella (2004, ISBN:9780387212395).")
+    (license license:gpl3+)))
+
 (define-public r-mergedblocks
   (package
     (name "r-mergedblocks")
@@ -43699,13 +43838,13 @@ coordinates can also be employed e.g. loess.")
 (define-public r-mdgof
   (package
     (name "r-mdgof")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MDgof" version))
        (sha256
-        (base32 "141i9yhwwd7alrl83fcx9hdad2zfgp38lzwyzs6i7rncf3b9752l"))))
+        (base32 "0d39sp3w2is5ygwni6gilxnpaips1hhkf3nds23kr9xnc49fsxi4"))))
     (properties `((upstream-name . "MDgof")))
     (build-system r-build-system)
     (arguments
@@ -44033,19 +44172,24 @@ interface for use with standard database workflows.")
 (define-public r-mdbplyr
   (package
     (name "r-mdbplyr")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mdbplyr" version))
        (sha256
-        (base32 "0kls1d5nq3jw7laaa2vi6g0sssglgvj8ijn7v1vi5x85vh3jxahq"))))
+        (base32 "1vxpiwd26b19d6f1h2f6ssqq0idagpfnx1n78i0r2m50qwx6jpd0"))))
     (properties `((upstream-name . "mdbplyr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble r-rlang r-jsonlite r-dplyr r-cli))
+    (propagated-inputs (list r-tidyselect
+                             r-tibble
+                             r-rlang
+                             r-jsonlite
+                             r-dplyr
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=mdbplyr")
     (synopsis "Native Lazy Analytical Backend for MongoDB")
@@ -44179,13 +44323,13 @@ abstract syntax trees as well as translating and displaying the documents.")
 (define-public r-md2sample
   (package
     (name "r-md2sample")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MD2sample" version))
        (sha256
-        (base32 "1zg21cd2rihzp9dd1xky1k7v1rl72xi3h0889d8glzsi5sfvnll2"))))
+        (base32 "0zf6yzk6dy53spsr728xmmp6v0v80wsj23s7cw87nzki5ybkb174"))))
     (properties `((upstream-name . "MD2sample")))
     (build-system r-build-system)
     (arguments
@@ -45581,6 +45725,34 @@ posterior samples of the stationary distribution to (a) assess the uncertainty
 in the estimated posterior model probabilities and (b) estimate the effective
 sample size of the MCMC output.")
     (license license:gpl3)))
+
+(define-public r-mcmchybridgp
+  (package
+    (name "r-mcmchybridgp")
+    (version "7.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MCMChybridGP" version))
+       (sha256
+        (base32 "1rxaqlwv8dvghxy7s6asln61avvwlbza7sr9q9s0r7znlzgyg3nv"))))
+    (properties `((upstream-name . "MCMChybridGP")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp r-mass))
+    (home-page "https://cran.r-project.org/package=MCMChybridGP")
+    (synopsis "Hybrid Markov Chain Monte Carlo Using Gaussian Processes")
+    (description
+     "Hybrid Markov chain Monte Carlo (MCMC) for sampling from multimodal target
+distributions when derivatives are unavailable.  A Gaussian process
+approximation is used to emulate derivatives, enabling efficient exploration
+with parallel tempering.  The method is described in Fielding, Nott and Liong
+(2011) <doi:10.1198/TECH.2010.09195>.  The research was carried out as part of
+the Singapore-Delft Water Alliance Multi-Objective Multi-Reservoir Management
+programme (R-264-001-272).")
+    (license license:gpl2)))
 
 (define-public r-mcmcensemble
   (package
@@ -48498,35 +48670,6 @@ metrics implemented in this package refer to Khamis, H. J., & Roche, A. F.
 <doi:10.1519/SSC.0000000000000281>.")
     (license license:expat)))
 
-(define-public r-mattransmix
-  (package
-    (name "r-mattransmix")
-    (version "0.1.18")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MatTransMix" version))
-       (sha256
-        (base32 "128l9aqjas3mz7qpq3dqai98mgq4vaidmqmzxrlg51zwfiq4mh5c"))))
-    (properties `((upstream-name . "MatTransMix")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mvtnorm))
-    (home-page "https://cran.r-project.org/package=MatTransMix")
-    (synopsis
-     "Clustering with Matrix Gaussian and Matrix Transformation Mixture Models")
-    (description
-     "This package provides matrix Gaussian mixture models, matrix transformation
-mixture models and their model-based clustering results.  The parsimonious
-models of the mean matrices and variance covariance matrices are implemented
-with a total of 196 variations.  For more information, please check: Xuwen Zhu,
-Shuchismita Sarkar, and Volodymyr Melnykov (2021), \"@code{MatTransMix}: an R
-package for matrix model-based clustering and parsimonious mixture modeling\",
-<doi:10.1007/s00357-021-09401-9>.")
-    (license license:gpl2+)))
-
 (define-public r-matsindf
   (package
     (name "r-matsindf")
@@ -49776,22 +49919,24 @@ algorithm for the indivisible goods trading problem.")
 (define-public r-matchingpursuit
   (package
     (name "r-matchingpursuit")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MatchingPursuit" version))
        (sha256
-        (base32 "1vinz69js4nfh6jycaq7d1201aaim4f1b91y1x11cqagqza0956x"))))
+        (base32 "0pfj91ml9ib20pbhsgi9rq88ckm2wnr4b8i68lzp6wq3hxs7pj43"))))
     (properties `((upstream-name . "MatchingPursuit")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-signal
+    (propagated-inputs (list r-xml2
+                             r-signal
                              r-rsqlite
                              r-raster
                              r-imager
+                             r-egm
                              r-edf
                              r-digest
                              r-desctools))
@@ -49803,10 +49948,11 @@ algorithm for the indivisible goods trading problem.")
      "This package provides tools for analysing and decomposing time series data using
 the Matching Pursuit (MP) algorithm, a greedy signal decomposition technique
 that represents complex signals as a linear combination of simpler functions
-(called atoms) selected from a redundant dictionary.  For more details see
-Mallat and Zhang (1993) <doi:10.1109/78.258082>, Pati et al. (1993)
-<doi:10.1109/ACSSC.1993.342465>, Elad (2010) <doi:10.1007/978-1-4419-7011-4> and
-RÃ³Å¼aÅski (2024) <doi:10.1145/3674832>.")
+(called atoms) selected from a redundant dictionary.  Support for the Orthogonal
+Matching Pursuit (OMP) variant of the classical MP algorithm is also provided.
+For more details see Mallat and Zhang (1993) <doi:10.1109/78.258082>, Pati et
+al. (1993) <doi:10.1109/ACSSC.1993.342465>, Elad (2010)
+<doi:10.1007/978-1-4419-7011-4> and RÃ³Å¼aÅski (2024) <doi:10.1145/3674832>.")
     (license license:gpl2+)))
 
 (define-public r-matchingmarkets
@@ -53662,13 +53808,13 @@ generating fictional state names.")
 (define-public r-manynet
   (package
     (name "r-manynet")
-    (version "2.1.2")
+    (version "2.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "manynet" version))
        (sha256
-        (base32 "0llkcnyg1bnm90qfjwacfrs31xknj1zcphz2a3qjn2z3bdfmll0d"))))
+        (base32 "0qh8d5dbddg5768z7qzcqii7qghl0rpa0d79kjhipnzmfx22ifm1"))))
     (properties `((upstream-name . "manynet")))
     (build-system r-build-system)
     (arguments

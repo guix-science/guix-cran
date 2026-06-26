@@ -6033,20 +6033,19 @@ see Motulsky, H and Brown, R (2006) <doi:10.1186/1471-2105-7-123>.")
 (define-public r-optimlanduse
   (package
     (name "r-optimlanduse")
-    (version "1.2.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "optimLanduse" version))
        (sha256
-        (base32 "03y3cw07ya9q15aybjcaiqa2ghs1id2k55crkpf8xh0yn4mylhh4"))))
+        (base32 "02krdyxzab23pccm9nf5py72k3a5g3lv08wa2a1pqp1ms4xbqzbx"))))
     (properties `((upstream-name . "optimLanduse")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr r-lpsolveapi r-future-apply r-future
-                             r-dplyr))
+    (propagated-inputs (list r-tidyr r-lpsolveapi r-future-apply r-dplyr))
     (home-page "https://github.com/Forest-Economics-Goettingen/optimLanduse/")
     (synopsis "Robust Land-Use Optimization")
     (description
@@ -9218,30 +9217,31 @@ requires the gradethis package which can be installed using
 (define-public r-opdisdownsampling
   (package
     (name "r-opdisdownsampling")
-    (version "1.0.1")
+    (version "1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "opdisDownsampling" version))
        (sha256
-        (base32 "10r6s87ffxzdcrwfwxwikxilpd4ccksma9g9sbz80l3mhlakvskl"))))
+        (base32 "0jbrn98lhdih0vmj233c96kh4ff9iq6l2vbvwx4pbizmh32f5xnc"))))
     (properties `((upstream-name . "opdisDownsampling")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-twosamples
+                             r-rcpp
                              r-pracma
                              r-pbmcapply
                              r-foreach
                              r-doparallel
                              r-catools))
-    (home-page "https://cran.r-project.org/package=opdisDownsampling")
+    (home-page "https://github.com/JornLotsch/opdisDownsampling")
     (synopsis
      "Optimal Distribution Preserving Down-Sampling of Bio-Medical Data")
     (description
      "An optimized method for distribution-preserving class-proportional down-sampling
-of bio-medical data.")
+of bio-medical data <doi:10.1371/journal.pone.0255838>.")
     (license license:gpl3)))
 
 (define-public r-opcreg
@@ -12479,13 +12479,13 @@ continuous data.")
 (define-public r-okbathtub
   (package
     (name "r-okbathtub")
-    (version "0.1.10")
+    (version "0.1.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "okBATHTUB" version))
        (sha256
-        (base32 "061sxnaf2s450wgva54d5v85kllsi3i90nidmjm66ywjdilwqq95"))))
+        (base32 "00pls3mkz19vnkqr7jgbab6xpa5h9716ngfbgqil6wvw6v4a9qjv"))))
     (properties `((upstream-name . "okBATHTUB")))
     (build-system r-build-system)
     (arguments

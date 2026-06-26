@@ -5505,13 +5505,13 @@ statistical properties change across spatio-temporal continuum.")
 (define-public r-crystract
   (package
     (name "r-crystract")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crystract" version))
        (sha256
-        (base32 "05pwnva7kbs3db13s95dryjb8nz5547j6nlmzfajz8xiry599wvz"))))
+        (base32 "0scn30jj5y6jwbim8sxlg59l4wcs5ayn2xgp3q6jwlaw9xhlgv9i"))))
     (properties `((upstream-name . "crystract")))
     (build-system r-build-system)
     (arguments
@@ -8513,6 +8513,39 @@ CRC32C is described in RFC 3270 at
 <doi:10.1109/26.231911>.")
     (license license:gpl2+)))
 
+(define-public r-crbhsf
+  (package
+    (name "r-crbhsf")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CRBHSF" version))
+       (sha256
+        (base32 "1bdr5pgsghi3ca1ifxd6vpwa0as3z2d7q3q6gjzcrhm49hdzbs1x"))))
+    (properties `((upstream-name . "CRBHSF")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-purrr r-proc r-ggplot2 r-dplyr))
+    (home-page "https://github.com/zerish12/CRBHSF")
+    (synopsis "Cyber-Resilient Bayesian Healthcare Surveillance Framework")
+    (description
+     "This package provides methods for healthcare performance surveillance using
+Bayesian risk estimation, latent organisational trust modelling,
+cyber-resilience assessment, external validation, decision-theoretic
+optimisation, and digital-twin deployment simulation.  The package supports
+prospective deterioration monitoring, uncertainty-aware risk assessment,
+intervention prioritisation, ablation analysis, and operational evaluation for
+healthcare performance management and health system resilience research.  The
+methodological framework is informed by contemporary guidance on prediction
+model development and validation (Efthimiou et al., 2024
+<doi:10.1136/bmj-2023-078276>), transparent reporting of prediction models
+(Collins et al., 2024 <doi:10.1136/bmj-2023-078378>), and decision-analytic
+model evaluation (Vickers and Elkin, 2006 <doi:10.1177/0272989X06295361>).")
+    (license license:expat)))
+
 (define-public r-crayons
   (package
     (name "r-crayons")
@@ -9185,13 +9218,13 @@ hypothesis that the distributions are equal is rejected.")
 (define-public r-cpsvote
   (package
     (name "r-cpsvote")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cpsvote" version))
        (sha256
-        (base32 "0nmg79isqwvxyg7zkfbshndfjb2fnc2ffg32hxvjvsy714lpljf6"))))
+        (base32 "0grcwhcg2zpnc3y0iiyn8ss91wxw9rx8bah5f4fi4r9gyrwaf0hs"))))
     (properties `((upstream-name . "cpsvote")))
     (build-system r-build-system)
     (arguments
@@ -9210,11 +9243,13 @@ hypothesis that the distributions are equal is rejected.")
     (description
      "This package provides automated methods for downloading, recoding, and merging
 selected years of the Current Population Survey's Voting and Registration
-Supplement, a large N national survey about registration, voting, and non-voting
-in United States federal elections.  Provides documentation for appropriate use
-of sample weights to generate statistical estimates, drawing from Hur & Achen
-(2013) <doi:10.1093/poq/nft042> and @code{McDonald} (2018)
-<http://www.electproject.org/home/voter-turnout/voter-turnout-data>.")
+Supplement
+<https://www.nber.org/research/data/current-population-survey-cps-supplements-voting-and-registration>,
+a large N national survey about registration, voting, and non-voting in United
+States federal elections.  Provides documentation for appropriate use of sample
+weights to generate statistical estimates, drawing from Hur & Achen (2013)
+<doi:10.1093/poq/nft042> and @code{McDonald} (2018)
+<https://www.electproject.org/election-data/voter-turnout-data>.")
     (license license:expat)))
 
 (define-public r-cpsurvsim
@@ -12415,6 +12450,50 @@ matrix are from a Poisson or a negative binomial distribution.")
      "Modeling under- and over-dispersed count data using extended Poisson process
 models as in the article Faddy and Smith (2011) <doi:10.18637/jss.v069.i06> .")
     (license license:gpl2)))
+
+(define-public r-countryatlas
+  (package
+    (name "r-countryatlas")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "countryatlas" version))
+       (sha256
+        (base32 "0wqc4if05bzn7kpmvqxa5wipf92dbwxczji2x0g1nk6m01lnqzsp"))))
+    (properties `((upstream-name . "countryatlas")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-wdi
+                             r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-memoise
+                             r-ggplot2
+                             r-dplyr
+                             r-countrycode
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://pursuitofdatascience.github.io/countryatlas/")
+    (synopsis "Join World Bank Data, Country Codes and Maps on the ISO Spine")
+    (description
+     "This package provides a complete toolkit for getting country data onto honest
+maps.  Country names rarely line up across data sources (\"US\", \"U.S.\", \"United
+States\", \"United States of America\" are one country, but a naive join treats
+them as four), so countryatlas makes ISO codes the universal join key.  It
+generalises a one-call, map-ready table that stitches together ggplot2 map
+geometry, WDI World Bank indicators and the countrycode Rosetta stone; exposes
+the join machinery for the user's own data; ships curated reference data
+(metadata, group memberships, an indicator catalogue, flags and currencies);
+adds analysis helpers (per-capita, regional roll-ups, ranking); and turns one
+hand-drawn choropleth into a full vocabulary of projected, area-honest maps
+(binned and quantile choropleths, proportional-symbol, bivariate, cartogram,
+tile-grid, flow, animated and interactive).  Heavy spatial dependencies stay
+optional, and a bundled offline snapshot lets every example, test and vignette
+run without the network.")
+    (license license:gpl3+)))
 
 (define-public r-countries
   (package
@@ -42028,16 +42107,41 @@ comes with back-ends for @code{OpenAI}', @code{GitHub} Copilot', and
 @code{LlamaGPT}'.")
     (license license:expat)))
 
+(define-public r-chatterbox
+  (package
+    (name "r-chatterbox")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "chatterbox" version))
+       (sha256
+        (base32 "0r9blqkkfz0hi9cb9ipivkf4krkqkzwm3q28bgkb95f36xmxhzmd"))))
+    (properties `((upstream-name . "chatterbox")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tuner r-torch r-safetensors r-jsonlite r-hfhub))
+    (home-page "https://github.com/cornball-ai/chatterbox")
+    (synopsis "Text-to-Speech Using the 'Chatterbox' Engine")
+    (description
+     "This package provides a native R torch port of the Chatterbox text-to-speech
+engine <https://github.com/resemble-ai/chatterbox>.  Provides speech synthesis
+with voice cloning; model weights are downloaded from @code{HuggingFace}
+<https://huggingface.co/> via the hfhub package.")
+    (license license:expat)))
+
 (define-public r-chatrater
   (package
     (name "r-chatrater")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chatRater" version))
        (sha256
-        (base32 "135bcl94qsd3306vv94nsvahx4zj5ls5ak1fbbkcxxivryvcim3q"))))
+        (base32 "1bwmq1lahx5s66wv5hd6kh03380g08101paq1gs5dpdp5z35p5a3"))))
     (properties `((upstream-name . "chatRater")))
     (build-system r-build-system)
     (arguments
@@ -55934,6 +56038,52 @@ Alberti 2015 <doi:10.1016/j.softx.2015.07.001>.")
 period.  More details can be found in Bardhan et al. (2022)
 <DOI:10.18805/ag.D-5418>.")
     (license license:gpl3)))
+
+(define-public r-caft
+  (package
+    (name "r-caft")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CAFT" version))
+       (sha256
+        (base32 "0p09yahcvz8bjg01ig58gjvpsb2d2yrqy3laxjjaibsfaprqs2l7"))))
+    (properties `((upstream-name . "CAFT")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mass
+                             r-icsnp
+                             r-ggtext
+                             r-ggplot2
+                             r-foreach
+                             r-expm
+                             r-dorng
+                             r-doparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mli171/CAFT")
+    (synopsis
+     "Rank-Based Compositional Analysis using Log-Linear Models for Microbiome Data with Zero Cells")
+    (description
+     "This package provides rank-based compositional differential abundance analysis
+for microbiome count data with zero cells using the compositional accelerated
+failure time model of Satten, Li and Zhao (2025) \"CAFT: A Compositional
+Log-Linear Model for Microbiome Data with Zero Cells\"
+<doi:10.1101/2025.11.26.690468>.  Zero counts are treated as censored
+observations below sample-specific detection limits, avoiding the use of
+pseudocounts.  The package implements estimation and hypothesis testing
+procedures for assessing associations between microbial taxa and covariates
+while accounting for the compositional structure of sequencing count data.  It
+supports taxon-level differential abundance analysis, estimation of regression
+effects under censoring induced by detection limits, and inference based on
+rank-based methods that remain applicable in the presence of excess zeros.
+Functions are provided for model fitting, significance testing, extraction of
+effect estimates, and summarization of results across taxa.  The package also
+provides optional bootstrap calibration of taxon-level p-values for sensitivity
+analysis in small-taxon settings.")
+    (license license:lgpl2.0+)))
 
 (define-public r-caffsim
   (package

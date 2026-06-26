@@ -3670,6 +3670,42 @@ Government NCRIS-enabled project, and its Ecosystem Surveillance platform
 (<https://www.tern.org.au/tern-land-observatory/ecosystem-surveillance-and-environmental-monitoring/>).")
     (license license:gpl3)))
 
+(define-public r-aurora
+  (package
+    (name "r-aurora")
+    (version "0.1.12")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "aurora" version))
+       (sha256
+        (base32 "1dazqmmz0hpag399swhh5975dva66596ws8jzyyw6nqf2gcrz24z"))))
+    (properties `((upstream-name . "aurora")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml
+                             r-rlang
+                             r-plumber2
+                             r-jsonlite
+                             r-htmltools
+                             r-glue
+                             r-fs
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/aurora-govpe/aurora-rpkg")
+    (synopsis "Build Stateless Web Apps with 'plumber2'")
+    (description
+     "This package provides a scaffolding and deployment toolkit for building
+stateless web applications in R on top of the plumber2 web framework
+(<https://plumber2.posit.co/>).  The UI is authored with bslib and compiled to a
+static HTML asset at build time, while plumber2 serves the assets and exposes
+JSON API routes.  Provides functions to scaffold app skeletons, run them
+locally, and generate Dockerfiles and images suitable for @code{ShinyProxy} or
+plain Docker.")
+    (license license:expat)))
+
 (define-public r-auroc
   (package
     (name "r-auroc")
@@ -7186,6 +7222,46 @@ Wobbrock, Findlater, Gergle, and Higgins (2011) <doi:10.1145/1978942.1978963>.
 Also supports aligned rank transform contrasts as described by Elkin, Kay,
 Higgins, and Wobbrock (2021) <doi:10.1145/3472749.3474784>.")
     (license license:gpl2+)))
+
+(define-public r-artoo
+  (package
+    (name "r-artoo")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "artoo" version))
+       (sha256
+        (base32 "11x52izad7n0npgizq4y5q4l0af56j1v9dsbva0ny846gp87y9nf"))))
+    (properties `((upstream-name . "artoo")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-utf8
+                             r-s7
+                             r-rlang
+                             r-nanoparquet
+                             r-jsonlite
+                             r-hms
+                             r-cli))
+    (native-inputs (list r-quarto))
+    (home-page "https://vthanik.github.io/artoo/")
+    (synopsis "Lossless CDISC-Native Input and Output for Clinical Datasets")
+    (description
+     "Reads and writes clinical-trial datasets losslessly across SAS XPORT (XPT),
+Clinical Data Interchange Standards Consortium (CDISC) Dataset-JSON, and Apache
+Parquet', applying a specification to produce submission-ready Study Data
+Tabulation Model (SDTM) and Analysis Data Model (A@code{DaM}) datasets.  A
+single canonical metadata model carries labels, CDISC data types, lengths, SAS
+display formats, controlled-terminology references, and sort keys identically
+across every format, so conversion between any two formats is lossless by
+construction.  Pure R and lightweight, with no external SAS or Java runtime.
+Implements the published format specifications for CDISC Dataset-JSON
+(<https://cdisc-org.github.io/@code{DataExchange-DatasetJson/doc/dataset-json1-1.html>})
+and SAS XPORT
+(<https://www.loc.gov/preservation/digital/formats/fdd/fdd000466.shtml>).")
+    (license license:expat)))
 
 (define-public r-artofr
   (package
@@ -17095,13 +17171,13 @@ website for more information.")
 (define-public r-alphavantagepf
   (package
     (name "r-alphavantagepf")
-    (version "0.8.0")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "alphavantagepf" version))
        (sha256
-        (base32 "0l2byzmrfprp423vq43qx1l1a32m9i8ld0w2shhf88f7ahqvs35b"))))
+        (base32 "1jiyvggj1b9jj8wma5m667n9xszdjd93clf7vzq872p2qkaw9y39"))))
     (properties `((upstream-name . "alphavantagepf")))
     (build-system r-build-system)
     (arguments

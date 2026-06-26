@@ -1790,19 +1790,23 @@ Philip D. (2018) <doi:10.1177/1532673X18759644>.")
 (define-public r-purger
   (package
     (name "r-purger")
-    (version "1.8.2")
+    (version "1.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "purgeR" version))
        (sha256
-        (base32 "0w3mcij7q5aqbs5phiyqprgr3hvs77fnjmbayp2rwn9qm1sx160a"))))
+        (base32 "003pd272lfh44jd84r299c1m7m66xg3sc9lv8vk1wvp61vj03a8g"))))
     (properties `((upstream-name . "purgeR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcppprogress r-rcpp r-progress r-foreach
+    (propagated-inputs (list r-shiny
+                             r-rcppprogress
+                             r-rcpp
+                             r-progress
+                             r-foreach
                              r-dosnow))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://gitlab.com/elcortegano/purgeR/")
@@ -1813,7 +1817,7 @@ of the inbreeding coefficient, partial, ancestral and purged inbreeding
 coefficients, and measures of the opportunity of purging related to the
 individual reduction of inbreeding load.  In addition, functions to calculate
 the effective population size and other parameters relevant to population
-genetics are included.  See LÃ³pez-Cortegano E. (2021)
+genetics are included.  See LÃ³pez-Cortegano E. (2022)
 <doi:10.1093/bioinformatics/btab599>.")
     (license license:gpl2)))
 
@@ -1884,13 +1888,13 @@ the topology of a membrane protein.  This package allows one to use
 (define-public r-puremoe
   (package
     (name "r-puremoe")
-    (version "1.0.4")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "puremoe" version))
        (sha256
-        (base32 "07k8zm53wq5bjkgayjzfqm0nn3zmg3b5hz659jgzb32gqjssc9bb"))))
+        (base32 "0ka4a8wrvwhk2ci0mbi8718miyd3awvnvq7mqpqd6fbh9099c9a8"))))
     (properties `((upstream-name . "puremoe")))
     (build-system r-build-system)
     (arguments
@@ -1898,19 +1902,26 @@ the topology of a membrane protein.  This package allows one to use
       #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-textshape
+                             r-textpress
                              r-rentrez
                              r-rappdirs
                              r-pbapply
                              r-jsonlite
                              r-httr
                              r-data-table))
-    (native-inputs (list r-knitr))
     (home-page "https://github.com/jaytimm/puremoe")
-    (synopsis "Pubmed Unified REtrieval for Multi-Output Exploration")
+    (synopsis
+     "Integrated Retrieval and Analysis of 'PubMed', 'NIH', and 'NLM' Literature Data")
     (description
-     "Access a variety of @code{PubMed} data through a single, user-friendly
-interface, including abstracts, bibliometrics from @code{iCite}', pubtations
-from @code{PubTator3}', and full-text records from PMC'.")
+     "Retrieve and analyze biomedical literature from @code{PubMed} and the wider
+NIH'/'NLM data stack through a single, PMID-centered interface.  A @code{PubMed}
+search resolves to a set of PMIDs, which can be used to retrieve article
+metadata and abstracts, author affiliations, @code{iCite} citation data and
+links, @code{PubTator3} entity and relation annotations, and open-access full
+text from PMC'.  A local analysis layer operates on the retrieved tables,
+supporting corpus expansion through citation links, citation network
+construction, sentence-level entity co-occurrence, inspection of relation
+evidence, and @code{MeSH} descriptor keyness.")
     (license license:expat)))
 
 (define-public r-pupmsi
@@ -9188,6 +9199,29 @@ More details can be referred to Wei Liu, et al. (2023)
 <doi:10.1101/2023.07.11.548486>.")
     (license license:gpl3)))
 
+(define-public r-productshotair
+  (package
+    (name "r-productshotair")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "productshotaiR" version))
+       (sha256
+        (base32 "0cxbxykvx6rqznq0zjqbyfd48j68mbc1ya0r0rfmiaiz073a8355"))))
+    (properties `((upstream-name . "productshotaiR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://productshotai.app")
+    (synopsis "Product Photo Planning Helpers")
+    (description
+     "Helpers for preparing ecommerce product photo planning tables, prompt sheets,
+and public @code{ProductShot} AI workflow URLs.  The package works offline and
+focuses on data-frame preparation for product image batches.")
+    (license license:expat)))
+
 (define-public r-productivity
   (package
     (name "r-productivity")
@@ -9734,6 +9768,37 @@ directory with the MRTSwath executable to the default R PATH by editing
      "Confidence intervals and point estimation for R under various parametric model
 assumptions; likelihood inference based on classical first-order approximations
 and higher-order asymptotic procedures.")
+    (license license:gpl2)))
+
+(define-public r-probsvms
+  (package
+    (name "r-probsvms")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ProbSVMs" version))
+       (sha256
+        (base32 "04ziz0fr60yl7fq8n65yc5nh47r9k5lpyr1lb1411dhk0hrjlfxp"))))
+    (properties `((upstream-name . "ProbSVMs")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-reshape2
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-mass
+                             r-lpsolveapi
+                             r-kernlab
+                             r-ggplot2))
+    (home-page "https://cran.r-project.org/package=ProbSVMs")
+    (synopsis "Probabilistic Support Vector Machines")
+    (description
+     "This package implements kernel-based classification Support Vector Machines with
+reliable estimated probabilities of class membership.  Theoretical support for
+the functions in this package can be found in Duarte Silva (2025)
+<doi:10.1016/j.cor.2025.107203>.")
     (license license:gpl2)))
 
 (define-public r-probstats4econ
@@ -11631,19 +11696,19 @@ Larmarange et al. (2011) <doi:10.4000/cybergeo.24606>.")
 (define-public r-preventr
   (package
     (name "r-preventr")
-    (version "0.11.0")
+    (version "0.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "preventr" version))
        (sha256
-        (base32 "1gs7xlqmggm9lqnmjl1zrq6xqjfapfl9nalr6c6i8sq08rix949y"))))
+        (base32 "0nk3fxkx5nnmskc24z8b9rhsq179zjpc50nvmgd2m8gvzcv0m9cv"))))
     (properties `((upstream-name . "preventr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-dplyr))
+    (propagated-inputs (list r-ggplot2 r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://martingmayer.com/preventr")
     (synopsis "An Implementation of the PREVENT and Pooled Cohort Equations")
@@ -12348,6 +12413,36 @@ Standardization, Unitization, Cubitization and adaptive intervals are offered.")
 part of the OOMPA collection of packages described at
 <http://oompa.r-forge.r-project.org/>.")
     (license license:asl2.0)))
+
+(define-public r-prepr4pcm
+  (package
+    (name "r-prepr4pcm")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "prepR4pcm" version))
+       (sha256
+        (base32 "0xsnffm7ds255bb99p0mdlbkzi71jq4lk567f0mw4gbcbix8banl"))))
+    (properties `((upstream-name . "prepR4pcm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-rlang r-cli r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/itchyshin/prepR4pcm")
+    (synopsis "Prepare Data and Trees for Phylogenetic Comparative Methods")
+    (description
+     "Reconcile species names across datasets and phylogenetic trees for comparative
+biology workflows.  Identifies mismatches due to formatting differences,
+taxonomic synonymy, and spelling errors.  Produces detailed reports documenting
+how each name was resolved, which taxonomic authority was used, and what remains
+unresolved.  Supports exact matching, name normalisation, synonym resolution via
+local taxonomic databases, and fuzzy matching for likely typos.  Detects
+taxonomic splits and lumps.  For methodological context, see Nakagawa et al.
+(2026) <doi:10.32942/X2468Z>.")
+    (license license:expat)))
 
 (define-public r-prepplot
   (package
@@ -19510,6 +19605,38 @@ graph.  Finds total order consistent with partial order or directed graph
 test for determining coefficient homogeneity between the panel data individuals
 is implemented, as described in Hsiao (2022), \"Analysis of Panel Data\"
 (<doi:10.1017/9781009057745>).")
+    (license license:gpl3)))
+
+(define-public r-pong2
+  (package
+    (name "r-pong2")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PONG2" version))
+       (sha256
+        (base32 "0k7c6fly3g22yhqa1b3l66rlhgws06w32ipn726lvkr9gspmn2nr"))))
+    (properties `((upstream-name . "PONG2")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-rcppparallel r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://normanlabucd.github.io/PONG2/")
+    (synopsis "KIR Genotype Imputation and Model Training from SNP Array Data")
+    (description
+     "This package provides a scalable and accurate tool for Killer-cell
+Immunoglobulin-like Receptor (KIR) genotype imputation directly from SNP array
+data using supervised machine learning models trained across five continental
+ancestry groups.  Uses attribute bagging and an ensemble classifier method with
+haplotype inference for SNPs and KIR types.  Models are built from global
+populations in the 1000 Genomes Project and validated across diverse biobank
+cohorts.  Methods are based on Zheng et al. (2014)
+<doi:10.1016/j.ajhg.2013.12.015> and Sadeeq et al. (2026)
+<https://github.com/@code{NormanLabUCD/PONG2>}.")
     (license license:gpl3)))
 
 (define-public r-poms
@@ -36867,13 +36994,13 @@ Kepplinger & Wei (2025) <doi:10.1080/00401706.2025.2540970>.")
 (define-public r-pensar
   (package
     (name "r-pensar")
-    (version "0.6.3")
+    (version "0.6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pensar" version))
        (sha256
-        (base32 "1rcy0l9qal3j7ipb1zsyjhx58hrhpi5i2qvxcl8yy1fav204c5s9"))))
+        (base32 "08rrc8vzynv5vcqngi8vzfd2v95ynwcswdrsi8xl1bzz95c5dij6"))))
     (properties `((upstream-name . "pensar")))
     (build-system r-build-system)
     (arguments
@@ -38031,13 +38158,13 @@ alternative for packages otherwise independent of forrel'.")
 (define-public r-pedbuildr
   (package
     (name "r-pedbuildr")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pedbuildr" version))
        (sha256
-        (base32 "1yq5ag62yf6qjkxvr4g0xggag0ic5gyby4y5vnhlakwn0h78yirv"))))
+        (base32 "12i9jwdfnbbgk6553yn0skakqhav9qlhgfmq990d9vis7wrzdriv"))))
     (properties `((upstream-name . "pedbuildr")))
     (build-system r-build-system)
     (arguments
@@ -38047,6 +38174,7 @@ alternative for packages otherwise independent of forrel'.")
                              r-pedtools
                              r-pedprobr
                              r-pedmut
+                             r-mirai
                              r-glue
                              r-forrel))
     (home-page "https://github.com/magnusdv/pedbuildr")
@@ -48778,13 +48906,13 @@ spaghetti-plot, build multi-contingency tables...")
 (define-public r-packetllm
   (package
     (name "r-packetllm")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PacketLLM" version))
        (sha256
-        (base32 "0p2x05fqlzvgpaw3al4h5z6v35f8dpgiymcbvrk9391bydhcszp7"))))
+        (base32 "0q1ng39d9wwrc5rwyxixz02h6idl47j4jwvamj93s1jvybfc317k"))))
     (properties `((upstream-name . "PacketLLM")))
     (build-system r-build-system)
     (arguments
@@ -48792,6 +48920,7 @@ spaghetti-plot, build multi-contingency tables...")
       #:tests? #f))
     (propagated-inputs (list r-shinyjs
                              r-shiny
+                             r-rstudioapi
                              r-readtext
                              r-promises
                              r-pdftools
@@ -48799,19 +48928,17 @@ spaghetti-plot, build multi-contingency tables...")
                              r-future))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/AntoniCzolgowski/PacketLLM")
-    (synopsis "Interactive 'OpenAI' Model Integration in 'RStudio'")
+    (synopsis "AI Assistant Gadget for 'RStudio'")
     (description
-     "Offers an interactive RStudio gadget interface for communicating with
-@code{OpenAI} large language models (e.g., gpt-5', gpt-5-mini', gpt-5-nano')
-(<https://platform.openai.com/docs/api-reference>).  Enables users to conduct
-multiple chat conversations simultaneously in separate tabs.  Supports uploading
-local files (R, PDF, DOCX) to provide context for the models.  Allows
-per-conversation configuration of system messages (where supported by the
-model).  API interactions via the httr package are performed asynchronously
-using promises and future to avoid blocking the R console.  Useful for tasks
-like code generation, text summarization, and document analysis directly within
-the RStudio environment.  Requires an @code{OpenAI} API key set as an
-environment variable.")
+     "This package provides an interactive RStudio gadget for working with an AI
+assistant during package and script development.  The gadget can use selected
+editor text, the active source file, package metadata, and uploaded files as
+context for code explanation, code generation, documentation, and review
+workflows.  It offers model presets, assistant behavior settings, responsive
+code-focused output, and explicit copy, insert, and replace actions for the
+active source editor.  API interactions via the httr package are performed
+asynchronously using promises and future to avoid blocking the R console.  The
+backend is configured via the OPENAI_API_KEY environment variable.")
     (license license:expat)))
 
 (define-public r-packagerank

@@ -6927,19 +6927,24 @@ in L. Del Core et al., (2022) <doi:10.1101/2022.07.08.499353>.")
 (define-public r-kardl
   (package
     (name "r-kardl")
-    (version "1.3.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kardl" version))
        (sha256
-        (base32 "1x9xrnc4xgs9wij5qfbwlmjlmhsw28whz5nx9llm1j4i4c2dzh08"))))
+        (base32 "0gklssizymayysywvmg7jj9qmzqhjlav4hcciqg2k0vmnqxpd37h"))))
     (properties `((upstream-name . "kardl")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-nlwaldtest r-msm r-lmtest r-ggplot2 r-car))
+    (propagated-inputs (list r-nlwaldtest
+                             r-msm
+                             r-lmtest
+                             r-lifecycle
+                             r-ggplot2
+                             r-car))
     (native-inputs (list r-knitr))
     (home-page "https://karamelikli.github.io/kardl/")
     (synopsis "Make Symmetric and Asymmetric ARDL Estimations")

@@ -2599,21 +2599,26 @@ Sousa (2024) <doi:10.1515/mcma-2023-2016> and Saraiva and Dias (2009)
 (define-public r-functional
   (package
     (name "r-functional")
-    (version "0.6")
+    (version "0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "functional" version))
        (sha256
-        (base32 "120qq9apg6bf39n9vnp68db5rdhwvnj2vi12a8j8243vq8kqxdqr"))))
+        (base32 "016i35q3ihaw45zy3n9c91qdwq7gmvm4xx996qm0bc8ai859szgq"))))
     (properties `((upstream-name . "functional")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://cran.r-project.org/package=functional")
-    (synopsis "Curry, Compose, and other higher-order functions")
-    (description "Curry, Compose, and other higher-order functions.")
+    (propagated-inputs (list r-lisp))
+    (home-page "https://github.com/klutometis/R-functional")
+    (synopsis "Curry, Compose, and Other Higher-Order Functions")
+    (description
+     "This package provides a small collection of higher-order functions for
+functional-style programming in R, including Curry (partial application),
+@code{CurryL} (lazy partial application), Compose (function composition,
+including a multi-argument variant), Identity', Negate and Swap'.")
     (license license:gpl2+)))
 
 (define-public r-functansnp
@@ -5401,13 +5406,13 @@ command and returns an R object of class nifti or necessary output.")
 (define-public r-freestiler
   (package
     (name "r-freestiler")
-    (version "0.1.7")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "freestiler" version))
        (sha256
-        (base32 "07dg158b99mr537vd4vgg2ba1l58p0zwblyxa9fvpbqqd0cx1171"))))
+        (base32 "14apgi3am5iibknzxmms9xq9zk18jjpqdis5r4cqcxr3856dif16"))))
     (properties `((upstream-name . "freestiler")))
     (build-system r-build-system)
     (arguments
@@ -6445,6 +6450,33 @@ usage of this package is illustrated in Lin et al. (2023
 <doi:10.1016/j.ajog.2022.08.053>) and detailed in Lin and Chu (2022
 <doi:10.1371/journal.pone.0268754>).")
     (license license:gpl2+)))
+
+(define-public r-fragilitidy
+  (package
+    (name "r-fragilitidy")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FragiliTidy" version))
+       (sha256
+        (base32 "0yax5773fk4jpisc7nv4l4f7mxmqn8q5ppzawqxynkj9fxb8ilrd"))))
+    (properties `((upstream-name . "FragiliTidy")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-rlang r-purrr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/tomdrake/fragilitidy")
+    (synopsis "Tidyverse-Compatible Fragility Index Calculations")
+    (description
+     "This package provides optimized, Tidyverse-compatible functions for calculating
+the Fragility Index and Reverse Fragility Index for 2x2 contingency tables from
+clinical trials.  Uses customized hypergeometric and algebraic calculations
+along with binary search algorithms to achieve substantial speedups over
+standard implementations, with seamless integration into dplyr pipelines.")
+    (license license:gpl3)))
 
 (define-public r-fracture
   (package
@@ -8185,6 +8217,31 @@ informed decisions during formulation design and optimization.")
      "Perform mathematical operations on R formula (add, subtract, multiply, etc.) and
 substitute parts of formula.")
     (license license:gpl3)))
+
+(define-public r-formulaiv
+  (package
+    (name "r-formulaiv")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "formulaiv" version))
+       (sha256
+        (base32 "02pc19wappwpg2kxki20xlwpvspfr40vvd0fdfn5nrxkccd5z30g"))))
+    (properties `((upstream-name . "formulaiv")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-lpsolve))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/peizansheng/formulaiv")
+    (synopsis "Sensitivity of Formula Instrument to Shock Design")
+    (description
+     "This package provides functions to implement the formula instrument method in
+Borusyak and Hull (2023) <doi:10.3982/ECTA19367> and examine its sensitivity to
+the assumed distributional of counterfactual shocks.")
+    (license license:expat)))
 
 (define-public r-formulaic
   (package
@@ -10487,13 +10544,13 @@ interactive introduction, see
 (define-public r-focus
   (package
     (name "r-focus")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "focus" version))
        (sha256
-        (base32 "0haa51i54bq416xv4v08wvdgvv584sdv8garqnsw54ahj6n8ynr5"))))
+        (base32 "1h092v2jv4hnhgca1ykfgqwyg1l8n9fc2xir1ixggyl62hvvjl4q"))))
     (properties `((upstream-name . "focus")))
     (build-system r-build-system)
     (arguments
@@ -29308,23 +29365,25 @@ model combination tools.")
 (define-public r-fable-intermittent
   (package
     (name "r-fable-intermittent")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fable.intermittent" version))
        (sha256
-        (base32 "1ybjcgng5mi5wp5s30akjlck3qvvb9s13i4djxbs6b1zwwafwdxl"))))
+        (base32 "18bh3svn9f5fbj4w4j7v479jqcxllv0wxjjmi01svixpisci1a3h"))))
     (properties `((upstream-name . "fable.intermittent")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tsibble
+                             r-tibble
                              r-rlang
                              r-rcpparmadillo
                              r-rcpp
                              r-nloptr
+                             r-generics
                              r-fabletools
                              r-distributional))
     (native-inputs (list r-knitr))

@@ -556,6 +556,36 @@ Small (2020) <http://pages.cs.wisc.edu/~hyunseung/> for details.")
     (license (list license:gpl2
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-ivgls
+  (package
+    (name "r-ivgls")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ivgls" version))
+       (sha256
+        (base32 "1krvp7ylc97f6lkpr8c9mj2dz54bdjy1sv5njzsnf01jhha2gvv2"))))
+    (properties `((upstream-name . "ivgls")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mass r-igraph r-glmnet))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/djghosh1123/ivgls")
+    (synopsis "Network-Aware IV Regression with Graph-Fused Lasso")
+    (description
+     "This package implements network-aware instrumental variable regression for
+causal node discovery in high-dimensional settings with graph-structured
+exposures.  Provides IVGL and IVGL-S estimators combining graph-Laplacian
+penalization with IV-based identification, including correction for invalid
+instruments via a @code{sisVIVE-style} update.  Methods are described in Pal and
+Ghosh (2026) <doi:10.48550/@code{arXiv.2604.24969>}.  The glmgraph package,
+required for the main estimators, is available at the additional repository
+<https://djghosh1123.r-universe.dev>.")
+    (license license:expat)))
+
 (define-public r-ivgets
   (package
     (name "r-ivgets")
@@ -3587,13 +3617,13 @@ It also contains methods for processing assay data.")
 (define-public r-isard
   (package
     (name "r-isard")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "isard" version))
        (sha256
-        (base32 "1fclf4sbbww1d3ybadi6pb5d38ngqrcszb5q25nx81m4408yqsm5"))))
+        (base32 "0523s0s98grh3da9s51bqiwqbar4bbps1pysfradxkwxd3bva9wa"))))
     (properties `((upstream-name . "isard")))
     (build-system r-build-system)
     (arguments
@@ -8258,19 +8288,20 @@ of values in unobserved locations.")
 (define-public r-interplot
   (package
     (name "r-interplot")
-    (version "0.2.3")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "interplot" version))
        (sha256
-        (base32 "1qs0ni16rbjilkahn15yn9sil3ba4n935bxpdbpwlsjina504jqj"))))
+        (base32 "0ch2lxjgxrj234997pc90yb97lrslj5pkdsq1mcldjjzl9yzdjzh"))))
     (properties `((upstream-name . "interplot")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-purrr
+                             r-lme4
                              r-interactiontest
                              r-ggplot2
                              r-dplyr
@@ -13067,6 +13098,39 @@ heterozygosity-fitness correlations (HFCs) based on microsatellite and SNP
 markers.")
     (license license:gpl2)))
 
+(define-public r-inatpick
+  (package
+    (name "r-inatpick")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "inatpick" version))
+       (sha256
+        (base32 "1l1dyh5qsikl44skvh08b2qw5vfiqfs3k5a7s49bfkwaq6h8j122"))))
+    (properties `((upstream-name . "inatpick")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-rlang
+                             r-purrr
+                             r-jsonlite
+                             r-httr
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/andresarb/inatpick")
+    (synopsis "Download Photos and Metadata from 'iNaturalist'")
+    (description
+     "This package provides a lightweight interface to the @code{iNaturalist} API
+(<https://www.inaturalist.org/pages/api+reference>) for downloading observation
+photos and exporting metadata to CSV. Supports filtering by taxon, place, user,
+and annotation.  Note that downloaded photos retain their original licenses as
+set by @code{iNaturalist} observers; users are responsible for respecting these
+licenses.")
+    (license license:expat)))
+
 (define-public r-inaparc
   (package
     (name "r-inaparc")
@@ -14089,13 +14153,13 @@ methodology derived from Tiruviluamala, N., Port, A., and Lewis, E. (2022)
 (define-public r-impectr
   (package
     (name "r-impectr")
-    (version "2.5.5")
+    (version "2.5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "impectR" version))
        (sha256
-        (base32 "17sn53jhl568vxgglfl6ibri3a1j10r3civd2wabpnd1kqrqv02d"))))
+        (base32 "0bgpvwvgmjv8fvpxq68p4rsxls8mk5332pzkqsh7aiv7cdzyknzq"))))
     (properties `((upstream-name . "impectR")))
     (build-system r-build-system)
     (arguments
@@ -14292,13 +14356,13 @@ importance and impact of the items.")
 (define-public r-imp4p
   (package
     (name "r-imp4p")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "imp4p" version))
        (sha256
-        (base32 "1ld8bjjrlij9m7xns7izibag9mndrfh21xgq1w7g3bh5ag9p9fs0"))))
+        (base32 "0aqxdyzgcrivbip9qggxg6hsw7xiq7zhb9vqfkxg1hjj49hgp9c0"))))
     (properties `((upstream-name . "imp4p")))
     (build-system r-build-system)
     (arguments
@@ -14307,8 +14371,8 @@ importance and impact of the items.")
     (propagated-inputs (list r-truncnorm
                              r-rcpp
                              r-norm
+                             r-missranger
                              r-missmda
-                             r-missforest
                              r-iso))
     (home-page "https://cran.r-project.org/package=imp4p")
     (synopsis "Imputation for Proteomics")
@@ -16762,13 +16826,13 @@ recording and analysing neuronal data.  See
 (define-public r-igor
   (package
     (name "r-igor")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "igoR" version))
        (sha256
-        (base32 "17q8y2x70vm8i4wfiq8ycp5dpzpblqrrynwbijwkifj50sw3kffy"))))
+        (base32 "1ds8nlmb6q8gi9hahwa3nmzh1dawyly8fy8ydpfzjwi85whya9q8"))))
     (properties `((upstream-name . "igoR")))
     (build-system r-build-system)
     (arguments
@@ -16776,11 +16840,13 @@ recording and analysing neuronal data.  See
       #:tests? #f))
     (native-inputs (list r-quarto))
     (home-page "https://dieghernan.github.io/igoR/")
-    (synopsis "Access the Intergovernmental Organizations Database")
+    (synopsis "Access the Intergovernmental Organizations ('IGO') Database")
     (description
-     "This package provides tools for searching, extracting and recoding information
-from the Intergovernmental Organizations ('IGO') Database (v3), distributed by
-the Correlates of War Project <https://correlatesofwar.org/>.  See also
+     "This package provides tools for searching, extracting and recoding the
+Intergovernmental Organizations ('IGO') Database (version 3), distributed by the
+Correlates of War Project <https://correlatesofwar.org/>.  Includes IGO'-year
+and country-year membership data, state system data and functions for deriving
+dyad-year joint membership results.  For a description of the data, see
 Pevehouse, J. C. et al. (2020) <doi:10.1177/0022343319881175>.")
     (license license:gpl3+)))
 

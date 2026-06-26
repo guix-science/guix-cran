@@ -27,7 +27,6 @@
   #:use-module (gnu packages tcl)
   #:use-module (gnu packages python)
   #:use-module (gnu packages statistics)
-  #:use-module (gnu packages prolog)
   #:use-module (gnu packages tbb)
   #:use-module (gnu packages package-management)
   #:use-module (gnu packages machine-learning)
@@ -8197,6 +8196,48 @@ analysis, wavelet transforms, particle motion, hodograms.  Includes general
 time-series tools, plotting, filtering, interactive display.")
     (license license:gpl2+)))
 
+(define-public r-rsei
+  (package
+    (name "r-rsei")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rsei" version))
+       (sha256
+        (base32 "17cm536i4miyx0jbcgmywgvg6m6hsy6gpd00wlzw2avzn2by1fxm"))))
+    (properties `((upstream-name . "rsei")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-tidyr
+                             r-tibble
+                             r-purrr
+                             r-magrittr
+                             r-keyring
+                             r-jsonlite
+                             r-httr2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/StrategicProjects/rsei")
+    (synopsis
+     "Client for the 'SEI' Electronic Information System Web Services")
+    (description
+     "Toolkit to interact with the SOAP web services of the SEI (Sistema Eletronico de
+Informacoes), the electronic system for document and process management widely
+used by Brazilian public administration bodies.  Provides functions to build the
+SOAP envelopes, perform the requests, handle SOAP faults, and parse the XML
+responses into data frames.  Covers process and document queries, listing
+services, write operations (creating processes and documents, sending and
+signing off processes, blocks, deadlines and markers) and the permission
+services of the companion SIP system.  Note that access to the web services is
+restricted by the server to previously authorized network addresses.  For more
+information about the SEI system and its web services see
+<https://www.gov.br/gestao/pt-br/assuntos/processo-eletronico-nacional>.")
+    (license license:gpl3)))
+
 (define-public r-rseedcalc
   (package
     (name "r-rseedcalc")
@@ -12766,6 +12807,32 @@ using qualitative and/or quantitative trait data according to Hamon and Noirot
 <https://www.documentation.ird.fr/hor/fdi:010031886>.")
     (license license:gpl2+)))
 
+(define-public r-rpcop
+  (package
+    (name "r-rpcop")
+    (version "1.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Rpcop" version))
+       (sha256
+        (base32 "02wwc59ak6crdazra4rmn2bi57agwafg5d8ijshb4kra1vi6xr6m"))))
+    (properties `((upstream-name . "Rpcop")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp r-princurve))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/kmfrick/Rpcop")
+    (synopsis "Principal Curves of Oriented Points")
+    (description
+     "Principal curves generalize the notion of a first principal component to the
+case in which it is a nonlinear smooth curve.  This package provides a function
+pcop(X) to compute principal curves with the algorithm defined in Delicado
+(2001) <doi:10.1006/jmva.2000.1917> from a data matrix X.")
+    (license license:gpl2+)))
+
 (define-public r-rpca
   (package
     (name "r-rpca")
@@ -15113,20 +15180,19 @@ outcomes with ties are supported.")
 (define-public r-rolog
   (package
     (name "r-rolog")
-    (version "0.9.27")
+    (version "0.9.28")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rolog" version))
        (sha256
-        (base32 "1ckkqh6dm3d1p8dgm0adyd2plgwi06fsh2id1yfsz5b3ld4zibkq"))))
+        (base32 "1s2ic58rdz8afqw17ixg4fmkcfgmnifiw8cj8aqxw9vcc9pnfsqn"))))
     (properties `((upstream-name . "rolog")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (inputs (list swi-prolog))
-    (propagated-inputs (list r-rcpp))
+    (propagated-inputs (list r-rswipl r-rcpp))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/mgondan/rolog")
     (synopsis "Query 'SWI'-'Prolog' from R")
@@ -16034,13 +16100,13 @@ transparently; the writer serialises an ROI OP object back to CBF plain-text.")
 (define-public r-rogue
   (package
     (name "r-rogue")
-    (version "2.2.0")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rogue" version))
        (sha256
-        (base32 "1k7pdkl9mg6408z8mdwkn97ygyxrq43bnf3yi50b3sq5cranb1z8"))))
+        (base32 "0y3x3m81gvy0jc1lbslm3mcj4apyf4461shqdwx1yn6kxn7dwc25"))))
     (properties `((upstream-name . "Rogue")))
     (build-system r-build-system)
     (arguments
@@ -16048,7 +16114,6 @@ transparently; the writer serialises an ROI OP object back to CBF plain-text.")
       #:tests? #f))
     (propagated-inputs (list r-treetools
                              r-treedist
-                             r-rfast
                              r-rdpack
                              r-matrixstats
                              r-fastmatch
@@ -21996,6 +22061,38 @@ optimization, as well as continuous semidefinite optimization.  Rmosek and the
 R-language are open-source projects.  MOSEK is a proprietary product, but
 unrestricted trial and academic licenses are available.")
     (license license:lgpl2.1+)))
+
+(define-public r-rmosaic
+  (package
+    (name "r-rmosaic")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rMosaic" version))
+       (sha256
+        (base32 "1i8hns8add1587m0h155wpmyala5pshgxaqlv0dj9x9yr0l66kl8"))))
+    (properties `((upstream-name . "rMosaic")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml
+                             r-shiny
+                             r-jsonlite
+                             r-htmlwidgets
+                             r-duckdb
+                             r-dbi))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/TiRizvanov/rMosaic")
+    (synopsis "R Bindings to the 'Mosaic' Visualization Framework")
+    (description
+     "This package provides R bindings for Mosaic', a declarative grammar for linked,
+data-driven visualizations backed by @code{DuckDB}'.  The package supplies
+htmlwidgets and shiny helpers for rendering Mosaic specifications from R,
+including optional browser-side @code{DuckDB-WASM} execution and selection
+export helpers for exploratory workflows.")
+    (license license:expat)))
 
 (define-public r-rmopi
   (package
@@ -27978,6 +28075,35 @@ GNUmakefile automatically).  Doxygen'-generated documentation of the C++ classes
 is available at the RInside website as well.")
     (license license:gpl2+)))
 
+(define-public r-ringseg
+  (package
+    (name "r-ringseg")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ringSeg" version))
+       (sha256
+        (base32 "0plwb860qi6d0548jciqfg0v0yppnjjl3vlar4f62dwfy97y0kqj"))))
+    (properties `((upstream-name . "ringSeg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=ringSeg")
+    (synopsis
+     "Asymptotic Distribution-Free Change-Point Detection via a New Ranking Scheme (RING)")
+    (description
+     "Rank-based, asymptotic distribution-free change-point detection for modern
+(high-dimensional, non-Euclidean) data, based on the graph-induced ranking
+scheme of Zhou and Chen (2025) <doi:10.1109/TIT.2025.3575858>.  Given a rank
+matrix built from a pairwise similarity, the method scans for a single
+change-point or a changed interval using three statistics (weighted WR',
+max-type MR', and generalized TR') and returns analytic distribution-free
+p-value approximations (with an optional skewness correction) as well as
+optional permutation p-values.")
+    (license license:gpl2+)))
+
 (define-public r-ringostat
   (package
     (name "r-ringostat")
@@ -30489,13 +30615,13 @@ still permitting the use of GRASS 7'.")
 (define-public r-rgraphspace
   (package
     (name "r-rgraphspace")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RGraphSpace" version))
        (sha256
-        (base32 "0wmh0hzrlir4pzln54xqhwa0hyi8ajzjsh9yzvzjgwgbxfyc4hgq"))))
+        (base32 "09mjwvacfiff07g1smaa9slsrprk6cdih59f694cnclq84w35fxq"))))
     (properties `((upstream-name . "RGraphSpace")))
     (build-system r-build-system)
     (arguments
@@ -32351,13 +32477,13 @@ the division operator \"/\".")
 (define-public r-rformat
   (package
     (name "r-rformat")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rformat" version))
        (sha256
-        (base32 "0pi2p6bazv672pnawhc6m5ml77yzn43y960gvhqkssa2fmrwj7cv"))))
+        (base32 "1m5lgfgmnsvandp9l37mrks2s47xglfywifrx4735cda9mbkll4m"))))
     (properties `((upstream-name . "rformat")))
     (build-system r-build-system)
     (arguments
@@ -41110,13 +41236,13 @@ Some of the functions are applicable to image data.")
 (define-public r-refugees
   (package
     (name "r-refugees")
-    (version "2025.12.0")
+    (version "2025.12.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "refugees" version))
        (sha256
-        (base32 "0hvnyx16d3hizhhpabpq8msr2sb87krfwj91fkblq141g6fw4nd0"))))
+        (base32 "18xpmdjbrlbn2i8idj0gjzbs0m2imzvg9a4ksqpnw5zljrpqdhdm"))))
     (properties `((upstream-name . "refugees")))
     (build-system r-build-system)
     (arguments
@@ -44634,13 +44760,13 @@ the Bank for International Settlements (BIS).")
 (define-public r-readyomics
   (package
     (name "r-readyomics")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "readyomics" version))
        (sha256
-        (base32 "18bm5n1w0wqrl554zlbfmw547ld3gs0yf68ggi1y2c9lz8zmjabg"))))
+        (base32 "0qnjb9fqk1pyqq852anpmk2rb9palxlmk4mnd5p7yh26lmfhzjdj"))))
     (properties `((upstream-name . "readyomics")))
     (build-system r-build-system)
     (arguments
@@ -45283,19 +45409,24 @@ formats: akterm, dmna, Scintec Format-1, and Campbell Scientific TOA5.")
 (define-public r-readmdtable
   (package
     (name "r-readmdtable")
-    (version "0.3.3")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "readMDTable" version))
        (sha256
-        (base32 "18pfv4ppc4jfcim6c7nf6im478qpb83k6kxyqzsbrf3324x77srk"))))
+        (base32 "1ba1npxfiii9gvdx1zr68wn41akkd9p9va0cm8f1m2rxpl5kcsh9"))))
     (properties `((upstream-name . "readMDTable")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr r-readr r-purrr r-httr2 r-cli))
+    (propagated-inputs (list r-stringr
+                             r-readr
+                             r-purrr
+                             r-lifecycle
+                             r-httr2
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jrdnbradford/readMDTable")
     (synopsis "Read Markdown Tables into Tibbles")
@@ -47319,6 +47450,37 @@ dice is non-transitive with given probability.")
 (https://www.guardian.com/) and their API, this package allows users to search
 for Guardian articles and retrieve both the content and metadata.")
     (license license:expat)))
+
+(define-public r-rdiagnosislist
+  (package
+    (name "r-rdiagnosislist")
+    (version "1.5.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Rdiagnosislist" version))
+       (sha256
+        (base32 "0c348jnjw2v8h4k81x1im79n9xdq1dndr4fmdii277pv0daabx59"))))
+    (properties `((upstream-name . "Rdiagnosislist")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-readxl r-data-table r-bit64))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/anoopshah/Rdiagnosislist")
+    (synopsis "Manipulate SNOMED CT Diagnosis Lists")
+    (description
+     "This package provides functions and methods for manipulating SNOMED CT concepts.
+ The package contains functions for loading the SNOMED CT release into a
+convenient R environment, selecting SNOMED CT concepts using regular
+expressions, and navigating the SNOMED CT ontology.  It provides the
+SNOMEDconcept S3 class for a vector of SNOMED CT concepts (stored as 64-bit
+integers) and the SNOMEDcodelist S3 class for a table of concepts IDs with
+descriptions.  The package can be used to construct sets of SNOMED CT concepts
+for research (<doi:10.1093/jamia/ocac158>).  For more information about SNOMED
+CT visit <https://www.snomed.org/>.")
+    (license license:gpl3)))
 
 (define-public r-rdi
   (package
@@ -50212,6 +50374,34 @@ geography: English towns, rivers, oceans; humans: authors, US presidents,
 occupations; science: elements, planets; words: adjectives, verbs, proverbs, US
 president quotes.")
     (license license:cc0)))
+
+(define-public r-rcoros
+  (package
+    (name "r-rcoros")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rCoros" version))
+       (sha256
+        (base32 "1xfz7d495yd623fv7fjy2mp6rfvgmqq3jf8mh5ha4qrwplzhpdbx"))))
+    (properties `((upstream-name . "rCoros")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-purrr r-httr2 r-dplyr r-digest))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mattyoreilly/rCoros")
+    (synopsis "Access COROS Training Hub Fitness Data")
+    (description
+     "This package provides a tidy interface to the COROS Training Hub API
+(<https://coros.com/traininghub>), the web platform that accompanies COROS GPS
+sports watches.  Retrieves activities, daily wellness metrics (heart rate
+variability, resting heart rate, VO2 max and training load), workout programmes
+and training calendars.  All results are returned as tibbles, ready for analysis
+with dplyr and ggplot2'.  Both the US and EU regional endpoints are supported.")
+    (license license:expat)))
 
 (define-public r-rcoregage
   (package
@@ -55969,6 +56159,37 @@ summarize posterior distributions.")
     (synopsis "Rate Limiting for R")
     (description
      "Allows to limit the rate at which one or more functions can be called.")
+    (license license:expat)))
+
+(define-public r-ratecalib
+  (package
+    (name "r-ratecalib")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ratecalib" version))
+       (sha256
+        (base32 "000g97rl7z8n247c46dcp0790z3k7dw9bwzdj1cyxz1mnh2ls0nx"))))
+    (properties `((upstream-name . "ratecalib")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-osqp r-matrix))
+    (home-page "https://github.com/makunxiang-cmd/ratecalib")
+    (synopsis "Calibration Weighting to Multiple Subgroup Pass-Rate Targets")
+    (description
+     "Calibration weighting for binary-outcome pass rates against multiple overlapping
+subgroup targets.  Adjusts initial positive weights so that the overall pass
+rate and subgroup pass rates approach (soft mode) or exactly match (exact mode)
+given targets, while preserving the initial weight structure and population
+margins.  Provides a one-step interface, pre-solve data checks, target-table
+construction, effective sample size and design-effect diagnostics, and example
+data.  The solver works on a bounded convex quadratic program over
+demographic-cell-by-outcome aggregates for efficiency on large samples.  Methods
+follow the calibration approach of Deville and Saerndal (1992)
+<doi:10.1080/01621459.1992.10475217>.")
     (license license:expat)))
 
 (define-public r-ratdat

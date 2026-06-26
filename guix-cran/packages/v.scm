@@ -4703,13 +4703,13 @@ different ways (i.e., model structures).")
 (define-public r-vigicaen
   (package
     (name "r-vigicaen")
-    (version "1.0.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vigicaen" version))
        (sha256
-        (base32 "0v9rhi4q8vrh4kyich1w6r52xmsnz40mwp6wrrazfgyfw8p65vcj"))))
+        (base32 "0ml768s7yn31mr4212lbf3awdpkxfjcw7p51v7lqr8m2i8fv2ka8"))))
     (properties `((upstream-name . "vigicaen")))
     (build-system r-build-system)
     (arguments
@@ -5711,13 +5711,13 @@ Factorization algorithms - Random generators of diferent types of integers.")
 (define-public r-vertexwiser
   (package
     (name "r-vertexwiser")
-    (version "1.5.1")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VertexWiseR" version))
        (sha256
-        (base32 "0zd6ypbh1ii0hq8lb0772cfzz9cgqb0r43kr2qjz8kk1v4qg7jkc"))))
+        (base32 "0npdikifd9hp68bxs2zpyshrnd08wwl3a099hpydnmplapc5iaxg"))))
     (properties `((upstream-name . "VertexWiseR")))
     (build-system r-build-system)
     (arguments

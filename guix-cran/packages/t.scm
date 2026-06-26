@@ -1042,6 +1042,45 @@ standardization, and loadings to new datasets but does not estimate spline
 models or principal components itself.")
     (license license:expat)))
 
+(define-public r-twocutoff
+  (package
+    (name "r-twocutoff")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TwoCutoff" version))
+       (sha256
+        (base32 "14abvl7h84d4mxqh86861rk88rv9v4jyj2g945dq7xvh231zfyps"))))
+    (properties `((upstream-name . "TwoCutoff")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xgboost
+                             r-proc
+                             r-patchwork
+                             r-mixtools
+                             r-gridextra
+                             r-ggplot2
+                             r-dplyr
+                             r-caret))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=TwoCutoff")
+    (synopsis
+     "Deriving Clinically Interpretable Cutoffs for Disease Biomarkers")
+    (description
+     "This package provides a reproducible pipeline for deriving two clinically
+meaningful cutoffs for disease biomarkers using a unified two-stage framework.
+The package integrates finite mixture modeling with risk prediction using
+biomarker plus clinical features, followed by decision curve analysis to
+evaluate clinical utility.  Outputs include biomarker density plots, risk
+calibration curves, decision curves, and summary tables of diagnostic
+performance.  Designed for researchers in bio-statistics, neurology, and data
+science, this package emphasizes reproducibility, transparency, and clear
+clinical relevance.")
+    (license license:expat)))
+
 (define-public r-twocoprimary
   (package
     (name "r-twocoprimary")
@@ -6839,13 +6878,13 @@ release files.  For more information on the API, see
 (define-public r-trtswitch
   (package
     (name "r-trtswitch")
-    (version "0.2.6")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "trtswitch" version))
        (sha256
-        (base32 "0z7rgg8j6ms9l48pr0pb805ni3f670yrca4zvac0z67cpnsg3szl"))))
+        (base32 "0mx2klxblbc48h9g6figf6cg9szmj98zwvj79byvm97jc8lr3syl"))))
     (properties `((upstream-name . "trtswitch")))
     (build-system r-build-system)
     (arguments
@@ -15865,13 +15904,13 @@ package in Chinese.")
 (define-public r-tmcalculator
   (package
     (name "r-tmcalculator")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TmCalculator" version))
        (sha256
-        (base32 "1qwbz5qr6j704d8bhny05b7j86yi87g8jkx650i7qv76r7i68w4n"))))
+        (base32 "1yzmswixh694584hbh67h1wx4whdf78sl10bh601aqfyc7aqyjlk"))))
     (properties `((upstream-name . "TmCalculator")))
     (build-system r-build-system)
     (arguments
@@ -17866,13 +17905,13 @@ web API and show it in table or figure format.")
 (define-public r-tinyrox
   (package
     (name "r-tinyrox")
-    (version "0.3.3")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinyrox" version))
        (sha256
-        (base32 "08f1i2wl0zqf70vig10xc7a6dhzax12cb28qyd0nww1gmgzdpla8"))))
+        (base32 "0873lynrjsp1ccbs5nw5cvmd1qkdwyybmyh65xpjfh88mwbp4a8r"))))
     (properties `((upstream-name . "tinyrox")))
     (build-system r-build-system)
     (arguments
@@ -17912,13 +17951,13 @@ legends, facets, themes, and various other enhancements.")
 (define-public r-tinypkgr
   (package
     (name "r-tinypkgr")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinypkgr" version))
        (sha256
-        (base32 "11gbgxxwzk72nvgq57bg0avg96rvdcbyyypwdhr6la88zc0mf57k"))))
+        (base32 "0xj4gbfk07gpsic18x027wsyhwdgdnjvmi55q4bcxswmaqhv6pnz"))))
     (properties `((upstream-name . "tinypkgr")))
     (build-system r-build-system)
     (arguments
@@ -17940,19 +17979,19 @@ Policy <https://cran.r-project.org/web/packages/policies.html>.")
 (define-public r-tinyoauth
   (package
     (name "r-tinyoauth")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinyoauth" version))
        (sha256
-        (base32 "10hqnsh0amr0zpkb0f4vv7jhpw15nw6s4bslvz2csnsghasqz3xv"))))
+        (base32 "1basjpk748cw4ffp9x27k6mb75k4xkvr8sr2g9l19976pj354fc6"))))
     (properties `((upstream-name . "tinyoauth")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-jsonlite r-curl))
+    (propagated-inputs (list r-jsonlite r-digest r-curl))
     (home-page "https://github.com/cornball-ai/tinyoauth")
     (synopsis "Minimal OAuth 2.0 Client")
     (description
@@ -17960,9 +17999,7 @@ Policy <https://cran.r-project.org/web/packages/policies.html>.")
 <https://www.rfc-editor.org/rfc/rfc6749> client supporting the
 client-credentials and authorization-code grants with token refresh.  Built on
 curl and jsonlite', with base R's socket server for the redirect listener,
-avoiding heavier HTTP stacks.  Includes a helper for the @code{OpenAI}
-<https://openai.com/> Codex device login, a similar but non-standard variant of
-the OAuth 2.0 device authorization grant.")
+avoiding heavier HTTP stacks.")
     (license license:expat)))
 
 (define-public r-tinylens
@@ -22199,13 +22236,13 @@ classification algorithms on grouped data.")
 (define-public r-tidyfinance
   (package
     (name "r-tidyfinance")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyfinance" version))
        (sha256
-        (base32 "0yy24qnq3ss2x2xvi8ik4a1i2yd57q3y9xhmim9nyldxsprw9l93"))))
+        (base32 "00x3rgvwwqwzpr1gpygyv3d7wfrdbf14q5kq60lc86ghanbd65r8"))))
     (properties `((upstream-name . "tidyfinance")))
     (build-system r-build-system)
     (arguments
@@ -22227,7 +22264,7 @@ classification algorithms on grouped data.")
                              r-dbplyr
                              r-dbi
                              r-cli))
-    (home-page "https://www.tidy-finance.org/r/")
+    (home-page "https://r.tidy-finance.org/")
     (synopsis "Tidy Finance Helper Functions")
     (description
      "Helper functions for empirical research in financial economics, addressing a
@@ -29179,6 +29216,34 @@ of conducting machine learning and deep neural networks research, but the system
 is general enough to be applicable in a wide variety of other domains as well.")
     (license license:asl2.0)))
 
+(define-public r-tensorevd
+  (package
+    (name "r-tensorevd")
+    (version "0.1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tensorEVD" version))
+       (sha256
+        (base32 "0rqxrxp0ycp63awjhii26xv4kylbq6dkx2b93c7lzsjixiw9y9ja"))))
+    (properties `((upstream-name . "tensorEVD")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/MarcooLopez/tensorEVD")
+    (synopsis
+     "Fast Algorithm to Factorize High-Dimensional Tensor Product Matrices")
+    (description
+     "Here we provide tools for the computation and factorization of high-dimensional
+tensor products that are formed by smaller matrices.  The methods are based on
+properties of Kronecker products (Searle 1982, p.  265, ISBN-10: 0470009616).
+We evaluated this methodology by benchmark testing and illustrated its use in
+Gaussian Linear Models ('Lopez-Cruz et al., 2024')
+<doi:10.1093/g3journal/jkae001>.")
+    (license license:gpl3)))
+
 (define-public r-tensorclustering
   (package
     (name "r-tensorclustering")
@@ -31613,6 +31678,40 @@ social sciences.  The data thinning methodology is detailed in Dharamshi et al.
 Biotechnologies, and @code{ImMunoGeneTics} (IMGT) nomenclatures.")
     (license license:expat)))
 
+(define-public r-tcprepdesigns
+  (package
+    (name "r-tcprepdesigns")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TCpRepDesigns" version))
+       (sha256
+        (base32 "1vjnvn7bn3bq5sqw3gggjmkmyl6nqb24g2vwmcrzqb4c0fwmwkiv"))))
+    (properties `((upstream-name . "TCpRepDesigns")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mass))
+    (home-page "https://cran.r-project.org/package=TCpRepDesigns")
+    (synopsis
+     "Partially Replicated Test-Control Designs for Early Generation Varietal Trials")
+    (description
+     "This package provides functions for generating partially replicated (p-rep)
+test-control designs for early generation varietal trials conducted across
+multiple environments.  The package implements three construction methods for
+obtaining efficient p-rep test-control designs with one or more control
+treatments.  The package extends the partially replicated design framework of
+Vinaykumar et al. (2026) <doi:10.1007/s12355-025-01684-1> to accommodate
+test-control comparisons in breeding trials.  Functions are also provided for
+generating randomized and non-randomized layouts and for evaluating designs
+using average variance measures for test-versus-test and test-versus-control
+comparisons, together with canonical efficiency factors.  The proposed designs
+are useful for large-scale varietal evaluation trials where a large number of
+test lines are assessed under limited experimental resources.")
+    (license license:gpl3+)))
+
 (define-public r-tcplfit2
   (package
     (name "r-tcplfit2")
@@ -33620,6 +33719,35 @@ and total and component above-ground biomass.  It is also possible to calculate
 assortments from the taper curves.  Uncertainty information is provided for
 diameter, volume and component biomass estimation.")
     (license license:bsd-2)))
+
+(define-public r-tapernor
+  (package
+    (name "r-tapernor")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "taperNOR" version))
+       (sha256
+        (base32 "03vd7l25y450g7yr02ck2jhhy24728va05kbp2pbn9g8c5wpvyyj"))))
+    (properties `((upstream-name . "taperNOR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-taper))
+    (home-page "https://github.com/SmartForest-no/taperNOR")
+    (synopsis
+     "Taper, Volume and Bark Thickness Models for Spruce, Pine and Birch in Norway")
+    (description
+     "Stem taper, bark thickness, and volume models for the main Norwegian tree
+species (Norway spruce, Scots pine, and birch), based on Hansen et al. (2023)
+<doi:10.1080/02827581.2023.2243821> and the correction
+<doi:10.1080/02827581.2024.2358467>.  Provides functions to predict stem
+diameter along the bole, bark thickness, and stem volume by numerical
+integration of the taper curve, and to invert these relationships (e.g.
+estimating height and diameter at breast height from measured diameters).")
+    (license license:expat)))
 
 (define-public r-taper
   (package

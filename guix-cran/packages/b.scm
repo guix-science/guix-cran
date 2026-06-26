@@ -7768,13 +7768,13 @@ intervals.")
 (define-public r-bootur
   (package
     (name "r-bootur")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bootUR" version))
        (sha256
-        (base32 "19sjh9hwx9hcqyrjx5kc2id1ml1sfd6c37g412vzfgk931bm0lbs"))))
+        (base32 "0jja3vs35c3g9s2k1kqv6icb9990sp6yyll5sscfq5cbci84rfil"))))
     (properties `((upstream-name . "bootUR")))
     (build-system r-build-system)
     (arguments
@@ -11728,6 +11728,37 @@ p-values.  It provides both vectorized and congregated versions for flexible
 inference.  The methodology is described in Zhang, Liang, Maile, and Zhou (2025)
 <doi:10.48550/@code{arXiv.2508.17411>}.")
     (license license:gpl2+)))
+
+(define-public r-blockwise
+  (package
+    (name "r-blockwise")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "blockwise" version))
+       (sha256
+        (base32 "1ylkdb425yx6amlj7pp35v9bxgznyyvrpi0l6rqigvhgsq7y1va9"))))
+    (properties `((upstream-name . "blockwise")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr r-vim))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/KarAnalytics/blockwise")
+    (synopsis "Reduced Modeling for Tabular Data with Blockwise Missingness")
+    (description
+     "Supervised learning on tabular data with blockwise missing patterns, using the
+Blockwise Reduced Modeling (BRM) method of Srinivasan, Currim, and Ram (2025)
+<doi:10.1287/ijds.2022.9016>.  BRM partitions the training data into overlapping
+subsets based on per-row feature-missing patterns, fits one user-supplied
+learner per subset with minimal imputation, and at prediction time routes each
+test instance to the best-matching subset model.  The interface is
+learner-agnostic: any fit-and-predict pair can be plugged in, and convenience
+specifications are provided for linear models, tree models, random forests, and
+gradient boosting.")
+    (license license:gpl3)))
 
 (define-public r-blocktools
   (package
@@ -18723,6 +18754,37 @@ particular for the Sequence Kernel Association Test (SKAT) used in genomics
 for dense or sparse matrices.")
     (license license:gpl2)))
 
+(define-public r-bigpopa
+  (package
+    (name "r-bigpopa")
+    (version "1.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BIGpopA" version))
+       (sha256
+        (base32 "1jlmv6h27hznbmhv2mfifjrx1fndkbaccbk1lsv9fpb78kkmsp82"))))
+    (properties `((upstream-name . "BIGpopA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-quadprog r-janitor r-ggplot2 r-dplyr
+                             r-data-table))
+    (home-page "https://github.com/Breeding-Insight/BIGpopA")
+    (synopsis
+     "Pedigree Validation Genetic Composition of Diploids & Polyploids")
+    (description
+     "This package provides tools for pedigree quality control and genomic breed/line
+composition estimation in diploid and polyploid breeding populations.
+BI@code{GpopA} provides functions to check and correct common pedigree errors,
+assign parentage from SNP genotype data using Mendelian error rates, validate
+parent-offspring trios, and estimate genome-wide breed or line composition using
+quadratic programming.  Supports both diploid and polyploid species.  For more
+details about the included @code{breedTools} functions, see Funkhouser et al.
+(2017) <doi:10.2527/tas2016.0003>.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-bigplsr
   (package
     (name "r-bigplsr")
@@ -21615,6 +21677,37 @@ that performs Bayesian inference of sex chromosome karyotypes and sex-linked
 scaffolds from low-depth sequencing data.")
     (license license:gpl2)))
 
+(define-public r-bewrs
+  (package
+    (name "r-bewrs")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bewrs" version))
+       (sha256
+        (base32 "0m66s2x26shcw6i9skag2bxcpggd74fyrk274vg58044b0lc0ibz"))))
+    (properties `((upstream-name . "bewrs")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-proc r-ggplot2))
+    (home-page "https://github.com/zerish12/bewrs")
+    (synopsis
+     "Bayesian Early-Warning Risk Surveillance for Healthcare Performance Monitoring")
+    (description
+     "This package provides Bayesian early-warning surveillance methods for monitoring
+healthcare performance and patient safety outcomes.  The package draws on
+risk-adjusted monitoring frameworks developed by Steiner et al. (2000)
+<doi:10.1093/biostatistics/1.4.441>, Spiegelhalter et al. (2003)
+<doi:10.1002/sim.1546>, Cook et al. (2011) <doi:10.1136/bmjqs.2008.031831>, and
+Neuburger et al. (2017) <doi:10.1136/bmjqs-2016-005511>.  The package implements
+Bayesian predictive modelling, risk-adjusted monitoring, early-warning signal
+detection, and graphical tools for continuous quality improvement and healthcare
+performance assessment.")
+    (license license:gpl3)))
+
 (define-public r-bevimed
   (package
     (name "r-bevimed")
@@ -23675,6 +23768,45 @@ method has been published by Godard and van Eyll (2018)
 dose-response models.  Covariate adjustment and Bayesian model averaging is
 supported.  Functions are provided to easily obtain inference on the
 dose-response relationship and plot the dose-response curve.")
+    (license license:expat)))
+
+(define-public r-beautils
+  (package
+    (name "r-beautils")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "beautils" version))
+       (sha256
+        (base32 "06qgybj1pxmr29cig70sfgsw2hjcsf48qirj332rrszl098d32mi"))))
+    (properties `((upstream-name . "beautils")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-uuid
+                             r-tidyr
+                             r-rstudioapi
+                             r-rlang
+                             r-qrencoder
+                             r-purrr
+                             r-glue
+                             r-ggplot2
+                             r-fieldhub
+                             r-dplyr
+                             r-cli))
+    (home-page "https://cran.r-project.org/package=beautils")
+    (synopsis "Field Planning and Biostatistics Utilities")
+    (description
+     "This package provides a collection of utility functions for biostatistics,
+agricultural trial planning, and experimental design.  Key features include
+generating experimental designs (like Latin Square, Alpha-Lattice by Patterson
+and Williams (1976) <doi:10.2307/2335087>, and Factorial), fieldbook creation,
+layout sketching, QR code-based label generation, and descriptive statistical
+tools to easily handle most common descriptive statistics for quantitative
+variables as described by Field, A., Miles, J., & Field, Z. (2012,
+ISBN:978-1-4462-0045-2).")
     (license license:expat)))
 
 (define-public r-beautier
@@ -30255,13 +30387,13 @@ to use and research on Bayesian Neural Networks.")
 (define-public r-bayesfbhborrow
   (package
     (name "r-bayesfbhborrow")
-    (version "2.0.9")
+    (version "2.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesFBHborrow" version))
        (sha256
-        (base32 "0adqqni036iyryvjy46brrrhmwcpf131xp467vgsj6cg5w8cpywb"))))
+        (base32 "1y877q3mjdn65gci84xkbn0piwzmv54961gg8w0i12hqa6vp8djc"))))
     (properties `((upstream-name . "BayesFBHborrow")))
     (build-system r-build-system)
     (arguments
@@ -30460,13 +30592,13 @@ continuous variables using the mode-jumping algorithm of Man and Culpepper
 (define-public r-bayesdp
   (package
     (name "r-bayesdp")
-    (version "1.3.7")
+    (version "1.3.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesDP" version))
        (sha256
-        (base32 "06lsip1sm8qs21jd6glw317n3yyyhavi6z85q65grwd00afza9ni"))))
+        (base32 "07zsk7k4pbz4p8i5rbh94sqvkqdrpq685d3r6fr85y1vh0gp4c7q"))))
     (properties `((upstream-name . "bayesDP")))
     (build-system r-build-system)
     (arguments

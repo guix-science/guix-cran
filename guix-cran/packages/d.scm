@@ -3395,13 +3395,13 @@ design, i.e.  when each test is applied to each subject in the study.")
 (define-public r-dtcomb
   (package
     (name "r-dtcomb")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dtComb" version))
        (sha256
-        (base32 "15xv3ssqvj5070wq2gkwjcva7xa18advcfbnhr2ahm7qjc2v55jr"))))
+        (base32 "1322w1qha9b4r0l53sidgw0kvn9xibbvpmrhkzia8m9hnyhilsgd"))))
     (properties `((upstream-name . "dtComb")))
     (build-system r-build-system)
     (arguments
@@ -4234,6 +4234,39 @@ repository under a uniform model.  Opal is such a central repository.  It can
 import, process, validate, query, analyze, report, and export data.  Opal is the
 reference implementation of the @code{DataSHIELD} infrastructure.")
     (license license:lgpl2.1+)))
+
+(define-public r-dsmsearch
+  (package
+    (name "r-dsmsearch")
+    (version "1.2.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dsmSearch" version))
+       (sha256
+        (base32 "11r5vjmgfa8xy244k8klqbbh9j0hf62cs7xacjazj3m27w09j2dw"))))
+    (properties `((upstream-name . "dsmSearch")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra
+                             r-sp
+                             r-sf
+                             r-nominatimlite
+                             r-imager
+                             r-httr2
+                             r-dplyr))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://cran.r-project.org/package=dsmSearch")
+    (synopsis "DSM and LiDAR Downloader")
+    (description
+     "This package provides a collection of functions to search and download DSM
+(Digital Surface Model) and @code{LiDAR} (Light Detection and Ranging) data via
+APIs, including @code{OpenTopography}
+<https://portal.opentopography.org/apidocs/> and TNMAccess
+<https://apps.nationalmap.gov/tnmaccess/#/>.")
+    (license license:gpl3)))
 
 (define-public r-dsmolgenisarmadillo
   (package
@@ -5823,6 +5856,47 @@ comparisons, and ISPOR best practice guidelines.  Supports binary (risk
 difference, risk ratio, odds ratio) and time-to-event (hazard ratio) outcomes.")
     (license license:gpl3+)))
 
+(define-public r-drlate
+  (package
+    (name "r-drlate")
+    (version "0.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "drlate" version))
+       (sha256
+        (base32 "1y9kkl4013jy1pb85pdv4727hxlcf8pcwsbllk57b8bf6ikr28pb"))))
+    (properties `((upstream-name . "drlate")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-numderiv))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/kvenkita/drlate")
+    (synopsis "Doubly Robust Estimation of Local Average Treatment Effects")
+    (description
+     "Estimates the local average treatment effect (LATE) and the local average
+treatment effect on the treated (LATT) using observational data with a binary
+instrument, implementing the complete estimator suite of Sloczynski, Uysal, and
+Wooldridge: the doubly robust estimators of Sloczynski, Uysal, and Wooldridge
+(2022) <doi:10.48550/@code{arXiv.2208.01300>} -- inverse probability weighted
+regression adjustment (IPWRA), inverse probability weighting (IPW), augmented
+inverse probability weighting (AIPW), and regression adjustment (RA) -- and the
+Abadie-kappa weighting estimators of Sloczynski, Uysal, and Wooldridge (2025)
+<doi:10.1080/07350015.2024.2332763>.  Supports linear, logistic, probit,
+Poisson, and fractional (fractional-logit and fractional-probit) outcome and
+treatment models, and instrument propensity scores estimated by maximum
+likelihood, covariate balancing (CBPS), or inverse probability tilting (IPT).
+Standard errors are computed jointly for all estimation stages by stacking the
+moment conditions of every model into a single M-estimation system;
+weak-instrument-robust Fieller confidence sets, cluster-aware bootstrap
+inference, design diagnostics, and a doubly robust Hausman-type test of
+unconfoundedness are included.  Estimates and standard errors are validated
+against the authors Stata commands drlate (Statistical Software Components
+S459708) and kappalate (S459257).")
+    (license license:expat)))
+
 (define-public r-driver
   (package
     (name "r-driver")
@@ -7180,6 +7254,59 @@ statistic Gw for identifying trait-related genes. @code{dQTG-seq2} is feasible
 to identify extremely over-dominant and small-effect genes in F2.  Li P, Li G,
 Zhang YW, Zuo JF, Liu JY, Zhang YM (2022, <doi: 10.1016/j.xplc.2022.100319>).")
     (license license:gpl2+)))
+
+(define-public r-dqcheckrgui
+  (package
+    (name "r-dqcheckrgui")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dqcheckrGUI" version))
+       (sha256
+        (base32 "0mphazdva7nxx0qkvz2s2a6iv2wc28dncy1zp3ws9051z15svk4b"))))
+    (properties `((upstream-name . "dqcheckrGUI")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:modules '((guix build r-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (propagated-inputs (list r-yaml
+                             r-shinyvalidate
+                             r-shinyfiles
+                             r-shinyace
+                             r-shiny
+                             r-rsqlite
+                             r-readr
+                             r-reactable
+                             r-dt
+                             r-dqcheckr
+                             r-dbi
+                             r-callr
+                             r-bslib))
+    (native-inputs (list r-knitr esbuild))
+    (home-page "https://github.com/mickmioduszewski/dqcheckrGUI")
+    (synopsis "Point-and-Click GUI Client for 'dqcheckr'")
+    (description
+     "This package provides a graphical user interface for the dqcheckr package.
+Provides a point-and-click shiny application for configuring dataset quality
+checks, running them against recurring file deliveries, and browsing historical
+check results â without writing any R code.")
+    (license license:expat)))
 
 (define-public r-dqcheckr
   (package
@@ -8726,13 +8853,13 @@ Gruttola & Stephen W. Lagakos (1989) <doi:10.2307/2532030>] [Jianguo Sun (1995)
 (define-public r-dotwhisker
   (package
     (name "r-dotwhisker")
-    (version "0.8.4")
+    (version "0.8.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dotwhisker" version))
        (sha256
-        (base32 "0a6rk7bfm9jl7bfr36fr7vvb0f3n0xmdiqmbq2kp5ng5lp2cnjfj"))))
+        (base32 "0ah970lq995qjsg7wqdak23v253i5vh0487sxdv4zczh9b9ykqzx"))))
     (properties `((upstream-name . "dotwhisker")))
     (build-system r-build-system)
     (arguments
@@ -8747,7 +8874,6 @@ Gruttola & Stephen W. Lagakos (1989) <doi:10.2307/2532030>] [Jianguo Sun (1995)
                              r-marginaleffects
                              r-gtable
                              r-gridextra
-                             r-ggstance
                              r-ggplot2
                              r-dplyr))
     (native-inputs (list r-knitr))
@@ -23215,13 +23341,13 @@ similar set of tools for illustrating distributions, based on ggplot2'.")
 (define-public r-denstest
   (package
     (name "r-denstest")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "denstest" version))
        (sha256
-        (base32 "1qgi7fjhv1rrpy6yij03mrff87rsz99csyqzrx1zkviwx43iizgn"))))
+        (base32 "0vbs7x52zz9rqkn1b9lnhqy5ks4y5j5ak9gh3l505vlw9wz7i4vk"))))
     (properties `((upstream-name . "denstest")))
     (build-system r-build-system)
     (arguments
@@ -29192,30 +29318,6 @@ behavior of the DFA and DCCA in trend-stationary processes\"
 <@code{arXiv:1910.10589>}.")
     (license license:gpl3+)))
 
-(define-public r-dc3net
-  (package
-    (name "r-dc3net")
-    (version "1.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dc3net" version))
-       (sha256
-        (base32 "19ibsvbnq6y88vqvgkm31zrqwjhpml59d792bz0zkk50r1q5bnyr"))))
-    (properties `((upstream-name . "dc3net")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-igraph r-c3net))
-    (home-page "https://cran.r-project.org/package=dc3net")
-    (synopsis
-     "Inferring Condition-Specific Networks via Differential Network Inference")
-    (description
-     "This package performs differential network analysis to infer disease specific
-gene networks.")
-    (license license:gpl3+)))
-
 (define-public r-dbx
   (package
     (name "r-dbx")
@@ -32005,6 +32107,42 @@ Model (OMOP CDM) databases.  Executes data quality checks and provides an R
 shiny application to view the results.")
     (license license:asl2.0)))
 
+(define-public r-dataprofilerr
+  (package
+    (name "r-dataprofilerr")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dataProfilerR" version))
+       (sha256
+        (base32 "12x5fjsc8gby1cbc79iqchg90fk2rgshzxd7sdg2ark36q043a2l"))))
+    (properties `((upstream-name . "dataProfilerR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mqfarooqi1/dataProfilerR")
+    (synopsis "Automated Exploratory Data Analysis and Dataset Profiling")
+    (description
+     "Profiles a data frame with minimal input: column type inference, missing-value
+analysis, distributional summary statistics (including skewness and kurtosis),
+normality tests, outlier detection, correlation and categorical-association
+analysis, date-column profiling, grouped comparisons and an overall data-quality
+score, alongside a set of ggplot2 visualisations.  A single entry point,
+@code{profile_data()}, returns a structured S3 object holding metadata,
+statistics, diagnostics and plots, with @code{print()}, @code{summary()} and
+@code{plot()} methods, and @code{report()} renders the whole profile to a
+self-contained HTML file.  Statistical methods include the Shapiro-Wilk
+normality test as implemented by Royston (1995) <doi:10.2307/2986146> and the
+Anderson-Darling test following Stephens (1974)
+<doi:10.1080/01621459.1974.10480196>, with power comparisons of these tests in
+Yap and Sim (2011) <doi:10.1080/00949655.2010.520163>, and the categorical
+association measure of Cramer (1946, ISBN:9780691080048).")
+    (license license:expat)))
+
 (define-public r-datapreparation
   (package
     (name "r-datapreparation")
@@ -32963,6 +33101,38 @@ people with a background in the humanities and arts.  Examples and details can
 be viewed in this presentation from 2026:
 <https://formacao2026.netlify.app/assets/modulo_3/modulo3#/title-slide>.")
     (license license:expat)))
+
+(define-public r-datacraftr
+  (package
+    (name "r-datacraftr")
+    (version "0.3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DataCraftR" version))
+       (sha256
+        (base32 "1yh9kzr1s7s933y40qf0ik3f50a3v78lnqrrrnq3lzlf9sk2ivzb"))))
+    (properties `((upstream-name . "DataCraftR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shinywidgets
+                             r-shiny
+                             r-rstudioapi
+                             r-rcppcolors
+                             r-bslib
+                             r-bsicons))
+    (home-page "https://github.com/CarlosRivera1212/DataCraftR")
+    (synopsis "Create Datasets Interactively Using 'shiny'")
+    (description
+     "Set of shiny'-based RStudio add-ins for interactively creating datasets through
+graphical interfaces.  Users can adjust graphical elements to define data
+generation parameters, and the resulting datasets can be saved to temporary RDS
+files for further analysis or visualization.  Methods are described in: Chang et
+al. (2024) <https://CRAN.R-project.org/package=shiny>; Bostock et al. (2011)
+<doi:10.1109/TVCG.2011.185>.")
+    (license license:gpl3+)))
 
 (define-public r-datacompare
   (package

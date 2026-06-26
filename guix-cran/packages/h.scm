@@ -635,6 +635,31 @@ detection in morphological, resource or environmental dimensions.  More details
 can be found in: Brown et al. (2020) <doi:10.1111/2041-210X.13363> .")
     (license license:gpl3)))
 
+(define-public r-hypergraph-sizing
+  (package
+    (name "r-hypergraph-sizing")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hypergraph.sizing" version))
+       (sha256
+        (base32 "0nzm3dn28zc8hn79qvhjl7a029fz4gxxbd60sds3qpcl24gmpdmv"))))
+    (properties `((upstream-name . "hypergraph.sizing")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=hypergraph.sizing")
+    (synopsis
+     "Hypergraph-Based Sizing Function for Generalised Linear Step-Up Method")
+    (description
+     "Calculates a sizing function based on the number of independent sets in the
+rejected hypergraph (Organ, Kenney & Gu, 2026,
+<doi:10.48550/@code{arXiv.2606.20514>}).  The sizing function is designed to be
+used with the GLSUP package.")
+    (license license:gpl3)))
+
 (define-public r-hypergeo2
   (package
     (name "r-hypergeo2")
@@ -1189,16 +1214,47 @@ utilities.  Technical details are available (in French) in Renard (2016)
 <https://hal.inrae.fr/hal-02605318>.")
     (license license:gpl3)))
 
+(define-public r-hydroponicsk
+  (package
+    (name "r-hydroponicsk")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HydroPonicsK" version))
+       (sha256
+        (base32 "1l9grjzf9rjl8j01rpfhvdfg6dy5h6n58ayr0cnsl62vmdc12b99"))))
+    (properties `((upstream-name . "HydroPonicsK")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-pheatmap r-ggplot2))
+    (home-page "https://cran.r-project.org/package=HydroPonicsK")
+    (synopsis "Hydroponic Data Analysis Tools")
+    (description
+     "This package provides statistical and graphical tools for the analysis of
+hydroponic crop production data.  The package includes functions for descriptive
+statistical analysis, data visualization, correlation analysis, heatmap
+generation, and graphical summaries of plant growth and nutrient-related
+variables.  These tools support researchers, students, and practitioners in
+evaluating crop performance and environmental conditions in hydroponic
+cultivation systems.  The package utilizes standard statistical methods
+implemented in R for data exploration and visualization.  Methods are described
+in James et al. (2021, ISBN:9781071614172) and Wickham (2016,
+ISBN:9783319242750).")
+    (license license:gpl3)))
+
 (define-public r-hydropeak
   (package
     (name "r-hydropeak")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hydropeak" version))
        (sha256
-        (base32 "06x1qahavvhaqwdsjg65ixgc6migbm188v3w3vjng5xl2g2ybhqc"))))
+        (base32 "1adsvv040xfhjl2apyqa8145rvgjls46rxvvxhgdiiakwdzn6bli"))))
     (properties `((upstream-name . "hydropeak")))
     (build-system r-build-system)
     (arguments
@@ -1221,7 +1277,7 @@ snow and glacier melt.  This is a companion to the package hydroroute', which is
 used to detect and follow hydropower plant-specific hydropeaking waves at the
 sub-catchment scale and to describe how hydropeaking flow parameters change
 along the longitudinal flow path as proposed and validated in Greimel et al.
-(2022).")
+(2022) <doi:10.1002/rra.3978>.")
     (license license:gpl2)))
 
 (define-public r-hydromopso
@@ -1507,6 +1563,42 @@ based on: Yilmaz et al., (2008) <DOI:10.1029/2007WR006716>.")
      "Pfafstetter Hydrological Codes as cited in Verdin and Verdin (1999) <doi:
 10.1016/S0022-1694(99)00011-6> are decoded for upstream or downstream queries.")
     (license license:gpl3)))
+
+(define-public r-hydrochem
+  (package
+    (name "r-hydrochem")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hydrochem" version))
+       (sha256
+        (base32 "1i5ry30hzspz5f735qd2xh9a4md5wlkzyb5q17b9fw9a2d25g2jn"))))
+    (properties `((upstream-name . "hydrochem")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales r-ggplot2 r-data-table r-cowplot))
+    (home-page "https://cran.r-project.org/package=hydrochem")
+    (synopsis "Analysis and Visualization Tools for Hydrochemical Analysis")
+    (description
+     "This package provides a comprehensive suite of tools for processing, analyzing,
+and visualizing hydrochemical data in a reproducible and programmatic workflow.
+Implements unit conversion, censored data management, ionic balance calculation,
+water type classification, and a range of hydrochemical indices relevant to
+water quality assessment.  Offers advanced visualization functions for
+generating Piper (Piper, 1944, <doi:10.1029/TR025i006p00914>), Durov (Durov,
+1948), Stiff (Stiff, 1951, <doi:10.2118/951376-G>), Collins (Collins, 1923,
+<doi:10.1021/ie50160a030>), Schoeller (Schoeller, 1935), Gibbs (Gibbs, 1970,
+<doi:10.1126/science.170.3962.1088>), and ternary diagrams â the standard
+graphical tools used in hydrochemical interpretation.  Unlike existing solutions
+that rely on spreadsheets or proprietary graphical software, hydrochem is
+designed for scalability and reproducibility, lowering the technical barrier for
+hydrochemists working with datasets of varying complexity.  It integrates
+seamlessly into modern R workflows and supports rigorous water resource
+management and research.")
+    (license license:gpl2)))
 
 (define-public r-hydrocan
   (package
@@ -5900,6 +5992,41 @@ Provides point estimates, oracle bias, variance, and approximate variance for
 HOIF-adjusted estimators.  For methodology details, see Zhao et al. (2024)
 <doi:10.48550/@code{arXiv.2411.08491>} and Gu et al. (2025)
 <doi:10.48550/@code{arXiv.2512.20046>}.")
+    (license license:expat)))
+
+(define-public r-hoif
+  (package
+    (name "r-hoif")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HOIF" version))
+       (sha256
+        (base32 "1ld8zz8mifhgcmvfk4a1pijsvjd1mc4vx7i8i1hp23wr4vb0fvh0"))))
+    (properties `((upstream-name . "HOIF")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ustats r-smut r-corpcor))
+    (native-inputs (list r-knitr))
+    (home-page "https://cxy0714.github.io/HOIF/")
+    (synopsis
+     "Higher-Order Influence Function Estimators for the Average Treatment Effect")
+    (description
+     "This package implements Higher-Order Influence Function (HOIF) estimators of the
+Average Treatment Effect (ATE), following Robins et al. (2008)
+<doi:10.1214/193940307000000527>, Liu et al. (2017)
+<doi:10.48550/@code{arXiv.1705.07577>} and Liu and Li (2023)
+<doi:10.48550/@code{arXiv.2302.08097>}.  Estimators of any order are supported,
+with optional covariate basis transformations (B-splines, Fourier) and optional
+K-fold sample splitting (cross-fitting) for improved finite-sample performance.
+The core higher-order U-statistics are computed exactly via the ustats package,
+an R interface to the Python package u-stats'; the underlying algorithm and its
+computational complexity are analyzed in Chen, Zhang and Liu (2025)
+<doi:10.48550/@code{arXiv.2508.12627>}.  A pure R implementation (up to order 6)
+is also provided as a fallback that does not require Python'.")
     (license license:expat)))
 
 (define-public r-hodgestools

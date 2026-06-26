@@ -10804,6 +10804,46 @@ strings.")
 Modern Concepts, Methods and Applications, CRC Press.")
     (license license:gpl3)))
 
+(define-public r-strollur
+  (package
+    (name "r-strollur")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "strollur" version))
+       (sha256
+        (base32 "0dvwja8rn34pgnqqahz4h28kb1fqwxjxzlx1al3yarnydaq59fi1"))))
+    (properties `((upstream-name . "strollur")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml
+                             r-waldo
+                             r-tidyr
+                             r-readr
+                             r-rcpp
+                             r-rcereal
+                             r-rbiom
+                             r-r6
+                             r-r-utils
+                             r-microseq
+                             r-dplyr
+                             r-cli
+                             r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mothur/strollur")
+    (synopsis "Store and Transfer Amplicon Sequence Data")
+    (description
+     "Stores the data associated with your amplicon sequence analysis.  This includes
+nucleotide sequences, abundance, sample and treatment assignments, taxonomic
+classifications, asv, otu and phylotype clusters, metadata, trees and various
+reports.  It is designed to facilitate data analysis across multiple R packages
+with utility functions to read / write from mothur', qiime2', dada2', and
+phyloseq'.")
+    (license license:gpl3+)))
+
 (define-public r-stroke
   (package
     (name "r-stroke")
@@ -15849,13 +15889,13 @@ assessed employing STB-methodology.")
 (define-public r-statuser
   (package
     (name "r-statuser")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statuser" version))
        (sha256
-        (base32 "11qkmc7i5lx9ibhi7k1vqnmyamamx70d6bilkshdmgxjc2lqns1l"))))
+        (base32 "0xn1fn91w8vdx9ca20ls9fm4xv16y53x4zljyf4kq76glyn60j0n"))))
     (properties `((upstream-name . "statuser")))
     (build-system r-build-system)
     (arguments
@@ -41697,13 +41737,13 @@ et al. (2022)<https://pubmed.ncbi.nlm.nih.gov/35988701/>, Peres et al.
 (define-public r-slopes
   (package
     (name "r-slopes")
-    (version "1.0.2")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "slopes" version))
        (sha256
-        (base32 "1g0bbsqpywrva7dggd61rnxyvl52qvdgawc2rchkmypazph35jpr"))))
+        (base32 "0l1xjhqmpn94vayh5jln46a1d0dv4fy27ky199yj7a1sdjynwr8s"))))
     (properties `((upstream-name . "slopes")))
     (build-system r-build-system)
     (arguments
@@ -45426,13 +45466,13 @@ within each class.")
 (define-public r-simvitd
   (package
     (name "r-simvitd")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SimVitD" version))
        (sha256
-        (base32 "1wz3b73pnccqsbg8wssah4gmwv7ajmhhca313r07sppgqskmm68r"))))
+        (base32 "0qr3z40pfvp8pkzwnjz866c9g89d3zjdcask5xr1017vqqdvbp76"))))
     (properties `((upstream-name . "SimVitD")))
     (build-system r-build-system)
     (arguments
@@ -50572,6 +50612,36 @@ gene sets and annotate cells\" (2024) <doi:10.1093/nar/gkae307>.")
      "This package provides functions for making particle-size analysis.  Sieve tests
 are widely used to obtain particle-size distribution of powders or granular
 materials.")
+    (license license:gpl2+)))
+
+(define-public r-sieveseq
+  (package
+    (name "r-sieveseq")
+    (version "0.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SIEVEseq" version))
+       (sha256
+        (base32 "1qfm1ksff21cnmaja14h7w7bcznryndfdq6agdibvqqrfcnclr8d"))))
+    (properties `((upstream-name . "SIEVEseq")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sn r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Divo-Lee/SIEVEseq")
+    (synopsis
+     "Unified Differential Expression, Variability and Skewness Analysis for RNA-Seq Data")
+    (description
+     "This package provides a unified framework for the simultaneous testing of
+differential expression, variability, and skewness of genes using RNA-Seq data.
+The framework adopts a compositional data analysis approach for modelling
+RNA-Seq count data, applies the centered log-ratio transformation to obtain
+continuous variables, and uses the skew-normal distribution for statistical
+inference.  Methods are described in Li and Khang (@code{bioRxiv} preprint,
+2024, version 3) <doi:10.1101/2024.04.09.588804>.")
     (license license:gpl2+)))
 
 (define-public r-sieveph
@@ -56458,32 +56528,6 @@ variance parameters in a random effects meta-analysis model; survival
 extrapolation.  R Shiny apps for most of the methods are included.")
     (license (list license:gpl2 license:gpl3))))
 
-(define-public r-sheetreader
-  (package
-    (name "r-sheetreader")
-    (version "1.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SheetReader" version))
-       (sha256
-        (base32 "0b9cgyh4lls8m6xq5hl2pmhlk72yl7bhbc3ssm81d84rsshhyxvl"))))
-    (properties `((upstream-name . "SheetReader")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://github.com/fhenz/SheetReader-r")
-    (synopsis "Parse xlsx Files")
-    (description
-     "Uses C++ via the Rcpp package to parse modern Excel files ('.xlsx').  Memory
-usage is kept minimal by decompressing only parts of the file at a time, while
-employing multiple threads to achieve significant runtime reduction.  Uses
-<https://github.com/richgel999/miniz> and
-<https://github.com/lemire/fast_double_parser>.")
-    (license license:expat)))
-
 (define-public r-shazam
   (package
     (name "r-shazam")
@@ -61052,47 +61096,6 @@ giving a more realistic evaluation of your method.  The main functions are
 details on the implemented methods.")
     (license license:gpl3)))
 
-(define-public r-seqfeatr
-  (package
-    (name "r-seqfeatr")
-    (version "0.3.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SeqFeatR" version))
-       (sha256
-        (base32 "05szq2rhw58sfngcicgl87zifcxw8nqaif9xhvsfa2fdvfpv5d58"))))
-    (properties `((upstream-name . "SeqFeatR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-widgettools
-                             r-tcltk2
-                             r-scales
-                             r-r2jags
-                             r-qvalue
-                             r-plyr
-                             r-plotrix
-                             r-phangorn
-                             r-ggplot2
-                             r-coda
-                             r-calibrate
-                             r-biostrings
-                             r-ape))
-    (home-page "https://cran.r-project.org/package=SeqFeatR")
-    (synopsis "Tool to Associate FASTA Sequences and Features")
-    (description
-     "This package provides user friendly methods for the identification of sequence
-patterns that are statistically significantly associated with a property of the
-sequence.  For instance, @code{SeqFeatR} allows to identify viral immune escape
-mutations for hosts of given HLA types.  The underlying statistical method is
-Fisher's exact test, with appropriate corrections for multiple testing, or
-Bayes.  Patterns may be point mutations or n-tuple of mutations. @code{SeqFeatR}
-offers several ways to visualize the results of the statistical analyses, see
-Budeus (2016) <doi:10.1371/journal.pone.0146409>.")
-    (license license:gpl3+)))
-
 (define-public r-seqdesign
   (package
     (name "r-seqdesign")
@@ -61511,6 +61514,36 @@ derive time series of topical sentiment.")
 challenge that sentiment can be computed and pooled across texts and time in
 various ways.  See Ardia et al. (2021) <doi:10.18637/jss.v099.i02>.")
     (license license:gpl2+)))
+
+(define-public r-sentixr
+  (package
+    (name "r-sentixr")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sentixr" version))
+       (sha256
+        (base32 "16kdzz5ng35qb4n3x7gfqp98b4q8krwc7gs1v8myqmgviw768ny4"))))
+    (properties `((upstream-name . "sentixr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-udpipe r-tidyselect r-rlang r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/valeriobasile/sentixr")
+    (synopsis "Lexicons and Tools for Italian Sentiment Analysis")
+    (description
+     "Lexicons and tools to perform sentiment analysis on Italian texts.  Lexicons
+included: Sentix 3.0, MAL, @code{ElIta} VAD and basic emotions (Plutchik's wheel
+of emotions).  For more details about the lexicons, see Basile & Nissim (2013),
+\"Sentiment Analysis on Italian Tweets\", <https://aclanthology.org/W13-1614/>;
+Vassallo et al. (2019), \"The Tenuousness of Lemmatization in Lexicon-based
+Sentiment Analysis\", <https://aclanthology.org/2019.clicit-1.79/>; Di Palma
+(2024), \"ELIta: A New Italian Language Resource for Emotion Analysis\",
+<https://aclanthology.org/2024.clicit-1.36/>.")
+    (license license:gpl3+)))
 
 (define-public r-sentimentr
   (package
@@ -64548,6 +64581,36 @@ depletion.  Please contact the package maintainer with any publications making
 use of this package in an effort to maintain a repository of dietary selections
 studies.")
     (license license:gpl2+)))
+
+(define-public r-selecta
+  (package
+    (name "r-selecta")
+    (version "0.6.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "selecta" version))
+       (sha256
+        (base32 "0k4mp630ymwdw51mgqsdzaizbmyx3kfy94v0lksmf91fs7bkmw8f"))))
+    (properties `((upstream-name . "selecta")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://phmcc.codeberg.page/selecta")
+    (synopsis "Declarative EQUATOR-Style Flow Diagrams for Clinical Studies")
+    (description
+     "Build EQUATOR-style flowcharts for clinical studies by sequentially defining
+inclusion and exclusion criteria, study arms, and endpoints.  The pipe-friendly
+API supports CONSORT (randomized trials), STROBE (observational cohorts), STARD
+(diagnostic accuracy), PRISMA (systematic reviews), and MOOSE (observational
+meta-analysis) diagram layouts, as well as multi-source convergence,
+split-and-recombine, factorial, and hybrid topologies.  Diagrams are rendered
+via grid graphics in both data-driven (automatic counting) and manual-count
+modes, with optional @code{DiagrammeR'/'Graphviz} output.")
+    (license license:gpl3+)))
 
 (define-public r-select
   (package
@@ -79327,13 +79390,13 @@ implementation of the @code{MapCurve} method (Hargrove et al. (2006)
 (define-public r-saber
   (package
     (name "r-saber")
-    (version "0.7.1")
+    (version "0.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "saber" version))
        (sha256
-        (base32 "0l45r44x4xdfa32v957crmi572k47vihbyy87wvx9xg2m60bfd65"))))
+        (base32 "0jz7fxq3s304skbx210qm4a12fqqxr71s5xkfd99pg11kq5kx286"))))
     (properties `((upstream-name . "saber")))
     (build-system r-build-system)
     (arguments
