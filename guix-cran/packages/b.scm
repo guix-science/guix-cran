@@ -1597,13 +1597,13 @@ anywhere anytime.")
 (define-public r-buildmer
   (package
     (name "r-buildmer")
-    (version "2.12")
+    (version "2.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "buildmer" version))
        (sha256
-        (base32 "02cd4immbw9s4kvvrn57sz5qm7pw0b3xzk5xzl9finv6qjihiaj3"))))
+        (base32 "0hqqp8rqxqs9gm6l736gbhz2rn7p6va7fvnzxv3fzl6i3prhdkl4"))))
     (properties `((upstream-name . "buildmer")))
     (build-system r-build-system)
     (arguments

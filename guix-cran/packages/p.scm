@@ -12737,13 +12737,13 @@ personalise output messages.  For details on due date calculations, see
 (define-public r-prefviz
   (package
     (name "r-prefviz")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "prefviz" version))
        (sha256
-        (base32 "028lyi01f42qirb5a5v3b69q7bbvr2xn46f0rzs99m3x5y9i7r8h"))))
+        (base32 "09dql0nfssrr4hav4y8kqlazsi4ik3xmixiy59d712pyjf91d3ln"))))
     (properties `((upstream-name . "prefviz")))
     (build-system r-build-system)
     (arguments
@@ -39284,13 +39284,13 @@ extracted data.")
 (define-public r-pdfsigner
   (package
     (name "r-pdfsigner")
-    (version "0.2.2")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pdfsigner" version))
        (sha256
-        (base32 "0jw8n90vqvjhvxlz29ld1qdmk1prp4a9syidwra4c3s3gnjavi1p"))))
+        (base32 "15vdv3g4mimsdr89banbpxv330xv48hfxajrsavq537n1p5cg9wm"))))
     (properties `((upstream-name . "pdfsigner")))
     (build-system r-build-system)
     (arguments
@@ -42703,19 +42703,20 @@ robust to parameter perturbations.")
 (define-public r-pathwayspace
   (package
     (name "r-pathwayspace")
-    (version "1.3.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PathwaySpace" version))
        (sha256
-        (base32 "0blzsp2bb9vixd8r3wibxgfw4v3lsf8gni29i9pcz0sznhlxwc5c"))))
+        (base32 "1p73sy928rldawx3xsk2rgmayzgk6qml55wnzvjy5b425h3j4nbb"))))
     (properties `((upstream-name . "PathwaySpace")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-scales
+                             r-rlang
                              r-rgraphspace
                              r-rann
                              r-patchwork
@@ -42723,6 +42724,7 @@ robust to parameter perturbations.")
                              r-igraph
                              r-ggrepel
                              r-ggplot2
+                             r-ggnewscale
                              r-colorspace))
     (native-inputs (list r-knitr))
     (home-page "https://sysbiolab.github.io/PathwaySpace/")

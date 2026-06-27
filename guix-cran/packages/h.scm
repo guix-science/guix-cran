@@ -14912,13 +14912,13 @@ Nine-dotted line, South Tibet, Hong Kong, Macao and Taiwan.")
 (define-public r-hce
   (package
     (name "r-hce")
-    (version "0.9.3")
+    (version "0.9.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hce" version))
        (sha256
-        (base32 "0y6ykpdnjqpdqfhzs4fi39kdpwizwypdq64b31d7vms6njfg7s7w"))))
+        (base32 "1bsh0jnbx9zfi9flylwzfn695bdfdhalwgy64fjj7bkwmm7w8nkp"))))
     (properties `((upstream-name . "hce")))
     (build-system r-build-system)
     (arguments
@@ -14928,30 +14928,33 @@ Nine-dotted line, South Tibet, Hong Kong, Macao and Taiwan.")
     (home-page "https://cran.r-project.org/package=hce")
     (synopsis "Design and Analysis of Hierarchical Composite Endpoints")
     (description
-     "Simulate and analyze hierarchical composite endpoints.  Includes implementation
-for the kidney hierarchical composite endpoint as defined in Heerspink HL et al
-(2023) âDevelopment and validation of a new hierarchical composite end point
-for clinical trials of kidney disease progressionâ (Journal of the American
-Society of Nephrology 34 (2): 2025â2038, <doi:10.1681/ASN.0000000000000243>).
-Win odds, also called Wilcoxon-Mann-Whitney or success odds, is the main
-analysis method.  Other win statistics (win probability, win ratio, net benefit)
-are also implemented in the univariate case, provided there is no censoring.
-The win probability analysis is based on the Brunner-Munzel test and uses the
-@code{DeLong-DeLong-Clarke-Pearson} variance estimator, as described by Brunner
-and Konietschke (2025) in âAn unbiased rank-based estimator of the
-MannâWhitney variance including the case of tiesâ (Statistical Papers 66
-(1): 20, <doi:10.1007/s00362-024-01635-0>).  Includes implementation of a new
-Wilson-type, compatible confidence interval for the win odds, as proposed by
-SchÃ¼Ã¼rhuis, Konietschke, Brunner (2025) in âA new approach to the
-nonparametric BehrensâFisher problem with compatible confidence intervals.â
-(Biometrical Journal 67 (6), <doi:10.1002/bimj.70096>).  Stratification and
-covariate adjustment are performed based on the methodology presented by Koch GG
-et al.  in âIssues for covariance analysis of dichotomous and ordered
-categorical data from randomized clinical trials and non-parametric strategies
-for addressing themâ (Statistics in Medicine 17 (15-16): 1863â92).  For a
-review, see Gasparyan SB et al (2021) âAdjusted win ratio with stratification:
-Calculation methods and interpretationâ (Statistical Methods in Medical
-Research 30 (2): 580â611, <doi:10.1177/0962280220942558>).")
+     "Simulate and analyze hierarchical composite endpoints with univariate
+distributions by Gasparyan, Koch, Brunner in (2025) in âThe Univariate
+Distribution of Hierarchical Composite Endpoints and the Condorcet
+Non-transitivity Paradox.â (Biometrical Journal 68 (3),
+<doi:10.1002/bimj.70140>).  Includes implementation for the kidney hierarchical
+composite endpoint as defined in Heerspink HL et al (2023) âDevelopment and
+validation of a new hierarchical composite end point for clinical trials of
+kidney disease progressionâ (Journal of the American Society of Nephrology 34
+(2): 2025â2038, <doi:10.1681/ASN.0000000000000243>).  Win odds, also called
+Wilcoxon-Mann-Whitney or success odds, is the main analysis method, but other
+win statistics (win probability, win ratio, net benefit) are also implemented in
+the univariate case.  The win probability analysis is based on the
+Brunner-Munzel test and uses the @code{DeLong-DeLong-Clarke-Pearson} variance
+estimator, as described by Brunner and Konietschke (2025) in âAn unbiased
+rank-based estimator of the MannâWhitney variance including the case of
+tiesâ (Statistical Papers 66 (1): 20, <doi:10.1007/s00362-024-01635-0>).
+Includes implementation of a new Wilson-type, compatible confidence interval for
+the win odds, as proposed by SchÃ¼Ã¼rhuis, Konietschke, Brunner (2025) in âA
+new approach to the nonparametric BehrensâFisher problem with compatible
+confidence intervals.â (Biometrical Journal 67 (6), <doi:10.1002/bimj.70096>).
+ Stratification and covariate adjustment are performed based on the methodology
+presented by Koch GG et al.  in âIssues for covariance analysis of dichotomous
+and ordered categorical data from randomized clinical trials and non-parametric
+strategies for addressing themâ (Statistics in Medicine 17 (15-16):
+1863â92).  For a review, see Gasparyan SB et al (2021) âAdjusted win ratio
+with stratification: Calculation methods and interpretationâ (Statistical
+Methods in Medical Research 30 (2): 580â611, <doi:10.1177/0962280220942558>).")
     (license license:expat)))
 
 (define-public r-hcd

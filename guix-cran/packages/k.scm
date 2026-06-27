@@ -5659,29 +5659,6 @@ estimation for rounded data, Gross, M. et al. (2016) (<doi:10.1111/rssa.12179>),
 as well as data aggregated on areas is supported.")
     (license (list license:gpl2 license:gpl3))))
 
-(define-public r-kernelboot
-  (package
-    (name "r-kernelboot")
-    (version "0.1.10")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "kernelboot" version))
-       (sha256
-        (base32 "1fv00hbm4l5dxcw8hq2wlfxng49bc8k608ny70g3fy0grkh7r8vy"))))
-    (properties `((upstream-name . "kernelboot")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp r-parallelly r-future-apply r-future))
-    (home-page "https://github.com/twolodzko/kernelboot")
-    (synopsis "Smoothed Bootstrap and Random Generation from Kernel Densities")
-    (description
-     "Smoothed bootstrap and functions for random generation from univariate and
-multivariate kernel densities.  It does not estimate kernel densities.")
-    (license license:gpl2)))
-
 (define-public r-kerndwd
   (package
     (name "r-kerndwd")

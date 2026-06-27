@@ -11178,6 +11178,33 @@ generator) and PLSIM (piecewise linear) algorithms, see Foldnes and Olsson
 <doi:10.1080/10705511.2021.1949323>, respectively.")
     (license license:gpl2+)))
 
+(define-public r-covsep
+  (package
+    (name "r-covsep")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "covsep" version))
+       (sha256
+        (base32 "1dkn9sc32dyj8ikdnpm5dhwy4x92q7nhvlkc8c5h51f67h3k2dcs"))))
+    (properties `((upstream-name . "covsep")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mvtnorm))
+    (home-page "https://doi.org/10.1214/16-AOS1495")
+    (synopsis
+     "Tests for Determining if the Covariance Structure of 2-Dimensional Data is Separable")
+    (description
+     "This package provides functions for testing if the covariance structure of
+2-dimensional data (e.g. samples of surfaces X_i = X_i(s,t)) is separable, i.e.
+if covariance(X) = C_1 x C_2.  A complete descriptions of the implemented tests
+can be found in the paper Aston et al. (2017) <doi:10.1214/16-AOS1495>
+<doi:10.48550/@code{arXiv.1505.02023>}.")
+    (license license:gpl2)))
+
 (define-public r-covsel
   (package
     (name "r-covsel")
@@ -13571,13 +13598,13 @@ and ATAC-Seq signatures as described in the article by Giorgi lab (2020)
 (define-public r-corteza
   (package
     (name "r-corteza")
-    (version "0.6.9")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "corteza" version))
        (sha256
-        (base32 "0fn63g2ls68wm1xpjv17h63b5h6y6kbhnwqp9bm549ydm5n9la8q"))))
+        (base32 "12m2hxyrpw8fmywnvnvrmgmay78b9gsm7s5s1ng0vbmj133zvv21"))))
     (properties `((upstream-name . "corteza")))
     (build-system r-build-system)
     (arguments
@@ -14964,13 +14991,13 @@ transition rate classes on different portions of a phylogeny.  Beaulieu et al
 (define-public r-coresynth
   (package
     (name "r-coresynth")
-    (version "0.2.0")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coresynth" version))
        (sha256
-        (base32 "1nxpgc26mvrygw9x1lxnap5g47wnw57pdpq77mzy9x8z28k108zr"))))
+        (base32 "1qjyqsqza8lxn29kzwvxmy02yly3ry6k61wq628q050hblb0fi0p"))))
     (properties `((upstream-name . "coresynth")))
     (build-system r-build-system)
     (arguments
@@ -17256,13 +17283,13 @@ measurements and indicators\", 2018, is a detailed presentation of convergence."
 (define-public r-convergencedfm
   (package
     (name "r-convergencedfm")
-    (version "0.1.4")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "convergenceDFM" version))
        (sha256
-        (base32 "16dv6877fc19dzxagmpvijbl68l194jj073s2xsx2zfkss0y28pl"))))
+        (base32 "16gxyvmqbxpcyqqs0v1056icnk83nvb3mgn4s4nczmm8fsza7ld8"))))
     (properties `((upstream-name . "convergenceDFM")))
     (build-system r-build-system)
     (arguments
@@ -17276,25 +17303,32 @@ measurements and indicators\", 2018, is a detailed presentation of convergence."
                              r-readxl
                              r-pls
                              r-magrittr
-                             r-dplyr))
+                             r-dplyr
+                             r-bayesiandisaggregation))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=convergenceDFM")
     (synopsis "Convergence and Dynamic Factor Models")
     (description
      "Tests convergence in macro-financial panels combining Dynamic Factor Models
-(DFM) and mean-reverting Ornstein-Uhlenbeck (OU) processes.  Provides: (i)
-static/approximate DFMs for large panels with VAR/VECM stability checks,
-Portmanteau tests and rolling out-of-sample R^2, following Stock and Watson
-(2002) <doi:10.1198/073500102317351921> and the Generalized Dynamic Factor Model
-of Forni, Hallin, Lippi and Reichlin (2000) <doi:10.1162/003465300559037>; (ii)
-cointegration analysis Ã  la Johansen (1988) <doi:10.1016/0165-1889(88)90041-3>;
-(iii) OU-based convergence and half-life summaries grounded in Uhlenbeck and
-Ornstein (1930) <doi:10.1103/@code{PhysRev.36.823>} and Vasicek (1977)
-<doi:10.1016/0304-405X(77)90016-2>; (iv) robust inference via sandwich HC/HAC
-estimators (Zeileis (2004) <doi:10.18637/jss.v011.i10>) and regression
-diagnostics ('lmtest'); and (v) optional PLS-based factor preselection (Mevik
-and Wehrens (2007) <doi:10.18637/jss.v018.i02>).  Functions emphasize
-reproducibility and clear, publication-ready summaries.")
+(DFM) and mean-reverting, discrete-time Ornstein-Uhlenbeck/AR(1) factor
+processes.  Provides: (i) static factor extraction with VAR stability checks,
+Portmanteau tests and rolling out-of-sample R^2, in the spirit of Stock and
+Watson (2002) <doi:10.1198/073500102317351921> and the Generalized Dynamic
+Factor Model of Forni, Hallin, Lippi and Reichlin (2000)
+<doi:10.1162/003465300559037>; (ii) cointegration analysis a la Johansen (1988)
+<doi:10.1016/0165-1889(88)90041-3>; (iii) Bayesian factor-OU/AR(1) estimation
+with convergence and half-life summaries grounded in Uhlenbeck and Ornstein
+(1930) <doi:10.1103/@code{PhysRev.36.823>} and Vasicek (1977)
+<doi:10.1016/0304-405X(77)90016-2>, with full Markov chain Monte Carlo
+convergence diagnostics; (iv) heteroskedasticity-consistent (HC) and, when the
+suggested sandwich (Zeileis (2004) <doi:10.18637/jss.v011.i10>) and lmtest
+packages are available, heteroskedasticity- and autocorrelation- consistent
+(HAC) robust inference, with a self-contained HC fallback; (v) coupling
+significance tests based on time-shift / block-bootstrap nulls that preserve
+marginal dynamics while breaking cross-series dependence; and (vi) optional
+PLS-based factor preselection (Mevik and Wehrens (2007)
+<doi:10.18637/jss.v018.i02>).  Functions emphasize reproducibility (explicit
+seeds throughout) and clear, publication-ready summaries.")
     (license license:gpl3)))
 
 (define-public r-convergenceconcepts
@@ -31447,6 +31481,43 @@ clustered data, especially useful for clusters having informative cluster size
 and intra-cluster group size.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-clusterrandssadj
+  (package
+    (name "r-clusterrandssadj")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ClusterRandSSAdj" version))
+       (sha256
+        (base32 "07ic0vyqwn9jln8vfbk19xmjsc3yizwxvn8xh41mfwybkm972sbg"))))
+    (properties `((upstream-name . "ClusterRandSSAdj")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sandwich
+                             r-multcomp
+                             r-matrix
+                             r-lmtest
+                             r-emmeans
+                             r-dplyr
+                             r-car))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ClusterRandSSAdj")
+    (synopsis "Small Sample Adjustment of Cluster Randomized Trial")
+    (description
+     "This package provides a set of functions to apply HC3 (FIRORES) and HC2 (ROOT)
+sandwich estimators to make small-sample adjustments to standard errors of
+Generalized Linear Model statistics used to analyze cluster randomized trial
+data.  The functions in the @code{ClusterRandSSAdj} package make small-sample
+adjustments to Generalized Linear Model parameter estimates, least squares means
+and pair-wise comparison of least squares means, Type III tests, and estimates
+from linear combinations of Generalized Linear Model parameters.  For more
+details see Ford (2017) <doi:10.1002/bimj.201600182> and Westgate (2022)
+<doi:10.1177/17407745211063479>.")
+    (license license:gpl3+)))
+
 (define-public r-clusternomics
   (package
     (name "r-clusternomics")
@@ -42979,35 +43050,6 @@ This package extends the changepoint package (see Killick, R and Eckley, I
 (2014) <doi:10.18637/jss.v058.i03> ).")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-changepoint-influence
-  (package
-    (name "r-changepoint-influence")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "changepoint.influence" version))
-       (sha256
-        (base32 "0mlr1k7mbi2v4vd0ry4if5j6x638znj0kbfvwr20p6m6wmd0ln0a"))))
-    (properties `((upstream-name . "changepoint.influence")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-reshape r-gridextra r-ggplot2 r-data-table
-                             r-changepoint))
-    (home-page "https://github.com/rkillick/changepoint.influence/")
-    (synopsis
-     "Package to Calculate the Influence of the Data on a Changepoint Segmentation")
-    (description
-     "Allows users to input their data, segmentation and function used for the
-segmentation (and additional arguments) and the package calculates the influence
-of the data on the changepoint locations, see Wilms et al. (2022)
-<doi:10.1080/10618600.2021.2000873>.  Currently this can only be used with the
-changepoint package functions to identify changes, but we plan to extend this.
-There are options for different types of graphics to assess the influence.")
-    (license (list license:gpl2+ license:gpl3+))))
-
 (define-public r-changepoint-geo
   (package
     (name "r-changepoint-geo")
@@ -43655,13 +43697,13 @@ license. <https://www.cgal.org/>.")
 (define-public r-cgaim
   (package
     (name "r-cgaim")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cgaim" version))
        (sha256
-        (base32 "1pmc2b0krixj9sbzf18v77wxi2mnz6vi120fmf9qzw0asdlnv652"))))
+        (base32 "1cngkh5j94scgjhazzdy529xb955d1i6iq1xy8xrbbn9bsc7nlkr"))))
     (properties `((upstream-name . "cgaim")))
     (build-system r-build-system)
     (arguments
@@ -43672,10 +43714,10 @@ license. <https://www.cgal.org/>.")
                              r-scam
                              r-quadprog
                              r-osqp
+                             r-nnls
                              r-mgcv
                              r-matrix
                              r-mass
-                             r-limsolve
                              r-gratia
                              r-foreach
                              r-doparallel

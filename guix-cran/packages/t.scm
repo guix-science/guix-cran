@@ -16176,13 +16176,13 @@ preserving geographic positions as much as possible.")
 (define-public r-tmap
   (package
     (name "r-tmap")
-    (version "4.4")
+    (version "4.4-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tmap" version))
        (sha256
-        (base32 "1av1n280c9jysinbl3fqlqhwz6lincnyqik4xqr7krxf3lhl26vl"))))
+        (base32 "1hycs1b9baxrxrh7k0ffzv4mby0cll58m27crb76s7w8mda0jg6d"))))
     (properties `((upstream-name . "tmap")))
     (build-system r-build-system)
     (arguments
@@ -17761,13 +17761,13 @@ staying lightweight, having only tinytest as its dependency.")
 (define-public r-tinytable
   (package
     (name "r-tinytable")
-    (version "0.16.0")
+    (version "0.17.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinytable" version))
        (sha256
-        (base32 "12div1ds4mcsqdk6ny6w5cyg4i73lk4w3fpypph9wmjkfrbcbqbf"))))
+        (base32 "12apscq31i5axrvyixgmqb7wlwzsimp4i9x7j2i482r3219imrms"))))
     (properties `((upstream-name . "tinytable")))
     (build-system r-build-system)
     (arguments

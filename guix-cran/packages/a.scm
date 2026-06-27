@@ -624,19 +624,24 @@ submit events.")
 (define-public r-azr
   (package
     (name "r-azr")
-    (version "0.3.4")
+    (version "0.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "azr" version))
        (sha256
-        (base32 "1q3pr378sr72j90qj57wyp1pzds76y7v9d2yk4p69xyc691vwmbs"))))
+        (base32 "11is55fipmsj9m7269syabki9rs8jjkfzyd6vd3b1hqz8g5gisvb"))))
     (properties `((upstream-name . "azr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang r-r6 r-jsonlite r-httr2 r-cli))
+    (propagated-inputs (list r-s7
+                             r-rlang
+                             r-r6
+                             r-jsonlite
+                             r-httr2
+                             r-cli))
     (home-page "https://pedrobtz.github.io/azr/")
     (synopsis
      "Credential Chain for Seamless 'OAuth 2.0' Authentication to 'Azure Services'")
@@ -5269,13 +5274,13 @@ thermal physics including photon density and Saha equation solutions.")
 (define-public r-astrochron
   (package
     (name "r-astrochron")
-    (version "1.6")
+    (version "1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "astrochron" version))
        (sha256
-        (base32 "0mfs5kz01cdxdq87qx1pb4b9n7ii2w7ab8zaggk3l5wl593p8hxg"))))
+        (base32 "1k58bfza3xnyv3ngklpk826x6bc3pmiy02zm373v2g519rjslr4h"))))
     (properties `((upstream-name . "astrochron")))
     (build-system r-build-system)
     (arguments

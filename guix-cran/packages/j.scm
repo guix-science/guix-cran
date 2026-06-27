@@ -3034,13 +3034,13 @@ spreadsheet (see <https://www.jamovi.org> for more information) from R.")
 (define-public r-jmv
   (package
     (name "r-jmv")
-    (version "2.7.7")
+    (version "2.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jmv" version))
        (sha256
-        (base32 "07z6lzd4n06zav8msml6zwiqqz0wpqzdfcb5qhdjbwfw03ajzq0l"))))
+        (base32 "09l2zwq23av3p2jkr14127897f6ik2r1y0bim84mi7m3qmv9i8b5"))))
     (properties `((upstream-name . "jmv")))
     (build-system r-build-system)
     (arguments
@@ -3051,7 +3051,6 @@ spreadsheet (see <https://www.jamovi.org> for more information) from R.")
                              r-rocr
                              r-r6
                              r-psych
-                             r-pmcmr
                              r-nnet
                              r-mvnormtest
                              r-multcomp
@@ -3060,6 +3059,7 @@ spreadsheet (see <https://www.jamovi.org> for more information) from R.")
                              r-magrittr
                              r-lavaan
                              r-jmvcore
+                             r-hmisc
                              r-gparotation
                              r-ggridges
                              r-ggrepel

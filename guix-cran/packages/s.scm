@@ -26188,13 +26188,13 @@ air temperature, and cloudiness.  Davis et al. (2017)
 (define-public r-spiro
   (package
     (name "r-spiro")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spiro" version))
        (sha256
-        (base32 "1bknjpkbsfys5ma4cdc3gv90cdf8p5mffhg4spmmjkbdvavc95ai"))))
+        (base32 "0xsinrf52sjr74yxa6f4ajpd5jh4yxwm6gzc78pvys71acscvp3w"))))
     (properties `((upstream-name . "spiro")))
     (build-system r-build-system)
     (arguments
@@ -37714,6 +37714,49 @@ detailed in the vignette with example data and results from up to 500 SNPs of
 <doi:10.13097/archive-ouverte/unige:161795>.")
     (license license:gpl3)))
 
+(define-public r-snpkit
+  (package
+    (name "r-snpkit")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SNPkit" version))
+       (sha256
+        (base32 "11g34d3x6qp81gc9ki6nmsv2nmb5xybrlhfxfpa2pbfqhfbjigf6"))))
+    (properties `((upstream-name . "SNPkit")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringi
+                             r-snpstats
+                             r-reshape2
+                             r-rcpp
+                             r-mass
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr
+                             r-data-table
+                             r-anticlust))
+    (native-inputs (list r-knitr))
+    (home-page "https://viniciusjunqueira.github.io/SNPkit/")
+    (synopsis "S4 Tools for Reading and Organizing Genetic Data")
+    (description
+     "This package provides an integrated suite of tools for handling single
+nucleotide polymorphism (SNP) genotype data in large-scale genetic studies.
+Supports importing and merging genotype files, performing quality control on SNP
+markers and samples, and preparing data for downstream analyses using popular
+software such as FImpute and PLINK'.  Offers S4 classes and methods to
+efficiently encapsulate SNP data, along with utilities for generating genotype
+summary statistics and visualization.  Additional functionalities include
+anticlustering approaches for batch effect control, automated script generation
+for external software, and streamlined workflows for large datasets commonly
+encountered in animal and plant breeding programs.  Designed to facilitate
+reproducible and scalable SNP data analyses in quantitative and statistical
+genetics.")
+    (license license:gpl3)))
+
 (define-public r-snpfiltr
   (package
     (name "r-snpfiltr")
@@ -42365,13 +42408,13 @@ Course in Methods of Data Analysis (2nd ed)\", Duxbury.")
 (define-public r-slendr
   (package
     (name "r-slendr")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "slendr" version))
        (sha256
-        (base32 "0ci7a2hilri8gdcds88187knfr2slm61r6nf21j3rrsdxasx39qy"))))
+        (base32 "030ymb02jjp14mw91psy6xmx2mc05x8isgx6d3lisac15anrmr98"))))
     (properties `((upstream-name . "slendr")))
     (build-system r-build-system)
     (arguments
@@ -42912,6 +42955,44 @@ robustly using a template matching approach, as described by Ekstrom (2004)
 <https://nipr.repo.nii.ac.jp/records/2496>, and behaviourly informed constraints
 (step-selection).")
     (license license:agpl3)))
+
+(define-public r-skymodelr
+  (package
+    (name "r-skymodelr")
+    (version "0.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "skymodelr" version))
+       (sha256
+        (base32 "0s2gqmpqqjsi5mfzjxjxqngk504f6m8p5v4cwkmr2rrirch6r3b3"))))
+    (properties `((upstream-name . "skymodelr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-swephr
+                             r-rcppthread
+                             r-rcpp
+                             r-rayvertex
+                             r-rayimage
+                             r-libopenexr
+                             r-libimath))
+    (home-page "https://www.skymodelr.com")
+    (synopsis "Generates and Samples Realistic Terrestrial Atmospheres")
+    (description
+     "Generates physically based sky environment maps and radiance samples using the
+spectral Hosek-Wilkie and Prague atmosphere models.  Functions write
+high-dynamic-range @code{OpenEXR} domes in latitude-longitude projections,
+compute per-direction RGB or 55-channel values, and optionally composite
+time-accurate star fields and moon phases.  Features include automatic sun and
+moon positioning from date, time and location, support for sea-level and
+high-altitude observers, wide-spectrum coefficients, and multithreaded C++
+acceleration for fast, high-resolution output.  For model details, see Hosek and
+Wilkie (2012) <doi:10.1145/2185520.2185591>, Hosek and Wilkie (2013)
+<doi:10.1109/MCG.2013.18>, Wilkie et al. (2021) <doi:10.1145/3450626.3459758>,
+and Vevoda et al. (2022) <doi:10.1111/cgf.14677>.")
+    (license license:gpl3)))
 
 (define-public r-skylight
   (package
@@ -72003,6 +72084,35 @@ imputed survey designs, compute descriptive statistics and model estimates, and
 produce plots and tables.  Methods follow design-based inference for complex
 surveys and pooling across multiple imputations.  See the package website and
 the code book for background.")
+    (license license:expat)))
+
+(define-public r-sceua
+  (package
+    (name "r-sceua")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sceua" version))
+       (sha256
+        (base32 "0m5pfc9nwr6wnsqpbxfinfwi92xm5r2r3iypy259knx1kik2715d"))))
+    (properties `((upstream-name . "sceua")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-checkmate))
+    (home-page "https://github.com/atsyplenkov/sceua/")
+    (synopsis "Shuffled Complex Evolution Algorithm for Optimization")
+    (description
+     "This package provides an R interface to a Rust implementation of the Shuffled
+Complex Evolution - University of Arizona (SCE-UA) global optimization algorithm
+(Duan et al., 1992).  SCE-UA combines simplex search, competitive evolution, and
+complex shuffling to solve nonlinear, non-convex, continuous parameter
+estimation problems.  The method is commonly used for calibrating hydrological
+and environmental models and follows the algorithm proposed by Duan et al.
+(1992) <doi:10.1029/91WR02985>.")
     (license license:expat)))
 
 (define-public r-scepterbinary

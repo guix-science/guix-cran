@@ -14497,6 +14497,36 @@ al. (2015) <doi:10.1002/bimj.201400143>, Wang et al. (2016)
 Wang (2024) <doi:10.1111/anzs.12409>.")
     (license license:gpl2)))
 
+(define-public r-mpar
+  (package
+    (name "r-mpar")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mpaR" version))
+       (sha256
+        (base32 "1xwvasaflkzb0m8p6lsjm6iaj4c6m3mxar4sq7f6dp5hwrqlf0zv"))))
+    (properties `((upstream-name . "mpaR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2 r-rlang r-igraph))
+    (home-page "https://github.com/resendeph/mpaR")
+    (synopsis "Main Path Analysis for Citation and Directed Networks")
+    (description
+     "This package implements Main Path Analysis (MPA) as introduced by Hummon and
+Doreian (1989) <doi:10.1016/0378-8733(89)90017-8>.  Given a directed acyclic
+graph (DAG) representing a citation or precedence network, the package computes
+traversal weights (SPC, SPLC, SPNP) for each edge and extracts the global,
+local, and key-route main paths.  Also provides tools for DAG validation, node
+role classification (source/terminal/user), per-component path extraction for
+disconnected networks, and scale-free network testing.  Accepts igraph objects
+or edge-list data frames as input.  Includes readers for Pajek (.net) and Gephi
+export (.gexf, .graphml) files.")
+    (license license:expat)))
+
 (define-public r-mpae
   (package
     (name "r-mpae")
@@ -45729,13 +45759,13 @@ sample size of the MCMC output.")
 (define-public r-mcmchybridgp
   (package
     (name "r-mcmchybridgp")
-    (version "7.0.1")
+    (version "7.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MCMChybridGP" version))
        (sha256
-        (base32 "1rxaqlwv8dvghxy7s6asln61avvwlbza7sr9q9s0r7znlzgyg3nv"))))
+        (base32 "11av2ks667gl8yafxsiblls230prfcznyz5vq58r3i07ca357myl"))))
     (properties `((upstream-name . "MCMChybridGP")))
     (build-system r-build-system)
     (arguments
@@ -57127,13 +57157,13 @@ and spatial data on various man-made and natural structures.")
 (define-public r-machineshop
   (package
     (name "r-machineshop")
-    (version "3.9.2")
+    (version "3.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MachineShop" version))
        (sha256
-        (base32 "1dpf0v5n0xaz1szhpa6ccadnf1il8sjqw0aprxz6j50r2qik94rp"))))
+        (base32 "10nxyz6vhmadbcpzhg4habpdp5q1v0rfwmavrf9yfll8mmavqr65"))))
     (properties `((upstream-name . "MachineShop")))
     (build-system r-build-system)
     (arguments

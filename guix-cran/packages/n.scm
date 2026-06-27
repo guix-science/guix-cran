@@ -2431,13 +2431,13 @@ numerical features are described in Calonico, Cattaneo and Farrell (2019,
 (define-public r-nprmpi
   (package
     (name "r-nprmpi")
-    (version "0.70-3")
+    (version "0.70-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "npRmpi" version))
        (sha256
-        (base32 "101pv0fmm62a50c7va2ks1xs3mh3y6m28wifzk3g6j4jqrj9xgsg"))))
+        (base32 "1pkh9gmfv6lw5w2kqlpd7hx9ag9dghm6ycdsq6xbr5nz0050hjv6"))))
     (properties `((upstream-name . "npRmpi")))
     (build-system r-build-system)
     (arguments
@@ -13570,13 +13570,13 @@ found at <https://bigsem.psychstat.org>.")
 (define-public r-networkscaleup
   (package
     (name "r-networkscaleup")
-    (version "0.2-1")
+    (version "0.2-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "networkscaleup" version))
        (sha256
-        (base32 "0jvwywlb9wdw2hai1dyh4wnvnx0169nlzsqvw12kxxbd6lq9rbxc"))))
+        (base32 "06c41bbnnzs3zgxjmfb9kfs72s0rkdvzdm76xgh5lscmkq3viq84"))))
     (properties `((upstream-name . "networkscaleup")))
     (build-system r-build-system)
     (arguments

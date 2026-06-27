@@ -1473,6 +1473,41 @@ the searched area and format the output for use as the dwp parameter in the
 Dalthorp, et al. (2024) <doi:10.3133/tm7A3>.")
     (license license:cc0)))
 
+(define-public r-dwmmlridge
+  (package
+    (name "r-dwmmlridge")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dwmmlRidge" version))
+       (sha256
+        (base32 "07nnzsc8kwn97rvdg2flc237rls1mshakwkrism1sn5gbkqhc5vj"))))
+    (properties `((upstream-name . "dwmmlRidge")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-styperidge-reg r-mass))
+    (home-page "https://github.com/filizkrdg/dwmmlRidge")
+    (synopsis
+     "Dynamically Weighted Modified Maximum Likelihood (DWMML) Ridge Regression")
+    (description
+     "This package implements the dynamically weighted modified maximum likelihood
+ridge (DWMMLR) regression estimator, a robust and multicollinearity-aware linear
+regression estimator that combines the DWMML3 weighting procedure of Sazak
+(2019) <doi:10.1080/00949655.2019.1571060> with ridge penalization to address
+both outlier sensitivity and variance inflation due to multicollinearity.  The
+ridge parameter is selected automatically using the approach implemented in the
+ridgregextra package (Karadag, Sazak, and Aydin, 2023)
+<https://CRAN.R-project.org/package=ridgregextra>, described further in Karadag,
+Sazak, and Aydin (2026) <doi:10.1080/02664763.2026.2655681>, which targets a
+variance inflation factor (VIF) close to but not below 1, removing the need for
+manual tuning.  Returns comprehensive outputs (coefficients, fitted values,
+residuals, mean squared error (MSE), standard errors, R-squared, and adjusted
+R-squared) through a simple x/y interface.")
+    (license license:expat)))
+
 (define-public r-dwls
   (package
     (name "r-dwls")
@@ -17802,6 +17837,42 @@ are differentially enriched between the two gene sets.  In addition to the
 analysis pipeline, this package also provides a plotting function.")
     (license license:gpl2)))
 
+(define-public r-diffdriver
+  (package
+    (name "r-diffdriver")
+    (version "0.1.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "diffdriver" version))
+       (sha256
+        (base32 "1fal52q0wv6alrx8282wp93lihdndn2ynbqmxkmpqasnpsnflszm"))))
+    (properties `((upstream-name . "diffdriver")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-squarem r-matrix r-fasttopics r-data-table
+                             r-brglm))
+    (native-inputs (list r-knitr))
+    (home-page "https://szhaolab.github.io/diffdriver/")
+    (synopsis "Identify Differential Selection")
+    (description
+     "Tests for context-dependent selection on cancer driver genes using somatic
+mutation data.  The package implements the @code{DiffDriver} statistical
+framework to assess whether the strength of positive selection on mutations in a
+driver gene is associated with tumor- or individual-level context variables,
+such as clinical traits, genomic features, or immune microenvironment subtypes.
+@code{DiffDriver} estimates individual- and position-specific background
+mutation rates, models selection as a deviation from the background rate using
+functional annotations, and tests context effects through a latent-variable
+logistic model.  It provides utilities for preparing mutation and annotation
+data, fitting differential-selection models, running gene-level association
+tests, summarizing candidate genes, and visualizing mutation patterns.  The
+method is described in Zhou et al. (2026) \"Detecting context-dependent selection
+on cancer driver genes with @code{DiffDriver}\" <doi:10.64898/2026.04.06.716771>.")
+    (license license:expat)))
+
 (define-public r-diffdfs
   (package
     (name "r-diffdfs")
@@ -18863,13 +18934,13 @@ Pinilla-Agudelo (2014) - DISP index by Stenger-KovÃ¡cs et al. (2018,
 (define-public r-diario
   (package
     (name "r-diario")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "diario" version))
        (sha256
-        (base32 "12ad1jg953ydll6kmcql6vzi5wj9ka08zd3v3a9kmk15gx3fqww3"))))
+        (base32 "1rh8mldl8fy22m4jsqy91sdzgrm4a1kyf5dxw69r6wd4cmh9zkjq"))))
     (properties `((upstream-name . "diario")))
     (build-system r-build-system)
     (arguments
@@ -22706,6 +22777,37 @@ Depth, which is a recent notion of depth with a low computational cost, what
 renders it very appropriate for high dimensional data such as gene expression
 data.")
     (license license:gpl2+)))
+
+(define-public r-depthr
+  (package
+    (name "r-depthr")
+    (version "0.1.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "depthR" version))
+       (sha256
+        (base32 "0pgj924nibhpmvxa2fyg94ydxqnxdygfzksf9ncsapf65zczbpl6"))))
+    (properties `((upstream-name . "depthR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppparallel r-rcppeigen r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/penny4nonsense/depthR")
+    (synopsis "Multivariate Depth Functions for General Dimension")
+    (description
+     "Efficient computation of multivariate statistical depth functions in arbitrary
+dimension d.  Implements Mahalanobis depth, Tukey (halfspace) depth, Liu
+simplicial depth (via adaptive Monte Carlo), projection depth, and spatial
+depth.  Provides depth-based medians, central regions, outlier detection, and
+depth-depth plots.  C++ backends via Rcpp and @code{RcppEigen} ensure
+performance at large n and d.  References: Liu (1990)
+<doi:10.1214/aos/1176347507>, Zuo and Serfling (2000)
+<doi:10.1214/aos/1016218226>, Vardi and Zhang (2000)
+<doi:10.1073/pnas.97.4.1423>.")
+    (license license:gpl3+)))
 
 (define-public r-depthproc
   (package
@@ -31505,13 +31607,13 @@ Ecological Metadata Language standards.")
 (define-public r-dataspacer
   (package
     (name "r-dataspacer")
-    (version "0.7.7")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DataSpaceR" version))
        (sha256
-        (base32 "0n5aylmblwz0v2xixy7bg5d7hhdrfpp5vj264cy2kvzql190a2zs"))))
+        (base32 "17q19i83f0lp8wipn8r1m8hfjk8p5ag2qzgpq54d4cf93w76jkm2"))))
     (properties `((upstream-name . "DataSpaceR")))
     (build-system r-build-system)
     (arguments
@@ -33354,13 +33456,13 @@ package.")
 (define-public r-databaseconnector
   (package
     (name "r-databaseconnector")
-    (version "7.1.0")
+    (version "7.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DatabaseConnector" version))
        (sha256
-        (base32 "1irggxdibdnkq5xvi0dw9plidhcd80aigi1lpc4j7n2862274b41"))))
+        (base32 "1bmv4gsdn7rw9y2c5w53hcpkfll5xwdpwz9p8yqj9a9d8nvmf1f5"))))
     (properties `((upstream-name . "DatabaseConnector")))
     (build-system r-build-system)
     (arguments
@@ -34652,13 +34754,13 @@ stochastic disability-adjusted life year (DALY) calculation.")
 (define-public r-daltoolboxdp
   (package
     (name "r-daltoolboxdp")
-    (version "1.3.747")
+    (version "1.3.757")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "daltoolboxdp" version))
        (sha256
-        (base32 "1gnadprgzaf9v9cr2cy1v9pcis2kbwdj9zhw53gmdwv9s0yb7nim"))))
+        (base32 "1yf1r48pshs0mki67xdvrn9gxrbdpdvsb441q67f2r7ghxdq7vbp"))))
     (properties `((upstream-name . "daltoolboxdp")))
     (build-system r-build-system)
     (arguments

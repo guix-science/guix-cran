@@ -33159,13 +33159,13 @@ FFTW for RFIF for RFIF installation instructions.")
 (define-public r-rfia
   (package
     (name "r-rfia")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rFIA" version))
        (sha256
-        (base32 "1hrgrfj7rjd7sd3iq6snypag3h2zi2y2ly8vbcmv1kkv885hc261"))))
+        (base32 "0xm6sxyryc9pnvq75xhfvy8sydfkzjbl318gqkbamaksbj05q5vv"))))
     (properties `((upstream-name . "rFIA")))
     (build-system r-build-system)
     (arguments
@@ -43191,32 +43191,6 @@ procedure can be found in \"Bivariate pseudo-observations for recurrent event
 analysis with terminal events\" (Furberg et al., 2021)
 <doi:10.1007/s10985-021-09533-5>.")
     (license license:gpl2+)))
-
-(define-public r-rectpacker
-  (package
-    (name "r-rectpacker")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rectpacker" version))
-       (sha256
-        (base32 "1kav3zfagds94b6ip6a7q5ayn254az2r5dqslwfcd45kz3523y44"))))
-    (properties `((upstream-name . "rectpacker")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://github.com/coolbutuseless/rectpacker")
-    (synopsis "Rectangle Packing")
-    (description
-     "Rectangle packing is a packing problem where rectangles are placed into a larger
-rectangular region (without overlapping) in order to maximise the use space.
-Rectangles are packed using the skyline heuristic as discussed in Lijun et al
-(2011) A Skyline-Based Heuristic for the 2D Rectangular Strip Packing Problem
-<doi:10.1007/978-3-642-21827-9_29>.  A function is also included for determining
-a good small-sized box for containing a given set of rectangles.")
-    (license license:expat)))
 
 (define-public r-recosystem
   (package
@@ -55142,20 +55116,19 @@ Shirley (2018) <https://raytracing.github.io>.")
 (define-public r-raymolecule
   (package
     (name "r-raymolecule")
-    (version "0.5.3")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "raymolecule" version))
        (sha256
-        (base32 "0lwjx43wd4ziriqd3rxar14z5497x79nfh3h05kn9b7rsiiv8ir9"))))
+        (base32 "0rqaxsnb9igy768yn6996a387hx66nxrv3gnrn9br5qv7ja776sb"))))
     (properties `((upstream-name . "raymolecule")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rayvertex r-rayrender r-periodictable
-                             r-magrittr r-httr))
+    (propagated-inputs (list r-rayvertex r-rayrender r-periodictable r-httr))
     (home-page "http://www.raymolecule.com/")
     (synopsis "Parse and Render Molecular Structures in 3D")
     (description

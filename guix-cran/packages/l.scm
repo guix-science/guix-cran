@@ -9062,29 +9062,30 @@ by the Python package langagent'.")
 (define-public r-llm-api
   (package
     (name "r-llm-api")
-    (version "0.1.4")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "llm.api" version))
        (sha256
-        (base32 "1xf4lkvpqi76hi0qnha1db21737n8ds4rxd64k9qyb306mr4hr9v"))))
+        (base32 "15pnn1ghg31082rliqb6il0wzj6kiac08yp3arak2d1p7qy086hc"))))
     (properties `((upstream-name . "llm.api")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-jsonlite r-curl))
+    (propagated-inputs (list r-tinyoauth r-jsonlite r-curl))
     (home-page "https://github.com/cornball-ai/llm.api")
     (synopsis "Minimal LLM Chat Interface")
     (description
      "This package provides a minimal-dependency client for Large Language Model chat
 APIs.  Supports @code{OpenAI} <https://openai.com/>, Anthropic Claude
-<https://claude.com/>, Moonshot Kimi <https://www.moonshot.ai/>, Ollama
-<https://ollama.com/>, and other @code{OpenAI'-compatible} endpoints.  Includes
-an agent loop with tool use and a Model Context Protocol client
-<https://modelcontextprotocol.io/>.  API design is derived from the ellmer
-package, reimplemented with only base R, curl', and jsonlite'.")
+<https://claude.com/>, Moonshot Kimi <https://www.moonshot.ai/>, @code{OpenAI}
+Codex subscription endpoints, Ollama <https://ollama.com/>, and other
+@code{OpenAI'-compatible} endpoints.  Includes an agent loop with tool use and a
+Model Context Protocol client <https://modelcontextprotocol.io/>.  API design is
+derived from the ellmer package, reimplemented with only base R, curl',
+jsonlite', and tinyoauth'.")
     (license license:expat)))
 
 (define-public r-llm
@@ -19883,20 +19884,19 @@ regression.  To find out more about the methods in this package, please see
 (define-public r-landmark
   (package
     (name "r-landmark")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "landmaRk" version))
        (sha256
-        (base32 "16x3vj3sf3kw0qjiz7mypvlfzcvbaqk1wq7kp2gxibbi61az9x86"))))
+        (base32 "16fr7sidg8b088y9k9m924h0caxxrb7lsmqjmyghri5kilxl7srs"))))
     (properties `((upstream-name . "landmaRk")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-timeroc
-                             r-survival
+    (propagated-inputs (list r-survival
                              r-rlang
                              r-riskregression
                              r-prodlim

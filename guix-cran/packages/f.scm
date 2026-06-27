@@ -8000,19 +8000,19 @@ Regression Analysis, First Edition.  New York: Springer.")
 (define-public r-fortunes
   (package
     (name "r-fortunes")
-    (version "1.5-4")
+    (version "1.5-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fortunes" version))
        (sha256
-        (base32 "109ly9kpfn6hy294ava8795wy5z9l1bnl98hhhv8kn9naf4camdg"))))
+        (base32 "0bha0394q7lmh9b1bcqlsiqjm24p36gqdplz2ycnsqnx4sw07hgq"))))
     (properties `((upstream-name . "fortunes")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://cran.r-project.org/package=fortunes")
+    (home-page "https://zeileis.codeberg.page/fortunes/")
     (synopsis "R Fortunes")
     (description
      "This package provides a collection of fortunes from the R community.")
@@ -20883,13 +20883,13 @@ data.")
 (define-public r-featureextraction
   (package
     (name "r-featureextraction")
-    (version "3.13.0")
+    (version "3.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FeatureExtraction" version))
        (sha256
-        (base32 "18ana2svqiwqz0jpzm3bzh04vcr011lmqzq4chf8mf9515mkjj44"))))
+        (base32 "0ivd31f86ys9zjka90761ys288h8dx9ih79j3mkng7gbbsi9w84f"))))
     (properties `((upstream-name . "FeatureExtraction")))
     (build-system r-build-system)
     (arguments

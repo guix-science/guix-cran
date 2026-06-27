@@ -12369,6 +12369,38 @@ for infectious diseases.  Epidemiological parameters extracted from the
 literature are loaded from the @code{epiparameterDB} R package.")
     (license license:expat)))
 
+(define-public r-epiomics
+  (package
+    (name "r-epiomics")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "epiomics" version))
+       (sha256
+        (base32 "1mfkh2wl2wd36ba1w0nd1klvbv8lmdls530bz8mzrvppy0glx7qi"))))
+    (properties `((upstream-name . "epiomics")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival r-qgcomp r-ggrepel r-ggplot2
+                             r-data-table))
+    (home-page "https://cran.r-project.org/package=epiomics")
+    (synopsis "Analysis of Omics Data in Observational Studies")
+    (description
+     "This package provides a collection of fast and flexible functions for analyzing
+omics data in observational studies.  Multiple different approaches for
+integrating multiple environmental/genetic factors, omics data, and/or phenotype
+data are implemented.  This includes functions for performing omics wide
+association studies with one or more variables of interest as the exposure or
+outcome; a function for performing a meet in the middle analysis for linking
+exposures, omics, and outcomes (as described by Chadeau-Hyam et al., (2010)
+<doi:10.3109/1354750X.2010.533285>); and a function for performing a mixtures
+analysis across all omics features using quantile-based g-Computation (as
+described by Keil et al., (2019) <doi:10.1289/EHP5838>).")
+    (license license:gpl3+)))
+
 (define-public r-epinow2
   (package
     (name "r-epinow2")
@@ -20309,6 +20341,43 @@ Thomson (1998) <doi:10.2307/3315677>, and Rolf Turner (2008)
 assess anthelmintic efficacy.  Bayesian inference is done via MCMC sampling
 using Stan <https://mc-stan.org/>.")
     (license license:gpl3+)))
+
+(define-public r-egfr
+  (package
+    (name "r-egfr")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "egfr" version))
+       (sha256
+        (base32 "0sj8bgqxjzainipavi4kjnd71hc851szb19601fbvr818kpripl5"))))
+    (properties `((upstream-name . "egfr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mhovd/egfr")
+    (synopsis "Estimated Glomerular Filtration Rate (eGFR) Calculators")
+    (description
+     "This package provides a comprehensive, vectorised toolkit for estimating
+glomerular filtration rate (@code{eGFR}) and creatinine clearance from serum
+creatinine, cystatin C, or both.  Implements adult, paediatric, and neonatal
+equations, including the Chronic Kidney Disease Epidemiology Collaboration
+(CKD-EPI) equations (2009, 2012, 2021), the Modification of Diet in Renal
+Disease (MDRD) Study equation, Cockcroft-Gault, the European Kidney Function
+Consortium (EKFC) equations, the Full Age Spectrum (FAS) equations, the
+Lund-Malmoe equations, the Berlin Initiative Study (BIS) equations, the Schwartz
+bedside equation, the Chronic Kidney Disease in Children Under 25 (C@code{KiD}
+U25) equations, the Caucasian, Asian, Paediatric, and Adult (CAPA) cystatin C
+equation, and a neonatal equation.  Helpers for body surface area, chronic
+kidney disease (CKD) staging following the Kidney Disease: Improving Global
+Outcomes (KDIGO) guideline, and unit conversions are included.  Methods are
+described in Levey et al. (2009) <doi:10.7326/0003-4819-150-9-200905050-00006>,
+Inker et al. (2021) <doi:10.1056/NEJMoa2102953>, and Pottel et al. (2021)
+<doi:10.7326/M20-4366>.  Inspired by the kidney.epi package.")
+    (license license:expat)))
 
 (define-public r-eganet
   (package
