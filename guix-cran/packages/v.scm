@@ -4743,13 +4743,13 @@ Monitoring Centre.  Disproportionality methods are described by NorÃ©n et al
 (define-public r-viewscape
   (package
     (name "r-viewscape")
-    (version "2.0.2")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "viewscape" version))
        (sha256
-        (base32 "1647masd0bb3lmpya119m3dvy7fpbv8g2zybk1wgd06q2y1g6k16"))))
+        (base32 "0q6j6bb2ba0kf4ivsjzh7javjkllbkqvvfq776as380a4x78xgjk"))))
     (properties `((upstream-name . "viewscape")))
     (build-system r-build-system)
     (arguments
@@ -4764,17 +4764,25 @@ Monitoring Centre.  Disproportionality methods are described by NorÃ©n et al
                              r-foresttools
                              r-dplyr))
     (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://github.com/land-info-lab/viewscape")
+    (home-page "https://github.com/billbillbilly/viewscape")
     (synopsis "Viewscape Analysis")
     (description
-     "This package provides a collection of functions to make R a more effective
-viewscape analysis tool for calculating viewscape metrics based on computing the
-viewable area for given a point/multiple viewpoints and a digital elevation
-model.The method of calculating viewscape metrics implemented in this package
-are based on the work of Tabrizian et al. (2020)
-<doi:10.1016/j.landurbplan.2019.103704>.  The algorithm of computing viewshed is
-based on the work of Franklin & Ray. (1994)
-<https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=555780f6f5d7e537eb1edb28862c86d1519af2be>.")
+     "This package provides tools for viewscape analysis from one or multiple
+viewpoints using a digital surface or elevation model.  Core functionality
+includes computing viewsheds, quantifying visual magnitude, calculating a suite
+of viewscape configuration metrics (extent, depth, relief, Sky View Factor,
+skyline variation, and patch-based landscape structure), Shannon Diversity Index
+and land cover feature proportions within the visible area, pairwise
+intervisibility networks, panoramic view generation, and visualizing results as
+rasters or polygons.  Viewscape configuration metrics follow the methods of
+Tabrizian et al. (2020) <doi:10.1016/j.landurbplan.2019.103704>.  The viewshed
+algorithm is based on Franklin & Ray (1994)
+<https://api.semanticscholar.org/@code{CorpusID:10680920>} and Wang et al.
+(2000) <https://api.semanticscholar.org/@code{CorpusID:131687018>}.  Visual
+magnitude is derived from Chamberlain & Meitner (2013)
+<doi:10.1016/j.landurbplan.2013.01.003>.  Sky View Factor is computed following
+Oke (1981) <doi:10.1002/joc.3370010304> as implemented in the shadow package
+(Dorman et al.  2019) <doi:10.32614/RJ-2019-024>.")
     (license license:gpl3)))
 
 (define-public r-viewr

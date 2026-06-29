@@ -1438,13 +1438,13 @@ this package uses Cyclops for an efficient implementation.")
 (define-public r-itensor
   (package
     (name "r-itensor")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iTensor" version))
        (sha256
-        (base32 "1isrb8si70yyhv1sshx696pvkyaxqd991j2ncf73mgc7k2jpmwy6"))))
+        (base32 "0cvny1yca18ch7463ad9yakz2lv8nsbrh7i7d29jfn2cgm7ndwm0"))))
     (properties `((upstream-name . "iTensor")))
     (build-system r-build-system)
     (arguments
@@ -1455,7 +1455,6 @@ this package uses Cyclops for an efficient implementation.")
                              r-mgcv
                              r-mass
                              r-jointdiag
-                             r-geigen
                              r-einsum))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/rikenbit/iTensor")
@@ -3687,13 +3686,13 @@ module or bicluster is a block of the reordered input matrix.")
 (define-public r-irtsim
   (package
     (name "r-irtsim")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "irtsim" version))
        (sha256
-        (base32 "1afgmcm9q99j3lv30zlpaaim901s184q2vrlygd4y1gc0ai5m6vj"))))
+        (base32 "0yra2s86gam58wqzb76fxkd6pn7qp47wq1p1pyjlcm2cdnzamiwz"))))
     (properties `((upstream-name . "irtsim")))
     (build-system r-build-system)
     (arguments
@@ -3705,7 +3704,7 @@ module or bicluster is a block of the reordered input matrix.")
                       (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-rlang r-mirt r-ggplot2 r-future-apply r-cli))
     (native-inputs (list r-r-rsp r-knitr))
-    (home-page "https://github.com/sward1/irtsim")
+    (home-page "https://sward1.github.io/irtsim/")
     (synopsis
      "Monte Carlo Simulation-Based Sample-Size Planning for Item Response Theory")
     (description
@@ -3715,11 +3714,12 @@ Monte Carlo simulation-based sample-size planning in item response theory (IRT).
 <doi:10.1177/25152459251314798> as a three-step workflow: specify the
 data-generating model with @code{irt_design()}, add study conditions with
 @code{irt_study()}, and run simulations with @code{irt_simulate()}.  Supports
-one-parameter logistic (1PL), two-parameter logistic (2PL), and graded response
-models with missing-completely-at-random (MCAR), missing-at-random (MAR),
-booklet, and linking missingness mechanisms.  Results include mean squared error
-(MSE), bias, root mean squared error (RMSE), standard error (SE), and coverage
-criteria with summary and plot methods.")
+one-parameter logistic (1PL), two-parameter logistic (2PL), three-parameter
+logistic (3PL), graded response (GRM), partial credit (PCM), and generalized
+partial credit (GPCM) models with missing-completely-at-random (MCAR),
+missing-at-random (MAR), booklet, and linking missingness mechanisms.  Results
+include mean squared error (MSE), bias, root mean squared error (RMSE), standard
+error (SE), and coverage criteria with summary and plot methods.")
     (license license:gpl3+)))
 
 (define-public r-irtshiny

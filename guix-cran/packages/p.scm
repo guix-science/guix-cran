@@ -30132,39 +30132,41 @@ sparse matrices for memory efficiency.")
 (define-public r-pic
   (package
     (name "r-pic")
-    (version "1.2.7")
+    (version "3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PiC" version))
        (sha256
-        (base32 "1mpbnrwhw6zslaazzj7y1sq217yjb65fnsdpgcfx57ra641ah6pf"))))
+        (base32 "0yrpmmvigw5halmyfpmcvsizxrjxrcby9faa7y8rj0rddpl6j0aj"))))
     (properties `((upstream-name . "PiC")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tictoc
-                             r-sf
+                             r-terra
+                             r-rann
                              r-magrittr
-                             r-foreach
                              r-dplyr
                              r-dbscan
                              r-data-table
                              r-conicfit
                              r-collapse))
     (home-page "https://github.com/rupppy/PiC")
-    (synopsis "Pointcloud Interactive Computation")
+    (synopsis
+     "Interactive Processing and Segmentation of Forest TLS Point-Cloud Data")
     (description
-     "This package provides advanced algorithms for analyzing pointcloud data from
-terrestrial laser scanner in forestry applications.  Key features include fast
-voxelization of large datasets; segmentation of point clouds into forest floor,
-understorey, canopy, and wood components.  The package enables efficient
-processing of large-scale forest pointcloud data, offering insights into forest
-structure, connectivity, and fire risk assessment.  Algorithms to analyze
-pointcloud data (.xyz input file).  For more details, see Ferrara & Arrizza
-(2025) <https://hdl.handle.net/20.500.14243/533471>.  For single tree
-segmentation details, see Ferrara et al. (2018)
+     "This package provides tools for the processing, segmentation, and analysis of
+terrestrial laser scanning (TLS and MLS) forest point-cloud data.  The package
+provides fast voxel-based processing, classification of point clouds into forest
+floor, understory, canopy, and woody components, and algorithms for single-tree
+analysis and structural characterization.  Methods are designed to handle large
+and dense point-cloud datasets efficiently, supporting applications in forest
+structure assessment, connectivity analysis, and fire-risk evaluation.  Input
+data are provided as .xyz', .txt', .las', or .laz point-cloud files.  For
+methodological details, see Ferrara and Arrizza (2025)
+<https://hdl.handle.net/20.500.14243/533471> and Ferrara et al. (2018)
 <doi:10.1016/j.agrformet.2018.04.008>.")
     (license license:gpl3+)))
 
@@ -32304,13 +32306,13 @@ of interaction terms.")
 (define-public r-phi2rho
   (package
     (name "r-phi2rho")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Phi2rho" version))
        (sha256
-        (base32 "14bbnpr4jpbmj914hg8782nkqr3mbp3xmywaiicb2w4wn6m6ljm0"))))
+        (base32 "0b24zbxsgp9v2lfb52b4pd2wwb0akc5s7gc3rrxjivv4h6mpm4f8"))))
     (properties `((upstream-name . "Phi2rho")))
     (build-system r-build-system)
     (arguments
@@ -32320,11 +32322,13 @@ of interaction terms.")
     (home-page "https://cran.r-project.org/package=Phi2rho")
     (synopsis "Owen's T Function and Bivariate Normal Integral")
     (description
-     "Computes the Owen's T function or the bivariate normal integral using one of the
-following: modified Euler's arctangent series, tetrachoric series, or Vasicek's
-series.  For the methods, see Komelj, J. (2023) <doi:10.4236/ajcm.2023.134026>
-(or reprint <@code{arXiv:2312.00011>} with better typography) and Vasicek, O. A.
-(1998) <doi:10.21314/JCF.1998.015>.")
+     "Computes Owen's T function or the bivariate normal integral using one of the
+following methods: the modified Euler's arctangent series, tetrachoric series,
+or Vasicek's series.  For the methodology, see Komelj, J. (2023)
+<doi:10.4236/ajcm.2023.134026>, or the revised postprint version with corrected
+contents and improved typography at <doi:10.48550/@code{arXiv.2312.00011>}.
+Also see the alternative approach by Vasicek, O. A. (1998)
+<doi:10.21314/JCF.1998.015>.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-phevis

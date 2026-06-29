@@ -28202,13 +28202,13 @@ repository, as it is a part of RKWard.")
 (define-public r-cocoon
   (package
     (name "r-cocoon")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cocoon" version))
        (sha256
-        (base32 "0qyzn88lb5w3jx7xcg6dic243l9b6i085nyj2c2f0j76vnvpmpa5"))))
+        (base32 "1m4hlvryv3fq8gf3w81md6hr7vlydcwdjjxzbxfqjwjbk9qvmld2"))))
     (properties `((upstream-name . "cocoon")))
     (build-system r-build-system)
     (arguments
@@ -43050,6 +43050,35 @@ This package extends the changepoint package (see Killick, R and Eckley, I
 (2014) <doi:10.18637/jss.v058.i03> ).")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-changepoint-influence
+  (package
+    (name "r-changepoint-influence")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "changepoint.influence" version))
+       (sha256
+        (base32 "0mlr1k7mbi2v4vd0ry4if5j6x638znj0kbfvwr20p6m6wmd0ln0a"))))
+    (properties `((upstream-name . "changepoint.influence")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-reshape r-gridextra r-ggplot2 r-data-table
+                             r-changepoint))
+    (home-page "https://github.com/rkillick/changepoint.influence/")
+    (synopsis
+     "Package to Calculate the Influence of the Data on a Changepoint Segmentation")
+    (description
+     "Allows users to input their data, segmentation and function used for the
+segmentation (and additional arguments) and the package calculates the influence
+of the data on the changepoint locations, see Wilms et al. (2022)
+<doi:10.1080/10618600.2021.2000873>.  Currently this can only be used with the
+changepoint package functions to identify changes, but we plan to extend this.
+There are options for different types of graphics to assess the influence.")
+    (license (list license:gpl2+ license:gpl3+))))
+
 (define-public r-changepoint-geo
   (package
     (name "r-changepoint-geo")
@@ -48011,13 +48040,13 @@ Morris (2008) <doi:10.18637/jss.v024.i01>.")
 (define-public r-ccmmr
   (package
     (name "r-ccmmr")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CCMMR" version))
        (sha256
-        (base32 "02dd0qc3i2y7ir39wardzq6y9cdhwigiqbr9xpm8la5csyc0w3kh"))))
+        (base32 "08m4lq8yx97qbpnmzcygv98c23pjww3n9jflj7v63c2xrvv0b4rq"))))
     (properties `((upstream-name . "CCMMR")))
     (build-system r-build-system)
     (arguments

@@ -2830,21 +2830,26 @@ Medical Research Council (Grant number MR/M013227/1).")
 (define-public r-joiner
   (package
     (name "r-joiner")
-    (version "1.2.8")
+    (version "1.2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "joineR" version))
        (sha256
-        (base32 "0hf83115g5m0m1wv9yji2wvyzb5j4wrzbzkspdcswk9i4hkmp4h7"))))
+        (base32 "11hzqnarngrqz5hq0z3005xrgx6697fnd1b43v7s709lmpnjxxcj"))))
     (properties `((upstream-name . "joineR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-survival r-statmod r-nlme r-mass r-lattice))
+    (propagated-inputs (list r-survival
+                             r-statmod
+                             r-nlme
+                             r-mass
+                             r-lattice
+                             r-generics))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/graemeleehickey/joineR/")
+    (home-page "https://graemeleehickey.github.io/joineR/")
     (synopsis
      "Joint Modelling of Repeated Measurements and Time-to-Event Data")
     (description
@@ -2856,7 +2861,7 @@ single continuous repeated measure.  The time-to-event data is modelled using a
 (cause-specific) Cox proportional hazards regression model with time-varying
 covariates.  The longitudinal outcome is modelled using a linear mixed effects
 model.  The association is captured by a latent Gaussian process.  The model is
-estimated using am Expectation Maximization algorithm.  Some plotting functions
+estimated using an Expectation Maximization algorithm.  Some plotting functions
 and the variogram are also included.  This project is funded by the Medical
 Research Council (Grant numbers G0400615 and MR/M013227/1).")
     (license (list license:gpl3

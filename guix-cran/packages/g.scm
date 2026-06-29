@@ -1272,13 +1272,13 @@ of the corresponding likelihood (see Albert, C., Vogel, S. and Ashauer, R.
 (define-public r-gutenbergr
   (package
     (name "r-gutenbergr")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gutenbergr" version))
        (sha256
-        (base32 "1hlsragcn46bp7hnippsz1vprahs7i06im4qj243mbqp88byfr7r"))))
+        (base32 "07rlq2smkjcr10vd68zbh20nm0vsxbwxbi4gscjfz55m4s0blmcj"))))
     (properties `((upstream-name . "gutenbergr")))
     (build-system r-build-system)
     (arguments
@@ -1622,19 +1622,19 @@ facilitate statistical analysis and manipulation of survey data.")
 (define-public r-guidedpls
   (package
     (name "r-guidedpls")
-    (version "1.1.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "guidedPLS" version))
        (sha256
-        (base32 "06mcls7cwiv2db9qbb2lkwhlia58hggba30p9b9jdl3sg91xyilz"))))
+        (base32 "08bm6nfh37mwcp1layz60x35lj5vfm4l1iyam6dcmrxcbvarcj18"))))
     (properties `((upstream-name . "guidedPLS")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-irlba))
+    (propagated-inputs (list r-matrix r-irlba))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/rikenbit/guidedPLS")
     (synopsis
@@ -25215,13 +25215,13 @@ by the user or by another package.")
 (define-public r-ggauto
   (package
     (name "r-ggauto")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggauto" version))
        (sha256
-        (base32 "0lw9qxijyxhlznn8sqa4v7gsrlc2c91pcgax38qf3rzsng2nbc3y"))))
+        (base32 "01620s2c8vfi99pqim9xgg4ifrvd5492gdq939shfam4ym0y898f"))))
     (properties `((upstream-name . "ggauto")))
     (build-system r-build-system)
     (arguments
@@ -25241,6 +25241,7 @@ by the user or by another package.")
                              r-ggforce
                              r-ggdist
                              r-dplyr))
+    (native-inputs (list r-knitr))
     (home-page "https://nrennie.rbind.io/ggauto/")
     (synopsis "Automatically Create and Style 'ggplot2' Charts")
     (description

@@ -7741,20 +7741,20 @@ own functions against.")
 (define-public r-fourierin
   (package
     (name "r-fourierin")
-    (version "0.2.5")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fourierin" version))
        (sha256
-        (base32 "1rl1h433m1kw1jnwb1fqq9vc1qixyz6zd7jzmm4h51xf8mz8r463"))))
+        (base32 "0f2sjlafrn51incclbdzkpayqyfckzmp9y6k7pm1if7r2gh60fb9"))))
     (properties `((upstream-name . "fourierin")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/gbasulto/fourierin")
     (synopsis "Computes Numeric Fourier Integrals")
     (description
@@ -8107,13 +8107,13 @@ for clean, consistent visual styling with a minimal dependency footprint.")
 (define-public r-forrel
   (package
     (name "r-forrel")
-    (version "1.8.1")
+    (version "1.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "forrel" version))
        (sha256
-        (base32 "1jfxbppkkpqq44djxkl2wwcz6dpvaj44yrdbi7jg6md3pdn5k2jv"))))
+        (base32 "1skzxbq1k51lhv9yxkpsyr119hk04yzc4mqqiq7fwkx2m7kpnkjl"))))
     (properties `((upstream-name . "forrel")))
     (build-system r-build-system)
     (arguments
@@ -8123,7 +8123,7 @@ for clean, consistent visual styling with a minimal dependency footprint.")
                              r-ribd
                              r-pedtools
                              r-pedprobr
-                             r-pbapply
+                             r-mirai
                              r-glue))
     (home-page "https://github.com/magnusdv/forrel")
     (synopsis "Forensic Pedigree Analysis and Relatedness Inference")
@@ -29253,13 +29253,13 @@ Representatives algorithm (Papastamoulis and Iliopoulos (2010)
 (define-public r-fabletools
   (package
     (name "r-fabletools")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fabletools" version))
        (sha256
-        (base32 "153zg6dkh0xwki043h63zc6kpfd0yc8rls56limlz2ahvk4y6c94"))))
+        (base32 "03b18my109zhl7cg6pn64c2737v38x096jsxfd6j3fykg4w5av79"))))
     (properties `((upstream-name . "fabletools")))
     (build-system r-build-system)
     (arguments

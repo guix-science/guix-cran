@@ -10782,13 +10782,13 @@ furthermore, symmetric and asymmetric error correction models.")
 (define-public r-apsimx
   (package
     (name "r-apsimx")
-    (version "2.8.235")
+    (version "2.8.270")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "apsimx" version))
        (sha256
-        (base32 "1c8js3rrgncr6dfwq2qjsn49670pp4idizl1habbw95agzrawapm"))))
+        (base32 "0w6ag2wgmy93b1xy5faj39bf5q2pm2n18k2cii88wmhsrfszpvp5"))))
     (properties `((upstream-name . "apsimx")))
     (build-system r-build-system)
     (arguments
@@ -15577,26 +15577,30 @@ et al. (2021) <doi:10.1053/j.gastro.2021.08.050>, Mungroop et al. (2019)
 (define-public r-amregtest
   (package
     (name "r-amregtest")
-    (version "1.0.5")
+    (version "1.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "amregtest" version))
        (sha256
-        (base32 "02pafnkncrlfh7ix7cafzn1iygm19li7i7yfnzld0h0sgn5lb2l9"))))
+        (base32 "059drhkpl5xp9yr18d9s3zsj2ms369l71w3d0hdarry8msn8n0as"))))
     (properties `((upstream-name . "amregtest")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-withr r-testthat r-remotes r-digest
+    (propagated-inputs (list r-withr
+                             r-testthat
+                             r-remotes
+                             r-r6
+                             r-digest
                              r-allelematch))
-    (home-page "https://cran.r-project.org/package=amregtest")
+    (home-page "https://github.com/torstax/amregtest")
     (synopsis "Runs Allelematch Regression Tests")
     (description
-     "Automates regression testing of package allelematch'.  Over 2500 tests covers
-all functions in allelematch', reproduces the examples from the documentation
-and includes negative tests.  The implementation is based on testthat'.")
+     "Automates regression testing of package allelematch'.  Over 2500 tests cover all
+functions in allelematch', reproduce the examples from the documentation, and
+include negative tests.  The implementation is based on testthat'.")
     (license license:expat)))
 
 (define-public r-amr
@@ -26844,21 +26848,21 @@ Thrun, M.C., Hansen-Goos, O., Lotsch, J. (2015) <DOI:10.3390/ijms161025897>.")
 (define-public r-adaptdiag
   (package
     (name "r-adaptdiag")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adaptDiag" version))
        (sha256
-        (base32 "02xpphdhvryc06yji89mn7m2djgkpy19ph4sd52rhfsma7xn6hyf"))))
+        (base32 "1x6dsq1k1h4j2q9ijq89ip9mj31qq2x248d2aibjdbl01fi02kw9"))))
     (properties `((upstream-name . "adaptDiag")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-pbmcapply r-foreach r-extradistr r-doparallel))
+    (propagated-inputs (list r-foreach r-extradistr r-dorng r-doparallel))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/graemeleehickey/adaptDiag")
+    (home-page "https://graemeleehickey.github.io/adaptDiag/")
     (synopsis "Bayesian Adaptive Designs for Diagnostic Trials")
     (description
      "Simulate clinical trials for diagnostic test devices and evaluate the operating

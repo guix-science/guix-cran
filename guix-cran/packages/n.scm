@@ -11172,19 +11172,19 @@ transition probabilities.")
 (define-public r-nhlscraper
   (package
     (name "r-nhlscraper")
-    (version "0.6.1")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nhlscraper" version))
        (sha256
-        (base32 "14m16vsg2kn7fnc0s568662ivg33m0nsgl0fd6b7v2bdsl4x09ba"))))
+        (base32 "0xl05lxhzw20xbq92g9yp9d04hsy9yzpa4na5dfcn75hggrrpkk4"))))
     (properties `((upstream-name . "nhlscraper")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xml2 r-jsonlite r-httr2 r-arrow))
+    (propagated-inputs (list r-xml2 r-xgboost r-jsonlite r-httr2 r-arrow))
     (native-inputs (list r-knitr))
     (home-page "https://rentosaijo.github.io/nhlscraper/")
     (synopsis "Scraper for National Hockey League Data")

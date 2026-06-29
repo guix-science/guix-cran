@@ -4881,13 +4881,13 @@ prof/cls/ora lessons do not overlap in the same hour. <https://vlad.bazon.net/>.
 (define-public r-houba
   (package
     (name "r-houba")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "houba" version))
        (sha256
-        (base32 "1vabdllzmv4zdb78qdq7pqiyf4cx0zhpnvlr533i4bccbk8h53wn"))))
+        (base32 "06vhp0ib135icnd8kimcp055dnvc65dc4jcj7z9agc6mlxh3ynr0"))))
     (properties `((upstream-name . "houba")))
     (build-system r-build-system)
     (arguments
@@ -6203,19 +6203,19 @@ be compressed and uncompressed easily to save disk space.")
 (define-public r-hnpclassifier
   (package
     (name "r-hnpclassifier")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HNPclassifier" version))
        (sha256
-        (base32 "1ihbxc7c873nvvhg8silgd60l41a72s1wyvj5kyhhddcy8783ybj"))))
+        (base32 "1njqyrdsprkf1m2ip6729mgmahjfxnjh82wqf8zx0pywf3ylkv54"))))
     (properties `((upstream-name . "HNPclassifier")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-randomforest r-nnet r-e1071 r-dplyr))
+    (propagated-inputs (list r-randomforest r-nnet r-mass r-e1071 r-dplyr))
     (home-page "https://cran.r-project.org/package=HNPclassifier")
     (synopsis "Hierarchical Neyman-Pearson Classification for Ordered Classes")
     (description
@@ -6230,9 +6230,7 @@ under-classification errors under user specified control levels with high
 probability.  It supports the creation of H-NP classifiers using scoring
 functions based on built-in classification methods (including logistic
 regression, support vector machines, and random forests), as well as
-user-trained scoring functions.  For theoretical details, please refer to Lijia
-Wang, Y. X. Rachel Wang, Jingyi Jessica Li & Xin Tong (2024)
-<doi:10.1080/01621459.2023.2270657>.")
+user-trained scoring functions.")
     (license license:expat)))
 
 (define-public r-hnp

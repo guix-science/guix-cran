@@ -5013,13 +5013,13 @@ digital terrain models using a variable focal windows size (Ilich et al. (2023)
 (define-public r-multisa
   (package
     (name "r-multisa")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multiSA" version))
        (sha256
-        (base32 "1hfd7ra1xkkwglq4kw9w2vx6x09n1khknaf9mjxapnqqgp569w2h"))))
+        (base32 "0jvc13x4dynn4z9jyvcsrajyc1cjn340lzfj8jfwzqmcihn9g1mn"))))
     (properties `((upstream-name . "multiSA")))
     (build-system r-build-system)
     (arguments
@@ -8541,13 +8541,13 @@ explore or document a data set using a tree structure.")
 (define-public r-muimaterial
   (package
     (name "r-muimaterial")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "muiMaterial" version))
        (sha256
-        (base32 "0ilfkygkfvjmz1m1cda1a86cycj1l2vmxca9dap9n2nanmjh640q"))))
+        (base32 "18gsffv0vqyl4kdnl1wx1hx74yf7gcmwvycn3na9j19pa747zd53"))))
     (properties `((upstream-name . "muiMaterial")))
     (build-system r-build-system)
     (arguments
@@ -25942,13 +25942,13 @@ addition'.")
 (define-public r-mixtime
   (package
     (name "r-mixtime")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mixtime" version))
        (sha256
-        (base32 "0c7j8kz9h8fxzx6wh4ixgdjlyxqm5n0cshq5frnv5g7j3j0a8ny5"))))
+        (base32 "183d36q3is997gbadl9zran589i3mkvdfadd49ya0f6pq01mfl8q"))))
     (properties `((upstream-name . "mixtime")))
     (build-system r-build-system)
     (arguments
@@ -37160,13 +37160,13 @@ test the between-strata heterogeneity.")
 (define-public r-metasurvey
   (package
     (name "r-metasurvey")
-    (version "0.0.21")
+    (version "0.0.24")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metasurvey" version))
        (sha256
-        (base32 "05g3ah4hsd4y255zzfh50367wbzxc13nrnk04wh8kx0m3dzpaii5"))))
+        (base32 "042x2d7ggi63dbbxr3k8grmsjar86dnpiig2pbicgvmhrfy4cv1v"))))
     (properties `((upstream-name . "metasurvey")))
     (build-system r-build-system)
     (arguments
@@ -44232,13 +44232,13 @@ interface for use with standard database workflows.")
 (define-public r-mdatools
   (package
     (name "r-mdatools")
-    (version "0.15.0")
+    (version "0.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mdatools" version))
        (sha256
-        (base32 "0kfcsqlamxwikfa5fywhfmfhcr17b1m1ryqvazw7y1mn4sfpyzl5"))))
+        (base32 "14a9yi1rsq6b594wjxc8b6p9ghkh2q028c9dwf88sbhbnzy0iwzk"))))
     (properties `((upstream-name . "mdatools")))
     (build-system r-build-system)
     (arguments
@@ -45933,13 +45933,13 @@ functions @code{(mcmap_beta()}, @code{mcmap_logitnorm()},
 (define-public r-mcm
   (package
     (name "r-mcm")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MCM" version))
        (sha256
-        (base32 "17k1msiggqqbz1c8bjy9ig5nzvqddvz53mzfhaclj1453hy793xp"))))
+        (base32 "0bjnwq506nvfnv31cicg9dd49sjsxaqlcf9qbsq2dzyxg97m1hkp"))))
     (properties `((upstream-name . "MCM")))
     (build-system r-build-system)
     (arguments
@@ -47240,13 +47240,13 @@ effects models and/or by node-splitting.")
 (define-public r-mbnmadose
   (package
     (name "r-mbnmadose")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MBNMAdose" version))
        (sha256
-        (base32 "1ppkhgkb7ril3q2nbhsxh0g8lvhfpddpl2c5bl5m1j2gl21r0h9m"))))
+        (base32 "03j52s9ffh3w2qsf8y4hj25kyph1znxx77qds9621il38shdnb5q"))))
     (properties `((upstream-name . "MBNMAdose")))
     (build-system r-build-system)
     (arguments
@@ -47258,6 +47258,7 @@ effects models and/or by node-splitting.")
                              r-reshape2
                              r-rdpack
                              r-r2jags
+                             r-overlapping
                              r-magrittr
                              r-igraph
                              r-ggplot2

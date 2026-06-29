@@ -15625,13 +15625,13 @@ factor.")
 (define-public r-encharter
   (package
     (name "r-encharter")
-    (version "0.9")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "encharter" version))
        (sha256
-        (base32 "0bhj6pyj5zz26jn79ajrg9vrmh2ndplln3n4nr639xh5vfjjibaw"))))
+        (base32 "1mmx64hklzd0sd990821fggh1v4p1jb5i7f0jgs06rgl9y25x78x"))))
     (properties `((upstream-name . "encharter")))
     (build-system r-build-system)
     (arguments

@@ -21341,13 +21341,13 @@ distribution.  The SSDM package also provides a user-friendly interface.")
 (define-public r-ssdforr
   (package
     (name "r-ssdforr")
-    (version "2.4")
+    (version "2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SSDforR" version))
        (sha256
-        (base32 "18pprbh600igc219nvi53w3cg48zxk636804iyg1wryy5zdsj7s6"))))
+        (base32 "1hb52c4z4fgj01rfc0ih5q7kadli6ski03bf6rylbhyb8g190633"))))
     (properties `((upstream-name . "SSDforR")))
     (build-system r-build-system)
     (arguments
@@ -42959,13 +42959,13 @@ robustly using a template matching approach, as described by Ekstrom (2004)
 (define-public r-skymodelr
   (package
     (name "r-skymodelr")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "skymodelr" version))
        (sha256
-        (base32 "0s2gqmpqqjsi5mfzjxjxqngk504f6m8p5v4cwkmr2rrirch6r3b3"))))
+        (base32 "1dv6assjqgz16vbkkgv596fk4f407sfkp4fvi6l2aphxvm4qvkh0"))))
     (properties `((upstream-name . "skymodelr")))
     (build-system r-build-system)
     (arguments
@@ -58787,13 +58787,13 @@ packages.")
 (define-public r-sfpl
   (package
     (name "r-sfpl")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SFPL" version))
        (sha256
-        (base32 "03axwipil1k1dcjc2zsc62a464qqrncyl2z828w7dqkhp2mfyz2s"))))
+        (base32 "1d4prav6ipjvdakw52b5dync94b9mz16bwrzgbvkh3c3ggabid8d"))))
     (properties `((upstream-name . "SFPL")))
     (build-system r-build-system)
     (arguments
@@ -58804,7 +58804,7 @@ packages.")
     (synopsis "Sparse Fused Plackett-Luce")
     (description
      "This package implements the methodological developments found in Hermes, van
-Heerwaarden, and Behrouzi (2024) <doi:10.48550/@code{arXiv.2308.04325>}, and
+Heerwaarden, and Behrouzi (2025) <doi:10.48550/@code{arXiv.2407.10846>}, and
 allows for the statistical modeling of multi-group rank data in combination with
 object variables.  The package also allows for the simulation of synthetic
 multi-group rank data.")

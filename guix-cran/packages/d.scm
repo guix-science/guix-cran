@@ -6435,13 +6435,13 @@ Company (2019).")
 (define-public r-dream
   (package
     (name "r-dream")
-    (version "2.1.3")
+    (version "2.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dream" version))
        (sha256
-        (base32 "1snnzrr2yds235zj7lnz0ky0saxp35n9xl9i08xnp23x2f5nki4k"))))
+        (base32 "0sijr6mzrgy63ipvp5c8b0vdplg6f5ziraa98kqndss57fslqgls"))))
     (properties `((upstream-name . "dream")))
     (build-system r-build-system)
     (arguments
@@ -24210,41 +24210,6 @@ decomposition methods, Lee-Carter mortality forecasting, Leslie matrices, and
 population pyramids for demographic analysis.  Methods are described in Preston
 et al. (2001, ISBN:1557864519) and Ustyuzhanin (2025)
 <doi:10.17323/demreview.v12i4.30415>.")
-    (license license:expat)))
-
-(define-public r-demokin
-  (package
-    (name "r-demokin")
-    (version "1.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DemoKin" version))
-       (sha256
-        (base32 "0ph60ifffg29a88f9qxkx6zvcv8rxl1q5wd39j5zz2fqm3ggz47v"))))
-    (properties `((upstream-name . "DemoKin")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-purrr
-                             r-progress
-                             r-matrixcalc
-                             r-matrix
-                             r-mass
-                             r-magrittr
-                             r-lifecycle
-                             r-igraph
-                             r-dplyr
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/IvanWilli/DemoKin")
-    (synopsis "Estimate Population Kin Distribution")
-    (description
-     "Estimate population kin counts and its distribution by type, age and sex.  The
-package implements one-sex and two-sex framework for studying living-death
-availability, with time varying rates or not, and multi-stage model.")
     (license license:expat)))
 
 (define-public r-demokde

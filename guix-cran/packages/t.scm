@@ -20327,13 +20327,13 @@ based on the morphological tagset from the Universal Dependencies.")
 (define-public r-tidystats
   (package
     (name "r-tidystats")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidystats" version))
        (sha256
-        (base32 "0zjpixm6j1a3rnyigzqlvzlgx8s7877ivz1hhdwi11rmjc8mrf1f"))))
+        (base32 "0j31dhzd97md6500vf7s9lrhz78lg4kqjmycr2r5bjqy42vw700k"))))
     (properties `((upstream-name . "tidystats")))
     (build-system r-build-system)
     (arguments

@@ -7048,19 +7048,18 @@ contributions, registrations, clients, and lobbyists.")
 (define-public r-loadings
   (package
     (name "r-loadings")
-    (version "0.5.1")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "loadings" version))
        (sha256
-        (base32 "0ar8xryk8xd2p5zscwshk83pg3ivwbp60kmjamjzwk56fjn8zb9k"))))
+        (base32 "0a9cwr63i08hpjxh70a3lxas6y0pdgvk8c8lfrxiwzd0r7g8yaf4"))))
     (properties `((upstream-name . "loadings")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-geigen))
     (home-page "https://cran.r-project.org/package=loadings")
     (synopsis
      "Loadings for Principal Component Analysis and Partial Least Squares")

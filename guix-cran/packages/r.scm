@@ -6698,13 +6698,13 @@ statements.")
 (define-public r-rsqlite-toolkit
   (package
     (name "r-rsqlite-toolkit")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RSQLite.toolkit" version))
        (sha256
-        (base32 "13f1ca7c6bjh8i8cvhwy44d89aqs2izh7cc4mh8jjk0v3n4g95cr"))))
+        (base32 "0a1w1q8lsrlrvrfxajsp5x8m7i30ggzk0nrfcif5hiri39m5rpnk"))))
     (properties `((upstream-name . "RSQLite.toolkit")))
     (build-system r-build-system)
     (arguments
@@ -23587,13 +23587,13 @@ biological data.  M. Draminski, J. Koronacki (2018) <doi:10.18637/jss.v085.i12>.
 (define-public r-rmcda
   (package
     (name "r-rmcda")
-    (version "0.3")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RMCDA" version))
        (sha256
-        (base32 "0rairbx6fqwzpdc6b0did5212ki0ryc1b23xfwaql3a7b1rmzn5h"))))
+        (base32 "08pwxql5vj7xr9w29x2mpb8b60i7iyaavc02rpc4kcf2yrsdmxww"))))
     (properties `((upstream-name . "RMCDA")))
     (build-system r-build-system)
     (arguments
@@ -23609,12 +23609,9 @@ biological data.  M. Draminski, J. Koronacki (2018) <doi:10.18637/jss.v085.i12>.
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=RMCDA")
-    (synopsis "Multi-Criteria Decision Analysis")
+    (synopsis "Multi-Criteria Decision Analysis in R")
     (description
-     "Supporting decision making involving multiple criteria.  Annice Najafi,
-Shokoufeh Mirzaei (2025) RMCDA: The Comprehensive R Library for applying
-multi-criteria decision analysis methods, Volume 24, e100762
-<doi:10.1016/j.simpa.2025.100762>.")
+     "This package provides different methods of multi-criteria decision analysis.")
     (license license:expat)))
 
 (define-public r-rmcc
@@ -43192,6 +43189,32 @@ analysis with terminal events\" (Furberg et al., 2021)
 <doi:10.1007/s10985-021-09533-5>.")
     (license license:gpl2+)))
 
+(define-public r-rectpacker
+  (package
+    (name "r-rectpacker")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rectpacker" version))
+       (sha256
+        (base32 "1kav3zfagds94b6ip6a7q5ayn254az2r5dqslwfcd45kz3523y44"))))
+    (properties `((upstream-name . "rectpacker")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/coolbutuseless/rectpacker")
+    (synopsis "Rectangle Packing")
+    (description
+     "Rectangle packing is a packing problem where rectangles are placed into a larger
+rectangular region (without overlapping) in order to maximise the use space.
+Rectangles are packed using the skyline heuristic as discussed in Lijun et al
+(2011) A Skyline-Based Heuristic for the 2D Rectangular Strip Packing Problem
+<doi:10.1007/978-3-642-21827-9_29>.  A function is also included for determining
+a good small-sized box for containing a given set of rectangles.")
+    (license license:expat)))
+
 (define-public r-recosystem
   (package
     (name "r-recosystem")
@@ -55545,13 +55568,13 @@ search or by a given id.")
 (define-public r-ravel
   (package
     (name "r-ravel")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ravel" version))
        (sha256
-        (base32 "0b0ibcqf31jls61iqc4gprdjkl5b194b0a56414km9m77cgmq8cm"))))
+        (base32 "1ir6rizdm816ig5f6x3apdaa02vnzm6vf3hf5k48zn65cln612li"))))
     (properties `((upstream-name . "ravel")))
     (build-system r-build-system)
     (arguments
