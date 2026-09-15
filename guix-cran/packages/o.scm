@@ -125,13 +125,13 @@ boundaries.")
 (define-public r-oystermapr
   (package
     (name "r-oystermapr")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oystermapR" version))
        (sha256
-        (base32 "02c2wxavmfj2yy5ghm28rwg20z7qklhndkr5pd6lf6gfn0rg7awp"))))
+        (base32 "10avhda9d53p57gvwv30mg6k596hk0pkjdag7w94q14y80v4sv3x"))))
     (properties `((upstream-name . "oystermapR")))
     (build-system r-build-system)
     (arguments
@@ -148,19 +148,26 @@ using Analytic Hierarchy Process (AHP) weighted scoring.  Users supply sensor
 data from Acoustic Doppler Current Profilers (ADCP),
 Conductivity-Temperature-Depth (CTD) sensors, bathymetric sonar, and sidescan
 sonar, specify a target species, and receive per-location suitability scores, a
-@code{GeoTIFF} heatmap for QGIS', contour lines, and a formatted PDF or HTML
-report.  Supports fourteen species across global aquaculture regions, including
-Ostrea edulis, Magallana gigas, Crassostrea virginica, Crassostrea
-hongkongensis, and ten further species; see @code{list_species()}.  Includes
-season-aware scoring, tidal height correction, Bayesian tolerance parameter
-updating from field observations, spatial block cross-validation (Roberts et
-al., 2017, <doi:10.1111/ecog.02881>), permutation variable importance, wave
-exposure and sediment stability modules, Harmful Algal Bloom (HAB) risk and
-anthropogenic disturbance scoring with optional live International Council for
-the Exploration of the Sea (ICES) data integration, hybrid larval dispersal
-connectivity scoring (union-find Gaussian kernel plus optional @code{OpenDrift}
-or Finite Volume Community Ocean Model ('FVCOM') connectivity matrix), and batch
-multi-species comparison.")
+five-band @code{GeoTIFF} heatmap for QGIS', contour lines, and a formatted PDF
+or HTML report.  Supports seventeen species across global aquaculture regions,
+including Ostrea edulis, Magallana gigas, Crassostrea virginica, Crassostrea
+hongkongensis, and thirteen further species; see @code{list_species()}.
+Includes ocean acidification scoring via in-house aragonite saturation state
+(Omega_arag) calculation using Lueker et al. (2000)
+<doi:10.1016/S0304-4203(00)00022-0> and Mucci (1983)
+<doi:10.1357/002224083788520153> equilibrium constants (no external
+dependencies), variable impact diagnostics @code{(variable_impact()}),
+fine-scale habitat area analysis for restoration reporting in m2 with contiguous
+patch identification @code{(area_summary()}), tolerance curve visualisation
+@code{(plot_tolerance()}), season-aware scoring, tidal height correction,
+Bayesian tolerance parameter updating from field observations, spatial block
+cross-validation (Roberts et al., 2017, <doi:10.1111/ecog.02881>), permutation
+variable importance, wave exposure and sediment stability modules, Harmful Algal
+Bloom (HAB) risk and anthropogenic disturbance scoring with optional live
+International Council for the Exploration of the Sea (ICES) data integration,
+hybrid larval dispersal connectivity scoring (union-find Gaussian kernel plus
+optional @code{OpenDrift} or Finite Volume Community Ocean Model ('FVCOM')
+connectivity matrix), and batch multi-species comparison.")
     (license license:gpl3+)))
 
 (define-public r-oyster
@@ -359,13 +366,13 @@ and data on global economic and social issues.")
 (define-public r-owidapi
   (package
     (name "r-owidapi")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "owidapi" version))
        (sha256
-        (base32 "1xannxprp79z7i3gxhd9znwvfy3fq88932vmqfs9zxpgblm176q7"))))
+        (base32 "1yh8v43ld81j3xh9z0z0d5l9qss8wi9hag7xwscnz8x735v6jpps"))))
     (properties `((upstream-name . "owidapi")))
     (build-system r-build-system)
     (arguments
@@ -382,7 +389,7 @@ and data on global economic and social issues.")
     (description
      "Retrieve data from the Our World in Data (OWID) Chart API
 <https://docs.owid.io/projects/etl/api/>.  OWID provides public access to more
-than 5,000 charts focusing on global problems such as poverty, disease, hunger,
+than 4,000 charts focusing on global problems such as poverty, disease, hunger,
 climate change, war, existential risks, and inequality.")
     (license license:expat)))
 
@@ -717,13 +724,13 @@ a null model of random rotation, as explained in De la Cruz et al. (2017)
 (define-public r-overlapping
   (package
     (name "r-overlapping")
-    (version "2.4")
+    (version "2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "overlapping" version))
        (sha256
-        (base32 "0wmab01aa7y7s0h2a6xczqqs0cbp6np192vznk733skfvj59d78v"))))
+        (base32 "1xayp2x0hzc2r553bqgdi7g99rc7mgfs2nwgk04wkvp76rdym0y0"))))
     (properties `((upstream-name . "overlapping")))
     (build-system r-build-system)
     (arguments
@@ -798,39 +805,45 @@ models using the methodology presented in Basu (2025)
 (define-public r-ouwie
   (package
     (name "r-ouwie")
-    (version "2.10")
+    (version "3.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OUwie" version))
        (sha256
-        (base32 "19bh0vb7azxpzrjw2829gcjcq91fnzb5ybhkp3fsvg9xccmjq9dg"))))
+        (base32 "1sdp095sr9d7ylzsqla827p82hh8fz8i7333y9897s7j68wpjpjf"))))
     (properties `((upstream-name . "OUwie")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcolorbrewer
+    (propagated-inputs (list r-reshape2
+                             r-rcolorbrewer
                              r-phytools
                              r-phylolm
                              r-phangorn
                              r-paleotree
                              r-numderiv
                              r-nloptr
+                             r-mass
                              r-lhs
                              r-interp
                              r-igraph
+                             r-ggplot2
+                             r-gensa
                              r-geiger
+                             r-expm
+                             r-data-table
                              r-corpcor
+                             r-corhmm
                              r-ape))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/thej022214/OUwie")
     (synopsis "Analysis of Evolutionary Rates in an OU Framework")
     (description
-     "Estimates rates for continuous character evolution under Brownian motion and a
-new set of Ornstein-Uhlenbeck based Hansen models that allow both the strength
-of the pull and stochastic motion to vary across selective regimes.  Beaulieu et
-al (2012).")
+     "Estimates rates for continuous character evolution under Brownian motion and
+Ornstein-Uhlenbeck based Hansen models that allow both the strength of the pull
+and stochastic motion to vary across selective regimes.  Beaulieu et al. (2012).")
     (license license:gpl2+)))
 
 (define-public r-outstandr
@@ -982,13 +995,13 @@ exploratory data analysis, and preprocessing workflows.")
 (define-public r-outliertree
   (package
     (name "r-outliertree")
-    (version "1.10.0-1")
+    (version "1.10.0-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "outliertree" version))
        (sha256
-        (base32 "1pva49dipbsgpq3hxndd77vyv91kvzrys6jg07b7pv7ik5rcrwcs"))))
+        (base32 "0ix25nsa5lxvwh58ajn452j2y8cmrs21ig58zhx30zi8w2i16m04"))))
     (properties `((upstream-name . "outliertree")))
     (build-system r-build-system)
     (arguments
@@ -1042,13 +1055,13 @@ extreme observations.")
 (define-public r-outlierso3
   (package
     (name "r-outlierso3")
-    (version "0.6.3")
+    (version "0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OutliersO3" version))
        (sha256
-        (base32 "165v572w9bnvay9f0xyxzbhgj1i86ndia4rzqy98i48dfdbdb990"))))
+        (base32 "1x7dyviy3n83hr9cf04mf4rfym8l6bafclmvj90xagfxl0jbkq80"))))
     (properties `((upstream-name . "OutliersO3")))
     (build-system r-build-system)
     (arguments
@@ -1059,7 +1072,6 @@ extreme observations.")
                              r-robustbase
                              r-rlist
                              r-memisc
-                             r-hdoutliers
                              r-ggplot2
                              r-ggally
                              r-forcats
@@ -1067,16 +1079,15 @@ extreme observations.")
                              r-dplyr
                              r-cellwise))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=OutliersO3")
+    (home-page "https://github.com/antonr4/OutliersO3")
     (synopsis "Draws Overview of Outliers (O3) Plots")
     (description
      "Potential outliers are identified for all combinations of a dataset's variables.
  O3 plots are described in Unwin(2019) <doi:10.1080/10618600.2019.1575226>.  The
-available methods are @code{HDoutliers()} from the package HDoutliers',
-@code{FastPCS()} from the package @code{FastPCS}', @code{mvBACON()} from
-@code{robustX}', @code{adjOutlyingness()} from robustbase',
-@code{DectectDeviatingCells()} from @code{cellWise}', @code{covMcd()} from
-robustbase'.")
+available methods are @code{FastPCS()} from the package @code{FastPCS}',
+@code{mvBACON()} from @code{robustX}', @code{adjOutlyingness()} from
+robustbase', @code{DectectDeviatingCells()} from @code{cellWise}',
+@code{covMcd()} from robustbase'.")
     (license license:gpl2+)))
 
 (define-public r-outlierslearn
@@ -1108,6 +1119,31 @@ Alfandi (2020) <doi:10.1145/3381028>, Abir Smiti (2020)
 <doi:10.1016/j.cosrev.2020.100306>, and Xiaogang Su, Chih-Ling Tsai (2011)
 <doi:10.1002/widm.19>.")
     (license license:expat)))
+
+(define-public r-outliershd
+  (package
+    (name "r-outliershd")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "outliersHD" version))
+       (sha256
+        (base32 "1fbqrhw2qnr7596igk3yww02149irdmcj83yrhbg4fqpv3xrf77i"))))
+    (properties `((upstream-name . "outliersHD")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rnanoflann r-rfast2 r-rfast))
+    (home-page "https://cran.r-project.org/package=outliersHD")
+    (synopsis "Detection of Outliers in High Dimensional Data")
+    (description
+     "Algorithms to detect high-dimensional outliers.  The minimum diagonal product of
+Ro, Zou, Wang and Yin (2015) <doi:10.1093/biomet/asv021>, the algorithm of
+Wilkinson (2018) <doi:10.1109/TVCG.2017.2744685>, and the distances of distances
+of Lee and Jeon (2025) <doi:10.48550/@code{arXiv.2511.02199>}.")
+    (license license:gpl2+)))
 
 (define-public r-outliers-ts-oga
   (package
@@ -1266,13 +1302,13 @@ Learning.")
 (define-public r-outcomerate
   (package
     (name "r-outcomerate")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "outcomerate" version))
        (sha256
-        (base32 "07mwml7r98qjgvrp938sqf7klyspz110583j0zwb72j69n4whmrj"))))
+        (base32 "1grdapx7k8vz7ydckwnpvbvbn9x14q2g4c6j4a0x4cva95sbjbd4"))))
     (properties `((upstream-name . "outcomerate")))
     (build-system r-build-system)
     (arguments
@@ -1280,15 +1316,15 @@ Learning.")
       #:tests? #f))
     (propagated-inputs (list r-rdpack))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/ropensci/outcomerate")
+    (home-page "https://docs.ropensci.org/outcomerate/")
     (synopsis "AAPOR Survey Outcome Rates")
     (description
      "Standardized survey outcome rate functions, including the response rate, contact
 rate, cooperation rate, and refusal rate.  These outcome rates allow survey
 researchers to measure the quality of survey data using definitions published by
-the American Association of Public Opinion Research (AAPOR).  For details on
-these standards, see AAPOR (2016)
-<https://www.aapor.org/Standards-Ethics/Standard-Definitions-(1).aspx>.")
+the American Association for Public Opinion Research (AAPOR).  For details on
+these standards, see AAPOR (2023)
+<https://aapor.org/wp-content/uploads/2024/03/Standards-Definitions-10th-edition.pdf>.")
     (license license:cc0)))
 
 (define-public r-outbreaks
@@ -1312,6 +1348,32 @@ these standards, see AAPOR (2016)
      "Empirical or simulated disease outbreak data, provided either as RData or as
 text files.")
     (license license:gpl2+)))
+
+(define-public r-outbreakr
+  (package
+    (name "r-outbreakr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OutbreakR" version))
+       (sha256
+        (base32 "1lsglwq256438fbykbbhrr82dqdpf67cridgqxinvmayxnbcxs3h"))))
+    (properties `((upstream-name . "OutbreakR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/vinodhpmd/OutbreakR")
+    (synopsis "Epidemiological Tools for Outbreak Investigation and Analysis")
+    (description
+     "This package provides tools for epidemiological analysis of disease outbreaks,
+including measures of disease frequency, association, impact, transmission, and
+vaccine effectiveness.  Functions support prevalence, incidence, attack rates,
+mortality, case fatality, risk ratios, odds ratios, rate ratios, attributable
+measures, reproduction numbers, herd immunity thresholds, contingency tables,
+grouped analyses, and outbreak line-list validation.")
+    (license license:gpl3+)))
 
 (define-public r-outbreaker2
   (package
@@ -1468,19 +1530,19 @@ with the OTTR Template repository to create courses.")
 (define-public r-ottr
   (package
     (name "r-ottr")
-    (version "1.5.3")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ottr" version))
        (sha256
-        (base32 "1q642c83iwbhnk5pq9w901a439jjlx98dv4knv5bg9i5vv8vh8s8"))))
+        (base32 "12nmsavrl39jrvxr1q8625m6djv88limgwvl3ii61yb9b8md9k7b"))))
     (properties `((upstream-name . "ottr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-zip r-testthat r-r6 r-jsonlite))
+    (propagated-inputs (list r-zip r-testthat r-r6 r-jsonlite r-fs))
     (home-page "https://cran.r-project.org/package=ottr")
     (synopsis "An R Autograding Extension for Otter-Grader")
     (description
@@ -1488,6 +1550,32 @@ with the OTTR Template repository to create courses.")
 (<https://otter-grader.readthedocs.io>).  It supports grading R scripts, R
 Markdown documents, and R Jupyter Notebooks.")
     (license license:bsd-3)))
+
+(define-public r-otter
+  (package
+    (name "r-otter")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "otter" version))
+       (sha256
+        (base32 "0zrp6pank9y9prh0kycmnpmm4r8lrpbykd29adkqabc95js5j9v5"))))
+    (properties `((upstream-name . "otter")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/ottvahtrik/otter")
+    (synopsis "Ott's Utility Functions")
+    (description
+     "This package provides a growing collection of personal utility functions.
+Currently provides tools to parse Rich Text Format (RTF) files and extract their
+tables into data frames, automatically detecting header rows, merging multi-page
+tables, and resolving merged cells.  Particularly useful for tables produced by
+SAS or by the r2rtf package, which are commonly used for clinical trial and
+regulatory reporting.")
+    (license license:expat)))
 
 (define-public r-ottensor
   (package
@@ -2065,6 +2153,33 @@ time-to-event outcome; details are described in Wang et al (2021)
 <doi:10.1002/sim.9185>.")
     (license license:gpl3)))
 
+(define-public r-osscontribs
+  (package
+    (name "r-osscontribs")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "osscontribs" version))
+       (sha256
+        (base32 "0ga7i9p6qymp0769fgdfj0k629c7nwpna8z566k8r6cjjnz1qvmj"))))
+    (properties `((upstream-name . "osscontribs")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/chrislongros/osscontribs")
+    (synopsis
+     "Commit and Contributor Statistics for Major Open Source Projects")
+    (description
+     "Over 30 years of daily commit activity and contributor growth for
+@code{FreeBSD}', @code{OpenBSD}', @code{NetBSD}', and @code{PostgreSQL}'.  Built
+from cloned git repositories for complete coverage -- not limited by API quotas.
+ Includes daily commits, daily new committers, weekly aggregates, and
+Phabricator sign-up data.  Designed for time series analysis, growth modeling,
+and cross-project comparison.  Contains no personal data.")
+    (license license:cc0)))
+
 (define-public r-ossanma
   (package
     (name "r-ossanma")
@@ -2119,13 +2234,13 @@ handle servers that run locally as well as the OSRM webserver.")
 (define-public r-osrm-backend
   (package
     (name "r-osrm-backend")
-    (version "0.3.1")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "osrm.backend" version))
        (sha256
-        (base32 "0j3kdgx47qnn6z180q8j74ady710kzdnlwplhja17k6cxgjwc3hn"))))
+        (base32 "0d3zjmganzhziwlbg5927agfbffs00bplfdi7cm32qnrv8nninmx"))))
     (properties `((upstream-name . "osrm.backend")))
     (build-system r-build-system)
     (arguments
@@ -2144,7 +2259,7 @@ handle servers that run locally as well as the OSRM webserver.")
     (description
      "Install and control Open Source Routing Machine ('OSRM') backend executables to
 prepare routing data and run/stop a local OSRM server.  For computations with
-the running server use the osrm R package
+the running server use the osrm package for R
 (<https://cran.r-project.org/package=osrm>).")
     (license license:expat)))
 
@@ -2230,6 +2345,43 @@ background maps and add a correct scale bar to @code{OpenStreetMap} plots in any
 map projection.")
     (license license:gpl2+)))
 
+(define-public r-osmnxr
+  (package
+    (name "r-osmnxr")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "osmnxr" version))
+       (sha256
+        (base32 "1i8g1mvagjmy5bqjii51zb5hg15dd7wzgn4x7qvl7d85s89269mf"))))
+    (properties `((upstream-name . "osmnxr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-tibble
+                             r-sf
+                             r-rlang
+                             r-purrr
+                             r-httr2
+                             r-glue
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/StrategicProjects/osmnxr")
+    (synopsis "Download, Model and Analyze 'OpenStreetMap' Street Networks")
+    (description
+     "This package provides a tidyverse'-friendly toolkit, inspired by the OSMnx
+Python library, to download, model, simplify, analyze and visualize street
+networks and other geospatial features from @code{OpenStreetMap}'.  Build
+routable graphs from a place name, address, point or bounding box; simplify
+topology; compute shortest paths, isochrones and urban metrics (intersection
+density, circuity, street-orientation entropy, centrality); and export to sf',
+sfnetworks and @code{MapLibre}'.  Heavy graph computation is performed by a
+bundled Rust core.")
+    (license license:expat)))
+
 (define-public r-osmextract
   (package
     (name "r-osmextract")
@@ -2257,13 +2409,13 @@ several providers.")
 (define-public r-osmdata
   (package
     (name "r-osmdata")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "osmdata" version))
        (sha256
-        (base32 "0dbw3f54ndr1g8gdbjzin984v0l8h33rxz96cq85smfz2y6jjala"))))
+        (base32 "1byd9fpwkd3m2w8hbcin0vwnqswfqg41zapwik5ff7czdhhpiq2y"))))
     (properties `((upstream-name . "osmdata")))
     (build-system r-build-system)
     (arguments
@@ -2319,13 +2471,13 @@ Krantz (2023) <https://www.ssrn.com/abstract=4537867>.")
 (define-public r-osmapir
   (package
     (name "r-osmapir")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "osmapiR" version))
        (sha256
-        (base32 "033dlpq95qbn9lxbl16v95ihlpywz0vwykkqh45d0bgvz2rpf4pj"))))
+        (base32 "00gibxmk7fgh4f5m07zx7jjn1yx7bk3i00bsmf5k8kk1k493i96n"))))
     (properties `((upstream-name . "osmapiR")))
     (build-system r-build-system)
     (arguments
@@ -2927,6 +3079,35 @@ estimator and produces estimates that are asymptotically unbiased as N goes to
 infinity, with a T as low as 2.")
     (license license:gpl3+)))
 
+(define-public r-orthomtl
+  (package
+    (name "r-orthomtl")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "orthoMTL" version))
+       (sha256
+        (base32 "0il5l6l3plb3xyl7rh42rx414xjxv3kciy4mgjaaxcxwh6ydqzp0"))))
+    (properties `((upstream-name . "orthoMTL")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-ggplot2 r-foreach r-doparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=orthoMTL")
+    (synopsis "Multi-Task Learning with Orthogonal Constraints")
+    (description
+     "Fits regularised multi-task learning models where relationships between tasks
+are controlled via orthogonality or disjoint-support constraints.  Supports
+regression, binary classification, and censored survival data.  In survival
+mode, time-to-event outcomes are converted into binary labels at user-defined
+thresholds, enabling the discovery of features with time-varying effects that
+standard proportional-hazards models cannot detect.  Implements the penalty
+described in Vervier et al. (2014) <https://hal.science/hal-00985654>.")
+    (license license:gpl3)))
+
 (define-public r-orthogonalsplinebasis
   (package
     (name "r-orthogonalsplinebasis")
@@ -3026,13 +3207,13 @@ relationships between glutamine synthetase proteins in seed plants.")
 (define-public r-orthanc
   (package
     (name "r-orthanc")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "orthanc" version))
        (sha256
-        (base32 "1hg6wdn36q2fvdgywg16mz30jw71fhg6g8l1ckzgjs0x35nyhcw4"))))
+        (base32 "0i4fi8xpln6bmcpmk1lvkrv1caivc5gw9azfkxmld347zvw91a6x"))))
     (properties `((upstream-name . "orthanc")))
     (build-system r-build-system)
     (arguments
@@ -3464,13 +3645,13 @@ a correlated-residual structure.")
 (define-public r-orion
   (package
     (name "r-orion")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ORION" version))
        (sha256
-        (base32 "0pdh8nnagj5hv5yyw72p9x89ld3mjqxxzz21zybpb7a9h57lz65b"))))
+        (base32 "1bwl76wlrwyfk4hl1nr4s4j3nl9f8hirgp2npb066al7v3is7bbn"))))
     (properties `((upstream-name . "ORION")))
     (build-system r-build-system)
     (arguments
@@ -3601,13 +3782,13 @@ orientlib help topic for details.")
 (define-public r-orgutils
   (package
     (name "r-orgutils")
-    (version "0.5-3")
+    (version "0.5-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "orgutils" version))
        (sha256
-        (base32 "1r3bq46bd21kqnw8vvpgb3bvj3m65hfm6yc6zav0pj2rdf1hb8ww"))))
+        (base32 "077912gd438prqx6p4bjbzmf03h5v9wp4amvijxzar3w99jvkszj"))))
     (properties `((upstream-name . "orgutils")))
     (build-system r-build-system)
     (arguments
@@ -4979,6 +5160,72 @@ structured data.table objects for easy analysis and manipulation.  Replaces the
 discontinued rorcid package with a modern, CRAN-compliant implementation.")
     (license license:expat)))
 
+(define-public r-orci-welch
+  (package
+    (name "r-orci-welch")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ORCI.Welch" version))
+       (sha256
+        (base32 "1s431qh0kal5k1268by5xyv3sa5hy5hqivghkbf4iz4k6cc4hmh9"))))
+    (properties `((upstream-name . "ORCI.Welch")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=ORCI.Welch")
+    (synopsis
+     "Approximate Odds Ratio Confidence Intervals with Welch's Adjustments")
+    (description
+     "Calculates approximate odds ratio confidence intervals with Welch's adjustments
+for a given dataset and ranks different odds ratio confidence intervals in terms
+of multiple metrics based on the dataset given.  References for Welch's
+adjustments can be found at Pan (2002) <doi:10.1016/S0167-9473(01)00107-4> and
+Clinton, Morgan, and Noguchi (2026)
+<https://meetings.ams.org/math/jmm2026/meetingapp.cgi/Paper/58471>.")
+    (license license:expat)))
+
+(define-public r-orchard
+  (package
+    (name "r-orchard")
+    (version "2.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "orchaRd" version))
+       (sha256
+        (base32 "19ilcss48mwx61fnm2h25bhkhwjmgkmqbk2ygmry8g7v0km3642f"))))
+    (properties `((upstream-name . "orchaRd")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tester
+                             r-rwishart
+                             r-progress
+                             r-metafor
+                             r-mass
+                             r-magrittr
+                             r-latex2exp
+                             r-ggplot2
+                             r-ggbeeswarm
+                             r-emmeans
+                             r-dplyr
+                             r-ape))
+    (home-page "https://daniel1noble.github.io/orchaRd/")
+    (synopsis
+     "Visualizing Meta-Analyses with Orchard Plots and Prediction Intervals")
+    (description
+     "Generates prediction intervals and orchard plots for meta-analytic and
+meta-regression models fitted with the metafor package.  Orchard plots augment
+classic forest plots by displaying individual effect sizes together with group
+means and their confidence and prediction intervals, providing an enhanced
+visualization of meta-analytic data for ecology, evolution, and beyond.  Methods
+are described in Nakagawa et al. (2023) <doi:10.1111/2041-210X.14152>.")
+    (license license:gpl2+)))
+
 (define-public r-orcamentobr
   (package
     (name "r-orcamentobr")
@@ -5034,13 +5281,13 @@ object from the graph package.")
 (define-public r-orbweaver
   (package
     (name "r-orbweaver")
-    (version "0.18.2")
+    (version "0.18.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "orbweaver" version))
        (sha256
-        (base32 "08x4wcqbfwrk1w3va1z027k9xjjkvymbm756spq1n8m53zy52nvp"))))
+        (base32 "0kkm1sdrlw2xyv0mf40h2kmpwzbz6pphiak7idb133xrs6n5ddr7"))))
     (properties `((upstream-name . "orbweaver")))
     (build-system r-build-system)
     (arguments
@@ -5090,13 +5337,13 @@ ISBN:0-521-43272-3).")
 (define-public r-orbital
   (package
     (name "r-orbital")
-    (version "0.5.1")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "orbital" version))
        (sha256
-        (base32 "1xi73gp1791808zhby882h6pw8rs9w7xwi9q1839d8hkj0nhch09"))))
+        (base32 "0d2j5m1b61p3bwzb6x0nvvd8qmdkmgjqswfys4jk1kg8ppxyk5b1"))))
     (properties `((upstream-name . "orbital")))
     (build-system r-build-system)
     (arguments
@@ -5112,16 +5359,53 @@ equations to perform predictions.  These smaller objects allow for low
 dependency prediction locally or directly in databases.")
     (license license:expat)))
 
+(define-public r-orbis
+  (package
+    (name "r-orbis")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "orbis" version))
+       (sha256
+        (base32 "175snp037hm9dvyzizn8hwqlwxx6w6qngsk9d6is09ag8h536b90"))))
+    (properties `((upstream-name . "orbis")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-htmltools))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mqfarooqi1/orbis")
+    (synopsis
+     "Interactive and High-Resolution Layered Graphics with Built-in World Maps")
+    (description
+     "This package provides a layered grammar of graphics that compiles plots to a
+resolution-independent scene description and renders it through two back-ends: a
+self-contained SVG writer with embedded @code{JavaScript} for interactive
+figures (tooltips, hover highlighting, zoom, pan and legend toggling) and R's
+own graphics devices for publication-quality output at any resolution.
+Geographic layers are first class: a simplified world polygon dataset ships with
+the package and can be drawn with several map projections, including Robinson,
+Equal Earth and an orthographic globe.  The layered grammar follows Wickham
+(2010) <doi:10.1198/jcgs.2009.07098>; projections follow Snyder (1987)
+<doi:10.3133/pp1395> and, for Equal Earth, Savric, Patterson and Jenny (2019)
+<doi:10.1080/13658816.2018.1504949>; line simplification uses Douglas and
+Peucker (1973) <doi:10.3138/FM57-6770-U75U-7727>; the default colour scales
+follow the guidance on perceptually uniform palettes of Crameri, Shephard and
+Heron (2020) <doi:10.1038/s41467-020-19160-7>.")
+    (license license:expat)))
+
 (define-public r-orangutan
   (package
     (name "r-orangutan")
-    (version "2.1.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Orangutan" version))
        (sha256
-        (base32 "17fkb1azj2kcs0hmabppblbr9hxb81cknxs7hvv8bzpkhvh8a1ld"))))
+        (base32 "0khw0x1knd4yjdcqn4q3rjcbb8py6x7908nzx7zhvsdxj7vn7i9y"))))
     (properties `((upstream-name . "Orangutan")))
     (build-system r-build-system)
     (arguments
@@ -5141,12 +5425,12 @@ dependency prediction locally or directly in databases.")
     (home-page "https://github.com/metalofis/Orangutan-R")
     (synopsis "Automated Analysis of Phenotypic Data")
     (description
-     "This package provides functions to analyze and visualize meristic and mensural
-phenotypic data in a comparative framework.  The package implements an automated
-pipeline that summarizes traits, identifies diagnostic variables among groups,
-performs multivariate and univariate statistical analyses, and produces
-publication-ready graphics.  Earlier implementation are described in Torres
-(2025) <doi:10.64898/2025.12.18.695244> (v1.0.0) and Torres (2026)
+     "This package provides functions to analyze and visualize meristic, mensural, and
+categorical phenotypic data in a comparative framework.  The package implements
+an automated pipeline that summarizes traits, identifies diagnostic variables
+among groups, performs multivariate and univariate statistical analyses, and
+produces publication-ready graphics.  Earlier implementation are described in
+Torres (2025) <doi:10.64898/2025.12.18.695244> (v1.0.0) and Torres (2026)
 <doi:10.1002/ece3.73111> (v2.0.0).")
     (license license:expat)))
 
@@ -5368,6 +5652,48 @@ estimation procedures, the computation for the posterior probabilities, and the
 testing procedure.")
     (license license:gpl2)))
 
+(define-public r-optsurvcutr
+  (package
+    (name "r-optsurvcutr")
+    (version "0.10.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OptSurvCutR" version))
+       (sha256
+        (base32 "0j6sqkhq96hlinlicb9q7lz02wl31vglhqkl0ryhdjd80k2njvrp"))))
+    (properties `((upstream-name . "OptSurvCutR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-survminer
+                             r-survival
+                             r-rlang
+                             r-rgenoud
+                             r-rcpp
+                             r-patchwork
+                             r-ggplot2
+                             r-foreach
+                             r-dorng
+                             r-doparallel
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/paytonyau/OptSurvCutR")
+    (synopsis
+     "Optimal Survival Cut-Point Discovery for Time-to-Event Analysis with 'OptSurvCutR'")
+    (description
+     "This package provides a robust workflow for optimal cut-point analysis in
+time-to-event ('survival') data.  Functions determine the optimal number of
+cut-points via @code{find_cutpoint_number()}, find their precise locations via
+@code{find_cutpoint()} using systematic or genetic algorithms (via the rgenoud
+package), and validate stability via bootstrapping using
+@code{validate_cutpoint()}.  Features include covariate adjustment, parallel
+processing, and an extensible S3 plotting engine for clinical dashboards and
+diagnostics.")
+    (license license:gpl3)))
+
 (define-public r-optsize
   (package
     (name "r-optsize")
@@ -5507,13 +5833,13 @@ after claiming your free academic license at
 (define-public r-optree
   (package
     (name "r-optree")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "optree" version))
        (sha256
-        (base32 "14z6jhksikfk5f97hyi2wcrfw6d39w381bb0cavvnvhs01grlcjy"))))
+        (base32 "0vgnyk3vqpd8q15wc20zl83s30ld57c8ywwacphyz9hmvjgr204y"))))
     (properties `((upstream-name . "optree")))
     (build-system r-build-system)
     (arguments
@@ -5588,18 +5914,19 @@ Gauss-Seidel, Conjugate Gradient Method (CGM) and Cholesky methods.")
 (define-public r-optotrials
   (package
     (name "r-optotrials")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OptOTrials" version))
        (sha256
-        (base32 "1l25d2blv4vz3hjyz7z98935ic3vw8fwk7cfhblvvggh57wada9m"))))
+        (base32 "177lc5yni0rq25sf88gi3fqbxdr19qlmvw6dv4mfvs2bgb9f4w6s"))))
     (properties `((upstream-name . "OptOTrials")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=OptOTrials")
     (synopsis "Optimal Two-Stage Designs for Ordered Categorical Outcomes")
     (description
@@ -5607,9 +5934,42 @@ Gauss-Seidel, Conjugate Gradient Method (CGM) and Cholesky methods.")
 randomized controlled trials (RCTs) with ordered categorical outcomes,
 supporting rank-based tests and group-sequential decision rules.  Methods build
 on classical and modern rank tests and two-stage/Group-Sequential designs, e.g.,
-Park (2025) <doi: 10.1371/journal.pone.0318211>.  Please see the package
-reference manual and vignettes for details.")
+Park (2025) <doi: 10.1371/journal.pone.0318211>.  The functions @code{rule()}',
+@code{op()} and @code{design_table()} provide a single entry point for
+constructing designs, evaluating their operating characteristics, and tabulating
+several designs at once.  The earlier functions, one for each combination of
+test statistic and stopping rule, are retained and still return the same values,
+but they are deprecated: each warns and names its replacement, and they will be
+removed in the next version.  Please see the package reference manual and the
+vignette for details.")
     (license license:gpl3)))
+
+(define-public r-optor
+  (package
+    (name "r-optor")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OptOR" version))
+       (sha256
+        (base32 "1qwvs9yrayyhjfdjwxnwwjkapgiz8srb0hjr55hgdnaryx2h3ihr"))))
+    (properties `((upstream-name . "OptOR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=OptOR")
+    (synopsis "Optimal Hyperrectangular Operating Regions")
+    (description
+     "Computes optimal axis-aligned hyperrectangles for discrete binary arrays and
+continuous regions defined by quadratic response functions.  The package
+provides methods for discrete optimization, grid classification, continuous
+refinement, and exact global extrema calculations.  Applications include the
+identification of practical operating regions within multivariate design spaces,
+including pharmaceutical development settings related to ICH Q8.")
+    (license license:expat)))
 
 (define-public r-optmatch
   (package
@@ -5698,13 +6058,13 @@ certain length.")
 (define-public r-optisolve
   (package
     (name "r-optisolve")
-    (version "1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "optiSolve" version))
        (sha256
-        (base32 "0mhl5gdz3y3cs3p6v7z4n50na3sqj0w739gixcf4qgb1ppx0h1xa"))))
+        (base32 "0lw3n8hss3ysbpq5w840xr0iklqk2q51nx4kx9fc0wwgyy4hmkpv"))))
     (properties `((upstream-name . "optiSolve")))
     (build-system r-build-system)
     (arguments
@@ -5712,10 +6072,8 @@ certain length.")
       #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-shapes
-                             r-rcpp
                              r-plyr
                              r-nloptr
-                             r-matrix
                              r-mass
                              r-cccp
                              r-alabama))
@@ -6504,13 +6862,13 @@ Numerical and graphical output for all methods is easily obtained.")
 (define-public r-optimalbinningwoe
   (package
     (name "r-optimalbinningwoe")
-    (version "1.0.8")
+    (version "1.13.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OptimalBinningWoE" version))
        (sha256
-        (base32 "13x9bfr1jwx7i1zh6kpahk8bkcagahvrcsx7rrmxwhli7lff2gsm"))))
+        (base32 "1myf1r9m5y4727acqx0njx8zzpp6ais5k1dzdgzhzwyjzvh8xgb9"))))
     (properties `((upstream-name . "OptimalBinningWoE")))
     (build-system r-build-system)
     (arguments
@@ -6527,15 +6885,17 @@ Numerical and graphical output for all methods is easily obtained.")
     (home-page "https://github.com/evandeilton/OptimalBinningWoE")
     (synopsis "Optimal Binning and Weight of Evidence Framework for Modeling")
     (description
-     "High-performance implementation of 36 optimal binning algorithms (16
-categorical, 20 numerical) for Weight of Evidence ('@code{WoE}') transformation,
+     "High-performance implementation of 37 optimal binning algorithms (16
+categorical, 21 numerical) for Weight of Evidence ('@code{WoE}') transformation,
 credit scoring, and risk modeling.  Includes advanced methods such as Mixed
 Integer Linear Programming ('MILP'), Genetic Algorithms, Simulated Annealing,
 and Monotonic Regression.  Features automatic method selection based on
 Information Value ('IV') maximization, strict monotonicity enforcement, and
-efficient handling of large datasets via Rcpp'.  Fully integrated with the
-tidymodels ecosystem for building robust machine learning pipelines.  Based on
-methods described in Siddiqi (2006) <doi:10.1002/9781119201731> and
+efficient handling of large datasets via Rcpp'.  Provides automated variable
+screening by Information Value strength and bin ordering, and generation of the
+equivalent SQL CASE expressions for in-database scoring.  Fully integrated with
+the tidymodels ecosystem for building robust machine learning pipelines.  Based
+on methods described in Siddiqi (2006) <doi:10.1002/9781119201731> and
 Navas-Palencia (2020) <doi:10.48550/@code{arXiv.2001.08025>}.")
     (license license:expat)))
 
@@ -6814,46 +7174,16 @@ near-optimal group-sequential designs for normally distributed outcomes.  The
 methods used are described in Wason, JMS (2015) <doi:10.18637/jss.v066.i02>.")
     (license license:gpl2)))
 
-(define-public r-optextras
-  (package
-    (name "r-optextras")
-    (version "2019-12.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "optextras" version))
-       (sha256
-        (base32 "1sqkid6h13h8i8wzri26s828ycwlxlwpwxd85r8bw9h8hs1n602r"))))
-    (properties `((upstream-name . "optextras")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-numderiv))
-    (home-page "https://cran.r-project.org/package=optextras")
-    (synopsis "Tools to Support Optimization Possibly with Bounds and Masks")
-    (description
-     "This package provides tools to assist in safely applying user generated
-objective and derivative function to optimization programs.  These are primarily
-function minimization methods with at most bounds and masks on the parameters.
-Provides a way to check the basic computation of objective functions that the
-user provides, along with proposed gradient and Hessian functions, as well as to
-wrap such functions to avoid failures when inadmissible parameters are provided.
- Check bounds and masks.  Check scaling or optimality conditions.  Perform an
-axial search to seek lower points on the objective function surface.  Includes
-forward, central and backward gradient approximation codes.")
-    (license license:gpl2)))
-
 (define-public r-optedr
   (package
     (name "r-optedr")
-    (version "3.0.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "optedr" version))
        (sha256
-        (base32 "1id2hiqcq5j1synnkc2xd592z7dr5x6khyhcyjkhj91pnhxh3srv"))))
+        (base32 "1svxyz6vqra1khv95phm1lvqvv40fl6vyvxam7fkav6ygiy4c3sd"))))
     (properties `((upstream-name . "optedr")))
     (build-system r-build-system)
     (arguments
@@ -6946,13 +7276,13 @@ divided by the intercept and provides confidence intervals for the ratio.")
 (define-public r-optconerrf
   (package
     (name "r-optconerrf")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "optconerrf" version))
        (sha256
-        (base32 "1id1pm01ac7rvcrv9ni25012rfl4dl5495yl2dp6yrnghr6bbmk5"))))
+        (base32 "0dr2b7kl4a8y0fs6mx2dsh59amrwyxjfbyifp1a327n0z3yw28l2"))))
     (properties `((upstream-name . "optconerrf")))
     (build-system r-build-system)
     (arguments
@@ -7256,13 +7586,13 @@ evaluating their benefits.  For more information, see Hanson et al. (2019)
 (define-public r-opportunistic
   (package
     (name "r-opportunistic")
-    (version "1.2")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Opportunistic" version))
        (sha256
-        (base32 "0kaj11ziij1v65l972x4kbr7vzkx4dwa27ymabiip4dg57a976wr"))))
+        (base32 "1q6x0iavki8fl4q5mxkyvyjxh9s1bhvda7ka26yd6k80lb6qgbmr"))))
     (properties `((upstream-name . "Opportunistic")))
     (build-system r-build-system)
     (arguments
@@ -7496,13 +7826,13 @@ manipulation.")
 (define-public r-openxlsx2
   (package
     (name "r-openxlsx2")
-    (version "1.27")
+    (version "1.29")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openxlsx2" version))
        (sha256
-        (base32 "1z3lfyl7svmmmvxan1qpgjbhki2f6xhv8lph23n1xvy3zlicjqzr"))))
+        (base32 "0x2visr8hrg7w8l2wmsnn6iaqfbiky5568rbjhyhagnj31fpb96x"))))
     (properties `((upstream-name . "openxlsx2")))
     (build-system r-build-system)
     (arguments
@@ -7721,13 +8051,13 @@ available, see <https://www.openassetpricing.com/>.")
 (define-public r-openskies
   (package
     (name "r-openskies")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openSkies" version))
        (sha256
-        (base32 "16rvkc1gmdyb0694rn81bz31zzj7v9plyqglbb4pl7gx6y04ci96"))))
+        (base32 "12r7gyjix2x3640cx8lkgglknpj1cws1zli1sk4x1kn57scvsv37"))))
     (properties `((upstream-name . "openSkies")))
     (build-system r-build-system)
     (arguments
@@ -7735,14 +8065,12 @@ available, see <https://www.openassetpricing.com/>.")
       #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-ssh
-                             r-rpresto
                              r-r6
                              r-magick
                              r-httr
                              r-ggplot2
                              r-ggmap
                              r-dbscan
-                             r-dbi
                              r-cluster))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=openSkies")
@@ -7783,13 +8111,13 @@ computational overhead.  It can have applications in procedural generation or
 (define-public r-openscoring
   (package
     (name "r-openscoring")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openscoring" version))
        (sha256
-        (base32 "0cfxqkd7bjvqh74mi4iv0vskrl0q29r4xiqbcnxiyppcgj7h45kj"))))
+        (base32 "0lmicmixywdzsz7720wc3zrgrsfp428bf9ji8ikq36yi5k7068d2"))))
     (properties `((upstream-name . "openscoring")))
     (build-system r-build-system)
     (arguments
@@ -7937,13 +8265,13 @@ part of the The package is part of the <https://openrepgrid.org/> project.")
 (define-public r-openrange
   (package
     (name "r-openrange")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OpenRange" version))
        (sha256
-        (base32 "0ml6khipzrhkc74bjpzj61k80cw9rg2xay9ylbzghv4hbjq8gj0s"))))
+        (base32 "1806mz2np5slx41vzwmr6h775vjz9madvwwvf1bv06zj2r0pnn74"))))
     (properties `((upstream-name . "OpenRange")))
     (build-system r-build-system)
     (arguments
@@ -8012,13 +8340,13 @@ is partially described in Fogola, Grasso, Masera and Scordino (2023,
 (define-public r-opennlp
   (package
     (name "r-opennlp")
-    (version "0.2-7")
+    (version "0.2-8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openNLP" version))
        (sha256
-        (base32 "15yl74wv6w1d2wwpn1xlkkpam3c62977gnqal651fv623v29gg35"))))
+        (base32 "1wfmwmzq14g4260hgphjfhxa93mr2i74x4rk7jq7gzsvhmw4bnfd"))))
     (properties `((upstream-name . "openNLP")))
     (build-system r-build-system)
     (arguments
@@ -8040,13 +8368,13 @@ entity extraction, chunking, parsing, and coreference resolution.  See
 (define-public r-openncai
   (package
     (name "r-openncai")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openNCAI" version))
        (sha256
-        (base32 "0v351j6pd6mydzggnja079frwpkq4lqg8z8fwmkmmrgbdfxrxiam"))))
+        (base32 "0f72wh8745j5572rby4wjd3jgnyr7livc41nrhnhvvcqwjn6zmx2"))))
     (properties `((upstream-name . "openNCAI")))
     (build-system r-build-system)
     (arguments
@@ -8058,7 +8386,6 @@ entity extraction, chunking, parsing, and coreference resolution.  See
                              r-rlang
                              r-readxl
                              r-openxlsx
-                             r-magrittr
                              r-janitor
                              r-dplyr))
     (native-inputs (list r-knitr))
@@ -8243,6 +8570,76 @@ standard process metrics, as well as define custom counter, gauge, and histogram
 metrics of their own.")
     (license license:expat)))
 
+(define-public r-openlineage
+  (package
+    (name "r-openlineage")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "openlineage" version))
+       (sha256
+        (base32 "040b2zczpkrlksgw8iwclxlj6gjq21d756dcmgabgrhvkkzd4svc"))))
+    (properties `((upstream-name . "openlineage")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-uuid
+                             r-s7
+                             r-r6
+                             r-jsonlite
+                             r-httr2
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=openlineage")
+    (synopsis "Create and Emit 'OpenLineage' Events")
+    (description
+     "Construct and validate run events that follow the @code{OpenLineage}
+specification <https://openlineage.io/>.  Model run lifecycles, datasets, and
+extensible facets with protocol-aware R objects.  Serialize events into
+deterministic @code{JavaScript} Object Notation (JSON) while preserving wire
+field names.  Deliver events synchronously over Hypertext Transfer Protocol
+(HTTP) with authentication and retries, or use offline transports for local
+development and testing.")
+    (license license:expat)))
+
+(define-public r-openland
+  (package
+    (name "r-openland")
+    (version "1.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OpenLand" version))
+       (sha256
+        (base32 "1wldp11g37yz8wq94p07prw76i7k60xs6g6fdp2xf2224y3hansr"))))
+    (properties `((upstream-name . "OpenLand")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-raster
+                             r-networkd3
+                             r-gridextra
+                             r-ggplot2
+                             r-dplyr
+                             r-circlize))
+    (native-inputs (list r-knitr))
+    (home-page "https://reginalexavier.github.io/OpenLand/")
+    (synopsis "Quantitative Analysis and Visualization of LUCC")
+    (description
+     "This package provides tools for the analysis of land use and cover (LUC) time
+series.  It includes support for loading spatiotemporal raster data and
+synthesized spatial plotting.  Several LUC change (LUCC) metrics in regular or
+irregular time intervals can be extracted and visualized through one- and
+multistep sankey and chord diagrams.  A complete intensity analysis according to
+Aldwaik and Pontius (2012) <doi:10.1016/j.landurbplan.2012.02.010> is
+implemented, including tools for the generation of standardized multilevel
+output graphics.")
+    (license license:gpl3)))
+
 (define-public r-openintro
   (package
     (name "r-openintro")
@@ -8421,6 +8818,41 @@ website to support the Open Graph Protocol and provides a list of the standard
 tags and their required properties.")
     (license license:expat)))
 
+(define-public r-openfhe-r
+  (package
+    (name "r-openfhe-r")
+    (version "1.5.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "openfhe.R" version))
+       (sha256
+        (base32 "1lymhr75zbskr1qj1ij715ibclykbqs2khb91zym9g9rfaaz1lm3"))))
+    (properties `((upstream-name . "openfhe.R")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list cmake))
+    (propagated-inputs (list r-s7 r-cpp11 r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://openfheorg.github.io/openfhe.R/")
+    (synopsis
+     "R Interface to the 'OpenFHE' Fully Homomorphic Encryption Library")
+    (description
+     "This package provides an R interface to @code{OpenFHE}', the open-source C++
+library for fully homomorphic encryption (Al Badawi and others, 2022)
+<https://eprint.iacr.org/2022/915>, which allows computation directly on
+encrypted data without access to the secret key.  Supports the
+Brakerski-Fan-Vercauteren (BFV, 2012) <https://eprint.iacr.org/2012/144>,
+Brakerski-Gentry-Vaikuntanathan (BGV, 2014) <doi:10.1145/2633600>, and
+Cheon-Kim-Kim-Song (CKKS, 2017) <https://eprint.iacr.org/2016/421> schemes for
+arithmetic on encrypted numbers, together with the Ducas-Micciancio (FHEW, 2015)
+<https://eprint.iacr.org/2014/816> and Chillotti-Gama-Georgieva-Izabachene
+(TFHE, 2020) <https://eprint.iacr.org/2018/421> schemes for evaluating arbitrary
+functions on encrypted bits.")
+    (license license:bsd-2)))
+
 (define-public r-openfda
   (package
     (name "r-openfda")
@@ -8456,13 +8888,13 @@ data and parse.  Kass-Hout TA, Xu Z, Mohebbi M et al. (2016)
 (define-public r-openesm
   (package
     (name "r-openesm")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openesm" version))
        (sha256
-        (base32 "0qi1fypbi4gdn6lia708kfqq3x7h6s6mx0mn871g9lgimisxalwq"))))
+        (base32 "0w5n62knydvwrqsqh0ax91ghabp506v7ba6wssffiv5j3pjffbb3"))))
     (properties `((upstream-name . "openesm")))
     (build-system r-build-system)
     (arguments
@@ -8521,22 +8953,21 @@ in R.")
 (define-public r-openebgm
   (package
     (name "r-openebgm")
-    (version "0.9.1")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openEBGM" version))
        (sha256
-        (base32 "19q5xlvgc91mcr6sjzppgkmvdlfb6cr7rs952i2yys3w7ylwk3bj"))))
+        (base32 "0msil02ngl3nwxiz6b91mykq2f9pka8hls29ya13l9igmm7vvhyk"))))
     (properties `((upstream-name . "openEBGM")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-ggplot2 r-data-table))
+    (propagated-inputs (list r-numderiv r-ggplot2 r-data-table))
     (native-inputs (list r-knitr))
-    (home-page
-     "https://journal.r-project.org/archive/2017/RJ-2017-063/index.html")
+    (home-page "https://journal.r-project.org/articles/RJ-2017-063/index.html")
     (synopsis "EBGM Disproportionality Scores for Adverse Event Data Mining")
     (description
      "An implementation of @code{DuMouchel's} (1999)
@@ -8645,13 +9076,13 @@ Format, see <https://opendataformat.github.io/>.")
 (define-public r-opencv
   (package
     (name "r-opencv")
-    (version "0.5.2")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "opencv" version))
        (sha256
-        (base32 "0ksp6vng2x3hjjni4sn2vrnv6vw4d1xj83g418xmljsd87nq30c6"))))
+        (base32 "003738aa8f6gzgabdc0q01kd0py1sck55rabyi941vway32xg4s7"))))
     (properties `((upstream-name . "opencv")))
     (build-system r-build-system)
     (arguments
@@ -8703,13 +9134,13 @@ camera device.")
 (define-public r-opencltools
   (package
     (name "r-opencltools")
-    (version "0.8.1")
+    (version "0.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "opencltools" version))
        (sha256
-        (base32 "1djza55n07kxpj1r6akzhlgdxrpmghkj3acaw35krv537r0q4s06"))))
+        (base32 "193ia2bap7hajbn1xj4kjyw6kz2v37ga42nqx40y8zz0v2j99jrl"))))
     (properties `((upstream-name . "opencltools")))
     (build-system r-build-system)
     (arguments
@@ -8725,9 +9156,10 @@ camera device.")
      "Runtime @code{OpenCL} support for R package developers: probe hardware and
 drivers, load and concatenate kernel sources, and manage dependency-annotated
 .cl libraries, so packages like nmathopencl and other ported libraries can offer
-GPU acceleration without each re-implementing the same plumbing.  Vignettes use
-the glmbayes envelope-gradient example and likelihood subgradient methodology
-(Nygren and Nygren, 2006, <doi:10.1198/016214506000000357>).")
+GPU acceleration without each re-implementing and related helpers.  Vignettes
+illustrate integration with suggested package nmathopencl and with downstream
+applications such as glmbayes'; production kernels for those applications ship
+in those packages rather than here.")
     (license license:gpl2)))
 
 (define-public r-opencl
@@ -8755,13 +9187,13 @@ computing power of GPUs and other HPC accelerator devices.")
 (define-public r-opencis
   (package
     (name "r-opencis")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "opencis" version))
        (sha256
-        (base32 "0pf1zidpwi7yy5z77d118m1hra2gfp869c0hazsx3wbyyb9q4mff"))))
+        (base32 "14gjdx53vsl4av17ln36qxqyj6l5vfv5rmskb4g5nnd39acvgd5s"))))
     (properties `((upstream-name . "opencis")))
     (build-system r-build-system)
     (arguments
@@ -8774,7 +9206,9 @@ computing power of GPUs and other HPC accelerator devices.")
                              r-memoise
                              r-magrittr
                              r-httr
-                             r-haven))
+                             r-haven
+                             r-digest
+                             r-cachem))
     (native-inputs (list r-knitr))
     (home-page "https://opencis.spainelectoralproject.com")
     (synopsis "Import Data from Spanish Sociological Research Center (CIS)")
@@ -8854,6 +9288,43 @@ monocot (Oryza sp.) and dicot (Arabidopsis sp.) reference models to deliver
 accurate predictions.  This methodology is being inspired by the ensemble
 algorithm for methylation prediction developed by Wang et al. (2022)
 <doi:10.1186/s12859-022-04756-1>.")
+    (license license:gpl3)))
+
+(define-public r-opencameo
+  (package
+    (name "r-opencameo")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OpEnCAMeO" version))
+       (sha256
+        (base32 "1clsak511mzwsj0sqrsvzkh4gmksx0glh098psd60097r7x6b54i"))))
+    (properties `((upstream-name . "OpEnCAMeO")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-seqinr
+                             r-ftrcool
+                             r-entropy
+                             r-elmnnrcpp
+                             r-biostrings))
+    (home-page "https://cran.r-project.org/package=OpEnCAMeO")
+    (synopsis
+     "Optimized Ensemble Predictor for 'C' and 'A' Methylation in Organism")
+    (description
+     "DNA methylation is an important epigenetic process that regulates gene activity
+through chemical modifications of DNA without changing its sequence.
+@code{OpEnCAMeO} is a organism based ensemble model for prediction of
+4@code{mC}, 6@code{mA} and No methylation sites directly from DNA sequences.  It
+combines multiple machine learning algorithms trained on Bacteria (Escherichia
+coli), Fungi (Saccharomyces cerevisiae) and Nematode (Caenorhabditis elegans) as
+reference models to deliver accurate predictions.  This methodology is being
+inspired by the ensemble algorithm for methylation prediction developed by Sinha
+et al. (2025) <doi:10.1101/2025.11.10.687509>.")
     (license license:gpl3)))
 
 (define-public r-opencage
@@ -8973,13 +9444,13 @@ API.")
 (define-public r-openaq
   (package
     (name "r-openaq")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openaq" version))
        (sha256
-        (base32 "1g6f5j1yj5frfkjpskk7lmrgm0gwbrx96izs2nqd31wkdc6ni3vm"))))
+        (base32 "0afhr57iq55vhww5jss2vjh0wwfx4af6n2mmwz62pm9dhpzm5pyb"))))
     (properties `((upstream-name . "openaq")))
     (build-system r-build-system)
     (arguments
@@ -8994,7 +9465,7 @@ API.")
 <https://openaq.org/>, a platform for real-time and historical air quality data
 from around the world.  Users can retrieve measurement data, metadata for
 sensors and locations for air quality research and monitoring.")
-    (license license:expat)))
+    (license license:asl2.0)))
 
 (define-public r-openappr
   (package
@@ -9037,13 +9508,13 @@ into R.")
 (define-public r-openalexr
   (package
     (name "r-openalexr")
-    (version "3.0.1")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openalexR" version))
        (sha256
-        (base32 "0j9ynx8rzq8yc8ivm5fwq0vcciqfqlkc5h4vfcdi7i3nwlwf7s7k"))))
+        (base32 "0rqpir84x1a2lfvabl1hqvzr5hddrl9yw45i72d1z2f9v5yssdml"))))
     (properties `((upstream-name . "openalexR")))
     (build-system r-build-system)
     (arguments
@@ -9055,7 +9526,7 @@ into R.")
      "Getting Bibliographic Records from 'OpenAlex' Database Using 'DSL' API")
     (description
      "This package provides a set of tools to extract bibliographic content from
-@code{OpenAlex} database using API <https://docs.openalex.org>.")
+@code{OpenAlex} database using API <https://developers.openalex.org/>.")
     (license license:expat)))
 
 (define-public r-openairtools
@@ -9217,13 +9688,13 @@ requires the gradethis package which can be installed using
 (define-public r-opdisdownsampling
   (package
     (name "r-opdisdownsampling")
-    (version "1.6")
+    (version "1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "opdisDownsampling" version))
        (sha256
-        (base32 "0jbrn98lhdih0vmj233c96kh4ff9iq6l2vbvwx4pbizmh32f5xnc"))))
+        (base32 "0zbxhmqpgkrva8j945wysyvs4sw0sy6gl2rmypndfma2qp3qxdl1"))))
     (properties `((upstream-name . "opdisDownsampling")))
     (build-system r-build-system)
     (arguments
@@ -9247,13 +9718,13 @@ of bio-medical data <doi:10.1371/journal.pone.0255838>.")
 (define-public r-opcreg
   (package
     (name "r-opcreg")
-    (version "3.0.0")
+    (version "4.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OPCreg" version))
        (sha256
-        (base32 "1386kalqc00ly27cyb2m6xgch9k55basj1nzhl7d66q09cbmyq4g"))))
+        (base32 "0i41ylwlwdjrk6ajzax3jh0g3mqnyh9szrm84g7z557yhff9kc66"))))
     (properties `((upstream-name . "OPCreg")))
     (build-system r-build-system)
     (arguments
@@ -9387,13 +9858,13 @@ pairwise likelihood comparison of theories, calibrated with pre-existing data.")
 (define-public r-oosse
   (package
     (name "r-oosse")
-    (version "1.0.11")
+    (version "1.0.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oosse" version))
        (sha256
-        (base32 "08nx25j5m6vqg9hqns6psldfdmsb81ixjlzdhxpx392ad0j4yfbx"))))
+        (base32 "1di4i36lswayx9nmf57s6xaqz27nq7jgdcpwgspdpj3rcd9wz5fv"))))
     (properties `((upstream-name . "oosse")))
     (build-system r-build-system)
     (arguments
@@ -9408,6 +9879,34 @@ pairwise likelihood comparison of theories, calibrated with pre-existing data.")
 of predictive performance.  In addition, a standard error for this point
 estimate is provided, and confidence intervals are constructed.")
     (license license:gpl2)))
+
+(define-public r-oorrt
+  (package
+    (name "r-oorrt")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OORRT" version))
+       (sha256
+        (base32 "1v3pmwwnvhsm3bbcd2yhz49phw516gv7czkmdd5bjlqwl1chrl27"))))
+    (properties `((upstream-name . "OORRT")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=OORRT")
+    (synopsis "Estimator for Optimised Optional Randomised Response Technique")
+    (description
+     "This package provides functions for estimation under the Randomised Response
+Technique for sensitive survey data, including Warner's estimator, Optional
+Randomised Response Technique estimator proposed by Chaudhuri and Mukerjee,and
+the Optimized Optional Randomised Response Technique estimator proposed by
+Pushadapu et al.  The package also includes Monte Carlo simulation tools for
+evaluating estimator performance.  The implemented methods are based on Warner
+(1965) <doi:10.1080/01621459.1965.10480775>, Chaudhuri and Mukerjee (1985),and
+Pushadapu et al. (2025) <doi: 10.1111/insr.12581>.")
+    (license license:gpl3)))
 
 (define-public r-oor
   (package
@@ -9749,20 +10248,20 @@ with new theme and colors.")
 (define-public r-ons
   (package
     (name "r-ons")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ons" version))
        (sha256
-        (base32 "0w5i13lb95vb50ylb1v7np9gjqawydg90ns3zdqzx1l3cxbbgz3a"))))
+        (base32 "0dzhsv11bzrsimbndarb2x4527wzwmx4li64mqrizghr30rbi4gg"))))
     (properties `((upstream-name . "ons")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-httr2 r-cli))
-    (home-page "https://github.com/charlescoverdale/ons")
+    (home-page "https://charlescoverdale.github.io/ons/")
     (synopsis "Download Data from the 'Office for National Statistics'")
     (description
      "This package provides functions to download and tidy statistical data published
@@ -10292,16 +10791,50 @@ negative and â1â for positive.  Additional examples were given using t
 data from Rimm et al. (2017 <doi:10.1001/jamaoncol.2017.0013>).")
     (license license:gpl3)))
 
+(define-public r-oneshotem
+  (package
+    (name "r-oneshotem")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OneShotEM" version))
+       (sha256
+        (base32 "0c8l95ih3bkvl8wsckrmcn75550fsb907fglwsw9qgv0k16225yn"))))
+    (properties `((upstream-name . "OneShotEM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-numderiv))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=OneShotEM")
+    (synopsis "Efficient eM-Algorithm for One-Shot Device Data Analysis")
+    (description
+     "This package implements the simple and efficient Expectation-Maximization
+(@code{eM}) algorithm proposed by Zhu, Li, Li, and Balakrishnan (2026)
+<doi:10.1080/03610918.2025.2515193> for parameter estimation in one-shot device
+accelerated life testing (ALT) data.  Unlike traditional EM algorithms that
+impute exact failure times, this method treats failure counts between inspection
+intervals as missing data, resulting in faster convergence and enhanced
+numerical stability.  Supports Exponential, Weibull, Lognormal, Gamma, and
+custom user-defined lifetime distributions under log-linear stress models.
+Standard errors, confidence intervals, model selection statistics (AIC, BIC,
+AICc, HQIC), residual diagnostics, and visualization tools are provided.
+References: Balakrishnan and Ling (2012) <doi:10.1016/j.csda.2011.09.010>, Fan,
+Balakrishnan, and Chang (2009) <doi:10.1080/00949650802142592>.")
+    (license license:gpl3+)))
+
 (define-public r-onesamplemr
   (package
     (name "r-onesamplemr")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OneSampleMR" version))
        (sha256
-        (base32 "136l26fvshnlwl07lgsk6qy1ymx491b11y2rnzx6ii9f2dnp43a7"))))
+        (base32 "01xvgr104ds2j668wp8zf26s0fs73m7cmfy9vz4a2a4dbkkysg46"))))
     (properties `((upstream-name . "OneSampleMR")))
     (build-system r-build-system)
     (arguments
@@ -10429,13 +10962,13 @@ excessive data cleaning.")
 (define-public r-onemap
   (package
     (name "r-onemap")
-    (version "3.2.4")
+    (version "3.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "onemap" version))
        (sha256
-        (base32 "1cwx032lzfd9x2rvmyk2mxw6fw9ws3yfx3kha81f4y6mb60i59sl"))))
+        (base32 "137zzz7xzybmf8fqd7289k2bm0wx4nbimj3bpy9bn7nl8076yd6j"))))
     (properties `((upstream-name . "onemap")))
     (build-system r-build-system)
     (arguments
@@ -10766,6 +11299,59 @@ A. and Boucher, K (2002) <doi:10.1016/S0025-5564(02)00086-X>.")
 learning methods based on TCGA data.")
     (license license:gpl3)))
 
+(define-public r-oncopredict
+  (package
+    (name "r-oncopredict")
+    (version "1.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oncoPredict" version))
+       (sha256
+        (base32 "0bwlinfgw10w9d382d0rvcy5mgm9lkp9ds6nrynl3yzf7xfd9qyk"))))
+    (properties `((upstream-name . "oncoPredict")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sva
+                             r-s4vectors
+                             r-ridge
+                             r-pls
+                             r-limma
+                             r-iranges
+                             r-glmnet
+                             r-genomicranges
+                             r-genomicfeatures
+                             r-car
+                             r-biocgenerics))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/HuangLabUMN/oncoPredict")
+    (synopsis "Drug Response Modeling and Biomarker Discovery")
+    (description
+     "Allows for building drug response models using screening data between bulk
+RNA-Seq and a drug response metric and two additional tools for biomarker
+discovery that have been developed by the Huang Laboratory at University of
+Minnesota.  There are 3 main functions within this package. (1)
+@code{calcPhenotype()} is used to build drug response models on RNA-Seq data and
+impute them on any other RNA-Seq dataset given to the model. (2) @code{GLDS()}
+is used to calculate the general level of drug sensitivity, which can improve
+biomarker discovery. (3) @code{IDWAS()} can take the results from
+@code{calcPhenotype()} and link the imputed response back to available genomic
+(mutation and CNV alterations) to identify biomarkers.  Each of these functions
+comes from a paper from the Huang research laboratory.  Below gives the relevant
+paper for each function.  The package is described in Maeser et al. (2021)
+\"@code{oncoPredict}: an R package for predicting in vivo or cancer patient drug
+response and biomarkers from cell line screening data\"
+<doi:10.1093/bib/bbab260>. @code{calcPhenotype()} - Geeleher et al, Clinical
+drug response can be predicted using baseline gene expression levels and in
+vitro drug sensitivity in cell lines. @code{GLDS()} - Geeleher et al, Cancer
+biomarker discovery is improved by accounting for variability in general levels
+of drug sensitivity in pre-clinical models. @code{IDWAS()} - Geeleher et al,
+Discovering novel pharmacogenomic biomarkers by imputing drug response in cancer
+patients from large genomics studies.")
+    (license license:gpl2)))
+
 (define-public r-oncofilterfast
   (package
     (name "r-oncofilterfast")
@@ -10828,13 +11414,13 @@ outcomes.")
 (define-public r-oncobayes2
   (package
     (name "r-oncobayes2")
-    (version "0.9-4")
+    (version "0.10-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OncoBayes2" version))
        (sha256
-        (base32 "1xh020kh90qfwwwa8qk1fr7p87ng90657nqpb4mc80lgcfwxxsav"))))
+        (base32 "1amawjxl8z90n8lbljcz2kmakyrqhpwh3dir852ffr8s0g775pqh"))))
     (properties `((upstream-name . "OncoBayes2")))
     (build-system r-build-system)
     (arguments
@@ -10845,10 +11431,10 @@ outcomes.")
                              r-tidyr
                              r-tibble
                              r-stanheaders
-                             r-scales
                              r-rstantools
                              r-rstan
                              r-rlang
+                             r-rdpack
                              r-rcppparallel
                              r-rcppeigen
                              r-rcpp
@@ -10856,11 +11442,9 @@ outcomes.")
                              r-posterior
                              r-matrixstats
                              r-lifecycle
-                             r-ggplot2
                              r-formula
                              r-dplyr
                              r-checkmate
-                             r-brms
                              r-bh
                              r-bayesplot
                              r-assertthat
@@ -10999,13 +11583,13 @@ privacy.")
 (define-public r-onam
   (package
     (name "r-onam")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ONAM" version))
        (sha256
-        (base32 "1kryxpxnsx3fqg95a9mkb2g07chwljdgnccp7n0is5h9zar128rn"))))
+        (base32 "14ry0rwbdg3x0ynhp0w8vnvyxvb6jpfafb3ar2qcnh4l5vjilwy8"))))
     (properties `((upstream-name . "ONAM")))
     (build-system r-build-system)
     (arguments
@@ -11282,13 +11866,13 @@ for collaboration and version control.")
 (define-public r-omopsketch
   (package
     (name "r-omopsketch")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OmopSketch" version))
        (sha256
-        (base32 "0prp23fcms0mr5lhr6k46d7fqjh2wlfazg1zi3ddz8ajkcxb4f6a"))))
+        (base32 "065bp0va2hkc9727wps27alxvjgasq08ka2jnz72dnc6nw3jgdxv"))))
     (properties `((upstream-name . "OmopSketch")))
     (build-system r-build-system)
     (arguments
@@ -11353,13 +11937,13 @@ functionality is supported.")
 (define-public r-omophub
   (package
     (name "r-omophub")
-    (version "1.8.1")
+    (version "1.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "omophub" version))
        (sha256
-        (base32 "11v14pkscpwww4h8wfh0yd5pfypqny539kjn4j7l9121hxy4zgy0"))))
+        (base32 "18hr875zbp9di2qvb0vqgs9mi5f86d317xb1ylpiam3r5y0v0im5"))))
     (properties `((upstream-name . "omophub")))
     (build-system r-build-system)
     (arguments
@@ -11387,13 +11971,13 @@ concept resolution with automatic pagination.")
 (define-public r-omopgenerics
   (package
     (name "r-omopgenerics")
-    (version "1.4.0")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "omopgenerics" version))
        (sha256
-        (base32 "0pszwpzz9r4ljvjr7l850iczs0rainyra3sv62zkp8ij8lq9yzrn"))))
+        (base32 "1m57sxfbpn6cqprvg8klzwxwwhk4hab8qfxqlsi7h0288hp8d6cb"))))
     (properties `((upstream-name . "omopgenerics")))
     (build-system r-build-system)
     (arguments
@@ -11764,6 +12348,46 @@ degree of sparsity.")
 using omics data.")
     (license license:gpl3+)))
 
+(define-public r-omicsbraid
+  (package
+    (name "r-omicsbraid")
+    (version "0.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OmicsBraid" version))
+       (sha256
+        (base32 "0rk8h38cdxdxxay18w3gp9gqs68yzp4l4a6zvj3qwals2c6pb4m1"))))
+    (properties `((upstream-name . "OmicsBraid")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2))
+    (home-page "https://github.com/microbes-potential/OmicsBraid")
+    (synopsis "Covariance-Aware Inference of Cross-Omic Effect Trajectories")
+    (description
+     "This package provides a research-oriented statistical framework for comparing
+standardized biological effects across matched omics layers.  It estimates
+layer-specific standardized effects, accounts for cross-omic dependence using
+matched-subject bootstrap correlations, tests multivariate omnibus evidence,
+synthesizes consensus effects with generalized least squares, quantifies
+cross-omic heterogeneity, performs practical-equivalence testing, fits
+covariance-aware ordered GLS effect trajectories, classifies hierarchical
+cross-layer effect patterns with separate confirmatory and suggestive states,
+supports analytic and subject-bootstrap confidence intervals for layer and
+consensus effects, supports empirical matched-subject permutation and
+centered-bootstrap calibration of omnibus and heterogeneity tests for
+non-Gaussian settings, and creates evidence-forest and effect-braid
+visualizations.  The package is designed for analysis-ready bulk multi-omics
+data or externally estimated summary statistics.  It does not perform raw
+sequencing or mass-spectrometry preprocessing.  Methodological components draw
+on standardized mean-difference estimation described by Hedges (1981)
+<doi:10.3102/10769986006002107>, bootstrap resampling described by Efron (1979)
+<doi:10.1214/aos/1176344552>, and two one-sided equivalence testing described by
+Schuirmann (1987) <doi:10.1007/BF01068419>.")
+    (license license:expat)))
+
 (define-public r-omicnetr
   (package
     (name "r-omicnetr")
@@ -11974,6 +12598,35 @@ Olympics events are included.  Data is from Kaggle at
 <https://www.kaggle.com/heesoo37/120-years-of-olympic-history-athletes-and-results>.")
     (license license:expat)))
 
+(define-public r-olympicathletes
+  (package
+    (name "r-olympicathletes")
+    (version "0.5.10")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "olympicAthletes" version))
+       (sha256
+        (base32 "1cvv384w1a82jjp12f7ych77wczknjy52f015z2pmz5br039dbsl"))))
+    (properties `((upstream-name . "olympicAthletes")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/moderndive/olympicAthletes")
+    (synopsis "Olympic Athlete Event Data, Athens 1896 to Milano-Cortina 2026")
+    (description
+     "This package provides a tidy, long-format dataset of every athlete-event
+participation in the modern Olympic Games, spanning Athens 1896 through
+Milano-Cortina 2026 (about 315,000 rows).  Extends the rgriff23 Olympic_history
+dataset (1896-2016) with five additional editions scraped from Olympedia
+(<https://www.olympedia.org>): @code{PyeongChang} 2018, Tokyo 2020, Beijing
+2022, Paris 2024, and Milano-Cortina 2026.  Companion datasets cover
+edition-level metadata and verified medal tables for every edition from 1896 to
+2026.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
+
 (define-public r-olstrajr
   (package
     (name "r-olstrajr")
@@ -12049,30 +12702,29 @@ assessment and variable selection procedures.")
 (define-public r-olsengine
   (package
     (name "r-olsengine")
-    (version "1.0.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OLSengine" version))
        (sha256
-        (base32 "1a8a8w5r56gs0ds88sg2wcvzi7zvfjrxqwa694555sfhi7g1fw8c"))))
+        (base32 "0jq9fd49197i3rhri194438k1b3ma2smjixzi07phz42h0a6y7b9"))))
     (properties `((upstream-name . "OLSengine")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/msoto-perez/OLSEngine")
+    (home-page "https://github.com/msoto-perez/OLSengine")
     (synopsis "Transparent and Assisted Linear Modeling Engine")
     (description
-     "This package provides a transparent, modular, and base-R implemented statistical
-engine for linear regression (OLS), analysis of variance (ANOVA), and logistic
-regression (Logit).  Designed under the principle of \"assisted simplicity\", it
-features an integrated methodological \"customs\" (Aduana) that automatically
-audits mathematical assumptions (e.g., multicollinearity, heteroskedasticity,
-normality, and perfect separation) and outputs publication-ready, APA-formatted
-tables.  It deliberately avoids hidden heuristics and external dependencies,
-ensuring computational transparency and reproducibility for applied research.")
+     "Unified estimation, diagnostics, and reporting for ordinary least squares (OLS)
+regression, ANOVA/t-tests, logistic regression, panel data (fixed/random effects
+with Hausman test), instrumental variables (2SLS with weak instrument
+diagnostics), and difference-in-differences.  Designed for applied researchers
+in social sciences with integrated \"Methodological Customs\" that audit
+assumptions and provide literature references.  All methods implemented in pure
+base R without external dependencies beyond stats and graphics packages.")
     (license license:expat)))
 
 (define-public r-olr
@@ -12364,13 +13016,13 @@ et al. (2021)<doi:10.48550/@code{arXiv.2112.13479>}.")
 (define-public r-okxr
   (package
     (name "r-okxr")
-    (version "0.4.5")
+    (version "0.4.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "okxr" version))
        (sha256
-        (base32 "166bxyxz2195pg54sb8gacwj5x841cz8bh246fklg6q14vw93g00"))))
+        (base32 "0n2my2k3ygs5lkn1c8n1557br64czb0hnzkc0qwf1sa820fcisi3"))))
     (properties `((upstream-name . "okxr")))
     (build-system r-build-system)
     (arguments
@@ -12451,16 +13103,43 @@ Kumam, P., Khan, D.M., Khalil, U., Sulaiman, M. and Khan, Z. (2020)
 <DOI:10.1109/ACCESS.2020.3010099>.")
     (license license:gpl3+)))
 
+(define-public r-okf
+  (package
+    (name "r-okf")
+    (version "0.7.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "okf" version))
+       (sha256
+        (base32 "1ns577w6hy0j2a9mzs5p5s0s814jk71ls9qj9d0gznp4kplcddab"))))
+    (properties `((upstream-name . "okf")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml r-jsonlite r-duckdb r-digest r-dbi))
+    (home-page "https://cran.r-project.org/package=okf")
+    (synopsis "Open Knowledge Format (OKF) Ingestion")
+    (description
+     "Read, validate, and load Open Knowledge Format (OKF) bundles (a directory of
+markdown files with YAML frontmatter) into a portable @code{DuckDB} catalog,
+build the concept graph, render to HTML, and optionally embed concept bodies for
+semantic search.  Deterministic and agent-free: the same bundle always yields
+the same catalog, graph, and render, with no LLM calls in the core.  Conformant
+and permissive per the OKF v0.1 specification.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-okcolors
   (package
     (name "r-okcolors")
-    (version "0.1.0")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "okcolors" version))
        (sha256
-        (base32 "1mfllfrx94k6vgmzkmg8d40mfskb034jfnm20lkjzdhbav0n2n9i"))))
+        (base32 "0qi6z6k09g3ggykr5sln9rf200x5vvmczljmafalclch5gf3sdjv"))))
     (properties `((upstream-name . "okcolors")))
     (build-system r-build-system)
     (arguments
@@ -12513,6 +13192,31 @@ Soil and Water Assessment Tool ('SWAT'; <https://swat.tamu.edu>) and the U.S.
 EPA Hydrologic and Water Quality System ('HAWQS'; <https://hawqs.tamu.edu>) in a
 two-model nutrient management workflow.")
     (license license:expat)))
+
+(define-public r-ojanp
+  (package
+    (name "r-ojanp")
+    (version "2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OjaNP" version))
+       (sha256
+        (base32 "047xs5d6xvqcfndilq5a4yvv6lzbz49f70whf4qir5b6gmvhhg6q"))))
+    (properties `((upstream-name . "OjaNP")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp r-icsnp r-ics))
+    (home-page "https://cran.r-project.org/package=OjaNP")
+    (synopsis
+     "Multivariate Methods Based on the Oja Median and Related Concepts")
+    (description
+     "Calculating the Oja median, Oja signs and ranks and methods based upon them.
+For details, see the the corresponding publication Fischer, Mosler, et al.
+(2020) <doi:10.18637/jss.v092.i08>.")
+    (license license:gpl2+)))
 
 (define-public r-oii
   (package
@@ -12790,13 +13494,13 @@ and Henery <doi:10.1111/j.2517-6161.1981.tb01153.x> models.")
 (define-public r-ohdsishinyappbuilder
   (package
     (name "r-ohdsishinyappbuilder")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OhdsiShinyAppBuilder" version))
        (sha256
-        (base32 "0rxrl9y7m5bcmq499ydhansjv6xy9q1i41bvjxif13h1fs9sv6s3"))))
+        (base32 "08x61afbyavaccmncx2dp27drnii4mrkcf1cxp8j3y4cxvvavjjn"))))
     (properties `((upstream-name . "OhdsiShinyAppBuilder")))
     (build-system r-build-system)
     (arguments
@@ -12806,9 +13510,9 @@ and Henery <doi:10.1111/j.2517-6161.1981.tb01153.x> models.")
                              r-shiny
                              r-rlang
                              r-resultmodelmanager
+                             r-remotes
                              r-parallellogger
                              r-dplyr
-                             r-devtools
                              r-databaseconnector
                              r-checkmate))
     (native-inputs (list r-knitr))
@@ -12826,13 +13530,13 @@ at <https://ohdsi.github.io/@code{OhdsiShinyAppBuilder/>}.")
 (define-public r-ohdsireportgenerator
   (package
     (name "r-ohdsireportgenerator")
-    (version "2.2.0")
+    (version "2.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OhdsiReportGenerator" version))
        (sha256
-        (base32 "0idclxqxnblm2ql1p17d2i01cbpyzixl1nkq5k3mnvsrihihi4ln"))))
+        (base32 "0w291l7ahz1s4cks0w1233y0zzfzjrgb33as6f850p7ng61nbb60"))))
     (properties `((upstream-name . "OhdsiReportGenerator")))
     (build-system r-build-system)
     (arguments
@@ -13016,13 +13720,13 @@ report checks the validity and reliability of the trial design.")
 (define-public r-ofhsyn
   (package
     (name "r-ofhsyn")
-    (version "0.1.1")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ofhsyn" version))
        (sha256
-        (base32 "1673gwn912rbsjjsrrdl9rnsp03nf4pdch0nf8bj5d1zdjib3d41"))))
+        (base32 "028apiwc74qavxvkssjsvqyz9aj82fapvvadmx1lcczvpl330zd5"))))
     (properties `((upstream-name . "ofhsyn")))
     (build-system r-build-system)
     (arguments
@@ -13170,6 +13874,40 @@ ability to produce editable vector graphics in @code{PowerPoint} and also to
 define placeholder where content is to be added.")
     (license license:expat)))
 
+(define-public r-ofemeantest
+  (package
+    (name "r-ofemeantest")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ofemeantest" version))
+       (sha256
+        (base32 "1dl15ghg8g8b8b3zqfdiipfm0rw0jh1v8y3rm8sa9bipjg1mgpfg"))))
+    (properties `((upstream-name . "ofemeantest")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-spdep
+                             r-spatialreg
+                             r-sf
+                             r-permuco
+                             r-multcompview))
+    (native-inputs (list r-knitr))
+    (home-page "https://ppaccioretti.github.io/ofemeantest/")
+    (synopsis "On Farm Experimentation Mean Test")
+    (description
+     "This package provides tools for comparing treatments in unreplicated on-farm
+experiments (OFE) using georeferenced data.  The package includes functions for
+constructing spatial grids, estimating the effective sample size from spatial
+autocorrelation, performing repeated permutation tests, adjusting pairwise
+comparisons, and visualizing the results.  It implements the OFE-mean test
+described in CÃ³rdoba, Paccioretti and Balzarini (2025)
+<doi:10.1007/s11119-024-10206-0>.")
+    (license license:expat)))
+
 (define-public r-oews2021
   (package
     (name "r-oews2021")
@@ -13216,6 +13954,36 @@ national level.  Metropolitan data is not included.")
 Statistics data release from the U.S. Bureau of Labor Statistics.  The dataset
 covers employment and wages across occupations, industries, states, and at the
 national level.  Metropolitan data is not included.")
+    (license license:expat)))
+
+(define-public r-oesir
+  (package
+    (name "r-oesir")
+    (version "0.3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oesir" version))
+       (sha256
+        (base32 "1vwrmp209a7hpzjfq205vc9a4z7x8gl10fkniv8s9063rhzvv3ry"))))
+    (properties `((upstream-name . "oesir")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrix r-mass))
+    (home-page "https://cran.r-project.org/package=oesir")
+    (synopsis
+     "Online Sliced Inverse Regression for Elliptical Model with Streaming Data")
+    (description
+     "For high-dimensional streaming heavy-tailed elliptical data, traditional sliced
+inverse regression methods require full offline data and cannot adapt to
+incremental data arrival.  This package implements Online Sliced Inverse
+Regression for Elliptical Model with Streaming Data (OE-SIR) algorithm with two
+recursive updating strategies, including offline batch SIR as benchmark,
+elliptical heavy-tailed data simulator, subspace evaluation metric and batch
+simulation tools for numerical experiments.  Cai, Z., Li, R., & Zhu, L. (2020)
+<doi:10.48550/@code{arXiv.2002.02795>}.")
     (license license:expat)))
 
 (define-public r-oenokpm
@@ -13296,13 +14064,13 @@ and Chien (2022) <doi:10.18637/jss.v104.i06>.")
 (define-public r-oeli
   (package
     (name "r-oeli")
-    (version "0.7.6")
+    (version "0.7.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oeli" version))
        (sha256
-        (base32 "16xfdh6cy209cx03nxr62lxz5x9b09jvak692x9a2jsw87y942zj"))))
+        (base32 "02qfpdcc7ivir8k2n20xgifzn0x7q2abrv3022swckgs7cqxrkn9"))))
     (properties `((upstream-name . "oeli")))
     (build-system r-build-system)
     (arguments
@@ -14000,13 +14768,13 @@ of CARET's GLM model class, by returning the final trained model.")
 (define-public r-oddsapir
   (package
     (name "r-oddsapir")
-    (version "0.0.3")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oddsapiR" version))
        (sha256
-        (base32 "0vjmmbyxsnc40sv053s3jgwssxnn897kf5hkx1vbxrym7zx775k9"))))
+        (base32 "1lnicbbbxmwdzz0786dw2rkiah1vafwqdb3wf0cc60w7h19h7b72"))))
     (properties `((upstream-name . "oddsapiR")))
     (build-system r-build-system)
     (arguments
@@ -14014,12 +14782,12 @@ of CARET's GLM model class, by returning the final trained model.")
       #:tests? #f))
     (inputs (list pandoc pandoc))
     (propagated-inputs (list r-tidyr
+                             r-tibble
                              r-rvest
                              r-rlang
                              r-magrittr
                              r-jsonlite
-                             r-janitor
-                             r-httr
+                             r-httr2
                              r-glue
                              r-dplyr
                              r-data-table
@@ -14028,7 +14796,36 @@ of CARET's GLM model class, by returning the final trained model.")
     (synopsis "Access Live Sports Odds from the Odds API")
     (description
      "This package provides a utility to quickly obtain clean and tidy sports odds
-from The Odds API <https://the-odds-api.com>.")
+from The Odds API <https://the-odds-api.com>.  Provides wrappers for every
+version 4 endpoint -- featured-market and single-event odds (including player
+props and alternate lines), historical odds snapshots, scores, events,
+participants, and usage-quota reporting -- returning tidy tibbles ready for
+analysis.")
+    (license license:expat)))
+
+(define-public r-oddsapiio
+  (package
+    (name "r-oddsapiio")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oddsapiio" version))
+       (sha256
+        (base32 "1ky8yy61d2w4k09qyqy1s2s6y5nd9rvgrch27dsp8kfsivgs0zz0"))))
+    (properties `((upstream-name . "oddsapiio")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite r-httr2))
+    (home-page "https://odds-api.io")
+    (synopsis "Client for the 'Odds-API.io' Sports Betting Odds API")
+    (description
+     "Query live and upcoming sports betting odds from the Odds-API.io REST API
+<https://docs.odds-api.io>.  Covers sports, bookmakers, leagues, events,
+per-event odds, value bets and arbitrage bets across 265+ bookmakers, returned
+as tidy data frames.  An API key is required; a free tier is available.")
     (license license:expat)))
 
 (define-public r-odds-n-ends
@@ -14085,13 +14882,13 @@ Probability are covered in this package.")
 (define-public r-oddnet
   (package
     (name "r-oddnet")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oddnet" version))
        (sha256
-        (base32 "0wa3vjjsn9f60b4c2l43sy41x0qhkbsg0yjy1ki6pgflgavr9ldg"))))
+        (base32 "01g8jl2y5s1q3payamkvrqa3c7afk3bi9hfsg21pz7nlzp64xac1"))))
     (properties `((upstream-name . "oddnet")))
     (build-system r-build-system)
     (arguments
@@ -14104,6 +14901,7 @@ Probability are covered in this package.")
                              r-pcapp
                              r-lookout
                              r-igraph
+                             r-feasts
                              r-fabletools
                              r-fable
                              r-dplyr))
@@ -14115,8 +14913,8 @@ Probability are covered in this package.")
 feature-based method to identify anomalies.  First, it computes many features
 for each network.  Then it models the features using time series methods.  Using
 time series residuals it detects anomalies.  This way, the temporal dependencies
-are accounted for when identifying anomalies (Kandanaarachchi, Hyndman 2022)
-<@code{arXiv:2210.07407>}.")
+are accounted for when identifying anomalies (Kandanaarachchi, Sanderson,
+Hyndman 2024) <doi:10.1109/ISCMI63661.2024.10851659>.")
     (license license:gpl3+)))
 
 (define-public r-odbr
@@ -14390,6 +15188,41 @@ the n clusters (integrity).  And 2) the contamination, i.e., the average
 proportion of elements from other groups that enter a focal group.  3) The
 probability of existence of the group gives the integrity and contamination in a
 Bayesian approach.")
+    (license license:gpl3)))
+
+(define-public r-octawave
+  (package
+    (name "r-octawave")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "octawave" version))
+       (sha256
+        (base32 "1zmqh4jwxgmn6616cnadcw546wmbxyjyymzwz1rzvm7h0h2zjjck"))))
+    (properties `((upstream-name . "octawave")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-plotly r-matlab))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=octawave")
+    (synopsis "Spatial Octahedral Quantum Wave Functions")
+    (description
+     "This package provides mathematical tools for simulating and visualizing
+three-dimensional octahedral quantum wave interferences and spatial resonance
+fields.  Includes functions for MRI slice generation of fullerene structures and
+wave models.  Computational modeling and three-dimensional visualization of
+fullerene and octahedral topologies are implemented within the R statistical
+environment, with interactive plotting powered by plotly'.  Theoretical
+foundations are based on the topological frameworks of Cataldo et al. (2015)
+<doi:10.1002/wcms.1207>, Dresselhaus et al. (1996, ISBN:9780122218200), and
+Coxeter (1973, ISBN:9780486614809); the geometric principles of equations of the
+octahedron type are outlined in Bobenko and Suris (2012)
+<doi:10.1093/imrn/rnr083>.  Additional structural and biological symmetry
+contexts are derived from Bragg (1914) <doi:10.1098/rspa.1914.0015> and Caspar
+and Klug (1962) <doi:10.1101/sqb.1962.027.001.005>.")
     (license license:gpl3)))
 
 (define-public r-ocsdata
@@ -14846,13 +15679,13 @@ Please refer to Flanders Marine Institute (2020) <doi:10.14284/403>.")
 (define-public r-oceanexplorer
   (package
     (name "r-oceanexplorer")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oceanexplorer" version))
        (sha256
-        (base32 "07l2la7nrqj8bsyv0flyjs08wishlvq6v2hx5n1g9kag4bcfl6vz"))))
+        (base32 "092pzv0fz0hxpd55rprd4vpnjsi2ssayhw8dc0yngqm6fim9rafk"))))
     (properties `((upstream-name . "oceanexplorer")))
     (build-system r-build-system)
     (arguments
@@ -14894,13 +15727,13 @@ found here: <https://www.ncei.noaa.gov/products/world-ocean-atlas>.")
 (define-public r-oce
   (package
     (name "r-oce")
-    (version "1.8-3")
+    (version "1.8-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oce" version))
        (sha256
-        (base32 "13vg1g3pn1bmmjb5sb34qmwy2czxigin02nz4vkwlw9z4vpjkwgi"))))
+        (base32 "05y9laaxs3la2s4ricnxd4k5f6axiqx8vpw0h1v4spw5cwxdv052"))))
     (properties `((upstream-name . "oce")))
     (build-system r-build-system)
     (arguments
@@ -15035,6 +15868,47 @@ an efficient survey design.  Reference: Fukaya et al. (2022)
 <doi:10.1111/2041-210X.13732>, Fukaya and Hasebe (2025)
 <doi:10.1002/1438-390X.12219>.")
     (license license:gpl3+)))
+
+(define-public r-occcite
+  (package
+    (name "r-occcite")
+    (version "0.6.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "occCite" version))
+       (sha256
+        (base32 "1pf5iw7gjpdb12gaaqpr8j46cg8w7p2hb2kibsqizy6dbj41q31r"))))
+    (properties `((upstream-name . "occCite")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridis
+                             r-tidyr
+                             r-stringr
+                             r-rpostgresql
+                             r-rlang
+                             r-rgbif
+                             r-refmanager
+                             r-rcolorbrewer
+                             r-lubridate
+                             r-leaflet
+                             r-htmltools
+                             r-ggplot2
+                             r-dplyr
+                             r-dbi
+                             r-curl
+                             r-bien
+                             r-bib2df))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://docs.ropensci.org/occCite/")
+    (synopsis "Querying and Managing Large Biodiversity Occurrence Datasets")
+    (description
+     "Facilitates the gathering of biodiversity occurrence data from disparate
+sources.  Metadata is managed throughout the process to facilitate reporting and
+enhanced ability to repeat analyses.")
+    (license license:gpl3)))
 
 (define-public r-occ
   (package
@@ -15216,23 +16090,53 @@ estimates are included.  The most relevant is covariance matrix computation
 using a closed formula.")
     (license license:gpl3+)))
 
+(define-public r-obrasgovr
+  (package
+    (name "r-obrasgovr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "obrasgovr" version))
+       (sha256
+        (base32 "1y52b4vwzlzqmxp6v3cldw0mnsfc1dlwz29s5bwfw65mgc4gyp0j"))))
+    (properties `((upstream-name . "obrasgovr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-rlang r-purrr r-httr2 r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/StrategicProjects/obrasgovr")
+    (synopsis "Access the 'ObrasGov' Open Data API")
+    (description
+     "This package provides a modern interface to the Brazilian federal government's
+@code{ObrasGov} open data application programming interface
+(<https://api-publica.obrasgov.gestao.gov.br>).  Retrieves data about public
+infrastructure projects, physical execution, contracts, commitments, geometries,
+feasibility studies, and project status histories.  Results are returned as tidy
+tibbles with typed date columns, preserved nested relationships, pagination
+metadata, and optional multi-page collection.")
+    (license license:expat)))
+
 (define-public r-obr
   (package
     (name "r-obr")
-    (version "0.2.5")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "obr" version))
        (sha256
-        (base32 "1nh5wl2rf2xgk0z9r3dd9ig5ffrjnzbd110xkg5m28y0c6j9sdgl"))))
+        (base32 "0xwcglrz19h080d93gckpg4171x3midzdjhm5l3j0ms137406lam"))))
     (properties `((upstream-name . "obr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-readxl r-httr2 r-cli))
-    (home-page "https://github.com/charlescoverdale/obr")
+    (native-inputs (list r-knitr))
+    (home-page "https://charlescoverdale.github.io/obr/")
     (synopsis "Access 'Office for Budget Responsibility' Data")
     (description
      "This package provides clean, tidy access to data published by the Office for
@@ -15240,11 +16144,13 @@ Budget Responsibility ('OBR'), the UK's independent fiscal watchdog.  Covers the
 Public Finances Databank (outturn for PSNB, PSND, receipts, and expenditure
 since 1946), the Historical Official Forecasts Database (every OBR forecast
 since 2010), the Economic and Fiscal Outlook detailed forecast tables (five-year
-projections from the latest Budget), the Welfare Trends Report (incapacity
-benefit spending and caseloads), and the Fiscal Risks and Sustainability Report
-(50-year state pension projections).  Data is downloaded from the OBR on first
-use and cached locally for subsequent calls.  Data is sourced from the OBR
-website <https://obr.uk>.")
+projections from the latest Budget), the monthly profiles for the public
+finances (the OBR forecast apportioned across the months of the fiscal year),
+and the Welfare Trends Report (incapacity benefit spending and caseloads).  All
+returned objects carry provenance metadata recording the source URL, publication
+vintage, retrieval time, and file fingerprint, so analyses can be audited and
+reproduced.  Data is downloaded from the OBR on first use and cached locally for
+subsequent calls.  Data is sourced from the OBR website <https://obr.uk>.")
     (license license:expat)))
 
 (define-public r-obmbpkg
@@ -15472,13 +16378,13 @@ defining enumerated types, as well as other bounded types, as S4 classes.")
 (define-public r-obic
   (package
     (name "r-obic")
-    (version "4.2.3")
+    (version "4.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OBIC" version))
        (sha256
-        (base32 "1ff7qvia4a9f89xyjrakfhkhaxdr8k75zxmfjaa1vaslj2cv46iv"))))
+        (base32 "11wp5vlvdr065h7dr4dz7x7wk6kc9jpjz1fl7iycscb0hgqkmxlv"))))
     (properties `((upstream-name . "OBIC")))
     (build-system r-build-system)
     (arguments
@@ -15748,6 +16654,38 @@ orbit-aware counts are computed respective each of the edges and nodes.")
     (synopsis "OpenAnalytics Plots Package")
     (description "Offers a suite of functions for enhancing R plots.")
     (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
+
+(define-public r-oalasso
+  (package
+    (name "r-oalasso")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oalasso" version))
+       (sha256
+        (base32 "1bb1353f2wsdp5a4awksq4l393bk648qkhqap44dsj4sqd9qlrhx"))))
+    (properties `((upstream-name . "oalasso")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-glmnet r-cobalt))
+    (native-inputs (list r-knitr))
+    (home-page "https://kabajiro.github.io/oalasso/")
+    (synopsis "Outcome-Adaptive Lasso Propensity Scores")
+    (description
+     "Estimates propensity scores by the outcome-adaptive lasso of Shortreed and
+Ertefaie (2017) <doi:10.1111/biom.12679> and the generalized outcome-adaptive
+lasso (GOAL) of Balde, Yang and Lefebvre (2023) <doi:10.1111/biom.13683>, using
+glmnet with an exact penalty-scale correction so that the published objectives
+and tuning grids are reproduced.  Tuning is by the weighted absolute mean
+difference balance criterion.  The resulting score is designed to be supplied
+directly to the @code{matchit()} function of @code{MatchIt} as a distance
+measure, to the @code{weightit()} function of @code{WeightIt} as a propensity
+score, or to the @code{psave()} function of @code{psAve} as an appended
+candidate.")
+    (license license:gpl2+)))
 
 (define-public r-oaii
   (package

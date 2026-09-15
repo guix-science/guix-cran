@@ -44,13 +44,13 @@
 (define-public r-xyomics
   (package
     (name "r-xyomics")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "XYomics" version))
        (sha256
-        (base32 "0dj2ka85fs6fv6r19y782jl4r89pj7px0w7l5haiq93pv96qdqwf"))))
+        (base32 "0v3s7mvsjilgi8acgmap30gm82yvcbaih5lwlwhafjszqpg4xzm6"))))
     (properties `((upstream-name . "XYomics")))
     (build-system r-build-system)
     (arguments
@@ -73,6 +73,7 @@
                              r-data-table
                              r-cowplot
                              r-clusterprofiler
+                             r-bh
                              r-annotationdbi))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=XYomics")
@@ -116,19 +117,19 @@ available from <https://github.com/Cyan4973/@code{xxHash>}.")
 (define-public r-xxdi
   (package
     (name "r-xxdi")
-    (version "1.26.4")
+    (version "1.26.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xxdi" version))
        (sha256
-        (base32 "15085mcdnz3hz1rq4vp3ffa621p3jlhnfxgfahcplhz5c2dpsxi8"))))
+        (base32 "0z1s8kcvdm311a3knp1a83mjr9clqwki9am6nqxbwdbal76hl527"))))
     (properties `((upstream-name . "xxdi")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr r-ggplot2 r-dplyr r-agop))
+    (propagated-inputs (list r-tidyr r-ggplot2 r-dplyr r-checkmate r-agop))
     (home-page "https://cran.r-project.org/package=xxdi")
     (synopsis
      "An R Package for Evaluating Expertise Indices for Research Strength Assessment")
@@ -143,23 +144,24 @@ the xd-index provides a broader assessment of overall scholarly expertise
 considering an institution's publication pattern and strengths across coarse
 thematic areas.  These indices offer a nuanced understanding of institutional
 research capabilities, aiding stakeholders in research management and resource
-allocation decisions.  Lathabai, H.H., Nandy, A., and Singh, V.K. (2021)
-<doi:10.1007/s11192-021-04188-3>.  Nandy, A., Lathabai, H.H., and Singh, V.K.
-(2023) <doi:10.5281/zenodo.8305585>.  This package provides the h-, g-, x-,
-xd-indices, and their variants for use with standard format of Web of Science
-(@code{WoS}) scrapped datasets.")
+allocation decisions.  For further details, see Lathabai, H.H., Nandy, A., and
+Singh, V.K. (2021) <doi:10.1007/s11192-021-04188-3>, and Nandy, A., Lathabai,
+H.H., and Singh, V.K. (2023) <doi:10.5281/zenodo.8305585>.  This package
+provides wrapper functions for computing these exertise indices and their
+variants, for use with the standard output format of the Web of Science
+database.")
     (license license:gpl3)))
 
 (define-public r-xwf
   (package
     (name "r-xwf")
-    (version "0.2-3")
+    (version "0.2-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xwf" version))
        (sha256
-        (base32 "1byj6vjk2abm9j919107xsa3nd40zbsvxaldvv4ml3c47k1fg3kc"))))
+        (base32 "1h4apyv4hnqwr3cpnwdl7zba8yf0px360mln796kiyiydxbpa5ww"))))
     (properties `((upstream-name . "xwf")))
     (build-system r-build-system)
     (arguments
@@ -408,13 +410,13 @@ frameworks of Pesaran, Shin, and Smith (1999)
 (define-public r-xtife
   (package
     (name "r-xtife")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xtife" version))
        (sha256
-        (base32 "0yx5wbpxf8w3cylz0y6zhqlp3xhfmldbf9lwmzrmny27mzv91lp2"))))
+        (base32 "1f5vvz76xqi1kqy6gs3lh16m1lrfzcnww390nh60f8y3jqf3dgd1"))))
     (properties `((upstream-name . "xtife")))
     (build-system r-build-system)
     (arguments
@@ -422,16 +424,24 @@ frameworks of Pesaran, Shin, and Smith (1999)
       #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Rickchen0910/xtife")
-    (synopsis "Interactive Fixed Effects Estimator for Balanced Panel Data")
+    (synopsis "Interactive Fixed Effects Estimator for Panel Data")
     (description
      "This package implements the interactive fixed effects ('IFE') panel estimator of
-Bai (2009) <doi:10.3982/ECTA6135> with analytical standard errors
-('homoskedastic', HC1 robust, and cluster-robust by unit).  Supports asymptotic
-bias correction for large panels (Bai 2009) and a dynamic extension for
-predetermined regressors (Moon and Weidner 2017
-<doi:10.1017/S0266466615000328>).  Includes information-criterion-based factor
-number selection (Bai and Ng 2002 <doi:10.1111/1468-0262.00273>).  All
-computations use base R only with no external dependencies.")
+Bai (2009) <doi:10.3982/ECTA6135> for balanced and unbalanced panels, with
+optional additive unit and/or time fixed effects.  Provides analytical standard
+errors ('homoskedastic', HC1 heteroskedasticity-robust, cluster-robust by unit,
+and heteroskedasticity- and autocorrelation- consistent), together with
+asymptotic incidental-parameter bias correction for large panels, including a
+dynamic extension for predetermined (lagged-dependent) regressors following Moon
+and Weidner (2017) <doi:10.1017/S0266466615000328>.  The number of factors is
+chosen by information criteria (Bai and Ng 2002 <doi:10.1111/1468-0262.00273>)
+or by singular value thresholding.  Unbalanced panels are handled by an
+expectation-maximisation algorithm with nuclear-norm-regularised initialisation,
+with estimation, analytical inference, and bias correction following Su, Wang
+and Wang (2025) <doi:10.2139/ssrn.5177283> and building on the matrix-completion
+and missing-data factor analysis of Bai and Ng (2021)
+<doi:10.1080/01621459.2021.1967163>.  All computations use base R only, with no
+external dependencies.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-xtfifevd
@@ -467,13 +477,13 @@ literature.")
 (define-public r-xtdml
   (package
     (name "r-xtdml")
-    (version "0.1.12")
+    (version "0.1.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xtdml" version))
        (sha256
-        (base32 "0qz7qpqd0fmixmvs1i9gvlmm8np376hc9x7rn8lr7c96m7734q36"))))
+        (base32 "0wz9gnyf8xdg5ji8wskqmz072y1ng23p1kg9vin0q2r0j81fdhim"))))
     (properties `((upstream-name . "xtdml")))
     (build-system r-build-system)
     (arguments
@@ -502,9 +512,9 @@ with high-dimensional confounding variables and an exogenous treatment variable
 within the double machine learning framework.  The package is used to estimate
 the structural parameter (treatment effect) in static panel data models with
 fixed effects using the approaches established in Clarke and Polselli (2025)
-<doi:10.1093/ectj/utaf011>.  xtdml is built on the object-oriented package
-@code{DoubleML} (Bach et al., 2024) <doi:10.18637/jss.v108.i03> using the mlr3
-ecosystem.")
+<doi:10.1093/ectj/utaf011>.  xtdml follows the object-oriented architecture of
+@code{DoubleML} (Bach et al., 2024) <doi:10.18637/jss.v108.i03> and uses the
+mlr3 ecosystem.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-xtdhcoint
@@ -691,6 +701,44 @@ builds on the framework described in Wang, Duerr, and Gao(2025)
      "An extension for the xml2 package to transform XML documents by applying an xslt
 style-sheet.")
     (license license:gpl2+)))
+
+(define-public r-xsdm
+  (package
+    (name "r-xsdm")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "xsdm" version))
+       (sha256
+        (base32 "1v8inbdmifyizlcp7wkzbiyvgwk6wnxjxvzm2iy8ydvgaa6h797l"))))
+    (properties `((upstream-name . "xsdm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ucminfcpp
+                             r-tibble
+                             r-terra
+                             r-sobol
+                             r-rcppparallel
+                             r-rcpp
+                             r-purrr
+                             r-future-callr
+                             r-future
+                             r-furrr
+                             r-expm
+                             r-checkmate))
+    (home-page "https://xsdm-project.github.io/xsdm/")
+    (synopsis "Demographic Approach to Species Distribution Model")
+    (description
+     "Integrates concepts of stochastic demography into species distribution
+modelling.  The main approach maximizes a likelihood function based on
+environmental information and presence/absence records.  This is used to
+reconstruct species fundamental ecological niches and to project their potential
+geographic range.  Data requirements include species presence/absence records
+and a timeseries of environmental data.")
+    (license license:agpl3+)))
 
 (define-public r-xrscc
   (package
@@ -906,13 +954,13 @@ objects.")
 (define-public r-xpose-xtras
   (package
     (name "r-xpose-xtras")
-    (version "0.1.4")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xpose.xtras" version))
        (sha256
-        (base32 "1wabd3i2k926ywcrfl0vi9z4bhwx6c02qvp6k9rkmi8vqkkh3mia"))))
+        (base32 "1pdhvsij5vsw4z5r8s9yh4xf36xlwiqi3cgy650rmzzdxisn2l6g"))))
     (properties `((upstream-name . "xpose.xtras")))
     (build-system r-build-system)
     (arguments
@@ -935,7 +983,6 @@ objects.")
                              r-ggally
                              r-forcats
                              r-dplyr
-                             r-conflicted
                              r-colorspace
                              r-cli
                              r-checkmate))
@@ -1024,24 +1071,20 @@ graphics for data exploration and model diagnostics.")
 (define-public r-xportr
   (package
     (name "r-xportr")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xportr" version))
        (sha256
-        (base32 "179kapmfkskpmf7risrq51w8jfg5rdk3qxy76wfxbnmg7qbyx5i2"))))
+        (base32 "1mvi5pnj614ffgrm8h11p7ji69wjba7gi3cv52gnbpv33yjg7kp2"))))
     (properties `((upstream-name . "xportr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyselect
-                             r-stringr
-                             r-rlang
-                             r-readr
+    (propagated-inputs (list r-rlang
                              r-purrr
-                             r-magrittr
                              r-lifecycle
                              r-haven
                              r-glue
@@ -1135,13 +1178,13 @@ and RFM analysis.")
 (define-public r-xplainfi
   (package
     (name "r-xplainfi")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xplainfi" version))
        (sha256
-        (base32 "16cp1zp3mx4i2if6352jgi9znyidrnhxscfxnhzvywahy8bqi35f"))))
+        (base32 "1ank2wx17bqsxqbyql5cfm0hvbffrg2kxzmjsx8pbddnpn82vxqj"))))
     (properties `((upstream-name . "xplainfi")))
     (build-system r-build-system)
     (arguments
@@ -1167,6 +1210,48 @@ importance (CFI, RFI), leave one covariate out (LOCO), and Shapley additive
 global importance (SAGE), as well as feature sampling mechanisms to support
 conditional importance methods.")
     (license license:lgpl3+)))
+
+(define-public r-xplaineff
+  (package
+    (name "r-xplaineff")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "xplaineff" version))
+       (sha256
+        (base32 "0jhpfddpdr10hxfirw0nxgx3mrwfqbpmgj9zs9pg86qqmwiqqw54"))))
+    (properties `((upstream-name . "xplaineff")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo
+                             r-rcpp
+                             r-r6
+                             r-patchwork
+                             r-mlr3misc
+                             r-igraph
+                             r-ggraph
+                             r-ggplot2
+                             r-data-table
+                             r-cli
+                             r-checkmate))
+    (home-page "https://github.com/mlr-org/xplaineff")
+    (synopsis
+     "Decomposing Global Feature Effects Based on Feature Interactions")
+    (description
+     "This package implements the GADGET (Generalized Additive Decomposition of Global
+@code{EffecTs}) algorithm for interpretable machine learning.  The package
+recursively partitions the feature space to minimize heterogeneity of feature
+effects (e.g., Accumulated Local Effects or Partial Dependence), producing a
+tree of regions where effects are more stable.  It supports both ALE and PD
+strategies, works with mlr3 learners and provides visualization of the
+interaction tree and regional effect plots.  The method is described in
+Herbinger, J., Wright, M. N., Nagler, T., Bischl, B., and Casalicchio, G.
+(2024), \"Decomposing Global Feature Effects Based on Feature Interactions\"
+<https://jmlr.org/papers/volume25/23-0699/23-0699.pdf>.")
+    (license license:expat)))
 
 (define-public r-xplain
   (package
@@ -1275,13 +1360,13 @@ random search strategies.")
 (define-public r-xomultinom
   (package
     (name "r-xomultinom")
-    (version "0.9.0")
+    (version "0.9.0-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "XOMultinom" version))
        (sha256
-        (base32 "1xx5s12wl16ycpvmz13if3v41fqw3cvll0r3y9bsr8rpkpsbblga"))))
+        (base32 "0hqx36jb78i449rjjsmrby46gr5dbs4755q3rawvl4labh920llf"))))
     (properties `((upstream-name . "XOMultinom")))
     (build-system r-build-system)
     (arguments
@@ -1308,13 +1393,13 @@ efficiency.")
 (define-public r-xoi
   (package
     (name "r-xoi")
-    (version "0.74")
+    (version "0.76")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xoi" version))
        (sha256
-        (base32 "0b5kfd1fhs4jzsyj6l5g4756k85nf46mhg5v77l2yj0f4c15n7yw"))))
+        (base32 "1x7vri8ahzl0c7vbz3zpadj02pz2ybqlq6p5z1n7l38pb5x2hlnx"))))
     (properties `((upstream-name . "xoi")))
     (build-system r-build-system)
     (arguments
@@ -1387,13 +1472,13 @@ occurred.")
 (define-public r-xmpdf
   (package
     (name "r-xmpdf")
-    (version "0.2.1")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xmpdf" version))
        (sha256
-        (base32 "0pma8njk77ggpky6m4l9p7n7ardy41lsn0q67wkgr0mwgjjyil7w"))))
+        (base32 "1x5njnm7afjpbl529g0gxkcl75zl2z2r5s154n98wkds328sd5fc"))))
     (properties `((upstream-name . "xmpdf")))
     (build-system r-build-system)
     (arguments
@@ -1414,8 +1499,8 @@ occurred.")
 in a variety of media file formats as well as edit bookmarks (aka outline aka
 table of contents) and documentation info entries in pdf files.  Can detect and
 use a variety of command-line tools to perform these operations such as exiftool
-<https://exiftool.org/>, ghostscript <https://www.ghostscript.com/>, and/or
-pdftk <https://gitlab.com/pdftk-java/pdftk>.")
+<https://exiftool.sourceforge.net/>, ghostscript <https://www.ghostscript.com/>,
+and/or pdftk <https://gitlab.com/pdftk-java/pdftk>.")
     (license license:expat)))
 
 (define-public r-xmlwriter
@@ -1587,13 +1672,13 @@ al(2020) <doi:10.1101/2020.07.27.20161562>.")
 (define-public r-xmap
   (package
     (name "r-xmap")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xmap" version))
        (sha256
-        (base32 "0jq9amaw3fi8vjn48m3hrmk17zr3kzy0qsahndmi14nabsybh0ck"))))
+        (base32 "1dn1p4s5jg5jsyr819hms09km8npbp7kgfaxna54wbp7vjbwacmy"))))
     (properties `((upstream-name . "xmap")))
     (build-system r-build-system)
     (arguments
@@ -1940,6 +2025,34 @@ originally developed for the R GUI and IDE RKWard <https://rkward.kde.org>, to
 make plugin development easier.")
     (license license:gpl3+)))
 
+(define-public r-ximage
+  (package
+    (name "r-ximage")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ximage" version))
+       (sha256
+        (base32 "07p1a04n93i1gkr9mqmc5gbg00n32ig08gib489mk1fhn6w5q2mj"))))
+    (properties `((upstream-name . "ximage")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/hypertidy/ximage")
+    (synopsis "Draw Images of Raster Data and Related Adornments")
+    (description
+     "Draw images easily, set up a plot with an image, specify where that image should
+be placed.  Image plot by default reflects the index of the image data itself,
+or can be specified in simple extent terms xmin,xmax,ymin,ymax'.  Numeric
+matrices, integer arrays, byte arrays, character arrays, and native rasters are
+(or will be) supported.  A combination of @code{image()} and
+@code{rasterImage()} from the graphics package with their good features in one
+place.")
+    (license license:expat)))
+
 (define-public r-xicor
   (package
     (name "r-xicor")
@@ -1968,13 +2081,13 @@ The reference for the methods implemented here is Chatterjee, Sourav (2020)
 (define-public r-xiacf
   (package
     (name "r-xiacf")
-    (version "0.6.2")
+    (version "0.6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xiacf" version))
        (sha256
-        (base32 "19imnhm69bx69r113frs65cwyi3gsk5rnwdilp3rr4lx123j1jpi"))))
+        (base32 "12wrf2vkhk1b655vzmgdmykv50y4vvg1i71h6s54mwjl4bkn4m57"))))
     (properties `((upstream-name . "xiacf")))
     (build-system r-build-system)
     (arguments
@@ -2056,19 +2169,20 @@ Goungounga et al. (2023) <doi:10.1002/bimj.202100210>.")
 (define-public r-xgxr
   (package
     (name "r-xgxr")
-    (version "1.1.2")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xgxr" version))
        (sha256
-        (base32 "0mmnh6zab7qllbfpl3vn5sd7hcznm83v5rxi1pw5zv96ax0ikagv"))))
+        (base32 "1aivsfv13v5m2rwkc51l2xf5rb88mkkdln75a9r1npaq7jrmm0xy"))))
     (properties `((upstream-name . "xgxr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble
+    (propagated-inputs (list r-vctrs
+                             r-tibble
                              r-stringr
                              r-scales
                              r-readr
@@ -2292,13 +2406,13 @@ ISBN:1-55860-066-3), Wickham, Hadley (2019, ISBN:978-815384571).")
 (define-public r-xegapopulation
   (package
     (name "r-xegapopulation")
-    (version "1.0.0.12")
+    (version "1.0.0.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xegaPopulation" version))
        (sha256
-        (base32 "1y5sj715cjab4pr44ca7wxn5n7nh24qpm5cwksf6hn3lim1h51k0"))))
+        (base32 "1y5hw2gm2l3pdakram4skc99j0ca80ncv6xm4qdnjpfi768abkq1"))))
     (properties `((upstream-name . "xegaPopulation")))
     (build-system r-build-system)
     (arguments
@@ -2330,13 +2444,13 @@ M. (1996, ISBN:0-18-201-031-7).  For xega''s architecture, see Geyer-Schulz, A.
 (define-public r-xegapermgene
   (package
     (name "r-xegapermgene")
-    (version "1.0.0.1")
+    (version "1.0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xegaPermGene" version))
        (sha256
-        (base32 "1c8fpjz8292f1cf744y32zdd53pmi74igh7sjxw9dccvxyy421yf"))))
+        (base32 "1cfsl4g5jva1ivpsjc555d1ia4sjah17fx0x59f90485nrj4vi15"))))
     (properties `((upstream-name . "xegaPermGene")))
     (build-system r-build-system)
     (arguments
@@ -2356,6 +2470,38 @@ heuristics (Croes, G. A. (1958) <doi:10.1287/opre.6.6.791> and Lin, S. and
 Kernighan.  B. W. (1973) <doi:10.1287/opre.21.2.498>), and randomized greedy
 operators.  A random mix operator for mutation selects a mutation variant
 randomly.")
+    (license license:expat)))
+
+(define-public r-xegamigration
+  (package
+    (name "r-xegamigration")
+    (version "0.5.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "xegaMigration" version))
+       (sha256
+        (base32 "0h3ljpq95jjn6fmvk0s683f0x3hc34irkvdz9ppmd189hxzz3p06"))))
+    (properties `((upstream-name . "xegaMigration")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xegaselectgene r-xegapopulation))
+    (home-page "https://github.com/ageyerschulz/xegaMigration")
+    (synopsis "'Xega' Island Models")
+    (description
+     "This package implements asynchronous message-passing communication protocols for
+island models of extended and evolutionary algorithms (see Tomassini, Marco
+(2005, ISBN:978-3-540-24193-5)) for the R-package xega
+<https://CRAN.R-project.org/package=xega>.  Basic asynchronous as well as
+synchronized communication primitives are supplied based on file I/O operations
+('rds') on a shared file system or by @code{openMPI} (MPI) messages.  The gene
+selection and replacement strategies, the migration policy as well as the
+communication topology between islands are configurable.  Homogeneous and
+heterogeneous island algorithms are supported.  For examples (R and
+shell-scripts), see
+<https://github.com/ageyerschulz/xega/tree/main/examples/@code{IslandModels>}.")
     (license license:expat)))
 
 (define-public r-xegagpgene
@@ -2418,13 +2564,13 @@ O'Neill, M., and Collins, J. J. (2018) <doi:10.1007/978-3-319-78717-6>.")
 (define-public r-xegagagene
   (package
     (name "r-xegagagene")
-    (version "1.0.0.6")
+    (version "1.0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xegaGaGene" version))
        (sha256
-        (base32 "0az5bamnmf4nl82ry6xfvf5230ps5lfqz8gqv6khll8nhbpa2r9z"))))
+        (base32 "06kr0r0zgz2vqnkjrh59rwrw9wh2gn9n9s8hg0clm0vkj1xkxsrv"))))
     (properties `((upstream-name . "xegaGaGene")))
     (build-system r-build-system)
     (arguments
@@ -2450,13 +2596,13 @@ ISBN:0-18-201-031-7).  For xega''s architecture, see Geyer-Schulz, A. (2025)
 (define-public r-xegadfgene
   (package
     (name "r-xegadfgene")
-    (version "1.0.0.9")
+    (version "1.0.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xegaDfGene" version))
        (sha256
-        (base32 "0q7khpydmabyhmrxdrm3vjyyid4bfrz91zkp6k0srhbwiv7z35wk"))))
+        (base32 "190w795i3s8mvin7z1r1g8ql3nmvpv3nlm569zzy3ygw3ll1znhs"))))
     (properties `((upstream-name . "xegaDfGene")))
     (build-system r-build-system)
     (arguments
@@ -2551,13 +2697,13 @@ APL2 implementation in Geyer-Schulz, Andreas (1997, ISBN:978-3-7908-0830-X).")
 (define-public r-xega
   (package
     (name "r-xega")
-    (version "0.9.0.23")
+    (version "0.9.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xega" version))
        (sha256
-        (base32 "0aqlhzmz94hh4f5wqglca6l0cpm8ijp1abl1ar2f5pp7rlm4rhai"))))
+        (base32 "112rkx0kfvy0lf0rdx31kpmz1adhf12n0i3iskzwqrfh98mkribr"))))
     (properties `((upstream-name . "xega")))
     (build-system r-build-system)
     (arguments
@@ -2566,6 +2712,7 @@ APL2 implementation in Geyer-Schulz, Andreas (1997, ISBN:978-3-7908-0830-X).")
     (propagated-inputs (list r-xegaselectgene
                              r-xegapopulation
                              r-xegapermgene
+                             r-xegamigration
                              r-xegagpgene
                              r-xegagegene
                              r-xegagagene
@@ -2589,11 +2736,15 @@ evolution (Price, Kenneth V., Storn, Rainer M. and Lampinen, Jouni A. (2005)
 and Collins, J. J. (2018) <doi:10.1007/978-3-319-78717-6>), and grammatical
 differential evolution (O'Neill, M. and Brabazon, A. (2006) in Arabinia, H.
 (2006, ISBN:978-193-241596-3).  All algorithms reuse basic adaptive mechanisms
-for performance optimization.  For xega''s architecture, see Geyer-Schulz, A.
-(2025) <doi:10.5445/IR/1000187255>.  Sequential or parallel execution (on
-multi-core machines, local clusters, and high-performance computing
+for performance optimization.  For the architecture, see Geyer-Schulz, A. (2025)
+<doi:10.5445/IR/1000187255>.  Sequential or parallel execution with master-slave
+pattern (on multi-core machines, local clusters, and high-performance computing
 environments) is available for all algorithms.  See
-<https://github.com/ageyerschulz/xega/tree/main/examples/@code{executionModel>}.")
+<https://github.com/ageyerschulz/xega/tree/main/examples/@code{executionModel>}.
+ Homogeneous and heterogeneous island models with asynchronous and synchronous
+communication and configurable communication topology as well as migration
+strategy are supported.  See
+<https://github.com/ageyerschulz/xega/tree/main/examples/@code{IslandModels>}.")
     (license license:expat)))
 
 (define-public r-xefun
@@ -2869,6 +3020,44 @@ whole lot more!")
      "This package provides a few functions which provide a quick way of subsetting
 genomic admixture data and generating customizable stacked barplots.")
     (license license:gpl3+)))
+
+(define-public r-xaci
+  (package
+    (name "r-xaci")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "xaci" version))
+       (sha256
+        (base32 "17i90sv745v2qzi5ki7cr40qzcsp4y5z39cqm4mqzf15iy4y793l"))))
+    (properties `((upstream-name . "xaci")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-units
+                             r-tidyr
+                             r-terra
+                             r-sf
+                             r-rnaturalearth
+                             r-readr
+                             r-ncdf4
+                             r-ggplot2
+                             r-geodata
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/XavierMilhaud/xaci")
+    (synopsis "Actuarial Climate Index")
+    (description
+     "Computes the Actuarial Climate Index (ACI) and its components (temperature,
+precipitation, drought, wind, sea level) from gridded climate data
+('@code{NetCDF}') and tide gauge records.  Implements the methodology described
+in Garrido, Milhaud & Olympio (2025) <https://hal.science/hal-04491982v2> for a
+French/European actuarial climate index, building on the American Academy of
+Actuaries framework, to any country in the world.")
+    (license license:expat)))
 
 (define-public r-x3ptools
   (package

@@ -65,13 +65,13 @@ high levels of noise.")
 (define-public r-kza
   (package
     (name "r-kza")
-    (version "4.1.0.1")
+    (version "4.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kza" version))
        (sha256
-        (base32 "1vx7wc8iwmr9d6ff2kcy6y3nyfj6jfzv4hxkv1fsas0rbjgfick4"))))
+        (base32 "0mrr9c2xk0cxfgd12ibsp0bj8ihfd8pmsgrq6dc9xvnk5sxg9d3z"))))
     (properties `((upstream-name . "kza")))
     (build-system r-build-system)
     (arguments
@@ -257,13 +257,13 @@ error handling, and usage tracking.")
 (define-public r-kvh
   (package
     (name "r-kvh")
-    (version "1.4.2")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kvh" version))
        (sha256
-        (base32 "0lx7p2rgvcjgg99chcan0qb9hafx226sqvdb1g1xpkdwvzbyxci8"))))
+        (base32 "0limi6pn056s9id6dfanqaxsl33qsn5zd2ghsfq5wn0d5p4ka0ii"))))
     (properties `((upstream-name . "kvh")))
     (build-system r-build-system)
     (arguments
@@ -597,20 +597,20 @@ and Zamar (2019) <arxiv:1906.08198>).")
 (define-public r-kstmatrix
   (package
     (name "r-kstmatrix")
-    (version "2.3-3")
+    (version "3.0-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kstMatrix" version))
        (sha256
-        (base32 "1dlahmc2rihk2pqdwswf2cg7hby2gl3nsj6s88h09vi35ylxjqvm"))))
+        (base32 "1f26c2rg9q1x3ci8b4lp72q23wp22xib7xx6vxna4ijwwxzn1kiq"))))
     (properties `((upstream-name . "kstMatrix")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyr r-sets r-rsvg r-pks r-diagrammer))
-    (native-inputs (list r-litedown))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=kstMatrix")
     (synopsis
      "Basic Functions in Knowledge Space Theory Using Matrix Representation")
@@ -622,26 +622,27 @@ particular domain.  The @code{kstMatrix} package provides basic functionalities
 to generate, handle, and manipulate knowledge structures and knowledge spaces.
 Opposed to the kst package, @code{kstMatrix} uses matrix representations for
 knowledge structures.  Furthermore, @code{kstMatrix} contains several knowledge
-spaces developed by the research group around Cornelia Dowling through querying
-experts.")
+spaces obtained in the 1990s by the research group around Cornelia Dowling
+through querying experts.")
     (license license:gpl3)))
 
 (define-public r-kstio
   (package
     (name "r-kstio")
-    (version "0.5-1")
+    (version "0.6-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kstIO" version))
        (sha256
-        (base32 "1rhz5wvbxjijv677ay7bkcyjr9fbbmbl3plcfzhbq1d19bw5fk7v"))))
+        (base32 "18wml4vw9f6p66zmlw97g20180lij40yr6syc4j2zf2i9xir0cy0"))))
     (properties `((upstream-name . "kstIO")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-sets r-readods r-openxlsx2 r-kstmatrix))
+    (native-inputs (list r-litedown))
     (home-page "https://cran.r-project.org/package=kstIO")
     (synopsis "Knowledge Space Theory Input/Output")
     (description
@@ -902,13 +903,13 @@ excision criteria.")
 (define-public r-ksgeneral
   (package
     (name "r-ksgeneral")
-    (version "2.0.2")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "KSgeneral" version))
        (sha256
-        (base32 "155fr49pvsbjkjh96aidw3fs6gb4q1i9c9v7qmk7nnfh6gnx0q3c"))))
+        (base32 "1ry4k5xw7k8d9n8amx99sjmf0hq0ja63w1p0f8836rwb1yc7a2h9"))))
     (properties `((upstream-name . "KSgeneral")))
     (build-system r-build-system)
     (arguments
@@ -945,21 +946,21 @@ Two-sample Kolmogorov-Smirnov and Kuiper Tests.  submitted.")
 (define-public r-ksformat
   (package
     (name "r-ksformat")
-    (version "0.7.1")
+    (version "0.8.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ksformat" version))
        (sha256
-        (base32 "1cfnfp57gnhyrhxv0qkvzm1bnvvx47wjh4hj4j6bv50v90cjwm7m"))))
+        (base32 "01clcryqh06xpn1kvmhznllvgqc9p2q7fx1w3k6vrhk0g7250gz2"))))
     (properties `((upstream-name . "ksformat")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/crow16384/ksformat")
+    (native-inputs (list r-quarto r-knitr))
+    (home-page "https://crow16384.github.io/ksformat/")
     (synopsis "'SAS'-Style 'PROC FORMAT' for R")
     (description
      "This package provides SAS PROC FORMAT'-like functionality for creating and
@@ -1019,13 +1020,13 @@ the method described by Casado et al. (2013) <doi:10.1126/scisignal.2003573>.")
 (define-public r-kscorrect
   (package
     (name "r-kscorrect")
-    (version "1.4.0")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "KScorrect" version))
        (sha256
-        (base32 "1khvwc610yp3fd4fn0wcgqpzxg9g7sicjjmwvfcahs8qxn3m5vfa"))))
+        (base32 "13cp609nbc5pnkr895dzcfybzc17jcnyr3b8b1a0mq7l3192z5yb"))))
     (properties `((upstream-name . "KScorrect")))
     (build-system r-build-system)
     (arguments
@@ -1045,6 +1046,35 @@ gamma, and Weibull distributions.  Functions to generate random numbers and
 calculate density, distribution, and quantile functions are provided for use
 with the log uniform and mixture distributions.")
     (license license:cc0)))
+
+(define-public r-ksamplesltrc
+  (package
+    (name "r-ksamplesltrc")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ksamplesLTRC" version))
+       (sha256
+        (base32 "1n1dv8ghv17495w9gw9s6g9jbadrkaxz7csm13376kjnswiw7hy3"))))
+    (properties `((upstream-name . "ksamplesLTRC")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ksamplesLTRC")
+    (synopsis "K-Sample Tests for Truncated and/or Censored Data")
+    (description
+     "This package provides tools for the nonparametric analysis and comparison of
+distributions under left truncation and right censoring.  The package includes
+simulation routines for truncated and/or censored survival data, nonparametric
+distribution comparison methods based on Kolmogorov-Smirnov-type and CramÃ©r-von
+Mises-type statistics, and bootstrap routines for p-value approximation.  For
+methodological details, see Lago, de UÃ±a-Ãlvarez and Pardo-FernÃ¡ndez (2025)
+<doi:10.1007/s11749-024-00948-4> and Lago, Pardo-FernÃ¡ndez and de UÃ±a-Ãlvarez
+(2026) <doi:10.1007/s10985-026-09713-1>.")
+    (license license:gpl3)))
 
 (define-public r-ksa
   (package
@@ -1067,6 +1097,44 @@ with the log uniform and mixture distributions.")
      "The Retained Component Criterion for Principal Component Analysis (RCC_PCA) is a
 tool to determine the optimal number of components to retain in PCA.")
     (license license:gpl2)))
+
+(define-public r-krt
+  (package
+    (name "r-krt")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "krt" version))
+       (sha256
+        (base32 "0rl5avkj21nddbfsm5dpry3s8s0nbgkxvy2zsqabvvp9iirb9853"))))
+    (properties `((upstream-name . "krt")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml r-xml2 r-jsonlite r-httr2 r-digest))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/choxos/krt")
+    (synopsis "Author, Validate, and Export Key Resources Tables")
+    (description
+     "This package provides a toolkit for creating, importing, validating, enriching,
+rendering, and depositing Key Resources Tables (KRTs).  A KRT lists the
+resources used and generated in a study (antibodies, cell lines, organisms,
+chemicals, software, datasets, protocols, and more), each paired with a
+persistent identifier such as a Research Resource Identifier (RRID), a Digital
+Object Identifier (DOI), a repository accession, or a catalog number, so that
+resources are unambiguously identifiable and machine-actionable.  The package
+models resources as typed, validated records around a neutral core schema and
+maps them to journal or funder output profiles, following the FAIR (Findable,
+Accessible, Interoperable, Reusable) principles of Wilkinson et al. (2016)
+<doi:10.1038/sdata.2016.18>.  It normalizes and optionally resolves identifiers
+against public registries, extracts resources from manuscripts, and renders
+tables both in the STAR (Structured, Transparent, Accessible Reporting) Methods
+style used by Cell Press journals and in the style required by ASAP (Aligning
+Science Across Parkinson's), with an emphasis on transparency, reproducibility,
+and correct per-component licensing.")
+    (license license:gpl3)))
 
 (define-public r-kronxnbc
   (package
@@ -1147,6 +1215,38 @@ or otherwise rhythmic data using the familiar R linear modelling syntax, while
 taking care of the trigonometry under the hood.")
     (license license:gpl3+)))
 
+(define-public r-kro-inv-test
+  (package
+    (name "r-kro-inv-test")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "kro.inv.test" version))
+       (sha256
+        (base32 "0caw5gwdbhqsv98c6d84xd3llx0ybm5hfz5wmzbp96804ywkq5mg"))))
+    (properties `((upstream-name . "kro.inv.test")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rspectra r-rmtstat r-pracma r-covkcd))
+    (home-page "https://github.com/Seungbongjung/kro.inv.test")
+    (synopsis
+     "Kronecker-Invariant Tests for High-Dimensional Separability Testing")
+    (description
+     "Kronecker-invariant tests for high-dimensional separability testing of
+matrix-variate data, focusing on Gaussian populations as benchmark cases.  Tests
+whether the population covariance matrix is represented as a Kronecker product
+of row and column covariance matrices.  Implements the tests based on the
+eigenvalues of the sample core whose test statistics are invariant to the
+separable component of the population covariance matrix, referred to as
+Kronecker-invariance.  Tests constructed using the largest eigenvalue and the
+separable expansion of the sample core and applying the extended likelihood
+ratio test for sphericity testing to the sample core.  For details, see Sung and
+Hoff (2025) <doi:10.48550/@code{arXiv.2506.17463>}.")
+    (license license:gpl3)))
+
 (define-public r-krmm
   (package
     (name "r-krmm")
@@ -1208,13 +1308,13 @@ sequence.  This package is described in Fong et al. (2015)
 (define-public r-krls
   (package
     (name "r-krls")
-    (version "1.7-0")
+    (version "1.7-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "KRLS" version))
        (sha256
-        (base32 "0ifq43d55x95yixiasyg04ccc10znfr3dhhvkz35kq5v3vz6zs84"))))
+        (base32 "08vri6a3cvgkbydv5liw62k90lgp351ds9hdb9cwm31vlnbzycmj"))))
     (properties `((upstream-name . "KRLS")))
     (build-system r-build-system)
     (arguments
@@ -1476,6 +1576,31 @@ initial cluster centers shows that KQM is almost always getting clustering
 results with smaller total sum squares of distances.")
     (license license:gpl2)))
 
+(define-public r-kpp2019
+  (package
+    (name "r-kpp2019")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "kpp2019" version))
+       (sha256
+        (base32 "1wwswbgxqzm6jm5kk79wl2177h7y6knb4i4agvxamfy9hzlaj075"))))
+    (properties `((upstream-name . "kpp2019")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://kpp2019.damurka.com")
+    (synopsis "Kenya Population Projections 2019")
+    (description
+     "This package provides population projection data for Kenya and its 47 counties
+from 2020 to 2045, derived from the 2019 Kenya Population and Housing Census and
+subsequent projections published by the Kenya National Bureau of Statistics
+(KNBS).  Includes annual and five-year age and sex distributions, along with
+components of population change such as births, deaths, and migration.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
+
 (define-public r-kpiwidget
   (package
     (name "r-kpiwidget")
@@ -1570,13 +1695,13 @@ important ones.")
 (define-public r-kpc
   (package
     (name "r-kpc")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "KPC" version))
        (sha256
-        (base32 "03idvlxfsi358q1fsq839l9j4kdg2qk33i405n2m49lkh7f3l1cr"))))
+        (base32 "19rdlh5zqz97yzhj8wsa40mdm0zr1njch2qrzs44gfmaw6avhyaa"))))
     (properties `((upstream-name . "KPC")))
     (build-system r-build-system)
     (arguments
@@ -1779,6 +1904,39 @@ house numbers to a reference index.  The methods are specifically designed for
 German municipalities ('KOR'-community) and German address schemes.")
     (license license:gpl3)))
 
+(define-public r-koopman-dmd
+  (package
+    (name "r-koopman-dmd")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "koopman.dmd" version))
+       (sha256
+        (base32 "1wjml96fqm0s8qvdvqmfp4par9sb56bwlv1r7qf64hh8cg4b2as8"))))
+    (properties `((upstream-name . "koopman.dmd")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jimeharrisjr/rust-dmd")
+    (synopsis
+     "Koopman Operator and Dynamic Mode Decomposition for Dynamical Systems")
+    (description
+     "Dynamic Mode Decomposition (DMD) with Koopman operator theory extensions,
+powered by a Rust backend via extendr'.  Provides standard DMD as described in
+Schmid (2010) <doi:10.1017/S0022112010001217>, DMD with control for forced
+linear systems following Proctor, Brunton, and Kutz (2016)
+<doi:10.1137/15M1013857>, Extended DMD with lifting functions, Hankel-DMD via
+time-delay embedding, Generalized Laplace Analysis for direct eigenfunction
+computation, and harmonic time averages and mesochronic harmonic plots for phase
+space analysis as developed in Mezic (2020)
+<doi:10.48550/@code{arXiv.2009.05883>}.  Includes built-in area-preserving and
+chaotic maps for experimentation.")
+    (license license:expat)))
+
 (define-public r-konpsurv
   (package
     (name "r-konpsurv")
@@ -1889,6 +2047,43 @@ for many common window envelope types (e.g. German, US, French, Japanese) and
 lets you define your own layouts.  The package comes with a default letter
 layout based on DIN 5008B'.")
     (license license:gpl3)))
+
+(define-public r-koma
+  (package
+    (name "r-koma")
+    (version "0.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "koma" version))
+       (sha256
+        (base32 "156irbw7c6914wdn6nnpv01ni7m1lm3dbr1w1k4b03351138j6r7"))))
+    (properties `((upstream-name . "koma")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tempdisagg
+                             r-rlang
+                             r-purrr
+                             r-progressr
+                             r-matrix
+                             r-glue
+                             r-foreach
+                             r-dofuture
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://timothymerlin.github.io/koma/")
+    (synopsis "Bayesian Simultaneous Equation Models for Forecasting")
+    (description
+     "Estimate and forecast Bayesian simultaneous equation models for macroeconomic
+time series.  Provides tools to specify systems of behavioral equations and
+accounting identities, transform and manage time series, simulate from the
+posterior using a Metropolis-within-Gibbs sampler, and generate unconditional
+and conditional forecasts with user-defined priors and restrictions.  Methods
+are described in Rathke A. and Sarferaz S. (forthcoming) \"Bayesian Estimation of
+Simultaneous Equations Model\".")
+    (license license:gpl3+)))
 
 (define-public r-kollar
   (package
@@ -2108,32 +2303,6 @@ for the k-out-of-n family.")
 has a Kronecker product structure.  Supplementary functions for tensor reshape
 and its reversal are also included.")
     (license license:gpl3)))
-
-(define-public r-kofdata
-  (package
-    (name "r-kofdata")
-    (version "0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "kofdata" version))
-       (sha256
-        (base32 "0slqs58flcj1z7a9fz71v99lnr9jphc9qkdph7q7iihx3qxri41g"))))
-    (properties `((upstream-name . "kofdata")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo r-xts r-jsonlite r-httr))
-    (home-page "https://github.com/KOF-ch/kofdata")
-    (synopsis "Get Data from the 'KOF Datenservice' API")
-    (description
-     "Read Swiss time series data from the KOF Data API,
-<https://datenservice.kof.ethz.ch>.  The API provides macro economic time series
-data mostly about Switzerland.  The package itself is a set of wrappers around
-the KOF Datenservice API. The kofdata package is able to consume public
-information as well as data that requires an API token.")
-    (license license:gpl2)))
 
 (define-public r-kodama
   (package
@@ -3071,13 +3240,13 @@ clusters for Kmeans and the best k-value for KNN: @code{knn_Function()},
 (define-public r-kmd
   (package
     (name "r-kmd")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "KMD" version))
        (sha256
-        (base32 "0sgcfh5b4dl1gy3dxsdsqgmyfrd6kqrzvxv9g4slskwyrjsirsp5"))))
+        (base32 "05n6m4vlkqsbm8lv94jnwggvi0yb4kxk62d37arkw99rvdmcq18v"))))
     (properties `((upstream-name . "KMD")))
     (build-system r-build-system)
     (arguments
@@ -3105,7 +3274,7 @@ H0: the M distributions are equal against H1: not all the distributions are
 equal.  Both permutation test and asymptotic test are available.  These tests
 are consistent against all alternatives where at least two samples have
 different distributions.  For more details on KMD and the associated tests, see
-Huang, Z. and B. Sen (2022) <@code{arXiv:2210.00634>}.")
+Huang, Z. and B. Sen (2024) <doi:10.1080/01621459.2023.2298036>.")
     (license license:gpl3)))
 
 (define-public r-kmc
@@ -3295,13 +3464,13 @@ National Nuclear Security Administration under Award Number DE-NA0004104.")
 (define-public r-klink
   (package
     (name "r-klink")
-    (version "1.2.0")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "KLINK" version))
        (sha256
-        (base32 "1mzalxng6jqf9iy2gaamr1blpi5vhd9i08jrvxip9gzmpzldx46h"))))
+        (base32 "0qh841c4fy02y0qhxx0np1bbbpvjywr44b06aqc0v88phjaj57kl"))))
     (properties `((upstream-name . "KLINK")))
     (build-system r-build-system)
     (arguments
@@ -3313,6 +3482,7 @@ National Nuclear Security Administration under Award Number DE-NA0004104.")
                              r-shinydashboard
                              r-shinybs
                              r-shiny
+                             r-scales
                              r-pedtools
                              r-pedprobr
                              r-pedmut
@@ -3328,7 +3498,9 @@ National Nuclear Security Administration under Award Number DE-NA0004104.")
 the pedsuite R packages.  KLINK is closely aligned with the (non-R) software
 Familias and @code{FamLink}', but offers several unique features, including
 visualisations and automated report generation.  The calculation of likelihood
-ratios supports pairs of linked markers, and all common mutation models.")
+ratios supports pairs of linked markers, and all common mutation models.  The
+program is described in Vigeland and Gilfillan (2026)
+<doi:10.1016/j.fsigen.2026.103578>.")
     (license license:gpl3+)))
 
 (define-public r-kliner
@@ -3383,6 +3555,41 @@ Z-score, and max-min-scale standardization.It can increase the dimension of
 existed dataset and remove abundant features by lasso.  Z Dai, L Jiayi, T Gong,
 C Wang (2021) <doi:10.1088/1742-6596/1955/1/012047>.")
     (license license:gpl2)))
+
+(define-public r-klerrss
+  (package
+    (name "r-klerrss")
+    (version "0.2.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "KlerRSS" version))
+       (sha256
+        (base32 "19nb12ga9b5n4xrvgvfig1dli1lhlrqlp4cn844v5d6jk7wllpil"))))
+    (properties `((upstream-name . "KlerRSS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-readxl r-ggplot2))
+    (home-page "https://cran.r-project.org/package=KlerRSS")
+    (synopsis
+     "Intelligent Ranked Set Sampling with 'Excel' Integration and SRS Comparison")
+    (description
+     "This package provides tools for Ranked Set Sampling (RSS) analysis, data import,
+statistical estimation, and comparison with Simple Random Sampling (SRS).  The
+package offers a complete workflow from Excel and CSV data import and cleaning
+to RSS implementation, efficiency evaluation, visualization, and automated
+reporting.  Intelligent ranking procedures based on correlation analysis,
+regression models, and machine learning methods are included to address
+imperfect ranking commonly encountered in practical RSS applications.  Monte
+Carlo simulation tools are provided for evaluating estimator performance under
+different sampling scenarios.  Ranked Set Sampling was originally introduced by
+@code{McIntyre} (1952) <doi:10.2307/3001960> as an efficient alternative to
+simple random sampling when ranking information is available at low cost.  The
+package supports researchers, statisticians, and practitioners working in
+agricultural, environmental, biological, and other applied sciences.")
+    (license license:gpl3)))
 
 (define-public r-kldtools
   (package
@@ -3467,13 +3674,13 @@ project homepage.")
 (define-public r-klassr
   (package
     (name "r-klassr")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "klassR" version))
        (sha256
-        (base32 "1cpqj9ylpad7ssy5xc1na0pl0q7z5va5rhddvadfssqard0an10v"))))
+        (base32 "0kpvyv5ff68djlzy0adnmkznn1gzp1fqmfdrismc38bmdaz0m6cm"))))
     (properties `((upstream-name . "klassR")))
     (build-system r-build-system)
     (arguments
@@ -3971,13 +4178,13 @@ individuals, aids in variant prioritization.  Methodology is described in Nugent
 (define-public r-kinesis
   (package
     (name "r-kinesis")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kinesis" version))
        (sha256
-        (base32 "05z8rpnwy307sh509wkjdxz9z8abbawwh1f6hm8xiszgkacm0ilj"))))
+        (base32 "1lgjfapcgfq2vlnzpmx1z1jnh7fn3rjzwzbvlh3yr5k27c2p1n4y"))))
     (properties `((upstream-name . "kinesis")))
     (build-system r-build-system)
     (arguments
@@ -4038,20 +4245,19 @@ curvature.")
 (define-public r-kindling
   (package
     (name "r-kindling")
-    (version "0.3.0")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kindling" version))
        (sha256
-        (base32 "0h23kinl38kxv932dyl5vyjav5l9gc5ljgmwyn164fnna8r3d0d9"))))
+        (base32 "1ir1cyi8902822xp3v9dxv0hy6x2f3h73lac43x59jba4fq0zp54"))))
     (properties `((upstream-name . "kindling")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-vip
-                             r-vctrs
+    (propagated-inputs (list r-vctrs
                              r-tune
                              r-torch
                              r-tidyr
@@ -4074,15 +4280,12 @@ curvature.")
      "Higher-Level Interface of 'torch' Package to Auto-Train Neural Networks")
     (description
      "This package provides a higher-level interface to the torch package for
-defining, training, and fine-tuning neural networks, including its depth,
-powered by code generation.  This package supports few to several architectures,
-including feedforward (multi-layer perceptron) and recurrent neural networks
-(Recurrent Neural Networks (RNN), Long Short-Term Memory (LSTM), Gated Recurrent
-Unit (GRU)), while also reduces boilerplate torch code while enabling seamless
-integration with torch'.  The model methods to train neural networks from this
-package also bridges to titanic ML frameworks in R, namely tidymodels ecosystem,
-which enables the parsnip model specifications, workflows, recipes, and tuning
-tools.")
+defining, training, and fine-tuning neural networks through code generation.
+The package supports several architectures, including feedforward (multi-layer
+perceptron) and recurrent neural networks (RNN, LSTM, GRU), while reducing
+boilerplate torch code.  Model training methods also bridge to machine learning
+frameworks in R, particularly the tidymodels ecosystem, including parsnip model
+specifications, workflows, recipes, and tuning tools.")
     (license license:expat)))
 
 (define-public r-kindisperse
@@ -4816,13 +5019,13 @@ chunks, e.g. figures and tables.")
 (define-public r-kfda
   (package
     (name "r-kfda")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kfda" version))
        (sha256
-        (base32 "0861hzry55gj8ykdd8cwil1wb7234pkmipp4v1749fpmzggq1xgi"))))
+        (base32 "0jkksbr9mq6lfdlyl1njwf69wr4dqfa1k0lyviydjbv9y8i5023w"))))
     (properties `((upstream-name . "kfda")))
     (build-system r-build-system)
     (arguments
@@ -5426,13 +5629,13 @@ estimation is presented in GonzÃ¡lez and Moraga (2022).
 (define-public r-kernsmoothirt
   (package
     (name "r-kernsmoothirt")
-    (version "6.4")
+    (version "6.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "KernSmoothIRT" version))
        (sha256
-        (base32 "0qqlmcd04m89pmhrbmxxx4lzzb6sksgrm0j8x7fs5r0sxdqy6rcp"))))
+        (base32 "199fibpbdyxgg9qpgahmlbm6avabmrk4gj1gf0zxb9rry5m43gjg"))))
     (properties `((upstream-name . "KernSmoothIRT")))
     (build-system r-build-system)
     (arguments
@@ -5616,6 +5819,35 @@ of @code{RcppArmadillo} to speed up the calculation of distances between
 observations.")
     (license license:expat)))
 
+(define-public r-kernelica
+  (package
+    (name "r-kernelica")
+    (version "2.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "KernelICA" version))
+       (sha256
+        (base32 "1wz9yvjl00kgzp4s7gpfr5xjk8py6x9c0qzs2gqhyz0xwwgcl7bi"))))
+    (properties `((upstream-name . "KernelICA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppeigen
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-manifoldoptim
+                             r-jade
+                             r-ictest))
+    (home-page "https://cran.r-project.org/package=KernelICA")
+    (synopsis "Kernel Independent Component Analysis")
+    (description
+     "The kernel independent component analysis (kernel ICA) method introduced by Bach
+and Jordan (2002) <doi:10.1162/153244303768966085>.  A separate function for the
+incomplete Cholesky decomposition used in kernel ICA is also provided.")
+    (license license:gpl2+)))
+
 (define-public r-kernelheaping
   (package
     (name "r-kernelheaping")
@@ -5706,6 +5938,31 @@ weighted discrimination and the kernel distance weighted discrimination.
 Reference: Wang and Zou (2018) <doi:10.1111/rssb.12244>.")
     (license license:gpl2)))
 
+(define-public r-kernda
+  (package
+    (name "r-kernda")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "kernda" version))
+       (sha256
+        (base32 "1w89qn1qk9gwgqak678k7zk85wsjyxrwpwwnmn7mbf65aaff6kc0"))))
+    (properties `((upstream-name . "kernda")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rfast r-rcpp r-kernreg r-compositional))
+    (home-page "https://cran.r-project.org/package=kernda")
+    (synopsis "Kernel Discriminant Analysis")
+    (description
+     "This package provides functions to perform discriminant analysis using kernel
+density estimation.  For the case of binary classification the package relies on
+the Nadaraya-Watson estimator.  References: Wand M.P. and Jones M.C. (1995).
+\"Kernel smoothing\".  CRC Press. <ISBN: 0412552701>.")
+    (license license:gpl2+)))
+
 (define-public r-kergp
   (package
     (name "r-kergp")
@@ -5794,13 +6051,13 @@ conditions.  Song, H. and Wu, M.C. (2023) <@code{arXiv:2307.15268>}.")
 (define-public r-kerasnip
   (package
     (name "r-kerasnip")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kerasnip" version))
        (sha256
-        (base32 "10xmmhbvfrlbwq1fbjnb2xksbm5wrk72j7pj5m873655q6q9z6ff"))))
+        (base32 "0ngdiky2vf9qyz668c8v9cz2kdrsvnijhaq32rykpf1cbw67p4j7"))))
     (properties `((upstream-name . "kerasnip")))
     (build-system r-build-system)
     (arguments
@@ -5956,13 +6213,13 @@ for details.")
 (define-public r-keng
   (package
     (name "r-keng")
-    (version "2026.3.19")
+    (version "2026.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Keng" version))
        (sha256
-        (base32 "1cmg6f51b2nig4j6rmghgm0xwa43068jp7yxray2bb38v3qdpw7s"))))
+        (base32 "10r1nlimqay84z34h1k5mm3z6ihpfkvd43kh6mrgd6k7casmysvf"))))
     (properties `((upstream-name . "Keng")))
     (build-system r-build-system)
     (arguments
@@ -5973,7 +6230,7 @@ for details.")
     (synopsis "Knock Errors Off Nice Guesses")
     (description
      "Miscellaneous functions and data used in psychological research and teaching.
-Keng currently has a built-in dataset depress, and could (1) scale a vector; (2)
+Keng currently has four built-in datasets, and could (1) scale a vector; (2)
 divide a vector into three groups, (3) compute the cut-off values of Pearson's r
 with known sample size; (4) test the significance and compute the post-hoc power
 for Pearson's r with known sample size; (5) conduct a priori power analysis and
@@ -6267,13 +6524,13 @@ Lamont-Smith (2018), submitted J. R. Stat.  Soc.")
 (define-public r-kdglm
   (package
     (name "r-kdglm")
-    (version "1.2.14")
+    (version "1.2.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kDGLM" version))
        (sha256
-        (base32 "1dz3b1hczgbx34nqs0cnpyw14yw0v2m3ffgkk778lzrvh04cji1w"))))
+        (base32 "05qk9fyfm34ci8gi16hqdps3afppp2g0a4zx6ikb8n1w60agp3m9"))))
     (properties `((upstream-name . "kDGLM")))
     (build-system r-build-system)
     (arguments
@@ -6421,13 +6678,13 @@ Nagler (2018) <doi:10.18637/jss.v084.i07>.")
 (define-public r-kde1d
   (package
     (name "r-kde1d")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kde1d" version))
        (sha256
-        (base32 "0712qfcwws0jfvjg7cr1nbjyxwh8aan2miy6azid4r1vb5g3sa3h"))))
+        (base32 "1gk6acifjxy7q16x5wnm1zng55wd6qrzcl0941bcj8cbd5n2z61m"))))
     (properties `((upstream-name . "kde1d")))
     (build-system r-build-system)
     (arguments
@@ -6438,9 +6695,9 @@ Nagler (2018) <doi:10.18637/jss.v084.i07>.")
     (synopsis "Univariate Kernel Density Estimation")
     (description
      "This package provides an efficient implementation of univariate local polynomial
-kernel density estimators that can handle bounded and discrete data.  See
-Geenens (2014) <doi:10.48550/@code{arXiv.1303.4121>}, Geenens and Wang (2018)
-<doi:10.48550/@code{arXiv.1602.04862>}, Nagler (2018a)
+kernel density estimators that can handle bounded, discrete, and zero-inflated
+data.  See Geenens and Wang (2018) <doi:10.48550/@code{arXiv.1602.04862>},
+Geenens (2014) <doi:10.48550/@code{arXiv.1303.4121>}, Nagler (2018a)
 <doi:10.48550/@code{arXiv.1704.07457>}, Nagler (2018b)
 <doi:10.48550/@code{arXiv.1705.05431>}.")
     (license license:expat)))
@@ -6927,13 +7184,13 @@ in L. Del Core et al., (2022) <doi:10.1101/2022.07.08.499353>.")
 (define-public r-kardl
   (package
     (name "r-kardl")
-    (version "2.0.2")
+    (version "2.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kardl" version))
        (sha256
-        (base32 "0gklssizymayysywvmg7jj9qmzqhjlav4hcciqg2k0vmnqxpd37h"))))
+        (base32 "1ah1y33ymm9jqid1rnxag608c0z02rskh8saaawg8gzf3m4cj83g"))))
     (properties `((upstream-name . "kardl")))
     (build-system r-build-system)
     (arguments
@@ -7433,6 +7690,35 @@ for easy analysis.  Also imports a variety of packages to facilitate the
 installation of those imported packages on the host machine.")
     (license license:gpl3)))
 
+(define-public r-k4siswa
+  (package
+    (name "r-k4siswa")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "K4Siswa" version))
+       (sha256
+        (base32 "06y5xydd9labrlbzzkpln6ml8w8yyrxslyvbsm3qf1sr1r0f2lh6"))))
+    (properties `((upstream-name . "K4Siswa")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=K4Siswa")
+    (synopsis "Student Context Data Files for TIMSS 2023 Grade 4")
+    (description
+     "The official Trends in International Mathematics and Science Study (TIMSS) 2023
+website provides Student Context Data Files for Grade 4 in RData format.
+However, the available data are presented solely as numerical values.  This
+package transforms the numerical data into categorical variables, enabling
+clearer interpretation and reducing ambiguity in statistical analysis.  The
+category labels are provided in Bahasa Indonesia.  This initiative contributes
+to promoting the use of Bahasa Indonesia in programming, in line with its
+designation as one of the official languages of the United Nations.  For more
+details see <https://timss2023.org/>.")
+    (license license:gpl3)))
+
 (define-public r-k4sekolah
   (package
     (name "r-k4sekolah")
@@ -7460,6 +7746,35 @@ presented in Bahasa Indonesia.  This initiative is intended as a contribution to
 promoting and expanding the use of Bahasa Indonesia in the field of programming,
 in line with its designation as one of the official languages of the United
 Nations General Assembly.")
+    (license license:gpl3)))
+
+(define-public r-k4rumah
+  (package
+    (name "r-k4rumah")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "K4Rumah" version))
+       (sha256
+        (base32 "05a1hn98pylkz6habwyr3h0ivnfhdr4dpwmgwd86h8ai8wajm50q"))))
+    (properties `((upstream-name . "K4Rumah")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=K4Rumah")
+    (synopsis "Home Context Data Files for TIMSS 2023 Grade 4")
+    (description
+     "The official Trends in International Mathematics and Science Study (TIMSS) 2023
+website provides Home Context Data Files for Grade 4 in RData format.  However,
+the available data are presented solely as numerical values.  This package
+transforms the numerical data into categorical variables, enabling clearer
+interpretation and reducing ambiguity in statistical analysis.  The category
+labels are provided in Bahasa Indonesia.  This initiative contributes to
+promoting the use of Bahasa Indonesia in programming, in line with its
+designation as one of the official languages of the United Nations.  For more
+details see <https://timss2023.org/>.")
     (license license:gpl3)))
 
 (define-public r-k4prosessiswa
@@ -7511,6 +7826,35 @@ information, visit <https://timss2023.org/>.")
     (description
      "The official Trends in International Mathematics and Science Study (TIMSS) 2023
 website provides Student Achievement Data Files for Grade 4 in RData format.
+However, the available data are presented solely as numerical values.  This
+package transforms the numerical data into categorical variables, enabling
+clearer interpretation and reducing ambiguity in statistical analysis.  The
+category labels are provided in Bahasa Indonesia.  This initiative contributes
+to promoting the use of Bahasa Indonesia in programming, in line with its
+designation as one of the official languages of the United Nations.  For more
+details see <https://timss2023.org/>.")
+    (license license:gpl3)))
+
+(define-public r-k4guru
+  (package
+    (name "r-k4guru")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "K4Guru" version))
+       (sha256
+        (base32 "19f7a6hwwirh1x0pkw560f4pr7wg38nqcsgn3rmxk31pnjws2klq"))))
+    (properties `((upstream-name . "K4Guru")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=K4Guru")
+    (synopsis "Teacher Context Data Files for TIMSS 2023 Grade 4")
+    (description
+     "The official Trends in International Mathematics and Science Study (TIMSS) 2023
+website provides Teacher Context Data Files for Grade 4 in RData format.
 However, the available data are presented solely as numerical values.  This
 package transforms the numerical data into categorical variables, enabling
 clearer interpretation and reducing ambiguity in statistical analysis.  The

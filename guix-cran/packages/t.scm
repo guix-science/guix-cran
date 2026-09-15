@@ -129,13 +129,13 @@ for typst-cli availability and run Typst commands.")
 (define-public r-typetracer
   (package
     (name "r-typetracer")
-    (version "0.2.3")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "typetracer" version))
        (sha256
-        (base32 "06prgavmgsc4918vfqqgr0mabrxa1jb9mix3xx3cij20srp12imj"))))
+        (base32 "0v4x8lxi5qylfrwf1ahkcbg8fmzp3a1dzhxha5wdshwravqaxgxv"))))
     (properties `((upstream-name . "typetracer")))
     (build-system r-build-system)
     (arguments
@@ -524,25 +524,25 @@ treatment effects.  Based on de Chaisemartin and D'Haultfoeuille (2020)
 (define-public r-twoway
   (package
     (name "r-twoway")
-    (version "0.6.3")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "twoway" version))
        (sha256
-        (base32 "02z2syb0g92d97gjxfkarpil9b2n25s128606h071jl0s88cr4ar"))))
+        (base32 "1j5n62w9wr1apmxyf4d8yl2ng4c1i421n5zaglm0v4v88hhpn4b2"))))
     (properties `((upstream-name . "twoway")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://github.com/friendly/twoway")
+    (home-page "https://friendly.github.io/twoway/")
     (synopsis "Analysis of Two-Way Tables")
     (description
      "Carries out analyses of two-way tables with one observation per cell, together
 with graphical displays for an additive fit and a diagnostic plot for removable
 non-additivity via a power transformation of the response.  It implements
-Tukey's Exploratory Data Analysis (1973) <ISBN: 978-0201076165> methods,
+methods from Tukey's Exploratory Data Analysis (1973) <ISBN: 978-0201076165>,
 including a 1-degree-of-freedom test for row*column non-additivity', linear in
 the row and column effects.")
     (license license:gpl3)))
@@ -574,13 +574,13 @@ and Held (2025) <doi:10.48550/@code{arXiv.2503.10246>}.")
 (define-public r-twotimescales
   (package
     (name "r-twotimescales")
-    (version "1.2.1")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TwoTimeScales" version))
        (sha256
-        (base32 "00wvf3q9mn1pzqnixxirhy2wkl8m4na6r9sh9xjlpx0p312c9c7v"))))
+        (base32 "0cmkip2a6n0v4skdfdw9fzy8mmi6irw06hanh4ggymqbq4wfdzvz"))))
     (properties `((upstream-name . "TwoTimeScales")))
     (build-system r-build-system)
     (arguments
@@ -605,7 +605,7 @@ that varies over two time scales.  If covariates are available, estimate a
 proportional hazards model with such a two-dimensional baseline hazard.
 Functions are provided to prepare the raw data for estimation, to fit the model
 and to plot the two-dimensional smooth hazard.  Extension to a competing risks
-model are implemented.  For details about the method please refer to Carollo et
+model is implemented.  For details about the method please refer to Carollo et
 al. (2025) <doi:10.1002/sim.10297>.")
     (license license:gpl3)))
 
@@ -895,13 +895,13 @@ and the term two-phase were introduced by @code{McIntyre} (1955)
 (define-public r-twopexp
   (package
     (name "r-twopexp")
-    (version "0.1.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "twopexp" version))
        (sha256
-        (base32 "0l2qi8jwkxdzzpjn4jlqdccn6kl8kkcnq3jrh0i02g5d9g6arhqy"))))
+        (base32 "1n5nc0ip0dv3cw92dpspkdl0kp4vk3qs9s81q8f0bcrqv53zysjl"))))
     (properties `((upstream-name . "twopexp")))
     (build-system r-build-system)
     (arguments
@@ -918,7 +918,9 @@ PMLE are based on Mengjie Zheng
 (2013)<https://scse.d.umn.edu/sites/scse.d.umn.edu/files/mengjie-thesis_masters-1.pdf>.
  QM is based on Entisar Elgmati and Nadia Gregni
 (2016)<doi:10.5539/ijsp.v5n5p12>.  MEDRANK is based on Matthew Reid
-(2022)<doi:10.5281/ZENODO.3938000>.")
+(2022)<doi:10.5281/ZENODO.3938000>.  In addition, the functions for computing
+the Kolmogorov-Smirnov (D) statistic, the CramÃ©r-von Mises statistic, and the
+AndersonâDarling statistic are provided.")
     (license license:gpl3)))
 
 (define-public r-twopartm
@@ -1084,19 +1086,19 @@ clinical relevance.")
 (define-public r-twocoprimary
   (package
     (name "r-twocoprimary")
-    (version "1.0.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "twoCoprimary" version))
        (sha256
-        (base32 "17f30gbzgj301yxx5v3vxbh2f5i0fr96dlj1nngg609f7i12ign9"))))
+        (base32 "0j722qgv69yf7bmb57zawpzswcr2p6mglfap5wvw9y73imd9932i"))))
     (properties `((upstream-name . "twoCoprimary")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-pbivnorm r-mvtnorm r-fpcompare))
+    (propagated-inputs (list r-rcpp r-pbivnorm r-mvtnorm r-fpcompare))
     (native-inputs (list r-knitr))
     (home-page "https://gosukehommaex.github.io/twoCoprimary/")
     (synopsis "Sample Size and Power Calculation for Two Co-Primary Endpoints")
@@ -1116,13 +1118,13 @@ size and power calculation capabilities.")
 (define-public r-twn
   (package
     (name "r-twn")
-    (version "0.2.6")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "twn" version))
        (sha256
-        (base32 "0bc8gwvzlg1vs3kvzhkh5a4nv07g8599i9bqw643y8kd391kmy5s"))))
+        (base32 "1l370czn1khd3nxykml2ax8fn42shnlb1ihgd4542vl2rrx103nj"))))
     (properties `((upstream-name . "twn")))
     (build-system r-build-system)
     (arguments
@@ -1234,13 +1236,13 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
 (define-public r-twinsvm
   (package
     (name "r-twinsvm")
-    (version "0.0.2")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "twinsvm" version))
        (sha256
-        (base32 "01aw5xpcfbf0sz61i9l32656hfwvmz5dczhccmskfx589w955kgl"))))
+        (base32 "0p35n3r9wxwy0aq38aj9v0aqb9i7048hnk7fbpihnwbwcwag0krs"))))
     (properties `((upstream-name . "twinsvm")))
     (build-system r-build-system)
     (arguments
@@ -1426,6 +1428,34 @@ during the current session.")
 for determining the length/validity of a tweet and identifying/linking any URLs
 or special tags (e.g. mentions or hashtags) which may be present.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
+(define-public r-tweediedistr
+  (package
+    (name "r-tweediedistr")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tweedieDistr" version))
+       (sha256
+        (base32 "194mpip4lj5n131ai3shx228pps7ry3ghaqip1yxy4rn9gd4rpys"))))
+    (properties `((upstream-name . "tweedieDistr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-rcpparmadillo r-rcpp r-distributional))
+    (home-page "https://github.com/StefanoDamato/tweedieDistr")
+    (synopsis "Tweedie Distribution")
+    (description
+     "This package provides density, distribution function, quantile function, and
+random generation for the Tweedie distribution under the compound Poisson-Gamma
+parameterisation with power parameter in (1, 2).  The density is evaluated using
+the series expansion of Dunn and Smyth (2005) <doi:10.1007/s11222-005-4070-y>,
+implemented in C++ via Rcpp and @code{RcppArmadillo} for performance.  A
+constructor compatible with the distributional package is also provided for use
+in tidy modelling workflows.")
+    (license license:lgpl3+)))
 
 (define-public r-twdtw
   (package
@@ -1889,19 +1919,27 @@ Mathematics with Canadian Applications,â 2020, ISBN: 9780135285015).")
 (define-public r-tvgarchkf
   (package
     (name "r-tvgarchkf")
-    (version "0.0.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tvGarchKF" version))
        (sha256
-        (base32 "1vq7vckk2553r7bw1gb23396q74v3pg75iiwf0qvp6v6j37fs272"))))
+        (base32 "0vz37kr78dyh2yxfkl4ax4fb7cxy086v2a55dk6n188ixlf4ldmj"))))
     (properties `((upstream-name . "tvGarchKF")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpp r-fgarch))
+    (propagated-inputs (list r-zoo
+                             r-withr
+                             r-timeseries
+                             r-rcpp
+                             r-numderiv
+                             r-npreg
+                             r-mgcv
+                             r-locfit
+                             r-fgarch))
     (home-page "https://cran.r-project.org/package=tvGarchKF")
     (synopsis "Time-Varying Garch Models Through a State-Space Representation")
     (description
@@ -2036,6 +2074,35 @@ Laplace P-splines.  For more details, see Lambert and Kreyenfeld (2025)
 <doi:10.1093/jrsssa/qnaf035>.")
     (license license:gpl3)))
 
+(define-public r-tvbounds
+  (package
+    (name "r-tvbounds")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tvbounds" version))
+       (sha256
+        (base32 "1nqjpcd8xicxv1iqhp6sl3kyh310z8q2rmgbvvpz3q86xkwzv5by"))))
+    (properties `((upstream-name . "tvbounds")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=tvbounds")
+    (synopsis
+     "Sensitivity Analysis and Bounds under Total Variation Neighborhoods")
+    (description
+     "This package implements the sensitivity analysis framework of Palomba (2026)
+\"Sensitivity Analysis in Population Shares\"
+<https://filippopalomba.github.io/#jmp> for randomized experiments with
+attrition, counterfactuals in structural models, and recentered instrumental
+variables.  Computes and plots sensitivity bounds together with their confidence
+intervals and robustness summary measures.")
+    (license license:expat)))
+
 (define-public r-tv
   (package
     (name "r-tv")
@@ -2162,13 +2229,13 @@ described by Xie, Allaire and Grolemund (2018, ISBN:9781138359338).")
 (define-public r-tutorial-helpers
   (package
     (name "r-tutorial-helpers")
-    (version "0.6.1")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tutorial.helpers" version))
        (sha256
-        (base32 "0vw2niibm9snxh903x7ckrdng7znmckmizffzz6aw15ck77sy32c"))))
+        (base32 "0kfs0mp1m7g1sngzcq6ar6d59lxcz9km9x97m1ny37bgiahvv9gd"))))
     (properties `((upstream-name . "tutorial.helpers")))
     (build-system r-build-system)
     (arguments
@@ -2179,11 +2246,8 @@ described by Xie, Allaire and Grolemund (2018, ISBN:9781138359338).")
                              r-rvest
                              r-rstudioapi
                              r-rmarkdown
-                             r-purrr
-                             r-mime
                              r-learnr
-                             r-jsonlite
-                             r-dplyr))
+                             r-knitr))
     (native-inputs (list r-quarto))
     (home-page "https://ppbds.github.io/tutorial.helpers/")
     (synopsis "Helper Functions for Creating Tutorials")
@@ -2433,6 +2497,51 @@ Designed as the mesh backend for the tulpa Bayesian hierarchical modelling
 engine but usable standalone for any spatial triangulation task.")
     (license license:expat)))
 
+(define-public r-tulpa
+  (package
+    (name "r-tulpa")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tulpa" version))
+       (sha256
+        (base32 "17m3ks7n05gr6p52pnasiibaxbdsbsxyjf7g1mnrji697zgwcccn"))))
+    (properties `((upstream-name . "tulpa")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tulpamesh
+                             r-rcppeigen
+                             r-rcpp
+                             r-matrix
+                             r-lifecycle
+                             r-generics))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/gcol33/tulpa")
+    (synopsis
+     "Template Unified Latent Process Architecture for Bayesian Hierarchical Models")
+    (description
+     "This package provides a general-purpose engine for fitting Bayesian hierarchical
+models with spatial fields, temporal effects, spatially varying coefficients,
+and multiple inference backends.  Scalable spatial structure includes Hilbert
+space approximate Gaussian processes (HSGP; Riutort-Mayol et al.  2023
+<doi:10.1007/s11222-022-10167-2>), nearest-neighbor Gaussian processes (NNGP;
+Datta et al.  2016 <doi:10.1080/01621459.2015.1044091>), intrinsic conditional
+autoregressive models (ICAR; Besag, York, and Mollie 1991
+<doi:10.1007/BF00116466>), the reparameterized Besag-York-Mollie model (BYM2;
+Riebler et al.  2016 <doi:10.1177/0962280216660421>), and stochastic partial
+differential equation fields (SPDE; Lindgren, Rue, and Lindstrom 2011
+<doi:10.1111/j.1467-9868.2011.00777.x>).  Temporal structure covers random
+walks, autoregressive processes, and Gaussian processes.  Inference is tiered by
+correctness guarantee: exact Hamiltonian Monte Carlo with the No-U-Turn sampler,
+Laplace and nested Laplace approximations with hyperparameter integration (Rue,
+Martino, and Chopin 2009 <doi:10.1111/j.1467-9868.2008.00700.x>), and
+variational inference.  Model-specific packages plug observation likelihoods
+into the engine through a templated C++ callback interface.")
+    (license license:expat)))
+
 (define-public r-tulip
   (package
     (name "r-tulip")
@@ -2494,13 +2603,13 @@ and Heyse (1985) <DOI:10.2307/2530666> for general parametric models.")
 (define-public r-tukeygh77
   (package
     (name "r-tukeygh77")
-    (version "0.1.4")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TukeyGH77" version))
        (sha256
-        (base32 "1jqlz07jxhkmn9pmc55167qx520j2ax3yl7yr39r5ibsdg7rzbmi"))))
+        (base32 "1apgqxaxxx3bk2pri6sdpdxplxsvl8nf3ihlk2dl28dbmm23fr43"))))
     (properties `((upstream-name . "TukeyGH77")))
     (build-system r-build-system)
     (arguments
@@ -2510,11 +2619,9 @@ and Heyse (1985) <DOI:10.2307/2530666> for general parametric models.")
     (home-page "https://cran.r-project.org/package=TukeyGH77")
     (synopsis "Tukey g-&-h Distribution")
     (description
-     "This package provides functions for density, cumulative density, quantile and
-simulation of Tukey g-and-h (1977) distributions.  The quantile-based
-transformation (Hoaglin 1985 <doi:10.1002/9781118150702.ch11>) and its reverse
-transformation, as well as the letter-value based estimates (Hoaglin 1985), are
-also provided.")
+     "Density, cumulative density, quantile and simulation of the 4-parameter Tukey
+g-and-h (1977) distributions.  The quantile-based transformation (Hoaglin 1985
+<doi:10.1002/9781118150702.ch11>) and its reverse transformation.")
     (license license:gpl2)))
 
 (define-public r-tukeyc
@@ -2719,13 +2826,13 @@ out Tucker Models.")
 (define-public r-tubern
   (package
     (name "r-tubern")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tubern" version))
        (sha256
-        (base32 "10m2vkp5hpxa3samay51ddf6wf9w94gkq8rwxwzxxp1sdvp85p2b"))))
+        (base32 "18m5qnr8f30qz9w2k5v8rgznf7kjcazlhnqrykffws0hbj8zsfwc"))))
     (properties `((upstream-name . "tubern")))
     (build-system r-build-system)
     (arguments
@@ -2746,13 +2853,13 @@ documentation.")
 (define-public r-tuber
   (package
     (name "r-tuber")
-    (version "1.4.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tuber" version))
        (sha256
-        (base32 "1np3sl6fjw43qixvi9cdpxgripk9gfagrlpp7xvlqawqm30jzax6"))))
+        (base32 "0mkr3dns4nkss3v88pwpl0dck7g22gqrc92xjpc7axcw9g20bxqc"))))
     (properties `((upstream-name . "tuber")))
     (build-system r-build-system)
     (arguments
@@ -2775,12 +2882,13 @@ documentation.")
                              r-askpass))
     (native-inputs (list r-knitr))
     (home-page "https://gojiplus.github.io/tuber/")
-    (synopsis "Client for the YouTube API")
+    (synopsis "Client for the YouTube Data API")
     (description
-     "Get comments posted on @code{YouTube} videos, information on how many times a
-video has been liked, search for videos with particular content, and much more.
-You can also scrape captions from a few videos.  To learn more about the
-@code{YouTube} API, see <https://developers.google.com/youtube/v3/>.")
+     "Search public @code{YouTube} data and retrieve channels, videos, playlists,
+comments, captions, live broadcasts, and reference data.  Authenticated methods
+support common uploads, playlist changes, comment moderation, and media updates.
+ See the @code{YouTube} Data API documentation at
+<https://developers.google.com/youtube/v3/>.")
     (license license:expat)))
 
 (define-public r-ttutils
@@ -2939,6 +3047,34 @@ Firth correction term in the maximum likelihood for the logistic regression
 model.  These methods handle the high-dimensionality and low event rates.")
     (license license:artistic2.0)))
 
+(define-public r-tts-api
+  (package
+    (name "r-tts-api")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tts.api" version))
+       (sha256
+        (base32 "1xk67kvfhx8k0hvssq36bd50fm22xds5h86gpvbvn36v5ilvw8p5"))))
+    (properties `((upstream-name . "tts.api")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite r-curl))
+    (home-page "https://github.com/cornball-ai/tts.api")
+    (synopsis "'OpenAI'-Compatible Text-to-Speech API Client")
+    (description
+     "This package provides a minimal-dependency R client for
+@code{OpenAI'-compatible} text-to-speech APIs (see
+<https://developers.openai.com/api/reference/resources/audio>).  Supports
+@code{OpenAI}', @code{ElevenLabs}', local servers ('Chatterbox', LM Studio',
+@code{OpenWebUI}', @code{AnythingLLM}'), and the chatterbox package for
+in-process synthesis.  Provides a unified interface for speech synthesis, voice
+cloning, and voice design with backend-specific parameters.")
+    (license license:expat)))
+
 (define-public r-tts
   (package
     (name "r-tts")
@@ -3046,13 +3182,13 @@ default @code{twoSided} = TRUE'.")
 (define-public r-tth
   (package
     (name "r-tth")
-    (version "4.16-0")
+    (version "4.16-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tth" version))
        (sha256
-        (base32 "1yddgyfa6wnvjr2qna86ld4x49mqa2rhkin9rzs6ghl7010l6czf"))))
+        (base32 "1mgsmxsp6vvfkjvzxign2114mrc6l04m542mx5317rhhj5k6kq4y"))))
     (properties `((upstream-name . "tth")))
     (build-system r-build-system)
     (arguments
@@ -3068,13 +3204,13 @@ translators.")
 (define-public r-tteice
   (package
     (name "r-tteice")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tteICE" version))
        (sha256
-        (base32 "188cl678hydqjsq8hqxm29v4w9rr6lg8afci65jl2yja8fxjphsa"))))
+        (base32 "1is3m693ns0m4j08dg8bkw3l4vszwmdrhd4vk7x1alaqwl7jj4y0"))))
     (properties `((upstream-name . "tteICE")))
     (build-system r-build-system)
     (arguments
@@ -3106,6 +3242,39 @@ semicompeting risks, where the times to both the primary outcome event and
 intercurrent event (or censoring) are recorded.  For estimation methods, users
 can choose nonparametric estimation (which does not use covariates) and
 semiparametrically efficient estimation.")
+    (license license:gpl3)))
+
+(define-public r-tte
+  (package
+    (name "r-tte")
+    (version "1.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TTE" version))
+       (sha256
+        (base32 "17y1hlzq13l2dmjgv6q0cfhlr1d5diinawisnq622hnjkz7a15b9"))))
+    (properties `((upstream-name . "TTE")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sandwich r-nnet))
+    (home-page "https://github.com/nomahi/TTE/")
+    (synopsis "Design and Analysis Tools for Target Trial Emulation")
+    (description
+     "Design and analysis tools for target trial emulation using longitudinal
+observational data.  Functions are provided for checking person-period data,
+expanding longitudinal data into sequentially nested trials, estimating inverse
+probability weights for intention-to-treat and per-protocol analyses, and
+assessing weight distributions and covariate balance.  Additional functions fit
+weighted pooled discrete-time outcome models, obtain standardized risks and
+treatment contrasts, and estimate weighted Kaplan-Meier and Aalen-Johansen
+curves.  Two worked examples based on fully synthetic data illustrate an
+active-comparator new-user study comparing sodium-glucose cotransporter 2
+inhibitors with dipeptidyl peptidase-4 inhibitors and an analysis of
+sequentially nested trials comparing angiotensin receptor blocker and calcium
+channel blocker strategies.")
     (license license:gpl3)))
 
 (define-public r-ttdo
@@ -3563,13 +3732,13 @@ format, wide format and transposed wide format data to various file types.")
 (define-public r-tstests
   (package
     (name "r-tstests")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tstests" version))
        (sha256
-        (base32 "0771k05gmbag61q429yvqwn1xh2l1y87z68szg3njrbnabrihpmb"))))
+        (base32 "1cq19qy3lln5qc2z648v4dnfadcmg64d586a40z6yqkycnyw54vq"))))
     (properties `((upstream-name . "tstests")))
     (build-system r-build-system)
     (arguments
@@ -3906,13 +4075,13 @@ Yeo-Johnson), and forecasting accuracy measures are implemented.")
 (define-public r-tsqr
   (package
     (name "r-tsqr")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tsqr" version))
        (sha256
-        (base32 "1bjrj7f9hcbm9l9n04r4wnmm1cavfmnwxgci2qa6swj445jz3506"))))
+        (base32 "0gy5hh00cpm7h1zw9llc66mzcb9mw7p8k1zc807frh2ccf5aamxa"))))
     (properties `((upstream-name . "tsqr")))
     (build-system r-build-system)
     (arguments
@@ -4017,13 +4186,13 @@ protocols by Rubinson et al. (2019) <doi:10.1177/00491241211036158>.")
 (define-public r-tspredit
   (package
     (name "r-tspredit")
-    (version "2.0.707")
+    (version "2.0.717")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tspredit" version))
        (sha256
-        (base32 "05z2a7l1pvk88m4jbwlnhkfqsdw9sz0gb7nwyl05snav0am88gzl"))))
+        (base32 "04ybkbv1w93xgixnnlld9rkxy86yswfl4nc5v493g10pw65ni44g"))))
     (properties `((upstream-name . "tspredit")))
     (build-system r-build-system)
     (arguments
@@ -4032,7 +4201,6 @@ protocols by Rubinson et al. (2019) <doi:10.1177/00491241211036158>.")
     (propagated-inputs (list r-wavelets
                              r-randomforest
                              r-nnet
-                             r-mfilter
                              r-kfas
                              r-hht
                              r-forecast
@@ -4040,7 +4208,6 @@ protocols by Rubinson et al. (2019) <doi:10.1177/00491241211036158>.")
                              r-elmnnrcpp
                              r-e1071
                              r-dplyr
-                             r-desctools
                              r-daltoolbox))
     (home-page "https://cefet-rj-dal.github.io/tspredit/")
     (synopsis "Time Series Prediction with Integrated Tuning")
@@ -4539,13 +4706,13 @@ proximal gradient descent algorithm (Chen et al. (2012)
 (define-public r-tsitter
   (package
     (name "r-tsitter")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tsitter" version))
        (sha256
-        (base32 "0kvr2szxka4q520d5878hbccjc1idr5fh53bxlmsvvpgf0d7mhm3"))))
+        (base32 "0xd5r2zky5682xdh6kkv2znja8gvpsn38dayhksxdn8jynjjdjqk"))))
     (properties `((upstream-name . "tsitter")))
     (build-system r-build-system)
     (arguments
@@ -4555,21 +4722,20 @@ proximal gradient descent algorithm (Chen et al. (2012)
     (home-page "https://github.com/r-lib/tsitter")
     (synopsis "Tree-Sitter Parsing Tools")
     (description
-     "Common tree-sitter (<https://tree-sitter.github.io/tree-sitter/>) parsing tools
-for R. It is meant to be used by other packages that specialize in particular
-languages and file formats.")
+     "Common tree-sitter parsing tools for R. It is meant to be used by other packages
+that specialize in particular languages and file formats.")
     (license license:expat)))
 
 (define-public r-tsissm
   (package
     (name "r-tsissm")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tsissm" version))
        (sha256
-        (base32 "1klm2hnwk4mj53n99jcwr1w167prdrbbplzjrj4qsadb3snjb4q3"))))
+        (base32 "1wv9v5gp6vm2jv8jn44k821x67pmrmp3s98czqrr6f48zkgypwx1"))))
     (properties `((upstream-name . "tsissm")))
     (build-system r-build-system)
     (arguments
@@ -4802,13 +4968,13 @@ al. (2017, under review).")
 (define-public r-tsgs
   (package
     (name "r-tsgs")
-    (version "1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TSGS" version))
        (sha256
-        (base32 "0lsl6lmyg57bbw0pm22clxvzgwz44r8pizjqn1g67c76vmrsgpd4"))))
+        (base32 "001qszw2g66zg954h5rv1y87wcpr5kpw1smldnksfkaz4gdswm2z"))))
     (properties `((upstream-name . "TSGS")))
     (build-system r-build-system)
     (arguments
@@ -4842,13 +5008,13 @@ obtained.")
 (define-public r-tsgc
   (package
     (name "r-tsgc")
-    (version "0.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tsgc" version))
        (sha256
-        (base32 "17vq2dp48w9401mn9j218wlc98h0g2rxrkqqqwdmxgfak303r2nj"))))
+        (base32 "1acph3vy22ld76qfbbh4r9dj3n17gcy7pbbcz9aqpmlsrdm57zgh"))))
     (properties `((upstream-name . "tsgc")))
     (build-system r-build-system)
     (arguments
@@ -4858,34 +5024,30 @@ obtained.")
                              r-xts
                              r-tidyr
                              r-scales
+                             r-purrr
                              r-magrittr
                              r-kfas
-                             r-ggthemes
+                             r-kableextra
                              r-ggplot2
-                             r-dplyr))
+                             r-abind))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/Craig-PT/tsgc")
+    (home-page "https://github.com/edwintang903/tsgc")
     (synopsis "Time Series Methods Based on Growth Curves")
     (description
-     "The tsgc package provides comprehensive tools for the analysis and forecasting
-of epidemic trajectories.  It is designed to model the progression of an
-epidemic over time while accounting for the various uncertainties inherent in
-real-time data.  Underpinned by a dynamic Gompertz model, the package adopts a
-state space approach, using the Kalman filter for flexible and robust estimation
-of the non-linear growth pattern commonly observed in epidemic data.  The
-reinitialization feature enhances the modelâs ability to adapt to the
-emergence of new waves.  The forecasts generated by the package are of value to
-public health officials and researchers who need to understand and predict the
-course of an epidemic to inform decision-making.  Beyond its application in
-public health, the package is also a useful resource for researchers and
-practitioners in fields where the trajectories of interest resemble those of
-epidemics, such as innovation diffusion.  The package includes functionalities
-for data preprocessing, model fitting, and forecast visualization, as well as
-tools for evaluating forecast accuracy.  The core methodologies implemented in
-tsgc are based on well-established statistical techniques as described in Harvey
-and Kattuman (2020) <doi:10.1162/99608f92.828f40de>, Harvey and Kattuman (2021)
-<doi:10.1098/rsif.2021.0179>, and Ashby, Harvey, Kattuman, and Thamotheram
-(2024)
+     "This package provides tools for modelling and forecasting epidemic trajectories
+using a dynamic Gompertz model within a state space framework, with the Kalman
+filter for robust estimation of non-linear growth.  Includes a reinitialization
+feature to adapt to new waves, and a leading-indicator extension that uses a
+related series moving ahead of the variable of interest (e.g. cases ahead of
+hospitalisations) to improve short-horizon forecasts, with model and lag
+selection via rolling-origin cross-validation.  Applicable to data at daily,
+monthly, quarterly, or annual frequency, and to non-epidemic trajectories with
+similar dynamics, such as innovation diffusion and product adoption.  Includes
+functions for data preprocessing, model fitting, forecast visualization, and
+accuracy evaluation using standard error measures.  Methods are described in
+Harvey and Kattuman (2020) <doi:10.1162/99608f92.828f40de>, Harvey and Kattuman
+(2021) <doi:10.1098/rsif.2021.0179>, and Ashby, Harvey, Kattuman, Tang, and
+Thamotheram (2024)
 <https://www.jbs.cam.ac.uk/wp-content/uploads/2024/03/cchle-tsgc-paper-2024.pdf>.")
     (license license:gpl3+)))
 
@@ -4977,13 +5139,13 @@ and layout customization options.")
 (define-public r-tsforecast
   (package
     (name "r-tsforecast")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tsforecast" version))
        (sha256
-        (base32 "0gknr4rymdccm93gsc4gaxwf0agr5wrpqskx379fln6fbqzcrawv"))))
+        (base32 "0245d71spdgabbb0rsx0namqa774znnka4fgi3mr2mwlfrzsay6f"))))
     (properties `((upstream-name . "tsforecast")))
     (build-system r-build-system)
     (arguments
@@ -5459,6 +5621,45 @@ Work-Conference on Artificial Neural Networks.  Springer, 2017
 <doi:10.1007/978-3-319-59153-7_62>.")
     (license license:gpl2+)))
 
+(define-public r-tselca
+  (package
+    (name "r-tselca")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tseLCA" version))
+       (sha256
+        (base32 "0dqjkhdh6zh3p1picsq7rhp05fwgarv2hmwfz2qpv92zvvbqwwaw"))))
+    (properties `((upstream-name . "tseLCA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-multilevlca r-cli))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://samleebyu.github.io/tseLCA/")
+    (synopsis "Three-Step Estimation for Latent Class Analysis")
+    (description
+     "This package implements BCH (Bolck-Croon-Hagenaars) <doi:10.1093/pan/mph001> and
+ML (Vermunt's maximum likelihood) <doi:10.1093/pan/mpq025> approaches for
+three-step estimation of latent class models with covariates and distal
+outcomes, following Bakk, Tekle & Vermunt (2013) <doi:10.1177/0081175012470644>,
+Bakk, Oberski & Vermunt (2014) <https://www.jstor.org/stable/24573086>, and Bakk
+& Kuha (2018) <doi:10.1007/s11336-017-9592-7>.  Built on @code{multilevLCA}
+(Lyrvall et al., 2025) <doi:10.1080/00273171.2025.2473935> for Step-1
+measurement model estimation, this package extends it with support for Gaussian,
+Poisson, and binomial distal outcome families.  Unlike @code{poLCA}', which
+relies on one-step estimation and cannot accommodate a measurement model from a
+different sample, this package uses a stepwise approach to prevent the
+structural model from influencing latent class formation.  Implements correct
+sandwich variance estimation that propagates measurement uncertainty from the
+first-step through classification-error correction in the final step (Bakk,
+Oberski & Vermunt, 2014).  Supports polytomous items and missing data in the
+measurement model with full information maximum likelihood.  A data-generating
+process replicating the Bakk & Kuha (2018) simulation study is included.")
+    (license license:gpl3+)))
+
 (define-public r-tseind
   (package
     (name "r-tseind")
@@ -5489,13 +5690,13 @@ Weisberg, Herbert (2005, ISBN:0-226-89128-3); Biemer, Paul (2010)
 (define-public r-tseffects
   (package
     (name "r-tseffects")
-    (version "0.2.1")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tseffects" version))
        (sha256
-        (base32 "16mdknrqc4mk5924h4m3by3albs4cf648zfk9biqzcp48pqwhmq7"))))
+        (base32 "1pgiay71parlfpma697hs2n8rn4143gdmbfisgdiwagmv41i88n4"))))
     (properties `((upstream-name . "tseffects")))
     (build-system r-build-system)
     (arguments
@@ -5512,15 +5713,15 @@ models in uncovering dynamic inferences.  ADL models are simple to estimate;
 this is what makes them attractive.  Once these models are estimated, what is
 less clear is how to uncover a rich set of dynamic inferences from these models.
  We provide tools for recovering those inferences.  These tools apply to
-traditional time-series quantities of interest: especially instantaneous effects
-for any period and cumulative effects for any period (including the long-run
-effect).  They also allow for a variety of shock histories to be applied to the
-independent variable (beyond just a one-time, one-unit increase) as well as the
-recovery of inferences in levels for shocks applies to (in)dependent variables
-in differences (what we call the Generalized Dynamic Response Function).  These
-effects are also available for the general conditional dynamic model advocated
-by Warner, Vande Kamp, and Jordan (2026 <doi:10.1017/psrm.2026.10087>).  We also
-provide the actual formulae for these effects.")
+traditional time-series quantities of interest and are built from the Impulse
+Response Function and Step Response Function (sometimes described as a pulse
+effect or a cumulative effect).  They also allow for a variety of shock
+histories to be applied to the independent variable (beyond just a one-time,
+one-unit increase) as well as the recovery of inferences in levels for shocks
+applied to (in)dependent variables in differences (what we call the Generalized
+Dynamic Response Function).  These effects are also available for the general
+conditional dynamic model advocated by Warner, Vande Kamp, and Jordan (2026
+<doi:10.1017/psrm.2026.10087>).  We also provide the formulae for these effects.")
     (license license:gpl2+)))
 
 (define-public r-tseal
@@ -5584,46 +5785,6 @@ Sipols, A., de Blas, C. S., Pastor, L., & Bayona, S. (2023)
 scale-dependent and/or scale-independent metrics.  On TSE, see: Weisberg,
 Herbert (2005, ISBN:0-226-89128-3); Biemer, Paul (2010)
 <doi:10.1093/poq/nfq058>.")
-    (license license:gpl2+)))
-
-(define-public r-tsdyn
-  (package
-    (name "r-tsdyn")
-    (version "11.0.5.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tsDyn" version))
-       (sha256
-        (base32 "0v60h5f8302izj6vbgandmr923nf5ygrygbwzapgn83rh80wcj77"))))
-    (properties `((upstream-name . "tsDyn")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vars
-                             r-urca
-                             r-tserieschaos
-                             r-tseries
-                             r-nnet
-                             r-mnormt
-                             r-mgcv
-                             r-matrix
-                             r-mass
-                             r-generics
-                             r-forecast
-                             r-foreach))
-    (home-page "https://github.com/MatthieuStigler/tsDyn/wiki")
-    (synopsis "Nonlinear Time Series Models with Regime Switching")
-    (description
-     "This package implements nonlinear autoregressive (AR) time series models.  For
-univariate series, a non-parametric approach is available through additive
-nonlinear AR. Parametric modeling and testing for regime switching dynamics is
-available when the transition is either direct (TAR: threshold AR) or smooth
-(STAR: smooth transition AR, LSTAR).  For multivariate series, one can estimate
-a range of TVAR or threshold cointegration TVECM models with two or three
-regimes.  Tests can be conducted for TVAR as well as for TVECM (Hansen and Seo
-2002 and Seo 2006).")
     (license license:gpl2+)))
 
 (define-public r-tsdt
@@ -5939,13 +6100,13 @@ used to detect data leakages in a collection of time series.")
 (define-public r-tscv
   (package
     (name "r-tscv")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tscv" version))
        (sha256
-        (base32 "19rjqk61q9wqkzbwla9w4wc7m8r42zvi3jab2a220m9ibrr2pblv"))))
+        (base32 "11hpgv12jjkpfp9djyqw87n41pjb9hy2rwasyngad8fc1fnavrb7"))))
     (properties `((upstream-name . "tscv")))
     (build-system r-build-system)
     (arguments
@@ -6875,6 +7036,40 @@ release files.  For more information on the API, see
 <https://isd.digital.nhs.uk/trud/users/guest/filters/0/api>.")
     (license license:expat)))
 
+(define-public r-truchet
+  (package
+    (name "r-truchet")
+    (version "0.0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "truchet" version))
+       (sha256
+        (base32 "1l7hc8kz540s937gfbpy8l9mr6w3c111xl1q5ny9xksgnn9g8c4h"))))
+    (properties `((upstream-name . "truchet")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-sf
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-lwgeom
+                             r-dplyr
+                             r-checkmate
+                             r-bezier))
+    (home-page "https://paezha.github.io/truchet/")
+    (synopsis
+     "Tiles and Random Mosaics Truchet Style Using the 'sf' Framework")
+    (description
+     "This package provides functions to create Truchet tiles, so called after
+SÃ©bastien Truchet who was the first to describe the patterns obtained by
+rotating tiles with respect to each other.  This form of tiling is described by
+Smith and Boucher (1987) <https://muse.jhu.edu/article/600574>.")
+    (license license:expat)))
+
 (define-public r-trtswitch
   (package
     (name "r-trtswitch")
@@ -6962,6 +7157,31 @@ Transformation Choice (Hothorn, 2018, <DOI:10.1177/1471082X17748081>).")
      "Gives the required 2^n treatment combinations in a 2^n symmetric factorial
 experiment in their respective standard order.")
     (license license:expat)))
+
+(define-public r-trsbook
+  (package
+    (name "r-trsbook")
+    (version "1.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TRSbook" version))
+       (sha256
+        (base32 "1w9zjjnvcvmag7fxjd9ay58b8400kbvi1gq29vf0kwzi81nr8r0c"))))
+    (properties `((upstream-name . "TRSbook")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xtable r-rcolorbrewer r-independencetests
+                             r-gdata))
+    (home-page "https://cran.r-project.org/package=TRSbook")
+    (synopsis "Companion to the Book \"The R Software\"")
+    (description
+     "This package provides functions and datasets for readers of the book \"The R
+Software: Fundamentals of Programming and Statistical Analysis\" by Lafaye de
+Micheaux, Drouilhet and Liquet (2013) <doi:10.1007/978-1-4614-9020-3>.")
+    (license license:gpl2+)))
 
 (define-public r-trps
   (package
@@ -7395,6 +7615,33 @@ irregular spaced data.  Please note that most of the functions are now also
 covered in package interp, which is a re-implementation from scratch under a
 free license based on a different triangulation algorithm.")
     (license (license:fsdg-compatible "file://LICENSE"))))
+
+(define-public r-tripaccess
+  (package
+    (name "r-tripaccess")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tripaccess" version))
+       (sha256
+        (base32 "17wg5faps7ws4h1n7vxh07n5d6n9hviqh3ixpv6npzix2x48sv3s"))))
+    (properties `((upstream-name . "tripaccess")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/scao53/tripaccess")
+    (synopsis "American Travel Behavior and Access Datasets")
+    (description
+     "Subsets of data from the National Household Travel Survey 2017.  It includes
+personal trips, mobility, demographic, and household information.  It is
+suitable for data visualization, data wrangling, joining datasets, exploratory
+data analysis, group comparisons, simple linear regression, categorical data
+analysis, and data ethics discussion in data science and statistics classes.")
+    (license (list license:cc0
+                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-trip
   (package
@@ -7830,6 +8077,41 @@ triangle distribution.  Also includes maximum likelihood estimation of
 parameters.")
     (license license:gpl2+)))
 
+(define-public r-trialsizing
+  (package
+    (name "r-trialsizing")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "trialSizing" version))
+       (sha256
+        (base32 "1vr2g3wcyz97w1c3b7mvik5vy7nirc726ipxz30n7g7q9901lvb9"))))
+    (properties `((upstream-name . "trialSizing")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://willyanjnr.github.io/trialSizing/")
+    (synopsis "Tools for Experimental Design Sizing")
+    (description
+     "Sizes field experiments from uniformity-trial data, following the relationship
+between the coefficient of variation and plot size.  Checks a trial for the
+spatial structure the sizing methods assume (semivariogram, Moran's I, kriged
+field map), summarises the coefficient of variation over every plot shape the
+grid admits, and estimates the optimal plot size by the modified maximum
+curvature method of Meier and Lessman (1971), by the linear response plateau
+(LRP) and quadratic response plateau (QRP) models, and by the closed form of
+Paranaiba, Ferreira and Morais (2009), which can be compared side by side.  From
+the coefficient of variation at the optimum it derives the number of
+replications needed to detect a given difference between treatment means, as in
+Cargnelutti Filho and others (2014).  Every method returns standardised
+diagnostic statistics, optional bootstrap uncertainty for the breakpoint, and
+publication-style plots.")
+    (license license:gpl3+)))
+
 (define-public r-trialsize
   (package
     (name "r-trialsize")
@@ -7856,13 +8138,13 @@ Clinical Research.")
 (define-public r-trialsimulator
   (package
     (name "r-trialsimulator")
-    (version "1.20.1")
+    (version "1.35.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TrialSimulator" version))
        (sha256
-        (base32 "0cmwaqlhr4xgjl4jqpirl2zpmxr1h1g04afy0xffhh1v87k283fa"))))
+        (base32 "0kqr3c8imgj7l3w5rx1pl5dw4bcy16bqppll3c05xhwava5z1myb"))))
     (properties `((upstream-name . "TrialSimulator")))
     (build-system r-build-system)
     (arguments
@@ -7880,6 +8162,7 @@ Clinical Research.")
                              r-ggplot2
                              r-emmeans
                              r-dplyr
+                             r-cli
                              r-base64enc))
     (native-inputs (list r-knitr))
     (home-page "https://zhangh12.github.io/TrialSimulator/")
@@ -7945,13 +8228,13 @@ a method you would like implemented, please get in touch.")
 (define-public r-trialemulation
   (package
     (name "r-trialemulation")
-    (version "0.0.4.11")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TrialEmulation" version))
        (sha256
-        (base32 "0ljznn4j42z0z4awdc9qgfya45gd5bxhzabha26bag63cwyi8hi2"))))
+        (base32 "06qs21xb8m464svm6wifq8kzdzsi12fy33gn8p6k88dl7jjx244c"))))
     (properties `((upstream-name . "TrialEmulation")))
     (build-system r-build-system)
     (arguments
@@ -7962,6 +8245,7 @@ a method you would like implemented, please get in touch.")
                              r-mvtnorm
                              r-lmtest
                              r-lifecycle
+                             r-future-apply
                              r-formula-tools
                              r-duckdb
                              r-dbi
@@ -7979,6 +8263,49 @@ in emulated trials using electronic health records.  A description and
 application of the method can be found in Danaei et al (2013)
 <doi:10.1177/0962280211403603>.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
+(define-public r-triager
+  (package
+    (name "r-triager")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "triageR" version))
+       (sha256
+        (base32 "1lwcprclh5jr50wqbxrrqbq6dnvpkjxbj1ggy1h76v5j43s5sy8v"))))
+    (properties `((upstream-name . "triageR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yardstick
+                             r-workflows
+                             r-tidyr
+                             r-tibble
+                             r-survival
+                             r-recipes
+                             r-quarto
+                             r-proc
+                             r-parsnip
+                             r-naniar
+                             r-mice
+                             r-ggplot2
+                             r-ellmer
+                             r-dplyr
+                             r-dalex))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/DevWebWacky/triageR")
+    (synopsis
+     "Automated Machine Learning and AI Agent Tools for Clinical Prediction Modelling")
+    (description
+     "This package provides a streamlined workflow for building, validating, and
+reporting clinical prediction models.  Combines standard machine learning tools
+with an optional AI agent that recommends appropriate statistical methods, runs
+sensitivity analyses, and flags common pitfalls.  Includes automated generation
+of reports aligned with TRIPOD+AI reporting guidance (Collins et al. (2024
+<doi:10.1136/bmj-2023-078378>)) for reproducible, guideline-aligned research.")
+    (license license:expat)))
 
 (define-public r-triadsim
   (package
@@ -8285,13 +8612,13 @@ Jackman (2008) <doi:10.18637/jss.v027.i08>.")
 (define-public r-trendseries
   (package
     (name "r-trendseries")
-    (version "1.2.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "trendseries" version))
        (sha256
-        (base32 "1kb6q0kjgvcz1f4v44hgg6sadsn5948lj7968zcpn02v9salmf1n"))))
+        (base32 "0hzah4rai7iffp4x5lcrbybwn05nixyjaniiskfcrhr4qfcw1mai"))))
     (properties `((upstream-name . "trendseries")))
     (build-system r-build-system)
     (arguments
@@ -8299,24 +8626,21 @@ Jackman (2008) <doi:10.18637/jss.v027.i08>.")
       #:tests? #f))
     (propagated-inputs (list r-tsbox
                              r-tibble
+                             r-rlang
                              r-rcpproll
                              r-mfilter
                              r-lubridate
                              r-hpfilter
-                             r-glue
                              r-dlm
                              r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/viniciusoike/trendseries")
     (synopsis "Extract Trends from Time Series")
     (description
-     "Extract trends from monthly and quarterly economic time series.  Provides two
-main functions: @code{augment_trends()} for pipe-friendly tibble workflows and
-@code{extract_trends()} for direct time series analysis.  Includes established
-econometric filters such as Hodrick-Prescott (HP), Baxter-King,
-Christiano-Fitzgerald, and Hamilton, alongside moving averages and smoothing
-methods.  Smart defaults are tuned for common economic frequencies following
-Ravn and Uhlig (2002) <doi:10.1162/003465302317411604>.")
+     "This package provides a unified interface to extract trends, cycles, and
+seasonal components from monthly and quarterly time series using established
+econometric filters and smoothing methods, with frequency-aware defaults for
+common economic frequencies.")
     (license license:expat)))
 
 (define-public r-trendsegmentr
@@ -8605,24 +8929,19 @@ package.")
 (define-public r-treetools
   (package
     (name "r-treetools")
-    (version "2.4.0")
+    (version "2.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TreeTools" version))
        (sha256
-        (base32 "0wmwfj7rbqbixpdxpgg6lkqj94mrrj4pwab8k4xn0dc23shh256h"))))
+        (base32 "05r3hczdj47fxx57fxdbz60j5gvj8s2i39wnf13w9wwnvrkba9pb"))))
     (properties `((upstream-name . "TreeTools")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rdpack
-                             r-rcpp
-                             r-plottools
-                             r-fastmatch
-                             r-bit64
-                             r-ape))
+    (propagated-inputs (list r-rdpack r-rcpp r-plottools r-bit64 r-ape))
     (native-inputs (list r-knitr))
     (home-page "https://ms609.github.io/TreeTools/")
     (synopsis "Create, Modify and Analyse Phylogenetic Trees")
@@ -8645,13 +8964,13 @@ formats; and analysis of splits and cladistic information.")
 (define-public r-treestructure
   (package
     (name "r-treestructure")
-    (version "0.7.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "treestructure" version))
        (sha256
-        (base32 "01gd85g6ac2sxrxzg8grzc1lnnr7lvcsxvkl6dsr8vxjzmjml1lw"))))
+        (base32 "1abdjwwr2f9bd89k802gq68hqsh2fqq6knxdr7sgsm89idspq70j"))))
     (properties `((upstream-name . "treestructure")))
     (build-system r-build-system)
     (arguments
@@ -8671,13 +8990,13 @@ patterns.")
 (define-public r-treestats
   (package
     (name "r-treestats")
-    (version "1.71.12")
+    (version "1.71.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "treestats" version))
        (sha256
-        (base32 "0x74pgd6yyh2kvcvcxgx4x30jkqf3syibkw632173fm1dhyfx0pd"))))
+        (base32 "14xhcph83563j1crd4djsslwqdyy6f8kwqdnnhw2c0zjihkgafxq"))))
     (properties `((upstream-name . "treestats")))
     (build-system r-build-system)
     (arguments
@@ -8731,13 +9050,13 @@ total evidence dating analyses.")
 (define-public r-treess
   (package
     (name "r-treess")
-    (version "0.1.50")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "treeSS" version))
        (sha256
-        (base32 "12w9yiwpzflyxswaavns3w9mncsn7w7pi2sa92h4kr4p6f7z1b01"))))
+        (base32 "1j63lxx2w58nah6icd2kazgbndgy2i2n09177i631krca21i9zw8"))))
     (properties `((upstream-name . "treeSS")))
     (build-system r-build-system)
     (arguments
@@ -9160,13 +9479,13 @@ Tree Ordered Alternatives in One-way ANOVA\"
 (define-public r-treeminer
   (package
     (name "r-treeminer")
-    (version "1.0.4")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TreeMineR" version))
        (sha256
-        (base32 "01g7v0lqrdwzsh7s1rv2l402pn97fvb7dvfz383ld7cdc8mmgd08"))))
+        (base32 "1zmvy10jzbnadhcgcaj1dn1fpn6kgkanbql2w3sp4c33gfi1lg2i"))))
     (properties `((upstream-name . "TreeMineR")))
     (build-system r-build-system)
     (arguments
@@ -9186,19 +9505,19 @@ across the space of a hierarchical tree.")
 (define-public r-treemapify
   (package
     (name "r-treemapify")
-    (version "2.6.0")
+    (version "2.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "treemapify" version))
        (sha256
-        (base32 "06g2v4iy1m9rjs1kg4ps1dmhq9p1djx4bnjlhj1hvn3j7anqvaq5"))))
+        (base32 "1hq7xc8i18iasccscm9wjz9xjlv571xbagzxac1w1hjgmqy73yij"))))
     (properties `((upstream-name . "treemapify")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-svglite r-ggplot2 r-ggfittext r-cli))
+    (propagated-inputs (list r-ggplot2 r-ggfittext r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://wilkox.org/treemapify/")
     (synopsis "Draw Treemaps in 'ggplot2'")
@@ -9267,13 +9586,13 @@ data.")
 (define-public r-treedist
   (package
     (name "r-treedist")
-    (version "2.14.1")
+    (version "2.15.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TreeDist" version))
        (sha256
-        (base32 "1rhg297q4zwbqyslwk23g1dij67kx3b37qv6rmyan92f3gxwr534"))))
+        (base32 "1ni5dyi6hdbhh3697hfmm8mpxg1vzmk5l59m2rznjv8ykvmzfqk7"))))
     (properties `((upstream-name . "TreeDist")))
     (build-system r-build-system)
     (arguments
@@ -9285,7 +9604,6 @@ data.")
                              r-shiny
                              r-rdpack
                              r-rcpp
-                             r-colorspace
                              r-cli
                              r-ape))
     (native-inputs (list r-knitr))
@@ -9313,13 +9631,13 @@ and splits.")
 (define-public r-treedimensiontest
   (package
     (name "r-treedimensiontest")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TreeDimensionTest" version))
        (sha256
-        (base32 "1bwvspjvc1cragbsrc05vhwk0zmfj36r9piqbj0vgahpjb4cswn9"))))
+        (base32 "1z0lg62c0wl3lnzwfn3pnbk9nbdvja4pvagmgr0xidhjn8rq19bi"))))
     (properties `((upstream-name . "TreeDimensionTest")))
     (build-system r-build-system)
     (arguments
@@ -9440,13 +9758,13 @@ EPA-454/B-96-001.  Weiss A, Norman JM (1985) Agricultural and Forest Meteorology
 (define-public r-treedbalance
   (package
     (name "r-treedbalance")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "treeDbalance" version))
        (sha256
-        (base32 "0kyls0zy7s7c1sqkcaz5290faavp9zdmk9qzdp2v42izsinkgrc6"))))
+        (base32 "0dj0qbpdchjs53gh181sbrn41xy0ddpz0ra692nfxrw4gd8qiscn"))))
     (properties `((upstream-name . "treeDbalance")))
     (build-system r-build-system)
     (arguments
@@ -9492,19 +9810,19 @@ Education and Research (FKZ: 03WIR4805).")
 (define-public r-treedater
   (package
     (name "r-treedater")
-    (version "1.0.2")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "treedater" version))
        (sha256
-        (base32 "0229cmw4cngcjb0sgja26cgakqb9n26pwybscz9ij46a9y6y5lj7"))))
+        (base32 "183dmmkinzakzsb7j5fdmjjwc05bsxcp3pqx183pzbysbhpg1nbd"))))
     (properties `((upstream-name . "treedater")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-limsolve r-ape))
+    (propagated-inputs (list r-quadprog r-matrix r-ape))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=treedater")
     (synopsis
@@ -9885,13 +10203,13 @@ Markus, Verhamme, Kors, and Rijnbeek (2022) <doi:10.1016/j.cmpb.2022.107081>.")
 (define-public r-treasury
   (package
     (name "r-treasury")
-    (version "0.5.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "treasury" version))
        (sha256
-        (base32 "0vjgi3ks0mlcc7rjx4xb0gvba7iajw9xqwddfbl3yzydbqw4sy1g"))))
+        (base32 "181i79mzbd0wg53yc432h9kmm4c26lwrq1v2rkwaxvr5yzp4sfs3"))))
     (properties `((upstream-name . "treasury")))
     (build-system r-build-system)
     (arguments
@@ -9905,7 +10223,10 @@ Markus, Verhamme, Kors, and Rijnbeek (2022) <doi:10.1016/j.cmpb.2022.107081>.")
 <https://home.treasury.gov/treasury-daily-interest-rate-xml-feed>, this package
 serves as a wrapper, facilitating the retrieval of daily treasury rates across
 various categories, including par yield curves, treasury bills, long-term rates,
-and real yield curves.")
+and real yield curves.  In addition, it provides access to the monthly published
+yield curve datasets, including the High Quality Market (HQM) corporate bond
+yield curve and the Treasury nominal and real coupon-issue (TNC, TRC) and
+breakeven inflation (TBI) curves.")
     (license license:expat)))
 
 (define-public r-trdist
@@ -10599,6 +10920,52 @@ Ukrainian strings into Latin symbols.")
 (2010) <doi:10.1177/0759106309352586>.")
     (license license:gpl2+)))
 
+(define-public r-transittraj
+  (package
+    (name "r-transittraj")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "transittraj" version))
+       (sha256
+        (base32 "1npapj1hnc4qp0gxn9gv0x3wwff019y1y67031xjrqls08xb3c02"))))
+    (properties `((upstream-name . "transittraj")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridis
+                             r-tidytransit
+                             r-tidyr
+                             r-slider
+                             r-sf
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-leaflet
+                             r-ivs
+                             r-hms
+                             r-ggspatial
+                             r-ggplot2
+                             r-ggnewscale
+                             r-gganimate
+                             r-geos
+                             r-dplyr
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://utel-uiuc.github.io/transittraj/")
+    (synopsis "Reconstruct and Visualize Transit Vehicle Trajectories")
+    (description
+     "Today's public transit vehicles produce a large amount of automatic vehicle
+location (AVL) data.  This data is very useful for planning and performance
+studies, but can be noisy, error-prone, and sparse.  This package provides tools
+for cleaning AVL point data and turning it into continuous, differentiable,
+monotonic, and invertible vehicle trajectory functions, based on the work of
+Robbennolt et al. (2025) <doi:10.48550/@code{arXiv.2509.00119>} and Huang et al.
+(2023) <doi:10.1109/ITSC57777.2023.10422524>.")
+    (license license:gpl3+)))
+
 (define-public r-transitiontrees
   (package
     (name "r-transitiontrees")
@@ -10659,13 +11026,13 @@ methodology is available for codifying these state transitions.")
 (define-public r-transhdm
   (package
     (name "r-transhdm")
-    (version "1.0.1")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TransHDM" version))
        (sha256
-        (base32 "0crbals1yzssl8jcf3pccj9w9i8hjgrjn64pcy3x0f9d1k4h2dml"))))
+        (base32 "0rly6zxf5hafb27hxmc7pkqf25rl344znb001l3w7yhxb7ycm3lx"))))
     (properties `((upstream-name . "TransHDM")))
     (build-system r-build-system)
     (arguments
@@ -10674,6 +11041,7 @@ methodology is available for codifying these state transitions.")
     (propagated-inputs (list r-mass
                              r-hdmt
                              r-glmnet
+                             r-ggplot2
                              r-foreach
                              r-doparallel
                              r-caret))
@@ -10724,13 +11092,13 @@ estimation efficiency in the target domain.")
 (define-public r-transfr
   (package
     (name "r-transfr")
-    (version "1.1.4")
+    (version "1.1.18")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "transfR" version))
        (sha256
-        (base32 "03nvmfjh1vpp9ddd5aq7hsibxammr46sipzcxc58423d4xsgb9s8"))))
+        (base32 "0dy8h2h0dzxfj47p29yc2ifk7p60cqx5qv4ij7mrq0isxwjnylzy"))))
     (properties `((upstream-name . "transfR")))
     (build-system r-build-system)
     (arguments
@@ -10740,20 +11108,21 @@ estimation efficiency in the target domain.")
                              r-stars
                              r-sf
                              r-rdpack
+                             r-matrix
                              r-glmnet
                              r-foreach
                              r-doparallel))
     (native-inputs (list r-knitr gfortran))
-    (home-page "https://gitlab.irstea.fr/HYCAR-Hydro/transfr")
+    (home-page "https://forge.inrae.fr/hydroGR/transfr")
     (synopsis "Transfer of Hydrograph from Gauged to Ungauged Catchments")
     (description
-     "This package provides a geomorphology-based hydrological modelling for
+     "This package provides geomorphology-based hydrological modelling for
 transferring streamflow measurements from gauged to ungauged catchments.
-Inverse modelling enables to estimate net rainfall from streamflow measurements
-following BoudhraÃ¢ et al. (2018) <doi:10.1080/02626667.2018.1425801>.
-Resulting net rainfall is then estimated on the ungauged catchments by spatial
-interpolation in order to finally simulate streamflow following de Lavenne et
-al. (2016) <doi:10.1002/2016WR018716>.")
+Inverse modelling makes it possible to estimate net rainfall from streamflow
+measurements following BoudhraÃ¢ et al. (2018)
+<doi:10.1080/02626667.2018.1425801>.  The resulting net rainfall is then
+interpolated to ungauged catchments to simulate streamflow following de Lavenne
+et al. (2016) <doi:10.1002/2016WR018716>.")
     (license license:gpl2)))
 
 (define-public r-transformmos
@@ -10949,16 +11318,50 @@ classification model pipelines can be implemented using their model name from
 <https://huggingface.co/models?pipeline_tag=zero-shot-classification>.")
     (license license:gpl3+)))
 
+(define-public r-transferegovr
+  (package
+    (name "r-transferegovr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "transferegovr" version))
+       (sha256
+        (base32 "0pffzrp9992fydnz24i70bd3vjp0y8jj9wb40x8h6l5vl63igpv5"))))
+    (properties `((upstream-name . "transferegovr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-rlang r-purrr r-httr2 r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/StrategicProjects/transferegovr")
+    (synopsis "Access the 'TransfereGov' Open Data APIs")
+    (description
+     "This package provides a modern interface to the open data application
+programming interfaces of the Brazilian federal government's @code{TransfereGov}
+platform
+(<https://www.gov.br/transferegov/pt-br/ferramentas-gestao/dados-abertos>).
+Covers the special transfers, fund-to-fund transfers, and decentralized credit
+('TED') modules, which together publish forty-eight tables on action plans,
+programs, budget commitments, financial execution, management reports, and
+payment orders.  The APIs are built on @code{PostgREST}', so the package exposes
+its filtering, column selection, and ordering operators directly, and returns
+tidy tibbles with types taken from the published schema.  Automatic pagination,
+request throttling, retries with exponential backoff, and an optional response
+cache are included.")
+    (license license:expat)))
+
 (define-public r-transda
   (package
     (name "r-transda")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "transDA" version))
        (sha256
-        (base32 "0ci2ry7xb3hgnfvf20rswngyg4lnz68lczw61a90d48aymcds9sl"))))
+        (base32 "0r6v38b5w5jgdfd5q9qhny97nxnv3yydhx1id81n62y07q66s7nz"))))
     (properties `((upstream-name . "transDA")))
     (build-system r-build-system)
     (arguments
@@ -11234,13 +11637,13 @@ in Kook et al. (2023, <doi:10.1080/01621459.2024.2395588>).")
 (define-public r-tram
   (package
     (name "r-tram")
-    (version "1.4-3")
+    (version "1.4-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tram" version))
        (sha256
-        (base32 "1l80r3rhif3acdcsh05myy9v5jwlsjk1navblb9vq9k7rxm3080r"))))
+        (base32 "1sxb6f1xa3y81gc98w02jhvxyakbdv4jynw06fm62sfq2b1f2d1d"))))
     (properties `((upstream-name . "tram")))
     (build-system r-build-system)
     (arguments
@@ -11256,7 +11659,7 @@ in Kook et al. (2023, <doi:10.1080/01621459.2024.2395588>).")
                              r-formula
                              r-basefun))
     (native-inputs (list r-knitr))
-    (home-page "https://ctm.R-forge.R-project.org")
+    (home-page "https://codeberg.org/thothorn/tram")
     (synopsis "Transformation Models")
     (description
      "Formula-based user-interfaces to specific transformation models implemented in
@@ -11375,13 +11778,13 @@ Brophy, J., MÃ©sidor, M., Blais, C. and Hamel, D., (2023)
 (define-public r-trajer
   (package
     (name "r-trajer")
-    (version "0.11.1")
+    (version "1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "trajeR" version))
        (sha256
-        (base32 "09idfgmfq0x58yr8is8g5lkxjx1m73ls5fwd43k18ia8hryx3gxc"))))
+        (base32 "1q9zra8rn05avdfgxlh0hkkm6if6ga1j70pb525br1iw7yg7v6k3"))))
     (properties `((upstream-name . "trajeR")))
     (build-system r-build-system)
     (arguments
@@ -11393,8 +11796,10 @@ Brophy, J., MÃ©sidor, M., Blais, C. and Hamel, D., (2023)
                              r-numderiv
                              r-minpack-lm
                              r-mass
+                             r-cli
                              r-capushe))
-    (home-page "https://github.com/gitedric/trajeR")
+    (native-inputs (list r-knitr))
+    (home-page "https://codeberg.org/cidric/trajeR")
     (synopsis "Group Based Modeling Trajectory")
     (description
      "Estimation of group-based trajectory models, including finite mixture models for
@@ -11435,19 +11840,25 @@ generalization, aggregation, intersection, simulation, and plotting.")
 (define-public r-traj
   (package
     (name "r-traj")
-    (version "3.0.1")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "traj" version))
        (sha256
-        (base32 "1z9g8h0bmr2zq8h9v61yrk5f7dp9jhmc9n1dv3y5ik4h94aizyfc"))))
+        (base32 "05glak9n9x04xxfwgnpsg1kvjqcwv7jvd5x2xkf1a79861mqv5gs"))))
     (properties `((upstream-name . "traj")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-igraph r-fclust r-e1071 r-clustercrit r-cluster))
+    (propagated-inputs (list r-rspectra
+                             r-matrix
+                             r-igraph
+                             r-fclust
+                             r-e1071
+                             r-clustercrit
+                             r-cluster))
     (home-page "https://CRAN.R-project.org/package=traj")
     (synopsis "Feature-Based Clustering of Longitudinal Trajectories")
     (description
@@ -11781,13 +12192,13 @@ about climate risk has been included.")
 (define-public r-tradestatistics
   (package
     (name "r-tradestatistics")
-    (version "6.0.0")
+    (version "7.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tradestatistics" version))
        (sha256
-        (base32 "1fj2waisj2vrv0vhg3qwfpfcv24n3hdiy3p84hkn4fb8di42shsk"))))
+        (base32 "04yd13lhklqqm0z0pj57xf1z87c6hm546sijsh8rlsix6n6wbw9s"))))
     (properties `((upstream-name . "tradestatistics")))
     (build-system r-build-system)
     (arguments
@@ -11828,34 +12239,24 @@ line, absolute increase, growth averaging methods.")
 (define-public r-tradepolicy
   (package
     (name "r-tradepolicy")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tradepolicy" version))
        (sha256
-        (base32 "0nil9yd32dlafz7493i8vbv0q8np7drj502xm4nznq4ql9px46fh"))))
+        (base32 "0z7mq0jbpnczr3sddf3c3wd94w6s0w82y315i6shadzjpiczf4sz"))))
     (properties `((upstream-name . "tradepolicy")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-sandwich
-                             r-purrr
-                             r-msm
-                             r-magrittr
-                             r-knitr
-                             r-ggplot2
-                             r-formula
-                             r-fixest
-                             r-dplyr
-                             r-broom))
+    (propagated-inputs (list r-tinyplot r-msm r-knitr r-data-table r-capybara))
     (home-page "https://github.com/pachadotdev/tradepolicy/")
     (synopsis "Replication of 'An Advanced Guide To Trade Policy Analysis'")
     (description
-     "Datasets from Yotov, et al. (2016, ISBN:978-92-870-4367-2) \"An Advanced Guide to
-Trade Policy Analysis\" and functions to report regression summaries with
+     "Datasets from Yotov, et al. (2016) <isbn:978-92-870-4367-2> (An Advanced Guide
+to Trade Policy Analysis) and functions to report regression summaries with
 clustered robust standard errors.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
@@ -11900,13 +12301,13 @@ power and runtime.")
 (define-public r-trade
   (package
     (name "r-trade")
-    (version "0.8.3")
+    (version "0.8.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "trade" version))
        (sha256
-        (base32 "1mnf9k19484a4w8icbcc18siim2wf6j0yazzijm8hiyylqczdy6v"))))
+        (base32 "058c0z9mxdhsprhhq0i3w4fg1q6qwh9gknryzbk0f149p1nr68n9"))))
     (properties `((upstream-name . "trade")))
     (build-system r-build-system)
     (arguments
@@ -11927,43 +12328,41 @@ Froeb et al. (2003) <doi:10.1016/S0304-4076(02)00166-5>.")
 (define-public r-tracktrap
   (package
     (name "r-tracktrap")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TrackTrap" version))
        (sha256
-        (base32 "1ffwmssrxcp2k65h5wylvv4mra079v3yjh5v2z2hx474lp0nvbcf"))))
+        (base32 "1csdf4hdjk5i9pa5d1nli3fd30rpn4qc0sgg96rscac17xlpnm9d"))))
     (properties `((upstream-name . "TrackTrap")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xml2
-                             r-rlang
+    (propagated-inputs (list r-rlang
                              r-magrittr
-                             r-jsonlite
                              r-httr
                              r-ggplot2
                              r-dplyr
                              r-degday
-                             r-daymetr
-                             r-curl))
+                             r-daymetr))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=TrackTrap")
     (synopsis "Model Cumulative Growing Degree-Days for Pest Monitoring")
     (description
      "Pest monitoring is crucial, especially during the early season, to understand
 the distribution and the proliferation of the target pest.  Raw count data from
-pest monitoring/traps can be coupled with environmental variables such as
-temperature, growing degree-day ('GDD') etc.  to get useful insights about the
-pest phenology.  This package pulls temperature data from the California
+pest monitoring/traps can be coupled with derived environmental variables such
+as growing degree-day ('GDD') to get useful insights about the pest phenology.
+This package pulls temperature data from the Daymet application programming
+interface ('API', <https://daymet.ornl.gov>), or Open-Meteo ('API',
+<https://open-meteo.com/>) or manual user-supplied CSV file from the California
 Irrigation Management Information System ('CIMIS',
-<https://cimis.water.ca.gov>), the Daymet application programming interface
-('API', <https://daymet.ornl.gov>), or Open Meteo ('API',
-<https://open-meteo.com/>) sequentially for a user-specified time period and
-calculates cumulative growing degree-days.  Users provide pest development
-thresholds (lower and upper temperatures), pest of concern, and the geographic
-coordinates of the trap location to track emergence and phenology.")
+<https://cimis.water.ca.gov>), for a user-specified time period and calculates
+cumulative growing degree-days.  Users provide intended date range, pest of
+concern, and the geographic coordinates of the trap location to track pest
+emergence and phenology throughout the growing season.")
     (license license:expat)))
 
 (define-public r-trackreconstruction
@@ -12209,6 +12608,38 @@ tracking.  An artificial neural network can be trained for noise filtering.  The
 goal is to supply accurate estimates of population size, structure and/or
 individual behavior, for use in evolutionary and ecological studies.")
     (license license:gpl2)))
+
+(define-public r-trackclean
+  (package
+    (name "r-trackclean")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "trackclean" version))
+       (sha256
+        (base32 "0pci998c1xijfwaznqb7y3rjag0yh9aqzcrmic0cbxpcdrq5cwhm"))))
+    (properties `((upstream-name . "trackclean")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-readr
+                             r-magrittr
+                             r-lubridate
+                             r-dplyr))
+    (home-page "https://github.com/tomasbil/trackclean")
+    (synopsis
+     "Tools for Cleaning High-Frequency Real-Time Location Tracking Data")
+    (description
+     "This package provides data cleaning and preprocessing tools for high-frequency
+positional data from real-time location tracking systems (UWB, RFID, and similar
+technologies), with functions for ID mapping, time period marking, data
+standardization, and two-phase conditional gap interpolation.  See Bilevicius
+(2026) <doi:10.5281/zenodo.20783488>.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-track2kba
   (package
@@ -12713,16 +13144,43 @@ reliability performance measures.  Implements
 <https://www.fhwa.dot.gov/tpm/guidance/pm3_hpms.pdf>.")
     (license (license:fsdg-compatible "Mozilla Public License Version 2.0"))))
 
+(define-public r-tplyr2
+  (package
+    (name "r-tplyr2")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tplyr2" version))
+       (sha256
+        (base32 "18mdrhf0ydq5r2p4vsiz7l1q5955kqr6al828jsswzsyrmgmhmq1"))))
+    (properties `((upstream-name . "tplyr2")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr r-rlang r-purrr r-jsonlite r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/atorus-research/tplyr2")
+    (synopsis "Grammar of Clinical Summary Tables")
+    (description
+     "This package implements a grammar of summary data for clinical reports.
+Clinical summary tables are decomposed into modular layers, each representing an
+independent summary block.  Supports count, descriptive statistics, and shift
+layer types with a declarative spec-based API built on data.table for
+performance.")
+    (license license:expat)))
+
 (define-public r-tplyr
   (package
     (name "r-tplyr")
-    (version "1.3.2")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Tplyr" version))
        (sha256
-        (base32 "0pbz2xpzc41gdg6qs9sjypg07lscn35vjwzfpg62y0vmhmkj206v"))))
+        (base32 "092sjfka4gkii5p4q8f5a1j7qra25a5yhvlc1lb1bxlmhq65kgmr"))))
     (properties `((upstream-name . "Tplyr")))
     (build-system r-build-system)
     (arguments
@@ -12851,13 +13309,13 @@ cellularity.")
 (define-public r-tpea
   (package
     (name "r-tpea")
-    (version "3.1.0")
+    (version "3.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TPEA" version))
        (sha256
-        (base32 "1yyc3q4dyf4d8m7wi851dnxf3xnvvfnvj28kl8z8py4r4jsb2hfy"))))
+        (base32 "1920d88qzc2rzb7v5qzlxlkpjbhkz60dgydff3snwhdcj7z394va"))))
     (properties `((upstream-name . "TPEA")))
     (build-system r-build-system)
     (arguments
@@ -13149,13 +13607,13 @@ the analysis can be found in Blackwell (2017) <doi:10.1021/acs.est.7b01613>.")
 (define-public r-toxdrc
   (package
     (name "r-toxdrc")
-    (version "1.0.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "toxdrc" version))
        (sha256
-        (base32 "1zs6m6fjk91172ax8nnrx4h1bskwgrrbx0njiy5ip1101zwc15av"))))
+        (base32 "05vy010hck0rlkkss099nmp4crx73aqd34xm0ai89j0jy6izrgqn"))))
     (properties `((upstream-name . "toxdrc")))
     (build-system r-build-system)
     (arguments
@@ -13296,13 +13754,13 @@ following a pause outcome.  For more details see Wilson et al. (2024)
 (define-public r-tourr
   (package
     (name "r-tourr")
-    (version "1.2.7")
+    (version "1.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tourr" version))
        (sha256
-        (base32 "08r8jyff769b0d8b1f6lfsvaip30navbdg7q5lzdbx7awa5qncfz"))))
+        (base32 "1iq72x0rak7648zvmqs9prqm7n2qr6i2axfh8f3cslykajn968ax"))))
     (properties `((upstream-name . "tourr")))
     (build-system r-build-system)
     (arguments
@@ -13530,37 +13988,6 @@ statistic's distribution (epsilon) except for @code{tost.rrp()} and
 equivalence within the tolerance.  Equivalence intervals for all tests may be
 defined symmetrically or asymmetrically.")
     (license license:gpl2)))
-
-(define-public r-tosi
-  (package
-    (name "r-tosi")
-    (version "0.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "TOSI" version))
-       (sha256
-        (base32 "00v0cjyz22akar7jrpg5alnnbh2nhxjh5cmq053i65xl0wlbzdpg"))))
-    (properties `((upstream-name . "TOSI")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-scalreg r-mass r-hdi r-glmnet))
-    (home-page "https://github.com/feiyoung/TOSI")
-    (synopsis
-     "Two-Directional Simultaneous Inference for High-Dimensional Models")
-    (description
-     "This package provides a general framework of two directional simultaneous
-inference is provided for high-dimensional as well as the fixed dimensional
-models with manifest variable or latent variable structure, such as
-high-dimensional mean models, high- dimensional sparse regression models, and
-high-dimensional latent factors models.  It is making the simultaneous inference
-on a set of parameters from two directions, one is testing whether the estimated
-zero parameters indeed are zero and the other is testing whether there exists
-zero in the parameter set of non-zero.  More details can be referred to Wei Liu,
-et al. (2022) <doi:10.48550/@code{arXiv.2012.11100>}.")
-    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-toscutil
   (package
@@ -14175,22 +14602,26 @@ more information on the study of toponyms, see Wichmann & Chevallier (2025)
 (define-public r-topolow
   (package
     (name "r-topolow")
-    (version "2.0.1")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "topolow" version))
        (sha256
-        (base32 "0r0hrhsakm9n1qkmqgmgh7yzfiy2nw2wvbkjalq3ak1j71bmdnwg"))))
+        (base32 "03lhn26fk2ka0hxnj0h2qjqz1mwwbdh25vhdbwwmz4s1im22clqw"))))
     (properties `((upstream-name . "topolow")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang
+    (propagated-inputs (list r-zoo
+                             r-rlang
                              r-reshape2
+                             r-rcpp
                              r-lifecycle
                              r-lhs
+                             r-igraph
+                             r-gridextra
                              r-ggplot2
                              r-future
                              r-filelock
@@ -14238,13 +14669,13 @@ Euclidean embedding details are in Arhami and Rohani (2025b)
 (define-public r-topologyr
   (package
     (name "r-topologyr")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "topologyR" version))
        (sha256
-        (base32 "0hiqh5zszjsi8pfygjggda89flg9lsw0q1mxh1msr6phymzj487s"))))
+        (base32 "1xzyifwr9sglhxv3lcwh7hd37b4lq0v0jss4lmgq2vbz34lzh6hf"))))
     (properties `((upstream-name . "topologyR")))
     (build-system r-build-system)
     (arguments
@@ -14325,6 +14756,38 @@ and Summers (2010) <doi:10.1111/j.1365-294X.2009.04465.x>).  Functions can map
 topographic paths on colored or hill shade maps and plot topographic cross
 sections (elevation profiles) for the paths.")
     (license license:gpl3)))
+
+(define-public r-topocast
+  (package
+    (name "r-topocast")
+    (version "0.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "topocast" version))
+       (sha256
+        (base32 "05fg1pzvw8h0wvzg1qczrrv2fywd0ax2833v3kiv7p878v9ik3mb"))))
+    (properties `((upstream-name . "topocast")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra r-rcpparmadillo r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://gillescolling.com/topocast/")
+    (synopsis "Moving-Window Regression Downscaling of Raster Data")
+    (description
+     "Downscales coarse-resolution raster data to a finer grid by fitting local linear
+regressions of a response, such as a climate variable, on one or more
+fine-resolution predictors, such as elevation and other terrain indices, within
+a moving window.  Regression coefficients are estimated for every cell using
+summed-area tables, so the cost is independent of the window size, then
+resampled to the target resolution and applied to the fine-resolution
+predictors.  Multiplicative and additive anomaly application downscale time
+series relative to a baseline climatology, following the regression-on-elevation
+approach used for high-resolution climate surfaces described in Karger et al.
+(2017) <doi:10.1038/sdata.2017.122>.")
+    (license license:expat)))
 
 (define-public r-topksignal
   (package
@@ -14697,6 +15160,39 @@ component analysis of thickness maps with associated morphometric map
 variations.")
     (license license:gpl2)))
 
+(define-public r-tooth
+  (package
+    (name "r-tooth")
+    (version "0.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tooth" version))
+       (sha256
+        (base32 "1j4cf8xmxyshy42fvrmybknfv2yciicpq9szb5q33glap0hz3040"))))
+    (properties `((upstream-name . "tooth")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-purrr
+                             r-patchwork
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ddmsel/tooth")
+    (synopsis "Dental Public Health Indices and Odontogram Visualizations")
+    (description
+     "Computes dental caries indices (DMFT, DMFS, dmft, dmfs) from surface-level
+clinical examination data and produces odontogram heatmap visualizations of
+per-tooth-surface outcomes.  Supports primary and permanent dentition with
+configurable teeth per quadrant (5 to 8), separate root and coronal caries
+tallying, long and wide input formats, stratified output, and
+FDI/Universal/quadrant tooth numbering conversion.")
+    (license license:expat)))
+
 (define-public r-toordinal
   (package
     (name "r-toordinal")
@@ -14898,13 +15394,13 @@ For more details, see
 (define-public r-toolmark
   (package
     (name "r-toolmark")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "toolmaRk" version))
        (sha256
-        (base32 "0pdr8lq4c11ia03v68lbfq38p3qp770mbj0nsbjsgbqi0pv9i1vx"))))
+        (base32 "1902c7bpg6zm3gf62i1svj64jqwlk5rxzvl717wzgkjvmmi6rkfa"))))
     (properties `((upstream-name . "toolmaRk")))
     (build-system r-build-system)
     (arguments
@@ -14928,13 +15424,13 @@ described in Hadler (2017).")
 (define-public r-toolero
   (package
     (name "r-toolero")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "toolero" version))
        (sha256
-        (base32 "0izi4azwj3hnjgn3rvd3zwv2n726cz0nc8i7xcyhq8sg54aisyc1"))))
+        (base32 "1sx07wcq8zcj22m423hcvim5d8k5qip1pszamn9rfdhrlm5ywwhx"))))
     (properties `((upstream-name . "toolero")))
     (build-system r-build-system)
     (arguments
@@ -14944,6 +15440,7 @@ described in Hadler (2017).")
                              r-xml2
                              r-withr
                              r-usethis
+                             r-tidyr
                              r-tibble
                              r-rvest
                              r-rlang
@@ -14951,6 +15448,8 @@ described in Hadler (2017).")
                              r-readr
                              r-quarto
                              r-purrr
+                             r-parallelly
+                             r-lifecycle
                              r-janitor
                              r-glue
                              r-fs
@@ -14961,10 +15460,13 @@ described in Hadler (2017).")
     (description
      "This package provides utility functions to help researchers implement best
 practices for their coding projects.  Includes tools for reading and cleaning
-data files, initializing R projects with a standard folder structure, creating
-Quarto documents from a reproducible template, detecting the execution context
-across interactive, Quarto, and script-based workflows, and splitting data
-frames into group-level output files.")
+data files, initializing R projects with a standard folder structure and
+optional YAML configuration, creating Quarto documents from reproducible
+templates with optional sample data and custom styling, detecting the execution
+context across interactive, Quarto', and script-based workflows, splitting data
+frames into group-level output files, applying analysis functions to each group
+with optional parallel execution, and rendering syntactic tree diagrams as
+standalone PNG images via Typst'.")
     (license license:expat)))
 
 (define-public r-toolbox
@@ -14992,13 +15494,13 @@ strings, pasting and combining rows together across columns, etc.")
 (define-public r-tongfen
   (package
     (name "r-tongfen")
-    (version "0.3.7")
+    (version "0.3.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tongfen" version))
        (sha256
-        (base32 "1sv4wvaskdr77smyk90isnd1k234zh791l0w7dzn8x6zdsyh1m9b"))))
+        (base32 "0jvij0qgacc8ap6gaxn9fp72bhim2kcvn1jzs463h0bw8dxfalql"))))
     (properties `((upstream-name . "tongfen")))
     (build-system r-build-system)
     (arguments
@@ -15597,13 +16099,13 @@ simulating various types of multistage designs.")
 (define-public r-tmsens
   (package
     (name "r-tmsens")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tmsens" version))
        (sha256
-        (base32 "10z4c5dzayhgf73zb64x7gy67j4xw17qmvyj44g9mgczppz4sadi"))))
+        (base32 "1am8d54lczsc8x9krdxlgarr74bx0rms7aarpzrmf4yg17mwinpw"))))
     (properties `((upstream-name . "tmsens")))
     (build-system r-build-system)
     (arguments
@@ -15852,6 +16354,33 @@ workflow, and samplers for constructing simulated corpora for benchmarking and
 method evaluation.")
     (license license:gpl3+)))
 
+(define-public r-tmdbr
+  (package
+    (name "r-tmdbr")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tmdbR" version))
+       (sha256
+        (base32 "0j14cbdz1iqnplb2mpfc1iqc8zv59sp6614zzgrxmq2yr5g50pwa"))))
+    (properties `((upstream-name . "tmdbR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite r-httr2))
+    (native-inputs (list r-knitr))
+    (home-page "https://developer.themoviedb.org/docs/getting-started")
+    (synopsis "Modern 'R' Client for 'The Movie Database' API")
+    (description
+     "This package provides a modern, tested client for version 3 of The Movie
+Database ('TMDB') API. It modernises the interface originally provided by the
+legacy TMDb package by Capozio (2020) <https://CRAN.R-project.org/package=TMDb>
+while adding secure web requests, bearer-token authentication, structured
+errors, retries, safe query encoding, and automatic pagination.")
+    (license license:artistic2.0)))
+
 (define-public r-tmdb
   (package
     (name "r-tmdb")
@@ -15877,50 +16406,26 @@ Database (TMDb) is a popular user editable database for movies and TV shows (see
 <https://www.themoviedb.org>).")
     (license license:artistic2.0)))
 
-(define-public r-tmcn
-  (package
-    (name "r-tmcn")
-    (version "0.2-13")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tmcn" version))
-       (sha256
-        (base32 "0rf8mz6kdm83pm85kzfyzb8kd3iwaxv5bgphjpxlnq6z32m9yds7"))))
-    (properties `((upstream-name . "tmcn")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=tmcn")
-    (synopsis "Text Mining Toolkit for Chinese")
-    (description
-     "This package provides a Text mining toolkit for Chinese, which includes
-facilities for Chinese string processing, Chinese NLP supporting, encoding
-detecting and converting.  Moreover, it provides some functions to support tm
-package in Chinese.")
-    (license license:lgpl2.0+)))
-
 (define-public r-tmcalculator
   (package
     (name "r-tmcalculator")
-    (version "1.0.7")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TmCalculator" version))
        (sha256
-        (base32 "1yzmswixh694584hbh67h1wx4whdf78sl10bh601aqfyc7aqyjlk"))))
+        (base32 "0b83ww8jb8p3a7qyj5sj8n5f404jhfw78n8fh9asv43nx90dh5pz"))))
     (properties `((upstream-name . "TmCalculator")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-s4vectors
+                             r-rcpp
                              r-iranges
                              r-genomicranges
                              r-genomeinfodb
-                             r-bsgenome
                              r-biostrings
                              r-biocgenerics))
     (native-inputs (list r-knitr))
@@ -15939,12 +16444,25 @@ empirical GCâcontent formulas (Marmur, 1962; Schildkraut, 2010; Wetmur, 199
 Untergasser, 2012; von Ahsen, 2001), and nearestâneighbor thermodynamics
 (Breslauer, 1986; Sugimoto, 1996; Allawi, 1998; @code{SantaLucia}, 2004; Freier,
 1986; Xia, 1998; Chen, 2012; Bommarito, 2000; Turner, 2010; Sugimoto, 1995;
-Allawi, 1997; @code{SantaLucia}, 2005).  Corrections are supported for salt ions
-(@code{SantaLucia}, 1996, 1998; Owczarzy, 2004, 2008) and for chemical
-conditions such as dimethyl sulfoxide and formamide.  This package returns
-result as a GRanges object for interoperability with Bioconductor workflows and
-downstream multi-omics analyses.  Data-level integration reconciles Tm windows
-with external multi-omics GRanges objects through overlap, nearest-feature,
+Allawi, 1997; @code{SantaLucia}, 2005; Zuber, 2022; Ghosh, 2020, 2023).
+Nearest-neighbor parameter sets are provided for DNA, RNA and RNA/DNA hybrid
+duplexes.  These include sets obtained by melting-temperature optimization that
+are fitted directly at a stated sodium concentration (Weber, 2015; Ferreira,
+2019; Basilio Barbosa, 2019; Banerjee, 2020), which replace salt correction
+rather than being corrected; salt correction is skipped automatically when the
+requested condition matches the one a set was fitted at.  The Zuber (2022) set
+additionally replaces the single terminal-AU penalty with end terms that depend
+on the penultimate base pair, applied automatically at both duplex ends.
+Parameter sets measured under molecular crowding (Ghosh, 2020, 2023) are also
+provided for DNA and RNA duplexes, so that duplex stability can be evaluated
+under cell-like rather than dilute-solution conditions.  Corrections are
+otherwise supported for salt ions (@code{SantaLucia}, 1996, 1998; Owczarzy,
+2004, 2008) and for chemical conditions such as dimethyl sulfoxide and
+formamide.  A compiled C++ core and parallel task partitioning profile the human
+genome in 3 minutes on a six-core laptop.  This package returns result as a
+GRanges object for interoperability with Bioconductor workflows and downstream
+multi-omics analyses.  Data-level integration reconciles Tm windows with
+external multi-omics GRanges objects through overlap, nearest-feature,
 windowed-count, and binned-average strategies, returning a single unified
 GRanges object ready for downstream analysis.  Visualization-level integration
 renders multiple feature layers as independent concentric tracks on a shared
@@ -15956,13 +16474,13 @@ correction methods for contrasting Tm and other features across region classes."
 (define-public r-tmbstan
   (package
     (name "r-tmbstan")
-    (version "1.1.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tmbstan" version))
        (sha256
-        (base32 "03gvpq23lzzkachx0yyhv2bwpzlyg8qahn60i9r5a9rdlm70y2a6"))))
+        (base32 "0bxs03cy53aacpq8spcbn4rlg8abiwpkbc5j8gzxv4dcck2bpnkd"))))
     (properties `((upstream-name . "tmbstan")))
     (build-system r-build-system)
     (arguments
@@ -15975,6 +16493,7 @@ correction methods for contrasting Tm and other features across region classes."
                              r-rcppeigen
                              r-rcpp
                              r-bh))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=tmbstan")
     (synopsis "MCMC Sampling from 'TMB' Model Object using 'Stan'")
     (description
@@ -16024,13 +16543,13 @@ full set of packages from the R-spatial ecosystem.")
 (define-public r-tmap-sources
   (package
     (name "r-tmap-sources")
-    (version "0.1")
+    (version "0.1-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tmap.sources" version))
        (sha256
-        (base32 "0zqwqfzf35bl5ccmhnhs3f8xb6325w7w21c0823b6kpjy04v23d2"))))
+        (base32 "0wp0sw7yl2k3dwv1pcr6pycmxs0y4k631gjbjzxjkj3y9kgbpg6v"))))
     (properties `((upstream-name . "tmap.sources")))
     (build-system r-build-system)
     (arguments
@@ -16272,13 +16791,13 @@ executed, and cube and dimension metadata information can be taken.")
 (define-public r-tm-plugin-mail
   (package
     (name "r-tm-plugin-mail")
-    (version "0.3-1")
+    (version "0.3-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tm.plugin.mail" version))
        (sha256
-        (base32 "181ar4n7fp8babpigv72fsb02pvg45wi364h9nqyk5ijsyyf9fw4"))))
+        (base32 "0qg5fiic0r6hjzv4md8msqhiznn362jqd50xihlgwf7i9i0vxqj9"))))
     (properties `((upstream-name . "tm.plugin.mail")))
     (build-system r-build-system)
     (arguments
@@ -16850,13 +17369,13 @@ statistics have independent increments.  Tsiatis, A. A. and Davidian, M., (2022)
 (define-public r-tl
   (package
     (name "r-tl")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tl" version))
        (sha256
-        (base32 "1kn1gc8mkcfh69n9i0diz9svcbw5myzniw2swc7xp368bg2bs82j"))))
+        (base32 "0cxccz55dwib30nbpm5ywrw8f8cvz32lfs0njpqrb0fqf1x5v55i"))))
     (properties `((upstream-name . "tl")))
     (build-system r-build-system)
     (arguments
@@ -16924,13 +17443,13 @@ CR2) can be handled using the @code{tkImg} package for Tcl/Tk'.")
 (define-public r-tkcat
   (package
     (name "r-tkcat")
-    (version "1.2.1")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TKCat" version))
        (sha256
-        (base32 "1kln9vvsj2h3hj053s9vbfdj5skswcgxw63ama7y0jxpxim1idn8"))))
+        (base32 "1dj7mxr1vxp1f7iscyb9pkx2vjhml6gn4i9nyxz2nbd9qh32152h"))))
     (properties `((upstream-name . "TKCat")))
     (build-system r-build-system)
     (arguments
@@ -16972,6 +17491,44 @@ relationships.  These MDBs are then gathered in catalogs that can be easily
 explored and shared.  Finally, TKCat provides tools to easily subset, filter and
 combine MDBs and create new catalogs suited for specific needs.")
     (license license:gpl3)))
+
+(define-public r-tkapprox
+  (package
+    (name "r-tkapprox")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TKApprox" version))
+       (sha256
+        (base32 "0cjhffph96iv78i6dcnggk75nlv6vkffazmq33m7vw6z0mncy2jp"))))
+    (properties `((upstream-name . "TKApprox")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-numderiv r-maxlik r-mass r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=TKApprox")
+    (synopsis
+     "General Framework for Bayesian Estimation Using the 'Tierney'-'Kadane' Approximation")
+    (description
+     "This package provides a distribution-independent framework for Bayesian
+estimation of arbitrary univariate probability models using the Tierney'-'Kadane
+approximation ('Tierney & Kadane', 1986 <doi:10.1080/01621459.1986.10478240>).
+Users specify the probability distribution, likelihood, prior distributions, and
+censoring mechanism, while the package automatically constructs the posterior
+distribution, computes posterior modes and Hessian matrices, approximates
+posterior expectations under several Bayesian loss functions, and returns
+Bayesian parameter estimates, posterior covariance matrices, credible intervals,
+diagnostic plots, and model comparison statistics.  Supports complete, right-,
+left-, interval-, Type-I, Type-II, progressive Type-II, hybrid, and doubly
+censored data ('Lawless', 2003 <ISBN:978-0-471-37215-8>; Meeker & Escobar', 1998
+<ISBN:978-0-471-14328-4>; Balakrishnan & Aggarwala', 2000
+<ISBN:978-0-8176-4129-0>; Kundu & Pradhan', 2009 <doi:10.1198/TECH.2009.0019>),
+making it a flexible tool for Bayesian reliability, survival, and lifetime data
+analysis.")
+    (license license:gpl3+)))
 
 (define-public r-tivy
   (package
@@ -17178,41 +17735,41 @@ Relevant references include Baker and King (2010)
 (define-public r-tissot
   (package
     (name "r-tissot")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tissot" version))
        (sha256
-        (base32 "12s3mq7vgkrx6l7sv2jfa9gs1pjimwwr0pz1b3lsy4qqcp3jr3k4"))))
+        (base32 "1malav6gfcz74xkz8xq5y5hbvdncpjmrikf22xn3179cdpw0bvwc"))))
     (properties `((upstream-name . "tissot")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble r-gdalraster))
-    (home-page "https://github.com/hypertidy/tissot")
+    (propagated-inputs (list r-tibble r-proj))
+    (home-page "https://hypertidy.github.io/tissot/")
     (synopsis "Tissot Indicatrix for Map Projection Distortion")
     (description
      "Compute and visualize the Tissot Indicatrix for map projections.  The indicatrix
 characterizes projection distortion by computing scale factors, angular
 deformation, areal distortion, and convergence at arbitrary points.  Based on
 the calculations shared by Bill Huber on
-<https://gis.stackexchange.com/a/5075/482>.  Uses GDAL for coordinate
-transformation.  Developed using the method published in Snyder, JP (1987)
-<doi:10.3133/pp1395>.")
+<https://gis.stackexchange.com/a/5075/482>.  Uses PROJ for coordinate
+transformation and distortion factor computation.  Developed using the method
+published in Snyder, JP (1987) <doi:10.3133/pp1395>.")
     (license license:expat)))
 
 (define-public r-tirt
   (package
     (name "r-tirt")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tirt" version))
        (sha256
-        (base32 "0prl026mg820hjf05jjb3gdgarvmw03ld6yc3kclwamklfdgybbv"))))
+        (base32 "0zp02612ba0hlv1pdiz2iv7dhzvpb87hvawlp4lrrgvf47hffarq"))))
     (properties `((upstream-name . "tirt")))
     (build-system r-build-system)
     (arguments
@@ -17248,19 +17805,26 @@ known item parameters or vice versa, which is essential for pre-equating studies
 and item bank maintenance.  Comprehensive data simulation functions are included
 to generate synthetic datasets with complex structures, including mixed-model
 blocks and specific testlet effects, aiding in methodological research and study
-design validation.  Researchers can try multiple simulation situations.")
+design validation.  Researchers can try multiple simulation situations.  A suite
+of post-estimation tools is also provided, including item and test information
+functions with the conditional standard error of measurement, summed-score to
+scale-score conversion tables (expected a posteriori, weighted likelihood, and
+maximum likelihood), person-fit and item-fit statistics, local dependence
+diagnostics (Yen's Q3), differential item functioning (M-H and logistic
+regression), reliability coefficients, test characteristic curves, and mixture
+(latent-class) item response models.")
     (license license:gpl3)))
 
 (define-public r-tipse
   (package
     (name "r-tipse")
-    (version "2.0")
+    (version "2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tipse" version))
        (sha256
-        (base32 "1qvbnnm10jn9l8jyp5460hc9zvahpchfhpci34vgpiql9i575bpp"))))
+        (base32 "0fiakb4zamdkg9lrqq8nnlx7czpdg92x8vfv9lf2d4qa779f58zm"))))
     (properties `((upstream-name . "tipse")))
     (build-system r-build-system)
     (arguments
@@ -17274,7 +17838,7 @@ design validation.  Researchers can try multiple simulation situations.")
                              r-ggplot2
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=tipse")
+    (home-page "https://github.com/openpharma/tipse")
     (synopsis "Tipping Point Analysis for Survival Endpoints")
     (description
      "This package implements tipping point sensitivity analysis for time-to-event
@@ -17627,66 +18191,45 @@ pairwise distance and similarity information to cluster vectors, matrices, or
 tensors.")
     (license license:expat)))
 
-(define-public r-tinyvast
+(define-public r-tinytrail
   (package
-    (name "r-tinyvast")
-    (version "1.6.0")
+    (name "r-tinytrail")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
-       (uri (cran-uri "tinyVAST" version))
+       (uri (cran-uri "tinytrail" version))
        (sha256
-        (base32 "0114hlbyap3b5hd80fjmg4phk6xwny19bxq9zf5canr09542igq6"))))
-    (properties `((upstream-name . "tinyVAST")))
+        (base32 "168da8kz52l9h6mz7n07wbvpq9pc4jf695blqfqz8jsm1h5ny624"))))
+    (properties `((upstream-name . "tinytrail")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-units
-                             r-tmb
-                             r-sparseinv
-                             r-sfnetworks
-                             r-sf
-                             r-sem
-                             r-sdmtmb
-                             r-rcppeigen
-                             r-mgcv
-                             r-matrix
-                             r-insight
-                             r-igraph
-                             r-gstat
-                             r-gpvecchia
-                             r-gpgp
-                             r-fmesher
-                             r-dsem
-                             r-cv
-                             r-corpcor
-                             r-cli
-                             r-checkmate
-                             r-abind))
+    (propagated-inputs (list r-yaml))
     (native-inputs (list r-knitr))
-    (home-page "https://vast-lib.github.io/tinyVAST/")
-    (synopsis "Multivariate Spatio-Temporal Models using Structural Equations")
+    (home-page "https://github.com/tinytrail-r/tinytrail")
+    (synopsis "Lightweight Auto-Updating Project Tracker and Data Dictionary")
     (description
-     "Fits a wide variety of multivariate spatio-temporal models with simultaneous and
-lagged interactions among variables (including vector autoregressive
-spatio-temporal ('VAST') dynamics) for areal, continuous, or network spatial
-domains.  It includes time-variable, space-variable, and space-time-variable
-interactions using dynamic structural equation models ('DSEM') as expressive
-interface, and the mgcv package to specify splines via the formula interface.
-See Thorson et al. (2025) <doi:10.1111/geb.70035> for more details.")
-    (license license:gpl3)))
+     "Once initialized, the package leaves a tiny trail of human- and AI-readable text
+that makes it effortless to keep track of small to medium-sized projects.  The
+package is lightweight (hence tiny') and maintains a YAML trail file recording
+which scripts produced which output files.  Call @code{tinytrail()} once at the
+top of each script to record metadata, wrap any save call with
+@code{tinytrail_write()} to log the output path, and optionally use
+@code{tinytrail_dict()} to capture a data dictionary for each input data frame.")
+    (license license:expat)))
 
 (define-public r-tinytiger
   (package
     (name "r-tinytiger")
-    (version "0.0.11")
+    (version "0.0.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinytiger" version))
        (sha256
-        (base32 "003499z1jy7k87xcg2m7jjka2b4qs3h3c87bb8x57yxxjqfdm6pi"))))
+        (base32 "1drabbvrbddxdkrar2afcb8bablk0z9ry91zj68blsljp78vlnv7"))))
     (properties `((upstream-name . "tinytiger")))
     (build-system r-build-system)
     (arguments
@@ -17761,13 +18304,13 @@ staying lightweight, having only tinytest as its dependency.")
 (define-public r-tinytable
   (package
     (name "r-tinytable")
-    (version "0.17.0")
+    (version "0.18.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinytable" version))
        (sha256
-        (base32 "12apscq31i5axrvyixgmqb7wlwzsimp4i9x7j2i482r3219imrms"))))
+        (base32 "0k1j0jzfd1sazrhb45swahsd0w39ph96rfsl9p6k74rc9m2rv9l3"))))
     (properties `((upstream-name . "tinytable")))
     (build-system r-build-system)
     (arguments
@@ -17809,13 +18352,13 @@ framework, and @code{LaTeX} code with the tabularray package.")
 (define-public r-tinysnapshot
   (package
     (name "r-tinysnapshot")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinysnapshot" version))
        (sha256
-        (base32 "19adi0ylihjz0k8fzx5bwh3aazfwv99a2k02fi7g03fym6sgwyqn"))))
+        (base32 "1r0r536w22barpwh24n0akxy0xbmpkfgxnj6q1bqqchx9cn2qdya"))))
     (properties `((upstream-name . "tinysnapshot")))
     (build-system r-build-system)
     (arguments
@@ -17902,16 +18445,42 @@ server using a JSON configuration file.")
 web API and show it in table or figure format.")
     (license license:expat)))
 
+(define-public r-tinyroxygen
+  (package
+    (name "r-tinyroxygen")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tinyroxygen" version))
+       (sha256
+        (base32 "1j6mh386knympvh3wmdmfjicvr80mp0i3fd1v7vgh3376jh5yjx4"))))
+    (properties `((upstream-name . "tinyroxygen")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=tinyroxygen")
+    (synopsis "Tiny 'Roxygen'-Style Documentation Generator")
+    (description
+     "This package provides a minimalistic, dependency-free alternative to roxygen2'.
+Reads # comment blocks above R functions and objects and turns them into .Rd
+documentation files and a NAMESPACE file.  tinyroxygen is to roxygen2 what
+tinytest is to testthat', a lightweight alternative built with base R only, with
+no recursive dependencies to install.  Roxygen stands for R documentation
+inspired by the Doxygen for C++ documentation tools.")
+    (license license:asl2.0)))
+
 (define-public r-tinyrox
   (package
     (name "r-tinyrox")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinyrox" version))
        (sha256
-        (base32 "0873lynrjsp1ccbs5nw5cvmd1qkdwyybmyh65xpjfh88mwbp4a8r"))))
+        (base32 "1l6cr1rs5plvydjbdh9q4qz5xlswzlmy0rjqyqx4g44pj744flqx"))))
     (properties `((upstream-name . "tinyrox")))
     (build-system r-build-system)
     (arguments
@@ -17929,13 +18498,13 @@ parsing, no inference magic, and explicit-only behavior.")
 (define-public r-tinyplot
   (package
     (name "r-tinyplot")
-    (version "0.6.1")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinyplot" version))
        (sha256
-        (base32 "1qy011zg4r0pya6scrilfmkp86rmi3kkgmminmx0g6vk7x6j4234"))))
+        (base32 "1cplyblm2r0xpgvw925bkh6czs90q272c10vfykhbvy73hrynzz6"))))
     (properties `((upstream-name . "tinyplot")))
     (build-system r-build-system)
     (arguments
@@ -18086,13 +18655,13 @@ library for reading and writing DNG and TIFF files.")
 (define-public r-tinycodet
   (package
     (name "r-tinycodet")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinycodet" version))
        (sha256
-        (base32 "0qi1i3hc2hyjm4bspnmgdjdnjy1bj3c1g035fzhvxailvciz68wf"))))
+        (base32 "1wdlwf92d4q6d026sz49rzpc9iiyzbj8hda09056pz9qqqzxhvja"))))
     (properties `((upstream-name . "tinycodet")))
     (build-system r-build-system)
     (arguments
@@ -18112,16 +18681,43 @@ package.  4) Reducing repetitive code.  Besides linking to Rcpp', tinycodet has
 only one other dependency, namely stringi'.")
     (license license:expat)))
 
+(define-public r-tinycache
+  (package
+    (name "r-tinycache")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tinycache" version))
+       (sha256
+        (base32 "1xwfwfp3ql67xm5xfn99jp46s72g4z9az2ifmhl90m7mzqsrziiq"))))
+    (properties `((upstream-name . "tinycache")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-cpp4r))
+    (home-page "https://pacha.dev/tinycache/")
+    (synopsis "Cache Objects in Disk or Memory")
+    (description
+     "Reuse objects with a long processing time either by storing those in disk or
+memory.  Uses caching to identify R objects (e.g., data frames, plots, etc.) and
+allows repeated access to those.  Created with the specific goal of skipping the
+waiting time for summary tables obtained from large SQL tables.  It is
+extensible to other uses, such as caching plots in Tabler dashboards to reduce
+waiting times.")
+    (license license:asl2.0)))
+
 (define-public r-tinyarray
   (package
     (name "r-tinyarray")
-    (version "2.4.3")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinyarray" version))
        (sha256
-        (base32 "0ndvqz7p4fg5h79h72x7zga7266hpl1qnbnba69lary33hdi4icm"))))
+        (base32 "12kgzd36js8lsw1b8nsm11b3pn8307vrn2shdbrzca36cnmvyw04"))))
     (properties `((upstream-name . "tinyarray")))
     (build-system r-build-system)
     (arguments
@@ -18134,18 +18730,17 @@ only one other dependency, namely stringi'.")
                              r-pheatmap
                              r-patchwork
                              r-limma
+                             r-httr2
                              r-hmisc
                              r-ggplot2
                              r-dplyr
-                             r-clusterprofiler
-                             r-biocmanager))
-    (home-page "https://github.com/xjsun1221/tinyarray")
+                             r-curl))
+    (home-page "https://cran.r-project.org/package=tinyarray")
     (synopsis "Expression Data Analysis and Visualization")
     (description
-     "The Gene Expression Omnibus (<https://www.ncbi.nlm.nih.gov/geo/>) and The Cancer
-Genome Atlas (<https://portal.gdc.cancer.gov/>) are widely used medical public
-databases.  Our platform integrates routine analysis and visualization tools for
-expression data to provide concise and intuitive data analysis and presentation.")
+     "This package provides a toolkit for microarray and RNA-seq data analysis,
+including annotation conversion, differential expression, enrichment, survival
+analysis, and visualization.")
     (license license:expat)))
 
 (define-public r-tintin
@@ -18893,13 +19488,13 @@ via either a ratio or a difference.")
 (define-public r-timedf
   (package
     (name "r-timedf")
-    (version "0.9.1")
+    (version "0.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "timeDF" version))
        (sha256
-        (base32 "1mcz600vrwm8s0vq4b6svraxpk2d7sjs97lw71xvbjm5a6albgbq"))))
+        (base32 "03nn5npg19dicl3yyhd9rspfny3vzls1kmzxr17hqwvdrkqb3p7h"))))
     (properties `((upstream-name . "timeDF")))
     (build-system r-build-system)
     (arguments
@@ -19086,25 +19681,25 @@ Administration (1970, ISBN:9780913236543), Natural Environment Research Council
 (define-public r-timbr
   (package
     (name "r-timbr")
-    (version "0.2.2")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "timbr" version))
        (sha256
-        (base32 "1bz368s1iryxrrxsvq2sbzlm2cnrfqxafzvbsgm6smb3skwyp3sb"))))
+        (base32 "04ck6xrjxzsrrkal901d9nm7l9aqw2mp8rqxysp05zzniv533w9y"))))
     (properties `((upstream-name . "timbr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-vctrs
+                             r-tidyselect
                              r-tidygraph
                              r-tibble
                              r-rlang
                              r-purrr
                              r-pillar
-                             r-memoise
                              r-lifecycle
                              r-dplyr
                              r-cli))
@@ -19351,13 +19946,13 @@ be inserted into the output stream.")
 (define-public r-tikatuwq
   (package
     (name "r-tikatuwq")
-    (version "0.9.0")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tikatuwq" version))
        (sha256
-        (base32 "1g8xnp9vbhsvlvl4k09a7z47d4n5f0ya1dbqrywhrpxsafyz2xqh"))))
+        (base32 "0g0zp65jcffbwvwdpsdrax4zkg19jlfc5fk6jywhs35798mslphp"))))
     (properties `((upstream-name . "tikatuwq")))
     (build-system r-build-system)
     (arguments
@@ -19626,6 +20221,38 @@ hollow data set so that final data set is able to be dealt with time series
 analysis.")
     (license license:gpl3+)))
 
+(define-public r-tiefreecensor
+  (package
+    (name "r-tiefreecensor")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TieFreeCensor" version))
+       (sha256
+        (base32 "0lz74xxap4klghd58v45gmygcrikiw6qm8pb7vvm5zxg6srhz6x1"))))
+    (properties `((upstream-name . "TieFreeCensor")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=TieFreeCensor")
+    (synopsis
+     "Algorithm for Generating Tie-Free Progressive Type-II Censored Samples")
+    (description
+     "Generates tie-free progressive Type-II censored samples from discrete
+distributions and user-specified discrete probability mass functions (PMF) or
+cumulative distribution functions (CDF).  Provides maximum likelihood estimation
+(MLE), Bayesian estimation via Markov chain Monte Carlo (MCMC)
+Metropolis-within-Gibbs sampling, likelihood-based parametric bootstrap
+goodness-of-fit (GOF) tests, profile log-likelihood diagnostics, and discrete
+survival and probability calculations.  Methods are based on Ahmad and Mansour
+(2026) <doi:10.1155/jom/3657078>, Balakrishnan and Dembinska (2008)
+<doi:10.1016/j.jspi.2007.02.006>, Joe and Zhu (2005)
+<doi:10.1002/bimj.200410102>, and Balakrishnan and Aggarwala (2000,
+ISBN:978-1-4612-1334-5).")
+    (license license:gpl3+)))
+
 (define-public r-tidyxl
   (package
     (name "r-tidyxl")
@@ -19695,13 +20322,13 @@ get tidy data frames in response, and cache data in a local database.")
 (define-public r-tidyweather
   (package
     (name "r-tidyweather")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyweather" version))
        (sha256
-        (base32 "1bfmbibm3mlfwgxcn0fc2x3drw43idyfm1mqrjb0xx0nvdvp5zxn"))))
+        (base32 "0mhl5aa3z09clsyq1nk0xwsd54jj4q87mxg5sfawbdd11w5ysi43"))))
     (properties `((upstream-name . "tidyweather")))
     (build-system r-build-system)
     (arguments
@@ -19841,13 +20468,13 @@ convenience plot builders for quick publication-quality charts.")
 (define-public r-tidytuesdayr
   (package
     (name "r-tidytuesdayr")
-    (version "1.3.2")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidytuesdayR" version))
        (sha256
-        (base32 "1q8ca4fw5sadw39b61zjvlzgxg1g0v1701wb4d2w6g5wmyxjz50p"))))
+        (base32 "155ykim0ijzq4z3p0fz31s3d99yzlgivppxkgxvy40vaskc7w2ia"))))
     (properties `((upstream-name . "tidytuesdayR")))
     (build-system r-build-system)
     (arguments
@@ -19860,6 +20487,7 @@ convenience plot builders for quick publication-quality charts.")
                              r-rlang
                              r-readr
                              r-purrr
+                             r-markdown
                              r-magrittr
                              r-lubridate
                              r-jsonlite
@@ -20063,13 +20691,13 @@ cases.")
 (define-public r-tidyterra
   (package
     (name "r-tidyterra")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyterra" version))
        (sha256
-        (base32 "0fga7krjq0hrjay79ngvyba34cp40pqz5xi4ndnsvrh1y75gzczd"))))
+        (base32 "1c88d2fkpw04rfzakb8gk26zkz3pqp2cb1d5j2r7sqzj2q5kvi7h"))))
     (properties `((upstream-name . "tidyterra")))
     (build-system r-build-system)
     (arguments
@@ -20096,7 +20724,8 @@ cases.")
     (description
      "This package provides methods from tidyverse packages for @code{SpatRaster} and
 @code{SpatVector} objects created with terra', plus ggplot2 geoms and scales for
-plotting those objects.")
+plotting those objects.  It is designed to let users manipulate spatial data
+with familiar dplyr and tidyr verbs before visualizing results with ggplot2'.")
     (license license:expat)))
 
 (define-public r-tidytable
@@ -20511,13 +21140,13 @@ interact seamlessly with the tidyverse.")
 (define-public r-tidysem
   (package
     (name "r-tidysem")
-    (version "0.2.10")
+    (version "0.2.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidySEM" version))
        (sha256
-        (base32 "0sqd4p56j4ndnlswsbcsa1g4yhscpajlsdisc5fk7qk7mas956f4"))))
+        (base32 "1kwjlgqkv2ddiqnyxcr032ixs8a014gvj354y6smahdq0s9mjv9m"))))
     (properties `((upstream-name . "tidySEM")))
     (build-system r-build-system)
     (arguments
@@ -20531,7 +21160,6 @@ interact seamlessly with the tidyverse.")
                              r-mplusautomation
                              r-matrix
                              r-lavaan
-                             r-igraph
                              r-gtable
                              r-ggplot2
                              r-future-apply
@@ -20966,6 +21594,40 @@ with any LLM provider that offers chat completion.")
     (license (list license:gpl3+
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-tidyprf
+  (package
+    (name "r-tidyprf")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidyprf" version))
+       (sha256
+        (base32 "0n73r79fp5iddcnx3nl2h7migz9dvjmybxxd5vqa2q7zq0bng91j"))))
+    (properties `((upstream-name . "tidyprf")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-purrr
+                             r-httr2
+                             r-fs
+                             r-dplyr
+                             r-cli
+                             r-arrow))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/bonijoao/tidyprf")
+    (synopsis "Tidy Access to Brazilian Federal Highway Police ('PRF') Data")
+    (description
+     "Download and read Brazilian Federal Highway Police ('PRF') open data on traffic
+accidents by person, by occurrence, and traffic violations
+<https://www.gov.br/prf/pt-br/acesso-a-informacao/dados-abertos/dados-abertos-da-prf>.
+ Data are retrieved on demand as Parquet files distributed via @code{GitHub}
+releases and cached locally for reuse.")
+    (license license:expat)))
+
 (define-public r-tidypopgen
   (package
     (name "r-tidypopgen")
@@ -21016,13 +21678,13 @@ memory.  The full functionalities of the package are described in Carter et al.
 (define-public r-tidyplus
   (package
     (name "r-tidyplus")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyplus" version))
        (sha256
-        (base32 "0lzs6z49xpca3zzc1dqyi2a395539nqrq9aww0d1gdfv2qdd8xx9"))))
+        (base32 "0ainc46s9gh24krpf32j87kls3aa59j0g0sfmjpr7gf8c7yg79h1"))))
     (properties `((upstream-name . "tidyplus")))
     (build-system r-build-system)
     (arguments
@@ -21275,13 +21937,13 @@ Anne (2002)
 (define-public r-tidync
   (package
     (name "r-tidync")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidync" version))
        (sha256
-        (base32 "0rm62pcxchknaz0bgfy1fcam33asspbzhwf03jx9vl5vx78ymk04"))))
+        (base32 "197pswwr2h774zak8y5z1dmznkarxhasx8gxmk8rzcxh0ysa1cmj"))))
     (properties `((upstream-name . "tidync")))
     (build-system r-build-system)
     (arguments
@@ -21291,11 +21953,8 @@ Anne (2002)
                              r-tibble
                              r-rnetcdf
                              r-rlang
-                             r-purrr
                              r-ncmeta
                              r-ncdf4
-                             r-magrittr
-                             r-forcats
                              r-dplyr
                              r-cftime))
     (native-inputs (list r-knitr))
@@ -21534,13 +22193,13 @@ approach, but an uninformative prior is also available.")
 (define-public r-tidyllm
   (package
     (name "r-tidyllm")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyllm" version))
        (sha256
-        (base32 "10pwpkqyzdspxjz6fsfg19n5j7v10bj962zgwvvy09m7yvx26ixr"))))
+        (base32 "1jw8gvxh4r9sgcvz2n2n8js084dbnj2px897lis0lv29xnfp0shz"))))
     (properties `((upstream-name . "tidyllm")))
     (build-system r-build-system)
     (arguments
@@ -21559,6 +22218,7 @@ approach, but an uninformative prior is also available.")
                              r-httr2
                              r-glue
                              r-curl
+                             r-coro
                              r-cli
                              r-base64enc))
     (native-inputs (list r-knitr))
@@ -21579,13 +22239,13 @@ integration into data workflows.  Web services are available at
 (define-public r-tidylearn
   (package
     (name "r-tidylearn")
-    (version "0.3.1")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidylearn" version))
        (sha256
-        (base32 "19hxgz7xzqmrk09m01f71n8xx31lz8abmg6pck4v92j0flqpyg41"))))
+        (base32 "039f675r0xidk8mp5is9rqqy0pbp2sf9b5ias63c2gdanvs6lldi"))))
     (properties `((upstream-name . "tidylearn")))
     (build-system r-build-system)
     (arguments
@@ -21612,7 +22272,7 @@ integration into data workflows.  Web services are available at
                              r-dbscan
                              r-cluster))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/ces0491/tidylearn")
+    (home-page "https://tidylearn.sheetsolved.com")
     (synopsis "Unified Tidy Interface to R's Machine Learning Ecosystem")
     (description
      "This package provides a unified tidyverse-compatible interface to R's machine
@@ -21626,24 +22286,24 @@ function signatures and tidy tibble output.  Results flow into unified
 ggplot2'-based visualization and optional formatted gt tables via the
 @code{tl_table()} family.  The underlying algorithms are unchanged; tidylearn
 simply makes them easier to use together.  Access raw model objects via the $fit
-slot for package-specific functionality.  Methods include random forests Breiman
-(2001) <doi:10.1023/A:1010933404324>, LASSO regression Tibshirani (1996)
-<doi:10.1111/j.2517-6161.1996.tb02080.x>, elastic net Zou and Hastie (2005)
-<doi:10.1111/j.1467-9868.2005.00503.x>, support vector machines Cortes and
-Vapnik (1995) <doi:10.1007/BF00994018>, and gradient boosting Friedman (2001)
-<doi:10.1214/aos/1013203451>.")
+slot for a supervised method, or $fit$model for an unsupervised one.  Methods
+include random forests Breiman (2001) <doi:10.1023/A:1010933404324>, LASSO
+regression Tibshirani (1996) <doi:10.1111/j.2517-6161.1996.tb02080.x>, elastic
+net Zou and Hastie (2005) <doi:10.1111/j.1467-9868.2005.00503.x>, support vector
+machines Cortes and Vapnik (1995) <doi:10.1007/BF00994018>, and gradient
+boosting Friedman (2001) <doi:10.1214/aos/1013203451>.")
     (license license:expat)))
 
 (define-public r-tidylda
   (package
     (name "r-tidylda")
-    (version "0.0.7")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidylda" version))
        (sha256
-        (base32 "0yvad9pf4m9y0yvjs2sg890cisici3gqyx2smy05xpp5w9sivi86"))))
+        (base32 "1vfdji3qpvabgi7rnrsj8xhabrh9fvz3ijxh4dflqzr6k401nj7b"))))
     (properties `((upstream-name . "tidylda")))
     (build-system r-build-system)
     (arguments
@@ -21668,12 +22328,13 @@ Vapnik (1995) <doi:10.1007/BF00994018>, and gradient boosting Friedman (2001)
     (synopsis "Latent Dirichlet Allocation Using 'tidyverse' Conventions")
     (description
      "This package implements an algorithm for Latent Dirichlet Allocation (LDA), Blei
-et at. (2003) <https://www.jmlr.org/papers/volume3/blei03a/blei03a.pdf>, using
+et al. (2003) <https://www.jmlr.org/papers/volume3/blei03a/blei03a.pdf>, using
 style conventions from the tidyverse', Wickham et al.
 (2019)<doi:10.21105/joss.01686>, and tidymodels', Kuhn et
 al.<https://tidymodels.github.io/model-implementation-principles/>.  Fitting is
-done via collapsed Gibbs sampling.  Also implements several novel features for
-LDA such as guided models and transfer learning.")
+done via @code{warpLDA}', a Metropolis-Hastings sampler, Chen et al. (2016)
+<doi:10.48550/@code{arXiv.1510.08628>}.  Also implements several novel features
+for LDA such as guided models and transfer learning.")
     (license license:expat)))
 
 (define-public r-tidylaslog
@@ -22027,6 +22688,42 @@ facilitating reformatting, manipulation and potential connection to other R
 packages.")
     (license license:gpl3+)))
 
+(define-public r-tidygedcom
+  (package
+    (name "r-tidygedcom")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidygedcom" version))
+       (sha256
+        (base32 "0rslva1mpb8p744dzckrk52rbqm9i5q1az2afn05dclndf4vn8yr"))))
+    (properties `((upstream-name . "tidygedcom")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-igraph
+                             r-dplyr
+                             r-bgmisc))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/R-Computing-Lab/tidygedcom/")
+    (synopsis "Read and Tidy 'GEDCOM' Genealogy Files")
+    (description
+     "Reads and parses GEDCOM (Genealogical Data Communication) files, the standard
+interchange format exported by genealogical software, and converts them into
+tidy data frames.  Individuals, families, life events, and parent-child links
+are extracted into rectangular structures suitable for pedigree and kinship
+analysis.  Additional helpers summarize file contents, convert place
+coordinates, and repair malformed records.  Wikipedia family tree templates can
+be parsed into the same tidy structure.  For a discussion of these and related
+data structures see [Hunter et al. (2026) <doi:10.1007/s10519-026-10259-z>].")
+    (license license:gpl3)))
+
 (define-public r-tidygate
   (package
     (name "r-tidygate")
@@ -22132,13 +22829,13 @@ any other data frame.  The main function is @code{predict_gam()}.")
 (define-public r-tidyfun
   (package
     (name "r-tidyfun")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyfun" version))
        (sha256
-        (base32 "1c5xi0hyzaqgns9qp1jjvy5w84wm2yh8snpdvfz1ij0g69g3sv2q"))))
+        (base32 "1lz3m8q143p6fj9r732gb0c31k9zcd841qf6ql2qg2wjijb0my5g"))))
     (properties `((upstream-name . "tidyfun")))
     (build-system r-build-system)
     (arguments
@@ -22236,13 +22933,13 @@ classification algorithms on grouped data.")
 (define-public r-tidyfinance
   (package
     (name "r-tidyfinance")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyfinance" version))
        (sha256
-        (base32 "00x3rgvwwqwzpr1gpygyv3d7wfrdbf14q5kq60lc86ghanbd65r8"))))
+        (base32 "0y2m8zmh7gybfkxb0ibp4ibh4jpg96ay6kh1ilhksvgyhyqlzvnk"))))
     (properties `((upstream-name . "tidyfinance")))
     (build-system r-build-system)
     (arguments
@@ -22264,6 +22961,7 @@ classification algorithms on grouped data.")
                              r-dbplyr
                              r-dbi
                              r-cli))
+    (native-inputs (list r-knitr))
     (home-page "https://r.tidy-finance.org/")
     (synopsis "Tidy Finance Helper Functions")
     (description
@@ -22272,7 +22970,7 @@ variety of topics covered in Scheuch, Voigt, and Weiss (2023)
 <doi:10.1201/b23237>.  The package is designed to provide shortcuts for issues
 extensively discussed in the book, facilitating easier application of its
 concepts.  For more information and resources related to the book, visit
-<https://www.tidy-finance.org/r/index.html>.")
+<https://www.tidy-finance.org/index.html>.")
     (license license:expat)))
 
 (define-public r-tidyfast
@@ -22359,32 +23057,44 @@ ESTIMATE (2013) <doi:10.1038/ncomms3612>.")
 (define-public r-tidyemoji
   (package
     (name "r-tidyemoji")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyEmoji" version))
        (sha256
-        (base32 "069p5i9jw3pn73qc6vq8ik7x4i10v3v3mjmcz1nwhxcczmlzildy"))))
+        (base32 "02s3m6bh9mdak67jllx5sgsyx9xcvkhxmd67af3n02k8616ns0xx"))))
     (properties `((upstream-name . "tidyEmoji")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr r-tibble r-lifecycle r-emoji r-dplyr))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-lifecycle
+                             r-emoji
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://pursuitofdatascience.github.io/tidyEmoji/")
-    (synopsis "Discover, Count and Score Emoji in Text")
+    (synopsis
+     "Discover, Count, Categorise, Score, Translate and Relate Emoji in Text")
     (description
      "This package provides a tidy toolkit for working with the emoji in any text
 column, such as social-media posts, product reviews, chat logs or survey
 responses.  Unicode is awkward to handle and not every code point is an emoji,
 which makes emoji statistics fiddly to obtain. @code{tidyEmoji} extracts,
-counts, categorises and sentiment-scores emoji with grapheme-aware detection (so
-skin-tone and multi-person sequences stay intact), returning tidy data frames
-that slot straight into a tidyverse workflow.  The bundled emoji sentiment
-lexicon is from the Emoji Sentiment Ranking of Kralj Novak et al. (2015)
-<doi:10.1371/journal.pone.0144296>, released under CC BY-SA 4.0.")
+counts, categorises, sentiment-scores and emotion-scores emoji, converts them to
+and from text (for accessibility and NLP preprocessing), searches the emoji
+catalogue, maps emoji co-occurrence and sequences (graph-ready edge lists and
+n-grams), measures where and how densely emoji are used, and builds
+document-by-emoji feature tables for machine learning, with grapheme-aware
+detection (so skin-tone and multi-person sequences stay intact), returning tidy
+data frames that slot straight into a tidyverse workflow.  The bundled emoji
+sentiment lexicon is from the Emoji Sentiment Ranking of Kralj Novak et al.
+(2015) <doi:10.1371/journal.pone.0144296>, released under CC BY-SA 4.0; the
+emotion lexicon is from @code{EmoTag1200} of Shoeb & de Melo (2020)
+<https://aclanthology.org/2020.emnlp-main.720/>, released under the MIT licence.")
     (license license:gpl3+)))
 
 (define-public r-tidyedsurvey
@@ -22661,26 +23371,31 @@ Tutor'(<https://tidydatatutor.com/>) web application.")
 (define-public r-tidydann
   (package
     (name "r-tidydann")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidydann" version))
        (sha256
-        (base32 "1l8ii2r2jxjxq0k0f07b9l3q6vrmh2wiyqvdjfl50al4r9gs552i"))))
+        (base32 "109vmimdajrw2vwbs7i5cngmgrv9hqldvqvrx7ql36x2fammdafg"))))
     (properties `((upstream-name . "tidydann")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble r-parsnip r-generics r-dials))
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-parsnip
+                             r-generics
+                             r-dials
+                             r-dann))
     (home-page "https://github.com/gmcmacran/tidydann")
     (synopsis
-     "Add the 'dann' Model and the 'sub_dann' Model to the Tidymodels Ecosystem")
+     "Add the 'dann' Model and the 'sub_dann' Model to the 'tidymodels' Ecosystem")
     (description
-     "This package provides model specifications, tuning parameters for models in dann
-package.  Models based on Hastie (1996)
-<https://web.stanford.edu/~hastie/Papers/dann_IEEE.pdf>.")
+     "This package provides model specifications and tuning parameters that make the
+models in the dann package available to the tidymodels ecosystem.  Models based
+on Hastie (1996) <https://web.stanford.edu/~hastie/Papers/dann_IEEE.pdf>.")
     (license license:expat)))
 
 (define-public r-tidycwl
@@ -22926,6 +23641,46 @@ univariate cumulative incidence estimates and competing risk regression.
 Methods follow those introduced in Fine and Gray (1999) <doi:10.1002/sim.7501>.")
     (license license:agpl3+)))
 
+(define-public r-tidycjk
+  (package
+    (name "r-tidycjk")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidycjk" version))
+       (sha256
+        (base32 "1k4vzdlaa4n17whh5jbnbp2nd3xspgvh1jnxvs1k5s5m8zxm9rag"))))
+    (properties `((upstream-name . "tidycjk")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-stringi r-dplyr))
+    (home-page "https://pursuitofdatascience.github.io/tidyckj/")
+    (synopsis "Tidy Tools for Chinese, Japanese and Korean Text")
+    (description
+     "This package provides a tidy toolkit for text that is written in Chinese,
+Japanese or Korean.  Most text tooling in R assumes that words are separated by
+whitespace, which CJK writing does not use, so ordinary summaries of a text
+column either treat a sentence as one undifferentiated blob or split it into
+isolated characters.  Word segmentation is therefore a pluggable engine that the
+caller names explicitly rather than a bundled dictionary, because where a word
+ends is a fact about a language and not about Unicode.  tidycjk classifies
+characters by Unicode block, reports which script and which language a text is
+written in, measures how much of a text is CJK, and turns those measurements
+into tibbles that slot straight into a tidyverse workflow.  It also measures
+display width in terminal columns, pads and truncates to a width rather than to
+a character count, and normalises fullwidth and halfwidth forms surgically --
+including composing halfwidth katakana voiced marks into single code points --
+without the collateral damage of a full NFKC pass.  Language detection
+deliberately returns NA rather than guessing when a text is written in Han
+characters only, because Japanese written without kana cannot be distinguished
+from Chinese by script alone.  Everything is derived from the Unicode
+specification; the package makes no network requests and needs no compiled code
+of its own.")
+    (license license:gpl3+)))
+
 (define-public r-tidycharts
   (package
     (name "r-tidycharts")
@@ -23023,13 +23778,13 @@ packages.")
 (define-public r-tidycensuskr
   (package
     (name "r-tidycensuskr")
-    (version "0.2.8")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidycensuskr" version))
        (sha256
-        (base32 "08d1ikrcfv4ig693dc4g1zq4axpz0nh3rxvqq5xbwhpsy7aqdxql"))))
+        (base32 "1knyqjwav0bg3j5qp8qb78hjnix7pr988zlrlcdpr7lyzydd10hg"))))
     (properties `((upstream-name . "tidycensuskr")))
     (build-system r-build-system)
     (arguments
@@ -23264,34 +24019,39 @@ automatically summarize the properties of the binned columns.")
 (define-public r-tidybde
   (package
     (name "r-tidybde")
-    (version "0.6.1")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyBdE" version))
        (sha256
-        (base32 "0xjwgg6vmjhv1yqm8ciqvpwzlqrwab5iqy06zinih2iyg9xzq4zj"))))
+        (base32 "0j2bvsdnphnma5zvfw9fm1df4x47y39bbrlp25xjw7b909nr5hp8"))))
     (properties `((upstream-name . "tidyBdE")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyr
-                             r-tibble
                              r-scales
                              r-readr
+                             r-lifecycle
+                             r-jsonlite
                              r-ggplot2
-                             r-dplyr))
+                             r-dplyr
+                             r-cli))
     (native-inputs (list r-quarto))
     (home-page "https://ropenspain.github.io/tidyBdE/")
-    (synopsis "Retrieve Data from 'Banco de EspaÃ±a'")
+    (synopsis "Retrieve Time Series Data from 'Banco de EspaÃ±a'")
     (description
-     "This package provides tools for retrieving time series data from Banco de
-EspaÃ±a ('@code{BdE}') as tibble objects.  Banco de EspaÃ±a is the national
-central bank and, within the framework of the Single Supervisory Mechanism
-('SSM'), the supervisor of the Spanish banking system alongside the European
-Central Bank.  This package is not sponsored, endorsed or administered by Banco
-de EspaÃ±a'.")
+     "This package provides tools for retrieving Banco de EspaÃ±a ('@code{BdE}') time
+series data as tibble objects from bulk CSV files and the Statistics web service
+(API)'.  Bulk CSV functions use stable @code{BdE} sequential numbers, while API
+functions use API series codes.  Catalog functions support discovery and local
+caching.  Plotting helpers provide ggplot2 palettes, scales and themes.  Banco
+de EspaÃ±a is the national central bank and, within the framework of the Single
+Supervisory Mechanism ('SSM'), the supervisor of the Spanish banking system
+alongside the European Central Bank.  This package is not sponsored, endorsed or
+administered by Banco de EspaÃ±a'.")
     (license license:gpl3+)))
 
 (define-public r-tidybayes
@@ -23371,13 +24131,13 @@ and data comparison.")
 (define-public r-tidyaml
   (package
     (name "r-tidyaml")
-    (version "0.0.6")
+    (version "0.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyAML" version))
        (sha256
-        (base32 "1fhkxf16j9zzn41lgriyx92gnjr0iiza5drgfwg1ib6imv5bbff8"))))
+        (base32 "00wxan4319208qwkg6b9kws45wb69xisxfk2whimr2b4mzlm1gls"))))
     (properties `((upstream-name . "tidyAML")))
     (build-system r-build-system)
     (arguments
@@ -23408,20 +24168,20 @@ for regression and classification problems with a simple verb framework.")
 (define-public r-tidyactuarial
   (package
     (name "r-tidyactuarial")
-    (version "0.1.4")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyactuarial" version))
        (sha256
-        (base32 "1zpdawqqcxil1kjrxz4cbpicgy6jwgpycgbzixh9nf1zydhs7gf1"))))
+        (base32 "09szywizihjwr5idkjpzrqc7rksfa62vyc699pmbz0jjpd09la70"))))
     (properties `((upstream-name . "tidyactuarial")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tibble r-scales r-rlang r-ggplot2 r-dplyr))
-    (home-page "https://cran.r-project.org/package=tidyactuarial")
+    (home-page "https://github.com/JulianFajardo1908/tidyactuarial")
     (synopsis "Tidy Tools for Actuarial Mathematics and Life Contingencies")
     (description
      "This package provides tidyverse-aligned tools for actuarial mathematics and life
@@ -23494,13 +24254,13 @@ of this package is to produce tide tables.")
 (define-public r-tides
   (package
     (name "r-tides")
-    (version "2.1")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Tides" version))
        (sha256
-        (base32 "0da3z010ali83qf8mf1znicqv8vvsa5r93mc40ax60ln2w33nlrm"))))
+        (base32 "14i31j2ql6y4p7b316419xp6aikxvx5b9dxb5dp94rjq7jgz0mmy"))))
     (properties `((upstream-name . "Tides")))
     (build-system r-build-system)
     (arguments
@@ -23667,13 +24427,13 @@ area under the curve, wash in rate and wash out rate are calculated.")
 (define-public r-tibblify
   (package
     (name "r-tibblify")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tibblify" version))
        (sha256
-        (base32 "0yy7i6v0wjl4d2rzkixpnijrx5f47bkmdnwj0d1y80kq2486axlb"))))
+        (base32 "1nzqs2mazhwvfgdiwfmq947lhsaw15y1p4i7xscznd3l1s964bli"))))
     (properties `((upstream-name . "tibblify")))
     (build-system r-build-system)
     (arguments
@@ -23854,13 +24614,13 @@ methods used in the package based on the following publications Stipanuk (1973)
 (define-public r-thsqca
   (package
     (name "r-thsqca")
-    (version "2.0.0")
+    (version "2.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ThSQCA" version))
        (sha256
-        (base32 "0vsfk4ixq96kvjq3d3f4aribv1w5lwawisrxj9p1993m07xb4dfq"))))
+        (base32 "1jpjqgw59dq62hgpzd4f5z0q20m7g5mnraazwwirkmb0m4klfqj8"))))
     (properties `((upstream-name . "ThSQCA")))
     (build-system r-build-system)
     (arguments
@@ -23872,9 +24632,9 @@ methods used in the package based on the following publications Stipanuk (1973)
     (synopsis "Threshold-Sweep QCA")
     (description
      "This package provides threshold sweep methods for Qualitative Comparative
-Analysis ('QCA').  Implements Condition Threshold Sweep-Single (CTS-S),
-Condition Threshold Sweep-Multiple (CTS-M), Outcome Threshold Sweep (OTS), and
-Dual Threshold Sweep (DTS) for systematic exploration of threshold calibration
+Analysis (QCA).  Implements Condition Threshold Sweep-Single (CTS-S), Condition
+Threshold Sweep-Multiple (CTS-M), Outcome Threshold Sweep (OTS), and Dual
+Threshold Sweep (DTS) for systematic exploration of threshold calibration
 effects on crisp-set QCA results.  These methods extend traditional robustness
 approaches by treating threshold variation as an exploratory tool for
 discovering causal structures.  Also provides Fiss (2011)
@@ -23886,7 +24646,7 @@ both parsimonious and intermediate solutions) from peripheral conditions
 <doi:10.1007/978-3-319-75668-4>, with function arguments following QCA
 conventions.  Based on set-theoretic methods by Ragin (2008)
 <doi:10.7208/chicago/9780226702797.001.0001> and established robustness
-protocols by Rubinson et al. (2019) <doi:10.1177/00491241211036158>.  This
+protocols by Oana and Schneider (2024) <doi:10.1177/00491241211036158>.  This
 package supersedes TSQCA'; see the NEWS file for migration guidance.")
     (license license:expat)))
 
@@ -23982,13 +24742,13 @@ Skaltsa et al. (2010) <doi:10.1002/bimj.200900294> and Heagerty et al. (2000)
 (define-public r-thresholdroc
   (package
     (name "r-thresholdroc")
-    (version "2.9.6")
+    (version "2.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ThresholdROC" version))
        (sha256
-        (base32 "01fa72phdhgz7dqlj3vhnfnflgmn4gxlfmd52mpa72lg4lnk9849"))))
+        (base32 "17fi95sdr6l42zj64ygqws35zfndzhqdwrrgs9n9l29dxywrvlf5"))))
     (properties `((upstream-name . "ThresholdROC")))
     (build-system r-build-system)
     (arguments
@@ -24288,13 +25048,13 @@ citation(\"@code{threeBrain}\") for details.")
 (define-public r-thredds
   (package
     (name "r-thredds")
-    (version "0.1-4")
+    (version "0.1-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "thredds" version))
        (sha256
-        (base32 "1323hgd7id4q1g88bczvnghdlb3g2vmywhij0f98ghj0a0ip6v00"))))
+        (base32 "1a4hw0pqfkgmgk4wdjbwa9lb6gy2cyab6lcr8vcqdpjn0lhv82mr"))))
     (properties `((upstream-name . "thredds")))
     (build-system r-build-system)
     (arguments
@@ -24305,7 +25065,7 @@ citation(\"@code{threeBrain}\") for details.")
     (synopsis "Crawler for Navigating THREDDS Catalogs")
     (description
      "This package provides a crawler for programmatically navigating THREDDS Data
-Server (<https://www.unidata.ucar.edu/software/tds/>) catalogs, and access
+Server (<https://www.unidata.ucar.edu/software/tds>) catalogs, and access
 dataset metadata and resources.")
     (license license:expat)))
 
@@ -24438,13 +25198,13 @@ University and Thomas Jefferson University Hospital, Philadelphia, PA.")
 (define-public r-thisutils
   (package
     (name "r-thisutils")
-    (version "0.4.7")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "thisutils" version))
        (sha256
-        (base32 "14gafz908ab2s8aygkp5syqbrbyq0frv1wlkqsshw7qd6ybvy4vl"))))
+        (base32 "12abwilc4f7diq10a8wlfrxxib2ma675lxjv8p1i27zlll4q4s1c"))))
     (properties `((upstream-name . "thisutils")))
     (build-system r-build-system)
     (arguments
@@ -24452,30 +25212,34 @@ University and Thomas Jefferson University Hospital, Philadelphia, PA.")
       #:tests? #f))
     (propagated-inputs (list r-rlang
                              r-rcpp
+                             r-ps
                              r-pak
                              r-matrix
-                             r-foreach
-                             r-doparallel
-                             r-cli))
+                             r-cli
+                             r-callr))
+    (native-inputs (list r-knitr))
     (home-page "https://mengxu98.github.io/thisutils/")
-    (synopsis
-     "Collection of Utility Functions for Data Analysis and Computing")
+    (synopsis "Reliable Utilities for Reusable Research Workflows")
     (description
-     "This package provides utility functions for data analysis and computing.
-Includes functions for logging, parallel processing, and other computational
-tasks to streamline workflows.")
+     "This package provides reusable building blocks for research packages across
+matrix representation, numerical computation, neighborhood evaluation,
+controlled execution, and runtime interoperability.  Core tools preserve
+declared sparse semantics, expose dense-memory and output boundaries,
+standardize neighborhood and classification results, and align serial and
+parallel result and error behavior.  Additional helpers support structured
+messages, optional dependency checks, and common statistical workflows.")
     (license license:expat)))
 
 (define-public r-thisplot
   (package
     (name "r-thisplot")
-    (version "0.4.0")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "thisplot" version))
        (sha256
-        (base32 "1d70b7aybc262lwa5q7fww1ccx2h7ccj0q0c18ashyi6xym48m3n"))))
+        (base32 "1mjr8029j8fnw4qxq4ys21xpias22vr1n3fdyi07qykyl1fkn7my"))))
     (properties `((upstream-name . "thisplot")))
     (build-system r-build-system)
     (arguments
@@ -24493,6 +25257,7 @@ tasks to streamline workflows.")
                              r-ggforce
                              r-geomtextpath
                              r-dendextend
+                             r-complexheatmap
                              r-cli))
     (home-page "https://mengxu98.github.io/thisplot/")
     (synopsis "Utility Functions for Plotting")
@@ -24532,13 +25297,13 @@ package:targets', and @code{testthat::source_file()}'.")
 (define-public r-thinr
   (package
     (name "r-thinr")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "thinr" version))
        (sha256
-        (base32 "1w6574bmfkwih07iyvpd49c8p9ix6j3d2q328ag8r1nc5683m379"))))
+        (base32 "1igxdbkvci2v0r48kg0lapnahmnxndc5ad8pgby304rr23l0j0jv"))))
     (properties `((upstream-name . "thinr")))
     (build-system r-build-system)
     (arguments
@@ -24559,9 +25324,9 @@ Hilditch (1969, in Machine Intelligence 4'), OPTA / SPTA (Naccache and Shinghal
 1984), and Holt and colleagues (1987) <doi:10.1145/12527.12531>.  Also provides
 the medial axis transform (Blum 1967) and a distance transform implementation
 following Felzenszwalb and Huttenlocher (2012) <doi:10.4086/toc.2012.v008a019>.
-The drop-in @code{thinImage()} matches the signature of @code{thinImage()} in
-the EBImage package on Bioconductor so existing code can switch parsers without
-changes.  The wider @code{thin()} API selects the algorithm by name.")
+The @code{thin()} API selects the algorithm by name, defaulting to Zhang-Suen.
+Complements the morphology in the EBImage package, which does not provide a
+thinning operator.")
     (license license:lgpl3)))
 
 (define-public r-thinkr
@@ -25000,6 +25765,68 @@ principles and workflows, theorytools facilitates the systematic improvement of
 theoretical frameworks and enhances their discoverability and usability.")
     (license license:gpl3+)))
 
+(define-public r-theoryforge
+  (package
+    (name "r-theoryforge")
+    (version "0.6.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "theoryforge" version))
+       (sha256
+        (base32 "1m9yzfvrb22lrpvgh5gan1ff4113maz8ylk09rzds2p31i9wm4lq"))))
+    (properties `((upstream-name . "theoryforge")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml r-jsonlite))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/pablobernabeu/theoryforge")
+    (synopsis "Systematic Theory Development")
+    (description
+     "This package provides a rigorous, reproducible workflow for building, developing
+and testing scientific theories represented as versioned, machine-checkable
+objects.  Functions read and validate theory objects, score them against a
+versioned rigour checklist, screen constructs for lexical redundancy, and emit
+byte-identical diagram intermediate representations.  The package is the
+feature-parity twin of a Python package of the same name, with behaviour pinned
+by a shared specification so the two implementations produce identical verdicts.")
+    (license license:expat)))
+
+(define-public r-theordinals
+  (package
+    (name "r-theordinals")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TheOrdinals" version))
+       (sha256
+        (base32 "1gd9bsfv2q660jwk9279a95mv5bdi6nz28nf47mlm1irx3ac58lv"))))
+    (properties `((upstream-name . "TheOrdinals")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-consrank))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=TheOrdinals")
+    (synopsis "Aggregation and Consensus Methods for Preference-Approvals")
+    (description
+     "This package provides tools for aggregating ordinal preference data into a group
+consensus.  The package implements DIVA (Divide and Conquer for
+Preference-Approvals), a distance-based aggregation method for
+preference-approvals, that is, preference data in which voters express both a
+(weak) ranking and an approval of the alternatives.  The consensus is the
+preference-approval minimising the average distance to the set of voters,
+measured through the family of distances of Erdamar, Garcia-Lapresta,
+Perez-Roman and Sanver (2014) <doi:10.1016/j.mathsocsci.2013.10.005>.  Methods
+and applications are described in Albano and Romano (2026)
+<doi:10.1007/s11634-025-00663-4>.  The package is designed to be extended with
+further methods for ordinal preference data.")
+    (license license:gpl3)))
+
 (define-public r-theopenair
   (package
     (name "r-theopenair")
@@ -25036,6 +25863,46 @@ wrapper functions for the @code{ChatGPT} endpoint and several high-level
 functions that enable the integration of @code{ChatGPT} capabilities in diverse
 data-related tasks, such as data cleansing and automated analytics script
 generation.")
+    (license license:expat)))
+
+(define-public r-themescoper
+  (package
+    (name "r-themescoper")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "themescopeR" version))
+       (sha256
+        (base32 "1kadncd6vkccmaa2gp4hg57jswc7wqhkji1mi1fyyk45s0nz5qvw"))))
+    (properties `((upstream-name . "themescopeR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-udpipe
+                             r-rlang
+                             r-readxl
+                             r-readr
+                             r-matrix
+                             r-igraph
+                             r-ggrepel
+                             r-ggplot2
+                             r-dplyr
+                             r-cli))
+    (home-page "https://github.com/lucadaniello/themescopeR")
+    (synopsis "Social Representation Analysis via Semantic Network Mapping")
+    (description
+     "This package implements the @code{ThemeScope} framework for detecting and
+visualising social representations in large-scale digital text corpora.  From
+raw documents it builds, via udpipe annotation, sentence-level word
+co-occurrence networks and derives two community-level indicators grounded in
+Social Representation Theory: the Prototypical Salience Index (PSI) for
+anchoring and the Concreteness Score (CS) for objectification.  Communities are
+located in a two-dimensional, theoretically grounded representational map.  The
+whole pipeline is usable from the R console; an optional shiny graphical
+interface calls the same exported functions.  The method is described in
+Misuraca, Spano and D'Aniello (2026) <doi:10.1177/01655515261454276>.")
     (license license:expat)))
 
 (define-public r-thematic
@@ -25185,38 +26052,16 @@ Braun, N., Neuffer, J., and Kempa-Liehr A.W. (2018)
 (2021) <https://facebookresearch.github.io/Kats/>.")
     (license license:expat)))
 
-(define-public r-thankr
-  (package
-    (name "r-thankr")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "thankr" version))
-       (sha256
-        (base32 "089ikp85d5ia6a1qzmw8dkgcmz628cibmwfzcpk7m3ii8acxq91w"))))
-    (properties `((upstream-name . "thankr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=thankr")
-    (synopsis "Find Out Who Maintains the Packages you Use")
-    (description
-     "Find out who maintains the packages you use in your current session or in your
-package library and maybe say thank you'.")
-    (license license:expat)))
-
 (define-public r-thamesmix
   (package
     (name "r-thamesmix")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "thamesmix" version))
        (sha256
-        (base32 "1z7nm9wq2l5ix351a112y4ia9qg446ah2qmj963jjjv9falqyvh3"))))
+        (base32 "0z9hjsmzxhg86hy0cb3m7q1x5vf3mjr1d0i9rj0sap22xcykk5nj"))))
     (properties `((upstream-name . "thamesmix")))
     (build-system r-build-system)
     (arguments
@@ -25240,6 +26085,34 @@ reciprocal marginal likelihood for uni- and multivariate mixture models using
 posterior samples and unnormalized log posterior values via reciprocal
 importance sampling.  Metodiev, Irons, Perrot-DockÃ¨s, Latouche & Raftery (2025)
 <doi:10.48550/@code{arXiv.2504.21812>}.")
+    (license license:gpl3+)))
+
+(define-public r-thamesblock
+  (package
+    (name "r-thamesblock")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "thamesblock" version))
+       (sha256
+        (base32 "1shhairw2569n0mmzzch5bwjn406glcv2mcc0x97vn9zkh28r3d8"))))
+    (properties `((upstream-name . "thamesblock")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr r-mclust r-matrix r-label-switching
+                             r-combinat))
+    (home-page "https://cran.r-project.org/package=thamesblock")
+    (synopsis
+     "Truncated Harmonic Mean Estimator of the Marginal Likelihood for Block Models")
+    (description
+     "This package implements the truncated harmonic mean estimator (THAMES) and other
+estimators of the reciprocal marginal likelihood for block models.  This is done
+via reciprocal importance sampling, using posterior samples and unnormalized log
+posterior values.  For further information see Metodiev, Perrot-DockÃ¨s,
+Fouetilou, Latouche & Raftery (2026).")
     (license license:gpl3+)))
 
 (define-public r-thames
@@ -25266,6 +26139,33 @@ reciprocal marginal likelihood using posterior samples and unnormalized log
 posterior values via reciprocal importance sampling.  Metodiev, Perrot-DockÃ¨s,
 Ouadah, Irons, Latouche, & Raftery (2024).  Bayesian Analysis.
 <doi:10.1214/24-BA1422>.")
+    (license license:gpl3+)))
+
+(define-public r-th
+  (package
+    (name "r-th")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TH" version))
+       (sha256
+        (base32 "1vsi3k4dnnlpg5m4vfbfabcc61dbs6icbvwzb6ra0ynh1lg6130g"))))
+    (properties `((upstream-name . "TH")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=TH")
+    (synopsis "Educational Hypothesis Tests in R")
+    (description
+     "This package provides educational implementations of one- and two-sample Z
+tests, Student and Welch t tests, a paired t test, an F test for two variances,
+and Pearson chi-square tests for goodness of fit, independence, and homogeneity.
+ Functions validate mutually exclusive raw-data and summary-statistics
+interfaces, return structured htest-compatible results, and optionally display
+step-by-step graphical explanations.")
     (license license:gpl3+)))
 
 (define-public r-tgst
@@ -25526,13 +26426,13 @@ import, modify, and export tables and templates with little to no code.")
 (define-public r-tfrmt
   (package
     (name "r-tfrmt")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tfrmt" version))
        (sha256
-        (base32 "0bhhj2ijldl3ijdfm8s456dlxsyw0m1n4233yk4y8bh75i8nmqij"))))
+        (base32 "0sk4h9lfp7l9314smr0dg1hwvnwsh8lq6yzya1kxcwhdbgw9ls49"))))
     (properties `((upstream-name . "tfrmt")))
     (build-system r-build-system)
     (arguments
@@ -26105,13 +27005,13 @@ Arabidopsis).")
 (define-public r-tf
   (package
     (name "r-tf")
-    (version "0.4.1")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tf" version))
        (sha256
-        (base32 "0mlhyiyq1cy23ll4fgglcnjc3sh4mvrkpyhk48194dxwk0yrmn1d"))))
+        (base32 "0il8abdivwv3rdxjcw3qdsgnfhxg787lgqqwbkr23r30v4vx4jw9"))))
     (properties `((upstream-name . "tf")))
     (build-system r-build-system)
     (arguments
@@ -26121,8 +27021,6 @@ Arabidopsis).")
                              r-vctrs
                              r-rlang
                              r-purrr
-                             r-pracma
-                             r-mvtnorm
                              r-mgcv
                              r-cli
                              r-checkmate))
@@ -26163,6 +27061,38 @@ particular, functions that help with the preparation of plain-text reports, e.g.
 for expanding and aligning strings that form the lines of such reports.  The
 package also provides generic functions for transforming R objects to HTML and
 to plain text.")
+    (license license:gpl3)))
+
+(define-public r-textures
+  (package
+    (name "r-textures")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "textures" version))
+       (sha256
+        (base32 "16dnj9sy0pbfwp6z3mk12qsmz6ch9d5syv1cdzpba6rxqs07q88j"))))
+    (properties `((upstream-name . "textures")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-cpp11))
+    (native-inputs (list r-knitr))
+    (home-page "https://hypertidy.github.io/textures/")
+    (synopsis "Quad Mesh Primitives and Texture Mapping for Grids")
+    (description
+     "Generate quad mesh primitives from the compact specification of a regular grid,
+its dimension and extent.  Provides fast generation of mesh indexes and
+vertices, an unexpanded intermediate form (the grid edge coordinates), and a
+compact serializable specification for meshes that are generated on demand.
+Meshes are mesh3d objects as used by the rgl package, constructed without
+requiring any graphics engine, with support for texture mapping (Heckbert (1986)
+<doi:10.1109/MCG.1986.276672>) where an image is draped over a mesh whose
+density is independent of the image resolution.  A C++ header library is
+installed so that other packages may generate mesh components via
+@code{LinkingTo}'.")
     (license license:gpl3)))
 
 (define-public r-texttools
@@ -26266,13 +27196,13 @@ inflected forms together as a single base form.")
 (define-public r-textreuse
   (package
     (name "r-textreuse")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "textreuse" version))
        (sha256
-        (base32 "0kaxrph1pwmcpcbl7720dkqv17h8zayv8a0i5vfn806873p3lbrq"))))
+        (base32 "0vvp93whx6j4wrkmbp87p7a20rhwfmp7960ksn5wx1szrzldr931"))))
     (properties `((upstream-name . "textreuse")))
     (build-system r-build-system)
     (arguments
@@ -26366,13 +27296,13 @@ allows for tokenization, filtering, counting (tf and tfidf) and feature hashing.
 (define-public r-textrar
   (package
     (name "r-textrar")
-    (version "0.8.0")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "textrar" version))
        (sha256
-        (base32 "0bl6f1v0vkbjjlq31wm1j4890jz1zmacsqf7drpirmcn38pq61zh"))))
+        (base32 "05vrdw2v190mydzjicnlzrfc169x83pfzwi7ab5ws57ai0sdzra4"))))
     (properties `((upstream-name . "textrar")))
     (build-system r-build-system)
     (arguments
@@ -26639,6 +27569,35 @@ the disk and load them when needed.  Includes various sentiment lexicons and
 labeled text data sets for classification and analysis.")
     (license license:expat)))
 
+(define-public r-textclassificationtutorial
+  (package
+    (name "r-textclassificationtutorial")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "textclassificationtutorial" version))
+       (sha256
+        (base32 "1k1x2nw2kh8dn7nm2jgdf9s9lcla6r1f9k9pddrhvprs33zj6h2p"))))
+    (properties `((upstream-name . "textclassificationtutorial")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/vkobayashi/textclassificationtutorial")
+    (synopsis "Reproducible Text Classification Workflows")
+    (description
+     "Dependency-light tools and tutorials for teaching reproducible text
+classification.  The package covers HTML text extraction, sentence segmentation,
+text preprocessing, document-term matrices, TF-IDF, keyword extraction, cosine
+similarity, stratified cross-validation, classification metrics, and a
+multinomial Naive Bayes classifier.  It modernizes the code accompanying
+Kobayashi, V. B., Berkers, H. A., Mol, S. T. Kismihok, G., and Den Hartog, D. N.
+(2017) <doi:10.1177/1094428117719322> The package replaces the original scripts
+in the paper.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-textcat
   (package
     (name "r-textcat")
@@ -26747,6 +27706,55 @@ analysis tools.")
 bigrams(two-word), and trigrams (three-word), while removing all stopwords.  It
 also plots the n-grams and corresponding counts as a bar chart.")
     (license license:gpl3)))
+
+(define-public r-textanalysisr
+  (package
+    (name "r-textanalysisr")
+    (version "0.1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TextAnalysisR" version))
+       (sha256
+        (base32 "03vlj2pvqjmljsvzxx80p2lcaw6knra2b31yaxn1d068c2271zw8"))))
+    (properties `((upstream-name . "TextAnalysisR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-widyr
+                             r-tidytext
+                             r-tidyr
+                             r-tibble
+                             r-shiny
+                             r-scales
+                             r-rlang
+                             r-rcolorbrewer
+                             r-quanteda-textstats
+                             r-quanteda
+                             r-matrix
+                             r-magrittr
+                             r-igraph
+                             r-htmlwidgets
+                             r-htmltools
+                             r-ggplot2
+                             r-dt
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://mshin77.github.io/TextAnalysisR/")
+    (synopsis "Text Mining Workflow Tool")
+    (description
+     "This package provides a text mining and natural language processing workflow for
+documents.  Includes preprocessing via quanteda', lexical analysis (term
+frequency-inverse document frequency, log-odds ratios, lexical diversity) via
+tidytext', topic modeling via stm and the BERTopic approach, semantic similarity
+and document clustering on transformer representations, an interactive Shiny
+interface with ggplot2 visualization, optional @code{spaCy} preprocessing, and
+local sentence-transformers or web-based ('@code{OpenAI}', Gemini') model
+providers for retrieval-augmented generation, as described in Shin et al. (2026)
+<doi:10.1177/07319487251412879>.")
+    (license license:gpl3+)))
 
 (define-public r-textab
   (package
@@ -27000,13 +28008,13 @@ according to various dimensions etc.  For more information see
 (define-public r-texreg
   (package
     (name "r-texreg")
-    (version "1.39.5")
+    (version "1.40")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "texreg" version))
        (sha256
-        (base32 "1h5p7awwvnrnp1bxrra9ccxvqr30zbgl20l292cmh7yrysxjlbc6"))))
+        (base32 "1v5qlxpfdzhxaqh6r3vkgrdf7mkavjcs8zd1y7fv4fwd3l18qcwv"))))
     (properties `((upstream-name . "texreg")))
     (build-system r-build-system)
     (arguments
@@ -27014,7 +28022,7 @@ according to various dimensions etc.  For more information see
       #:tests? #f))
     (inputs (list texlive-booktabs))
     (propagated-inputs (list r-httr))
-    (home-page "https://github.com/leifeld/texreg/")
+    (home-page "https://github.com/leifeld-lab/texreg/")
     (synopsis "Conversion of R Regression Output to LaTeX or HTML Tables")
     (description
      "Converts coefficients, standard errors, significance stars, and goodness-of-fit
@@ -27545,6 +28553,47 @@ further statistical analysis.  The user can define his own tests and scoring
 procedures through a GUI.")
     (license license:gpl2)))
 
+(define-public r-testrenlme
+  (package
+    (name "r-testrenlme")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TestREnlme" version))
+       (sha256
+        (base32 "0d8z196xs6d7qff9phc9h151zslrdmj1gl68ckmclchgwwbwbbf1"))))
+    (properties `((upstream-name . "TestREnlme")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-rlang
+                             r-nls-multstart
+                             r-nlme
+                             r-mgsub
+                             r-matrixcalc
+                             r-matrix
+                             r-mass
+                             r-ggplot2
+                             r-expm))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/germaine86/TestREnlme")
+    (synopsis
+     "Nonparametric Tests for Random Effects in Linear and Nonlinear Mixed-Effects Models")
+    (description
+     "This package provides nonparametric permutation tests for testing all or any
+subset of random effects in linear and nonlinear mixed-effects models, without
+requiring normality or other distributional assumptions on random effects or
+errors.  Three distribution-free variance-component estimators are implemented:
+Variance Least Squares ('VLS'), Method of Moments ('MM'), and Method of Moments
+with First-Order Approximation ('MMF').  A permutation procedure is used to
+obtain finite-sample p-values.  Plotting functions support data exploration,
+model evaluation, and communication of results.  Methods are described in
+Uwimpuhwe, Drikvandi, and Blozis (2026) <doi:10.1002/sim.70605>.")
+    (license license:gpl3+)))
+
 (define-public r-testnet
   (package
     (name "r-testnet")
@@ -27762,6 +28811,49 @@ purpose.")
 on 9 hypothesis tests for dependence.")
     (license license:gpl3)))
 
+(define-public r-testflow
+  (package
+    (name "r-testflow")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "testflow" version))
+       (sha256
+        (base32 "0xxn1jdzqzmcf0z5apdp1fc64djzh4az7cam3mabanvx0rl36fic"))))
+    (properties `((upstream-name . "testflow")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-survival
+                             r-rlang
+                             r-purrr
+                             r-ggplot2
+                             r-dplyr
+                             r-cli
+                             r-car
+                             r-broom))
+    (native-inputs (list r-knitr))
+    (home-page "https://CRAN.R-project.org/package=testflow")
+    (synopsis "Workflow for Statistical Testing and Interpretation")
+    (description
+     "This package provides a unified workflow for choosing, running, and interpreting
+common statistical tests, from group comparisons and analysis of variance to
+regression, survival analysis, and diagnostic and agreement statistics.  The
+package combines assumption checks, test selection, effect sizes, formatted
+results, plain-language interpretation, and a sample-size planning module
+covering continuous, binary, survival, ordinal, bioequivalence, and
+precision-based designs.  Implemented methods follow standard references
+including Casella and Berger (2002, ISBN:9780534243128), Hollander et al. (2013,
+ISBN:9781118553299), Agresti (2013, ISBN:9780470463635), Cohen (1988,
+ISBN:9780805802832), Hosmer, Lemeshow and Sturdivant (2013, ISBN:9780470582473),
+and Julious (2010, ISBN:9781584887393).")
+    (license license:expat)))
+
 (define-public r-testex
   (package
     (name "r-testex")
@@ -27879,13 +28971,13 @@ D. L. (1989) <doi:10.1002/ajpa.1330790113> and Konigsberg, L. W. (1991)
 (define-public r-testdesign
   (package
     (name "r-testdesign")
-    (version "1.7.0")
+    (version "1.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TestDesign" version))
        (sha256
-        (base32 "0vrlvmwa6rh4pf8wrzhqk5y6293fd15bqmnkqgd38m1zgl7clyd5"))))
+        (base32 "03vbcc1d30kymr4m5kd3rz3irbks0bx4l0k9lh61jb7wcr996ya6"))))
     (properties `((upstream-name . "TestDesign")))
     (build-system r-build-system)
     (arguments
@@ -27895,6 +28987,7 @@ D. L. (1989) <doi:10.1002/ajpa.1330790113> and Konigsberg, L. W. (1991)
                              r-rcpp
                              r-lpsolve
                              r-logitnorm
+                             r-highs
                              r-foreach
                              r-crayon))
     (native-inputs (list r-knitr))
@@ -28071,13 +29164,13 @@ results from binary diagnostic tests.")
 (define-public r-testassay
   (package
     (name "r-testassay")
-    (version "0.1.1")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "testassay" version))
        (sha256
-        (base32 "1gc35s5an0cpvadwx4bswy5lzcp01az3gnkjhvph6sm3pi3xjxm7"))))
+        (base32 "088xzrb1hwwqxm541rmmlsk8vv3s0rcrldciylgkax7hr333s78z"))))
     (properties `((upstream-name . "testassay")))
     (build-system r-build-system)
     (arguments
@@ -28222,13 +29315,13 @@ explore nonlinear associations between cognition and demographic variables.")
 (define-public r-test-assessr
   (package
     (name "r-test-assessr")
-    (version "2.1.2")
+    (version "2.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "test.assessr" version))
        (sha256
-        (base32 "1npiq1prgf62vbisxnqy9l6jszm2mik9g7bw1lpk90z1lrjyaxh0"))))
+        (base32 "13cpy79rxvglss6iwp9r35r06lqb560abimqwzl5wkvpaqfgwwcy"))))
     (properties `((upstream-name . "test.assessr")))
     (build-system r-build-system)
     (arguments
@@ -28298,13 +29391,13 @@ about tesselle at <https://www.tesselle.org>.")
 (define-public r-tesouror
   (package
     (name "r-tesouror")
-    (version "0.2.3")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tesouror" version))
        (sha256
-        (base32 "0xlibbbf8j85v1df2lr82dl8qxyxrh8sq86g7k78sw0bkkgxwdkf"))))
+        (base32 "13lvrbmjayvb9kg0zw6azz202gax460wlwa96z4ja1rj55br7zpx"))))
     (properties `((upstream-name . "tesouror")))
     (build-system r-build-system)
     (arguments
@@ -28372,13 +29465,13 @@ approximations for probability integrals.\" <doi:10.1016/0266-8920(89)90024-6>."
 (define-public r-terralink
   (package
     (name "r-terralink")
-    (version "1.8.0")
+    (version "1.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "terralink" version))
        (sha256
-        (base32 "0vj1771za0pgcwq0yx2zn4mz1wnkhbxxl1612cggacm2pyxpmwqj"))))
+        (base32 "00q9xmb304rfkhmmbfyfymbis1lwyqdp2dmw2b57hvb6l1lvmlvl"))))
     (properties `((upstream-name . "terralink")))
     (build-system r-build-system)
     (arguments
@@ -28651,13 +29744,13 @@ builds on geepack <doi:10.18637/jss.v015.i02> (HÃ¸jsgaard, Halekoh and Yan,
 (define-public r-tern
   (package
     (name "r-tern")
-    (version "0.9.10")
+    (version "0.9.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tern" version))
        (sha256
-        (base32 "0q6shjand0a90i6vgdmbvl6yjcnja9bgzal96drg0n6nkzcmjlrc"))))
+        (base32 "0i1s1smym0yn4yfwixayc71qkzyjn2prc94slq3m0k7q0ld1clb2"))))
     (properties `((upstream-name . "tern")))
     (build-system r-build-system)
     (arguments
@@ -28672,7 +29765,6 @@ builds on geepack <doi:10.18637/jss.v015.i02> (HÃ¸jsgaard, Halekoh and Yan,
                              r-rdpack
                              r-nestcolor
                              r-mass
-                             r-magrittr
                              r-lifecycle
                              r-labeling
                              r-gtable
@@ -28752,13 +29844,13 @@ for the test of independence.")
 (define-public r-term
   (package
     (name "r-term")
-    (version "0.3.7")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "term" version))
        (sha256
-        (base32 "1f9vspbd4av7nm4qrhdzqvv4b8kw5c5wlrw2akp8sqcd40rc4na7"))))
+        (base32 "1iyscmd2irmpxqfq8qc65hqgvhc2vdpzvfn3njagbqa1qr05i9d8"))))
     (properties `((upstream-name . "term")))
     (build-system r-build-system)
     (arguments
@@ -28767,7 +29859,6 @@ for the test of independence.")
     (propagated-inputs (list r-vctrs
                              r-universals
                              r-rlang
-                             r-purrr
                              r-lifecycle
                              r-extras
                              r-chk))
@@ -28904,13 +29995,13 @@ de-escalated only if an unacceptable level of toxicity is experienced.")
 (define-public r-tepr
   (package
     (name "r-tepr")
-    (version "1.1.15")
+    (version "1.1.17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tepr" version))
        (sha256
-        (base32 "10ysldr19y422n6987q5469z4x971pjz5xm6vffd63f6bgggydjg"))))
+        (base32 "03gbd19bc3vmhnzyiz50x8y0s2ajghygd1pq6k0y83fcadhnsp9s"))))
     (properties `((upstream-name . "tepr")))
     (build-system r-build-system)
     (arguments
@@ -28986,13 +30077,13 @@ Details of the methods are described in Gerard and Hoff (2015)
 (define-public r-tensorts
   (package
     (name "r-tensorts")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tensorTS" version))
        (sha256
-        (base32 "11kmp5qy54rhb302jwpncsbqifgqn7zivav8ph1qbz3f3911chw2"))))
+        (base32 "0rxrsha91129lrmj3djc9f98nlprjz73rb17mhfg8r4i24468r0w"))))
     (properties `((upstream-name . "tensorTS")))
     (build-system r-build-system)
     (arguments
@@ -29521,6 +30612,40 @@ Baker, and Ross (2016) <doi:10.1016/j.foodqual.2016.06.011>, and Pineau et al.
 (2009) <doi:10.1016/j.foodqual.2009.04.005>.")
     (license license:gpl2+)))
 
+(define-public r-temporalmodelr
+  (package
+    (name "r-temporalmodelr")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TemporalModelR" version))
+       (sha256
+        (base32 "1nwqqrkm3bspgs5apa7nd68c1nkkl04halrmpc8g6vk35kndx54m"))))
+    (properties `((upstream-name . "TemporalModelR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra r-sf r-exactextractr r-deldir))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/CJHughes926/TemporalModelR")
+    (synopsis "Temporally Explicit Species Distribution Modelling")
+    (description
+     "Increases the ease of implementing a temporally-explicit modeling methodology
+when building ecological niche and species distribution models.  Provides
+functions to assist with three major steps of temporally-explicit models: (i)
+preprocessing species and environmental data and generating suitable background
+or pseudoabsence data, (ii) building a niche model and generating
+temporally-explicit predictions from that model, and (iii) model postprocessing
+to explore spatiotemporal trends in model predictions.  Methodological and
+theoretical foundations are described in Ingenloff and Peterson (2021)
+<doi:10.1111/2041-210X.13564>, Franklin (2010, ISBN:9780521700023), Peterson et
+al. (2011, ISBN:9780691136882), Blonder (2018) <doi:10.1111/ecog.03187>, Senay
+et al. (2013) <doi:10.1371/journal.pone.0071218>, and Li and Zhang (2024)
+<doi:10.48550/@code{arXiv.2404.05933>}.")
+    (license license:expat)))
+
 (define-public r-temporalhazard
   (package
     (name "r-temporalhazard")
@@ -29709,13 +30834,13 @@ such as area under the curve (Myerson et al., 2001,
 (define-public r-templr
   (package
     (name "r-templr")
-    (version "0.2-3")
+    (version "0.2-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "templr" version))
        (sha256
-        (base32 "14vlp02pfvavaq6m1pg3wji045ndnf10jm9smknf294jgnyha73x"))))
+        (base32 "1bk2flm83xvk12znzbrpg8dk90lji5x48pv97sv28l6rhbx09wix"))))
     (properties `((upstream-name . "templr")))
     (build-system r-build-system)
     (arguments
@@ -29829,6 +30954,37 @@ file formats.")
 temperatures.  Etienne Low-Decarie,Tobias G. Boatman, Noah Bennett,Will
 Passfield,Antonio Gavalas-Olea,Philipp Siegel, Richard J. Geider (2017)
 <doi:10.1002/ece3.3576> .")
+    (license license:gpl3)))
+
+(define-public r-temper
+  (package
+    (name "r-temper")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "temper" version))
+       (sha256
+        (base32 "1akx3w90faqzwa4g27qbz37jm1hr149qhhrk9w931s45vjhhrgbz"))))
+    (properties `((upstream-name . "temper")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-torch
+                             r-scales
+                             r-purrr
+                             r-lubridate
+                             r-imputets
+                             r-ggplot2))
+    (home-page "https://rpubs.com/giancarlo_vercellino/temper")
+    (synopsis "Temporal Encoder-Masked Probabilistic Ensemble Regressor")
+    (description
+     "This package implements a probabilistic ensemble time-series forecaster that
+combines an auto-encoder with a neural decision forest whose split variables are
+learned through a differentiable feature-mask layer.  Functions are written with
+torch tensors and provide CRPS (Continuous Ranked Probability Scores) training
+plus mixture-distribution post-processing.")
     (license license:gpl3)))
 
 (define-public r-tempdisagg
@@ -30104,6 +31260,44 @@ interface that takes some work off the programmer.")
 with ease (e.g. you send messages, images, files from R to your smartphone).")
     (license license:gpl3)))
 
+(define-public r-tejor
+  (package
+    (name "r-tejor")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tejoR" version))
+       (sha256
+        (base32 "196k5hyqshg08ybn6vqz08ssvj4w9krs1q3gicjw8yhi70sp2d8v"))))
+    (properties `((upstream-name . "tejoR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sf r-jsonlite r-digest))
+    (home-page "https://github.com/adriGr52/tejoR")
+    (synopsis
+     "Statistical Harmonization of Territorial Series Across Changing Geographies")
+    (description
+     "Builds, validates, seals and applies weighting matrices ('crosswalks') to carry
+statistical series across changing zoning systems, such as the transition from
+the 112 Unidades de Planeamiento Zonal (UPZ) to the 33 Unidades de Planeamiento
+Local (UPL) in Bogota (Decree 555 of 2021).  Implements the tejo-crosswalk/0.2
+specification shared with the Python package tejo': sha256'-sealed artifacts,
+non-negative weights that sum to one for each source unit, dasymetric weighting
+with vector ancillary data via sf', rates that are never interpolated directly,
+and missing values that propagate instead of being silently imputed.  Methods:
+Tobler (1979) <doi:10.1080/01621459.1979.10481647>; Mennis (2003)
+<doi:10.1111/0033-0124.10042>.  Descripcion en espanol: construye, valida, sella
+y aplica matrices de ponderadores ('crosswalks') para trasladar series
+estadisticas entre mallas geograficas que cambian, como la transicion de UPZ a
+UPL en Bogota (Decreto 555 de 2021): integridad por sha256', pesos no negativos
+que suman uno por unidad fuente, metodo dasimetrico con ancilar vectorial via
+sf', tasas que nunca se interpolan directamente y valores faltantes que se
+propagan en lugar de imputarse.")
+    (license license:expat)))
+
 (define-public r-tejapi
   (package
     (name "r-tejapi")
@@ -30252,13 +31446,13 @@ description proposed in Lyu et al. (2026)
 (define-public r-tectonicr
   (package
     (name "r-tectonicr")
-    (version "0.4.8")
+    (version "0.4.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tectonicr" version))
        (sha256
-        (base32 "1i8v031b197xl1za3zzlpvc9k3azcnl8ndnrkxqh1gqivamlddsc"))))
+        (base32 "0s0c7iy3xnfsq0shhjf8ai0cmmabwlw5mjxnxjcz9wp0xfvxwyj9"))))
     (properties `((upstream-name . "tectonicr")))
     (build-system r-build-system)
     (arguments
@@ -30274,7 +31468,6 @@ description proposed in Lyu et al. (2026)
                              r-spatstat-explore
                              r-smoothr
                              r-sf
-                             r-rlang
                              r-rcolorbrewer
                              r-lifecycle
                              r-ggplot2
@@ -30362,13 +31555,13 @@ Okajima et al. (2012) <doi:10.1007/s11284-011-0905-5>.")
 (define-public r-teal-widgets
   (package
     (name "r-teal-widgets")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal.widgets" version))
        (sha256
-        (base32 "0w026nrqgyi8xv6bppab2561ij422gjqlzvxlzqgp6bh9yrzdd5l"))))
+        (base32 "1r6bkipjn9ss1mym3kdmjl3zvpd608nrn6y26rcxy9x05y2rrv3x"))))
     (properties `((upstream-name . "teal.widgets")))
     (build-system r-build-system)
     (arguments
@@ -30403,13 +31596,13 @@ manipulation of application layout and plot or table settings.")
 (define-public r-teal-transform
   (package
     (name "r-teal-transform")
-    (version "0.7.1")
+    (version "0.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal.transform" version))
        (sha256
-        (base32 "188g32q4ly1zmv3x7wwy35vyx885898baj8ikms2vs5rwx3kyxj0"))))
+        (base32 "1jk0li2mfyyiv7kjbyn8jnbv4v7g7isc86lqfci7cyfl3hw6ank3"))))
     (properties `((upstream-name . "teal.transform")))
     (build-system r-build-system)
     (arguments
@@ -30440,13 +31633,13 @@ facilitates dataset merging in teal framework.")
 (define-public r-teal-slice
   (package
     (name "r-teal-slice")
-    (version "0.8.0")
+    (version "0.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal.slice" version))
        (sha256
-        (base32 "1p0q1m60zmyyanzlyhaf7xinhiv10xpgp3hdg6g1s5q8a91h5ryr"))))
+        (base32 "1z4g3wr0c6jm6hs0dx477fwjn469rhkp34icrpla69a27qzzd7qi"))))
     (properties `((upstream-name . "teal.slice")))
     (build-system r-build-system)
     (arguments
@@ -30481,13 +31674,13 @@ displays filtered and unfiltered observation counts.")
 (define-public r-teal-reporter
   (package
     (name "r-teal-reporter")
-    (version "0.6.1")
+    (version "0.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal.reporter" version))
        (sha256
-        (base32 "1951rg5w985n9khrrjgb1yy6xhmvpbaqassarvwim89sm462zl5d"))))
+        (base32 "06y85s8n592vk93vh7l7vp5hg5bmglg070f8nq52hwm38iymxxr9"))))
     (properties `((upstream-name . "teal.reporter")))
     (build-system r-build-system)
     (arguments
@@ -30529,13 +31722,13 @@ supporting reproducible research and analysis.")
 (define-public r-teal-picks
   (package
     (name "r-teal-picks")
-    (version "0.1.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal.picks" version))
        (sha256
-        (base32 "1r0fca7yx287gk2ddsqp9g2wa6nssijgfxsw386d2w1fbmr39aq1"))))
+        (base32 "089r8q6w9z5bwln2ah26fgf89m7nxq8hi2m0b00gqj75fq1lf24f"))))
     (properties `((upstream-name . "teal.picks")))
     (build-system r-build-system)
     (arguments
@@ -30568,24 +31761,26 @@ and transformed into analysis-ready data within teal modules.")
 (define-public r-teal-modules-general
   (package
     (name "r-teal-modules-general")
-    (version "0.6.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal.modules.general" version))
        (sha256
-        (base32 "13ai248klsi5d9jgijvv885iggxarf3s29rz6pwkyig3k2x93xxj"))))
+        (base32 "0fadnzlarhigkc08fpi3lmzr5amnck97w9dh6rqi1q9dn9xaaf3x"))))
     (properties `((upstream-name . "teal.modules.general")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
                              r-tibble
                              r-tern
                              r-teal-widgets
                              r-teal-transform
                              r-teal-reporter
+                             r-teal-picks
                              r-teal-logger
                              r-teal-data
                              r-teal-code
@@ -30600,6 +31795,8 @@ and transformed into analysis-ready data within teal modules.")
                              r-scales
                              r-rtables
                              r-rmarkdown
+                             r-rlang
+                             r-patchwork
                              r-mass
                              r-lifecycle
                              r-lattice
@@ -30618,7 +31815,8 @@ and transformed into analysis-ready data within teal modules.")
                              r-dplyr
                              r-colourpicker
                              r-checkmate
-                             r-bslib))
+                             r-bslib
+                             r-broom))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://insightsengineering.github.io/teal.modules.general/")
     (synopsis "General Modules for 'teal' Applications")
@@ -30632,13 +31830,13 @@ and analysis.")
 (define-public r-teal-modules-clinical
   (package
     (name "r-teal-modules-clinical")
-    (version "0.12.0")
+    (version "0.13.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal.modules.clinical" version))
        (sha256
-        (base32 "1nh3rvwi8ixiknfdhz93fw4ab58785fvfja95dfnpksnyl28gnjd"))))
+        (base32 "1mrk8lxr6bnrkamyz7b4phzp8ly136b7hbcljgfzkdzzcl1bgjiz"))))
     (properties `((upstream-name . "teal.modules.clinical")))
     (build-system r-build-system)
     (arguments
@@ -30687,13 +31885,13 @@ and accurate reports.")
 (define-public r-teal-logger
   (package
     (name "r-teal-logger")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal.logger" version))
        (sha256
-        (base32 "10anjqw3ff6vy46l7j0z2vbhpyfc0hns9qv1dn4r3c5dx54nn4al"))))
+        (base32 "11x506h8yaywv7bqdb8087raw5kilslglm33w0wr4zfncgmc22by"))))
     (properties `((upstream-name . "teal.logger")))
     (build-system r-build-system)
     (arguments
@@ -30712,13 +31910,13 @@ various log destinations, vectorization, and more.")
 (define-public r-teal-data
   (package
     (name "r-teal-data")
-    (version "0.8.0")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal.data" version))
        (sha256
-        (base32 "1zl7kg834rr1cqd1g5jbp5nwgj06pfvgjrw69pss1n6msrpiqmsf"))))
+        (base32 "1w8kzhr2fb3q723vn8f09l00rkcrahq9x6byn5p7p6m0x22rwcii"))))
     (properties `((upstream-name . "teal.data")))
     (build-system r-build-system)
     (arguments
@@ -30736,13 +31934,13 @@ applications focusing on reproducibility and relational data.")
 (define-public r-teal-code
   (package
     (name "r-teal-code")
-    (version "0.7.1")
+    (version "0.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal.code" version))
        (sha256
-        (base32 "01jbxnsjp478wmvb46dhc0kwwpqz7ypchsc0jcxr52abd4rnxpvr"))))
+        (base32 "0v647hg15447fmagrzqvcvqd6fpfq36y1dvdjr44bpymdz61qj9h"))))
     (properties `((upstream-name . "teal.code")))
     (build-system r-build-system)
     (arguments
@@ -30760,13 +31958,13 @@ reproducibility in teal applications.")
 (define-public r-teal
   (package
     (name "r-teal")
-    (version "1.1.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal" version))
        (sha256
-        (base32 "0rs69ry7v5aqjgazldpaajvxnk8f958wfsm46zg4g9bv3jbb9bzc"))))
+        (base32 "10r886p76i9zvg59481cdz6i727n46l67g5wkc60zjj5yg27x7g0"))))
     (properties `((upstream-name . "teal")))
     (build-system r-build-system)
     (arguments
@@ -31070,13 +32268,13 @@ sap flow rates at the tree and plot scale (For more information see : Granier
 (define-public r-tdlm
   (package
     (name "r-tdlm")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TDLM" version))
        (sha256
-        (base32 "1fh1bn9jgrr8f4q6h7p4al3z1aaq4v6w7bpilq6kcliyrp7kb6fq"))))
+        (base32 "1rqskrvx3wg9kz2bf7m9yfhsgy0wjcw5bdq7k8pvj17jmiz0708p"))))
     (properties `((upstream-name . "TDLM")))
     (build-system r-build-system)
     (arguments
@@ -31573,13 +32771,13 @@ persistent homology features.")
 (define-public r-td
   (package
     (name "r-td")
-    (version "0.0.6")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "td" version))
        (sha256
-        (base32 "1zycwnl7n03jw76n8qrk2zhgnakj6npid25pflj6dnmbjc47ih32"))))
+        (base32 "11acifbvg7mxcwgdr2vmndy7p47bp77bgpkiil39qkd4dmraqr0i"))))
     (properties `((upstream-name . "td")))
     (build-system r-build-system)
     (arguments
@@ -31681,13 +32879,13 @@ Biotechnologies, and @code{ImMunoGeneTics} (IMGT) nomenclatures.")
 (define-public r-tcprepdesigns
   (package
     (name "r-tcprepdesigns")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TCpRepDesigns" version))
        (sha256
-        (base32 "1vjnvn7bn3bq5sqw3gggjmkmyl6nqb24g2vwmcrzqb4c0fwmwkiv"))))
+        (base32 "0b0jmsamyjfvi9986sd0p4glmlaaq0mlnn6wi14yj1gbb0263hma"))))
     (properties `((upstream-name . "TCpRepDesigns")))
     (build-system r-build-system)
     (arguments
@@ -31701,15 +32899,14 @@ Biotechnologies, and @code{ImMunoGeneTics} (IMGT) nomenclatures.")
      "This package provides functions for generating partially replicated (p-rep)
 test-control designs for early generation varietal trials conducted across
 multiple environments.  The package implements three construction methods for
-obtaining efficient p-rep test-control designs with one or more control
-treatments.  The package extends the partially replicated design framework of
-Vinaykumar et al. (2026) <doi:10.1007/s12355-025-01684-1> to accommodate
-test-control comparisons in breeding trials.  Functions are also provided for
-generating randomized and non-randomized layouts and for evaluating designs
-using average variance measures for test-versus-test and test-versus-control
-comparisons, together with canonical efficiency factors.  The proposed designs
-are useful for large-scale varietal evaluation trials where a large number of
-test lines are assessed under limited experimental resources.")
+obtaining p-rep test-control designs with one or more control treatments.  The
+package extends the partially replicated design framework of Vinaykumar et al.
+(2026) <doi:10.1007/s12355-025-01684-1> to accommodate test-control comparisons
+in breeding trials.  Functions are provided for generating randomized and
+non-randomized layouts and for displaying the design parameters and treatment
+allocations for each environment.  The proposed designs are useful for
+large-scale varietal evaluation trials where a large number of test lines are
+assessed under limited experimental resources.")
     (license license:gpl3+)))
 
 (define-public r-tcplfit2
@@ -32277,13 +33474,13 @@ windows instead of n-lagged observations.")
 (define-public r-tbrdist
   (package
     (name "r-tbrdist")
-    (version "2.0.0")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TBRDist" version))
        (sha256
-        (base32 "179inkra4jgbabin7zk7wvarpskc0q58xzls7ks3xwz5gm5awzdb"))))
+        (base32 "0hfkdm3rwzwa58yb68bzcz82h3rcxz2g5cwxs9bsa88dd39bm5sl"))))
     (properties `((upstream-name . "TBRDist")))
     (build-system r-build-system)
     (arguments
@@ -32358,6 +33555,46 @@ frequently than others.  May also be used for simulating from a joint Bayesian
 distribution along with clinical trials based on the Bayesian distribution.")
     (license license:gpl3)))
 
+(define-public r-tbnb
+  (package
+    (name "r-tbnb")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tbnb" version))
+       (sha256
+        (base32 "1q9bgpigixqdvyp4vyipazwidamqkvpmqbc3nlhiiclj99k3wpx7"))))
+    (properties `((upstream-name . "tbnb")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-quanteda r-matrix))
+    (home-page "https://cran.r-project.org/package=tbnb")
+    (synopsis
+     "Threshold-Based and Iterative Threshold-Based Naive Bayes Classifier")
+    (description
+     "This package implements the Threshold-Based Naive Bayes (Tb-NB) classifier and
+its iterative refinement (@code{iTb-NB}) for binary sentiment / text
+classification problems.  The classifier computes a continuous log-likelihood
+ratio score per document and uses a data-driven decision threshold estimated via
+K-fold cross-validation on a user-selected criterion (accuracy, F1 score,
+Matthews correlation coefficient, balanced error, etc.).  An optional iterative
+refinement procedure locally re-estimates the threshold in regions of class
+overlap using either Gaussian kernel density estimation or a Central Limit
+Theorem bootstrap approximation.  The package exposes an idiomatic R formula +
+data.frame interface together with a quanteda'-based text preprocessing
+pipeline, supports user-supplied document-feature matrices, and includes an
+optional word-embedding extension that augments the Bag-of-Words with K nearest
+semantic neighbours of each token.  The package additionally implements the
+p-value extension proposed by Romano (2025) for both document- and feature-level
+interpretability via @code{tbnb_pvalues()}.  Methods are described in Romano,
+Contu, Mola, Conversano (2024) <doi:10.1007/s11634-023-00536-8>, Romano,
+Zammarchi, Conversano (2024) <doi:10.1007/s10260-023-00721-1>, and Romano (2025)
+<doi:10.1007/978-3-031-96736-8_41>.")
+    (license license:gpl3+)))
+
 (define-public r-tbm
   (package
     (name "r-tbm")
@@ -32390,13 +33627,13 @@ introduced in <DOI:10.1007/s11222-019-09870-4>.")
 (define-public r-tbl2xts
   (package
     (name "r-tbl2xts")
-    (version "1.0.4")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tbl2xts" version))
        (sha256
-        (base32 "1h54yhwbmlzgii202dcrz336d790374p213f1ba6rlm5syad88v9"))))
+        (base32 "1wrljczvfik64yhmrhsb83f83606fh2ziknqmsp16i05fjqrzs74"))))
     (properties `((upstream-name . "tbl2xts")))
     (build-system r-build-system)
     (arguments
@@ -32468,13 +33705,13 @@ optionally with generalized Pareto p-value estimation.")
 (define-public r-tbea
   (package
     (name "r-tbea")
-    (version "1.7.0")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tbea" version))
        (sha256
-        (base32 "0528amnsd9g5q1jrankgd1wd0023fgpss0v144br6690kwzazaac"))))
+        (base32 "064yi5pv3svxlkcijymvxmk91f699a0hf66j2nlf8xs2w682fka3"))))
     (properties `((upstream-name . "tbea")))
     (build-system r-build-system)
     (arguments
@@ -32686,13 +33923,13 @@ and local taxonomic assignment.")
 (define-public r-taxodist
   (package
     (name "r-taxodist")
-    (version "0.5.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "taxodist" version))
        (sha256
-        (base32 "0mqqsb8p40q4gkpadyxnvh0d9cnb21jf50bdvlw7fdxcixwbk6xn"))))
+        (base32 "0c57g1chr618mxr2yaznfgc4bwwd5nxc93h25mfiw5pjcvp3ry5f"))))
     (properties `((upstream-name . "taxodist")))
     (build-system r-build-system)
     (arguments
@@ -32701,19 +33938,18 @@ and local taxonomic assignment.")
     (propagated-inputs (list r-stringr r-rvest r-purrr r-httr r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/rodrigosqrt3/taxodist")
-    (synopsis "Taxonomic Distance and Phylogenetic Lineage Computation")
+    (synopsis "Taxonomic Hierarchy Distances and Lineage Analysis")
     (description
-     "Computes phylogenetic distances between any two taxa using hierarchical lineage
-data retrieved from The Taxonomicon <http://taxonomicon.taxonomy.nl>, a
-comprehensive curated classification of all life based on Systema Naturae 2000
-(Brands, 1989 <http://taxonomicon.taxonomy.nl>).  Given any two taxon names,
-retrieves their full lineages, identifies the most recent common ancestor
-(MRCA), and computes a dissimilarity index based on lineage depth.  Outputs
-native dist objects, enabling direct integration with the R statistical
-ecosystem for hierarchical clustering, principal coordinate analysis
-(P@code{CoA}), and multivariate ecological analyses.  Supports individual
-distance queries, pairwise distance matrices, clade filtering, and lineage
-utilities.")
+     "Computes distances between taxonomic hierarchy nodes using lineage data
+retrieved from The Taxonomicon <http://taxonomicon.taxonomy.nl>.  For distinct
+nodes, distance is defined as the reciprocal of the depth of their most recent
+common ancestor; identical nodes have distance zero.  This definition yields an
+ultrametric within each connected hierarchy.  Functions are provided for lineage
+retrieval and comparison, clade membership, pairwise and matrix distance
+calculation, hierarchical clustering, principal coordinates analysis, and cache
+management.  Distance matrices are returned as base R dist objects.  The
+distances represent classification depth rather than evolutionary time or
+phylogenetic branch length.")
     (license license:gpl3+)))
 
 (define-public r-taxnames
@@ -32851,16 +34087,46 @@ Links to the API documentation for other supported services are available in the
 documentation for their respective functions in this package.")
     (license license:expat)))
 
+(define-public r-taxify
+  (package
+    (name "r-taxify")
+    (version "0.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "taxify" version))
+       (sha256
+        (base32 "1dd6mbiq8vwf7q2dkqhi4ajxj519gx8rkxbkzb773y34mslv1f13"))))
+    (properties `((upstream-name . "taxify")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vectra r-rlang r-jsonlite r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://gillescolling.com/taxify/")
+    (synopsis "Offline Taxonomic Name Matching Against Darwin Core Backbones")
+    (description
+     "Match taxonomic names against locally stored Darwin Core backbone databases
+('WFO', COL', GBIF', ITIS', NCBI Taxonomy', Open Tree of Life', @code{WoRMS}',
+Euro+Med', Species Fungorum', @code{AlgaeBase}', @code{FishBase}',
+@code{SeaLifeBase}', Reptile Database', LCVP', WCVP', Mammal Diversity
+Database', @code{AviList}', LPSN').  Provides offline fuzzy and exact matching
+with synonym resolution, hybrid name detection, and a unified output schema
+across all sources.  All heavy computation runs in the vectra C11 columnar
+engine.")
+    (license license:expat)))
+
 (define-public r-taxicabca
   (package
     (name "r-taxicabca")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TaxicabCA" version))
        (sha256
-        (base32 "0izjf6vrdjvs9axvafr2mamr157i8w6d7m5sfjch1p5c174cpr9c"))))
+        (base32 "0vvlgwsydcmgwyp7k47vxmmx4frqr2dd47bpqq8gx48fyxz3w7f9"))))
     (properties `((upstream-name . "TaxicabCA")))
     (build-system r-build-system)
     (arguments
@@ -32980,13 +34246,13 @@ data derived from naming providers is also included.")
 (define-public r-taxadb
   (package
     (name "r-taxadb")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "taxadb" version))
        (sha256
-        (base32 "0m6rbvnf6ngz6i2w5jvmca0zl0pyy3b30vhjqxi08glii5fkwx2k"))))
+        (base32 "0h8n7fciijqyc1cyhi86jlzrm2ljb3n74dn4k0373kywlv2hmg8k"))))
     (properties `((upstream-name . "taxadb")))
     (build-system r-build-system)
     (arguments
@@ -32995,19 +34261,19 @@ data derived from naming providers is also included.")
     (propagated-inputs (list r-tibble
                              r-stringi
                              r-rlang
-                             r-memoise
                              r-magrittr
                              r-duckdb
                              r-dplyr
                              r-dbplyr
-                             r-dbi
-                             r-contentid))
+                             r-dbi))
     (native-inputs (list r-knitr))
     (home-page "<https://docs.ropensci.org/taxadb/>")
-    (synopsis "High-Performance Local Taxonomic Database Interface")
+    (synopsis "High-Performance Taxonomic Database Interface")
     (description
-     "This package creates a local database of many commonly used taxonomic
-authorities and provides functions that can quickly query this data.")
+     "This package provides fast access to many commonly used taxonomic authorities in
+a uniform Darwin Core format.  Tables are read directly from versioned Parquet
+snapshots, streamed from cloud storage or from a local copy, and queried with
+familiar dplyr verbs.")
     (license license:expat)))
 
 (define-public r-taxa
@@ -33132,13 +34398,13 @@ performances over time.")
 (define-public r-tau
   (package
     (name "r-tau")
-    (version "0.0-28")
+    (version "0.0-29")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tau" version))
        (sha256
-        (base32 "0k6wz8rakib6bynw4gibpqzzidyr09sylw5kc3hlqy09pm8hfx4g"))))
+        (base32 "1yahl32lknngrcx5hiizsbwlxic7glyzsdlzsbih2yj3y4ysf3mq"))))
     (properties `((upstream-name . "tau")))
     (build-system r-build-system)
     (arguments
@@ -33433,6 +34699,40 @@ amount of bicycle rental in 2015 by using @code{predict_bike_rental()}.")
 Various visualizations are provided.")
     (license license:gpl2)))
 
+(define-public r-tarpolyglot
+  (package
+    (name "r-tarpolyglot")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tarpolyglot" version))
+       (sha256
+        (base32 "0p9mcdxsx27wcnsvpm0wgikhjlx7qcgisqsx2nsplxsx8dfdm5wf"))))
+    (properties `((upstream-name . "tarpolyglot")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-targets r-rextendr r-reticulate r-juliacall
+                             r-crew))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Pierre9344/tarpolyglot")
+    (synopsis "Run Python, Julia, and Rust Inside 'targets' Pipeline Steps")
+    (description
+     "Adds target constructors that make it easy to use Python, Julia, and Rust inside
+a targets pipeline using reticulate', @code{JuliaCall}', and rextendr'.
+Provides @code{tar_target_py()}, @code{tar_target_jl()}, and
+@code{tar_target_rs()} (with matching @code{_raw()} variants), each mirroring
+@code{targets::tar_target()} and @code{targets::tar_target_raw()}'.  Python and
+Julia steps run a script via a live interpreter with optional R pre- and
+post-scripts; Rust steps compile #[extendr] functions and call them from an R
+post-script.  Results are returned either as converted R objects or as files
+written to disk (format = \"file\").  Dynamic branching, environment/version
+selection, a crew controller for isolation, and the full set of
+@code{tar_target_raw()} arguments are supported.")
+    (license license:expat)))
+
 (define-public r-tariff
   (package
     (name "r-tariff")
@@ -33463,13 +34763,13 @@ implementation and the implementation available from IHME.")
 (define-public r-targeted
   (package
     (name "r-targeted")
-    (version "0.7.1")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "targeted" version))
        (sha256
-        (base32 "04jdm33anz59rr3vlx24d7awx82g0pms8cka7drlazfn77kqzrb2"))))
+        (base32 "1fpmfmck5994fldrjz0m0acgr4qwm93xid0x3svbqhizhhapxspn"))))
     (properties `((upstream-name . "targeted")))
     (build-system r-build-system)
     (arguments
@@ -33494,11 +34794,13 @@ implementation and the implementation available from IHME.")
      "Various methods for targeted and semiparametric inference including augmented
 inverse probability weighted (AIPW) estimators for missing data and causal
 inference (Bang and Robins (2005) <doi:10.1111/j.1541-0420.2005.00377.x>),
-variable importance and conditional average treatment effects (CATE) (van der
-Laan (2006) <doi:10.2202/1557-4679.1008>), estimators for risk differences and
-relative risks (Richardson et al. (2017) <doi:10.1080/01621459.2016.1192546>),
-assumption lean inference for generalized linear model parameters (Vansteelandt
-et al. (2022) <doi:10.1111/rssb.12504>).")
+one-step imputation (Nordland et al (2026))
+<doi:10.48550/@code{arXiv.2606.07174>}), variable importance and conditional
+average treatment effects (CATE) (van der Laan (2006)
+<doi:10.2202/1557-4679.1008>), estimators for risk differences and relative
+risks (Richardson et al. (2017) <doi:10.1080/01621459.2016.1192546>), assumption
+lean inference for generalized linear model parameters (Vansteelandt et al.
+(2022) <doi:10.1111/rssb.12504>).")
     (license license:asl2.0)))
 
 (define-public r-tardis
@@ -33535,6 +34837,36 @@ emojis and multi-word tokens, so this package can also be used to study
 constructs beyond sentiment.")
     (license license:expat)))
 
+(define-public r-tarchives
+  (package
+    (name "r-tarchives")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tarchives" version))
+       (sha256
+        (base32 "1c2025zyf65v6dj5h9iwxwfr38frk0cjgfpsc361aff42hq3gym4"))))
+    (properties `((upstream-name . "tarchives")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-targets
+                             r-rlang
+                             r-fs
+                             r-cli
+                             r-callr))
+    (home-page "https://github.com/UchidaMizuki/tarchives")
+    (synopsis "Make Your 'targets' Pipelines into a Package")
+    (description
+     "Runs targets pipelines bundled inside a package and caches the results in the R
+user cache directory, so that users of the package do not need to rerun the
+pipeline themselves.  Package authors can update the cached results at any time
+by releasing a new package version.")
+    (license license:expat)))
+
 (define-public r-tar
   (package
     (name "r-tar")
@@ -33562,35 +34894,6 @@ autoregressive orders, as well as the estimation of remain parameters.  The
 package implements the methodology from the 2005 paper: Modeling Bivariate
 Threshold Autoregressive Processes in the Presence of Missing Data
 <DOI:10.1081/STA-200054435>.")
-    (license license:gpl2+)))
-
-(define-public r-taqmngr
-  (package
-    (name "r-taqmngr")
-    (version "2018.5-1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "TAQMNGR" version))
-       (sha256
-        (base32 "0bf0sgqa53l9y2bhwg2ngiwlcgrmj0nvxchlsmcc8zin388qf4pb"))))
-    (properties `((upstream-name . "TAQMNGR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list zlib))
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://cran.r-project.org/package=TAQMNGR")
-    (synopsis "Manage Tick-by-Tick Transaction Data")
-    (description
-     "Manager of tick-by-tick transaction data that performs cleaning', aggregation
-and import in an efficient and fast way.  The package engine, written in C++,
-exploits the zlib and gzstream libraries to handle gzipped data without need to
-uncompress them.  Cleaning and aggregation are performed according to Brownlees
-and Gallo (2006) <DOI:10.1016/j.csda.2006.09.030>.  Currently, TAQMNGR processes
-raw data from WRDS (Wharton Research Data Service,
-<https://wrds-web.wharton.upenn.edu/wrds/>).")
     (license license:gpl2+)))
 
 (define-public r-tapnet
@@ -33781,6 +35084,64 @@ fitted to 380 trees and a subset of section-wise diameter measurements of these
 trees.  The functions implemented here are detailed in Kublin, E., Breidenbach,
 J., Kaendler, G. (2013) <doi:10.1007/s10342-013-0715-0>.")
     (license license:gpl2+)))
+
+(define-public r-tantivyr
+  (package
+    (name "r-tantivyr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tantivyr" version))
+       (sha256
+        (base32 "1r5n33a68kxhqxlq975pd64r5v1hdmi6knbpm3hg370d5606j979"))))
+    (properties `((upstream-name . "tantivyr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-tidyselect r-tibble r-rlang r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://strategicprojects.github.io/tantivyr/")
+    (synopsis "Fast Full-Text Search for R with 'Tantivy'")
+    (description
+     "Index data frames and document collections and run fast full-text search
+entirely on your machine.  tantivyr wraps the Tantivy Rust search engine (a
+Lucene'-inspired library) to provide BM25 ranking, structured filters, snippet
+highlighting and incremental updates over an on-disk or in-memory index.
+First-class support is provided for stemming and stop words in Portuguese and
+English, making it well suited to public documents, news clippings, extracted
+PDF text, transcripts and legal acts.")
+    (license license:expat)))
+
+(define-public r-tanner
+  (package
+    (name "r-tanner")
+    (version "1.8.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tanner" version))
+       (sha256
+        (base32 "1lmx9gqrdv2j3jk0366x3vvmqzrljyrd6y2yshp5pn0gf53im7kw"))))
+    (properties `((upstream-name . "tanner")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-haven))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/growthcharts/tanner")
+    (synopsis "Puberty Stage Line Diagrams and SDS for Tanner Pubertal Stages")
+    (description
+     "Plots Tanner pubertal stage measurements (genital, pubic hair, testicular
+volume, breast, menarche) against Dutch 1997 growth-study references as stage
+line diagrams, and converts observed stages to age-conditional standard
+deviation scores (SDS).  Testicular volume can be entered as a raw orchidometer
+reading in ml.  Implements the method of van Buuren and Ooms (2009)
+<doi:10.1002/sim.3567>.")
+    (license license:expat)))
 
 (define-public r-tangram-pipe
   (package
@@ -34671,13 +36032,13 @@ detailed overview of tacmagic functions.")
 (define-public r-tabxplor
   (package
     (name "r-tabxplor")
-    (version "1.3.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tabxplor" version))
        (sha256
-        (base32 "0wi6pd0iswfy58qdzvkn7a23qj7lxgsy499s225w6b9zhl4qshv7"))))
+        (base32 "0557kj3538gfn0lq4shq9pdr26xxmmf34gmcizc6np92352bx1pw"))))
     (properties `((upstream-name . "tabxplor")))
     (build-system r-build-system)
     (arguments
@@ -34687,31 +36048,29 @@ detailed overview of tacmagic functions.")
                              r-tidyselect
                              r-tidyr
                              r-tibble
-                             r-stringr
-                             r-stringi
+                             r-survey
                              r-rlang
                              r-purrr
                              r-pillar
-                             r-magrittr
-                             r-kableextra
+                             r-nnet
+                             r-mass
+                             r-lifecycle
                              r-forcats
                              r-dplyr
-                             r-desctools
                              r-data-table
-                             r-crayon
                              r-cli))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/BriceNocenti/tabxplor")
     (synopsis "User-Friendly Tables with Color Helpers for Data Exploration")
     (description
      "Make it easy to deal with multiple cross-tables in data exploration, by creating
-them, manipulating them, and adding color helpers to highlight important
-informations (differences from totals, comparisons between lines or columns,
-contributions to variance, confidence intervals, odds ratios, etc.).  All
-functions are pipe-friendly and render data frames which can be easily
-manipulated.  In the same time, time-taking operations are done with data.table
-to go faster with big dataframes.  Tables can be exported with formats and
-colors to Excel', plot and html.")
+them, manipulating them, and adding color helpers to highlight deviations
+(differences from totals, comparisons between lines or columns, contributions to
+variance, odds ratios, etc.) and significance (confidence intervals, stars,
+etc.).  Create the same kind of tables for regression models, with a framework
+to compare model effects with their crude/observed counterpart systematically.
+All functions render data frames which can be easily manipulated.  All tables
+can be exported with formats and colors to Excel', html and markdown.")
     (license license:gpl3+)))
 
 (define-public r-tabusearch
@@ -34759,6 +36118,37 @@ algorithm as described by Fouskakis and Draper (2007)
     (description
      "Convert semi-structured log files (such as Apache access.log files) into a
 tabular format (data.frame) using a standard template system.")
+    (license license:expat)))
+
+(define-public r-tabulergm
+  (package
+    (name "r-tabulergm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tabulergm" version))
+       (sha256
+        (base32 "1srwaqhc5dhc8b131svjrlpc0s8f65liinndq1f8zj8nm9xsvr8c"))))
+    (properties `((upstream-name . "tabulergm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml r-network r-netplot r-ergm r-base64enc))
+    (native-inputs (list r-knitr))
+    (home-page "https://gvegayon.github.io/tabulergm/")
+    (synopsis
+     "Publication-Ready Tables and Summaries for Exponential-Family Random Graph Models")
+    (description
+     "This package creates publication-ready tables documenting exponential-family
+random graph models (ERGMs), a class of statistical models for social networks
+(Robins et al., 2007, <doi:10.1016/j.socnet.2006.08.002>).  Tables describe
+model terms through their definitions, mathematical representations, and
+graphical representations, and can be generated from ERGM formulas or from
+models fitted with the ergm package (Hunter et al., 2008,
+<doi:10.18637/jss.v024.i03>).  Resulting tables can be integrated into quarto
+and rmarkdown documents.")
     (license license:expat)))
 
 (define-public r-tabulator
@@ -34884,13 +36274,13 @@ special handling for the format currently in use.")
 (define-public r-tabular
   (package
     (name "r-tabular")
-    (version "0.1.0")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tabular" version))
        (sha256
-        (base32 "1z9hdckhhpvzikg3vlkyi8s7x457sg3swkvfngmvm7r59piymrr8"))))
+        (base32 "19gmjs4y9czbv018g7f65nhsijf20c2xhgfripqa216gx2g9zrqy"))))
     (properties `((upstream-name . "tabular")))
     (build-system r-build-system)
     (arguments
@@ -34899,13 +36289,14 @@ special handling for the format currently in use.")
     (propagated-inputs (list r-xml2 r-s7 r-rlang r-commonmark r-cli))
     (native-inputs (list r-quarto))
     (home-page "https://vthanik.github.io/tabular/")
-    (synopsis "Render Tables and Listings for Clinical Submissions")
+    (synopsis "Render Tables, Listings, and Figures for Clinical Submissions")
     (description
-     "Render clinical submission tables and listings to RTF', @code{LaTeX}', HTML',
-PDF', and DOCX from pre-summarised data frames, with no external Java or SAS
-dependency.  Features include decimal alignment via font metrics, multi-level
-column headers with passthrough leaves, predicate-targeted cell styling,
-footnotes, and group-aware pagination.  Built for Clinical Data Interchange
+     "Render clinical submission tables, listings, and figures to RTF', @code{LaTeX}',
+Typst', HTML', PDF', and DOCX from pre-summarised data frames, with no external
+Java or SAS dependency.  Features include decimal alignment via font metrics,
+multi-level column headers with passthrough leaves, predicate-targeted cell
+styling, footnotes, group-aware pagination, and figures that wrap a plot or
+image in the same page chrome as a table.  Built for Clinical Data Interchange
 Standards Consortium (CDISC) Analysis Data Model (A@code{DaM}) workflows and
 regulatory submissions to agencies such as the Food and Drug Administration
 (FDA), European Medicines Agency (EMA), and Pharmaceuticals and Medical Devices
@@ -34998,13 +36389,13 @@ a tibble of tables is created with captions and automatic printing using
 (define-public r-tabstats
   (package
     (name "r-tabstats")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tabstats" version))
        (sha256
-        (base32 "18s620ls995fvmwzrriygky8b0z8a36ks2c6nwrjvi9k2pca59x9"))))
+        (base32 "1p0dgvq2cim8rxc5hlpqd378j85qyx3aagfbhbs48qv0liz5wikp"))))
     (properties `((upstream-name . "tabstats")))
     (build-system r-build-system)
     (arguments
@@ -35012,7 +36403,7 @@ a tibble of tables is created with captions and automatic printing using
       #:tests? #f))
     (propagated-inputs (list r-vctrs r-tibble r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/joshuamarie/tabstats")
+    (home-page "https://github.com/s7-stats/tabstats")
     (synopsis "Lightweight Toolkit for Displaying Customizable Tables")
     (description
      "This package provides a lightweight toolkit that provides functions for printing
@@ -35157,13 +36548,13 @@ the package.")
 (define-public r-tabpfn
   (package
     (name "r-tabpfn")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tabpfn" version))
        (sha256
-        (base32 "02jl8nz6a2cvkd9bzcfr4519p9v76lngflp3jfqxaapp63pv2nfl"))))
+        (base32 "0p1awh3r46qncqaq38pf66w45wxaxkbzmyhhwrnc6vi7gqimwkpf"))))
     (properties `((upstream-name . "tabpfn")))
     (build-system r-build-system)
     (arguments
@@ -35173,6 +36564,7 @@ the package.")
                              r-rlang
                              r-reticulate
                              r-purrr
+                             r-jsonlite
                              r-hardhat
                              r-generics
                              r-dplyr
@@ -35214,13 +36606,13 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
 (define-public r-tabnet
   (package
     (name "r-tabnet")
-    (version "0.9.0")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tabnet" version))
        (sha256
-        (base32 "0z7sgnisyl1f0732llmbd2blrxxw2hwk1gv0db53d57zxyna4hvc"))))
+        (base32 "0y3r2qxnsxzgclx715m1swj89ksvjpcdh6xsfl2zhdrmj2bzrh3x"))))
     (properties `((upstream-name . "tabnet")))
     (build-system r-build-system)
     (arguments
@@ -35281,42 +36673,16 @@ tidymodels ecosystem.")
      "Collection of functions that allow to export data frames to excel workbook.")
     (license license:expat)))
 
-(define-public r-tabletolongform
-  (package
-    (name "r-tabletolongform")
-    (version "1.3.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "TableToLongForm" version))
-       (sha256
-        (base32 "034vca0il7006zdkh5vdfjddyq9lg5mkl8hjria2rpks6wx0jhrd"))))
-    (properties `((upstream-name . "TableToLongForm")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page
-     "https://www.stat.auckland.ac.nz/~joh024/Research/TableToLongForm/")
-    (synopsis
-     "Automatically Convert Hierarchical for-Human Tables to Machine-Readable LongForm Dataframes")
-    (description
-     "This package provides a wrapper to a set of algorithms designed to recognise
-positional cues present in hierarchical for-human Tables (which would normally
-be interpreted visually by the human brain) to decompose, then reconstruct the
-data into machine-readable @code{LongForm} Dataframes.")
-    (license license:gpl3)))
-
 (define-public r-tablet
   (package
     (name "r-tablet")
-    (version "0.8.1")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tablet" version))
        (sha256
-        (base32 "0pjhg01bdr2px7lvbgawb8h706bx2lk9qs6v9qg391h0v6wn1kbk"))))
+        (base32 "1l3qrwdfqigyjrvsrldjnk7v453br280b62w2ikq17k1mk23y6y3"))))
     (properties `((upstream-name . "tablet")))
     (build-system r-build-system)
     (arguments

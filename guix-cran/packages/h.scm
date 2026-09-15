@@ -450,13 +450,13 @@ Hediger & Michel & Naef (2022).")
 (define-public r-hypetools
   (package
     (name "r-hypetools")
-    (version "1.6.7")
+    (version "1.6.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HYPEtools" version))
        (sha256
-        (base32 "1d72d7r71qb0ljqffyris581czhi1km8amvdfv0067a8xwg6wv9d"))))
+        (base32 "0q4mrf9cphhzssshyi50mc6qa5r90bf85h1shsq8mxnvvndw5p3q"))))
     (properties `((upstream-name . "HYPEtools")))
     (build-system r-build-system)
     (arguments
@@ -548,13 +548,13 @@ species distribution modeling.")
 (define-public r-hypertext
   (package
     (name "r-hypertext")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hypertext" version))
        (sha256
-        (base32 "1xlan81kl934f4rzlk3z79wyicim0wswl3kk2ja8p8v490962ynf"))))
+        (base32 "1awqsxcb07wa27fvd8c7v16lhcqmi7g9krnz428qdmkbnlgpnwzs"))))
     (properties `((upstream-name . "hypertext")))
     (build-system r-build-system)
     (arguments
@@ -638,13 +638,13 @@ can be found in: Brown et al. (2020) <doi:10.1111/2041-210X.13363> .")
 (define-public r-hypergraph-sizing
   (package
     (name "r-hypergraph-sizing")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hypergraph.sizing" version))
        (sha256
-        (base32 "0nzm3dn28zc8hn79qvhjl7a029fz4gxxbd60sds3qpcl24gmpdmv"))))
+        (base32 "040vhykxhz22nqxh6nqar8c03b9hwp4r81al04ha5mcr1cm9p0q7"))))
     (properties `((upstream-name . "hypergraph.sizing")))
     (build-system r-build-system)
     (arguments
@@ -873,31 +873,31 @@ Generalized Plackett-Luce likelihoods use Hankin 2024
 (define-public r-hyper-gam
   (package
     (name "r-hyper-gam")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hyper.gam" version))
        (sha256
-        (base32 "0bid5x5k1szfwn737057jgiwwy17rna8vagak1fx3afvmc78sl9p"))))
+        (base32 "0iy2if38zh1kb2xckkjjiwr8wkm14l9z8zf3611xrbby221jh2ax"))))
     (properties `((upstream-name . "hyper.gam")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-plotly r-mgcv r-cli))
-    (home-page "https://github.com/tingtingzhan/hyper.gam")
+    (home-page "https://cran.r-project.org/package=hyper.gam")
     (synopsis "Generalized Additive Models with Hyper Column")
     (description
      "An interactive HTML widget of the perspective plot for generalized additive
-models.  An alternative solution of the function @code{mgcv::vis.gam()}.  This R
+models; an alternative solution of the function @code{mgcv::vis.gam()}.  This R
 package author has retired from academic research.  Accordingly, this package
 should not be considered a validated tool for use in peer-reviewed publications
 or as the basis for grant applications.  Backward compatibility with user-code
 published in <doi:10.1093/bioinformatics/btaf182> and
-<doi:10.1093/bioinformatics/btaf430> is not maintained in versions >= 0.3.0 of
-this package.  The authors of those publications are the appropriate contacts
-for reproducibility inquiries.")
+<doi:10.1093/bioinformatics/btaf430> is not maintained in versions >= 0.3.0
+(June 2026) of this package.  The authors of those publications are the
+appropriate contacts for reproducibility inquiries.")
     (license license:gpl2)))
 
 (define-public r-hyper-fit
@@ -1320,6 +1320,34 @@ to alleviate the computational burden of complex models with long execution
 time.")
     (license license:gpl2+)))
 
+(define-public r-hydromeso
+  (package
+    (name "r-hydromeso")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hydromeso" version))
+       (sha256
+        (base32 "1n3a24vyjzzmk5z04gf3604ryypfnim2sc6jiflm9kl4jkap2lxi"))))
+    (properties `((upstream-name . "hydromeso")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra))
+    (native-inputs (list r-knitr))
+    (home-page "https://el-cordero.github.io/hydromeso/")
+    (synopsis "Classify Fluvial Mesohabitats from Depth and Velocity")
+    (description
+     "Classifies hydraulic conditions into nominal fluvial mesohabitat categories
+using water depth and velocity.  It implements the eight-class scheme in the
+preprint by Cordero and Harris <doi:10.2139/ssrn.7100727>, supports validated
+rectangular custom schemes, and works with tabular and spatial data through
+terra'.  Outputs describe hydraulic classes and do not by themselves establish
+biological habitat quality or species occurrence.")
+    (license license:gpl3)))
+
 (define-public r-hydrome
   (package
     (name "r-hydrome")
@@ -1349,13 +1377,13 @@ water retention characteristic curves.")
 (define-public r-hydroloom
   (package
     (name "r-hydroloom")
-    (version "1.2.0")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hydroloom" version))
        (sha256
-        (base32 "0ziaxa1cpwvfqknhnhfylpy5wf44lxmwx2l3gmbm3b7bhdc0z8pm"))))
+        (base32 "01q410b0srfc45a4d5qk3py9bnsin8fl0na4kqxggbv73hai15ci"))))
     (properties `((upstream-name . "hydroloom")))
     (build-system r-build-system)
     (arguments
@@ -1376,7 +1404,7 @@ water retention characteristic curves.")
     (description
      "This package provides a collection of utilities that support creation of network
 attributes for hydrologic networks.  Methods and algorithms implemented are
-documented in Moore et al. (2019) <doi:10.3133/ofr20191096>), Cormen and
+documented in Moore et al. (2019) <doi:10.3133/ofr20191096>, Cormen and
 Leiserson (2022) <ISBN:9780262046305> and Verdin and Verdin (1999)
 <doi:10.1016/S0022-1694(99)00011-6>.")
     (license license:cc0)))
@@ -1409,6 +1437,45 @@ Missing values in observed and/or simulated values can be removed before
 computations.  Comments / questions / collaboration of any kind are very
 welcomed.")
     (license license:gpl2+)))
+
+(define-public r-hydrogeofetch
+  (package
+    (name "r-hydrogeofetch")
+    (version "2.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hydrogeofetch" version))
+       (sha256
+        (base32 "1kzhfz0ifvhbnkqk98rv3rqzjqzlj3mc8ikv4rl16wqq5c0icjh1"))))
+    (properties `((upstream-name . "hydrogeofetch")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zip
+                             r-xml2
+                             r-units
+                             r-sf
+                             r-memoise
+                             r-jsonlite
+                             r-hydroloom
+                             r-httr2
+                             r-dplyr
+                             r-digest
+                             r-dataretrieval
+                             r-data-table
+                             r-arrow))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=hydrogeofetch")
+    (synopsis "Hydrologic Geospatial Fabric Extraction Tool Chain")
+    (description
+     "Traverses and works with National Hydrography Dataset Plus (NHDPlus) data.  All
+methods implemented in hydrogeofetch are available in the NHDPlus documentation
+available from the US Environmental Protection Agency
+<https://www.epa.gov/waterdata/basic-information>.  Previously published as
+@code{nhdplusTools}'.")
+    (license license:cc0)))
 
 (define-public r-hydroevents
   (package
@@ -1468,13 +1535,13 @@ undefined or degenerate cases.  Methods include Nash and Sutcliffe (1970)
 (define-public r-hydrodownloadr
   (package
     (name "r-hydrodownloadr")
-    (version "0.1.3")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hydrodownloadR" version))
        (sha256
-        (base32 "1jf86ka1p78d0ng8z4cvlvhj7k446ylcdlljx31hqmz1059mmdhd"))))
+        (base32 "0b22n37y2c6s0irsz8z8m6dh1y999qalqxz72k20h85n6rd1bppz"))))
     (properties `((upstream-name . "hydrodownloadR")))
     (build-system r-build-system)
     (arguments
@@ -1500,19 +1567,20 @@ undefined or degenerate cases.  Methods include Nash and Sutcliffe (1970)
                              r-dataretrieval
                              r-cli
                              r-cellranger))
-    (home-page "https://bafg-bund.github.io/hydrodownloadR/")
+    (home-page "https://hydrodownloadr.bafg.de/")
     (synopsis "Hydrologic Station Catalogs and Time Series from Public APIs")
     (description
-     "This package provides a unified, extensible interface to discover hydrologic
-stations and download daily time series (e.g., water discharge, water level,
-water temperature, and several other water quality parameter) from national and
-regional public APIs.  Includes a provider registry, S3 generics stations and
-timeseries', licensing metadata, date-range and complete history modes, rate
-limiting and retries, optional authentication via environment variables, tidy
-outputs, UTF-8 to ASCII transliteration, and WGS84 coordinates.  Designed for
-reproducible workflows and straightforward addition of new providers.
-Background and use cases are described in Farber et al. (2025)
-<doi:10.5194/essd-17-4613-2025> and Farber et al. (2023)
+     "This package provides a unified, extensible interface for discovering
+hydrological stations and downloading hydrological daily time series (e.g.,
+water discharge, water level, water temperature) and discrete water-quality
+observations from national and regional public APIs.  Water-quality observations
+are retained at their original sampling timestamps.  Includes a provider
+registry, S3 generics stations and timeseries', licensing metadata, date-range
+and complete history modes, rate limiting and retries, optional authentication
+via environment variables, tidy outputs, UTF-8 to ASCII transliteration, and
+WGS84 coordinates.  Designed for reproducible workflows and straightforward
+addition of new providers.  Background and use cases are described in Farber et
+al. (2025) <doi:10.5194/essd-17-4613-2025> and Farber et al. (2023)
 <doi:10.57757/IUGG23-2838>.")
     (license license:expat)))
 
@@ -1784,13 +1852,13 @@ published by Weber (2022) <doi:10.1594/PANGAEA.948042>.")
 (define-public r-hyd1d
   (package
     (name "r-hyd1d")
-    (version "0.5.4")
+    (version "0.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hyd1d" version))
        (sha256
-        (base32 "0rb1i95c6x9559wf2q318b32s6c60qgc9v5g3d26avzxpidh8gqk"))))
+        (base32 "1sl6gwa54x8ykivi1z0gfz1md7ddlq797hpmfpgmb2c5xg6vd173"))))
     (properties `((upstream-name . "hyd1d")))
     (build-system r-build-system)
     (arguments
@@ -2243,6 +2311,43 @@ problems.")
      "Facilitates building topology preserving maps for data analysis.")
     (license license:asl2.0)))
 
+(define-public r-hvs
+  (package
+    (name "r-hvs")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HVS" version))
+       (sha256
+        (base32 "14qm1x6fy9525fwjipqm5ky2crwdc4w8p10c4fbkmidf77zg7pwy"))))
+    (properties `((upstream-name . "HVS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://cran.r-project.org/package=HVS")
+    (synopsis "Hypergraph Variable Selection")
+    (description
+     "This package performs hypergraph-based setwise variable selection with false
+discovery rate control (Organ, Kenney & Gu, 2026,
+<doi:10.48550/@code{arXiv.2606.20514>}).  The idea is, in addition to selecting
+individual predictors when there is sufficient evidence, to also test all pairs
+of predictors, and when there is insufficient evidence to be sure which is the
+true predictor, it will select possibly overlapping pairs, for which there is
+strong evidence that at least one is a true predictor.  The method is designed
+to control a generalised false discovery rate, where discoveries are counted
+based on the number of independent sets.  The function of this package is
+similar to the hypergraph.sizing package, but this package is optimised for
+faster computation in the case where we test all pairs of predictors.  The
+package also includes functions for counting independent sets in a graph or
+hypergraph, either exactly or approximately.  There is also a very limited
+function for isotonic regression, which is designed for fast computation in the
+specific case needed for hypergraph variable selection, rather than for general
+use.")
+    (license license:gpl3)))
+
 (define-public r-huxtable
   (package
     (name "r-huxtable")
@@ -2577,13 +2682,13 @@ Beffa, Junxi Wang, Jialiang Li, Frank Pessler, Frank Klawonn (2014)
 (define-public r-huito
   (package
     (name "r-huito")
-    (version "0.2.6")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "huito" version))
        (sha256
-        (base32 "1cwg36ffcnkn2q3y6gsk8yygx3h8f0ridpkw44d820yvvbzx7w6q"))))
+        (base32 "05j4dxgnv9r78h5kf3lh0k3b0sh7x4rn6lxw89lsp0nw6a7dvf3b"))))
     (properties `((upstream-name . "huito")))
     (build-system r-build-system)
     (arguments
@@ -2611,6 +2716,44 @@ different procedures and tools used in plant science and experimental designs.
 Learn more about the inkaverse project at <https://inkaverse.com/>.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-huggingfacer
+  (package
+    (name "r-huggingfacer")
+    (version "2.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "huggingfaceR" version))
+       (sha256
+        (base32 "10bfsd3j4xyiq0hgd916j1rd8n1z6ic1rln5xksgy23zrhiqjlll"))))
+    (properties `((upstream-name . "huggingfaceR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-jsonlite
+                             r-httr2
+                             r-glue
+                             r-dplyr
+                             r-cli))
+    (home-page "https://farach.github.io/huggingfaceR/")
+    (synopsis "Access 'Hugging Face' Models and Datasets")
+    (description
+     "Access models and datasets hosted on the Hugging Face Hub through its Inference
+Application Programming Interface (API).  Run text classification, embeddings,
+chat, translation, image, audio, and other tasks from tidy R workflows without
+installing Python by default.  Results are returned as data frames or simple R
+objects so they can be composed with dplyr', tidyr', and related tooling.
+Helpers also support Hub search, file download, provider discovery, and guarded
+uploads for authenticated workflows.")
+    (license license:expat)))
 
 (define-public r-hues
   (package
@@ -2666,13 +2809,13 @@ and Urban Development <https://www.huduser.gov/portal/dataset/fmr-api.html>.")
 (define-public r-hubutils
   (package
     (name "r-hubutils")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hubUtils" version))
        (sha256
-        (base32 "08canfqgcx0fi0xhpc5zh0nh1y5ab6v0088qc7ajkm7jpzgl7xas"))))
+        (base32 "0vzkmlwb7mcs526mxv7p6wbnn9ik6j6gaw8mndsxl2q9bb0mq3f0"))))
     (properties `((upstream-name . "hubUtils")))
     (build-system r-build-system)
     (arguments
@@ -2699,6 +2842,36 @@ and Urban Development <https://www.huduser.gov/portal/dataset/fmr-api.html>.")
 with hubverse schema, Hub configuration files and model outputs and designed to
 be primarily used internally by other hubverse packages.  See Reich et al.
 (2022) <doi:10.2105/AJPH.2022.306831> for an overview of Collaborative Hubs.")
+    (license license:expat)))
+
+(define-public r-hubevals
+  (package
+    (name "r-hubevals")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hubEvals" version))
+       (sha256
+        (base32 "1qzd8awf6q1kd6g5z8l4gx1lskgr0pq8xzwyqdcs3lgd1dq3b7r4"))))
+    (properties `((upstream-name . "hubEvals")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-scoringutils
+                             r-rlang
+                             r-purrr
+                             r-hubutils
+                             r-dplyr
+                             r-cli))
+    (home-page "https://hubverse-org.github.io/hubEvals/")
+    (synopsis "Tools for Scoring and Evaluating Hubverse Model Outputs")
+    (description
+     "This package provides tools for scoring and evaluating hubverse model outputs
+against observed data, wrapping scoring workflows from the scoringutils package
+and bridging hubverse model output formats to scoringutils forecast classes.")
     (license license:expat)))
 
 (define-public r-hubensembles
@@ -3198,6 +3371,36 @@ residuals.  The script will also produce a .csv file with all of the relevant
 parameters for each spot on the SPR chip.")
     (license license:gpl3+)))
 
+(define-public r-htna
+  (package
+    (name "r-htna")
+    (version "0.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "htna" version))
+       (sha256
+        (base32 "0g7f5g1fbijhj60nghfc5g4cgnci4wgjq2a58fqincg4vzfp18mw"))))
+    (properties `((upstream-name . "htna")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-nestimate r-igraph r-cograph))
+    (native-inputs (list r-knitr))
+    (home-page "https://sonsoles.me/htna/")
+    (synopsis "Heterogeneous Transition Network Analysis")
+    (description
+     "This package implements the Heterogeneous Transition Network Analysis (HTNA)
+method described by LÃ³pez-Pernas et al. (2026) <doi:10.1002/jcal.70285>.  The
+method is an extension of transition network analysis (TNA) where actions or
+events belong to two or more distinct actor types (e.g. Human and AI),
+preserving the actor type partition on the resulting network.  Provides a thin,
+focused API on top of the Nestimate estimation engine and the cograph rendering
+engine, so downstream bootstrap, permutation, reliability, centrality, and
+plotting functions treat each actor's codes as a distinct node group.")
+    (license license:expat)))
+
 (define-public r-htmxr
   (package
     (name "r-htmxr")
@@ -3267,13 +3470,13 @@ dynamically sortable tables.")
 (define-public r-htmlreportr
   (package
     (name "r-htmlreportr")
-    (version "1.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "htmlreportR" version))
        (sha256
-        (base32 "0zvjpm4dd0zd9h4x2wi1m6a8x63kjgjm0x2yyzw9f0nk5jcy2wwv"))))
+        (base32 "00drwq8a8x18lpj2118vngyhvlrm1a4cahb90zn6dv2by6s7wmrj"))))
     (properties `((upstream-name . "htmlreportR")))
     (build-system r-build-system)
     (arguments
@@ -3294,7 +3497,12 @@ dynamically sortable tables.")
                                     ((source . target) (minify source
                                                                #:target target)))
                                   '())))))))
-    (propagated-inputs (list r-xfun r-mime r-knitr r-jsonlite r-ggplot2))
+    (propagated-inputs (list r-xfun
+                             r-stringr
+                             r-mime
+                             r-knitr
+                             r-jsonlite
+                             r-ggplot2))
     (native-inputs (list esbuild))
     (home-page "https://github.com/AEstebanMar/htmlreportR")
     (synopsis "'HTML' Reporting Made Simple(R)")
@@ -3394,6 +3602,29 @@ obsolete are not included.")
 using an external backend.  The package includes helper functions for backend
 setup, file conversion, and an optional Tk graphical interface.")
     (license license:gpl3)))
+
+(define-public r-html2excel
+  (package
+    (name "r-html2excel")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "html2excel" version))
+       (sha256
+        (base32 "05ariv6xwha0l9fvhvcsyhqqz88mhwmr3h4niz7ffjxml5kyy18s"))))
+    (properties `((upstream-name . "html2excel")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rvest r-openxlsx))
+    (home-page "https://paulnorthrop.github.io/html2excel/")
+    (synopsis "Convert 'HTML' Tables to 'Excel' Files")
+    (description
+     "Reads tables from HTML web pages or local documents.  The tables are returned as
+a list of tibbles and may be written to Excel files.")
+    (license license:gpl3+)))
 
 (define-public r-htm2txt
   (package
@@ -3931,13 +4162,13 @@ Bivand and Piras, (2015) <doi:10.18637/jss.v063.i18>, Drukker et al., (2013)
 (define-public r-hsphase
   (package
     (name "r-hsphase")
-    (version "3.0.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hsphase" version))
        (sha256
-        (base32 "0pmikrcf1r4qnxpdm5sbsph671m0cap5g6mp07k4dsbd96n07i07"))))
+        (base32 "0qy7h4vnqlk8alhajg9qzbqv7h46cdv6k89dyhji997h7mhzmad6"))))
     (properties `((upstream-name . "hsphase")))
     (build-system r-build-system)
     (arguments
@@ -4220,48 +4451,6 @@ packages.  Functions that aid semiparametric regression analysis are also
 included.")
     (license license:gpl2+)))
 
-(define-public r-hrtnomaly
-  (package
-    (name "r-hrtnomaly")
-    (version "25.11.22")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "HRTnomaly" version))
-       (sha256
-        (base32 "11yggmn4nmz1ankazmg4p5hhcbwaybl2r286mffp7m19advxv4ix"))))
-    (properties `((upstream-name . "HRTnomaly")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr r-purrr r-dplyr))
-    (home-page "https://cran.r-project.org/package=HRTnomaly")
-    (synopsis "Historical, Relational, and Tail Anomaly-Detection Algorithms")
-    (description
-     "The presence of outliers in a dataset can substantially bias the results of
-statistical analyses.  To correct for outliers, micro edits are manually
-performed on all records.  A set of constraints and decision rules is typically
-used to aid the editing process.  However, straightforward decision rules might
-overlook anomalies arising from disruption of linear relationships.
-Computationally efficient methods are provided to identify historical, tail, and
-relational anomalies at the data-entry level (Sartore et al., 2024;
-<doi:10.6339/24-JDS1136>).  A score statistic is developed for each anomaly
-type, using a distribution-free approach motivated by the BienaymÃ©-Chebyshev's
-inequality, and fuzzy logic is used to detect cellwise outliers resulting from
-different types of anomalies.  Each data entry is individually scored and
-individual scores are combined into a final score to determine anomalous
-entries.  In contrast to fuzzy logic, Bayesian bootstrap and a Bayesian test
-based on empirical likelihoods are also provided as studied by Sartore et al.
-(2024; <doi:10.3390/stats7040073>).  These algorithms allow for a more nuanced
-approach to outlier detection, as it can identify outliers at data-entry level
-which are not obviously distinct from the rest of the data. --- This research
-was supported in part by the U.S. Department of Agriculture, National
-Agriculture Statistics Service.  The findings and conclusions in this
-publication are those of the authors and should not be construed to represent
-any official USDA, or US Government determination or policy.")
-    (license license:agpl3)))
-
 (define-public r-hrtlfmc
   (package
     (name "r-hrtlfmc")
@@ -4364,6 +4553,41 @@ the tilted version of Huber loss at other quantiles.  Such approximation
 provides computational efficiency and stability, and has also been shown to be
 statistical consistent.")
     (license license:gpl2+)))
+
+(define-public r-hrm
+  (package
+    (name "r-hrm")
+    (version "1.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HRM" version))
+       (sha256
+        (base32 "1f3nqknjm8qj73gixwl803qyhcc8ji0gkqxgxbxj6ig1llrdsqw0"))))
+    (properties `((upstream-name . "HRM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp
+                             r-pseudorank
+                             r-plyr
+                             r-mvtnorm
+                             r-matrixcalc
+                             r-ggplot2
+                             r-doby
+                             r-data-table))
+    (home-page "https://github.com/happma/HRM")
+    (synopsis "High-Dimensional Repeated Measures")
+    (description
+     "This package provides methods for testing main and interaction effects in
+possibly high-dimensional parametric or nonparametric repeated measures in
+factorial designs.  The observations of the subjects are assumed to be
+multivariate normal if using the parametric test.  The nonparametric version
+tests with regard to nonparametric relative effects (based on pseudo-ranks).  It
+is possible to use up to 2 whole- and 3 subplot factors.  See Happ et al. (2017,
+<doi:10.1080/15598608.2017.1307792>) for details.")
+    (license (list license:gpl2 license:gpl3))))
 
 (define-public r-hrf
   (package
@@ -4736,13 +4960,13 @@ by A. Gallant and D. W. Nychka (1987) <doi:10.2307/1913241>.")
 (define-public r-howmanyimputations
   (package
     (name "r-howmanyimputations")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "howManyImputations" version))
        (sha256
-        (base32 "1vcsf8l2hflr3csjrrgv4883hz0gb3vkaa26943wi8vss7h2lb4d"))))
+        (base32 "05s3pwc7xbgjg69g7mbazybvgihlyrapq47gjwgnpngv0n2zaf38"))))
     (properties `((upstream-name . "howManyImputations")))
     (build-system r-build-system)
     (arguments
@@ -4850,13 +5074,13 @@ Wikipedia are also included.")
 (define-public r-hours2lessons
   (package
     (name "r-hours2lessons")
-    (version "0.1.4")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hours2lessons" version))
        (sha256
-        (base32 "1372c54fhla7manih6dsfxwbwhf6iqa7vnjcjw25962kifyd8z1f"))))
+        (base32 "04k6h9w3kmz6ja192amw296bvfvqjcvvgl33gwihgv8q17wqnbxs"))))
     (properties `((upstream-name . "hours2lessons")))
     (build-system r-build-system)
     (arguments
@@ -5285,13 +5509,13 @@ of squares.")
 (define-public r-hopkins
   (package
     (name "r-hopkins")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hopkins" version))
        (sha256
-        (base32 "0wy4d5mmzd9qka5wpkglqy0m2pswypj64wp4hqpk94c6gj46ghwl"))))
+        (base32 "1gzpmfdmplgzal90l7yri455dhlvhkazvag6i6ggw4cq34bx6g76"))))
     (properties `((upstream-name . "hopkins")))
     (build-system r-build-system)
     (arguments
@@ -5396,13 +5620,13 @@ simulations.  It is also possible to consider random data and ACK probabilities.
 (define-public r-hoopr
   (package
     (name "r-hoopr")
-    (version "3.0.0")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hoopR" version))
        (sha256
-        (base32 "0fkvpjs1p8qvgi63pm3gban1h9nqzh4lb273aa7h70nxqayxrsbi"))))
+        (base32 "1pkffgyxa1bxyqsiwgl7h8iwvdldy2gmzbw7snbzjxjgvm8sdja6"))))
     (properties `((upstream-name . "hoopR")))
     (build-system r-build-system)
     (arguments
@@ -5411,19 +5635,22 @@ simulations.  It is also possible to consider random data and ACK probabilities.
     (inputs (list pandoc pandoc))
     (propagated-inputs (list r-tidyr
                              r-stringr
+                             r-stringi
+                             r-stringdist
                              r-rvest
                              r-rlang
                              r-rcppparallel
                              r-rcpp
                              r-purrr
                              r-progressr
+                             r-matrix
                              r-magrittr
                              r-lubridate
                              r-lifecycle
                              r-jsonlite
                              r-janitor
                              r-httr2
-                             r-glue
+                             r-glmnet
                              r-dplyr
                              r-data-table
                              r-cli))
@@ -5438,6 +5665,40 @@ available.  It is also a full NBA Stats API<https://www.nba.com/stats/> wrapper.
 basketball statistics website<https://kenpom.com>.  It provides users with an
 active subscription the capability to scrape the website tables and analyze the
 data for themselves.")
+    (license license:expat)))
+
+(define-public r-hood2net
+  (package
+    (name "r-hood2net")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hood2net" version))
+       (sha256
+        (base32 "1g9qbsgdzi10jl3zkri2r174xd4wfqyj575gyivrsld0v3i21rmb"))))
+    (properties `((upstream-name . "hood2net")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringdist r-rcpp r-igraph))
+    (native-inputs (list r-knitr))
+    (home-page "https://csqsiew.github.io/hood2net/")
+    (synopsis "Create a Language Network from Neighborhoods of Words")
+    (description
+     "Input a list of words and/or their phonological transcriptions and this package
+creates a language network based on their neighborhood structure.  First, the
+phonological/orthographic neighbors for each item in the list are identified
+based on various definitions of a neighbor (e.g., edit-distance (substitution,
+deletion, or addition), substitution-only; distance size (1-edit or more); based
+on single characters or segments indicated by separators) and summarizes this
+information in an igraph network object for subsequent analyses.  For more
+details see Luce & Pisoni (1998) <doi:10.1097/00003446-199802000-00001> and
+Vitevitch (2008) <doi:10.1044/1092-4388(2008/030)>.  Helper functions for
+extracting network metrics, neighbors, and other information from the language
+network are provided.  This package is intended for psycholinguists interested
+in modeling language networks and word neighborhoods in various languages.")
     (license license:expat)))
 
 (define-public r-honestdid
@@ -5620,6 +5881,33 @@ have been described in detail in Goeman et al (Biometrika 106, 841-856, 2019).")
 with a blank center.  The package is named after Homer Simpson - arguably the
 best-known lover of doughnuts.")
     (license license:gpl2)))
+
+(define-public r-homeranger
+  (package
+    (name "r-homeranger")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HomeRangeR" version))
+       (sha256
+        (base32 "17xykcb3v1vy048grw98xkzy4l45py889ybbvgn6xxwg2z9fcdds"))))
+    (properties `((upstream-name . "HomeRangeR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-dplyr))
+    (home-page "https://cran.r-project.org/package=HomeRangeR")
+    (synopsis "Predict Vertebrate Home-Range Sizes Using Allometric Models")
+    (description
+     "This package provides empirically strong allometric predictions of the
+home-range size of most vertebrate species.  Based on inputs of mean body size,
+taxonomic class, and optional classifications of environment and trophic level
+or foraging mode, @code{HomeRangeR} predicts home-range size using the most
+appropriate model for the species selected from a collection of empirically
+derived vertebrate home-range allometries.")
+    (license license:expat)))
 
 (define-public r-home
   (package
@@ -6067,13 +6355,13 @@ the package to build on previous lab members code.")
 (define-public r-hockeystick
   (package
     (name "r-hockeystick")
-    (version "0.8.7")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hockeystick" version))
        (sha256
-        (base32 "1w7s2rg9jscnb6hgiwh22k6b2083dq9a4ydvk9rvvv5zs32zlazy"))))
+        (base32 "1xqbzpyz2n2p4bzwr6cwiyc6zj29pa7zzp865yn35pc2vl427zrh"))))
     (properties `((upstream-name . "hockeystick")))
     (build-system r-build-system)
     (arguments
@@ -6094,14 +6382,14 @@ the package to build on previous lab members code.")
                              r-dplyr))
     (native-inputs (list r-quarto))
     (home-page "https://cortinah.github.io/hockeystick/")
-    (synopsis "Download and Visualize Essential Climate Change Data")
+    (synopsis "Download and Visualize Essential Global Heating Data")
     (description
      "This package provides easy access to essential climate change datasets to
 non-climate experts.  Users can download the latest raw data from authoritative
 sources and view it via pre-defined ggplot2 charts.  Datasets include
 atmospheric CO2, methane, emissions, instrumental and proxy temperature records,
-sea levels, Arctic/Antarctic sea-ice, Hurricanes, and Paleoclimate data.
-Sources include: NOAA Mauna Loa Laboratory
+CMIP6 projections, sea levels, Arctic/Antarctic sea-ice, Hurricanes, Wildfires,
+and Paleoclimate data.  Sources include: NOAA Mauna Loa Laboratory
 <https://gml.noaa.gov/ccgg/trends/data.html>, Global Carbon Project
 <https://www.globalcarbonproject.org/carbonbudget/>, NASA GISTEMP
 <https://data.giss.nasa.gov/gistemp/>, National Snow and Sea Ice Data Center
@@ -6203,13 +6491,13 @@ be compressed and uncompressed easily to save disk space.")
 (define-public r-hnpclassifier
   (package
     (name "r-hnpclassifier")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HNPclassifier" version))
        (sha256
-        (base32 "1njqyrdsprkf1m2ip6729mgmahjfxnjh82wqf8zx0pywf3ylkv54"))))
+        (base32 "1qra5dmxciz0r7ya7a528hz1xxg1km66lgsxl0l4x17zfb1idbsm"))))
     (properties `((upstream-name . "HNPclassifier")))
     (build-system r-build-system)
     (arguments
@@ -6230,7 +6518,8 @@ under-classification errors under user specified control levels with high
 probability.  It supports the creation of H-NP classifiers using scoring
 functions based on built-in classification methods (including logistic
 regression, support vector machines, and random forests), as well as
-user-trained scoring functions.")
+user-trained scoring functions.  The package exports @code{`base_function()}` to
+train these built-in base learners directly for use in the H-NP pipeline.")
     (license license:expat)))
 
 (define-public r-hnp
@@ -6599,30 +6888,6 @@ Methods are described in Gamiz, Limnios, and Segovia-Garcia (2023)
 <doi:10.1016/j.ejor.2022.05.006>.")
     (license license:gpl2)))
 
-(define-public r-hmmr
-  (package
-    (name "r-hmmr")
-    (version "1.0-1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "hmmr" version))
-       (sha256
-        (base32 "0f3l4dch7z2r1na41pqp1amwb650c1frs62j0x5fid79pw37rczs"))))
-    (properties `((upstream-name . "hmmr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-depmixs4 r-boot))
-    (home-page "<https://depmix.github.io/hmmr/>")
-    (synopsis
-     "Mixture and Hidden Markov Models with R: Datasets and Example Code")
-    (description
-     "Datasets and code examples that accompany our book Visser & Speekenbrink (2021),
-\"Mixture and Hidden Markov Models with R\", <https://depmix.github.io/hmmr/>.")
-    (license license:gpl2+)))
-
 (define-public r-hmmpa
   (package
     (name "r-hmmpa")
@@ -6844,13 +7109,13 @@ predict future sequences.")
 (define-public r-hmetad
   (package
     (name "r-hmetad")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hmetad" version))
        (sha256
-        (base32 "039wfsq6hdckm4kbs888a1sx27k6xyyhbh92pvx8qw9582jdi7kq"))))
+        (base32 "00mnk6sbx6lcj3wi633lngb3rj1xnkyy44vi01153k2pp7lyi1vy"))))
     (properties `((upstream-name . "hmetad")))
     (build-system r-build-system)
     (arguments
@@ -7339,16 +7604,49 @@ using either lmer in the lme4 package or lme in the nlme package.")
 <https://www.hlidacstatu.cz/>, a Czech watchdog, via their API.")
     (license license:expat)))
 
+(define-public r-hlctools
+  (package
+    (name "r-hlctools")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HLCtools" version))
+       (sha256
+        (base32 "0nn7m1w3kbi5r5hxk1zylpgblfvfx5972c1sdilgdf1rr8c0164j"))))
+    (properties `((upstream-name . "HLCtools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/guilhermefranchi/HLCtools")
+    (synopsis "Calculate Herd Lying Concordance Metrics")
+    (description
+     "Calculates Herd Lying Concordance (HLC) metrics from individual animal
+lying-behaviour data.  HLC is a continuous framework for quantifying group-level
+behavioural cohesion from between-animal dispersion within observation
+intervals.  The package implements standard deviation, mean absolute deviation,
+interquartile range, and entropy formulations, lying-weighted extensions,
+threshold-based synchrony comparisons, temporal summaries, and descriptive
+method-ranking tools.  The HLC formulations are introduced in this package;
+related approaches to cattle behavioural synchrony include Raussi et al. (2011)
+<doi:10.1017/S1751731110001928>, Kok et al. (2023)
+<doi:10.1016/j.applanim.2023.105906>, and the activity metric framework of van
+Dixhoorn et al. (2024) <doi:10.24072/pcjournal.489>.")
+    (license license:expat)))
+
 (define-public r-hlatools
   (package
     (name "r-hlatools")
-    (version "1.6.3")
+    (version "1.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HLAtools" version))
        (sha256
-        (base32 "0x7skrcqrznbq60kdxkr9yrcl5ng2420ic650y03in14qvf7acql"))))
+        (base32 "1m1cx6axq4rg5i30fjlwiyzfjp4ihiaia1j25wflmvkqm5ncc6nk"))))
     (properties `((upstream-name . "HLAtools")))
     (build-system r-build-system)
     (arguments
@@ -7374,7 +7672,8 @@ between UNIFORMAT and GL String Code (GLSC) formats, translate HLA alleles and
 GLSCs across @code{ImmunoPolymorphism} Database (IPD) IMGT/HLA Database release
 versions, identify differences between pairs of alleles at a locus, generate
 customized, multi-position sequence alignments, trim and convert allele-names
-across nomenclature epochs, and extend existing data-analysis methods.")
+across nomenclature epochs, and extend existing data-analysis methods.  Tran et
+al., (2025) <doi:10.1111/iji.70013>.")
     (license license:gpl3+)))
 
 (define-public r-hlar
@@ -7738,13 +8037,13 @@ suitable for mapping, quantitative analysis, and network analysis.")
 (define-public r-historicalborrowlong
   (package
     (name "r-historicalborrowlong")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "historicalborrowlong" version))
        (sha256
-        (base32 "024dq8kyw67bz4p58d99r1ldhh3wjhpjzgqdmi25ncgxq7k9ylva"))))
+        (base32 "0l3gix8nxw2r3mxwsx7cdmdp21i5zgxl90n6d07paf7kdq36b9wv"))))
     (properties `((upstream-name . "historicalborrowlong")))
     (build-system r-build-system)
     (arguments
@@ -7935,13 +8234,13 @@ series.  An introducing paper is Irpino A. Verde R. (2015) <doi:
 (define-public r-histdata
   (package
     (name "r-histdata")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HistData" version))
        (sha256
-        (base32 "1c9a5g75idwivaf5qi5h1rsmdhzzq096ymsi0wykccdl2wcdsmx1"))))
+        (base32 "0y1bd5jcrrjlwal1rgybvpx5wdgdbkss50h0x4118qyhqrhhrzac"))))
     (properties `((upstream-name . "HistData")))
     (build-system r-build-system)
     (arguments
@@ -8317,13 +8616,13 @@ forecasting, not for planning your flight!")
 (define-public r-hima
   (package
     (name "r-hima")
-    (version "2.3.3")
+    (version "2.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HIMA" version))
        (sha256
-        (base32 "1hfycb3p6bvpcj1hrldjnrrp6afailz9xngww2f4l36r4hdzcycb"))))
+        (base32 "0g58q5z97kv7205f2p99bkiar8y21i68af4c674kkwgh9kpa2hqk"))))
     (properties `((upstream-name . "HIMA")))
     (build-system r-build-system)
     (arguments
@@ -8337,7 +8636,6 @@ forecasting, not for planning your flight!")
                              r-iterators
                              r-hommel
                              r-hdmt
-                             r-hdi
                              r-glmnet
                              r-foreach
                              r-doparallel
@@ -8870,13 +9168,13 @@ as @code{zwl_test()} in this package, provide a reliable and powerful test.")
 (define-public r-highdir
   (package
     (name "r-highdir")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "highdir" version))
        (sha256
-        (base32 "1bixr34czbhx04drsayk9rnff7gscra26y8g0cdas8m2jjb4h4jy"))))
+        (base32 "079j8zjqnf9ln2vrdqxxg5rgc2g17mjsscnd0wijygw7nih64ppw"))))
     (properties `((upstream-name . "highdir")))
     (build-system r-build-system)
     (arguments
@@ -8884,7 +9182,9 @@ as @code{zwl_test()} in this package, provide a reliable and powerful test.")
       #:tests? #f))
     (propagated-inputs (list r-viridis
                              r-shiny
+                             r-scales
                              r-rlang
+                             r-lifecycle
                              r-jsonlite
                              r-htmlwidgets
                              r-highcharter
@@ -8892,15 +9192,45 @@ as @code{zwl_test()} in this package, provide a reliable and powerful test.")
     (native-inputs (list r-knitr))
     (home-page "https://folkehelsestats.github.io/highdir/")
     (synopsis
-     "Backend-Agnostic Figure Builder for 'highcharter' and 'ggplot2'")
+     "Unified Data Visualization Framework for Dynamic and Static Graphics")
     (description
-     "This package provides a backend-agnostic API for creating data visualizations
-using highcharter (interactive) or ggplot2 (static).  Figures are defined once
-via a specification object and can be rendered to either backend without
-modifying the calling code.  Supports both declarative and layered workflows,
-flexible theming and colour palettes, optional @code{JavaScript} enhancements,
-and tools for exporting figures and interactive exploration via a shiny app.")
+     "This package provides a unified API for creating data visualizations across
+dynamic and static rendering modes.  Visualizations are defined once using a
+specification object and can be rendered with highcharter', ggplot2', or other
+supported packages without modifying user code.  The package supports
+declarative and layered workflows, reusable themes and colour palettes, optional
+@code{JavaScript} enhancements, export tools, and interactive exploration
+through shiny applications.")
     (license license:expat)))
+
+(define-public r-highdimencdm
+  (package
+    (name "r-highdimencdm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HighDimenCDM" version))
+       (sha256
+        (base32 "1s0aqc1yyib9mkycxwpyxk76zl871msn110m63n4q3cdxrlmyqjz"))))
+    (properties `((upstream-name . "HighDimenCDM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-gdina r-coda))
+    (home-page "https://cran.r-project.org/package=HighDimenCDM")
+    (synopsis
+     "Stochastic EM Algorithm for High-Dimensional Cognitive Diagnosis Models")
+    (description
+     "This package provides stochastic expectation-maximization (@code{stEM})
+algorithms for estimating high-dimensional cognitive diagnosis models.  The
+package implements stochastic EM algorithms for cognitive diagnosis models with
+a large number of attributes.  It includes estimation functions and example
+datasets for model fitting and analysis.  The methods are described in Ma, W.,
+Wang, K., and Xu, G. (Accepted). \"Parameter estimation of cognitive diagnosis
+models with stochastic EM algorithm.\" Behaviometrika.")
+    (license license:gpl3)))
 
 (define-public r-highd2means
   (package
@@ -9091,13 +9421,13 @@ Allocation (Pfitzingera and Katzke, 2019)
 (define-public r-hiernet
   (package
     (name "r-hiernet")
-    (version "1.9")
+    (version "1.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hierNet" version))
        (sha256
-        (base32 "0fdnj50s985w06wrjc67hcy6fc4lj8jbxlskgrli9m0181vbdj69"))))
+        (base32 "014x4vkd2s1p2gmfx0lf82dkby4ppxli9vchry8lb74658j8ggyv"))))
     (properties `((upstream-name . "hierNet")))
     (build-system r-build-system)
     (arguments
@@ -10270,13 +10600,13 @@ screenshot in PNG format using a headless browser.")
 (define-public r-hexify
   (package
     (name "r-hexify")
-    (version "0.6.5")
+    (version "0.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hexify" version))
        (sha256
-        (base32 "1di5586kk0k6qz7z83lj7bz23xfniin5mpcx2qyd0ja92qj3sbjz"))))
+        (base32 "0rw5lw7qw8znjnihg594apzjv50l81w75lsvw99xyf0ask3yq5r6"))))
     (properties `((upstream-name . "hexify")))
     (build-system r-build-system)
     (arguments
@@ -10285,12 +10615,12 @@ screenshot in PNG format using a headless browser.")
     (propagated-inputs (list r-sf r-rlang r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://gillescolling.com/hexify/")
-    (synopsis "Equal-Area Hex Grids on the 'Snyder' 'ISEA' 'Icosahedron'")
+    (synopsis "Equal-Area Hex Grids on the Snyder ISEA Icosahedron")
     (description
      "This package provides functions to build and use hexagonal discrete global grids
-using the Snyder ISEA projection ('Snyder 1992
+using the Icosahedral Snyder Equal Area ('ISEA') projection (Snyder 1992
 <doi:10.3138/27H7-8K88-4882-1752>) and the H3 hierarchical hexagonal system
-('Uber Technologies).  Implements the ISEA discrete global grid system ('Sahr',
+(Uber Technologies).  Implements the ISEA discrete global grid system (Sahr,
 White and Kimerling 2003 <doi:10.1559/152304003100011090>).  Includes a fast C++
 core for ISEA projection and aperture quantization, an included H3 v4.4.1 C
 library for native H3 grid operations, and sf'/'terra'-compatible R wrappers for
@@ -10330,13 +10660,13 @@ for easy rendering of the glyphs in an R terminal or graphics device.")
 (define-public r-hexdensity
   (package
     (name "r-hexdensity")
-    (version "1.4.10")
+    (version "1.4.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hexDensity" version))
        (sha256
-        (base32 "0aszzm070rz4sgsys6yiyxlzijzmknlqak6cpb6p0pklvw62psca"))))
+        (base32 "14d962qb0x75v40s0g1h4z7z6qlbd9rgcxh80xc31j2qpjaav265"))))
     (properties `((upstream-name . "hexDensity")))
     (build-system r-build-system)
     (arguments
@@ -10810,13 +11140,13 @@ vectors that are distributed according to a Gaussian copula.")
 (define-public r-heterfunctionaldata
   (package
     (name "r-heterfunctionaldata")
-    (version "0.1.0")
+    (version "1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HeterFunctionalData" version))
        (sha256
-        (base32 "0qrfmxwrxn0rd2ncy3afhraf7m0010nf9739jkj19h1j5vksi9n1"))))
+        (base32 "006aasv11hjb3rbxslixcrfgjz91bwjw0y7jaz5ig2p8r2y811bq"))))
     (properties `((upstream-name . "HeterFunctionalData")))
     (build-system r-build-system)
     (arguments
@@ -11062,13 +11392,13 @@ estimators.\" Journal of Multivariate Analysis (2021)
 (define-public r-hermite
   (package
     (name "r-hermite")
-    (version "1.1.2")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hermite" version))
        (sha256
-        (base32 "0j9s7ayvbvmgwybrvf703b72qbn8gskb105pis19ig2sslllzda3"))))
+        (base32 "0wfzri2b069ywk6grvrn84wlykhnvqsrhrghmykiwb6dad5i7apg"))))
     (properties `((upstream-name . "hermite")))
     (build-system r-build-system)
     (arguments
@@ -11213,30 +11543,27 @@ through comms.")
 (define-public r-heplots
   (package
     (name "r-heplots")
-    (version "1.8.1")
+    (version "1.8.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "heplots" version))
        (sha256
-        (base32 "08mfll0n1k3mp02i4rqqib5334y7sjaza44riia40rizz6ypbz55"))))
+        (base32 "0jkdbav0xmmqa8csgha69smi41hiqv0rp68g08jbfayladdjz5hb"))))
     (properties `((upstream-name . "heplots")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-rgl
                              r-purrr
                              r-mass
                              r-magrittr
+                             r-generics
                              r-car
-                             r-broom))
-    (native-inputs (list r-r-rsp r-knitr))
+                             r-boot))
+    (native-inputs (list r-knitr))
     (home-page "https://friendly.github.io/heplots/")
     (synopsis "Visualizing Hypothesis Tests in Multivariate Linear Models")
     (description
@@ -11253,13 +11580,13 @@ space when there are more than a few response variables.")
 (define-public r-henna
   (package
     (name "r-henna")
-    (version "0.7.5")
+    (version "0.8.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "henna" version))
        (sha256
-        (base32 "0rj835dyqf7zzls2yyb515l5y3capqwavifhna2bj4pfvxa7f33p"))))
+        (base32 "08pfqkihr0z0j5m3s3r14zgac7rg17l6zlzh5dzdkd8kjg03rhnc"))))
     (properties `((upstream-name . "henna")))
     (build-system r-build-system)
     (arguments
@@ -11380,13 +11707,13 @@ Events API, and Helsinki Region Infoshare statistics API.")
 (define-public r-helpersmg
   (package
     (name "r-helpersmg")
-    (version "2026.3.31")
+    (version "2026.8.24")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HelpersMG" version))
        (sha256
-        (base32 "08k5avm8dbkwk0glq7i7ifqz2s14ia2i69wd7bgxxj1775ag09c1"))))
+        (base32 "0d45jkrfrm2mn5zimylwvxaxwr0h68frjvjg2yw1dyxwz5lbms9p"))))
     (properties `((upstream-name . "HelpersMG")))
     (build-system r-build-system)
     (arguments
@@ -11434,6 +11761,39 @@ how to set up CI. This project was first presented at Erum2018 to showcase
 R-Rust integration <https://jeroen.github.io/erum2018/>; for a real world
 use-case, see the gifski package on CRAN'.")
     (license license:expat)))
+
+(define-public r-hellometry
+  (package
+    (name "r-hellometry")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hellometry" version))
+       (sha256
+        (base32 "13n7hm20i38vziaz4h5vc2qszdxhyk9wjlsgp1lq48y5c7ngwx2w"))))
+    (properties `((upstream-name . "hellometry")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-purrr
+                             r-progress
+                             r-performance
+                             r-magrittr
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/pierrerogy/hellometry")
+    (synopsis "Biomass Estimation from Allometric Relationships")
+    (description
+     "Estimates body size and biomass of organisms from allometric relationships.  It
+works with any data that follow a few column-naming conventions, using the
+measurements you supply to impute the ones that are missing.")
+    (license license:gpl3+)))
 
 (define-public r-hellokitty
   (package
@@ -11669,13 +12029,13 @@ methods recommended by the National Cancer Institute (2024)
 (define-public r-heims
   (package
     (name "r-heims")
-    (version "0.4.0")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "heims" version))
        (sha256
-        (base32 "0vnq31jwn09grni4gdhf1hzd87b62as4f65b2qw7ky6mi38ahr5d"))))
+        (base32 "0y38k7fxak60xk64rqwjxj910akfccc5jnzxa7yvv2pcaxy11p8z"))))
     (properties `((upstream-name . "heims")))
     (build-system r-build-system)
     (arguments
@@ -11687,7 +12047,7 @@ methods recommended by the National Cancer Institute (2024)
                              r-fastmatch
                              r-data-table
                              r-bit64))
-    (home-page "https://cran.r-project.org/package=heims")
+    (home-page "https://github.com/HughParsonage/heims")
     (synopsis
      "Decode and Validate HEIMS Data from Department of Education, Australia")
     (description
@@ -11696,7 +12056,10 @@ methods recommended by the National Cancer Institute (2024)
 Department of Education, Australia to record enrolments and completions in
 Australia's higher education system, as well as a range of relevant information.
  For more information, including the source of the data dictionary, see
-<http://heimshelp.education.gov.au/sites/heimshelp/dictionary/pages/data-element-dictionary>.")
+<https://web.archive.org/web/20180210074903/http://heimshelp.education.gov.au/sites/heimshelp/dictionary/pages/data-element-dictionary>.
+ That collection has since been superseded by the Tertiary Collection of Student
+Information, whose data element dictionary is at
+<https://www.tcsisupport.gov.au/element>.")
     (license license:gpl3)))
 
 (define-public r-heimdall
@@ -11937,13 +12300,13 @@ global and local influence for four possible perturbation schema.")
 (define-public r-heck
   (package
     (name "r-heck")
-    (version "0.1.5")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "heck" version))
        (sha256
-        (base32 "0lmd19ia6jwnraagd8k99dp630y013vd9a7dkxsarahqqk80jpca"))))
+        (base32 "00zn7qvxvm9zfk9hq2hh2f9pyfffhkhr5rza8yd2yy48991qk9b0"))))
     (properties `((upstream-name . "heck")))
     (build-system r-build-system)
     (arguments
@@ -12058,6 +12421,34 @@ visualization.  This package wraps the @code{JavaScript} heat-tree package using
 the htmlwidgets R package.")
     (license license:expat)))
 
+(define-public r-heatstressr
+  (package
+    (name "r-heatstressr")
+    (version "2.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HeatStressR" version))
+       (sha256
+        (base32 "199l7w017a278qmd86cprpq625jrzm1xliffknha757i53z4qbx0"))))
+    (properties `((upstream-name . "HeatStressR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-foreach r-doparallel r-assertthat))
+    (home-page "https://github.com/zyf0717/HeatStressR")
+    (synopsis "Calculate Heat Stress Indices")
+    (description
+     "Calculates heat-stress indices from meteorological observations, including the
+physically based wet-bulb globe temperature model described by Liljegren et al.
+(2008) <doi:10.1080/15459620802310770>.  The package provides an independently
+maintained R implementation with row-level diagnostics, configurable physical
+controls, and batch processing for the Liljegren method; it is not a
+bitwise-compatible port of the original program, and cross-implementation
+differences are expected.")
+    (license license:gpl3)))
+
 (define-public r-heatmapr
   (package
     (name "r-heatmapr")
@@ -12140,6 +12531,35 @@ same data set, e.g., clustered and ordered by a supervised clustering method.")
 dependent variables, and calculates the related heatmap fit statistic described
 in Esarey and Pierce (2012) <DOI:10.1093/pan/mps026>.")
     (license license:gpl2+)))
+
+(define-public r-heatmapbehavior
+  (package
+    (name "r-heatmapbehavior")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "heatmapbehavior" version))
+       (sha256
+        (base32 "0c8n9dzziqc2x1jlwsfhrjppwfgmhc2g5i9g2m6axicf99gx62si"))))
+    (properties `((upstream-name . "heatmapbehavior")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-rlang
+                             r-magrittr
+                             r-imager
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=heatmapbehavior")
+    (synopsis "Spatial and Behavioral Analysis of Heatmaps")
+    (description
+     "This package provides tools for processing heatmap images, removing backgrounds,
+calculating automatic arena calibration, and extracting behavioral metrics such
+as thigmotaxis index, Gini behavioral coefficient, and center of mass.")
+    (license license:gpl3)))
 
 (define-public r-heatindex
   (package
@@ -12271,13 +12691,13 @@ up to, and adjusting for files that have already been downloaded.")
 (define-public r-heaping
   (package
     (name "r-heaping")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "heaping" version))
        (sha256
-        (base32 "1yb9sxbfqangsmaipwprfwsga8w9ah9i7pk5awk97gac3g7k5pzh"))))
+        (base32 "1a5px9ss995z0rfw90x16zzlsixah9bmilhpb8l3vp63c94m5zmr"))))
     (properties `((upstream-name . "heaping")))
     (build-system r-build-system)
     (arguments
@@ -12295,8 +12715,11 @@ distort demographic analyses.  Unlike traditional smoothing methods that only
 correct aggregated statistics, this package corrects individual values by
 replacing a calculated proportion of heaped observations with draws from fitted
 truncated distributions (log-normal, normal, or uniform).  Supports 5-year and
-10-year heaping patterns, single heap correction, and optional model-based
-adjustment to preserve covariate relationships.")
+10-year heaping patterns, single heap correction, survey weights, and optional
+covariate-conditional (model-based) correction via quantile regression forests
+or linear models to preserve relationships.  A multiple-imputation wrapper
+repeats the correction to propagate the added uncertainty into downstream
+inference.")
     (license license:gpl2+)))
 
 (define-public r-healthyr-ts
@@ -12374,13 +12797,13 @@ package.")
 (define-public r-healthyr-ai
   (package
     (name "r-healthyr-ai")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "healthyR.ai" version))
        (sha256
-        (base32 "04bv2vwskr37lcc1knb0v8bfn5qd286cmmhj5pzpyr797h5r7s1g"))))
+        (base32 "0hkhwnh4ax24iwq5m4qd5ii6qmbl03bd39681x0sbvmblp815mzx"))))
     (properties `((upstream-name . "healthyR.ai")))
     (build-system r-build-system)
     (arguments
@@ -12395,9 +12818,6 @@ package.")
                              r-recipes
                              r-purrr
                              r-parsnip
-                             r-modeltime
-                             r-magrittr
-                             r-h2o
                              r-ggrepel
                              r-ggplot2
                              r-forcats
@@ -12458,13 +12878,13 @@ consistent verb framework that takes the guesswork out of everything.")
 (define-public r-healthyaddress
   (package
     (name "r-healthyaddress")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "healthyAddress" version))
        (sha256
-        (base32 "02vlfpdnwa3x4pb5sk50y8ln437an0lx704ihhiamn2ij04bmf98"))))
+        (base32 "0bzm8sqamsbz3nqvc6d38v6wlwnxx7ai28g6m1z2yfjh24p6v2m2"))))
     (properties `((upstream-name . "healthyAddress")))
     (build-system r-build-system)
     (arguments
@@ -12551,13 +12971,13 @@ normalization, imputation, and combined marker dispatch.")
 (define-public r-healthiar
   (package
     (name "r-healthiar")
-    (version "0.2.4")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "healthiar" version))
        (sha256
-        (base32 "0lsl9vpaipfrph4knwnlxfkzgw3v1dv0v3fkq34jgfc49v5q12m6"))))
+        (base32 "1q4xngl8mpdasvy02kjnvv7mihmfndqh52z6psld49dyihmfxhkq"))))
     (properties `((upstream-name . "healthiar")))
     (build-system r-build-system)
     (arguments
@@ -12688,13 +13108,13 @@ The implementation is based on dbplyr with full tidyverse compatibility.")
 (define-public r-healthcare-antitrust
   (package
     (name "r-healthcare-antitrust")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "healthcare.antitrust" version))
        (sha256
-        (base32 "0fd1wla4fzpgv7bngxzckpa8mlvdsvx4wqnnjk1hw839h2vi59k4"))))
+        (base32 "0x2nrz5krrk3cb715m93nia6dac631fbva6pkzwr8hi5qkzpn1ip"))))
     (properties `((upstream-name . "healthcare.antitrust")))
     (build-system r-build-system)
     (arguments
@@ -12736,13 +13156,13 @@ body mass index etc.  related to fitness and health of a person.")
 (define-public r-healthbr
   (package
     (name "r-healthbr")
-    (version "0.2.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "healthbR" version))
        (sha256
-        (base32 "1sw4yl13djqahffh1hkdsln7gr54bi60l7kgvlzb446zhrwrjijc"))))
+        (base32 "0yg54d5817gk8f2p3xsjbhd3my9dabk121yzn97262zhkbwbda6l"))))
     (properties `((upstream-name . "healthbR")))
     (build-system r-build-system)
     (arguments
@@ -12777,21 +13197,24 @@ Care Health Information System - coverage indicators via REST API), ANS
 consumer complaints, and financial statements), ANVISA ('Agencia Nacional de
 Vigilancia Sanitaria - product registrations, pharmacovigilance',
 hemovigilance', technovigilance', and controlled substance sales via SNGPC'),
-and other health information systems.  Data is downloaded from the Brazilian
-Ministry of Health and IBGE repositories.  Data is returned in tidy format
-following tidyverse conventions.")
+and other health information systems.  Data is downloaded from DATASUS (the
+Ministry of Health's informatics department: compressed .dbc microdata read
+natively, or the healthbr-data Parquet mirror with per-file provenance) and from
+IBGE repositories, and is returned in tidy format following tidyverse
+conventions.  A vignette compares the package with microdatasus on the DATASUS
+systems both read.")
     (license license:expat)))
 
 (define-public r-healthatlas
   (package
     (name "r-healthatlas")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "healthatlas" version))
        (sha256
-        (base32 "1pqljkhrsxdbzmjrwygb7dj6h9h3jfff9jzj015kb4120hz7jiys"))))
+        (base32 "16g5ydx566wkk86qbq7mvf5kabk2xa2aqjh2znmhi0fg4m05y2bn"))))
     (properties `((upstream-name . "healthatlas")))
     (build-system r-build-system)
     (arguments
@@ -12907,13 +13330,13 @@ elastic net methods.")
 (define-public r-hdtsa
   (package
     (name "r-hdtsa")
-    (version "1.0.6-1")
+    (version "1.0.6-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HDTSA" version))
        (sha256
-        (base32 "11lnqhscaf54wcyy0v7fxl70zzjd389wjpn7diap1pm9d0n16b5r"))))
+        (base32 "12z04dlagisk8lwm8fanmnhppzzbn0zvz7dcnaxkq7pynvvyizmc"))))
     (properties `((upstream-name . "HDTSA")))
     (build-system r-build-system)
     (arguments
@@ -12925,9 +13348,9 @@ elastic net methods.")
                              r-rcppeigen
                              r-rcpparmadillo
                              r-rcpp
+                             r-qz
                              r-mass
                              r-jointdiag
-                             r-geigen
                              r-forecast
                              r-clime))
     (home-page "https://github.com/Linc2021/HDTSA")
@@ -13332,34 +13755,6 @@ the shrinkage bias in the predicted PC scores.  Dey, R. and Lee, S. (2019)
 <doi:10.1016/j.jmva.2019.02.007>.")
     (license license:gpl2+)))
 
-(define-public r-hdoutliers
-  (package
-    (name "r-hdoutliers")
-    (version "1.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "HDoutliers" version))
-       (sha256
-        (base32 "0vc3g36cghs2ln8a3pb344b3vw1jpz9r8ld77ldd898vg9rhkq2m"))))
-    (properties `((upstream-name . "HDoutliers")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mclust r-fnn r-factominer))
-    (home-page "https://cran.r-project.org/package=HDoutliers")
-    (synopsis
-     "Leland Wilkinson's Algorithm for Detecting Multidimensional Outliers")
-    (description
-     "An implementation of an algorithm for outlier detection that can handle a) data
-with a mixed categorical and continuous variables, b) many columns of data, c)
-many rows of data, d) outliers that mask other outliers, and e) both
-unidimensional and multidimensional datasets.  Unlike ad hoc methods found in
-many machine learning papers, HDoutliers is based on a distributional model that
-uses probabilities to determine outliers.")
-    (license license:expat)))
-
 (define-public r-hdomdesign
   (package
     (name "r-hdomdesign")
@@ -13444,13 +13839,13 @@ Zhu and Zhang (2026) <doi:10.1016/j.csda.2025.108269>.")
 (define-public r-hdnom
   (package
     (name "r-hdnom")
-    (version "6.2.0")
+    (version "6.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hdnom" version))
        (sha256
-        (base32 "15wr72g8z95lanbcdlf57lgjfl1jqml8r9w2fvxqipsfdahk4l5s"))))
+        (base32 "1zzh2nppag2m2245r40p1sgj99579wxf6fcp15by1bgxmmkdbnlj"))))
     (properties `((upstream-name . "hdnom")))
     (build-system r-build-system)
     (arguments
@@ -13476,20 +13871,21 @@ calibration, and comparison for high-dimensional data.")
 (define-public r-hdmtd
   (package
     (name "r-hdmtd")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hdMTD" version))
        (sha256
-        (base32 "1phd8lvm0b2zjmf2wpgk1yjhf2y1zvdrwvx15y787cglw24r8a8b"))))
+        (base32 "1hmgvlsniwkg990bs0dkq24jph17h34fq3qc2y7wyg28rsgw84qj"))))
     (properties `((upstream-name . "hdMTD")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-purrr r-igraph r-dplyr))
-    (home-page "https://github.com/MaiaraGripp/hdMTD")
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://arxiv.org/abs/2509.01808")
     (synopsis
      "Inference for High-Dimensional Mixture Transition Distribution Models")
     (description
@@ -13750,35 +14146,6 @@ inference for high-dimensional vector autoregression with measurement error\",
 Statistica Sinica.")
     (license license:gpl2+)))
 
-(define-public r-hdir
-  (package
-    (name "r-hdir")
-    (version "1.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "HDiR" version))
-       (sha256
-        (base32 "1qwd3y9645m8v2gdrb4xjpq86ixs9rgrw7iv3m5lm7nnf87qm350"))))
-    (properties `((upstream-name . "HDiR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rgl r-npcirc r-movmf r-directional r-circular))
-    (home-page "https://cran.r-project.org/package=HDiR")
-    (synopsis "Directional Highest Density Regions")
-    (description
-     "We provide an R tool for computation and nonparametric plug-in estimation of
-Highest Density Regions (HDRs) and general level sets in the directional
-setting.  Concretely, circular and spherical HDRs can be reconstructed from a
-data sample following Saavedra-Nieves and Crujeiras (2021)
-<doi:10.1007/s11634-021-00457-4>.  This library also contains two real datasets
-in the circular and spherical settings.  The first one concerns a problem from
-animal orientation studies and the second one is related to earthquakes
-occurrences.")
-    (license license:gpl2)))
-
 (define-public r-hdinterval
   (package
     (name "r-hdinterval")
@@ -13839,29 +14206,6 @@ forests.  See Waggoner (2023) <doi:10.1007/s00180-023-01325-9> for more on
 (2022) <https://github.com/mayer79/@code{missRanger>} for more on
 @code{missRanger}'.")
     (license license:expat)))
-
-(define-public r-hdi
-  (package
-    (name "r-hdi")
-    (version "0.1-10")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "hdi" version))
-       (sha256
-        (base32 "01ljli5y2s6lx28r5k9az7pcg4a3nd1f8wh4smcb2l9c1ri7mwqm"))))
-    (properties `((upstream-name . "hdi")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-scalreg r-mass r-linprog r-glmnet))
-    (home-page "https://cran.r-project.org/package=hdi")
-    (synopsis "High-Dimensional Inference")
-    (description
-     "Implementation of multiple approaches to perform inference in high-dimensional
-models.")
-    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-hdglm
   (package
@@ -13975,13 +14319,13 @@ al. (2025) <doi:10.1080/07350015.2025.2526424>.")
 (define-public r-hdf5lib
   (package
     (name "r-hdf5lib")
-    (version "2.1.1.1")
+    (version "2.2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hdf5lib" version))
        (sha256
-        (base32 "1mg95clhi57crvh71h0262nf08rh05vyw7zi9d7y2r3zvk56gqz4"))))
+        (base32 "1nrhpz5rf38b0iaj1m3h0rfy266djsbp28r0p0vri6shvd36a02s"))))
     (properties `((upstream-name . "hdf5lib")))
     (build-system r-build-system)
     (arguments
@@ -13991,7 +14335,7 @@ al. (2025) <doi:10.1080/07350015.2025.2526424>.")
     (synopsis "Headers and Static Libraries for 'HDF5'")
     (description
      "This package provides a self-contained, static build of the HDF5 (Hierarchical
-Data Format 5) C library (release 2.1.1) for R package developers.  Designed for
+Data Format 5) C library (release 2.2.0) for R package developers.  Designed for
 use in the @code{LinkingTo} field, it enables zero-dependency integration by
 building the library entirely from source during installation.  Additionally, it
 compiles and internally links a comprehensive suite of advanced compression
@@ -14003,22 +14347,52 @@ fully encapsulated.  HDF5 is developed by The HDF Group
 <https://www.hdfgroup.org/>.")
     (license license:expat)))
 
+(define-public r-hdelliptical
+  (package
+    (name "r-hdelliptical")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HDElliptical" version))
+       (sha256
+        (base32 "0f9xblm94a3qychg4ngny9xs5aqv5hs9v2xxdbzf1mxvd9750amv"))))
+    (properties `((upstream-name . "HDElliptical")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-mvtnorm))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/flnankai/HDElliptical")
+    (synopsis
+     "High-Dimensional Methods for Elliptically Symmetric Distributions")
+    (description
+     "Fast, documented implementations of robust estimation, testing, dimension
+reduction, classification, and clustering methods for high-dimensional
+elliptically symmetric data.  Computational kernels use Rcpp and
+@code{RcppArmadillo}'.  The package follows methods reviewed in Feng (2026),
+\"High-Dimensional Data Analysis for Elliptically Symmetric Distributions\"
+<https://github.com/flnankai/HDElliptical/releases>.")
+    (license license:expat)))
+
 (define-public r-hdd
   (package
     (name "r-hdd")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hdd" version))
        (sha256
-        (base32 "1xl5p56qrnvli2ga1p8xyvgsp17jyjm0xng5prigyngnpj327qpk"))))
+        (base32 "0qp77849m1zrvjmnzghn4ib35yhah0aa7r4k38y142sav6v788bd"))))
     (properties `((upstream-name . "hdd")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-readr r-fst r-dreamerr r-data-table))
+    (propagated-inputs (list r-stringmagic r-readr r-fst r-dreamerr
+                             r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=hdd")
     (synopsis "Easy Manipulation of Out of Memory Data Sets")
@@ -14026,7 +14400,8 @@ fully encapsulated.  HDF5 is developed by The HDF Group
      "Hard drive data: Class of data allowing the easy importation/manipulation of out
 of memory data sets.  The data sets are located on disk but look like in-memory,
 the syntax for manipulation is similar to data.table'.  Operations are performed
-\"chunk-wise\" behind the scene.")
+\"chunk-wise\" behind the scene.  See <https://lrberge.github.io/hdd/> for more
+information.")
     (license license:gpl3)))
 
 (define-public r-hdcurves
@@ -14126,33 +14501,6 @@ complexity of the functions, the package runs best on datasets with a relatively
 large number of attributes but no more than a few hundred observations.")
     (license license:gpl3)))
 
-(define-public r-hdclust
-  (package
-    (name "r-hdclust")
-    (version "1.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "HDclust" version))
-       (sha256
-        (base32 "1v8q8xf9nlxq0x8m5xlnrp3f3hdzlxraxf8g22cadi1162d6vfg1"))))
-    (properties `((upstream-name . "HDclust")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rtsne r-rcppprogress r-rcpp))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=HDclust")
-    (synopsis
-     "Clustering High Dimensional Data with Hidden Markov Model on Variable Blocks")
-    (description
-     "Clustering of high dimensional data with Hidden Markov Model on Variable Blocks
-(HMM-VB) fitted via Baum-Welch algorithm.  Clustering is performed by the Modal
-Baum-Welch algorithm (MBW), which finds modes of the density function.  Lin Lin
-and Jia Li (2017) <https://jmlr.org/papers/v18/16-342.html>.")
-    (license license:gpl2+)))
-
 (define-public r-hdclassif
   (package
     (name "r-hdclassif")
@@ -14242,31 +14590,6 @@ misspecified (but not both).  This package is based on the paper by Fan et al.,
 (2022), Journal of Business & Economic Statistics
 <doi:10.1080/07350015.2020.1811102>.")
     (license license:gpl3+)))
-
-(define-public r-hdbrr
-  (package
-    (name "r-hdbrr")
-    (version "1.1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "HDBRR" version))
-       (sha256
-        (base32 "03jl1m099z6gj2ipi7rnjnrd2rmk4zs54332rwlqyf40dv7ndbz1"))))
-    (properties `((upstream-name . "HDBRR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-numderiv r-mass r-bigstatsr))
-    (home-page "https://cran.r-project.org/package=HDBRR")
-    (synopsis "High Dimensional Bayesian Ridge Regression without MCMC")
-    (description
-     "Ridge regression provide biased estimators of the regression parameters with
-lower variance.  The HDBRR (\"High Dimensional Bayesian Ridge Regression\")
-function fits Bayesian Ridge regression without MCMC, this one uses the SVD or
-QR decomposition for the posterior computation.")
-    (license license:gpl2+)))
 
 (define-public r-hdbma
   (package
@@ -14499,13 +14822,13 @@ classification if the covariance matrices of the classes are unequal.")
 (define-public r-hcuptools
   (package
     (name "r-hcuptools")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HCUPtools" version))
        (sha256
-        (base32 "0m2iwdm3h4rhrjkfa91kgfly838pcvvhqddih1s7x651x9n5dq8c"))))
+        (base32 "0xxng8jnjfm91kz0c5l720nl0lb81n38aalhv76kpispcb31pa47"))))
     (properties `((upstream-name . "HCUPtools")))
     (build-system r-build-system)
     (arguments
@@ -14601,13 +14924,13 @@ Li (2020) <doi:10.1080/10543406.2019.1684305>.")
 (define-public r-hcrur
   (package
     (name "r-hcrur")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hcruR" version))
        (sha256
-        (base32 "1ws6jn9cr30rbs9qxr5vzyb58x8cs1cn5d91ggykgd5jrr3dxdr5"))))
+        (base32 "1xwpw77df5mzycj03nig4zz1rg4mb77zjbhr5149cqi50r97qbam"))))
     (properties `((upstream-name . "hcruR")))
     (build-system r-build-system)
     (arguments
@@ -14802,13 +15125,13 @@ complexity is paired with an efficient C++ implementation.")
 (define-public r-hcinfer
   (package
     (name "r-hcinfer")
-    (version "0.1.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hcinfer" version))
        (sha256
-        (base32 "0n2hjs10cpcm8psp3c6zhw5pk0lfkcicxr0g4nwmhspxphi8n3ab"))))
+        (base32 "1k22fqfwa4s2fyvgf1g3hklamj7ilvyrkn2xm14frvn2yg8swigq"))))
     (properties `((upstream-name . "hcinfer")))
     (build-system r-build-system)
     (arguments
@@ -14819,18 +15142,23 @@ complexity is paired with an efficient C++ implementation.")
     (home-page "https://prdm0.github.io/hcinfer/")
     (synopsis "Heteroskedasticity-Consistent Inference for Linear Models")
     (description
-     "Computes heteroskedasticity-consistent covariance matrix estimators for ordinary
-least squares regression models.  The published HC0 through HC5m estimators
+     "This package performs heteroskedasticity-consistent inferences in linear
+regressions under heteroskedasticity.  The published HC0 through HC5m estimators
 implemented in the package follow White (1980) <doi:10.2307/1912934>, Hinkley
-(1977) <doi:10.1080/00401706.1977.10489550>, Horn et al. (1975)
-<doi:10.1080/01621459.1975.10479877>, @code{MacKinnon} and White (1985)
+(1977) <doi:10.1080/00401706.1977.10489550>, @code{MacKinnon} and White (1985)
 <doi:10.1016/0304-4076(85)90158-7>, Cribari-Neto (2004)
 <doi:10.1016/S0167-9473(02)00366-3>, Cribari-Neto and da Silva (2011)
 <doi:10.1007/s10182-010-0141-2>, Cribari-Neto et al. (2007)
-<doi:10.1080/03610920601126589>, and Li et al. (2016)
+<doi:10.1080/03610920601126589> with its erratum
+<doi:10.1080/03610920802109210>, and Li et al. (2016)
 <doi:10.1080/00949655.2016.1198906>.  The package also includes HCbeta, a new
-estimator proposed by the package authors.  It provides normal Wald tests,
-confidence intervals, diagnostics, and S3 output for applied inference.")
+estimator proposed by the package authors.  It additionally provides feasible
+generalized least squares estimation under multiplicative heteroskedasticity
+following Harvey (1976) <doi:10.2307/1913974> and Cribari-Neto and Pereira
+(2019) <doi:10.1080/00949655.2019.1586902>, with two-step and maximum likelihood
+fitting and information criteria for the likelihood fit.  It provides normal
+Wald tests, confidence intervals, diagnostics, and S3 output for applied
+inference.")
     (license license:expat)))
 
 (define-public r-hcidata
@@ -15243,6 +15571,32 @@ Discrete Choice Experiment.  For more details see the article by Mukhopadhyay et
 al. (2019) <DOI:10.1080/19466315.2018.1527248>.")
     (license license:gpl2)))
 
+(define-public r-hbayesdm
+  (package
+    (name "r-hbayesdm")
+    (version "2.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hBayesDM" version))
+       (sha256
+        (base32 "13wql399ilgmkkksi2h3kma20q7z6f9ks9n13rmjqlvnsm0y0k3r"))))
+    (properties `((upstream-name . "hBayesDM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-posterior r-loo r-ggplot2 r-data-table
+                             r-bayesplot))
+    (home-page "https://github.com/CCS-Lab/hBayesDM")
+    (synopsis "Hierarchical Bayesian Modeling of Decision-Making Tasks")
+    (description
+     "Fit an array of decision-making tasks with computational models in a
+hierarchical Bayesian framework.  Can perform hierarchical Bayesian analysis of
+various computational models with a single line of coding (Ahn et al., 2017)
+<doi:10.1162/CPSY_a_00002>.")
+    (license license:gpl3)))
+
 (define-public r-hbamr
   (package
     (name "r-hbamr")
@@ -15383,6 +15737,46 @@ the hazard functions given the covariates, we do not assume specific functional
 forms for the covariates.  Rava, D. and Xu, R. (2021) <@code{arXiv:2112.09535>}.")
     (license license:gpl2)))
 
+(define-public r-hawkinr
+  (package
+    (name "r-hawkinr")
+    (version "2.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hawkinR" version))
+       (sha256
+        (base32 "1mgcn95kifihxykxsbh09jllaq4kqjv2pvhy21gckagamaf4gbzs"))))
+    (properties `((upstream-name . "hawkinR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-stringr
+                             r-s7
+                             r-rlang
+                             r-progress
+                             r-magrittr
+                             r-lubridate
+                             r-logger
+                             r-keyring
+                             r-jsonlite
+                             r-janitor
+                             r-httr2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://connect.hawkindynamics.com/r")
+    (synopsis "Interface to the 'Hawkin Dynamics' Force Platform API")
+    (description
+     "This package provides a secure and configurable interface to the Hawkin Dynamics
+API for accessing athlete performance data, tests, and metadata.  The package
+supports profile-based authentication with secure credential storage via the
+operating system keychain, automatic access token refresh, and region-aware API
+routing.  Designed for reproducible analysis, data synchronization workflows,
+and production deployment.")
+    (license license:expat)))
+
 (define-public r-hawkesbow
   (package
     (name "r-hawkesbow")
@@ -15436,6 +15830,44 @@ number of jumps of the process on a given interval, such as mean, variance or
 autocorrelation of process jumps on time intervals separated by a lag.")
     (license license:gpl2+)))
 
+(define-public r-hawaspatial
+  (package
+    (name "r-hawaspatial")
+    (version "0.1.10")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HawaSpatial" version))
+       (sha256
+        (base32 "0qixh8xcz5fhf5hrppq0fq93x8wmm1v1inw65wjrvqcfrxhf40im"))))
+    (properties `((upstream-name . "HawaSpatial")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny))
+    (home-page "https://github.com/Abdisalammuse/HawaSpatial")
+    (synopsis "Holistic and Areal Weighted Analysis for Global Development")
+    (description
+     "This package provides a shiny'-based platform for sub-national monitoring of
+global development indicators using large-scale household surveys.  The package
+supports the Demographic and Health Surveys, Multiple Indicator Cluster Surveys,
+Malaria Indicator Surveys, Integrated Household Budget Surveys, Service
+Provision Assessment surveys, and Living Standards Measurement Study surveys.
+It provides workflows for descriptive, diagnostic, predictive, and prescriptive
+spatial analytics, including a spatial equalizer for survey-shapefile
+integration, exploratory spatial data analysis, area-level small area
+estimation, spatial autoregressive and spatial error models, hierarchical
+multilevel models, spatial inequality metrics, spatial and temporal
+decomposition, and publication-ready reporting.  The implemented methods are
+described in <doi:10.1111/j.1538-4632.1995.tb00338.x>,
+<doi:10.1007/s11749-018-0599-x>, and the reference identified by
+<isbn:9781118735787>.  The software has been cited in applied geographic and
+multilevel health studies, including studies of arthritis resource allocation
+<doi:10.1016/j.jorep.2026.101000> and childhood stunting priorities
+<doi:10.1016/j.nutos.2026.100660>.")
+    (license license:gpl3+)))
+
 (define-public r-havel
   (package
     (name "r-havel")
@@ -15472,19 +15904,19 @@ originally reported in Gansner et al. (2004) <doi:10.1007/978-3-540-31843-9_25>.
 (define-public r-hausdorffgof
   (package
     (name "r-hausdorffgof")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HausdorffGoF" version))
        (sha256
-        (base32 "04g0cxp5hapf58qlgxc2j91sji5nh2g1vl7vsy9gca92l83fyd2r"))))
+        (base32 "1hh28kncym1kr9liwl2dpgyxrx06sr021ldj05wz7gdi1qcqaz2j"))))
     (properties `((upstream-name . "HausdorffGoF")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-withr r-rcppeigen r-rcpp r-ksgeneral))
+    (propagated-inputs (list r-rcppeigen r-rcpp r-ksgeneral))
     (home-page "https://github.com/fakecloudsjy/HausdorffGoF")
     (synopsis "One- And Two-Sample Hausdorff Goodness-of-Fit Test")
     (description
@@ -15596,13 +16028,13 @@ flexibility to incorporate custom parameterizations using external datasets.")
 (define-public r-hassediagrams
   (package
     (name "r-hassediagrams")
-    (version "2.0")
+    (version "2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hassediagrams" version))
        (sha256
-        (base32 "1py8islqhcjbcyr6fzw1hrz71iizyv8csv52dpp2zjvfqmmli8f5"))))
+        (base32 "1ij0ngrjs3ri3xx8g6w6hy7yd0nh4za4hqllg1pazdb992cslja5"))))
     (properties `((upstream-name . "hassediagrams")))
     (build-system r-build-system)
     (arguments
@@ -15678,6 +16110,31 @@ to the number of lags involved in the test and therefore it should be used with
 extra caution.  The Hassani SACF Theorem has been described in : Hassani,
 Yeganegi and M. R. (2019) <doi:10.1016/j.physa.2018.12.028>.")
     (license license:gpl3)))
+
+(define-public r-hashtable
+  (package
+    (name "r-hashtable")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hashtable" version))
+       (sha256
+        (base32 "0mgni23dajgw9v8blvprpp97xn1rrc0rdywly9zd2dn74anxsdk5"))))
+    (properties `((upstream-name . "hashtable")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp r-fastmatch))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jokergoo/hashtable")
+    (synopsis "Hash Table and Hash Set")
+    (description
+     "It provides three implementations of hash tables and hash maps: 1.  using
+std::unordered_map and std::unordered_set C++ libraries, 2.  wrapping around the
+fastmatch package, 3.  using R environment.")
+    (license license:expat)))
 
 (define-public r-hashr
   (package
@@ -15896,13 +16353,13 @@ Julia', or any software that supports Text, CSV, or Excel formats.")
 (define-public r-harness
   (package
     (name "r-harness")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "harness" version))
        (sha256
-        (base32 "1y3a8v2g314xq1b3njl2rm889kab9skcldv3cdh6n9p1fi99jk2k"))))
+        (base32 "1gbgcqgrprldx5c6dl7wffcf3ryblawi6ccwx8j2qkrrn63nj949"))))
     (properties `((upstream-name . "harness")))
     (build-system r-build-system)
     (arguments
@@ -15920,38 +16377,6 @@ agent loop and does not call a language model; it discovers the chosen coder
 binary, generates its configuration, links the curated skills, and opens the
 terminal.  Code written by the agent is run manually by the user, by design, so
 that every generated script passes through a human audit gate before execution.")
-    (license license:expat)))
-
-(define-public r-harmonydata
-  (package
-    (name "r-harmonydata")
-    (version "0.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "harmonydata" version))
-       (sha256
-        (base32 "1g1k2d9hr1mjlqkn2v149km4kf3y7xz1fl51lag3f7740pvqagf1"))))
-    (properties `((upstream-name . "harmonydata")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-uuid
-                             r-purrr
-                             r-jsonlite
-                             r-httr
-                             r-base64enc
-                             r-assertthat))
-    (home-page "<https://harmonydata.ac.uk>")
-    (synopsis "R Library for 'Harmony'")
-    (description
-     "Harmony is a tool using AI which allows you to compare items from questionnaires
-and identify similar content.  You can try Harmony at
-<https://harmonydata.ac.uk/app/> and you can read our blog at
-<https://harmonydata.ac.uk/blog/> or at
-<https://fastdatascience.com/how-does-harmony-work/>.  Documentation at
-<https://harmonydata.ac.uk/harmony-r-released/>.")
     (license license:expat)))
 
 (define-public r-harmonizer
@@ -16021,13 +16446,13 @@ rate only in the weak sense, rather than the strong sense as intended.")
 (define-public r-harbinger
   (package
     (name "r-harbinger")
-    (version "2.0.757")
+    (version "2.1.707")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "harbinger" version))
        (sha256
-        (base32 "130y2hav6zaj03qlf3qqafl3s95sz0i4c5x8fbrlcxrvc1pjdy6j"))))
+        (base32 "1nrq5ykni8cg98cmfvykc00zfxwpgk62crk5z4swxmp5yz38k76c"))))
     (properties `((upstream-name . "harbinger")))
     (build-system r-build-system)
     (arguments
@@ -16063,6 +16488,33 @@ state-of-the-art methods described in Salles et al. (2020)
 <doi:10.5753/sbbd.2020.13626>.")
     (license license:expat)))
 
+(define-public r-haptrace
+  (package
+    (name "r-haptrace")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HAPTRACE" version))
+       (sha256
+        (base32 "04xxmn1xiff0pfpi76f232nzz1zvl7m1wwnll2kmqyhxyah6dl0y"))))
+    (properties `((upstream-name . "HAPTRACE")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-hsphase r-gdata
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=HAPTRACE")
+    (synopsis
+     "Haplotype-Based Tracking of Admixed Population for Breed Composition Estimation")
+    (description
+     "Simulate populations and track haplotypes over generations to evaluate
+population admixture.  The HAPTRACE supports customisable population parameters,
+including size, number of markers, mutation rates and recombination.")
+    (license license:gpl3+)))
+
 (define-public r-happign
   (package
     (name "r-happign")
@@ -16093,13 +16545,13 @@ elevation models, state borders, spatial databases, cadastral parcels, and more.
 (define-public r-haplovar
   (package
     (name "r-haplovar")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HaploVar" version))
        (sha256
-        (base32 "0hr015bkyg92hqcdvqrjs4fhlx83l51nrqn524arjh8qsyb5mjl0"))))
+        (base32 "0rqs4q0fnnd29hf5iqx4lmgxrh6wgs7m0nspa5ilwy2wm64x7pf8"))))
     (properties `((upstream-name . "HaploVar")))
     (build-system r-build-system)
     (arguments
@@ -16117,7 +16569,7 @@ nucleotide polymorphisms (SNPs) (in VCF format) and a linkage disequilibrium
 (LD) matrix, calculate local haplotypes and format the output to be compatible
 with a wide range of trait association and trait prediction tools.  The local
 haplotypes are calculated from the LD matrix using a clustering algorithm called
-density-based spatial clustering of applications with noise ('DBSCAN') (Ester et
+density-based spatial clustering of applications with noise (DBSCAN) (Ester et
 al., 1996) <ISBN: 1577350049>.")
     (license license:expat)))
 
@@ -16655,13 +17107,13 @@ hand.")
 (define-public r-hammer
   (package
     (name "r-hammer")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HAMMER" version))
        (sha256
-        (base32 "1wy39wbzqypj9fvczl0mib4mrvs2nbyf5a2gwk2w2b7f7slli8q5"))))
+        (base32 "0v2gnqa8pwk1gh48g38x0v8kk9yvclrxhicbygn16gxcfakz649l"))))
     (properties `((upstream-name . "HAMMER")))
     (build-system r-build-system)
     (arguments
@@ -16672,11 +17124,12 @@ hand.")
     (synopsis
      "High-Dimensional Factor-Analytic Representation Modeling and Metrics")
     (description
-     "The goal of HAMMER is to provide factor analytic representation learningand
+     "The goal of HAMMER is to provide factor analytic representation learning and
 associated determinacy metrics for very-high-dimensional data.  It projects
 high-dimensional data onto low-dimensional generative latent sources and
 assesses the uncertainty in the projection.  The projection is
-distribution-free, scale-equivariant, and efficient.")
+distribution-free, scale-equivariant, and efficient.  For details, see Peeters
+(2026) <doi:10.48550/@code{arXiv.2606.28854>}.")
     (license license:gpl2+)))
 
 (define-public r-hamlet
@@ -16707,13 +17160,13 @@ patterns.")
 (define-public r-ham
   (package
     (name "r-ham")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ham" version))
        (sha256
-        (base32 "0sfrzbzma4xhigharywiv4014gmkgv17cb27wn8f3jvh1dq3n4v4"))))
+        (base32 "1ma3n6c8lalpz6dg4ph5rgqkrnq8f817i533b91q9jswjjsiwdqb"))))
     (properties `((upstream-name . "ham")))
     (build-system r-build-system)
     (arguments
@@ -16737,13 +17190,15 @@ examples in the README file.  For more details on the statistical methods, see
 Allen & Yen (1979, ISBN:0-8185-0283-5), Angrist & Pischke (2009,
 ISBN:9780691120355), Cohen (1988, ISBN:0-8058-0283-5), Gebski (2012)
 <doi:10.1017/S0950268812000179>, Gelman & Goodrich (2019)
-<doi:10.1080/00031305.2018.1549100>, Harrell (2016, ISBN:978-3-319-19424-0),
-Kline (1999, ISBN:9780415211581), Kruschke (2014, ISBN:9780124058880), Linden
-(2015) <doi:10.1177/1536867X1501500208>, Merlo (2006)
-<doi:10.1136/jech.2004.029454>, Muthen & Satorra (1995) <doi:10.2307/271070>,
-Rabe-Hesketh & Skrondal (2008, ISBN:978-1-59718-040-5), Ryan (2011,
-ISBN:978-0-470-59074-4), and Vickers & Elkin (2006)
-<doi:10.1177/0272989X06295361>.")
+<doi:10.1080/00031305.2018.1549100>, Gelman & Hill (2007,
+ISBN:978-0-521-68689-1), Harrell (2015, ISBN:978-3-319-19424-0), Imbens & Rubin
+(2015, ISBN:978-0-521-88588-1), Kline (1999, ISBN:9780415211581), Kruschke
+(2014, ISBN:9780124058880), Linden (2015) <doi:10.1177/1536867X1501500208>,
+Merlo (2006) <doi:10.1136/jech.2004.029454>, Muthen & Satorra (1995)
+<doi:10.2307/271070>, Pitman (1993, ISBN:978-0-387-97974-8), Rabe-Hesketh &
+Skrondal (2008, ISBN:978-1-59718-040-5), Rosenbaum (2010,
+ISBN:978-1-4419-1212-1), Ryan (2011, ISBN:978-0-470-59074-4), and Vickers &
+Elkin (2006) <doi:10.1177/0272989X06295361>.")
     (license license:expat)))
 
 (define-public r-halfmoon
@@ -17274,13 +17729,13 @@ property lists.  Uses the HDF5 library developed by The HDF Group
 (define-public r-h3sdm
   (package
     (name "r-h3sdm")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "h3sdm" version))
        (sha256
-        (base32 "1da7m9p6316acg6kp943q5j6xpkmfs6495v22cxbw6zar0z3hrl0"))))
+        (base32 "1w08zqsfdi32x0afpv4kirxs916mqjnb6ycmh508q102w01sx100"))))
     (properties `((upstream-name . "h3sdm")))
     (build-system r-build-system)
     (arguments
@@ -17288,7 +17743,6 @@ property lists.  Uses the HDF5 library developed by The HDF Group
       #:tests? #f))
     (propagated-inputs (list r-yardstick
                              r-workflows
-                             r-vip
                              r-tune
                              r-tidyr
                              r-tibble

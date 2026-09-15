@@ -11,8 +11,9 @@
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages julia)
   #:use-module (gnu packages gcc)
-  #:use-module (gnu packages java)
   #:use-module (gnu packages compression)
+  #:use-module (gnu packages java)
+  #:use-module (gnu packages pkg-config)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -363,13 +364,13 @@ manuscript corresponding to this package [Lyu, P. et al., (2023),
 (define-public r-jumble
   (package
     (name "r-jumble")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jumble" version))
        (sha256
-        (base32 "1i308b1a9izwfj1qhw7zkadyn6b6vxb5xp389qm6z8jf4jm7n9sj"))))
+        (base32 "0kixpwim6bj6kmraps57qshanvs5fma7prbiwpqc438q7kjp3kq3"))))
     (properties `((upstream-name . "jumble")))
     (build-system r-build-system)
     (arguments
@@ -412,19 +413,19 @@ where possible (or a modified string, if not a valid formula in R).")
 (define-public r-juliaconnector
   (package
     (name "r-juliaconnector")
-    (version "1.1.5")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JuliaConnectoR" version))
        (sha256
-        (base32 "0ql1qwkcc7gyaj0knmsyzr1lnxsk7n2wdfpam56fwmpaidkv1drv"))))
+        (base32 "1wc1ija6r33m181g8bi5bibidqcxmqzh6v1brj4j0fjvp1g49nqc"))))
     (properties `((upstream-name . "JuliaConnectoR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://cran.r-project.org/package=JuliaConnectoR")
+    (home-page "https://github.com/stefan-m-lenz/JuliaConnectoR")
     (synopsis "Functionally Oriented Interface for Integrating 'Julia' with R")
     (description
      "Allows to import functions and whole packages from Julia in R. Imported Julia
@@ -741,19 +742,35 @@ et al. (2023) <doi:10.1111/geb.13706>.")
 (define-public r-jsutils
   (package
     (name "r-jsutils")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jsutils" version))
        (sha256
-        (base32 "09rfksmlhf21fb6bj46p0wwlmnpr7jpw89y6q0jw2hah9pdp3qdk"))))
+        (base32 "0by81khshs72mhgncxa2nkf3w4qvj34n3278kfm42a2pz4mr6vdg"))))
     (properties `((upstream-name . "jsutils")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:modules '((guix build r-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-quickjsr))
+    (native-inputs (list esbuild))
     (home-page "https://github.com/andrjohns/jsutils")
     (synopsis "'JavaScript' Utilities for 'R'")
     (description
@@ -956,6 +973,71 @@ estimating equation(GEE), generalized linear mixed-effects model(GLMM), Cox
 proportional hazards model, survey-weighted generalized linear model(svyglm) and
 survey-weighted Cox model results for publication.")
     (license license:asl2.0)))
+
+(define-public r-jsslintr
+  (package
+    (name "r-jsslintr")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jsslintr" version))
+       (sha256
+        (base32 "1xca1isrxqcj0dvp13iwpcyw2afvxisdwm2j2wliiwhh283mnjjm"))))
+    (properties `((upstream-name . "jsslintr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/kollerma/jss-style-checker")
+    (synopsis "JSS 'LaTeX'/'BibTeX' Style Checker")
+    (description
+     "Lints @code{LaTeX'/'BibTeX} manuscripts against the Journal of Statistical
+Software (JSS) style guide.  Wraps the same Rust rule engine used by the
+standalone jsslint binary, the browser/'WASM build, and the Python binding,
+exposed to R via extendr'.")
+    (license license:expat)))
+
+(define-public r-jsplyr
+  (package
+    (name "r-jsplyr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jsplyr" version))
+       (sha256
+        (base32 "0sz5pm4jkh6fgsygm4lyvnxpwn11qikn0i30lvy7xyvrch7wr8jk"))))
+    (properties `((upstream-name . "jsplyr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-shiny
+                             r-rlang
+                             r-purrr
+                             r-promises
+                             r-jsonlite
+                             r-htmltools
+                             r-glue
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/r-world-devs/jsplyr")
+    (synopsis "Manipulate 'JSON' Data in the Browser with a 'dplyr' Interface")
+    (description
+     "This package provides a dplyr backend for shiny applications that manipulates
+JSON data in the web browser instead of on the server.  Data manipulation verbs
+such as filter, select, mutate, summarise, arrange, and joins are evaluated
+lazily and translated into @code{JavaScript} operations that run client-side,
+following the lazy evaluation approach of dbplyr but generating
+@code{JavaScript} rather than SQL'.  Results are returned to R asynchronously as
+promises.  This keeps data wrangling responsive for large data frames by
+offloading the work to the client.")
+    (license license:expat)))
 
 (define-public r-jsparo
   (package
@@ -1748,13 +1830,13 @@ the hazard and cumulative survival scale.  See Yu et al.(2009)
 (define-public r-jpstat
   (package
     (name "r-jpstat")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jpstat" version))
        (sha256
-        (base32 "1vzqipxk019f9chm9nxcsifiv3i2cmqvwgyx45zrh2cxsrn8bhvk"))))
+        (base32 "0ff01ai8a2mxxlkip2mi6as330dmcv8vh3klyb64yhmhjncmc5fw"))))
     (properties `((upstream-name . "jpstat")))
     (build-system r-build-system)
     (arguments
@@ -1770,15 +1852,14 @@ the hazard and cumulative survival scale.  See Yu et al.(2009)
                              r-pillar
                              r-navigatr
                              r-lifecycle
-                             r-httr
-                             r-dplyr))
+                             r-httr2
+                             r-dplyr
+                             r-cli))
     (home-page "https://github.com/UchidaMizuki/jpstat")
-    (synopsis "Tools for Easy Use of 'e-Stat', 'RESAS' API, Etc")
+    (synopsis "Tools for Easy Use of the 'e-Stat' API")
     (description
-     "This package provides tools to use API such as e-Stat
-(<https://www.e-stat.go.jp/>), the portal site for Japanese government
-statistics, and RESAS (Regional Economy and Society Analyzing System,
-<https://resas.go.jp>).")
+     "This package provides tools to use the e-Stat API (<https://www.e-stat.go.jp/>),
+the portal site for Japanese government statistics.")
     (license license:expat)))
 
 (define-public r-jpmesh
@@ -1813,6 +1894,59 @@ statistics, and RESAS (Regional Economy and Society Analyzing System,
     (description
      "Helpful functions for using mesh code (80km to 100m) data in Japan.  Visualize
 mesh code using ggplot2 and leaflet', etc.")
+    (license license:expat)))
+
+(define-public r-jpmapdata
+  (package
+    (name "r-jpmapdata")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jpmapdata" version))
+       (sha256
+        (base32 "19aqkyb8q3ckdy5imcfp9n93qnznmml9anqsyzv1xgfb296zw5bj"))))
+    (properties `((upstream-name . "jpmapdata")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/yhoriuchi/jpmapdata")
+    (synopsis "Boundary Data for Japan Maps")
+    (description
+     "This package provides boundary @code{GeoPackage} files used by the jpmap
+package, including Japan prefecture example boundaries and official MLIT N03
+administrative area data converted for jpmap'.  Keeping these data in a separate
+package lets jpmap update its functionality without repeatedly redistributing
+large boundary files on CRAN mirrors.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
+
+(define-public r-jpmap
+  (package
+    (name "r-jpmap")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jpmap" version))
+       (sha256
+        (base32 "1j5gzgwzx3lqlmcj7c2r0fs05p36glggg6k86b9zbrcc49l4a0la"))))
+    (properties `((upstream-name . "jpmap")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sf r-rlang r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://yhoriuchi.github.io/jpmap/")
+    (synopsis "Japan Maps with Insets for Okinawa and Ogasawara")
+    (description
+     "This package provides tools for drawing maps of Japan with prefecture and
+municipal boundaries.  The plotting workflow mirrors the usmap package and
+includes a transform that moves Okinawa and Ogasawara into visible inset
+locations.  Boundary helpers build local @code{GeoPackage} files from Japan's
+official MLIT N03 administrative area data
+<https://nlftp.mlit.go.jp/ksj/gml/datalist/@code{KsjTmplt-N03-2024.html>}.")
     (license license:expat)))
 
 (define-public r-jpinfect
@@ -2380,13 +2514,13 @@ bivariate extreme value models as described in Zheng, Westra, and Sisson (2013)
 (define-public r-jointnmix
   (package
     (name "r-jointnmix")
-    (version "1.0")
+    (version "1.0-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jointNmix" version))
        (sha256
-        (base32 "0ibh7hqkpzlfk3bk4d2dd64jhr8cvw563k082vwnljiam7k5nj4b"))))
+        (base32 "1zz247g22i168hwkg7zhdqva55wmj9589lp1s2gjiyj8hcxyc16i"))))
     (properties `((upstream-name . "jointNmix")))
     (build-system r-build-system)
     (arguments
@@ -2518,13 +2652,13 @@ found in Gouy-Pailler et al (2010) <doi:10.1109/TBME.2009.2032162>.")
 (define-public r-jointcomprisk
   (package
     (name "r-jointcomprisk")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jointCompRisk" version))
        (sha256
-        (base32 "09j2j9ljr7cb9xc1zxmckz1apxmqrail29zqcwi9vr4f690k0d9g"))))
+        (base32 "0jr3ajsdmz244rf91vi53zahxrks1xvvrg7qrjlqcr1w748kxlpf"))))
     (properties `((upstream-name . "jointCompRisk")))
     (build-system r-build-system)
     (arguments
@@ -2688,13 +2822,13 @@ Concepts and diagnostics build on tidy data principles as described in Wickham
 (define-public r-joinpointr
   (package
     (name "r-joinpointr")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "joinpointR" version))
        (sha256
-        (base32 "0318rx4gjpmb9wj6azsil1l6y425w06xh56an7hc4pspgchhj203"))))
+        (base32 "0ky9l5l1rgi3sbwl0xwlgwlgx0z8f64m4mq81ia8cchzi6czxyah"))))
     (properties `((upstream-name . "joinpointR")))
     (build-system r-build-system)
     (arguments
@@ -2779,6 +2913,49 @@ coefficients, outcome prediction, and performance measurement.  For optional
 comparisons, install @code{remMap} from @code{GitHub}
 (<https://github.com/cran/@code{remMap>}).")
     (license license:gpl3)))
+
+(define-public r-joinery
+  (package
+    (name "r-joinery")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "joinery" version))
+       (sha256
+        (base32 "1wrx2r0f7w38k9ahz0y6bpwg7s87fn39vrwcqb97cb1b65hgmkl2"))))
+    (properties `((upstream-name . "joinery")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tinyplot
+                             r-stringi
+                             r-s7
+                             r-rlang
+                             r-phonics
+                             r-lubridate
+                             r-igraph
+                             r-glue
+                             r-data-table
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://edubruell.github.io/joinery/")
+    (synopsis "Heuristic Index-Based Record Linkage")
+    (description
+     "Links records that refer to the same entity across sources that share no common
+key, such as people, firms, or addresses with spelling variation, abbreviations,
+or reordered words.  Linkage is described declaratively as a strategy that
+normalises, tokenises, phonetically encodes, weights, and blocks each field;
+candidate pairs are then scored by the rarity-weighted overlap of their tokens
+and every score is attributed back to individual tokens for explainability.
+Strategies compose into staged pipelines of exact, fuzzy, and optional
+embedding-based matching that carry unmatched records forward and resolve
+entities as connected components.  The same strategy runs on an in-memory
+data.table backend or an out-of-core @code{DuckDB} backend, and diagnostic and
+calibration tools help tune a strategy and filter false positives.  The
+token-retrieval heuristic follows Doherr (2023) <doi:10.2139/ssrn.4326848>.")
+    (license license:expat)))
 
 (define-public r-joinerml
   (package
@@ -2960,13 +3137,13 @@ and continuous moderators.  Allows correcting for phylogenetic relatedness.")
 (define-public r-jmvreadwrite
   (package
     (name "r-jmvreadwrite")
-    (version "0.4.13")
+    (version "0.4.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jmvReadWrite" version))
        (sha256
-        (base32 "13pp2bs30svli9aff8la7lq283y5ffb1lzlnp0nj3p8q3vxan74n"))))
+        (base32 "18f431dnqmyq6lbm8263qman4fl8slmy3cdfl4vr2plj8dcq7vw5"))))
     (properties `((upstream-name . "jmvReadWrite")))
     (build-system r-build-system)
     (arguments
@@ -2987,13 +3164,13 @@ easy transfer of data and analyses between jamovi and R.")
 (define-public r-jmvcore
   (package
     (name "r-jmvcore")
-    (version "2.7.35")
+    (version "2.7.38")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jmvcore" version))
        (sha256
-        (base32 "0fnvlhnpsyq4h5z2yir3ncanz3f7mydrf0bh8ilz3wxx3vkp0iwf"))))
+        (base32 "1wp704yncz6a6gnfzj0bcwir2zwlk9pkfchljflynl7vsqmgv2p7"))))
     (properties `((upstream-name . "jmvcore")))
     (build-system r-build-system)
     (arguments
@@ -3147,13 +3324,13 @@ effect slices).  Methods are described in Bhattacharjee (2025, under review).")
 (define-public r-jmotif
   (package
     (name "r-jmotif")
-    (version "1.2.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jmotif" version))
        (sha256
-        (base32 "17l92hf32n2cjwf09blzibz3v8xzfx8i6jwb1cvsb7g0j9v6b8hp"))))
+        (base32 "19hs4xsh6q18vfm3lps4yfjyy2rj1rbpcmrd3ifwiyjc7n15rhs8"))))
     (properties `((upstream-name . "jmotif")))
     (build-system r-build-system)
     (arguments
@@ -3165,9 +3342,8 @@ effect slices).  Methods are described in Bhattacharjee (2025, under review).")
      "Time Series Analysis Toolkit Based on Symbolic Aggregate Discretization, i.e. SAX")
     (description
      "This package implements time series z-normalization, SAX, HOT-SAX, VSM, SAX-VSM,
-@code{RePair}, and RRA algorithms facilitating time series motif (i.e.,
-recurrent pattern), discord (i.e., anomaly), and characteristic pattern
-discovery along with interpretable time series classification.")
+@code{RePair}, and RRA algorithms for time series discord (anomaly) discovery,
+grammatical compression, and interpretable time series classification.")
     (license license:gpl2)))
 
 (define-public r-jmisc
@@ -3314,13 +3490,13 @@ Sigma_theta, is unknown.")
 (define-public r-jmdem
   (package
     (name "r-jmdem")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jmdem" version))
        (sha256
-        (base32 "15zrxgd5fgi4wzp4s963pnwj3vkgxs4ygqrcpncy9b6j2cxrivdc"))))
+        (base32 "15v4zvb9q1j912zk39bz677j4hb8s6w3bz79ag8cm8gr31dmbbh2"))))
     (properties `((upstream-name . "jmdem")))
     (build-system r-build-system)
     (arguments
@@ -3842,6 +4018,33 @@ final document by passing data from R. The template syntax supports features
 such as variables, loops, conditions and inheritance.")
     (license license:expat)))
 
+(define-public r-jiebars
+  (package
+    (name "r-jiebars")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jiebaRS" version))
+       (sha256
+        (base32 "0cd21873nk6f405hidygr714lw8jmjsw2mkfnjd8smr05rxy0g8k"))))
+    (properties `((upstream-name . "jiebaRS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list xz))
+    (propagated-inputs (list r-rlang r-cli))
+    (home-page "https://yousa-mirage.github.io/jiebaRS/")
+    (synopsis "Chinese Text Segmentation, POS Tagging, and Keyword Extraction")
+    (description
+     "This package provides fast Chinese text segmentation, keyword extraction via
+TF-IDF and @code{TextRank}', and part-of-speech tagging, powered by a Rust
+backend ('jieba-rs').  Supports custom dictionaries, user words, stop words, IDF
+files, and HMM models, with parallel batch processing of multiple strings.
+Serves as a modern, maintained replacement for the @code{jiebaR} package.")
+    (license license:expat)))
+
 (define-public r-jico
   (package
     (name "r-jico")
@@ -3921,13 +4124,13 @@ application which depends on your OS.")
 (define-public r-jgd
   (package
     (name "r-jgd")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jgd" version))
        (sha256
-        (base32 "1v98ssk8v1yhs7qw5nazyd591mxfcj815mycw2xih1ny1hfwg8w0"))))
+        (base32 "1w8mm6piw2wi4r642dsqqadpl7x0969vz6daf9wyn3whkwqv9ml4"))))
     (properties `((upstream-name . "jgd")))
     (build-system r-build-system)
     (arguments
@@ -4164,54 +4367,38 @@ translated into individual HTTP requests.")
 (define-public r-jenga
   (package
     (name "r-jenga")
-    (version "1.3.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jenga" version))
        (sha256
-        (base32 "0yq1nkaakzajjdk3w6hzikl6pwqx0546mcb1ik688b0l55vmwphc"))))
+        (base32 "15w6cgdxzdgdz4mg74wjxbv087676ja34lsd7kpbhysj0jlmx4lv"))))
     (properties `((upstream-name . "jenga")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tictoc
-                             r-scales
-                             r-rfast
-                             r-readr
-                             r-purrr
-                             r-philentropy
-                             r-narray
-                             r-moments
-                             r-modeest
-                             r-lubridate
-                             r-imputets
-                             r-greybox
-                             r-ggplot2
-                             r-fastdummies
-                             r-fancova
-                             r-entropy
-                             r-dplyr
-                             r-abind))
     (home-page "https://rpubs.com/giancarlo_vercellino/jenga")
     (synopsis "Fast Extrapolation of Time Features using K-Nearest Neighbors")
     (description
      "Fast extrapolation of univariate and multivariate time features using K-Nearest
-Neighbors.  The compact set of hyper-parameters is tuned via grid or random
-search.")
+Neighbors.  Version 2.0 adds approximate nearest-neighbor search, optional GPU
+acceleration, probabilistic forecast distributions, conformal prediction
+intervals, and multi-scale sequence representations.  The compact set of
+hyper-parameters is tuned via grid or random search.")
     (license license:gpl3)))
 
 (define-public r-jellyfisher
   (package
     (name "r-jellyfisher")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jellyfisher" version))
        (sha256
-        (base32 "010kwvb63zb6hy6vql9rai179y2kgh6z59fhanh9q78r8y1m9w55"))))
+        (base32 "1p4gy3ycazqgsxfnhv960gwmj1dxmjpswwnvn02pi9wl98yfk091"))))
     (properties `((upstream-name . "jellyfisher")))
     (build-system r-build-system)
     (arguments
@@ -4325,13 +4512,13 @@ reduce user dependencies.")
 (define-public r-jdcruncher
   (package
     (name "r-jdcruncher")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JDCruncheR" version))
        (sha256
-        (base32 "07sy4md7lw7wqpi70b1hi32qikmw8cpx46c8apsadqs7ym1ac15y"))))
+        (base32 "0bqwa9vawnisqslxkqdh7f0m4yhpf3351c4s5cvbs51qpmvhn2k4"))))
     (properties `((upstream-name . "JDCruncheR")))
     (build-system r-build-system)
     (arguments
@@ -4339,7 +4526,7 @@ reduce user dependencies.")
       #:tests? #f))
     (propagated-inputs (list r-openxlsx))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/InseeFr/JDCruncheR")
+    (home-page "https://github.com/InseeFr/rjd3qr")
     (synopsis "'JDemetra+' Quality Report Generator")
     (description
      "Tool for generating quality reports from cruncher outputs (and calculating
@@ -4779,13 +4966,13 @@ Countries API <https://restcountries.com/>.")
 (define-public r-janusplot
   (package
     (name "r-janusplot")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "janusplot" version))
        (sha256
-        (base32 "1pha3q7kix6fasw920zdjpykamqgj69cpp3kdchvqaw1i3wijrfc"))))
+        (base32 "1nwxrjl3iw7nw6zq8qc7k14jj0glj93bjrzjdk6xrskc9s2wm14z"))))
     (properties `((upstream-name . "janusplot")))
     (build-system r-build-system)
     (arguments
@@ -4848,6 +5035,43 @@ difference and qualitative form of each fitted smooth.")
      "Proposes a coarse-to-fine optimization of a recommending system based on
 deep-neural networks using tensorflow'.")
     (license license:gpl3)))
+
+(define-public r-janssonr
+  (package
+    (name "r-janssonr")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "janssonr" version))
+       (sha256
+        (base32 "0sa0frax0n042fvpv18nr1g21kd86974lxw7gdzxym72rbw10ps3"))))
+    (properties `((upstream-name . "janssonr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (native-inputs (list pkg-config))
+    (home-page "https://github.com/cornball-ai/janssonr")
+    (synopsis "Strict JSON Encoding and Decoding via the 'Jansson' C Library")
+    (description
+     "An R-safe profile of RFC 8259 JSON: parsing and generation backed by the Jansson
+C library, linked as a system library where one is available and compiled from
+the bundled sources otherwise.  The parser rejects, with classed conditions
+carrying line, column, and byte position: malformed or truncated input, trailing
+content, duplicate object keys at any depth, invalid UTF-8, escapes encoding a
+null character, reals overflowing double, and integer literals whose magnitude
+exceeds 2^53, the range within which a double represents every integer exactly.
+Number literals with a fraction or exponent convert by ordinary correctly
+rounded IEEE 754 double conversion.  Objects decode to named lists in key order,
+arrays to unnamed lists, and scalars to length-one vectors.  The encoder maps
+named lists to objects in insertion order, unnamed lists to arrays, guarantees
+that every finite double, signed zero included, round-trips to the exact same
+value (whole-number doubles are written as integers), and refuses values with no
+faithful JSON representation (NA, @code{NaN}, infinities, named atomic vectors,
+classed objects) instead of guessing.  No R package dependencies.")
+    (license license:expat)))
 
 (define-public r-jane
   (package
@@ -4921,13 +5145,13 @@ information for a given Jamendo user (including yourself!) or enter an artist's
 (define-public r-jamba
   (package
     (name "r-jamba")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jamba" version))
        (sha256
-        (base32 "0j4vcs63hg0yjymz9i7lhkyndq0b18xdyw8bs764zrz4pdmgad80"))))
+        (base32 "1hzalp7ppkd4ig1bj6gp58wd7qd2mzx0nn2xdmhyzslqrw7bgan4"))))
     (properties `((upstream-name . "jamba")))
     (build-system r-build-system)
     (arguments
@@ -5056,13 +5280,13 @@ methodology, please refer to the documentation of targets
 (define-public r-jagshelper
   (package
     (name "r-jagshelper")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jagshelper" version))
        (sha256
-        (base32 "1y1kbijmr0ckjl9hj823d4m4rkawj2qay0wisbwi6zg0iwll198v"))))
+        (base32 "1bq96r2x0zklyj53hsbm2sfmbhpa3m7gnrqisi740qmqhkk7065i"))))
     (properties `((upstream-name . "jagshelper")))
     (build-system r-build-system)
     (arguments
@@ -5218,31 +5442,6 @@ sequencing studies.  This method was specifically designed to detect population
 stratification based on rare variants, hence it will be especially useful in
 rare variant analysis.")
     (license license:gpl3)))
-
-(define-public r-jacobieigen
-  (package
-    (name "r-jacobieigen")
-    (version "0.3-4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "JacobiEigen" version))
-       (sha256
-        (base32 "1jm63w2jn89pk725x3d9myq010mb0g5ir8vhv29mkiwgrqig6iw1"))))
-    (properties `((upstream-name . "JacobiEigen")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=JacobiEigen")
-    (synopsis "Classical Jacobi Eigenvalue Algorithm")
-    (description
-     "This package implements the classical Jacobi algorithm for the eigenvalues and
-eigenvectors of a real symmetric matrix, both in pure R and in C++ using Rcpp'.
-Mainly as a programming example for teaching purposes.")
-    (license license:gpl2+)))
 
 (define-public r-jacobi
   (package

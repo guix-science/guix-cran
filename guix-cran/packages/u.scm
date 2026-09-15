@@ -40,6 +40,29 @@
   #:use-module (guix-cran packages b)
   #:use-module (guix-cran packages a))
 
+(define-public r-uygeo
+  (package
+    (name "r-uygeo")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "uygeo" version))
+       (sha256
+        (base32 "1ay844r6sz0qjb2pjkw19a62c43c6nkmzvwc45bihkxzm2b0n8i7"))))
+    (properties `((upstream-name . "uygeo")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/ManuelSpinola/uygeo")
+    (synopsis "Geospatial Data for Uruguay")
+    (description
+     "This package provides geospatial data for Uruguay, including country boundaries
+and administrative divisions (departments).  Data are provided as sf objects
+ready for use with the sf and ggplot2 packages.")
+    (license license:expat)))
+
 (define-public r-uxr
   (package
     (name "r-uxr")
@@ -184,13 +207,13 @@ default and can also expose 16-byte raw representations for low-level workflows.
 (define-public r-utsf
   (package
     (name "r-utsf")
-    (version "1.3.3")
+    (version "1.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "utsf" version))
        (sha256
-        (base32 "0f34r0y3yh2mnqkb4a4j00dsr9x38ihdz6f3xq6d8fmz5b1wg93b"))))
+        (base32 "1q3hzdgcgcj5829bb63xackjbc0v30lgf50jkyxln7k2wjd3mhdl"))))
     (properties `((upstream-name . "utsf")))
     (build-system r-build-system)
     (arguments
@@ -416,26 +439,27 @@ relationships at the lower and upper boundary of the data range.")
 (define-public r-uteals
   (package
     (name "r-uteals")
-    (version "0.0.3")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "uteals" version))
        (sha256
-        (base32 "1dm7bq1gn9wvp9sdrd0c6nnmvfjh7jdkgvc0c72m3nq9ss7f2njz"))))
+        (base32 "16lz7laxqg40f83rdm77w6mwbvp9d344vnqszw34ayp39mvng5iq"))))
     (properties `((upstream-name . "uteals")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-yaml
+    (propagated-inputs (list r-zip
+                             r-yaml
                              r-tern
+                             r-teal-reporter
                              r-teal-modules-clinical
                              r-teal-code
                              r-teal
                              r-shinywidgets
                              r-shinyjs
-                             r-shinybs
                              r-shiny
                              r-rtables
                              r-rlang
@@ -443,10 +467,12 @@ relationships at the lower and upper boundary of the data range.")
                              r-patchwork
                              r-openxlsx
                              r-junco
+                             r-jsonlite
                              r-gridify
                              r-ggplotify
                              r-ggplot2
                              r-formatters
+                             r-dt
                              r-dplyr
                              r-cowplot
                              r-checkmate))
@@ -664,6 +690,34 @@ can also be called using \"usshraw\", as described in: Ussher, J. (1658)
 the governing body of university sport in Canada.")
     (license license:expat)))
 
+(define-public r-uspopulationsampler
+  (package
+    (name "r-uspopulationsampler")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "USPopulationSampler" version))
+       (sha256
+        (base32 "0x8045z14yq8cadjjry2qajrl6hhjx0psyb8lzd85yzj1s1p4spv"))))
+    (properties `((upstream-name . "USPopulationSampler")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sf r-data-table r-curl r-arrow))
+    (home-page "https://github.com/Techavoan/USPopulationSampler")
+    (synopsis
+     "Population-Weighted Sampling of Geographic Locations in the United States")
+    (description
+     "Generate geospatial locations within census block groups (BG; the smallest
+geographic unit for which population counts are available) within target
+counties, states, or across the entirety of the U.S. randomly selected according
+to population counts by using the Census Bureau reference data and optionally
+allow users to conduct temporal assignments on sampled locations using Covid-19
+data.")
+    (license license:expat)))
+
 (define-public r-uspopcenters
   (package
     (name "r-uspopcenters")
@@ -714,16 +768,49 @@ of settings.  As the permutation principle is used, all tests have exact,
 non-asymptotic Type I error control at the nominal level.")
     (license license:expat)))
 
+(define-public r-usmile
+  (package
+    (name "r-usmile")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Usmile" version))
+       (sha256
+        (base32 "12ihpi78drhq1jvghmv582cdm6spbhmgqmmdbvd3fvyvlpfxdyl3"))))
+    (properties `((upstream-name . "Usmile")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-proc r-ggplot2))
+    (home-page "https://github.com/bbwieckowska/Usmile")
+    (synopsis "Threshold-Free Class-Specific Comparison of Binary Classifiers")
+    (description
+     "This package implements the U-smile methodology for threshold-free,
+class-specific comparison of probabilistic binary classifiers.  The package
+quantifies prediction improvement and worsening separately for non-events and
+events using the Brier alteration (BA), relative Brier (RB), improvement
+proportion (I) coefficients, and relative likelihood ratio (@code{rLR})
+coefficients, and provides U-smile, prediction improvement-worsening, receiver
+operating characteristic, and precision-recall plots.  The original U-smile
+framework is described in Kubiak et al. (2024)
+<doi:10.1371/journal.pone.0303276>, its three-level extension for imbalanced
+binary classification in Wieckowska et al. (2025)
+<doi:10.1371/journal.pone.0321661>, and the likelihood-based extension in
+Wieckowska and Guzik (2026) <doi:10.1038/s41598-026-40545-z>.")
+    (license license:expat)))
+
 (define-public r-usmapdata
   (package
     (name "r-usmapdata")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "usmapdata" version))
        (sha256
-        (base32 "1vgs29sfbxsjdfrvvnhyfqi2j7x7xm1aqrfqj31vfwx0cmhdp5i1"))))
+        (base32 "0sb63c82xsk509vp1236gaqh5zrjwy5482swqj7r4sk08bvg5jxx"))))
     (properties `((upstream-name . "usmapdata")))
     (build-system r-build-system)
     (arguments
@@ -1415,6 +1502,41 @@ itself.")
 reading/writing, processing, multi-panel visualization.")
     (license license:gpl2+)))
 
+(define-public r-uroscores
+  (package
+    (name "r-uroscores")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "uroscores" version))
+       (sha256
+        (base32 "1s9p41my89zxbx1c5jfzn0b6wrj9kjka857w5gfai0p2nmhgahdn"))))
+    (properties `((upstream-name . "uroscores")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/faizamirullah/uroscores")
+    (synopsis
+     "Scoring Tools for Urology and Pelvic Health Research Instruments")
+    (description
+     "Scores standardized patient-reported instruments used in urology and pelvic
+health research, including the International Prostate Symptom Score (Barry et
+al., 1992), the Overactive Bladder Symptom Score (Homma et al., 2006)
+<doi:10.1016/j.urology.2006.02.042>, the O'Leary-Sant interstitial cystitis
+indices, the short forms of the Urogenital Distress Inventory and the
+Incontinence Impact Questionnaire (Uebersax et al., 1995)
+<doi:10.1002/nau.1930140206>, the Sandvik incontinence severity index, and the
+Benign Prostatic Hyperplasia Impact Index.  Instruments are declarative
+definitions read by a single scoring engine.  Responses are checked against the
+permitted value set of each item, missing items follow the published rule for
+the instrument or return NA when none was published, severity bands are assigned
+by membership, and published minimal important difference statistics are
+included for responder analyses.")
+    (license license:expat)))
+
 (define-public r-urootab
   (package
     (name "r-urootab")
@@ -1545,6 +1667,34 @@ password, host, port, path, query, and fragment.")
 and identifying common patterns.  It aids in examining website architecture and
 identifying SEO issues, helping users optimize web presence and content
 strategy.")
+    (license license:expat)))
+
+(define-public r-urbstatdata
+  (package
+    (name "r-urbstatdata")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "urbstatdata" version))
+       (sha256
+        (base32 "1h4ka93495iapflsgg19nxsliq92ydfdva962rm8f80n0ff9spr0"))))
+    (properties `((upstream-name . "urbstatdata")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/mariocools/urbstatdata")
+    (synopsis "Seven Data Sets for Urban and Built-Environment Statistics")
+    (description
+     "Seven documented data sets from transport, traffic safety, urban planning,
+construction and architectural engineering.  The package provides fixed,
+redistributable snapshots with consistent variable names.  Each help page
+records the source, licence, unit of observation, transformations and
+limitations of its data set.  Sources include Yeh (2018) <doi:10.24432/C5J30W>,
+Tsanas and Xifara (2012) <doi:10.24432/C51307>, Yeh (1998)
+<doi:10.24432/C5PK67>, Seoul Bike Sharing Demand (2020) <doi:10.24432/C5F62R>,
+and Singh and Chaudhari (2018) <doi:10.24432/C5P605>.")
     (license license:expat)))
 
 (define-public r-urbin
@@ -1700,23 +1850,21 @@ and TillÃ© (2005) and Haziza, Mecatti and Rao (2008) for details.")
 (define-public r-upstartr
   (package
     (name "r-upstartr")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "upstartr" version))
        (sha256
-        (base32 "08afvjk428r3hdhzpb5ah7iba1y8knxa0ziq9zik7fg984hr4hak"))))
+        (base32 "0rjfix7c0rgdw59q5g18aqh9zavf6j0wqw3i039zqgai6lhjpr69"))))
     (properties `((upstream-name . "upstartr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidytext
-                             r-tgamtheme
                              r-textclean
                              r-stringr
-                             r-sf
                              r-scales
                              r-rmarkdown
                              r-readxl
@@ -1730,8 +1878,7 @@ and TillÃ© (2005) and Haziza, Mecatti and Rao (2008) for details.")
                              r-glue
                              r-ggplot2
                              r-dplyr
-                             r-crayon
-                             r-beepr))
+                             r-crayon))
     (home-page "https://github.com/globeandmail/upstartr")
     (synopsis
      "Utilities Powering the Globe and Mail's Data Journalism Template")
@@ -1775,6 +1922,33 @@ ranking association patterns not necessarily following same marginal
 distributions, such as in count data from DNA and RNA sequencing---a rapidly
 expanding frontier in modern science.")
     (license license:lgpl3+)))
+
+(define-public r-upsetly
+  (package
+    (name "r-upsetly")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "upsetly" version))
+       (sha256
+        (base32 "0x474vjvp0i8lhfdlhcn6br4ksvwfn8j9i15cqg14kiy2pyyj147"))))
+    (properties `((upstream-name . "upsetly")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-plotly r-jsonlite r-htmlwidgets r-htmltools))
+    (home-page "https://github.com/Rbunensi/upsetly")
+    (synopsis "Interactive UpSet Plots Using 'plotly'")
+    (description
+     "This package creates interactive @code{UpSet-style} visualizations for exploring
+intersections among multiple sets, following the layout of Lex et al. (2014)
+<doi:10.1109/TVCG.2014.2346248>.  plotly widgets combine set-size bars,
+intersection-size bars, and membership matrices, and can synchronize complete
+intersection details with an HTML element for copying in Quarto', R Markdown',
+and Shiny documents.")
+    (license license:expat)))
 
 (define-public r-upsetjs
   (package
@@ -2136,13 +2310,13 @@ information.")
 (define-public r-unvs-med
   (package
     (name "r-unvs-med")
-    (version "1.1.0")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "unvs.med" version))
        (sha256
-        (base32 "148brfwc42ahvbnnpmndq9ryrxsx1k2i8j3rklyl9lsrhs476v2d"))))
+        (base32 "023i0zh8jspcs7wk3182v3qwczqx37q95jqwligjsr0flzxd95cw"))))
     (properties `((upstream-name . "unvs.med")))
     (build-system r-build-system)
     (arguments
@@ -2251,13 +2425,13 @@ on unsystematic sub-samples.")
 (define-public r-unsurv
   (package
     (name "r-unsurv")
-    (version "0.5.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "unsurv" version))
        (sha256
-        (base32 "0rc36wlq8bk2m7mpdlx4h4vz3v0abkz3bqqpiib4fxdfwwc6p7d8"))))
+        (base32 "1rrm4dmf66arvkpy0092r7zxdka5w8mlchjib32xc1aglpdqwczk"))))
     (properties `((upstream-name . "unsurv")))
     (build-system r-build-system)
     (arguments
@@ -2265,27 +2439,27 @@ on unsystematic sub-samples.")
       #:tests? #f))
     (propagated-inputs (list r-ggplot2 r-cluster))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/ielbadisy/unsurv")
+    (home-page "https://CRAN.R-project.org/package=unsurv")
     (synopsis "Unsupervised Clustering of Individualized Survival Curves")
     (description
      "This package provides tools for clustering individualized survival curves using
 the Partitioning Around Medoids (PAM) algorithm, with monotonic enforcement,
 optional smoothing, weighted distances (L1/L2), automatic K selection via
 silhouette width, prediction for new curves, basic stability checks, and
-plotting helpers.  The clustering strategy follows Kaufman and Rousseeuw (1990,
-ISBN:0471878766).")
+plotting helpers.  The method is described in El Badisy (2026)
+<doi:10.1093/bioadv/vbag218>.")
     (license license:expat)))
 
 (define-public r-unsum
   (package
     (name "r-unsum")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "unsum" version))
        (sha256
-        (base32 "0x3jlahx78dip1r6dld8h0gwiiivznj7m001fdzb83s2709a81jf"))))
+        (base32 "041n22m7zdhia2hzwyifvw7v4syf3fm4wlpknvz7p54328szhv8d"))))
     (properties `((upstream-name . "unsum")))
     (build-system r-build-system)
     (arguments
@@ -2294,10 +2468,11 @@ ISBN:0471878766).")
     (inputs (list))
     (propagated-inputs (list r-tibble
                              r-scales
+                             r-s7
                              r-roundwork
                              r-rlang
-                             r-readr
                              r-nanoparquet
+                             r-ggtext
                              r-ggplot2
                              r-cli))
     (native-inputs (list r-knitr))
@@ -2497,13 +2672,13 @@ method is described in Helgeson, Vock, and Bair (2021) <doi:10.1111/biom.13376>.
 (define-public r-uno
   (package
     (name "r-uno")
-    (version "2.7.4")
+    (version "2.7.4-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Uno" version))
        (sha256
-        (base32 "00as5ljh0gn78l9cyg6xbavh4d3blrxhhqml7kn6w6zngcfhmpq1"))))
+        (base32 "14aga37djf4fbr3xf920iqz9b75zfcyx0q099c0q17n40pzgrrkw"))))
     (properties `((upstream-name . "Uno")))
     (build-system r-build-system)
     (arguments
@@ -2575,13 +2750,13 @@ regression models that account for unmeasured confounders.")
 (define-public r-unmarked
   (package
     (name "r-unmarked")
-    (version "1.5.1")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "unmarked" version))
        (sha256
-        (base32 "0gx1l8c3ssyhr1mxbvrv6gwkymkgml1jxn5jl2k9mnbnr32sl9hs"))))
+        (base32 "1h05fmps11r0225xyk98ff6x2z00g0fb6798zj1ydngcamcyih2f"))))
     (properties `((upstream-name . "unmarked")))
     (build-system r-build-system)
     (arguments
@@ -3085,6 +3260,34 @@ Association Sources).")
 lie outside the Unit circle.  You can also easily draw an unit circle.")
     (license license:gpl3)))
 
+(define-public r-unitary
+  (package
+    (name "r-unitary")
+    (version "0.3.11")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Unitary" version))
+       (sha256
+        (base32 "18mskx3s8nyvvx8irdq1avsdyzal5fjidw9ykhharcd06cn116qj"))))
+    (properties `((upstream-name . "Unitary")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-latex2exp r-gtable r-formula r-data-table))
+    (home-page "https://cran.r-project.org/package=Unitary")
+    (synopsis "Quantum Simulator")
+    (description
+     "This package provides a comprehensive toolkit for quantum computing simulation
+and visualization within the R environment.  The package enables users to
+initialize qubit states, construct custom quantum gates with both unitary
+transformation and visual parameters, and build full quantum circuits by
+sequentially adding gates.  It includes predefined common gates (e.g., Hadamard,
+Pauli-X/Y/Z, Control-NOT, Control-Z) and supports direct plotting of circuits
+and individual gates for intuitive analysis.")
+    (license license:gpl3+)))
+
 (define-public r-unisensr
   (package
     (name "r-unisensr")
@@ -3202,6 +3405,72 @@ information, For detailed information kindly read the publication
 <doi:10.1016/j.jprot.2019.103613>.")
     (license license:gpl3)))
 
+(define-public r-unilindleyapprox
+  (package
+    (name "r-unilindleyapprox")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "UniLindleyApprox" version))
+       (sha256
+        (base32 "1pvi8npmyl79h1b61hhajw2nix3fibgihlpq2yjj7cdbks8rszb2"))))
+    (properties `((upstream-name . "UniLindleyApprox")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-numderiv r-mass))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=UniLindleyApprox")
+    (synopsis
+     "Bayesian Point Estimation Using Lindley's Approximation Under Censoring Schemes")
+    (description
+     "This package performs Bayesian point estimation using Lindley's Approximation
+(1980) <doi:10.1111/j.2517-6161.1980.tb01102.x> for arbitrary univariate
+probability distributions under numerous censoring and truncation schemes.
+Users supply the probability density function (PDF), cumulative distribution
+function (CDF), survival function, log-prior density, initial parameter vector,
+support bounds, and observed data; the package automatically computes Bayesian
+point estimates under various loss functions using Lindley's approximation.
+Supported schemes include complete data, right censoring, left censoring,
+interval censoring, random censoring, block random censoring, Type-I censoring,
+Type-II censoring, progressive Type-II censoring, progressive first failure
+censoring, joint Type-I censoring, joint Type-II censoring, balanced joint
+progressive Type-II censoring, hybrid censoring, hybrid Type-I censoring, hybrid
+Type-II censoring, Type-I hybrid censoring, Type-II progressively hybrid
+censoring, doubly Type-II censoring, middle censoring, right truncation, and
+left truncation.  The package computes posterior expectations of arbitrary
+smooth functions, supports multiple loss functions (squared error loss function
+(SELF), weighted squared error loss function (WSELF), modified quadratic squared
+error loss function (MQSELF), precautionary loss function (PLF), entropy loss
+function (ELF), linear-exponential (LINEX), generalized entropy loss function
+(GELF), Kullback-Leibler loss function (K-Loss), and user-defined), provides
+model selection criteria (Akaike information criterion (AIC), Bayesian
+information criterion (BIC), corrected Akaike information criterion (AICc),
+Hannan-Quinn information criterion (HQIC), consistent Akaike information
+criterion (CAIC), Kullback information criterion (KIC)), goodness-of-fit
+statistics (Kolmogorov-Smirnov, Anderson-Darling, Cramer-von Mises, Watson,
+Chi-square), residual analysis (Cox-Snell, Martingale, Deviance, Pearson,
+Generalized, Randomized quantile), comprehensive visualization tools, prediction
+utilities, and simulation functions for benchmarking estimators.  Methods are
+described in Lindley (1980) <doi:10.1111/j.2517-6161.1980.tb01102.x>, Tierney
+and Kadane (1986) <doi:10.2307/2234555>, Tierney, Kass, and Kadane (1989)
+<doi:10.2307/2335663>, Nagar, Kumar, and Krishna (2026)
+<doi:10.59467/IJASS.2026.22.1>, Goel, Kumar, and Krishna (2026, \"Estimation in
+power Lindley distributions using balanced joint progressively Type-II censored
+data\"), Wu and Kus (2009) <doi:10.1016/j.csda.2009.03.010>, Goel and Krishna
+(2026) <doi:10.1007/s13198-026-03208-w>, Balakrishnan and Aggarwala (2000,
+ISBN:978-1-4612-1334-5), Mondal and Kundu (2020)
+<doi:10.1080/03610926.2018.1554128>, Ding and Gui (2023)
+<doi:10.3390/math11092003>, Prajapati, Mitra, and Kundu (2019)
+<doi:10.1007/s13571-018-0167-0>, Yadav, Jaiswal, and Yadav (2026)
+<doi:10.1007/s11135-026-02647-8>, Iyer, Jammalamadaka, and Kundu (2008)
+<doi:10.1016/j.jspi.2007.03.062>, Banerjee and Kundu (2008)
+<doi:10.1109/TR.2008.916890>, and Kundu and Joarder (2006)
+<doi:10.1016/j.csda.2005.05.002>.")
+    (license license:gpl3)))
+
 (define-public r-unilasso
   (package
     (name "r-unilasso")
@@ -3259,6 +3528,50 @@ on the corporate design of the University of Konstanz
 <https://www.uni-konstanz.de/>, but can be adapted and extended for other
 purposes or institutions.")
     (license license:cc-by-sa4.0)))
+
+(define-public r-uniis
+  (package
+    (name "r-uniis")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "UniIS" version))
+       (sha256
+        (base32 "1xq2k0mqah7rsn4pg84c96940hdshixk328da7ssw8mb95hkdfx8"))))
+    (properties `((upstream-name . "UniIS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=UniIS")
+    (synopsis "Importance Sampling Inference for Censored Univariate Data")
+    (description
+     "Distribution-independent framework for importance-sampling inference with
+univariate observations subject to censoring or truncation.  Users provide
+probability functions and a proposal over model parameters.  Constructs
+observed-data likelihood contributions, computes numerically stable importance
+weights, and supplies posterior, likelihood, predictive, diagnostic, and
+model-comparison summaries.  Covers complete, right, left, interval, Type-I,
+Type-II, progressive Type-II, first-failure, progressive first-failure, doubly
+Type-II, middle-censored, and left/right-truncated data.  Methods for importance
+sampling and censoring schemes are described in Geweke (1989)
+<doi:10.2307/2290062>, Hesterberg (1995) <doi:10.1080/00031305.1995.10476138>,
+Robert and Casella (2004, ISBN:978-0-387-21617-1), Kundu and Joarder (2006)
+<doi:10.1016/j.csda.2005.05.002>, Banerjee and Kundu (2008)
+<doi:10.1109/TR.2008.916890>, Iyer, Jammalamadaka, and Kundu (2008)
+<doi:10.1016/j.jspi.2007.03.062>, Wu and Kus (2009)
+<doi:10.1016/j.csda.2009.03.010>, Prajapati, Mitra, and Kundu (2019)
+<doi:10.1007/s13571-018-0167-0>, Mondal and Kundu (2020)
+<doi:10.1080/03610926.2018.1554128>, Balakrishnan and Aggarwala (2000,
+ISBN:980-1-4612-1334-5), Ding and Gui (2023) <doi:10.3390/math11092003>, Nagar,
+Kumar, and Krishna (2026) <doi:10.59467/IJASS.2026.22.1>, Goel and Krishna
+(2026) <doi:10.1007/s13198-026-03208-w>, Yadav, Jaiswal, and Yadav (2026)
+<doi:10.1007/s11135-026-02647-8>, and Goel, Kumar, and Krishna (2026,
+\"Estimation in power Lindley distributions using balanced joint progressively
+Type-II censored data\").")
+    (license license:gpl3)))
 
 (define-public r-unifyr
   (package
@@ -3564,6 +3877,103 @@ heterogeneous genomic data.  For more details see Chen and Rahmani et al. (2024)
 <doi:10.1101/2024.01.27.577588>.")
     (license license:gpl3)))
 
+(define-public r-unicensorem
+  (package
+    (name "r-unicensorem")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "UniCensorEM" version))
+       (sha256
+        (base32 "1dvm09v1r9sqa20xridydlh03slfmdgwcwlayavhaivwahq5gg15"))))
+    (properties `((upstream-name . "UniCensorEM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-numderiv))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=UniCensorEM")
+    (synopsis "EM Algorithm for Parameter Estimation Under Censoring Schemes")
+    (description
+     "This package performs parameter estimation using the Expectation-Maximization
+(EM) algorithm of Dempster, Laird, and Rubin (1977)
+<doi:10.1111/j.2517-6161.1977.tb01600.x> for arbitrary univariate probability
+distributions under numerous censoring and truncation schemes.  Users supply the
+probability density function (PDF), cumulative distribution function (CDF),
+survival function, initial parameter vector, support bounds, and observed data;
+the package automatically estimates parameters using the EM algorithm under the
+specified censoring scheme.  Supported schemes include complete data, right
+censoring, left censoring, interval censoring, random censoring, block random
+censoring, Type-I censoring, Type-II censoring, progressive Type-II censoring
+(Balakrishnan and Aggarwala (2000, ISBN:978-1-4612-1334-5)), progressive first
+failure censoring, joint Type-I censoring, joint Type-II censoring, balanced
+joint progressive Type-II censoring, hybrid censoring, hybrid Type-I censoring,
+hybrid Type-II censoring, Type-I hybrid censoring, Type-II progressively hybrid
+censoring, doubly Type-II censoring, middle censoring, right truncation, and
+left truncation.  Standard errors are computed via the observed information
+matrix (numerical Hessian), the Louis (1982)
+<doi:10.1111/j.2517-6161.1982.tb01203.x> method, and the supplemented EM (SEM)
+algorithm of Meng and Rubin (1991) <doi:10.1080/01621459.1991.10475130>.  The
+package also provides confidence intervals, model selection criteria (AIC, BIC,
+AICc, HQIC), goodness-of-fit statistics (Kolmogorov-Smirnov, Cramer-von Mises,
+Anderson-Darling), residual analysis (randomized quantile residuals, generalized
+residuals), parametric bootstrap methods, Aitken acceleration for convergence
+improvement, and comprehensive visualization tools.  References: Wu and Kus
+(2009) <doi:10.1016/j.csda.2009.03.010>, Kundu and Joarder (2006)
+<doi:10.1016/j.csda.2005.05.002>, Iyer, Jammalamadaka, and Kundu (2008)
+<doi:10.1016/j.jspi.2007.03.062>, Banerjee and Kundu (2008)
+<doi:10.1109/TR.2008.916890>, Prajapati, Mitra, and Kundu (2019)
+<doi:10.1007/s13571-018-0167-0>, Mondal and Kundu (2020)
+<doi:10.1080/03610926.2018.1554128>, Ding and Gui (2023)
+<doi:10.3390/math11092003>.")
+    (license license:gpl3)))
+
+(define-public r-unicensor
+  (package
+    (name "r-unicensor")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "UniCensor" version))
+       (sha256
+        (base32 "1ccy30x9fg2xz20gxx0mqar85iwqhr1jqaab6ppyxgxa8ram124v"))))
+    (properties `((upstream-name . "UniCensor")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=UniCensor")
+    (synopsis "Reproducible Random Samples Under Univariate Censoring Schemes")
+    (description
+     "Generates reproducible random samples from any user-specified univariate
+distribution under a comprehensive suite of censoring and truncation schemes.
+Users supply the probability density function (PDF), cumulative distribution
+function (CDF), survival function, support bounds, and parameters; the same seed
+and inputs yield identical samples across sessions.  Supported schemes include
+right and left truncation, random, right, left, interval, and middle censoring,
+block random censoring, balanced joint progressive Type-II (BJPT-II),
+progressive first failure, joint Type-I, Type-I, Type-II, progressive Type-II,
+Type-II progressively hybrid, joint Type-II, hybrid, hybrid Type-I, doubly
+Type-II, Type-I hybrid, and hybrid Type-II censoring.  Diagnostic histogram, dot
+plot, and autocorrelation plots are provided for each scheme to verify
+distributional behaviour.  Methods are described in Nagar, Kumar, and Krishna
+(2026) <doi:10.59467/IJASS.2026.22.1>, Goel, Kumar, and Krishna (2026,
+\"Estimation in power Lindley distributions using balanced joint progressively
+Type-II censored data\"), Wu and Kus (2009) <doi:10.1016/j.csda.2009.03.010>,
+Goel and Krishna (2026) <doi:10.1007/s13198-026-03208-w>, Balakrishnan and
+Aggarwala (2000, ISBN:978-1-4612-1334-5), Mondal and Kundu (2020)
+<doi:10.1080/03610926.2018.1554128>, Ding and Gui (2023)
+<doi:10.3390/math11092003>, Prajapati, Mitra, and Kundu (2019)
+<doi:10.1007/s13571-018-0167-0>, Yadav, Jaiswal, and Yadav (2026)
+<doi:10.1007/s11135-026-02647-8>, Iyer, Jammalamadaka, and Kundu (2008)
+<doi:10.1016/j.jspi.2007.03.062>, Banerjee and Kundu (2008)
+<doi:10.1109/TR.2008.916890>, and Kundu and Joarder (2006)
+<doi:10.1016/j.csda.2005.05.002>.")
+    (license license:gpl3)))
+
 (define-public r-unicefdata
   (package
     (name "r-unicefdata")
@@ -3850,27 +4260,57 @@ geometric distance representation.")
 (define-public r-unexcel
   (package
     (name "r-unexcel")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "unexcel" version))
        (sha256
-        (base32 "1jnnz0nqrb770zcrrgvc9whrlid2k4k70bn79h8qf8i4jy4yhd9p"))))
+        (base32 "1ijvqd210kwl8mr5xncp08zqwc4xsk2n6w0wghj84pgqf6j90kp3"))))
     (properties `((upstream-name . "unexcel")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-xml2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/drhrf/unexcel")
-    (synopsis "Revert Excel Serial Dates Back to Intended Day.Month Numerics")
+    (synopsis "Revert Spreadsheet Date Auto-Conversion to the Numbers Typed")
     (description
-     "Detects values imported from spreadsheets that were auto-converted to Excel date
-serials and reconstructs the originally intended day.month decimals (for
-example, 30.3 that Excel displayed as 30/03/2025').  The functions work in a
-vectorized manner, preserve non-serial values, and support both the 1900 and
-1904 date systems.")
+     "Spreadsheets silently turn entries such as 30.3 into dates, so the imported data
+carry date serials instead of the numbers that were typed.  Reading the workbook
+directly recovers those numbers without guesswork: an xlsx file states its own
+date system, and records which cells are formatted as dates and in which field
+order, so the values to repair are identified from the file rather than inferred
+from their magnitude.  Functions are also provided for data already imported,
+where that evidence is no longer available, using conservative and configurable
+detection.")
+    (license license:expat)))
+
+(define-public r-undomanager
+  (package
+    (name "r-undomanager")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "undomanager" version))
+       (sha256
+        (base32 "15qz243hqzna01jgspcfd1r4bb68h1a08rm6cr5rx3w382y97wr1"))))
+    (properties `((upstream-name . "undomanager")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-r6 r-checkmate))
+    (home-page "https://github.com/daattali/undomanager")
+    (synopsis "Manage the History of Any Object with Undo/Redo Operations")
+    (description
+     "Track the history of any R object and move through it with undo and redo
+operations.  Anything can be stored, from a single number to a data frame or an
+entire application state.  A manager can restrict its history to specific
+classes and cap how many items it keeps, and it can be reactive to integrate
+with Shiny'.")
     (license license:expat)))
 
 (define-public r-undidr
@@ -3900,6 +4340,38 @@ the aggregate average treatment effect on the treated via the randomization
 inference procedure described in @code{MacKinnon} and Webb (2020)
 <doi:10.1016/j.jeconom.2020.04.024>.")
     (license license:expat)))
+
+(define-public r-underdisp
+  (package
+    (name "r-underdisp")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "underdisp" version))
+       (sha256
+        (base32 "1cp59r10537hp1bpki039m81lvvgq26z2w4frw9xf8n6xm4mbcw5"))))
+    (properties `((upstream-name . "underdisp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vgam r-rcpp r-numderiv r-mass))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/bagozzib/underdisp")
+    (synopsis "Diagnostics and Models for Underdispersed Count Data")
+    (description
+     "This package provides tools for detecting and modeling underdispersion in count
+data (conditional variance below the conditional mean), a phenomenon overlooked
+by the Poisson and negative binomial defaults.  Provides a screening diagnostic
+that benchmarks at-risk dispersion against a zero-truncated Poisson; the
+continuous parameter binomial (CPB) regression and its zero-truncated variant,
+with an interpretable observation-specific bound and high-dimensional
+fixed-effects support; validated bootstrap (for coefficients) and
+profile-likelihood (for the dispersion parameter) inference; and quantities of
+interest including predicted probabilities and the implied ceiling.  The
+likelihood is implemented in C++ for speed.")
+    (license license:gpl3)))
 
 (define-public r-uncover
   (package
@@ -4149,13 +4621,13 @@ Equation and Twin Modelling in R. Twin Research and Human Genetics, 22, 27-41.
 (define-public r-umweltapir
   (package
     (name "r-umweltapir")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "umweltapir" version))
        (sha256
-        (base32 "1vc7g391rqidaxaq48hxxmblhrjalgd3hp7k45pv2whk55x48gxs"))))
+        (base32 "13izlhkmsl5sglxi6iz8pi72xnh20iymxwb61p987cm3921mwc3k"))))
     (properties `((upstream-name . "umweltapir")))
     (build-system r-build-system)
     (arguments
@@ -4307,13 +4779,13 @@ molecular identifiers generated by UMI@code{ErrorCorrect}
 (define-public r-ume
   (package
     (name "r-ume")
-    (version "1.6.1")
+    (version "1.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ume" version))
        (sha256
-        (base32 "1qzr7qjjhvc9lw4il6wj68il1p81jyp61b1fzb10r1pldbbvxwah"))))
+        (base32 "1dbwm3gs89yggg1cs0l2qwlw3fd61hmlcwygca8lsvb2yms3qg96"))))
     (properties `((upstream-name . "ume")))
     (build-system r-build-system)
     (arguments
@@ -4412,13 +4884,13 @@ the method can be used to generate new data.")
 (define-public r-ultrapolarplot
   (package
     (name "r-ultrapolarplot")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ultrapolaRplot" version))
        (sha256
-        (base32 "07qkzwmg1d24sjigrid1zkjgnbs1j8vnac6jjgnsv477zd92ncgq"))))
+        (base32 "1nlq636ivmc4z6y8rjqv8ng3phfzfl77sy42b8q7c13ysfw23ymx"))))
     (properties `((upstream-name . "ultrapolaRplot")))
     (build-system r-build-system)
     (arguments
@@ -4490,13 +4962,13 @@ simplex.")
 (define-public r-ulrb
   (package
     (name "r-ulrb")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ulrb" version))
        (sha256
-        (base32 "15i7vbm12jfx26azd139h5600r1ccraq1axc2qrzy2i9qfdxf1vi"))))
+        (base32 "0yv77k34cqgrb6198s9qp0jqh8spgyrllzinwgh6n9s6wbhfi3bf"))))
     (properties `((upstream-name . "ulrb")))
     (build-system r-build-system)
     (arguments
@@ -4802,13 +5274,13 @@ purposes.")
 (define-public r-ukbnmr
   (package
     (name "r-ukbnmr")
-    (version "3.3.2")
+    (version "3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ukbnmr" version))
        (sha256
-        (base32 "1mp5z52p1a6k6fvzswrc9jk9xddlm5d9bisranm5rk66ybximsp4"))))
+        (base32 "1gvdjhv43qwbxk9if2q9xxcv4ni344naiibdnhxd2ivxqdhkkbdg"))))
     (properties `((upstream-name . "ukbnmr")))
     (build-system r-build-system)
     (arguments
@@ -4870,6 +5342,52 @@ extraction and decoding, variable derivation, survival and association analysis,
 genetic risk score computation, and publication-quality visualization.  For
 details on the UK Biobank resource, see Bycroft et al. (2018)
 <doi:10.1038/s41586-018-0579-z>.")
+    (license license:expat)))
+
+(define-public r-ukbanalytica
+  (package
+    (name "r-ukbanalytica")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "UKBAnalytica" version))
+       (sha256
+        (base32 "1mc1193hb47wyx9ly8byj11pjkq780yr2d9qx547bg5mgxj5lfpj"))))
+    (properties `((upstream-name . "UKBAnalytica")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-tableone
+                             r-survival
+                             r-stringi
+                             r-scales
+                             r-sandwich
+                             r-rlang
+                             r-proc
+                             r-mitools
+                             r-mice
+                             r-mgcv
+                             r-mass
+                             r-lmtest
+                             r-igraph
+                             r-ggplot2
+                             r-data-table))
+    (home-page "https://github.com/Hinna0818/UKBAnalytica")
+    (synopsis "UK Biobank Data Processing and Survival Analysis Toolkit")
+    (description
+     "This package provides an integrated workflow for UK Biobank Research Analysis
+Platform (RAP) hosted and RAP-generated analysis tables.  The package supports
+RAP phenotype extraction planning, predefined variable sets and disease
+definitions, standardized baseline preprocessing, multi-source endpoint
+ascertainment, prevalent and incident case classification, survival-ready cohort
+construction, regression, multiple imputation, propensity score analysis,
+mediation analysis, subgroup and sensitivity analyses, machine learning,
+proteomics enrichment and protein-protein interaction analysis, and
+publication-oriented visualization.  The package workflow is described in He et
+al. (2026) <doi:10.64898/2026.06.19.26356057>.")
     (license license:expat)))
 
 (define-public r-ukbabynames
@@ -5064,13 +5582,13 @@ Shape.")
 (define-public r-ugmar
   (package
     (name "r-ugmar")
-    (version "3.6.0")
+    (version "3.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "uGMAR" version))
        (sha256
-        (base32 "0ggrjcy4ay88sys1jhx56vcs7v3fl8v4fkmnz91kk5c6q5nkgr87"))))
+        (base32 "1q4pq17yal64n0198fvry3npb1sc1g1krx2qc0cpyspfr0c3qgkc"))))
     (properties `((upstream-name . "uGMAR")))
     (build-system r-build-system)
     (arguments
@@ -5143,54 +5661,6 @@ month.")
 function of the Unit-Garima distribution based on Ayuyuen, S., & Bodhisuwan, W.
 (2024)<doi:10.18187/pjsor.v20i1.4307>.")
     (license license:gpl3)))
-
-(define-public r-ufs
-  (package
-    (name "r-ufs")
-    (version "25.7.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ufs" version))
-       (sha256
-        (base32 "1ryf4a2fkr83xbpwb4y9nmkn14jpqmqr3qigwb8jg5idji0q6wps"))))
-    (properties `((upstream-name . "ufs")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-suppdists
-                             r-scales
-                             r-rmdpartials
-                             r-pwr
-                             r-plyr
-                             r-pander
-                             r-knitr
-                             r-kableextra
-                             r-htmltools
-                             r-gtable
-                             r-gridextra
-                             r-gparotation
-                             r-ggridges
-                             r-ggrepel
-                             r-ggplot2
-                             r-dplyr
-                             r-diptest
-                             r-digest))
-    (home-page "https://ufs.opens.science")
-    (synopsis "Collection of Utilities")
-    (description
-     "This is a new version of the userfriendlyscience package, which has grown a bit
-unwieldy.  Therefore, distinct functionalities are being consciously uncoupled
-into different packages.  This package contains the general-purpose tools and
-utilities (see the behaviorchange package, the rosetta package, and the
-soon-to-be-released scd package for other functionality), and is the most direct
-successor of the original userfriendlyscience package.  For example, this
-package contains a number of basic functions to create higher level plots, such
-as diamond plots, to easily plot sampling distributions, to generate confidence
-intervals, to plan study sample sizes for confidence intervals, and to do some
-basic operations such as (dis)attenuate effect size estimates.")
-    (license license:gpl3+)))
 
 (define-public r-ufrisk
   (package
@@ -5321,6 +5791,44 @@ interdependence for right-censored event times.  These models, as applied to
 this data set, can be found back in the publications found in the reference
 list.")
     (license license:gpl3)))
+
+(define-public r-uddbart
+  (package
+    (name "r-uddbart")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "uddbart" version))
+       (sha256
+        (base32 "100icy47axa1j7z4zwzr6qq2j1lfrgsphpb5b0c4l0hzrbqkinfk"))))
+    (properties `((upstream-name . "uddbart")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/xulinpan/uddbart")
+    (synopsis "Unified Dynamic Deep 'BART' for Interval-Censored Survival")
+    (description
+     "This package implements U-DDBART-IC, a unified Bayesian workflow for dynamic
+risk prediction from irregular longitudinal biomarkers when event times are
+interval-censored between clinical visits.  The package turns long-format
+biomarker histories and patient-level interval endpoints L, R, C and delta into
+a discrete-time follow-up grid, summarises each landmark history with nine
+interpretable trajectory features (current, baseline and previous biomarker
+values, last visit gap, local slope, cumulative decline, best value, elapsed
+time and visit count), fits discrete-time interval hazards using optional
+logit-link Bayesian additive regression trees, a generalized linear model
+fallback, or a lightweight variational approximation, accumulates survival from
+the discrete-time product, and evaluates the interval-censored likelihood.
+Fitted models return landmark risk predictions over user-specified horizons with
+posterior or bootstrap uncertainty by evaluating survival ratios across fitted
+hazard draws.  Utilities are provided for simulation, staged model fitting,
+plotting and summarising dynamic risk curves, IPCW Brier scores,
+cumulative/dynamic time-dependent area under the curve, calibration tables, and
+an anonymised chronic myeloid leukaemia molecular-monitoring example data set.")
+    (license license:expat)))
 
 (define-public r-ucscxenatools
   (package
@@ -5629,13 +6137,13 @@ form.")
 (define-public r-ubstats
   (package
     (name "r-ubstats")
-    (version "0.3.0")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "UBStats" version))
        (sha256
-        (base32 "1cwng8yp5ba2zk7dpj05d2cpcb46ddk81vqicjjilardsvwbjn7j"))))
+        (base32 "180c7h864h0rigkv1ipq16hlv94hfdpn2fqkbrgjckjcrskgj9lv"))))
     (properties `((upstream-name . "UBStats")))
     (build-system r-build-system)
     (arguments
@@ -5644,10 +6152,12 @@ form.")
     (home-page "https://cran.r-project.org/package=UBStats")
     (synopsis "Basic Statistics")
     (description
-     "Basic statistical analyses.  The package has been developed to be used in
-statistics courses at Bocconi University (Milan, Italy).  Currently, the package
-includes some exploratory and inferential analyses usually presented in
-introductory statistics courses.")
+     "Basic statistical analyses.  The package provides comprehensive functions and
+datasets for teaching introductory statistics courses.  It has been developed to
+be used in undergraduate statistics courses at Bocconi University (Milan,
+Italy), and constitutes the core software tool used throughout the textbook by
+Piccarreta, R., Tonini, D., & Trentini, F. (2026) \"From Data to Decisions.  An
+Introduction to Applied Statistics\", BUP, ISBN:9788823824096.")
     (license license:gpl3)))
 
 (define-public r-ubms
@@ -5841,75 +6351,16 @@ block feature selection.")
 approaches, featuring methods for data preparation, modeling, and visualization.")
     (license license:gpl3+)))
 
-(define-public r-uavrmp
-  (package
-    (name "r-uavrmp")
-    (version "0.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "uavRmp" version))
-       (sha256
-        (base32 "1bv5979x3c3vbls40vih83mm29cq7yjv37w544cg63sml2k2bj3v"))))
-    (properties `((upstream-name . "uavRmp")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:modules '((guix build r-build-system)
-                  ((guix build minify-build-system)
-                   #:select (minify))
-                  (guix build utils)
-                  (ice-9 match))
-      #:imported-modules `(,@%r-build-system-modules (guix build
-                                                      minify-build-system))
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'process-javascript
-                    (lambda* (#:key inputs #:allow-other-keys)
-                      (with-directory-excursion "inst/"
-                        (for-each (match-lambda
-                                    ((source . target) (minify source
-                                                               #:target target)))
-                                  '())))))))
-    (propagated-inputs (list r-zoo
-                             r-xfun
-                             r-terra
-                             r-spatialeco
-                             r-sp
-                             r-sf
-                             r-rlist
-                             r-log4r
-                             r-link2gi
-                             r-jsonlite
-                             r-geosphere
-                             r-exifr
-                             r-dplyr
-                             r-data-table
-                             r-concaveman
-                             r-brew))
-    (native-inputs (list r-knitr esbuild))
-    (home-page "https://github.com/gisma/uavRmp")
-    (synopsis "UAV Mission Planner")
-    (description
-     "The Unmanned Aerial Vehicle Mission Planner provides an easy to use work flow
-for planning autonomous obstacle avoiding surveys of ready to fly unmanned
-aerial vehicles to retrieve aerial or spot related data.  It creates either
-intermediate flight control files for the DJI-Litchi supported series or ready
-to upload control files for the pixhawk-based flight controller.  Additionally
-it contains some useful tools for digitizing and data manipulation.")
-    (license (list license:gpl3+
-                   (license:fsdg-compatible "file://LICENSE")))))
-
 (define-public r-uaparserjs
   (package
     (name "r-uaparserjs")
-    (version "0.3.8")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "uaparserjs" version))
        (sha256
-        (base32 "028c7gbmkc6fgbxhrjwbl7f0igd631n62d8mnrg3429xb1v2dvx9"))))
+        (base32 "1mf9v32w4w8xlbhs4iqnfhx6ba4qfjzf34gij5j99245rb2jvwsl"))))
     (properties `((upstream-name . "uaparserjs")))
     (build-system r-build-system)
     (arguments
@@ -5919,12 +6370,9 @@ it contains some useful tools for digitizing and data manipulation.")
     (home-page "https://github.com/gregfrog/uaparserjs")
     (synopsis "Parse 'User-Agent' Strings")
     (description
-     "Despite there being a section in RFC 7231
-<https://datatracker.ietf.org/doc/html/rfc7231#section-5.5.3> defining a
-suggested structure for User-Agent headers this data is notoriously difficult to
-parse consistently.  Tools are provided that will take in user agent strings and
-return structured R objects.  This is a V8'-backed package based on the
-ua-parser project <https://github.com/ua-parser>.")
+     "Parses HTTP user agent strings and returns user agent, device and OS
+information.  This is a âV8â-backed package that uses the UA, device and OS
+definitions from the âua-parserâ project <https://github.com/ua-parser>.")
     (license (list license:asl2.0
                    (license:fsdg-compatible "file://LICENSE")))))
 

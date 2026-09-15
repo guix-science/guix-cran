@@ -147,13 +147,13 @@ settings.")
 (define-public r-zoomerjoin
   (package
     (name "r-zoomerjoin")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "zoomerjoin" version))
        (sha256
-        (base32 "0zb93mfkzz9lvfahis4yn1iblh50gwvxb8mmxmn8s5wyphsc3jcm"))))
+        (base32 "11wafjiigzki56qgahmwkwkx5ib96s4py2xrdz3762k5pska99xs"))))
     (properties `((upstream-name . "zoomerjoin")))
     (build-system r-build-system)
     (arguments
@@ -162,7 +162,7 @@ settings.")
     (inputs (list zlib))
     (propagated-inputs (list r-tidyr r-tibble r-rlang r-dplyr r-collapse))
     (native-inputs (list r-knitr))
-    (home-page "https://beniamino.org/zoomerjoin/")
+    (home-page "https://archive.beniamino.org/zoomerjoin/")
     (synopsis "Superlatively Fast Fuzzy Joins")
     (description
      "Empowers users to fuzzily-merge data frames with millions or tens of millions of
@@ -321,16 +321,44 @@ viewing, and support a safer approach to vector sampling, sequence generation,
 and aggregation.")
     (license license:expat)))
 
+(define-public r-zmij
+  (package
+    (name "r-zmij")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "zmij" version))
+       (sha256
+        (base32 "0m0lxjp9w9xgzhx9bhgcak60f89wrn7kqjwx1a2yh3r3xwg47psh"))))
+    (properties `((upstream-name . "zmij")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list zlib xz))
+    (home-page "https://nanx.me/zmij/")
+    (synopsis "Round-Trip-Safe Double-Precision Formatting")
+    (description
+     "Converts double-precision floating-point values to decimal strings with the
+shortest significands needed for round-trip recovery.  Uses the zmij algorithm
+through a vendored Rust implementation.  The method is described in Zverovich
+(2025), \"Faster Double-to-String Conversion\"
+<https://vitaut.net/posts/2025/faster-dtoa/>.  Provides vectorized formatting, a
+correctly rounded inverse parser, and explicit handling of missing and
+non-finite values.")
+    (license license:expat)))
+
 (define-public r-zmctp
   (package
     (name "r-zmctp")
-    (version "0.1.0")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "zmctp" version))
        (sha256
-        (base32 "1ihgvh5bpdwx8hsi9g3iqkg2arih9p8j4vfn0b6802lw833jnhim"))))
+        (base32 "0nk743v2h4irkfq42si0iv87hrcz4z2nfcafjggm7gqx4pqcr1m4"))))
     (properties `((upstream-name . "zmctp")))
     (build-system r-build-system)
     (arguments
@@ -626,13 +654,13 @@ based on the determined rank.")
 (define-public r-zipcoder
   (package
     (name "r-zipcoder")
-    (version "0.3.5")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "zipcodeR" version))
        (sha256
-        (base32 "1fmjqfhxd0lgsn6l5jvi3qzhbq9865xcps3jm9iy72jx7jxr59lk"))))
+        (base32 "1j2gbgd24xvdi0bjk2r7myq5gqfgcs0sff50m2r3h5f45vrq6mha"))))
     (properties `((upstream-name . "zipcodeR")))
     (build-system r-build-system)
     (arguments
@@ -657,7 +685,9 @@ based on the determined rank.")
 codes and functions for working with them.  Search ZIP codes by multiple
 geographies, including state, county, city & across time zones.  Also included
 are functions for relating ZIP codes to Census data, geocoding & distance
-calculations.")
+calculations.  New analyses can select an immutable modern data bundle through
+the next-generation API, while the historical interface remains compatible with
+version 0.3.5 for reproducible research.")
     (license license:gpl3)))
 
 (define-public r-zipbayes
@@ -687,6 +717,40 @@ accommodating four different scenarios: the general scenario, the scenario with
 measurement error in responses, the external validation scenario, and the
 internal validation scenario.")
     (license license:gpl2+)))
+
+(define-public r-zinb-gp
+  (package
+    (name "r-zinb-gp")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ZINB.GP" version))
+       (sha256
+        (base32 "1sl4fa46s0i6m8j625w3cx8yc776d14wg3iykffkz17jsfvlkiyv"))))
+    (properties `((upstream-name . "ZINB.GP")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mvtnorm
+                             r-msm
+                             r-matrix
+                             r-mass
+                             r-laplacesdemon
+                             r-bayeslogit))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/KingJMS1/GP_ZINB_R")
+    (synopsis
+     "Bayesian Zero-Inflated Negative Binomial Gaussian Process Models")
+    (description
+     "Fits Bayesian zero-inflated negative binomial regression models with Gaussian
+process random effects for spatial, temporal, or spatiotemporal count data.
+Provides Markov chain Monte Carlo sampling, configurable random effects in the
+zero-inflation and count components, and posterior predictive draws.  Implements
+a full GP version of the methods described by He and Huang (2024)
+<doi:10.1016/j.jspi.2023.106098>.")
+    (license license:expat)))
 
 (define-public r-zinarp
   (package
@@ -999,19 +1063,19 @@ additive models,shape constrained additive models, and I-splines.")
 (define-public r-zeroonedists
   (package
     (name "r-zeroonedists")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ZeroOneDists" version))
        (sha256
-        (base32 "0hagc4xgyxscz4gdg0wk2j7df07jqjf2gy39rmk4kfs6v7n264hj"))))
+        (base32 "0b5yblzhwkfg155djpppqcn063zbf8a1fl9p5j5v08qn2m33g2w5"))))
     (properties `((upstream-name . "ZeroOneDists")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-gamlss-dist r-gamlss))
+    (propagated-inputs (list r-gamlss))
     (home-page "https://github.com/fhernanb/ZeroOneDists")
     (synopsis "One Zero Statistical Distributions")
     (description
@@ -1098,37 +1162,37 @@ Extension Principle (see de Barros, L.C., Bassanezi, R.C., Lodwick, W.A. (2017)
 <doi:10.1007/978-3-662-53324-6_2>).")
     (license license:gpl3)))
 
-(define-public r-zenstats
+(define-public r-zentrar
   (package
-    (name "r-zenstats")
-    (version "0.1.2")
+    (name "r-zentrar")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
-       (uri (cran-uri "zenstats" version))
+       (uri (cran-uri "zentraR" version))
        (sha256
-        (base32 "1ji4pqb0vh8ad8jr4pd6dkjr5cfckrlp24jncjc079wahw64fgs5"))))
-    (properties `((upstream-name . "zenstats")))
+        (base32 "18aianzn3w6hp4bvgmgh85skhbc5zyc1zzhzdjb8i6wx7y05k6l6"))))
+    (properties `((upstream-name . "zentraR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-rvest
+    (propagated-inputs (list r-vctrs
+                             r-tidyr
+                             r-tibble
                              r-rlang
-                             r-readr
-                             r-rcurl
-                             r-purrr
-                             r-polite
-                             r-curl
-                             r-cli
-                             r-checkmate))
-    (home-page "https://rfsaldanha.github.io/zenstats/")
-    (synopsis "Statistics from 'Zenodo' Deposits")
+                             r-httr2
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://gitlab.com/meter-group-inc/pubpackages/zentraR")
+    (synopsis "R Client for the ZENTRA Cloud V5 API")
     (description
-     "Fetch statistics about views, downloads and data volume from Zenodo deposits.
-The package collects a Zenodo (<https://zenodo.org>) deposit file information,
-respecting the website scrapping policies.")
+     "Downloads environmental sensor data from the ZENTRA Cloud V5 API
+(<https://api.zentracloud.io>) into tidy data frames.  Provides device
+discovery, reading retrieval with automatic pagination and rate-limit handling,
+tidy long output with a wide-format helper, and an incremental sync engine with
+pluggable local storage (RDS files, CSV files, or return-only) so that new
+readings can be fetched on a schedule and appended to a growing local record.")
     (license license:expat)))
 
 (define-public r-zenplots
@@ -1214,13 +1278,13 @@ further details, see <doi:10.18637/jss.v095.i04>.")
 (define-public r-zen4r
   (package
     (name "r-zen4r")
-    (version "0.10.5")
+    (version "0.10.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "zen4R" version))
        (sha256
-        (base32 "0nvbfrjm8jlx14jskm7fckj4p2d6n5v9gz0zz0z4696wimx84vcv"))))
+        (base32 "0i0whfm5ff24yrag7vrgb6b9z9ds86jkkk6mdvcz5dc55vb269lq"))))
     (properties `((upstream-name . "zen4R")))
     (build-system r-build-system)
     (arguments
@@ -1395,13 +1459,13 @@ limitations.")
 (define-public r-zctacrosswalk
   (package
     (name "r-zctacrosswalk")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "zctaCrosswalk" version))
        (sha256
-        (base32 "14yda45nqn9ywb7zpwp4kmjziglj0qjgm02lmi8ndvc5wi2r1ma7"))))
+        (base32 "0igl6iajsvkr44brn7blpsabwp3r23w9fmmfg6gj28fgpxdyp9sk"))))
     (properties `((upstream-name . "zctaCrosswalk")))
     (build-system r-build-system)
     (arguments
@@ -1409,7 +1473,7 @@ limitations.")
       #:tests? #f))
     (propagated-inputs (list r-stringr r-rlang r-readr r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/MarketBridge/zctaCrosswalk")
+    (home-page "https://github.com/brendensm/zctaCrosswalk")
     (synopsis
      "Crosswalk Between 2020 Census ZIP Code Tabulation Areas (ZCTAs), States and Counties")
     (description
@@ -1421,13 +1485,13 @@ ZIP Code Tabulation Areas (ZCTAs).")
 (define-public r-zarr
   (package
     (name "r-zarr")
-    (version "0.4.1")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "zarr" version))
        (sha256
-        (base32 "1l13hafcr6mz8ra7ah16c1bjbxn4bmbv2419k9f8m11xgkkmzghc"))))
+        (base32 "17d3lbprcrgrj1php3jva9rfmvmpbj7ywnp9r0aq64xahm6s9p1d"))))
     (properties `((upstream-name . "zarr")))
     (build-system r-build-system)
     (arguments

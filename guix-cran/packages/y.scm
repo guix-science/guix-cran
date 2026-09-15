@@ -185,13 +185,13 @@ channel including geography, traffic sources, time period, etc.")
 (define-public r-yrnd
   (package
     (name "r-yrnd")
-    (version "0.1.4")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "yrnd" version))
        (sha256
-        (base32 "1qpirsm91jx0p46cgb2s817d7cjrlirfiw7bb0dhx0mvd28vf4v0"))))
+        (base32 "1w8n7h1i3snh3w45k5l3w1q49dbip5xa611hf0gsx5gv6xrd8n9w"))))
     (properties `((upstream-name . "yrnd")))
     (build-system r-build-system)
     (arguments
@@ -202,9 +202,11 @@ channel including geography, traffic sources, time period, etc.")
                              r-tibble
                              r-scales
                              r-rblpapi
+                             r-mass
                              r-lubridate
                              r-ggplot2
-                             r-dplyr))
+                             r-dplyr
+                             r-deoptim))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=yrnd")
     (synopsis
@@ -213,13 +215,18 @@ channel including geography, traffic sources, time period, etc.")
      "This package provides with parametric Risk Neutral Densities (RNDs) and
 cumulative densities of futures prices on fixed-income products.  It relies on
 options on Short Term Interest Rate futures or options on government bond
-futures.  It models the futures price as a mixture of lognormal densities.  It
-also provides with the RNDs and cumulative densities of the money market rate or
-the government bond yield inferred from the futures price, using the RND of the
-futures price.  It eventually provides with the probability attached to each
-bond in the delivery basket of a government bond futures to be the cheapest at
-maturity, using the RND of the bond futures price.  The package leverages on the
-works of Melick, W. R. and Thomas, C. P. (1997) <doi:10.2307/2331318> and B.
+futures.  It models the futures price as a mixture of lognormal densities.
+Leveraging on this, the package provides with the RNDs and cumulative densities
+of the money market rate or the government bond yield inferred from the futures
+price, using the RND of the futures price.  The package also extracts from the
+RND of the government bond futures price simultaneously the RND of the
+cheapest-to-deliver bond yield at options maturity and the RND of the ctd bond
+repo rate from options maturity to futures maturity.  The package also provides
+with the probability attached to each bond in the delivery basket of a
+government bond futures to be the cheapest at maturity, and also the non
+parametric distribution of the spread between two bond yields, using two RNDs
+based on options on bond futures of the same maturity.  The package leverages on
+the works of Melick, W. R. and Thomas, C. P. (1997) <doi:10.2307/2331318> and B.
 Bahra (1998) <doi:10.2139/ssrn.77429>.")
     (license license:gpl3)))
 
@@ -593,13 +600,13 @@ compute Asymmetry Index (AI) and bilateral (L+R) measures and reshape the data."
 (define-public r-ymd
   (package
     (name "r-ymd")
-    (version "0.1.5")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ymd" version))
        (sha256
-        (base32 "009br3vjv816iazdxxhwl2773zi6pbfqycc86k1xar85qjgl04ir"))))
+        (base32 "0v3md5ry5gh9sy2i1pr5a4fmlz9h0m43x7bib5jhylrcz44yhgr5"))))
     (properties `((upstream-name . "ymd")))
     (build-system r-build-system)
     (arguments
@@ -1196,19 +1203,19 @@ readability.  See ?yamlet, ?decorate, ?modify, ?io_csv, and ?ggplot.decorated.")
 (define-public r-yaml12
   (package
     (name "r-yaml12")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "yaml12" version))
        (sha256
-        (base32 "19cyxqgq279bflkcjngsyklapfp0iw1z9lpzm0ql4w8kcn5ncm4h"))))
+        (base32 "1kbpjy7yzgqjlyivy6bbnibb3nwan7bb14innw6m4j6lmj5d58d8"))))
     (properties `((upstream-name . "yaml12")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (inputs (list xz))
+    (inputs (list))
     (native-inputs (list r-knitr))
     (home-page "https://posit-dev.github.io/r-yaml12/")
     (synopsis "Fast 'YAML' 1.2 Parser and Formatter")
