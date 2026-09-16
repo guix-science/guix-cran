@@ -11565,13 +11565,13 @@ groups of sequences.")
 (define-public r-traminer
   (package
     (name "r-traminer")
-    (version "2.2-13")
+    (version "2.2-14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TraMineR" version))
        (sha256
-        (base32 "1j0y4hxh28q6m6smzwy9grk91fvv1xhxqkx859dld1byqv485rvg"))))
+        (base32 "0hqzlwxf39vdgds7pl6j30ppsr54l7rpw2ycg25fg76lcmfv4f46"))))
     (properties `((upstream-name . "TraMineR")))
     (build-system r-build-system)
     (arguments
@@ -11579,7 +11579,7 @@ groups of sequences.")
       #:tests? #f))
     (propagated-inputs (list r-vegan r-rcolorbrewer r-colorspace r-cluster
                              r-boot))
-    (home-page "http://traminer.unige.ch")
+    (home-page "https://traminer.unige.ch")
     (synopsis "Trajectory Miner: a Sequence Analysis Toolkit")
     (description
      "Set of sequence analysis tools for manipulating, describing and rendering
@@ -27848,24 +27848,25 @@ Meier & Mata (2024) <doi:10.1007/s11625-024-01516-3>.")
 (define-public r-text2map
   (package
     (name "r-text2map")
-    (version "0.2.3")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "text2map" version))
        (sha256
-        (base32 "0jxj6m4411zvxqvpdqnijfy2nml8syinwxv2z6qx06cisi76dkw7"))))
+        (base32 "1n33rgscy0cmnz0wk6nxjmky6fgc70fi49rb8ni4pv0vl86vcqz1"))))
     (properties `((upstream-name . "text2map")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble
+    (propagated-inputs (list r-tidyselect
+                             r-tibble
                              r-text2vec
                              r-stringi
                              r-rsvd
                              r-rlang
-                             r-qgraph
+                             r-rhpcblasctl
                              r-pillar
                              r-permute
                              r-matrix
@@ -27875,19 +27876,18 @@ Meier & Mata (2024) <doi:10.1007/s11625-024-01516-3>.")
                              r-fastmatch
                              r-dplyr
                              r-doparallel
-                             r-clusterr
                              r-cli))
     (home-page "https://culturalcartography.gitlab.io/text2map")
     (synopsis "R Tools for Text Matrices, Embeddings, and Networks")
     (description
-     "This is a collection of functions optimized for working with with various kinds
-of text matrices.  Focusing on the text matrix as the primary object -
-represented either as a base R dense matrix or a Matrix package sparse matrix -
-allows for a consistent and intuitive interface that stays close to the
-underlying mathematical foundation of computational text analysis.  In
-particular, the package includes functions for working with word embeddings,
-text networks, and document-term matrices.  Methods developed in Stoltz and
-Taylor (2019) <doi:10.1007/s42001-019-00048-6>, Taylor and Stoltz (2020)
+     "This is a collection of functions optimized for working with various kinds of
+text matrices.  Focusing on the text matrix as the primary object - represented
+either as a base R dense matrix or a Matrix package sparse matrix - allows for a
+consistent and intuitive interface that stays close to the underlying
+mathematical foundation of computational text analysis.  In particular, the
+package includes functions for working with word embeddings, text networks, and
+document-term matrices.  Methods developed in Stoltz and Taylor (2019)
+<doi:10.1007/s42001-019-00048-6>, Taylor and Stoltz (2020)
 <doi:10.1007/s42001-020-00075-8>, Taylor and Stoltz (2020)
 <doi:10.15195/v7.a23>, and Stoltz and Taylor (2021)
 <doi:10.1016/j.poetic.2021.101567>.")
@@ -37510,5 +37510,37 @@ for T2D (Type 2 Diabetes) patients based on the primary outcome of @code{HbA1c}
 (Glycated Hemoglobin).  You provide the individual's information, and
 T2D@code{FitTailor} details the exercise plan and predicts the intervention's
 effectiveness.")
+    (license license:expat)))
+
+(define-public r-t1ff
+  (package
+    (name "r-t1ff")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "T1FF" version))
+       (sha256
+        (base32 "0rv7g2la84giwr6m979l7zsqsk4qy7p5g7lf7gxsa5cwx02a1mpk"))))
+    (properties `((upstream-name . "T1FF")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-kernlab r-e1071))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=T1FF")
+    (synopsis
+     "Type-1 Fuzzy Functions for Classification, Regression, and Forecasting")
+    (description
+     "Fits Type-1 Fuzzy Function models for binary classification, numeric regression,
+and time-series forecasting with user-supplied temporal predictors.  The package
+combines fuzzy C-means memberships, nonlinear membership transformations,
+cluster-specific linear or support vector machine models, and
+membership-weighted predictions.  It also provides model evaluation, validation,
+K-fold and stratified K-fold tuning, and repeated nested cross-validation with
+task-appropriate metrics.  The regression workflow can be used for forecasting
+when temporal dependence is represented by lagged or seasonal predictors and
+assessment partitions preserve chronological order.")
     (license license:expat)))
 

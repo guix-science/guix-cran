@@ -16216,13 +16216,13 @@ follow Chow et al. (2017) <doi:10.1201/9781315183084>.")
 (define-public r-biostatr
   (package
     (name "r-biostatr")
-    (version "4.1.1")
+    (version "4.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BioStatR" version))
        (sha256
-        (base32 "14jcn2aaz2is2k6dp51ac5kxx0j8smza9ndm6wwyy9fc1d5n1c9d"))))
+        (base32 "0rp8dzhx343as9p9zqc286wszl9kvhw2qqnqw0jjax1k0bx1217a"))))
     (properties `((upstream-name . "BioStatR")))
     (build-system r-build-system)
     (arguments
@@ -17416,13 +17416,13 @@ ISBN:9781680502398).")
 (define-public r-biogsp
   (package
     (name "r-biogsp")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BioGSP" version))
        (sha256
-        (base32 "1dzs3kj87iqqc472nvw9z8wzv4pf4ldd6y4jfswlqb1xb7bwqdv0"))))
+        (base32 "01cypnfdkya9amnkbldg7v6cbd4rabn33szzhr13rhlxgya00bfj"))))
     (properties `((upstream-name . "BioGSP")))
     (build-system r-build-system)
     (arguments
@@ -17853,6 +17853,40 @@ platforms.")
 complete water balance, bioclimatic balance, bioclimatic intensities, reports
 for individual locations, multi-layered rasters for spatial analysis.")
     (license license:gpl3)))
+
+(define-public r-bioclients
+  (package
+    (name "r-bioclients")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bioclients" version))
+       (sha256
+        (base32 "1nyw4vkl9qpzzy3s1yjfa7v68k5920klvaaq8x10pnkq3ws385n5"))))
+    (properties `((upstream-name . "bioclients")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-httr2 r-biohttp))
+    (home-page "https://github.com/samuelbharti/bioclients")
+    (synopsis "Clients for Biological Database Web Services")
+    (description
+     "Look up genes, variants and proteins from R, without writing a client for every
+biological web service.  Each service gets one client that makes the request and
+returns a table.  Parsing is a separate function that needs no network, so it
+can run on a saved response and be tested offline.  Transport, retries, caching
+and error handling are left to the biohttp package.  Dependencies for single
+services are optional, so you do not install what you will not use.  The
+services covered include Ensembl', described in Dyer et al. (2025)
+<doi:10.1093/nar/gkae1071>, @code{UniProt}', in The @code{UniProt} Consortium
+(2025) <doi:10.1093/nar/gkae1010>, @code{gnomAD}', in Chen et al. (2024)
+<doi:10.1038/s41586-023-06045-0>, Open Targets', in Buniello et al. (2025)
+<doi:10.1093/nar/gkae1128>, and the @code{AlphaFold} Protein Structure Database,
+in Varadi et al. (2024) <doi:10.1093/nar/gkad1011>.  Each client's help page
+cites the service it calls.")
+    (license license:expat)))
 
 (define-public r-biocharkitgui
   (package
@@ -22840,19 +22874,24 @@ Back Filling Design for dose escalation in early-phase oncology trials.")
 (define-public r-bfbin2arm
   (package
     (name "r-bfbin2arm")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bfbin2arm" version))
        (sha256
-        (base32 "1h036sa9m3p2wqlf5wirjai8bdbh65andc8s1y33zv7kyr0snvqn"))))
+        (base32 "1brr1afw73gk0cihhjxq8aa93qrdz92j40fzbkh9nskgr0ixdrp5"))))
     (properties `((upstream-name . "bfbin2arm")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-vgam r-rlang r-patchwork r-ggplot2 r-dplyr))
+    (propagated-inputs (list r-vgam
+                             r-statmod
+                             r-rlang
+                             r-patchwork
+                             r-ggplot2
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://rikokelter.github.io/bfbin2arm/")
     (synopsis "Bayes Factor Design for Two-Arm Binomial Trials")

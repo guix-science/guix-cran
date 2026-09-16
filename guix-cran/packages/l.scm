@@ -5341,13 +5341,13 @@ Regression models.")
 (define-public r-logr
   (package
     (name "r-logr")
-    (version "1.3.9")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "logr" version))
        (sha256
-        (base32 "1469178a3as395kl239sq54v3rla63nyah96i779vbvqhaa3nblz"))))
+        (base32 "1zyqcxgm4z2ikkpmxj7bvfwzhx1bn8wbaqn1qkqc7xvnv7fnsglc"))))
     (properties `((upstream-name . "logr")))
     (build-system r-build-system)
     (arguments
@@ -13495,6 +13495,45 @@ is available at the Supplementary Data section at Nucleic Acids Research Online
 <doi:10.1093/nar/gkr775>.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
+(define-public r-lidr
+  (package
+    (name "r-lidr")
+    (version "4.3.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lidR" version))
+       (sha256
+        (base32 "0w806zmvcsqjqdwgnddbx9h9hs5bacznv3ag487qwk0yxddfxyz8"))))
+    (properties `((upstream-name . "lidR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra
+                             r-stars
+                             r-sf
+                             r-rlas
+                             r-rgl
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-parallelly
+                             r-lazyeval
+                             r-glue
+                             r-data-table
+                             r-classint
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/r-lidar/lidR")
+    (synopsis
+     "Airborne Point Cloud Data Manipulation and Visualization for Forestry Applications")
+    (description
+     "Airborne point cloud interface for data manipulation and visualization.
+Read/write las and laz files, computation of metrics in area based approach,
+point filtering, artificial point reduction, classification from geographic
+data, normalization, individual tree segmentation and other manipulations.")
+    (license license:gpl3)))
+
 (define-public r-licoread
   (package
     (name "r-licoread")
@@ -21051,6 +21090,34 @@ competing risks, either through cause-specific Cox regression or Fine-Gray
 regression.  To find out more about the methods in this package, please see
 <https://isobelbarrott.github.io/Landmarking/articles/Landmarking>.")
     (license license:gpl2+)))
+
+(define-public r-landmarked
+  (package
+    (name "r-landmarked")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "landmarked" version))
+       (sha256
+        (base32 "0aj3214l0ydiz9cw6gqraf3gvcpj00kpfrdy7x6kgdciaqx1ljsk"))))
+    (properties `((upstream-name . "landmarked")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survminer r-survival r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/CStats/landmarked")
+    (synopsis "Plot Adjusted Kaplan-Meier Estimates from a Landmark Time")
+    (description
+     "Plots contextual landmark Kaplan-Meier curves.  An extension of the
+@code{survminer::ggsurvplot()} function that allows the specification of a
+landmark time and an optional label.  The period before the landmark is
+displayed as a pooled survival curve, while curves beyond the landmark are
+presented according to the groups defined in the supplied survival::survfit
+object.")
+    (license license:gpl3+)))
 
 (define-public r-landmark
   (package

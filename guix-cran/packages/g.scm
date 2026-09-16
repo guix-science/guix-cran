@@ -14179,6 +14179,34 @@ Virolainen (2025) <doi:10.1080/07350015.2024.2322090>, Savi Virolainen (in
 press) <doi:10.1016/j.ecosta.2025.09.003>.")
     (license license:gpl3)))
 
+(define-public r-gmtm
+  (package
+    (name "r-gmtm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GMTM" version))
+       (sha256
+        (base32 "04pinhiccbwnhdcmv9jhra9gqlvkhmr8pcndasvd7jiagmpz1zm3"))))
+    (properties `((upstream-name . "GMTM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-wordvector
+                             r-testthat
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-quanteda
+                             r-proxyc))
+    (home-page "https://cran.r-project.org/package=GMTM")
+    (synopsis "Gaussian Mixture Text Models for Topic Analysis")
+    (description
+     "Gaussian mixture models and k-means for topic analysis of dense document
+vectors.  The underlying clustering functions rely on the Armadillo library.")
+    (license license:asl2.0)))
+
 (define-public r-gmtfd
   (package
     (name "r-gmtfd")
@@ -17113,6 +17141,41 @@ supported.  The methodology is described in Hall, Johnstone, Ormerod, Wand and
 Yu (Journal of the American Statistical Association, 2020).")
     (license license:gpl2+)))
 
+(define-public r-glmmcosinor
+  (package
+    (name "r-glmmcosinor")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GLMMcosinor" version))
+       (sha256
+        (base32 "0h9shqikmxsy725gibz1zxzq9h778v5zznrj5nb0nfj1k81szbcw"))))
+    (properties `((upstream-name . "GLMMcosinor")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales
+                             r-rlang
+                             r-reformulas
+                             r-glmmtmb
+                             r-ggplot2
+                             r-ggforce
+                             r-cowplot
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ropensci/GLMMcosinor")
+    (synopsis
+     "Fit a Cosinor Model Using a Generalized Mixed Modeling Framework")
+    (description
+     "Allows users to fit a cosinor model using the @code{glmmTMB} framework.  This
+extends on existing cosinor modeling packages, including cosinor and
+circacompare', by including a wide range of available link functions and the
+capability to fit mixed models.  The cosinor model is described by Cornelissen
+(2014) <doi:10.1186/1742-4682-11-16>.")
+    (license license:gpl3+)))
+
 (define-public r-glmm-hp
   (package
     (name "r-glmm-hp")
@@ -17710,13 +17773,13 @@ in this package is \"GLHD_CC\".")
 (define-public r-gleifr
   (package
     (name "r-gleifr")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gleifr" version))
        (sha256
-        (base32 "1la8ljqrm1m8fpzk5nz2pxk9vqb0bvismfx4s2azr66pgbj35yhl"))))
+        (base32 "0cxq2mn4ddyjx1g8n6727bcwyar40pja64vnp10f1pdjjvfyy2iy"))))
     (properties `((upstream-name . "gleifr")))
     (build-system r-build-system)
     (arguments
@@ -24933,6 +24996,41 @@ PNG files, external resources, or as a list column containing raster image data.
 system.")
     (license license:artistic2.0)))
 
+(define-public r-ggicons
+  (package
+    (name "r-ggicons")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggicons" version))
+       (sha256
+        (base32 "09l3mckk6q8f1axsh9ci3d3aacq759zfqh28z9qb5mg9l2d9q71q"))))
+    (properties `((upstream-name . "ggicons")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs
+                             r-scales
+                             r-rsvg
+                             r-rlang
+                             r-icons
+                             r-grimport2
+                             r-ggplot2
+                             r-cli))
+    (home-page "https://pkg.mitchelloharawild.com/ggicons/")
+    (synopsis "Icon Geometries for 'ggplot2'")
+    (description
+     "This package provides icon geometries for ggplot2', using vector icon sets from
+the icons package.  Icons can be drawn as points in place of ordinary markers,
+styled with the usual colour, size, alpha and angle aesthetics, and mapped from
+discrete values or passed through directly.  Icons also appear in legend keys,
+as fixed-position annotations, and as axis, strip and legend labels.  Pictograms
+extend this to isotype-style unit charts, waffle/percentage charts and rating
+widgets, encoding a value as a grid of repeated icons.")
+    (license license:expat)))
+
 (define-public r-gghourglass
   (package
     (name "r-gghourglass")
@@ -29384,13 +29482,13 @@ package tourr'.")
 (define-public r-geozarr
   (package
     (name "r-geozarr")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geozarr" version))
        (sha256
-        (base32 "1ns6h37fbcbblvx7m7pp4njnaxwbjh646grfgp17zkisydad85qx"))))
+        (base32 "0aq8kzkr4lyb5fkzyzzyklzqf3v7nalam3iigngq3f7kkbgzn6h6"))))
     (properties `((upstream-name . "geozarr")))
     (build-system r-build-system)
     (arguments
@@ -32833,6 +32931,44 @@ opt-in progress reporting (via progressr') are implemented as optional,
 composable layers.  Further layers (error replay, content-hash input
 fingerprinting, content-based case identifiers) are planned and will remain
 composable with the default layers.")
+    (license license:expat)))
+
+(define-public r-genpca
+  (package
+    (name "r-genpca")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "genpca" version))
+       (sha256
+        (base32 "18axadj5w7gc4lmx9ihaw7s1q2faypzn38mc8s9g38ci9d4b21ab"))))
+    (properties `((upstream-name . "genpca")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppeigen
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-multivarious
+                             r-matrix
+                             r-fnn
+                             r-eigencore
+                             r-digest
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://bbuchsbaum.github.io/genpca/")
+    (synopsis "Generalized Principal Component Analysis")
+    (description
+     "Generalized PCA and related matrix decompositions in weighted inner-product
+spaces.  Methods are based on Allen, G. I., Grosenick, L., and Taylor, J. (2014)
+<doi:10.1080/01621459.2013.852978>, \"A generalized least-square matrix
+decomposition\", Journal of the American Statistical Association, 109(505),
+145-159; and Abdi, H. (2007), \"Singular value decomposition (SVD) and
+generalized singular value decomposition\"
+<https://personal.utdallas.edu/~herve/Abdi-SVD2007-pretty.pdf>, in \"Encyclopedia
+of Measurement and Statistics\", 907-912.")
     (license license:expat)))
 
 (define-public r-genpathmox

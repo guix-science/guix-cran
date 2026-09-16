@@ -3576,13 +3576,13 @@ time series such as moving averages or stochastic oscillators.")
 (define-public r-ftextra
   (package
     (name "r-ftextra")
-    (version "0.6.4")
+    (version "0.6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ftExtra" version))
        (sha256
-        (base32 "02sdhqjfzgbwwzv2dg6wbzhymklkrmxihs4nz83fi1585dv5kbyq"))))
+        (base32 "0nw75ddhv3b54g74sr0zg3ml36dq476vbs8lcz2h575jaq17p8lk"))))
     (properties `((upstream-name . "ftExtra")))
     (build-system r-build-system)
     (arguments
@@ -8737,13 +8737,13 @@ react and interact as well as generate code to create reproducible analyses.")
 (define-public r-formatters
   (package
     (name "r-formatters")
-    (version "0.5.12")
+    (version "0.5.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "formatters" version))
        (sha256
-        (base32 "14jrb5pz2n334r817nw1cqrpz6xyxydl9786l53rb28v856wrvkl"))))
+        (base32 "1gzzg332aqkrdi3lpdnjn1pcwlz4ilsj0askbk33a1pgckmb658r"))))
     (properties `((upstream-name . "formatters")))
     (build-system r-build-system)
     (arguments
@@ -8751,7 +8751,7 @@ react and interact as well as generate code to create reproducible analyses.")
       #:tests? #f))
     (propagated-inputs (list r-stringi r-lifecycle r-htmltools r-checkmate))
     (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://insightsengineering.github.io/formatters/")
+    (home-page "https://pharmaverse.github.io/formatters/")
     (synopsis "ASCII Formatting for Values and Tables")
     (description
      "We provide a framework for rendering complex tables to ASCII, and a set of
@@ -11646,28 +11646,6 @@ all available endpoints and parameters, enabling R users to interact with a wide
 range of financial data.")
     (license license:expat)))
 
-(define-public r-fmp
-  (package
-    (name "r-fmp")
-    (version "1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "FMP" version))
-       (sha256
-        (base32 "0w11a78nz4n7zih9h00xkv7prsy9hlxphbpa7hpnbvq9r98g08qm"))))
-    (properties `((upstream-name . "FMP")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=FMP")
-    (synopsis "Filtered Monotonic Polynomial IRT Models")
-    (description
-     "Estimates Filtered Monotonic Polynomial IRT Models as described by Liang and
-Browne (2015) <DOI:10.3102/1076998614556816>.")
-    (license license:gpl2+)))
-
 (define-public r-fmm
   (package
     (name "r-fmm")
@@ -12498,13 +12476,13 @@ interface.  The implemented calculations are based on Strasser et al. (2004)
 (define-public r-fluidsynth
   (package
     (name "r-fluidsynth")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fluidsynth" version))
        (sha256
-        (base32 "1a5hch0wyzwfrxhn3nmffsmvs0pdmi9d3z040afka8dbzxnxclhy"))))
+        (base32 "191a8ilj4956s228zcqlrcimw58v7mfya2y3c5yfhj5d76gibsy2"))))
     (properties `((upstream-name . "fluidsynth")))
     (build-system r-build-system)
     (arguments
@@ -23562,6 +23540,51 @@ is designed to simplify common tasks in categorical data analysis, making it
 easier to work with factors in a flexible and efficient manner.")
     (license license:gpl3)))
 
+(define-public r-fctools
+  (package
+    (name "r-fctools")
+    (version "2.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FCtools" version))
+       (sha256
+        (base32 "0xghp8z5an805hin17sy61p90d0l777f2s9v098wn50gfbmgcrhb"))))
+    (properties `((upstream-name . "FCtools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rfast
+                             r-reshape2
+                             r-png
+                             r-plotly
+                             r-igraph
+                             r-gridextra
+                             r-ggraph
+                             r-ggplotify
+                             r-ggplot2
+                             r-foreach
+                             r-dosnow
+                             r-doparallel
+                             r-cowplot
+                             r-circlize))
+    (home-page "https://cogbrainhealthlab.github.io/FCtools/")
+    (synopsis "Functional Connectivity Tools")
+    (description
+     "Analyzing and visualizing brain connectivity data, including network-based
+statistics (NBS) for linear and linear mixed models, both at edge level and
+functional network level (Yeo's 7-networks (Schaefer et al. (2017)
+<doi:10.1093/cercor/bhx179>)).  Plots include edge-wise connectograms, chord
+diagrams, network connectograms, heatmaps, and 3D glass brain connectivity
+plots.  FCtools works with vectors of edges (derived from connectivity/adjacency
+matrices) from the Brainnetome (Fan et al. (2016) <doi:10.1093/cercor/bhw157>),
+Schaefer (100 or 200, each with 19 ASeg subcortices) (Schaefer et al. (2017)
+<doi:10.1093/cercor/bhx179>, Fischl et al. (2002)
+<doi:10.1016/S0896-6273(02)00569-X>), and Automated Anatomical Labeling (AAL)
+atlases (Tzourio-Mazoyer et al. (2002) <doi:10.1006/nimg.2001.0978>).")
+    (license license:gpl3)))
+
 (define-public r-fcros
   (package
     (name "r-fcros")
@@ -26935,21 +26958,20 @@ guides and Python package information can be found at
 (define-public r-fastfgee
   (package
     (name "r-fastfgee")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastFGEE" version))
        (sha256
-        (base32 "1cni4psaky76q31w99lmhzn5dcfzj2pfwy7zprg6is3c6axinjjq"))))
+        (base32 "0x45c54rlk7qv1vn85apd9s41kdljabprg4njk3i25av6q72jqns"))))
     (properties `((upstream-name . "fastFGEE")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-supergauss
-                             r-rfast
-                             r-refund
+    (propagated-inputs (list r-refund
+                             r-rcpp
                              r-mgcv
                              r-matrix
                              r-mass
@@ -26964,15 +26986,20 @@ guides and Python package information can be found at
      "Fits functional generalized estimating equations for longitudinal functional
 outcomes and covariates using a one-step estimator that is fast even for large
 cluster sizes or large numbers of clusters.  The package supports
-quasi-likelihoods derived from a range of families, common link functions, and
-several working correlation structures.  Uncertainty quantification is based on
-sandwich variance estimators and bootstrap procedures that remain valid even
-when the working correlation is incorrectly specified.  The package provides an
-implementation of the method described in Loewinger et al. (2025)
-<https://pmc.ncbi.nlm.nih.gov/articles/PMC12306803/>.  For irregularly spaced
-AR(1) precision matrices, the package can optionally use the archived package
-@code{irregulAR1}'; if needed, it can be obtained from the CRAN Archive at
-<https://cran.r-project.org/src/contrib/Archive/@code{irregulAR1/>}.")
+quasi-likelihoods derived from a range of distributions, with substantial
+simulations run for quasi-likelihoods derived from Gaussian, binomial, Poisson,
+negative binomial, Gamma and beta families.  It supports common link functions
+and several working correlation structures.  An optimized engine constructs
+cluster score and sensitivity statistics in one pass, provides coefficient-space
+Gaussian cross-validation, analytic-gradient fast cluster cross-validation, and
+an experimental sandwich-scaled working restricted quasi-likelihood selector.
+Internal compiled routines provide symmetric positive-definite Cholesky solves
+and exact tridiagonal precision operations for irregularly sampled
+continuous-time AR(1) working correlations.  Uncertainty quantification is based
+on sandwich variance estimators and studentized wild cluster bootstrap
+procedures for cluster-robust pointwise intervals and optional simultaneous
+bands.  The package implements methods described in Loewinger et al. (2025)
+<https://pmc.ncbi.nlm.nih.gov/articles/PMC12306803/>.")
     (license license:gpl3+)))
 
 (define-public r-fasterraster

@@ -537,13 +537,13 @@ Hammami F (2026) \"rxode2-mrgsolve-bridge\"
 (define-public r-rxode2ll
   (package
     (name "r-rxode2ll")
-    (version "2.0.17")
+    (version "2.0.18")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rxode2ll" version))
        (sha256
-        (base32 "0gifwdzild2i37k3cwy5bsnwcdp0215mqwp7wybzqxbyi105hvjc"))))
+        (base32 "1zmw14k74b2rs54v3mdlr2z2p52qh8n53fc9zpvl7p68cd9w928l"))))
     (properties `((upstream-name . "rxode2ll")))
     (build-system r-build-system)
     (arguments
@@ -16893,13 +16893,13 @@ allows R to connect to any DBMS that has a ODBC driver.")
 (define-public r-rodbc
   (package
     (name "r-rodbc")
-    (version "1.3-26.2")
+    (version "1.3-26.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RODBC" version))
        (sha256
-        (base32 "1b58n4njy104aq50nx3gbv58c1h3m6wfxz7kwjifhqncbyqmpa5z"))))
+        (base32 "0584z4p59pmsfqs03yqbbfqfvxjlm51lw1fc2sxqfkwjs99kjr2i"))))
     (properties `((upstream-name . "RODBC")))
     (build-system r-build-system)
     (arguments
@@ -35871,37 +35871,29 @@ and DMS-2015552.")
 (define-public r-resurv
   (package
     (name "r-resurv")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ReSurv" version))
        (sha256
-        (base32 "0xvy7n1nk67bvv95ipzvr4kf1xgfj52xyc4xn05cxybl5kq9aimv"))))
+        (base32 "10ia16q4a1mibm3rlsx9wxm9h9zfx97anrzd21clq3zicjhjf6di"))))
     (properties `((upstream-name . "ReSurv")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (inputs (list python))
     (propagated-inputs (list r-xgboost
-                             r-tidyverse
                              r-tidyr
-                             r-tibble
                              r-synthetic
                              r-survival
-                             r-shapforxgboost
-                             r-rpart
-                             r-reticulate
-                             r-reshape2
                              r-purrr
+                             r-lubridate
                              r-ggplot2
-                             r-forecast
                              r-fastdummies
-                             r-dtplyr
                              r-dplyr
                              r-data-table
-                             r-bshazard))
+                             r-actuar))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/edhofman/ReSurv")
     (synopsis "Machine Learning Models for Predicting Claim Counts")
@@ -42634,6 +42626,48 @@ function-on-scalar, scalar-on-function, and function-on-function regression.
 Some of the functions are applicable to image data.")
     (license license:gpl2+)))
 
+(define-public r-refuginator
+  (package
+    (name "r-refuginator")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "refuginator" version))
+       (sha256
+        (base32 "169cbx1a25d9lw5i88n2bhp60ry2vm7qf37y0jqvlyhyf8wvpqbx"))))
+    (properties `((upstream-name . "refuginator")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridis
+                             r-tidyr
+                             r-stringr
+                             r-shinyjs
+                             r-shinycssloaders
+                             r-shiny
+                             r-sf
+                             r-scales
+                             r-rnaturalearthdata
+                             r-rnaturalearth
+                             r-rlang
+                             r-plotly
+                             r-neotoma2
+                             r-leaflet
+                             r-ggplot2
+                             r-gganimate
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/nathanielmorley2000/refuginator")
+    (synopsis "An Interactive Tool for Identifying Refugia")
+    (description
+     "This package provides a shiny'-based browser application for reconstructing
+organismal distributions and identifying historical and geohistorical refugia
+using the methods published by Morley et al. (2026)
+<doi:10.1038/s43247-026-03563-3>.")
+    (license license:gpl3+)))
+
 (define-public r-refugees
   (package
     (name "r-refugees")
@@ -49120,13 +49154,13 @@ from the DHS website, (4) loading datasets and associate metadata into R, and
 (define-public r-rdhonest
   (package
     (name "r-rdhonest")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RDHonest" version))
        (sha256
-        (base32 "162la7ilid7ljbdhzpz82fvwslxwaca80lvmvg80inp3is3kypfp"))))
+        (base32 "0r67l35bhi7fnwpyfl82k5xlm274f9rf62j1zw72r5ab2ak3yzij"))))
     (properties `((upstream-name . "RDHonest")))
     (build-system r-build-system)
     (arguments
@@ -56920,13 +56954,13 @@ file export, and the ability to save 3D visualizations to a 3D printable format.
 (define-public r-rayrender
   (package
     (name "r-rayrender")
-    (version "0.41.3")
+    (version "0.42.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rayrender" version))
        (sha256
-        (base32 "0l84bjd7fq1p2q51xbbzwisiyk6jrldsmsnbazkmvalg5cy6c8a9"))))
+        (base32 "08990x300zz6gf8n2n0kvf216nf72x8ra2b1g2666ksninzq4qdp"))))
     (properties `((upstream-name . "rayrender")))
     (build-system r-build-system)
     (arguments
@@ -56937,6 +56971,7 @@ file export, and the ability to save 3D visualizations to a 3D printable format.
                              r-vctrs
                              r-testthat
                              r-spacefillr
+                             r-skymodelr
                              r-rcppthread
                              r-rcpp
                              r-rayvertex
@@ -62121,6 +62156,58 @@ multi-source data into joint, individual and residual (noise) contributions.
 The decomposition is robust to outliers and noise in the data.  The method is
 illustrated in Ponzi et al (2021) <@code{arXiv:2101.09110>}.")
     (license license:expat)))
+
+(define-public r-raiser
+  (package
+    (name "r-raiser")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "raiseR" version))
+       (sha256
+        (base32 "1p43y06rj3x8yqg5kxhg9ip27z0gd0xq9kbr5xcl8yn644ppk7j2"))))
+    (properties `((upstream-name . "raiseR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr r-mrfdepth r-mass))
+    (home-page "https://github.com/jinsejacob/raiseR")
+    (synopsis "Raise Regression and Robust Methods for Multicollinearity")
+    (description
+     "This package implements Raise Regression as an inference-preserving alternative
+to Ridge Regression for combating multicollinearity in linear models, including
+the classical single-variable Raise Regression, the Simultaneous Raise
+Regression (SRR) based on QR decomposition and the Sequential Variance Inflation
+Factor (SVIF) of Jacob and Varadharajan (2022) <doi:10.1007/s11135-022-01557-9>,
+and the original raise parameter selection strategy of Jacob and Varadharajan
+(2023) <doi:10.13189/ms.2023.110106>.  Also implements Robust Raise Regression
+for data contaminated by outliers, with exact finite-sample inference (sandwich
+standard errors, Wald tests, Satterthwaite-corrected degrees of freedom)
+obtained by down-weighting observations using Stahel-Donoho projection
+outlyingness and Tukey's biweight function.  Provides ordinary and robust Ridge
+Regression (Hoerl and Kennard, 1970, <doi:10.1080/00401706.1970.10488634>),
+ordinary and robust Liu Regression (Liu, 1993, <doi:10.1080/03610929308831027>),
+with the robust variants of both based on the MM-estimates of Yohai (1987,
+<doi:10.1214/aos/1176350366>) and, for Liu Regression specifically, the
+biasing-parameter derivation of Filzmoser and Kurnaz (2018)
+<doi:10.1080/03610918.2016.1271889>.  Also provides the classical Variance
+Inflation Factor (VIF) and Condition Number (Belsley, 1991) computed from the
+correlation matrix of the predictors, and the Robust Variance Inflation Factor
+(RVIF) and robust Condition Number of Jacob and Varadharajan (2024, Sankhya B,
+<doi:10.1007/s13571-024-00342-y>), which use the same projection outlyingness
+and biweight down-weighting scheme to obtain a weighted correlation matrix that
+resists the influence of outliers.  A flexible @code{scaleDat()} function
+supports classical (mean and standard deviation), robust weighted (Stahel-Donoho
+and Tukey biweight), median and Median Absolute Deviation Normalized (MADN, the
+median absolute deviation scaled by 1.4826 to estimate the standard deviation
+under normality), and min-max scaling.  Diagnostic and goodness-of-fit plots,
+and the standard influence-diagnostic suite (Cook's distance, DFBETAS and
+COVRATIO regression diagnostics) and heteroskedasticity tests (via the lmtest
+and car packages) analogous to those for objects of class lm', are provided for
+the exact, unbiased Raise Regression fit.")
+    (license license:gpl3+)))
 
 (define-public r-rairtable
   (package

@@ -3509,13 +3509,13 @@ R and shiny on their system.")
 (define-public r-exdqlm
   (package
     (name "r-exdqlm")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "exdqlm" version))
        (sha256
-        (base32 "0gj44abyfbgda1k4a53217h7346a4hhgdmsp4gb2yq6pvr1xcgiz"))))
+        (base32 "1fa978qzr3vib89dldwpbzcp8wn4zq4smhwfrq9zyq013c1f2bfy"))))
     (properties `((upstream-name . "exdqlm")))
     (build-system r-build-system)
     (arguments
@@ -6573,6 +6573,43 @@ evaluating a model.  Just by giving the real and predicted class, measures such
 as accuracy, sensitivity, specificity, ppv, npv, fmeasure, mcc and ...  will be
 returned.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-evaluatellm
+  (package
+    (name "r-evaluatellm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "evaluatellm" version))
+       (sha256
+        (base32 "09fajgha0j8rgv7qw30akws85prbbgvlrm8mjnfgaks0byf6xrqj"))))
+    (properties `((upstream-name . "evaluatellm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://charlescoverdale.github.io/evaluatellm/")
+    (synopsis "Statistical Inference for Language Model Evaluations")
+    (description
+     "Treats language model evaluations as statistical experiments and supplies the
+inference they require.  Provides central limit theorem and cluster-robust
+standard errors for evaluation scores, paired and unpaired model comparisons,
+variance decomposition when several responses are drawn per question,
+control-variate variance reduction, multiplicity adjustment across benchmark
+suites, and power and minimum detectable effect calculations for planning
+evaluations, following Miller (2024) <doi:10.48550/@code{arXiv.2411.00640>}.
+For evaluations scored by a model judge, implements agreement statistics against
+a human gold standard and prediction-powered inference (Angelopoulos et al.
+2023) <doi:10.1126/science.adi6000> with the power-tuned estimator of
+Angelopoulos, Bates and Jordan (2023) <doi:10.48550/@code{arXiv.2311.01453>}, so
+a small set of human labels debiases a large set of judge scores.  Leaderboards
+are supported through bootstrap rank intervals and Bradley-Terry ratings
+(Bradley and Terry 1952) <doi:10.2307/2334029>.  Accepts scores from any
+evaluation harness.")
+    (license license:expat)))
 
 (define-public r-evaluatecore
   (package
@@ -15358,6 +15395,33 @@ includes @code{HeatMap()} for visualizing distributional characteristics among
 multiple populations (groups).")
     (license license:gpl3)))
 
+(define-public r-entropic-scree
+  (package
+    (name "r-entropic-scree")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Entropic.Scree" version))
+       (sha256
+        (base32 "1ddh99yj080wrc06fw7i8bl1x69q1hnq7if49czmgv4niw30zvqw"))))
+    (properties `((upstream-name . "Entropic.Scree")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp r-patchwork r-infotheo r-ggplot2
+                             r-data-table))
+    (home-page "https://zenodo.org/records/22028087")
+    (synopsis "Information-Theoretic Dimensionality Estimation")
+    (description
+     "An information-theoretic diagnostic technique for estimating the intrinsic
+dimensionality of tabular datasets.  Evaluates shared probability mass via a
+transformed mutual information metric.  Aims to extract the Intrinsic Generative
+Rank (r) and structural topology.  For full methodological details, see the
+preprint by Lee-St.  John (2026) <https://zenodo.org/records/22028087>.")
+    (license license:asl2.0)))
+
 (define-public r-entropart
   (package
     (name "r-entropart")
@@ -19292,13 +19356,13 @@ This work was supported by the U.S. National Science Foundation under Grants No.
 (define-public r-elfgen
   (package
     (name "r-elfgen")
-    (version "2.3.5")
+    (version "2.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "elfgen" version))
        (sha256
-        (base32 "1zi4d3g8wb68sb54lfainvxv4y4mxbhlc4l9w27jzyyzn2g1z7l0"))))
+        (base32 "18fsw8k4f748b3a8rbas2jylnwryl6xiz0xcp7pc004wmwcdcv2r"))))
     (properties `((upstream-name . "elfgen")))
     (build-system r-build-system)
     (arguments
@@ -19310,7 +19374,7 @@ This work was supported by the U.S. National Science Foundation under Grants No.
                              r-scales
                              r-sbtools
                              r-quantreg
-                             r-nhdplustools
+                             r-hydrogeofetch
                              r-ggplot2
                              r-curl))
     (home-page "https://github.com/HARPgroup/elfgen")

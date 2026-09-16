@@ -1414,6 +1414,38 @@ regarding the gamma model.  See, for example, Broman and Weber (2000)
 <doi:10.1086/302923>.")
     (license license:gpl3)))
 
+(define-public r-xnicher
+  (package
+    (name "r-xnicher")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "xnicher" version))
+       (sha256
+        (base32 "0ayg5lhd2l1v5ixqlvxhal390gjxnj59av6z1gf0wx3m2v9fi2a8"))))
+    (properties `((upstream-name . "xnicher")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ucminfcpp
+                             r-terra
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-checkmate))
+    (home-page "https://github.com/alrobles/xnicher")
+    (synopsis "Estimates Ecological Niche Models Using Ellipses")
+    (description
+     "Ecological niche model estimation using ellipsoidal geometry under an M
+hypothesis.  Fits nine likelihood families (presence-only, weighted,
+inverse-probability-weighted, skew-normal, skew-normal-weighted, skew-t,
+skew-t-weighted, ncst, and ncst-weighted) via multi-start optimisation with
+Sobol sequences.  Methods for the optimisation of ellipses parameters are as
+described in Jimenez et al. (2022) <doi:10.1016/j.ecolmodel.2021.109823>.")
+    (license license:gpl3+)))
+
 (define-public r-xnet
   (package
     (name "r-xnet")

@@ -6678,13 +6678,13 @@ Nagler (2018) <doi:10.18637/jss.v084.i07>.")
 (define-public r-kde1d
   (package
     (name "r-kde1d")
-    (version "1.2.0")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kde1d" version))
        (sha256
-        (base32 "1gk6acifjxy7q16x5wnm1zng55wd6qrzcl0941bcj8cbd5n2z61m"))))
+        (base32 "10418lhpm8y6bmz1h2dab15zaj8l05rp6fwrig44wb944jw1c9c3"))))
     (properties `((upstream-name . "kde1d")))
     (build-system r-build-system)
     (arguments

@@ -8956,13 +8956,13 @@ performances of biomarkers, diagnostic tests, or risk prediction models.")
 (define-public r-varmapack
   (package
     (name "r-varmapack")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "varmapack" version))
        (sha256
-        (base32 "1v3lxcihcpzpbp8mxbgk46ih228xbz56hcwngx0ph684xrlczk1h"))))
+        (base32 "12a3hnfi08djzhb91jk63grca0j8awpj979kpgc1fkc0bhyvai99"))))
     (properties `((upstream-name . "varmapack")))
     (build-system r-build-system)
     (arguments

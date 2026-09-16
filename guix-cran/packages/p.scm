@@ -10591,13 +10591,13 @@ joint probability of superior performance and stability is also provided.")
 (define-public r-probaverse
   (package
     (name "r-probaverse")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "probaverse" version))
        (sha256
-        (base32 "1vrqcsrxpvjq82hqjm24h25v5h1i5n02gygsbf3xyxgf1z3s69p0"))))
+        (base32 "1aywqnm75sajnn1h4fpdx3bsbwmdmr7n36v4v6s2viw0bkhd5nkg"))))
     (properties `((upstream-name . "probaverse")))
     (build-system r-build-system)
     (arguments
@@ -21480,13 +21480,13 @@ structural query analysis, query optimization, AST diffing and
 (define-public r-polyglotr
   (package
     (name "r-polyglotr")
-    (version "1.7.4")
+    (version "1.7.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "polyglotr" version))
        (sha256
-        (base32 "0nw2d80yyx6r551yy7c6yq65xx6xw4m6h5w8pmpmdiskpf3h4w08"))))
+        (base32 "105v7q7zsncyvll25gh0nlg1hmngsl170ss4hbhnm7y1zpckbrj1"))))
     (properties `((upstream-name . "polyglotr")))
     (build-system r-build-system)
     (arguments
@@ -28176,13 +28176,13 @@ al (2015) <doi:10.1093/nar/gku1267>.")
 (define-public r-pks
   (package
     (name "r-pks")
-    (version "0.7-0")
+    (version "0.8-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pks" version))
        (sha256
-        (base32 "0bixr64pz85mfw00nhsa2krldvahp05f8p46gmap3mbfb90c5rxl"))))
+        (base32 "1d55xms0qspcg1qxbw5vwd3kbvbqb0m3b8hfv75a1k8244za9zhg"))))
     (properties `((upstream-name . "pks")))
     (build-system r-build-system)
     (arguments
@@ -31400,42 +31400,6 @@ highlights the units to be sampled, and documents them based on the selected
 sampling method (simple random or systematic sampling).")
     (license license:gpl3)))
 
-(define-public r-phytoin
-  (package
-    (name "r-phytoin")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PhytoIn" version))
-       (sha256
-        (base32 "0c9amq06ljjzwqfbm3syjq9xbgdlm68m1ncyd1ni6lj3klbmpfnc"))))
-    (properties `((upstream-name . "PhytoIn")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-scales r-packcircles r-ggplot2 r-ggforce
-                             r-biomass))
-    (home-page "https://github.com/PhytoIn/PhytoIn")
-    (synopsis "Vegetation Analysis and Forest Inventory")
-    (description
-     "This package provides functions and example datasets for phytosociological
-analysis, forest inventory, biomass and carbon estimation, and visualization of
-vegetation data.  Includes functions to compute structural parameters
-@code{[phytoparam()}, @code{summary.param()}, @code{stats()}], estimate
-above-ground biomass and carbon @code{[AGB()}], stratify wood volume by diameter
-at breast height (DBH) classes @code{[stratvol()}], generate collector and
-rarefaction curves @code{[collector.curve()}, @code{rarefaction()}], and
-visualize basal areas on quadrat maps @code{[BAplot()}, including rectangular
-plots and individual coordinates].  Several example datasets are provided to
-demonstrate the functionality of these tools.  For more details see FAO (1981,
-ISBN:92-5-101132-X) \"Manual of forest inventory\", IBGE (2012,
-ISBN:9788524042720) \"Manual tÃ©cnico da vegetaÃ§Ã£o brasileira\" and Heringer et
-al. (2020) \"Phytosociology in R: A routine to estimate phytosociological
-parameters\" <doi:10.22533/at.ed.3552009033>.")
-    (license license:gpl3)))
-
 (define-public r-phytoclass
   (package
     (name "r-phytoclass")
@@ -34426,6 +34390,43 @@ details about the methods can be found at Zhang et al. (2019)
 <doi:10.1038/s41596-019-0227-6>, Yu et al. (2017) <doi:10.1093/jamia/ocw135>,
 and Liao et al. (2015) <doi:10.1136/bmj.h1885>.")
     (license license:gpl3)))
+
+(define-public r-phdid
+  (package
+    (name "r-phdid")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "phdid" version))
+       (sha256
+        (base32 "07rvqr5pxhxp219zx8kr49hqwmm5j88vis5dlkqlg3plh5h7iaix"))))
+    (properties `((upstream-name . "phdid")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/ronwag2005/phdid")
+    (synopsis "Partial Homogeneity in Staggered Difference-in-Differences")
+    (description
+     "In staggered difference-in-differences designs the treatment effect is a vector
+of cohort-time effects rather than a single number.  Estimating each separately
+is unbiased but imprecise when some are equal, while pooling them all is precise
+but biased under genuine heterogeneity.  This package treats the choice as a
+partition-selection problem on the cohort-time cells and provides two estimators
+for it: a Dirichlet process mixture fitted by a collapsed Gibbs sampler, whose
+posterior marginalises over the unknown partition and reports co-clustering
+probabilities, and an L0'-penalised estimator that returns a single partition
+and arises as the fixed-variance maximum a posteriori solution of the same
+model.  Also provides tests for whether the cohort-time effects carry
+recoverable heterogeneity at all, sampler diagnostics including exact
+enumeration of the partition posterior for small designs, regularisation paths
+for both estimators, and a calibrated data-generating process.  All estimators
+accept a vector of first-stage cohort-time effects with their joint covariance,
+so any heterogeneity-robust first-stage estimator may be used.  Methods are
+described in Arora and Wagle (2026) <doi:10.2139/ssrn.7207083>.")
+    (license license:expat)))
 
 (define-public r-phdcocktail
   (package
@@ -44248,13 +44249,13 @@ algorithms.  This is further described in Reps (2017)
 (define-public r-patientgenerator
   (package
     (name "r-patientgenerator")
-    (version "0.1.4")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PatientGenerator" version))
        (sha256
-        (base32 "0nrjcbql7z8rlvg3p80zw6w227d3h6djrw6fl1rcnbwx0xnjxb6j"))))
+        (base32 "08sk5lzlzh73g2d2l6ckhv8jqilf2cb3q2zjang9dx4qvhzhpn3j"))))
     (properties `((upstream-name . "PatientGenerator")))
     (build-system r-build-system)
     (arguments
@@ -44263,21 +44264,22 @@ algorithms.  This is further described in Reps (2017)
     (propagated-inputs (list r-testthat
                              r-stringr
                              r-shiny
+                             r-readxl
                              r-r6
                              r-r2d3
+                             r-openxlsx
                              r-jsonlite
                              r-httr2
                              r-glue
                              r-ellmer
-                             r-duckdb
                              r-dt
                              r-dplyr
-                             r-dbi
                              r-data-table
+                             r-cli
                              r-checkmate
                              r-bslib))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/mi-erasmusmc/PatientGenerator")
+    (home-page "https://github.com/OHDSI/PatientGenerator")
     (synopsis
      "Generator of Synthetic Patient Data for the OMOP Common Data Model")
     (description
@@ -51245,4 +51247,30 @@ Roca-PardiÃ±as (2011) <doi:10.18637/jss.v038.i03>.")
      "Single arm phase 2 oncology trial.  For more details see P. Gao (2024)
 <doi:10.1080/10543406.2024.2341673>.")
     (license license:expat)))
+
+(define-public r-p2distance
+  (package
+    (name "r-p2distance")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "p2distance" version))
+       (sha256
+        (base32 "190d68mb9vn3qq265ga5yir2vxif7yak1h1nspimm3k3ckcrkkbv"))))
+    (properties `((upstream-name . "p2distance")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/ajpelu/p2distance")
+    (synopsis "Welfare's Synthetic Indicator")
+    (description
+     "The welfare's synthetic indicator provides an ideal tool for measuring
+multi-dimensional concepts such as welfare, development, living standards, etc.
+It enables information from the various indicators to be aggregated into a
+single synthetic measure.  The method was proposed by Pena (1977,
+ISBN:9788426001788) and further developed by Zarzosa and Somarriba (2012)
+<doi:10.1007/s11205-012-0005-0>.")
+    (license (list license:gpl2+ license:gpl3+))))
 

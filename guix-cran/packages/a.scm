@@ -21,6 +21,7 @@
   #:use-module (gnu packages duckdb)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages rust-apps)
+  #:use-module (gnu packages sqlite)
   #:use-module (gnu packages parallel)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -2495,6 +2496,44 @@ seamlessly generate parsimonious sparse-score risk models (i.e., risk scores),
 which can be easily implemented and validated in clinical practice.  We hope to
 see its application in various medical case studies.")
     (license license:gpl2+)))
+
+(define-public r-autorelevate
+  (package
+    (name "r-autorelevate")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "autorelevate" version))
+       (sha256
+        (base32 "0m4kpz0znri7whdsylv4cw13lyharf1fkhnhzph53n9k0bm363gh"))))
+    (properties `((upstream-name . "autorelevate")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/vksharma-bhu/autorelevate")
+    (synopsis
+     "The Autorelevated Family of Probability Distributions and Estimation Methods")
+    (description
+     "This package implements the autorelevated family of probability distributions,
+obtained by applying the autorelevation transformation of Krakowski (1973)
+<doi:10.1051/ro/197307V201071> and Dileepkumar and Sankaran (2022) to ten
+baseline probability distributions: Weibull, Lomax, Burr XII, Gompertz,
+Log-Logistic, Chen, Exponentiated Exponential, Power Lindley, Log-normal, and
+Gamma.  The Weibull member of the family is studied in detail by Dileep Kumar,
+Shabeer, and Sankaran (2025) <doi:10.1080/01966324.2026.2665479>.  The Lomax
+member is studied by Sharma, Pal, Bhardwaj, and Tyagi (2026, submitted), who
+establish its upside-down bathtub hazard shape.  Supplies vectorized density,
+distribution, survival, hazard, quantile (via the negative branch of the Lambert
+W function), and random-generation functions for all ten members of the family.
+It also implements Maximum Likelihood, Maximum Product of Spacings, Least
+Squares, Weighted Least Squares, and Cramer-von Mises estimation methods along
+with a Kolmogorov-Smirnov goodness-of-fit test, a Total Time on Test plot, and
+model selection by AIC, BIC, CAIC, and HQIC. It also includes a bundled bladder
+cancer remission dataset (Lee and Wang, 2003) for illustration.")
+    (license license:expat)))
 
 (define-public r-autoregressionmde
   (package
@@ -6515,13 +6554,13 @@ Galli, and Murray (2022)
 (define-public r-asremlplus
   (package
     (name "r-asremlplus")
-    (version "4.4.63")
+    (version "4.4.65")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "asremlPlus" version))
        (sha256
-        (base32 "05n8igdrahpxb0kbsg26lrxng87hfl7b2snbvs8ligss837g0b9p"))))
+        (base32 "1784wmjwbj3xdm0dx66bmbxhn7308lh4w803sdqrd7w438sbphvb"))))
     (properties `((upstream-name . "asremlPlus")))
     (build-system r-build-system)
     (arguments
@@ -9643,6 +9682,48 @@ Rolling/Recursive ARDL for time-varying relationships, and Panel NARDL for
 nonlinear panel cointegration.  All methods include comprehensive diagnostics,
 publication-ready outputs, and visualization tools.")
     (license license:gpl3)))
+
+(define-public r-ardldml
+  (package
+    (name "r-ardldml")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ardldml" version))
+       (sha256
+        (base32 "1rwbiqkgvkwh2mx249bw1fvsdv27fpqvfkg3g53c6wzqymzd19dq"))))
+    (properties `((upstream-name . "ardldml")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-glmnet))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/merwanroudane/ardldml")
+    (synopsis "Bounds Testing for Cointegration with Many Persistent Controls")
+    (description
+     "An implementation of the DML-Bounds procedure of Villena (2026)
+<doi:10.2139/ssrn.6472826> for testing cointegration in data-rich time-series
+settings.  The Autoregressive Distributed Lag (ARDL) bounds test of Pesaran,
+Shin and Smith (2001) <doi:10.1002/jae.616> avoids pretesting the integration
+order of the regressors but is not designed for a high-dimensional conditioning
+set.  Residualising the lagged levels against persistent controls can absorb
+stochastic trends and thereby change the finite-sample null distribution, so
+what governs the null is the effective number of stochastic trends surviving
+residualisation rather than the integration order of the original regressors.
+The procedure combines h-block cross-fitting, a balanced nuisance projection in
+the Double Machine Learning (DML) style of Chernozhukov and others (2018)
+<doi:10.1111/ectj.12097>, adaptive weighting after Zou (2006)
+<doi:10.1198/016214506000000735>, and a restricted system wild bootstrap that
+regenerates the dependent variable and the focal regressor jointly.  No
+critical-value table is shipped: the classical bracket is regenerated by
+simulation and the operational critical value is bootstrapped.  A
+trend-absorption diagnostic and a penalty-sensitivity sweep report whether a
+verdict survives a change of conditioning set.  Monthly United States
+macroeconomic series from the FRED-MD database of @code{McCracken} and Ng (2016)
+<doi:10.1080/07350015.2015.1086655> are bundled so every example runs offline.")
+    (license license:expat)))
 
 (define-public r-ardl-nardl
   (package
@@ -13996,13 +14077,13 @@ simulate the effects of mergers under different competitive regimes.")
 (define-public r-anticlust
   (package
     (name "r-anticlust")
-    (version "0.8.16")
+    (version "0.8.18")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "anticlust" version))
        (sha256
-        (base32 "1g2xkrjhwpq2rsfclvm5rw4rylbsw6zqw8vykz1qnizddz7kq5hh"))))
+        (base32 "0y52w75ckk8f645cjss987sbsjzifr35kj6jflzc5inb71dnaga9"))))
     (properties `((upstream-name . "anticlust")))
     (build-system r-build-system)
     (arguments
@@ -23549,33 +23630,6 @@ The package also provides functions to visualise and evaluate the performance of
 your aggregated estimates on validation data.")
     (license license:expat)))
 
-(define-public r-agghoo
-  (package
-    (name "r-agghoo")
-    (version "0.1-0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "agghoo" version))
-       (sha256
-        (base32 "0vaqmydww494ql6xbhhjkpap3lqkhf8hkbcrr1pk81qpszs0pndm"))))
-    (properties `((upstream-name . "agghoo")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rpart r-r6 r-fnn r-class))
-    (home-page "https://git.auder.net/?p=agghoo.git")
-    (synopsis "Aggregated Hold-Out Cross Validation")
-    (description
-     "The agghoo procedure is an alternative to usual cross-validation.  Instead of
-choosing the best model trained on V subsamples, it determines a winner model
-for each subsample, and then aggregates the V outputs.  For the details, see
-\"Aggregated hold-out\" by Guillaume Maillard, Sylvain Arlot, Matthieu Lerasle
-(2021) <@code{arXiv:1909.04890>} published in Journal of Machine Learning
-Research 22(20):1--55.")
-    (license license:expat)))
-
 (define-public r-agfh
   (package
     (name "r-agfh")
@@ -27928,6 +27982,33 @@ smooth discounted flows from daily flow measurements.  Antecedent discharge
 algorithms are described and reviewed in Zhang and Ball (2017)
 <doi:10.1016/j.jhydrol.2016.12.052>.")
     (license license:gpl3+)))
+
+(define-public r-adbcsqlite
+  (package
+    (name "r-adbcsqlite")
+    (version "0.24.0-2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "adbcsqlite" version))
+       (sha256
+        (base32 "1rdp8c716c58a1hza4ndf32vxgk6g5jxv1wy7mqpmk667c15bwgz"))))
+    (properties `((upstream-name . "adbcsqlite")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list sqlite))
+    (propagated-inputs (list r-adbcdrivermanager))
+    (home-page "https://arrow.apache.org/adbc/current/r/adbcsqlite/")
+    (synopsis "'Arrow' Database Connectivity ('ADBC') 'SQLite' Driver")
+    (description
+     "This package provides a developer-facing interface to the Arrow Database
+Connectivity ('ADBC') SQLite driver for the purposes of building high-level
+database interfaces for users.  ADBC <https://arrow.apache.org/adbc/> is an API
+standard for database access libraries that uses Arrow for result sets and query
+parameters.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-adasampling
   (package

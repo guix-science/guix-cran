@@ -1581,13 +1581,13 @@ documents using a data frame as input.")
 (define-public r-quarrint
   (package
     (name "r-quarrint")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quarrint" version))
        (sha256
-        (base32 "13fdmmrgn23xd9vpywmcl7pf729gmcxjfl1wxs30axsbp4h1s6rk"))))
+        (base32 "1zjphldp0w3v6y2vaj052vvym5yrfqhiq0h6vfr06ayv0wcqpncn"))))
     (properties `((upstream-name . "quarrint")))
     (build-system r-build-system)
     (arguments
@@ -4414,6 +4414,36 @@ regional scores to generate an average tissue specific score for each subject.
 The @code{QRI_plot()} is used to plot QRI and generate the normative curves for
 individual measurements.")
     (license license:gpl2+)))
+
+(define-public r-qrfactor
+  (package
+    (name "r-qrfactor")
+    (version "1.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qrfactor" version))
+       (sha256
+        (base32 "0pzx3gh0hh290i7dxgjc3cyk6z0j79qgjbfzzhg4cvqksmbcjnzk"))))
+    (properties `((upstream-name . "qrfactor")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sp r-pvclust r-mvoutlier r-cluster))
+    (home-page "https://gowusu.github.io/qrfactor/")
+    (synopsis
+     "Simultaneous Q-Mode and R-Mode Factor Analysis for Spatial Data")
+    (description
+     "This package performs Q-mode and R-mode factor analysis simultaneously on
+spatial and non-spatial data.  A single function, @code{qrfactor()}, carries out
+principal component analysis, R-mode factor analysis, Q-mode factor analysis,
+simultaneous R- and Q-mode factor analysis, principal coordinate analysis and
+multidimensional scaling.  Loadings and scores are returned from the fitted
+object, and the @code{plot()} method provides annotated biplots for combinations
+of eigenvectors, loadings and scores.  Input may be supplied as an ESRI
+shapefile, a delimited text file or a data frame.")
+    (license license:gpl2)))
 
 (define-public r-qreport
   (package

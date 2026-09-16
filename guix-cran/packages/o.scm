@@ -5434,6 +5434,33 @@ Torres (2025) <doi:10.64898/2025.12.18.695244> (v1.0.0) and Torres (2026)
 <doi:10.1002/ece3.73111> (v2.0.0).")
     (license license:expat)))
 
+(define-public r-orange
+  (package
+    (name "r-orange")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "orange" version))
+       (sha256
+        (base32 "1qan7l88y6pzzqhdccy1xxnbk6pkzphfr0ljwrajjw4rqr6r5h98"))))
+    (properties `((upstream-name . "orange")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-igraph r-icosa))
+    (home-page "https://adamtkocsis.com/orange/")
+    (synopsis "Spherical Descriptors of Geographic Distributions")
+    (description
+     "Characterization of distribution data on the surface of a sphere.  The primary
+group of these metrics describe the extent of a distribution, geographic ranges.
+ The calculation of geographic descriptors can be executed using point
+coordinate data, vector polygons, as well as cells on a discretized sphere.
+Besides using spherical implementations, the package offers the exploration of
+partial results for visual diagnostics.")
+    (license license:gpl3)))
+
 (define-public r-oralopioids
   (package
     (name "r-oralopioids")
@@ -10680,6 +10707,36 @@ Mann-Whitney U test for two samples.  Moreover, it assesses variance homogeneity
 and normality of data in each group via tests and plots (Dag et al., 2018,
 <https://journal.r-project.org/archive/2018/RJ-2018-022/RJ-2018-022.pdf>).")
     (license license:gpl2+)))
+
+(define-public r-oneway
+  (package
+    (name "r-oneway")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oneway" version))
+       (sha256
+        (base32 "0xmbbscfk1cw8ny4vvd4ba0bpbzalgwjy1hfwqfh8jjxzb07vi44"))))
+    (properties `((upstream-name . "oneway")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-varequal r-outlying r-normality))
+    (home-page "https://github.com/P10911004-NPUST/oneway")
+    (synopsis "One-Way Statistical Analyses")
+    (description
+     "This package performs one-way tests of assumptions (normality and
+homoscedasticity), analysis of variance, robust and nonparametric alternatives,
+multiple comparison procedures, effect size estimators, confidence intervals,
+and descriptive summaries.  Functions are designed with a consistent interface
+to support reproducible and user-friendly statistical workflows.  For more
+details see Howell (2010, ISBN:978-0-495-59784-1), Zar (2014,
+ISBN:978-0-13-100846-5), Hollander et al. (2014, ISBN:978-0-470-38737-5),
+Montgomery (2017, ISBN:978-1-119-11347-8), Lakens (2013)
+<doi:10.3389/fpsyg.2013.00863>, and Piepho (2004) <doi:10.1198/1061860043515>.")
+    (license license:expat)))
 
 (define-public r-onetwosamples
   (package

@@ -1932,6 +1932,30 @@ See
 and Sigg et al. (2007) <doi:10.1109/MLSP.2007.4414315> for more details.")
     (license license:gpl2+)))
 
+(define-public r-nsc
+  (package
+    (name "r-nsc")
+    (version "1.1.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NSC" version))
+       (sha256
+        (base32 "0cdsb88gm8f6rr2xyy1q2x1034gc2yhiqryc74815dh42y1lp9kb"))))
+    (properties `((upstream-name . "NSC")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringi r-readxl))
+    (home-page "https://cran.r-project.org/package=NSC")
+    (synopsis "Format Student Data for the National Student Clearinghouse")
+    (description
+     "Formats student records for submission to the National Student Clearinghouse.
+The package creates the required header, detail, and trailer rows and writes
+tab-delimited TXT and CSV files.")
+    (license license:expat)))
+
 (define-public r-nsarfima
   (package
     (name "r-nsarfima")
@@ -5840,6 +5864,32 @@ Lomax (Pareto Type II), generalized Lomax, Mardiaâs Pareto of Type I,
 Logistic, Burr, Cook-Johnsonâs uniform, F and Inverted Beta.  See Tapan Nayak
 (1987) <doi:10.2307/3214068>.")
     (license license:gpl3+)))
+
+(define-public r-nonnet
+  (package
+    (name "r-nonnet")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nonnet" version))
+       (sha256
+        (base32 "0cyzij0g84hn2rrchj2aajwrfpbcly8pw76ib14001v2shb35mn6"))))
+    (properties `((upstream-name . "nonnet")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mgcv r-energy))
+    (home-page "https://cran.r-project.org/package=nonnet")
+    (synopsis "Generate and Analyze Nonlinear Networks")
+    (description
+     "This package creates and detects nonlinear relations using the methods described
+in Slipetz, Qiu, Sun, and Henry (2026) <doi:10.48550/@code{arXiv.2411.02763>}.
+Use the @code{netgen()} function to generate a nonlinear network and the
+@code{dcor_res()} function for a residualization procedure for detecting
+nonlinear relations.")
+    (license license:expat)))
 
 (define-public r-nonneg-cg
   (package
@@ -15016,29 +15066,21 @@ website (2017)
 (define-public r-netsimr
   (package
     (name "r-netsimr")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NetSimR" version))
        (sha256
-        (base32 "1ja8jkgyb3izh87j9np19lr0d5wzzlvnwijvx01v3igjzfcbsss7"))))
+        (base32 "196g3kcmwcnlh1miqdm96m4my4jx1n07by2889vs4795nzjgbw9s"))))
     (properties `((upstream-name . "NetSimR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-shiny
-                             r-reactable
-                             r-plotly
-                             r-htmltools
-                             r-future-apply
-                             r-future
-                             r-fitdistrplus
-                             r-bslib
-                             r-base64enc))
+    (propagated-inputs (list r-shiny r-future r-bslib r-base64enc))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=NetSimR")
+    (home-page "https://github.com/NetSimAnalytics/NetSimR")
     (synopsis "Actuarial Functions for Non-Life Insurance Modelling")
     (description
      "Assists actuaries and other insurance modellers in pricing, reserving and
@@ -16060,6 +16102,39 @@ al., (2015) <DOI:10.1016/j.socscimed.2015.10.001>; Valente (1995) <ISBN:
 9781881303213>, Myers (2000) <DOI:10.1086/303110>, Iyengar and others (2011)
 <DOI:10.1287/mksc.1100.0566>, Burt (1987) <DOI:10.1086/228667>; among others.")
     (license license:expat)))
+
+(define-public r-netdfi
+  (package
+    (name "r-netdfi")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "netDFI" version))
+       (sha256
+        (base32 "0xf5mv01mgyn3f0mx1iblhwxiaxxsippyl0ypr38b7kg47gh3qsc"))))
+    (properties `((upstream-name . "netDFI")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-qgraph
+                             r-psychonetrics
+                             r-progressr
+                             r-patchwork
+                             r-ggplot2
+                             r-future-apply
+                             r-future
+                             r-dplyr
+                             r-bootnet))
+    (home-page "https://github.com/xinkaidupsy/netDFI")
+    (synopsis "Dynamic Fit Index for Network Models")
+    (description
+     "Implement methods to determine the dynamic fit index cutoffs for network models.
+ The package allows users to evaluate model fit based on their own model
+statement, model type, and sample size.  Methods are described in Du and Epskamp
+(2026) <doi:10.31234/osf.io/5wj2y_v2>.")
+    (license license:gpl3+)))
 
 (define-public r-netda
   (package

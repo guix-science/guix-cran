@@ -14783,6 +14783,32 @@ information about Impala.")
     (license (list license:asl2.0
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-imply
+  (package
+    (name "r-imply")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "imply" version))
+       (sha256
+        (base32 "0qfw3raxvwjlybb8cfqm108xm8abay8b39c8yjrjc2gq9im44ivm"))))
+    (properties `((upstream-name . "imply")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-s7 r-rcpparray r-rcpp))
+    (home-page "https://github.com/jonclayden/imply")
+    (synopsis "Efficiently Apply Functions to Images")
+    (description
+     "Infrastructure for handling generalised two and three dimensional images, which
+may hold multiple values at each spatial location, and efficiently applying
+functions to them.  Dense, compacted and sparse pixel/voxel representations are
+supported, with one core engine for processing them all.  Parallelism is
+supported via the parallel package, libdispatch and @code{OpenMP}'.")
+    (license (license:fsdg-compatible "BSD_3_clause + file LICENCE"))))
+
 (define-public r-implied
   (package
     (name "r-implied")

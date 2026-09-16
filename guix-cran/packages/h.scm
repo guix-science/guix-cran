@@ -2351,13 +2351,13 @@ use.")
 (define-public r-huxtable
   (package
     (name "r-huxtable")
-    (version "5.8.0")
+    (version "6.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "huxtable" version))
        (sha256
-        (base32 "0b2jgrakcaa8am853c6g7jjkl8aa3l8wj0pq26dmm7dyvsjwqp3w"))))
+        (base32 "0wi00hzjahn5svgd6yx6dlgj7arp9w4dxmj4akq6slg97klc3b4z"))))
     (properties `((upstream-name . "huxtable")))
     (build-system r-build-system)
     (arguments
@@ -14554,6 +14554,36 @@ Projection for Estimating Changepoints by Wang and Samworth (2017)
 <doi:10.1214/23-EJS2126>.")
     (license license:gpl3)))
 
+(define-public r-hdcce
+  (package
+    (name "r-hdcce")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hdcce" version))
+       (sha256
+        (base32 "14imwcljyjdpir7m4297442m5cvarf22m7q2a5vpcx6sk1vyccrp"))))
+    (properties `((upstream-name . "hdcce")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mvtnorm r-glmnet))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/RueckerM/hdcce")
+    (synopsis
+     "Estimation and Inference for High-Dimensional Panel Data Models with Interactive Fixed Effects")
+    (description
+     "Estimation and inference for panel data models with interactive fixed effects.
+The methods cover i) the linear specification of Ruecker, M., Vogt, M., Linton,
+O. and Walsh, C. (2025) \"Estimation and Inference in High-Dimensional Panel Data
+Models with Interactive Fixed Effects\" <doi:10.3982/QE2308>, and ii) the
+dictionary design of Ruecker, M., Vogt, M. and Linton, O. (2026)
+\"High-Dimensional Panel Data Models with Interactive Fixed Effects: Beyond the
+Linear Case\" <doi:10.48550/@code{arXiv.2608.02055>}.")
+    (license license:gpl2+)))
+
 (define-public r-hdcate
   (package
     (name "r-hdcate")
@@ -16028,13 +16058,13 @@ flexibility to incorporate custom parameterizations using external datasets.")
 (define-public r-hassediagrams
   (package
     (name "r-hassediagrams")
-    (version "2.1")
+    (version "3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hassediagrams" version))
        (sha256
-        (base32 "1ij0ngrjs3ri3xx8g6w6hy7yd0nh4za4hqllg1pazdb992cslja5"))))
+        (base32 "1ww0hl4jnfvp61r8rjxcvw9z9c5m01hdnar2wyg44h2wgm53lyjr"))))
     (properties `((upstream-name . "hassediagrams")))
     (build-system r-build-system)
     (arguments

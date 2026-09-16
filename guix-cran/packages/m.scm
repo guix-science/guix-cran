@@ -4625,19 +4625,19 @@ ways of performing an analysis step, in R and R Notebooks.")
 (define-public r-multivator
   (package
     (name "r-multivator")
-    (version "1.1-11")
+    (version "1.2-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multivator" version))
        (sha256
-        (base32 "1r9v15bg0kyhq5xqzkpj6ilz745q6k3j46zh1n68pf17zmi0k0ww"))))
+        (base32 "081aiafl0b4a5q8s6x3qm0sv2dnpm6gkxc3kgrxrqf3k9kyyr4xl"))))
     (properties `((upstream-name . "multivator")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-mvtnorm r-mathjaxr r-emulator))
+    (propagated-inputs (list r-quadform r-mvtnorm r-emulator))
     (home-page "https://github.com/RobinHankin/multivator")
     (synopsis "Multivariate Emulator")
     (description
@@ -8033,6 +8033,31 @@ LÃ¶nnqvist (2024) <doi:10.1037/pspp0000508>.  Includes also tools that help in
 understanding difference score reliability, conditional intra-class
 correlations, tail-dependency, and heterogeneity of variance estimates.  Package
 development was supported by the Academy of Finland research grant 338891.")
+    (license license:gpl3)))
+
+(define-public r-multicorr
+  (package
+    (name "r-multicorr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "multiCorr" version))
+       (sha256
+        (base32 "1kxg6f6gkjjjax4cny21s87wz517pj1w23xkknm2gaccs4bkwii0"))))
+    (properties `((upstream-name . "multiCorr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=multiCorr")
+    (synopsis "Multicovariance and Multicorrelation for p-Variables")
+    (description
+     "This package implements the multicorrelation coefficient for p-variables as
+described in Cankaya (2023).  The package provides a numerically stable
+implementation using logarithmic transformations and a log-sum-exp approach to
+reduce numerical overflow and underflow when calculations involve a large number
+of variables.")
     (license license:gpl3)))
 
 (define-public r-multicoll
@@ -58671,13 +58696,13 @@ sensitivity analyses, scenario analyses, etc.")
 (define-public r-maestro
   (package
     (name "r-maestro")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maestro" version))
        (sha256
-        (base32 "0zyc13zrl8wsishpm5z1az28aw5f9p86pr27dmzm073zqb8nwva8"))))
+        (base32 "0g01dxidcaaj9h7043kn792rvxl95isz39mzm37x88q4dkibmgw0"))))
     (properties `((upstream-name . "maestro")))
     (build-system r-build-system)
     (arguments

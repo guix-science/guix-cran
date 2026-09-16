@@ -2573,13 +2573,13 @@ the National Academy of Sciences USA <doi:10.1073/pnas.2021655118>.")
 (define-public r-cumulcalib
   (package
     (name "r-cumulcalib")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cumulcalib" version))
        (sha256
-        (base32 "1y73fhrfcmgc8b4w6n2i50ajxkvzi3nn8an427qggwdh6gril40r"))))
+        (base32 "05jkpxm0mdvipa0d498ssq3qza30f2h0ws7gh9lf7n9pm6bln5g3"))))
     (properties `((upstream-name . "cumulcalib")))
     (build-system r-build-system)
     (arguments
@@ -2598,9 +2598,9 @@ implements the methodology described in Sadatsafavi and Petkau (2024)
 takes in vectors of binary responses and predicted risks.  The package also
 implements non-parametric assessment of the calibration of individualized
 treatment effect (ITE) models using data from a randomized trial, via
-@code{cumulcalibITE()}, as described in Sadatsafavi et al. (2025)
-<doi:10.48550/@code{arXiv.2512.08140>}.  The @code{plot()} and @code{summary()}
-methods are implemented for the results returned by @code{cumulcalib()} and
+@code{cumulcalibITE()}, as described in Sadatsafavi et al. (2026)
+<doi:10.1002/sim.70724>.  The @code{plot()} and @code{summary()} methods are
+implemented for the results returned by @code{cumulcalib()} and
 @code{cumulcalibITE()}.")
     (license license:expat)))
 
@@ -15609,20 +15609,35 @@ transition rate classes on different portions of a phylogeny.  Beaulieu et al
 (define-public r-coreval
   (package
     (name "r-coreval")
-    (version "0.1.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coreval" version))
        (sha256
-        (base32 "0yirijb7kvz2xpi60xmgrfga6jvz1zi0mzrf68wsf4x3bymilrzk"))))
+        (base32 "14prll4x71dmppp31fdhga9i264llk4xx52cx32njfm38q6d5m30"))))
     (properties `((upstream-name . "coreval")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:modules '((guix build r-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-haven r-data-table))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/hrach-gevorgyan/coreval")
     (synopsis "Check Clinical Trial Data Against 'CDISC' Open Rules")
     (description
@@ -15630,15 +15645,16 @@ transition rate classes on different portions of a phylogeny.  Beaulieu et al
 openly published CDISC Open Rules ('CORE').  Check a single dataset while you
 are still writing the code that builds it, or a whole study folder once it
 exists, and get the findings back as a tidy data frame pointing at the exact row
-and variable.  Reads transport ('XPT'), SAS and comma-separated files, plus
-Define-XML when present, and covers rules for the SDTM', SEND and TIG standards.
- The rules are bundled inside the package, so nothing is downloaded and your
-data never leaves your machine: no internet, no API key, no account.  When a
-rule cannot be checked - because it needs a dataset you did not supply, for
-instance - it is reported as skipped with the reason, never counted as a pass.
-Meant as a quick first pass before a qualified validation system, never as a
-replacement for one.  An independent project: not affiliated with or endorsed by
-CDISC', and not a CORE'-certified conformance engine.")
+and variable.  Reads transport ('XPT'), SAS', comma-separated and Dataset-JSON
+files, plus Define-XML when present, and USDM study-design documents.  Covers
+rules for the SDTM', SEND', TIG and USDM standards.  The rules are bundled
+inside the package, so nothing is downloaded and your data never leaves your
+machine: no internet, no API key, no account.  When a rule cannot be checked -
+because it needs a dataset you did not supply, for instance - it is reported as
+skipped with the reason, never counted as a pass.  Meant as a quick first pass
+before a qualified validation system, never as a replacement for one.  An
+independent project: not affiliated with or endorsed by CDISC', and not a
+CORE'-certified conformance engine.")
     (license license:expat)))
 
 (define-public r-coresynth
@@ -19017,6 +19033,31 @@ geographic distance.  This package contains code for running analyses (which are
 implemented in the modeling language rstan') and visualizing and interpreting
 output.  See the paper for more details on the model and its utility.")
     (license license:gpl3)))
+
+(define-public r-constree
+  (package
+    (name "r-constree")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ConsTree" version))
+       (sha256
+        (base32 "1b35gl5vhs3ynyq40arczc0a53f8svvyrajw5mrxzn4gkn9221fa"))))
+    (properties `((upstream-name . "ConsTree")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-treetools r-rdpack r-rcpp r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://constree.github.io/")
+    (synopsis "Fast Algorithms for Phylogenetic Consensus Trees")
+    (description
+     "Efficient construction of phylogenetic consensus trees.  Methods include strict,
+majority-rule, majority-rule (+), loose (combinable component / semi-strict),
+greedy, Adams, frequency difference, R*, and local consensus.")
+    (license license:gpl3+)))
 
 (define-public r-constrainedkriging
   (package
@@ -27200,6 +27241,36 @@ and sensitivity evaluation.")
      "Extract and monitor price and market cap of Cryptocurrencies from Coin Market
 Cap <https://coinmarketcap.com/api/>.")
     (license license:expat)))
+
+(define-public r-coinclp
+  (package
+    (name "r-coinclp")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "coinclp" version))
+       (sha256
+        (base32 "0lnpq475sapvxd41bzqf3i5wqh6abbq8dyx5yqr2xkvg6ad3k6av"))))
+    (properties `((upstream-name . "coinclp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list zlib))
+    (native-inputs (list pkg-config r-knitr))
+    (home-page "https://github.com/SamLovick/coinclp")
+    (synopsis "R Interface to the 'COIN-OR' 'Clp' Linear Programming Solver")
+    (description
+     "Solves linear programs with Clp', the simplex and interior point code of the
+COIN-OR project <https://github.com/coin-or/Clp>.  Provides a one-call solver
+interface for dense and sparse constraint matrices, and complete low level
+bindings to the Clp callable library covering problem construction, warm starts,
+presolve options, basis access and MPS files.  A compatibility layer reproduces
+the interface of the archived @code{clpAPI} package so that existing code keeps
+working.  Clp itself is not bundled and must be installed on the system; the
+Rtools toolchain supplies it on Windows'.")
+    (license (license:fsdg-compatible "EPL"))))
 
 (define-public r-coimp
   (package
@@ -39747,25 +39818,36 @@ cohort definition expressions to be edited and converted to Markdown or SQL'.")
 (define-public r-circda
   (package
     (name "r-circda")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "circda" version))
        (sha256
-        (base32 "031lxb0fcnps02h8lxzvs5gjzdkk7cgsk1i6lk0ssbhn2qrkj8nw"))))
+        (base32 "1azw0qckbllp39yyasildn1pxafp9wsazsk6xhb1nn74s7n9n65b"))))
     (properties `((upstream-name . "circda")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rfast r-rangen r-directional r-circular))
+    (propagated-inputs (list r-rfast r-rangen r-glmnet r-directional
+                             r-circular))
     (home-page "https://cran.r-project.org/package=circda")
     (synopsis "Circular Data Analysis")
     (description
      "This package provides functions to perform maximum likelihood estimation,
 model-based clustering, discriminant and regression analysis with a circular
-response variable. <doi:10.1080/01621459.2019.1585249>.")
+response variable.  The standard textbook for such data is the \"Directional
+Statistics\" by Mardia, K. V. and Jupp, P. E. (2000).  Other references include:
+Tsagris M. and Alzeley O. (2025). \"Circular and spherical projected Cauchy
+distributions: A Novel Framework for Circular and Directional Data Modeling\".
+Australian & New Zealand Journal of Statistics, 67(1): 77--103.
+<doi:10.1111/anzs.12434>.  Tsagris M., Papastamoulis P. and Kato S. (2025).
+\"Directional data analysis: spherical Cauchy or Poisson kernel-based
+distribution\".  Statistics and Computing, 35:51
+<doi:10.1007/s11222-025-10583-0>.  Alzeley O. and Tsagris (2026). \"On the
+generalized circular projected Cauchy distribution\".  Mathematics, 14(11): 1934
+<doi:10.3390/math14111934>.")
     (license license:gpl2+)))
 
 (define-public r-circacp
@@ -41944,13 +42026,13 @@ function of unit characteristics variables.")
 (define-public r-choicedata
   (package
     (name "r-choicedata")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "choicedata" version))
        (sha256
-        (base32 "18kv5g0hd7ddbnyl17bcg9rlg6m1157p4hzrjf0phnc93nhm8ld7"))))
+        (base32 "0namqrqlpsbdd2ldwakplvjqi92d5vyk913bvixmbjxzlk1xqlj8"))))
     (properties `((upstream-name . "choicedata")))
     (build-system r-build-system)
     (arguments
@@ -41960,12 +42042,10 @@ function of unit characteristics variables.")
                              r-tibble
                              r-rlang
                              r-rdpack
-                             r-patchwork
+                             r-rcpparmadillo
+                             r-rcpp
                              r-optimizer
                              r-oeli
-                             r-mvtnorm
-                             r-matrix
-                             r-ggplot2
                              r-formula
                              r-dplyr
                              r-cli
@@ -49257,6 +49337,37 @@ random Q-matrix generation and detection of complete/identified Q-matrices.")
 visualize the output files of CD@code{MetaPOP}
 <https://computationalecologylab.github.io/cdmetapop_web/>.")
     (license license:gpl2+)))
+
+(define-public r-cdmeta
+  (package
+    (name "r-cdmeta")
+    (version "1.1-1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cdmeta" version))
+       (sha256
+        (base32 "110gfmxs3krqfmc9hjblrrgznb5dphwwcbab092zc11lsia5qnix"))))
+    (properties `((upstream-name . "cdmeta")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-pimeta))
+    (home-page "https://github.com/guido-s/cdmeta")
+    (synopsis
+     "Confidence-Distribution-Based Inference for Random-Effects Meta-Analysis")
+    (description
+     "Computational tools for confidence-distribution-propagation-based inference in
+random-effects meta-analysis.  Implements confidence-distribution propagation
+for frequentist inference in random-effects meta-analysis.  The package samples
+the between-study variance from a confidence distribution based on the exact
+distribution of Cochran's Q, samples the average effect conditionally on each
+draw, and generates the true effect in a future study.  It provides prediction
+intervals and confidence intervals for the average effect, between-study
+variance, between-study standard deviation, and I2.  The methods are described
+in Noma and Schwarzer (2026) <doi:10.48550/@code{arXiv.2608.26527>}.")
+    (license license:gpl3)))
 
 (define-public r-cdmconnector
   (package
@@ -57605,6 +57716,62 @@ available with a time step ranging from 15 min to 1 month.  For license terms
 and to create an account, please see
 <http://www.soda-pro.com/web-services/radiation/cams-radiation-service>.")
     (license license:expat)))
+
+(define-public r-campsisnca
+  (package
+    (name "r-campsisnca")
+    (version "1.7.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "campsisnca" version))
+       (sha256
+        (base32 "06shk31yqs79rm9rcp0rim1jlrck5sfvxnbi1z7jczi9773h66qr"))))
+    (properties `((upstream-name . "campsisnca")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-lifecycle
+                             r-jsonvalidate
+                             r-jsonlite
+                             r-gtsummary
+                             r-gt
+                             r-glue
+                             r-dplyr
+                             r-cards
+                             r-campsismod
+                             r-campsis
+                             r-assertthat))
+    (home-page "https://github.com/Calvagone/campsisnca")
+    (synopsis "Non-Compartmental Analysis for Campsis Simulation Platform")
+    (description
+     "This package provides a flexible and user-friendly non-compartmental analysis
+(NCA) toolkit designed to work seamlessly with simulated pharmacokinetic data
+generated using the campsis ecosystem.  The package provides a comprehensive
+framework to compute standard and custom NCA metrics, including exposure (AUC),
+peak/trough concentrations, half-life and time-above/below thresholds, with
+support for configurable time windows and summary statistics.  campsisnca
+integrates tightly with campsis and campsismod', enabling streamlined workflows
+from simulation to analysis.  In addition, the package provides a JSON-based
+interface to define NCA analyses, metrics and options using formal schemas,
+allowing analyses to be created, validated and executed outside of R and
+facilitating reproducibility, automation and system integration.  The package
+also includes utilities for generating formatted summary tables and exporting
+results in multiple formats suitable for reporting.  Trapezoidal rule
+implementation for AUC calculation is based on the @code{qpNCA} package by
+Huisman, Jolling, Mehta and Bergsma (2021)
+<doi:10.32614/CRAN.package.@code{qpNCA>}, following methodology from Rowland and
+Tozer (2011, ISBN:978-0-683-07404-8).  The package itself is licensed under the
+GPL (>= 3); the JSON schema files shipped in inst/extdata are licensed
+separately under the Creative Commons Attribution 4.0 International (CC BY 4.0).")
+    (license license:gpl3+)))
 
 (define-public r-campsismod
   (package

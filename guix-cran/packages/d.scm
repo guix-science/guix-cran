@@ -1522,13 +1522,13 @@ dyads adapts del Rosario and West (2025) <doi:10.1177/25152459251351286>.")
 (define-public r-dyadicmarkov
   (package
     (name "r-dyadicmarkov")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dyadicMarkov" version))
        (sha256
-        (base32 "0nibfy8pqvg0h7l34zv6mvb4rybbbgr7fhm89nfnp39r5qs9ci2s"))))
+        (base32 "1kzcp94b8s0nrivs2r395mxg73jj0yrp248hganywawjwrlkmn58"))))
     (properties `((upstream-name . "dyadicMarkov")))
     (build-system r-build-system)
     (arguments
@@ -3383,6 +3383,37 @@ Deutsche Turnliga <https://www.deutsche-turnliga.de/archiv.html>.  Also included
 is data of one competition and one matchday as test data.")
     (license license:expat)))
 
+(define-public r-dtlog
+  (package
+    (name "r-dtlog")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dtlog" version))
+       (sha256
+        (base32 "1myqapdkj90dp21d69r3458g8q43zlljarix3x5kbbwi93wa853v"))))
+    (properties `((upstream-name . "dtlog")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-data-table))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/AkiShiroshita/dtlog")
+    (synopsis "Logging for 'data.table' Operations")
+    (description
+     "This package provides feedback about data.table operations.  dtlog redefines the
+subsetting method for data tables as well as several functions exported by
+data.table so that each operation prints a short message describing what it did:
+how many rows were removed, which columns were added, updated or dropped, how
+many groups an aggregation produced, and so on.  The operations themselves are
+left untouched, including modification by reference.  It also provides
+@code{dttable()}, which describes the variables a single data table holds and
+passes every other call on to @code{base::table()} unchanged.  Inspired by the
+tidylog package.")
+    (license license:expat)))
+
 (define-public r-dtlg
   (package
     (name "r-dtlg")
@@ -3474,45 +3505,6 @@ based on Atchanut and Sirinapa (2021). <DOI: 10.14456/sjst-psu.2021.149>.  In
 addition, a function for maximum likelihood estimation of the DTGIW distribution
 is provided.")
     (license license:gpl3)))
-
-(define-public r-dtgap
-  (package
-    (name "r-dtgap")
-    (version "0.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dtGAP" version))
-       (sha256
-        (base32 "1jqyiik8qkbaijqyapax4lici27cv87y7xbwdkllh38h9s4np3k8"))))
-    (properties `((upstream-name . "dtGAP")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-yardstick
-                             r-stringr
-                             r-seriation
-                             r-rpart
-                             r-rlang
-                             r-rcolorbrewer
-                             r-partykit
-                             r-magrittr
-                             r-ggparty
-                             r-dplyr
-                             r-complexheatmap
-                             r-circlize
-                             r-caret
-                             r-c50))
-    (home-page "https://github.com/hanmingwu1103/dtGAP")
-    (synopsis
-     "Supervised Generalized Association Plots Based on Decision Trees")
-    (description
-     "Enhances decision tree visualization by incorporating Generalized Association
-Plots (GAP) through matrix-based visualizations including confusion matrix maps,
-decision tree matrix maps, and predicted class membership maps based on
-supervised correlation and distance metrics.")
-    (license license:expat)))
 
 (define-public r-dtfm
   (package
@@ -6382,6 +6374,41 @@ plumber'-style application programming interface for building REST services from
 R with substantially higher throughput, including streaming responses and
 full-duplex @code{WebSocket} endpoints.")
     (license license:expat)))
+
+(define-public r-drmtmb
+  (package
+    (name "r-drmtmb")
+    (version "0.7.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "drmTMB" version))
+       (sha256
+        (base32 "1h7j0x4as6bdc2sr50cbn0arinxysqqfrzq5jz5wjv3h6lr4h7sb"))))
+    (properties `((upstream-name . "drmTMB")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tmb r-rcppeigen r-matrix r-lifecycle r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://itchyshin.github.io/drmTMB/")
+    (synopsis "Distributional Regression Models Using Template Model Builder")
+    (description
+     "Fast distributional regression models for univariate and bivariate responses
+using Template Model Builder.  The current implementation focuses on Gaussian,
+Student-t, and skew-normal location-scale models, known sampling covariance,
+phylogenetic location effects, random-effect scale models, bivariate residual
+correlation, positive-continuous, Tweedie semi-continuous, strict-proportion,
+zero-one bounded, and denominator-aware proportion families, fixed-effect
+Bernoulli/binomial event-probability models, and fixed-effect Poisson,
+negative-binomial, zero-inflated, zero-truncated, hurdle count, and ordinal
+cumulative-logit models.  Additional response-family models are staged for later
+phases.  Every fitted family also exposes a distributional-output and adequacy
+layer: randomized quantile-residual worm and QQ plots that detect fixed-effect
+shape and atom misspecification, and conditional-quantile, exceedance, and
+centile outputs with plug-in (uncalibrated) intervals.")
+    (license license:gpl3+)))
 
 (define-public r-drmeta
   (package
@@ -14222,20 +14249,19 @@ distr', @code{distrEx}', @code{distrMod}', @code{distrSim}', @code{distrTEst}',
 (define-public r-distplyr
   (package
     (name "r-distplyr")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "distplyr" version))
        (sha256
-        (base32 "0ngcwpiakvv1v7hmwbml2z50ra3qb89zni92kncx29pd9cnxhb2b"))))
+        (base32 "15ziyhmnwrmambhyg575pgnq159g9pnblg3zvrghbachc59wi050"))))
     (properties `((upstream-name . "distplyr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-vctrs r-rlang r-ellipsis r-distionary
-                             r-checkmate))
+    (propagated-inputs (list r-vctrs r-rlang r-distionary r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://distplyr.probaverse.com/")
     (synopsis "Manipulate and Combine Probability Distributions")
@@ -22359,6 +22385,39 @@ Baek, C., Gampe, M., Leinwand B., Lindquist K., Hopfinger J. and Gates K. (2023)
 <doi:10.1007/s11336-023-09908-7>.")
     (license (license:fsdg-compatible "Unlimited"))))
 
+(define-public r-detectpanel
+  (package
+    (name "r-detectpanel")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "detectPanel" version))
+       (sha256
+        (base32 "0na4ighq6c0d806l4ag5phj0g24z340pgpiklabn3i3xhg5jz4sk"))))
+    (properties `((upstream-name . "detectPanel")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Emr-27/detectPanel")
+    (synopsis "Leakage-Aware Discovery of Small Biomarker Panels")
+    (description
+     "Discovers small binary-classification biomarker panels from count or expression
+matrices while prioritizing detectability, expression stability, and univariate
+discrimination.  Candidate filtering and panel selection can be repeated inside
+nested cross-validation to reduce information leakage.  The package provides
+shared resampling splits, exhaustive small-panel search, logistic model fitting
+with an automatic ridge fallback for unstable separation-prone fits, out-of-fold
+evaluation, selection-frequency summaries, and optional DESeq2
+differential-expression support.  The nested model-selection workflow follows
+Varma and Simon (2006) <doi:10.1186/1471-2105-7-91>, and the optional
+differential-expression analysis uses Love, Huber, and Anders (2014)
+<doi:10.1186/s13059-014-0550-8>.")
+    (license license:expat)))
+
 (define-public r-detectors
   (package
     (name "r-detectors")
@@ -28303,13 +28362,13 @@ differentials and compares the estimates obtained from two datasets.")
 (define-public r-decafs
   (package
     (name "r-decafs")
-    (version "3.3.5")
+    (version "3.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DeCAFS" version))
        (sha256
-        (base32 "06s6z4j1dnh5mpypc7vgnxby8ms81gqkyavpay13czyk6jbps4w6"))))
+        (base32 "1rfywn77q83z6r1njnlmi1xqhj95c6x1rlz8ilsasw1ar11lr6lr"))))
     (properties `((upstream-name . "DeCAFS")))
     (build-system r-build-system)
     (arguments

@@ -14626,6 +14626,36 @@ empirical coverage), and to produce contour plots over 2D slices in model
 parameter space.")
     (license license:gpl3)))
 
+(define-public r-stiles
+  (package
+    (name "r-stiles")
+    (version "2026.9.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sTiles" version))
+       (sha256
+        (base32 "1bx2papf0ngrbcpp637622v5j49nnwzkn2bahjsm5gbs0gp45aby"))))
+    (properties `((upstream-name . "sTiles")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrix))
+    (home-page "https://esmail-abdulfattah.github.io/sTiles/")
+    (synopsis "Tile-Based Sparse Cholesky Factorization and Selected Inverse")
+    (description
+     "Interface to the @code{sTiles} framework for tile-based sparse Cholesky
+factorization: log-determinants, selected inverse (marginal variances) and
+triangular solves, with symbolic reuse so that repeated factorization of
+matrices sharing one sparsity pattern pays the ordering cost only once, as in a
+hyperparameter sweep.  The compiled glue in this package resolves its symbols at
+run time against the @code{sTiles} solver library ('libstiles'), which is a
+separate component distributed under its own terms and is not part of this
+package.  Install it once with @code{sTiles_install_library()}', or point the
+package at a copy you already have with the STILES_LIB environment variable.")
+    (license license:expat)))
+
 (define-public r-stihc
   (package
     (name "r-stihc")
@@ -16149,13 +16179,13 @@ acknowledging the authorship of the original code.")
 (define-public r-steadystatebvar
   (package
     (name "r-steadystatebvar")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SteadyStateBVAR" version))
        (sha256
-        (base32 "0qbzwic818bnyhxzbpwdzbx2x51ifpfz06gb4grhbzjpvj9257hc"))))
+        (base32 "0kddzxf6hbyybc8jhwgnadyidxambz60whd46pzyns7rrssqb46f"))))
     (properties `((upstream-name . "SteadyStateBVAR")))
     (build-system r-build-system)
     (arguments
@@ -19937,6 +19967,36 @@ parameters, and it provides convenience functions both for specifying the model
 and for flexibly aggregating coefficients to answer a variety of research
 questions.")
     (license license:gpl3)))
+
+(define-public r-staggeredgmm
+  (package
+    (name "r-staggeredgmm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "staggeredGMM" version))
+       (sha256
+        (base32 "1zkm7lk1ghmmw1nnpw9x38iznvvcbn6x5w2dnv796pbqsjxca7nb"))))
+    (properties `((upstream-name . "staggeredGMM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mass r-fixest))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/RishabhBijani/staggeredGMM")
+    (synopsis "GMM Estimation of Treatment Effects Under Staggered Adoption")
+    (description
+     "Estimates cohort-by-time average treatment effects under staggered treatment
+adoption by the generalized method of moments.  Three weighting schemes are
+provided, corresponding to a pooled stationary covariance, a cohort-specific
+stationary covariance, and an unrestricted within-cohort covariance.  Optional
+adjustment for baseline covariates by outcome regression, and a
+serial-correlation robust over-identification test of parallel trends and no
+anticipation, are also supported.  The methods are described in Arora and Bijani
+(2026) <doi:10.2139/ssrn.6558759>.")
+    (license license:expat)))
 
 (define-public r-staggered
   (package
@@ -28064,26 +28124,19 @@ clipboard export, and row-wise descriptive summaries.")
 (define-public r-spichanges
   (package
     (name "r-spichanges")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SPIChanges" version))
        (sha256
-        (base32 "1s0q0z9283n0lbh87x3gsl7wxc5xx7byarcj7wsk5ir0rpxkzr39"))))
+        (base32 "1afa9rf2m2qrp016mdziah2wipq2lla1j6jnrk0s8jiy5zaimmnc"))))
     (properties `((upstream-name . "SPIChanges")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-zoo
-                             r-spsutil
-                             r-rlang
-                             r-mumin
-                             r-lubridate
-                             r-gamlss-dist
-                             r-gamlss
-                             r-brglm2))
+    (propagated-inputs (list r-zoo r-rlang r-lubridate r-dglm r-brglm2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/gabrielblain/SPIChanges")
     (synopsis
@@ -38552,13 +38605,13 @@ types, including spatial data returned as sf objects.")
 (define-public r-socketr
   (package
     (name "r-socketr")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "socketR" version))
        (sha256
-        (base32 "03kjm1yqazzqbhlr2mr4dxpzxq871l2dg9a8226kira8xghchg8w"))))
+        (base32 "1vlbdw6jnvl65lxvvpy9rhrwn5vxv20w04hg6m1r3794zh14kcab"))))
     (properties `((upstream-name . "socketR")))
     (build-system r-build-system)
     (arguments
@@ -38569,7 +38622,11 @@ types, including spatial data returned as sf objects.")
     (home-page "https://sassoftware.github.io/socketr/")
     (synopsis "POSIX Socket Programming for R")
     (description
-     "This package provides a small, type-safe interface to POSIX sockets on Linux.")
+     "This package provides a small POSIX sockets interface to R, enabling direct
+network communication from R for applications that need low-level socket control
+or lightweight client and server connections.  This package provides IPv4 and
+IPv6 support with TCP/UDP protocols.  It functional API with socket_create and
+an R6 interface through Socket object.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-sociome
@@ -48689,6 +48746,33 @@ regression model's coefficients and variance-covariance matrix.")
 not-a-pipe operator of the magrittr package.")
     (license license:gpl3)))
 
+(define-public r-simpsystudy
+  (package
+    (name "r-simpsystudy")
+    (version "1.1.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "simPsyStudy" version))
+       (sha256
+        (base32 "15akkq0sp2ipasj3jd4xpgdpxysiv4p10z28304axf5sidizp4bl"))))
+    (properties `((upstream-name . "simPsyStudy")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rdpack r-multirng r-moments r-mass))
+    (home-page "https://github.com/Boklauth/simPsyStudy")
+    (synopsis "Simulation of Ordinal Responses for Psychometric Studies")
+    (description
+     "This package provides tools to define factorial simulation conditions and
+generate binary or ordinal item responses under common-factor and probit graded
+response model parameterizations.  Supports multivariate normal and correlated
+gamma latent traits, reproducible replications, parameter conversion, and
+structured storage of generated datasets.  The graded response model follows
+Samejima (1969).")
+    (license license:expat)))
+
 (define-public r-simpr-interaction
   (package
     (name "r-simpr-interaction")
@@ -57057,13 +57141,13 @@ displayed on fullscreen and use buttons to trigger the fullscreen view.")
 (define-public r-shinyfilters
   (package
     (name "r-shinyfilters")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyfilters" version))
        (sha256
-        (base32 "068mrn03z2aaanv6d6x253ad7cqzvzw9c6wxm6lwgwxaj0kdswrx"))))
+        (base32 "06znxc6h27dfd7n6xwzb6yim4wg2gfdfjadn41f8jixqngmjbdw8"))))
     (properties `((upstream-name . "shinyfilters")))
     (build-system r-build-system)
     (arguments
@@ -62027,6 +62111,34 @@ range of applications, the implementation offers extensive flexibility in
 specification and estimation techniques.")
     (license license:gpl2+)))
 
+(define-public r-sezgi
+  (package
+    (name "r-sezgi")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sezgi" version))
+       (sha256
+        (base32 "0f62sks2rvs2r61kzzi5kn0mpbc0glsmrd0281hq0283qp6qcff2"))))
+    (properties `((upstream-name . "sezgi")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-r6))
+    (home-page "https://github.com/tdelphi1981/sezgi")
+    (synopsis "Metaheuristic Optimization with a 'Rust' Core")
+    (description
+     "Build and run metaheuristic optimization algorithms as serializable component
+graphs executed by a Rust core, with reproducible, bit-exact trajectories shared
+across the R and Python frontends.  Includes population and local-search
+algorithm presets, standard benchmark suites (BBOB, CEC 2014/2017/2022, TSP),
+multi-objective indicators, structural-bias diagnostics and statistical
+comparison tools.")
+    (license license:expat)))
+
 (define-public r-sewage
   (package
     (name "r-sewage")
@@ -66977,6 +67089,34 @@ selection as described in Rufibach (2011, Section 6).")
 regression, least angle regression, the lasso, and the many means problem.  The
 lasso function implements Gaussian, logistic and Cox survival models.")
     (license license:gpl2)))
+
+(define-public r-selectiontools
+  (package
+    (name "r-selectiontools")
+    (version "26.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SelectionTools" version))
+       (sha256
+        (base32 "0mg4w3qrhlfvc3gh646kd63mjf735yqf3qn5vzs6g6157gwd20g1"))))
+    (properties `((upstream-name . "SelectionTools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=SelectionTools")
+    (synopsis "Simulation and Data Analysis for Plant Breeders")
+    (description
+     "This package provides tools for simulation of plant breeding programs as
+described, for example, by Melchinger and Frisch (2023)
+<doi:10.1007/s00122-023-04446-3>, prediction of segregation variance
+(Osthushenrich, Frisch and Herzog (2017) <doi:10.1371/journal.pone.0188839>),
+genomic prediction (Hofheinz and Frisch (2014) <doi:10.1534/g3.113.010025>),
+linkage disequilibrium based haplotype construction, and planning of marker
+assisted back crossing programs.")
+    (license license:cc0)))
 
 (define-public r-selectiongain
   (package
@@ -77629,13 +77769,13 @@ dimensionality reduction evaluation\", @code{PeerJ} Computer Science 12:e3424
 (define-public r-sats
   (package
     (name "r-sats")
-    (version "1.0.10")
+    (version "1.0.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SATS" version))
        (sha256
-        (base32 "02mzkcnn1wv8zl5bpfmlv61ch87sngwh2nx02v8drb1z8m68m6da"))))
+        (base32 "1qqs1r47idjn1vxcmjml5m4cfqdxw6vp7kwfh3bmnyrbhd9qai6s"))))
     (properties `((upstream-name . "SATS")))
     (build-system r-build-system)
     (arguments
@@ -77644,17 +77784,16 @@ dimensionality reduction evaluation\", @code{PeerJ} Computer Science 12:e3424
     (propagated-inputs (list r-iranges r-glmnet r-genomicranges r-dplyr
                              r-biostrings))
     (home-page "https://cran.r-project.org/package=SATS")
-    (synopsis "Signature Analyzer for Targeted Sequencing")
+    (synopsis "Signature Analyzer for Targeted Sequencing (SATS)")
     (description
-     "SATS stands for Signature Analyzer for Targeted Sequencing and performs
-mutational signature analysis for targeted sequenced tumors.  Unlike the
-canonical analysis of mutational signatures, SATS factorizes the mutation counts
-matrix into a panel context matrix (measuring the size of the targeted sequenced
-genome for each tumor in the unit of million base pairs (Mb)), a signature
-profile matrix, and a signature activity matrix.  SATS also calculates the
-expected number of mutations attributed by a signature, namely signature burden,
-for each targeted sequenced tumor.  For more details see Lee et al. (2024)
-<doi:10.1101/2023.05.18.23290188>.")
+     "This package performs mutational signature analysis for tumors profiled by
+targeted sequencing.  Unlike the canonical analysis of mutational signatures,
+SATS factorizes the mutation count matrix into a panel-context matrix (measuring
+the number of mutation opportunities per million base pairs for each tumor), a
+signature profile matrix, and a signature activity matrix.  SATS also calculates
+the expected number of mutations attributed to each signature, namely the
+signature burden, for each tumor profiled by targeted sequencing.  For more
+details see Lee et al. (2024) <doi:10.1101/2023.05.18.23290188>.")
     (license license:gpl2)))
 
 (define-public r-satres
@@ -80210,6 +80349,33 @@ approaches, and optimized diversity metricâbased selection methods.  See th
 package documentation for more, including full list of references for the
 methods implemented.")
     (license license:gpl2+)))
+
+(define-public r-sample
+  (package
+    (name "r-sample")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SAMPLE" version))
+       (sha256
+        (base32 "0vw93g0lw9g6wba3ap39qh9b6v8ybkr3mada0h8gk5wkrzlwm3c2"))))
+    (properties `((upstream-name . "SAMPLE")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rmisc r-rcolorbrewer r-magrittr r-ggplot2
+                             r-dplyr))
+    (home-page "https://github.com/yacinebenchehida/SAMPLE")
+    (synopsis "Estimate Sampling Effort for Species Occurrence Rates")
+    (description
+     "Estimates the sampling effort needed to obtain stable species occurrence and
+prevalence rates from presence-absence data.  The method repeatedly subsamples
+observations, evaluates changes in estimated rates, and reports the minimum
+stable sample size.  For methodological details, see Bravo et al. (2025)
+<doi:10.1002/ece3.70998>.")
+    (license license:expat)))
 
 (define-public r-sampcompr
   (package
