@@ -8116,28 +8116,36 @@ estimators and functions for diagnostics of their finite-sample performance.")
 (define-public r-estimatr
   (package
     (name "r-estimatr")
-    (version "1.0.6")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "estimatr" version))
        (sha256
-        (base32 "1yf6srvysl2j00jc1mgywr1bdvv9jcvhwrp09cq4cjzyaq7f2hsd"))))
+        (base32 "1y6kg5qqfkbkx93v2baw67vfrnyfr7qdv75gvx9sdcf5wvr261bk"))))
     (properties `((upstream-name . "estimatr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang r-rcppeigen r-rcpp r-generics r-formula))
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-rcppeigen
+                             r-rcpp
+                             r-generics
+                             r-formula))
+    (native-inputs (list r-knitr))
     (home-page "https://declaredesign.org/r/estimatr/")
     (synopsis "Fast Estimators for Design-Based Inference")
     (description
-     "Fast procedures for small set of commonly-used, design-appropriate estimators
+     "Fast procedures for a small set of commonly-used, design-appropriate estimators
 with robust standard errors and confidence intervals.  Includes estimators for
 linear regression, instrumental variables regression, difference-in-means,
 Horvitz-Thompson estimation, and regression improving precision of experimental
 estimates by interacting treatment with centered pre-treatment covariates
-introduced by Lin (2013) <doi:10.1214/12-AOAS583>.")
+introduced by Lin (2013) <doi:10.1214/12-AOAS583>.  Fixed effects are absorbed
+by alternating projections rather than by dummy expansion, and Horvitz-Thompson
+variance is computed from the randomization declaration.")
     (license license:expat)))
 
 (define-public r-estimators
@@ -13252,13 +13260,13 @@ on network and epidemic parameters, given epidemic data.")
 (define-public r-epimodel
   (package
     (name "r-epimodel")
-    (version "2.6.1")
+    (version "2.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EpiModel" version))
        (sha256
-        (base32 "090jh0jiwkkp4hp2ksa2knb5yz2f5ddhwcr9l903jplbmpq6p3zl"))))
+        (base32 "1yi8p5c22qsll18267vsrji0lvf9bxmsr63s6psx65fa9h1z302z"))))
     (properties `((upstream-name . "EpiModel")))
     (build-system r-build-system)
     (arguments
@@ -18419,26 +18427,26 @@ dependencies.")
 (define-public r-emaxnls
   (package
     (name "r-emaxnls")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "emaxnls" version))
        (sha256
-        (base32 "1sqcwy1344zmw9f71xb59m8rzficl148sbf2xaa3d154dc85d1zi"))))
+        (base32 "1xaj0lr743c1v2mhcs5npbd3v9ava8fxv5y0k1hxzc82jv638vdy"))))
     (properties `((upstream-name . "emaxnls")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble r-rlang r-mvtnorm r-minpack-lm r-deriv))
+    (propagated-inputs (list r-rlang r-mvtnorm r-minpack-lm r-deriv))
     (home-page "https://github.com/djnavarro/emaxnls")
     (synopsis "Nonlinear Least Squares Estimation for Emax Regression Models")
     (description
      "This package provides estimation and covariate selection tools for Emax
-regression models using nonlinear least squares methods.  Supported optimization
+regression models using nonlinear least squares methods.  Supported optimisation
 algorithms are Gauss-Newton, Levenberg-Marquardt, and the port library for
-bounded optimization.  The package also provides tools to assist in simulation
+bounded optimisation.  The package also provides tools to assist in simulation
 work using Emax regression.")
     (license license:expat)))
 

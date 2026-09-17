@@ -5197,32 +5197,27 @@ the national project BOREAS (PID2022-140673OA-I00).  See LledÃ³ et al. (2019)
 (define-public r-cshshydrology
   (package
     (name "r-cshshydrology")
-    (version "1.5.0")
+    (version "1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CSHShydRology" version))
        (sha256
-        (base32 "1slanprnmqcxv00nlh9xh86n4w94mg8f2nkbpd2d2kpcg7f4bysh"))))
+        (base32 "04q1wv475916z8mrjm8bpwrgzp04a8v14xp5q3f0dx3klxyy3vv4"))))
     (properties `((upstream-name . "CSHShydRology")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-whitebox
-                             r-timedate
-                             r-tidyterra
-                             r-tidyhydat
-                             r-terra
+    (propagated-inputs (list r-timedate
                              r-teachingdemos
                              r-stringr
+                             r-scales
                              r-plotrix
                              r-outliers
                              r-mgbt
                              r-lubridate
                              r-kendall
-                             r-httr2
-                             r-ggspatial
                              r-ggplot2
                              r-fields
                              r-dplyr
@@ -12561,20 +12556,20 @@ methods in Chianucci et al. (2022) <doi:10.1007/s00468-018-1666-3>.")
 (define-public r-cover
   (package
     (name "r-cover")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "COveR" version))
        (sha256
-        (base32 "1didrpz284xdsq55j8sfg6ibx1g4k9m3dgfvx1798hgcr0n44hn0"))))
+        (base32 "0kalz7shag827nhh49xxybxq2mgwqigxyxhxkqxspaakil74ha4r"))))
     (properties `((upstream-name . "COveR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list gsl))
-    (home-page "https://cran.r-project.org/package=COveR")
+    (home-page "https://github.com/Neplex/COveR")
     (synopsis "Clustering with Overlaps")
     (description
      "Provide functions for overlaps clustering, fuzzy clustering and interval-valued
@@ -12904,13 +12899,13 @@ packages into a target R version using pak'.  Includes a Shiny dashboard
 (define-public r-couplr
   (package
     (name "r-couplr")
-    (version "1.6.1")
+    (version "1.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "couplr" version))
        (sha256
-        (base32 "1yi6q5v39cmxs6rhaxzmnywniddcf35lja5gfra18xdjx5d5bbbq"))))
+        (base32 "1fmbx0jz40nr19i6s4gi4c0n7li0gwsyaj96xh57x5mcpn1mrfis"))))
     (properties `((upstream-name . "couplr")))
     (build-system r-build-system)
     (arguments
@@ -19660,36 +19655,33 @@ downloaded from <https://shop.acer.org/acer-conquest-5.html>.")
 (define-public r-conover-test
   (package
     (name "r-conover-test")
-    (version "1.1.7")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "conover.test" version))
        (sha256
-        (base32 "1sdcs7g67pkx2flnjdg5fgik5p2gsw0x0swqzfzlkg2k17bhvw5i"))))
+        (base32 "02p7dsc72vdyyks5902qjl2vqhdfbpk8dl2in65amfzhzvw8971p"))))
     (properties `((upstream-name . "conover.test")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang))
+    (propagated-inputs (list r-scrutiny r-rlang))
     (home-page "https://cran.r-project.org/package=conover.test")
     (synopsis "Conover-Iman Test of Multiple Comparisons Using Rank Sums")
     (description
-     "Computes the Conover-Iman test (1979) for 0th-order stochastic dominance and
-reports the results among multiple pairwise comparisons after a Kruskal-Wallis
-omnibus test for i0th-order stochastic dominance among k groups (Kruskal and
-Wallis, 1952).  conover.test makes k(k-1)/2 multiple pairwise comparisons based
-on Conover-Iman t-test-statistic of the rank differences.  The null hypothesis
-for each pairwise comparison is that the probability of observing a randomly
-selected value from the first group that is larger than a randomly selected
-value from the second group equals one half; this null hypothesis corresponds to
-that of the Wilcoxon-Mann-Whitney rank-sum test.  Like the rank-sum test, if the
-data can be assumed to be continuous, and the distributions are assumed
-identical except for a difference in location, Conover-Iman test may be
-understood as a test for median difference and for mean difference.
-conover.test accounts for tied ranks.  The Conover-Iman test is strictly valid
-if and only if the corresponding Kruskal-Wallis null hypothesis is rejected.")
+     "Computes the Conover-Iman test (1979) for stochastic superiority and reports the
+results among multiple pairwise comparisons after a Kruskal-Wallis omnibus test
+for stochastic superiority among k groups (Kruskal and Wallis, 1952).
+conover.test makes k(k-1)/2 multiple pairwise comparisons based on Conover-Iman
+t-test-statistic of the rank differences.  The null hypothesis for each pairwise
+comparison is that the probability of observing a randomly selected value from
+the first group that is larger than a randomly selected value from the second
+group equals one half; this null hypothesis corresponds to that of the
+Wilcoxon-Mann-Whitney rank-sum test.  conover.test accounts for tied ranks.  The
+Conover-Iman test is strictly valid if and only if the corresponding
+Kruskal-Wallis null hypothesis is rejected.")
     (license license:gpl2)))
 
 (define-public r-connmattools
@@ -27245,13 +27237,13 @@ Cap <https://coinmarketcap.com/api/>.")
 (define-public r-coinclp
   (package
     (name "r-coinclp")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coinclp" version))
        (sha256
-        (base32 "0lnpq475sapvxd41bzqf3i5wqh6abbq8dyx5yqr2xkvg6ad3k6av"))))
+        (base32 "0sncd2xga4blj2ipfg6qyv4k5859dcmjk7pqc5mgwlh14dayaq3a"))))
     (properties `((upstream-name . "coinclp")))
     (build-system r-build-system)
     (arguments
@@ -27269,7 +27261,7 @@ bindings to the Clp callable library covering problem construction, warm starts,
 presolve options, basis access and MPS files.  A compatibility layer reproduces
 the interface of the archived @code{clpAPI} package so that existing code keeps
 working.  Clp itself is not bundled and must be installed on the system; the
-Rtools toolchain supplies it on Windows'.")
+Rtools toolchain supplies it on Windows', from Rtools 4.3 on.")
     (license (license:fsdg-compatible "EPL"))))
 
 (define-public r-coimp
@@ -42808,25 +42800,19 @@ reproducible child language research.  The CHILDES database is maintained at
 (define-public r-childesr
   (package
     (name "r-childesr")
-    (version "0.2.3")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "childesr" version))
        (sha256
-        (base32 "1a58s0zph4mfmh9sdfbv7yaa20lx5gi0mca0ikzarfwxjl5knp39"))))
+        (base32 "15278k9rm8i4svaws83f6z4mwxhf14n8gl34glnccgj4insw0281"))))
     (properties `((upstream-name . "childesr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rmysql
-                             r-purrr
-                             r-magrittr
-                             r-jsonlite
-                             r-dplyr
-                             r-dbplyr
-                             r-dbi))
+    (propagated-inputs (list r-rlang r-purrr r-magrittr r-jsonlite r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/langcog/childesr")
     (synopsis "Accessing the 'CHILDES' Database")
@@ -42926,13 +42912,13 @@ package.")
 (define-public r-chevron
   (package
     (name "r-chevron")
-    (version "0.2.13")
+    (version "0.2.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chevron" version))
        (sha256
-        (base32 "1ih9x949z2wjc9a458ik3jgd0fn49lm97cd2fsnnxj53mb5r34gx"))))
+        (base32 "0dmlj38pzmrh55308f4dzlyhjp1ck1xn7y74ik06i7l3g3byfg4p"))))
     (properties `((upstream-name . "chevron")))
     (build-system r-build-system)
     (arguments
@@ -44567,13 +44553,13 @@ package URL for the User's Guide and application examples.")
 (define-public r-characterization
   (package
     (name "r-characterization")
-    (version "3.0.1")
+    (version "4.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Characterization" version))
        (sha256
-        (base32 "077qfmlhf5k0b4dpd8bpm3v94kbm5lv92vlk34ap8sr6gly0kz8z"))))
+        (base32 "08qsk92gkl87b5kmawsr5an2ifn80d3my5aqlhx3j55pxzkagw87"))))
     (properties `((upstream-name . "Characterization")))
     (build-system r-build-system)
     (arguments
@@ -48798,31 +48784,6 @@ general longitudinal multilevel datasets.")
 different levels of gene expression.  Multi-component normal mixture models and
 EM algorithms are used for modeling.")
     (license license:asl2.0)))
-
-(define-public r-cec
-  (package
-    (name "r-cec")
-    (version "0.12.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CEC" version))
-       (sha256
-        (base32 "07xfn53rw59cb07wiy8fxz9pdprbyjzqzildpxqbi41f3d16wf76"))))
-    (properties `((upstream-name . "CEC")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://github.com/swarm-lab/cec")
-    (synopsis "Cross-Entropy Clustering")
-    (description
-     "Splits data into Gaussian type clusters using the Cross-Entropy Clustering
-('CEC') method.  This method allows for the simultaneous use of various types of
-Gaussian mixture models, for performing the reduction of unnecessary clusters,
-and for discovering new clusters by splitting them.  CEC is based on the work of
-Spurek, P. and Tabor, J. (2014) <doi:10.1016/j.patcog.2014.03.006>.")
-    (license license:gpl3)))
 
 (define-public r-ceblr
   (package
@@ -57044,13 +57005,13 @@ cancer rates over time.")
 (define-public r-cansim
   (package
     (name "r-cansim")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cansim" version))
        (sha256
-        (base32 "0z21mc1s4xgfidmy8qs6xsrixvgp4f01aapg8n8bv9mqq0i2pl1v"))))
+        (base32 "1cjzsc3927wn9q4635fb3kfdfpsq6j63cn3b72grv5k97z3rzx0j"))))
     (properties `((upstream-name . "cansim")))
     (build-system r-build-system)
     (arguments

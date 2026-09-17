@@ -8524,31 +8524,6 @@ reporting graphics.  Body surface area calculations are based on Du Bois and Du
 Bois (1916) <doi:10.1001/archinte.1916.00080130010002>.")
     (license license:expat)))
 
-(define-public r-hint
-  (package
-    (name "r-hint")
-    (version "0.1-3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "hint" version))
-       (sha256
-        (base32 "00ppz8009cp0wbkmrxdg8x9jjqqb803bl6ki13hsqz07aya0j4iy"))))
-    (properties `((upstream-name . "hint")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://github.com/alextkalinka/hint")
-    (synopsis
-     "Tools for Hypothesis Testing Based on Hypergeometric Intersection Distributions")
-    (description
-     "Hypergeometric Intersection distributions are a broad group of distributions
-that describe the probability of picking intersections when drawing
-independently from two (or more) urns containing variable numbers of balls
-belonging to the same n categories. <@code{arXiv:1305.0717>}.")
-    (license license:gpl2+)))
-
 (define-public r-hindexcalculator
   (package
     (name "r-hindexcalculator")

@@ -805,20 +805,19 @@ models using the methodology presented in Basu (2025)
 (define-public r-ouwie
   (package
     (name "r-ouwie")
-    (version "3.0.2")
+    (version "3.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OUwie" version))
        (sha256
-        (base32 "1sdp095sr9d7ylzsqla827p82hh8fz8i7333y9897s7j68wpjpjf"))))
+        (base32 "1jz67phfhl76id73f0v6gdgxp3iinf8b3hrr5viyzrmwsd5dcc9x"))))
     (properties `((upstream-name . "OUwie")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-reshape2
-                             r-rcolorbrewer
+    (propagated-inputs (list r-rcolorbrewer
                              r-phytools
                              r-phylolm
                              r-phangorn
@@ -829,7 +828,6 @@ models using the methodology presented in Basu (2025)
                              r-lhs
                              r-interp
                              r-igraph
-                             r-ggplot2
                              r-gensa
                              r-geiger
                              r-expm
@@ -15037,13 +15035,13 @@ stored in a MS SQL Server database.  For more details see Marcon (2021)
 (define-public r-odbc
   (package
     (name "r-odbc")
-    (version "1.7.0")
+    (version "1.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "odbc" version))
        (sha256
-        (base32 "17kxdxgds8n667b6164v5xq2kjw4bks4pfy4cjpial6qaqhdrd3y"))))
+        (base32 "0km8ypbqr4mn0wy40rprvx8svr2rqyjx4km0cjmzgisqlqmvf892"))))
     (properties `((upstream-name . "odbc")))
     (build-system r-build-system)
     (arguments

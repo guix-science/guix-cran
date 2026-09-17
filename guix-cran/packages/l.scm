@@ -1788,13 +1788,13 @@ Sobrino JA, Jimenez-Munoz JC, Soria G, Julien Y, Mattar C, CristÃ³bal J. (2014
 (define-public r-lssdoc
   (package
     (name "r-lssdoc")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lssdoc" version))
        (sha256
-        (base32 "1lggfpi3n1l29bq1i5bhhlvz312yrazg5mrym0jgrdjk1y0rqwfr"))))
+        (base32 "1ljqw2vbncdzvlfsf4c6dbfkwj0zymyqd00vqf62ylzzpcwldhnh"))))
     (properties `((upstream-name . "lssdoc")))
     (build-system r-build-system)
     (arguments
@@ -1803,17 +1803,19 @@ Sobrino JA, Jimenez-Munoz JC, Soria G, Julien Y, Mattar C, CristÃ³bal J. (2014
     (propagated-inputs (list r-xml2 r-rlang r-lifecycle r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://amaltawfik.github.io/lssdoc/")
-    (synopsis
-     "Render 'LimeSurvey' '.lss' Questionnaires as Word and PDF Documents")
+    (synopsis "'LimeSurvey' '.lss' Questionnaires to and from Word Documents")
     (description
-     "Render @code{LimeSurvey} .lss survey exports as questionnaire documents in Word
-('.docx') or PDF, displaying one to four languages side by side with localized
-chrome in English, French, German, Spanish and Italian.  Includes a rule-based
-automated audit that flags missing translations, forward filter references,
-duplicate codes, array-scale inconsistencies and orphan structural references.
-Designed for anyone working with a @code{LimeSurvey} survey: researchers,
-methodologists, ethics committees, translators and reviewers.  Processing is
-fully local: the source file is the only input and no questionnaire content is
+     "Turn a @code{LimeSurvey} .lss survey export into a publication-quality
+questionnaire document in Word ('.docx') or PDF, with up to four of the survey's
+own languages side by side.  Every label the package adds around that content --
+column headers, type names, the audit section -- is written in English, French,
+German, Spanish or Italian, whatever the survey languages are.  A rule-based
+audit flags missing translations, forward filter references, duplicate codes,
+array-scale inconsistencies and orphan structural references.  Questionnaires
+travel the other way too: describe one in R, or fill in a Word form, and write a
+.lss file ready to import.  Meant for the people who work on questionnaires --
+researchers, methodologists, ethics committees, translators and reviewers -- and
+fully local: the source file is the only input, and no questionnaire content is
 uploaded to a third-party service.")
     (license license:expat)))
 
@@ -3214,13 +3216,13 @@ arboreal plants.")
 (define-public r-lpl
   (package
     (name "r-lpl")
-    (version "0.15")
+    (version "0.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lpl" version))
        (sha256
-        (base32 "02vld6yswl5vymcj88mjbkr6i4m3awarrzvk1f80hmy1izm9qw2z"))))
+        (base32 "0pcbjw8s578kl1ala7kca6vxacjl68zy4xz17qhbrb6cb6a6nmvq"))))
     (properties `((upstream-name . "lpl")))
     (build-system r-build-system)
     (arguments
@@ -16851,13 +16853,13 @@ single map.")
 (define-public r-leaflet-extras2
   (package
     (name "r-leaflet-extras2")
-    (version "1.3.3")
+    (version "1.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "leaflet.extras2" version))
        (sha256
-        (base32 "038988yw94yi40f0v49wcfqgxlyasppvh2x7bw7qcb309mzsqxa3"))))
+        (base32 "1i0760j7ka9wyq3qbda0z8n4qd57p29918q14fikqkg2r786mwyp"))))
     (properties `((upstream-name . "leaflet.extras2")))
     (build-system r-build-system)
     (arguments
@@ -16891,13 +16893,13 @@ leaflet package.")
 (define-public r-leaflet-extras
   (package
     (name "r-leaflet-extras")
-    (version "2.0.2")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "leaflet.extras" version))
        (sha256
-        (base32 "0k26wzn26fr30ygs8b8qvd9cyg35x6mg243n5xak1wh2kw6igpnl"))))
+        (base32 "1s98p4vqy7fx1r57gwza06kqr9g3882grz73z3a7zny7j6hmljkl"))))
     (properties `((upstream-name . "leaflet.extras")))
     (build-system r-build-system)
     (arguments
@@ -16905,7 +16907,7 @@ leaflet package.")
       #:tests? #f))
     (propagated-inputs (list r-stringr r-magrittr r-leaflet r-htmlwidgets
                              r-htmltools))
-    (home-page "https://github.com/sebastien-plutniak/leaflet.extras")
+    (home-page "https://github.com/trafficonese/leaflet.extras")
     (synopsis "Extra Functionality for 'leaflet' Package")
     (description
      "The leaflet @code{JavaScript} library provides many plugins some of which are
@@ -16919,13 +16921,13 @@ plugins.")
 (define-public r-leaflegend
   (package
     (name "r-leaflegend")
-    (version "1.2.8")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "leaflegend" version))
        (sha256
-        (base32 "1ph5sly720rcqkya0hzzqamciw8527kp2l924rqfmfzlknmaf0k9"))))
+        (base32 "0cz2y7avdkfa4zjk9fh01vnll15lqnxgj5jh2cw1wl27bxy1c8l9"))))
     (properties `((upstream-name . "leaflegend")))
     (build-system r-build-system)
     (arguments

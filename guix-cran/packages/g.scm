@@ -28,7 +28,6 @@
   #:use-module (gnu packages ssh)
   #:use-module (gnu packages tls)
   #:use-module (gnu packages pcre)
-  #:use-module (gnu packages sqlite)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -16623,13 +16622,13 @@ described in Friedman et al. (2010) <doi:10.18637/jss.v033.i01> and Simon et al.
 (define-public r-glmnetr
   (package
     (name "r-glmnetr")
-    (version "0.6-3")
+    (version "0.6-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmnetr" version))
        (sha256
-        (base32 "15w7wxaipnczja1gqidpk7fka21ls7b1jrp9dlkdn71yc9mrg9c0"))))
+        (base32 "0f8nh8vxri6mlivssvikgywim2fj3l3xqahfly3gyw0hr1xx91gv"))))
     (properties `((upstream-name . "glmnetr")))
     (build-system r-build-system)
     (arguments
@@ -16642,13 +16641,16 @@ described in Friedman et al. (2010) <doi:10.18637/jss.v033.i01> and Simon et al.
     (propagated-inputs (list r-xgboost
                              r-torch
                              r-survival
-                             r-smoof
                              r-rpart
                              r-randomforestsrc
-                             r-paramhelpers
-                             r-mlrmbo
+                             r-proc
+                             r-paradox
+                             r-mlr3mbo
                              r-matrix
+                             r-lgr
                              r-glmnet
+                             r-dicekriging
+                             r-bbotk
                              r-aorsf))
     (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=glmnetr")
@@ -21565,13 +21567,13 @@ knitr and shiny integration allowing the user to use ggsql in both frameworks.")
 (define-public r-ggspectra
   (package
     (name "r-ggspectra")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggspectra" version))
        (sha256
-        (base32 "0hsy6lnjg0r13igwivhvfghaz7x7f5dnljvg40x5gdxf331g57az"))))
+        (base32 "0ydjfjkwrrfgvlhvcliwnazq2yvzqnhqn123rfvkxijiahp30xj7"))))
     (properties `((upstream-name . "ggspectra")))
     (build-system r-build-system)
     (arguments
@@ -23137,13 +23139,13 @@ the required Chart Data instead of exporting it from the Monolix gui.")
 (define-public r-ggplotplus
   (package
     (name "r-ggplotplus")
-    (version "0.5.6")
+    (version "0.5.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggplotplus" version))
        (sha256
-        (base32 "1npjadmr25v06192hz8hnxhzgqybrinwzrv0qd4bsqklh22wv957"))))
+        (base32 "1h8dc000avdqp0s3pbd29wrvwn64dranp290as63za1xp7j1z8b3"))))
     (properties `((upstream-name . "ggplotplus")))
     (build-system r-build-system)
     (arguments
@@ -24044,6 +24046,41 @@ when both predictor and response have uncertainty attached to them and also when
 covariance within the predictor, within the response and between the predictor
 and the response is present.  Base on the results published in guide ISO/TS
 28037 (2010) <https://www.iso.org/standard/44473.html>.")
+    (license license:gpl2+)))
+
+(define-public r-ggmosaic2
+  (package
+    (name "r-ggmosaic2")
+    (version "0.5.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggmosaic2" version))
+       (sha256
+        (base32 "0d21c70z6yrq48sranbhxh9srhsbgdbl8xj9fz0zdiizn5kg4r88"))))
+    (properties `((upstream-name . "ggmosaic2")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-tidyr
+                             r-scales
+                             r-rlang
+                             r-purrr
+                             r-productplots
+                             r-plotly
+                             r-ggrepel
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://friendly.github.io/ggmosaic2/")
+    (synopsis "Mosaic Plots in the 'ggplot2' Framework, Extended")
+    (description
+     "Mosaic plots in the ggplot2 framework.  Mosaic plot functionality is provided in
+a single ggplot2 layer by calling the geom mosaic'.  This extends the
+now-defunct ggmosaic package by allowing fitted loglinear models which can be
+used to show patterns of association among variables in frequency tables.")
     (license license:gpl2+)))
 
 (define-public r-ggmncv
@@ -32366,13 +32403,13 @@ for mapping and spatial analysis.  Runfola et al. (2020)
 (define-public r-geobayes
   (package
     (name "r-geobayes")
-    (version "0.7.7")
+    (version "0.7.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geoBayes" version))
        (sha256
-        (base32 "0faawsvaq2zsf8hs2c3vhiaq8iisba20nh7prv1r8dn6gca33dzv"))))
+        (base32 "088zky5maavz1pr1gcw0284vvzxskl62ikngxcw8igycgyxxvq8r"))))
     (properties `((upstream-name . "geoBayes")))
     (build-system r-build-system)
     (arguments
@@ -32441,13 +32478,13 @@ functionality and @code{JavaScript} bindings to consume @code{GeoParquet}
 (define-public r-geoarrow
   (package
     (name "r-geoarrow")
-    (version "0.4.3")
+    (version "0.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geoarrow" version))
        (sha256
-        (base32 "1a1fmk1afdlmiwxr4mp1r8ax1zsqqrm1prv3jpi90f0am6n19jys"))))
+        (base32 "0b9ysah6xmxsdij2p5x5kvhvihg7iqr4b3n7a0hrp6s2ipw0zg4x"))))
     (properties `((upstream-name . "geoarrow")))
     (build-system r-build-system)
     (arguments
@@ -32936,13 +32973,13 @@ composable with the default layers.")
 (define-public r-genpca
   (package
     (name "r-genpca")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "genpca" version))
        (sha256
-        (base32 "18axadj5w7gc4lmx9ihaw7s1q2faypzn38mc8s9g38ci9d4b21ab"))))
+        (base32 "1ykr2cw83xp6pmqxlqkr67qqnrvi8dhl9z6pkn3ss2ja53b99aps"))))
     (properties `((upstream-name . "genpca")))
     (build-system r-build-system)
     (arguments
@@ -37190,49 +37227,6 @@ the use of simple, lightweight objects for holding raw data.  Currently, only
 minimal S3 class interfaces have been implemented for selected R objects that
 contain spatial data.  gdalraster may be useful in applications that need
 scalable, low-level I/O, or prefer a direct GDAL API.")
-    (license license:expat)))
-
-(define-public r-gdalcubes
-  (package
-    (name "r-gdalcubes")
-    (version "0.7.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gdalcubes" version))
-       (sha256
-        (base32 "0agbh485yqgp4gmdf1a10dlfnkhrjmykb641iwyz8f0dl5rmr1jq"))))
-    (properties `((upstream-name . "gdalcubes")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list zlib
-                  sqlite
-                  proj
-                  pcre2
-                  openssl
-                  openssh
-                  netcdf
-                  gdal
-                  curl))
-    (propagated-inputs (list r-rcpp r-ncdf4 r-jsonlite r-bh))
-    (native-inputs (list pkg-config r-knitr))
-    (home-page "https://github.com/appelmar/gdalcubes")
-    (synopsis "Earth Observation Data Cubes from Satellite Image Collections")
-    (description
-     "Processing collections of Earth observation images as on-demand multispectral,
-multitemporal raster data cubes.  Users define cubes by spatiotemporal extent,
-resolution, and spatial reference system and let gdalcubes automatically apply
-cropping, reprojection, and resampling using the Geospatial Data Abstraction
-Library ('GDAL').  Implemented functions on data cubes include reduction over
-space and time, applying arithmetic expressions on pixel band values, moving
-window aggregates over time, filtering by space, time, bands, and predicates on
-pixel values, exporting data cubes as @code{netCDF} or @code{GeoTIFF} files,
-plotting, and extraction from spatial and or spatiotemporal features.  All
-computational parts are implemented in C++, linking to the GDAL',
-@code{netCDF}', CURL', and SQLite libraries.  See Appel and Pebesma (2019)
-<doi:10.3390/data4030092> for further details.")
     (license license:expat)))
 
 (define-public r-gdadata

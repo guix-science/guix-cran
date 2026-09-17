@@ -18304,13 +18304,13 @@ staying lightweight, having only tinytest as its dependency.")
 (define-public r-tinytable
   (package
     (name "r-tinytable")
-    (version "0.18.0")
+    (version "0.19.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinytable" version))
        (sha256
-        (base32 "0k1j0jzfd1sazrhb45swahsd0w39ph96rfsl9p6k74rc9m2rv9l3"))))
+        (base32 "1n0hwklbqa44226x7sd88cgymanv0akiv6nm9knz9bc6c9s420h7"))))
     (properties `((upstream-name . "tinytable")))
     (build-system r-build-system)
     (arguments
@@ -27233,13 +27233,13 @@ the Smith-Waterman local alignment algorithm suitable for natural language.")
 (define-public r-textreg
   (package
     (name "r-textreg")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "textreg" version))
        (sha256
-        (base32 "0h44z5hyndnvzd9axix7gpmhbdx347dfgxw9r8w38kyw6dklbjy6"))))
+        (base32 "0ac8d5sy9fw4ph40jadsky5f03pl350mffnd2zqcw9ab2h2z4h19"))))
     (properties `((upstream-name . "textreg")))
     (build-system r-build-system)
     (arguments
@@ -30890,13 +30890,13 @@ represented by characters in R, or can themselves be R-expressions or functions.
 (define-public r-templateicar
   (package
     (name "r-templateicar")
-    (version "0.10.0")
+    (version "0.11.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "templateICAr" version))
        (sha256
-        (base32 "1h36hg10kshsyqxym5ihj54n3xmlhxmv4w2awr2chhdh987b5di2"))))
+        (base32 "1ibkja3ssafb27mpf50j6pikhysqaibibyzngsxr6g8rngvzipib"))))
     (properties `((upstream-name . "templateICAr")))
     (build-system r-build-system)
     (arguments
@@ -30911,19 +30911,21 @@ represented by characters in R, or can themselves be R-expressions or functions.
                              r-fmritools
                              r-fmriscrub
                              r-abind))
-    (home-page "https://github.com/mandymejia/templateICAr")
+    (home-page "https://cran.r-project.org/package=BayesBrainMap")
     (synopsis
      "Estimate Brain Networks and Connectivity with ICA and Empirical Priors")
     (description
      "This package implements the template ICA (independent components analysis) model
 proposed in Mejia et al. (2020) <doi:10.1080/01621459.2019.1679638> and the
-spatial template ICA model proposed in proposed in Mejia et al. (2022)
+spatial template ICA model proposed in Mejia et al. (2022)
 <doi:10.1080/10618600.2022.2104289>.  Both models estimate subject-level brain
 as deviations from known population-level networks, which are estimated using
 standard ICA algorithms.  Both models employ an expectation-maximization
 algorithm for estimation of the latent brain networks and unknown model
 parameters.  Includes direct support for CIFTI', GIFTI', and NIFTI neuroimaging
-file formats.")
+file formats.  Note, this package has been deprecated and superseded by
+@code{BayesBrainMap}', which includes model improvements and new names for the
+core functions.")
     (license license:gpl3)))
 
 (define-public r-temperatureresponse

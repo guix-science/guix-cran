@@ -9586,6 +9586,42 @@ references, see the webpage of Aleks Jakulin
 <http://stat.columbia.edu/~jakulin/Int/>.")
     (license license:gpl3)))
 
+(define-public r-integmultireg
+  (package
+    (name "r-integmultireg")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IntegMultiReg" version))
+       (sha256
+        (base32 "1pp543ijvz0cpdd0y21h5mk44km0fzv8i0cwkx11iadpi8m3ask3"))))
+    (properties `((upstream-name . "IntegMultiReg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list gsl))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=IntegMultiReg")
+    (synopsis
+     "Integrative Bayesian Multiple Regression for Multi-Platform Biomarkers")
+    (description
+     "This package provides a Bayesian framework that integrates several regression
+models to identify a parsimonious set of biomarkers shared across disparate data
+platforms (for example genomic, transcriptomic and proteomic assays).  Subjects
+are partitioned into subgroups defined by their pattern of platform
+availability, so that no subject with partially missing platform data is
+excluded, and information is borrowed across subgroups through a Markov random
+field prior on the variable-selection indicators together with non-local
+(product moment) priors on the regression effects.  The methodology was
+introduced for time-to-event outcomes by Chekouo, Stingo, Doecke and Do (2017)
+<doi:10.1111/biom.12587>; this package additionally supports continuous
+(Gaussian) and binary (probit) outcomes.  Posterior inference is carried out by
+a Markov chain Monte Carlo sampler implemented in C for computational
+efficiency.")
+    (license license:gpl3+)))
+
 (define-public r-integirty
   (package
     (name "r-integirty")
@@ -10205,40 +10241,6 @@ place inset maps.  This package provides functions to automatically position
 inset maps based on user-defined parameters, making it extremely easy to create
 maps with inset maps with minimal code.")
     (license license:gpl2+)))
-
-(define-public r-insee
-  (package
-    (name "r-insee")
-    (version "1.1.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "insee" version))
-       (sha256
-        (base32 "0ksh8dbk5856zikvj9h39ckl8brp3bl77m216shg75j2qz36rzld"))))
-    (properties `((upstream-name . "insee")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml2
-                             r-tidyselect
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-rappdirs
-                             r-purrr
-                             r-openssl
-                             r-httr
-                             r-dplyr
-                             r-crayon))
-    (native-inputs (list r-knitr))
-    (home-page "https://pyr-opendatafr.github.io/R-Insee-Data/")
-    (synopsis "Tools to Easily Download Data from INSEE BDM Database")
-    (description
-     "Using embedded sdmx queries, get the data of more than 150 000 insee series from
-bdm macroeconomic database.")
-    (license license:expat)))
 
 (define-public r-insectlabelr
   (package

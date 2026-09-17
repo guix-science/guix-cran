@@ -7158,13 +7158,13 @@ package is based on the reference from the 	paper of Irshad and others (2024,
 (define-public r-frab
   (package
     (name "r-frab")
-    (version "0.0-6")
+    (version "0.0-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "frab" version))
        (sha256
-        (base32 "1w57icar18xfgk4jx5v5b69xn0msjndw13j6kplgvk1q50hryx5c"))))
+        (base32 "01m150yvxz632li2g3bi02bvkwg8d6p7iny3s2ym423ppqd3d87f"))))
     (properties `((upstream-name . "frab")))
     (build-system r-build-system)
     (arguments
@@ -11055,13 +11055,13 @@ interactive introduction, see
 (define-public r-focus
   (package
     (name "r-focus")
-    (version "0.1.9")
+    (version "0.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "focus" version))
        (sha256
-        (base32 "031czprkznxp5bapc56zr7zwvy32z75kncqjkypch1anvjrpka18"))))
+        (base32 "02y5s21hba1wwm3hxwwdmhbkchqpv6qkhvbnr0bb06ackxc9z3fc"))))
     (properties `((upstream-name . "focus")))
     (build-system r-build-system)
     (arguments
@@ -22822,13 +22822,13 @@ the plot of the functional data.")
 (define-public r-fdasrvf
   (package
     (name "r-fdasrvf")
-    (version "2.4.4")
+    (version "2.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fdasrvf" version))
        (sha256
-        (base32 "0970d05wfdlghwpmq780p0m8lj74jd92xn97m03xv1vlhb74q0gy"))))
+        (base32 "1dvj0ykxmp71frgd5n6rl1nx8r5b1mijsnif9z1w9xmgijqddg8m"))))
     (properties `((upstream-name . "fdasrvf")))
     (build-system r-build-system)
     (arguments
@@ -22841,10 +22841,10 @@ the plot of the functional data.")
                              r-rcpp
                              r-mvtnorm
                              r-minpack-lm
+                             r-mgcv
                              r-matrix
                              r-lpsolve
                              r-foreach
-                             r-fields
                              r-doparallel
                              r-coda
                              r-cli))

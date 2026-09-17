@@ -8103,13 +8103,13 @@ create and transform data for customizing arrows.")
 (define-public r-arrg
   (package
     (name "r-arrg")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arrg" version))
        (sha256
-        (base32 "11n0qd51ab8hmm6axzzpx3dg4n43g7fh72x8p3ixbj0k11id02ph"))))
+        (base32 "0blb8lby1h9vg4qvw9ivfpqsz8yj8lfmihih467c3bwpdw9a4lxy"))))
     (properties `((upstream-name . "arrg")))
     (build-system r-build-system)
     (arguments
@@ -8797,6 +8797,38 @@ from relational database connections into compressed text files and streaming
 those text files back into a database without requiring the whole table to fit
 in working memory.")
     (license license:expat)))
+
+(define-public r-arinfolstm
+  (package
+    (name "r-arinfolstm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ARInfoLSTM" version))
+       (sha256
+        (base32 "18qrvl20rkjckklay61clf4cdwnka9c4ipib1ibjds4bxjry5h96"))))
+    (properties `((upstream-name . "ARInfoLSTM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-torch r-ggplot2 r-forecast r-coro r-cli))
+    (home-page "https://cran.r-project.org/package=ARInfoLSTM")
+    (synopsis "ARIMA-Informed LSTM for Time Series Forecasting")
+    (description
+     "This package implements an ARIMA-Informed Long Short-Term Memory (LSTM)
+framework for univariate time series forecasting.  The package integrates
+statistical information extracted from @code{AutoRegressive} Integrated Moving
+Average (ARIMA) models with deep learning-based LSTM architectures to improve
+forecasting accuracy, stability, and interpretability.  Inspired by the
+philosophy of Physics-Informed Machine Learning (PIML), the proposed framework
+incorporates information from classical statistical models into neural network
+learning, creating a hybrid forecasting approach that combines domain knowledge
+with data-driven intelligence.  The methodology is motivated by hybrid
+forecasting framework proposed by Yeasin and Paul (2024)
+<doi:10.1007/s11227-023-05542-3>.")
+    (license license:gpl3)))
 
 (define-public r-arimaann
   (package
@@ -26075,23 +26107,23 @@ complete introduction to the method.")
 (define-public r-admixr2
   (package
     (name "r-admixr2")
-    (version "0.2.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admixr2" version))
        (sha256
-        (base32 "1mq405v46kyfwyq7i88wwsrd8j9plsgzdpfyynq8x8s3dsj76yhw"))))
+        (base32 "02dpmzylxdb05qgdj2bi1ihfizlsbf5dg5z3qa9x89053c3swjbq"))))
     (properties `((upstream-name . "admixr2")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rxode2
+    (propagated-inputs (list r-symengine
+                             r-rxode2
                              r-rcppeigen
                              r-rcpp
                              r-randtoolbox
-                             r-qs2
                              r-nloptr
                              r-nlmixr2est
                              r-digest
@@ -26101,13 +26133,13 @@ complete introduction to the method.")
     (synopsis "Aggregate Data Modelling")
     (description
      "Fit pharmacokinetic/pharmacodynamic (PK/PD) models to aggregate-level data (mean
-vector and covariance matrix per study) rather than individual-level data.
-Integrates with the nlmixr2'/'rxode2 ecosystem via four estimation methods: a
-First-Order ('FO') analytical estimator, a Monte Carlo (MC) estimator, a
-Gauss-Hermite quadrature ('GH') estimator, and an Iterative Reweighting Monte
-Carlo ('IRMC') estimator.  Methods are based on VÃ¤litalo (2021)
-<doi:10.1007/s10928-021-09760-1>; software described in van de Beek et al.
-(2025) <doi:10.1007/s10928-025-10011-w>.")
+vector and covariance matrix per study) rather than individual-level data, for
+meta-analysis across studies.  Integrates with the nlmixr2'/'rxode2 ecosystem
+via four estimation methods: a First-Order ('FO') analytical estimator, a Monte
+Carlo (MC) estimator, a Gauss-Hermite quadrature ('GH') estimator, and an
+Iterative Reweighting Monte Carlo ('IRMC') estimator.  Methods are based on
+VÃ¤litalo (2021) <doi:10.1007/s10928-021-09760-1>; software described in van de
+Beek et al. (2025) <doi:10.1007/s10928-025-10011-w>.")
     (license license:gpl3+)))
 
 (define-public r-admixr
@@ -28008,6 +28040,34 @@ Connectivity ('ADBC') SQLite driver for the purposes of building high-level
 database interfaces for users.  ADBC <https://arrow.apache.org/adbc/> is an API
 standard for database access libraries that uses Arrow for result sets and query
 parameters.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
+(define-public r-adbcpostgresql
+  (package
+    (name "r-adbcpostgresql")
+    (version "0.24.0-2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "adbcpostgresql" version))
+       (sha256
+        (base32 "1s9k8spqbcnsd31znc3ngd9lgazppl4d30pxn8vdznzna93vkqml"))))
+    (properties `((upstream-name . "adbcpostgresql")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list zlib openssl))
+    (propagated-inputs (list r-adbcdrivermanager))
+    (native-inputs (list pkg-config))
+    (home-page "https://arrow.apache.org/adbc/current/r/adbcpostgresql/")
+    (synopsis "'Arrow' Database Connectivity ('ADBC') 'PostgreSQL' Driver")
+    (description
+     "This package provides a developer-facing interface to the Arrow Database
+Connectivity ('ADBC') @code{PostgreSQL} driver for the purposes of building
+high-level database interfaces for users.  ADBC <https://arrow.apache.org/adbc/>
+is an API standard for database access libraries that uses Arrow for result sets
+and query parameters.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-adasampling

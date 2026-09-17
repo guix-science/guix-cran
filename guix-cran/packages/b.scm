@@ -7742,13 +7742,13 @@ welcomed.")
 (define-public r-boundirt
   (package
     (name "r-boundirt")
-    (version "0.6.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BoundIRT" version))
        (sha256
-        (base32 "0mkb7578ilvqwzgc7ak6xcningniajgh69zy025v2cbw1jhad7j0"))))
+        (base32 "1ws0ld54lyy6qis9gcbv7d8s4bw2mggr9i13dslaxlsh0ilq6psg"))))
     (properties `((upstream-name . "BoundIRT")))
     (build-system r-build-system)
     (arguments
@@ -7763,7 +7763,8 @@ welcomed.")
                              r-rcpp
                              r-mvtnorm
                              r-mass
-                             r-bh))
+                             r-bh
+                             r-bayesplot))
     (home-page "https://cran.r-project.org/package=BoundIRT")
     (synopsis "Fit Bounded Continuous Item Response Theory Models to Data")
     (description
@@ -7782,7 +7783,7 @@ model by Flores et al. (2020)<doi:10.1007/978-3-030-43469-4_8>.  All models can
 be fitted with or without zero-one inflation (Molenaar et al.,
 2022)<doi:10.3102/10769986221108455>.  Model fit comparisons can be conducted
 using the Watanabe-Akaike information criterion (WAIC), leave-one-out
-cross-validation information citerion (LOOIC) and the fully marginalized
+cross-validation information criterion (LOOIC), and the fully marginalized
 likelihood (i.e., Bayes factors).")
     (license license:gpl3)))
 
@@ -9308,13 +9309,13 @@ explanation of the Gaussian case.")
 (define-public r-boom
   (package
     (name "r-boom")
-    (version "0.9.16")
+    (version "0.9.17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Boom" version))
        (sha256
-        (base32 "1514q8rvb4p1j27vff60fc2fcfdja0z67v1l0s5aaxplmy4cl5va"))))
+        (base32 "1ig3s9nm16djpi30dqysm7i6pwqk8myj5gw15cb4wpriv41vf4gg"))))
     (properties `((upstream-name . "Boom")))
     (build-system r-build-system)
     (arguments
@@ -11202,13 +11203,13 @@ Wu et al., (2022) <doi:10.1093/biostatistics/kxac050>.")
 (define-public r-bmm
   (package
     (name "r-bmm")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bmm" version))
        (sha256
-        (base32 "1898bwxicikcqiiy0yncw7qa477sbmrhy1myd2jibbi046dfii9b"))))
+        (base32 "0659my8vhliyaail9xnmfqar42rirgasywsfjrrk0a4shnab8qik"))))
     (properties `((upstream-name . "bmm")))
     (build-system r-build-system)
     (arguments
@@ -11223,7 +11224,7 @@ Wu et al., (2022) <doi:10.1093/biostatistics/kxac050>.")
                              r-crayon
                              r-brms
                              r-bayesplot))
-    (home-page "https://github.com/venpopov/bmm")
+    (home-page "https://github.com/popov-lab/bmm")
     (synopsis "Easy and Accessible Bayesian Measurement Models Using 'brms'")
     (description
      "Fit computational and measurement models using full Bayesian inference.  The
@@ -12239,13 +12240,13 @@ integration methods and optimization routines.")
 (define-public r-blox
   (package
     (name "r-blox")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "blox" version))
        (sha256
-        (base32 "16cchlqawmab9svgraxnq3z1wbyq0q70ym97lm6csz0dlsjima0p"))))
+        (base32 "0z2s0wkhl4ldw3rjpxa9hi6b1kaz15vd0a239qpids68g7hawdvc"))))
     (properties `((upstream-name . "blox")))
     (build-system r-build-system)
     (arguments
@@ -12257,7 +12258,7 @@ integration methods and optimization routines.")
     (description
      "Finds the best block diagonal matrix approximation of a symmetric matrix.  This
 can be exploited for divisive hierarchical clustering using singular vectors,
-named HC-SVD. The method is described in Bauer (202Xa)
+named HC-SVD. The method is described in Bauer (202X)
 <doi:10.48550/@code{arXiv.2308.06820>}.")
     (license license:gpl2+)))
 
@@ -20580,13 +20581,13 @@ as described by Hollenbach JA, Mack SJ, Thomson G, Gourraud PA (2012)
 (define-public r-bigdatastatmeth
   (package
     (name "r-bigdatastatmeth")
-    (version "2.0.5")
+    (version "2.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BigDataStatMeth" version))
        (sha256
-        (base32 "14787p6h2liaz2ji4r9bxnmbnbri85divpczcgm3wp9izwcn06qj"))))
+        (base32 "0jkvxlf12wrcqgsrq91502g3yn0xfq6czzigd4xgbc86hn6zzfj1"))))
     (properties `((upstream-name . "BigDataStatMeth")))
     (build-system r-build-system)
     (arguments

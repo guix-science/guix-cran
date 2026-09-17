@@ -1874,13 +1874,13 @@ Futures, and Other Derivatives (11th ed.)â, 2022, ISBN: 9780136939979).")
 (define-public r-vol2birdr
   (package
     (name "r-vol2birdr")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vol2birdR" version))
        (sha256
-        (base32 "1sxvz1aa2yy74cs3vd9g4bahs8vs1qzvfpj0kxgd60d55ph721cs"))))
+        (base32 "1qivahc88zh7agrk7x17biyq1m28j225mmdc8fbp1yrs11vnj7hq"))))
     (properties `((upstream-name . "vol2birdR")))
     (build-system r-build-system)
     (arguments
@@ -5807,13 +5807,13 @@ Factorization algorithms - Random generators of diferent types of integers.")
 (define-public r-vertexwiser
   (package
     (name "r-vertexwiser")
-    (version "1.5.3")
+    (version "1.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VertexWiseR" version))
        (sha256
-        (base32 "0rx2gvw2i6g86a816xxvvknr6i0bjh982znp7nrxqpz1z9zz7cib"))))
+        (base32 "0c1z6iv4l1j17c07s58y0m399k7gh254jnif0ml50zfav22v3xdp"))))
     (properties `((upstream-name . "VertexWiseR")))
     (build-system r-build-system)
     (arguments
@@ -6874,13 +6874,13 @@ Yashunin (2018) <doi:10.1109/TPAMI.2018.2889473>.")
 (define-public r-vectra
   (package
     (name "r-vectra")
-    (version "0.12.3")
+    (version "0.12.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vectra" version))
        (sha256
-        (base32 "1smahsrkddi6sfm0hy18ijsnc52k82hypmczdbq1g6ysrhqz45y9"))))
+        (base32 "15ld6rnwr2q175nvxh6a5fk7602gzwhwg2dzfc0xgk0r0rdpzism"))))
     (properties `((upstream-name . "vectra")))
     (build-system r-build-system)
     (arguments

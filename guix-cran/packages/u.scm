@@ -4621,13 +4621,13 @@ Equation and Twin Modelling in R. Twin Research and Human Genetics, 22, 27-41.
 (define-public r-umweltapir
   (package
     (name "r-umweltapir")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "umweltapir" version))
        (sha256
-        (base32 "13izlhkmsl5sglxi6iz8pi72xnh20iymxwb61p987cm3921mwc3k"))))
+        (base32 "1kl4h8zp8gqr0s8xjf2jyydhq9r9srry6xcnqkxhdpip2qmrblxw"))))
     (properties `((upstream-name . "umweltapir")))
     (build-system r-build-system)
     (arguments
@@ -5211,13 +5211,13 @@ electric power transmission network) in the UK since 2011.")
 (define-public r-ukfe
   (package
     (name "r-ukfe")
-    (version "2.0.2")
+    (version "2.15.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "UKFE" version))
        (sha256
-        (base32 "1mbk5q1icfgnfm26fjnmfv5wyaslq58744kcv5nn4fnzliwckal6"))))
+        (base32 "180fkcxg7w7rc17847j9r4lx9cq5qina6ccvv7hzph7arhxy9nn1"))))
     (properties `((upstream-name . "UKFE")))
     (build-system r-build-system)
     (arguments
@@ -5230,7 +5230,7 @@ electric power transmission network) in the UK since 2011.")
     (description
      "This package provides functions to implement the methods of the Flood Estimation
 Handbook (FEH), associated updates and the revitalised flood hydrograph model
-(@code{ReFH}).  Currently the package uses NRFA peak flow dataset version 14.
+(@code{ReFH}).  Currently the package uses NRFA peak flow dataset version 15.
 Aside from FEH functionality, further hydrological functions are available.
 Most of the methods implemented in this package are described in one or more of
 the following: \"Flood Estimation Handbook\", Centre for Ecology & Hydrology

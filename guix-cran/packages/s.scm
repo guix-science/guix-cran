@@ -15075,19 +15075,19 @@ return values are checked in order to make them type stable.")
 (define-public r-stevedata
   (package
     (name "r-stevedata")
-    (version "1.8.0")
+    (version "1.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stevedata" version))
        (sha256
-        (base32 "1003xlphg5mzd5xzh8hiyzjxyq3n74kh9fz37xznvs26zjdz4aq4"))))
+        (base32 "1y878s0606gxyx91i7qg1c5wiqnkli7wr9s6p6qin0x4vvwz1q6h"))))
     (properties `((upstream-name . "stevedata")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "http://svmiller.com/stevedata/")
+    (home-page "https://svmiller.com/stevedata/")
     (synopsis
      "Steve's Toy Data for Teaching About a Variety of Methodological, Social, and Political Topics")
     (description
@@ -27867,25 +27867,30 @@ simulation of INAR data.")
 (define-public r-spina
   (package
     (name "r-spina")
-    (version "4.1.0")
+    (version "5.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SPINA" version))
        (sha256
-        (base32 "0x7y150iq072qqci2niqk7j8pvhcylb7kdvwambg1r1gi3ffycm9"))))
+        (base32 "0k1v6n6a2dbmrjnpyvfb9dwqr0300nhk5ah2csxd9j5m6wkcvll0"))))
     (properties `((upstream-name . "SPINA")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "http://spina.sf.net/")
+    (native-inputs (list r-knitr))
+    (home-page "https://spina.sourceforge.net")
     (synopsis "Structure Parameter Inference Approach")
     (description
-     "Calculates constant structure parameters of endocrine homeostatic systems from
-equilibrium hormone concentrations.  Methods and equations have been described
-in Dietrich et al. (2012) <doi:10.1155/2012/351864> and Dietrich et al. (2016)
-<doi:10.3389/fendo.2016.00057>.")
+     "SPINA (Structure Parameter Inference Approach) is a methodology to calculate
+constant structure parameters of endocrine homeostatic systems from steady-state
+hormone and metabolite concentrations.  Methods and equations for thyroid
+homeostasis (SPINA Thyr) have been described in Dietrich et al. (2012)
+<doi:10.1155/2012/351864> and Dietrich et al. (2016)
+<doi:10.3389/fendo.2016.00057>, and for glucose homeostasis (SPINA Carb) in
+Dietrich et al. (2022) <doi:10.1038/s41598-022-22531-3> and Dietrich et al.
+(2024) <doi:10.1111/1753-0407.13525>.")
     (license license:bsd-3)))
 
 (define-public r-spima
@@ -42301,41 +42306,6 @@ package has a heavy emphasis on spatial scan methods, which were first
 introduced by Kulldorff and Nagarwalla (1995) <doi:10.1002/sim.4780140809> and
 Kulldorff (1997) <doi:10.1080/03610929708831995>.")
     (license license:gpl2+)))
-
-(define-public r-smer
-  (package
-    (name "r-smer")
-    (version "0.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "smer" version))
-       (sha256
-        (base32 "1l075m8bslblm6043hpwcyg3vg0sfjx8166rfywpwp1in14xzyb0"))))
-    (properties `((upstream-name . "smer")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-testthat
-                             r-rhdf5lib
-                             r-rcppeigen
-                             r-rcpp
-                             r-mvmapit
-                             r-logging
-                             r-highfive
-                             r-genio
-                             r-dplyr
-                             r-bh))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/lcrawlab/sme")
-    (synopsis "Sparse Marginal Epistasis Test")
-    (description
-     "The Sparse Marginal Epistasis Test is a computationally efficient genetics
-method which detects statistical epistasis in complex traits; see Stamp et al.
-(2025, <doi:10.1101/2025.01.11.632557>) for details.")
-    (license license:expat)))
 
 (define-public r-smdocker
   (package
@@ -73759,13 +73729,13 @@ Iqab011. <doi:10.1093/nargab/lqab011>.")
 (define-public r-sclvalid
   (package
     (name "r-sclvalid")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sclValid" version))
        (sha256
-        (base32 "1viab5pld4vfmws7jr9zdl3br9xfpkkbq0nmnldf1qnl3imy6l0z"))))
+        (base32 "1i1vpn4jxfrdrw5vxrrpd3cw85y48faww9r4n2ph6zzjmqf3qspz"))))
     (properties `((upstream-name . "sclValid")))
     (build-system r-build-system)
     (arguments
@@ -73789,12 +73759,17 @@ Iqab011. <doi:10.1093/nargab/lqab011>.")
     (home-page "https://cran.r-project.org/package=sclValid")
     (synopsis "Ensemble Validation and Ranking of Clustering Methods")
     (description
-     "This package provides tools for clustering, validation, and ranking of
-single-cell RNA sequencing data.  The package implements multiple clustering
-approaches, a collection of internal, external, and stability-based validation
-measures, and rank aggregation for comparing clustering solutions.  User-defined
-clustering functions can also be incorporated into the validation framework.
-Methods are based in part on Visser and Datta (2025) <doi:10.1002/sim.70331>.")
+     "This package provides methods for evaluating and comparing clustering results,
+with an emphasis on sample-level clustering where observations are treated as
+the units being clustered and perturbation is performed by removing samples.
+The package implements internal, stability, and external validation measures and
+supports the comparison and ranking of clustering procedures across tuning
+parameter choices.  It is conceptually related to the @code{clValid} package,
+which assesses clustering stability by perturbing features; in contrast, this
+package focuses on perturbing the samples being clustered, making the validation
+framework suitable for applications such as single-cell clustering where samples
+or cells are the primary units of interest.  Methods are based in part on Visser
+and Datta (2025) <doi:10.1002/sim.70331>.")
     (license license:gpl3+)))
 
 (define-public r-sclust
@@ -74046,6 +74021,49 @@ indicator, and knapsack constraints with continuous, binary, and integer
 variables.  Includes a one-shot solver interface and a model-building API for
 incremental problem construction.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
+(define-public r-scintruler
+  (package
+    (name "r-scintruler")
+    (version "0.99.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SCIntRuler" version))
+       (sha256
+        (base32 "0h90cdy8iavhjzcb5ghya4g6vwfk7i45hlw380kaa8x4b8igzmrw"))))
+    (properties `((upstream-name . "SCIntRuler")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-summarizedexperiment
+                             r-singlecellexperiment
+                             r-seuratobject
+                             r-seurat
+                             r-rcpp
+                             r-matrixgenerics
+                             r-matrix
+                             r-magrittr
+                             r-harmony
+                             r-gridextra
+                             r-ggplot2
+                             r-dplyr
+                             r-cowplot
+                             r-coin))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/yuelyu21/SCIntRuler")
+    (synopsis
+     "Guiding the Integration of Multiple Single-Cell RNA-Seq Datasets")
+    (description
+     "The accumulation of single-cell RNA sequencing (@code{scRNA-seq}) studies
+highlights the potential benefits of integrating multiple datasets.  By
+augmenting sample sizes and enhancing analytical robustness, integration can
+lead to more insightful biological conclusions.  However, challenges arise due
+to the inherent diversity and batch discrepancies within and across studies.
+SC@code{IntRuler} addresses these challenges by guiding the integration of
+multiple @code{scRNA-seq} datasets.")
+    (license license:expat)))
 
 (define-public r-scinsight
   (package

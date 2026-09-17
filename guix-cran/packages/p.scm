@@ -14922,13 +14922,13 @@ attained.")
 (define-public r-practools
   (package
     (name "r-practools")
-    (version "1.7.5")
+    (version "1.7.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PracTools" version))
        (sha256
-        (base32 "10r24pnmh6swax0h67hbnwzskpj23sd6h0421qjv5mkcwvy12jpq"))))
+        (base32 "1x7bg6vh45ywnkdkj08b59h9lbn39ia9hqgksfpp9yhbbh689pxa"))))
     (properties `((upstream-name . "PracTools")))
     (build-system r-build-system)
     (arguments
@@ -18757,35 +18757,6 @@ dependence via a Vine Copula model in a rolling window fashion.  One can even
 condition on variables/time series at certain quantile levels to stress test the
 risk measure estimates.")
     (license license:expat)))
-
-(define-public r-portn
-  (package
-    (name "r-portn")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "portn" version))
-       (sha256
-        (base32 "1n759fwk2lwz8nqrc04r3720pffyhinmz2x83g5553ywxs0ds4da"))))
-    (properties `((upstream-name . "portn")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rsolnp))
-    (home-page "https://github.com/ysd2004/portn")
-    (synopsis "Portfolio Analysis for Nature")
-    (description
-     "The functions are designed to find the efficient mean-variance frontier or
-portfolio weights for static portfolio (called Markowitz portfolio) analysis in
-resource economics or nature conservation.  Using the nonlinear programming
-solver ('Rsolnp'), this package deals with the quadratic minimization of the
-variance-covariances without shorting (i.e., non-negative portfolio weights)
-studied in Ando and Mallory (2012) <doi:10.1073/pnas.1114653109>.  See the
-examples, testing versions, and more details from:
-<https://github.com/ysd2004/portn>.")
-    (license license:gpl2+)))
 
 (define-public r-portion
   (package

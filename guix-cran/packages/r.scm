@@ -1560,13 +1560,13 @@ and interactive way.")
 (define-public r-rwa
   (package
     (name "r-rwa")
-    (version "0.1.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rwa" version))
        (sha256
-        (base32 "1aihj7kgiyz7m7bn6bjlk0jbp2hgm7lswdjsxjm4zyzn453vvbhm"))))
+        (base32 "0lh7j8y82b76vc4awq5zxk4hnam0f4i60d0lv0i9jd2lgp04v6bx"))))
     (properties `((upstream-name . "rwa")))
     (build-system r-build-system)
     (arguments
@@ -8281,34 +8281,24 @@ SFA toolkit 1.0 by Pietro Berkes and SFA toolkit 2.8 by Wolfgang Konen.")
 (define-public r-rsf
   (package
     (name "r-rsf")
-    (version "0.3.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rsf" version))
        (sha256
-        (base32 "0vlnmqj6if2d8m4frdyarc985s73zapsj74rjv1nv074z422l2ci"))))
+        (base32 "0r0xchr9kmpiyiv2a7vkgwxg2rn5hbfi71jszwh27hd995ahm48r"))))
     (properties `((upstream-name . "rsf")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-ymlthis
-                             r-yaml
-                             r-usethis
-                             r-rlang
-                             r-renv
-                             r-magrittr
-                             r-knitr
-                             r-here
-                             r-gert
-                             r-bookdown))
+    (propagated-inputs (list r-renv r-gert))
     (home-page "https://github.com/dchiu911/rsf/")
-    (synopsis "Report of Statistical Findings in 'bookdown'")
+    (synopsis "Report of Statistical Findings in Quarto")
     (description
      "This package provides a report of statistical findings (RSF) project template is
-generated using a bookdown format.  YAML fields can be further customized.
-Additional helper functions provide extra features to the RSF.")
+generated using a Quarto book.")
     (license license:expat)))
 
 (define-public r-rsentiment
@@ -18862,21 +18852,21 @@ the Copas-like selection model of Ning et al. (2017)
 (define-public r-robustarithmetic
   (package
     (name "r-robustarithmetic")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RobustArithmetic" version))
        (sha256
-        (base32 "1w0q3bvfnl3mil67k6fkwlp29zb18yqq39j3vn9fq83vd4nwp9d2"))))
+        (base32 "1sm89697dv01zjlj62driyy0wa8gqhffx15sksza281ykqix930p"))))
     (properties `((upstream-name . "RobustArithmetic")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/IsadoreNabi/RobustArithmetic")
-    (synopsis "Verified Interval Arithmetic and Rigorous Enclosures in Pure R")
+    (synopsis "Verified Interval Arithmetic with Correctly Rounded Kernels")
     (description
      "Verified interval arithmetic for R, in the inf-sup (endpoint) representation of
 the set-based flavor of the interval standard.  Every operation returns an
@@ -18888,25 +18878,29 @@ mode.  That mode is not reachable from R, and changing it would not be a local
 act: it is per-thread state of the processor, so it would govern every
 floating-point operation executed afterwards on that thread, in this package or
 anywhere else.  Elementary functions are provided at two levels: a fast level
-over the system math library, widened by a declared slack derived from published
-accuracy measurements, and a rigorous level over Rmpfr with a directed-rounding
-bridge, reached by an escalation ladder of precisions when a verdict would
-otherwise fall inside the slack.  On top of the kernel the package builds
-natural and centered interval extensions of expressions, a monotonicity test,
-the Hansen-Sengupta interval Newton operator with extended division and
-epsilon-inflated candidate verification, and a subdivision (paving) engine whose
-only failure mode is a named abstention with its budget printed.  Conformance
-with IEEE Std 1788.1-2017 <doi:10.1109/IEEESTD.2018.8277144> is not claimed, and
-the reason is the standard's own: its subclause 1.5 makes conformance a list of
-requirements that an implementation shall satisfy, with no partial grade to
-claim.  What this package follows, measured one requirement at a time and stated
-in the package documentation, is the interval type and the decoration system of
-clause 5, 22 of the 39 arithmetic operations of Table 4.1, and the seven numeric
-functions of Table 4.3.  What it does not provide is the cancellative
-operations, the interval comparison relations, the text input and output of
-subclause 6.8, the interchange representation of subclause 7.3, and the tightest
-accuracy that subclause 6.5.2 requires of the basic operations, which here are
-one unit in the last place wider at each end.")
+over the included correctly rounded binary64 implementation, comprising fifteen
+kernels from CORE-MATH <doi:10.1109/ARITH54963.2022.00014> and the hardware
+square root, widened by the pre-registered slack of two outward steps; and a
+rigorous level over Rmpfr with a directed-rounding bridge, reached by an
+escalation ladder of precisions when a verdict would otherwise fall inside the
+slack.  Fast-level enclosures retain measured provenance because correct
+rounding of the included software is verified numerically rather than
+established here as a theorem for every kernel.  On top of the kernel the
+package builds natural and centered interval extensions of expressions, a
+monotonicity test, the Hansen-Sengupta interval Newton operator with extended
+division and epsilon-inflated candidate verification, and a subdivision (paving)
+engine whose only failure mode is a named abstention with its budget printed.
+Conformance with IEEE Std 1788.1-2017 <doi:10.1109/IEEESTD.2018.8277144> is not
+claimed, and the reason is the standard's own: its subclause 1.5 makes
+conformance a list of requirements that an implementation shall satisfy, with no
+partial grade to claim.  What this package follows, measured one requirement at
+a time and stated in the package documentation, is the interval type and the
+decoration system of clause 5, 22 of the 39 arithmetic operations of Table 4.1,
+and the seven numeric functions of Table 4.3.  What it does not provide is the
+cancellative operations, the interval comparison relations, the text input and
+output of subclause 6.8, the interchange representation of subclause 7.3, and
+the tightest accuracy that subclause 6.5.2 requires of the basic operations,
+which here are one unit in the last place wider at each end.")
     (license license:gpl3+)))
 
 (define-public r-robustarima
@@ -22769,13 +22763,13 @@ export helpers for exploratory workflows.")
 (define-public r-rmoriebricklayer
   (package
     (name "r-rmoriebricklayer")
-    (version "0.3.9")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rmoriebricklayer" version))
        (sha256
-        (base32 "15kwzv4zngh5qd239bm0xc9vglbrxwggpx04sw0h3rpix0xfvk3g"))))
+        (base32 "1skc9gs69b5h12vxy43bdyv4grq6bpq5424kxxkb7rs2ynkrs5ka"))))
     (properties `((upstream-name . "rmoriebricklayer")))
     (build-system r-build-system)
     (arguments
@@ -22794,10 +22788,34 @@ Secure Hash Algorithm 256 ('SHA-256') digests and Internet Archive Wayback
 Machine (<https://web.archive.org/>) snapshots, validates downloaded data
 against a pinned schema, and falls back to schema-driven synthetic data when the
 real source is unreachable.  Run records are captured in a manifest plus a
-plain-language summary so any result can be traced back to its inputs.  Also
-ships a small compiled C core (fast summary statistics and a self-contained
-SHA-256') that sibling packages in the rmorie ecosystem reach through
-@code{LinkingTo} for a single, shared numeric and provenance-hashing backend.")
+plain-language summary so any result can be traced back to its inputs.
+Distributional drift between a pinned capsule and a fresh fetch is tested with
+Kolmogorov-Smirnov, chi-square, population stability index, Jensen-Shannon
+divergence and Benford first-digit screens, because a re-released extract can be
+statistically identical yet differ byte-for-byte, and a column can keep its name
+and type while having been silently rescaled.  Manifests can be authenticated
+rather than only checksum-verified, with keyed digests ('HMAC-SHA-256', RFC
+2104) or post-quantum hash-based signatures ('Winternitz one-time signatures
+under a Merkle tree, RFC 8391), and pinned chunk-wise through a Merkle tree so a
+mismatch identifies which part of a capsule moved.  Also ships a compiled C++
+core (summary, robust and rank statistics, SHA-256', SHA-512 and CRC-32') that
+sibling packages in the rmorie ecosystem reach through @code{LinkingTo} for a
+single, shared numeric and provenance-hashing backend.  For the published
+administrative tables these capsules usually hold, it computes
+period-over-period change matched on the period rather than the row, with the
+exact conditional-binomial interval for a ratio of counts and with a
+percentage-point reading kept distinct from a percent change, rendered to
+Hypertext Markup Language ('HTML'), Portable Document Format ('PDF'), delimited
+text, @code{JavaScript} Object Notation ('JSON') or Markdown.  Interval
+categories such as \"2 to 5\" or \"50+\" are parsed to bounds and the dependence of
+any derived figure on the open top band is measured rather than assumed.
+Concentration is summarised by the Gini coefficient, the Lorenz curve and
+tail-index estimation by exact discrete maximum likelihood; trend in a series of
+a few periods by the Mann-Kendall test with Theil-Sen slopes, a permutation
+step-change scan and Poisson rate ratios; and region-coded counts by indirect
+standardisation, exact standardised incidence ratios, the empirical Bayes
+shrinkage of Clayton and Kaldor (1987) <doi:10.2307/2532003>, funnel-plot limits
+and Moran's I.")
     (license license:agpl3)))
 
 (define-public r-rmopi
@@ -23702,19 +23720,19 @@ MerecÂ´s weight vector and all intermediate matrix/vectors used to calculate i
 (define-public r-rmedsem
   (package
     (name "r-rmedsem")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rmedsem" version))
        (sha256
-        (base32 "164zyi7sfkn7ivww79zk6hf5kkvkvyykim11fznp0f4yf8qiq1jy"))))
+        (base32 "0wl4219cr5m969n7vsnbpb61dgp32n25kl8w6023an9aj6as30ig"))))
     (properties `((upstream-name . "rmedsem")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-purrr r-mvtnorm r-lavaan r-ggplot2 r-dplyr))
+    (propagated-inputs (list r-mvtnorm r-lavaan r-ggplot2))
     (home-page "https://github.com/ihrke/rmedsem")
     (synopsis "Statistical Mediation Analysis for SEMs")
     (description
@@ -23723,9 +23741,13 @@ lavaan', blavaan', @code{cSEM}', or modsem'.  Implements the Baron and Kenny
 (1986) <doi:10.1037/0022-3514.51.6.1173> and Zhao, Lynch & Chen (2010)
 <doi:10.1086/651257> approaches to determine the presence and type of mediation.
  Supports covariance-based SEM, partial least squares SEM, Bayesian SEM, and
-moderated mediation models.  Reports indirect effects with standard errors from
-Sobel, Delta, Monte-Carlo, and bootstrap methods, along with effect size
-measures (RIT, RID).")
+moderated mediation and mediated moderation models.  Tests indirect effects with
+the Sobel, Delta, Monte-Carlo, and bootstrap methods or, for Bayesian models,
+with posterior summaries and equal-tailed or highest density credible intervals.
+ Reports the effect size measures RIT, RID, and Upsilon of Lachowicz, Preacher
+and Kelley (2018) <doi:10.1037/met0000165>.  Results can be summarized,
+extracted with standard methods such as @code{summary()}, @code{coef()} and
+@code{confint()}, and plotted.")
     (license license:expat)))
 
 (define-public r-rmedpower2
@@ -25885,13 +25907,13 @@ datasets.  Alam, M. A, Fukumizu, K., Wang Y.-P. (2018)
 (define-public r-rkt
   (package
     (name "r-rkt")
-    (version "1.8")
+    (version "1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rkt" version))
        (sha256
-        (base32 "00491vrr0fyrqz0fma7sgl9jl36fzgrhilivjjhk27bkp7qzgym6"))))
+        (base32 "0d0si81p3qgzqymzinnrnlv6046n60p1szdzr6z9ynabbas77n8s"))))
     (properties `((upstream-name . "rkt")))
     (build-system r-build-system)
     (arguments
@@ -30028,13 +30050,13 @@ data.  Methods are described by Dylan S Small et al., (2012)
 (define-public r-richcluster
   (package
     (name "r-richcluster")
-    (version "1.0.2")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "richCluster" version))
        (sha256
-        (base32 "0vw6qdwhmpsgyf164b3ldg1k49wli39a0q8pp07x6h8v4rrksy02"))))
+        (base32 "0ysg9c7q9cq5p5f3yr0pj9qg33ly78y99zvpvl5hzqb3ygc6f0v9"))))
     (properties `((upstream-name . "richCluster")))
     (build-system r-build-system)
     (arguments
@@ -30046,7 +30068,6 @@ data.  Methods are described by Dylan S Small et al., (2012)
                              r-plotly
                              r-networkd3
                              r-magrittr
-                             r-iheatmapr
                              r-igraph
                              r-heatmaply
                              r-fields
@@ -30055,9 +30076,17 @@ data.  Methods are described by Dylan S Small et al., (2012)
     (home-page "https://github.com/hurlab/richCluster")
     (synopsis "Fast, Robust Clustering Algorithms for Gene Enrichment Data")
     (description
-     "Fast C++ agglomerative hierarchical clustering algorithm packaged into easily
-callable R functions, designed to help cluster biological terms based on how
-similar of genes are expressed in their activation.")
+     "Clusters functionally related biological terms from gene set enrichment results.
+ Terms are compared by the overlap of their gene sets using Cohen's kappa, the
+Jaccard index, or the Dice coefficient, and the resulting similarity matrix is
+grouped either by agglomerative hierarchical clustering with single, complete,
+average, or Ward linkage, or by the seed-and-merge procedure of the DAVID
+functional classification tool.  The distance and clustering routines are
+written in C++ for speed.  The methods are described in Huang et al. (2007)
+<doi:10.1186/gb-2007-8-9-r183>, Ward (1963)
+<doi:10.1080/01621459.1963.10500845>, Cohen (1960)
+<doi:10.1177/001316446002000104>, and Jaccard (1912)
+<doi:10.1111/j.1469-8137.1912.tb05611.x>.")
     (license license:gpl3)))
 
 (define-public r-riceware
@@ -32217,34 +32246,6 @@ either the Glottography organization on @code{GitHub}
 <https://github.com/Glottography> or the Glottography community on Zenodo
 <https://zenodo.org/communities/glottography>.  Based on Ranacher et al. (2026)
 <doi:10.5334/johd.459>.")
-    (license license:expat)))
-
-(define-public r-rglobi
-  (package
-    (name "r-rglobi")
-    (version "0.3.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rglobi" version))
-       (sha256
-        (base32 "14jwl1cl20q7sgsiidd2sd2p2vjjfvqam0bijg9j8328g27cbi63"))))
-    (properties `((upstream-name . "rglobi")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-readr r-rcurl r-curl))
-    (native-inputs (list r-knitr))
-    (home-page "https://docs.ropensci.org/rglobi/")
-    (synopsis "Interface to Global Biotic Interactions")
-    (description
-     "This package provides a programmatic interface to the web service methods
-provided by Global Biotic Interactions (@code{GloBI})
-(<https://www.globalbioticinteractions.org/>). @code{GloBI} provides access to
-spatial-temporal species interaction records from sources all over the world.
-rglobi provides methods to search species interactions by location, interaction
-type, and taxonomic name.")
     (license license:expat)))
 
 (define-public r-rgl2gltf
@@ -47952,13 +47953,13 @@ This project is not affiliated with the Arduino company,
 (define-public r-rduckhts
   (package
     (name "r-rduckhts")
-    (version "1.5.1-0.1.3")
+    (version "1.5.2-0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rduckhts" version))
        (sha256
-        (base32 "0j3xf4q41df2y5rsppk3f5m47730f80j9l9sy1b7njd3kh3q0n55"))))
+        (base32 "0nxsv55qk3f9apiv0i5fwg7znacn3l7c0657bczgnfr6jvcjpk2s"))))
     (properties `((upstream-name . "Rduckhts")))
     (build-system r-build-system)
     (arguments
@@ -53556,13 +53557,13 @@ package in the R Commander GUI for R.")
 (define-public r-rcmdr
   (package
     (name "r-rcmdr")
-    (version "2.13.0")
+    (version "2.14.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rcmdr" version))
        (sha256
-        (base32 "1b4v4599g4jqa1bdryxrwyw3pwpvihbbkgf715lrq6s083yyw1cl"))))
+        (base32 "1c2l4z9bniph7fyhryl7i3rqqqp3al35mgydbvzkdv8gd09yfv7s"))))
     (properties `((upstream-name . "Rcmdr")))
     (build-system r-build-system)
     (arguments
@@ -53575,7 +53576,7 @@ package in the R Commander GUI for R.")
                              r-effects
                              r-car
                              r-abind))
-    (home-page "https://github.com/RCmdr-Project/rcmdr")
+    (home-page "https://www.r-commander.com")
     (synopsis "R Commander")
     (description
      "This package provides a platform-independent basic-statistics GUI (graphical
@@ -56779,13 +56780,13 @@ bed files.  Further details are provided in: Border and Malik (2023)
 (define-public r-rbacon
   (package
     (name "r-rbacon")
-    (version "3.5.2")
+    (version "4.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rbacon" version))
        (sha256
-        (base32 "086d46222wbdby6spz6cz7f8r8wcf4465bsbqyc2ca0lpnnllq66"))))
+        (base32 "044jif6k2jl7392dxx90b05h29xkn5jzhanigjywccs0ib0jrdaq"))))
     (properties `((upstream-name . "rbacon")))
     (build-system r-build-system)
     (arguments
@@ -56793,7 +56794,7 @@ bed files.  Further details are provided in: Border and Malik (2023)
       #:tests? #f))
     (propagated-inputs (list r-rintcal r-rice r-rcpp r-data-table r-coda))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=rbacon")
+    (home-page "https://github.com/Maarten14C/rbacon")
     (synopsis "Age-Depth Modelling using Bayesian Statistics")
     (description
      "An approach to age-depth modelling that uses Bayesian statistics to reconstruct
@@ -62738,31 +62739,6 @@ anti-ideal value, and the extent to which the anti-ideal value is considered
 worse.  The function standardizes the decision matrix, normalizes the data,
 applies weights, and returns the final sorted rankings.")
     (license license:gpl3+)))
-
-(define-public r-rafs
-  (package
-    (name "r-rafs")
-    (version "0.2.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RAFS" version))
-       (sha256
-        (base32 "0hmx9h9nnrb4lc3m6zq31x59khjl2mfy3czj3bb651xryglg7wpc"))))
-    (properties `((upstream-name . "RAFS")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-splittools r-mdfs r-fastcluster))
-    (home-page "https://www.mdfs.it/")
-    (synopsis "Robust Aggregative Feature Selection")
-    (description
-     "This package provides a cross-validated minimal-optimal feature selection
-algorithm.  It utilises popularity counting, hierarchical clustering with
-feature dissimilarity measures, and prefiltering with all-relevant feature
-selection method to obtain the minimal-optimal set of features.")
-    (license license:gpl3)))
 
 (define-public r-raem
   (package

@@ -1085,37 +1085,6 @@ regional, and federal agencies that have different identifiers on lakes.  This
 package helps you to go between them.")
     (license license:expat)))
 
-(define-public r-mwcsr
-  (package
-    (name "r-mwcsr")
-    (version "0.1.12")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mwcsr" version))
-       (sha256
-        (base32 "00amilaq1v5cs8gipsrdjxb2ckp430ajffh1d7w4vkl2r2c5kmy9"))))
-    (properties `((upstream-name . "mwcsr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list openjdk))
-    (propagated-inputs (list r-rcpp r-igraph))
-    (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://github.com/ctlab/mwcsr")
-    (synopsis
-     "Solvers for Maximum Weight Connected Subgraph Problem and Its Variants")
-    (description
-     "Algorithms for solving various Maximum Weight Connected Subgraph Problems,
-including variants with budget constraints, cardinality constraints, weighted
-edges and signals.  The package represents an R interface to high-efficient
-solvers based on relax-and-cut approach (Ãlvarez-Miranda E., Sinnl M. (2017)
-<doi:10.1016/j.cor.2017.05.015>) mixed-integer programming (Loboda A., Artyomov
-M., and Sergushichev A. (2016) <doi:10.1007/978-3-319-43681-4_17>) and simulated
-annealing.")
-    (license license:expat)))
-
 (define-public r-mwana
   (package
     (name "r-mwana")
@@ -3763,13 +3732,13 @@ vector, color number, brightness ratio, etc.).  Creates plots such as
 (define-public r-muse
   (package
     (name "r-muse")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "muse" version))
        (sha256
-        (base32 "1acmx12jygf64q0wxkzd9vnlk0cb3r764ririwbaplx4fmm2c95j"))))
+        (base32 "1nkq7gwd3jn2bb13i0ffiqk8ycr38kdd0ds2pfkmp371iynp0c56"))))
     (properties `((upstream-name . "muse")))
     (build-system r-build-system)
     (arguments
@@ -3782,7 +3751,7 @@ vector, color number, brightness ratio, etc.).  Creates plots such as
                              r-greybox
                              r-generics))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/openforecast-org/muse")
+    (home-page "https://openforecast.org/packages/")
     (synopsis "Multiple Unobserved Sources of Error State Space Models")
     (description
      "This package implements the Power / Trend / Seasonal (PTS) model, a unified
@@ -11748,13 +11717,13 @@ for inference of a network with no anomalous quartets of Allman et al. (2026)
 (define-public r-mscp
   (package
     (name "r-mscp")
-    (version "1.0")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mscp" version))
        (sha256
-        (base32 "18cy7nnvhpjl874bawsh8j1gry9wx134q6gk6j03s6546bzy8lgc"))))
+        (base32 "0k2wmr72q2p351kbkcsxsdfx6pz65w7ir84l4kj8abwr4s0s69ld"))))
     (properties `((upstream-name . "mscp")))
     (build-system r-build-system)
     (arguments
@@ -11766,8 +11735,8 @@ for inference of a network with no anomalous quartets of Allman et al. (2026)
     (description
      "Multiscale moving sum procedure for the detection of changes in expectation in
 univariate sequences.  References - Multiscale change point detection via
-gradual bandwidth adjustment in moving sum processes (2021+), Tijana Levajkovic
-and Michael Messer.")
+gradual bandwidth adjustment in moving sum processes, Tijana Levajkovic and
+Michael Messer (2023) <doi:10.1214/22-EJS2101>.")
     (license license:gpl3)))
 
 (define-public r-mscombine
@@ -15422,30 +15391,6 @@ function).  The classification regions behind each point of the ROC curve are
 displayed in both static graphics @code{(plot_buildROC()}, @code{plot_regions()}
 or @code{plot_funregions()} function) or videos @code{(movieROC()} function).")
     (license license:gpl3)))
-
-(define-public r-movewindspeed
-  (package
-    (name "r-movewindspeed")
-    (version "0.2.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "moveWindSpeed" version))
-       (sha256
-        (base32 "0gj8qivwgxh9xzyfldb5hqmd8qi2q9xcazdl9iz39fxvwdshravz"))))
-    (properties `((upstream-name . "moveWindSpeed")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp r-move))
-    (native-inputs (list r-knitr))
-    (home-page "https://gitlab.com/bartk/moveWindSpeed")
-    (synopsis "Estimate Wind Speeds from Bird Trajectories")
-    (description
-     "Estimating wind speed from trajectories of individually tracked birds using a
-maximum likelihood approach.")
-    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-movementsync
   (package
@@ -36194,6 +36139,43 @@ slice sampler with stepout and shrinkage (Neal (2003)
 <DOI:10.2307/2986138>), and univariate Metropolis with Gaussian proposal.")
     (license license:gpl2+)))
 
+(define-public r-mft
+  (package
+    (name "r-mft")
+    (version "3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MFT" version))
+       (sha256
+        (base32 "1pgd0cj0lhmchd425k789xa79rigfr4fp0m6cnyzg1dggwxzbc3i"))))
+    (properties `((upstream-name . "MFT")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=MFT")
+    (synopsis "The Multiple Filter Test for Change Point Detection")
+    (description
+     "This package provides statistical tests and algorithms for the detection of
+change points in time series and point processes - particularly for changes in
+the mean in time series and for changes in the rate and in the variance in point
+processes.  References - Michael Messer, Marietta Kirchner, Julia Schiemann,
+Jochen Roeper, Ralph Neininger and Gaby Schneider (2014), A multiple filter test
+for the detection of rate changes in renewal processes with varying variance
+<doi:10.1214/14-AOAS782>.  Stefan Albert, Michael Messer, Julia Schiemann,
+Jochen Roeper, Gaby Schneider (2017), Multi-scale detection of variance changes
+in renewal processes in the presence of rate change points
+<doi:10.1111/jtsa.12254>.  Michael Messer, Kaue M. Costa, Jochen Roeper and Gaby
+Schneider (2017), Multi-scale detection of rate changes in spike trains with
+weak dependencies <doi:10.1007/s10827-016-0635-3>.  Michael Messer, Stefan
+Albert and Gaby Schneider (2018), The multiple filter test for change point
+detection in time series <doi:10.1007/s00184-018-0672-1>.  Michael Messer,
+Hendrik Backhaus, Albrecht Stroh and Gaby Schneider (2020) A multi-scale
+approach for testing and detecting peaks in time series
+<doi:10.1080/02331888.2020.1823980>.")
+    (license license:gpl3)))
+
 (define-public r-mfsis
   (package
     (name "r-mfsis")
@@ -45727,31 +45709,6 @@ page for more information and examples.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
-(define-public r-mdfs
-  (package
-    (name "r-mdfs")
-    (version "1.5.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MDFS" version))
-       (sha256
-        (base32 "1wryjmyk4baxxhdfwjczpkv1c12dalx0bmmrry4c9xa03yz483rl"))))
-    (properties `((upstream-name . "MDFS")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://www.mdfs.it/")
-    (synopsis "MultiDimensional Feature Selection")
-    (description
-     "This package provides functions for @code{MultiDimensional} Feature Selection
-(MDFS): calculating multidimensional information gains, scoring variables,
-finding important variables, plotting selection results.  This package includes
-an optional CUDA implementation that speeds up information gain calculation
-using NVIDIA GPGPUs.  R. Piliszek et al. (2019) <doi:10.32614/RJ-2019-019>.")
-    (license license:gpl3)))
-
 (define-public r-mdendro
   (package
     (name "r-mdendro")
@@ -46151,13 +46108,13 @@ abstract syntax trees as well as translating and displaying the documents.")
 (define-public r-md2sample
   (package
     (name "r-md2sample")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MD2sample" version))
        (sha256
-        (base32 "0arf1s99jl0cq4qpp0mahdq609q6lj86m8v3ws7p8l0fdh4281qc"))))
+        (base32 "0k6dcsn79j3sfvbdajqpp3x038jhh1jp53xs2pw0bi8qzvbzmcbb"))))
     (properties `((upstream-name . "MD2sample")))
     (build-system r-build-system)
     (arguments
@@ -51831,19 +51788,19 @@ matching and linear regression for causal inference in observational studies.")
 (define-public r-matchit
   (package
     (name "r-matchit")
-    (version "4.7.2")
+    (version "4.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MatchIt" version))
        (sha256
-        (base32 "1bbqh4alm725852gspc8fqygvqi256pxdiykzc5c958h3ljymdgi"))))
+        (base32 "1pkpc5faaln76hgcqc9wrl1bam3vx5vy553mjb0bzl3hr4cz44i2"))))
     (properties `((upstream-name . "MatchIt")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang r-rcppprogress r-rcpp r-chk r-backports))
+    (propagated-inputs (list r-rlang r-rcppprogress r-rcpp r-arg))
     (native-inputs (list r-knitr))
     (home-page "https://kosukeimai.github.io/MatchIt/")
     (synopsis "Nonparametric Preprocessing for Parametric Causal Inference")

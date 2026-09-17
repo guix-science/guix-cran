@@ -9935,38 +9935,6 @@ multiple realizations of of simulated data sets, can be converted to coda::mcmc
 and coda::mcmc.list objects.")
     (license license:expat)))
 
-(define-public r-nlints
-  (package
-    (name "r-nlints")
-    (version "1.4.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "NlinTS" version))
-       (sha256
-        (base32 "0frw5fxaqsm24lbg4lzchij5d3c4fnpcfmj7ybq7gz9bdjhjy44h"))))
-    (properties `((upstream-name . "NlinTS")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-timeseries r-rdpack r-rcpp))
-    (home-page "https://cran.r-project.org/package=NlinTS")
-    (synopsis "Models for Non Linear Causality Detection in Time Series")
-    (description
-     "Models for non-linear time series analysis and causality detection.  The main
-functionalities of this package consist of an implementation of the classical
-causality test (C.W.J.Granger 1980) <doi:10.1016/0165-1889(80)90069-X>, and a
-non-linear version of it based on feed-forward neural networks.  This package
-contains also an implementation of the Transfer Entropy
-<doi:10.1103/@code{PhysRevLett.85.461>}, and the continuous Transfer Entropy
-using an approximation based on the k-nearest neighbors
-<doi:10.1103/@code{PhysRevE.69.066138>}.  There are also some other useful
-tools, like the VARNN (Vector Auto-Regressive Neural Network) prediction model,
-the Augmented test of stationarity, and the discrete and continuous entropy and
-mutual information.")
-    (license (list license:gpl2+ license:gpl3+))))
-
 (define-public r-nlin
   (package
     (name "r-nlin")

@@ -4955,13 +4955,13 @@ of the European Food Safety Authority (EFSA PLH Panel et al., 2018)
 (define-public r-qpost
   (package
     (name "r-qpost")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qpost" version))
        (sha256
-        (base32 "09jci9bi3zrdak2kfnpv7iqxlppa3cq28iiyv07zk97lkc0j5f1c"))))
+        (base32 "1mfjdl35mhi25qdmz1yf04vkam1j5zxxjp9in0h6974sgks5axx5"))))
     (properties `((upstream-name . "qpost")))
     (build-system r-build-system)
     (arguments

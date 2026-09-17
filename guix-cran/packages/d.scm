@@ -8582,6 +8582,46 @@ without coding.  You can get resultant data (as a tibble') and the code for data
 manipulation.")
     (license license:gpl3)))
 
+(define-public r-dplyneage
+  (package
+    (name "r-dplyneage")
+    (version "0.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dplyneage" version))
+       (sha256
+        (base32 "0r4qh75gl24j5kgrrjg37gwfc14514z5yjkwkj1k81gzjksmjjxx"))))
+    (properties `((upstream-name . "dplyneage")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:modules '((guix build r-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (propagated-inputs (list r-jsonlite r-htmlwidgets))
+    (native-inputs (list r-knitr esbuild))
+    (home-page "https://tgerke.github.io/dplyneage/")
+    (synopsis "Column Lineage Visualization for 'dplyr' Pipelines")
+    (description
+     "This package implements column lineage visualizations using React Flow for dplyr
+and dbplyr pipelines.  Provides a tidyverse-style interface for tracking data
+transformations through pipeline operations.")
+    (license license:expat)))
+
 (define-public r-dplr
   (package
     (name "r-dplr")
@@ -9090,13 +9130,13 @@ visualization.")
 (define-public r-dowser
   (package
     (name "r-dowser")
-    (version "2.5.1")
+    (version "2.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dowser" version))
        (sha256
-        (base32 "1mg0ndzdzy4f51jjvj9n355p1ppc86skzga51fk37xxmhy6hc41z"))))
+        (base32 "1h6xc33ywqrq8qfh8fshqica1310rw114484161b304dfyrpijvj"))))
     (properties `((upstream-name . "dowser")))
     (build-system r-build-system)
     (arguments
@@ -26937,13 +26977,13 @@ inst/COPYRIGHTS for details on third-party code.")
 (define-public r-deepspat
   (package
     (name "r-deepspat")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "deepspat" version))
        (sha256
-        (base32 "1zlivriq3ji3r464hddsl864g4c7gbadny9zxvq6q8gkz48xkwb7"))))
+        (base32 "1dkdc9lix4xg5ad7h6703az91h9d4h04853wcvyj69a4b27hzfn7"))))
     (properties `((upstream-name . "deepspat")))
     (build-system r-build-system)
     (arguments
@@ -26952,7 +26992,6 @@ inst/COPYRIGHTS for details on third-party code.")
     (inputs (list))
     (propagated-inputs (list r-tfprobability
                              r-tensorflow
-                             r-spatialextremes
                              r-rlang
                              r-reticulate
                              r-matrix
@@ -32058,13 +32097,13 @@ described in Hall and Castellano (2023) <doi:10.1101/2023.05.05.539427>.")
 (define-public r-dawar
   (package
     (name "r-dawar")
-    (version "0.3.3")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dawaR" version))
        (sha256
-        (base32 "04wkbzygrjsrbd4arjasz80f2db0cgrxqx9dm86y8c66q7l0wac5"))))
+        (base32 "083r1fpr071ly5587lw01g77cjwfxwhr8s2xsq9zi5yl7c518dy5"))))
     (properties `((upstream-name . "dawaR")))
     (build-system r-build-system)
     (arguments
@@ -32375,13 +32414,13 @@ governance tooling.")
 (define-public r-datey
   (package
     (name "r-datey")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datey" version))
        (sha256
-        (base32 "0lai0zw26m0yyg5askcr8ayp884f4fbgiib09v7wmqxkkswzbq6v"))))
+        (base32 "012zghlghzbqc2kaqln5igmlvncxxy3b3bxkjpg3z8lx7gwpd8ch"))))
     (properties `((upstream-name . "datey")))
     (build-system r-build-system)
     (arguments

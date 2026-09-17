@@ -4612,6 +4612,45 @@ calculate scores for each dimension of the KHQ; converts KHQ item scores to
 KHQ5D scores; and also calculates the utility index of the KHQ5D.")
     (license license:expat)))
 
+(define-public r-khisr
+  (package
+    (name "r-khisr")
+    (version "1.0.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "khisr" version))
+       (sha256
+        (base32 "07yrhc3c1w6iviwj7wxhd1m6nsfrhah3iqpqpbbks2bjb99hfqhd"))))
+    (properties `((upstream-name . "khisr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-lifecycle
+                             r-jsonlite
+                             r-janitor
+                             r-httr2
+                             r-dplyr
+                             r-curl
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://khisr.damurka.com")
+    (synopsis "An R Client to Retrieve Data from DHIS2")
+    (description
+     "This package provides a user-friendly interface for interacting with the
+District Health Information Software 2 ('DHIS2', <https://dhis2.org>) instance.
+It streamlines data retrieval, empowering researchers, analysts, and healthcare
+professionals to obtain and utilize data efficiently.")
+    (license license:expat)))
+
 (define-public r-khaos
   (package
     (name "r-khaos")
@@ -7184,13 +7223,13 @@ in L. Del Core et al., (2022) <doi:10.1101/2022.07.08.499353>.")
 (define-public r-kardl
   (package
     (name "r-kardl")
-    (version "2.0.5")
+    (version "2.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kardl" version))
        (sha256
-        (base32 "1ah1y33ymm9jqid1rnxag608c0z02rskh8saaawg8gzf3m4cj83g"))))
+        (base32 "18z58vwwwx8x5qw41kkksj3r25sj2njp1ka6mkfw5d58pq3r9ayx"))))
     (properties `((upstream-name . "kardl")))
     (build-system r-build-system)
     (arguments
