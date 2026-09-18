@@ -2777,13 +2777,13 @@ transforming the data.")
 (define-public r-isocountry
   (package
     (name "r-isocountry")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "isocountry" version))
        (sha256
-        (base32 "064xbg8yhc1r9kcxhzsm8qy6bbz648iy4fwgpr8mh62mcn25g8xv"))))
+        (base32 "1rrcfy07a0p1fa0p9wjqppan86j4i477vk0zab4whz21fxvdwdwy"))))
     (properties `((upstream-name . "isocountry")))
     (build-system r-build-system)
     (arguments
@@ -6150,6 +6150,41 @@ model/data set combination is close-to-linear or not.  See Bates and Watts
 (1980) <doi:10.1002/9780470316757> and Ratkowsky and Reddy (2017)
 <doi:10.1093/aesa/saw098> for details.")
     (license license:gpl2+)))
+
+(define-public r-ipeb
+  (package
+    (name "r-ipeb")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iPEB" version))
+       (sha256
+        (base32 "10p7pmw982pq7vvg7ib7jkqbwxgaysdhgfwdr2s2jccqsrqx875g"))))
+    (properties `((upstream-name . "iPEB")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-nlme))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/bitansa/iPEB")
+    (synopsis
+     "Improved Parametric Empirical Bayes for Longitudinal Biomarker Analysis")
+    (description
+     "Extends parametric empirical Bayes (PEB) for longitudinal biomarker screening
+with a time-gap-aware standardization layer, covariate adjustment, and
+objective-driven multi-marker weighting.  The layer models each subject's
+biomarker history with a random intercept (and an optional random slope) and
+autocorrelated, gap-scaled residuals, so that prediction uncertainty grows with
+the time between visits and per-visit specificity is preserved under irregular
+sampling.  Marker weights are learned to optimize a user-selected clinical
+objective -- maximizing sensitivity at a fixed specificity, extending detection
+lead time, or a combined objective -- with optional feature selection and a
+choice of scalar or multivariate combiner.  Functions for fitting, prediction,
+and evaluation (sensitivity, lead time, and specificity at chosen operating
+points) are provided.  A manuscript describing the method is in preparation.")
+    (license license:expat)))
 
 (define-public r-ipeaplot
   (package
@@ -10241,6 +10276,40 @@ place inset maps.  This package provides functions to automatically position
 inset maps based on user-defined parameters, making it extremely easy to create
 maps with inset maps with minimal code.")
     (license license:gpl2+)))
+
+(define-public r-insee
+  (package
+    (name "r-insee")
+    (version "1.1.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "insee" version))
+       (sha256
+        (base32 "0ksh8dbk5856zikvj9h39ckl8brp3bl77m216shg75j2qz36rzld"))))
+    (properties `((upstream-name . "insee")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-tidyselect
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-rappdirs
+                             r-purrr
+                             r-openssl
+                             r-httr
+                             r-dplyr
+                             r-crayon))
+    (native-inputs (list r-knitr))
+    (home-page "https://pyr-opendatafr.github.io/R-Insee-Data/")
+    (synopsis "Tools to Easily Download Data from INSEE BDM Database")
+    (description
+     "Using embedded sdmx queries, get the data of more than 150 000 insee series from
+bdm macroeconomic database.")
+    (license license:expat)))
 
 (define-public r-insectlabelr
   (package

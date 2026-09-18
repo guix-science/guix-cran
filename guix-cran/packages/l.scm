@@ -6554,13 +6554,13 @@ package has no external dependencies.")
 (define-public r-locuszoomr
   (package
     (name "r-locuszoomr")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "locuszoomr" version))
        (sha256
-        (base32 "1qfp0a4ff6jhiva8wq6rwxcxwz7harcvma1kp8mpk84rq47gg8n0"))))
+        (base32 "14mv685aabflzq51qa6jqx7a6b1cqjib59i23q9mdv9ncms17d07"))))
     (properties `((upstream-name . "locuszoomr")))
     (build-system r-build-system)
     (arguments
@@ -19883,6 +19883,34 @@ R execution stack has emptied.  The functions are scheduled in an event loop.
 This is a derived work from the later package aiming to reduce the number of
 dependencies.")
     (license license:asl2.0)))
+
+(define-public r-latentstate
+  (package
+    (name "r-latentstate")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "latentState" version))
+       (sha256
+        (base32 "1askikd7ifbgm4bpg03hm1hkx9pa0r2rhs2b893ikfk0whqrhfxx"))))
+    (properties `((upstream-name . "latentState")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://osf.io/2whcu")
+    (synopsis
+     "Simulate Outcomes of a Latent State Reinforcement Learning Model")
+    (description
+     "Simulates outcomes of an updated version of the latent state reinforcement
+learning model originally described in Cochran and Cisler (2019)
+<doi:10.1371/journal.pcbi.1007331>.  The package is designed to create results
+under all reasonable experiment setups, including different reinforcement
+schedules, number of cues, number of phases, and number of options per trial.
+Participants can be simulated using either fixed parameters or parameters drawn
+from a distribution.")
+    (license license:gpl3+)))
 
 (define-public r-latentnet
   (package

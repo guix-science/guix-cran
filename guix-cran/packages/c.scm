@@ -6679,6 +6679,37 @@ and Wallot (2018) <doi: 10.1080/00273171.2018.1512846> for further details about
 the method.")
     (license license:gpl3+)))
 
+(define-public r-crownscorchtls
+  (package
+    (name "r-crownscorchtls")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CrownScorchTLS" version))
+       (sha256
+        (base32 "0z8knr7qmyzpxbxsy7wkh3hpzhzwgf9qd7z57sjsbsj11shr4lr5"))))
+    (properties `((upstream-name . "CrownScorchTLS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-rcppeigen
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-randomforest
+                             r-lidr
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jbcannon/CrownScorchTLS")
+    (synopsis "Estimate Crown Scorch from Terrestrial LiDAR Scans")
+    (description
+     "Estimates tree crown scorch from terrestrial lidar scans collected with a RIEGL
+vz400i.  The methods follow those described in Cannon et al. (2025, Fire Ecology
+21:71, <doi:10.1186/s42408-025-00420-0>).")
+    (license license:gpl3)))
+
 (define-public r-crownmetrics
   (package
     (name "r-crownmetrics")
@@ -14338,6 +14369,38 @@ interactions among @code{microRNAs} published in Scientific Reports.  Please see
 the reference: Yu et al. (2019) <doi:10.1038/s41598-019-40167-8>.")
     (license license:gpl2+)))
 
+(define-public r-corsym
+  (package
+    (name "r-corsym")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "corsym" version))
+       (sha256
+        (base32 "0cjkwkdkb3g7282yfb5qg5mmsgfnh4hpzaljfr5j9036dvnqgndi"))))
+    (properties `((upstream-name . "corsym")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/OchoaLab/corsym")
+    (synopsis "Correlation Estimation for Exchangeable/Symmetrical Variables")
+    (description
+     "We implement a new correlation estimator, @code{CorSym}, designed for
+exchangeable variables, where the ordering of the two values in the pair is
+arbitrary.  This kind of data arises frequently in the study of assortative
+pairing (for example, income in a couple).  The standard Pearson estimator is
+sensitive to such ordering and can be highly biased when the order is biased
+(when the first value tends to have lower or higher values than the second
+value). @code{CorSym} gives the same estimate deterministically for all orders
+within each pair, and estimates the desired correlation without bias (variables
+must be exchangeable).  The package also includes utilities to simulate biased
+orders and test for order bias.  Described in Kennedy and Ochoa (2026)
+<doi:10.64898/2026.08.22.746446>.")
+    (license license:gpl3+)))
+
 (define-public r-corset
   (package
     (name "r-corset")
@@ -15715,6 +15778,50 @@ Athey, Bayati, Doudchenko, Imbens and Khosravi (2021)
      "Core functions for simulating quantities of interest from generalised linear
 models (GLM).  This package will form the backbone of a series of other packages
 that improve the interpretation of GLM estimates.")
+    (license license:gpl3+)))
+
+(define-public r-coreset
+  (package
+    (name "r-coreset")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Coreset" version))
+       (sha256
+        (base32 "0g20d4y4a8firskj81rmvc8b7qwmas380qgnd26nrkm12m7yxwns"))))
+    (properties `((upstream-name . "Coreset")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rdpack r-rcpp r-cli))
+    (native-inputs (list r-quarto))
+    (home-page "https://ms609.github.io/Coreset/")
+    (synopsis "Discrete Diversity, Dispersion, and Coverage Subset Selection")
+    (description
+     "Solves discrete location objectives on a distance matrix or Euclidean coordinate
+set.  The Max-Min Diversity (MMDP / p-dispersion) objective, which maximizes the
+minimum pairwise distance within a selection of k items, is solved by
+farthest-first selection (Gonzalez 1985) <doi:10.1016/0304-3975(85)90224-5>; the
+@code{DropAdd} tabu-search heuristic (Porumbel, Hao & Glover 2011)
+<doi:10.1007/s10479-011-0898-z>, GRASP with path-relinking (Resende, Marti,
+Gallego & Duarte 2010) <doi:10.1016/j.cor.2008.05.011>, and an exact
+node-packing integer program (Sayyady & Fathi 2016)
+<doi:10.1016/j.ejor.2016.02.026>.  The Max-Mean Dispersion objective, which
+selects a subset of unrestricted size maximising the sum of its pairwise
+distances divided by the number of selected elements, is solved by
+reinforcement-learning-guided tabu search (Nijimbere et al.  2020)
+<doi:10.3934/jimo.2020115>.  The discrete k-centre (min-max covering / facility
+location) objective, which chooses k centres to minimise the largest distance
+from any point to its nearest centre, is solved via the CDSh heuristic
+(Garcia-Diaz et al.  2017 <doi:10.1007/s10732-017-9345-x>, 2019
+<doi:10.1109/ACCESS.2019.2933875>), and an exact minimum-cover integer program.
+The maximum-entropy (maxdet) objective, which maximises the log-determinant of a
+similarity kernel built from the distances (Shewry & Wynn 1987
+<doi:10.1080/02664768700000020>; the mode of a determinantal point process,
+Kulesza & Taskar 2012 <doi:10.1561/2200000044>), is solved by greedy
+pivoted-Cholesky selection and, for small instances, exact enumeration.")
     (license license:gpl3+)))
 
 (define-public r-corenlp
@@ -17289,6 +17396,40 @@ measure the influence of individual voters within a voting body.  There are
 routines for visualizing both set-valued and point-valued solutions in the case
 of three or four players.")
     (license license:gpl2)))
+
+(define-public r-coopendata
+  (package
+    (name "r-coopendata")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "coOpenData" version))
+       (sha256
+        (base32 "0pvyc22mys1yf5ggl1z5j5zfhyxz6j3ssa58m4938z5y0y0vp88f"))))
+    (properties `((upstream-name . "coOpenData")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-jsonlite
+                             r-janitor
+                             r-httr
+                             r-dplyr
+                             r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/nyc-open-data-lab/coOpenData")
+    (synopsis "Lightweight Interface to Colorado Open Data APIs")
+    (description
+     "This package provides a unified set of helper functions to access datasets from
+the Colorado Open Data platform <https://data.colorado.gov/>.  Functions return
+results as tidy tibbles and support optional filtering, sorting, and row limits
+via the Socrata API. The package provides a consistent interface for discovering
+and downloading datasets from the Colorado Open Data Portal using human-readable
+dataset keys or official Socrata dataset identifiers.")
+    (license license:expat)))
 
 (define-public r-cooltools
   (package
@@ -23726,35 +23867,6 @@ property as they always attain the lower bound of Discrete Discrepancy measure.
 Further, some useful functions added in this package for adding more value to
 this package.")
     (license license:gpl2+)))
-
-(define-public r-competitiontoolbox
-  (package
-    (name "r-competitiontoolbox")
-    (version "0.7.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "competitiontoolbox" version))
-       (sha256
-        (base32 "132g8jlkq9z3g57wqsq0shx0v9m1c0gjf9r0ik3yykah2pyigb0l"))))
-    (properties `((upstream-name . "competitiontoolbox")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-trade
-                             r-shiny
-                             r-rhandsontable
-                             r-ggplot2
-                             r-bslib
-                             r-antitrust))
-    (home-page "https://github.com/luciu5/competitiontoolbox")
-    (synopsis "Graphical User Interface for Antitrust and Trade Practitioners")
-    (description
-     "This package provides a graphical user interface for simulating the effects of
-mergers, tariffs, and quotas under an assortment of different economic models.
-The interface is powered by the Shiny web application framework from RStudio'.")
-    (license license:cc0)))
 
 (define-public r-comperes
   (package
@@ -44388,6 +44500,33 @@ further faceted by season of the year, we simply write: \"CHART bar X category,
 season Y sales\".")
     (license license:gpl3)))
 
+(define-public r-charport
+  (package
+    (name "r-charport")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "charport" version))
+       (sha256
+        (base32 "0615a6zvwh1khra9xr64a2531zkff3g1igcdw1cipw844vgi8999"))))
+    (properties `((upstream-name . "charport")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-quarto))
+    (home-page "https://github.com/charbase/charport")
+    (synopsis "ALTREP String Interoperability")
+    (description
+     "This package provides infrastructure for interoperable ALTREP character vectors.
+ Producers of ALTREP string classes can register access methods, allowing
+consumers to read supported character vectors through a common interface without
+materializing them as ordinary R strings.  Also provides charvec', a reference
+ALTREP string implementation backed by stable memory slices, with support for
+efficient and multithreaded construction.")
+    (license license:expat)))
+
 (define-public r-charlesschwabapi
   (package
     (name "r-charlesschwabapi")
@@ -49333,13 +49472,13 @@ in Noma and Schwarzer (2026) <doi:10.48550/@code{arXiv.2608.26527>}.")
 (define-public r-cdmconnector
   (package
     (name "r-cdmconnector")
-    (version "2.7.0")
+    (version "2.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CDMConnector" version))
        (sha256
-        (base32 "0kph0zxch99yzgjhl8vd37ligz4pw0f9v7w9ijg1jwpm27j04ynd"))))
+        (base32 "1js5a7ahnivjqallckdrjb9r74qcwsp1j90x2yg0cfhajk3847sv"))))
     (properties `((upstream-name . "CDMConnector")))
     (build-system r-build-system)
     (arguments
@@ -54921,6 +55060,46 @@ Bahram, S., Vallat, L., and Maumy-Bertrand, M. (2014)
 <doi:10.1093/bioinformatics/btt705>.")
     (license license:gpl2+)))
 
+(define-public r-carwatch
+  (package
+    (name "r-carwatch")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "carwatch" version))
+       (sha256
+        (base32 "11y8250birankcy522zzx7mi3gmbh874qdrh13m4k9wv8fwbkkfy"))))
+    (properties `((upstream-name . "carwatch")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-vctrs
+                             r-tibble
+                             r-rlang
+                             r-readr
+                             r-jsonlite
+                             r-ggplot2
+                             r-fs
+                             r-dplyr
+                             r-digest
+                             r-clock
+                             r-boot))
+    (native-inputs (list r-knitr))
+    (home-page "https://carwatch-tools.github.io/carwatch-r/")
+    (synopsis "Processing of 'CARWatch' Sampling Logs and Saliva Data")
+    (description
+     "Import and reconstruct saliva-sampling studies recorded by the CARWatch
+application.  Registration metadata and raw barcode events are converted into
+auditable study days and scheduled sample positions using a two-pass
+issue-review workflow.  Functions assess sampling-time compliance, merge
+laboratory saliva measurements, calculate response features, and create
+quality-control visualizations.  The application is described by Richer et al.
+(2023) <doi:10.1016/j.psyneuen.2023.106073>.")
+    (license license:expat)))
+
 (define-public r-carts
   (package
     (name "r-carts")
@@ -57786,13 +57965,13 @@ PK/PD simulation platform built on top of rxode2 and mrgsolve'.")
 (define-public r-campsis
   (package
     (name "r-campsis")
-    (version "1.9.0")
+    (version "1.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "campsis" version))
        (sha256
-        (base32 "006irh34hq7dkm5nmx40lw9c789wn8n0crshjsp52qd1ha65w6j6"))))
+        (base32 "0i1dzpm46sp8aw8w13xmyv6vvg2qqwn4r49xbaavc2zgzfbvzd60"))))
     (properties `((upstream-name . "campsis")))
     (build-system r-build-system)
     (arguments

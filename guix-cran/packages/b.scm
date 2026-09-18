@@ -9524,6 +9524,32 @@ Buuren (2018, ISBN:9781138588318) and Groothuis-Oudshoorn (2011)
 <doi:10.48550/@code{arXiv.2507.21807>}.")
     (license license:expat)))
 
+(define-public r-bonsaisitter
+  (package
+    (name "r-bonsaisitter")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bonsaisitter" version))
+       (sha256
+        (base32 "16y4mn5bnmzax58rjpf1vn30vf59p2zgz6v9d444jsnlpcrxh0xa"))))
+    (properties `((upstream-name . "bonsaisitter")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/cornball-ai/bonsaisitter")
+    (synopsis "Bindings to the 'Tree-Sitter' Parsing Library")
+    (description
+     "This package provides a runtime for the Tree-sitter parsing library
+<https://tree-sitter.github.io/tree-sitter/> that mirrors the API of the
+treesitter package, so it can serve as a drop-in replacement.  Parses source
+code into concrete syntax trees and updates them incrementally as the source
+changes.  Grammars are supplied by separate packages such as treesitter.r', so
+the runtime itself depends on nothing beyond base R.")
+    (license license:expat)))
+
 (define-public r-bonsaiforest
   (package
     (name "r-bonsaiforest")
@@ -18753,6 +18779,40 @@ boundaries and conditional power for single-arm group sequential test with
 binary endpoint, via either asymptotic or exact test.  The package also provides
 functions to obtain boundary crossing probabilities given the design.")
     (license license:gpl3)))
+
+(define-public r-bingroup2
+  (package
+    (name "r-bingroup2")
+    (version "1.3.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "binGroup2" version))
+       (sha256
+        (base32 "0v2fkg4ca6ymny5xrd7pjw6jzdrw1v1niqfd4mj31qz9c215vria"))))
+    (properties `((upstream-name . "binGroup2")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales
+                             r-rdpack
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-rbeta2009
+                             r-partitions
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/bdhitt/binGroup2")
+    (synopsis "Identification and Estimation using Group Testing")
+    (description
+     "This package provides methods for the group testing identification problem: 1)
+Operating characteristics (e.g., expected number of tests) for commonly used
+hierarchical and array-based algorithms, and 2) Optimal testing configurations
+for these same algorithms.  Methods for the group testing estimation problem: 1)
+Estimation and inference procedures for an overall prevalence, and 2) Regression
+modeling for commonly used hierarchical and array-based algorithms.")
+    (license license:gpl3+)))
 
 (define-public r-bingroup
   (package

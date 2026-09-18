@@ -6115,64 +6115,6 @@ using solver slsqp'.  Alternatively, they can be reformulated as optimization
 problems with second order cone constraints and solved with package cccp'.")
     (license license:gpl2)))
 
-(define-public r-optisel
-  (package
-    (name "r-optisel")
-    (version "2.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "optiSel" version))
-       (sha256
-        (base32 "1wbqp2grjr4ifmjkf5h4fbsl00b9w8rh6nr32f4gvmmgd49hjxq4"))))
-    (properties `((upstream-name . "optiSel")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-reshape2
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-quadprog
-                             r-purrr
-                             r-pspline
-                             r-plyr
-                             r-pedigree
-                             r-optisolve
-                             r-nadiv
-                             r-matrix
-                             r-mass
-                             r-magic
-                             r-kinship2
-                             r-foreach
-                             r-ecosolver
-                             r-doparallel
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=optiSel")
-    (synopsis "Optimum Contribution Selection and Population Genetics")
-    (description
-     "This package provides a framework for the optimization of breeding programs via
-optimum contribution selection and mate allocation.  An easy to use set of
-function for computation of optimum contributions of selection candidates, and
-of the population genetic parameters to be optimized.  These parameters can be
-estimated using pedigree or genotype information, and include kinships, kinships
-at native haplotype segments, and breed composition of crossbred individuals.
-They are suitable for managing genetic diversity, removing introgressed genetic
-material, and accelerating genetic gain.  Additionally, functions are provided
-for computing genetic contributions from ancestors, inbreeding coefficients, the
-native effective size, the native genome equivalent, pedigree completeness, and
-for preparing and plotting pedigrees.  The methods are described in:\\n Wellmann,
-R., and Pfeiffer, I. (2009) <doi:10.1017/S0016672309000202>.\\n Wellmann, R., and
-Bennewitz, J. (2011) <doi:10.2527/jas.2010-3709>.\\n Wellmann, R., Hartwig, S.,
-Bennewitz, J. (2012) <doi:10.1186/1297-9686-44-34>.\\n de Cara, M. A. R.,
-Villanueva, B., Toro, M. A., Fernandez, J. (2013) <doi:10.1111/mec.12560>.\\n
-Wellmann, R., Bennewitz, J., Meuwissen, T.H.E. (2014)
-<doi:10.1017/S0016672314000196>.\\n Wellmann, R. (2019)
-<doi:10.1186/s12859-018-2450-5>.")
-    (license license:gpl2)))
-
 (define-public r-optiscale
   (package
     (name "r-optiscale")
@@ -9101,13 +9043,13 @@ Format, see <https://opendataformat.github.io/>.")
 (define-public r-opencv
   (package
     (name "r-opencv")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "opencv" version))
        (sha256
-        (base32 "003738aa8f6gzgabdc0q01kd0py1sck55rabyi941vway32xg4s7"))))
+        (base32 "1jda4rcm46zsdb6nc421dc093hgsl9lz9bqfpl8sml01rc7iy8db"))))
     (properties `((upstream-name . "opencv")))
     (build-system r-build-system)
     (arguments
@@ -11987,6 +11929,39 @@ counts and trends.")
 Model format in Spark'.  Functionality includes creating all required tables and
 fields and creation of a single reference to the data.  Native Spark
 functionality is supported.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
+(define-public r-omopindices
+  (package
+    (name "r-omopindices")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OmopIndices" version))
+       (sha256
+        (base32 "03gw2sfjladg21j96kj9l0a6gyyc3rnv2dp3ijp60fzdvm16snyl"))))
+    (properties `((upstream-name . "OmopIndices")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang
+                             r-purrr
+                             r-patientprofiles
+                             r-omopgenerics
+                             r-dplyr
+                             r-clock
+                             r-cli))
+    (home-page "https://OHDSI.github.io/OmopIndices/")
+    (synopsis "Patient-Level Indices from the OMOP Common Data Model")
+    (description
+     "This package provides tools to derive standardised, reproducible patient-level
+indices and covariates from Observational Medical Outcomes Partnership (OMOP)
+Common Data Model (CDM) databases.  Functions calculate comorbidity and frailty
+scores, including the Charlson Comorbidity Index, Electronic Frailty Index, and
+Hospital Frailty Risk Score, as well as body mass index, polypharmacy,
+ethnicity, location, and socioeconomic status measures.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-omophub

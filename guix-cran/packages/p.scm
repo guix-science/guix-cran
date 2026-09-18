@@ -6846,6 +6846,40 @@ Global Irreplaceability.  Conservation Biology 2021;1-11.
 <doi:10.1111/cobi.13806>.")
     (license license:expat)))
 
+(define-public r-proximum
+  (package
+    (name "r-proximum")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Proximum" version))
+       (sha256
+        (base32 "019c894pcihv06zsb06b9avs7ykj1kry371grh363ky2h9i0f349"))))
+    (properties `((upstream-name . "Proximum")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-matrix r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/agostinognasso/Proximum")
+    (synopsis "Statistical Analysis of Ensemble Proximity Matrices")
+    (description
+     "Treats the proximity matrices produced by tree ensembles as first-class
+statistical objects rather than as model by-products.  Provides a unified
+extractor across ensemble engines, in-bag and out-of-bag definitions,
+transformations to dissimilarities with metric diagnostics, corrections that
+make an indefinite proximity usable as a kernel, and permutation inference for
+comparing two proximity matrices or partitioning one across the terms of a
+design.  Also provides a Nystrom approximation, a thresholded sparse
+representation and a streaming form that never allocates the matrix at all, for
+samples too large to hold it, measures how far the proximity moves between
+replicates of the ensemble, and draws each object through ggplot2': the seriated
+matrix, the configuration it implies, and the thresholded graph with its
+communities.")
+    (license license:expat)))
+
 (define-public r-proximetricsr
   (package
     (name "r-proximetricsr")
@@ -18758,6 +18792,35 @@ condition on variables/time series at certain quantile levels to stress test the
 risk measure estimates.")
     (license license:expat)))
 
+(define-public r-portn
+  (package
+    (name "r-portn")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "portn" version))
+       (sha256
+        (base32 "1n759fwk2lwz8nqrc04r3720pffyhinmz2x83g5553ywxs0ds4da"))))
+    (properties `((upstream-name . "portn")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rsolnp))
+    (home-page "https://github.com/ysd2004/portn")
+    (synopsis "Portfolio Analysis for Nature")
+    (description
+     "The functions are designed to find the efficient mean-variance frontier or
+portfolio weights for static portfolio (called Markowitz portfolio) analysis in
+resource economics or nature conservation.  Using the nonlinear programming
+solver ('Rsolnp'), this package deals with the quadratic minimization of the
+variance-covariances without shorting (i.e., non-negative portfolio weights)
+studied in Ando and Mallory (2012) <doi:10.1073/pnas.1114653109>.  See the
+examples, testing versions, and more details from:
+<https://github.com/ysd2004/portn>.")
+    (license license:gpl2+)))
+
 (define-public r-portion
   (package
     (name "r-portion")
@@ -23987,6 +24050,44 @@ constraints (P(l1<N1<=u1, ..., lk<Nk<=uk)).  Uses a method suggested by Bruce
 Levin (1981) <doi:10.1214/aos/1176345593>.")
     (license license:agpl3)))
 
+(define-public r-pmsims
+  (package
+    (name "r-pmsims")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pmsims" version))
+       (sha256
+        (base32 "0s32v3ywvwf5lja4kvq3lqgx6z2zggyn39w00kas1gjdvh6zyly4"))))
+    (properties `((upstream-name . "pmsims")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-timeroc
+                             r-survival
+                             r-proc
+                             r-mlpwr
+                             r-lifecycle
+                             r-ggplot2
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://pmsims-package.github.io/pmsims/")
+    (synopsis "Simulation-Based Sample Size Tools for Prediction Models")
+    (description
+     "This package provides a flexible, simulation-based toolkit for exploring how
+much data are needed to develop reliable prediction models.  It works by
+repeatedly generating data, fitting models, and evaluating performance to show
+how sample size affects predictive accuracy, calibration, and overfitting.  The
+package supports continuous, binary, and time-to-event outcomes and can be used
+with both regression-based modelling approaches and machine-learning methods.
+It is designed to help researchers plan studies, assess feasibility, and build
+more robust and generalisable models.  The methods are described in Olaniran et
+al. (2026) <doi:10.1186/s12874-026-02935-9> and Shamsutdinova et al. (2026)
+<doi:10.48550/@code{arXiv.2602.23507>}.")
+    (license license:gpl3+)))
+
 (define-public r-pmsesampling
   (package
     (name "r-pmsesampling")
@@ -26144,13 +26245,13 @@ within \"stat_function\" in a ggplot2 object.")
 (define-public r-plotftir
   (package
     (name "r-plotftir")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PlotFTIR" version))
        (sha256
-        (base32 "03j9bp5rns470hmpxps6667i0bn0hz2zdq9ahnh9hgiv119xfm3c"))))
+        (base32 "1ig0qlpqpg6x4shjsg24b873lirgdz54p2vbicd5f5cmc9xmnxzs"))))
     (properties `((upstream-name . "PlotFTIR")))
     (build-system r-build-system)
     (arguments
@@ -32951,13 +33052,13 @@ suite Aphalo P. J. (2015) <doi:10.19232/uv4pb.2015.1.14>.")
 (define-public r-photobiologyplants
   (package
     (name "r-photobiologyplants")
-    (version "0.6.1-1")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "photobiologyPlants" version))
        (sha256
-        (base32 "0mdg72vna7jn6466jajkrxnip38zdiay9rfbkh4rvfgzhl6q1lps"))))
+        (base32 "13i6bfxbz3zjzy55yhxsqxnhglq209akgwrwlam6hjylycmx3f1z"))))
     (properties `((upstream-name . "photobiologyPlants")))
     (build-system r-build-system)
     (arguments

@@ -5034,19 +5034,19 @@ More information available at <https://shahlab.stanford.edu/start>.")
 (define-public r-atime
   (package
     (name "r-atime")
-    (version "2026.4.2")
+    (version "2026.9.17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "atime" version))
        (sha256
-        (base32 "0yszdca2dnnijk4ji1700ga186bf0kf8fv1dhvzhfy5p67bqa0xc"))))
+        (base32 "1zsscnccj7i5hnkc5p3yc1ip77ikkbpnn5gpnbq97z6ac4n794fh"))))
     (properties `((upstream-name . "atime")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-lattice r-git2r r-data-table r-bench))
+    (propagated-inputs (list r-lattice r-gert r-data-table r-bench))
     (native-inputs (list r-litedown))
     (home-page "https://github.com/tdhock/atime")
     (synopsis "Asymptotic Timing")
@@ -8830,6 +8830,45 @@ forecasting framework proposed by Yeasin and Paul (2024)
 <doi:10.1007/s11227-023-05542-3>.")
     (license license:gpl3)))
 
+(define-public r-arimasel
+  (package
+    (name "r-arimasel")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "arimasel" version))
+       (sha256
+        (base32 "1wfdlijkm5dfpbaqvy686igyzz88i748akh7767qj997xxa5mb92"))))
+    (properties `((upstream-name . "arimasel")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Olawaleawe/arimasel")
+    (synopsis
+     "Cartesian Product-Based ARIMA Model Identification and Selection")
+    (description
+     "This package provides an alternative algorithm for ARIMA and seasonal ARIMA
+model identification based on Cartesian products of user-supplied parameter
+sets.  Rather than relying on ACF/PACF plots or stepwise search (as in
+@code{auto.arima()}), the package exhaustively evaluates every candidate
+(p,d,q)(P,D,Q)[m] combination in the requested index sets, ranks all converged
+models by AIC, AICc, BIC, and HQIC simultaneously, computes Akaike weights for
+model uncertainty quantification, supports exogenous regressors, produces
+ensemble forecasts, evaluates candidate models by rolling-origin (expanding
+window) cross-validation, and provides publication-quality diagnostic and
+comparison plots.  A feature-based exploratory data analysis suite computes
+scale-free time series characteristics (trend and seasonal strength, spectral
+entropy, autocorrelation, lumpiness, stability) in the spirit of Hyndman, Wang
+and Laptev (2015), and a feature-guided automatic search narrows the Cartesian
+product model space before the exhaustive search runs.  The algorithm is
+flexible, transparent, and widely applicable for quick, reproducible ARIMA model
+selection in both academic research and industry forecasting pipelines.
+Applications are demonstrated with Nigerian macroeconomic time series data.")
+    (license license:gpl3)))
+
 (define-public r-arimaann
   (package
     (name "r-arimaann")
@@ -10437,13 +10476,13 @@ or with a static data set.  Example is provided at
 (define-public r-archeofrag-gui
   (package
     (name "r-archeofrag-gui")
-    (version "1.1.4")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "archeofrag.gui" version))
        (sha256
-        (base32 "10cwfgns75jjvsfa4djz54x7scay4rjwckjl5r657b96djbnw2fm"))))
+        (base32 "0q5ga3jqjqcz01dsdw8ian3wa080xz9q4bk879v7s0s0bmfv9vz0"))))
     (properties `((upstream-name . "archeofrag.gui")))
     (build-system r-build-system)
     (arguments
@@ -10466,25 +10505,26 @@ or with a static data set.  Example is provided at
 datasets of the archeofrag package for spatial analysis in archaeology from
 refitting data.  Quick and seamless exploration of archaeological refitting
 datasets, focusing on physical refits only.  Features include: built-in
-documentation and convenient workflow, plot generation and exports, anomaly
+documentation and convenient workflow, plot generation and export, anomaly
 detection in the spatial distribution of refitting connection, exploration of
-spatial units merging solutions, simulation of archaeological site formation
+spatial units merging solutions, data export to the fabryka application for
+spatial orientation analysis, simulation of archaeological site formation
 processes, support for parallel computing, R code generation to re-execute
 simulations and ensure reproducibility, code generation for the @code{openMOLE}
 model exploration software.  A demonstration of the app is available at
-<https://analytics.huma-num.fr/Sebastien.Plutniak/archeofrag/>.")
+<https://analytics.huma-num.fr/archeofrag/>.")
     (license license:gpl3)))
 
 (define-public r-archeofrag
   (package
     (name "r-archeofrag")
-    (version "1.2.4")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "archeofrag" version))
        (sha256
-        (base32 "1f0ifcxgl9fyf68wrskf3cnlhp6dlha0ybnh3ghcv9vr3jcvp2d6"))))
+        (base32 "16smnzmfgwrkadfdldyfapsbb6nixhryg2dxndzj29bi8cjry73n"))))
     (properties `((upstream-name . "archeofrag")))
     (build-system r-build-system)
     (arguments
@@ -10508,7 +10548,7 @@ scientific papers: Plutniak (2021, Journal of Archaeological Science,
 <doi:10.1016/j.jas.2021.105501>) and Plutniak (2022, Journal of Open Source
 Software, <doi:10.21105/joss.04335>).  This package is complemented by the
 archeofrag.gui R package, a companion GUI application available at
-<https://analytics.huma-num.fr/Sebastien.Plutniak/archeofrag/>.")
+<https://analytics.huma-num.fr/archeofrag/>.")
     (license license:gpl3)))
 
 (define-public r-archdata
@@ -27161,13 +27201,13 @@ Specialty Pharmacy\" <doi:10.18553/jmcp.2019.25.10.1073>.")
 (define-public r-adheaping
   (package
     (name "r-adheaping")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adheaping" version))
        (sha256
-        (base32 "07sl9zk0l6y5p67yinci3brih3q8qgxaihix0wyqyyif79i5vvbk"))))
+        (base32 "034f80zb1gpnnm19d58gf8f8zd533g3p4lh3c2lfrp951bnpj30z"))))
     (properties `((upstream-name . "adheaping")))
     (build-system r-build-system)
     (arguments
@@ -27182,9 +27222,9 @@ characteristic-function theory of heaping.  Rounding to a grid is convolution
 with a box followed by lattice sampling, so the density is recovered by
 deconvolving the known box and tapering against a data-driven noise floor.
 Provides a box-deconvolution de-heaping estimator, a superposition variant, and
-a single combined estimator selected by a band-capacity gate; blind grid,
+a single combined estimator selected by a band-capacity gate; grid,
 heaped-fraction, and mixed-grain readers; and a spectral higher-order comb
-detector.  Faithful base-R replicas of the Heitjan-Rubin multiple-imputation and
+detector.  Base-R replicas of the Heitjan-Rubin multiple-imputation and
 measurement-error deconvolution methods are included for comparison, and the
 Kernelheaping stochastic expectation-maximization estimator is used when
 installed.")
@@ -27737,34 +27777,32 @@ than standard methods.")
 (define-public r-addivortes
   (package
     (name "r-addivortes")
-    (version "0.6.9")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AddiVortes" version))
        (sha256
-        (base32 "18212rlq3xy9vilvrqwq0rqjqs8xf4f694y38wdq72vgi7v8kf51"))))
+        (base32 "0mzv5nrqs4wkpf7v4k9avv79dyri5b9jjy6rxpcqyb7k20nznww1"))))
     (properties `((upstream-name . "AddiVortes")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list))
-    (propagated-inputs (list r-pbapply))
     (native-inputs (list r-knitr))
     (home-page "https://johnpaulgosling.github.io/AddiVortes/")
     (synopsis "(Bayesian) Additive Voronoi Tessellations")
     (description
      "This package implements the Bayesian Additive Voronoi Tessellation model for
-non-parametric regression and machine learning as introduced in Stone and
-Gosling (2025) <doi:10.1080/10618600.2024.2414104>.  This package provides a
-flexible alternative to BART (Bayesian Additive Regression Trees) using Voronoi
-tessellations instead of trees.  Users can fit Bayesian regression models
-(estimating the associated posterior distributions and make predictions.  It is
-particularly useful for spatial data analysis, machine learning regression,
-complex function approximation and Bayesian modeling where the underlying
-structure is unknown.  The method is well-suited to capturing spatial patterns
-and non-linear relationships.")
+non-parametric regression, classification and machine learning as introduced in
+Stone and Gosling (2025) <doi:10.1080/10618600.2024.2414104>.  This package
+provides a flexible alternative to BART (Bayesian Additive Regression Trees)
+using Voronoi tessellations instead of trees.  Users can fit Bayesian regression
+and probit classification models, estimate the associated posterior
+distributions and make predictions.  It is particularly useful for spatial data
+analysis, machine learning, complex function approximation and Bayesian
+modelling where the underlying structure is unknown.")
     (license license:gpl3+)))
 
 (define-public r-additive
@@ -29400,6 +29438,44 @@ be integrated.")
 model based on self-supervised learning for wrist-worn accelerometer data.")
     (license license:expat)))
 
+(define-public r-actimetrics
+  (package
+    (name "r-actimetrics")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "actimetrics" version))
+       (sha256
+        (base32 "0pmy8jzblymwq8h888vxvynmiaqyckw2igrb8ki06nx020qdn8ma"))))
+    (properties `((upstream-name . "actimetrics")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-walking
+                             r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-purrr
+                             r-lubridate
+                             r-dplyr
+                             r-assertthat
+                             r-actiread
+                             r-actibase))
+    (native-inputs (list r-knitr))
+    (home-page "https://jhuwit.github.io/actimetrics/")
+    (synopsis "Create Metrics Actigraphy and Activity Analysis")
+    (description
+     "This package provides functions for calibrating, counting, and summarizing
+actigraphy and activity data into specific metrics and sleep measures.  The
+metrics include activity counts, step counts, activity index, Monitor
+Independent Movement Summary Unit (MIMS), mean amplitude deviation (MAD), and
+provides wrappers for sleep estimation from activity counts using Tudor-Locke
+(2014) <doi:10.1139/apnm-2013-0173> and Sadeh (1994)
+<doi:10.1093/sleep/17.3.201>.")
+    (license license:gpl3)))
+
 (define-public r-actilifecounts
   (package
     (name "r-actilifecounts")
@@ -29471,13 +29547,13 @@ algorithm to detect sleep periods from asleep/awake states.")
 (define-public r-actibase
   (package
     (name "r-actibase")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "actibase" version))
        (sha256
-        (base32 "19bp38q6gb1g268akml9svmy9kfkh0f2csckf2gggy5rlzjg6z0p"))))
+        (base32 "0mm4mjscdc3lznhch6mc386kqx98h65gwq3q1727324cpq7i9dki"))))
     (properties `((upstream-name . "actibase")))
     (build-system r-build-system)
     (arguments

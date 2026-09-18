@@ -496,13 +496,13 @@ al. (2024) <doi:10.1016/j.envsoft.2024.106094>.")
 (define-public r-hypervolume
   (package
     (name "r-hypervolume")
-    (version "3.1.6")
+    (version "3.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hypervolume" version))
        (sha256
-        (base32 "0z2mzxl4141z95sjqb4xm2c7r53g29j2fmvsi4wb1nj8yd4haw9b"))))
+        (base32 "1bhzyw9nvh5hvy3gsr0narw5dgmhyj52kyw7gnbwczmvg8kl04sc"))))
     (properties `((upstream-name . "hypervolume")))
     (build-system r-build-system)
     (arguments
@@ -15656,13 +15656,13 @@ The original version of the default model is described in BÃ¸lstad (2024)
 (define-public r-hbal
   (package
     (name "r-hbal")
-    (version "1.2.15")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hbal" version))
        (sha256
-        (base32 "07q6v1n1wihj0bbg3qv8srdr94jqp29g7xbqslc1ym903d0mqn0z"))))
+        (base32 "0nqahizplakx18a1mgfb287cq354qrnikmkx17jb95ax4nxz86jp"))))
     (properties `((upstream-name . "hbal")))
     (build-system r-build-system)
     (arguments

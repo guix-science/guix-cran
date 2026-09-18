@@ -4658,13 +4658,13 @@ are directly influenced by a number of variables (Battese and Coelli, 1995,
 (define-public r-fromo
   (package
     (name "r-fromo")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fromo" version))
        (sha256
-        (base32 "017s0h2nvg5xqc4r91brwjabryacnwkry5zivpcic512bvckglsj"))))
+        (base32 "0idrmspxh3shzp6w90sg8cvadwfmgwlgq1nnmg0zfslk5khp14nd"))))
     (properties `((upstream-name . "fromo")))
     (build-system r-build-system)
     (arguments
@@ -8390,6 +8390,56 @@ such as daily active users and play duration.  It supports pagination for large
 result sets and time-series analysis of island performance.  The API endpoint is
 <https://api.fortnite.com/ecosystem/v1>.")
     (license license:expat)))
+
+(define-public r-fortls
+  (package
+    (name "r-fortls")
+    (version "2.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FORTLS" version))
+       (sha256
+        (base32 "1mk6wix61pl05w058ivqwa65pslqaiyqhf1m3c5ypg86sffmwhrg"))))
+    (properties `((upstream-name . "FORTLS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vroom
+                             r-voxr
+                             r-tidyr
+                             r-sf
+                             r-scales
+                             r-reticulate
+                             r-rcsf
+                             r-rcppeigen
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-raster
+                             r-progress
+                             r-plotly
+                             r-moments
+                             r-lidr
+                             r-htmlwidgets
+                             r-distance
+                             r-dbscan
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://molina-valero.github.io/FORTLS/")
+    (synopsis
+     "Automatic Processing of Terrestrial-Based Technologies Point Cloud Data for Forestry Purposes")
+    (description
+     "Process automation of point cloud data derived from terrestrial-based
+technologies such as Terrestrial Laser Scanner (TLS) or Mobile Laser Scanner.
+FORTLS enables (i) detection of trees and estimation of tree-level attributes
+(e.g. diameters and heights), (ii) estimation of stand-level variables (e.g.
+density, basal area, mean and dominant height), (iii) computation of metrics
+related to important forest attributes estimated in Forest Inventories at
+stand-level, and (iv) optimization of plot design for combining TLS data and
+field measured data.  Documentation about FORTLS is described in Molina-Valero
+et al. (2022, <doi:10.1016/j.envsoft.2022.105337>).")
+    (license license:gpl3)))
 
 (define-public r-forstringr
   (package
@@ -18828,6 +18878,34 @@ methods score and rank feature relevance using metrics such as p-values,
 correlation, and importance scores (Kuhn and Johnson (2019)
 <doi:10.1201/9781315108230>).")
     (license license:expat)))
+
+(define-public r-filters-trade
+  (package
+    (name "r-filters-trade")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "filters.trade" version))
+       (sha256
+        (base32 "14csqvlikf0bzl9nxs1ak9lgl329w12yjkv9rqm5p4xpz2wshr86"))))
+    (properties `((upstream-name . "filters.trade")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml))
+    (home-page "https://cran.r-project.org/package=filters.trade")
+    (synopsis "Filter System for Selecting Trading Instruments")
+    (description
+     "Enables filtering datasets of tradable instruments by prior specified
+identifiers which correspond to saved filter expressions.  A filter is a named
+expression bound to a target dataset, stored once in a package level registry,
+and later applied to select trading codes such as tickers or symbols out of a
+universe, price or signal dataset.  The design follows the `filters` package,
+replacing the clinical study dataset convention with a trading instrument
+convention.")
+    (license license:asl2.0)))
 
 (define-public r-filters
   (package

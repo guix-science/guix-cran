@@ -15290,13 +15290,13 @@ respective starting times can be specified.")
 (define-public r-disordr
   (package
     (name "r-disordr")
-    (version "0.9-8-6")
+    (version "0.9-8-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "disordR" version))
        (sha256
-        (base32 "1496kwdf5190mpwpzq6ycczj08f4jjamlz97751aygybxvqf9rh1"))))
+        (base32 "10wzyby9mwx42fl5zkwgl5n4gsbyfj45mfa701c20crh12y97spx"))))
     (properties `((upstream-name . "disordR")))
     (build-system r-build-system)
     (arguments
@@ -26578,6 +26578,30 @@ maintenance.  Based on the methodology of Liu and Huang (2016)
 insect development.")
     (license license:gpl3+)))
 
+(define-public r-deformula
+  (package
+    (name "r-deformula")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "deformula" version))
+       (sha256
+        (base32 "0hw0axij82qvwvrz4clyzwb52mymd3vylh5yaz9wh1wrgzsidnfb"))))
+    (properties `((upstream-name . "deformula")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://github.com/okamumu/deformula/")
+    (synopsis
+     "Integration of One-Dimensional Functions with Double Exponential Formulas")
+    (description
+     "Numerical quadrature of functions of one variable over a finite or infinite
+interval with double exponential formulas.")
+    (license license:expat)))
+
 (define-public r-deform
   (package
     (name "r-deform")
@@ -33555,19 +33579,20 @@ serialization of datasets in line with ISO and W3C standards.")
 (define-public r-dataseries
   (package
     (name "r-dataseries")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dataseries" version))
        (sha256
-        (base32 "1zvba7glnw7kzql1cq4xnp717vxjdik30smjvfqxary4abcimn7c"))))
+        (base32 "13zbrl1rza8xilsdpmjnw4a5mpnsvaw129srv6ga77f18i1jsrj1"))))
     (properties `((upstream-name . "dataseries")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-jsonlite))
+    (native-inputs (list r-knitr))
     (home-page "https://dataseries.org")
     (synopsis "Switzerland's Data Series in One Place")
     (description
@@ -33575,7 +33600,7 @@ serialization of datasets in line with ISO and W3C standards.")
 <https://dataseries.org>, a comprehensive and up-to-date collection of public
 data from Switzerland.  Series are retrieved through the public dataseries.org
 API and imported as a data.frame or ts object.")
-    (license license:gpl3)))
+    (license license:expat)))
 
 (define-public r-datasda
   (package
@@ -34880,6 +34905,31 @@ count validation.")
      "This package creates a data dictionary from any dataframe or tibble in your R
 environment.  You can opt to add variable labels.  You can write the object
 directly to Excel.")
+    (license license:expat)))
+
+(define-public r-datadict
+  (package
+    (name "r-datadict")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "datadict" version))
+       (sha256
+        (base32 "1ijs0rl2i89ds32j7mby1igrrzyddfjmv559q4n9nhd7fial24w7"))))
+    (properties `((upstream-name . "datadict")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-processx r-cli))
+    (home-page "https://data-dict.tidyverse.org")
+    (synopsis "Validate Data Against a 'data-dict.yaml' Data Dictionary")
+    (description
+     "This package provides a data dictionary describes a collection of related
+tables: their columns, types, constraints, relationships, and glossary.
+Validate a dataset against its dictionary and read the findings as an HTML
+report.  Reference: <https://data-dict.tidyverse.org>.")
     (license license:expat)))
 
 (define-public r-datacutr

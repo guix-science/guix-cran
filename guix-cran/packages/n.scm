@@ -4310,6 +4310,33 @@ logistic or Gompertz curves) to predict final counts from partially reported
 data.")
     (license license:expat)))
 
+(define-public r-nowcaster
+  (package
+    (name "r-nowcaster")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nowcaster" version))
+       (sha256
+        (base32 "1lykvyrpmi9shawxfan19jq1n2l1wjsj09w7y3vmgdcj9lj8lkzs"))))
+    (properties `((upstream-name . "nowcaster")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-tibble r-mgcv r-dplyr))
+    (home-page "https://covid19br.github.io/nowcaster/")
+    (synopsis
+     "Statistical Models for Notification Delay Correction of Epidemiological Data")
+    (description
+     "Statistical models for correcting notification delays of epidemiological data.
+The package wraps statistical models to estimate not yet reported data using
+empirical delay distribution either from individual-level data or from the
+differences of aggregated time series of cases.  For more details see Bastos et
+al. (2019) <doi:10.1002/sim.8303>.")
+    (license license:gpl3+)))
+
 (define-public r-nowcast
   (package
     (name "r-nowcast")
@@ -7276,13 +7303,13 @@ Statistics: Using Partial Moments (ISBN: 1490523995, Second edition:
 (define-public r-nnr
   (package
     (name "r-nnr")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nnR" version))
        (sha256
-        (base32 "1wxryfkmachsv5m3bbb7ym70p55l36b218q8r2wjy4bl0cwi83jp"))))
+        (base32 "0b6bxlwrrfm0yg8j9xyhy1gkfq7k8il9pbin2nzn63gmfz6vfidy"))))
     (properties `((upstream-name . "nnR")))
     (build-system r-build-system)
     (arguments
@@ -7292,18 +7319,14 @@ Statistics: Using Partial Moments (ISBN: 1490523995, Second edition:
     (home-page "https://github.com/2shakilrafi/nnR/")
     (synopsis "Neural Networks Made Algebraic")
     (description
-     "Do algebraic operations on neural networks.  We seek here to implement in R,
-operations on neural networks and their resulting approximations.  Our
-operations derive their descriptions mainly from Rafi S., Padgett, J.L., and
-Nakarmi, U. (2024), \"Towards an Algebraic Framework For Approximating Functions
-Using Neural Network Polynomials\", <doi:10.48550/@code{arXiv.2402.01058>}, Grohs
-P., Hornung, F., Jentzen, A. et al. (2023), \"Space-time error estimates for deep
-neural network approximations for differential equations\",
-<doi:10.1007/s10444-022-09970-2>, Jentzen A., Kuckuck B., von Wurstemberger, P.
-(2023), \"Mathematical Introduction to Deep Learning Methods, Implementations,
-and Theory\" <doi:10.48550/@code{arXiv.2310.20360>}.  Our implementation is meant
-mainly as a pedagogical tool, and proof of concept.  Faster implementations with
-deeper vectorizations may be made in future versions.")
+     "Build, compose, stack, sum, and realize feed-forward neural networks as
+algebraic objects.  Implements the calculus and constructive approximations
+described by Rafi, Padgett, and Nakarmi (2024)
+<doi:10.48550/@code{arXiv.2402.01058>}, Grohs, Hornung, Jentzen, et al. (2023)
+<doi:10.1007/s10444-022-09970-2>, and Jentzen, Kuckuck, and von Wurstemberger
+(2023) <doi:10.48550/@code{arXiv.2310.20360>}.  Includes neural network
+polynomials, transcendental-function approximations, multidimensional maximum
+convolution, and vectorized batch realization.")
     (license license:gpl3)))
 
 (define-public r-nnmomo
@@ -15489,13 +15512,13 @@ call @code{NetMHCIIpan} from R.")
 (define-public r-netmeta
   (package
     (name "r-netmeta")
-    (version "3.6-1")
+    (version "3.7-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "netmeta" version))
        (sha256
-        (base32 "0sg49prq4bqr9mzdgaawd2xfsmins0sgyxplkrxk7p8pzzn0yb4i"))))
+        (base32 "1wn9y4x446g5hy7ghp9xr7n92qgwbhxbz0gvl590di69mhs5wlv9"))))
     (properties `((upstream-name . "netmeta")))
     (build-system r-build-system)
     (arguments
@@ -15507,6 +15530,7 @@ call @code{NetMHCIIpan} from R.")
                       (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-tidyr
                              r-stringr
+                             r-reshape2
                              r-mvtnorm
                              r-metafor
                              r-meta
@@ -15551,8 +15575,9 @@ automated drawing of network graphs described in RÃ¼cker & Schwarzer (2016)
 Hasse diagram for poset (Carlsen & Bruggemann, 2014) <doi:10.1002/cem.2569>;
 (RÃ¼cker & Schwarzer, 2017) <doi:10.1002/jrsm.1270>; - contribution matrix as
 described in Papakonstantinou et al. (2018) <doi:10.12688/f1000research.14770.3>
-and Davies et al. (2022) <doi:10.1002/sim.9346>; - network meta-regression with
-a single continuous or binary covariate (Kwarteng et al., 2026)
+and Davies et al. (2022) <doi:10.1002/sim.9346>; - path-based approach for
+detecting and assessing inconsistency; - network meta-regression with a single
+continuous or binary covariate (Kwarteng et al., 2026)
 <doi:10.21203/rs.3.rs-8235913/v1>; - subgroup network meta-analysis.")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file://LICENSE")))))

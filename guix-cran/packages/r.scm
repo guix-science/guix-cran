@@ -4261,13 +4261,13 @@ described in Kristensen et al. (2016) <doi:10.18637/jss.v070.i05>.")
 (define-public r-rtmb
   (package
     (name "r-rtmb")
-    (version "1.9")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RTMB" version))
        (sha256
-        (base32 "0vpq0rj5hf8kjj2qmlyppvj1bdqwcrcxc6z65s2j0f27mad5mgp2"))))
+        (base32 "0da68p0xgdfs9yzhrnkq3pjsxqifzmnqcibb5dq1q1rhbgmj2yx8"))))
     (properties `((upstream-name . "RTMB")))
     (build-system r-build-system)
     (arguments
@@ -5671,13 +5671,13 @@ summarizing model outputs.  rsyncrosim requires @code{SyncroSim} 2.3.5 or higher
 (define-public r-rswipl
   (package
     (name "r-rswipl")
-    (version "10.1.9")
+    (version "10.1.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rswipl" version))
        (sha256
-        (base32 "1y5ycpdnhmqfcwds2qk7ycz4l0m8fjz8711jwnijnv5a5lnz1ybb"))))
+        (base32 "1f7g67gwpc5m86dp0gj7jvm4ys3dgcnf1m4fyjiqjjgj281z02lh"))))
     (properties `((upstream-name . "rswipl")))
     (build-system r-build-system)
     (arguments
@@ -14044,19 +14044,19 @@ from the scrutiny package.")
 (define-public r-roundrobinr
   (package
     (name "r-roundrobinr")
-    (version "1.0.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "roundRobinR" version))
        (sha256
-        (base32 "1qb8crhkjbqgpbxssq741l3g6qsnci29aklix6jlslwfg9qss3rh"))))
+        (base32 "1ppjvq9ka57a3x9parpcq0jcw860bka1i0bw70hm3lzls9glplkh"))))
     (properties `((upstream-name . "roundRobinR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-nlme r-data-table))
+    (propagated-inputs (list r-nlme r-matrix r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/andrewpknight/roundRobinR")
     (synopsis "Manipulate and Analyze Round Robin Dyadic Data")
@@ -15698,31 +15698,6 @@ analysis of continuous outcomes introduced by Tan et al. (2017)
 residuals and estimates in linear scales are available from the package, and
 outcomes with ties are supported.")
     (license license:lgpl3)))
-
-(define-public r-rolog
-  (package
-    (name "r-rolog")
-    (version "0.9.28")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rolog" version))
-       (sha256
-        (base32 "1s2ic58rdz8afqw17ixg4fmkcfgmnifiw8cj8aqxw9vcc9pnfsqn"))))
-    (properties `((upstream-name . "rolog")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rswipl r-rcpp))
-    (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://github.com/mgondan/rolog")
-    (synopsis "Query 'SWI'-'Prolog' from R")
-    (description
-     "This R package connects to SWI-Prolog, <https://www.swi-prolog.org/>, so that R
-can send deterministic and non-deterministic queries to prolog (consult,
-query/submit, once, findall).")
-    (license (license:fsdg-compatible "FreeBSD"))))
 
 (define-public r-rolocisccnbs
   (package
@@ -22759,6 +22734,41 @@ htmlwidgets and shiny helpers for rendering Mosaic specifications from R,
 including optional browser-side @code{DuckDB-WASM} execution and selection
 export helpers for exploratory workflows.")
     (license license:expat)))
+
+(define-public r-rmoriedata
+  (package
+    (name "r-rmoriedata")
+    (version "0.3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rmoriedata" version))
+       (sha256
+        (base32 "1zzrg0ncfnnvbp2d5493n2m2knsb0jy5n9m8z6vlznrv4k9pizb8"))))
+    (properties `((upstream-name . "rmoriedata")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rmoriebricklayer))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/rootcoder007/rmoriedata")
+    (synopsis "Integrated Datasets for the 'rmorie' Package")
+    (description
+     "Integrated open data fixtures used by the rmorie package for examples,
+vignettes, and tests.  Split out so rmorie itself stays within the CRAN
+package-size soft cap.  Contains snapshots of publicly available datasets from
+open-data portals built on the Comprehensive Knowledge Archive Network ('CKAN',
+<https://ckan.org/>), Socrata (<https://dev.socrata.com/>), and Opendatasoft
+(<https://www.huwise.com/>) (Chicago, New York City, Toronto, Vancouver, and
+others), Statistics Canada Canadian Centre for Justice and Community Safety
+Statistics ('CCJS') tables, a multi-agent-reviewed corpus of Ontario Special
+Investigations Unit ('SIU', <https://www.siu.on.ca/>) director's reports, and
+synthetic fixtures for unit tests.  Also ships a small set of analyst-facing
+helpers for releasing aggregate statistics without re-identification risk:
+Laplace and Gaussian differential privacy mechanisms and k-anonymity,
+l-diversity, and cell suppression verifiers.")
+    (license license:agpl3+)))
 
 (define-public r-rmoriebricklayer
   (package
@@ -31573,6 +31583,66 @@ codes, and chemical structures for over 170,000 registered substances.")
 Number for Repetitive Group Sampling Plan Based on Cpk as given in Aslam et al.
 (2013) (<DOI:10.1080/00949655.2012.663374>).")
     (license license:gpl2)))
+
+(define-public r-rgrsptt
+  (package
+    (name "r-rgrsptt")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rGrSPTT" version))
+       (sha256
+        (base32 "1nzih2jnpnqb1vvdml081yvwnanj72knfznp6jz3miz4fbh5gl6c"))))
+    (properties `((upstream-name . "rGrSPTT")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=rGrSPTT")
+    (synopsis "Group Sampling Inspection Plan for Time Truncated Life Test")
+    (description
+     "Designing group acceptance sampling inspection plans under time-truncated life
+tests.  The package calculates the required minimum number of groups subject to
+a consumer's risk constraint on the probability of acceptance.  Users can supply
+failure probabilities obtained from any lifetime distribution, allowing the
+methodology to be applied without restricting the analysis to a particular
+probability model.  The package also provides a function for plotting the
+required minimum number of groups against the termination ratio.  Saha et al.
+(2025) <doi:10.1007/s41872-025-00305-w>; Tripathi et al. (2020)
+<doi:10.1080/02664763.2020.1759031>; Tripathi and Aslam (2024)
+<doi:10.1285/i20705948v17n3p636>.")
+    (license license:gpl3)))
+
+(define-public r-rgrpc
+  (package
+    (name "r-rgrpc")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rgrpc" version))
+       (sha256
+        (base32 "1rmbqqfrf80fp3jyjmj29rrzsb2zq3wjmn2gzsd4bdlryjm3lwbz"))))
+    (properties `((upstream-name . "rgrpc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list pkg-config))
+    (home-page "https://github.com/cornball-ai/rgrpc")
+    (synopsis "Asynchronous 'gRPC' Client and Server Runtime")
+    (description
+     "This package provides a first-class asynchronous @code{gRPC} <https://grpc.io/>
+runtime built on the generic asynchronous C++ API ('@code{GenericStub}',
+@code{AsyncGenericService}') <https://grpc.github.io/grpc/cpp/>.  Requests and
+responses cross the native boundary as method names plus opaque byte buffers;
+R@code{ProtoBuf} supplies and consumes the bytes, so schemas are loaded at
+runtime and no generated service stubs are required.  Native completion threads
+never call the R API: completions are queued natively and delivered in batches
+on the R main thread.  Complements R@code{ProtoBuf} rather than replacing it.
+Links against the system @code{gRPC} library for C++'.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-rgroovy
   (package
@@ -48841,13 +48911,13 @@ subcommunities.  Richard Reeve, et al. (2016)
 (define-public r-rdistance
   (package
     (name "r-rdistance")
-    (version "4.4.3")
+    (version "4.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rdistance" version))
        (sha256
-        (base32 "1cs1265hvhhm03ghsnx6p6rs10gbbdkspv1lnpvh9w8pa498j5fy"))))
+        (base32 "0ph82isjk0jhq6hkm9yrm1qfn8hr3yx20xm5qcppzwlvqpq6n3lg"))))
     (properties `((upstream-name . "Rdistance")))
     (build-system r-build-system)
     (arguments
@@ -48858,7 +48928,9 @@ subcommunities.  Richard Reeve, et al. (2016)
                              r-tidyselect
                              r-tidyr
                              r-tibble
+                             r-sf
                              r-progress
+                             r-oscars
                              r-multidplyr
                              r-expint
                              r-dplyr
@@ -48885,13 +48957,13 @@ Many tutorials are available on the package's website (URL below).")
 (define-public r-rdist
   (package
     (name "r-rdist")
-    (version "0.0.5")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rdist" version))
        (sha256
-        (base32 "1jb6dgp1f3307h96v20pjxpkxfz08ij98w0yj5cdx1g2kwfl0h0w"))))
+        (base32 "1d9zl6lmk93dm0xbxgfs8f783jsfsarbbr90gpzharpdsbn41959"))))
     (properties `((upstream-name . "rdist")))
     (build-system r-build-system)
     (arguments
@@ -50089,6 +50161,30 @@ software article is Cattaneo, Titiunik, and Yu (2025)
 @code{CytoGPS} web site, then import the results into R for further analysis and
 graphing.")
     (license license:asl2.0)))
+
+(define-public r-rcxl
+  (package
+    (name "r-rcxl")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rcxl" version))
+       (sha256
+        (base32 "1p5zmvmafpnfqkix15nfqki63wwgldv3aspbl74a797y68nh99b9"))))
+    (properties `((upstream-name . "rcxl")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/vlshields/rcxl")
+    (synopsis "Read xlsx Files with a Native Parser")
+    (description
+     "Reads tabular data from xlsx files with a specialized C parser.  Worksheet XML
+is scanned in a single pass and decoded directly into R vectors, with no
+intermediate document model.  Bundles the miniz and libdeflate decompressors to
+read the underlying archive.")
+    (license license:expat)))
 
 (define-public r-rcurvep
   (package
@@ -60128,6 +60224,34 @@ Overall Ranking of Populations\" by Klein, Wright, and Wieczorek (2020)
 <DOI:10.1111/rssc.12402>.")
     (license license:gpl2)))
 
+(define-public r-rankimp
+  (package
+    (name "r-rankimp")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rankimp" version))
+       (sha256
+        (base32 "10vvqy17d8n2gs55lv06wxxn0f7kzrd5b1lg30x4flx88qi7s4ia"))))
+    (properties `((upstream-name . "rankimp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-ggplot2 r-consrank))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/agostinognasso/rankimp")
+    (synopsis "Consensus Ranking of Variable Importance with Uncertainty")
+    (description
+     "Variable importance rankings depend on the method, the random seed and the
+resample used to compute them.  This package treats every source of importance
+as a judge expressing a ranking over the predictors, and synthesises those
+rankings into a Kemeny median ranking with ties.  Uncertainty about the
+consensus is quantified through bootstrap rank confidence sets, top-k
+probabilities and clustering of disagreeing judges.")
+    (license license:expat)))
+
 (define-public r-rankicc
   (package
     (name "r-rankicc")
@@ -61304,13 +61428,13 @@ Square (GLS) based Random Forest (RF-GLS) detailed in Saha, Basu and Datta
 (define-public r-randomforestrhf
   (package
     (name "r-randomforestrhf")
-    (version "2.0.3")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "randomForestRHF" version))
        (sha256
-        (base32 "0y7jkss2gjlankhjk1j4x2wiqk1hyyylp0bhfnm5bkbbybac2vm8"))))
+        (base32 "0fbxvlikibhfp4dxf1qyrp34sslbfi9lzk1p862n1fsr31iw3zm8"))))
     (properties `((upstream-name . "randomForestRHF")))
     (build-system r-build-system)
     (arguments

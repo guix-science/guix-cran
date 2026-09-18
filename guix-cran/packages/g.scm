@@ -27217,6 +27217,32 @@ implements biplot and scree plot methods which can be used with the results of
 ggplot2 techniques.")
     (license license:gpl2)))
 
+(define-public r-ggbipart
+  (package
+    (name "r-ggbipart")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggbipart" version))
+       (sha256
+        (base32 "1v9bnvyaqv1ajw2gqvn20q9b7lib3sl3yv53m9sh8kr9vk74wh4n"))))
+    (properties `((upstream-name . "ggbipart")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-network r-igraph r-ggplot2 r-ggally))
+    (native-inputs (list r-knitr))
+    (home-page "http://pjordanolab.ebd.csic.es/resources/")
+    (synopsis "Plots for Bipartite Networks in R")
+    (description
+     "This package provides functions to plot bipartite ecological networks using
+ggplot2 graphics, including interaction webs, node-link layouts, and matrix
+representations.  Species interaction data in the form of adjacency matrices, or
+network and igraph graph objects, can be plotted directly.")
+    (license license:gpl3)))
+
 (define-public r-ggautomap
   (package
     (name "r-ggautomap")

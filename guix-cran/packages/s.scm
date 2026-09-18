@@ -13049,13 +13049,13 @@ data source for applications in social and life sciences.")
 (define-public r-stpphawkes
   (package
     (name "r-stpphawkes")
-    (version "0.2.2")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stpphawkes" version))
        (sha256
-        (base32 "1lk9m3i2mzlqvrk3wqg26m39ijg8v827v5y5ir0l6j23y9314rnc"))))
+        (base32 "1d0xqin7ydyz7m3pw1pzbz6avbw0kwlsb7lrwbkr30q3b6awmq43"))))
     (properties `((upstream-name . "stpphawkes")))
     (build-system r-build-system)
     (arguments
@@ -20813,24 +20813,19 @@ Practices in Psychological Science 3(1), 66-80 <DOI:10.1177/2515245919885617>.")
 (define-public r-ssutil
   (package
     (name "r-ssutil")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ssutil" version))
        (sha256
-        (base32 "048ypjnlkzkhi7iy1z8njhhgagwggq9r1wpy34qjr0yxxdq30rd2"))))
+        (base32 "1dxfap6naaa3ggjxr89ypvbvc7lzhghns6g16lc6lxdr40l029xg"))))
     (properties `((upstream-name . "ssutil")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-stringr
-                             r-mvtnorm
-                             r-mass
-                             r-gsdesign
-                             r-broom))
+    (propagated-inputs (list r-tibble r-stringr r-mvtnorm r-mass r-broom))
     (native-inputs (list r-knitr))
     (home-page "https://johnaponte.github.io/ssutil/")
     (synopsis "Sample Size Calculation Tools")
@@ -27150,13 +27145,13 @@ the time, dude!\".")
 (define-public r-splitgraph
   (package
     (name "r-splitgraph")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "splitGraph" version))
        (sha256
-        (base32 "1xalxv6wqippjif775b2zxh26lkmzkxnqf8hnczc2sj9wp166a8a"))))
+        (base32 "0dbcsxcm49nx6aixajqnis9y5rlb9phjms1i96p01s3hnzjc0yli"))))
     (properties `((upstream-name . "splitGraph")))
     (build-system r-build-system)
     (arguments
@@ -31275,6 +31270,34 @@ Baddeley and Nair (2019).")
     (synopsis "Interactive Graphics Functions for the 'spatstat' Package")
     (description
      "Extension to the spatstat package, containing interactive graphics capabilities.")
+    (license license:gpl2+)))
+
+(define-public r-spatstat-convert
+  (package
+    (name "r-spatstat-convert")
+    (version "1.0-1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spatstat.convert" version))
+       (sha256
+        (base32 "0vyjmpi2jy9bis8d6pb98rl2ikqg1mbd3j11gq6wqy67dzb724lz"))))
+    (properties `((upstream-name . "spatstat.convert")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-spatstat-utils
+                             r-spatstat-univar
+                             r-spatstat-linnet
+                             r-spatstat-geom
+                             r-spatstat
+                             r-sp))
+    (home-page "https://cran.r-project.org/package=spatstat.convert")
+    (synopsis "Extension to 'spatstat' for Converting Data Formats")
+    (description
+     "Extension to the spatstat package, enabling the user to convert spatial data
+between formats defined in `spatstat and formats defined in sp', sf and terra'.")
     (license license:gpl2+)))
 
 (define-public r-spatsoc
@@ -41041,13 +41064,13 @@ by the fact that the GPD density is log--concave for gamma in [-1,0].")
 (define-public r-smoothsurv
   (package
     (name "r-smoothsurv")
-    (version "2.6")
+    (version "2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smoothSurv" version))
        (sha256
-        (base32 "1fw5ibcsr13n3ycs1rkcnd3x08qgxz31hzfra6hpjkzcavcxdlk4"))))
+        (base32 "0300fzq0f9712p166pri4pwlz31pc4wiq8iklwiagkl36k6zcya0"))))
     (properties `((upstream-name . "smoothSurv")))
     (build-system r-build-system)
     (arguments
@@ -41061,7 +41084,10 @@ by the fact that the GPD density is log--concave for gamma in [-1,0].")
 possibly right, left or interval censored observations and with the error
 distribution expressed as a mixture of G-splines.  Core part of the computation
 is done in compiled C++ written using the Scythe Statistical Library Version
-0.3.")
+0.3.  The methods implemented in the package have been published in KomÃ¡rek,
+Lesaffe and Hilton (2005, J. of Comp.  and Graph.  Stat.)
+<doi:10.1198/106186005X63734> and Lesaffre, KomÃ¡rek and Declerck (2005, Stat.
+Methods in Med.  Res.) <doi:10.1191/0962280205sm417oa>.")
     (license license:gpl2+)))
 
 (define-public r-smoothroctime
@@ -42306,6 +42332,41 @@ package has a heavy emphasis on spatial scan methods, which were first
 introduced by Kulldorff and Nagarwalla (1995) <doi:10.1002/sim.4780140809> and
 Kulldorff (1997) <doi:10.1080/03610929708831995>.")
     (license license:gpl2+)))
+
+(define-public r-smer
+  (package
+    (name "r-smer")
+    (version "0.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "smer" version))
+       (sha256
+        (base32 "09nci463xlnjsb6ksgv48why0wx07s5dyix1dsbrbc5lba90fva4"))))
+    (properties `((upstream-name . "smer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-testthat
+                             r-rhdf5lib
+                             r-rcppeigen
+                             r-rcpp
+                             r-mvmapit
+                             r-logging
+                             r-highfive
+                             r-genio
+                             r-dplyr
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lcrawlab/sme")
+    (synopsis "Sparse Marginal Epistasis Test")
+    (description
+     "The Sparse Marginal Epistasis Test is a computationally efficient genetics
+method which detects statistical epistasis in complex traits; see Stamp et al.
+(2025, <doi:10.1101/2025.01.11.632557>) for details.")
+    (license license:expat)))
 
 (define-public r-smdocker
   (package
@@ -44511,6 +44572,31 @@ implements sleep scoring using the \"five-minute rule\" (Hendricks et al. (2000)
 (Geissmann et al. (2017) <DOI:10.1371/journal.pbio.2003026>) and a new algorithm
 to detect when animals are dead.")
     (license license:gpl3)))
+
+(define-public r-sleeper
+  (package
+    (name "r-sleeper")
+    (version "0.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sleeper" version))
+       (sha256
+        (base32 "1rmms78fil593j3h8r16mw4dwg2dx9mi1cx7zx2f5y4gkkrz5b8d"))))
+    (properties `((upstream-name . "sleeper")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-reticulate r-dplyr r-curl r-assertthat))
+    (home-page "https://cran.r-project.org/package=sleeper")
+    (synopsis "Estimate Sleep Status from Accelerometry Data")
+    (description
+     "Wraps the classifier from the Sundararajan (2021)
+<doi:10.1038/s41598-020-79217-x> to estimate sleep using a random forest.  Users
+must download the model files from Sundararajan (2020)
+<doi:10.5281/zenodo.3752645> in order to use this method.")
+    (license license:gpl3+)))
 
 (define-public r-sleepcycles
   (package
@@ -55261,13 +55347,13 @@ export @code{WebGL} visualization in a shiny-friendly format.")
 (define-public r-shinyreprex
   (package
     (name "r-shinyreprex")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyreprex" version))
        (sha256
-        (base32 "1fv36vl92a2cq7mlk295lmf24a0czk98irp06c0hfbvvkcadkyjh"))))
+        (base32 "0w6d0qnixsi3gq1c0c2sq4nmy9p75p7pnx19qhkspiril40q2j8g"))))
     (properties `((upstream-name . "shinyreprex")))
     (build-system r-build-system)
     (arguments
@@ -55277,7 +55363,13 @@ export @code{WebGL} visualization in a shiny-friendly format.")
                   (add-after 'unpack 'set-HOME
                     (lambda _
                       (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-styler r-s7 r-rlang r-purrr r-constructive))
+    (propagated-inputs (list r-styler
+                             r-s7
+                             r-rlang
+                             r-renv
+                             r-purrr
+                             r-constructive
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/AscentSoftware/shinyreprex")
     (synopsis "Reproducible Code for 'Shiny' Objects")
@@ -55820,13 +55912,13 @@ interactively.")
 (define-public r-shinyoauth
   (package
     (name "r-shinyoauth")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyOAuth" version))
        (sha256
-        (base32 "1bp6m4i01q8bd2kq0zr07bpl7kz8jp1hrbipdqyj87f4328p7y97"))))
+        (base32 "09677s2aza0165lhvzymgqs6dfz3r3y2pldrg93vrzdnhk0wnfx0"))))
     (properties `((upstream-name . "shinyOAuth")))
     (build-system r-build-system)
     (arguments
@@ -55844,20 +55936,22 @@ interactively.")
                              r-jose
                              r-httr2
                              r-htmltools
+                             r-curl
                              r-cli
                              r-cachem))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/lukakoning/shinyOAuth")
     (synopsis
-     "Provider-Agnostic OAuth Authentication for 'shiny' Applications")
+     "OIDC Authentication and OAuth Authorization for 'shiny' Applications")
     (description
-     "This package provides a simple, configurable, provider-agnostic OAuth 2.0 and
-@code{OpenID} Connect (OIDC) authentication framework for shiny applications
-using S7 classes.  Defines providers, clients, and tokens, as well as various
-supporting functions and a shiny module.  Features include cross-site request
-forgery (CSRF) protection, state encryption, Proof Key for Code Exchange (PKCE)
+     "This package provides a simple, configurable framework for @code{OpenID} Connect
+(OIDC) authentication and OAuth 2.0 authorization in shiny applications using S7
+classes.  Defines providers, clients, and tokens, as well as various supporting
+functions and a shiny module.  Features include cross-site request forgery
+(CSRF) protection, state encryption, Proof Key for Code Exchange (PKCE)
 handling, validation of OIDC identity tokens (nonces, signatures, claims),
-automatic user info retrieval, asynchronous flows, and hooks for audit logging.")
+automatic user info retrieval for OIDC and supported OAuth providers,
+asynchronous flows, and hooks for audit logging.")
     (license license:expat)))
 
 (define-public r-shinynotes

@@ -3163,13 +3163,13 @@ facilitate the model interpretation.")
 (define-public r-mvbayes
   (package
     (name "r-mvbayes")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mvBayes" version))
        (sha256
-        (base32 "1himqrmapizn7lfd7qyfqzd91cpmz1kvlzmh1y3b6b0iq17qwhdz"))))
+        (base32 "1ymxvaa1pfx93jd6d1sj3x3pv5ms600dnz1zdhywyrb9fzi1r015"))))
     (properties `((upstream-name . "mvBayes")))
     (build-system r-build-system)
     (arguments
@@ -15392,6 +15392,30 @@ displayed in both static graphics @code{(plot_buildROC()}, @code{plot_regions()}
 or @code{plot_funregions()} function) or videos @code{(movieROC()} function).")
     (license license:gpl3)))
 
+(define-public r-movewindspeed
+  (package
+    (name "r-movewindspeed")
+    (version "0.2.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "moveWindSpeed" version))
+       (sha256
+        (base32 "0gj8qivwgxh9xzyfldb5hqmd8qi2q9xcazdl9iz39fxvwdshravz"))))
+    (properties `((upstream-name . "moveWindSpeed")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp r-move))
+    (native-inputs (list r-knitr))
+    (home-page "https://gitlab.com/bartk/moveWindSpeed")
+    (synopsis "Estimate Wind Speeds from Bird Trajectories")
+    (description
+     "Estimating wind speed from trajectories of individually tracked birds using a
+maximum likelihood approach.")
+    (license (list license:gpl2+ license:gpl3+))))
+
 (define-public r-movementsync
   (package
     (name "r-movementsync")
@@ -20323,6 +20347,38 @@ transmission heterogeneity (Lloyd-Smith et al. (2005)
 <doi:10.2807/1560-7917.ES2015.20.25.21167>), and decomposition of reproduction
 number (Zhao et al. (2022) <doi:10.1371/journal.pcbi.1010281>).")
     (license license:gpl3)))
+
+(define-public r-modelskill
+  (package
+    (name "r-modelskill")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "modelskill" version))
+       (sha256
+        (base32 "1fcyyq87m97ggp2hp7dx501r2q467lnacdv2jffkysvbydrzrf04"))))
+    (properties `((upstream-name . "modelskill")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridis r-ggrepel r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/AlexandreWadoux/modelskill")
+    (synopsis "Assessing and Visualising the Performance of Prediction Models")
+    (description
+     "This package provides tools for evaluating continuous predictions and their
+associated predictive uncertainty from statistical, machine-learning,
+geostatistical, and process-based models.  It implements complementary measures
+of prediction error, association, agreement, efficiency, uncertainty
+calibration, and predictive-distribution performance, together with Taylor,
+solar, target, coverage, probability integral transform, and quantile-coverage
+diagnostics.  Methods include the integrated evaluation approach of Wadoux,
+Walvoort and Brus (2022) <doi:10.1016/j.geoderma.2021.115332> and the
+uncertainty-validation framework of Schmidinger and Heuvelink (2023)
+<doi:10.1016/j.geoderma.2023.116585>.")
+    (license license:expat)))
 
 (define-public r-modelselection
   (package
@@ -29435,13 +29491,13 @@ Completely at Random (MCAR)\", Journal of Statistical Software, 56(6), 1-31.
 (define-public r-missmda
   (package
     (name "r-missmda")
-    (version "1.22")
+    (version "1.23")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "missMDA" version))
        (sha256
-        (base32 "1lgk86d63r602zcdvwp7n791j54k0j415vks7gf5nbzz390436dp"))))
+        (base32 "03b94i321zzsfcv0h5ppsyqd5v179v8hr1l0km8rcpkvqw5f15v1"))))
     (properties `((upstream-name . "missMDA")))
     (build-system r-build-system)
     (arguments
@@ -32499,13 +32555,13 @@ Perederiy, V. (2017) <doi:10.48550/@code{arXiv.1708.00062>}.")
 (define-public r-migraph
   (package
     (name "r-migraph")
-    (version "1.7.0")
+    (version "1.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "migraph" version))
        (sha256
-        (base32 "1031b69cwi3yd1d4fpbay60shmqmg270x6zywd6mn241k9smm648"))))
+        (base32 "061diyamlqghzxgm781k1m8zh6cki9aw0bfk1rygfnzyfhan2y1v"))))
     (properties `((upstream-name . "migraph")))
     (build-system r-build-system)
     (arguments
@@ -33133,6 +33189,33 @@ with the fast implementation of the sg-LASSO estimator by means of proximal
 block coordinate descent.  High-dimensional mixed frequency time-series data can
 also be easily manipulated with functions provided in the package.")
     (license license:gpl2+)))
+
+(define-public r-midasinla
+  (package
+    (name "r-midasinla")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "midasINLA" version))
+       (sha256
+        (base32 "1ps2lfg664dli26zmavd0pf9q304gy3985mv3q72x93a0x26y5li"))))
+    (properties `((upstream-name . "midasINLA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrixstats r-matrix))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=midasINLA")
+    (synopsis "Spatial MIDAS Models Using INLA")
+    (description
+     "This package provides tools for fitting spatial Mixed Data Sampling (MIDAS)
+regression models using Integrated Nested Laplace Approximation (INLA).  The
+package is designed for settings where responses and explanatory variables are
+observed at different temporal frequencies and supports both constant and
+spatially varying regression coefficients.")
+    (license license:gpl3)))
 
 (define-public r-midasim
   (package
@@ -51443,30 +51526,6 @@ that image, and pastes it into a (e.g. an rmarkdown') document.  See
 and use of the API is subject to their terms and conditions.")
     (license license:gpl3+)))
 
-(define-public r-mathml
-  (package
-    (name "r-mathml")
-    (version "1.9")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mathml" version))
-       (sha256
-        (base32 "03mil67bhi2m5xz9cfagk86gbqpgq9li3mxvw4zqa9vjj623cpbx"))))
-    (properties `((upstream-name . "mathml")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xfun r-rolog r-knitr))
-    (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://github.com/mgondan/mathml")
-    (synopsis "Translate R Expressions to 'MathML' and 'LaTeX'/'MathJax'")
-    (description
-     "Translate R expressions to @code{MathML} or @code{MathJax'/'LaTeX} so that they
-can be rendered in R markdown documents and shiny apps.")
-    (license (license:fsdg-compatible "FreeBSD"))))
-
 (define-public r-mates
   (package
     (name "r-mates")
@@ -51844,13 +51903,13 @@ algorithm for the indivisible goods trading problem.")
 (define-public r-matchingpursuit
   (package
     (name "r-matchingpursuit")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MatchingPursuit" version))
        (sha256
-        (base32 "1ydzhfl2fwxci1vz0qlm113rq3yfnn4580j4i5910izfjvi394i4"))))
+        (base32 "1adr3pnxfisln53wwrxf2fj1xzdsy2dshzym4sa6advcqznxcpn6"))))
     (properties `((upstream-name . "MatchingPursuit")))
     (build-system r-build-system)
     (arguments
@@ -51863,8 +51922,7 @@ algorithm for the indivisible goods trading problem.")
                              r-imager
                              r-egm
                              r-edf
-                             r-digest
-                             r-desctools))
+                             r-digest))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=MatchingPursuit")
     (synopsis
@@ -51878,7 +51936,7 @@ Matching Pursuit (OMP) variant of the classical MP algorithm is also provided.
 For more details see Mallat and Zhang (1993) <doi:10.1109/78.258082>, Pati et
 al. (1993) <doi:10.1109/ACSSC.1993.342465>, Elad (2010)
 <doi:10.1007/978-1-4419-7011-4> and RÃ³Å¼aÅski (2024) <doi:10.1145/3674832>.")
-    (license license:gpl2+)))
+    (license license:gpl3)))
 
 (define-public r-matchingmarkets
   (package
@@ -54234,13 +54292,13 @@ analysis in clustered data settings.")
 (define-public r-marcher
   (package
     (name "r-marcher")
-    (version "0.0-2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "marcher" version))
        (sha256
-        (base32 "0hcxbfrwniih4kvx5sxhlffz1pc87kf52v8hvaf193rhhdykis5q"))))
+        (base32 "07hg1k6q0i6zvr4j6m4ffhc5zk0qz5v1vgd5bv08dra0s12b7hil"))))
     (properties `((upstream-name . "marcher")))
     (build-system r-build-system)
     (arguments
@@ -54254,19 +54312,22 @@ analysis in clustered data settings.")
                              r-mvtnorm
                              r-minpack-lm
                              r-matrix
-                             r-magrittr))
+                             r-magrittr
+                             r-lubridate
+                             r-gtools))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=marcher")
     (synopsis "Migration and Range Change Estimation in R")
     (description
      "This package provides a set of tools for likelihood-based estimation, model
 selection and testing of two- and three-range shift and migration models for
-animal movement data as described in Gurarie et al. (2017) <doi:
-10.1111/1365-2656.12674>.  Provided movement data (X, Y and Time), including
-irregularly sampled data, functions estimate the time, duration and location of
-one or two range shifts, as well as the ranging area and auto-correlation
-structure of the movment.  Tests assess, for example, whether the shift was
-\"significant\", and whether a two-shift migration was a true return migration.")
+animal movement data as described in Gurarie et al. (2017)
+<doi:10.1111/1365-2656.12674>.  Provided movement data (X, Y and Time),
+including irregularly sampled data, functions estimate the time, duration and
+location of one or two range shifts, as well as the ranging area and
+auto-correlation structure of the movement.  Tests assess, for example, whether
+the shift was \"significant\", and whether a two-shift migration was a true return
+migration.")
     (license license:gpl2)))
 
 (define-public r-march
@@ -55067,6 +55128,33 @@ Mapper, an algorithm from this area developed by Singh, MÃ©moli and Carlsson
 (2007) which generalizes the concept of a Reeb graph
 <https://en.wikipedia.org/wiki/Reeb_graph>.")
     (license license:expat)))
+
+(define-public r-maposm
+  (package
+    (name "r-maposm")
+    (version "0.5.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "maposm" version))
+       (sha256
+        (base32 "19fxpvnzlz5w33hvhk5gx0ijyxakrp1fqniyqjziwpcjpm1a5rm8"))))
+    (properties `((upstream-name . "maposm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sf r-osmextract r-mapsf r-lwgeom))
+    (home-page "https://codeberg.org/riatelab/maposm")
+    (synopsis "Get Map Layers from 'OpenStreetMap'")
+    (description
+     "The @code{OpenStreetMap} database provides a wide range of highly detailed
+geographic layers on a global scale.  To obtain synthetic information for
+cartographic purposes, layers must be selected, simplified, merged, or modified.
+ maposm downloads @code{OpenStreetMap} extracts and performs these operations to
+create a set of composite layers of urban areas, buildings, green spaces, main
+roads, secondary roads, railways, and water bodies.")
+    (license license:gpl3)))
 
 (define-public r-mapnhanespa
   (package

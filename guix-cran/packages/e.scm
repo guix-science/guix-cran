@@ -25533,13 +25533,13 @@ packages and publicly hosted on Hugging Face'.  Learn more about the
 (define-public r-econcausal
   (package
     (name "r-econcausal")
-    (version "1.0.2")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EconCausal" version))
        (sha256
-        (base32 "0x0yib61yggg5k66l6pfb8wxkyk157076gypydv795wmpp6cy27a"))))
+        (base32 "05cjhcsfdfa0sqgd2dmcmvv0769ccvjlsb1f97bzplar26wqg2mb"))))
     (properties `((upstream-name . "EconCausal")))
     (build-system r-build-system)
     (arguments
@@ -25550,16 +25550,18 @@ packages and publicly hosted on Hugging Face'.  Learn more about the
                              r-tseries
                              r-tidyr
                              r-tibble
+                             r-sandwich
                              r-rlang
                              r-readxl
                              r-purrr
                              r-progressr
                              r-magrittr
+                             r-lmtest
                              r-future-apply
+                             r-future
+                             r-earth
                              r-dplyr
-                             r-bsts
-                             r-brms
-                             r-boomspikeslab))
+                             r-brms))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/IsadoreNabi/EconCausal")
     (synopsis
@@ -25570,7 +25572,7 @@ macroeconomic time series: (1) Error-Correction Models with Multivariate
 Adaptive Regression Splines (ECM-MARS), (2) Bayesian Structural Time Series
 (BSTS), and (3) Bayesian GLM with AR(1) errors validated with Leave-Future-Out
 (LFO).  Heavy backends (Stan) are optional and never used in examples or tests.")
-    (license license:expat)))
+    (license license:gpl3+)))
 
 (define-public r-econandprodefficiency
   (package

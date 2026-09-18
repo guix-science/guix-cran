@@ -2425,13 +2425,13 @@ on unsystematic sub-samples.")
 (define-public r-unsurv
   (package
     (name "r-unsurv")
-    (version "0.7.0")
+    (version "0.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "unsurv" version))
        (sha256
-        (base32 "1rrm4dmf66arvkpy0092r7zxdka5w8mlchjib32xc1aglpdqwczk"))))
+        (base32 "05rli5ymy1570kjixd0335mpq6f6517bah4kzz9831jhwccja1bj"))))
     (properties `((upstream-name . "unsurv")))
     (build-system r-build-system)
     (arguments

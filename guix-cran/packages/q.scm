@@ -2807,13 +2807,13 @@ models, and construct networks with partial derivatives.")
 (define-public r-quadrupen
   (package
     (name "r-quadrupen")
-    (version "1.0-0")
+    (version "1.1-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quadrupen" version))
        (sha256
-        (base32 "0ld45gyhlakrr7nbh32ibmrrg7qbapg2xs92b6qbydvh11fp286l"))))
+        (base32 "0sfrd58yrz7w5v1nvqzwyqn7c1n0nv4aaan6ra7siin074y8mp52"))))
     (properties `((upstream-name . "quadrupen")))
     (build-system r-build-system)
     (arguments

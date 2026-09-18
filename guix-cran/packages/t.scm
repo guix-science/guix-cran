@@ -18376,13 +18376,13 @@ expectations to test base R and ggplot2 plots as well as console output from
 (define-public r-tinyshinyserver
   (package
     (name "r-tinyshinyserver")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinyshinyserver" version))
        (sha256
-        (base32 "1qppmlvyyp1pki374q419kwvr34y8zzvmnc6f14pypmygab8y0kz"))))
+        (base32 "175qw6kwv15042rw5jy7b28rzq4dlwmc8mqgn1br3a9wp82yc5b9"))))
     (properties `((upstream-name . "tinyshinyserver")))
     (build-system r-build-system)
     (arguments
@@ -18392,14 +18392,15 @@ expectations to test base R and ggplot2 plots as well as console output from
                              r-shiny
                              r-rmarkdown
                              r-quarto
+                             r-promises
                              r-openssl
                              r-logger
                              r-later
                              r-jsonlite
-                             r-httr
                              r-httpuv
                              r-future
                              r-digest
+                             r-curl
                              r-callr))
     (home-page "https://github.com/lab1702/tinyshinyserver")
     (synopsis "Tiny 'shiny' Server - Lightweight Multi-App 'shiny' Proxy")
@@ -23057,13 +23058,13 @@ ESTIMATE (2013) <doi:10.1038/ncomms3612>.")
 (define-public r-tidyemoji
   (package
     (name "r-tidyemoji")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyEmoji" version))
        (sha256
-        (base32 "02s3m6bh9mdak67jllx5sgsyx9xcvkhxmd67af3n02k8616ns0xx"))))
+        (base32 "0igd7fbfgqkjkhb9ysvwp2mwyyrbkph5k4azv86zbrkss4010x1i"))))
     (properties `((upstream-name . "tidyEmoji")))
     (build-system r-build-system)
     (arguments
@@ -23090,10 +23091,14 @@ catalogue, maps emoji co-occurrence and sequences (graph-ready edge lists and
 n-grams), measures where and how densely emoji are used, and builds
 document-by-emoji feature tables for machine learning, with grapheme-aware
 detection (so skin-tone and multi-person sequences stay intact), returning tidy
-data frames that slot straight into a tidyverse workflow.  The bundled emoji
-sentiment lexicon is from the Emoji Sentiment Ranking of Kralj Novak et al.
-(2015) <doi:10.1371/journal.pone.0144296>, released under CC BY-SA 4.0; the
-emotion lexicon is from @code{EmoTag1200} of Shoeb & de Melo (2020)
+data frames that slot straight into a tidyverse workflow.  It also quantifies
+how much annotators disagreed about an emoji (interpretation risk), extracts the
+words around each emoji, tracks emoji use over time, measures text-emoji
+sentiment mismatch, and applies explicit emoji-preprocessing policies for
+language-model pipelines.  The bundled emoji sentiment lexicon is from the Emoji
+Sentiment Ranking of Kralj Novak et al. (2015)
+<doi:10.1371/journal.pone.0144296>, released under CC BY-SA 4.0; the emotion
+lexicon is from @code{EmoTag1200} of Shoeb & de Melo (2020)
 <https://aclanthology.org/2020.emnlp-main.720/>, released under the MIT licence.")
     (license license:gpl3+)))
 
