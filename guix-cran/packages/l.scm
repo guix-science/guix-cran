@@ -555,13 +555,13 @@ environmental covariates.")
 (define-public r-luminescence
   (package
     (name "r-luminescence")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Luminescence" version))
        (sha256
-        (base32 "08v6wrsj4sy2grznmzwda82758qj79r7jw2c8l8jdyycklfq5dnk"))))
+        (base32 "0dp8gwlbd8bn6h7496w7zjyn25rr475ndyna424b7g05lnhl6ip5"))))
     (properties `((upstream-name . "Luminescence")))
     (build-system r-build-system)
     (arguments
@@ -1297,13 +1297,13 @@ family genetic risk score from Kendler (2021)
 (define-public r-ltertools
   (package
     (name "r-ltertools")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ltertools" version))
        (sha256
-        (base32 "0c4pqb5k8c5qg8ym43mxawpwaaf6y1jd5pydlz6z14pvqiqdx6pk"))))
+        (base32 "0ll1sg7l950w4xbk8k2jpcw1awhabj2qxll6ifyhmms64y7k340c"))))
     (properties `((upstream-name . "ltertools")))
     (build-system r-build-system)
     (arguments
@@ -19028,13 +19028,13 @@ time are supported.")
 (define-public r-layeranalyzer
   (package
     (name "r-layeranalyzer")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "layeranalyzer" version))
        (sha256
-        (base32 "0fh6c6k4v7b24vzp19a4cmdaa5dd2mj2xdxwsk8mnj05hgdfa7iw"))))
+        (base32 "1hfswjggycyk1nxd42yp16c6cckx4gdkf46jj9hj9q4vlfqxjnq5"))))
     (properties `((upstream-name . "layeranalyzer")))
     (build-system r-build-system)
     (arguments

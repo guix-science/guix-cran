@@ -6047,6 +6047,38 @@ ggplot', gt or flextable'.  Based on R grid graphics, for more details see Paul
 Murrell (2018) <doi:10.1201/9780429422768>.")
     (license license:asl2.0)))
 
+(define-public r-gridhr
+  (package
+    (name "r-gridhr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gridHR" version))
+       (sha256
+        (base32 "11g10n3gkjlb057ibpz4n6rchzxsf5ldyifnqgafxfwwi1g5apdb"))))
+    (properties `((upstream-name . "gridHR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sf r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=gridHR")
+    (synopsis "Grid-Based Home-Range Analysis and Radial Space-Use Profiles")
+    (description
+     "This package provides tools for estimating and exploring animal home ranges from
+geographical locations using regular spatial grids of square or hexagonal cells;
+see Ford and Krumme (1979) <doi:10.1016/0022-5193(79)90366-7>.  The package
+includes grid-based home-range estimation across different cell sizes, analyses
+of the relationship between grid-cell size and home-range area and spatial
+connectivity, and rarefaction analyses to evaluate how home-range estimates
+change with increasing numbers of locations.  It also introduces a novel radial
+approach for characterizing the internal organization of space use by
+quantifying how space-use intensity changes with increasing distance from the
+centre toward the periphery of the home range.")
+    (license license:expat)))
+
 (define-public r-gridgraphviz
   (package
     (name "r-gridgraphviz")
@@ -8442,6 +8474,38 @@ expect the number of burn-in iterations and the number of sampling iterations
 for the underlying MCMC sampler.")
     (license license:gpl3)))
 
+(define-public r-graphiaextra
+  (package
+    (name "r-graphiaextra")
+    (version "0.26.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gRaphiaExtra" version))
+       (sha256
+        (base32 "1asznlkzq8fj1cm6iqcgplgr03sk3pvx36kc9vl5nd7dvp9pqgvf"))))
+    (properties `((upstream-name . "gRaphiaExtra")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-dplyr r-checkmate))
+    (home-page "https://cran.r-project.org/package=gRaphiaExtra")
+    (synopsis "An R Package for Integrating 'Seurat' Objects into 'gRaphia'")
+    (description
+     "Utilising graph-based network analysis frameworks, Graphia
+<https://graphia.app/> is a powerful open source visual analytics application
+developed to aid the interpretation of large and complex datasets.  For more
+details, see article by Freeman et al. (2022)
+<doi:10.1371/journal.pcbi.1010310>. @code{gRaphia} is an extension of the
+Graphia application within the R environment, providing tools for network
+analysis and visualisation. @code{gRaphiaExtra} provides additional
+functionality specifically designed for single-cell RNA-sequencing data,
+enabling users to seamlessly integrate and utilise existing Seurat analysis
+outputs in @code{gRaphia}'.  The package also provides supplementary functions
+to support and enhance the @code{gRaphia} analysis framework.")
+    (license license:gpl3)))
+
 (define-public r-grapherator
   (package
     (name "r-grapherator")
@@ -9435,13 +9499,13 @@ and @code{MaxMin} ordering proposed in Guinness (2018)
 (define-public r-gpvam
   (package
     (name "r-gpvam")
-    (version "3.2-0")
+    (version "3.3-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GPvam" version))
        (sha256
-        (base32 "03s8yl56rl2hpjfhfmbkckfjhxiz6ac6qcqsq75m0ajlyvzicvhl"))))
+        (base32 "1bawvdad4fvlfwayyybqk7q8bb3ksmsznzjgzspkynz4il00kf48"))))
     (properties `((upstream-name . "GPvam")))
     (build-system r-build-system)
     (arguments
@@ -9459,11 +9523,12 @@ and @code{MaxMin} ordering proposed in Guinness (2018)
     (synopsis
      "Maximum Likelihood Estimation of Multiple Membership Mixed Models Used in Value-Added Modeling")
     (description
-     "An EM algorithm, Karl et al. (2013) <doi:10.1016/j.csda.2012.10.004>, is used to
-estimate the generalized, variable, and complete persistence models, Mariano et
-al. (2010) <doi:10.3102/1076998609346967>.  These are multiple-membership linear
-mixed models with teachers modeled as \"G-side\" effects and students modeled with
-either \"G-side\" or \"R-side\" effects.")
+     "An EM algorithm, Karl et al. (2013) <doi:10.1016/j.csda.2012.10.004>, estimates
+generalized, reduced generalized, variable, complete, and zero persistence
+models by maximum likelihood or restricted maximum likelihood (the default).
+These are multiple-membership linear mixed models with teachers modeled as
+\"G-side\" effects and students modeled with either \"G-side\" or \"R-side\" effects;
+see Mariano et al. (2010) <doi:10.3102/1076998609346967>.")
     (license license:gpl2)))
 
 (define-public r-gpumatrix
@@ -17077,26 +17142,26 @@ is conducted with Stan'.  References: Anderson and Ward (2019)
 (define-public r-glmmfel
   (package
     (name "r-glmmfel")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmmFEL" version))
        (sha256
-        (base32 "1fc1i5bhlkbm7l34cd10wdvgn87hdqdqd1fzi25lc5pib5krcp2h"))))
+        (base32 "12r0sfz1vx9jw0gqj8ryradw5mycpi4aiwnh80axw7x6g1nc3hmf"))))
     (properties `((upstream-name . "glmmFEL")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-numderiv r-matrix))
+    (propagated-inputs (list r-matrix))
     (home-page "https://cran.r-project.org/package=glmmFEL")
     (synopsis
      "Generalized Linear Mixed Models via Fully Exponential Laplace in EM")
     (description
      "Fit generalized linear mixed models (GLMMs) with normal random effects using
 first-order Laplace, fully exponential Laplace (FEL) with mean-only corrections,
-and FEL with mean and covariance corrections in the E-step of an
+and FEL with mean and variance-diagonal corrections in the E-step of an
 expectation-maximization (EM) algorithm.  The current development version
 provides a matrix-based interface (y, X, Z) and supports binary logit and
 probit, and Poisson log-link models.  An EM framework is used to update fixed
@@ -22674,6 +22739,33 @@ regression, logistic regression.  This method was described by Per Kragh (2003)
 visualizations through a web browser GUI without writing any code.")
     (license license:gpl2+)))
 
+(define-public r-ggrank
+  (package
+    (name "r-ggrank")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggrank" version))
+       (sha256
+        (base32 "1y66d99q1sa0wxqb09p6ana4c00ylmmpp95farlzvymc1cc53az4"))))
+    (properties `((upstream-name . "ggrank")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales r-rlang r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://thinkdenominator.github.io/ggrank/")
+    (synopsis "Visualise Changes in Rankings with 'ggplot2'")
+    (description
+     "Calculates, inspects, tabulates, and visualises changes in rankings across two
+to four ordered states.  Creates ggplot2'-based rank-transition charts that
+retain categories entering or leaving a selected top-rank boundary.  Supports
+ranks calculated from numeric values as well as authoritative ranks supplied
+without values.")
+    (license license:expat)))
+
 (define-public r-ggrandomforests
   (package
     (name "r-ggrandomforests")
@@ -24689,13 +24781,13 @@ regression curves.")
 (define-public r-ggirread
   (package
     (name "r-ggirread")
-    (version "1.0.10")
+    (version "1.0.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GGIRread" version))
        (sha256
-        (base32 "0yvdj0mq1z44mnwid6gv04p5hn57s2whmin9x4ljs82397rzyx00"))))
+        (base32 "0xr4jcc5bhch3zbfvgnsfgxw72glz6rkpy6801wna11gjkhybbxs"))))
     (properties `((upstream-name . "GGIRread")))
     (build-system r-build-system)
     (arguments
@@ -28523,13 +28615,13 @@ the estimator and diagnostics tests can be fully user-specified, see Sucarrat
 (define-public r-getrad
   (package
     (name "r-getrad")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "getRad" version))
        (sha256
-        (base32 "0a965f83ngl1ks1ikl7crsyizhi402f00nngricw13xiyf41kg45"))))
+        (base32 "1idrdc6ps809zlg4v2jiajpdv6idikqd8m24irwdz6b1bfr5m7y1"))))
     (properties `((upstream-name . "getRad")))
     (build-system r-build-system)
     (arguments
@@ -41233,13 +41325,13 @@ ISBN:978-0-387-30303-1), and Dugas et al. (2009)
 (define-public r-galah
   (package
     (name "r-galah")
-    (version "2.2.0")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "galah" version))
        (sha256
-        (base32 "1i4vclnyvw0fr3gnzbnrr4l0cd74hacqyx9nvbh9hvd6jkw7iina"))))
+        (base32 "08hg23svl150rb0kjac4hxxqnbvn65xzzp51fslrvgywqhxb0wqv"))))
     (properties `((upstream-name . "galah")))
     (build-system r-build-system)
     (arguments

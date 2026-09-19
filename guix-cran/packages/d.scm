@@ -1426,27 +1426,26 @@ profile plot, contour plot, and scatter plot.  For more details, see Yu et al.
 (define-public r-dyads
   (package
     (name "r-dyads")
-    (version "1.2.1")
+    (version "1.2.22.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dyads" version))
        (sha256
-        (base32 "0nx4gx51p0qz1565yn7xg0ijrkqvn9ql9hrmp5lwl4lxvsjnwki1"))))
+        (base32 "1mxayfnamzv9i7whcmvg3899y6zclg6bvpdkl57r2giw8g5a2a65"))))
     (properties `((upstream-name . "dyads")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rfast r-rcppziggurat r-mvtnorm r-mass
-                             r-cholwishart))
+    (propagated-inputs (list r-rfast r-mvtnorm r-mass r-dplyr r-cholwishart))
     (home-page "https://cran.r-project.org/package=dyads")
     (synopsis "Dyadic Network Analysis")
     (description
-     "This package contains functions for the MCMC simulation of dyadic network models
-j2 (Zijlstra, 2017, <doi:10.1080/0022250X.2017.1387858>) and p2 (Van Duijn,
-Snijders & Zijlstra, 2004, <doi: 10.1046/j.0039-0402.2003.00258.x>), the
-multilevel p2 model (Zijlstra, Van Duijn & Snijders (2009) <doi:
+     "This package contains functions for the MCMC simulation of (multilevel) dyadic
+network models j2 (Zijlstra, 2017, <doi:10.1080/0022250X.2017.1387858>) and p2
+(Van Duijn, Snijders & Zijlstra, 2004, <doi: 10.1046/j.0039-0402.2003.00258.x>),
+the multilevel p2 model (Zijlstra, Van Duijn & Snijders (2009) <doi:
 10.1348/000711007X255336>), and the bidirectional (multilevel) counterpart of
 the the multilevel p2 model as described in Zijlstra, Van Duijn & Snijders
 (2009) <doi: 10.1348/000711007X255336>, the (multilevel) b2 model.")
@@ -11748,13 +11747,13 @@ estimates of the regression coefficients.")
 (define-public r-dndr
   (package
     (name "r-dndr")
-    (version "3.1.0")
+    (version "3.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dndR" version))
        (sha256
-        (base32 "158dgbharl9f3lsjh7i3d6fqwcg73jz86pq3gz45shzcwn4zanni"))))
+        (base32 "1l111gbr3rwm042c54wzddrb977458w8v74gm24gs7w7b5s6nmfa"))))
     (properties `((upstream-name . "dndR")))
     (build-system r-build-system)
     (arguments

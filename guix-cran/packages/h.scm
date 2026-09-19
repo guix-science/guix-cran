@@ -2720,13 +2720,13 @@ Learn more about the inkaverse project at <https://inkaverse.com/>.")
 (define-public r-huggingfacer
   (package
     (name "r-huggingfacer")
-    (version "2.2.0")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "huggingfaceR" version))
        (sha256
-        (base32 "10bfsd3j4xyiq0hgd916j1rd8n1z6ic1rln5xksgy23zrhiqjlll"))))
+        (base32 "0wjl1gxnnnaq75l75y06k72mh4wpaylcykqqwy5qa1bn2lwm5xxm"))))
     (properties `((upstream-name . "huggingfaceR")))
     (build-system r-build-system)
     (arguments
@@ -2752,7 +2752,8 @@ chat, translation, image, audio, and other tasks from tidy R workflows without
 installing Python by default.  Results are returned as data frames or simple R
 objects so they can be composed with dplyr', tidyr', and related tooling.
 Helpers also support Hub search, file download, provider discovery, and guarded
-uploads for authenticated workflows.")
+uploads for authenticated workflows.  Optional local embeddings and text
+classification use Python through reticulate'.")
     (license license:expat)))
 
 (define-public r-hues
@@ -7273,13 +7274,13 @@ Single and multi-individual models are available.  O'Brien et al. (2024)
 (define-public r-hmda
   (package
     (name "r-hmda")
-    (version "0.3.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HMDA" version))
        (sha256
-        (base32 "14g8xrnhb6rc6lwsakdnpawnd2p8df6zc277z6adnj2kb44d65ji"))))
+        (base32 "18dl2r5il5g2mlww57wgl99nkl3d85rxvgphn9gy1gpcr936rh1s"))))
     (properties `((upstream-name . "HMDA")))
     (build-system r-build-system)
     (arguments
@@ -12399,19 +12400,19 @@ the htmlwidgets R package.")
 (define-public r-heatstressr
   (package
     (name "r-heatstressr")
-    (version "2.2.1")
+    (version "2.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HeatStressR" version))
        (sha256
-        (base32 "199l7w017a278qmd86cprpq625jrzm1xliffknha757i53z4qbx0"))))
+        (base32 "152bqk3s4736zr9nl4wr4z189f971b465427icli786lsvzb4kl0"))))
     (properties `((upstream-name . "HeatStressR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-foreach r-doparallel r-assertthat))
+    (propagated-inputs (list r-assertthat))
     (home-page "https://github.com/zyf0717/HeatStressR")
     (synopsis "Calculate Heat Stress Indices")
     (description

@@ -1366,6 +1366,41 @@ plurality, condorcet and two-round runoff methods (Raftery et al., 2021
 <doi:10.32614/RJ-2021-086>).")
     (license license:gpl2+)))
 
+(define-public r-vostokr
+  (package
+    (name "r-vostokr")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vostokR" version))
+       (sha256
+        (base32 "1j4fsnnaxr8j6qvzwhp3ag1gv62rfc4wgykg49dicsl0kxzm56kv"))))
+    (properties `((upstream-name . "vostokR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-terra
+                             r-sf
+                             r-rcppeigen
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-lidr
+                             r-data-table))
+    (home-page "https://github.com/bi0m3trics/vostokR")
+    (synopsis "Solar Potential Calculation for Point Clouds using 'VOSTOK'")
+    (description
+     "Calculate solar potential for @code{LiDAR} point clouds using the VOSTOK (Voxel
+Octree Solar Toolkit) algorithm.  This R program provides an interface to the
+original VOSTOK C++ implementation by Bechtold and Hofle (2020), enabling
+efficient ray casting and solar position algorithms to compute solar irradiance
+for each point while accounting for shadowing effects.  Integrates seamlessly
+with the @code{lidR} package for @code{LiDAR} data processing workflows.  The
+original VOSTOK toolkit is available at <doi:10.11588/data/QNA02B>.")
+    (license license:gpl3+)))
+
 (define-public r-voss
   (package
     (name "r-voss")
@@ -6750,13 +6785,13 @@ htmlwidget'.")
 (define-public r-veesa
   (package
     (name "r-veesa")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "veesa" version))
        (sha256
-        (base32 "08jp8qv7sh2qp92m251jyq8wh3vqyfwynhqgscgg5siyqnydv4k6"))))
+        (base32 "1f4d6yqvlad0qfznyv4rbmwyyf59vnb45l5prww1n03ycrjzcx54"))))
     (properties `((upstream-name . "veesa")))
     (build-system r-build-system)
     (arguments
@@ -6769,7 +6804,7 @@ htmlwidget'.")
                              r-forcats
                              r-fdasrvf
                              r-dplyr))
-    (home-page "https://cran.r-project.org/package=veesa")
+    (home-page "https://github.com/sandialabs/veesa")
     (synopsis "Pipeline for Explainable Machine Learning with Functional Data")
     (description
      "This package implements the Variable importance Explainable Elastic Shape

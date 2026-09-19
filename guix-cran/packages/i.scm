@@ -19,6 +19,10 @@
   #:use-module (gnu packages algebra)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages xorg)
+  #:use-module (gnu packages curl)
+  #:use-module (gnu packages ssh)
+  #:use-module (gnu packages tls)
+  #:use-module (gnu packages pcre)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -21271,18 +21275,19 @@ VMS database, the ICES DATSU web services, and the ICES @code{SharePoint} site
 (define-public r-icesat2vegr
   (package
     (name "r-icesat2vegr")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ICESat2VegR" version))
        (sha256
-        (base32 "0ppi9ijnyc38z1cz9hf8wv6ylai4ckph7py46w1awrh6drriv6ih"))))
+        (base32 "1qagjpawylqx153s3wihsa2qkql4dbh21ln95bkshz1z2z96pv9n"))))
     (properties `((upstream-name . "ICESat2VegR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (inputs (list zlib pcre2 openssl openssh curl))
     (propagated-inputs (list r-xml2
                              r-terra
                              r-stringr

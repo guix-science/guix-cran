@@ -3730,13 +3730,13 @@ matrices of any standard data type.")
 (define-public r-jmastats
   (package
     (name "r-jmastats")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jmastats" version))
        (sha256
-        (base32 "13109rz5nlcmh789y1w1lxy8zl6ym62kf6n73iz4kly026mggyn0"))))
+        (base32 "13qpnn15giwgjv00pcchxdqyaz4q5arpsl0xrrk52gf9fp04ifma"))))
     (properties `((upstream-name . "jmastats")))
     (build-system r-build-system)
     (arguments

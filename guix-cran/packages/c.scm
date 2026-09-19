@@ -3565,13 +3565,13 @@ density, ring width and percent latewood for each ring) are then obtained.")
 (define-public r-ctreemi
   (package
     (name "r-ctreemi")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ctreeMI" version))
        (sha256
-        (base32 "04cb65pmyl4a8r7rp7k1gn3vr8sjgpsgqsp8jgn51gh7ccakxyaf"))))
+        (base32 "1fygl90r2dd95dwbzkr9d74vi6pzr41jni6fq0s837alhribyfwl"))))
     (properties `((upstream-name . "ctreeMI")))
     (build-system r-build-system)
     (arguments
@@ -5096,19 +5096,19 @@ conditions.")
 (define-public r-csmbuilder
   (package
     (name "r-csmbuilder")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "csmbuilder" version))
        (sha256
-        (base32 "1pssqkrganshhgj7rffa1knsijz15q2c9aa8jygxbjxgj6jswzrn"))))
+        (base32 "1hn0bqakk8pzpma8kxlk13rzg546r1sk5advw1hwpsxv78pp62kn"))))
     (properties `((upstream-name . "csmbuilder")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://cran.r-project.org/package=csmbuilder")
+    (home-page "https://github.com/palderman/csmbuilder")
     (synopsis "Collection of Tools for Building Cropping System Models")
     (description
      "This package provides a collection of tools for designing, implementing,
@@ -28519,13 +28519,13 @@ regimes, sequence typology as well as early warning signals.")
 (define-public r-codyn
   (package
     (name "r-codyn")
-    (version "2.0.5")
+    (version "2.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "codyn" version))
        (sha256
-        (base32 "1iqlh3ydnqi7s2b3fa2zgb05j763qgxriys4piawwmgrdrvd3d9q"))))
+        (base32 "108l2qi0fb311yc3j9pq4hmpjq1qisjq2l6y0qqf40vcgjlv20dz"))))
     (properties `((upstream-name . "codyn")))
     (build-system r-build-system)
     (arguments
@@ -34639,13 +34639,13 @@ rate methods build on prior work from Lambert A. (2018)
 (define-public r-clogitl1
   (package
     (name "r-clogitl1")
-    (version "1.5")
+    (version "1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clogitL1" version))
        (sha256
-        (base32 "0y6a6s5l98i0vrj66biwr17g6pzpmm5kfz4c57af0yhv7c4s4was"))))
+        (base32 "0l9qn89jxk31vm17q80nm5siglydqcr0aybgvzs3qdv9y6l037xl"))))
     (properties `((upstream-name . "clogitL1")))
     (build-system r-build-system)
     (arguments
@@ -35247,13 +35247,13 @@ number needed to treat, number needed to diagnose, and predictive summary index.
 (define-public r-clinpubr
   (package
     (name "r-clinpubr")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clinpubr" version))
        (sha256
-        (base32 "015mpipbkvdvjj5mb03vf8n76zw82gak638vygfj8hxn0z5hxxb0"))))
+        (base32 "0wj97apg00wbn0caadxnlip9r2qa9zsmgk9zk61n5idwax4cjypl"))))
     (properties `((upstream-name . "clinpubr")))
     (build-system r-build-system)
     (arguments
@@ -36357,13 +36357,13 @@ Brazil's National Institute of Meteorology (INMET)
 (define-public r-climate
   (package
     (name "r-climate")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "climate" version))
        (sha256
-        (base32 "0c8s8q7icxpmhr2sc3hh0zr1pkpgna2nysbij3zz8g2m4a38kz9b"))))
+        (base32 "1kpnb4dn5x4l1cxwis994sfh4zgw2c2n4sk9gk4sjj0sp5l0g4qy"))))
     (properties `((upstream-name . "climate")))
     (build-system r-build-system)
     (arguments
@@ -37870,39 +37870,6 @@ partitional clustering techniques based on nearest neighbor distances.")
      "Implementation of the Wilkinson and Ivany (2002) approach to paleoclimate
 analysis, applied to isotope data extracted from clams.")
     (license (list license:gpl2+ license:gpl3+))))
-
-(define-public r-clampseg
-  (package
-    (name "r-clampseg")
-    (version "1.2-0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "clampSeg" version))
-       (sha256
-        (base32 "1cz4sj5lfpyk2i6zbjl6qd7vsqlfc0915m82ff99ln5lr1myy508"))))
-    (properties `((upstream-name . "clampSeg")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-stepr r-lowpassfilter))
-    (native-inputs (list r-r-rsp))
-    (home-page "https://cran.r-project.org/package=clampSeg")
-    (synopsis "Idealisation of Patch Clamp Recordings")
-    (description
-     "This package implements the model-free multiscale idealisation approaches:
-Jump-Segmentation by M@code{UltiResolution} Filter (JSMURF), Hotz et al. (2013)
-<doi:10.1109/TNB.2013.2284063>, JUmp Local @code{dEconvolution} Segmentation
-filter (JULES), Pein et al. (2018) <doi:10.1109/TNB.2018.2845126>, and
-Heterogeneous Idealization by Local testing and DEconvolution (HILDE), Pein et
-al. (2021) <doi:10.1109/TNB.2020.3031202>.  Further details on how to use them
-are given in the accompanying vignette.")
-    (license license:gpl3)))
 
 (define-public r-clam
   (package

@@ -1050,30 +1050,30 @@ with the log uniform and mixture distributions.")
 (define-public r-ksamplesltrc
   (package
     (name "r-ksamplesltrc")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ksamplesLTRC" version))
        (sha256
-        (base32 "1n1dv8ghv17495w9gw9s6g9jbadrkaxz7csm13376kjnswiw7hy3"))))
+        (base32 "13qka4za0vjfm74m9zhhfrbnsn3pd461aaci9j22n46pap4gw62a"))))
     (properties `((upstream-name . "ksamplesLTRC")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ksamplesLTRC")
+    (home-page "https://github.com/adrian-lago/ksamplesLTRC")
     (synopsis "K-Sample Tests for Truncated and/or Censored Data")
     (description
-     "This package provides tools for the nonparametric analysis and comparison of
-distributions under left truncation and right censoring.  The package includes
-simulation routines for truncated and/or censored survival data, nonparametric
-distribution comparison methods based on Kolmogorov-Smirnov-type and CramÃ©r-von
-Mises-type statistics, and bootstrap routines for p-value approximation.  For
-methodological details, see Lago, de UÃ±a-Ãlvarez and Pardo-FernÃ¡ndez (2025)
-<doi:10.1007/s11749-024-00948-4> and Lago, Pardo-FernÃ¡ndez and de UÃ±a-Ãlvarez
-(2026) <doi:10.1007/s10985-026-09713-1>.")
+     "Nonparametric analysis and comparison of distributions under left truncation and
+right censoring.  The package includes simulation routines for truncated and/or
+censored survival data, nonparametric distribution comparison methods based on
+Kolmogorov-Smirnov-type and CramÃ©r-von Mises-type statistics, and bootstrap
+routines for p-value approximation.  For methodological details, see Lago, de
+UÃ±a-Ãlvarez and Pardo-FernÃ¡ndez (2025) <doi:10.1007/s11749-024-00948-4> and
+Lago, Pardo-FernÃ¡ndez and de UÃ±a-Ãlvarez (2026)
+<doi:10.1007/s10985-026-09713-1>.")
     (license license:gpl3)))
 
 (define-public r-ksa

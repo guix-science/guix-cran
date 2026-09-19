@@ -4473,6 +4473,37 @@ system according to standards, given e.  g.  in American Speech-Language-Hearing
 Association (2005), <doi:10.1044/policy.GL2005-00014>.")
     (license license:gpl3)))
 
+(define-public r-attrition
+  (package
+    (name "r-attrition")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "attrition" version))
+       (sha256
+        (base32 "1q206cpa4720bd4shwi99rkpaah9pwj9k4aws57f1j4wy7akps8z"))))
+    (properties `((upstream-name . "attrition")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-ggplot2 r-generics))
+    (native-inputs (list r-knitr))
+    (home-page "https://alexandercoppock.com/attrition/")
+    (synopsis
+     "Addressing Nonignorable Attrition with Double Sampling and Bounds")
+    (description
+     "This package implements the double-sampling bounds estimator of Coppock, Gerber,
+Green, and Kern (2017) <doi:10.1017/pan.2016.6> for randomized experiments with
+nonignorable missing outcomes.  Provides worst-case (Manski) bounds,
+double-sampling bounds with analytic variance and Imbens-Manski confidence
+intervals, Lee (2009) <doi:10.1111/j.1467-937X.2009.00536.x> trimming bounds
+with analytic and bootstrap standard errors, covariate adjustment via
+poststratification, and a sensitivity analysis for violations of the outcome
+stability assumption.")
+    (license license:gpl3)))
+
 (define-public r-attrib
   (package
     (name "r-attrib")
@@ -10433,13 +10464,13 @@ Peluso, E., Cianfrani, Gaudio, F., Lungaroni, M., (2019),
 (define-public r-archeoviz
   (package
     (name "r-archeoviz")
-    (version "1.4.2")
+    (version "1.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "archeoViz" version))
        (sha256
-        (base32 "0dywwa8bwnjmwg8zzpdfcra2bz3xkzz9x483ficcvhyf034s9p1h"))))
+        (base32 "1pqf6xwjnyvmrkq1wgkzsbbby1wz9zrpyn90k54qrqvncmx1wahf"))))
     (properties `((upstream-name . "archeoViz")))
     (build-system r-build-system)
     (arguments
@@ -20007,13 +20038,13 @@ family of distributions available in Galarza et.al. (2017)
 (define-public r-alcyon
   (package
     (name "r-alcyon")
-    (version "0.9.0")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "alcyon" version))
        (sha256
-        (base32 "0xaksica0pgbpgqqw47vz583pvh6zff52m734arb338awag16gz7"))))
+        (base32 "0iqfgqajkkzm0ashjwrqvnk23bbqpx71p28jjs4pm7hk6zd711i6"))))
     (properties `((upstream-name . "alcyon")))
     (build-system r-build-system)
     (arguments

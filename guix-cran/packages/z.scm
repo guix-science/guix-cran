@@ -654,13 +654,13 @@ based on the determined rank.")
 (define-public r-zipcoder
   (package
     (name "r-zipcoder")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "zipcodeR" version))
        (sha256
-        (base32 "1j2gbgd24xvdi0bjk2r7myq5gqfgcs0sff50m2r3h5f45vrq6mha"))))
+        (base32 "0wg2q2jrr2qzvfafpxnk7y7yg09a6kg4gl5d3visa519r1m1xjv0"))))
     (properties `((upstream-name . "zipcodeR")))
     (build-system r-build-system)
     (arguments

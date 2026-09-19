@@ -640,13 +640,13 @@ associated with multiple phenotypes.")
 (define-public r-wsmed
   (package
     (name "r-wsmed")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wsMed" version))
        (sha256
-        (base32 "1bl6q4a4ipicf2dij02qb32jn9hk43rspadmvxlxkdlily97rn3r"))))
+        (base32 "0zmmkpqygfvlbjkz6jpjgvcb3qhrn9p0gx7y2damb72h7sj0akqg"))))
     (properties `((upstream-name . "wsMed")))
     (build-system r-build-system)
     (arguments

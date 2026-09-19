@@ -3046,13 +3046,13 @@ currently submitted by Orecchioni et al, 2020 in Nanoscale.")
 (define-public r-funbootband
   (package
     (name "r-funbootband")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "funbootband" version))
        (sha256
-        (base32 "1vpg36x2ri8lk2c683bidk5068lwc74k2hvq86ifh9981p84q4ff"))))
+        (base32 "0g6kwq24sqn9849gj2mssivbxrj7d58q48xr1f4scx51p4hswcg0"))))
     (properties `((upstream-name . "funbootband")))
     (build-system r-build-system)
     (arguments
@@ -3062,15 +3062,17 @@ currently submitted by Orecchioni et al, 2020 in Nanoscale.")
     (native-inputs (list r-knitr))
     (home-page "https://github.com/koda86/funbootband-cran")
     (synopsis
-     "Simultaneous Prediction and Confidence Bands for Time Series Data")
+     "Simultaneous Prediction and Confidence Bands for Functional Data")
     (description
-     "This package provides methods to compute simultaneous prediction and confidence
-bands for dense time series data.  The implementation builds on the functional
-bootstrap approach proposed by Lenhoff et al. (1999)
-<doi:10.1016/S0966-6362(98)00043-5> and extended by Koska et al. (2023)
-<doi:10.1016/j.jbiomech.2023.111506> to support both independent and clustered
-(hierarchical) data.  Includes a simple API (see @code{band()}) and an Rcpp
-backend for performance.")
+     "Computes simultaneous prediction and confidence bands for densely sampled
+functional data on a common grid.  The calibration builds on the functional
+bootstrap approach of Lenhoff et al. (1999) <doi:10.1016/S0966-6362(98)00043-5>;
+hierarchical measurement designs are motivated by Koska et al. (2023)
+<doi:10.1016/j.jbiomech.2023.111506>.  Independent curves are resampled
+individually.  Clustered data use an intact-subject bootstrap with equal subject
+weighting, and the clustered prediction target is one future curve from a new
+subject.  Curves are represented by finite Fourier series, and an Rcpp backend
+performs the bootstrap calibration.")
     (license license:gpl3)))
 
 (define-public r-funbiogeo
@@ -17662,13 +17664,13 @@ plus parts of chapters 4 and 11.")
 (define-public r-finto
   (package
     (name "r-finto")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "finto" version))
        (sha256
-        (base32 "0wqqr7zhbk7bhsd0g2d442q1axr1d80byhkb05f978f566gh40nd"))))
+        (base32 "1apgpsdd17w6dkfhz32z7qfsjbjcldjsf2hiy32adhj6rmkvk1s8"))))
     (properties `((upstream-name . "finto")))
     (build-system r-build-system)
     (arguments
@@ -17677,8 +17679,10 @@ plus parts of chapters 4 and 11.")
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
+                             r-rlang
                              r-purrr
                              r-jsonlite
+                             r-isocodes
                              r-httr
                              r-dplyr))
     (native-inputs (list r-knitr))
@@ -19819,6 +19823,40 @@ Python package that extends the OS methodology, as presented in Soares HHM,
 Romanelli JPR, Fleming PJ, da Silveira CH (2024)
 <doi:10.1101/2024.11.01.621530>.")
     (license license:gpl3)))
+
+(define-public r-fibermargin
+  (package
+    (name "r-fibermargin")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fibermargin" version))
+       (sha256
+        (base32 "10azays9dqdckfz59z8y55vlk3dczwhd2x2jvls4y6fhg0fannhx"))))
+    (properties `((upstream-name . "fibermargin")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://tkcaccia.github.io/fibermargin/")
+    (synopsis "Categorical Mask and Spatial Label Refinement")
+    (description
+     "This package implements @code{FiberMargin}', a deterministic training-free
+operator for repairing categorical masks and spatial labels from coordinates and
+labels alone.  Its primary multiclass operator uses rotated space-filling-curve
+charts and two-sided class enclosure at one fixed geometric transport range.  A
+class-balanced, isolation-protected chart-disagreement rule provides pointwise
+repair decisions and audit scores.  An auxiliary nearest-neighbour ballot
+handles binary masks.  The C++ engine supports two- and three-dimensional
+coordinates, removes constant axes independently within each specimen, and
+reuses one deterministic CPU worker budget without nested process pools.
+Reproducible mask corruptions, planar and volumetric simulators, damage-aware
+evaluation, and compact licensed human dorsolateral prefrontal cortex and
+colorectal cancer benchmarks support assessment.")
+    (license license:expat)))
 
 (define-public r-fiberld
   (package
@@ -26562,13 +26600,13 @@ time.")
 (define-public r-fastkmedoids
   (package
     (name "r-fastkmedoids")
-    (version "1.6")
+    (version "1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastkmedoids" version))
        (sha256
-        (base32 "16bgvwx1c1la2p4wd3rhm7abmkfn1bgh2dk26g168bk585a7affx"))))
+        (base32 "04b9znmqnbr05vpb1dy4gvly0n47alzq5p9fw17y3740rk1ihx07"))))
     (properties `((upstream-name . "fastkmedoids")))
     (build-system r-build-system)
     (arguments

@@ -12478,13 +12478,13 @@ repositories of the nflverse project.")
 (define-public r-nflplotr
   (package
     (name "r-nflplotr")
-    (version "1.6.0")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nflplotR" version))
        (sha256
-        (base32 "1911y55iwa0jy3sacm959sfkrjsddhpzrri8xzhqxzx4hjclz1f1"))))
+        (base32 "1lv1wbfh1127g2a18jscmggvzzwmidnyrchdd6c3sn7003ihly35"))))
     (properties `((upstream-name . "nflplotR")))
     (build-system r-build-system)
     (arguments
@@ -12513,13 +12513,13 @@ analysis in ggplot2 plots and gt tables.")
 (define-public r-nflfastr
   (package
     (name "r-nflfastr")
-    (version "5.2.0")
+    (version "6.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nflfastR" version))
        (sha256
-        (base32 "0hk0ki3kxvgn45mqgs93ilfzhd902yp44m4i1lvg8h3dc8d6l9sd"))))
+        (base32 "131c890h4xqxkm970yadw8ayqc8m1h2mli5w536syprvyih04j4x"))))
     (properties `((upstream-name . "nflfastR")))
     (build-system r-build-system)
     (arguments

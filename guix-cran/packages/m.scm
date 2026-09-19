@@ -1974,13 +1974,13 @@ variance-covariance matrix for multivariate normal data with missing values.")
 (define-public r-mvnma
   (package
     (name "r-mvnma")
-    (version "0.2-0")
+    (version "0.3-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mvnma" version))
        (sha256
-        (base32 "1g6jfd8akf8wqk4h4g1ibgjbhd1bzm8nqadkmx58plgq0irq96v8"))))
+        (base32 "0r86mgadwh6dhbj9wibw39m2rfnvlhwj2cb4mvq0r9ik4hryrnzx"))))
     (properties `((upstream-name . "mvnma")))
     (build-system r-build-system)
     (arguments
@@ -2001,16 +2001,19 @@ variance-covariance matrix for multivariate normal data with missing values.")
     (description
      "This package provides tools to conduct Bayesian multivariate network
 meta-analysis providing - the single correlation coefficient model by Efthimiou
-et al. (2015) <doi:10.1093/biostatistics/kxu030>; - per-outcome treatment
-hierarchies using the surface under the cumulative ranking curve (SUCRA), the
-probability of best value, or median (or mean) ranks (Salanti et al., 2011)
+et al. (2015) <doi:10.1093/biostatistics/kxu030>; - per-outcome consistency
+checks using the node-splitting method (Dias et al., 2010)
+<doi:10.1002/sim.3767>; - per-outcome treatment hierarchies using the surface
+under the cumulative ranking curve (SUCRA), the probability of best value, or
+median (or mean) ranks (Salanti et al., 2011)
 <doi:10.1016/j.jclinepi.2010.03.016>; - across-outcomes benefit-risk assessment
 using the ViÅ¡@code{eKriterijumska} Optimizacija I Kompromisno ReÅ¡enje (VIKOR)
 method (Opricovic & Tzeng, 2004) <doi:10.1016/S0377-2217(03)00020-1>; -
 convergence checks using trace plots, density plots, or the R-hat statistic; -
-forest plots of treatment estimates, scatter plots of per-outcome rankings,
-Hasse diagrams (Carlsen & Bruggemann, 2014) <doi:10.1002/cem.2569> to visualize
-the partial order of the treatments across all outcomes.")
+forest plots of treatment estimates and consistency checks, scatter plots of
+per-outcome rankings, Hasse diagrams (Carlsen & Bruggemann, 2014)
+<doi:10.1002/cem.2569> to visualize the partial order of the treatments across
+all outcomes.")
     (license license:gpl2+)))
 
 (define-public r-mvnimpute
@@ -2679,13 +2682,13 @@ dose-response surfaces.")
 (define-public r-mvglmmrank
   (package
     (name "r-mvglmmrank")
-    (version "1.2-5")
+    (version "1.2-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mvglmmRank" version))
        (sha256
-        (base32 "1j5cxlm6gfy57rwwksnqg528la0b5nx20r7zvsng1jkh46fxpna5"))))
+        (base32 "17qkq3hb9s157v10qi5dlh0m6x0x594da450h5qbp2kmc1xf8pwa"))))
     (properties `((upstream-name . "mvglmmRank")))
     (build-system r-build-system)
     (arguments
@@ -6895,13 +6898,13 @@ python'.")
 (define-public r-multilevlca
   (package
     (name "r-multilevlca")
-    (version "2.1.5")
+    (version "2.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multilevLCA" version))
        (sha256
-        (base32 "1pwn3lwaqb95i5vf3fjv3s7wagyqrvwbsapgbg93aicrapqsh93h"))))
+        (base32 "1hclzq75lgwq1m7msq582q46gpcz0lsr98gdvylwlpqw28ryn11y"))))
     (properties `((upstream-name . "multilevLCA")))
     (build-system r-build-system)
     (arguments
@@ -7391,13 +7394,13 @@ multigroup data with certain variables of interest.")
 (define-public r-multigroup-vaccine
   (package
     (name "r-multigroup-vaccine")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multigroup.vaccine" version))
        (sha256
-        (base32 "029wpl7f4hfm24g9hmpzbljcndwsc0l1nkhxsbkilmi07pqb2v9n"))))
+        (base32 "0c70hl5r5mf5nhia2a91826xc3r1n80k54l8lizky20pydz70jjc"))))
     (properties `((upstream-name . "multigroup.vaccine")))
     (build-system r-build-system)
     (arguments
@@ -14972,6 +14975,34 @@ Sankararaman, B Pasaniuc, WJ Gauderman, JS Witte (2020)
 <doi:10.1093/bioinformatics/btaa1083>.")
     (license license:gpl3)))
 
+(define-public r-mpem
+  (package
+    (name "r-mpem")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mpem" version))
+       (sha256
+        (base32 "0k20dyd2lh72lqxs47bi1k0xyxasm8k6ray4kgzvcqz018rpjccc"))))
+    (properties `((upstream-name . "mpem")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (home-page "https://github.com/LHZMix/MPEM")
+    (synopsis "Matrix Partial EM for Incomplete Matrix-Normal Data")
+    (description
+     "Fits single-component and finite-mixture Kronecker-structured matrix-normal
+models and imputes incomplete matrix-variate data using matrix partial
+expectation-maximization.  General MPEM handles arbitrary missingness, while
+Rect-MPEM exploits rectangular structural missingness.  The methods are
+described in Lu, Andrews and Browne (2026) \"An Efficient EM Algorithm for Both
+Element-Wise and Structural Missingness in Matrix-Variate Normal Mixture Models\"
+<doi:10.48550/@code{arXiv.2609.00616>}.")
+    (license license:expat)))
+
 (define-public r-mpdir
   (package
     (name "r-mpdir")
@@ -16740,18 +16771,19 @@ Baudrot and Charles (2019) <doi:10.1038/s41598-019-47698-0>.")
 (define-public r-morsedr
   (package
     (name "r-morsedr")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "morseDR" version))
        (sha256
-        (base32 "05gvfgdvsdjpi1ssqz8lqk76z3i0i6920krj95m8v54zpnjnypx5"))))
+        (base32 "1imsjxjf5c1zv3ld8lnblvaghw0gngg1bh9141w4cwq72lranh25"))))
     (properties `((upstream-name . "morseDR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (inputs (list jags))
     (propagated-inputs (list r-rjags r-ggplot2 r-coda))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=morseDR")
@@ -28622,13 +28654,13 @@ Gaussian copula model.  The methods are described in Yoon, Carroll and Gaynanova
 (define-public r-mixedbiastest
   (package
     (name "r-mixedbiastest")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mixedbiastest" version))
        (sha256
-        (base32 "0sfgrzsxng527m8yicr3iz45h9wb2pq71zvhrvkkmvv1gg2l1clq"))))
+        (base32 "0mxja2dlb6c9n9dbkr553c5amidfkxgcwjvshdafpmlk9bb87ip6"))))
     (properties `((upstream-name . "mixedbiastest")))
     (build-system r-build-system)
     (arguments
@@ -45694,13 +45726,13 @@ coordinates can also be employed e.g. loess.")
 (define-public r-mdgof
   (package
     (name "r-mdgof")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MDgof" version))
        (sha256
-        (base32 "0db8lkl799snhqbqshwgl6dlixi00jqiaxkm3xkn1m041v73jp7n"))))
+        (base32 "1s9k5waz9x5zwc9m53x39ybwh737i6ssb5dxgh913mddg7532wc9"))))
     (properties `((upstream-name . "MDgof")))
     (build-system r-build-system)
     (arguments
@@ -45720,19 +45752,16 @@ coordinates can also be employed e.g. loess.")
     (synopsis
      "Various Methods for the Goodness-of-Fit Problem in D>1 Dimensions")
     (description
-     "The routine @code{gof_test()} in this package runs the goodness-of-fit test
-using various test statistic for multivariate data.  Models under the null
-hypothesis can either be simple or allow for parameter estimation.  p values are
-found via the parametric bootstrap (simulation).  The routine
-@code{gof_test_adjusted_pvalues()} runs several tests and then finds a p value
-adjusted for simultaneous inference.  The routine @code{gof_power()} allows the
-estimation of the power of the tests. @code{hybrid_test()} and
-@code{hybrid_power()} do the same by first generating a Monte Carlo data set
-under the null hypothesis and then running a number of two-sample methods.  The
-routine @code{run.studies()} allows a user to quickly study the power of a new
-method and how it compares to those included in the package via a large number
-of case studies.  For details of the methods and references see the included
-vignettes.")
+     "This package provides multivariate goodness-of-fit testing with a common
+interface for several test statistics.  Null models may be simple or include
+parameter estimation, with p-values obtained by parametric bootstrap simulation.
+ The function @code{gof_test_adjusted_pvalue()} combines several tests and
+computes a p-value adjusted for simultaneous inference.  The function
+@code{gof_power()} estimates test power.  The functions @code{hybrid_test()} and
+@code{hybrid_power()} use Monte Carlo samples under the null together with
+two-sample procedures.  The function @code{run.studies()} supports systematic
+power comparisons of user-supplied and included methods across case studies.
+See the included vignettes for method details and references.")
     (license license:gpl2+)))
 
 (define-public r-mdgc
@@ -46736,13 +46765,13 @@ dependencies.")
 (define-public r-mcptools
   (package
     (name "r-mcptools")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mcptools" version))
        (sha256
-        (base32 "0wdz62apsnrgfs6qmrkh4n08mz91sfmj9gjpf7dgqqillf4bbwg9"))))
+        (base32 "18jj33fizws2acwh8ymcr34cj4q1v879jm7761s7rlgfrbkg9shd"))))
     (properties `((upstream-name . "mcptools")))
     (build-system r-build-system)
     (arguments
@@ -53470,13 +53499,13 @@ described in Zempleni et al. (2004) <doi:10.1002/asmb.521>, Dobi and Zempleni
 (define-public r-markovchain
   (package
     (name "r-markovchain")
-    (version "1.0.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "markovchain" version))
        (sha256
-        (base32 "0pqsq7k8qz47lcj47dlc87z5rvwwaazbi7vhdp78pyrmzc0mijgp"))))
+        (base32 "1lh5aqyhardfxagnq917znhp684m1vr6cw4wwy7dpnkn3ijg9a5g"))))
     (properties `((upstream-name . "markovchain")))
     (build-system r-build-system)
     (arguments

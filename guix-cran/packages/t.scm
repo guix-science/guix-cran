@@ -227,6 +227,34 @@ permitted values.  The actual parameters with which the function is called are
 evaluated against these type hint comments at run-time.")
     (license license:gpl3)))
 
+(define-public r-typedjson
+  (package
+    (name "r-typedjson")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "typedjson" version))
+       (sha256
+        (base32 "0add3pd6bhiizbyga6qf5pkp0z4x7adpdp6yga6xaz3vf5p7hs8i"))))
+    (properties `((upstream-name . "typedjson")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-cpp11))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://nbenn.github.io/typedjson/")
+    (synopsis "Type-Faithful and Human-Readable JSON for R Values")
+    (description
+     "Writing an R value as JSON that a human can read, and reading it back unchanged.
+ The jsonlite package offers either a readable but lossy pair of functions or a
+faithful but verbose one; this package emits ordinary JSON for ordinary values
+and annotates only what JSON cannot express, namely the distinction between
+integer and double, typed missing values, non-finite numbers, attributes, and
+objects from the S3, S4 and S7 systems.")
+    (license license:expat)))
+
 (define-public r-typed
   (package
     (name "r-typed")
@@ -8224,6 +8252,34 @@ Bayesian methods in clinical trials.  There is a preponderance of early phase
 trial designs because this is where Bayesian methods are used most.  If there is
 a method you would like implemented, please get in touch.")
     (license license:gpl3+)))
+
+(define-public r-trialflowr
+  (package
+    (name "r-trialflowr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TrialFlowR" version))
+       (sha256
+        (base32 "0ws1f030lvq1hrq68pcjjk3rsx3pk2abwc4sawp63s784swq2357"))))
+    (properties `((upstream-name . "TrialFlowR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/vinodhpmd/TrialFlowR")
+    (synopsis "Clinical Trial Flow and Participant Disposition")
+    (description
+     "Summarizes participant flow and disposition in clinical trials, including
+CONSORT-style randomized controlled trials, parallel-group, crossover, cluster
+randomized, and multi-arm trials.  Provides functions for screening failures,
+exclusions and reasons, allocation, follow-up, loss to follow-up, withdrawals,
+intention-to-treat and per-protocol populations, and participant-disposition
+summaries.  The methods are based on established principles for reporting
+participant flow and disposition in randomized trials; see Schulz et al. (2010)
+<doi:10.1136/bmj.c332>.")
+    (license license:expat)))
 
 (define-public r-trialemulation
   (package
@@ -34097,13 +34153,13 @@ documentation for their respective functions in this package.")
 (define-public r-taxify
   (package
     (name "r-taxify")
-    (version "0.5.0")
+    (version "0.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "taxify" version))
        (sha256
-        (base32 "1dd6mbiq8vwf7q2dkqhi4ajxj519gx8rkxbkzb773y34mslv1f13"))))
+        (base32 "0gyhcql55fph2kk13hkighnb91mlfx71lcvbgilmpbigyvdhhjc6"))))
     (properties `((upstream-name . "taxify")))
     (build-system r-build-system)
     (arguments
@@ -35382,13 +35438,13 @@ simulation studies.  Methods are described in Fokoue (2024)
 (define-public r-tall
   (package
     (name "r-tall")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tall" version))
        (sha256
-        (base32 "1wpv8lmcwdy4g9nxswagzyavyiq4z862pkbd6j6x9z6xm61kgq5h"))))
+        (base32 "0x9c76316i4xd5xavb4ii9jhkgi879lp3r3xbrjhpv4wizrqnxhk"))))
     (properties `((upstream-name . "tall")))
     (build-system r-build-system)
     (arguments
@@ -36039,13 +36095,13 @@ detailed overview of tacmagic functions.")
 (define-public r-tabxplor
   (package
     (name "r-tabxplor")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tabxplor" version))
        (sha256
-        (base32 "0557kj3538gfn0lq4shq9pdr26xxmmf34gmcizc6np92352bx1pw"))))
+        (base32 "124g8ns9q3wr41307d5360yn0h363ay4s2dpa8pjxhknq78h4q5k"))))
     (properties `((upstream-name . "tabxplor")))
     (build-system r-build-system)
     (arguments

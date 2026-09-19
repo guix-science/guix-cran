@@ -3972,13 +3972,13 @@ data [dissertation].  Stockholm: Almqvist & Wiksell International; 1993.")
 (define-public r-svemnet
   (package
     (name "r-svemnet")
-    (version "3.6.0")
+    (version "3.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SVEMnet" version))
        (sha256
-        (base32 "07mw06681qn283hafqvs19q6y5rcc0xz215zv2m0l6nm3h7ykp3w"))))
+        (base32 "0fa1zs1cwgygmgv61xjym7i32vjw357zhc282myw20mgb1xcx01p"))))
     (properties `((upstream-name . "SVEMnet")))
     (build-system r-build-system)
     (arguments
@@ -8151,13 +8151,13 @@ while others address common tasks or extend existing R functions.")
 (define-public r-supportr
   (package
     (name "r-supportr")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "supportR" version))
        (sha256
-        (base32 "14xvs9jbkikhmc8q43w7w218vm9z4w7vmbkrkzadhd5xdp8zkv98"))))
+        (base32 "115vs59il75bdr3q6g1b87vd4pfmw2xr1y22rg81i7zr0qrdr45g"))))
     (properties `((upstream-name . "supportR")))
     (build-system r-build-system)
     (arguments
@@ -8167,6 +8167,7 @@ while others address common tasks or extend existing R functions.")
                              r-tidyr
                              r-stringr
                              r-stringi
+                             r-spelling
                              r-scales
                              r-rmarkdown
                              r-rlang
@@ -10128,13 +10129,13 @@ authored by Stephanie Sapp, Mark J. van der Laan & John Canny (2014)
 (define-public r-subselect
   (package
     (name "r-subselect")
-    (version "0.16.1")
+    (version "0.16.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "subselect" version))
        (sha256
-        (base32 "0rmrf4r0rickpy612vn4492rx5qha6gi3m06wmnfypc4pvp04k33"))))
+        (base32 "1zb03077mb5d13kq80z16ismd3l8rgzkh38l10l9nv833kxi94j9"))))
     (properties `((upstream-name . "subselect")))
     (build-system r-build-system)
     (arguments
@@ -23956,13 +23957,13 @@ name comment, which also will be the name of the list element.")
 (define-public r-sqlrender
   (package
     (name "r-sqlrender")
-    (version "1.19.6")
+    (version "1.19.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SqlRender" version))
        (sha256
-        (base32 "149k7zidnqsi67x8kdq9n29w6x47hqgkrz2yha3lr1sz44kwcxi5"))))
+        (base32 "1ybzjnj9avsq5ma75pxlr2spiwnz7nk3bqm237617m89ss8snvla"))))
     (properties `((upstream-name . "SqlRender")))
     (build-system r-build-system)
     (arguments
@@ -35084,6 +35085,57 @@ autoregressive models (see Rossoni, D. F., & Lima, R. R. (2019)
 M. S. D. (2004) <doi:10.1590/S1413-70542004000100018>).  For both methods, there
 are three multicomparison procedure available: Tukey, multivariate T, and
 Scott-Knott.")
+    (license license:gpl3)))
+
+(define-public r-spanner
+  (package
+    (name "r-spanner")
+    (version "1.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spanner" version))
+       (sha256
+        (base32 "06cxg9swb5cpa116ia8cgmjx923kiiw3xfx4swl34pxcr26xsj94"))))
+    (properties `((upstream-name . "spanner")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra
+                             r-sfheaders
+                             r-sf
+                             r-rfast
+                             r-rcppeigen
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-rann
+                             r-mathjaxr
+                             r-lidr
+                             r-geometry
+                             r-fnn
+                             r-dplyr
+                             r-data-table
+                             r-cpprouting
+                             r-conicfit
+                             r-bh))
+    (home-page "https://github.com/bi0m3trics/spanner")
+    (synopsis
+     "Utilities to Support Lidar Applications at the Landscape, Forest, and Tree Scale")
+    (description
+     "This package implements algorithms for terrestrial, mobile, and airborne lidar
+processing, tree detection, segmentation, and attribute estimation (Donager et
+al., 2021) <doi:10.3390/rs13122297>, and a hierarchical patch delineation
+algorithm @code{PatchMorph} (Girvetz & Greco, 2007)
+<doi:10.1007/s10980-007-9104-8>.  Tree detection uses rasterized point cloud
+metrics (relative neighborhood density and verticality) combined with RANSAC
+cylinder fitting to locate tree boles and estimate diameter at breast height.
+Tree segmentation applies graph-theory approaches inspired by Tao et al. (2015)
+<doi:10.1016/j.isprsjprs.2015.08.007> with cylinder fitting methods from de
+Conto et al. (2017) <doi:10.1016/j.compag.2017.07.019>. @code{PatchMorph}
+delineates habitat patches across spatial scales using organism-specific
+thresholds.  Built on @code{lidR} (Roussel et al., 2020)
+<doi:10.1016/j.rse.2020.112061>.")
     (license license:gpl3)))
 
 (define-public r-spanishoddata
@@ -50767,37 +50819,33 @@ register at <https://app.simfin.com/login>.")
 (define-public r-simfastboin
   (package
     (name "r-simfastboin")
-    (version "1.3.2")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simFastBOIN" version))
        (sha256
-        (base32 "1py6s1wpdjks1nn597ga2x2xfskm456dlpazndnvcxg51zpdpl28"))))
+        (base32 "1r42d4mjjdnbqg7s5sia36xacrnw9qk076ir13zhpfniias83igm"))))
     (properties `((upstream-name . "simFastBOIN")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-knitr r-kableextra r-iso))
+    (propagated-inputs (list r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/gosukehommaEX/simFastBOIN")
     (synopsis
-     "Fast Bayesian Optimal Interval Design for Phase I Dose-Finding Trials")
+     "Fast Simulation of Bayesian Optimal Interval Designs for Phase I Trials")
     (description
-     "Conducting Bayesian Optimal Interval (BOIN) design for phase I dose-finding
-trials. @code{simFastBOIN} provides functions for pre-computing decision tables,
-conducting trial simulations, and evaluating operating characteristics.  The
-package uses vectorized operations and the @code{Iso::pava()} function for
-isotonic regression to achieve efficient performance while maintaining full
-compatibility with BOIN methodology.  Version 1.3.2 adds p_saf and p_tox
-parameters for customizable safety and toxicity thresholds.  Version 1.3.1 fixes
-Date field.  Version 1.2.1 adds comprehensive roxygen2 documentation and
-enhanced print formatting with flexible table output options.  Version 1.2.0
-integrated C-based PAVA for isotonic regression.  Version 1.1.0 introduced
-conservative MTD selection (@code{boundMTD}) and flexible early stopping rules
-(n_earlystop_rule).  Methods are described in Liu and Yuan (2015)
-<doi:10.1111/rssc.12089>.")
+     "Design and evaluate phase I dose-finding trials that use the Bayesian optimal
+interval (BOIN) design of Liu and Yuan (2015) <doi:10.1111/rssc.12089>.
+Functions are provided to tabulate the decision boundaries, to simulate trials,
+to estimate the dose-toxicity curve under a monotonicity constraint and to
+select the maximum tolerated dose.  The simulation engine is written in C++ and
+draws one random variate per patient in enrollment order, which reproduces the
+reference implementation in the BOIN package trial by trial for a given seed.
+The traditional 3+3 design is provided as a comparator, with operating
+characteristics obtained in closed form rather than by simulation.")
     (license license:expat)))
 
 (define-public r-simfam
@@ -53244,13 +53292,13 @@ algorithm and to process data visualization.")
 (define-public r-sidrar
   (package
     (name "r-sidrar")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sidrar" version))
        (sha256
-        (base32 "16p39pcd090kmvg74mc77ndwlzm91yw0zzw3dfxd61ia8aap0c2w"))))
+        (base32 "0pjcngd4067088ic6l76lf7n9jqb0ifh9sl8f903pdbc07nnd6fk"))))
     (properties `((upstream-name . "sidrar")))
     (build-system r-build-system)
     (arguments
@@ -53290,6 +53338,39 @@ system for retrieving aggregate statistical data.")
 provided by the Brazilian Institute of Geography and Statistics (IBGE).  Data
 are retrieved through the official API <https://apisidra.ibge.gov.br/>.")
     (license license:expat)))
+
+(define-public r-sidra
+  (package
+    (name "r-sidra")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sidra" version))
+       (sha256
+        (base32 "0j1hvzjc70zdvbc73xl55gb0smjm7k1v24h1phx7ivcz02p5ypcf"))))
+    (properties `((upstream-name . "sidra")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-jsonlite
+                             r-httr
+                             r-dplyr
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/rodrigoesborges/sidra")
+    (synopsis "Acesso aos Dados do 'SIDRA' do IBGE")
+    (description
+     "This package provides functions for accessing and manipulating data from
+Brazilian Institute of Geography and Statistics (IBGE)'s API SIDRA (acronym for
+IBGE System of Automatic Retrieval) from the new endpoints at
+<https://servicodados.ibge.gov.br/api/docs/agregados?versao=3>.  Ferramentas
+para acessar e manipular dados via API do Sistema IBGE De RecuperaÃ§Ã£o
+AutomÃ¡tica SIDRA do Instituto Brasileiro de Geografia e EstatÃ­stica (IBGE).")
+    (license license:gpl3)))
 
 (define-public r-sidier
   (package
@@ -55912,13 +55993,13 @@ interactively.")
 (define-public r-shinyoauth
   (package
     (name "r-shinyoauth")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyOAuth" version))
        (sha256
-        (base32 "09677s2aza0165lhvzymgqs6dfz3r3y2pldrg93vrzdnhk0wnfx0"))))
+        (base32 "1y2ymvfzpsiy9yfgvfccxj29yqq10sra1p8w3xv1wbqfpzgp2lvc"))))
     (properties `((upstream-name . "shinyOAuth")))
     (build-system r-build-system)
     (arguments
@@ -76247,6 +76328,41 @@ on the cowplot package by Claus O. Wilke and the ggplot2 package by Hadley
 Wickham.")
     (license license:gpl2+)))
 
+(define-public r-scatools
+  (package
+    (name "r-scatools")
+    (version "0.4.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SCAtools" version))
+       (sha256
+        (base32 "0ahqfb04fp8qyqn2r70327h29q4pidjynkjhrzwj3cwfj9d7fwxv"))))
+    (properties `((upstream-name . "SCAtools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-nca r-ggplot2))
+    (home-page "https://github.com/youngchanresearcher/SCAtools")
+    (synopsis "Direction-Aware Sufficiency Condition Analysis")
+    (description
+     "This package provides a direction-aware interface for analysing bivariate
+sufficiency statements from empty-space frontier patterns.  Logical sufficiency
+directions (high or low levels of a condition and outcome) are kept separate
+from the physical location of the empty corner in the scatter plot.  Computation
+is delegated to version 5 of the NCA package based on Dul (2016)
+<doi:10.1177/1094428115584005>, using the contraposition between necessity and
+sufficiency.  Threshold tables are computed in actual units and converted by
+this package, so percentage, percentile and standard-deviation scales follow one
+stated reporting convention in every sufficiency direction.  Includes tidy
+summaries, threshold rules, plots, random-data generation, permutation tests,
+and power analysis.  An ordinary least-squares line can be drawn beside the
+frontier as a central-tendency reference; it is an average-effect summary and
+never a component of a sufficiency claim.  An empty-space pattern alone does not
+establish causality or deterministic sufficiency.")
+    (license license:gpl3+)))
+
 (define-public r-scarabee
   (package
     (name "r-scarabee")
@@ -78324,6 +78440,37 @@ future or any date in the past.  There are many date formats used in SAS to
 represent date-time.  Here, we try to develop functions which will convert the
 date to different SAS date formats.")
     (license license:expat)))
+
+(define-public r-sasctl
+  (package
+    (name "r-sasctl")
+    (version "0.9.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sasctl" version))
+       (sha256
+        (base32 "1iircm45dki4x2h48kj6j6v4arbp3fnl59s1hddrn0r42hg7qa77"))))
+    (properties `((upstream-name . "sasctl")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-uuid
+                             r-rocr
+                             r-reshape2
+                             r-jsonlite
+                             r-httr
+                             r-glue
+                             r-base64enc))
+    (native-inputs (list r-knitr))
+    (home-page "https://sassoftware.github.io/r-sasctl/")
+    (synopsis "Easily Communicate Between the \"SAS Viya\" Platform and R")
+    (description
+     "The sasctl (sas control) package enables easy communication between the \"SAS
+Viya\" platform APIs <https://developer.sas.com> and the R runtime.  It offers
+convenient wrappers to some most used endpoints.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-sascii
   (package

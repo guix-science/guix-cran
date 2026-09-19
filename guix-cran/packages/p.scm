@@ -7437,13 +7437,13 @@ information.")
 (define-public r-prototest
   (package
     (name "r-prototest")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "prototest" version))
        (sha256
-        (base32 "07g58hq2qdpczqhjsv6dq1bya9rs958r103n91icw5yc19bvyhi2"))))
+        (base32 "0n60p35n0s1pqw3961gfxs4asy1r5bkk0zpfb3axmnd4lj5fq41q"))))
     (properties `((upstream-name . "prototest")))
     (build-system r-build-system)
     (arguments
@@ -7451,7 +7451,7 @@ information.")
       #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-mass r-intervals
                              r-glmnet))
-    (home-page "http://arxiv.org/abs/1511.07839")
+    (home-page "https://arxiv.org/abs/1511.07839")
     (synopsis "Inference on Prototypes from Clusters of Features")
     (description
      "Procedures for testing for group-wide signal in clusters of variables.  Tests
@@ -13040,13 +13040,13 @@ part of the OOMPA collection of packages described at
 (define-public r-prepr4pcm
   (package
     (name "r-prepr4pcm")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "prepR4pcm" version))
        (sha256
-        (base32 "1fil0jczi35lnmmfbyamxyfyfqwivgba4yi922nx8636gci95b58"))))
+        (base32 "0nwxizzj8cmqgn165a5fqwwyw9ccp58akp2809h06v22k9rpk4f4"))))
     (properties `((upstream-name . "prepR4pcm")))
     (build-system r-build-system)
     (arguments
@@ -14930,13 +14930,13 @@ palettes.")
 (define-public r-prais
   (package
     (name "r-prais")
-    (version "1.1.4")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "prais" version))
        (sha256
-        (base32 "099yvyry359bkp2gbr80f6cdk21119cylx3pgk6h5cqszglyc1ks"))))
+        (base32 "13rzlw8dpz3w5y8gb8v84ajp870s0jv1s1z6pqaq6fi9cc4h8vni"))))
     (properties `((upstream-name . "prais")))
     (build-system r-build-system)
     (arguments
@@ -14951,7 +14951,7 @@ serial correlation of the errors in a linear regression model.  The procedure
 recursively estimates the coefficients and the error autocorrelation of the
 specified model until sufficient convergence of the AR(1) coefficient is
 attained.")
-    (license license:gpl2)))
+    (license license:gpl2+)))
 
 (define-public r-practools
   (package
@@ -17984,18 +17984,20 @@ parallelized to improve their efficiency.")
 (define-public r-pot
   (package
     (name "r-pot")
-    (version "1.1-11")
+    (version "1.1-12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "POT" version))
        (sha256
-        (base32 "0dkcikrz4xf8r49a0fap8nw8ydkz56kdmc7wjn9jannngl010z6v"))))
+        (base32 "0m13jqm0ac0w4aw0j8mnax67z86v3byrm4y1rv5cy9pkpf7dgdjg"))))
     (properties `((upstream-name . "POT")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-evd))
+    (native-inputs (list r-knitr))
     (home-page "https://pot.r-forge.r-project.org/")
     (synopsis "Generalized Pareto Distribution and Peaks Over Threshold")
     (description
@@ -22166,13 +22168,13 @@ visualization.")
 (define-public r-poldis
   (package
     (name "r-poldis")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "poldis" version))
        (sha256
-        (base32 "0si3lvxajp4jlgwh1paksd48yqk3qknh8k5p4zas61056ckdyj8q"))))
+        (base32 "1bvj9ix4m90xd66553i7z7mfpxiqsrai1yvs39akbs6v8cvaqnif"))))
     (properties `((upstream-name . "poldis")))
     (build-system r-build-system)
     (arguments
@@ -22187,6 +22189,7 @@ visualization.")
                              r-quanteda
                              r-purrr
                              r-dplyr))
+    (native-inputs (list r-knitr))
     (home-page "http://henriquesposito.com/poldis/")
     (synopsis "Analyse Political Texts")
     (description

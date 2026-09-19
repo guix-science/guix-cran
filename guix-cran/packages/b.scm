@@ -13,6 +13,7 @@
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages compression)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages algebra)
   #:use-module (gnu packages julia)
   #:use-module (gnu packages tls)
@@ -17856,6 +17857,46 @@ Objects as JSON, PDF, HTML, or Word documents, and exporting to cloud-based
 platforms.")
     (license license:agpl3)))
 
+(define-public r-biocohort
+  (package
+    (name "r-biocohort")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "biocohort" version))
+       (sha256
+        (base32 "0rr9573198rpxymsfhf64bc8j7ds8r8y726dvnzr9cf9wng45id3"))))
+    (properties `((upstream-name . "biocohort")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list crossmap))
+    (propagated-inputs (list r-tibble
+                             r-s7
+                             r-rlang
+                             r-readr
+                             r-fs
+                             r-dplyr
+                             r-cli
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://www.samuelbharti.com/biocohort/")
+    (synopsis "Cohort Objects for Subjects and Samples in Omics Studies")
+    (description
+     "Keeps the subjects, samples, and analysis outputs of a study in one validated
+object.  It starts from a sample manifest with one row per sample, which is
+read, checked, and split into a subject table and a sample map.  Species and
+assay are plain values in those tables rather than fixed types, so the same
+object serves any organism and any omics assay.  From that object the package
+writes the sample sheet a pipeline expects, pairs tumor and normal samples on
+demand, and records where each analysis writes its output so the files can be
+loaded back in by subject or by pair.  Manual corrections are kept in an audit
+trail.  Results can also be translated across genome builds or species, with
+liftover for coordinates and ortholog mapping for genes.")
+    (license license:expat)))
+
 (define-public r-bioclim
   (package
     (name "r-bioclim")
@@ -29644,13 +29685,13 @@ segmentation wrapper for all algorithms.")
 (define-public r-bayesppr
   (package
     (name "r-bayesppr")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesPPR" version))
        (sha256
-        (base32 "1p337a5pnii3kan5540gv570bcjhmn89fjrnfdn7w1qvb4hd7mlp"))))
+        (base32 "1c09igvi9kw14dr39z2xzv8klw4qm7yyy0rgkcwwc97zcqcd5kil"))))
     (properties `((upstream-name . "BayesPPR")))
     (build-system r-build-system)
     (arguments
@@ -34598,13 +34639,13 @@ al. (1982) and Ellis et al. (1982) <doi:10.1093/JXB/38.6.1033>
 (define-public r-basetable
   (package
     (name "r-basetable")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "basetable" version))
        (sha256
-        (base32 "01ai6d9gm3n9a7g39g2624ysxfm65y1lgph605wal8mkj2wyda0v"))))
+        (base32 "1d8q4s44nn2812wxjlzy4ilqy9dl5hm6m8kyiggbz9n3g72ssmfx"))))
     (properties `((upstream-name . "basetable")))
     (build-system r-build-system)
     (arguments

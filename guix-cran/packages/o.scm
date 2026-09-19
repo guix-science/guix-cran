@@ -5680,13 +5680,13 @@ testing procedure.")
 (define-public r-optsurvcutr
   (package
     (name "r-optsurvcutr")
-    (version "0.10.0")
+    (version "0.11.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OptSurvCutR" version))
        (sha256
-        (base32 "0j6sqkhq96hlinlicb9q7lz02wl31vglhqkl0ryhdjd80k2njvrp"))))
+        (base32 "0a0lbf5zrazci1vfin6wj242s8yzrv3l6n3rfablx55d6habsazb"))))
     (properties `((upstream-name . "OptSurvCutR")))
     (build-system r-build-system)
     (arguments
@@ -9736,13 +9736,13 @@ philosophy of the package is described in Guo G. (2018)
 (define-public r-opalr
   (package
     (name "r-opalr")
-    (version "3.6.1")
+    (version "3.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "opalr" version))
        (sha256
-        (base32 "1sh3k8hsmpkvmni35n1vjhizshanvxvlxdlynl29682dzjhxwqca"))))
+        (base32 "15mwwkbbbjc8wj6n5sqjs4vp3gqkxdkr715pw7qiz2g0ncj2cnxz"))))
     (properties `((upstream-name . "opalr")))
     (build-system r-build-system)
     (arguments
@@ -12732,13 +12732,13 @@ assessment and variable selection procedures.")
 (define-public r-olsengine
   (package
     (name "r-olsengine")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OLSengine" version))
        (sha256
-        (base32 "0jq9fd49197i3rhri194438k1b3ma2smjixzi07phz42h0a6y7b9"))))
+        (base32 "08w5zih6qcxxq6gma4jq8n4mj5svnqcqpm8j4afxvw9iqb9nrw5g"))))
     (properties `((upstream-name . "OLSengine")))
     (build-system r-build-system)
     (arguments
@@ -12911,13 +12911,13 @@ the Olink platform'.  More information on Olink data can be found at
 (define-public r-olinkanalyze
   (package
     (name "r-olinkanalyze")
-    (version "5.0.2")
+    (version "5.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OlinkAnalyze" version))
        (sha256
-        (base32 "1zc5xnmy97nchjpyvrsc8afki5c347yjs20mz7ybx7v9lgib8ycy"))))
+        (base32 "10xyk42f223cngffb3w0gyamr9rbnzpfisqyr47a0yskr44d168q"))))
     (properties `((upstream-name . "OlinkAnalyze")))
     (build-system r-build-system)
     (arguments
@@ -12927,6 +12927,7 @@ the Olink platform'.  More information on Olink data can be found at
                              r-tibble
                              r-stringr
                              r-rlang
+                             r-pillar
                              r-ggplot2
                              r-forcats
                              r-duckdb

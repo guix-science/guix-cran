@@ -2451,13 +2451,13 @@ TIGER/Line shapefiles.")
 (define-public r-rupturesrcpp
   (package
     (name "r-rupturesrcpp")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rupturesRcpp" version))
        (sha256
-        (base32 "0fg8iv389jjmjzdqvmmp7nrnk12hqxpyrvpf58svi506zlnp3866"))))
+        (base32 "0pqn0sslrvbxwp8aahv57c83zpf6qm2rah22jlxvs8xidiy8gjk4"))))
     (properties `((upstream-name . "rupturesRcpp")))
     (build-system r-build-system)
     (arguments
@@ -8479,13 +8479,13 @@ model with maximum likelihood estimation of the parameters.")
 (define-public r-rsearch
   (package
     (name "r-rsearch")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rsearch" version))
        (sha256
-        (base32 "0b2rglcz7ba96j5pr45wyfrzpgnj4c0wlc93c5wndhivqpnrj01a"))))
+        (base32 "1hbqlsszn4c7c6hjwiczkc8kbfrppjb6f7v6digri7hpikkzllyv"))))
     (properties `((upstream-name . "Rsearch")))
     (build-system r-build-system)
     (arguments
@@ -27031,20 +27031,21 @@ comparing workspaces.")
 (define-public r-rjd3jars
   (package
     (name "r-rjd3jars")
-    (version "0.0.5")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rjd3jars" version))
        (sha256
-        (base32 "0hdmjrp5i10xbwyiifxr7w258grl7s5l9lz6snij1f9k09cksxb4"))))
+        (base32 "02yqfrir1kddy08y0m4a3749cq12v8b8inf3rx21pjm10p2fkwkh"))))
     (properties `((upstream-name . "rjd3jars")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (inputs (list openjdk))
     (propagated-inputs (list r-rjava))
-    (home-page "https://cran.r-project.org/package=rjd3jars")
+    (home-page "https://github.com/rjdverse/rjd3jars")
     (synopsis "External jars for 'rjdverse' R Packages")
     (description
      "It provides external jars required for the rjdverse (as rjd3toolkit', rjd3x13
@@ -46151,13 +46152,13 @@ the cumulative distribution functions of and sampling from the EAMs.")
 (define-public r-realvams
   (package
     (name "r-realvams")
-    (version "0.4-6")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RealVAMS" version))
        (sha256
-        (base32 "1945vxqj4y6fci3pwrq5jr91ikx2yn91jm33fm0x1x1bzv7krcgh"))))
+        (base32 "08bcahxva0k86901qwx7qhkv274bmm35jl27faq4lw1q7n6dsz69"))))
     (properties `((upstream-name . "RealVAMS")))
     (build-system r-build-system)
     (arguments
@@ -51951,13 +51952,13 @@ parameters, using Rcpp and @code{RcppEigen}'.")
 (define-public r-rcpparray
   (package
     (name "r-rcpparray")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppArray" version))
        (sha256
-        (base32 "0n32nqqa2cdx0lams95yhdij837asbs6kmaahnf2hm6q0pnwbj43"))))
+        (base32 "0pd6jna5r9dkjqml96nk8py977c7kvpaqq0cim8yrl1rhzxffv9h"))))
     (properties `((upstream-name . "RcppArray")))
     (build-system r-build-system)
     (arguments
@@ -56297,13 +56298,13 @@ distribution and random vectors from the Dirichlet distribution.")
 (define-public r-rbest
   (package
     (name "r-rbest")
-    (version "1.11-0")
+    (version "1.12-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RBesT" version))
        (sha256
-        (base32 "0nf0i27yv1qyqbhipji7c2wfc8fn35s5cqb9hyhm1y6cb8lnlq5r"))))
+        (base32 "0f8jfqpcvqyh8y1qgzcaasfzxhw1jbhbh23hx7c1a4d0q1bhbp4m"))))
     (properties `((upstream-name . "RBesT")))
     (build-system r-build-system)
     (arguments

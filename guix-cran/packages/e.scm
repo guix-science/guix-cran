@@ -6425,13 +6425,13 @@ to evaluate the statistical significance of observed deviations.")
 (define-public r-evbsreg
   (package
     (name "r-evbsreg")
-    (version "1.0.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "evbsreg" version))
        (sha256
-        (base32 "1x20gavz7px5ayxjsj0nnjbhfiqgkpp5h60ah56s0cjg2qcqll0r"))))
+        (base32 "0xs82kzqbm3hxp5ywh4f3n91s7gg6x7xjpwlnzj47810cxn8lrkd"))))
     (properties `((upstream-name . "evbsreg")))
     (build-system r-build-system)
     (arguments
@@ -6448,9 +6448,15 @@ Birnbaum-Saunders (EVBS) regression model: joint maximum likelihood estimation,
 conformal normal curvature diagnostics under three perturbation schemes
 (case-weight, response variable, and explanatory variable), randomized quantile
 residuals with simulation envelope, Monte Carlo simulation utilities, and
-publication-quality density and diagnostic plots.  The methods are described in
-Ospina, Lima, Barros, and Macedo (2026, submitted) and are applied to monthly
-maximum wind gust data from Itajai, Brazil.")
+publication-quality density and diagnostic plots.  Version 1.1.0 adds the
+density, distribution and quantile functions, the finite upper endpoint, return
+levels and expected shortfall, block bootstrap standard errors for serially
+dependent series, local influence diagnostics for the generalized extreme-value
+regression model, and a GAMLSS family allowing the tail-shape parameter to
+depend on covariates.  Version 1.2.0 adds a prospective control chart for
+endpoint identifiability.  The methods are described in Ospina, Lima, Barros,
+and Macedo (2026, submitted) and are applied to monthly maximum wind gust data
+from Itajai, Brazil.")
     (license license:expat)))
 
 (define-public r-evapotranspiration
