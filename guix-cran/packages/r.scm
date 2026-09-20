@@ -53965,13 +53965,13 @@ Jacobson & Truax (1991).  Referenced article: Jacobson, N. S., & Truax, P.
 (define-public r-rcicr
   (package
     (name "r-rcicr")
-    (version "1.3.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rcicr" version))
        (sha256
-        (base32 "1z7d1p2q52wf85h3m3hxmm5aqi9i0zmwgqzhr6abqndpkk03h11k"))))
+        (base32 "0fs0bzllqbnnnv01lz5x0d2hyv2xbmxsyxm21aqvrpjmil42q7db"))))
     (properties `((upstream-name . "rcicr")))
     (build-system r-build-system)
     (arguments

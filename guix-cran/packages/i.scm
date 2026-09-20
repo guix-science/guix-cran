@@ -18143,13 +18143,13 @@ that the series assumptions in the time series data are met.")
 (define-public r-ifo
   (package
     (name "r-ifo")
-    (version "0.2.5")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ifo" version))
        (sha256
-        (base32 "09vlbv95h7q2bfqbxk40rmk7fvw2ijghvnak6nfs133k0m4mgdb3"))))
+        (base32 "1qp7i9j0xhvlym732npr726fm92fwd6ns6g6jqmc6rr6221286nh"))))
     (properties `((upstream-name . "ifo")))
     (build-system r-build-system)
     (arguments

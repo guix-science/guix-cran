@@ -22948,45 +22948,6 @@ combinations of efficient functions to facilitate frequently-used data
 operations.")
     (license license:expat)))
 
-(define-public r-tidyfit
-  (package
-    (name "r-tidyfit")
-    (version "0.7.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tidyfit" version))
-       (sha256
-        (base32 "0wd1xrynhgnznxjrjv30nss8sv4wv4gg01b5l6m30hhpn66v5a4d"))))
-    (properties `((upstream-name . "tidyfit")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-yardstick
-                             r-vctrs
-                             r-tidyr
-                             r-tibble
-                             r-rsample
-                             r-rlang
-                             r-purrr
-                             r-progressr
-                             r-mass
-                             r-generics
-                             r-furrr
-                             r-dplyr
-                             r-dials
-                             r-crayon
-                             r-broom))
-    (native-inputs (list r-knitr))
-    (home-page "https://tidyfit.residualmetrics.com")
-    (synopsis "Regularized Linear Modeling with Tidy Data")
-    (description
-     "An extension to the R tidy data environment for automated machine learning.  The
-package allows fitting and cross validation of linear regression and
-classification algorithms on grouped data.")
-    (license license:gpl3)))
-
 (define-public r-tidyfinance
   (package
     (name "r-tidyfinance")

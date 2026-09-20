@@ -7166,46 +7166,6 @@ estimates population-level average causal effects such as ATE, ATT, or the
 marginal policy relevant treatment effect.")
     (license license:gpl3+)))
 
-(define-public r-localice
-  (package
-    (name "r-localice")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "localICE" version))
-       (sha256
-        (base32 "1pyq6kdahsy9qa0jzmring48r0i9h4rkp8lxpf9afksgm1qn0c5z"))))
-    (properties `((upstream-name . "localICE")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-ggplot2 r-checkmate))
-    (home-page "https://github.com/viadee/localICE")
-    (synopsis "Local Individual Conditional Expectation")
-    (description
-     "Local Individual Conditional Expectation ('@code{localICE}') is a local
-explanation approach from the field of @code{eXplainable} Artificial
-Intelligence (XAI). @code{localICE} is a model-agnostic XAI approach which
-provides three-dimensional local explanations for particular data instances.
-The approach is proposed in the master thesis of Martin Walter as an extension
-to ICE (see Reference).  The three dimensions are the two features at the
-horizontal and vertical axes as well as the target represented by different
-colors.  The approach is applicable for classification and regression problems
-to explain interactions of two features towards the target.  For classification
-models, the number of classes can be more than two and each class is added as a
-different color to the plot.  The given instance is added to the plot as two
-dotted lines according to the feature values.  The @code{localICE-package} can
-explain features of type factor and numeric of any machine learning model.
-Automatically supported machine learning packages are mlr',
-@code{randomForest}', caret or all other with an S3 predict function.  For
-further model types from other libraries, a predict function has to be provided
-as an argument in order to get access to the model.  Reference to the ICE
-approach: Alex Goldstein, Adam Kapelner, Justin Bleich, Emil Pitkin (2013)
-<@code{arXiv:1309.6392>}.")
-    (license license:bsd-3)))
-
 (define-public r-localgauss
   (package
     (name "r-localgauss")
@@ -9612,34 +9572,6 @@ Model Context Protocol client <https://modelcontextprotocol.io/>.  API design is
 derived from the ellmer package, reimplemented with only base R, curl',
 jsonlite', and tinyoauth'.")
     (license license:expat)))
-
-(define-public r-llm
-  (package
-    (name "r-llm")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "LLM" version))
-       (sha256
-        (base32 "0kxppzaim7cmjawg5rjih4dsz8adq0asairgq3vx5lyjppb2cybx"))))
-    (properties `((upstream-name . "LLM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survey
-                             r-stringr
-                             r-scales
-                             r-rweka
-                             r-reghelper
-                             r-partykit))
-    (home-page "https://cran.r-project.org/package=LLM")
-    (synopsis "Logit Leaf Model Classifier for Binary Classification")
-    (description
-     "Fits the Logit Leaf Model, makes predictions and visualizes the output. (De
-Caigny et al., (2018) <DOI:10.1016/j.ejor.2018.02.009>).")
-    (license license:gpl3+)))
 
 (define-public r-llamar
   (package

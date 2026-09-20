@@ -3965,13 +3965,13 @@ gtsummary packages.")
 (define-public r-dt2
   (package
     (name "r-dt2")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DT2" version))
        (sha256
-        (base32 "1iwj33k452var6nc59f4vaxblsr492i4kvvnv4d45jxicdh660ck"))))
+        (base32 "0v4badbp3q95j5b0qpm8z73s27pb50m6ll0yn4xv389lf427b8ip"))))
     (properties `((upstream-name . "DT2")))
     (build-system r-build-system)
     (arguments
@@ -35080,19 +35080,19 @@ skimr package.")
 (define-public r-datacommons
   (package
     (name "r-datacommons")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datacommons" version))
        (sha256
-        (base32 "1yqs63jx9jpi5dhs3j4g9nvvj2z3r6zlxxsljr1p6hy3f4991sn3"))))
+        (base32 "0ar04xvpypq41c4q56k1zxi15kz7pqjcjkdcgv0ixi0rj6bjkil6"))))
     (properties `((upstream-name . "datacommons")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-jsonlite r-httr2 r-cli))
+    (propagated-inputs (list r-lifecycle r-jsonlite r-httr2 r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/tidy-intelligence/r-datacommons")
     (synopsis "Client for the 'Google Data Commons API V2'")

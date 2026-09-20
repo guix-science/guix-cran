@@ -7320,39 +7320,6 @@ dimension reduction analyses to identify underlying structures among features.
 For more details see Haghish (2025) <doi:10.13140/RG.2.2.32473.63846>.")
     (license license:expat)))
 
-(define-public r-hmclearn
-  (package
-    (name "r-hmclearn")
-    (version "0.0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "hmclearn" version))
-       (sha256
-        (base32 "0zalvgnibd1kygryqcah5d008y6a0nxpy61yyiqsriw89r01jyjk"))))
-    (properties `((upstream-name . "hmclearn")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mvtnorm r-mass r-bayesplot))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=hmclearn")
-    (synopsis "Fit Statistical Models Using Hamiltonian Monte Carlo")
-    (description
-     "Provide users with a framework to learn the intricacies of the Hamiltonian Monte
-Carlo algorithm with hands-on experience by tuning and fitting their own models.
- All of the code is written in R. Theoretical references are listed below:.
-Neal, Radford (2011) \"Handbook of Markov Chain Monte Carlo\" ISBN:
-978-1420079418, Betancourt, Michael (2017) \"A Conceptual Introduction to
-Hamiltonian Monte Carlo\" <@code{arXiv:1701.02434>}, Thomas, S., Tu, W. (2020)
-\"Learning Hamiltonian Monte Carlo in R\" <@code{arXiv:2006.16194>}, Gelman, A.,
-Carlin, J. B., Stern, H. S., Dunson, D. B., Vehtari, A., & Rubin, D. B. (2013)
-\"Bayesian Data Analysis\" ISBN: 978-1439840955, Agresti, Alan (2015) \"Foundations
-of Linear and Generalized Linear Models ISBN: 978-1118730034, Pinheiro, J.,
-Bates, D. (2006) \"Mixed-effects Models in S and S-Plus\" ISBN: 978-1441903174.")
-    (license license:gpl3)))
-
 (define-public r-hmcdm
   (package
     (name "r-hmcdm")

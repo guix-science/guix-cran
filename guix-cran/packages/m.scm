@@ -3973,13 +3973,13 @@ and specificityâ <doi:10.3760/cma.j.issn.0366-6999.20123102>.")
 (define-public r-munsellinterpol
   (package
     (name "r-munsellinterpol")
-    (version "3.5-1")
+    (version "3.6-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "munsellinterpol" version))
        (sha256
-        (base32 "1350f91y0sykz5rl5fhxagsm1xr9x10r4ab78vxdajq3pm633nfc"))))
+        (base32 "1c25nk0hpf4d31aa1bj59i76wp2gdpglsczjya0xacg7qx940fk6"))))
     (properties `((upstream-name . "munsellinterpol")))
     (build-system r-build-system)
     (arguments
@@ -54263,19 +54263,21 @@ visualising maritime routes.")
 (define-public r-marcxmlr
   (package
     (name "r-marcxmlr")
-    (version "0.1.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "marcxmlr" version))
        (sha256
-        (base32 "0d08y1jwnj69cl0x906vpcjkzi2k2935v592sn8a03kzfpwby0sj"))))
+        (base32 "0az26a8lqr896qy7prqml3kvg4s82g58a0vcybzz6i6hnycah38i"))))
     (properties `((upstream-name . "marcxmlr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xml2 r-tibble r-purrr))
+    (inputs (list zlib libxml2))
+    (propagated-inputs (list r-xml2 r-tibble r-rlang r-purrr))
+    (native-inputs (list pkg-config))
     (home-page "https://github.com/larry77/marcxmlr")
     (synopsis "Faithful and Scalable MARCXML Parsing")
     (description

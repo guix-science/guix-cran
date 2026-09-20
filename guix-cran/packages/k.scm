@@ -7556,19 +7556,19 @@ kernel).")
 (define-public r-kamila
   (package
     (name "r-kamila")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kamila" version))
        (sha256
-        (base32 "01rwalv2qigxl3j3jyhrdbxlarwf0xdc8xa6c42sgcl6qpna5vn7"))))
+        (base32 "0siqiy4x20wfp42805dxhcgins5x2m97hlkwl8byxkn3cxl4xx8n"))))
     (properties `((upstream-name . "kamila")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpp r-plyr r-kernsmooth r-gtools r-abind))
+    (propagated-inputs (list r-rcpp r-kernsmooth))
     (home-page "https://github.com/ahfoss/kamila")
     (synopsis "Methods for Clustering Mixed-Type Data")
     (description
