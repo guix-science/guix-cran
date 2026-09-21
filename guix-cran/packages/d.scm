@@ -23812,19 +23812,24 @@ useful in teaching a course on financial derivatives.")
 (define-public r-deriva
   (package
     (name "r-deriva")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "deriva" version))
        (sha256
-        (base32 "1ifrnvxpdmmyc16im1203hz5s9ll4xcwnnz9lqy68r01nadpqyxx"))))
+        (base32 "0w5wf2iqq7szx1fyxnmzgvi527pfk2gyyqhhykama26zcmxli51q"))))
     (properties `((upstream-name . "deriva")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-vctrs r-tibble r-rlang r-generics r-cli))
+    (propagated-inputs (list r-withr
+                             r-vctrs
+                             r-tibble
+                             r-rlang
+                             r-generics
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/bonijoao/deriva")
     (synopsis "Tidy Drift Detection for Monitored Machine Learning Models")

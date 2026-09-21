@@ -1049,28 +1049,20 @@ on the Wildbook framework is available at: <http://www.wildbook.org/doku.php>.")
 (define-public r-rwig
   (package
     (name "r-rwig")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rwig" version))
        (sha256
-        (base32 "101ilybs91s2f367w6wpxjfqadizkbgdb7a82pb6v2kq8yzk4va2"))))
+        (base32 "13if58miam506q2k44wg8qn57ajgzgqnlqj7adw8a9wy5z6g9h2z"))))
     (properties `((upstream-name . "rwig")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list autoconf))
-    (propagated-inputs (list r-word2vec
-                             r-tokenizers
-                             r-stopwords
-                             r-rlang
-                             r-rhpcblasctl
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-lubridate
-                             r-cli))
+    (propagated-inputs (list r-word2vec r-tokenizers r-stopwords r-rlang r-cli))
     (native-inputs (list pkg-config r-knitr))
     (home-page "https://github.com/fangzhou-xie/rwig")
     (synopsis "Wasserstein Index Generation (WIG) Model")
@@ -1862,13 +1854,13 @@ et al. (2020) <doi:10.1002/hbm.25045>).")
 (define-public r-rvinecopulib
   (package
     (name "r-rvinecopulib")
-    (version "0.7.3.1.0")
+    (version "1.0.0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rvinecopulib" version))
        (sha256
-        (base32 "1f0pjcwndv948zrqlw06mkbiia32bldz7d8yz61cl3cwyhs2s3nf"))))
+        (base32 "18igv55h5xg4j8wlnv0kab0jygzdy1sc14rzhf93jqga6bnvkmv4"))))
     (properties `((upstream-name . "rvinecopulib")))
     (build-system r-build-system)
     (arguments
@@ -1882,6 +1874,7 @@ et al. (2020) <doi:10.1002/hbm.25045>).")
                              r-kde1d
                              r-bh
                              r-assertthat))
+    (native-inputs (list r-knitr))
     (home-page "https://vinecopulib.github.io/rvinecopulib/")
     (synopsis "High Performance Algorithms for Vine Copula Modeling")
     (description
@@ -1892,7 +1885,7 @@ vine copula and bivariate copula models.  Advantages over @code{VineCopula} are
 a sleeker and more modern API, improved performances, especially in high
 dimensions, nonparametric and multi-parameter families, and the ability to model
 discrete variables.  The rvinecopulib package includes vinecopulib as
-header-only C++ library (currently version 0.7.2).  Thus users do not need to
+header-only C++ library (currently version 1.0.0).  Thus users do not need to
 install vinecopulib itself in order to use rvinecopulib'.  Since their initial
 releases, vinecopulib is licensed under the MIT License, and rvinecopulib is
 licensed under the GNU GPL version 3.")
@@ -2970,13 +2963,13 @@ This package fixes incorrect annotations in the original data sets.")
 (define-public r-ruido
   (package
     (name "r-ruido")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Ruido" version))
        (sha256
-        (base32 "0ml2qs4h045sxaksk825vfm8hi1d0309zx3bjb8brpn7n0d1pl68"))))
+        (base32 "0firsc11vnyjmxx5nrnsj1xmi9r3d285930q2v95vlx1lpjydn9r"))))
     (properties `((upstream-name . "Ruido")))
     (build-system r-build-system)
     (arguments
@@ -5053,13 +5046,13 @@ endpoints.")
 (define-public r-rtemis-core
   (package
     (name "r-rtemis-core")
-    (version "0.3.1")
+    (version "0.4.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtemis.core" version))
        (sha256
-        (base32 "0yya85l5q4hy8k4ww03bjbgwxx3317wx9p9k38xcqbyr2rp2162n"))))
+        (base32 "0zsfm1qq72bglq9vq1q6mcm9z7m522hrllwgljfyqrddz90mirpa"))))
     (properties `((upstream-name . "rtemis.core")))
     (build-system r-build-system)
     (arguments
@@ -5075,7 +5068,7 @@ a library of S7 properties, test_* functions that return logical values, check_*
 functions that throw informative errors, and clean_* functions that return
 validated and coerced values.  This code began as part of the rtemis package
 (<doi:10.32614/CRAN.package.rtemis>).")
-    (license license:gpl3+)))
+    (license license:bsd-3)))
 
 (define-public r-rtemis-a3
   (package
@@ -11698,51 +11691,47 @@ groups or related samples; Ruscio & Gera, 2013). <DOI:
 (define-public r-rprobitb
   (package
     (name "r-rprobitb")
-    (version "1.2.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RprobitB" version))
        (sha256
-        (base32 "0yp554j4i809njanwd86dzydn61ii54vcs8df8942aprprg7kk6i"))))
+        (base32 "12ckxlrihjr7vca0g66f6nikjhpf9302za4h73fmcz383prp8hgj"))))
     (properties `((upstream-name . "RprobitB")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-viridis
-                             r-testthat
-                             r-rlang
+    (propagated-inputs (list r-testthat
                              r-rdpack
                              r-rcpparmadillo
                              r-rcpp
-                             r-progress
-                             r-plotroc
+                             r-progressr
+                             r-posterior
                              r-oeli
-                             r-mixtools
-                             r-mass
-                             r-gridextra
-                             r-ggplot2
-                             r-foreach
-                             r-dosnow
-                             r-crayon
+                             r-loo
+                             r-future-apply
+                             r-formula
                              r-cli
-                             r-checkmate))
+                             r-choicedata
+                             r-checkmate
+                             r-bridgesampling
+                             r-bayesplot))
     (native-inputs (list r-knitr))
     (home-page "https://loelschlaeger.de/RprobitB/")
     (synopsis "Bayesian Probit Choice Modeling")
     (description
-     "Bayes estimation of probit choice models in cross-sectional and panel settings.
-The package can analyze binary, multivariate, ordered, and ranked choices, as
-well as heterogeneity of choice behavior among deciders.  The main functionality
-includes model fitting via Gibbs sampling, tools for convergence diagnostic,
-choice data simulation, in-sample and out-of-sample choice prediction, and model
-selection using information criteria and Bayes factors.  The latent class model
-extension facilitates preference-based decider classification, where the number
-of latent classes can be inferred via the Dirichlet process or a weight-based
-updating heuristic.  This allows for flexible modeling of choice behavior
-without the need to impose structural constraints.  For a reference on the
-method, see Oelschlaeger and Bauer (2021) <https://trid.trb.org/view/1759753>.")
+     "Fits Bayesian probit models for binary, multinomial, ordered, and ranked choices
+in cross-sectional and panel data.  Correlated or uncorrelated normal and
+log-normal random coefficients, finite mixtures, sparse finite mixtures, and
+Dirichlet process mixtures describe preference heterogeneity.  Multiple Gibbs
+chains produce posterior draws for diagnostics and choice prediction.  Empirical
+model data can be supplied as a data frame or simulated from the requested
+specification.  For an overarching treatment of the methodology, see
+Oelschlaeger (2026) <https://pub.uni-bielefeld.de/record/3014719>.  The
+latent-class model is described in Oelschlaeger and Bauer (2021)
+<https://trid.trb.org/view/1759753>.")
     (license license:gpl3)))
 
 (define-public r-rprintf
@@ -22706,13 +22695,13 @@ unrestricted trial and academic licenses are available.")
 (define-public r-rmosaic
   (package
     (name "r-rmosaic")
-    (version "0.1.3")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rMosaic" version))
        (sha256
-        (base32 "1i8hns8add1587m0h155wpmyala5pshgxaqlv0dj9x9yr0l66kl8"))))
+        (base32 "0hkszqwfjna10b5isqhza2xingzwpvimhxpki7gzdny37gbzw633"))))
     (properties `((upstream-name . "rMosaic")))
     (build-system r-build-system)
     (arguments
@@ -22722,6 +22711,7 @@ unrestricted trial and academic licenses are available.")
                              r-shiny
                              r-jsonlite
                              r-htmlwidgets
+                             r-htmltools
                              r-duckdb
                              r-dbi))
     (native-inputs (list r-knitr))
@@ -49378,13 +49368,13 @@ sparse linear discriminant analysis (see Pun and Hadimaja (2019)
 (define-public r-rdeckgl
   (package
     (name "r-rdeckgl")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rDeckgl" version))
        (sha256
-        (base32 "09i5ky1dqqdb64x0a5n8csk1cincjb0cbpghvk6c7kn3hkrgdlvk"))))
+        (base32 "1nn14vf5f4ylhggchiidlazprnjd77lxasfrdkk0fswsy1b49mjw"))))
     (properties `((upstream-name . "rDeckgl")))
     (build-system r-build-system)
     (arguments
@@ -49409,6 +49399,7 @@ sparse linear discriminant analysis (see Pun and Hadimaja (2019)
                              r-shiny
                              r-jsonlite
                              r-htmlwidgets
+                             r-htmltools
                              r-duckdb
                              r-dbi
                              r-base64enc
@@ -63241,13 +63232,13 @@ functionality in radiant.data'.")
 (define-public r-radiant-model
   (package
     (name "r-radiant-model")
-    (version "1.6.11")
+    (version "1.6.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "radiant.model" version))
        (sha256
-        (base32 "1r6mciga8yz1srq2xkhdcpjq960glv4m45w1hplir9yva1484682"))))
+        (base32 "1rib4w02rjr1nl1gnmfhxqbxiqma65hyfl4cjqzvpkbzzp0wz4kb"))))
     (properties `((upstream-name . "radiant.model")))
     (build-system r-build-system)
     (arguments

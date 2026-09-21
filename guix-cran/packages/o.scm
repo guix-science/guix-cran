@@ -16045,13 +16045,13 @@ between competing models, see Deldossi and Nai Ruscone (2020)
 (define-public r-observationalblocks
   (package
     (name "r-observationalblocks")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "observationalBlocks" version))
        (sha256
-        (base32 "06xax30jp8n6c02sn249zlkcq9mxnib8dd5kg5rbammb4cml7gnr"))))
+        (base32 "013hvq629zfwdsl7d1hgs0xhpjp1sa0p7i1d1k3m1gz75hfr05z5"))))
     (properties `((upstream-name . "observationalBlocks")))
     (build-system r-build-system)
     (arguments

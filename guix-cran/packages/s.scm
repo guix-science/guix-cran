@@ -5063,13 +5063,13 @@ results to an Excel sheet.")
 (define-public r-survobj
   (package
     (name "r-survobj")
-    (version "3.1.1")
+    (version "3.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "survobj" version))
        (sha256
-        (base32 "0vxv34sj15077jgiq1jfw7wdi0j396scp7ngz9nzg7zq1icg214q"))))
+        (base32 "035i71h7bqxdmjf980yvqn61habwiz14zj7z3w3kikdhv7l4s0s7"))))
     (properties `((upstream-name . "survobj")))
     (build-system r-build-system)
     (arguments
@@ -5078,12 +5078,17 @@ results to an Excel sheet.")
     (propagated-inputs (list r-tidyr r-survival r-ggplot2 r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://johnaponte.github.io/survobj/")
-    (synopsis "Objects to Simulate Survival Times")
+    (synopsis
+     "Simulate Parametric and Semi-Parametric Survival Times with Object-Oriented Design")
     (description
-     "Generate objects that simulate survival times.  Random values for the
-distributions are generated using the method described by Bender (2003)
-<https://epub.ub.uni-muenchen.de/id/eprint/1716> and Leemis (1987) in Operations
-Research, 35(6), 892â894.")
+     "Simulate parametric and semi-parametric survival times through a consistent,
+reusable interface for each distribution, using an object-oriented design.
+Supported distributions include Exponential, Weibull, Gompertz, Log-Logistic,
+Log-Normal, and Piecewise Exponential.  Random variates can be generated under
+Proportional Hazards, Accelerated Failure Time, and Extended Hazards models, as
+well as under renewal and non-homogeneous Poisson recurrent event processes,
+following the methods described by Bender (2003) <doi:10.5282/UBM/EPUB.1716> and
+Leemis (1987) in Operations Research, 35(6), 892-894.")
     (license license:gpl3+)))
 
 (define-public r-survnma
@@ -15339,25 +15344,19 @@ the ability to export results in common formats.")
 (define-public r-stepreg
   (package
     (name "r-stepreg")
-    (version "1.6.7")
+    (version "1.6.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "StepReg" version))
        (sha256
-        (base32 "1dpllycclhnv4qgahv9gnr3mx435ahyp0p4cf8pm8h8acnp0jsry"))))
+        (base32 "0dgvpgxfzrvdh1bm8sk40a2iyjrd97nzwj5dm2dhcmldn5b5hj1k"))))
     (properties `((upstream-name . "StepReg")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-survival
-                             r-survauc
-                             r-proc
-                             r-mass
-                             r-ggrepel
-                             r-ggplot2
-                             r-flextable))
+    (propagated-inputs (list r-survival r-survauc r-mass r-ggrepel r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://journal.r-project.org/articles/RJ-2026-005/")
     (synopsis
@@ -18624,13 +18623,13 @@ ISBN:978-1-4338-3216-1).")
 (define-public r-statafrikr
   (package
     (name "r-statafrikr")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statAfrikR" version))
        (sha256
-        (base32 "0xh13zjrwxf7a5vprjpvnfphy71g8akig6yddkzvng36mlgjwjqw"))))
+        (base32 "19y8wanijhb846is78jg7gmc7hl8l57vfb6nsa6kr8sgzfaacx3x"))))
     (properties `((upstream-name . "statAfrikR")))
     (build-system r-build-system)
     (arguments
@@ -18640,16 +18639,18 @@ ISBN:978-1-4338-3216-1).")
                              r-tibble
                              r-survey
                              r-stringr
+                             r-sf
                              r-scales
                              r-rlang
                              r-readxl
                              r-readr
                              r-haven
+                             r-ggrepel
                              r-ggplot2
                              r-forcats
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/damoko2004/statAfrikR")
+    (home-page "https://statafrikr.org/")
     (synopsis "Statistical Tools for African National Statistics Institutes")
     (description
      "This package provides a comprehensive statistical toolbox for National
@@ -23319,19 +23320,20 @@ Swartz, 2001, <doi:10.2307/3316080>; Nestler, 2018,
 (define-public r-srlars
   (package
     (name "r-srlars")
-    (version "3.0.1")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "srlars" version))
        (sha256
-        (base32 "0nfcr9p0y7xv5mahlbbygm18vfhj4kdysjckdz2l9v7qixlqy600"))))
+        (base32 "0r20fi2y5fkj2zxngy39a6n16cyhn0xlna275sd9dy5xg2xqygn5"))))
     (properties `((upstream-name . "srlars")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-robustbase r-mvnfast r-cellwise))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=srlars")
     (synopsis "Fast and Scalable Cellwise-Robust Ensemble")
     (description
@@ -36105,41 +36107,31 @@ package).  For more information, please see Rocha and Romano (2021) and check
 (define-public r-soundgen
   (package
     (name "r-soundgen")
-    (version "2.9.0")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "soundgen" version))
        (sha256
-        (base32 "0jqbq6ylq81lqij23dx2m91jrii5xjw2yvj050z6a6w36ry7qkkh"))))
+        (base32 "0r5j6lw38axgxca8gxkxhi4c3j92wd39m11lkjnn2f8jymhr60x5"))))
     (properties `((upstream-name . "soundgen")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-zoo
-                             r-tuner
-                             r-signal
-                             r-shinyjs
-                             r-shiny
-                             r-seewave
-                             r-phontools
-                             r-nonlineartseries
-                             r-mvtnorm
-                             r-foreach
-                             r-dtw
-                             r-doparallel
-                             r-data-table
-                             r-bslib))
+    (propagated-inputs (list r-tuner r-signal r-phontools))
     (home-page "http://cogsci.se/soundgen.html")
     (synopsis "Sound Synthesis and Acoustic Analysis")
     (description
-     "This package performs parametric synthesis of sounds with harmonic and noise
-components such as animal vocalizations or human voice.  Also offers tools for
-audio manipulation and acoustic analysis, including pitch tracking, spectral
-analysis, audio segmentation, pitch and formant shifting, etc.  Includes four
-interactive web apps for synthesizing and annotating audio, manually correcting
-pitch contours, and measuring formant frequencies.  Reference: Anikin (2019)
+     "Parametric source-filter synthesis of harmonic-noise signals, such as animal
+vocalizations and human voice, with control over pitch, formants, noise,
+amplitude modulation, nonlinear phenomena, and morphing.  General signal
+processing tools for audio analysis and manipulation: pitch tracking, formant
+and vocal tract length estimation, reassigned and auditory spectrograms,
+modulation spectra and psychoacoustic roughness, self-similarity and surprisal,
+audio segmentation, pitch and formant shifting, etc.  Includes four interactive
+web apps for audio synthesis, annotation, formant analysis, and manually
+correcting pitch contours.  Reference: Anikin (2019)
 <doi:10.3758/s13428-018-1095-7>.")
     (license license:gpl2+)))
 
@@ -40037,13 +40029,13 @@ classification procedure.")
 (define-public r-snma
   (package
     (name "r-snma")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SNMA" version))
        (sha256
-        (base32 "1862ahkw10s5bjp7hsc8486g40jcbxzi2dhkwcn9p4p76xa5ab7q"))))
+        (base32 "18wwxsnm3inmwjfm7pyx70cjk99bnixj3limz6ixvfs2yf9ng01f"))))
     (properties `((upstream-name . "SNMA")))
     (build-system r-build-system)
     (arguments
@@ -41418,20 +41410,19 @@ semi-parametric approach.")
 (define-public r-smoothemplik
   (package
     (name "r-smoothemplik")
-    (version "0.0.17")
+    (version "0.0.18")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smoothemplik" version))
        (sha256
-        (base32 "15r41i7axpsa92xqwi4cmmbhkgz3dh8p7d1qqzv06x6nwz7hligx"))))
+        (base32 "11jpnz0894smw0llc3p2ydim2w4nmc7b6yvsy193b1si72cb8iw7"))))
     (properties `((upstream-name . "smoothemplik")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-testthat
-                             r-rdpack
+    (propagated-inputs (list r-rdpack
                              r-rcppparallel
                              r-rcpparmadillo
                              r-rcpp
@@ -57128,13 +57119,13 @@ assistant-like user interfaces.")
 (define-public r-shinyglass
   (package
     (name "r-shinyglass")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyglass" version))
        (sha256
-        (base32 "19hl64h238lzhl64gzdyi8vs2m80b5268a6jrsj336sxsp8wi5iz"))))
+        (base32 "0vh0f3ppwcz3yhbkhfcs6x6jinny7gnc4ivpixc5di99bbjms9k0"))))
     (properties `((upstream-name . "shinyglass")))
     (build-system r-build-system)
     (arguments
@@ -57151,8 +57142,9 @@ assistant-like user interfaces.")
 surfaces, backdrop blur, and system typography on Bootstrap components.
 Includes light and dark presets with runtime switching and an OS-following auto
 mode, an @code{iOS-style} intensity control from Ultra Clear to Tinted, optional
-persistence of the look, named wallpaper scenes, and helpers to match ggplot2',
-plotly', and gt output to the glass pack.")
+persistence of the look, named wallpaper scenes, helpers to match ggplot2',
+plotly', gt', and DT output to the glass pack, a flatten mode for print and
+screenshots, and documented CSS tokens.")
     (license license:gpl3)))
 
 (define-public r-shinygizmo
@@ -82291,20 +82283,20 @@ et al.(2019) <doi:10.1111/rssa.12390>, and Yudasena (2024).")
 (define-public r-saehb-spatial-beta
   (package
     (name "r-saehb-spatial-beta")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "saeHB.Spatial.Beta" version))
        (sha256
-        (base32 "1891dhbjj1snapma93wjk3bcybv4mqrxf2c0vj27x8s5lr0ap2wa"))))
+        (base32 "1lqli0yfhk4xik7mshmyr77a2lbg4mawrm77xcyxpwqg1vzi2p25"))))
     (properties `((upstream-name . "saeHB.Spatial.Beta")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list jags))
-    (propagated-inputs (list r-spdep r-sf r-rjags r-coda))
+    (propagated-inputs (list r-spdep r-sf r-runjags r-coda))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/BobyIwan/saeHB.Spatial.Beta")
     (synopsis
@@ -82314,20 +82306,21 @@ et al.(2019) <doi:10.1111/rssa.12390>, and Yudasena (2024).")
 Estimation using the Hierarchical Bayesian (HB) method.  Model-based estimators
 are designed for variables of interest that follow a Beta distribution
 (proportions bounded between 0 and 1).  The package supports both non-spatial
-models and spatial models based on the Simultaneous Autoregressive (SAR) and
-Leroux Conditional Autoregressive (CAR) structures, with optional survey design
-effect (DEFF) adjustments.  In addition, it provides utility functions for
-constructing spatial weights matrices and performing spatial autocorrelation
-diagnostics.  The rjags package is used to obtain posterior estimates via Markov
-Chain Monte Carlo (MCMC).  For references, see Rao and Molina (2015)
-<doi:10.1002/9781118735855>, Liu (2009)
-<https://api.drum.lib.umd.edu/server/api/core/bitstreams/cb8e2cbf-441e-4f0f-b4b3-6182f3cf24de/content>,
-Liu et al. (2014)
+and spatial models based on Simultaneous Autoregressive (SAR) and Leroux
+Conditional Autoregressive (CAR) structures for area-level random effects, with
+optional survey design effect (DEFF) adjustments for sampling variances.  In
+addition, it provides utility functions for constructing spatial weights
+matrices and performing spatial autocorrelation diagnostics.  The runjags
+package is used to obtain posterior estimates via Markov Chain Monte Carlo
+(MCMC) with parallel computing capabilities.  For references, see Rao and Molina
+(2015) <doi:10.1002/9781118735855>, Liu et al. (2014)
 <https://www150.statcan.gc.ca/n1/pub/12-001-x/2014001/article/14030-eng.pdf>,
 Kubacki and Jedrzejczak (2016) <doi:10.59170/stattrans-2016-022>, Leroux et al.
 (2000) <doi:10.1007/978-1-4612-1284-3_4>, Chung and Datta (2020)
 <https://www.census.gov/content/dam/Census/library/working-papers/2020/adrm/RRS2020-07.pdf>,
-Anselin (1988) <doi:10.1007/978-94-015-7799-1>, and Anselin and Morrison (2019)
+Figueroa-ZÃºÃ±iga et al. (2013) <doi:10.1016/j.csda.2012.12.002>, Denwood (2016)
+<doi:10.18637/jss.v071.i09>, Anselin (1988) <doi:10.1007/978-94-015-7799-1>, and
+Anselin and Morrison (2019)
 <https://spatialanalysis.github.io/lab_tutorials/Spatial_Weights_as_Distance_Functions.html>.")
     (license license:gpl3)))
 

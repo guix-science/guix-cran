@@ -2351,13 +2351,13 @@ use.")
 (define-public r-huxtable
   (package
     (name "r-huxtable")
-    (version "6.0.1")
+    (version "6.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "huxtable" version))
        (sha256
-        (base32 "0wi00hzjahn5svgd6yx6dlgj7arp9w4dxmj4akq6slg97klc3b4z"))))
+        (base32 "1c2j0xlkn8vj57ycb3vnwij9lk0rz1xr108q7sah25ygdcdap9f8"))))
     (properties `((upstream-name . "huxtable")))
     (build-system r-build-system)
     (arguments

@@ -8461,13 +8461,13 @@ climate data (licensed under CC BY 4.0,
 (define-public r-wdsmatch
   (package
     (name "r-wdsmatch")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wdsmatch" version))
        (sha256
-        (base32 "1hphric1gdnp5yrapj2w52lrhblxdzb98a9h4h852b108sm0sqrn"))))
+        (base32 "08y14ihwqzd04dmgzrmshqlv1cyf8kpxzc0zzxbn9kxafkara6ag"))))
     (properties `((upstream-name . "wdsmatch")))
     (build-system r-build-system)
     (arguments

@@ -10011,13 +10011,13 @@ which helps keep analysis scripts visually consistent and easier to navigate.")
 (define-public r-boldconnectr
   (package
     (name "r-boldconnectr")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BOLDconnectR" version))
        (sha256
-        (base32 "0547r1s2gzcfjzgs3xkribz3kalslrk3vxqrn1vzr8g3fb0a02ml"))))
+        (base32 "0jaqknqp69z1kxsjsd1115vrkzq2sg25zdvdda0dnj7y2y1hqmsf"))))
     (properties `((upstream-name . "BOLDconnectR")))
     (build-system r-build-system)
     (arguments

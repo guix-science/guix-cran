@@ -7719,13 +7719,13 @@ a tool for interpretability or @code{eXplainable} Artificial Intelligence (XAI).
 (define-public r-nmw
   (package
     (name "r-nmw")
-    (version "0.5.1")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nmw" version))
        (sha256
-        (base32 "1n65jn4mzb5pfzpsp6j9xqddd0kfnrzmyipa6ix7gd4h3c8bs74j"))))
+        (base32 "0sqfh2635rvmq80lia8s4a7dg6j4p0q15jsmgb3q148izwq7fldl"))))
     (properties `((upstream-name . "nmw")))
     (build-system r-build-system)
     (arguments
@@ -7740,12 +7740,12 @@ a tool for interpretability or @code{eXplainable} Artificial Intelligence (XAI).
 Users Guides.  Icon plc, 2020) software works.  NONMEM classical estimation
 methods such as First Order (FO) approximation', First Order Conditional
 Estimation (FOCE)', and Laplacian approximation are explained.  Functions are
-also provided for post-run processing of NONMEM output files, generating PDF
-diagnostic reports including objective function value analysis, parameter
-estimates, prediction and residual diagnostics, empirical Bayes estimate (EBE)
-analysis, input data summary, and individual pharmacokinetic parameter
-distributions.  Helper utilities for building NONMEM-ready datasets from
-SDTM-style source tables are also included.")
+also provided for post-run processing of NONMEM output files, generating PDF or
+Markdown diagnostic reports including objective function value analysis,
+parameter estimates, prediction and residual diagnostics, empirical Bayes
+estimate (EBE) analysis, input data summary, and individual pharmacokinetic
+parameter distributions.  Helper utilities for building NONMEM-ready datasets
+from SDTM-style source tables are also included.")
     (license license:gpl3)))
 
 (define-public r-nmvanova
@@ -9637,13 +9637,13 @@ covariate selection.")
 (define-public r-nlmixr2est
   (package
     (name "r-nlmixr2est")
-    (version "7.0.2")
+    (version "7.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmixr2est" version))
        (sha256
-        (base32 "1p8baqsz7jmspg83zf4cdl9aspilp3av7cv1cbb9ik12654qkfss"))))
+        (base32 "1iycazy36bkip6gr8j8vavcagz7yx3fib6nb8lhapbjcyr8gn5jb"))))
     (properties `((upstream-name . "nlmixr2est")))
     (build-system r-build-system)
     (arguments
@@ -9652,6 +9652,7 @@ covariate selection.")
     (propagated-inputs (list r-symengine
                              r-rxode2
                              r-rex
+                             r-rcpptrust
                              r-rcppeigen
                              r-rcpparmadillo
                              r-rcpp
@@ -9668,6 +9669,7 @@ covariate selection.")
                              r-checkmate
                              r-bh
                              r-backports))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/nlmixr2/nlmixr2est")
     (synopsis
      "Nonlinear Mixed Effects Models in Population PK/PD, Estimation Routines")

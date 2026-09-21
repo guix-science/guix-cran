@@ -8378,13 +8378,13 @@ inference.")
 (define-public r-estempmm
   (package
     (name "r-estempmm")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EstemPMM" version))
        (sha256
-        (base32 "1fnz7d5dm6biq5swd4d11dakrr6xxyjzp32vj5rhjn3d0hvb5haq"))))
+        (base32 "0nx8yp4w4q3v5kyganq4flskin69qgqh07jy2zslb1a4zjd8hdb5"))))
     (properties `((upstream-name . "EstemPMM")))
     (build-system r-build-system)
     (arguments

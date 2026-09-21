@@ -3686,13 +3686,13 @@ human-readable dataset keys or official Socrata dataset identifiers.")
 (define-public r-ctoclient
   (package
     (name "r-ctoclient")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ctoclient" version))
        (sha256
-        (base32 "1kqfdhsb5ifv7l7rvv19a716kgl2kmyxpmvlwn157a5vjysckda3"))))
+        (base32 "105y735q3zgfcwhawxx6y1w59mpfczlzh9h8kjr0xbnzl803w7zs"))))
     (properties `((upstream-name . "ctoclient")))
     (build-system r-build-system)
     (arguments
@@ -3704,10 +3704,15 @@ human-readable dataset keys or official Socrata dataset identifiers.")
                              r-readxl
                              r-readr
                              r-purrr
+                             r-officer
+                             r-jsonlite
                              r-httr2
+                             r-flextable
                              r-dplyr
+                             r-curl
                              r-cli
                              r-checkmate))
+    (native-inputs (list r-knitr))
     (home-page "https://guturago.github.io/ctoclient/")
     (synopsis "Modern and Flexible Data Pipeline for 'SurveyCTO'")
     (description
@@ -30949,19 +30954,25 @@ for probit and tobit models are provided.")
 (define-public r-cmstatrext
   (package
     (name "r-cmstatrext")
-    (version "0.4.1")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cmstatrExt" version))
        (sha256
-        (base32 "0i8xgy2zfma3h5s785qv9i545495c3b1j35vc3r4ip0ibg2x3pd5"))))
+        (base32 "0dcsrs46x4b1vv24caxblklc6xrvjzl1i0qxdf8msjc0yybkliy2"))))
     (properties `((upstream-name . "cmstatrExt")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-testthat r-rlang r-rcpp r-generics r-dplyr))
+    (propagated-inputs (list r-testthat
+                             r-rlang
+                             r-rcpp
+                             r-lifecycle
+                             r-generics
+                             r-dplyr
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/cmstatr/cmstatrExt")
     (synopsis "More Statistical Methods for Composite Material Data")
@@ -51906,13 +51917,13 @@ k-medoids clustering methods.  The method is Dahl, Andros, Carter (2022+)
 (define-public r-caverify
   (package
     (name "r-caverify")
-    (version "0.1.3")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "caverify" version))
        (sha256
-        (base32 "0n3c7hhz97ldr1d0nl72cs370m9yqb98gyp2igb4dr9qp98kmyw2"))))
+        (base32 "0wrg0lh1sqfhymk7vwbaadfh6d4ra69937x8hy0snl8v6slrdmm7"))))
     (properties `((upstream-name . "caverify")))
     (build-system r-build-system)
     (arguments
@@ -51923,8 +51934,10 @@ k-medoids clustering methods.  The method is Dahl, Andros, Carter (2022+)
     (description
      "Verifies that an array covers every t-way interaction, the certificate check for
 covering arrays, using compiled C code with optional @code{OpenMP} threading.
-Missing values are treated as wildcard (\"flexible\") entries that count as every
-symbol.  Designed to be easy to embed in other packages: a single C file with a
+Supports uniform and mixed-level (per-column symbol counts) arrays.  Missing
+values mark flexible (\"don't care\") entries, which contribute nothing to
+coverage, so a verified array remains covering however they are filled.
+Designed to be easy to embed in other packages: a single C file with a
 registered .Call entry point and one R wrapper.")
     (license license:expat)))
 
@@ -56963,13 +56976,13 @@ schedules with irregular payments.")
 (define-public r-capesr
   (package
     (name "r-capesr")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "capesR" version))
        (sha256
-        (base32 "18wvcxi5ibi1mrk07idyryvnm6qcqg9h7077rv796hy5vllw3j6g"))))
+        (base32 "1jg20kvih4sgwy04vaz1hdkwy9i1j2pni82pzb5cc5fc7grzgkxx"))))
     (properties `((upstream-name . "capesR")))
     (build-system r-build-system)
     (arguments
@@ -56977,13 +56990,13 @@ schedules with irregular payments.")
       #:tests? #f))
     (propagated-inputs (list r-stringr r-rlang r-magrittr r-dplyr r-arrow))
     (native-inputs (list r-knitr))
-    (home-page "<https://github.com/hugoavmedeiros/capesR>")
+    (home-page "https://github.com/milkway/capesR")
     (synopsis "Access to CAPES Data")
     (description
      "This package provides simplified access to the data from the Catalog of Theses
 and Dissertations of the Brazilian Coordination for the Improvement of Higher
 Education Personnel (CAPES, <https://catalogodeteses.capes.gov.br>) for the
-years 1987 through 2022.  The dataset includes variables such as Higher
+years 1987 through 2024.  The dataset includes variables such as Higher
 Education Institution (institution), Area of Concentration (area), Graduate
 Program Name (program_name), Type of Work (type), Language of Work (language),
 Author Identification (author), Abstract (abstract), Advisor Identification

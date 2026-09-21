@@ -1061,19 +1061,20 @@ matrices and vectors, ROC and PR statistics.")
 (define-public r-usedthese
   (package
     (name "r-usedthese")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "usedthese" version))
        (sha256
-        (base32 "0ahcyvy2w87mx2qr7pl1fzihiqnsjqbbx1ba435b8ypyz7fzrpy6"))))
+        (base32 "10ngacj1kd09lnr2f9ll7qah3sl7vxsfkz02h83gyjnv9hlw1bbg"))))
     (properties `((upstream-name . "usedthese")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-withr
+    (propagated-inputs (list r-xml2
+                             r-withr
                              r-tidyselect
                              r-tidyr
                              r-tibble
@@ -1085,7 +1086,6 @@ matrices and vectors, ROC and PR statistics.")
                              r-lifecycle
                              r-knitr
                              r-kableextra
-                             r-httr
                              r-highr
                              r-dplyr
                              r-conflicted

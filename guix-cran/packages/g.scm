@@ -27711,13 +27711,13 @@ auto-selected based on whether variables are categorical or numeric.")
 (define-public r-gfunctions
   (package
     (name "r-gfunctions")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gfunctions" version))
        (sha256
-        (base32 "0gsi9hm232k8wnfz29f2jci7in8b1099i3787pc1538q8d5327i7"))))
+        (base32 "11cp7r5yi64m0jnfmvz1kr9dg4fa8w21qf1x0gy3yg2m5a45lsij"))))
     (properties `((upstream-name . "gfunctions")))
     (build-system r-build-system)
     (arguments
@@ -32453,13 +32453,13 @@ other Geocaching-related tasks.")
 (define-public r-geobr
   (package
     (name "r-geobr")
-    (version "2.0.1")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geobr" version))
        (sha256
-        (base32 "156r1r2z36b1v4g2p3876w9dj6r3cc7gyg8piar458jxzig5gba9"))))
+        (base32 "0nkr6z2iifcam374yqq6sndbp9yig7fn4g1x077yw5qv7v518b6l"))))
     (properties `((upstream-name . "geobr")))
     (build-system r-build-system)
     (arguments
@@ -32471,7 +32471,6 @@ other Geocaching-related tasks.")
                              r-rlang
                              r-nanoarrow
                              r-httr2
-                             r-glue
                              r-fs
                              r-duckspatial
                              r-duckdb
@@ -32482,7 +32481,7 @@ other Geocaching-related tasks.")
                              r-checkmate
                              r-arrow))
     (native-inputs (list r-knitr))
-    (home-page "https://ipeagit.github.io/geobr/")
+    (home-page "https://ipea.github.io/geobr/")
     (synopsis "Download Official Spatial Data Sets of Brazil")
     (description
      "Easy access to official spatial data sets of Brazil.  The package offers a wide

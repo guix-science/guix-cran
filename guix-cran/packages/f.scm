@@ -26817,13 +26817,13 @@ regression line on a scatter plot with the equation as the main title.")
 (define-public r-fastgp
   (package
     (name "r-fastgp")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FastGP" version))
        (sha256
-        (base32 "11xgqal5vjvvdrgj3i7x5b4zar4dcsc2yrb1zcyy71m589pmq6br"))))
+        (base32 "19vvfn1h8399g0py8fnflfk9m8scmg05yxdpfva76a62x9v8h93b"))))
     (properties `((upstream-name . "FastGP")))
     (build-system r-build-system)
     (arguments
@@ -26834,11 +26834,12 @@ regression line on a scatter plot with the equation as the main title.")
     (synopsis "Efficiently Using Gaussian Processes with Rcpp and RcppEigen")
     (description
      "This package contains Rcpp and @code{RcppEigen} implementations of matrix
-operations useful for Gaussian process models, such as the inversion of a
-symmetric Toeplitz matrix, sampling from multivariate normal distributions,
-evaluation of the log-density of a multivariate normal vector, and Bayesian
-inference for latent variable Gaussian process models with elliptical slice
-sampling (Murray, Adams, and @code{MacKay} 2010).")
+operations useful for Gaussian process models, such as the inverse and
+determinant of a symmetric and positive-definite Toeplitz matrix, sampling from
+multivariate normal distributions, evaluation of the log-density of a
+multivariate normal vector, and Bayesian inference for latent variable Gaussian
+process models with elliptical slice sampling (Murray, Adams, and @code{MacKay}
+2010).")
     (license license:gpl2)))
 
 (define-public r-fastglmpca

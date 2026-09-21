@@ -2130,13 +2130,13 @@ Punycode and IDNA engine by the pslr and rurl packages.")
 (define-public r-pump
   (package
     (name "r-pump")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PUMP" version))
        (sha256
-        (base32 "1j5xjazfncjm0iypmw8clvqpaw3y9pvapiahpf8y6482s3bmqa91"))))
+        (base32 "1alcpc7jp4hwx9xzx3bcrjk5xcxgpplki2jnhzqrhvbcnsj3fg9j"))))
     (properties `((upstream-name . "PUMP")))
     (build-system r-build-system)
     (arguments
@@ -9366,19 +9366,20 @@ respect to the loss of the forecast combination.  Methods like @code{predict()},
 (define-public r-profiler
   (package
     (name "r-profiler")
-    (version "0.3-5")
+    (version "0.3-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "profileR" version))
        (sha256
-        (base32 "0fgc7585a7194c67irafjnx8g2j6mn3qhcfn76c6dh28clp20qp9"))))
+        (base32 "0zpazwvaznzfzz8pvj1n1xg7w0ngwnvayc4cpm65i1fq0i52x617"))))
     (properties `((upstream-name . "profileR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-reshape r-rcolorbrewer r-lavaan r-ggplot2))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=profileR")
     (synopsis "Profile Analysis of Multivariate Data in R")
     (description
@@ -9387,9 +9388,10 @@ tools to implement profile analysis and cross-validation techniques described in
 Davison & Davenport (2002) <DOI: 10.1037/1082-989X.7.4.468>, Bulut (2013), and
 other published and unpublished resources.  The package includes routines to
 perform criterion-related profile analysis, profile analysis via
-multidimensional scaling, moderated profile analysis, profile analysis by group,
-and a within-person factor model to derive score profiles.")
-    (license license:gpl2+)))
+multidimensional scaling, moderated profile analysis, generalizability theory,
+profile analysis by group, and a within-person factor model to derive score
+profiles.")
+    (license license:gpl3)))
 
 (define-public r-profilelikelihood
   (package
@@ -23694,19 +23696,20 @@ The R Journal, 15/4: 255--269. <doi:10.32614/RJ-2023-094>.")
 (define-public r-pnadcperiods
   (package
     (name "r-pnadcperiods")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PNADCperiods" version))
        (sha256
-        (base32 "1w1b67a3if99g0asngr2yyldnqcq647h0y2jwgvn3n2fh91l3c6b"))))
+        (base32 "0k51r740gfqak86drl7w62k2fgzfn2c5d8mbd3dm5dnzsy9iz1wr"))))
     (properties `((upstream-name . "PNADCperiods")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sidrar r-lubridate r-data-table r-checkmate))
+    (propagated-inputs (list r-lubridate r-jsonlite r-data-table r-curl
+                             r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://antrologos.github.io/PNADCperiods/")
     (synopsis "Identify Reference Periods in Brazil's PNADC Survey Data")
@@ -23729,7 +23732,7 @@ weights calibrated to SIDRA (Sistema IBGE de Recuperacao Automatica) population
 totals.  Also includes a SIDRA mensalization module that converts 86+ official
 rolling quarter series from the IBGE SIDRA API (Application Programming
 Interface) into exact monthly estimates, without requiring access to microdata.
-Hecksher (2020) <https://repositorio.ipea.gov.br/handle/11058/9859>.")
+Hecksher and Barbosa (2026) <https://osf.io/preprints/socarxiv/fra5u_v1>.")
     (license license:expat)))
 
 (define-public r-pnadcibge
@@ -23894,13 +23897,13 @@ summarized in: Prybylski, (2024) <doi:10.1007/s40262-023-01343-2>.")
 (define-public r-pmxcode
   (package
     (name "r-pmxcode")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pmxcode" version))
        (sha256
-        (base32 "15wch2y1vsj58xrhjnmlw4wfsbqm4c720cp7r45bp6wkplpdfcbh"))))
+        (base32 "0krc76qlnzsprf5dvasw728jznxknmg4gzbym9qi8zj6v995s0yy"))))
     (properties `((upstream-name . "pmxcode")))
     (build-system r-build-system)
     (arguments
@@ -30571,13 +30574,13 @@ has changed in this new version.  The old version is still available at R-Forge.
 (define-public r-pilotr
   (package
     (name "r-pilotr")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pilotr" version))
        (sha256
-        (base32 "1apmd224zw8adhl227ljs5h8q91bxwzzvsalal8pm0zhcnpi68rc"))))
+        (base32 "0894z9d29z390m2pbgknkvwqwad810x37yxhaa74njv9gywa6yny"))))
     (properties `((upstream-name . "pilotr")))
     (build-system r-build-system)
     (arguments

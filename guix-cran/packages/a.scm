@@ -21019,13 +21019,13 @@ explanation of all concepts, see Thomson (2024)
 (define-public r-airnow
   (package
     (name "r-airnow")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "airnow" version))
        (sha256
-        (base32 "022q6pnxqqilg904g9paxm9psjk5raxwfmszhqb9bx4w6bm04rbh"))))
+        (base32 "10x6ykp328ajiw35vkg9z655v6w9cg13c0fd6wsfnmwaxgqwk2hn"))))
     (properties `((upstream-name . "airnow")))
     (build-system r-build-system)
     (arguments

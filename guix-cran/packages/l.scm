@@ -4582,34 +4582,6 @@ profiles comparison, and 3) viral quasispecies profiles comparison and
 visualization.")
     (license license:gpl3)))
 
-(define-public r-longpower
-  (package
-    (name "r-longpower")
-    (version "1.0.27")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "longpower" version))
-       (sha256
-        (base32 "1n6g2frmpsg8990gcvnky9s96qql816zn1r01vn7kjbkyba99vx9"))))
-    (properties `((upstream-name . "longpower")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-nlme r-lme4))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/mcdonohue/longpower")
-    (synopsis "Sample Size Calculations for Longitudinal Data")
-    (description
-     "Compute power and sample size for linear models of longitudinal data.  Supported
-models include mixed-effects models and models fit by generalized least squares
-and generalized estimating equations.  The package is described in Iddi and
-Donohue (2022) <DOI:10.32614/RJ-2022-022>.  Relevant formulas are derived by Liu
-and Liang (1997) <DOI:10.2307/2533554>, Diggle et al (2002)
-<ISBN:9780199676750>, and Lu, Luo, and Chen (2008) <DOI:10.2202/1557-4679.1098>.")
-    (license license:gpl2+)))
-
 (define-public r-longmixr
   (package
     (name "r-longmixr")

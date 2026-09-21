@@ -5652,13 +5652,13 @@ Work-Conference on Artificial Neural Networks.  Springer, 2017
 (define-public r-tselca
   (package
     (name "r-tselca")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tseLCA" version))
        (sha256
-        (base32 "0dqjkhdh6zh3p1picsq7rhp05fwgarv2hmwfz2qpv92zvvbqwwaw"))))
+        (base32 "19k5slnk34wjgh1xcsd8kznr280ig88x0sh3x38xd0h57vfnyi6i"))))
     (properties `((upstream-name . "tseLCA")))
     (build-system r-build-system)
     (arguments
@@ -18246,6 +18246,55 @@ Huang (2022) <doi:10.3390/genes13112036>.  TIP is a Bayesian prior that uses
 pairwise distance and similarity information to cluster vectors, matrices, or
 tensors.")
     (license license:expat)))
+
+(define-public r-tinyvast
+  (package
+    (name "r-tinyvast")
+    (version "1.6.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tinyVAST" version))
+       (sha256
+        (base32 "068ar6xyagdh3zwkfxi12h2ccr1hcpg8b1j47q7iwlc0ifqm3l5w"))))
+    (properties `((upstream-name . "tinyVAST")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-units
+                             r-tmb
+                             r-sparseinv
+                             r-sfnetworks
+                             r-sf
+                             r-sdmtmb
+                             r-rcppeigen
+                             r-mgcv
+                             r-matrix
+                             r-insight
+                             r-igraph
+                             r-gstat
+                             r-gpvecchia
+                             r-gpgp
+                             r-fmesher
+                             r-dsem
+                             r-cv
+                             r-corpcor
+                             r-cli
+                             r-checkmate
+                             r-abind))
+    (native-inputs (list r-knitr))
+    (home-page "https://vast-lib.github.io/tinyVAST/")
+    (synopsis "Multivariate Spatio-Temporal Models using Structural Equations")
+    (description
+     "Fits a wide variety of multivariate spatio-temporal models with simultaneous and
+lagged interactions among variables (including vector autoregressive
+spatio-temporal ('VAST') dynamics) for areal, continuous, or network spatial
+domains.  It includes time-variable, space-variable, and space-time-variable
+interactions using dynamic structural equation models ('DSEM') as expressive
+interface, and the mgcv package to specify splines via the formula interface.
+See Thorson et al. (2025) <doi:10.1111/geb.70035> for more details.")
+    (license license:gpl3)))
 
 (define-public r-tinytrail
   (package

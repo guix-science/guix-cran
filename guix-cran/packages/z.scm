@@ -352,13 +352,13 @@ non-finite values.")
 (define-public r-zmctp
   (package
     (name "r-zmctp")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "zmctp" version))
        (sha256
-        (base32 "0nk743v2h4irkfq42si0iv87hrcz4z2nfcafjggm7gqx4pqcr1m4"))))
+        (base32 "0w5cc6p3ilyp75ihza4n3dycd430z0bf1ni5rww2nlq4na618gi0"))))
     (properties `((upstream-name . "zmctp")))
     (build-system r-build-system)
     (arguments
