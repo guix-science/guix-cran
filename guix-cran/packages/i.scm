@@ -9005,13 +9005,13 @@ can be assessed.")
 (define-public r-interflex
   (package
     (name "r-interflex")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "interflex" version))
        (sha256
-        (base32 "1pxvxq21warvn1mb0x3yj3zpmssvyhnp2q1972yw1p6aghj98bsx"))))
+        (base32 "09db65vhz8v8cq70jfb9pxjizf5071zdj1r9nkj9j65vi86amrg2"))))
     (properties `((upstream-name . "interflex")))
     (build-system r-build-system)
     (arguments

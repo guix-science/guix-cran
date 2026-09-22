@@ -7258,13 +7258,13 @@ ISBN: 9780471094586), William Q. Meeker and Lois A. Escobar (1998, ISBN:
 (define-public r-weibullness
   (package
     (name "r-weibullness")
-    (version "1.24.1")
+    (version "2.26.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "weibullness" version))
        (sha256
-        (base32 "072w8av27ldass8alk50rdzqijmp2jpk243hnqqg0sfs69qs7px1"))))
+        (base32 "043icdk85g1f8j4nczcmg5zfr9m7azk3wkch6a4sk588z37n5767"))))
     (properties `((upstream-name . "weibullness")))
     (build-system r-build-system)
     (arguments
@@ -7282,7 +7282,7 @@ Weibull distributions, accompanied by parameter estimations.  For more details,
 see Park (2017) <doi:10.23055/ijietap.2017.24.4.2848>, Park (2018)
 <doi:10.1155/2018/6056975>, and Park (2023) <doi:10.3390/math11143156>.  This
 work was supported by the National Research Foundation of Korea (NRF) grants
-funded by the Korea government (MSIT) (No.  2022R1A2C1091319, RS-2023-00242528).")
+funded by the Korea government (No.  2022R1A2C1091319).")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-weibullmodiamr

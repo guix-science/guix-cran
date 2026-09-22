@@ -10836,6 +10836,37 @@ It is designed to facilitate reproducible analysis across multiple sports with
 comprehensive documentation and error handling.")
     (license license:expat)))
 
+(define-public r-valcurvar
+  (package
+    (name "r-valcurvar")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ValCurvaR" version))
+       (sha256
+        (base32 "18nl0bb8vhqdprww399m3035kzgdn64klsi57x6bgk6hrf3iw9wj"))))
+    (properties `((upstream-name . "ValCurvaR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-outliers r-nortest r-lmtest))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/isaquebrand/ValCurvaR")
+    (synopsis "Validation of Analytical Calibration Curves")
+    (description
+     "This package provides transparent tools for fitting and evaluating analytical
+calibration curves.  Ordinary and weighted least squares fits are supported,
+together with lack-of-fit, heteroscedasticity and influence diagnostics,
+back-calculation, prediction uncertainty and publication-ready base graphics.
+The workflow is designed to support validation studies rather than rely on a
+single goodness-of-fit statistic.  Methods follow Magnusson and Ornemark (2014)
+<https://www.eurachem.org/images/stories/Guides/pdf/MV_guide_2nd_ed_EN.pdf> and
+International Council for Harmonisation (2023)
+<https://database.ich.org/sites/default/files/ICH_Q2%28R2%29_Guideline_2023_1130_@code{ErrorCorrection_2025.pdf>}.")
+    (license license:expat)))
+
 (define-public r-valaddin
   (package
     (name "r-valaddin")

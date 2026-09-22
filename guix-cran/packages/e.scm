@@ -2053,6 +2053,36 @@ package for mining global plant diversity and distribution data.  Applications
 in Plant Sciences 12: e11609'.")
     (license license:expat)))
 
+(define-public r-exposureem
+  (package
+    (name "r-exposureem")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "exposureEM" version))
+       (sha256
+        (base32 "19ipi06cy7c2qixzwxmh0sljnscc7v00ibc3h80frm6nfv789h4y"))))
+    (properties `((upstream-name . "exposureEM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=exposureEM")
+    (synopsis "Combined-Exposure Models by EM and Marquardt Optimization")
+    (description
+     "Fits general two-component combined-exposure models for binary event histories
+when the event setting is not observed.  The observed binary event is
+represented as the union of two latent component-specific binary events.  Known
+exposure proportions enter as offsets.  Parameters can be estimated by
+expectation-maximization, direct Marquardt-damped Newton-Raphson maximization of
+the observed likelihood, or a hybrid that uses several expectation-maximization
+iterations before direct optimization.  Uncertainty is estimated with Louis
+formula for the expectation-maximization estimator and the inverse observed
+Hessian for direct and hybrid fits.  Complementary log-log, logit, and log
+component links are available for all three estimation methods.")
+    (license license:expat)))
+
 (define-public r-exposr
   (package
     (name "r-exposr")
@@ -13995,13 +14025,13 @@ that produces a graph similar to an age pyramid.")
 (define-public r-epidatr
   (package
     (name "r-epidatr")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epidatr" version))
        (sha256
-        (base32 "1lssf28hsikd30nsimprpnxq1yrqjxmz97m4a7zb2kp8ikmmpk4a"))))
+        (base32 "1fyb1dsgpmax6srr6jpmn18zlkmm985zpipr395rhd14yx5g211b"))))
     (properties `((upstream-name . "epidatr")))
     (build-system r-build-system)
     (arguments
@@ -23936,13 +23966,13 @@ package @code{bupaR}'.")
 (define-public r-ede
   (package
     (name "r-ede")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EDE" version))
        (sha256
-        (base32 "1ab7xhp99pkvmq18j4c33j3h50zkhgzh6cr6z3zrzd1891xchadr"))))
+        (base32 "15zdm631xra9ycgday0jcyklvmwj86b59mgvvrbzpjz0253ng3lb"))))
     (properties `((upstream-name . "EDE")))
     (build-system r-build-system)
     (arguments
@@ -23955,16 +23985,19 @@ package @code{bupaR}'.")
      "Estimates the historic date of extinction of a species from a time-ordered
 record of sighting events.  Given a table of sighting counts per year, computes
 extinction date estimators from the sighting-record literature: optimal linear
-estimation under a record-value model (Roberts & Solow, 2003), nonparametric and
-sighting-effort-weighted persistence tests (Solow, 1993; Solow, 2005), a
-sighting-rate persistence test comparable across records with different
+estimation and its Weibull extreme-value persistence test (Roberts & Solow,
+2003; Solow, 2005), constant-rate and declining-rate persistence tests (Solow,
+1993), a sighting-rate persistence test comparable across records with different
 observation periods (@code{McInerny}, Roberts, Davy & Cribb, 2006), a classical
 confidence interval on the end of a temporal range (Strauss & Sadler, 1989), a
 truncation-point extrapolation (Robson & Whitlock, 1964), and a combinatorial
 persistence test based on inclusion-exclusion over sighting-gap occupancy
-(Burgman, Grimson & Ferson, 1995).  Every estimator is built on a single
-validated input object and returns a common result class with, where defined, a
-point estimate, a confidence interval, or a full persistence-probability curve.")
+(Burgman, Grimson & Ferson, 1995).  Also implements a nonparametric endpoint
+test (Solow & Roberts, 2003), a sighting-interval trend index (JariÄ &
+Ebenhard, 2010), and reliability-adjusted inference for uncertain records
+(JariÄ & Roberts, 2014).  Every estimator is built on a validated input object
+and returns a common result class with, where defined, a point estimate, a
+confidence interval, or a full p-value curve.")
     (license license:gpl3+)))
 
 (define-public r-eddington

@@ -12360,6 +12360,66 @@ dissimilarity matrices in homogeneous clusters.  Currently, it includes methods
 only for binary data (<doi:10.18637/jss.v100.i16>).")
     (license license:gpl2+)))
 
+(define-public r-dmar
+  (package
+    (name "r-dmar")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DMAR" version))
+       (sha256
+        (base32 "1ljshl5ask3p041sz1fgk1smh3q3sg9kipdbap89b15nf69iqhf6"))))
+    (properties `((upstream-name . "DMAR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr r-mass r-generics))
+    (native-inputs (list r-knitr))
+    (home-page "https://kenkelley.org")
+    (synopsis "Design, Measurement, and Analysis in R (DMAR)")
+    (description
+     "This package provides methods for design, measurement, and analysis, with the
+aim of being user friendly yet methodologically sound.  DMAR (pronounced
+\"Dee-Mar\") implements many advanced and nonstandard methods and makes them
+available for straightforward use, with interfaces, defaults, and documentation
+that are consistent across the package and grounded in the methodological
+literature, in support of sound and reproducible results.  The package
+emphasizes effect size estimation with confidence intervals; sample size
+planning through accuracy in parameter estimation (AIPE) and power analysis
+(including composite power for designs whose conclusions require several results
+to hold at once), with minimum risk, sequential, and equivalence frameworks;
+reliability, agreement, and measurement more broadly, from coefficient omega
+with confidence intervals to measurement invariance; factor analysis and
+structural equation modeling, in which constructs, latent variables measured by
+multiple indicators, are modeled directly, with confirmatory factor analysis,
+convergent and discriminant validity, and sample size planning for structural
+equation models; mediation analysis, from the simple mediation model with
+bootstrap intervals to likelihood ratio tests of arbitrary indirect effects by
+model-based constrained optimization (MBCO), with multiple groups and the
+probing of moderated mediation; equivalence and noninferiority testing;
+meta-analysis; repeated measures, multivariate, ANOVA, and ANCOVA designs; and
+inference grounded in model comparison throughout.  Measurement is approached
+from a psychometric perspective, and although many of the methods grew up in
+human-centered research, they apply broadly across the empirical sciences.  Much
+of what is implemented traces to the author's methodological work, interests,
+and collaborations.  DMAR is a more modern, more general, and greatly expanded
+reimagining of the MBESS package (Kelley, 2007a, <doi:10.18637/jss.v020.i08>;
+2007b, <doi:10.3758/BF03192993>), which has been on CRAN for more than two
+decades and remains available there in stable form.  Most functions accept
+either raw data or the summary statistics typically reported in published
+articles, so an analysis can be reproduced from a paper without the original
+data, which is useful both for extending a published analysis and for
+meta-analytic work.  The estimation, inference, and planning functions return
+one consistently formatted data frame per function that composes with the
+broader R ecosystem, and confidence intervals are reported alongside effect
+sizes throughout, as best practice recommends.  Researchers who have data and a
+question but who are not R experts will find the package approachable, while
+methodologists gain access to advanced and nonstandard methods, including tables
+of critical values not available elsewhere.")
+    (license license:gpl3+)))
+
 (define-public r-dmai
   (package
     (name "r-dmai")
@@ -36343,19 +36403,19 @@ and discrete Laplacian distributions see Canonne et al. (2020)
 (define-public r-daoh
   (package
     (name "r-daoh")
-    (version "0.1.0")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "daoh" version))
        (sha256
-        (base32 "0q5mpx55nlqmx8k9y293ym09w2k3k95kfymjmax64rag4gih3s0z"))))
+        (base32 "0gy70vpclpd3bwz5qmirknnpggldi0cf3zdjid4vzmz6pybqvwn6"))))
     (properties `((upstream-name . "daoh")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-scales r-ggplot2))
+    (propagated-inputs (list r-scales r-ggplot2 r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/davecumin/daoh")
     (synopsis "Days Alive and Out of Hospital (DAOH) Calculation")

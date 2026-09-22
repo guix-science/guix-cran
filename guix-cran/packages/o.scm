@@ -10392,23 +10392,24 @@ Public Health Ontario website:
 (define-public r-onls
   (package
     (name "r-onls")
-    (version "0.1-4")
+    (version "0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "onls" version))
        (sha256
-        (base32 "1x3qmb050lapgk0vg259m4vz1cggps7azgflzxdshflfijkzsm84"))))
+        (base32 "0ckc988f2c6p7vk8wp883svh5b8i3m0nb60l7imx17fnb416f4jm"))))
     (properties `((upstream-name . "onls")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-minpack-lm))
+    (propagated-inputs (list r-rgl r-minpack-lm))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=onls")
     (synopsis "Orthogonal Nonlinear Least-Squares Regression")
     (description
-     "Fits two-dimensional data by means of orthogonal nonlinear least-squares using
+     "Fits n-dimensional data by means of orthogonal nonlinear least-squares using
 Levenberg-Marquardt minimization and provides functionality for fit diagnostics
 and plotting.  Delivers the same results as the ODRPACK Fortran implementation
 described in Boggs et al. (1989) <doi:10.1145/76909.76913>, but is implemented

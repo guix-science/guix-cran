@@ -2528,28 +2528,24 @@ engine but usable standalone for any spatial triangulation task.")
 (define-public r-tulpa
   (package
     (name "r-tulpa")
-    (version "0.2.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tulpa" version))
        (sha256
-        (base32 "17m3ks7n05gr6p52pnasiibaxbdsbsxyjf7g1mnrji697zgwcccn"))))
+        (base32 "0xb4ck5dxwdhffgpv44lrcixn5s7ld3y8s1ybl3w4jp6qc29p1il"))))
     (properties `((upstream-name . "tulpa")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tulpamesh
-                             r-rcppeigen
-                             r-rcpp
-                             r-matrix
-                             r-lifecycle
+    (propagated-inputs (list r-tulpamesh r-rcppeigen r-rcpp r-matrix
                              r-generics))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/gcol33/tulpa")
     (synopsis
-     "Template Unified Latent Process Architecture for Bayesian Hierarchical Models")
+     "Templated Unified Library for Posterior Approximation in Bayesian Hierarchical Models")
     (description
      "This package provides a general-purpose engine for fitting Bayesian hierarchical
 models with spatial fields, temporal effects, spatially varying coefficients,
@@ -12354,6 +12350,41 @@ at choosing the best model for a particular dataset, regarding its discriminant
 power and runtime.")
     (license license:expat)))
 
+(define-public r-tradeindices
+  (package
+    (name "r-tradeindices")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tradeIndices" version))
+       (sha256
+        (base32 "0jld40vwhz3rcm7vm4wh3mvrmph13r19mlcggbi36s3xhf3fyv52"))))
+    (properties `((upstream-name . "tradeIndices")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=tradeIndices")
+    (synopsis
+     "International Trade Intensity, Openness and Diversification Measures")
+    (description
+     "Calculates commonly used indicators for empirical international trade analysis
+from user-supplied data.  Measures include trade openness, bilateral export and
+import intensity, the Herfindahl-Hirschman concentration index, normalized and
+entropy-based diversification, structural diversification relative to a
+benchmark, export similarity, trade complementarity, revealed comparative
+advantage, and intra-industry trade.  Functions are vectorized where
+appropriate, validate economically meaningful inputs, and require no external
+data service.  The definition of trade openness follows the World Bank indicator
+metadata <https://data.worldbank.org/indicator/NE.TRD.GNFS.ZS>.  Methodological
+background for several trade indicators is provided by the World Bank's World
+Integrated Trade Solution
+<https://wits.worldbank.org/wits/wits/witshelp/Content/Utilities/e1.trade_indicators.htm>
+and the World Trade Organization (2012, ISBN:9789287038128).")
+    (license license:expat)))
+
 (define-public r-trade
   (package
     (name "r-trade")
@@ -16465,13 +16496,13 @@ Database (TMDb) is a popular user editable database for movies and TV shows (see
 (define-public r-tmcalculator
   (package
     (name "r-tmcalculator")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TmCalculator" version))
        (sha256
-        (base32 "0b83ww8jb8p3a7qyj5sj8n5f404jhfw78n8fh9asv43nx90dh5pz"))))
+        (base32 "07a66zl9qb4sr49w63i1mvb9aprmjl4j0x8djvf3ig7lxzyhj4nq"))))
     (properties `((upstream-name . "TmCalculator")))
     (build-system r-build-system)
     (arguments
@@ -16483,6 +16514,7 @@ Database (TMDb) is a popular user editable database for movies and TV shows (see
                              r-genomicranges
                              r-genomeinfodb
                              r-biostrings
+                             r-biocparallel
                              r-biocgenerics))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=TmCalculator")
@@ -16493,8 +16525,10 @@ Database (TMDb) is a popular user editable database for movies and TV shows (see
 many molecular biology applications, and this software scales Tm analysis from
 individual sequences to genomeâwide thermodynamic profiling.  This package
 extends Tm analysis from simple sequence level computation to comprehensive
-genome-wide thermodynamic profiling.  It takes multiple input formats including
-sequence strings, FASTA files, genomic coordinates.  The implementation provides
+genome-wide thermodynamic profiling.  It takes four input sources: sequence
+strings, a FASTA file, an installed BSgenome package named by string, or a
+GRanges carrying sequences.  A regions argument selects what to cover and window
+and slide set the resolution at which it is tiled.  The implementation provides
 three Tm calculation methods: the Wallace rule (Thein & Wallace, 1986),
 empirical GCâcontent formulas (Marmur, 1962; Schildkraut, 2010; Wetmur, 1991;
 Untergasser, 2012; von Ahsen, 2001), and nearestâneighbor thermodynamics
@@ -16514,9 +16548,10 @@ provided for DNA and RNA duplexes, so that duplex stability can be evaluated
 under cell-like rather than dilute-solution conditions.  Corrections are
 otherwise supported for salt ions (@code{SantaLucia}, 1996, 1998; Owczarzy,
 2004, 2008) and for chemical conditions such as dimethyl sulfoxide and
-formamide.  A compiled C++ core and parallel task partitioning profile the human
-genome in 3 minutes on a six-core laptop.  This package returns result as a
-GRanges object for interoperability with Bioconductor workflows and downstream
+formamide.  A compiled C++ core, and task partitioning by region across
+@code{BiocParallel} workers through a BPPARAM argument, profile the human genome
+in 3 minutes on a six-core laptop.  This package returns result as a GRanges
+object for interoperability with Bioconductor workflows and downstream
 multi-omics analyses.  Data-level integration reconciles Tm windows with
 external multi-omics GRanges objects through overlap, nearest-feature,
 windowed-count, and binned-average strategies, returning a single unified
@@ -19874,6 +19909,39 @@ linear regression using the \"tilted correlation\", a new way of measuring the
 contribution of each variable to the response which takes into account high
 correlations among the variables in a data-driven way.")
     (license license:gpl2+)))
+
+(define-public r-tiltdens
+  (package
+    (name "r-tiltdens")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tiltdens" version))
+       (sha256
+        (base32 "0dw7r5j4pws5q9q2ybv2vbbrywwzniqiw0iz5681rl0lca9yvrb5"))))
+    (properties `((upstream-name . "tiltdens")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-quadprog))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/DoostiH/tiltdens")
+    (synopsis "Tilted and Data-Sharpened Nonparametric Density Estimation")
+    (description
+     "High-order nonparametric density estimators built by perturbing a conventional
+kernel estimator, either by re-weighting the observations (\"tilting\") or by
+moving them (\"data sharpening\").  The perturbation is chosen so that the
+estimator inherits the fast convergence rate of an infinite-order kernel
+estimator, such as the sinc or trapezoidal flat-top estimator, while remaining a
+proper non-negative density without the oscillatory tails those estimators
+suffer from.  Two criteria are provided: minimising the L2 distance to an
+infinite-order comparator, following Doosti and Hall (2016)
+<doi:10.1111/rssb.12112>, and minimising a cross-validation criterion that needs
+no comparator and is much faster, following Doosti, Hall and Mateu (2018)
+<doi:10.1016/j.jspi.2017.12.003>.")
+    (license license:expat)))
 
 (define-public r-tiler
   (package
@@ -33723,6 +33791,47 @@ of choice to various other packages.  It also allows the user to use a spread_by
 argument for a character column xts conversion.")
     (license license:gpl3)))
 
+(define-public r-tbl-now
+  (package
+    (name "r-tbl-now")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tbl.now" version))
+       (sha256
+        (base32 "03ihdpp786vglzlfplmbs22bwlbjycaja9bjqxfqc0hfdh5mipwn"))))
+    (properties `((upstream-name . "tbl.now")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-scales
+                             r-s7
+                             r-rlang
+                             r-pillar
+                             r-lubridate
+                             r-lifecycle
+                             r-ggplot2
+                             r-generics
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://rodrigozepeda.github.io/tbl.now/")
+    (synopsis "Tidy Data and Workflow Layer for Epidemic Nowcasting")
+    (description
+     "Defines tidy data structures and package-agnostic workflows for epidemiological
+nowcasting.  The tbl_now class records event, report, and revision dates
+alongside strata, covariates, censoring, and reporting-delay metadata while
+remaining compatible with dplyr'.  Tools support validation, manipulation,
+diagnostics, visualization, format conversion, retrospective evaluation, and
+multiple modelling engines.  The tbl_nowcast class standardizes probabilistic
+predictions for plotting, scoring, comparison, and ensembling.")
+    (license license:expat)))
+
 (define-public r-tbfmultinomial
   (package
     (name "r-tbfmultinomial")
@@ -33965,6 +34074,35 @@ Data is included for all officially released studio albums, extended plays
 easily creating data visualizations with color palettes inspired by Taylor
 Swift's album covers.")
     (license license:expat)))
+
+(define-public r-taxresolver
+  (package
+    (name "r-taxresolver")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TaxResolveR" version))
+       (sha256
+        (base32 "1fss1bbnkz3gj3r0c79j7cicpysjypaw9lqflxm3df4sxdh1dbjj"))))
+    (properties `((upstream-name . "TaxResolveR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-httr2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/prdelosriosescalante/TaxResolveR")
+    (synopsis "Taxonomic Name Resolution and Validation Tools")
+    (description
+     "This package provides reproducible tools for cleaning, parsing, classifying,
+standardising, validating and resolving scientific names in ecological and
+biodiversity datasets.  Taxonomic matches can be assessed for match quality and
+taxonomic status, records requiring manual review can be identified, and
+resolution results can be summarised, reported and exported.  Taxonomic name
+resolution can use the GBIF species matching service and the GBIF Backbone
+Taxonomy described by GBIF Secretariat (2023) <doi:10.15468/39omei>.")
+    (license license:gpl3)))
 
 (define-public r-taxonomizr
   (package

@@ -10933,13 +10933,13 @@ S., and J. M. Lees (1996)<doi:10.1785/BSSA0860061853>.")
 (define-public r-rqti
   (package
     (name "r-rqti")
-    (version "1.2.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rqti" version))
        (sha256
-        (base32 "0q1k8achq94hxifindi5zrpwpxgnizbqg0zf5nkg3078wawwigpl"))))
+        (base32 "1a4fsg7a61yw3ssagn72zhrhr0zzn0ywzdxzy2p59lfl2w9m3nny"))))
     (properties `((upstream-name . "rqti")))
     (build-system r-build-system)
     (arguments
@@ -15839,13 +15839,13 @@ efficiently with parallelism across columns and windows provided by
 (define-public r-rollout
   (package
     (name "r-rollout")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rollout" version))
        (sha256
-        (base32 "151vxadm45mj361arraps8v5d5nc61x3ilnifp8h7wgm1v6bif4a"))))
+        (base32 "1lyyffcw4h3frpmbv05hdcqbwf0k7h44yh7qxh9pnn5lzkspanvy"))))
     (properties `((upstream-name . "rollout")))
     (build-system r-build-system)
     (arguments
@@ -22763,13 +22763,13 @@ l-diversity, and cell suppression verifiers.")
 (define-public r-rmoriebricklayer
   (package
     (name "r-rmoriebricklayer")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rmoriebricklayer" version))
        (sha256
-        (base32 "1skc9gs69b5h12vxy43bdyv4grq6bpq5424kxxkb7rs2ynkrs5ka"))))
+        (base32 "00chlxhkpiy23i1m4cmfx5swgqx68rfl272hka3bx8hr8dlfr3mg"))))
     (properties `((upstream-name . "rmoriebricklayer")))
     (build-system r-build-system)
     (arguments
@@ -23667,29 +23667,31 @@ useful for exploratory and probabilistic analysis.")
 (define-public r-rmet
   (package
     (name "r-rmet")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rmet" version))
        (sha256
-        (base32 "0sqwbp5nmgpv066wds387qjp95iwi9acd249mxi9fncjzjw1ja9f"))))
+        (base32 "019y1blq2aap9sdb7hwszmzsx0d1z955b0cqrw8pa9a50nyf25g9"))))
     (properties `((upstream-name . "rmet")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-curl))
+    (propagated-inputs (list r-jsonlite r-curl))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/rodrigosqrt3/rmet")
     (synopsis "Download and Read Brazilian Meteorological Data from INMET")
     (description
      "Automates the download and processing of historical weather data from the
-Brazilian National Institute of Meteorology (INMET).  It resolves formatting
-inconsistencies in raw CSV files across different years, removes structural
-artifacts, standardizes column names, converts timestamps to local Brazilian
-time zones, and outputs tidy data frames ready for analysis.  Data are retrieved
-from <https://portal.inmet.gov.br/dadoshistoricos>.")
+Brazilian National Institute of Meteorology (INMET).  It provides a cached
+catalogue of automatic stations, resumable and validated downloads, and parsers
+for formatting inconsistencies in raw CSV files across different years.  It
+removes structural artifacts, standardizes column names, parses timestamps, and
+returns data frames ready for analysis.  Data are retrieved from
+<https://portal.inmet.gov.br/dadoshistoricos> and
+<https://apitempo.inmet.gov.br/estacoes/T>.")
     (license license:gpl3+)))
 
 (define-public r-rmerec
@@ -26900,13 +26902,13 @@ Integrated Moving Average.")
 (define-public r-rjd3toolkit
   (package
     (name "r-rjd3toolkit")
-    (version "3.8.0")
+    (version "3.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rjd3toolkit" version))
        (sha256
-        (base32 "0a92530m34pg5cw849c2jw9dhazx84isy1a9in8rda9lbfh1df2f"))))
+        (base32 "1462p56rzyf1as3f35fj578ys6hdcz3644dzw2wjz54lgrnnijs3"))))
     (properties `((upstream-name . "rjd3toolkit")))
     (build-system r-build-system)
     (arguments
@@ -27816,6 +27818,35 @@ presented.  Lastly, the Rankit, an empirical normal quantile transformation
 cases and facilitate adoption. <DOI: 10.1201/9780203910894>. <DOI:
 10.22237/jmasm/1257034080>.")
     (license license:expat)))
+
+(define-public r-risq
+  (package
+    (name "r-risq")
+    (version "3.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "risq" version))
+       (sha256
+        (base32 "0v08a08aw27agn3n2a9p8msw0j3kvhabpx24v5pwfidas7pzyh4n"))))
+    (properties `((upstream-name . "risq")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=risq")
+    (synopsis "Representativity Indicators for Survey Quality")
+    (description
+     "Calculate representativity indicators for survey quality based on survey data
+and response models.  Use partial indicators to analyse the impact of individual
+variables and categories.  Monitor changes in representativity during data
+collection.  Improve representativity through adaptive survey design.  Supports
+both R-indicators and coefficients of variation.  See also Schouten, Cobben,
+Bethlehem (2009) <https://api.semanticscholar.org/@code{CorpusID:33654901>},
+Shlomo, Skinner, Schouten (2012) <doi:10.1016/j.jspi.2011.07.008> and Schouten,
+Shlomo (2017) <doi:10.1111/insr.12159>.")
+    (license (license:fsdg-compatible "EUPL-1.2"))))
 
 (define-public r-riskyr
   (package
@@ -63491,6 +63522,36 @@ microbiome data. @code{radEmu} estimates fold-differences in the abundance of
 taxa across samples relative to \"typical\" fold-differences.  Notably, it does
 not require pseudocounts, nor choosing a denominator taxon.  For more details,
 see Clausen et al. (2026) <doi:10.1093/biomet/asag009>.")
+    (license license:expat)))
+
+(define-public r-raddr
+  (package
+    (name "r-raddr")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "raddr" version))
+       (sha256
+        (base32 "15jqj7k005yy2cj14npamx5y0552d0hkj21anmnpaalbv3k8bpls"))))
+    (properties `((upstream-name . "raddr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs r-rlang))
+    (native-inputs (list r-knitr))
+    (home-page "https://gitlab.com/bart-turczynski/raddr")
+    (synopsis "Show What an IP Address Literal Means Under Every Standard")
+    (description
+     "Standards and implementations disagree about what an IP address literal means:
+the string \"0177.0.0.1\" is rejected by the dotted-quad grammar, read as
+127.0.0.1 by browsers, and read as 177.0.0.1 by some inet_pton implementations.
+Most libraries pick one reading and discard the rest.  This package reports them
+all, alongside the reason codes that explain each one, and classifies parsed
+values against the IANA special-purpose address registries.  It is pure R,
+performs no network access, and returns facts rather than allow or deny
+verdicts.")
     (license license:expat)))
 
 (define-public r-raddata

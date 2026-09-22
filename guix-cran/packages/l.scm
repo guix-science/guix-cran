@@ -4582,6 +4582,34 @@ profiles comparison, and 3) viral quasispecies profiles comparison and
 visualization.")
     (license license:gpl3)))
 
+(define-public r-longpower
+  (package
+    (name "r-longpower")
+    (version "1.0.27")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "longpower" version))
+       (sha256
+        (base32 "1n6g2frmpsg8990gcvnky9s96qql816zn1r01vn7kjbkyba99vx9"))))
+    (properties `((upstream-name . "longpower")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-nlme r-lme4))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mcdonohue/longpower")
+    (synopsis "Sample Size Calculations for Longitudinal Data")
+    (description
+     "Compute power and sample size for linear models of longitudinal data.  Supported
+models include mixed-effects models and models fit by generalized least squares
+and generalized estimating equations.  The package is described in Iddi and
+Donohue (2022) <DOI:10.32614/RJ-2022-022>.  Relevant formulas are derived by Liu
+and Liang (1997) <DOI:10.2307/2533554>, Diggle et al (2002)
+<ISBN:9780199676750>, and Lu, Luo, and Chen (2008) <DOI:10.2202/1557-4679.1098>.")
+    (license license:gpl2+)))
+
 (define-public r-longmixr
   (package
     (name "r-longmixr")
@@ -15736,6 +15764,31 @@ plotter's arsenal of guides.  Guides in ggplot2 include axes and legends.
 legendry offers new axes and annotation options, as well as new legends and
 colour displays.")
     (license license:expat)))
+
+(define-public r-legendplot
+  (package
+    (name "r-legendplot")
+    (version "0.4-1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "legendplot" version))
+       (sha256
+        (base32 "1wj604hr4pd4wgm1amcfm4lvi3627xy0f4zjidcwn17xvzqdsabm"))))
+    (properties `((upstream-name . "legendplot")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rgl))
+    (native-inputs (list r-knitr))
+    (home-page "https://rubenfcasal.github.io/legendplot/")
+    (synopsis "Standard and 'rgl' Plots with Legends")
+    (description
+     "This package provides tools to combine standard R plots or rgl 3D plots with a
+legend.  Facilitates the creation of composite figures that mix 2D or 3D
+visualizations with a categorical or continuous legend.")
+    (license license:gpl2+)))
 
 (define-public r-lefko3
   (package

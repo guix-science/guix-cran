@@ -6218,13 +6218,13 @@ that there are only Compliers and Never Takers in the population.")
 (define-public r-noncompart
   (package
     (name "r-noncompart")
-    (version "0.8.3")
+    (version "0.8.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NonCompart" version))
        (sha256
-        (base32 "1r5wnrykv4ap1axh0sph8ksc8i5i5ahc6bivy0qhiki6jivmzwjw"))))
+        (base32 "0vff1y80jl5kp1h69jg3i1vy85rzr2f61ygz56h01dqzsw2qzs4m"))))
     (properties `((upstream-name . "NonCompart")))
     (build-system r-build-system)
     (arguments
@@ -6236,17 +6236,18 @@ that there are only Compliers and Never Takers in the population.")
      "Conduct a noncompartmental analysis with industrial strength.  Some features are
 1) Use of CDISC SDTM terms 2) Automatic or manual slope selection 3) Supporting
 both linear-up linear-down and linear-up log-down method 4) Interval(partial)
-AUCs with linear or log interpolation method 5) Installation/Operational
-Qualification (IQ/OQ) reports in pdf.  After installation, qualify the package
-in your own environment: run @code{IQNCA()} for Installation Qualification and
-@code{OQNCA()} for Operational Qualification.  Run @code{writeMD5NCA()} once
-after installation so the IQ file-integrity check passes.  To approve a report,
-sign it digitally in Adobe Acrobat Reader (generate with @code{sigField=TRUE},
-or run @code{addSigFieldNCA()}, to add click-to-sign fields), instead of
-printing and scanning; or use @code{signPDFNCA()/verifyPDFNCA()} for a
-scriptable signature. * Reference: Gabrielsson J, Weiner D. Pharmacokinetic and
-Pharmacodynamic Data Analysis - Concepts and Applications.  5th ed.  2016.
-(ISBN:9198299107).")
+AUCs with linear or log interpolation method 5) Steady-state analysis over the
+dosing interval (AUCTAU, CAVG, CL and Vz from AUCTAU) 6)
+Installation/Operational Qualification (IQ/OQ) reports in pdf.  After
+installation, qualify the package in your own environment: run @code{IQNCA()}
+for Installation Qualification and @code{OQNCA()} for Operational Qualification.
+ Run @code{writeMD5NCA()} once after installation so the IQ file-integrity check
+passes.  To approve a report, sign it digitally in Adobe Acrobat Reader
+(generate with @code{sigField=TRUE}, or run @code{addSigFieldNCA()}, to add
+click-to-sign fields), instead of printing and scanning; or use
+@code{signPDFNCA()/verifyPDFNCA()} for a scriptable signature. * Reference:
+Gabrielsson J, Weiner D. Pharmacokinetic and Pharmacodynamic Data Analysis -
+Concepts and Applications.  5th ed.  2016. (ISBN:9198299107).")
     (license license:gpl3)))
 
 (define-public r-nonabsdid
@@ -9591,28 +9592,25 @@ composition and modification functions to make model updates easier.")
 (define-public r-nlmixr2extra
   (package
     (name "r-nlmixr2extra")
-    (version "5.2.0")
+    (version "5.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmixr2extra" version))
        (sha256
-        (base32 "0ijzg9hsy9pddp3hzm0x5cj972l29yxp3i0zfpqk8hpkskrypmgs"))))
+        (base32 "18dmcfdg3zrxk6f1mn8f88hcpci11hlfqhmg8a3xnnqdmr1qkpc4"))))
     (properties `((upstream-name . "nlmixr2extra")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-symengine
-                             r-rxode2
+    (propagated-inputs (list r-rxode2
                              r-rcpparmadillo
                              r-rcpp
                              r-nlmixr2est
                              r-nlme
-                             r-magrittr
                              r-lotri
                              r-knitr
-                             r-ggtext
                              r-ggplot2
                              r-dplyr
                              r-digest
@@ -10106,6 +10104,32 @@ number of features, misclassification rate for the different number of features
 and classification algorithms tested and ROC plot.  For further details about
 the methodology, please check: Markus Ruschhaupt, Wolfgang Huber, Annemarie
 Poustka, and Ulrich Mansmann (2004) <doi:10.2202/1544-6115.1078>.")
+    (license license:gpl3)))
+
+(define-public r-nlcs
+  (package
+    (name "r-nlcs")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nlcs" version))
+       (sha256
+        (base32 "0i2z2ka4vxyr21bhsv3m0xd065cfnim3zyqmay2dhdz9yv18a114"))))
+    (properties `((upstream-name . "nlcs")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-psych r-efatools))
+    (home-page "https://cran.r-project.org/package=nlcs")
+    (synopsis "N-LCS: Normative Latent Cognitive Structure")
+    (description
+     "This package provides functions to construct a normative latent cognitive
+structure (N-LCS) from cognitive test data standardized to healthy controls, and
+to compute cognitive deviation magnitude (CDM) and cognitive deviation angle
+(CDA).  Methods are described in Chen (2026)
+<doi:10.1080/23279095.2026.2691088>.")
     (license license:gpl3)))
 
 (define-public r-nlcoptim

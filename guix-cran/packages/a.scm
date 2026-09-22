@@ -6916,6 +6916,32 @@ datasets used for the example models in each chapter, summarizing output from
 model fitting engines, and running custom Markov Chain Monte Carlo.")
     (license license:gpl3)))
 
+(define-public r-asmap
+  (package
+    (name "r-asmap")
+    (version "1.1-0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ASMap" version))
+       (sha256
+        (base32 "1c9mh2as0zgx6r7xa5p2hd8y5i99pnbz4nx1r1yj09sf2rzsp8cm"))))
+    (properties `((upstream-name . "ASMap")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcolorbrewer r-qtl r-lattice r-gtools r-fields))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/DrJ001/ASMap")
+    (synopsis "Linkage Map Construction using the MSTmap Algorithm")
+    (description
+     "This package provides functions for Accurate and Speedy linkage map
+construction, manipulation and diagnosis of Doubled Haploid, Backcross and
+Recombinant Inbred R/qtl objects.  This includes extremely fast linkage map
+clustering and optimal marker ordering using MSTmap (see Wu et al.,2008).")
+    (license license:gpl2+)))
+
 (define-public r-asm
   (package
     (name "r-asm")
@@ -9482,13 +9508,13 @@ version of this package lives; it can be installed using devtools.")
 (define-public r-arf
   (package
     (name "r-arf")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arf" version))
        (sha256
-        (base32 "010gs6cd8cyn19ajcfl2cix6qr3h5182mbz38r4xxax5wwgzxd1r"))))
+        (base32 "1983wz828kyf0ir5pkjmv0vmzfkr58m5aakd0afwxd392s4s1zs1"))))
     (properties `((upstream-name . "arf")))
     (build-system r-build-system)
     (arguments

@@ -12855,13 +12855,13 @@ imbalance measures.  See Baldi Antognini A, Frieri R, Zagoraiou M and Novelli M
 (define-public r-coursekata
   (package
     (name "r-coursekata")
-    (version "0.20.1")
+    (version "0.21.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coursekata" version))
        (sha256
-        (base32 "1yjphgipr3lc3ffkcbr22sp1kv2x4k7ac5j2bkkiibnydqxlg4j6"))))
+        (base32 "0a37yfkpn15yx99rq5xc458zn5wx4xfw4y1rg4ky8pcp4jf0i5ic"))))
     (properties `((upstream-name . "coursekata")))
     (build-system r-build-system)
     (arguments
@@ -29064,13 +29064,13 @@ available: English, Finnish, Swedish, and Latin.")
 (define-public r-codecarbonr
   (package
     (name "r-codecarbonr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CodeCarbonR" version))
        (sha256
-        (base32 "0f5bavbnm0ihjc21ys0xvkmdk8ps2szi3jjjfgrqlbivd6q3r2sd"))))
+        (base32 "1661b57nrbrlrv4jjpk9cq285rihydgdca32qiv910xykigvj9ah"))))
     (properties `((upstream-name . "CodeCarbonR")))
     (build-system r-build-system)
     (arguments
@@ -35592,13 +35592,13 @@ survival quantiles.")
 (define-public r-clindr
   (package
     (name "r-clindr")
-    (version "2.5.2")
+    (version "2.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clinDR" version))
        (sha256
-        (base32 "1nvns3m7a0waqdjqdr80kcpgdxiwv09ch20481xi55fx48lmv04y"))))
+        (base32 "0r4vzm6bwafyd6x73ra9vzrpw5y12sdq323f58ydg6jq1apkbhdz"))))
     (properties `((upstream-name . "clinDR")))
     (build-system r-build-system)
     (arguments
@@ -35610,6 +35610,7 @@ survival quantiles.")
                              r-shiny
                              r-rstan
                              r-purrr
+                             r-officer
                              r-mvtnorm
                              r-glue
                              r-ggplot2
@@ -35617,6 +35618,7 @@ survival quantiles.")
                              r-dplyr
                              r-dosefinding
                              r-doparallel))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=clinDR")
     (synopsis
      "Simulation and Analysis Tools for Clinical Dose Response Modeling")
@@ -37422,6 +37424,37 @@ including results from stats pairwise tests, @code{DescTools}', PMCMRplus',
 rstatix', symmetric matrices of p-values, and data frames.  Provides a
 consistent interface for visualizing statistical groupings across different
 testing frameworks.")
+    (license license:gpl3+)))
+
+(define-public r-clcm
+  (package
+    (name "r-clcm")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CLCM" version))
+       (sha256
+        (base32 "1p1x44khjhn6vmwg8fkzl1mjx92wnd6s9paqh6zldr6sxk9g3858"))))
+    (properties `((upstream-name . "CLCM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-numderiv r-matrix))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/CJangelo/CLCM")
+    (synopsis "Estimate Confirmatory Latent Class Models")
+    (description
+     "Estimate confirmatory latent class models for a variety of item response types
+that are encountered in the clinical field.  One or two timepoints are
+supported.  Latent regression estimation can be performed, allowing for
+comparisons of longitudinal latent class assignments (e.g., treatment
+success/failure) across observed groups (e.g., treatment arms in clinical
+trials).  Fit statistics C2 (a limited-information goodness-of-fit statistic),
+Akaike Information Criterion (AIC), and Bayesian Information Criterion (BIC) are
+available as well.  Methods are described in Iaconangelo (2026)
+<doi:10.5281/zenodo.22663151>.")
     (license license:gpl3+)))
 
 (define-public r-clc
@@ -44481,13 +44514,13 @@ season Y sales\".")
 (define-public r-charport
   (package
     (name "r-charport")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "charport" version))
        (sha256
-        (base32 "0615a6zvwh1khra9xr64a2531zkff3g1igcdw1cipw844vgi8999"))))
+        (base32 "06181b4hfsk3ccsv698ckrkxwl7m8skxr9fx9gb7r5sczwmdsj4w"))))
     (properties `((upstream-name . "charport")))
     (build-system r-build-system)
     (arguments
@@ -48080,24 +48113,24 @@ fitting a bivariate copula.")
 (define-public r-censobr
   (package
     (name "r-censobr")
-    (version "0.6.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "censobr" version))
        (sha256
-        (base32 "0hzf9df63ax5sq7zrsbsmhyrqa3d6xxja241ivgvkdbgq5yp0nlb"))))
+        (base32 "1lqaq4z1j490y9970wz8vdnpm4cp0a2y4vl4ahnkm9rg8pa4qv5g"))))
     (properties `((upstream-name . "censobr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rlang
+                             r-httr2
                              r-glue
                              r-fs
                              r-duckdb
                              r-dplyr
-                             r-curl
                              r-cli
                              r-checkmate
                              r-arrow))
@@ -52721,6 +52754,36 @@ response through the use of Multivariate Bayesian Structural Time Series models
 (MBSTS) as described in Menchetti & Bojinov (2020) <@code{arXiv:2006.12269>}.
 The package also includes functions for model building and forecasting.")
     (license license:gpl3+)))
+
+(define-public r-causalloopanalytics
+  (package
+    (name "r-causalloopanalytics")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CausalLoopAnalytics" version))
+       (sha256
+        (base32 "1fiyv2afzivxn9zx3csbifxxkz3k8qw4fymyvzz6b4gf0nmbs2v4"))))
+    (properties `((upstream-name . "CausalLoopAnalytics")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/vinodhpmd/CausalLoopAnalytics")
+    (synopsis "Data-Driven Causal Loop and Feedback Network Analysis")
+    (description
+     "This package provides tools for constructing signed causal-loop models,
+discovering directed causal relationships from time-series data using
+Granger-style tests, identifying and classifying reinforcing and balancing
+feedback loops, quantifying loop strength, assessing loop stability by bootstrap
+resampling, calculating network centrality and leverage-point scores, comparing
+causal-loop models, and producing publication-ready base R visualizations and
+summaries.  The package is domain-agnostic and can be used in human medicine,
+veterinary medicine, agriculture, epidemiology, ecology, public health, and One
+Health.  Methods are based on Granger (1969) <doi:10.2307/1912791> and Efron
+(1979) <doi:10.1214/aos/1176344552>.")
+    (license license:expat)))
 
 (define-public r-causalimpact
   (package

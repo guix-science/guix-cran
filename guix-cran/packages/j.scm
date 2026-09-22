@@ -2258,13 +2258,13 @@ vignette further explains the use of the implemented functions.")
 (define-public r-jordan
   (package
     (name "r-jordan")
-    (version "1.0-6")
+    (version "1.0-6-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jordan" version))
        (sha256
-        (base32 "1c5s12s3qbffk5rlmigmy5hhqd6ln43z5scn5vl4cc05ix64zh15"))))
+        (base32 "1h6vakcv26kwmpkv8wh3l9vy568f2c2i6rd3qc906b1z5kmvkrlz"))))
     (properties `((upstream-name . "jordan")))
     (build-system r-build-system)
     (arguments

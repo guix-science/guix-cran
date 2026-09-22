@@ -23963,13 +23963,13 @@ models, see Blei and @code{McAuliffe} (2007)
 (define-public r-mlstats
   (package
     (name "r-mlstats")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlstats" version))
        (sha256
-        (base32 "1zs8gzh3kn48c99lfivplv31pnjvnrf542322jv90rbg7qhv2yld"))))
+        (base32 "1zpdp9b2lzsn2c5lmgc1jjapdvyffr4xz42wp63vaxzwjyfvzfbx"))))
     (properties `((upstream-name . "mlstats")))
     (build-system r-build-system)
     (arguments
@@ -44614,6 +44614,39 @@ information on the nodes in the modelling process.  Isobel Claire Gormley and
 Thomas Brendan Murphy (2010) <doi:10.1016/j.stamet.2010.01.002>.")
     (license license:gpl2)))
 
+(define-public r-mechgraph
+  (package
+    (name "r-mechgraph")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mechgraph" version))
+       (sha256
+        (base32 "0dkbs2sxr274qqq92w43v9m01alnjpfk50n6s274lm36ip6dr9a8"))))
+    (properties `((upstream-name . "mechgraph")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-igraph))
+    (home-page "https://cran.r-project.org/package=mechgraph")
+    (synopsis "Mechanism Evidence Graph Data Model")
+    (description
+     "This package provides a lightweight graph data model for representing,
+combining, querying, and summarizing evidence-backed biological mechanism
+graphs.  A mechgraph is an S3 list holding a node table, an edge table, and
+provenance metadata.  The package implements builders that convert STRING and
+@code{BioGRID} interaction tables into mechgraph objects, combiners
+@code{(mg_bind()}, @code{mg_combine()}) that merge graphs while preserving
+duplicate evidence records, accessors @code{(mg_nodes()}, @code{mg_edges()},
+@code{mg_metadata()}) and mutators @code{(mg_add_*()}, @code{mg_drop_*()}) for
+node and edge tables, filters by type, source, identifier, and score,
+induced-subgraph construction, structural validation @code{(mg_validate()}), and
+quality-control summaries @code{(mg_qc()}).  Szklarczyk et al. (2023)
+<doi:10.1093/nar/gkac1000> Oughtred et al. (2021) <doi:10.1002/pro.3938>.")
+    (license license:expat)))
+
 (define-public r-mecfda
   (package
     (name "r-mecfda")
@@ -50658,6 +50691,42 @@ Optional features include column reweighting, residual variance re-estimation
 across outer iterations, and automatic generation of a lasso penalty sequence
 for tuning.")
     (license license:gpl3+)))
+
+(define-public r-matsketch
+  (package
+    (name "r-matsketch")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "matsketch" version))
+       (sha256
+        (base32 "026cmi0kdhdj63s6nkg59j3gw8fj8r6maqq75jn873shpfy9bwkp"))))
+    (properties `((upstream-name . "matsketch")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mqfarooqi1/matsketch")
+    (synopsis "Randomized Matrix Computations from Few Entries and Products")
+    (description
+     "This package implements recent randomized algorithms that answer questions about
+a large positive-semidefinite matrix while touching only a small part of it.
+Randomly pivoted Cholesky builds a low-rank approximation from a few rows of a
+kernel matrix (Chen, Epperly, Tropp and Webber (2025) <doi:10.1002/cpa.22234>),
+with an accelerated variant based on rejection sampling (Epperly, Tropp and
+Webber (2025) <doi:10.1137/24m1699048>).  The XTrace, X@code{NysTrace} and XDiag
+estimators recover the trace and diagonal of a matrix that is available only
+through matrix-vector products (Epperly, Tropp and Webber (2024)
+<doi:10.1137/23m1548323>), alongside the Hutch++ estimator of Meyer, Musco,
+Musco and Woodruff (2021) <doi:10.1137/1.9781611976496.16>.  Randomized Nystrom
+preconditioning speeds up the conjugate gradient method for regularized linear
+systems (Frangella, Tropp and Udell (2023) <doi:10.1137/21m1466244>).  These
+pieces are combined to fit restricted maximum likelihood variance-component
+models on genomic relationship matrices without forming or factorizing the
+covariance matrix.")
+    (license license:expat)))
 
 (define-public r-matsindf
   (package

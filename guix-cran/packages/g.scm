@@ -1926,6 +1926,45 @@ regression, are automatically identified and the tables are pre-filled with
 appropriate column headers.")
     (license license:expat)))
 
+(define-public r-gtstats
+  (package
+    (name "r-gtstats")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gtstats" version))
+       (sha256
+        (base32 "0qq0ch2pjgp5qwrlh567igy69rybh6a7iz2s3milbgkz9lflvp56"))))
+    (properties `((upstream-name . "gtstats")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tibble
+                             r-officer
+                             r-gt
+                             r-ggplot2
+                             r-flextable
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://gtstats.thinkdenominator.com/")
+    (synopsis "Beginner-Friendly Statistics and Publication-Ready Tables")
+    (description
+     "This package provides beginner-friendly functions for common descriptive and
+inferential statistical analyses, together with tools for creating
+publication-ready tables.  The package includes data description, summary
+statistics, distribution assessment, group comparisons, effect sizes,
+correlations, proportions and rates with confidence intervals, crosstabs for
+epidemiological measures, plots, and modular table-building workflows.
+Statistical methods include unequal-variance comparisons described by Welch
+(1947) <doi:10.1093/biomet/34.1-2.28>, score confidence intervals described by
+Wilson (1927) <doi:10.1080/01621459.1927.10502953>, and robust variance
+assessment described by Brown and Forsythe (1974)
+<doi:10.1080/01621459.1974.10482955>.")
+    (license license:expat)))
+
 (define-public r-gtrt
   (package
     (name "r-gtrt")
@@ -6857,13 +6896,13 @@ greenspace morphology metrics at patch and landscape levels.")
 (define-public r-greenreg
   (package
     (name "r-greenreg")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GREENREG" version))
        (sha256
-        (base32 "19k667dgp6in8a6a9bnjysi0varg4x1977q2dciv5shpm4a7kx14"))))
+        (base32 "05fyzsrml5kbfsrgnkz5j32f70sjla8rg5aqrvvgprjk152rnylf"))))
     (properties `((upstream-name . "GREENREG")))
     (build-system r-build-system)
     (arguments
@@ -6880,7 +6919,12 @@ RegresiÃ³n Lineal MÃºltiple'), Generalized Linear Models (GLM), and time ser
 analysis through Autoregressive Integrated Moving Average (ARIMA) models.
 Designed to support teaching at the Universidad AutÃ³noma Chapingo, it
 facilitates results interpretation and assumption validation through automatic
-graphical diagnostics.  Methods for regression and time series are based on
+graphical diagnostics.  Developed as part of an undergraduate thesis at the
+Universidad AutÃ³noma Chapingo, under the supervision of Dr. Julio CÃ©sar
+BuendÃ­a Espinoza (thesis advisor), with the participation of the thesis
+committee: Diego Ernesto Lira GonzÃ¡lez (secretary), Israel Lerma Serna
+(member), Juan Uriel Avelar Roblero (alternate), and Elisa del Carmen MartÃ­nez
+Ochoa (alternate).  Methods for regression and time series are based on
 Montgomery et al. (2021, ISBN:978-1119570141) and Box & Jenkins (1970,
 ISBN:978-0816211043).")
     (license license:gpl3)))
@@ -24327,13 +24371,13 @@ data.")
 (define-public r-ggmeta
   (package
     (name "r-ggmeta")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggmeta" version))
        (sha256
-        (base32 "0vv5f6h8lmia5fqr0v7dr6d18bhcnd43s6r8s96ibb76d37xch4c"))))
+        (base32 "19rcw9j1hfchq30br4fq80sprhsiqghzipp00dhig9sl7797m36z"))))
     (properties `((upstream-name . "ggmeta")))
     (build-system r-build-system)
     (arguments
@@ -28753,25 +28797,31 @@ statistical statistical theory, documentation and examples.")
 (define-public r-getlattesdata
   (package
     (name "r-getlattesdata")
-    (version "1.5")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GetLattesData" version))
        (sha256
-        (base32 "0gfjqvzn03qxlyf4hj5kzfy8pqbphrw421bqbkb2pksa6gyvnfnq"))))
+        (base32 "0g9m598l2nm3qxhvkw16fbf6nd3ihznv3al6fgymbszqcdr729ds"))))
     (properties `((upstream-name . "GetLattesData")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xml
+    (propagated-inputs (list r-xml2
+                             r-xml
+                             r-tibble
                              r-stringr
                              r-stringdist
+                             r-readxl
                              r-readr
+                             r-purrr
                              r-lubridate
+                             r-lifecycle
+                             r-janitor
                              r-dplyr
-                             r-curl))
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/msperlin/GetLattesData/")
     (synopsis "Reading Bibliometric Data from Lattes Platform")
@@ -39746,6 +39796,43 @@ volatilities using the Unified GARCH-Ito [Kim and Wang (2016)
 (2020) <doi:10.1016/j.jeconom.2020.07.007>] models.  Optimization is done using
 augmented Lagrange multiplier method.")
     (license license:gpl3)))
+
+(define-public r-garchinfolstm
+  (package
+    (name "r-garchinfolstm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GARCHInfoLSTM" version))
+       (sha256
+        (base32 "08xx4r6z9zhqbznwmx1sqw1255npaqbbmqldpv9xk7bhnpp09fnw"))))
+    (properties `((upstream-name . "GARCHInfoLSTM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-torch r-rugarch r-ggplot2 r-coro r-cli))
+    (home-page "https://cran.r-project.org/package=GARCHInfoLSTM")
+    (synopsis "GARCH-Informed LSTM Model for Volatility Forecasting")
+    (description
+     "The proposed Generalized Autoregressive Conditional Heteroskedasticity
+(GARCH)-informed Long Short-Term Memory (LSTM) model follows the concept of
+physics-informed machine learning (PIML) by integrating established econometric
+knowledge of price volatility into a data-driven forecasting framework.  In the
+model, conditional volatility estimated from the GARCH process is incorporated
+as an additional explanatory signal or volatility-based weighting component
+within the LSTM architecture.  This enables the LSTM to learn nonlinear temporal
+dependencies while remaining informed by the underlying characteristics of
+agricultural price series, including volatility clustering, heteroscedasticity
+and market uncertainty.  The optimized weighting parameter, lambda, controls the
+contribution of the GARCH-derived volatility information to the final
+prediction.  Thus, the model combines the statistical interpretability of GARCH
+with the nonlinear learning capability of LSTM, producing a hybrid PIML
+framework that is more responsive to both normal price movements and periods of
+extreme market volatility.  The methodology is motivated by hybrid forecasting
+framework proposed by Yeasin and Paul (2024) <doi:10.1007/s11227-023-05542-3>.")
+    (license license:expat)))
 
 (define-public r-garch-x
   (package

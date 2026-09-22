@@ -12463,13 +12463,13 @@ prettier versions of the originals.")
 (define-public r-pretestcad
   (package
     (name "r-pretestcad")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pretestcad" version))
        (sha256
-        (base32 "0kj4zb0rg5yf0ybxwjgpjxjdc899nqpy2d3wrrkk8lsxrgz4kfrf"))))
+        (base32 "06i1112j8k6d3qhxg1sfrg63ifpn35yc9g4zmw4s8f9m4fzacrl1"))))
     (properties `((upstream-name . "pretestcad")))
     (build-system r-build-system)
     (arguments
@@ -14296,13 +14296,13 @@ command in R: system.file(\"manual\", package = \"predhy.GUI\").")
 (define-public r-predhy
   (package
     (name "r-predhy")
-    (version "2.1.2")
+    (version "2.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "predhy" version))
        (sha256
-        (base32 "1hxssaa6fr2ag82lw1l4gy40gc2n6viill76yiilxzi7wrr2dq7s"))))
+        (base32 "02ff3vjn1ybdz61cg33f2lkai5zcfqmq4sv62qc1dl4wknwwbbj1"))))
     (properties `((upstream-name . "predhy")))
     (build-system r-build-system)
     (arguments
@@ -36518,6 +36518,44 @@ R.D.P.(2022)<doi:10.21704/rfp.v37i3.1956>.")
 comprehension.")
     (license license:gpl2)))
 
+(define-public r-peruocc
+  (package
+    (name "r-peruocc")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "peruocc" version))
+       (sha256
+        (base32 "0ddy469c0a7i2f02kkzkbqr09713h12c6jj6mzv8m0lamjdmvka1"))))
+    (properties `((upstream-name . "peruocc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sf
+                             r-rinat
+                             r-rgbif
+                             r-readr
+                             r-jsonlite
+                             r-ggplot2
+                             r-geoperu
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://paulesantos.github.io/peruocc/")
+    (synopsis "Query and Standardize Biodiversity Occurrences in Peru")
+    (description
+     "Facilitates the retrieval, spatial validation, and integration of flora and
+fauna occurrence records across administrative units (districts and provinces)
+in Peru.  Retrieves official boundary geometries via geoperu', queries and
+consolidates observations from the Global Biodiversity Information Facility
+(GBIF, <https://www.gbif.org/>) and @code{iNaturalist}
+(<https://www.inaturalist.org/>), and standardizes attributes into a unified
+Darwin Core aligned structure.  Designed for biodiversity assessments and
+spatial workflows within user-defined areas of interest.")
+    (license license:expat)))
+
 (define-public r-perumammals
   (package
     (name "r-perumammals")
@@ -44285,13 +44323,13 @@ Medical Outcomes Partnership (OMOP) common data model.")
 (define-public r-patientlevelprediction
   (package
     (name "r-patientlevelprediction")
-    (version "6.6.0")
+    (version "6.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PatientLevelPrediction" version))
        (sha256
-        (base32 "01gb3nnwgdi7bf13cgc5mv9jldcdhhzgf4b4xim6p6xhib45v5pc"))))
+        (base32 "1vl3a4v6lpg0nx8pg1zgx4ls5n42r8hqdmy1dgs0m8fk53nqqiis"))))
     (properties `((upstream-name . "PatientLevelPrediction")))
     (build-system r-build-system)
     (arguments
@@ -44308,6 +44346,7 @@ Medical Outcomes Partnership (OMOP) common data model.")
                              r-featureextraction
                              r-dplyr
                              r-digest
+                             r-dbplyr
                              r-databaseconnector
                              r-cyclops
                              r-andromeda))
@@ -48296,13 +48335,13 @@ time.  Methods are described in Kim and Kim (2024)
 (define-public r-pampal
   (package
     (name "r-pampal")
-    (version "1.5.2")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PAMpal" version))
        (sha256
-        (base32 "1kcni21mlpbmzfw997fjgrm5g4x8vllj2c8r1zi3vwvjkp5ir3hr"))))
+        (base32 "1iqbhkg0i0sq6n6cmy68zmj191vlr8qvi62baf218kp6x180jzim"))))
     (properties `((upstream-name . "PAMpal")))
     (build-system r-build-system)
     (arguments
@@ -48327,7 +48366,8 @@ time.  Methods are described in Kim and Kim (2024)
                              r-gam
                              r-future-apply
                              r-dplyr
-                             r-data-table))
+                             r-data-table
+                             r-audio))
     (home-page "https://cran.r-project.org/package=PAMpal")
     (synopsis "Load and Process Passive Acoustic Data")
     (description
@@ -48390,13 +48430,13 @@ post-processing as well as visualization.")
 (define-public r-pammisc
   (package
     (name "r-pammisc")
-    (version "1.13.0")
+    (version "1.14.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PAMmisc" version))
        (sha256
-        (base32 "0cfjr941mk1l4g04img4p8x6wj70fg4113g84kzibialcpa7hppk"))))
+        (base32 "0nrhkpspcai989m6zw88izxw9k71lipv08wnwpklf9grn71shhjr"))))
     (properties `((upstream-name . "PAMmisc")))
     (build-system r-build-system)
     (arguments
@@ -48411,7 +48451,6 @@ post-processing as well as visualization.")
                              r-rsqlite
                              r-rjson
                              r-rerddap
-                             r-rcpproll
                              r-purrr
                              r-pambinaries
                              r-ncdf4
@@ -48420,7 +48459,8 @@ post-processing as well as visualization.")
                              r-ggplot2
                              r-geosphere
                              r-fftw
-                             r-dplyr))
+                             r-dplyr
+                             r-data-table))
     (home-page "https://cran.r-project.org/package=PAMmisc")
     (synopsis "Miscellaneous Functions for Passive Acoustic Analysis")
     (description

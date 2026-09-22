@@ -10751,13 +10751,13 @@ of ancestor and descendent functions.")
 (define-public r-foodwebr
   (package
     (name "r-foodwebr")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "foodwebr" version))
        (sha256
-        (base32 "1xsmqr06jnywd8838i61wsmhangiswl68iahh7a2nspi4l26xdld"))))
+        (base32 "00xy6ljvgqwb4mpnizanknbddzzqabygbqpa5i2sp36lddzcjh4m"))))
     (properties `((upstream-name . "foodwebr")))
     (build-system r-build-system)
     (arguments
@@ -16367,13 +16367,13 @@ Approximate Maximum Likelihood and the Cross-Entropy methods.  See Bee, M.
 (define-public r-fitdistrbayes
   (package
     (name "r-fitdistrbayes")
-    (version "0.2.3")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fitdistrBayes" version))
        (sha256
-        (base32 "1n4xnrdskbp3bwsrx7si6f1840ddjv2d1jv2hjd8cvkvk0np7sf2"))))
+        (base32 "0304xgh7r5f22911hncq6vjld7s919s6j9py0b6nd9iyfrdg167s"))))
     (properties `((upstream-name . "fitdistrBayes")))
     (build-system r-build-system)
     (arguments
@@ -16389,8 +16389,12 @@ user-defined distributions and priors through an extensible model specification.
 computation when registered or supplied.  Exact simulation, marginalization,
 slice sampling, adaptive Metropolis, and user-supplied posterior samplers share
 a common interface for summaries, diagnostics, prediction, and pointwise
-log-likelihood evaluation.  The reference-prior framework follows Bernardo
-(1979) <doi:10.1111/j.2517-6161.1979.tb01066.x>.")
+log-likelihood evaluation.  A separate interface fits independently
+right-censored observations using the registered complete-data priors,
+observed-data likelihood sampling or data augmentation, with sufficient
+posterior-propriety checks.  Optional post-processing provides WAIC, PSIS-LOO,
+and DIC for observed-data likelihoods.  The reference-prior framework follows
+Bernardo (1979) <doi:10.1111/j.2517-6161.1979.tb01066.x>.")
     (license license:gpl3)))
 
 (define-public r-fitdistcp
@@ -27075,13 +27079,13 @@ guides and Python package information can be found at
 (define-public r-fastfgee
   (package
     (name "r-fastfgee")
-    (version "0.2.0")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastFGEE" version))
        (sha256
-        (base32 "0x45c54rlk7qv1vn85apd9s41kdljabprg4njk3i25av6q72jqns"))))
+        (base32 "1yw80irjd5wvhic17slvgms6dyw3l2gvc8gvxfsf1gdm4w1yzzjw"))))
     (properties `((upstream-name . "fastFGEE")))
     (build-system r-build-system)
     (arguments

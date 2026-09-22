@@ -9449,6 +9449,43 @@ datasets using dplyr'.  Functions are provided to do the common tasks of
 calculating confidence intervals.")
     (license license:gpl3)))
 
+(define-public r-summarisebig
+  (package
+    (name "r-summarisebig")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "summarisebig" version))
+       (sha256
+        (base32 "1laa26r9kmj2cxcl92hwplqx44vqbnzprvlaamg4izx93ir5hs5q"))))
+    (properties `((upstream-name . "summarisebig")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang
+                             r-purrr
+                             r-futurize
+                             r-future-mirai
+                             r-future
+                             r-furrr
+                             r-dplyr
+                             r-arrow))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/larry77/summarisebig")
+    (synopsis "Grouped Summaries for Large 'arrow' Datasets")
+    (description
+     "This package provides a dplyr'-like interface for grouped summaries on large
+arrow datasets.  Complete summaries are attempted in arrow first.  When a result
+can be reconstructed from arrow'-computable sufficient statistics, an explicit
+@code{MapReduce-style} reduction and R finalization strategy is available.  For
+arbitrary R functions that require raw group observations, complete groups are
+materialized in bounded chunks, with optional parallel execution and
+shared-memory processing.  The @code{MapReduce} strategy follows the programming
+model described by Dean and Ghemawat (2008) <doi:10.1145/1327452.1327492>.")
+    (license license:expat)))
+
 (define-public r-sumextras
   (package
     (name "r-sumextras")
@@ -15495,13 +15532,13 @@ cluster randomized trials in the presence of a time-varying treatment effect\",
 (define-public r-steppedpower
   (package
     (name "r-steppedpower")
-    (version "0.3.5")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SteppedPower" version))
        (sha256
-        (base32 "0dxl88gfwi6wb9k4qmqhb9hqgvjpzbvwfpiqadzjwg1h6yg487y5"))))
+        (base32 "0b3bpi476nhyrrdq5971k87qagdx88w9vvn65rnr73sszbzx97v7"))))
     (properties `((upstream-name . "SteppedPower")))
     (build-system r-build-system)
     (arguments
@@ -35540,6 +35577,39 @@ of a projection onto low-dimensional feature space of spatially dependent
 metagenes offers pre-processing to clustering, testing for spatial variability
 and denoising of spatial expression patterns.  For more details, see Koehler et
 al. (2026) <doi:10.1093/bioinformatics/btag052>.")
+    (license license:expat)))
+
+(define-public r-spaci
+  (package
+    (name "r-spaci")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spaci" version))
+       (sha256
+        (base32 "120ayrxx1pc9kf5hvpg86gf7423zgyz8hr1jzpcabzj1yxnw09fx"))))
+    (properties `((upstream-name . "spaci")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Ogunsolaia/spaci")
+    (synopsis
+     "Causal Effect Estimation Under Spatial Confounding and Interference")
+    (description
+     "This package implements the distance-adjusted propensity score with interference
+(@code{iDAPS}) and @code{recoverU+} methods for estimating the average treatment
+effect on the treated (ATT) from spatial observational data in the presence of
+both spatial confounding and spatial interference. @code{iDAPS} matches units on
+a data-driven composite of propensity-score distance, spatial proximity and
+neighbourhood-exposure distance. @code{recoverU+} is a doubly robust estimator
+that augments the propensity-score and control-outcome models with a partially
+recovered spatial confounder and a neighbourhood-exposure term.  The package
+also provides the naive propensity score, DAPS and @code{recoverU} comparators,
+and a simulator for the spatial confounding/interference data-generating
+process.")
     (license license:expat)))
 
 (define-public r-spacetimebss
@@ -57198,13 +57268,13 @@ issues.")
 (define-public r-shinygenui
   (package
     (name "r-shinygenui")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinygenui" version))
        (sha256
-        (base32 "15chpsyli798x6wdm9w60ynqsbh12hkz9x1f799618jwkjfrmpr7"))))
+        (base32 "0gd5r59vvsr9wii10zzkr5a9qvvx0alq72jrl6nbbsnmfsx3s16h"))))
     (properties `((upstream-name . "shinygenui")))
     (build-system r-build-system)
     (arguments
@@ -57215,7 +57285,6 @@ issues.")
                              r-shiny
                              r-rlang
                              r-r6
-                             r-promises
                              r-jsonlite
                              r-htmltools
                              r-ellmer
@@ -64727,43 +64796,36 @@ clustering and imputation simultaneously.")
 (define-public r-sensortowerr
   (package
     (name "r-sensortowerr")
-    (version "1.0.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sensortowerR" version))
        (sha256
-        (base32 "109jpnialj99msndmyxsbn8ch8chdl8cw4yzn9avaifsbpwicrzb"))))
+        (base32 "160vr43slk1s1fnw9c6vp8a2cczaql3ix972k0adjilk32wycwpv"))))
     (properties `((upstream-name . "sensortowerR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-vctrs
+                             r-tidyr
                              r-tibble
-                             r-stringr
                              r-rlang
                              r-purrr
                              r-openssl
                              r-lubridate
                              r-jsonlite
                              r-httr2
-                             r-httr
-                             r-glue
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/econosopher/sensortowerR")
-    (synopsis "Interface to 'Sensor Tower' Mobile App Intelligence API")
+    (synopsis "Tidy Pipelines for the 'Sensor Tower' API")
     (description
-     "Interface to the Sensor Tower API
-<https://app.sensortower.com/api/docs/app_analysis> for mobile app analytics and
-market intelligence.  Provides a small, consistent set of functions to retrieve
-app metadata, publisher information, download and revenue estimates, active user
-metrics, category rankings, aggregate game market denominators, and market
-trends.  Four core verbs ('st_metrics', st_rankings', st_app'/'st_apps',
-st_filter') cover the common workflows with standardized parameters and
-tidyverse-friendly output.  Supports both @code{iOS} and Android app ecosystems
-with unified data structures for cross-platform analysis.")
+     "Retrieves mobile app intelligence from the Sensor Tower API
+<https://app.sensortower.com/api/docs/app_analysis>.  Composes discovery,
+metadata, rankings, sales, audience and specialist estimates through ordinary
+data frames with explicit identifiers, units and error handling.")
     (license license:expat)))
 
 (define-public r-sensominer
@@ -67230,13 +67292,13 @@ lasso function implements Gaussian, logistic and Cox survival models.")
 (define-public r-selectiontools
   (package
     (name "r-selectiontools")
-    (version "26.3")
+    (version "26.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SelectionTools" version))
        (sha256
-        (base32 "0mg4w3qrhlfvc3gh646kd63mjf735yqf3qn5vzs6g6157gwd20g1"))))
+        (base32 "0jqqlhw58xp6r7csy28b5l5j95x8z159q9zff9aziy5avsfjyh9b"))))
     (properties `((upstream-name . "SelectionTools")))
     (build-system r-build-system)
     (arguments
@@ -67252,7 +67314,8 @@ described, for example, by Melchinger and Frisch (2023)
 (Osthushenrich, Frisch and Herzog (2017) <doi:10.1371/journal.pone.0188839>),
 genomic prediction (Hofheinz and Frisch (2014) <doi:10.1534/g3.113.010025>),
 linkage disequilibrium based haplotype construction, and planning of marker
-assisted back crossing programs.")
+assisted back crossing programs.  It provides an integrated framework for
+simulation and analysis of plant breeding programs.")
     (license license:cc0)))
 
 (define-public r-selectiongain
@@ -73042,13 +73105,13 @@ input from formula', aov', lm', aovlist', and @code{lmerMod} objects.")
 (define-public r-scorpion
   (package
     (name "r-scorpion")
-    (version "1.3.3")
+    (version "1.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SCORPION" version))
        (sha256
-        (base32 "0772jp6piwwwp2z5snsnn5yqw06hc5fmw9yiniid9lyj194idar8"))))
+        (base32 "01vsqz1c7k3ig0basrp2pc780imwaqxf21jjnjig3fca58fwfg1x"))))
     (properties `((upstream-name . "SCORPION")))
     (build-system r-build-system)
     (arguments
@@ -75946,33 +76009,36 @@ handle settings with many potential control units.")
 (define-public r-sccddesign
   (package
     (name "r-sccddesign")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SCCDdesign" version))
        (sha256
-        (base32 "0425s73wdlm6zqf6kwiv5g18p4hixdbwc9zja4khsfxfjg5vy4qv"))))
+        (base32 "1mph258r8ar4jmli1p2hq700zf4sr2in16li1bgz8k6iqqxhr45x"))))
     (properties `((upstream-name . "SCCDdesign")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-pracma r-algdesign))
+    (propagated-inputs (list r-pracma r-leaps r-algdesign))
     (home-page "https://cran.r-project.org/package=SCCDdesign")
     (synopsis
      "Construction of Screening Designs for Mixed Level Continuous and Categorical Factors")
     (description
-     "This package provides functions for constructing screening designs for
-experiments involving three-level continuous and two-level categorical factors.
-The package implements three methods proposed by Jones, B., Lekivetz, R.,
-Majumdar, D. and Nachtsheim, C. (2025) <doi:10.1080/00401706.2024.2362149> for
-generating efficient screening designs for even run sizes.  It also includes
-functions for constructing conference matrices using Paley Type I and Type II
-constructions, as well as construction of pseudo conference matrices by
-coordinate exchange algorithm given by Jones, B. and Nachtsheim, C. J. (2011)
-<doi:10.1080/00224065.2011.11917841> which are used in the development of these
-screening designs.")
+     "Constructs screening designs for experiments involving continuous and
+categorical factors with multiple levels.  The package implements methods for
+constructing mixed-level screening designs, involving factors with more than two
+levels.  It also evaluates the statistical performance of screening designs
+throughdev power to identify active effects and Type I error rates.  The package
+implements three methods proposed by Jones, B., Lekivetz, R., Majumdar, D. and
+Nachtsheim, C. (2025) <doi:10.1080/00401706.2024.2362149> for generating
+efficient screening designs involving three-level continuous and two-level
+categorical factors for even run sizes.  It also includes Paley Type I and Type
+II constructions for conference matrices and pseudo conference matrices obtained
+using the coordinate exchange algorithm by Jones, B. and Nachtsheim, C. J.
+(2011) <doi:10.1080/00224065.2011.11917841> which are used in the development of
+these screening designs.")
     (license license:gpl3)))
 
 (define-public r-sccca
