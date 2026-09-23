@@ -4926,6 +4926,34 @@ samples for several distributional assumptions.  Hubeaux, S. and Rufibach, K.
 (2014) <doi:10.48550/@code{arXiv.1402.0432>}.")
     (license license:gpl2+)))
 
+(define-public r-survrec
+  (package
+    (name "r-survrec")
+    (version "2.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "survrec" version))
+       (sha256
+        (base32 "02pdn79kb9yhq3v8n6gh8553k0cxjg8psq7cl5fc6kaf4992nf6d"))))
+    (properties `((upstream-name . "survrec")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-rcpp r-ggplot2 r-boot))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/isglobal-brge/survrec")
+    (synopsis "Survival Analysis for Recurrent Event Data")
+    (description
+     "Estimation of the survival function of inter-occurrence times for recurrent
+event data, using the estimators of PeÃ±a, Strawderman and Hollander (2001)
+<doi:10.1198/016214501753381922> and Wang and Chang (1999)
+<doi:10.1080/01621459.1999.10473831>, and maximum likelihood estimation under a
+gamma frailty model.  Includes bootstrap comparison of survival quantiles
+between groups.")
+    (license license:gpl2+)))
+
 (define-public r-survpresmooth
   (package
     (name "r-survpresmooth")
@@ -17953,13 +17981,13 @@ from VSN international (<https://vsni.co.uk/software/asreml-r/>).")
 (define-public r-statgengwas
   (package
     (name "r-statgengwas")
-    (version "1.0.13")
+    (version "1.0.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statgenGWAS" version))
        (sha256
-        (base32 "1dpcf54k0i5amiizwmdrp9fs8rwdhkny3mzlwz0vg1c5vdjz1yhy"))))
+        (base32 "1zxj3yhjapqmznpjv810vdz3z6jxygznwqdscg4r999p8jcmvfqb"))))
     (properties `((upstream-name . "statgenGWAS")))
     (build-system r-build-system)
     (arguments
@@ -19980,13 +20008,13 @@ treated (ATT), and provides placebo-in-time confidence intervals and p-values.")
 (define-public r-staggr
   (package
     (name "r-staggr")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "staggR" version))
        (sha256
-        (base32 "1gzyazg4f12x7ib7lbbig8wbhqimwxnsh6213zm1kilw3x013w50"))))
+        (base32 "0i8xlyzbssm5s59wy1zdz4swv8xwfhafdkbdr01ba15bq0kxxzsz"))))
     (properties `((upstream-name . "staggR")))
     (build-system r-build-system)
     (arguments
@@ -24524,6 +24552,46 @@ categorical data types are handled.  Spatial auto-correlation within an
 attribute and cross-correlation between attributes is accommodated for.  The MC
 realizations may be used as input to the environmental models called from R, or
 externally.")
+    (license license:gpl3+)))
+
+(define-public r-sptrends
+  (package
+    (name "r-sptrends")
+    (version "1.6.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sptrends" version))
+       (sha256
+        (base32 "1mpg4x8v9gchf9ywcrzz5a0m7zb8z8pk30q0g8rj3y1k1s23mkpy"))))
+    (properties `((upstream-name . "sptrends")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr r-terra r-matrix))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Olive-r/sptrends")
+    (synopsis
+     "Statistical Inference for Spatiotemporal Trends in Gridded Data")
+    (description
+     "This package provides a unified and reproducible framework for statistical
+inference of spatiotemporal trends in gridded environmental data.  The framework
+addresses the interconnected challenges of serial correlation, spatial
+dependence and multiple testing that commonly arise when analysing gridded
+environmental time series.  Its core methods support serial-correlation
+treatment through trend-preserving prewhitening, pixel-wise and spatially
+explicit trend inference, slope estimation and multiple-testing correction.
+These methods may be applied independently or integrated within configurable
+analytical workflows.  Dedicated workflows are also provided to reproduce
+methodologies published in the scientific literature: GutiÃ©rrez-HernÃ¡ndez and
+GarcÃ­a (2025) <doi:10.1016/j.rsase.2024.101377> for the True Significant Trends
+workflow, GutiÃ©rrez-HernÃ¡ndez and GarcÃ­a (2024) <doi:10.3390/rs16203886> for
+the Robust Trend Analysis workflow, and GutiÃ©rrez-HernÃ¡ndez and GarcÃ­a (2025)
+<doi:10.3390/math13223630> for the adaptive false discovery rate procedure.
+Supporting utilities facilitate raster data import and inspection, anomaly
+calculation, spatial autocorrelation diagnostics, simulation studies,
+benchmarking, visualisation, mapping, and reporting.")
     (license license:gpl3+)))
 
 (define-public r-sptotal
@@ -74437,13 +74505,13 @@ performing bibliometric analysis.")
 (define-public r-scimesh
   (package
     (name "r-scimesh")
-    (version "0.3.4")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scimesh" version))
        (sha256
-        (base32 "1k9w328k2hn520s659pc6wfyi480q0zzmz58ynk71rabvpy49izn"))))
+        (base32 "0rvi9a6spl3pz21i3jg0n7f35z20nmsjg8d8smlvf8yb6mzp4fzd"))))
     (properties `((upstream-name . "scimesh")))
     (build-system r-build-system)
     (arguments
@@ -74459,11 +74527,12 @@ C++17 with native R bindings.  Renders triangle meshes to publication-quality
 images entirely on the CPU, requiring no display server or graphics hardware.
 Features multi-light Blinn-Phong shading, screen-space ambient occlusion,
 anti-aliasing, depth fog, transparency, wireframe rendering, texture mapping,
-and procedural geometry generation.  Supports standard mesh file formats with
-PNG and PPM output.  Works on high-performance computing clusters, headless
-servers, containers, and continuous integration pipelines, making it suitable
-for scientific visualization across neuro-imaging, molecular structures, and
-general 3D graphics.")
+screen-space lines and text labels, and procedural geometry generation.
+Supports standard mesh file formats with PNG and PPM output.  Works on
+high-performance computing clusters, headless servers, containers, and
+continuous integration pipelines, making it suitable for scientific
+visualization across neuro-imaging, molecular structures, and general 3D
+graphics.")
     (license license:expat)))
 
 (define-public r-scilintr

@@ -1745,33 +1745,6 @@ are available to assess the accuracy of oneâs method.  Please see Steorts
 `Introductory Statistics with R', 2nd ed., Springer Verlag, ISBN 978-0387790534.")
     (license license:gpl2+)))
 
-(define-public r-isubgen
-  (package
-    (name "r-isubgen")
-    (version "1.0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "iSubGen" version))
-       (sha256
-        (base32 "16ffwcsvmazhz6qqrc79i7y6imshh5psyycaw6sdpxgsy0wbp7zb"))))
-    (properties `((upstream-name . "iSubGen")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tensorflow r-philentropy r-keras
-                             r-consensusclusterplus r-cluster))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/uclahs-cds/package-iSubGen")
-    (synopsis "Integrative Subtype Generation")
-    (description
-     "Multi-data type subtyping, which is data type agnostic and accepts missing data.
- Subtyping is performed using intermediary assessments created with autoencoders
-and similarity calculations.  See Fox et al. (2024)
-<doi:10.1016/j.crmeth.2024.100884> for details.")
-    (license license:gpl2)))
-
 (define-public r-istay
   (package
     (name "r-istay")
@@ -6965,6 +6938,29 @@ corresponds to the correct way to perform the popular log(Y + 1) transformation.
  For more details about how to use it, see the notebook at:
 <https://www.davidbenatia.com/>.")
     (license license:gpl3)))
+
+(define-public r-iod25
+  (package
+    (name "r-iod25")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iod25" version))
+       (sha256
+        (base32 "0ibcbw8k2isrq3b6dapfq48lm467nak8cxc594pd797lyh1win6m"))))
+    (properties `((upstream-name . "iod25")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://douglasmunro.github.io/iod25/")
+    (synopsis "English Indices of Deprivation (IoD25)")
+    (description
+     "Set of relative measures of deprivation for small areas (Lower-layer Super
+Output Areas) across England.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-iobr
   (package

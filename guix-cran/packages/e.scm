@@ -14767,18 +14767,28 @@ to extract colors from all types of figures and pdf files.")
 (define-public r-eodhdr2
   (package
     (name "r-eodhdr2")
-    (version "0.5.2")
+    (version "0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eodhdR2" version))
        (sha256
-        (base32 "0q1zlc0q5hhhg1kb7vakcvxzhpxlkbzc94azpp8x7p8awcmy1z56"))))
+        (base32 "1zylskfyr9111gnvh7vjxy6syy0vahc2p4943iqnr3f8g2n33hhh"))))
     (properties `((upstream-name . "eodhdR2")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-readr
+                             r-purrr
+                             r-lubridate
+                             r-jsonlite
+                             r-httr
+                             r-glue
+                             r-fs
+                             r-dplyr
+                             r-cli))
     (home-page
      "https://github.com/EodHistoricalData/R-Library-for-financial-data-2024")
     (synopsis "Official R API for Fetching Data from 'EODHD'")
@@ -21029,19 +21039,20 @@ the prototyping of packages.")
 (define-public r-ehdprep
   (package
     (name "r-ehdprep")
-    (version "1.4.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eHDPrep" version))
        (sha256
-        (base32 "1jq7ag7168gvz2sgbxfc41wm1hq1nvnva209bxqllazy69flgvcm"))))
+        (base32 "1yk1ci5739a0g7l8fjzrfqid3dd5zpc4g5600phfxznand5hapj5"))))
     (properties `((upstream-name . "eHDPrep")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tm
+                             r-tidyselect
                              r-tidyr
                              r-tidygraph
                              r-tibble
@@ -25429,6 +25440,40 @@ economic complexity.  Most of the functions use matrix calculus and are based on
 bipartite (incidence) matrices consisting of region - industry pairs.  These are
 described in Balland (2017) <http://econ.geo.uu.nl/peeg/peeg1709.pdf>.")
     (license (list license:gpl2 license:gpl3))))
+
+(define-public r-econevalr
+  (package
+    (name "r-econevalr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EconEvalR" version))
+       (sha256
+        (base32 "00bad861dqzlzws3cjmcwjyfsqbzmpb07w04pyv8gvn4pbpv2rkf"))))
+    (properties `((upstream-name . "EconEvalR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mgcv r-cli))
+    (home-page "https://github.com/vinodhpmd/EconEvalR")
+    (synopsis
+     "Economic Evaluation Methods for Cost-Benefit, Partial Budgeting, and Cost-Effectiveness Analyses")
+    (description
+     "This package provides functions for economic evaluation, including Cost-Benefit
+Analysis, Benefit-Cost Ratio, Net Present Value, Internal Rate of Return,
+Partial Budgeting, Budget Impact Analysis, Cost-Effectiveness Analysis, Decision
+Tree Analysis, One-Way, Two-Way, Multi-Way, and Probabilistic Sensitivity
+Analyses, Expected Value of Perfect Information, and Expected Value of Partial
+Perfect Information.  The implemented methods are based on established
+approaches in economic evaluation and decision analysis; see Drummond et al.
+(2015, ISBN:9780199665884), Briggs et al. (2006, ISBN:9780198526629), Boardman
+et al. (2018, ISBN:9781108415996), and van Hout et al. (1994)
+<doi:10.1002/hec.4730030505>.  The package produces summaries, graphical
+displays, and reproducible workflows for applications in veterinary science,
+agriculture, public health, epidemiology, health economics, and related fields.")
+    (license license:expat)))
 
 (define-public r-econetgen
   (package

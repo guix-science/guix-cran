@@ -781,19 +781,19 @@ other packages is unnecessary, since the command runs in the basic R language.")
 (define-public r-ovbsa
   (package
     (name "r-ovbsa")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ovbsa" version))
        (sha256
-        (base32 "013w5y4p6dkp2zi6mpzn0jz74g9q1lbhp7w5nlqzchd8l68mfdsb"))))
+        (base32 "1lwppxw44hk1r07yb2xhrmvccs76s5n780785sifwgks5iqi27f4"))))
     (properties `((upstream-name . "ovbsa")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr r-lmtest r-dplyr))
+    (propagated-inputs (list r-tidyr r-tictoc r-lmtest r-ggplot2 r-dplyr))
     (home-page "https://github.com/dbasu-umass/ovbsa/")
     (synopsis "Sensitivity Analysis of Omitted Variable Bias")
     (description
@@ -2873,18 +2873,19 @@ code was developed in the Biological Information Processing Group at the
 (define-public r-oscars
   (package
     (name "r-oscars")
-    (version "0.1.2")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OSCARS" version))
        (sha256
-        (base32 "13m0l82h1xwfpcz2jv00rb5rm15jk76jgb0fsc3yvn6gs39rbx2z"))))
+        (base32 "11y3hw9d2sw9jv7xpy9cnxlxy715yrirs3i58w9lg3zmw416fmav"))))
     (properties `((upstream-name . "OSCARS")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-cli))
     (home-page "https://cran.r-project.org/package=OSCARS")
     (synopsis "Global Bounded Optimization by the OSCARS-II Algorithm")
     (description
@@ -5939,13 +5940,13 @@ Gauss-Seidel, Conjugate Gradient Method (CGM) and Cholesky methods.")
 (define-public r-optotrials
   (package
     (name "r-optotrials")
-    (version "1.0.3")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OptOTrials" version))
        (sha256
-        (base32 "177lc5yni0rq25sf88gi3fqbxdr19qlmvw6dv4mfvs2bgb9f4w6s"))))
+        (base32 "078pga33h4z7b47lx068zvqiahy8crhzkhjfglr0zx4vb3gdal02"))))
     (properties `((upstream-name . "OptOTrials")))
     (build-system r-build-system)
     (arguments
@@ -5956,17 +5957,15 @@ Gauss-Seidel, Conjugate Gradient Method (CGM) and Cholesky methods.")
     (synopsis "Optimal Two-Stage Designs for Ordered Categorical Outcomes")
     (description
      "This package provides functions to design and simulate optimal two-stage
-randomized controlled trials (RCTs) with ordered categorical outcomes,
-supporting rank-based tests and group-sequential decision rules.  Methods build
-on classical and modern rank tests and two-stage/Group-Sequential designs, e.g.,
-Park (2025) <doi: 10.1371/journal.pone.0318211>.  The functions @code{rule()}',
-@code{op()} and @code{design_table()} provide a single entry point for
-constructing designs, evaluating their operating characteristics, and tabulating
-several designs at once.  The earlier functions, one for each combination of
-test statistic and stopping rule, are retained and still return the same values,
-but they are deprecated: each warns and names its replacement, and they will be
-removed in the next version.  Please see the package reference manual and the
-vignette for details.")
+randomized controlled trials (RCTs) with ordered categorical outcomes, using
+rank-based tests and interim decision rules for futility and superiority,
+following Park (2025) <doi:10.1371/journal.pone.0318211>.  The functions
+@code{rule()}', @code{op()} and @code{design_table()} provide a single entry
+point for constructing designs, evaluating their operating characteristics, and
+tabulating several designs at once.  The separate functions provided for each
+combination of test statistic and stopping rule up to version 1.0.2 were
+deprecated in 1.0.3 and are removed here.  Please see the package reference
+manual and the vignette for details.")
     (license license:gpl3)))
 
 (define-public r-optor
@@ -9708,6 +9707,45 @@ particularly useful for handling large-scale, streaming data where traditional
 batch processing methods may be computationally infeasible.The philosophy of the
 package is described in Guo (2025) <doi:10.1016/j.physa.2024.130308>.")
     (license license:gpl3)))
+
+(define-public r-opcc
+  (package
+    (name "r-opcc")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OPCC" version))
+       (sha256
+        (base32 "15dzn0cz42yzrq39lyx2glx3n5dv29zz2bas9fcigyxmabkkpbrm"))))
+    (properties `((upstream-name . "OPCC")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite r-digest))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lennon-li/OPCC")
+    (synopsis "Open Postal Code Correspondence")
+    (description
+     "An open, fully reproducible alternative to closed postal code conversion files,
+giving source-qualified many-to-many correspondence between Ontario postal codes
+and Statistics Canada 2021 census geographies.  Every published artifact can be
+rebuilt step by step from public sources using the included build functions, so
+any user can reproduce and audit the conversion end to end.  Lookup results
+retain allocation weights, evidence source, lineage, method, and vintage;
+unmatched postal codes remain explicit, and versioned release artifacts are
+checksum-verified before use.  A built-in shiny application provides a
+point-and-click interface for joining, mapping, and exporting results.
+Correspondences are derived from the Statistics Canada National Address Register
+<https://www150.statcan.gc.ca/n1/pub/46-26-0002/462600022022001-eng.htm>, the
+2021 Census Geographic Attribute File
+<https://www12.statcan.gc.ca/census-recensement/2021/geo/aip-pia/attribute-attribs/index-eng.cfm>,
+and the @code{GeoNames} postal code export
+<https://download.geonames.org/export/zip/>.  The package does not redistribute
+Canada Post, PCCF, or PCCF+ data and does not claim authoritative postal
+assignments.")
+    (license license:expat)))
 
 (define-public r-opc
   (package

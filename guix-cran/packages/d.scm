@@ -5941,13 +5941,13 @@ robust estimation for cluster-randomized trials with survival outcomes\"
 (define-public r-drrglm
   (package
     (name "r-drrglm")
-    (version "0.3.2")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "drrglm" version))
        (sha256
-        (base32 "0l4zbslhz1w4pysjbzkfzr6fz0jn2bpq71iaw2sx6gq63zrpp8la"))))
+        (base32 "1qk3vn5bdabs04r93nlf7p436j0f7ny42rf1jb3lw0vskiqv4n1z"))))
     (properties `((upstream-name . "drrglm")))
     (build-system r-build-system)
     (arguments
@@ -5961,9 +5961,7 @@ robust estimation for cluster-randomized trials with survival outcomes\"
 structure for matrix-variate generalized linear models through a weighted
 combination of nuclear-norm and L1-norm.  The methodology implemented by this
 package is described in the paper \"Doubly Regularized Matrix-Variate
-Regression\", which has been tentatively accepted for publication but does not
-yet have a DOI or URL. A formal citation will be added in a future update once
-the final publication details are available.")
+Regression\".  See Xu, Luo and Jiang <doi:10.1080/10618600.2026.2702534>.")
     (license license:agpl3)))
 
 (define-public r-drquality
@@ -33895,13 +33893,13 @@ information.")
 (define-public r-dataquier
   (package
     (name "r-dataquier")
-    (version "2.8.9")
+    (version "2.8.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dataquieR" version))
        (sha256
-        (base32 "0fdrszl4wgrjjhscc1lr60mknfygm5qk4v107668brk5n9sm8l0y"))))
+        (base32 "14s4wwjmbmra3pp9rqzaadaq4axgzbxcapsi3pii42ng4jn840r9"))))
     (properties `((upstream-name . "dataquieR")))
     (build-system r-build-system)
     (arguments
@@ -33923,20 +33921,18 @@ information.")
                                                                #:target target)))
                                   '())))))))
     (propagated-inputs (list r-withr
-                             r-units
                              r-scales
                              r-robustbase
                              r-rlang
                              r-rio
                              r-readr
-                             r-r-devices
-                             r-qmrparser
                              r-patchwork
-                             r-parallelmap
-                             r-mass
+                             r-nnet
+                             r-mgcv
                              r-lubridate
                              r-lme4
                              r-lifecycle
+                             r-htmltools
                              r-hms
                              r-ggplot2
                              r-emmeans

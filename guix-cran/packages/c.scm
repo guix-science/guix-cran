@@ -5519,21 +5519,21 @@ Ramon et al. (2021) <doi:10.1088/1748-9326/abe491>', Duzenli et al. (2024)
 (define-public r-csdm
   (package
     (name "r-csdm")
-    (version "1.0.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "csdm" version))
        (sha256
-        (base32 "1p279f3ymis4gjcr9nwnj4p689vwil2ccas6640x3g15vp2wknin"))))
+        (base32 "0ab4k09gnvmk7rrxmmx8h6qrncgqp0gpm2zp4h75iw7ivchvqvia"))))
     (properties `((upstream-name . "csdm")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rdpack r-mass))
+    (propagated-inputs (list r-tibble r-rdpack r-generics))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/Macosso/csdm")
+    (home-page "https://macosso.github.io/csdm/")
     (synopsis "Cross-Sectional Dependence Models")
     (description
      "This package provides estimators and utilities for large panel-data models with
@@ -6683,6 +6683,38 @@ cross-recurrence plot, Please refer to Coco and others (2021)
 and Wallot (2018) <doi: 10.1080/00273171.2018.1512846> for further details about
 the method.")
     (license license:gpl3+)))
+
+(define-public r-crownsegmentr
+  (package
+    (name "r-crownsegmentr")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "crownsegmentr" version))
+       (sha256
+        (base32 "090s30dfd7lj8wql170yz72j67klvgg8nlxk6nzccps981wz3ymc"))))
+    (properties `((upstream-name . "crownsegmentr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra
+                             r-sf
+                             r-rcpp
+                             r-progress
+                             r-lidr
+                             r-dbscan
+                             r-data-table
+                             r-bh
+                             r-assertthat))
+    (home-page "https://github.com/Lenostatos/crownsegmentr")
+    (synopsis "Tree Crown Segmentation in Airborne LiDAR Point Clouds")
+    (description
+     "This package provides a function that performs the adaptive mean shift algorithm
+for individual tree crown delineation in 3D point clouds as proposed by Ferraz
+et al. (2016) <doi:10.1016/j.rse.2016.05.028>, as well as supporting functions.")
+    (license license:gpl3)))
 
 (define-public r-crownscorchtls
   (package
@@ -23124,6 +23156,32 @@ Garcia-Escudero Luis A., Gordaliza Alfonso, Matran Carlos, Mayo-Iscar Agustin.
 (2008), <doi:10.1214/07-AOS515>.")
     (license license:gpl2+)))
 
+(define-public r-compositionalcln
+  (package
+    (name "r-compositionalcln")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Compositionalcln" version))
+       (sha256
+        (base32 "06m0szr4nnhrlkjzdn466djnqxqvxysi7i0fnlpq9zq1vhaa7s07"))))
+    (properties `((upstream-name . "Compositionalcln")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rfast r-rangen r-mziln))
+    (home-page "https://cran.r-project.org/package=Compositionalcln")
+    (synopsis "Modelling Compositional Data with Zero Values")
+    (description
+     "Modelling structural zeros in compositional data using a conditional logistic
+normal model as described by Aitchison (1986), where MLE (Maximum Likelihood
+Estimation) is performed via the EM (Expectation-Maximization) algorithm.  The
+relevant paper is Alzeley and Tsagris (2026)
+<doi:10.48550/@code{arXiv.2608.29954>}.")
+    (license license:gpl2+)))
+
 (define-public r-compositionalasmr
   (package
     (name "r-compositionalasmr")
@@ -25818,26 +25876,28 @@ custom colour palettes.")
 (define-public r-colossus
   (package
     (name "r-colossus")
-    (version "1.5.1")
+    (version "1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Colossus" version))
        (sha256
-        (base32 "0l1vddk32djrpg1dz3ckyg9cfwnalfqs7dj3vgxblqm4dwzxxpa7"))))
+        (base32 "185mxghmjc07zvcqd1m9j3pgfd3xz1pmj8pdx0gn5kds1m3g0bpp"))))
     (properties `((upstream-name . "Colossus")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list))
-    (propagated-inputs (list r-tibble
+    (propagated-inputs (list r-withr
+                             r-tibble
                              r-testthat
                              r-stringr
                              r-rlang
                              r-rcppeigen
                              r-rcpp
                              r-processx
+                             r-pracma
                              r-lubridate
                              r-dplyr
                              r-data-table
@@ -25847,7 +25907,7 @@ custom colour palettes.")
     (synopsis
      "\"Risk Model Regression and Analysis with Complex Non-Linear Models\"")
     (description
-     "This package performs survival analysis using general non-linear models.  Risk
+     "This package performs risk analysis using general non-linear models.  Risk
 models can be the sum or product of terms.  Each term is the product of
 exponential/linear functions of covariates.  Additionally sub-terms can be
 defined as a sum of exponential, linear threshold, and step functions.  Cox
@@ -57223,6 +57283,35 @@ knot locations, annual percent changes (APCs), and average annual percent
 changes (AAPCs), facilitating the analysis and communication of changes in
 cancer rates over time.")
     (license license:expat)))
+
+(define-public r-canton
+  (package
+    (name "r-canton")
+    (version "0.0.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Canton" version))
+       (sha256
+        (base32 "0d6qcmmb47rjnxdv8zfap3z9si484jhhlv2j1554ybkn3s2mh8a9"))))
+    (properties `((upstream-name . "Canton")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-systemfonts r-ggplot2))
+    (home-page "https://github.com/ScienceAdvances/Canton")
+    (synopsis
+     "Consistent Fonts and Figure Export for Scientific Publication Workflows")
+    (description
+     "This package provides a unified interface for exporting figures created with
+base graphics, ggplot2', grid', pheatmap', and @code{ComplexHeatmap} to PDF,
+PNG, JPEG, and TIFF files.  Selects an appropriate rendering strategy based on
+the plot object and supports exporting a figure to multiple formats in one call.
+ Also provides font configuration and diagnostics, reusable figure presets,
+publication-oriented themes, and colour palettes.  The ggplot2 graphics
+framework is described by Wickham (2016, ISBN:978-3-319-24277-4).")
+    (license license:gpl3+)))
 
 (define-public r-cansim
   (package

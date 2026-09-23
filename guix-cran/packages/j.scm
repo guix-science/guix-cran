@@ -4584,13 +4584,13 @@ journals only that were included Journal Citation Reports JCR'.")
 (define-public r-jcp
   (package
     (name "r-jcp")
-    (version "1.2")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jcp" version))
        (sha256
-        (base32 "120hhysgnb5992ss2ays7ksyy0xb251lsxgnxihc11h2rqg6wqv8"))))
+        (base32 "1msydhmw6vgsw4yqmzqzmay9mb9yv3p2sfm146q9bh42254399zc"))))
     (properties `((upstream-name . "jcp")))
     (build-system r-build-system)
     (arguments
@@ -4603,8 +4603,8 @@ journals only that were included Journal Citation Reports JCR'.")
 univariate sequences.  Performs a statistical test of the null hypothesis of the
 absence of change points.  In case of rejection performs an algorithm for change
 point detection.  Reference - Bivariate change point detection - joint detection
-of changes in expectation and variance, Scandinavian Journal of Statistics, DOI
-10.1111/sjos.12547.")
+of changes in expectation and variance, Scandinavian Journal of Statistics,
+<doi:10.1111/sjos.12547>.")
     (license license:gpl3)))
 
 (define-public r-jcolors

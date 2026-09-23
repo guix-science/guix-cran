@@ -16868,6 +16868,33 @@ corn grown continuously and in rotation with other crops, in treated and
 untreated soil.")
     (license license:expat)))
 
+(define-public r-morphsim
+  (package
+    (name "r-morphsim")
+    (version "1.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MorphSim" version))
+       (sha256
+        (base32 "017gcav2m1n3v9rp7hnn8pl53wwiwqx446f03zijydmc9hsyazb5"))))
+    (properties `((upstream-name . "MorphSim")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-phangorn r-fossilsim r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=MorphSim")
+    (synopsis "Simulate Discrete Character Data along Phylogenetic Trees")
+    (description
+     "This package provides tools to simulate morphological traits along phylogenetic
+trees with branch lengths representing evolutionary distance or time.  Includes
+functions for visualizing evolutionary processes along trees and within
+morphological character matrices.  Methods are described in Mulvey et al. (2026)
+<doi:10.1111/2041-210X.70326>.")
+    (license license:gpl3)))
+
 (define-public r-morphotools2
   (package
     (name "r-morphotools2")

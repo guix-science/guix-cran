@@ -82,6 +82,38 @@ citations already present in R Markdown and Quarto files, and synchronise
 bibliography files.  Includes an RStudio addin for interactive use.")
     (license license:gpl3+)))
 
+(define-public r-zot
+  (package
+    (name "r-zot")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "zot" version))
+       (sha256
+        (base32 "1hq9ih4ldx6k3rjhrbqkkk2r0yaz33mm0ph87qdi12iyihsz55bd"))))
+    (properties `((upstream-name . "zot")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rsqlite
+                             r-jsonlite
+                             r-httr2
+                             r-digest
+                             r-dbi
+                             r-data-table))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://averriK.github.io/zot/")
+    (synopsis "Access 'Zotero' Libraries")
+    (description
+     "Interface to the Zotero reference manager <https://www.zotero.org> through its
+public web API and local client database.  Provides paginated reads, versioned
+writes, read-only local queries, batch plans and resumable ledgers,
+bibliographic comparison, metadata mapping, file attachment, and optional
+semantic-index queries.")
+    (license license:expat)))
+
 (define-public r-zoomr
   (package
     (name "r-zoomr")

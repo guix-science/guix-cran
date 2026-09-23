@@ -6706,46 +6706,52 @@ for Polymerase Chain Reaction) in biparental populations such as F1, F2, BC
 (define-public r-fragility
   (package
     (name "r-fragility")
-    (version "1.6.1")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fragility" version))
        (sha256
-        (base32 "01cg41dqi5zaplgman9yp7hinwklsiqcks05m6vj0894gill95c5"))))
+        (base32 "14kgz1chkpa8p1qi8mq1f8zaanla7knqsc35807jg5z1kvy1qd0d"))))
     (properties `((upstream-name . "fragility")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-plotrix r-netmeta r-metafor r-meta))
+    (propagated-inputs (list r-survival r-plotrix r-netmeta r-metafor r-meta))
     (home-page "https://cran.r-project.org/package=fragility")
-    (synopsis
-     "Assessing and Visualizing Fragility of Clinical Results with Binary Outcomes")
+    (synopsis "Assessing and Visualizing Fragility of Clinical Results")
     (description
-     "This package provides a collection of user-friendly functions for assessing and
-visualizing fragility of individual studies (Walsh et al., 2014
-<doi:10.1016/j.jclinepi.2013.10.019>; Lin, 2021 <doi:10.1111/jep.13428>),
-conventional pairwise meta-analyses (Atal et al., 2019
+     "This package provides a collection of user-friendly functions for assessing
+fragility of clinical results with binary and survival outcomes.  For binary
+outcomes, the package assesses and visualizes fragility of individual studies
+(Walsh et al., 2014 <doi:10.1016/j.jclinepi.2013.10.019>; Lin, 2021
+<doi:10.1111/jep.13428>), conventional pairwise meta-analyses (Atal et al., 2019
 <doi:10.1016/j.jclinepi.2019.03.012>), and network meta-analyses of multiple
 treatments with binary outcomes (Xing et al., 2020
-<doi:10.1016/j.jclinepi.2020.07.003>).  The included functions are designed to:
-1) calculate the fragility index (i.e., the minimal event status modifications
-that can alter the significance or non-significance of the original result) and
-fragility quotient (i.e., fragility index divided by sample size) at a specific
-significance level; 2) give the cases of event status modifications for altering
-the result's significance or non-significance and visualize these cases; 3)
-visualize the trend of statistical significance as event status is modified; 4)
-efficiently derive fragility indexes and fragility quotients at multiple
-significance levels, and visualize the relationship between these fragility
-measures against the significance levels; and 5) calculate fragility indexes and
-fragility quotients of multiple datasets (e.g., a collection of clinical trials
-or meta-analyses) and produce plots of their overall distributions.  The outputs
-from these functions may inform the robustness of clinical results in terms of
-statistical significance and aid the interpretation of fragility measures.  The
-usage of this package is illustrated in Lin et al. (2023
-<doi:10.1016/j.ajog.2022.08.053>) and detailed in Lin and Chu (2022
-<doi:10.1371/journal.pone.0268754>).")
+<doi:10.1016/j.jclinepi.2020.07.003>).  The functions for binary outcomes are
+designed to: 1) calculate the fragility index (i.e., the minimal event status
+modifications that can alter the significance or non-significance of the
+original result) and fragility quotient (i.e., fragility index divided by sample
+size) at a specific significance level; 2) give the cases of event status
+modifications for altering the result's significance or non-significance and
+visualize these cases; 3) visualize the trend of statistical significance as
+event status is modified; 4) efficiently derive fragility indexes and fragility
+quotients at multiple significance levels, and visualize the relationship
+between these fragility measures against the significance levels; and 5)
+calculate fragility indexes and fragility quotients of multiple datasets (e.g.,
+a collection of clinical trials or meta-analyses) and produce plots of their
+overall distributions.  For survival outcomes, the package implements the event
+status modification method based on the log-rank test described by Xing et al.
+(2026 <doi:10.1093/aje/kwaf229>).  It calculates the fragility index and
+fragility quotient for two-group studies with right-censored data, modifying
+event status in one or both groups while preserving follow-up times and group
+assignments.  Results include the sequence of modifications, corresponding
+p-values, and an S3 print method.  The outputs from these functions may inform
+the robustness of clinical results in terms of statistical significance and aid
+the interpretation of fragility measures.  The usage of this package is
+illustrated in Lin et al. (2023 <doi:10.1016/j.ajog.2022.08.053>) and detailed
+in Lin and Chu (2022 <doi:10.1371/journal.pone.0268754>).")
     (license license:gpl2+)))
 
 (define-public r-fragilitidy
@@ -12409,13 +12415,13 @@ reproducible scientific workflows.")
 (define-public r-fluxcore
   (package
     (name "r-fluxcore")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fluxCore" version))
        (sha256
-        (base32 "0c5pgw4k7hfmppyqqy1bkm9a1xyi69ks407gldgi9dml21kyrm2p"))))
+        (base32 "1nrw35a7430yz2zwn45rjgxh8jzkyvchnk2b1rnpz4wfywrdrln8"))))
     (properties `((upstream-name . "fluxCore")))
     (build-system r-build-system)
     (arguments
@@ -12429,13 +12435,13 @@ reproducible scientific workflows.")
      "This package provides a foundation for probabilistic simulation of single-entity
 systems in which events occur at irregular times and each event updates only a
 small, sparse subset of the entity's state.  Models are assembled from a
-declared schema and a @code{ModelBundle} of callback functions (event proposal,
-state transition, stopping rule) and run through a single validated entry point,
-@code{load_model()}'.  Supports competing event processes, schema-declared
-decision points with user-supplied policies, typed parameter draws for
-representing uncertainty, and optional trajectory recording for auditing
-simulated decisions.  Designed to be domain agnostic: this package contains no
-model of any particular system, only the scaffolding for building one.")
+declared schema and a bundle of callback functions for event proposal, state
+transition, and stopping, with their contracts validated before simulation.
+Supports competing event processes, schema-declared decision points with
+user-supplied policies, typed parameter draws for representing uncertainty, and
+optional trajectory recording for auditing simulated decisions.  Designed to be
+domain agnostic: this package contains no model of any particular system, only
+the scaffolding for building one.")
     (license license:lgpl3)))
 
 (define-public r-fluspect

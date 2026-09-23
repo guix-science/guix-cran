@@ -625,13 +625,13 @@ submit events.")
 (define-public r-azr
   (package
     (name "r-azr")
-    (version "0.3.5")
+    (version "0.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "azr" version))
        (sha256
-        (base32 "11is55fipmsj9m7269syabki9rs8jjkfzyd6vd3b1hqz8g5gisvb"))))
+        (base32 "02xr3aaaxjkngnaffdwjfqaah3mimi17pg2qq15r1vcyzqlp5i2h"))))
     (properties `((upstream-name . "azr")))
     (build-system r-build-system)
     (arguments
@@ -22053,6 +22053,43 @@ regression, generalized additive models (Wood, 2017,
 bootstrap (Cameron, 2008, <doi:10.1162/rest.90.3.414>).")
     (license license:expat)))
 
+(define-public r-ai4officialstats
+  (package
+    (name "r-ai4officialstats")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AI4OfficialStats" version))
+       (sha256
+        (base32 "1vnkn6qfxp11b0y9139wimy5sm52chancp6i71c5qzbvwyarwx9k"))))
+    (properties `((upstream-name . "AI4OfficialStats")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite r-digest))
+    (home-page "https://cran.r-project.org/package=AI4OfficialStats")
+    (synopsis "Audit Statistical Fidelity of AI-Mediated Official Statistics")
+    (description
+     "This package provides deterministic tools for auditing whether artificial
+intelligence systems preserve the numerical, semantic, contextual, temporal,
+geographic, unit, provenance, revision, transformation, and uncertainty
+properties of official statistics.  Structured reference statistics and
+machine-generated claims can be compared using non-compensatory critical-error
+rules, weakest-link and geometric fidelity summaries, provenance graphs, and
+portable SHA-256 proof bundles.  The package provides bounded connectors for
+official statistical services and an extensible HTTPS JSON API registry.  Prompt
+perturbation, statistical red-team generation, minimal-pair tests, and benchmark
+data support reproducible evaluation of generative, retrieval-augmented, and
+agentic statistical systems.  An embedded alignment layer maps claim-level
+controls to relevant activities of the Generic Statistical Business Process
+Model (GSBPM) 5.2, including Analyse, Disseminate, Evaluate, Quality Management,
+and Metadata Management.  The GSBPM alignment follows United Nations Economic
+Commission for Europe (2025) \"Generic Statistical Business Process Model (GSBPM)
+version 5.2\" <https://unece.org/statistics/gsbpm-v5.2>.")
+    (license license:expat)))
+
 (define-public r-ai
   (package
     (name "r-ai")
@@ -28237,13 +28274,13 @@ University of Trento, Italy.")
 (define-public r-adar
   (package
     (name "r-adar")
-    (version "0.3.5")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adaR" version))
        (sha256
-        (base32 "095i044mmyj85x6zili1q6ib9b8i01cscli786amrynlac55abar"))))
+        (base32 "11q8n67rb0a939sr2wsws65b3lg7kh371w6dx185ji8z9912xkm2"))))
     (properties `((upstream-name . "adaR")))
     (build-system r-build-system)
     (arguments

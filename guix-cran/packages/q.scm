@@ -1521,20 +1521,19 @@ Causal Quartets\" (Gelman et al.  2023) <doi:10.48550/@code{arXiv.2302.12878>}."
 (define-public r-quartet
   (package
     (name "r-quartet")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Quartet" version))
        (sha256
-        (base32 "10x9pgqqnbk43kyqbki8pigsz7mb8lwdpidy8642ajagvma41ds1"))))
+        (base32 "035m9zbmqkgnxvhqrdhi5fqx51hcf8j7fmpyij65abw5by75xan6"))))
     (properties `((upstream-name . "Quartet")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-viridislite
-                             r-treetools
+    (propagated-inputs (list r-treetools
                              r-ternary
                              r-rdpack
                              r-rcpp
@@ -1548,11 +1547,13 @@ Causal Quartets\" (Gelman et al.  2023) <doi:10.48550/@code{arXiv.2302.12878>}."
      "Calculates the number of four-taxon subtrees consistent with a pair of
 cladograms, calculating the symmetric quartet distance of Bandelt & Dress
 (1986), Reconstructing the shape of a tree from observed dissimilarity data,
-Advances in Applied Mathematics, 7, 309-343 <doi:10.1016/0196-8858(86)90038-2>,
-and using the @code{tqDist} algorithm of Sand et al. (2014), @code{tqDist}: a
-library for computing the quartet and triplet distances between binary or
-general trees, Bioinformatics, 30, 2079â2080
-<doi:10.1093/bioinformatics/btu157> for pairs of binary trees.")
+Advances in Applied Mathematics <doi:10.1016/0196-8858(86)90038-2>, using the
+@code{tqDist} algorithm of Sand et al. (2014), @code{tqDist}: a library for
+computing the quartet and triplet distances between binary or general trees,
+Bioinformatics <doi:10.1093/bioinformatics/btu157> for pairs of binary trees;
+calculating the rooted triplet distance using the CPDT algorithm of Jansson &
+Rajaby (2017), A more practical algorithm for the rooted triplet distance,
+Journal of Computational Biology <doi:10.1089/cmb.2016.0185>.")
     (license license:gpl2+)))
 
 (define-public r-quartabs

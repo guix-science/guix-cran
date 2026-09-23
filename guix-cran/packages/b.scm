@@ -16954,6 +16954,36 @@ in ensemble models and ensemble projections.  Some bench of other evaluation and
 visualisation tools are also available within the package.")
     (license license:gpl3)))
 
+(define-public r-biomixmodel
+  (package
+    (name "r-biomixmodel")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BioMixModel" version))
+       (sha256
+        (base32 "0mbnn9c3zvnaxcriv7p382gkbxhk2wm101z1msa8r69f9z4pib64"))))
+    (properties `((upstream-name . "BioMixModel")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/vinodhpmd/BioMixModel")
+    (synopsis "Mixed Models for Biological, Clustered and Longitudinal Data")
+    (description
+     "Fits and interprets mixed-effects models for clustered, longitudinal and
+heterogeneous biological data.  Provides variance partitioning, intraclass
+correlation, penalized likelihood summaries, a heterogeneous-data information
+criterion, model comparison, diagnostics, and ensemble-style summaries for
+multilevel data.  The package is designed as a complementary, interpretable
+workflow around established mixed-model methods.  Methods for intraclass
+correlation and variance partitioning are informed by Nakagawa and Schielzeth
+(2010) <doi:10.1111/j.1469-185X.2010.00141.x> and Nakagawa et al. (2017)
+<doi:10.1098/rsif.2017.0213>.  Mixed-effects modeling approaches are described
+by Zuur et al. (2009) <doi:10.1007/978-0-387-87458-6>.")
+    (license license:expat)))
+
 (define-public r-biometryassist
   (package
     (name "r-biometryassist")
@@ -18971,13 +19001,13 @@ ethnographically documented groups of hunter-gatherers.")
 (define-public r-binest
   (package
     (name "r-binest")
-    (version "0.2-1")
+    (version "0.3-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "binest" version))
        (sha256
-        (base32 "0bi7m5z9ym9jcviv4r8kk95snw5hi2jjn5k753qzsb6zcymhj65k"))))
+        (base32 "0p789j9x4wgpl6fnvwglz4vrfrvsfwaj9bqlc0jc5dg9vspxmh23"))))
     (properties `((upstream-name . "binest")))
     (build-system r-build-system)
     (arguments
@@ -18987,20 +19017,17 @@ ethnographically documented groups of hunter-gatherers.")
     (home-page "https://cran.r-project.org/package=binest")
     (synopsis "Estimation of Group Means and SDs from Binned Count Data")
     (description
-     "Estimates group-level means and standard deviations from binned (coarsened)
-count data, where the within-bin scores are unobserved.  The package implements
-three methods that share a common output structure: @code{bin_means()} (a fast
-estimator that assumes within-district normality and uses pooled bin proportions
-to derive bin-conditional truncated-normal expectations), @code{mle_hetop()}
-(maximum likelihood for the heteroskedastic ordered probit model of Reardon,
-Shear, Castellano and Ho 2017 <doi:10.3102/1076998616666279>), and
-@code{fh_hetop()} (the Bayesian Fay-Herriot variant of Lockwood, Castellano and
-Shear 2018 <doi:10.3102/1076998618795124>).  The @code{mle_hetop()} and
-@code{fh_hetop()} functions are forked from the HETOP package by J. R. Lockwood
-('CRAN', last released 2019). @code{mle_hetop()} has been modified to speed up
-the runtime via a vectorized inner loop and to remove two user-facing arguments
-(fixedcuts and svals) that some users found confusing; cutpoints and starting
-values are now derived internally from the data.")
+     "Education agencies often report school or district score distributions as the
+number of students scoring in each of several score ranges, or bins, separated
+by threshold scores, or cuts.  The functions in the binest package translate
+those bin counts into estimates of the mean and standard deviation (SD).  They
+do so using the heteroskedastic ordered probit (HETOP) model, which assumes that
+scores follow a normal distribution within each school or district, each of
+which has its own mean and SD. The binest package includes the
+@code{fast_hetop()} function, which fits the model much more quickly than
+previous implementations.  The model is described by Reardon, Shear, Castellano
+and Ho (2017) <doi:10.3102/1076998616666279>; a Bayesian variant is described by
+Lockwood, Castellano and Shear (2018) <doi:10.3102/1076998618795124>.")
     (license license:gpl2+)))
 
 (define-public r-binequality
@@ -37335,13 +37362,13 @@ outside of decennial census years.")
 (define-public r-badp
   (package
     (name "r-badp")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "badp" version))
        (sha256
-        (base32 "1x27kpkrfbvxamiahi2fgaphjj9c9p6fcr24arrmsq0ifxyni0av"))))
+        (base32 "0iafnb8r5ldbyam5mml3vnx4arz3cjgkbpj2qcbnlxx8zqhq0hi2"))))
     (properties `((upstream-name . "badp")))
     (build-system r-build-system)
     (arguments

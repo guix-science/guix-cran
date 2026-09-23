@@ -20785,13 +20785,13 @@ patterns assessment.  Piou C, U Berger and V Grimm (2009)
 (define-public r-pomdpsolve
   (package
     (name "r-pomdpsolve")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pomdpSolve" version))
        (sha256
-        (base32 "1ib295lhiizg7cn506hin9hkk2r2h6wdhdcdf5jvvadqdqc91by1"))))
+        (base32 "0i804aq6m8rbb90gfmpq5wavlxwq7ixz3ij1q8i92k18v18dzv2y"))))
     (properties `((upstream-name . "pomdpSolve")))
     (build-system r-build-system)
     (arguments
@@ -35047,13 +35047,13 @@ pharmaverse at <https://pharmaverse.org>.")
 (define-public r-pharmartf
   (package
     (name "r-pharmartf")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pharmaRTF" version))
        (sha256
-        (base32 "1h16r4yhlm6mbwq3k24ssm70bsrg2hvykqh8dayigz5wi2nq5c1f"))))
+        (base32 "1vq4rvjfkwfly691ancl31yal391zwpqhxm280g5j8bb1ims7bmz"))))
     (properties `((upstream-name . "pharmaRTF")))
     (build-system r-build-system)
     (arguments
@@ -35336,13 +35336,13 @@ available here <https://www.postgresql.org/docs/current/index.html>.")
 (define-public r-pgt
   (package
     (name "r-pgt")
-    (version "0.6.1")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pgt" version))
        (sha256
-        (base32 "1jsw91rx6gw679r7kfxf2l7q12wzgj21l3r5mlz4bwyxnalwyaj0"))))
+        (base32 "17ni03amlb9gb36mivsi1innrp70vkvwk8sb0nn9vl2gzlhhkk2h"))))
     (properties `((upstream-name . "pgt")))
     (build-system r-build-system)
     (arguments
@@ -35360,11 +35360,11 @@ Rodseth (2025) <doi:10.1007/s11123-025-00768-0> and its factorially determined
 multi-output representation, the by-production intersection technology of Murty,
 Russell and Levkoff (2012) <doi:10.1016/j.jeem.2012.02.005>, the
 materials-balance cost model of Coelli, Lauwers and Van Huylenbroeck (2007)
-<doi:10.1007/s11123-007-0052-8> and a weak-disposability reference model, with
-an enforced materials-balance identity, a pre-estimation feasibility audit,
-metafrontier decompositions, bad-output shadow prices, marginal abatement cost
-curves, a cross-axiom comparison harness, a global Malmquist-Luenberger
-productivity index and subsampling inference.  Estimators are solved with
+<doi:10.1007/s11123-007-0052-8> and a weak-disposability reference model, with a
+pre-estimation audit of every materials-balance account, metafrontier
+decompositions, bad-output shadow prices, marginal abatement cost curves, a
+cross-axiom comparison harness, a global Malmquist-Luenberger productivity index
+and subsampling sensitivity intervals.  Estimators are solved with
 @code{lpSolveAPI}'.")
     (license license:gpl3+)))
 
@@ -47504,6 +47504,38 @@ psycholinguistics, computational linguistics, and natural language processing
 (NLP).")
     (license license:expat)))
 
+(define-public r-panglm
+  (package
+    (name "r-panglm")
+    (version "1.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "panglm" version))
+       (sha256
+        (base32 "0rw1q6x5clf1h1llsbc07xgaywp6sygpf80mvyamj79s6gz82qkk"))))
+    (properties `((upstream-name . "panglm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppparallel r-rcpparmadillo r-rcpp
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://CRAN.R-project.org/package=panglm")
+    (synopsis "Generalized Linear Models for Panel Data")
+    (description
+     "This package provides generalized linear models for panel data, including
+pooled, fixed-effects, and random-effects estimators for continuous, binary, and
+count outcomes.  Offers a unified interface for fitting and analysing panel
+regression models, with efficient computation for large datasets.  Estimators
+and tests follow standard panel-data references, including Hausman (1978)
+<doi:10.2307/1913827>, Chamberlain (1980) <doi:10.2307/2297110>, Allison and
+Waterman (2002) <doi:10.1111/1467-9531.00117>, and Croissant and Millo (2008)
+<doi:10.18637/jss.v027.i02>.  Core numerical routines are implemented using
+Rcpp', @code{RcppArmadillo}', and @code{RcppParallel}'.")
+    (license license:expat)))
+
 (define-public r-pangaear
   (package
     (name "r-pangaear")
@@ -50987,13 +51019,13 @@ packages each time you want to run this.")
 (define-public r-packagerank
   (package
     (name "r-packagerank")
-    (version "0.9.8")
+    (version "0.9.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "packageRank" version))
        (sha256
-        (base32 "0j4fjyqx0wlwxfbiixx9123fadhfdzi97s4mb43imiw2ydp0d5gs"))))
+        (base32 "0bb3s8anvmqq7m4flcvjmdqpp7s7ai8p039yhz7dzzba3gfa16pq"))))
     (properties `((upstream-name . "packageRank")))
     (build-system r-build-system)
     (arguments

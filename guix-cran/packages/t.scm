@@ -35299,13 +35299,13 @@ J., Kaendler, G. (2013) <doi:10.1007/s10342-013-0715-0>.")
 (define-public r-tantivyr
   (package
     (name "r-tantivyr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tantivyr" version))
        (sha256
-        (base32 "1r5n33a68kxhqxlq975pd64r5v1hdmi6knbpm3hg370d5606j979"))))
+        (base32 "18flsli9s7j56ljxihfxpd9z4kpk0dd8fq71nfypcwjsxd2191s3"))))
     (properties `((upstream-name . "tantivyr")))
     (build-system r-build-system)
     (arguments

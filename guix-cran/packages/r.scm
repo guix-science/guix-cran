@@ -26816,13 +26816,13 @@ including high-frequency data with multiple periodicities.")
 (define-public r-rjd3x13
   (package
     (name "r-rjd3x13")
-    (version "3.8.0")
+    (version "3.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rjd3x13" version))
        (sha256
-        (base32 "1r60i5gv8nin3ic1siw63mw4jhwv9zfv0aljk0g7wkym7j4l8jv9"))))
+        (base32 "083w4myrk3664bz90glb9lh11y04hpd72nx5rvz5k7fchavgw3if"))))
     (properties `((upstream-name . "rjd3x13")))
     (build-system r-build-system)
     (arguments
@@ -26874,13 +26874,13 @@ or regression variables.")
 (define-public r-rjd3tramoseats
   (package
     (name "r-rjd3tramoseats")
-    (version "3.8.0")
+    (version "3.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rjd3tramoseats" version))
        (sha256
-        (base32 "1y4ps7gxq2fki5cpp96pv3nqk1f89lf4lp54akiv3lp1h70jqkp2"))))
+        (base32 "0ciqrajd90mjj7qx4g0xxpp92v5m1rxxckxak2vvysf4l254g68w"))))
     (properties `((upstream-name . "rjd3tramoseats")))
     (build-system r-build-system)
     (arguments
@@ -28398,13 +28398,13 @@ Begg CB, Zabor EC, Bernstein JL, Bernstein L, Press MF, Seshan VE (2013)
 (define-public r-risk-assessr
   (package
     (name "r-risk-assessr")
-    (version "4.1.2")
+    (version "4.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "risk.assessr" version))
        (sha256
-        (base32 "1km8i6jsf2brsqn3gpyrp22ixl2yi2ckqjm8fs1g07660x2ys9kl"))))
+        (base32 "1ixzgyly9i39n4mq6m011fxas5r0rmc4lwzcydssbjds48r2v3jn"))))
     (properties `((upstream-name . "risk.assessr")))
     (build-system r-build-system)
     (arguments
@@ -30082,13 +30082,13 @@ data.  Methods are described by Dylan S Small et al., (2012)
 (define-public r-richcluster
   (package
     (name "r-richcluster")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "richCluster" version))
        (sha256
-        (base32 "0ysg9c7q9cq5p5f3yr0pj9qg33ly78y99zvpvl5hzqb3ygc6f0v9"))))
+        (base32 "1f9ygj8cvj63lzjsf4hy5apl33jkxr137xbhvi7zyk3myffh76q2"))))
     (properties `((upstream-name . "richCluster")))
     (build-system r-build-system)
     (arguments
@@ -50777,13 +50777,13 @@ and will be transformed into a R data frame.")
 (define-public r-rcrisp
   (package
     (name "r-rcrisp")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rcrisp" version))
        (sha256
-        (base32 "1ld6bhzw9bly1n88lygx3vl0v0z2xzqb473ixpf19ya788b5im2z"))))
+        (base32 "1sarxrilwyqx1rsjhkijs57j8qh753mrw2pblagpiadb75dwy7gk"))))
     (properties `((upstream-name . "rcrisp")))
     (build-system r-build-system)
     (arguments

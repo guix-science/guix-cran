@@ -5981,13 +5981,13 @@ nonlinear mixed effects modeling.  See package?nonmemica'.")
 (define-public r-nonmem2rx
   (package
     (name "r-nonmem2rx")
-    (version "0.1.9")
+    (version "0.1.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nonmem2rx" version))
        (sha256
-        (base32 "1b4gmfkagkdjv6ssps0c7pndbpqdva50a3368naiy2msd4ys0j1b"))))
+        (base32 "1w94s0q49mz3ygmg71awa38xab6pn3c7hpkn5dkv5yp0hjdd830f"))))
     (properties `((upstream-name . "nonmem2rx")))
     (build-system r-build-system)
     (arguments
@@ -5996,7 +5996,6 @@ nonlinear mixed effects modeling.  See package?nonmemica'.")
     (propagated-inputs (list r-xml2
                              r-rxode2
                              r-rcpp
-                             r-qs2
                              r-magrittr
                              r-lotri
                              r-ggplot2
@@ -8104,13 +8103,13 @@ projects.")
 (define-public r-nmfkc
   (package
     (name "r-nmfkc")
-    (version "0.9.6")
+    (version "0.9.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nmfkc" version))
        (sha256
-        (base32 "06vysvi4qsdk2a7mjwdpmxrl89q8jyhn1x3wk6bl9vr117xsi8w2"))))
+        (base32 "1swa24crgdh2kpidpv9bdg54ymaihzf0yv5cfdmxifhwap8c2s4r"))))
     (properties `((upstream-name . "nmfkc")))
     (build-system r-build-system)
     (arguments
@@ -8129,8 +8128,8 @@ model combining covariate-driven scores with unit-specific random effects
 together with wild bootstrap inference, and NMF-based Structural Equation
 Modeling (NMF-SEM) via @code{nmf.sem()}, which fits a two-block input-output
 model for blind source separation and path analysis.  References: Satoh (2025)
-<doi:10.48550/@code{arXiv.2403.05359>}; Satoh (2025)
-<doi:10.48550/@code{arXiv.2510.10375>}; Satoh (2025)
+<doi:10.48550/@code{arXiv.2403.05359>}; Satoh (2026)
+<doi:10.1007/s42081-026-00349-x>; Satoh (2025)
 <doi:10.48550/@code{arXiv.2512.18250>}; Satoh (2026)
 <doi:10.48550/@code{arXiv.2603.01468>}; Satoh and Tokuda (2026)
 <doi:10.48550/@code{arXiv.2607.27474>}; Satoh (2026)
@@ -9529,13 +9528,13 @@ outputs (e.g. R Markdown).")
 (define-public r-nlmixr2plot
   (package
     (name "r-nlmixr2plot")
-    (version "5.1.0")
+    (version "5.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmixr2plot" version))
        (sha256
-        (base32 "0y4k1j8dda5v93dglr8pbplnz1qwi4784p18cdlz6c137d14q82w"))))
+        (base32 "044ksm269gsdnz68bkpnkb6lq7k7gqljkqv59whhbpjxpya40ngl"))))
     (properties `((upstream-name . "nlmixr2plot")))
     (build-system r-build-system)
     (arguments
@@ -9549,6 +9548,7 @@ outputs (e.g. R Markdown).")
                              r-ggtibble
                              r-ggplot2
                              r-ggforce))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/nlmixr2/nlmixr2plot")
     (synopsis
      "Nonlinear Mixed Effects Models in Population PK/PD, Plot Functions")
@@ -15083,13 +15083,13 @@ website (2017)
 (define-public r-netsimr
   (package
     (name "r-netsimr")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NetSimR" version))
        (sha256
-        (base32 "196g3kcmwcnlh1miqdm96m4my4jx1n07by2889vs4795nzjgbw9s"))))
+        (base32 "0bkyj4y75v7n2kf4kdmp77rshzyi1k766zg440lbh9bkv4q40aw2"))))
     (properties `((upstream-name . "NetSimR")))
     (build-system r-build-system)
     (arguments
@@ -15110,13 +15110,13 @@ probability density function (pdf), cumulative probability function (cdf) and
 inverse cumulative probability function for Sliced @code{LogNormal-Pareto} and
 Sliced Gamma-Pareto distributions.  Includes calculating pure IBNR exposure with
 @code{LogNormal} and Gamma distribution for reporting delay.  Includes three
-shiny tools, one to simulate insurance claims applying reinsurance structures,
-fit generalised linear models and fit claims frequency or severity
-distributions.  Methods used in the package refer to Free for All by Yiannis
+shiny tools: a claims simulator with reinsurance structures, a generalised
+linear model fitting tool, and a claims frequency and severity distribution
+fitting tool.  Methods used in the package refer to Free for All by Yiannis
 Parizas (2023) <https://www.theactuary.com/2023/03/02/free-all>; Escaping the
 triangle by Yiannis Parizas (2019)
-<https://www.theactuary.com/features/2019/06/2019/06/05/escaping-triangle>; Take
-to excess by Yiannis Parizas (2019)
+<https://www.theactuary.com/features/2019/06/2019/06/05/escaping-triangle>;
+Taken to excess by Yiannis Parizas (2019)
 <https://www.theactuary.com/features/2019/03/2019/03/06/taken-excess>.")
     (license license:gpl3)))
 

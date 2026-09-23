@@ -14702,6 +14702,44 @@ factors but allows users to refer to lfactor levels by either the level or the
 label.")
     (license license:gpl2)))
 
+(define-public r-lexsync
+  (package
+    (name "r-lexsync")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lexsync" version))
+       (sha256
+        (base32 "1m3hh2q8rhn4lzp0fa8jfd5wr1qr51xqdm78kw16mq27rqwsi3n5"))))
+    (properties `((upstream-name . "lexsync")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml
+                             r-stringi
+                             r-stringdist
+                             r-readr
+                             r-jsonlite
+                             r-digest))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/pablobernabeu/lexsync")
+    (synopsis "Lexical Optimisation and Hardware-Timed Experiment Generation")
+    (description
+     "This package provides a cross-platform toolkit that unifies many-language
+lexical-corpus access, parallel multidimensional stimulus matching,
+deterministic pseudoword generation, counterbalancing and the automated
+generation of experiments from a declarative trial-event model, for
+@code{PsychoPy}', @code{OpenSesame} and the browser ('@code{jsPsych}').  The
+laboratory targets bind electroencephalography onset triggers to the stimulus
+flip.  It is the R member of a dual-language pair; a structurally identical
+Python package is also provided.  Several paradigms (factorial word contrasts,
+lexical decision, priming, self-paced reading and cued categorisation) are
+supported, and each design is accompanied by a machine- and human-readable
+materials datasheet for reproducibility.")
+    (license license:expat)))
+
 (define-public r-lexrankr
   (package
     (name "r-lexrankr")

@@ -8019,13 +8019,13 @@ or Quarto document.")
 (define-public r-grassr
   (package
     (name "r-grassr")
-    (version "0.7.4")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grassr" version))
        (sha256
-        (base32 "1z61x2g0vpqz958k3x9xmyjn0vksvzipzp1v58h95wv2z4addvrm"))))
+        (base32 "1j9vwgrd4kjlaz9k0v4hr4bzw2a8qwnbbpbx4ir5dlbw9cxinp80"))))
     (properties `((upstream-name . "grassr")))
     (build-system r-build-system)
     (arguments
@@ -8035,7 +8035,8 @@ or Quarto document.")
     (home-page "https://defense031.github.io/grassr/")
     (synopsis "Context-Conditioned Reporting for Binary Rater Reliability")
     (description
-     "Generates a Report Card for rater reliability on binary outcomes from an N x k
+     "The name abbreviates \"Guide for Rater Agreement under Structural Skew\".
+Generates a Report Card for rater reliability on binary outcomes from an N x k
 subject-by-rater rating matrix, on both the inter-rater and intra-rater axes.
 Each panel coefficient is positioned on a data-generating-process-calibrated
 reference surface conditioned on the study's rater count, sample size, and
@@ -14290,29 +14291,26 @@ press) <doi:10.1016/j.ecosta.2025.09.003>.")
 (define-public r-gmtm
   (package
     (name "r-gmtm")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GMTM" version))
        (sha256
-        (base32 "04pinhiccbwnhdcmv9jhra9gqlvkhmr8pcndasvd7jiagmpz1zm3"))))
+        (base32 "07riq6bgsayw9z1c8b152i1n5ynxh469ccpyalxk4qkqrrlpqgra"))))
     (properties `((upstream-name . "GMTM")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-wordvector
-                             r-testthat
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-quanteda
+    (propagated-inputs (list r-wordvector r-rcpparmadillo r-rcpp r-quanteda
                              r-proxyc))
     (home-page "https://cran.r-project.org/package=GMTM")
-    (synopsis "Gaussian Mixture Text Models for Topic Analysis")
+    (synopsis "Gaussian Mixture Topic Models")
     (description
-     "Gaussian mixture models and k-means for topic analysis of dense document
-vectors.  The underlying clustering functions rely on the Armadillo library.")
+     "Gaussian mixture models (GMM) and k-means for topic analysis of dense document
+vectors.  The underlying clustering functions rely on the Armadillo library
+(Sanderson & Curtin, 2017) <doi:10.1109/ICSPCS.2017.8270510>.")
     (license license:asl2.0)))
 
 (define-public r-gmtfd
@@ -15438,13 +15436,13 @@ R Markdown documents, and R Jupyter Notebooks'.  Internally, uses
 (define-public r-glyrepr
   (package
     (name "r-glyrepr")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glyrepr" version))
        (sha256
-        (base32 "16pa62b44p8nfbd9niz3ldg55rspp5hf19mlppms77l6jzs5m9s6"))))
+        (base32 "1vja3pgabj09ll0aksapxwqab1mz02qxrfqxrch3k6ll7wsahmjb"))))
     (properties `((upstream-name . "glyrepr")))
     (build-system r-build-system)
     (arguments
@@ -15455,6 +15453,7 @@ R Markdown documents, and R Jupyter Notebooks'.  Internally, uses
                              r-stringr
                              r-rstackdeque
                              r-rlang
+                             r-rcpp
                              r-purrr
                              r-pillar
                              r-magrittr
@@ -25937,13 +25936,13 @@ and radii.")
 (define-public r-ggfacto
   (package
     (name "r-ggfacto")
-    (version "0.3.2")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggfacto" version))
        (sha256
-        (base32 "1cdj34y5saf2d5cwnigmxlfyny9alcl84cyhrybv5yqykc75sim8"))))
+        (base32 "1yg1cinqapmnzgjn3rz7wx8jbmahv9wyq4bsl9vacc57l6j6ada3"))))
     (properties `((upstream-name . "ggfacto")))
     (build-system r-build-system)
     (arguments
@@ -25955,26 +25954,27 @@ and radii.")
                              r-tidyr
                              r-tibble
                              r-tabxplor
-                             r-stringr
+                             r-scales
                              r-rlang
                              r-purrr
                              r-magrittr
-                             r-gridextra
+                             r-htmltools
                              r-ggrepel
                              r-ggplot2
                              r-ggiraph
-                             r-ggforce
+                             r-gdtools
                              r-forcats
+                             r-fastcluster
                              r-factominer
-                             r-dplyr
-                             r-data-table))
-    (home-page "https://github.com/BriceNocenti/ggfacto")
+                             r-dplyr))
+    (home-page "https://bricenocenti.github.io/ggfacto/")
     (synopsis "Graphs for Correspondence Analysis")
     (description
-     "Readable, complete and pretty graphs for correspondence analysis made with
+     "Readable, complete and pretty graphs for multiple correspondence analysis,
+correspondence analysis and principal component analysis made with
 @code{FactoMineR}'.  They can be rendered as interactive HTML plots, showing
-useful informations at mouse hover.  The interest is not mainly visual but
-statistical: it helps the reader to keep in mind the data contained in the
+useful information at mouse hover.  The interest is not mainly visual but
+statistical.  It helps the reader to keep in mind the data contained in the
 cross-table or Burt table while reading the correspondence analysis, thus
 preventing over-interpretation.  Most graphs are made with ggplot2', which means
 that you can use the + syntax to manually add as many graphical pieces you want,
@@ -27779,13 +27779,13 @@ if things do not work as they should.")
 (define-public r-gft
   (package
     (name "r-gft")
-    (version "1.0.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GFT" version))
        (sha256
-        (base32 "0802l96rnyvi204d0k2mba8pdycwqrpkkfih7zhvip8w148ns6nk"))))
+        (base32 "0ff92ys8g8srn15yh5wdrclalk78i488cxyaprlxga3lfr51kvsq"))))
     (properties `((upstream-name . "GFT")))
     (build-system r-build-system)
     (arguments
@@ -27799,10 +27799,13 @@ if things do not work as they should.")
 matrices, gamma = vecl(log C), which maps the positive definite correlation
 matrices one-to-one onto the Euclidean space of dimension n(n-1)/2, see Archakov
 and Hansen (2021) <doi:10.3982/ECTA16910>.  The inverse is computed from a
-variational characterization by the GFT-FP+N algorithm: a fixed-point phase in
-the log domain followed by a matrix-free inexact Newton phase with
-preconditioned conjugate gradients.  Reference implementations of the plain
-fixed point, Broyden's method, and full Newton are included.  Uses base R only.")
+variational characterization by the GFT-FP+N algorithm: matrix-free inexact
+Newton steps for the log-diagonal residual, solved by preconditioned conjugate
+gradients, with fixed-point safeguards that guarantee global convergence.
+Sequential inversion with a tangent predictor, a certified quadrature
+preconditioner, and comparison solvers (the plain fixed point, Broyden's method,
+full Newton, Anderson acceleration, and limited-memory BFGS) are included.  Uses
+base R only.")
     (license license:expat)))
 
 (define-public r-gformulami
@@ -32329,13 +32332,13 @@ sampling tasks, the spatial bias of the model can be effectively reduced.")
 (define-public r-geocodebr
   (package
     (name "r-geocodebr")
-    (version "0.6.4")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geocodebr" version))
        (sha256
-        (base32 "1s2587nc4zd1w8dx0jnvzpj5s0xh5522f00n76v9kzmkmcavghzh"))))
+        (base32 "0fgvxq304xwa8h0i5nxh3bzlk4kjhiw36x4qkmxfw6lq8ja4rcnw"))))
     (properties `((upstream-name . "geocodebr")))
     (build-system r-build-system)
     (arguments
@@ -37338,13 +37341,13 @@ etc.).")
 (define-public r-gdalraster
   (package
     (name "r-gdalraster")
-    (version "2.6.1")
+    (version "2.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gdalraster" version))
        (sha256
-        (base32 "077djgyibc0729x8gq088m7v47wqzyif5abhwr6k0w4snij4b402"))))
+        (base32 "1igw0swc9dx9zbr0nyvy4pcna120zh6m4v1r8khmrhp6gb2k3hjp"))))
     (properties `((upstream-name . "gdalraster")))
     (build-system r-build-system)
     (arguments
@@ -40072,13 +40075,13 @@ evaluations.")
 (define-public r-gapanalysis
   (package
     (name "r-gapanalysis")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GapAnalysis" version))
        (sha256
-        (base32 "19ss4r1vcxicl8djlxv2q8kkpa42zpi86sj75dqpybchsl5xcf7f"))))
+        (base32 "000ndv9bi1p8ql5bq5r6j1c0pzs8xm2pr8s73qwhv6sf3daalpdc"))))
     (properties `((upstream-name . "GapAnalysis")))
     (build-system r-build-system)
     (arguments
