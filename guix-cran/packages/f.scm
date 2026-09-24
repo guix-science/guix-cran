@@ -4203,6 +4203,41 @@ computation and the graphical representation of the frequencies of the responses
 to each item and the report of the responses of a few subjects.")
     (license license:gpl3)))
 
+(define-public r-fshybridpls
+  (package
+    (name "r-fshybridpls")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FSHybridPLS" version))
+       (sha256
+        (base32 "0rmqjs8gck6wqlngllrnkwcmmyplch2bgmnbm899sgqlfa78v5zn"))))
+    (properties `((upstream-name . "FSHybridPLS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-fda))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Jong-Min-Moon/FShybridPLS")
+    (synopsis "Hybrid Penalized Partial Least Squares for Mixed Data")
+    (description
+     "Fits Penalized Partial Least Squares (PLS) regression when predictors are hybrid
+objects that combine functional curves (infinite-dimensional fda objects) and
+scalar covariates (finite-dimensional numeric matrices).  The package treats a
+hybrid predictor as an element of a product Hilbert space formed by the
+functional and Euclidean components, and implements the arithmetic (addition,
+scalar multiplication, and inner products, including roughness-penalized inner
+products) needed to run penalized PLS directly in that space.  The algorithm
+extracts latent components that maximize covariance with a scalar response while
+penalizing roughness of the estimated functional coefficient curves.  Helpers
+are included for constructing hybrid predictors, two-step within- and
+between-modality normalization, train/test splitting, synthetic data generation,
+cross-validated component selection, and prediction.  The method is described in
+Mun and Jang (2026) <doi:10.48550/@code{arXiv.2601.16364>}.")
+    (license license:expat)))
+
 (define-public r-fsemipar
   (package
     (name "r-fsemipar")
@@ -27168,13 +27203,13 @@ OS@code{GeoW4} installer version) of GRASS 8.0 or higher.")
 (define-public r-fastei
   (package
     (name "r-fastei")
-    (version "0.0.19")
+    (version "0.0.21")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastei" version))
        (sha256
-        (base32 "0zvp6y6ac1l2mmn8ih50axb9bpd1qmz55xypp2ajjriqz6q4i2g1"))))
+        (base32 "0w3ka0c9yaj257fp48xy11vi9d9fa4x3xav9jrx9z65gqgqd4mng"))))
     (properties `((upstream-name . "fastei")))
     (build-system r-build-system)
     (arguments
@@ -27185,7 +27220,7 @@ OS@code{GeoW4} installer version) of GRASS 8.0 or higher.")
     (home-page
      "https://danielhermosilla.github.io/ecological-inference-elections/reference/fastei-package.html")
     (synopsis
-     "Methods for ''A Fast Alternative for the R x C Ecological Inference Case''")
+     "Methods for ''An accurate, fast, and scalable ecological inference algorithm for the R x C case''")
     (description
      "Estimates the probability matrix for the RÃC Ecological Inference problem using
 the Expectation-Maximization Algorithm with four approximation methods for the
@@ -27195,9 +27230,10 @@ has functions that aggregate rows optimally to have more reliable estimates in
 cases of having few data points.  For comparing the probability estimates of two
 groups, a Wald test routine is implemented.  The library has data from the first
 round of the Chilean Presidential Election 2021 and can also generate synthetic
-election data.  Methods described in Thraves, Charles; Ubilla, Pablo;
-Hermosilla, Daniel (2024) A Fast Ecological Inference Algorithm for the RÃC
-case <doi:10.2139/ssrn.4832834>.")
+election data.  Methods described in Ubilla Pavez, Pablo; Hermosilla, Daniel;
+Thraves, Charles (2026) An accurate, fast, and scalable ecological inference
+algorithm for the RÃC case'', Statistics and Computing 36, Article 195
+<doi:10.1007/s11222-026-10946-1>.")
     (license license:expat)))
 
 (define-public r-fastdid

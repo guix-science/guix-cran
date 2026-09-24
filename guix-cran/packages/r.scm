@@ -3785,23 +3785,22 @@ can also provide their own mega-trees.")
 (define-public r-rtransparency
   (package
     (name "r-rtransparency")
-    (version "1.0.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtransparency" version))
        (sha256
-        (base32 "02xbmnscsdjb7gfmgx23bq15z1arj8hmaz990gqc6l06d737d37f"))))
+        (base32 "18nkmqhh0rzy72xbvg56y8zahydppza9rhik1wxyjl8p6sl91mnn"))))
     (properties `((upstream-name . "rtransparency")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-xml2
-                             r-utf8
-                             r-tidyselect
                              r-tibble
                              r-stringr
+                             r-stringi
                              r-rlang
                              r-readr
                              r-purrr
@@ -4116,13 +4115,13 @@ peaks and spectra using the ggplot2 package.")
 (define-public r-rtmpt
   (package
     (name "r-rtmpt")
-    (version "2.0-3")
+    (version "2.1-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtmpt" version))
        (sha256
-        (base32 "158jpp4hzirg2pa0rpnrnggfc9m8zl9zq1xd7g63x6nz7a6x9s0p"))))
+        (base32 "085ljv9x8h3832wrwkx9in3443gn1ms0xn0hhcff77av9br9ww8g"))))
     (properties `((upstream-name . "rtmpt")))
     (build-system r-build-system)
     (arguments
@@ -11051,13 +11050,13 @@ URL provides a link to article in the R Journal.")
 (define-public r-rqlm
   (package
     (name "r-rqlm")
-    (version "4.4-1")
+    (version "4.5-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rqlm" version))
        (sha256
-        (base32 "0dkchj2qx3x3i8qbbskjwph15pphp6g2i284pzn7l96z2msryz9y"))))
+        (base32 "1ig0a77icsq330znzsjliqw8v9ix3k03dxx3pw7w43s8rk9x4brq"))))
     (properties `((upstream-name . "rqlm")))
     (build-system r-build-system)
     (arguments
@@ -25323,13 +25322,13 @@ buffer engine, and adaptive recursive thresholding.")
 (define-public r-rlibkriging
   (package
     (name "r-rlibkriging")
-    (version "1.1-1")
+    (version "1.2-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rlibkriging" version))
        (sha256
-        (base32 "01l9clalcxapxmsv2ggnis3anywxar9i7fyvvczywp1rbwicmzs3"))))
+        (base32 "1vnbk5r3gz5wmpwprp31b1fh5x68x4gpwmbr97lw1zck9bs0yvm6"))))
     (properties `((upstream-name . "rlibkriging")))
     (build-system r-build-system)
     (arguments
@@ -25986,13 +25985,13 @@ place crypto orders.")
 (define-public r-rkorapclient
   (package
     (name "r-rkorapclient")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RKorAPClient" version))
        (sha256
-        (base32 "039aph4knlyzw5kaq6ik1cbpr6psm7hak88rwj9n9rcxn4nvaskc"))))
+        (base32 "1l5z55rcl0mydxpdqjnd4wmg46zb6avifxlgmp5isa5p3lappww1"))))
     (properties `((upstream-name . "RKorAPClient")))
     (build-system r-build-system)
     (arguments
@@ -26955,13 +26954,13 @@ series scores).  The latest version of the cruncher can be downloaded here:
 (define-public r-rjd3providers
   (package
     (name "r-rjd3providers")
-    (version "3.8.0")
+    (version "3.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rjd3providers" version))
        (sha256
-        (base32 "1k1jwnrr6w50k8lg0pvfm01dpqcnkabs52kdxb270jmf9v9v771h"))))
+        (base32 "1c3xb72qj3fvhlrlqdyafl9pysl7qrw5bb90w948s06w9k733lah"))))
     (properties `((upstream-name . "rjd3providers")))
     (build-system r-build-system)
     (arguments
@@ -27822,20 +27821,20 @@ cases and facilitate adoption. <DOI: 10.1201/9780203910894>. <DOI:
 (define-public r-risq
   (package
     (name "r-risq")
-    (version "3.0.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "risq" version))
        (sha256
-        (base32 "0v08a08aw27agn3n2a9p8msw0j3kvhabpx24v5pwfidas7pzyh4n"))))
+        (base32 "13c9271pqsyf2cjqva3sfzlm82i8y4yranm72aabmvjv49351846"))))
     (properties `((upstream-name . "risq")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=risq")
+    (home-page "https://github.com/reijeridema/risq")
     (synopsis "Representativity Indicators for Survey Quality")
     (description
      "Calculate representativity indicators for survey quality based on survey data
@@ -34555,13 +34554,13 @@ density indices.")
 (define-public r-rfair
   (package
     (name "r-rfair")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rfair" version))
        (sha256
-        (base32 "0xj4m8jqyz520cg556mcp75rd2nmwl65fj0r2m8hj90aj6a95nlv"))))
+        (base32 "1qa9sl8c4a92wfjz82zwlmaf3n7q4rbwky4pcbd2g7v2mjqrjgaw"))))
     (properties `((upstream-name . "rfair")))
     (build-system r-build-system)
     (arguments
@@ -34574,7 +34573,8 @@ density indices.")
                              r-mime
                              r-jsonlite
                              r-httr2
-                             r-digest))
+                             r-digest
+                             r-curl))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/choxos/rfair")
     (synopsis "Assess the FAIRness of Research Data Objects and Software")

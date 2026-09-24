@@ -1085,6 +1085,37 @@ regional, and federal agencies that have different identifiers on lakes.  This
 package helps you to go between them.")
     (license license:expat)))
 
+(define-public r-mwcsr
+  (package
+    (name "r-mwcsr")
+    (version "0.1.13")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mwcsr" version))
+       (sha256
+        (base32 "0qpb8d9i0il5j1hi34bbnaw2y8sbjf2j589640sp9c1z25sl4sz9"))))
+    (properties `((upstream-name . "mwcsr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list openjdk))
+    (propagated-inputs (list r-rcpp r-igraph))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/ctlab/mwcsr")
+    (synopsis
+     "Solvers for Maximum Weight Connected Subgraph Problem and Its Variants")
+    (description
+     "Algorithms for solving various Maximum Weight Connected Subgraph Problems,
+including variants with budget constraints, cardinality constraints, weighted
+edges and signals.  The package represents an R interface to high-efficient
+solvers based on relax-and-cut approach (Ãlvarez-Miranda E., Sinnl M. (2017)
+<doi:10.1016/j.cor.2017.05.015>) mixed-integer programming (Loboda A., Artyomov
+M., and Sergushichev A. (2016) <doi:10.1007/978-3-319-43681-4_17>) and simulated
+annealing.")
+    (license license:expat)))
+
 (define-public r-mwana
   (package
     (name "r-mwana")
@@ -9198,13 +9229,13 @@ explore or document a data set using a tree structure.")
 (define-public r-muimaterial
   (package
     (name "r-muimaterial")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "muiMaterial" version))
        (sha256
-        (base32 "05hvi37f1a1iczrqhrwfj8m2nxc0mych6ldrif51j3gbranrsbqh"))))
+        (base32 "04l4in2pmmwi9lnpsq12jq7cra0mnpj6apqn0782kx8zs3y2l80x"))))
     (properties `((upstream-name . "muiMaterial")))
     (build-system r-build-system)
     (arguments
@@ -35327,13 +35358,13 @@ in linear regression models, which were proposed by Johndrow et al. (2020)
 (define-public r-mhn
   (package
     (name "r-mhn")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mhn" version))
        (sha256
-        (base32 "1v5hfcn1q2nvfc1prwblw1hcrndjgfdq89nsphxxixblzp3w6gcb"))))
+        (base32 "148yvjqyd1fvskm08glxvx95xin2qkmlywfwc28ikbsa0r1q6mhg"))))
     (properties `((upstream-name . "mhn")))
     (build-system r-build-system)
     (arguments
@@ -35345,13 +35376,14 @@ in linear regression models, which were proposed by Johndrow et al. (2020)
     (synopsis "The Modified Half-Normal Distribution")
     (description
      "This package provides density, distribution, quantile, and random generation
-functions for the Modified Half-Normal (MHN) distribution, along with moments,
-mode, and the Fox-Wright Psi function used as the normalizing constant.  The MHN
-distribution arises as a conditional posterior in Bayesian MCMC and generalizes
-the half-normal, truncated normal, and square-root gamma distributions.
-Implements efficient sampling via the Sun, Kong & Pal (2023)
-<doi:10.1080/03610926.2021.1934700> algorithms and the Gao & Wang (2025)
-<doi:10.1080/03610918.2025.2524551> RTDR method.")
+functions for the Modified Half-Normal (MHN) distribution, along with moments
+and mode; the Fox-Wright Psi normalizing constant is evaluated internally.  The
+MHN distribution arises as a conditional posterior in Bayesian Markov chain
+Monte Carlo and generalizes the half-normal, truncated normal, and square-root
+gamma distributions.  Implements efficient sampling via the Sun, Kong & Pal
+(2023) <doi:10.1080/03610926.2021.1934700> algorithms and the Gao & Wang (2025)
+<doi:10.1080/03610918.2025.2524551> relaxed transformed density rejection
+method.")
     (license license:expat)))
 
 (define-public r-mhmmbayes
@@ -54183,13 +54215,13 @@ a conditional risk model.")
 (define-public r-margevt
   (package
     (name "r-margevt")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "margEVT" version))
        (sha256
-        (base32 "1j1842iwc9yd531x47ifpvsndw255w7jjq9rzxjbv2s7917py3gh"))))
+        (base32 "0lrsvlc3wf211p8fvkw047xiwg6a6q03kxmvzq00rxm3njf6kdg9"))))
     (properties `((upstream-name . "margEVT")))
     (build-system r-build-system)
     (arguments
@@ -54202,16 +54234,13 @@ a conditional risk model.")
     (description
      "This package implements a non-stationary extreme value analysis framework by
 coupling a covariate-driven Non-Homogeneous Poisson Process (NHPP) with
-Elastic-Net regularization and exact analytical gradients.  Provides
-methodologies for estimating conditional return levels and unconditional
-(marginalized) return levels via parametric stochastic integration over Vector
-Autoregressive VAR(p) covariate trajectories, or non-parametric annual-block
-resampling.  Temporal resolution and active-set tolerances are propagated
-consistently through fitting, marginalization, simulation, and validation.
-Methodologies are based on Villa (2026) <https://sabi.ufrgs.br/> \"A Novel
-Regularized Point Process and Stochastic Marginalization Framework for Return
-Level Inference under Covariate-Driven Extremes\" (Master's dissertation,
-Universidade Federal do Rio Grande do Sul).")
+Elastic-Net regularization and analytical gradients.  Provides methods for
+estimating conditional return levels and unconditional (marginalized) return
+levels via parametric stochastic integration over stable Vector Autoregressive
+VAR(p) or univariate autoregressive covariate trajectories, or non-parametric
+annual-block resampling.  Supports block-specific penalty controls, operational
+active-set thresholds, conditional parametric bootstrap inference, and
+walk-forward assessment.")
     (license license:gpl3+)))
 
 (define-public r-margaret

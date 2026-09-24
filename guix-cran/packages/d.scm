@@ -21477,13 +21477,13 @@ into binary outcomes.")
 (define-public r-dfer
   (package
     (name "r-dfer")
-    (version "1.0.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dfeR" version))
        (sha256
-        (base32 "18bsg5j8xar4q2m659fh6nr2frnbk5w6hz49gg1x99c16gkdwcnz"))))
+        (base32 "10ip9549xvcrfz6g81vqmllzwv962ix64g3zc9kjwcrb7km0zjwl"))))
     (properties `((upstream-name . "dfeR")))
     (build-system r-build-system)
     (arguments
@@ -21492,21 +21492,25 @@ into binary outcomes.")
     (propagated-inputs (list r-withr
                              r-usethis
                              r-tidyselect
+                             r-stringr
+                             r-rstudio-prefs
                              r-rlang
                              r-renv
-                             r-magrittr
                              r-lifecycle
                              r-jsonlite
-                             r-httr
+                             r-httr2
                              r-emoji
-                             r-dplyr))
+                             r-dplyr
+                             r-dbi
+                             r-cli
+                             r-arrow))
     (native-inputs (list r-knitr))
     (home-page "https://dfe-analytical-services.github.io/dfeR/")
     (synopsis "Common Department for Education Analysis Tasks")
     (description
-     "Preferred methods for common analytical tasks that are undertaken across the
-Department, including number formatting, project templates and curated reference
-data.")
+     "This package provides preferred methods for common analytical tasks undertaken
+across the Department for Education in England, including number formatting,
+project templates and curated reference data.")
     (license license:gpl3+)))
 
 (define-public r-dfd
@@ -28406,13 +28410,13 @@ effective decision-making.")
 (define-public r-decimal
   (package
     (name "r-decimal")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "decimal" version))
        (sha256
-        (base32 "0fl64hg0w4z7g4h84nfrgrw5a1i9ip2pfbnxyqm8wdb8hgxk8jmh"))))
+        (base32 "1ics766w3j8c066g5zhkm08s8vqf4vi88jq1yzwp6a48sg7v8v2s"))))
     (properties `((upstream-name . "decimal")))
     (build-system r-build-system)
     (arguments
@@ -28420,13 +28424,13 @@ effective decision-making.")
       #:tests? #f))
     (propagated-inputs (list r-withr r-vctrs r-rlang))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=decimal")
+    (home-page "https://github.com/pedrobtz/decimal")
     (synopsis "Exact Arbitrary-Precision Decimal Vectors")
     (description
      "Arbitrary-precision vectors with an exact decimal representation, avoiding the
 rounding surprises of binary floating point.  Built on the mpdecimal C library,
 arithmetic is governed by an explicit decimal context controlling precision,
-rounding, and signalling, and vectors integrate with vctrs for use in data
+rounding, and signaling, and vectors integrate with vctrs for use in data
 frames, tibble objects, summaries, and common numeric workflows.  Missing
 values, signed zeros, infinities, and not-a-number values are supported
 throughout.  The arithmetic model follows Cowlishaw (2009) \"General Decimal
@@ -35552,13 +35556,13 @@ routines that support parallel processing.")
 (define-public r-data-sketches
   (package
     (name "r-data-sketches")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "data.sketches" version))
        (sha256
-        (base32 "1d3kl14s2x9k5jr5dkrsf5kwgvqig7pi4xrzf4knx0hms552mfx9"))))
+        (base32 "0yzjz6ybrnqggvyvdi417d9z27ds0xbjbi51dfh7g5krg38palzn"))))
     (properties `((upstream-name . "data.sketches")))
     (build-system r-build-system)
     (arguments
@@ -37560,6 +37564,41 @@ function.  The package provides tools to create or manage such data and
 functional methods (principal component analysis, multidimensional scaling,
 cluster analysis, discriminant analysis...) for such probability densities.")
     (license license:gpl2+)))
+
+(define-public r-dact
+  (package
+    (name "r-dact")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DACT" version))
+       (sha256
+        (base32 "0jndn2iawbd3jvkvgiskvdhzzadcj8xj87hnfqvmzm9v80p8s7rl"))))
+    (properties `((upstream-name . "DACT")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mvtnorm
+                             r-jsonlite
+                             r-foreach
+                             r-dplyr
+                             r-doparallel
+                             r-clinfun))
+    (home-page "https://github.com/innovatiostat/rcode")
+    (synopsis "Design and Analysis for Clinical Trials")
+    (description
+     "The applications and evaluation of the operating characteristics of many
+statistical methodologies require the use of sophisticated software or extensive
+simulations.  DACT is designed to serve a wide range of innovative statistical
+designs and analyses.  The primary objective of the DACT software is to promote
+the understanding and application of cutting-edge statistical solutions in
+clinical trials.  For this reason, the software is free for non-commercial
+scientific research, including but not limited to academic researchers and
+research/teaching institutions.  Computing codes are available upon request.
+For more details see P. Gao (2024) <doi:10.1080/10543406.2024.2341673>.")
+    (license license:expat)))
 
 (define-public r-dacf
   (package

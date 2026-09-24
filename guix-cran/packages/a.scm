@@ -2113,13 +2113,13 @@ VAE training for heterogeneous tabular datasets.")
 (define-public r-autosync
   (package
     (name "r-autosync")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "autosync" version))
        (sha256
-        (base32 "0lvprikm8ciwndn6girv183j2mcy3a8lvgyfvndp0p94agp6cr1c"))))
+        (base32 "01qlfbzhbb4nf02mvd03wfhmqk2mn7vfls08kcx7d8p8m240x4ng"))))
     (properties `((upstream-name . "autosync")))
     (build-system r-build-system)
     (arguments
@@ -12993,13 +12993,13 @@ methods can be found in Quatto P, Margaritella N, et al. (2019)
 (define-public r-apexcharter
   (package
     (name "r-apexcharter")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "apexcharter" version))
        (sha256
-        (base32 "1f21swwpshvr07ims2sbj53xwyj8d3jq3qrj1y6pk08lrdqqqd2v"))))
+        (base32 "1p4crzsr3sxb94csgqv98v467819b56l2v2zg5dqhi7bji9ichaz"))))
     (properties `((upstream-name . "apexcharter")))
     (build-system r-build-system)
     (arguments

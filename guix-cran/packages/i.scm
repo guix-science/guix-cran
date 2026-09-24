@@ -1745,6 +1745,33 @@ are available to assess the accuracy of oneâs method.  Please see Steorts
 `Introductory Statistics with R', 2nd ed., Springer Verlag, ISBN 978-0387790534.")
     (license license:gpl2+)))
 
+(define-public r-isubgen
+  (package
+    (name "r-isubgen")
+    (version "1.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iSubGen" version))
+       (sha256
+        (base32 "16ffwcsvmazhz6qqrc79i7y6imshh5psyycaw6sdpxgsy0wbp7zb"))))
+    (properties `((upstream-name . "iSubGen")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tensorflow r-philentropy r-keras
+                             r-consensusclusterplus r-cluster))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/uclahs-cds/package-iSubGen")
+    (synopsis "Integrative Subtype Generation")
+    (description
+     "Multi-data type subtyping, which is data type agnostic and accepts missing data.
+ Subtyping is performed using intermediary assessments created with autoencoders
+and similarity calculations.  See Fox et al. (2024)
+<doi:10.1016/j.crmeth.2024.100884> for details.")
+    (license license:gpl2)))
+
 (define-public r-istay
   (package
     (name "r-istay")
@@ -17850,13 +17877,13 @@ plots, lasagna plots and ambulatory glucose profile report.")
 (define-public r-iglm
   (package
     (name "r-iglm")
-    (version "1.2.5")
+    (version "1.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iglm" version))
        (sha256
-        (base32 "03v4azdq9cd9vkd3s0cdlb8604p4npvqnis4d61p97zs70ykya6b"))))
+        (base32 "1hgb2g8fpdznfqizicmlamrv899i4fvv137wd7z9jyvi8xfva9jn"))))
     (properties `((upstream-name . "iglm")))
     (build-system r-build-system)
     (arguments
@@ -17878,7 +17905,7 @@ plots, lasagna plots and ambulatory glucose profile report.")
      "An implementation of generalized linear models (GLMs) for studying relationships
 among attributes in connected populations, where responses of connected units
 can be dependent, as introduced by Fritz et al. (2025)
-<doi:10.1080/01621459.2025.2565851>.  igml extends GLMs for independent
+<doi:10.1080/01621459.2025.2565851>.  iglm extends GLMs for independent
 responses to dependent responses and can be used for studying spillover in
 connected populations and other network-mediated phenomena.")
     (license license:gpl3)))

@@ -4524,6 +4524,54 @@ three functions are based on results in Poetscher and Preinerstorfer (2021)
 <doi:10.1017/S0266466623000269>.")
     (license license:gpl2)))
 
+(define-public r-hrri
+  (package
+    (name "r-hrri")
+    (version "1.0.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HRRI" version))
+       (sha256
+        (base32 "0l4pbgypm8mdjid43qrja39vnqhxj0bn74ivpf7lzf6g2jn981i1"))))
+    (properties `((upstream-name . "HRRI")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect r-tidyr r-rlang r-igraph r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mghotbi/HRRI")
+    (synopsis "Diagnostics for Soil-Plant-Microbial Redox Recovery")
+    (description
+     "This package provides diagnostic functions for integrating longitudinal soil,
+plant and microbial observations during redox disturbance and recovery.
+Functions calculate stoichiometric potential oxygen demand, accessible electron
+capacity from explicitly supplied inventories and kinetic parameters, recovery
+signatures, fixed-reference domain scores, and exploratory multiblock scores
+with observation-coverage diagnostics.  Memory is represented as a holobiont
+state accumulating from mineralogical, plant-acclimation and microbial-community
+legacies.  An illustrative simulator produces closed Fe and Mn inventories
+alongside synthetic observations; its carbon, nitrogen, sulfur and oxygen
+budgets are not closed and its parameters are not calibrated to field rates.
+Simulation benchmarks assess agreement with a prescribed synthetic target and do
+not constitute empirical validation or parameter identification.  Accuracy
+assessment is cluster-aware: intervals come from resampling whole trajectories,
+agreement is reported as Lin's concordance coefficient alongside correlation,
+and mean squared error is partitioned into bias, variance mismatch and lack of
+correlation.  The measured quantities follow Sander, Hofstetter and Gorski
+(2015) <doi:10.1021/acs.est.5b00006> for mediated electrochemical determination
+of electron-accepting and electron-donating capacity, Kluepfel, Piepenbrock,
+Kappler and Sander (2014) <doi:10.1038/ngeo2084> for regeneration of
+electron-accepting capacity across repeated anoxic periods, Thompson, Chadwick,
+Rancourt and Chorover (2006) <doi:10.1016/j.gca.2005.12.005> for the increase in
+iron-oxide crystallinity under redox oscillation, and Keiluweit, Wanzek, Kleber,
+Nico and Fendorf (2017) <doi:10.1038/s41467-017-01406-6> for anaerobic
+microsites in otherwise aerobic soil.  Agreement statistics follow Lin (1989)
+<doi:10.2307/2532051> and Kobayashi and Salam (2000)
+<doi:10.2134/agronj2000.922345x>.")
+    (license license:expat)))
+
 (define-public r-hrqglas
   (package
     (name "r-hrqglas")
@@ -14563,6 +14611,31 @@ misspecified (but not both).  This package is based on the paper by Fan et al.,
 (2022), Journal of Business & Economic Statistics
 <doi:10.1080/07350015.2020.1811102>.")
     (license license:gpl3+)))
+
+(define-public r-hdbrr
+  (package
+    (name "r-hdbrr")
+    (version "1.1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HDBRR" version))
+       (sha256
+        (base32 "04f9y503nafn9z23dpkgirzmih3l0ycpfzjx2qb7l9zcj8pfn8yh"))))
+    (properties `((upstream-name . "HDBRR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-numderiv r-bigstatsr r-bigparallelr))
+    (home-page "https://cran.r-project.org/package=HDBRR")
+    (synopsis "High Dimensional Bayesian Ridge Regression without MCMC")
+    (description
+     "This package implements Bayesian ridge regression for high-dimensional data
+without using Markov chain Monte Carlo (MCMC).  Posterior computations are
+performed using singular value decomposition (SVD) or QR decomposition.  The
+package also provides variable selection and prediction methods.")
+    (license license:gpl2+)))
 
 (define-public r-hdbma
   (package

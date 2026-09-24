@@ -482,6 +482,35 @@ studying community synchrony.  See, for instance, Sheppard et al (2016) <doi:
 Sheppard et al (2019) <doi: 10.1371/journal.pcbi.1006744>.")
     (license license:gpl3)))
 
+(define-public r-wswavelet
+  (package
+    (name "r-wswavelet")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "WSwavelet" version))
+       (sha256
+        (base32 "0g3yyi17l7zj9jhrf9ic3w8ybjblj6ndb4xgw54m9zf7m97c84mj"))))
+    (properties `((upstream-name . "WSwavelet")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-wavethresh))
+    (native-inputs (list r-knitr))
+    (home-page "https://nilotpalsanyal.github.io/WSwavelet/")
+    (synopsis
+     "Bayesian Wavelet Denoising with Wendland-Semicircle Slab Mixture")
+    (description
+     "Bayesian wavelet denoising using a resolution-adaptive spike-and-slab prior
+whose continuous slab is a mixture of a compactly supported Wendland-type
+density and the semicircle density.  The package provides Gaussian and Laplace
+working-likelihood versions, empirical-Bayes fitting of resolution-specific slab
+weights, robust noise-scale estimation, posterior-mean coefficient shrinkage,
+reconstruction by the inverse discrete wavelet transform, and diagnostic tools.")
+    (license (list license:gpl2 license:gpl3))))
+
 (define-public r-wstdiff
   (package
     (name "r-wstdiff")
@@ -9134,13 +9163,13 @@ Centre for Demography and Human Capital Data Explorer
 (define-public r-wcc
   (package
     (name "r-wcc")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wcc" version))
        (sha256
-        (base32 "0jlrfr0jidjq3lafkh0z5mjl3n02mbha1dkyhd9bjjc669sj8hra"))))
+        (base32 "1vmldbf03hb7bmz7sh5rsmpz314v45h9qqmfpf4z3csbghi64hqg"))))
     (properties `((upstream-name . "wcc")))
     (build-system r-build-system)
     (arguments

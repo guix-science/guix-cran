@@ -3988,6 +3988,34 @@ a \"collinearity biplot\" of the smallest dimensions of predictor space, where
 collinearity is most apparent.")
     (license license:gpl3+)))
 
+(define-public r-visatc
+  (package
+    (name "r-visatc")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "visATC" version))
+       (sha256
+        (base32 "0d61sbzfply40mk0mqi3azjidglcm7il7lx3v7ncp933psqd3g3b"))))
+    (properties `((upstream-name . "visATC")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-rlang
+                             r-plotly
+                             r-igraph
+                             r-graphlayouts
+                             r-dplyr))
+    (home-page "https://jnm212.github.io/visATC/")
+    (synopsis "Visualise the Anatomical Therapeutic Chemical (ATC) Hierarchy")
+    (description
+     "Visualisation and subsetting of the World Health Organisation Anatomical
+Therapeutic Chemical (ATC) classification system.")
+    (license license:gpl3+)))
+
 (define-public r-visae
   (package
     (name "r-visae")

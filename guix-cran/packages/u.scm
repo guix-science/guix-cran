@@ -5211,13 +5211,13 @@ electric power transmission network) in the UK since 2011.")
 (define-public r-ukfe
   (package
     (name "r-ukfe")
-    (version "2.15.0")
+    (version "2.15.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "UKFE" version))
        (sha256
-        (base32 "180fkcxg7w7rc17847j9r4lx9cq5qina6ccvv7hzph7arhxy9nn1"))))
+        (base32 "1c3vjas7wd47zlgr86kcq2rhdijpb0v943wpdiab6k85f6fq9pjs"))))
     (properties `((upstream-name . "UKFE")))
     (build-system r-build-system)
     (arguments

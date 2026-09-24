@@ -6333,13 +6333,13 @@ and @code{JavaScript} commands.  This package relies on the X toolkit ('XTK',
 (define-public r-brainnettest
   (package
     (name "r-brainnettest")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BrainNetTest" version))
        (sha256
-        (base32 "1rhs7sn7fm2h50ikqxigx1bvj7aw6jav0ahq8svdy83m9cj1bnf1"))))
+        (base32 "1pkn9wbsvslb9p7qiwmdvrzapq0vcs0iprlalj39rnhzi9kxk71c"))))
     (properties `((upstream-name . "BrainNetTest")))
     (build-system r-build-system)
     (arguments
@@ -6352,15 +6352,15 @@ and @code{JavaScript} commands.  This package relies on the X toolkit ('XTK',
     (description
      "Non-parametric hypothesis testing for populations of brain networks represented
 as graphs, following the L1-distance ANOVA framework of Fraiman and Fraiman
-(2018) <doi:10.1038/s41598-018-21688-0>.  The package builds on this
+(2018) <doi:10.1038/s41598-018-23152-5>.  The package builds on this
 nonparametric graph-comparison framework, extending it with procedures for
 edge-level inference and identification of the specific connections driving
 group differences.  In particular, it provides utilities to compute central
 (mean) graphs, pairwise Manhattan distances between adjacency matrices, the
-group test statistic T, and a fast permutation procedure to identify the
-critical edges that drive between-group differences.  Helper functions to
-generate synthetic community-structured graphs and to visualise brain networks
-with communities are also included.")
+group test statistic T and its permutation p-value, and a fast permutation
+procedure to identify the critical edges that drive between-group differences.
+Helper functions to generate synthetic community-structured graphs and to
+visualise brain networks with communities are also included.")
     (license license:expat)))
 
 (define-public r-brainkcca
@@ -15968,13 +15968,13 @@ processes in such experiments.")
 (define-public r-biotooltipr
   (package
     (name "r-biotooltipr")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BioTooltipR" version))
        (sha256
-        (base32 "07pwvz7nc4qi2q4j7fysm7bqcfil3fn3a4p9ksxgxrvir0nv9n11"))))
+        (base32 "12rrjiwackrrr062jcfl1wmlg1rh42xhn7a1cgg81y5nmgk312rj"))))
     (properties `((upstream-name . "BioTooltipR")))
     (build-system r-build-system)
     (arguments
@@ -29408,13 +29408,13 @@ factors (Pawel and Held, 2022) <doi:10.1111/rssb.12491>.")
 (define-public r-bayesrel
   (package
     (name "r-bayesrel")
-    (version "0.7.9")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Bayesrel" version))
        (sha256
-        (base32 "0k5js1dsdl5lc6vnd334cmr43bzm65v68imfdyldwzfich71pqli"))))
+        (base32 "0gfh5cx1jv0df3ai524krcq4ymk4qfbm0pbi101nsqqcm6z14zp8"))))
     (properties `((upstream-name . "Bayesrel")))
     (build-system r-build-system)
     (arguments
@@ -34460,6 +34460,51 @@ and return georeferenced sf outputs for mapping and remote-sensing integration."
      "Easily create tables from data frames/matrices.  Create/manipulate tables
 row-by-row, column-by-column or cell-by-cell.  Use common formatting/styling to
 output rich tables as HTML', HTML widgets or to Excel'.")
+    (license license:gpl3)))
+
+(define-public r-basicstatsplots
+  (package
+    (name "r-basicstatsplots")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BasicStatsPlots" version))
+       (sha256
+        (base32 "06wids4vmnhn9psg3lmgxgcyfjb83ac9zbgzr7lcid3fz42jdmnp"))))
+    (properties `((upstream-name . "BasicStatsPlots")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-scales
+                             r-rlang
+                             r-rcolorbrewer
+                             r-proc
+                             r-patchwork
+                             r-nortest
+                             r-mass
+                             r-lmtest
+                             r-gtsummary
+                             r-gt
+                             r-ggridges
+                             r-ggplot2
+                             r-dplyr
+                             r-checkmate
+                             r-car
+                             r-broom-helpers
+                             r-broom))
+    (home-page "https://cran.r-project.org/package=BasicStatsPlots")
+    (synopsis
+     "Publication-Ready Data Visualization and Simple Statistical Inference")
+    (description
+     "This package creates publication-ready data visualizations using ggplot2',
+together with tools for common simple statistical analyses (confidence
+intervals, ANOVA, linear and generalized regression).  The package provides
+common chart types and analyses with built-in validation, customization options,
+and publication-friendly themes.")
     (license license:gpl3)))
 
 (define-public r-basicspace

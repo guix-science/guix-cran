@@ -5553,13 +5553,13 @@ further details, see the paper by John R.J. Thompson (2024)
 (define-public r-nonprobsvy
   (package
     (name "r-nonprobsvy")
-    (version "0.2.3")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nonprobsvy" version))
        (sha256
-        (base32 "1ryx99ib3r2l4nhzvk8bdp7j11v9z5nvw0rb0s0rn7vyyrj0czni"))))
+        (base32 "1y8rgd6lrzp4y7wssjilz2hx20dlfn612j948p9lq4wrxr2bn9ff"))))
     (properties `((upstream-name . "nonprobsvy")))
     (build-system r-build-system)
     (arguments
@@ -5576,7 +5576,9 @@ further details, see the paper by John R.J. Thompson (2024)
                              r-mass
                              r-formula-tools
                              r-foreach
+                             r-dorng
                              r-doparallel))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/ncn-foreigners/nonprobsvy")
     (synopsis "Inference Based on Non-Probability Samples")
     (description
@@ -5592,7 +5594,7 @@ al. (2021)
 Wu (2022)
 <https://www150.statcan.gc.ca/n1/pub/12-001-x/2022002/article/00002-eng.htm>.
 For details on the package and its functionalities see
-<doi:10.48550/@code{arXiv.2504.04255>}.")
+<doi:10.18637/jss.v117.i02>.")
     (license license:expat)))
 
 (define-public r-nonprobsampling

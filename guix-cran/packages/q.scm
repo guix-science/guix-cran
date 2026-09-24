@@ -7412,6 +7412,34 @@ to the distributions of quadratic forms of Gaussian variables\"
 <doi:10.1080/10618600.2021.2000423>.")
     (license license:gpl2)))
 
+(define-public r-qapproach
+  (package
+    (name "r-qapproach")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qapproach" version))
+       (sha256
+        (base32 "07dpfn9c3zb273mdav108v16v0wzrlaal1wbdpyqkmzfn40296gw"))))
+    (properties `((upstream-name . "qapproach")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr r-qmethod r-igraph r-fmsb))
+    (home-page "https://doi.org/10.5281/zenodo.11518485")
+    (synopsis "The Q Approach to Consensus Building")
+    (description
+     "This package implements a workflow based on Q method to support
+consensus-building processes.  It prepares participant rankings, selects and
+fits group perspectives, calculates consensus priority scores, validates results
+by bootstrap resampling, and produces publication-ready figures.  The underlying
+method is described by Geschke et al. (2022) \"The Q approach to consensus
+building: integrating diverse perspectives to guide decision-making\"
+<doi:10.32942/X2F59S>.")
+    (license license:gpl3)))
+
 (define-public r-qape
   (package
     (name "r-qape")

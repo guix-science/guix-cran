@@ -5648,13 +5648,13 @@ Work-Conference on Artificial Neural Networks.  Springer, 2017
 (define-public r-tselca
   (package
     (name "r-tselca")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tseLCA" version))
        (sha256
-        (base32 "19k5slnk34wjgh1xcsd8kznr280ig88x0sh3x38xd0h57vfnyi6i"))))
+        (base32 "0zipp9gcmrqnf7sb002g3vkc181r25ixz2lwbing5s0lf4knwbyn"))))
     (properties `((upstream-name . "tseLCA")))
     (build-system r-build-system)
     (arguments
@@ -13559,13 +13559,13 @@ Robert (2023) \"Tissue-adjusted pathway analysis of cancer (TPAC)\"
 (define-public r-toxsummary
   (package
     (name "r-toxsummary")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "toxSummary" version))
        (sha256
-        (base32 "1pxd8sgbby2n6bpcfxng0mj60xx5mx5m0svmqn355cl49vfccsbg"))))
+        (base32 "1ha59gpsdfy0ifpr4wz07zqsjvakh48vyyazy4i23sz7k221gppj"))))
     (properties `((upstream-name . "toxSummary")))
     (build-system r-build-system)
     (arguments

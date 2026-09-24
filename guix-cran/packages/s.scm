@@ -18665,13 +18665,13 @@ ISBN:978-1-4338-3216-1).")
 (define-public r-statamarkdown
   (package
     (name "r-statamarkdown")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Statamarkdown" version))
        (sha256
-        (base32 "1r5czzpwhzsc2l8d22ibavbbb1xfi4n816lph75f0f6ddlppaml8"))))
+        (base32 "1csy1b2ny16cf323wq2ffv95vqpjy27l465m70icdkq7zy92fba1"))))
     (properties `((upstream-name . "Statamarkdown")))
     (build-system r-build-system)
     (arguments
@@ -30898,13 +30898,13 @@ data, taking estimation error into account.")
 (define-public r-spca
   (package
     (name "r-spca")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spca" version))
        (sha256
-        (base32 "089a22s2lwzqcyn08ynldkg8j1w9ch1k03lwvlgzl5asmsw51n3m"))))
+        (base32 "0f7x9snxp4lf3h936prxwj5mi44h8xf1x45z45j0k1hl2s2b1gqm"))))
     (properties `((upstream-name . "spca")))
     (build-system r-build-system)
     (arguments
@@ -55697,6 +55697,41 @@ averaging and Bayesian Dirichlet process mixture models.  See @code{McIntyre},
 Fellows, Gutreuter and Hladik (2022) <doi:10.2196/32645>.")
     (license (license:fsdg-compatible "MIT + file LICENCE"))))
 
+(define-public r-shinyreact
+  (package
+    (name "r-shinyreact")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "shinyreact" version))
+       (sha256
+        (base32 "0lr4svimx2qqr7c5pi0zpgc6g99998c0jq66b0m046xh5dh65m96"))))
+    (properties `((upstream-name . "shinyreact")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny
+                             r-rlang
+                             r-jsonlite
+                             r-htmltools
+                             r-cli
+                             r-brio))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://posit-dev.github.io/shinyreact/r/")
+    (synopsis "Client-Side 'React' Interface for 'Shiny'")
+    (description
+     "Server-side plumbing for the ui.tsx pattern in Shiny': the user interface is
+defined in a client React (<https://react.dev/>) bundle, and the Shiny server
+contains only reactive computation.  Provides page builders that discover and
+serve the client bundle, a render function that publishes any JSON-serializable
+value to the client, and custom messages to React components.  Ships no user
+interface components, so the app author owns the whole front end.  The React
+runtime and the client hooks are bundled, so no @code{JavaScript} build step is
+required to get started.")
+    (license license:expat)))
+
 (define-public r-shinyratings
   (package
     (name "r-shinyratings")
@@ -62325,13 +62360,13 @@ algorithms are proposed.")
 (define-public r-sfadv
   (package
     (name "r-sfadv")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sfadv" version))
        (sha256
-        (base32 "1rfpm6km5pckwhqgpvidm6qsj5sjdaqqj5b0sgvpslivfa4c80cr"))))
+        (base32 "11y3wqq8h888mjyhf9lk1rgf636fvzvf38brmnb96kiv249b6a6w"))))
     (properties `((upstream-name . "sfadv")))
     (build-system r-build-system)
     (arguments
@@ -66571,6 +66606,39 @@ and approximate casewise influence using scores and casewise likelihood.  An
 introduction to the package can be found in Cheung and Lai (2026)
 <doi:10.1080/00273171.2026.2634293>.")
     (license license:gpl3)))
+
+(define-public r-semeqmodels
+  (package
+    (name "r-semeqmodels")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "semeqmodels" version))
+       (sha256
+        (base32 "133zvdfgsbbri7nzgwhgmqhgypvdmp3qlhgh53qwywwma8dyx83i"))))
+    (properties `((upstream-name . "semeqmodels")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-semptools
+                             r-semplot
+                             r-rcolorbrewer
+                             r-modelbpp
+                             r-manymome
+                             r-lavaan
+                             r-igraph
+                             r-digest
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://sfcheung.github.io/semeqmodels/")
+    (synopsis "Equivalent Models in Structural Equation Models")
+    (description
+     "For identifying the sets of empirically equivalent models for structural
+equation models fitted by the lavaan package developed by Rosseel (2012)
+<doi:10.18637/jss.v048.i02>.")
+    (license license:gpl3+)))
 
 (define-public r-semeffect
   (package

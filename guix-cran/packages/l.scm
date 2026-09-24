@@ -13468,6 +13468,44 @@ point filtering, artificial point reduction, classification from geographic
 data, normalization, individual tree segmentation and other manipulations.")
     (license license:gpl3)))
 
+(define-public r-lidartree
+  (package
+    (name "r-lidartree")
+    (version "4.0.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lidaRtRee" version))
+       (sha256
+        (base32 "0dh8vpp0i3hhrlh04gqam927978jdxyx60sxlfmwp163g8zqw6i4"))))
+    (properties `((upstream-name . "lidaRtRee")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra
+                             r-sf
+                             r-reldist
+                             r-lidr
+                             r-leaps
+                             r-imager
+                             r-gvlma
+                             r-car))
+    (home-page "https://lidar.pages-forge.inrae.fr/lidaRtRee/")
+    (synopsis "Forest Analysis with Airborne Laser Scanning (LiDAR) Data")
+    (description
+     "This package provides functions for forest objects detection, structure metrics
+computation, model calibration and mapping with airborne laser scanning:
+co-registration of field plots (Monnet and Mermin (2014)
+<doi:10.3390/f5092307>); tree detection (method 1 in Eysn et al. (2015)
+<doi:10.3390/f6051721>) and segmentation; forest parameters estimation with the
+area-based approach: model calibration with ground reference, and maps export
+(Aussenac et al. (2023) <doi:10.12688/openreseurope.15373.2>); extraction of
+both physical (gaps, edges, trees) and statistical features useful for e.g.
+habitat suitability modeling (Glad et al. (2020) <doi:10.1002/rse2.117>) and
+forest maturity mapping (Fuhr et al. (2022) <doi:10.1002/rse2.274>).")
+    (license license:gpl3)))
+
 (define-public r-licoread
   (package
     (name "r-licoread")

@@ -17,11 +17,11 @@
   #:use-module (gnu packages fontutils)
   #:use-module (gnu packages fribidi)
   #:use-module (gnu packages graphviz)
-  #:use-module (gnu packages duckdb)
   #:use-module (gnu packages java)
   #:use-module (gnu packages tbb)
   #:use-module (gnu packages version-control)
   #:use-module (gnu packages language)
+  #:use-module (gnu packages duckdb)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages perl)
   #:use-module (gnu packages curl)
@@ -6932,13 +6932,13 @@ ISBN:978-0816211043).")
 (define-public r-greenr
   (package
     (name "r-greenr")
-    (version "0.0.1.7")
+    (version "0.0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "greenR" version))
        (sha256
-        (base32 "0ad35rnqn0x1jnanrvgd7qn4m76z8p2wmfyfirxl6c2kxnjsrb4f"))))
+        (base32 "0l45qhh2brg30cwcs18pifqc2ymsc81lbdhzvj66xjbpm3gvrj9a"))))
     (properties `((upstream-name . "greenR")))
     (build-system r-build-system)
     (arguments
@@ -6961,7 +6961,6 @@ ISBN:978-0816211043).")
                              r-rcpp
                              r-rcolorbrewer
                              r-purrr
-                             r-progress
                              r-plotly
                              r-patchwork
                              r-osrm
@@ -6983,11 +6982,8 @@ ISBN:978-0816211043).")
                              r-ggplot2
                              r-exactextractr
                              r-elevatr
-                             r-duckdb
                              r-dt
                              r-dplyr
-                             r-dbi
-                             r-data-table
                              r-curl
                              r-cowplot
                              r-classint
@@ -30995,18 +30991,19 @@ classes and functions.")
 (define-public r-geomodels
   (package
     (name "r-geomodels")
-    (version "2.2.8")
+    (version "2.2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeoModels" version))
        (sha256
-        (base32 "12x9jfn0bhp1zch3zvjjm00v49nwz6zbvcmnw6yvsymryqpycdkj"))))
+        (base32 "15vqhkfdnly5ly9f5ajjldx3w9hd9f82dj55fsy4q9yn7v3h1ws2"))))
     (properties `((upstream-name . "GeoModels")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (inputs (list))
     (propagated-inputs (list r-vgam
                              r-spam
                              r-sn

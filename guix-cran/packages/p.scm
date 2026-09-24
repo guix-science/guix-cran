@@ -3777,13 +3777,13 @@ students in the Psychology Department at Nottingham Trent University.")
 (define-public r-psymetrictools
   (package
     (name "r-psymetrictools")
-    (version "1.2.2")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PsyMetricTools" version))
        (sha256
-        (base32 "10r19fram9d2v27vv1x6brgyl4wp1nb5s9893dg4qjdiizg91rx1"))))
+        (base32 "024gqbmrwx9h9bcnzzc6rd3mhb07yldrm1973jkyrm3rdskkbghy"))))
     (properties `((upstream-name . "PsyMetricTools")))
     (build-system r-build-system)
     (arguments
@@ -7879,39 +7879,6 @@ variable selection.  The algorithm can handle linear regression, GLM, and Cox
 regression.  S3 methods @code{print()}, @code{summary()}, @code{coef()},
 @code{predict()}, and @code{plot()} are available for the algorithm.  Technical
 details can be found at Zuo et al. (2021) <doi:10.1080/00031305.2021.1946150>.")
-    (license license:gpl3)))
-
-(define-public r-prosetta
-  (package
-    (name "r-prosetta")
-    (version "0.4.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PROsetta" version))
-       (sha256
-        (base32 "0adfnp2myr82rhfba0hjyr3a5ypzx48qqwn7r9hmgw6lshk5n9rj"))))
-    (properties `((upstream-name . "PROsetta")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-testdesign
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-psych
-                             r-plink
-                             r-mvnfast
-                             r-mirt
-                             r-lavaan
-                             r-equate))
-    (native-inputs (list r-knitr))
-    (home-page "https://www.prosettastone.org/")
-    (synopsis "Linking Patient-Reported Outcomes Measures")
-    (description
-     "Perform scale linking to establish relationships between instruments that
-measure similar constructs according to the PROsetta Stone methodology, as in
-Choi, Schalet, Cook, & Cella (2014) <doi:10.1037/a0035768>.")
     (license license:gpl3)))
 
 (define-public r-proscorertools
@@ -20811,13 +20778,13 @@ and Cassandra <doi:10.32614/RJ-2024-021>.")
 (define-public r-pomdp
   (package
     (name "r-pomdp")
-    (version "1.2.5")
+    (version "1.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pomdp" version))
        (sha256
-        (base32 "0kynzc5s8wqx5ib7d57shrjbfczwrh7yy1g92774biqn020jrrzr"))))
+        (base32 "0n6q6rqq6sz937nvi6f5qvn28yr9g6sl48zqynjp4ymgmqdydkwz"))))
     (properties `((upstream-name . "pomdp")))
     (build-system r-build-system)
     (arguments
@@ -20834,10 +20801,10 @@ and Cassandra <doi:10.32614/RJ-2024-021>.")
     (synopsis
      "Infrastructure for Partially Observable Markov Decision Processes (POMDP)")
     (description
-     "This package provides the infrastructure to define and analyze the solutions of
-Partially Observable Markov Decision Process (POMDP) models.  Interfaces for
-various exact and approximate solution algorithms are available including value
-iteration, point-based value iteration and SARSOP. Hahsler and Cassandra
+     "This package provides the infrastructure to define and analyze solutions to
+Partially Observable Markov Decision Process (POMDP) models.  Interfaces to
+various exact and approximate solution algorithms are available, including value
+iteration, point-based value iteration, and SARSOP. Hahsler and Cassandra
 <doi:10.32614/RJ-2024-021>.")
     (license license:gpl3+)))
 
@@ -23840,13 +23807,13 @@ pharmacometric models.")
 (define-public r-pmxnode
   (package
     (name "r-pmxnode")
-    (version "0.1.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pmxNODE" version))
        (sha256
-        (base32 "1cnaab6hy8q1q0jyr3hk89dc0vpsrawmd0ny50km1bxb3l915rvm"))))
+        (base32 "1n1jbf58q4yfrx0mghmdy1dm38nfnn4z4svkxil1fa7n316jh9ka"))))
     (properties `((upstream-name . "pmxNODE")))
     (build-system r-build-system)
     (arguments
@@ -26600,13 +26567,13 @@ prediction model with less overfitting and robust to noise.")
 (define-public r-plnr
   (package
     (name "r-plnr")
-    (version "2025.11.22")
+    (version "2026.9.23")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plnr" version))
        (sha256
-        (base32 "1rnf6a9ihh37j1wrgbkdam53yp5f7bcri7lkd27nby3ccf6v4lpz"))))
+        (base32 "1p568yy8qdgz7amljlripnnppcbgm1nl7shbw3pnawfnjwr4b7hj"))))
     (properties `((upstream-name . "plnr")))
     (build-system r-build-system)
     (arguments
@@ -26642,13 +26609,13 @@ flexible execution options, built-in debugging tools, and hash-based caching.")
 (define-public r-plnmodels
   (package
     (name "r-plnmodels")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PLNmodels" version))
        (sha256
-        (base32 "1c57rj01n3pylh6ms25wxmwlcjfmzkl13g6wjwhr1fqvpgyk8cir"))))
+        (base32 "1fvlw34lbpcivh7jmcd566pgksvflbg74nflrqhrwg5qhrhmxrll"))))
     (properties `((upstream-name . "PLNmodels")))
     (build-system r-build-system)
     (arguments
@@ -26667,7 +26634,6 @@ flexible execution options, built-in debugging tools, and hash-based caching.")
                              r-magrittr
                              r-igraph
                              r-gridextra
-                             r-glassofast
                              r-ggplot2
                              r-dplyr
                              r-corrplot
@@ -34897,13 +34863,13 @@ used to interface Python from R.")
 (define-public r-pharmaversesdtmjnj
   (package
     (name "r-pharmaversesdtmjnj")
-    (version "0.0.4")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pharmaversesdtmjnj" version))
        (sha256
-        (base32 "1s1lm65sdnjhfd7f0ysyilrhqsfvpkc81zqp78gb576030vgyvsa"))))
+        (base32 "0xrnfv65bk3m1n58kwngmvcbzg4969fz7n2nf2w494mxga5iavxs"))))
     (properties `((upstream-name . "pharmaversesdtmjnj")))
     (build-system r-build-system)
     (arguments

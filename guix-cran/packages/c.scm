@@ -10180,18 +10180,19 @@ documentation are available at <https://nicchr.github.io/cppally/>.")
 (define-public r-cpp4r
   (package
     (name "r-cpp4r")
-    (version "1.1.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cpp4r" version))
        (sha256
-        (base32 "0xygsmij3lbx3byjz81k4vqnyfcb8mlacb8xb5hs31ginr25m85d"))))
+        (base32 "0vfw97f62a79ilnrbp21lwq7bjjx3649f3y4qrmi5sn5fjd8b7c8"))))
     (properties `((upstream-name . "cpp4r")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (native-inputs (list r-litedown))
     (home-page "https://cpp4r.org")
     (synopsis "Header-Only 'C++' and 'R' Interface")
     (description
@@ -24502,32 +24503,6 @@ administrative levels: country, island, prefecture, and commune.  Includes tools
 for choropleth visualisation using ggplot2 and leaflet', and functions to
 retrieve the underlying spatial datasets as sf objects.")
     (license license:expat)))
-
-(define-public r-comorbidpgs
-  (package
-    (name "r-comorbidpgs")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "comorbidPGS" version))
-       (sha256
-        (base32 "0nzxl11m7913j0h63rzlaji2nvwn2hqmd6mdyf8r9nh1l1a3zxj3"))))
-    (properties `((upstream-name . "comorbidPGS")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-nnet r-mass r-ivreg r-ggplot2))
-    (home-page "https://cran.r-project.org/package=comorbidPGS")
-    (synopsis
-     "Assessing Predisposition Between Phenotypes using Polygenic Scores")
-    (description
-     "Using polygenic scores (PGS, or PRS/GRS for binary outcomes), this package
-allows to investigate shared predisposition between different conditions, and do
-fast association analysis, export plots and views of the PGS distribution using
-ggplot2 object.")
-    (license license:gpl3+)))
 
 (define-public r-comorbidity
   (package
@@ -50857,13 +50832,13 @@ dynamic functional connectivity.  Medical Image Analysis, Volume 75.")
 (define-public r-cci
   (package
     (name "r-cci")
-    (version "0.3.6.1")
+    (version "0.3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CCI" version))
        (sha256
-        (base32 "18sazzv3mm47sw5pzll25bz6v39qzkm1jkk7a8ricrqcydsqjxxw"))))
+        (base32 "0p14w7yn0b3frxgm5w86yi1lmd72a5ilgpcvbnj8xbkiqz21zzmb"))))
     (properties `((upstream-name . "CCI")))
     (build-system r-build-system)
     (arguments
