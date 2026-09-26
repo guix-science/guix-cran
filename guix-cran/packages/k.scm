@@ -65,13 +65,13 @@ high levels of noise.")
 (define-public r-kza
   (package
     (name "r-kza")
-    (version "4.2.0")
+    (version "4.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kza" version))
        (sha256
-        (base32 "0mrr9c2xk0cxfgd12ibsp0bj8ihfd8pmsgrq6dc9xvnk5sxg9d3z"))))
+        (base32 "02pvrp3qxjz4g8hc1h7hvk37a384kf1zvk94mjc5cl7ik74kjl29"))))
     (properties `((upstream-name . "kza")))
     (build-system r-build-system)
     (arguments
@@ -81,8 +81,10 @@ high levels of noise.")
     (home-page "https://cran.r-project.org/package=kza")
     (synopsis "Kolmogorov-Zurbenko Adaptive Filters")
     (description
-     "Time Series Analysis including break detection, spectral analysis, KZ Fourier
-Transforms.")
+     "Time series analysis including break detection, spectral analysis, and
+Kolmogorov-Zurbenko Fourier transforms, following Zurbenko et al. (1996)
+<doi:10.1175/1520-0442(1996)009%3C3548:DDITSO%3E2.0.CO;2> and Yang and Zurbenko
+(2010) <doi:10.1002/wics.71>.")
     (license license:gpl3)))
 
 (define-public r-kyotil

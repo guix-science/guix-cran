@@ -8232,13 +8232,13 @@ to covariates only or also to outcome values.")
 (define-public r-lmmsolver
   (package
     (name "r-lmmsolver")
-    (version "1.0.13")
+    (version "1.0.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LMMsolver" version))
        (sha256
-        (base32 "1zf4fsnx3a57741srahx28bn21chp2n8qwnl4izk8kwb8758z9ay"))))
+        (base32 "1f9hs9z8rf4zmkpmazpdpnzn4azh9j0z01slzdhbqlgar12h92hh"))))
     (properties `((upstream-name . "LMMsolver")))
     (build-system r-build-system)
     (arguments
@@ -12868,13 +12868,13 @@ chunks.  Rebuild the file from the tibble.")
 (define-public r-lightlogr
   (package
     (name "r-lightlogr")
-    (version "0.10.3")
+    (version "0.10.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LightLogR" version))
        (sha256
-        (base32 "1ff8j5p5zb0nvikji137p4ficmm767g3mc630d2dg2kdnhnhpq31"))))
+        (base32 "0krzrcp09ld4w3rf2mh3amm9fayjgz0x11bh4d1bj02vabhjx1vq"))))
     (properties `((upstream-name . "LightLogR")))
     (build-system r-build-system)
     (arguments
@@ -13734,13 +13734,13 @@ load EXR images.")
 (define-public r-liblinear
   (package
     (name "r-liblinear")
-    (version "2.10-25")
+    (version "2.10-26")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LiblineaR" version))
        (sha256
-        (base32 "19iqqmdwzwc5xyr3d6fppm9d9fmdikq2qqm8ns0gnl67b31gx5p6"))))
+        (base32 "00ibjahzrpjgxi94cy4sba9ahzy7i7kw563zli4zkw4nbx5247zw"))))
     (properties `((upstream-name . "LiblineaR")))
     (build-system r-build-system)
     (arguments
@@ -14141,30 +14141,31 @@ and methods are described in detail in Timonen et al. (2021)
 (define-public r-lglasso
   (package
     (name "r-lglasso")
-    (version "0.1.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lglasso" version))
        (sha256
-        (base32 "0qkmlr7gfbw9m403676p4ip4hn2v2ll1jcwj5vhshcyb5whsr866"))))
+        (base32 "0wfyhb2smbmqkq0n2m0622cpyfav3kigvchi1cca0ixpvklfi2y8"))))
     (properties `((upstream-name . "lglasso")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-glasso))
+    (propagated-inputs (list r-mass r-glasso r-fake r-cvxr))
     (home-page "https://github.com/jiezhou-2/lglasso")
-    (synopsis "Longitudinal Graphical Lasso")
+    (synopsis "Graphical Lasso for Longitudinal Data")
     (description
-     "For high-dimensional correlated observations, this package carries out the L_1
-penalized maximum likelihood estimation of the precision matrix (network) and
-the correlation parameters.  The correlated data can be longitudinal data (may
-be irregularly spaced) with dampening correlation or clustered data with uniform
-correlation.  For the details of the algorithms, please see the paper Jie Zhou
-et al.  Identifying Microbial Interaction Networks Based on Irregularly Spaced
-Longitudinal 16S @code{rRNA} sequence data <doi:10.1101/2021.11.26.470159>.")
-    (license license:gpl3)))
+     "Estimate treatment-specific precision matrices (networks) from longitudinal
+high-dimensional normal data.  The corresponding random effects are also
+estimated.  It is motivated by the analysis of omics data in clinical trials
+where the longitudinal omics data becomes increasingly common.  It includes both
+one-stage models (without treatment) and two-stage models (with one treatment).
+For details of the algorithms, please check the materials on its @code{GitHub}
+repo.  If you have any questions, feel free to contact the maintainers through
+the email below.")
+    (license license:gpl3+)))
 
 (define-public r-lgewis
   (package
@@ -14743,13 +14744,13 @@ label.")
 (define-public r-lexsync
   (package
     (name "r-lexsync")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lexsync" version))
        (sha256
-        (base32 "1m3hh2q8rhn4lzp0fa8jfd5wr1qr51xqdm78kw16mq27rqwsi3n5"))))
+        (base32 "1qyrsjbrwbxcw5qdra5263in89v97mbfn9xpk0by9cpi7zwis3ix"))))
     (properties `((upstream-name . "lexsync")))
     (build-system r-build-system)
     (arguments
@@ -21228,13 +21229,13 @@ Biomarker Trajectories'.")
 (define-public r-landgraph
   (package
     (name "r-landgraph")
-    (version "0.0.1")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "landgraph" version))
        (sha256
-        (base32 "19ffib2frsjih4a6cbisfx16wbf5r874p7pbxpxxqxg5glf4r4r7"))))
+        (base32 "0p7d79r48sliygxl4h70kmzhyikacsl958w2l39fzjnqdn1msf4q"))))
     (properties `((upstream-name . "landgraph")))
     (build-system r-build-system)
     (arguments
@@ -21250,8 +21251,8 @@ list) with constructors from coordinates; genetic covariance and distance from
 biallelic or multiallelic data (the Yang-style normalized-dosage covariance and
 the Dyer-style multivariate covariance); and antisymmetric per-edge directional
 covariate builders (the gradient of a scalar potential, and the projection of a
-vector flow field).  Used by terradish (symmetric resistance) and dragonflow
-(asymmetric gene flow).  No compiled code.")
+vector flow field).  Used by terradish (symmetric resistance).  No compiled
+code.")
     (license license:bsd-3)))
 
 (define-public r-landform

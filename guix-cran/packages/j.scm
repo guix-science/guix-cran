@@ -3164,13 +3164,13 @@ easy transfer of data and analyses between jamovi and R.")
 (define-public r-jmvcore
   (package
     (name "r-jmvcore")
-    (version "2.7.38")
+    (version "28.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jmvcore" version))
        (sha256
-        (base32 "1wp704yncz6a6gnfzj0bcwir2zwlk9pkfchljflynl7vsqmgv2p7"))))
+        (base32 "0imidsa66mscf24551nvh0rfbqq8fmr8nh767lnmp73s6cg3nclc"))))
     (properties `((upstream-name . "jmvcore")))
     (build-system r-build-system)
     (arguments

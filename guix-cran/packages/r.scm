@@ -566,6 +566,41 @@ recompiling rxode2 (Wang, Hallow and James (2016) <doi:10.1002/psp4.12052>)
 which runs the nlmixr2 models during estimation.")
     (license license:gpl3+)))
 
+(define-public r-rxode2lincmt
+  (package
+    (name "r-rxode2lincmt")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rxode2lincmt" version))
+       (sha256
+        (base32 "1sdkrkfz6zjr2x5zfvdcbwyrlxy26cmvdpxxjrqs7zlbj2a2xyjj"))))
+    (properties `((upstream-name . "rxode2lincmt")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stanheaders
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-checkmate
+                             r-bh))
+    (home-page "https://nlmixr2.github.io/rxode2lincmt/")
+    (synopsis "Linear Compartment Model Solutions and Gradients for 'rxode2'")
+    (description
+     "Analytic one, two and three compartment linear pharmacokinetic solutions with
+their parameter gradients from stan automatic differentiation (Carpenter et al
+(2015) <doi:10.48550/@code{arXiv.1509.07164>}), eigen decompositions and
+derived-parameter conversions used by rxode2 (Wang, Hallow and James (2016)
+<doi:10.1002/psp4.12052>).  Split out of rxode2 so its installation does not
+compile stan AD items which made it take too long to compile by itself.  The
+closed-form solutions follow the idea of the wnl package (Bae,
+<https://CRAN.R-project.org/package=wnl>), though the implementation here is
+different.")
+    (license license:gpl3+)))
+
 (define-public r-rxode2
   (package
     (name "r-rxode2")
@@ -3297,13 +3332,13 @@ document that support @code{JavaScript} typed data
 (define-public r-rtseva
   (package
     (name "r-rtseva")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RtsEva" version))
        (sha256
-        (base32 "0ky9ik2aigysydvavj1mismxsnrcbq4rgg993n9pdi1jk6xvsk7d"))))
+        (base32 "1v866al7p950cn3n9apdaxhf0iiwrz6rm15a30034ny6kh5pskzz"))))
     (properties `((upstream-name . "RtsEva")))
     (build-system r-build-system)
     (arguments
@@ -5011,13 +5046,13 @@ graphs.  The bookdown Lite template theme supports code folding.")
 (define-public r-rtemis-llm
   (package
     (name "r-rtemis-llm")
-    (version "0.8.1")
+    (version "0.8.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtemis.llm" version))
        (sha256
-        (base32 "0ckkjj5f8jwr6i93hw07s1wawvrgl5zi8kdwzwlckaksvmcayymy"))))
+        (base32 "1xy0zia7b7in3hs47qknn2f0rza1rvsjsim7w3566hdrq47hc2rq"))))
     (properties `((upstream-name . "rtemis.llm")))
     (build-system r-build-system)
     (arguments
@@ -5025,11 +5060,11 @@ graphs.  The bookdown Lite template theme supports code folding.")
       #:tests? #f))
     (propagated-inputs (list r-s7
                              r-rtemis-core
+                             r-jsonvalidate
                              r-jsonlite
                              r-httr2
                              r-digest
-                             r-data-table
-                             r-cli))
+                             r-data-table))
     (home-page "https://www.rtemis.org")
     (synopsis "Large Language Models and Agentic AI")
     (description
@@ -5039,7 +5074,8 @@ Features reasoning, structured output, memory management, and tool use.
 Supports Ollama <https://docs.ollama.com/api>, @code{OpenAI'-compatible}
 <https://developers.openai.com/api/reference/overview>, and
 Anthropic'-compatible <https://platform.claude.com/docs/en/api/getting-started>
-endpoints.")
+endpoints.  Runs Apple's on-device Foundation Models through the rtemis-afm
+bridge <https://github.com/rtemis-org/rtemis-afm>.")
     (license license:gpl3+)))
 
 (define-public r-rtemis-core
@@ -5663,13 +5699,13 @@ summarizing model outputs.  rsyncrosim requires @code{SyncroSim} 2.3.5 or higher
 (define-public r-rswipl
   (package
     (name "r-rswipl")
-    (version "10.1.15")
+    (version "10.1.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rswipl" version))
        (sha256
-        (base32 "1f7g67gwpc5m86dp0gj7jvm4ys3dgcnf1m4fyjiqjjgj281z02lh"))))
+        (base32 "1bc1p921qv32b0v752yy5kishsd3b24dgc534gjz5f11j0h488s8"))))
     (properties `((upstream-name . "rswipl")))
     (build-system r-build-system)
     (arguments
@@ -7772,6 +7808,45 @@ information).  The package offers an interface to query the Smartly.io API and
 loads data directly into R for further data processing and data analysis.")
     (license license:expat)))
 
+(define-public r-rsmart
+  (package
+    (name "r-rsmart")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rsmart" version))
+       (sha256
+        (base32 "0acq3ph88v70p1f5i3hmln2c135njsa60fg9h7l1ijh8p5np4b6g"))))
+    (properties `((upstream-name . "rsmart")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mvtnorm
+                             r-modelobj
+                             r-matrix
+                             r-mass
+                             r-foreach
+                             r-dofuture
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://MSDLLCpapers.github.io/rsmart/")
+    (synopsis
+     "Sequential Multiple Assignment Randomized Trials Design and Analyses")
+    (description
+     "This package implements the interim augmented inverse probability weighted
+estimator (IAIPWE) for estimating the value of treatment regimes embedded in
+sequential multiple assignment randomized trials (SMARTs).  The IAIPWE subsumes
+both the inverse probability weighted estimator (IPWE) and the augmented inverse
+probability weighted estimator (AIPWE), enabling inference at interim and final
+analyses.  The package provides functions for value estimation, sandwich
+variance computation, group sequential stopping boundaries, and sample size
+determination for multi-stage SMARTs with up to two treatment options at each
+stage.  See Manschot, Laber, and Davidian (2023) <doi:10.1111/biom.13854> for
+additional details.")
+    (license license:gpl3+)))
+
 (define-public r-rsmalltelescopes
   (package
     (name "r-rsmalltelescopes")
@@ -8291,6 +8366,34 @@ SFA toolkit 1.0 by Pietro Berkes and SFA toolkit 2.8 by Wolfgang Konen.")
     (description
      "This package provides a report of statistical findings (RSF) project template is
 generated using a Quarto book.")
+    (license license:expat)))
+
+(define-public r-rservets
+  (package
+    (name "r-rservets")
+    (version "0.8.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RserveTS" version))
+       (sha256
+        (base32 "0zjxdwv5lc9l0m02s6sdavpkqd10qpl68ggjgi0yaj4pbjf1fc4r"))))
+    (properties `((upstream-name . "RserveTS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rserve r-rlang r-objectsignals
+                             r-objectproperties))
+    (home-page "https://tomelliott.co.nz/RserveTS/")
+    (synopsis "Typed Application Contracts for 'Rserve'")
+    (description
+     "Defines a typed application contract between R backends and @code{TypeScript}
+clients over Rserve'.  Users specify the API architecture with typed object
+capability (Ocap) functions and compile matching @code{TypeScript} schemas and
+deployment scripts for the server.  The companion library rserve-ts', available
+on npm <https://www.npmjs.com/package/rserve-ts>, provides the client-side
+runtime that consumes those schemas.")
     (license license:expat)))
 
 (define-public r-rsentiment
@@ -12138,13 +12241,13 @@ objects and rgl visualizing capabilities.")
 (define-public r-rpointcloud
   (package
     (name "r-rpointcloud")
-    (version "0.9.1")
+    (version "0.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RPointCloud" version))
        (sha256
-        (base32 "177p145h2hrq4yn802fj702ab7wvlgr61zfgbj4n02s85689cwcf"))))
+        (base32 "10wq0bqvlml6q8klpak9fbafy73gd0vblqfskxb6fh29fkcky90i"))))
     (properties `((upstream-name . "RPointCloud")))
     (build-system r-build-system)
     (arguments
@@ -12157,7 +12260,7 @@ objects and rgl visualizing capabilities.")
                              r-classcomparison
                              r-circlize))
     (native-inputs (list r-knitr))
-    (home-page "http://oompa.r-forge.r-project.org/")
+    (home-page "http://silicovore.com/OOMPA/cytangle.html")
     (synopsis "Visualizing Topological Loops and Voids")
     (description
      "Visualizations to explain the results of a topological data analysis.  The goal
@@ -12167,7 +12270,8 @@ sets.  The output of an analysis using the TDA package is a Rips diagram (named
 after the mathematician Eliyahu Rips).  The goal of R@code{PointCloud} is to
 fill in these holes in the data by providing tools to visualize the features
 that help explain the structures found in the Rips diagram.  See @code{McGee}
-and colleagues (2024) <doi:10.1101/2024.05.16.593927>.")
+and colleagues (2024) <doi:10.1101/2024.05.16.593927> and (2026) <doi:
+10.3390/biotech15030063>.")
     (license license:artistic2.0)))
 
 (define-public r-rpnf
@@ -17827,6 +17931,31 @@ established, often related to methods in package robustbase'.  Amazingly,
 <doi:10.1111/j.1467-9868.2009.00706.x>.")
     (license license:gpl2+)))
 
+(define-public r-robustvis
+  (package
+    (name "r-robustvis")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RobustVis" version))
+       (sha256
+        (base32 "0pi8vyhr5lwvigqwm43gx8ycz7hnzgcnma0qwp04mnsn57d7qk56"))))
+    (properties `((upstream-name . "RobustVis")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-scales r-ggplot2 r-dplyr))
+    (home-page "https://cran.r-project.org/package=RobustVis")
+    (synopsis "Visualize ROBUST-RCT Risk of Bias Assessments")
+    (description
+     "This package provides functions to visualize ROBUST-RCT assessments,Â as
+introduced by Wang et al. (2025) <doi:10.1136/bmj-2024-081199>.  Through
+aÂ two-step workflow (step 1 and step 2), the package generates bar plots
+andÂ traffic-light plots that match standard Cochrane styles.")
+    (license license:expat)))
+
 (define-public r-robustvarcomp
   (package
     (name "r-robustvarcomp")
@@ -22727,13 +22856,13 @@ export helpers for exploratory workflows.")
 (define-public r-rmoriedata
   (package
     (name "r-rmoriedata")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rmoriedata" version))
        (sha256
-        (base32 "1zzrg0ncfnnvbp2d5493n2m2knsb0jy5n9m8z6vlznrv4k9pizb8"))))
+        (base32 "0fn85gy9jkaqjy9vwz3z05qb1d8cd1jlnw3i74csyk084c8x485r"))))
     (properties `((upstream-name . "rmoriedata")))
     (build-system r-build-system)
     (arguments
@@ -22745,8 +22874,7 @@ export helpers for exploratory workflows.")
     (synopsis "Integrated Datasets for the 'rmorie' Package")
     (description
      "Integrated open data fixtures used by the rmorie package for examples,
-vignettes, and tests.  Split out so rmorie itself stays within the CRAN
-package-size soft cap.  Contains snapshots of publicly available datasets from
+vignettes, and tests.  Contains snapshots of publicly available datasets from
 open-data portals built on the Comprehensive Knowledge Archive Network ('CKAN',
 <https://ckan.org/>), Socrata (<https://dev.socrata.com/>), and Opendatasoft
 (<https://www.huwise.com/>) (Chicago, New York City, Toronto, Vancouver, and
@@ -24717,13 +24845,13 @@ without ties.  Based on Adkins and Flinger (1998)
 (define-public r-rmake
   (package
     (name "r-rmake")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rmake" version))
        (sha256
-        (base32 "02m9kazlqmv90kzclwxjrvv7k73djwmgs2lmvqdmanlpnrp943b3"))))
+        (base32 "0hqn69qv3pm51v62pmxa0ivj8cf82dynivdjq4w5034dq3ms36fg"))))
     (properties `((upstream-name . "rmake")))
     (build-system r-build-system)
     (arguments
@@ -25322,13 +25450,13 @@ buffer engine, and adaptive recursive thresholding.")
 (define-public r-rlibkriging
   (package
     (name "r-rlibkriging")
-    (version "1.2-2")
+    (version "1.2-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rlibkriging" version))
        (sha256
-        (base32 "1vnbk5r3gz5wmpwprp31b1fh5x68x4gpwmbr97lw1zck9bs0yvm6"))))
+        (base32 "0qvl5y0qnnsgk52qrxmxrh7xvxwkpw1k459jas08kslh1a16lkm1"))))
     (properties `((upstream-name . "rlibkriging")))
     (build-system r-build-system)
     (arguments
@@ -27912,6 +28040,42 @@ Downstream functions for CNV aberration detection, recurrence analysis, gene
 annotation, CNV matrix generation, and CNV-RNA expression correlation are
 disease-type agnostic.")
     (license license:expat)))
+
+(define-public r-riskweightedassets
+  (package
+    (name "r-riskweightedassets")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "riskweightedassets" version))
+       (sha256
+        (base32 "199b5f7y49968whpaj7a55jk051j7j87dbff2hbbyd8z3g2ax1k9"))))
+    (properties `((upstream-name . "riskweightedassets")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml r-readxl r-openxlsx r-jsonlite r-digest))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/rds0001/risk-weighted-assets-r")
+    (synopsis "Reproducible Risk-Weighted Asset Calculations")
+    (description
+     "This package provides transparent, deterministic and auditable calculations of
+risk-weighted assets, own-funds requirements, interest-rate risk in the banking
+book and related capital metrics.  It supports canonical in-memory tables and
+versioned spreadsheet datasets, strict validation, synthetic reference profiles,
+bitemporal snapshots, calculation controls and traceable regulatory source
+metadata.  Methods are parameterised against the European Parliament and Council
+(2013) Capital Requirements Regulation
+<https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32013R0575> and its
+amending Regulation (EU) 2024/1623
+<https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1623>.  A
+granular analyst API exposes individual formulae, domain views, controls,
+schemas and auditable parameter overrides.  The implementation is intended for
+analytical, educational and model-validation use and does not constitute legal
+or supervisory advice.")
+    (license license:gpl3)))
 
 (define-public r-riskutility
   (package
@@ -34923,13 +35087,13 @@ facilitates correction, linked through a code.")
 (define-public r-rewind
   (package
     (name "r-rewind")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rewind" version))
        (sha256
-        (base32 "0vxa500waa0h2njg44zpcfmwf1yrpk8ayx6cpkkks06nzgp5gj0d"))))
+        (base32 "0sqqy12pn5943dkra45n71anns2cq32fi3bmhz34mqgnfhh0hyss"))))
     (properties `((upstream-name . "rewind")))
     (build-system r-build-system)
     (arguments
@@ -41417,6 +41581,38 @@ significantly different from a homogeneous Poisson process.  The departure from
 the Poisson process is measured using a L1 distance.  See Di and Perlman 2007
 for more details.")
     (license license:gpl2)))
+
+(define-public r-regstat
+  (package
+    (name "r-regstat")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "regstat" version))
+       (sha256
+        (base32 "1j0r394al2acr82dkprv74klj14imckm68n756sbvs81bxzj65ff"))))
+    (properties `((upstream-name . "regstat")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mtloots/regstat")
+    (synopsis
+     "An Exact Test for a Change in Covariance (Dependence) Structure")
+    (description
+     "An exact finite-sample test for whether two groups share a covariance matrix,
+the omnibus form of the differential-network question.  Under the Gaussian null
+the likelihood-ratio statistic has a distribution given by the real Jacobi
+ensemble that is free of the unknown common covariance, so a single Monte-Carlo
+calibration at the identity serves every covariance with no estimate of the
+nuisance covariance; this is the property that survives the dimension barrier,
+where estimating the covariance is hardest.  The max-type high-dimensional test
+of Cai, Liu and Xia (2013) <doi:10.1080/01621459.2012.758041> is provided for
+comparison.  A pure-C back-end does the numerics and also backs the Python
+package regstat'.")
+    (license license:gpl3)))
 
 (define-public r-regspec
   (package
@@ -49703,25 +49899,22 @@ then be imported to access the check functions in other packages.")
 (define-public r-rdborrow
   (package
     (name "r-rdborrow")
-    (version "0.0.4.0")
+    (version "0.0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rdborrow" version))
        (sha256
-        (base32 "16m89i4rca7mzf1hnz48pjhjs42c47plndyn0qsiwxg58dxw3c3h"))))
+        (base32 "1gb85kv14wh8hfqris3q6fh8l3klsjwj1bwbdrgxk7bzy9ib9wrl"))))
     (properties `((upstream-name . "rdborrow")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-progress
+    (propagated-inputs (list r-progress
                              r-mvtnorm
                              r-matrix
-                             r-future-apply
                              r-futile-logger
-                             r-dplyr
                              r-cvxr
                              r-copula
                              r-checkmate
@@ -49739,8 +49932,8 @@ approaches for borrowing external control information, as well as a simulation
 module for generating trial and external control data, evaluating estimator
 performance via Monte Carlo studies, and conducting power analyses for sample
 size determination.  Methods are based on Zhou et al. (2024)
-<doi:10.1093/biostatistics/kxae012> and Zhou et al. (2024)
-<doi:10.1080/01621459.2024.2395586>.")
+<doi:10.1093/jrsssa/qnae075> and Zhou et al. (2024)
+<doi:10.1080/10543406.2024.2330209>.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-rdbnomics
@@ -50163,13 +50356,13 @@ software article is Cattaneo, Titiunik, and Yu (2025)
 (define-public r-rcytogps
   (package
     (name "r-rcytogps")
-    (version "1.2.13")
+    (version "1.2.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RCytoGPS" version))
        (sha256
-        (base32 "04i0c36if13ilbskbn85js68gcfgxd54wp9d61qinb1g9jmsw4sa"))))
+        (base32 "0l0jn7p2h0gjv8xdxcizqhi5hpj0lkzcj4id2xwm088b2iib83nb"))))
     (properties `((upstream-name . "RCytoGPS")))
     (build-system r-build-system)
     (arguments
@@ -50177,7 +50370,7 @@ software article is Cattaneo, Titiunik, and Yu (2025)
       #:tests? #f))
     (propagated-inputs (list r-rjson))
     (native-inputs (list r-knitr))
-    (home-page "http://oompa.r-forge.r-project.org/")
+    (home-page "http://silicovore.com/OOMPA/thresher.html")
     (synopsis "Using Cytogenetics Data in R")
     (description
      "Defines classes and methods to process text-based cytogenetics using the
@@ -50445,6 +50638,37 @@ Continuous Ranked Probability Score (CRPS) (Gneiting & Raftery, 2007)
 <doi:10.2307/1913610>, and Moving Block Bootstrap resampling (Kunsch, 1989)
 <doi:10.1214/aos/1176347265>.")
     (license license:gpl3)))
+
+(define-public r-rctcovadj
+  (package
+    (name "r-rctcovadj")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RCTCovAdj" version))
+       (sha256
+        (base32 "1v4r4ab63mvxwrfg0n45w37xybwwvm9jmq1w4aw7df1wnihgrnza"))))
+    (properties `((upstream-name . "RCTCovAdj")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-digest))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=RCTCovAdj")
+    (synopsis "Covariate Adjustment for Randomized Controlled Trials")
+    (description
+     "This package implements covariate-adjusted estimation and inference for marginal
+mean differences in two-arm randomized controlled trials with continuous
+outcomes.  Methods include the unadjusted difference in means, common-slope
+analysis of covariance, interacted standardization with joint influence-function
+inference, and cross-fitted augmentation.  The package also provides analytic
+power and sample-size calculations, reproducible simulation designs, and article
+replication workflows, including tools for verifying and analyzing an authorized
+local trial-data file.  The adjustment methods build on Tsiatis et al. (2008)
+<doi:10.1002/sim.3113> and Lin (2013) <doi:10.1214/12-AOAS583>.")
+    (license license:expat)))
 
 (define-public r-rct3
   (package
@@ -51468,13 +51692,13 @@ more detail in <doi:10.1002/spe.2984>.  fast_float is licensed under the Apache
 (define-public r-rcppfastad
   (package
     (name "r-rcppfastad")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppFastAD" version))
        (sha256
-        (base32 "1vzdwixcqgb510lbyz62vmpy5ghr87i8qbgn696dmx7fvsgf4dkw"))))
+        (base32 "0r8xjvpzck2m1nzn9q9cxbjiaf8jnhk4nlmlxrqax1shgacj38p3"))))
     (properties `((upstream-name . "RcppFastAD")))
     (build-system r-build-system)
     (arguments
@@ -53676,19 +53900,20 @@ package in the R Commander GUI for R.")
 (define-public r-rcmdr
   (package
     (name "r-rcmdr")
-    (version "2.14.1")
+    (version "2.15.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rcmdr" version))
        (sha256
-        (base32 "1c2l4z9bniph7fyhryl7i3rqqqp3al35mgydbvzkdv8gd09yfv7s"))))
+        (base32 "02n8cj5kb3kcnmr2bdw3n9b2xm3cl11mayibdrkm5387hw4dq7z8"))))
     (properties `((upstream-name . "Rcmdr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tcltk2
+    (propagated-inputs (list r-teachingdemos
+                             r-tcltk2
                              r-relimp
                              r-rcmdrmisc
                              r-lme4
@@ -59319,6 +59544,114 @@ plots.  Methods are described in Pickering and Endre (2012)
 <doi:10.1002/sim.2929>.")
     (license license:gpl3)))
 
+(define-public r-rapsimng-wheat
+  (package
+    (name "r-rapsimng-wheat")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rapsimng.wheat" version))
+       (sha256
+        (base32 "05ycf2ijwdbj65zqfkgxy2qhq5ygdrxjv7z4mjjr0iijxi89vbgj"))))
+    (properties `((upstream-name . "rapsimng.wheat")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyweather r-optree))
+    (home-page "https://wheat.rapsimng.bangyou.me/")
+    (synopsis
+     "Crop-Specific Functions and Parameters for APSIM Next Generation Wheat Model")
+    (description
+     "This package provides wheat-specific functions, processes and parameter sets
+used by wheat model in the Agricultural Production Systems @code{sIMulator}
+('APSIM') Next Generation.  Includes tools for crop process calculations,
+parameter management and customisation, enabling users to explore, modify and
+apply wheat model components.")
+    (license license:expat)))
+
+(define-public r-rapsimng-lupin
+  (package
+    (name "r-rapsimng-lupin")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rapsimng.lupin" version))
+       (sha256
+        (base32 "18pwz4dbm216y7ydk66ryr4dbja13vgxrh79n9raw5ky5b6agkwl"))))
+    (properties `((upstream-name . "rapsimng.lupin")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyweather r-optree))
+    (home-page "https://lupin.rapsimng.bangyou.me/")
+    (synopsis
+     "Crop-Specific Functions and Parameters for APSIM Next Generation Lupin Model")
+    (description
+     "This package provides lupin-specific functions, processes and parameter sets
+used by lupin model in the Agricultural Production Systems @code{sIMulator}
+('APSIM') Next Generation.  Includes tools for crop process calculations,
+parameter management and customisation, enabling users to explore, modify and
+apply lupin model components.")
+    (license license:expat)))
+
+(define-public r-rapsimng-lentil
+  (package
+    (name "r-rapsimng-lentil")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rapsimng.lentil" version))
+       (sha256
+        (base32 "09hgrq71jl202fvfj6id855k0675qkc5zq86bny3i1znay5v38sl"))))
+    (properties `((upstream-name . "rapsimng.lentil")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyweather r-optree))
+    (home-page "https://lentil.rapsimng.bangyou.me/")
+    (synopsis
+     "Crop-Specific Functions and Parameters for APSIM Next Generation Lentil Model")
+    (description
+     "This package provides lentil-specific functions, processes and parameter sets
+used by lentil model in the Agricultural Production Systems @code{sIMulator}
+('APSIM') Next Generation.  Includes tools for crop process calculations,
+parameter management and customisation, enabling users to explore, modify and
+apply lentil model components.")
+    (license license:expat)))
+
+(define-public r-rapsimng-fababean
+  (package
+    (name "r-rapsimng-fababean")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rapsimng.fababean" version))
+       (sha256
+        (base32 "0zp399m33phh9jj7ha2il6bawaynd8kzmra6pxp227w0rifjklj7"))))
+    (properties `((upstream-name . "rapsimng.fababean")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyweather r-optree))
+    (home-page "https://fababean.rapsimng.bangyou.me/")
+    (synopsis
+     "Crop-Specific Functions and Parameters for APSIM Next Generation Fababean Model")
+    (description
+     "This package provides fababean-specific functions, processes and parameter sets
+used by fababean model in the Agricultural Production Systems @code{sIMulator}
+('APSIM') Next Generation.  Includes tools for crop process calculations,
+parameter management and customisation, enabling users to explore, modify and
+apply fababean model components.")
+    (license license:expat)))
+
 (define-public r-rapsimng-decide-core
   (package
     (name "r-rapsimng-decide-core")
@@ -59341,6 +59674,60 @@ plots.  Methods are described in Pickering and Endre (2012)
      "This package provides a low-level interface for analysing Agricultural
 Production Systems @code{sIMulator} ('APSIM') Next Generation simulation outputs
 to support structured decision-making workflows.")
+    (license license:expat)))
+
+(define-public r-rapsimng-chickpea
+  (package
+    (name "r-rapsimng-chickpea")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rapsimng.chickpea" version))
+       (sha256
+        (base32 "0ndk597yfpzmgjlwnmzyr29v4k0pi2ksmhxrz8psqhw5s9kwnnxq"))))
+    (properties `((upstream-name . "rapsimng.chickpea")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyweather r-optree))
+    (home-page "https://chickpea.rapsimng.bangyou.me/")
+    (synopsis
+     "Crop-Specific Functions and Parameters for APSIM Next Generation Chickpea Model")
+    (description
+     "This package provides chickpea-specific functions, processes and parameter sets
+used by chickpea model in the Agricultural Production Systems @code{sIMulator}
+('APSIM') Next Generation.  Includes tools for crop process calculations,
+parameter management and customisation, enabling users to explore, modify and
+apply chickpea model components.")
+    (license license:expat)))
+
+(define-public r-rapsimng-canola
+  (package
+    (name "r-rapsimng-canola")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rapsimng.canola" version))
+       (sha256
+        (base32 "1l8bhs0agw2zvw9mr93lsvpvnfdg81x9ng5shvirgql198jyglfi"))))
+    (properties `((upstream-name . "rapsimng.canola")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyweather r-optree))
+    (home-page "https://canola.rapsimng.bangyou.me/")
+    (synopsis
+     "Crop-Specific Functions and Parameters for APSIM Next Generation Canola Model")
+    (description
+     "This package provides canola-specific functions, processes and parameter sets
+used by canola model in the Agricultural Production Systems @code{sIMulator}
+('APSIM') Next Generation.  Includes tools for crop process calculations,
+parameter management and customisation, enabling users to explore, modify and
+apply canola model components.")
     (license license:expat)))
 
 (define-public r-rapsimng

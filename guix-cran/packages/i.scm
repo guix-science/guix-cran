@@ -9731,13 +9731,13 @@ efficiency.")
 (define-public r-integirty
   (package
     (name "r-integirty")
-    (version "1.0.8")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "integIRTy" version))
        (sha256
-        (base32 "1pch6jwlj4yg006jmgd78xfx92rwxynmdmxwpvzp3vzpgjx09rbz"))))
+        (base32 "0fybsgy51r0m2mjas8jbz9whrr81pm0wbbb6g99k4by2yydj7r6q"))))
     (properties `((upstream-name . "integIRTy")))
     (build-system r-build-system)
     (arguments
@@ -9749,7 +9749,7 @@ efficiency.")
                              r-foreach
                              r-doparallel
                              r-abind))
-    (home-page "http://oompa.r-forge.r-project.org/")
+    (home-page "http://silicovore.com/OOMPA/standalone.html")
     (synopsis
      "Integrating Multiple Modalities of High Throughput Assays Using Item Response Theory")
     (description
@@ -15455,13 +15455,13 @@ to harness AI for predictive analytics.")
 (define-public r-immutables
   (package
     (name "r-immutables")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Immutables" version))
        (sha256
-        (base32 "00mlk98x100hi4h834rbf6vaz94h3g2w8nkb9hyfvbri28cpnajp"))))
+        (base32 "1jjjinsr9ny6gh7k1b28bmd169sis6nis09w5pqnkj9jdcv83ajk"))))
     (properties `((upstream-name . "Immutables")))
     (build-system r-build-system)
     (arguments
@@ -22580,13 +22580,13 @@ al. (2022) <doi:10.32614/RJ-2022-043>, Masoudi et al. (2017)
 (define-public r-icamp
   (package
     (name "r-icamp")
-    (version "1.8.6")
+    (version "1.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iCAMP" version))
        (sha256
-        (base32 "0ahi8knr4cyz4mvaivhpzk62dhv94r6x0ipb4j2fy0s55q6988f2"))))
+        (base32 "04f18j1wjmnbgzb7pj3wrx11yvkml61dbi9djlbcnawb8l5x1jl4"))))
     (properties `((upstream-name . "iCAMP")))
     (build-system r-build-system)
     (arguments

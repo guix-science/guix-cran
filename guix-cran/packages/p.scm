@@ -4328,6 +4328,45 @@ Davidian (2004) <DOI:10.1002/sim.1903>, Li and Greene (2013)
 <DOI:10.1080/01621459.2016.1260466>.")
     (license license:gpl2+)))
 
+(define-public r-psvr
+  (package
+    (name "r-psvr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "psvr" version))
+       (sha256
+        (base32 "0rry6hf7138sqr5zbsaybr0l21krhxxij8s6pa2r5bragwlyis5i"))))
+    (properties `((upstream-name . "psvr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-workflowsets
+                             r-tune
+                             r-scales
+                             r-rlang
+                             r-rcpp
+                             r-parsnip
+                             r-matrix
+                             r-dials))
+    (native-inputs (list r-knitr))
+    (home-page "https://pbenavidesh.github.io/psvr/")
+    (synopsis "Percentage-Error Support Vector Regression")
+    (description
+     "This package implements four support vector regression (SVR) models derived from
+a unified mathematical framework for percentage-error loss functions:
+epsilon-SVR minimizing the mean absolute percentage error (MAPE), its symmetric
+kernel extension, least-squares SVR (LS-SVR) minimizing the root mean square
+percentage error (RMSPE), and its symmetric counterpart.  All models require
+strictly positive targets.  The epsilon-SVR models are solved via a built-in
+sequential minimal optimization (SMO) algorithm (with osqp available as an
+optional alternative backend) and the LS-SVR models via a linear system (base
+R).  See Benavides-Herrera et al. (2026) <doi:10.3390/math14101679> for the
+mathematical derivations.")
+    (license license:expat)))
+
 (define-public r-psvmsdr
   (package
     (name "r-psvmsdr")
@@ -7881,6 +7920,39 @@ regression.  S3 methods @code{print()}, @code{summary()}, @code{coef()},
 details can be found at Zuo et al. (2021) <doi:10.1080/00031305.2021.1946150>.")
     (license license:gpl3)))
 
+(define-public r-prosetta
+  (package
+    (name "r-prosetta")
+    (version "0.4.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PROsetta" version))
+       (sha256
+        (base32 "0adfnp2myr82rhfba0hjyr3a5ypzx48qqwn7r9hmgw6lshk5n9rj"))))
+    (properties `((upstream-name . "PROsetta")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-testdesign
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-psych
+                             r-plink
+                             r-mvnfast
+                             r-mirt
+                             r-lavaan
+                             r-equate))
+    (native-inputs (list r-knitr))
+    (home-page "https://www.prosettastone.org/")
+    (synopsis "Linking Patient-Reported Outcomes Measures")
+    (description
+     "Perform scale linking to establish relationships between instruments that
+measure similar constructs according to the PROsetta Stone methodology, as in
+Choi, Schalet, Cook, & Cella (2014) <doi:10.1037/a0035768>.")
+    (license license:gpl3)))
+
 (define-public r-proscorertools
   (package
     (name "r-proscorertools")
@@ -11241,13 +11313,13 @@ the model in the presence of incomplete datasets.")
 (define-public r-prioritizr
   (package
     (name "r-prioritizr")
-    (version "8.1.0")
+    (version "9.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "prioritizr" version))
        (sha256
-        (base32 "05nwnqi615n9vix0aqmi6iczri25l3vlcb6kiwawkjrzf5d3a81p"))))
+        (base32 "1v47vj99ln475bwbxr360cz604zfdk7f5j4g8h2mag52i3lni7ql"))))
     (properties `((upstream-name . "prioritizr")))
     (build-system r-build-system)
     (arguments
@@ -11261,16 +11333,13 @@ the model in the presence of incomplete datasets.")
                              r-rlang
                              r-rcpparmadillo
                              r-rcpp
-                             r-raster
                              r-r6
                              r-matrix
                              r-magrittr
-                             r-igraph
                              r-exactextractr
                              r-cli
                              r-bh
-                             r-assertthat
-                             r-ape))
+                             r-assertthat))
     (native-inputs (list r-knitr))
     (home-page "https://prioritizr.net")
     (synopsis "Systematic Conservation Prioritization in R")
@@ -11821,13 +11890,13 @@ aggregation of these tabular inputs.")
 (define-public r-primarycensored
   (package
     (name "r-primarycensored")
-    (version "1.5.2")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "primarycensored" version))
        (sha256
-        (base32 "0q6ggdryxzgnxnjbr7q1f4lhbv459i23aqw6by9894a0p21af6k1"))))
+        (base32 "1v9q27xx6vnq3pbvdys6drwz67qw40jsg5v2qchcxxa16z9xbp6s"))))
     (properties `((upstream-name . "primarycensored")))
     (build-system r-build-system)
     (arguments
@@ -12985,25 +13054,25 @@ Standardization, Unitization, Cubitization and adaptive intervals are offered.")
 (define-public r-preprocess
   (package
     (name "r-preprocess")
-    (version "3.1.9")
+    (version "3.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PreProcess" version))
        (sha256
-        (base32 "1046lvnrybjrlv3q3w1q93vyjazcd44pi48x0ngjppapyqv52rvx"))))
+        (base32 "1zavh2lszxgzzx8sni9hcl3vch99smfkb3mq8hvkh4arsxpa4gya"))))
     (properties `((upstream-name . "PreProcess")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-oompabase))
-    (home-page "http://oompa.r-forge.r-project.org/")
+    (home-page "http://silicovore.com/OOMPA/index.html")
     (synopsis "Basic Functions for Pre-Processing Microarrays")
     (description
      "This package provides classes to pre-process microarray gene expression data as
 part of the OOMPA collection of packages described at
-<http://oompa.r-forge.r-project.org/>.")
+<http://silicovore.com/OOMPA/index.html>.")
     (license license:asl2.0)))
 
 (define-public r-prepr4pcm
@@ -13226,13 +13295,13 @@ Quebec between 1980 and 2020.")
 (define-public r-premium
   (package
     (name "r-premium")
-    (version "3.2.13")
+    (version "3.2.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PReMiuM" version))
        (sha256
-        (base32 "1qamq7glc0dag1ps0dr4f931ij9jk91lj5h1k2g0yd0h3kqamawn"))))
+        (base32 "0yax7wr4h0pshly0v023jny35fgxdrh2pyipwsrpmag63w5c7v90"))))
     (properties `((upstream-name . "PReMiuM")))
     (build-system r-build-system)
     (arguments
@@ -13244,7 +13313,6 @@ Quebec between 1980 and 2020.")
                              r-rcpp
                              r-plotrix
                              r-ggplot2
-                             r-gamlss-dist
                              r-data-table
                              r-cluster
                              r-bh))
@@ -27594,6 +27662,39 @@ models and different ways to select the penalty parameter lambda as discussed in
 Knaus (2021) <doi:10.1111/rssa.12623>.")
     (license license:gpl3)))
 
+(define-public r-plasmidplot
+  (package
+    (name "r-plasmidplot")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "plasmidplot" version))
+       (sha256
+        (base32 "0ch3gqb9y6vsy7f0vhwqiavm5mv59zxqgqlppmisq4qgfq5is24i"))))
+    (properties `((upstream-name . "plasmidplot")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/dkturingfz/plasmidplot")
+    (synopsis "Publication-Quality Circular and Linear Plasmid Maps")
+    (description
+     "Draws circular and linear plasmid maps with grid graphics.  Features are shown
+as colored arcs with optional arrowheads, callout labels that are laid out to
+avoid overlap, an automatic base-pair scale, and the plasmid name and size.  A
+style is built from a handful of shape parameters, with presets as named
+combinations of them, and the layout follows the molecule's topology.  Maps can
+be built up feature by feature or imported from @code{GenBank}', EMBL', FASTA
+and @code{SnapGene} files, whose format is detected from content rather than
+file extension.  Restriction sites can be located in the sequence and labeled.
+Ships eight visual styles, including one inspired by the @code{AngularPlasmid}
+@code{JavaScript} library, and seven categorical palettes checked for colorblind
+safety.  Palettes from other packages can be used directly, as a color vector or
+as a palette function, and checked against the same criteria.")
+    (license license:expat)))
+
 (define-public r-plasmamutationdetector
   (package
     (name "r-plasmamutationdetector")
@@ -27630,13 +27731,13 @@ to the measured PER in control samples.")
 (define-public r-plasma
   (package
     (name "r-plasma")
-    (version "1.1.5")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plasma" version))
        (sha256
-        (base32 "1v085di0d3hlj0njirvdxvlr8mzz3w7kbr27dgxdqw6fl6gl40nm"))))
+        (base32 "1x761nqra6jld0xj3pzz1nrcccfnwg4ska7hjygi6pc30y35an21"))))
     (properties `((upstream-name . "plasma")))
     (build-system r-build-system)
     (arguments
@@ -27654,7 +27755,7 @@ to the measured PER in control samples.")
                              r-oompabase
                              r-beanplot))
     (native-inputs (list r-r-rsp))
-    (home-page "http://oompa.r-forge.r-project.org/")
+    (home-page "http://silicovore.com/OOMPA/index.html")
     (synopsis "Partial LeAst Squares for Multiomic Analysis")
     (description
      "This package contains tools for supervised analyses of incomplete, overlapping
@@ -34935,13 +35036,13 @@ pharmaversesdtm package.")
 (define-public r-pharmaverseadamjnj
   (package
     (name "r-pharmaverseadamjnj")
-    (version "0.0.5")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pharmaverseadamjnj" version))
        (sha256
-        (base32 "0rmqmbsdgyx908ni8i84q6ma14v365jzms3l7j9wy1v4zvp7hpi0"))))
+        (base32 "06rg1rq8y02kypf6cikkp66j4di6x7v6zp61p0fhlvbg4bp5fwkv"))))
     (properties `((upstream-name . "pharmaverseadamjnj")))
     (build-system r-build-system)
     (arguments
@@ -40909,6 +41010,34 @@ file as input, uploading it to PDFTables, and returning a file with the
 extracted data.")
     (license license:cc0)))
 
+(define-public r-pdfsigner
+  (package
+    (name "r-pdfsigner")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pdfsigner" version))
+       (sha256
+        (base32 "02n8kai1mljlildlndfvpzljv1f9nabqbyfr4sqk9sf41gxdl0pb"))))
+    (properties `((upstream-name . "pdfsigner")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (home-page "https://github.com/StrategicProjects/pdfsigner")
+    (synopsis "Digitally Sign and Verify PDF Documents")
+    (description
+     "Digitally sign PDF documents with a PKCS#12 keystore and verify their
+signatures.  Signing produces a detached PKCS#7 / CMS signature
+('adbe.pkcs7.detached') over the document and is applied as an incremental
+update, so existing signatures remain valid.  The cryptography and PDF
+manipulation are performed by a bundled, pure-'Rust backend (the pdf_signer
+crate); no Java runtime, @code{OpenSSL}', or external command-line tools are
+required.  Visible signature appearances with custom text are supported.")
+    (license license:gpl3)))
+
 (define-public r-pdfsearch
   (package
     (name "r-pdfsearch")
@@ -42623,13 +42752,13 @@ Proportional-Edge PCDs, and Central Similarity PCDs.")
 (define-public r-pcdimension
   (package
     (name "r-pcdimension")
-    (version "1.1.14")
+    (version "1.1.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PCDimension" version))
        (sha256
-        (base32 "067yxfaz6rjwnf3hr53llwzfd5pdz8jdqls42bxy7c1y3jm9ay3k"))))
+        (base32 "02q2nfss2ysm83xadirfd10canb0igib8pd7pwzqdl67461pflml"))))
     (properties `((upstream-name . "PCDimension")))
     (build-system r-build-system)
     (arguments
@@ -42637,7 +42766,7 @@ Proportional-Edge PCDs, and Central Similarity PCDs.")
       #:tests? #f))
     (propagated-inputs (list r-oompabase r-kernlab r-cpm r-classdiscovery
                              r-changepoint))
-    (home-page "http://oompa.r-forge.r-project.org/")
+    (home-page "http://silicovore.com/OOMPA/thresher.html")
     (synopsis "Finding the Number of Significant Principal Components")
     (description
      "This package implements methods to automate the Auer-Gervini graphical Bayesian
@@ -44332,13 +44461,13 @@ algorithms.  This is further described in Reps (2017)
 (define-public r-patientgenerator
   (package
     (name "r-patientgenerator")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PatientGenerator" version))
        (sha256
-        (base32 "08sk5lzlzh73g2d2l6ckhv8jqilf2cb3q2zjang9dx4qvhzhpn3j"))))
+        (base32 "1rl493wjahpdn6867hqn1wmyhkhhvmzm0jj3qrak6aa35wn6igfi"))))
     (properties `((upstream-name . "PatientGenerator")))
     (build-system r-build-system)
     (arguments
@@ -51223,6 +51352,33 @@ programs/machines can understand.")
      "Investigate (analytically or visually) the inputs and outputs of probabilistic
 analyses of health economic models using standard health economic visualisation
 and metamodelling methods.")
+    (license license:gpl3+)))
+
+(define-public r-pacha
+  (package
+    (name "r-pacha")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pacha" version))
+       (sha256
+        (base32 "1xyx3h178aw8zzwglxwvjqcq7pssh271dfa3syhkqarcbh5jgd5a"))))
+    (properties `((upstream-name . "pacha")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml r-httr2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/envinatu/pacha")
+    (synopsis "Reproducible Reporting for ChecklistBank Ethnobotanical Data")
+    (description
+     "This package provides programmatic access to the Listado de plantas de uso y
+aprovechamiento sostenible en Ecuador <doi:10.48580/dgvrn>.  Acts as a client
+for the @code{ChecklistBank} API and for processing @code{ColDP} (Catalogue of
+Life Data Package) files.  Supports data retrieval for ethnobotanical records
+and includes built-in Markdown report generation for reproducible workflows.")
     (license license:gpl3+)))
 
 (define-public r-pac

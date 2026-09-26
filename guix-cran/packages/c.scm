@@ -6862,20 +6862,20 @@ are available.  It also includes our own implementation of the COPPS procedure
 (define-public r-crossvalidate
   (package
     (name "r-crossvalidate")
-    (version "2.3.5")
+    (version "2.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CrossValidate" version))
        (sha256
-        (base32 "154jg0gdgjivvqca64c346820wng1p7br8bd91ns5ia37bndc46r"))))
+        (base32 "1il3hjjnr660yzdcvk09za8sls0cs1r9b2gzg1rkq78cp7mp5sar"))))
     (properties `((upstream-name . "CrossValidate")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-oompabase r-modeler))
-    (home-page "http://oompa.r-forge.r-project.org")
+    (home-page "http://silicovore.com/OOMPA/classpred.html")
     (synopsis
      "Classes and Methods for Cross Validation of \"Class Prediction\" Algorithms")
     (description
@@ -10737,13 +10737,13 @@ sites.")
 (define-public r-cpfa
   (package
     (name "r-cpfa")
-    (version "1.3.2")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cpfa" version))
        (sha256
-        (base32 "028aq946xyf41xwn8a1y0ff22c92v62mchwp4xwxpzg7zjliaw37"))))
+        (base32 "14r1xd67m04j05rnkkii4al0qlcrzgcy29ajbgxvh12kf1bnz3vb"))))
     (properties `((upstream-name . "cpfa")))
     (build-system r-build-system)
     (arguments
@@ -11508,20 +11508,20 @@ supposed to be available.")
 (define-public r-coxboost
   (package
     (name "r-coxboost")
-    (version "1.5.1")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CoxBoost" version))
        (sha256
-        (base32 "0nnpnq7nirmzm0zhxwayss66wx5nkaxlilk1211c7a16cg7yjvad"))))
+        (base32 "1n2dbcld1nssbf9srhrdckqryx44a9gq50ijydqgnf55xkf9msfv"))))
     (properties `((upstream-name . "CoxBoost")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-survival r-matrix))
-    (home-page "https://cran.r-project.org/package=CoxBoost")
+    (home-page "https://github.com/binderh/CoxBoost")
     (synopsis
      "Cox Models by Likelihood Based Boosting for a Single Survival Endpoint or Competing Risks")
     (description
@@ -24267,13 +24267,13 @@ pages, including providing new figure components.")
 (define-public r-comparegroups
   (package
     (name "r-comparegroups")
-    (version "4.10.3")
+    (version "4.10.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "compareGroups" version))
        (sha256
-        (base32 "08f1q8nymbkp9nplcjf6gsvq8c8a4y3rdharifrf0v38j4x3rxa7"))))
+        (base32 "15kpdz2zvadk5i08c4p9rbji9fxiiaj8s9x10qpk635r5bv8wz6g"))))
     (properties `((upstream-name . "compareGroups")))
     (build-system r-build-system)
     (arguments
@@ -28024,13 +28024,13 @@ and extensive toolset.")
 (define-public r-cogmod
   (package
     (name "r-cogmod")
-    (version "0.3.0")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cogmod" version))
        (sha256
-        (base32 "1imq92m5f8mymsr4kdakvmmm48ra7qmpgfnfr5a7c3inlx0my4v0"))))
+        (base32 "07h9sn23m57pfsp69v8s13b87big0s92ymn67npi2c4cirb2vfgw"))))
     (properties `((upstream-name . "cogmod")))
     (build-system r-build-system)
     (arguments
@@ -28045,13 +28045,14 @@ and extensive toolset.")
      "This package implements cognitive models for data from subjective (Likert or
 analog) scales and from decision making tasks with reaction times and choice
 data.  Provides random generation, density functions, and custom response
-distributions for Bayesian estimation with brms', covering discreted-beta,
-ordered beta and choice-confidence models for subjective ratings, reaction-times
-families (Shifted Log-Normal, Shifted Wald), as well as sequential sampling
-models including the drift diffusion model (DDM), the racing diffusion model
-(RDM), the lognormal race model (LNR), and linear ballistic accumulator (LBA)
-model.  The website provides examples and tutorials for using and interpreting
-the models.  Methods are described in Ratcliff and @code{McKoon} (2008)
+distributions for Bayesian estimation with brms', covering discrete beta,
+ordered beta and choice-confidence models for subjective ratings; reaction time
+distributions such as the ex-Gaussian and the shifted log-normal, Wald, gamma
+and Weibull; and sequential sampling models of choice and reaction time,
+including the drift diffusion model (DDM), the racing diffusion model (RDM), the
+lognormal race model (LNR) and the linear ballistic accumulator (LBA).  The
+website provides examples and tutorials for using and interpreting the models.
+Methods are described in Ratcliff and @code{McKoon} (2008)
 <doi:10.1162/neco.2008.12-06-420>, Brown and Heathcote (2008)
 <doi:10.1016/j.cogpsych.2007.12.002>, Rouder et al. (2015)
 <doi:10.1007/s11336-013-9396-3>, Tillman et al. (2020)
@@ -34622,20 +34623,20 @@ et al. (2014) <doi:10.1186/s13059-014-0439-6>; Carreira et al. (2014)
 (define-public r-cloneseeker
   (package
     (name "r-cloneseeker")
-    (version "1.0.16")
+    (version "1.0.17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CloneSeeker" version))
        (sha256
-        (base32 "0080l2y764nmkaxh2iyg1js9b4ahdwpxxxglqr0xzcf82004q72r"))))
+        (base32 "1vh1p7v6cra9p0vdczq325zryxm95v6pivgz89ik68bhk55mi81c"))))
     (properties `((upstream-name . "CloneSeeker")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-quantmod r-mc2d r-combinat))
-    (home-page "http://oompa.r-forge.r-project.org/")
+    (home-page "http://silicovore.com/OOMPA/clonefinder.html")
     (synopsis "Seeking and Finding Clones in Copy Number and Sequencing Data")
     (description
      "Defines the classes and functions used to simulate and to analyze data sets
@@ -37818,25 +37819,25 @@ trees in practice.")
 (define-public r-classcomparison
   (package
     (name "r-classcomparison")
-    (version "3.3.5")
+    (version "3.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ClassComparison" version))
        (sha256
-        (base32 "0xjnpdph0bmm7zaqj22qicfhjrbiq56imsrp7a0fmh0mhvs2wp6x"))))
+        (base32 "0gcg2k51057wbam25zhw8qn6fb5rjxwwfghkam58fyrgw4afca4p"))))
     (properties `((upstream-name . "ClassComparison")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-oompabase r-biobase))
-    (home-page "http://oompa.r-forge.r-project.org/")
+    (home-page "http://silicovore.com/OOMPA/index.html")
     (synopsis
      "Classes and Methods for \"Class Comparison\" Problems on Microarrays")
     (description
      "Defines the classes used for \"class comparison\" problems in the OOMPA project
-(<http://oompa.r-forge.r-project.org/>).  Class comparison includes tests for
+(<http://silicovore.com/OOMPA/index.html>).  Class comparison includes tests for
 differential expression; see Simon's book for details on typical problem types.")
     (license license:asl2.0)))
 
@@ -41235,6 +41236,36 @@ p-value generator from a conditional hypergeometric distribution: the
 distribution of how many items are in the overlap of all samples when samples of
 arbitrary size are each taken without replacement from populations of arbitrary
 size.")
+    (license license:expat)))
+
+(define-public r-churon
+  (package
+    (name "r-churon")
+    (version "0.1.12")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "churon" version))
+       (sha256
+        (base32 "18ch3scarxfqx9rb0mm7f10gaxxgpip1wrz6l4ks8wsv41249jw6"))))
+    (properties `((upstream-name . "churon")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-digest))
+    (home-page "https://github.com/mrchypark/churon")
+    (synopsis "'ONNX Runtime' Integration")
+    (description
+     "This package provides high-performance R bindings for ONNX Runtime
+<https://onnxruntime.ai/>, enabling efficient machine learning model inference.
+Written in Rust for memory safety and speed, the package supports cross-platform
+model execution with multiple execution providers.  Includes comprehensive error
+handling and validation, with bundled MNIST example model for immediate testing
+and prototyping.  Designed for production use with support for @code{macOS}
+(arm64), Linux (x64/arm64), and Windows (x64).  Runtime libraries are downloaded
+on explicit request from <https://github.com/microsoft/onnxruntime/releases>.")
     (license license:expat)))
 
 (define-public r-chunkhooks
@@ -51956,13 +51987,13 @@ Cycle Intersection (ICI) is described in Yuri Baramykov (2026)
 (define-public r-caviarpd
   (package
     (name "r-caviarpd")
-    (version "0.3.22")
+    (version "0.3.25")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "caviarpd" version))
        (sha256
-        (base32 "0bl6i1yy9cqmc0scw92wi7rac4hvic28xv21ib9sw1rzl8c4kh20"))))
+        (base32 "1ivvwnl2vsf99h2ma30df6g6w028blind3whqkpjqclaqpg34i0r"))))
     (properties `((upstream-name . "caviarpd")))
     (build-system r-build-system)
     (arguments
@@ -52182,29 +52213,30 @@ win ratio, win proportion, and net benefit.")
 (define-public r-causalweight
   (package
     (name "r-causalweight")
-    (version "1.1.5")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "causalweight" version))
        (sha256
-        (base32 "0863vn7n8a1y6qlq38wpvx57k3vfi8b1n09flpvgxsa7rmvzs01s"))))
+        (base32 "0cy1dxph8cz7mhy8r4b5j9in20ivgx00lxvrwiijqf8hfp4vnalp"))))
     (properties `((upstream-name . "causalweight")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-xgboost
-                             r-superlearner
                              r-sandwich
                              r-ranger
                              r-np
+                             r-nnls
                              r-mvtnorm
+                             r-kernlab
                              r-hdm
                              r-grf
                              r-glmnet
                              r-fastdummies
-                             r-e1071
+                             r-clubsandwich
                              r-checkmate))
     (home-page "https://cran.r-project.org/package=causalweight")
     (synopsis
@@ -57332,13 +57364,13 @@ manipulation and summarizing.")
 (define-public r-canpumf
   (package
     (name "r-canpumf")
-    (version "0.5.2")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "canpumf" version))
        (sha256
-        (base32 "05nxxwn62z3akh0phkz9ylhlfcga26dd0lrway0da1shyss9p0xm"))))
+        (base32 "0gbzcln6iiklg0nk2qd5g1di21d7nq6kih0a5v6v63zi2cks3y4p"))))
     (properties `((upstream-name . "canpumf")))
     (build-system r-build-system)
     (arguments
@@ -57351,13 +57383,14 @@ manipulation and summarizing.")
                              r-rlang
                              r-readr
                              r-purrr
+                             r-jsonlite
                              r-httr
                              r-haven
-                             r-duckplyr
                              r-duckdb
                              r-dplyr
                              r-dbplyr
-                             r-dbi))
+                             r-dbi
+                             r-curl))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mountainMath/canpumf")
     (synopsis "Parse StatCan PUMF Files")
@@ -57967,13 +58000,13 @@ and to create an account, please see
 (define-public r-campsisnca
   (package
     (name "r-campsisnca")
-    (version "1.7.1")
+    (version "1.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "campsisnca" version))
        (sha256
-        (base32 "06shk31yqs79rm9rcp0rim1jlrck5sfvxnbi1z7jczi9773h66qr"))))
+        (base32 "1d6nsjv3p34jagp4mw61zv52359chvjm9fwxcjj3jwrviccw8gnr"))))
     (properties `((upstream-name . "campsisnca")))
     (build-system r-build-system)
     (arguments
@@ -58072,13 +58105,13 @@ PK/PD simulation platform built on top of rxode2 and mrgsolve'.")
 (define-public r-campsis
   (package
     (name "r-campsis")
-    (version "1.9.1")
+    (version "1.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "campsis" version))
        (sha256
-        (base32 "0i1dzpm46sp8aw8w13xmyv6vvg2qqwn4r49xbaavc2zgzfbvzd60"))))
+        (base32 "0qyz8zbqgrzsm9q8h5gm285q2dxb601n859g5n95m2gsgspmv655"))))
     (properties `((upstream-name . "campsis")))
     (build-system r-build-system)
     (arguments
@@ -59689,6 +59722,37 @@ regions around the projected coordinates for the category points.  Includes
 routines to plot the results in a variety of styles.  Also reports the standard
 numerical output for correspondence analysis.")
     (license license:gpl3)))
+
+(define-public r-cabiplot
+  (package
+    (name "r-cabiplot")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CAbiplot" version))
+       (sha256
+        (base32 "1j1gg0kwdmwzxc2m0c6scm0c4znz8307ya9rpawldfrj2xvyqjkx"))))
+    (properties `((upstream-name . "CAbiplot")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-gridextra r-ggplot2 r-factominer r-factoextra))
+    (home-page "https://cran.r-project.org/package=CAbiplot")
+    (synopsis "Correspondence Analysis Biplots and Diagnostic Reports")
+    (description
+     "This package provides a convenience wrapper around @code{FactoMineR} and
+factoextra for running Correspondence Analysis (CA) on a numeric data table
+(e.g. a genotype-by-trait or contingency-style matrix) and producing a full set
+of publication-ready diagnostic plots: scree plot, symmetric biplot, row-only
+and column-only plots, row/column contribution plots, and row/column cos2
+(quality-of-representation) plots.  A single top-level function runs the whole
+pipeline, prints formatted result tables, and optionally saves every plot as a
+high-resolution image, mirroring a typical CA reporting workflow used in
+agronomy and plant-breeding studies.  An example genotype-by-trait data set is
+included.")
+    (license license:expat)))
 
 (define-public r-cabinets
   (package

@@ -230,13 +230,13 @@ evaluated against these type hint comments at run-time.")
 (define-public r-typedjson
   (package
     (name "r-typedjson")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "typedjson" version))
        (sha256
-        (base32 "0add3pd6bhiizbyga6qf5pkp0z4x7adpdp6yga6xaz3vf5p7hs8i"))))
+        (base32 "1wxyw5am1laj80s4xsjaa0rr2a7n940vwm2n2pwxhjdia4z4mcmy"))))
     (properties `((upstream-name . "typedjson")))
     (build-system r-build-system)
     (arguments
@@ -2528,13 +2528,13 @@ engine but usable standalone for any spatial triangulation task.")
 (define-public r-tulpa
   (package
     (name "r-tulpa")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tulpa" version))
        (sha256
-        (base32 "0xb4ck5dxwdhffgpv44lrcixn5s7ld3y8s1ybl3w4jp6qc29p1il"))))
+        (base32 "1j0vxyqq604rf7y6s4hmg5wxxga294042jqn12fxv802fm51cz67"))))
     (properties `((upstream-name . "tulpa")))
     (build-system r-build-system)
     (arguments
@@ -8977,6 +8977,49 @@ functions for generating customized palettes that are on theme.  The package
 also offers functions for applying the palettes to plots made using the ggplot2
 package.")
     (license license:expat)))
+
+(define-public r-treetraits
+  (package
+    (name "r-treetraits")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tReeTraits" version))
+       (sha256
+        (base32 "1p35xddjh3lc1z47fy2yxmfw1z968h0qk97y2wlnwmk03jaxwa9x"))))
+    (properties `((upstream-name . "tReeTraits")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-terra
+                             r-stringr
+                             r-spanner
+                             r-sf
+                             r-rlang
+                             r-rgl
+                             r-reticulate
+                             r-recexcavaar
+                             r-readr
+                             r-minpack-lm
+                             r-lidr
+                             r-ggpubr
+                             r-ggplotify
+                             r-ggplot2
+                             r-fnn
+                             r-dplyr
+                             r-data-table
+                             r-crownscorchtls
+                             r-alphashape3d))
+    (home-page "https://cran.r-project.org/package=tReeTraits")
+    (synopsis "Calculate Tree Traits from Terrestrial Lidar")
+    (description
+     "Measuring tree architecture from terrestrial lidar data, including tree-level
+properties, crown characteristics, and structural attributes derived from
+quantitative structure models (QSMs).")
+    (license license:gpl3)))
 
 (define-public r-treetools
   (package
@@ -18516,13 +18559,13 @@ expectations to test base R and ggplot2 plots as well as console output from
 (define-public r-tinyshinyserver
   (package
     (name "r-tinyshinyserver")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinyshinyserver" version))
        (sha256
-        (base32 "175qw6kwv15042rw5jy7b28rzq4dlwmc8mqgn1br3a9wp82yc5b9"))))
+        (base32 "0ggv8gzlk50lkadpvdz7vnyrzsmfv7pxgwzwbynim9xwn1bhmwfb"))))
     (properties `((upstream-name . "tinyshinyserver")))
     (build-system r-build-system)
     (arguments
@@ -20496,13 +20539,13 @@ get tidy data frames in response, and cache data in a local database.")
 (define-public r-tidyweather
   (package
     (name "r-tidyweather")
-    (version "0.3.0")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyweather" version))
        (sha256
-        (base32 "0mhl5aa3z09clsyq1nk0xwsd54jj4q87mxg5sfawbdd11w5ysi43"))))
+        (base32 "1zzlm4cpz6ynbzy7pqhwic27cznsc82xx429mihwxjgh7i7appk9"))))
     (properties `((upstream-name . "tidyweather")))
     (build-system r-build-system)
     (arguments
@@ -24753,13 +24796,13 @@ methods used in the package based on the following publications Stipanuk (1973)
 (define-public r-thsqca
   (package
     (name "r-thsqca")
-    (version "2.0.6")
+    (version "2.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ThSQCA" version))
        (sha256
-        (base32 "1jpjqgw59dq62hgpzd4f5z0q20m7g5mnraazwwirkmb0m4klfqj8"))))
+        (base32 "1w8gqkph4jyl8dqr5sl0mgxnp865abia1ds24z1bl166l93hxsxd"))))
     (properties `((upstream-name . "ThSQCA")))
     (build-system r-build-system)
     (arguments
@@ -24771,14 +24814,14 @@ methods used in the package based on the following publications Stipanuk (1973)
     (synopsis "Threshold-Sweep QCA")
     (description
      "This package provides threshold sweep methods for Qualitative Comparative
-Analysis (QCA).  Implements Condition Threshold Sweep-Single (CTS-S), Condition
-Threshold Sweep-Multiple (CTS-M), Outcome Threshold Sweep (OTS), and Dual
-Threshold Sweep (DTS) for systematic exploration of threshold calibration
-effects on crisp-set QCA results.  These methods extend traditional robustness
-approaches by treating threshold variation as an exploratory tool for
-discovering causal structures.  Also provides Fiss (2011)
-<doi:10.5465/amj.2011.60263120> core/peripheral condition classification via
-@code{compute_fiss_core()} and @code{generate_fiss_chart()}, enabling
+Analysis (QCA).  Implements Condition Threshold Sweep (CTS, for one or several
+conditions), Outcome Threshold Sweep (OTS), and Dual Threshold Sweep (DTS) for
+systematic exploration of threshold calibration effects on crisp-set QCA
+results.  These methods extend traditional robustness approaches by treating
+threshold variation as an explicit analytical dimension and recording the
+sufficiency solution obtained at each threshold setting.  Also provides Fiss
+(2011) <doi:10.5465/amj.2011.60263120> core/peripheral condition classification
+via @code{compute_fiss_core()} and @code{generate_fiss_chart()}, enabling
 four-symbol configuration charts that distinguish core conditions (present in
 both parsimonious and intermediate solutions) from peripheral conditions
 (intermediate only).  Built on top of the QCA package by Dusa (2019)
@@ -24910,13 +24953,13 @@ The statistical methodology used here can be found in Perez-Jaume et al (2017)
 (define-public r-thresher
   (package
     (name "r-thresher")
-    (version "1.1.5")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Thresher" version))
        (sha256
-        (base32 "15ddl0dny2pzrk0r6ccppfd62rfs5gd0svc3xbhzn7dzw6nrvi8w"))))
+        (base32 "05y1x43dvgqrlb35m09vc7vgs2prymdq87pcry1qwd5a97a8hmpz"))))
     (properties `((upstream-name . "Thresher")))
     (build-system r-build-system)
     (arguments
@@ -24929,7 +24972,7 @@ The statistical methodology used here can be found in Perez-Jaume et al (2017)
                              r-colorspace
                              r-classdiscovery
                              r-ade4))
-    (home-page "http://oompa.r-forge.r-project.org/")
+    (home-page "http://silicovore.com/OOMPA/thresher.html")
     (synopsis "Threshing and Reaping for Principal Components")
     (description
      "Defines the classes used to identify outliers (threshing) and compute the number
@@ -25304,35 +25347,6 @@ key value store that uses a memory map for efficient access.  This package wraps
 the entire LMDB interface (except duplicated keys), and provides objects for
 transactions and cursors.")
     (license license:expat)))
-
-(define-public r-thomasjeffersonuniv
-  (package
-    (name "r-thomasjeffersonuniv")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ThomasJeffersonUniv" version))
-       (sha256
-        (base32 "1bf5dch0z077is7zz49hhwf3l2y4qpg47gdhvbp2968pb35mn35j"))))
-    (properties `((upstream-name . "ThomasJeffersonUniv")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo
-                             r-writexl
-                             r-timedate
-                             r-survival
-                             r-stringi
-                             r-stringdist
-                             r-lubridate))
-    (home-page "https://cran.r-project.org/package=ThomasJeffersonUniv")
-    (synopsis "Handy Tools for TJU/TJUH Employees")
-    (description
-     "This package provides functions for admin needs of employees of Thomas Jefferson
-University and Thomas Jefferson University Hospital, Philadelphia, PA.")
-    (license license:gpl2)))
 
 (define-public r-thisutils
   (package
@@ -34134,19 +34148,24 @@ and local taxonomic assignment.")
 (define-public r-taxodist
   (package
     (name "r-taxodist")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "taxodist" version))
        (sha256
-        (base32 "0c57g1chr618mxr2yaznfgc4bwwd5nxc93h25mfiw5pjcvp3ry5f"))))
+        (base32 "00ijj4ycw4nw3dvgvg863zivf9sb2j3b9r0dq45158cz6alw2jjn"))))
     (properties `((upstream-name . "taxodist")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr r-rvest r-purrr r-httr r-cli))
+    (propagated-inputs (list r-stringr
+                             r-rvest
+                             r-purrr
+                             r-jsonlite
+                             r-httr
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/rodrigosqrt3/taxodist")
     (synopsis "Taxonomic Hierarchy Distances and Lineage Analysis")
@@ -34155,9 +34174,10 @@ and local taxonomic assignment.")
 retrieved from The Taxonomicon <http://taxonomicon.taxonomy.nl>.  For distinct
 nodes, distance is defined as the reciprocal of the depth of their most recent
 common ancestor; identical nodes have distance zero.  This definition yields an
-ultrametric within each connected hierarchy.  Functions are provided for lineage
-retrieval and comparison, clade membership, pairwise and matrix distance
-calculation, hierarchical clustering, principal coordinates analysis, and cache
+ultrametric within each connected hierarchy.  Functions are provided for
+auditable name resolution, online or user-supplied lineage analysis, clade
+membership, pairwise and matrix distance calculation, hierarchical clustering,
+principal coordinates analysis, portable JSON analysis bundles, and cache
 management.  Distance matrices are returned as base R dist objects.  The
 distances represent classification depth rather than evolutionary time or
 phylogenetic branch length.")
@@ -35777,20 +35797,20 @@ Rosenbaum (2022) <doi:10.1080/00031305.2022.2063944>.")
 (define-public r-tailrank
   (package
     (name "r-tailrank")
-    (version "3.2.4")
+    (version "3.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TailRank" version))
        (sha256
-        (base32 "06zmr9alizs5196gqbpwpv21p3z68blcl6mkb3v876ga4c8s3qac"))))
+        (base32 "13r2hwiqykm6nlvcsz87sr7512fx04s0cdfad28bawdjc0iycs4p"))))
     (properties `((upstream-name . "TailRank")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-oompadata r-oompabase r-biobase))
-    (home-page "http://oompa.r-forge.r-project.org/")
+    (home-page "http://silicovore.com/OOMPA/index.html")
     (synopsis "The Tail-Rank Statistic")
     (description
      "This package implements the tail-rank statistic for selecting biomarkers from a
@@ -36759,13 +36779,13 @@ the package.")
 (define-public r-tabpfn
   (package
     (name "r-tabpfn")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tabpfn" version))
        (sha256
-        (base32 "0p1awh3r46qncqaq38pf66w45wxaxkbzmyhhwrnc6vi7gqimwkpf"))))
+        (base32 "0k8gy27wskhabj7bxsk49gpx5185dadm1cp8bafg2d2a0w6jiyz3"))))
     (properties `((upstream-name . "tabpfn")))
     (build-system r-build-system)
     (arguments

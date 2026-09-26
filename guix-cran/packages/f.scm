@@ -615,13 +615,13 @@ the @code{FuzzyNumbers} package.")
 (define-public r-fuzzysim
   (package
     (name "r-fuzzysim")
-    (version "4.59")
+    (version "4.60")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fuzzySim" version))
        (sha256
-        (base32 "1yfyc5qbr98vf58pnvxxl954ssgv4wa93glrpc2dyg5pfffafd44"))))
+        (base32 "14m4xfl9c05mjj557zqqbzvp100fsbrx5a78n967b7fiakhk0570"))))
     (properties `((upstream-name . "fuzzySim")))
     (build-system r-build-system)
     (arguments
@@ -1878,6 +1878,43 @@ Puglielli et al. (2021) <doi:10.1111/nph.16952>, Carmona et al. (2021)
 more information.")
     (license license:gpl3)))
 
+(define-public r-funresmech
+  (package
+    (name "r-funresmech")
+    (version "1.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "funresMech" version))
+       (sha256
+        (base32 "0jl3l2vfvbnsnfg928wd8nw7ccjxcw27883hd49d9hv18zcvw5ap"))))
+    (properties `((upstream-name . "funresMech")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shinythemes
+                             r-shinybs
+                             r-shiny
+                             r-rmarkdown
+                             r-rlang
+                             r-plotly
+                             r-magrittr
+                             r-ggplot2
+                             r-future
+                             r-dplyr
+                             r-deoptim))
+    (home-page "https://github.com/Segon03/funresMech")
+    (synopsis "Mechanistic Functional Response Analysis")
+    (description
+     "This package implements the mechanistic functional response model proposed by
+Okuyama (2012) <doi:10.1016/j.biocontrol.2011.10.008> for host-parasitoid
+systems.  Provides tools for model fitting, likelihood profiling, stochastic
+simulation, and visualization of parasitism distributions.  Includes an
+interactive shiny application for complete analysis workflows, built with plotly
+for interactive graphics and rmarkdown for reproducible reports.")
+    (license license:expat)))
+
 (define-public r-funreg
   (package
     (name "r-funreg")
@@ -2433,6 +2470,36 @@ iterative hierarchical clustering method originally developed for multivariate
 data, to the functional data setting.  For further details, please see Higgins
 and Carey (2024) <doi:10.1007/s11634-024-00611-8>.")
     (license license:expat)))
+
+(define-public r-funhmm
+  (package
+    (name "r-funhmm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "funHMM" version))
+       (sha256
+        (base32 "00466843qfwdrii2cl8fskpilvpz02k335lcy4aijdp2nbpdf1ym"))))
+    (properties `((upstream-name . "funHMM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=funHMM")
+    (synopsis "Hidden Markov Models for Functional Data")
+    (description
+     "Fits hidden Markov models to time-ordered sequences of curves, such as sample
+paths of stochastic processes or smoothed functional observations, without
+projecting the curves onto a finite basis.  The emission functions are
+Onsager-Machlup functionals of Gaussian measures on function spaces, which
+allows for Brownian motion with drift, fractional Brownian motion,
+Ornstein-Uhlenbeck processes and non-parametric state means under a choice of
+Cameron-Martin norm.  The Baum-Welch and Viterbi algorithms are implemented in
+C. Methods are described in Kashlak, Loliencar and Heo (2023)
+<https://jmlr.org/papers/v24/22-0685.html>.")
+    (license license:gpl3+)))
 
 (define-public r-funhddc
   (package
@@ -5695,13 +5762,13 @@ computational efficiency.")
 (define-public r-freesurferformats
   (package
     (name "r-freesurferformats")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "freesurferformats" version))
        (sha256
-        (base32 "0p143dp07g9fs6ixv2jg6bacxps12izji5h67nk9l336slam6k84"))))
+        (base32 "1nlc5im7h4k11afjh8br09fxm213hp0zz7xdra8jkravg71n76qa"))))
     (properties `((upstream-name . "freesurferformats")))
     (build-system r-build-system)
     (arguments
@@ -8178,6 +8245,49 @@ recombination (Hudson and Kaplan 1985, Genetics 111:147-164).  Thus, the
 presence of all four gametes is also called phylogenetic incompatibility.")
     (license license:gpl2)))
 
+(define-public r-foundryr
+  (package
+    (name "r-foundryr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "foundryR" version))
+       (sha256
+        (base32 "0scms4c8ph0jdx7xmah858yg7ffkl5ddn8ajzg3h36pk5b7kcjb3"))))
+    (properties `((upstream-name . "foundryR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-lifecycle
+                             r-jsonlite
+                             r-httr2
+                             r-generics
+                             r-dplyr
+                             r-digest
+                             r-curl
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/farach/foundryR")
+    (synopsis "Data Frame Workflows for 'Microsoft Foundry'")
+    (description
+     "Work with Microsoft Azure AI Foundry from data-frame-oriented R workflows.
+Provides data-frame-returning helpers for Azure AI Content Safety', Azure
+@code{OpenAI} Responses API calls, strict structured extraction, vector
+representations, files, batch jobs, audio, media, and chat completions.
+Supports research annotation, safety gates, semantic search, and tidymodels
+recipes.  Helps teams keep model workflows inside their Azure environment while
+preserving analyzable outputs.  See the Microsoft Foundry REST API documentation
+<https://learn.microsoft.com/rest/api/microsoft-foundry/> and Azure AI Content
+Safety documentation
+<https://learn.microsoft.com/azure/ai-services/content-safety/>.")
+    (license license:expat)))
+
 (define-public r-foundry
   (package
     (name "r-foundry")
@@ -9035,13 +9145,13 @@ Latent Class Discrete Weibull Models.This package is based on Fader and Hardie
 (define-public r-foresty
   (package
     (name "r-foresty")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "foresty" version))
        (sha256
-        (base32 "1k4al3iz3905ds3xa84j0nyiqkj18rkjz162f8v1l8q3fffl0n9i"))))
+        (base32 "02rzfj5ilw3icakl233l4kf8hcbyz0kcj6b4m5mib0l0jddrxxsc"))))
     (properties `((upstream-name . "foresty")))
     (build-system r-build-system)
     (arguments
@@ -9064,18 +9174,19 @@ can follow a journal's house style.  The same results go to a self-contained
 HTML page holding the subgroup estimates, the joint test and the coefficient
 table.  The car package computes the linear combinations and their tests.
 Models fitted by @code{stats::glm()}, @code{stats::lm()}, the survival package,
-the lme4 package and the geepack package are supported, as is any fit supplying
-@code{coef()} and @code{vcov()}.  Ordinal outcomes are supported through the
-MASS package and nominal ones through the nnet package, where the figure carries
-one row per level of the outcome and the interaction is tested jointly across
-the equations.  Fits from the rms package are refused, naming the function that
-fits the same model in their place.  The estimation of an exposure effect within
-a level of a modifier, and the test of the difference between such estimates,
-follow Altman and Bland (2003) <doi:10.1136/bmj.326.7382.219> and
-@code{VanderWeele} and Knol (2014) <doi:10.1515/em-2013-0005>; the reporting of
-subgroup effects beside the interaction test follows Wang et al. (2007)
-<doi:10.1056/NEJMsr077003>, and the figure itself the forest plot described by
-Lewis and Clarke (2001) <doi:10.1136/bmj.322.7300.1479>.")
+the lme4 package, the geepack package and the survey package are supported, as
+is any fit supplying @code{coef()} and @code{vcov()}.  Ordinal outcomes are
+supported through the MASS package and nominal ones through the nnet package,
+where the figure carries one row per level of the outcome and the interaction is
+tested jointly across the equations.  Fits from the rms package are refused,
+naming the function that fits the same model in their place.  The estimation of
+an exposure effect within a level of a modifier, and the test of the difference
+between such estimates, follow Altman and Bland (2003)
+<doi:10.1136/bmj.326.7382.219> and @code{VanderWeele} and Knol (2014)
+<doi:10.1515/em-2013-0005>; the reporting of subgroup effects beside the
+interaction test follows Wang et al. (2007) <doi:10.1056/NEJMsr077003>, and the
+figure itself the forest plot described by Lewis and Clarke (2001)
+<doi:10.1136/bmj.322.7300.1479>.")
     (license license:gpl3)))
 
 (define-public r-foresttools
@@ -19977,6 +20088,41 @@ and Leemans, A. (2024) \"Handbook of Diffusion MR Tractography\"
 underpinnings of diffusion MRI tractography.")
     (license license:expat)))
 
+(define-public r-fiastemmap
+  (package
+    (name "r-fiastemmap")
+    (version "2.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FIAstemmap" version))
+       (sha256
+        (base32 "07n658zqppllh0hvzvmxsmyj55ff1anx8agx1c1j8hxkivafda3n"))))
+    (properties `((upstream-name . "FIAstemmap")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-spatstat-geom r-spatstat-explore r-gdalraster
+                             r-cli r-bit64))
+    (home-page "https://firelab.github.io/FIAstemmap/")
+    (synopsis
+     "Tree Canopy Modeling for USDA Forest Inventory and Analysis Plots")
+    (description
+     "Maps individual tree stem locations on field plots of the Forest Inventory and
+Analysis Program of USDA Forest Service
+(<https://research.fs.usda.gov/programs/nfi>).  Stem locations are mapped in
+cartesian coordinate space based on field-measured distance and azimuth from
+subplot and microplot centers.  Per-tree crown widths are estimated using a
+curated set of allometric equations with coverage for the conterminous US.
+Spatial descriptors of tree point pattern are computed at the whole plot level.
+Several stand height metrics are also computed and provided in the output.  The
+spatial representation of modeled tree crowns is used to generate estimates of
+fractional tree canopy cover at the microplot, subplot and whole plot levels.
+Convenience functions are provided for efficient data processing.  Exploratory
+data analysis is also facilitated via integration with the spatstat packages.")
+    (license license:expat)))
+
 (define-public r-fi
   (package
     (name "r-fi")
@@ -28308,13 +28454,13 @@ details in R Journal article; Abel (2015) <doi:10.32614/RJ-2015-002>.")
 (define-public r-fangs
   (package
     (name "r-fangs")
-    (version "0.2.22")
+    (version "0.2.25")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fangs" version))
        (sha256
-        (base32 "0qxz9n1xkhwy5546kmjqij8v091immrahm2hc3cs30cmgbalmz36"))))
+        (base32 "042n7qaxk1905l1bi8cy6wx2pn4aghkamxyd54aiyhzj00x818h7"))))
     (properties `((upstream-name . "fangs")))
     (build-system r-build-system)
     (arguments
@@ -29364,13 +29510,13 @@ Useful when using the book.")
 (define-public r-fahb
   (package
     (name "r-fahb")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fahb" version))
        (sha256
-        (base32 "1kcrywj0q2qf28420frypvdn17j0l2x7kjkz64ihq08wm951d0ri"))))
+        (base32 "1d81h2c9zfhwmk1czcljx0dsjfilr9qfcr8v324hz1kkcb6q9i10"))))
     (properties `((upstream-name . "fahb")))
     (build-system r-build-system)
     (arguments
@@ -29383,7 +29529,7 @@ Useful when using the book.")
                              r-ggplot2
                              r-brms))
     (native-inputs (list r-knitr))
-    (home-page "https://dtwilson.github.io/fahb/")
+    (home-page "https://lictr.github.io/fahb/")
     (synopsis
      "Design and Analysis of Pilot Trials Assessing Recruitment Feasibility")
     (description
@@ -30594,35 +30740,38 @@ published in Statistics and Computing <doi: 10.1007/s11222-017-9744-8>.")
 (define-public r-fabricqueryr
   (package
     (name "r-fabricqueryr")
-    (version "0.2.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fabricQueryR" version))
        (sha256
-        (base32 "1iy00mcrd7k84w7n2gi3njxd47qc3brr7gdmzszx5nfzjj3hczkj"))))
+        (base32 "0nd69z27dncnc89hws2g7234b31wadf14vmgx0kmsl41k5hivb5b"))))
     (properties `((upstream-name . "fabricQueryR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-stringr
+    (propagated-inputs (list r-vctrs
+                             r-tibble
                              r-rlang
-                             r-purrr
+                             r-reticulate
+                             r-r6
+                             r-nanoarrow
                              r-jsonlite
                              r-httr2
-                             r-dplyr
                              r-cli
+                             r-bit64
                              r-azureauth))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/kennispunttwente/fabricQueryR")
-    (synopsis "Query Data in 'Microsoft Fabric'")
+    (synopsis "Access and Manage 'Microsoft Fabric'")
     (description
-     "Query data hosted in Microsoft Fabric'.  Provides helpers to open DBI
-connections to SQL endpoints of Lakehouse and Data Warehouse items; submit Data
-Analysis Expressions ('DAX') queries to semantic model datasets in Microsoft
-Fabric and Power BI'; read Delta Lake tables stored in @code{OneLake} ('Azure
-Data Lake Storage Gen2'); and execute Spark code via the Livy API'.")
+     "Access Microsoft Fabric workspaces, items, and workload endpoints through its
+web application programming interfaces (APIs).  Connect to data in
+@code{OneLake}', Lakehouse', Warehouse', semantic model, and Eventhouse items,
+with support for DBI', Arrow', @code{GraphQL}', and Spark'.  Manage files,
+tables, refreshes, jobs, schedules, ingestion, and long-running operations.")
     (license license:expat)))
 
 (define-public r-fabricerin

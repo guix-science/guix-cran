@@ -1110,13 +1110,13 @@ such dynamic value elements.  This package aims to reduce those challenges.")
 (define-public r-dynamicmultiplex
   (package
     (name "r-dynamicmultiplex")
-    (version "1.1.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dynamicmultiplex" version))
        (sha256
-        (base32 "03a4wf9cpzq84p43mi94jw8ifgaq7dhf83pdwmsqhni4yprh7jiq"))))
+        (base32 "00syx56f53dwxkk0kg0ayq94mdxzxkfqbmd9s44hb17ln0crg72b"))))
     (properties `((upstream-name . "dynamicmultiplex")))
     (build-system r-build-system)
     (arguments
@@ -3385,13 +3385,13 @@ is data of one competition and one matchday as test data.")
 (define-public r-dtlog
   (package
     (name "r-dtlog")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dtlog" version))
        (sha256
-        (base32 "1myqapdkj90dp21d69r3458g8q43zlljarix3x5kbbwi93wa853v"))))
+        (base32 "14ffxiymgfazml6wiwi2ll5psmkvy01pxmqad5ys4dc24l7r0gsa"))))
     (properties `((upstream-name . "dtlog")))
     (build-system r-build-system)
     (arguments
@@ -3906,13 +3906,13 @@ information on dtangle see Hunt et al. (2019)
 (define-public r-dtametatmb
   (package
     (name "r-dtametatmb")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dtametaTMB" version))
        (sha256
-        (base32 "1lhyhh4vqly5b6hv8fpfn2dnadlifxhk03gwrhbhvvj7zqcim5xj"))))
+        (base32 "1g2mhzqhclm685psfa1jfmh93wqi6474c3a3rfhsbncnvkml9z91"))))
     (properties `((upstream-name . "dtametaTMB")))
     (build-system r-build-system)
     (arguments
@@ -4372,13 +4372,13 @@ and obtain the matching confidence interval using a choice of methods.")
 (define-public r-dsrocrate
   (package
     (name "r-dsrocrate")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dsROCrate" version))
        (sha256
-        (base32 "1z7cfy34df6bszgxj2349hlxj4n5ia6a4hjsppz5p8qxblhg498y"))))
+        (base32 "0igg1va9hvh43s35c0dx06q7jm2nfvk735vj3i7r0j1llm31av30"))))
     (properties `((upstream-name . "dsROCrate")))
     (build-system r-build-system)
     (arguments
@@ -5005,13 +5005,13 @@ Enrichment Analysis. <https://github.com/LHJLab/DSGE>.")
 (define-public r-dsge
   (package
     (name "r-dsge")
-    (version "1.0.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dsge" version))
        (sha256
-        (base32 "1h3skrh7ilhkd840h6y4mn72mgdh98rsvdk13f7vc8aixkdk0bq8"))))
+        (base32 "13vpxgr42ja7pqnhbnjyf92mx0hljvqlmqviygqyz9f7alsqz7aw"))))
     (properties `((upstream-name . "dsge")))
     (build-system r-build-system)
     (arguments
@@ -5025,14 +5025,19 @@ Enrichment Analysis. <https://github.com/LHJLab/DSGE>.")
      "Specify, solve, and estimate dynamic stochastic general equilibrium (DSGE)
 models by maximum likelihood and Bayesian methods.  Supports both linear models
 via an equation-based formula interface and nonlinear models via string-based
-equations with first-order perturbation (linearization around deterministic
-steady state).  Solution uses the method of undetermined coefficients (Klein,
-2000 <doi:10.1016/S0165-1889(99)00045-7>).  Likelihood evaluated via the Kalman
-filter.  Bayesian estimation uses adaptive Random-Walk Metropolis-Hastings with
-prior specification.  Additional tools include Kalman smoothing, historical
-shock decomposition, local identification diagnostics, parameter sensitivity
-analysis, second-order perturbation, occasionally binding constraints,
-impulse-response functions, forecasting, and robust standard errors.")
+equations with perturbation up to third order (Schmitt-Grohe and Uribe, 2004
+<doi:10.1016/S0165-1889(03)00043-5>).  Solution uses the method of undetermined
+coefficients (Klein, 2000 <doi:10.1016/S0165-1889(99)00045-7>).  Likelihood
+evaluated via the Kalman filter or a bootstrap particle filter (Gordon et al.,
+1993).  Bayesian estimation uses adaptive Random-Walk Metropolis-Hastings or
+Particle Marginal Metropolis-Hastings (Andrieu et al., 2010
+<doi:10.1111/j.1467-9868.2009.00736.x>) with parallel chain support.  Additional
+tools include Bayes factor model comparison with Kass-Raftery evidence scales,
+Ramsey optimal policy via linear-quadratic regulator, nonlinear perfect
+foresight via stacked-time Newton (Juillard et al., 1998), Kalman smoothing,
+historical shock decomposition, local identification diagnostics, parameter
+sensitivity analysis, occasionally binding constraints, impulse-response
+functions, forecasting, and robust standard errors.")
     (license license:expat)))
 
 (define-public r-dsfm
@@ -9376,31 +9381,26 @@ double one-sided cross-validation, and standard cross-validation.")
 (define-public r-doudpackage
   (package
     (name "r-doudpackage")
-    (version "2.1.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "doudpackage" version))
        (sha256
-        (base32 "02zr80ps7x5bq388px9jfpf3b5krvba63ydrsi9big2v5x73hfv9"))))
+        (base32 "1b9mfi9bsxa1cy0ay777gwqj95fb5676905ps0hpz79kybj0sydq"))))
     (properties `((upstream-name . "doudpackage")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringi
-                             r-purrr
-                             r-kableextra
-                             r-dplyr))
-    (home-page "https://cran.r-project.org/package=doudpackage")
-    (synopsis "Create Elegant Table 1 in HTML for Bio-Statistics")
+    (propagated-inputs (list r-tidyr r-tibble r-purrr r-kableextra r-dplyr))
+    (home-page "https://github.com/tiago972/doudpackage")
+    (synopsis "Create Elegant Table 1 in HTML/'LaTeX' for Bio-Statistics")
     (description
      "This package creates the \"table one\" of bio-medical papers.  Fill it with your
 data and the name of the variable which you'll make the group(s) out of and it
-will make univariate, bivariate analysis and parse it into HTML. It also allows
-you to visualize all your data with graphic representation.")
+will make univariate and bivariate analysis, and parse the result into an HTML
+or @code{LaTeX} table ready to paste into a paper.")
     (license license:gpl3+)))
 
 (define-public r-douconca
@@ -24416,6 +24416,37 @@ package ships with reproducibly simulated datasets so that every example and
 vignette runs without further setup.")
     (license license:expat)))
 
+(define-public r-depguard
+  (package
+    (name "r-depguard")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "depguard" version))
+       (sha256
+        (base32 "1sy7cz2dil7psdl91qib3jiwlp470h3xmjfa4i96kawgjp08bbg9"))))
+    (properties `((upstream-name . "depguard")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sessioninfo r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/sunraycodes/depguard")
+    (synopsis
+     "Manifest-Based Dependency Conflict Detection for Sandboxed R Sessions")
+    (description
+     "This package provides lightweight, manifest-based checking of R package
+dependencies (including transitive dependencies) against the currently installed
+environment, without requiring a full project lockfile.  Designed for sandboxed
+or ephemeral notebook environments (e.g. Kaggle, Colab, Binder) where
+renv'-style lockfile ownership is impractical.  Includes session snapshot/diff
+tools (building on sessioninfo') to detect when an install silently changes the
+version of a package that is already loaded, and optional single-package version
+rollback.")
+    (license license:expat)))
+
 (define-public r-dependentsimr
   (package
     (name "r-dependentsimr")
@@ -25667,13 +25698,13 @@ fertility rates, net migration numbers; and stochastic population forecasting.")
 (define-public r-demographictable
   (package
     (name "r-demographictable")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DemographicTable" version))
        (sha256
-        (base32 "17x45a87rlqx1nv7s9my3znyjvfiia3y7clqqxr8nl3pxxk0ixdf"))))
+        (base32 "1ndl0ln114mxr9hfms87hqqbvcdzw8n88ilqz24c5a8qsjkp4dhg"))))
     (properties `((upstream-name . "DemographicTable")))
     (build-system r-build-system)
     (arguments
@@ -25845,13 +25876,13 @@ proposed by Caswell (1989) <doi:10.1016/0304-3800(89)90019-7>.")
 (define-public r-demixr
   (package
     (name "r-demixr")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DEmixR" version))
        (sha256
-        (base32 "06jc1jly7vmdbbr8qz4k9b3inqfczgwld8f1xrlcrccafpggifag"))))
+        (base32 "1r4b4ssb3pqfhj7531nwgj4fw2hc0127zg59bq84j6jr9p8vin45"))))
     (properties `((upstream-name . "DEmixR")))
     (build-system r-build-system)
     (arguments
@@ -25859,17 +25890,18 @@ proposed by Caswell (1989) <doi:10.1016/0304-3800(89)90019-7>.")
       #:tests? #f))
     (propagated-inputs (list r-pbapply r-deoptim))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=DEmixR")
+    (home-page "https://github.com/FHabibzadeh/DEmixR")
     (synopsis "Fit Two-Component Normal and Lognormal Mixture Models")
     (description
      "Fits, bootstraps, and evaluates two-component normal and lognormal mixture
-models.  Parameters are estimated by combining differential-evolution global
-optimization, as implemented in the DEoptim package (Mullen, Ardia, Gil,
-Windover and Cline, 2011) <doi:10.18637/jss.v040.i06>, with a local L-BFGS-B
-refinement step via @code{optim()}.  Also provides preliminary diagnostic plots,
-automatic normal-versus-lognormal model selection by information criteria, and
-parametric or nonparametric bootstrap confidence intervals for the fitted
-parameters.")
+models.  Parameters are searched within data-derived bounds by
+differential-evolution global optimization, as implemented in the DEoptim
+package (Mullen, Ardia, Gil, Windover and Cline, 2011)
+<doi:10.18637/jss.v040.i06>, followed by a local L-BFGS-B refinement step via
+@code{optim()}.  Also provides preliminary diagnostic plots, diagnostic plots
+for fitted mixtures, automatic normal-versus-lognormal model selection by the
+Bayesian or Akaike information criterion, and parametric or nonparametric
+bootstrap confidence intervals for the fitted parameters.")
     (license license:expat)))
 
 (define-public r-dematel
@@ -31061,6 +31093,52 @@ behavior of the DFA and DCCA in trend-stationary processes\"
 <@code{arXiv:1910.10589>}.")
     (license license:gpl3+)))
 
+(define-public r-dcc
+  (package
+    (name "r-dcc")
+    (version "1.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DCC" version))
+       (sha256
+        (base32 "13fr15n2cxd0q6w6s8nyrmdy2wjkfjpp4cw15cly48q00c47p5qf"))))
+    (properties `((upstream-name . "DCC")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml
+                             r-writexl
+                             r-stringi
+                             r-readxl
+                             r-readods
+                             r-openxlsx2
+                             r-jsonlite
+                             r-haven
+                             r-data-table
+                             r-arrow))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/weiandata/DCC")
+    (synopsis "Data Cleaning Center for Survey and Assessment Data")
+    (description
+     "Rule-driven, auditable cleaning of survey and assessment response data,
+implementing the @code{WeianData} Detect-Execute-Report workflow.  Provides a
+multi-format, multi-encoding input layer (CSV, Excel', SPSS', Stata', SAS',
+Parquet, JSON), the dcc_data container with a provenance chain, level-0
+structural diagnostics, five built-in response-quality detectors (missing items,
+straight-lining, response time, trap items, score anomalies), a declarative YAML
+rule engine, an execution engine with a cell-level audit log, answer-key
+scoring, multi-form to master item bank mapping, a normalized report model
+rendered as bilingual staff workbooks and HTML, complete statistical bundles,
+and versioned machine JSON/JSONL with findings-to-changes reconciliation,
+cell-level lineage tracing, and manifest-based one-command reproduction.
+Includes a protected bilingual strict project workbook and matching JSON
+contract with cell-addressed validation, non-mutating preflight, preview-first
+execution, and localized staff guidance.  All formally supported input backends
+install with the package; PDF is optional rather than a fixed report output.")
+    (license license:gpl2+)))
+
 (define-public r-dbx
   (package
     (name "r-dbx")
@@ -33129,13 +33207,13 @@ dplyr', data.table', arrow', and DBI ('SQL'), which do the heavy lifting.")
 (define-public r-datasusr
   (package
     (name "r-datasusr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datasusr" version))
        (sha256
-        (base32 "03i5npd363k9z0xi92mzvqpl2ydp06wlhhm48kzqcyrjjp4xzpwq"))))
+        (base32 "1qj75q2x7ddag4p3b2pm65lk38zr5lzjbrfy4zbh1dwq539sigqj"))))
     (properties `((upstream-name . "datasusr")))
     (build-system r-build-system)
     (arguments

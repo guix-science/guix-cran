@@ -2245,13 +2245,13 @@ ISBN:978-0-471-18386-0).")
 (define-public r-swfscmisc
   (package
     (name "r-swfscmisc")
-    (version "1.7")
+    (version "1.7.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "swfscMisc" version))
        (sha256
-        (base32 "17ppby5d4r3kdnmrpy349grvg9dq5zsc7cy3qn3gz423ikgnjiyn"))))
+        (base32 "1n0s947qd313x6gvb0zfva583ikm0zgi1ml1nfqydwkyx92igyw5"))))
     (properties `((upstream-name . "swfscMisc")))
     (build-system r-build-system)
     (arguments
@@ -2262,7 +2262,6 @@ ISBN:978-0-471-18386-0).")
                              r-spatstat-geom
                              r-sf
                              r-rlang
-                             r-modeest
                              r-kknn
                              r-hdinterval
                              r-ggrepel
@@ -4271,13 +4270,13 @@ the sturdiness of regression coefficients.")
 (define-public r-svalignr
   (package
     (name "r-svalignr")
-    (version "0.9.2")
+    (version "0.10.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SVAlignR" version))
        (sha256
-        (base32 "1w7pycmzcpz233hwq16xyr1rj1qh627iyh59f6zri6fcqqq5m26w"))))
+        (base32 "038s95pvlg8y1jfln1fqllb502zlp2mklka00snmdvfipmy5x0bm"))))
     (properties `((upstream-name . "SVAlignR")))
     (build-system r-build-system)
     (arguments
@@ -4297,7 +4296,7 @@ the sturdiness of regression coefficients.")
                              r-biostrings
                              r-ape))
     (native-inputs (list r-r-rsp))
-    (home-page "http://oompa.r-forge.r-project.org/")
+    (home-page "http://silicovore.com/OOMPA/clonefinder.html")
     (synopsis
      "Recovering Structure of Long Molecules from Structural Variation Data")
     (description
@@ -6389,13 +6388,13 @@ the granting authority can be held responsible for them.")
 (define-public r-surveyframe
   (package
     (name "r-surveyframe")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "surveyframe" version))
        (sha256
-        (base32 "0192wfasj1w9qw6y3h1msdvmqjbk6rcxcs9jym7ylnhx827j74c8"))))
+        (base32 "190jni515lka3av7ibl4ij0bmwnsh6zafpyyixyv22v6z2i6bycr"))))
     (properties `((upstream-name . "surveyframe")))
     (build-system r-build-system)
     (arguments
@@ -16603,13 +16602,13 @@ STCOS models.")
 (define-public r-stceg
   (package
     (name "r-stceg")
-    (version "0.1.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stCEG" version))
        (sha256
-        (base32 "0ki3rvsh3bg4i4mz4flhrcmb1yzmxqzb73nq6gqckkbvlg4bp3g4"))))
+        (base32 "0kv065axmcf4skl6zdc0yfhiyf9y5hagzxwv27i6ndsi2rjnrn5p"))))
     (properties `((upstream-name . "stCEG")))
     (build-system r-build-system)
     (arguments
@@ -16618,30 +16617,17 @@ STCOS models.")
     (propagated-inputs (list r-zoo
                              r-visnetwork
                              r-viridis
-                             r-tidyverse
-                             r-tidyr
-                             r-stringr
-                             r-spdata
-                             r-sortable
                              r-shinywidgets
                              r-shinyjs
-                             r-shinyjqui
-                             r-shinycssloaders
                              r-shiny
                              r-sf
-                             r-scales
-                             r-rcolorbrewer
                              r-purrr
+                             r-magrittr
                              r-leaflet
                              r-igraph
-                             r-hwep
                              r-htmlwidgets
-                             r-htmltools
-                             r-gtools
                              r-dt
-                             r-dplyr
-                             r-crayon
-                             r-colorspace))
+                             r-dplyr))
     (home-page "https://github.com/holliecalley/stCEG")
     (synopsis "Fully Customizable Chain Event Graphs over Spatial Areas")
     (description
@@ -17903,13 +17889,13 @@ developed by Biometris.")
 (define-public r-statgenhtp
   (package
     (name "r-statgenhtp")
-    (version "1.0.9.4")
+    (version "1.0.9.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statgenHTP" version))
        (sha256
-        (base32 "0whfk34jz4pyizznjgbh3zp8f2b42n042b2s0spiam3xldajqiz6"))))
+        (base32 "0vpcg8zdklscpsfkq467rpnsf3pv8g2nlhki4mlqpdn0q4vxamgn"))))
     (properties `((upstream-name . "statgenHTP")))
     (build-system r-build-system)
     (arguments
@@ -18688,13 +18674,13 @@ ISBN:978-1-4338-3216-1).")
 (define-public r-statafrikr
   (package
     (name "r-statafrikr")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statAfrikR" version))
        (sha256
-        (base32 "19y8wanijhb846is78jg7gmc7hl8l57vfb6nsa6kr8sgzfaacx3x"))))
+        (base32 "1m8pbgq51c5ya2spa3q6c5ysw2j9q63rwfi76k8fb7ig2vxpvxwz"))))
     (properties `((upstream-name . "statAfrikR")))
     (build-system r-build-system)
     (arguments
@@ -22790,13 +22776,13 @@ better than classical supervised classifiers.")
 (define-public r-ssbtools
   (package
     (name "r-ssbtools")
-    (version "1.8.8")
+    (version "1.8.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SSBtools" version))
        (sha256
-        (base32 "0jwa6b1x7ycz5say168c7ry4i6h17rrc6fckwg0aa81cib6ds5vr"))))
+        (base32 "00mhprqqr6ifc480iaj8n96a53h0v6nxahhg1qmisgvgb4v4r7dc"))))
     (properties `((upstream-name . "SSBtools")))
     (build-system r-build-system)
     (arguments
@@ -30729,20 +30715,20 @@ created by k-means.  See Walvoort et al. (2010)
 (define-public r-spconform
   (package
     (name "r-spconform")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spconform" version))
        (sha256
-        (base32 "1x9iaypbz1rvvva1k395w80p33df9p5qrfz68q5b4v3x70zz0j68"))))
+        (base32 "1f2bzn4pygjh8jwszxry5xy73lhqaghnw1j0wwrj40agn5cf6zgy"))))
     (properties `((upstream-name . "spconform")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/amjed-droid/spconform")
+    (home-page "https://cran.r-project.org/package=spconform")
     (synopsis
      "Conformal Prediction for Spatially and Spatio-Temporally Dependent Data")
     (description
@@ -30756,7 +30742,7 @@ using spatial proximity, following the localized conformal framework of Mao,
 Martin and Reich (2024) <doi:10.1080/01621459.2022.2147531>.  Includes
 comprehensive spatial diagnostic tools to audit empirical coverage, conditional
 spatial strata, and boundary proximity effects.")
-    (license license:gpl3+)))
+    (license license:gpl3)))
 
 (define-public r-spconf
   (package
@@ -35021,13 +35007,13 @@ statements in parallel on top of SAS data.")
 (define-public r-spareg
   (package
     (name "r-spareg")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spareg" version))
        (sha256
-        (base32 "1agz28rxv42dsi61zpa0yk633xyvlz2hf79vggnvsaslgb7sdf85"))))
+        (base32 "1dnd1rmmn3xmrffxlbyxm5m4kwpbmy7m08bnvxpz1zcvb3gzhddv"))))
     (properties `((upstream-name . "spareg")))
     (build-system r-build-system)
     (arguments
@@ -35047,9 +35033,7 @@ random projection techniques for fitting ensembles of predictive generalized
 linear models to high-dimensional data.  Designed for extensibility, the package
 implements key techniques as S3 classes with user-friendly constructors,
 enabling easy integration and development of new procedures for high-dimensional
-applications.  For more details see Parzer et al (2024a)
-<doi:10.48550/@code{arXiv.2312.00130>} and Parzer et al (2024b)
-<doi:10.48550/@code{arXiv.2410.00971>}.")
+applications.")
     (license license:gpl3)))
 
 (define-public r-sparcl
@@ -44394,13 +44378,13 @@ function in this package is \"@code{maximinSLHD}\".")
 (define-public r-slgp
   (package
     (name "r-slgp")
-    (version "1.1.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SLGP" version))
        (sha256
-        (base32 "02ng135j6jrzblzb9rr61nf7vn4ipmvqm1z9gl7zbilidxdmd57b"))))
+        (base32 "1kqilckxxk3dqsj2cjxy37fyzqx98zr3yv0cva6rr9ckjpyp99xs"))))
     (properties `((upstream-name . "SLGP")))
     (build-system r-build-system)
     (arguments
@@ -44413,7 +44397,6 @@ function in this package is \"@code{maximinSLHD}\".")
                              r-rcppeigen
                              r-rcpp
                              r-mvnfast
-                             r-gofkernel
                              r-dicedesign
                              r-bh))
     (native-inputs (list r-knitr))
@@ -52176,13 +52159,13 @@ JSON file that can be used to generate datasets.")
 (define-public r-sillyputty
   (package
     (name "r-sillyputty")
-    (version "0.4.2")
+    (version "0.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SillyPutty" version))
        (sha256
-        (base32 "06nf0zgdikfcg1vlsr4jbzy29g2ms8w7f16hddmb4bf5hqhbqkxg"))))
+        (base32 "139kp33f0wfig24p2y0hwcf22dk0bg8ccclcfb718h43iw4h8w2x"))))
     (properties `((upstream-name . "SillyPutty")))
     (build-system r-build-system)
     (arguments
@@ -52190,7 +52173,7 @@ JSON file that can be used to generate datasets.")
       #:tests? #f))
     (propagated-inputs (list r-thresher r-polychrome r-oompabase r-cluster))
     (native-inputs (list r-knitr))
-    (home-page "http://oompa.r-forge.r-project.org/")
+    (home-page "http://silicovore.com/OOMPA/thresher.html")
     (synopsis "Silly Putty Clustering")
     (description
      "This package implements a simple, novel clustering algorithm based on optimizing
@@ -53707,20 +53690,20 @@ Analysis in R\".")
 (define-public r-siberg
   (package
     (name "r-siberg")
-    (version "2.0.4")
+    (version "2.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SIBERG" version))
        (sha256
-        (base32 "0ak6gm6llr6bpvflmf2p56dc257x2lj5j6rj39bqmr7b6p9mzpq0"))))
+        (base32 "1jkg2965401pz930hrji9d3zj10jdw3hrjs9sa1n1wxd5214574a"))))
     (properties `((upstream-name . "SIBERG")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-mclust))
-    (home-page "http://oompa.r-forge.r-project.org/")
+    (home-page "http://silicovore.com/OOMPA/standalone.html")
     (synopsis
      "Systematic Identification of Bimodally Expressed Genes Using RNAseq Data")
     (description
@@ -57743,13 +57726,13 @@ simulations, animations, countdowns, or interactive visualizations.")
 (define-public r-shinyds
   (package
     (name "r-shinyds")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyds" version))
        (sha256
-        (base32 "1g7mia2waylfaz6nbfms5g3rka4xswjiba4ql8z5ik98qcf8zfiz"))))
+        (base32 "0k1wz16rsbici4cjzr6hx8rb30x313n7xnlhhmz15ivd717l2q11"))))
     (properties `((upstream-name . "shinyds")))
     (build-system r-build-system)
     (arguments
@@ -59151,13 +59134,13 @@ back sides, as well as various of HTML tool widgets.")
 (define-public r-shewhartr
   (package
     (name "r-shewhartr")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shewhartr" version))
        (sha256
-        (base32 "1v0i87dg5vigxyqa1dbab36fd0vbrglv31wpg1jbbg9an2c3k330"))))
+        (base32 "15riw23yhxp1xj8mp8gw4v0536l4nqpba69w80xxaij1dsxz7qln"))))
     (properties `((upstream-name . "shewhartr")))
     (build-system r-build-system)
     (arguments
@@ -62199,13 +62182,13 @@ ISBN:0-387-96614-5).")
 (define-public r-sfclust
   (package
     (name "r-sfclust")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sfclust" version))
        (sha256
-        (base32 "04bhxx8nkiaygpq6izm6lswf5995zb6y4ih7kx4dj8jy8cmldlv4"))))
+        (base32 "1ihzl4zqsh2yk8rz0n1mjx8ngdkkw8fbmdv37y7mdaqy9827fgch"))))
     (properties `((upstream-name . "sfclust")))
     (build-system r-build-system)
     (arguments
@@ -72585,6 +72568,46 @@ thresholding in correlated noise.\" Annals of Statistics, 2023 (To appear).
 <@code{arXiv:2009.12297>}.")
     (license license:expat)))
 
+(define-public r-screenllm
+  (package
+    (name "r-screenllm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "screenllm" version))
+       (sha256
+        (base32 "0b9pngvsdww093vgswcv745qhz5zygyi14pj74yzs9y59vc2hcwi"))))
+    (properties `((upstream-name . "screenllm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-jsonlite
+                             r-httr2
+                             r-glue
+                             r-fs
+                             r-dplyr
+                             r-digest
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/s-spillias/screenllm")
+    (synopsis "LLM-Assisted Title/Abstract Screening for Systematic Reviews")
+    (description
+     "This package provides a turn-key workflow for LLM-assisted systematic-review
+screening.  The package ranks a corpus of titles and abstracts with an ensemble
+of open-source large language models served locally by Ollama', then applies the
+SAFE stopping rule to identify the records a human should screen.  Defaults
+match the four-LLM mean ensemble and the SAFE configuration recommended by
+Spillias et al. (2026).  A companion Shiny app walks the human reviewer through
+the records above the stopping point.  Complementary to the A@code{IscreenR}
+package of Vembye et al. (2025) <doi:10.1037/met0000769>, which targets
+cloud-hosted GPT models via the @code{OpenAI} API; screenllm targets
+locally-served open-weights ensembles with an integrated stopping rule.")
+    (license license:expat)))
+
 (define-public r-screenclean
   (package
     (name "r-screenclean")
@@ -81229,13 +81252,13 @@ within the constrained space.")
 (define-public r-salso
   (package
     (name "r-salso")
-    (version "0.3.78")
+    (version "0.3.79")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "salso" version))
        (sha256
-        (base32 "0fzk16h4dmficlf7cw1fa4sddlfldwig34vxsg9zpmkrfvmkvarp"))))
+        (base32 "1xc7drhj83bvhrz588r6319783qa5bm1q3gx29l6fmalz3xxnp89"))))
     (properties `((upstream-name . "salso")))
     (build-system r-build-system)
     (arguments

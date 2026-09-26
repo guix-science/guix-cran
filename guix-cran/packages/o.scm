@@ -8787,20 +8787,20 @@ tags and their required properties.")
 (define-public r-openfhe-r
   (package
     (name "r-openfhe-r")
-    (version "1.5.1.1")
+    (version "1.5.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openfhe.R" version))
        (sha256
-        (base32 "1lymhr75zbskr1qj1ij715ibclykbqs2khb91zym9g9rfaaz1lm3"))))
+        (base32 "082adg4jrpw1d107i6ik820rn1vbyniim5yaglzc8zfym50wb8a3"))))
     (properties `((upstream-name . "openfhe.R")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list cmake))
-    (propagated-inputs (list r-s7 r-cpp11 r-cli))
+    (propagated-inputs (list r-s7 r-rlang r-cpp11 r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://openfheorg.github.io/openfhe.R/")
     (synopsis

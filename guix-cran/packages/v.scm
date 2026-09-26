@@ -1044,19 +1044,19 @@ package is approximately 8 MB.")
 (define-public r-vprint
   (package
     (name "r-vprint")
-    (version "1.4")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vprint" version))
        (sha256
-        (base32 "0jf6wvbs78047x9hhgsy9n9yav7r1r95vl126cngvp6pl0j843br"))))
+        (base32 "1b4af4a2yfwx0hjzwdd0dbgwyljqap3ngagqx27sibk67ifqz0sr"))))
     (properties `((upstream-name . "vprint")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-crayon))
+    (propagated-inputs (list r-stringr r-crayon))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=vprint")
     (synopsis "More Flexible Form of Boolean Verbose")
@@ -3632,13 +3632,13 @@ glm', coxph', rlm', gam', locfit', lmer', @code{randomForest}', etc.).")
 (define-public r-vispedigree
   (package
     (name "r-vispedigree")
-    (version "1.9.0")
+    (version "1.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "visPedigree" version))
        (sha256
-        (base32 "0brkzsg7psvm9d6w4v6j4zbm3c72252ccnlcvqvx69fjfp0slg3i"))))
+        (base32 "05j06vhcwykrlbg07sc242c8hrfr2vq58g1p5z4bv9gqg5svjpnr"))))
     (properties `((upstream-name . "visPedigree")))
     (build-system r-build-system)
     (arguments
@@ -3699,13 +3699,13 @@ as both viewpoints and occluders.")
 (define-public r-visomopresults
   (package
     (name "r-visomopresults")
-    (version "1.5.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "visOmopResults" version))
        (sha256
-        (base32 "077b80vvknml2nzvg1y19s475m0pkdmd0iv2yr392a08ym8pijbp"))))
+        (base32 "06py4bh8njxqajy54c318qi569sy3khz4bch14j87pfyzja2chkk"))))
     (properties `((upstream-name . "visOmopResults")))
     (build-system r-build-system)
     (arguments
@@ -8548,34 +8548,44 @@ in part derived from Hijmans R (2024) <doi:10.32614/CRAN.package.terra>.")
 (define-public r-vasicekreg
   (package
     (name "r-vasicekreg")
-    (version "1.1.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vasicekreg" version))
        (sha256
-        (base32 "02zf0msd1wig17kfvx2bf832jp3kz2nskcpmfdbpmjmxg3crzmqn"))))
+        (base32 "1j9i8x6njfjkbz2m16fkh9vkgxbb4zi32rxkgafx5khp8a3cw620"))))
     (properties `((upstream-name . "vasicekreg")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpp r-mvtnorm r-gamlss-dist r-gamlss))
-    (home-page "https://cran.r-project.org/package=vasicekreg")
-    (synopsis "Regression Modeling Using Vasicek Distribution")
+    (propagated-inputs (list r-statmod
+                             r-rcpp
+                             r-numderiv
+                             r-mvtnorm
+                             r-gamlss-dist
+                             r-gamlss))
+    (native-inputs (list r-knitr))
+    (home-page "https://jmazucheli.github.io/vasicekreg/")
+    (synopsis "Vasicek-Type Distributions and Regression Models")
     (description
      "This package provides density, cumulative distribution, quantile, and random
-generation functions for Vasicek distributions with standard normal and standard
-logistic kernels.  The normal-kernel distribution is parameterized by either its
-mean or a fixed quantile, whereas the logistic-kernel distribution uses a
-fixed-quantile parameterization.  Zero-adjusted, one-adjusted, and
-zero-and-one-adjusted extensions of the normal-kernel mean parameterization are
-also provided for responses that include boundary values.  The corresponding
-NVASIM', NVASIQ', LVASIQ', ZANVASIM', OANVASIM', and ZOANVASIM families are
-available for fitting Generalized Additive Models for Location, Scale and Shape,
-as introduced by Rigby and Stasinopoulos (2005,
-<doi:10.1111/j.1467-9876.2005.00510.x>).  Some functions are written in C++
-using Rcpp', developed by Eddelbuettel and Francois (2011,
+generation functions for Vasicek-type distributions with standard normal,
+standard logistic, and standard hyperbolic-secant kernels.  The normal-kernel
+distribution is parameterized by either its mean or a fixed quantile, whereas
+the logistic- and hyperbolic-secant-kernel distributions use fixed-quantile
+parameterizations.  Zero-augmented, one-augmented, and zero-and-one-augmented
+extensions of the normal-kernel mean parameterization are also provided for
+responses that include boundary values.  The corresponding NVASIM', NVASIQ',
+LVASIQ', HVASIQ', ZANVASIM', OANVASIM', and ZOANVASIM families are available for
+fitting Generalized Additive Models for Location, Scale and Shape (GAMLSS), as
+introduced by Rigby and Stasinopoulos (2005,
+<doi:10.1111/j.1467-9876.2005.00510.x>).  Two-part random-intercept regression
+models for zero-augmented longitudinal responses are included with either a beta
+or a normal-kernel Vasicek positive component, extending the framework of Chen
+and Li (2016, <doi:10.1093/bioinformatics/btw308>).  Some functions are written
+in C++ using Rcpp', developed by Eddelbuettel and Francois (2011,
 <doi:10.18637/jss.v040.i08>).")
     (license license:expat)))
 

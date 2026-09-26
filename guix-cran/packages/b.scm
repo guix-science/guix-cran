@@ -13,6 +13,7 @@
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages compression)
+  #:use-module (gnu packages cmake)
   #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages algebra)
   #:use-module (gnu packages julia)
@@ -6074,13 +6075,13 @@ run in their original form.")
 (define-public r-brar
   (package
     (name "r-brar")
-    (version "0.1")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "brar" version))
        (sha256
-        (base32 "154za7bmqj2p3pby8q0cmslgcggy2k5xj4sa9r1prqpzxlc3qzl2"))))
+        (base32 "0ril2k7wkd79vcfch935w2pcs65w1b6h46azmrdpsq8bsw4swysk"))))
     (properties `((upstream-name . "brar")))
     (build-system r-build-system)
     (arguments
@@ -11847,6 +11848,28 @@ models when parameters are varied.  See Wilson, A. (2008)
 <dx.doi.org/10.1098/rsif.2007.1288>.")
     (license license:gpl3+)))
 
+(define-public r-blueycolors
+  (package
+    (name "r-blueycolors")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "blueycolors" version))
+       (sha256
+        (base32 "1labyi4gvrjxwy17xjnwyqh7jprnz3f7mb253x4w6s3df29si9pz"))))
+    (properties `((upstream-name . "blueycolors")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2))
+    (home-page "https://github.com/ekholme/blueycolors")
+    (synopsis "Provides 'Bluey' Inspired Color Palettes")
+    (description
+     "This package provides Bluey'-inspired color palettes and ggplot2 scales.")
+    (license license:expat)))
+
 (define-public r-blueterra
   (package
     (name "r-blueterra")
@@ -14355,19 +14378,20 @@ high-contrast colour system.")
 (define-public r-bjm
   (package
     (name "r-bjm")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BJM" version))
        (sha256
-        (base32 "1ijpaql8b39rqh4m1cz2asxc8h2gprjvfcm6svx32av7sxmhrgvn"))))
+        (base32 "0piizy8dm3fmpipdxg7c1iacnxdr7j017rc1hiyn4m1s2z2xiqqc"))))
     (properties `((upstream-name . "BJM")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-survival r-nlme r-mvtnorm r-matrix r-ggplot2))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=BJM")
     (synopsis
      "Backward Joint Model for the Dynamic Prediction of Both Time-to-Event and Longitudinal Outcomes")
@@ -15322,6 +15346,41 @@ and Seock-Ho Kim (Springer, 2017, ISBN-13: 978-3-319-54204-1) including
 @code{rasch()}.  For example, @code{iccplot()} plots an item characteristic
 curve under the two-parameter logistic model.")
     (license license:gpl2+)))
+
+(define-public r-birp
+  (package
+    (name "r-birp")
+    (version "0.9.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "birp" version))
+       (sha256
+        (base32 "024jq8gb4s8lr9dlid7d6n2s1sn2f4ba40kl517765s5cm0ccp68"))))
+    (properties `((upstream-name . "birp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list zlib cmake))
+    (propagated-inputs (list r-rcpp r-mass))
+    (native-inputs (list r-knitr))
+    (home-page "https://bitbucket.org/wegmannlab/birpr")
+    (synopsis
+     "Testing for Population Trends Using Low-Cost Ecological Count Data")
+    (description
+     "This package provides a Bayesian tool to test for population trends and changes
+in trends under arbitrary designs, including before-after (BA),
+control-intervention (CI) and before-after-control-intervention (BACI) designs
+commonly used to assess conservation impact.  It infers changes in trends
+jointly from data obtained with multiple survey methods, as well as from limited
+and noisy data not necessarily collected in standardized ecological surveys.
+Observed counts can be modeled as following either a Poisson or a negative
+binomial model, and both deterministic and stochastic trend models are
+available.  For more details on the model see Singer et al. (2025)
+<doi:10.1101/2025.01.08.631844>, and the file AUTHORS for a list of copyright
+holders and contributors.")
+    (license (license:fsdg-compatible "MPL-2.0"))))
 
 (define-public r-birk
   (package
@@ -17273,6 +17332,35 @@ leave-out, time-ordered), guarded preprocessing (train-only imputation,
 normalization, filtering, feature selection), cross-validated fitting with
 common learners, permutation-gap auditing, batch and fold association tests, and
 duplicate detection.")
+    (license license:expat)))
+
+(define-public r-bioiot
+  (package
+    (name "r-bioiot")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bioIOT" version))
+       (sha256
+        (base32 "0mb4lsx8ygwyrs5mp5zp0kjck9w7w0pqkhq9wxy9yn2ds23f0mc0"))))
+    (properties `((upstream-name . "bioIOT")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/XTSgreen/bioIOT-R")
+    (synopsis "Inverse Optimal Transport for Single-Cell Trajectory Analysis")
+    (description
+     "Semi-relaxed inverse optimal transport (IOT) for single-cell state-transition
+and pseudotime analysis: a self-contained R solver (Anderson-accelerated soft
+Sinkhorn with exact implicit gradients), feature-weight fitting with a two-stage
+bias-corrected refit and multi-restart, state transition matrices, random-walk
+pseudotime, ggplot2 visualisation, soft-gated Seurat and
+@code{SingleCellExperiment} interfaces, reproducible simulated demo data, and
+bulk-cohort pathway scoring utilities.")
     (license license:expat)))
 
 (define-public r-bioinsight
@@ -19481,20 +19569,20 @@ methodological background, see Albert and Chib (1993)
 (define-public r-bimodalindex
   (package
     (name "r-bimodalindex")
-    (version "1.1.11")
+    (version "1.1.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BimodalIndex" version))
        (sha256
-        (base32 "1lms0xq4s8p83f86jqbxd196bcvhaqjas5j25h5iz2p2qxaax5r7"))))
+        (base32 "02l3i0sprzyfrfcl6ggw1w8906ri24y4v9xd2yic7awvix3ri3y6"))))
     (properties `((upstream-name . "BimodalIndex")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-oompabase r-mclust))
-    (home-page "http://oompa.r-forge.r-project.org/")
+    (home-page "http://silicovore.com/OOMPA/classpred.html")
     (synopsis "The Bimodality Index")
     (description
      "Defines the functions used to compute the bimodal index as defined by Wang et
@@ -22379,19 +22467,21 @@ the generalized graded unfolding model of Roberts, Donoghue, and Laughlin (2000)
 (define-public r-bggm
   (package
     (name "r-bggm")
-    (version "2.1.6")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BGGM" version))
        (sha256
-        (base32 "0gvmjsbzcrhc4qhkjipvrgx38z1hykkc6xca6w8g7l133p3mqmw3"))))
+        (base32 "1rvikw18rbs6hwicdrv4gdqpplx9avqj6wkm7r51d0f0dvd2ib8c"))))
     (properties `((upstream-name . "BGGM")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sna
+    (propagated-inputs (list r-truncnorm
+                             r-sna
+                             r-rlang
                              r-reshape
                              r-rdpack
                              r-rcppprogress
@@ -33483,13 +33573,13 @@ implemented in this package are described in Roman-Palacios et al. (2021)
 (define-public r-bawir
   (package
     (name "r-bawir")
-    (version "1.5.4")
+    (version "1.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BAwiR" version))
        (sha256
-        (base32 "0dhckjng8pn6p1228m24zml7v7l16nwmxjxg7w35agp6gzmckpsv"))))
+        (base32 "12w3fvm6mrk9jp0bf6g2kh837cabq86dyinkpw48jpxpg21qh1d3"))))
     (properties `((upstream-name . "BAwiR")))
     (build-system r-build-system)
     (arguments
@@ -33519,7 +33609,7 @@ implemented in this package are described in Roman-Palacios et al. (2021)
      "Collection of tools to work with European basketball data.  Functions available
 are related to friendly web scraping, data management and visualization.  Data
 were obtained from <https://www.euroleaguebasketball.net/euroleague/>,
-<https://www.euroleaguebasketball.net/eurocup/> and <https://www.acb.com/>,
+<https://www.euroleaguebasketball.net/eurocup/> and <https://acb.com/>,
 following the instructions of their respectives robots.txt files, when
 available.  Box score data are available for the three leagues.  Play-by-play
 and spatial shooting data are also available for the Spanish league.  Methods
@@ -33529,7 +33619,8 @@ plots, team four factors plots, cross-tables with the results of regular season
 games, maps of nationalities, combinations of lineups, possessions-related
 variables, timeouts, performance by periods, personal fouls, offensive rebounds
 and different types of shooting charts.  Please see Vinue (2020)
-<doi:10.1089/big.2018.0124> and Vinue (2024) <doi:10.1089/big.2023.0177>.")
+<doi:10.1089/big.2018.0124>, Vinue (2024) <doi:10.1089/big.2023.0177> and Vinue
+(2026) <doi:10.1007/s11042-026-21930-2>.")
     (license license:gpl2+)))
 
 (define-public r-batteryreduction
@@ -35657,13 +35748,13 @@ BAREB is a cluster-wise linear model based on Yuliang (2020)
 (define-public r-barcodingr
   (package
     (name "r-barcodingr")
-    (version "1.0-3")
+    (version "1.0-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BarcodingR" version))
        (sha256
-        (base32 "03x26mrlvg00rnfh74wacpgbdk7xr2lq4yd0bx4q2442nli54rdv"))))
+        (base32 "0ggyq5nsxrbbw7czbh9ydk56gkzgfpin9sf2lxzvqx4f6qnyl44a"))))
     (properties `((upstream-name . "BarcodingR")))
     (build-system r-build-system)
     (arguments

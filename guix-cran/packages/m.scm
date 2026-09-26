@@ -2244,13 +2244,13 @@ via both ggplot2 and interactive plotly visualizations.  See Korkmaz et al.
 (define-public r-mvmorph
   (package
     (name "r-mvmorph")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mvMORPH" version))
        (sha256
-        (base32 "1ga9ngbanavlix5jhr32924lz45mxwdinx0vrbxh7b594iwb385y"))))
+        (base32 "10yvpzi1kji0mpcfcrzf1c7bcfr9cqqfb4y28n5f413iihwyds32"))))
     (properties `((upstream-name . "mvMORPH")))
     (build-system r-build-system)
     (arguments
@@ -2260,6 +2260,7 @@ via both ggplot2 and interactive plotly visualizations.  See Korkmaz et al.
                              r-spam
                              r-phytools
                              r-pbmcapply
+                             r-pbapply
                              r-glassofast
                              r-corpcor
                              r-ape))
@@ -2272,9 +2273,10 @@ via both ggplot2 and interactive plotly visualizations.  See Korkmaz et al.
 Shifts) models of continuous traits evolution on trees and time series.
 @code{mvMORPH} also proposes high-dimensional multivariate comparative tools
 (linear models using Generalized Least Squares and multivariate tests) based on
-penalized likelihood.  See Clavel et al. (2015) <DOI:10.1111/2041-210X.12420>,
-Clavel et al. (2019) <DOI:10.1093/sysbio/syy045>, and Clavel & Morlon (2020)
-<DOI:10.1093/sysbio/syaa010>.")
+penalized likelihood and Empirical Bayes approaches.  See Clavel et al. (2015)
+<DOI:10.1111/2041-210X.12420>, Clavel et al. (2019) <DOI:10.1093/sysbio/syy045>,
+Clavel & Morlon (2020) <DOI:10.1093/sysbio/syaa010>, and Montoya et al. (2026)
+<DOI:10.1093/sysbio/syag051>.")
     (license license:gpl2+)))
 
 (define-public r-mvmonitoring
@@ -19805,13 +19807,13 @@ transformation.")
 (define-public r-modeva
   (package
     (name "r-modeva")
-    (version "3.46")
+    (version "3.47")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modEvA" version))
        (sha256
-        (base32 "0l51vd274365g32cd8xvzgp1m9il2zznc048nrh26fkj3azsm9dh"))))
+        (base32 "1d1qjbah12hrx2p7y9vz9lvb358vx1463khy3cl9246ck2xc2vdy"))))
     (properties `((upstream-name . "modEvA")))
     (build-system r-build-system)
     (arguments
@@ -20765,13 +20767,13 @@ intervals.For more details see Zychaluk and Foster (2009)
 (define-public r-modeler
   (package
     (name "r-modeler")
-    (version "3.4.10")
+    (version "3.4.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Modeler" version))
        (sha256
-        (base32 "0dwcp8vwnwdiakqjyfjxmnj3a0q0psfqpfvdiixsx5qw6y1x2kj7"))))
+        (base32 "025bjg54m7m175bvcx4vk9vyxzqazn4iyi4sgf5sklq19i43xr9d"))))
     (properties `((upstream-name . "Modeler")))
     (build-system r-build-system)
     (arguments
@@ -20787,7 +20789,7 @@ intervals.For more details see Zychaluk and Foster (2009)
                              r-classdiscovery
                              r-classcomparison
                              r-class))
-    (home-page "http://oompa.r-forge.r-project.org/")
+    (home-page "http://silicovore.com/OOMPA/classpred.html")
     (synopsis
      "Classes and Methods for Training and Using Binary Prediction Models")
     (description
@@ -21091,13 +21093,13 @@ introduced in Rufibach and Walther (2010).")
 (define-public r-modalforecast
   (package
     (name "r-modalforecast")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ModalForecast" version))
        (sha256
-        (base32 "074y7ns1ax20xpml96ii16jbd20n9ky8msdfxnnyrva9s3yccj64"))))
+        (base32 "1cd71680sy44ng4wx1dn5jrdk0cp1x92l6w74b7c77mr7zadrib8"))))
     (properties `((upstream-name . "ModalForecast")))
     (build-system r-build-system)
     (arguments
@@ -21105,17 +21107,20 @@ introduced in Rufibach and Walther (2010).")
       #:tests? #f))
     (propagated-inputs (list r-scales r-gridextra r-ggplot2 r-forecast))
     (home-page "https://github.com/chedgala/ModalForecast")
-    (synopsis "Parametric Modal ARIMA Models using the SKD Family")
+    (synopsis
+     "Parametric Modal ARIMA and Seasonal ARIMA Models using the SKD Family")
     (description
      "This package implements parametric modal Autoregressive Integrated Moving
-Average (ARIMA) models utilizing the Skewed Distribution (SKD) family.  Current
-distributions supported are the Skew-Normal, Skewed Student-t, and Skewed
-Laplace.  The conditional mode is parameterized and optimized via maximum
-likelihood using analytical gradients.  Includes comprehensive residual
-diagnostics, robustness options (heavy tails, asymmetry), robust parametric
-bootstrap prediction intervals, and classical asymptotic inference via the
-Fisher Information matrix.  Methods are described in Galarza, C.E., Lachos,
-V.H., Cabral, C.R.B., & Castro, L.M. (2017) <doi:10.1002/sta4.140>.")
+Average (ARIMA) and seasonal ARIMA (SARIMA) models utilizing the Skewed
+Distribution (SKD) family, in which the conditional mode, rather than the
+conditional mean, follows the (seasonal) ARIMA recursion.  Current distributions
+supported are the Skew-Normal, Skewed Student-t, and Skewed Laplace.  The
+parameters are estimated by maximum likelihood using analytical gradients.
+Includes residual diagnostics, simulation envelopes, automatic order selection,
+joint and marginal modal forecasts, exact and parametric bootstrap prediction
+intervals, and classical asymptotic inference via the Fisher Information matrix.
+ Methods are described in Galarza, C.E., Lachos, V.H., Cabral, C.R.B., & Castro,
+L.M. (2017) <doi:10.1002/sta4.140>.")
     (license license:gpl3)))
 
 (define-public r-modalclust
@@ -21548,27 +21553,27 @@ transformations will converge to the same woe transformation.")
 (define-public r-mnt
   (package
     (name "r-mnt")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mnt" version))
        (sha256
-        (base32 "1wf2mq4zdhznv589j7snw0gpnfrlvq6lhfihi2n20qlwm3lb9naa"))))
+        (base32 "1n1v1ng0v6j195cmq9yrdrxaakjica8cyzmcci25rq8mjk2glvn6"))))
     (properties `((upstream-name . "mnt")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-pracma r-mass))
+    (propagated-inputs (list r-suppdists r-rmpfr r-pracma r-pearsonds r-mass))
     (home-page "https://cran.r-project.org/package=mnt")
     (synopsis "Affine Invariant Tests of Multivariate Normality")
     (description
      "Various affine invariant multivariate normality tests are provided.  It is
 designed to accompany the survey article Ebner, B. and Henze, N. (2020)
-<@code{arXiv:2004.07332>} titled \"Tests for multivariate normality -- a critical
-review with emphasis on weighted L^2-statistics\".  We implement new and time
-honoured L^2-type tests of multivariate normality, such as the
+<doi:10.1007/s11749-020-00740-0> titled \"Tests for multivariate normality -- a
+critical review with emphasis on weighted L^2-statistics\".  We implement new and
+time honoured L^2-type tests of multivariate normality, such as the
 Baringhaus-Henze-Epps-Pulley (BHEP) test, the Henze-Zirkler test, the test of
 Henze-JimÃ©nes-Gamero, the test of Henze-JimÃ©nes-Gamero-Meintanis, the test of
 Henze-Visage, the DÃ¶rr-Ebner-Henze test based on harmonic oscillator and the
@@ -24553,13 +24558,13 @@ framework.")
 (define-public r-mlr3resampling
   (package
     (name "r-mlr3resampling")
-    (version "2026.5.19")
+    (version "2026.9.24")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3resampling" version))
        (sha256
-        (base32 "14zs1i8c96bx238nnn1z5icp1nvzxnxgwmqi4l0vjsg36f0vjggr"))))
+        (base32 "1fn1lh87mrmpzcf30d7afqmkh2n21kqbgr8klz3xldkscg458mb0"))))
     (properties `((upstream-name . "mlr3resampling")))
     (build-system r-build-system)
     (arguments
@@ -34054,19 +34059,20 @@ Fronius microinverters.")
 (define-public r-microeco
   (package
     (name "r-microeco")
-    (version "2.3.0")
+    (version "2.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "microeco" version))
        (sha256
-        (base32 "1i39aa6360l83bhfl77q72wmxb7sh4jzj8kb7jcx0byj7mx3ny8k"))))
+        (base32 "1hlf8kqgc7w3hk94j4rx659z9mld4frkm5k5yd9vs0rjnq2p8zfs"))))
     (properties `((upstream-name . "microeco")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-vegan
+    (propagated-inputs (list r-withr
+                             r-vegan
                              r-tibble
                              r-scales
                              r-rlang
@@ -34084,10 +34090,11 @@ Fronius microinverters.")
     (synopsis "Microbial Community Ecology Data Analysis")
     (description
      "This package provides a series of data analysis approaches for microbiome data
-based on the R6 class.  The classes are designed for data preprocessing, taxa
-abundance plotting, alpha diversity analysis, beta diversity analysis,
-differential abundance test, null model analysis, network analysis, machine
-learning, environmental data analysis and functional analysis.")
+based on the R6 class.  The classes are designed for data preprocessing, niche
+analysis, taxonomic abundance plot, alpha diversity analysis, beta diversity
+analysis, differential abundance test, null model analysis, network analysis,
+machine learning, environmental data analysis, functional redundancy analysis,
+metabolites analysis, etc.")
     (license license:gpl3)))
 
 (define-public r-microdatoses
@@ -42626,13 +42633,13 @@ unequal randomization ratios.")
 (define-public r-mercator
   (package
     (name "r-mercator")
-    (version "1.1.7")
+    (version "1.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Mercator" version))
        (sha256
-        (base32 "0mdqa9w1p6cmli6976v4wi0sw9r4p5prkj7lzfd1877wk11c9c73"))))
+        (base32 "0wr8gj0jnbwccgwyjagwnq5irdpzl04hp38841a89drxppz3d1yd"))))
     (properties `((upstream-name . "Mercator")))
     (build-system r-build-system)
     (arguments
@@ -42650,7 +42657,7 @@ unequal randomization ratios.")
                              r-cluster
                              r-classdiscovery))
     (native-inputs (list r-knitr))
-    (home-page "http://oompa.r-forge.r-project.org/")
+    (home-page "http://silicovore.com/OOMPA/thresher.html")
     (synopsis "Clustering and Visualizing Distance Matrices")
     (description
      "Defines the classes used to explore, cluster and visualize distance matrices,
@@ -50823,13 +50830,13 @@ data frame and expand a data frame of matrices into a tidy data frame.")
 (define-public r-matsbyname
   (package
     (name "r-matsbyname")
-    (version "0.6.14")
+    (version "0.6.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "matsbyname" version))
        (sha256
-        (base32 "0cq318mlmi0lnz8wf6vbqjnqqwdr492l64wwjd21sf8jh0w3jgma"))))
+        (base32 "0d16f3192vqzgzvlmv6sw45sj3r5cirjlrccdgjakzkgvp2c6s5s"))))
     (properties `((upstream-name . "matsbyname")))
     (build-system r-build-system)
     (arguments
@@ -58382,20 +58389,21 @@ for each subject.")
 (define-public r-magp
   (package
     (name "r-magp")
-    (version "0.8.0")
+    (version "0.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "magp" version))
        (sha256
-        (base32 "12740wd6wwjfkd8iw4i83009il08xnjf7xsm4b2nil9gik983z69"))))
+        (base32 "0n0p557w386qpy0ndwbjxgkp780ga8x8xv3ck2w2i42rcdjjj4rr"))))
     (properties `((upstream-name . "magp")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rcpp r-nloptr))
-    (home-page "https://cran.r-project.org/package=magp")
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/twskr/magp")
     (synopsis "Mapping-Based Additive Gaussian Process Models")
     (description
      "Fits mapping-based additive Gaussian process models for experiments in which
@@ -58405,8 +58413,15 @@ and a full mapping with one fewer dimension than the number of components.  Both
 models support parameter estimation, point prediction, and plug-in predictive
 uncertainty.  Input checks validate the sequence data and apply consistent
 scaling to the quantitative inputs.  Computationally intensive covariance and
-gradient calculations are implemented in C++ with Rcpp'.  The model was
-introduced by Xiao et al. (2024) <doi:10.1080/01621459.2022.2123335>.")
+gradient calculations are implemented in C++ with Rcpp'.  Initial-design
+functions combine a space-filling Latin hypercube with sequence permutations.
+The sequence portion can be generated randomly or optimized with simulated
+annealing or space-filling threshold accepting.  Expected improvement can be
+optimized over both parts of the input, and a sequential interface supports
+Bayesian optimization of an expensive user-supplied objective.  An integrated
+workflow can generate the initial design, evaluate the objective, and continue
+the sequential search in one call.  The model was introduced by Xiao et al.
+(2024) <doi:10.1080/01621459.2022.2123335>.")
     (license license:expat)))
 
 (define-public r-magnamwar

@@ -9451,16 +9451,55 @@ nlmixr2targets ensures minimal rework in model development with nlmixr2 and
 targets by simplifying and standardizing models and datasets.")
     (license license:gpl2+)))
 
+(define-public r-nlmixr2scm
+  (package
+    (name "r-nlmixr2scm")
+    (version "0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nlmixr2scm" version))
+       (sha256
+        (base32 "1nxhayvvar82r23xlink481kndf9lrlkdgqqi830w8vh7rd2nryh"))))
+    (properties `((upstream-name . "nlmixr2scm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rxode2
+                             r-nlmixr2utils
+                             r-nlmixr2est
+                             r-nlme
+                             r-lotri
+                             r-data-table
+                             r-cli
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/nlmixr2/nlmixr2scm")
+    (synopsis "Stepwise Covariate Modeling for 'nlmixr2' Models")
+    (description
+     "Stepwise covariate modeling (SCM) for nonlinear mixed-effects models fitted with
+nlmixr2'.  Forward inclusion and backward elimination are driven by
+likelihood-ratio tests, and the covariate terms are generated inside the model
+body, so continuous covariates are centered and categorical covariates expanded
+into indicator columns without editing the model by hand.  Candidate fits can be
+cached and resumed, fitted in parallel, and reviewed through per-step and
+all-candidate summary tables.  The approach follows Jonsson and Karlsson (1998)
+<doi:10.1023/A:1011970125687>, and the implementation in Perl-speaks-NONMEM
+described by Lindbom, Ribbing and Jonsson (2004)
+<doi:10.1016/j.cmpb.2003.11.003>.")
+    (license license:gpl3+)))
+
 (define-public r-nlmixr2save
   (package
     (name "r-nlmixr2save")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmixr2save" version))
        (sha256
-        (base32 "13wjsgcrz4brj8rprxjilxypb2x7wa3z5yj7jc22z22x8krawiy4"))))
+        (base32 "0n21d4q8s7qgz26iiq16kngvh5yi3arl4vdfmhawz08ak72fryxi"))))
     (properties `((upstream-name . "nlmixr2save")))
     (build-system r-build-system)
     (arguments
@@ -12928,13 +12967,13 @@ targets.  All outputs are data.table objects.")
 (define-public r-newmanomics
   (package
     (name "r-newmanomics")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NewmanOmics" version))
        (sha256
-        (base32 "19grhf7b8fbp73iyj7pfi7h9x0hrsj5ksn2cj053rpikflxprkxv"))))
+        (base32 "0fx7c0yzqvvi3d56s20klwb0l6d55v37hryng6npnnwzs70m0qpz"))))
     (properties `((upstream-name . "NewmanOmics")))
     (build-system r-build-system)
     (arguments
@@ -12942,7 +12981,7 @@ targets.  All outputs are data.table objects.")
       #:tests? #f))
     (propagated-inputs (list r-oompabase))
     (native-inputs (list r-knitr))
-    (home-page "http://oompa.r-forge.r-project.org/")
+    (home-page "http://silicovore.com/OOMPA/standalone.html")
     (synopsis
      "Extending the Newman Studentized Range Statistic to Transcriptomics")
     (description
@@ -13379,13 +13418,13 @@ corresponding classical ANOVA and ANCOVA.")
 (define-public r-neutrocodsanalysis
   (package
     (name "r-neutrocodsanalysis")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NeutroCODsAnalysis" version))
        (sha256
-        (base32 "0di6x89nisrrnr0nxfbcl33ppfp2y7vmvvz7b87c1ay8gd24cxx2"))))
+        (base32 "17644kvzs6bhm0n6x145jvcc65fv51ip85gnyl2kdvagk6g3f5s5"))))
     (properties `((upstream-name . "NeutroCODsAnalysis")))
     (build-system r-build-system)
     (arguments
@@ -15613,32 +15652,38 @@ continuous or binary covariate (Kwarteng et al., 2026)
 (define-public r-netmem
   (package
     (name "r-netmem")
-    (version "1.0-3")
+    (version "1.1-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "netmem" version))
        (sha256
-        (base32 "01lppzz87l389f30vzys8mcxyhcz11ma68djwlxzj6l4zznvhymb"))))
+        (base32 "1mi2r67l74qbs720q0rzdb6wsrzynyb1z6fycj03k6iprjfyl8lk"))))
     (properties `((upstream-name . "netmem")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-matrix r-igraph))
+    (propagated-inputs (list r-matrix))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/anespinosa/netmem")
     (synopsis "Social Network Measures using Matrices")
     (description
      "This package provides measures to describe and manipulate one-mode, two-mode,
 multiplex, and multilevel networks using matrix algebra.  Implements functions
-for network centrality, cohesive subgroups, structural holes, similarity
-measures, path distances, signed networks, and random network generation.
-Supports ego-centric and whole-network analyses, including dyadic and triadic
-census, structural balance, and bipartite projections.  Key references: Bonacich
-(1972) <doi:10.1080/0022250X.1972.9989806>, Breiger (1974)
-<doi:10.2307/2576011>, KivelÃ¤ et al. (2014) <doi:10.1093/comnet/cnu016>,
-Espinosa-Rada et al. (2024) <doi:10.1016/j.socnet.2023.11.008>.")
+for network centrality, cohesive subgroups, communities, structural holes, roles
+and positions, similarity measures, path distances, signed networks,
+segregation, social influence, and random network generation.  Supports
+ego-centric and whole-network analyses, including dyadic and triadic censuses,
+structural balance, bipartite projections, measures with overlapping group
+memberships, Q-analysis, neighbourhood-inclusion dominance, main path analysis
+of citation networks, and permutation tests for networks.  Key references:
+Bonacich (1972) <doi:10.1080/0022250X.1972.9989806>, Breiger (1974)
+<doi:10.2307/2576011>, Kivela et al. (2014) <doi:10.1093/comnet/cnu016>,
+Espinosa-Rada et al. (2024) <doi:10.1016/j.socnet.2023.11.008>, Schoch and
+Brandes (2016) <doi:10.1017/S0956792516000401>, Traag et al. (2019)
+<doi:10.1038/s41598-019-41695-z>, Everett and Borgatti (2026)
+<doi:10.1016/j.socnet.2025.12.001>.")
     (license license:gpl3)))
 
 (define-public r-netmediate
@@ -18466,13 +18511,13 @@ Roig et al. (2022) <doi:10.1186/s12874-022-01683-w>, Saville et al. (2022)
 (define-public r-ncar
   (package
     (name "r-ncar")
-    (version "0.7.1")
+    (version "0.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ncar" version))
        (sha256
-        (base32 "0km217x1n32ycwmp02wv0g3iy2pjzkbrbpk9xw6jdsggfsk8pbw5"))))
+        (base32 "011b1yaybffmfcmh79srxzjzfrmhx4vhxk60f8i4hdfb6189gqbi"))))
     (properties `((upstream-name . "ncar")))
     (build-system r-build-system)
     (arguments
@@ -18485,9 +18530,10 @@ Roig et al. (2022) <doi:10.1186/s12874-022-01683-w>, Saville et al. (2022)
      "Conduct a noncompartmental analysis with industrial strength.  Some features are
 1) CDISC SDTM terms 2) Automatic or manual slope selection 3) Supporting both
 linear-up linear-down and linear-up log-down method 4) Interval(partial) AUCs
-with linear or log interpolation method 5) Produce pdf, rtf, text report files.
-6) Produce Installation and Operational Qualification (IQ/OQ) reports in pdf.
-After installation, qualify the package in your own environment: run
+with linear or log interpolation method 5) Steady-state analysis over the dosing
+interval (AUCTAU, CAVG, CL and Vz from AUCTAU) 6) Produce pdf, rtf, text report
+files.  7) Produce Installation and Operational Qualification (IQ/OQ) reports in
+pdf.  After installation, qualify the package in your own environment: run
 @code{pdfIQ()} for Installation Qualification and @code{pdfOQ()} for Operational
 Qualification.  Run @code{writeMD5()} once after installation so the IQ
 file-integrity check passes.  To approve a report, sign it digitally in Adobe
@@ -19273,13 +19319,13 @@ Autopsy (VA) built on code from Miasnikof et al (2015)
 (define-public r-nbbdesigns
   (package
     (name "r-nbbdesigns")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NBBDesigns" version))
        (sha256
-        (base32 "0vb7iglzbkk3dvh4z7ia7zjds4i2anw5y50vjg2k0sb9q0zi5hvp"))))
+        (base32 "1a1rj72y7f9clzca1cnhp3nl32hx80wdllmid0c7qkdn0cf8nxd6"))))
     (properties `((upstream-name . "NBBDesigns")))
     (build-system r-build-system)
     (arguments
@@ -20442,19 +20488,19 @@ Markov model which is described in Strakova J., Straka M. and Hajic J. (2013)
 (define-public r-nameneedle
   (package
     (name "r-nameneedle")
-    (version "1.2.10")
+    (version "1.2.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NameNeedle" version))
        (sha256
-        (base32 "0qgwwf8dz7j9m152v9al6sj0gmgqr04gndzpbfmxhmh0kswg46md"))))
+        (base32 "1gj1wfzrj89dizlkdfpx803kdpfib4warf3cpwdkxk5r5ldgjy86"))))
     (properties `((upstream-name . "NameNeedle")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "http://oompa.r-forge.r-project.org/")
+    (home-page "http://silicovore.com/OOMPA/standalone.html")
     (synopsis "Using Needleman-Wunsch to Match Sample Names")
     (description
      "The Needleman-Wunsch global alignment algorithm can be used to find approximate

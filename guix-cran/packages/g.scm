@@ -8635,13 +8635,13 @@ networks with a hierarchical algorithm\" by T. Rebafka (2022)
 (define-public r-graph4lg
   (package
     (name "r-graph4lg")
-    (version "1.8.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "graph4lg" version))
        (sha256
-        (base32 "07a109jjn1s36x1hpb1zvgb2wq41f11l8cv3car1lr6lw5g3rr3x"))))
+        (base32 "02czzxdapphd7frh7s2wvdzb9ncnc1p0lcdwhndvdsr4cwp72348"))))
     (properties `((upstream-name . "graph4lg")))
     (build-system r-build-system)
     (arguments
@@ -8649,10 +8649,10 @@ networks with a hierarchical algorithm\" by T. Rebafka (2022)
       #:tests? #f))
     (propagated-inputs (list r-vegan
                              r-tidyr
+                             r-terra
                              r-stringr
                              r-spatstat-linnet
                              r-spatstat-geom
-                             r-sp
                              r-sf
                              r-rdpack
                              r-raster
@@ -8664,7 +8664,6 @@ networks with a hierarchical algorithm\" by T. Rebafka (2022)
                              r-hierfstat
                              r-ggplot2
                              r-gdistance
-                             r-foreign
                              r-ecodist
                              r-adegenet))
     (native-inputs (list r-rmarkdown r-knitr))
@@ -8673,18 +8672,20 @@ networks with a hierarchical algorithm\" by T. Rebafka (2022)
     (description
      "Build graphs for landscape genetics analysis.  This set of functions can be used
 to import and convert spatial and genetic data initially in different formats,
-import landscape graphs created with GRAPHAB software (Foltete et al., 2012)
-<doi:10.1016/j.envsoft.2012.07.002>, make diagnosis plots of isolation by
-distance relationships in order to choose how to build genetic graphs, create
-graphs with a large range of pruning methods, weight their links with several
-genetic distances, plot and analyse graphs,	compare them with other graphs.  It
-uses functions from other packages such as adegenet (Jombart, 2008)
+import landscape graphs created with Graphab software (Foltete et al., 2021)
+<doi:10.1016/j.simpa.2021.100065>, make diagnosis plots of isolation by distance
+relationships in order to choose how to build genetic graphs, create graphs with
+a large range of pruning methods, weight their links with several genetic
+distances, plot and analyse graphs,	compare them with other graphs.  It uses
+functions from other packages such as adegenet (Jombart, 2008)
 <doi:10.1093/bioinformatics/btn129> and igraph (Csardi et Nepusz, 2006)
 <https://igraph.org/>.  It also implements methods commonly used in landscape
 genetics to create graphs, described by Dyer et Nason (2004)
 <doi:10.1111/j.1365-294X.2004.02177.x> and Greenbaum et Fefferman (2017)
 <doi:10.1111/mec.14059>, and to analyse distance data (van Strien et al., 2015)
-<doi:10.1038/hdy.2014.62>.")
+<doi:10.1038/hdy.2014.62>.  Recent updates introduce multiple habitat graph
+functionalities (as described by Savary et al., 2024)
+<doi:10.1007/s10980-024-01947-4>.")
     (license license:gpl2)))
 
 (define-public r-graph3d
@@ -21510,19 +21511,20 @@ studied in (Helske, Helske, Cooper, Ynnerman, and Besancon, 2021)
 (define-public r-ggstratify
   (package
     (name "r-ggstratify")
-    (version "0.0.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggstratify" version))
        (sha256
-        (base32 "03vbpmpxbyljalwfm29vdib8zmc1p0pip4akk6qilp4b3cx3djf3"))))
+        (base32 "0nifw9z0dr9ysa7skpnqa3p9gr0ri8nlsc02vn6n6fk837ji4ybw"))))
     (properties `((upstream-name . "ggstratify")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-survival
+                             r-survey
                              r-shiny
                              r-ragg
                              r-patchwork
@@ -21543,15 +21545,26 @@ time or crossed.  Every stratum is reported with the number of observations
 behind it, on the figure and on each of its panels; strata that contain none are
 listed rather than dropped, and rows with a missing value in a layer variable
 are excluded and counted.  A continuous variable can be categorized into
-quantile groups, equal-width bins or user-supplied cut points and then used as a
-layer; the figure types follow those offered by the ggplotgui package and add
-the line plot for change over time, an optional LOWESS smoother, and the
-Kaplan-Meier curve estimated by survival', with an optional number-at-risk
-table.  Columns are described as they are typed, so convert each to the type you
-mean first.  Figures are written as PNG or SVG, and the application prints the
-ggplot2 code behind the figure on screen, so that a description can be repeated,
-shared or accounted for later.  Everything runs locally, with no network access
-and no AI involved.")
+quantile groups, equal-width bins or user-supplied cut points, a variable of any
+type can be turned into whether it is missing or observed, so that the rows a
+layer would exclude become a stratum of their own, and a date or date-time
+variable can be read at a chosen resolution, either as a calendar period or as a
+position in the yearly cycle such as the month or the season; any of them can
+then be used as a layer.  The figure types follow those offered by the ggplotgui
+package and add the line plot for change over time, an optional LOWESS smoother,
+and the Kaplan-Meier curve estimated by survival', with an optional
+number-at-risk table.  An error bar can show a standard error or a confidence
+interval, the latter from the t distribution for a mean and from the
+Clopper-Pearson or Wilson method for a proportion, and the points can be joined
+by a line computed from the same summary, which is how a trend over time is
+read.  A survey weight can be set: the figure is then drawn from the weighted
+data, every count is reported both as rows and as the sum of the weights, and
+error bars and confidence bands are design-based estimates from the survey
+package.  Columns are described as they are typed, so convert each to the type
+you mean first.  Figures are written as PNG or SVG, and the application prints
+the ggplot2 code behind the figure on screen, so that a description can be
+repeated, shared or accounted for later.  Everything runs locally, with no
+network access and no AI involved.")
     (license license:gpl3)))
 
 (define-public r-ggstar
@@ -25503,13 +25516,13 @@ not require a square coordinate system.")
 (define-public r-gggenomes
   (package
     (name "r-gggenomes")
-    (version "1.1.3")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gggenomes" version))
        (sha256
-        (base32 "031c33m9zhf5hsi31k7qn2fp1frij5xdq9sqzg0gc8x3gissc1bz"))))
+        (base32 "0h1cvybmnyla1akz4vm601hsspmwap9zix2rhnax9h16f2g53g4c"))))
     (properties `((upstream-name . "gggenomes")))
     (build-system r-build-system)
     (arguments
@@ -25521,7 +25534,6 @@ not require a square coordinate system.")
                              r-tibble
                              r-stringr
                              r-snakecase
-                             r-scales
                              r-rlang
                              r-readr
                              r-purrr
@@ -25529,7 +25541,8 @@ not require a square coordinate system.")
                              r-jsonlite
                              r-ggplot2
                              r-dplyr
-                             r-colorspace))
+                             r-colorspace
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://thackl.github.io/gggenomes/")
     (synopsis "Grammar of Graphics for Comparative Genomics")
@@ -25980,13 +25993,13 @@ or change theme elements.  3D graphs are made with plotly'.")
 (define-public r-ggexametrika
   (package
     (name "r-ggexametrika")
-    (version "1.1.2")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggExametrika" version))
        (sha256
-        (base32 "0fb0jhjffyaigm7cpiicklrhww9j4s2q5cv8w121vi6hwiqk3xp0"))))
+        (base32 "0dcs2kca7aqgh22bkl699dhic60mn6zvqg69k1v8f9767ik6h4ad"))))
     (properties `((upstream-name . "ggExametrika")))
     (build-system r-build-system)
     (arguments
@@ -26131,13 +26144,13 @@ descendant branches of interest.  Uses the Grammar of Graphics.")
 (define-public r-ggeda
   (package
     (name "r-ggeda")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggEDA" version))
        (sha256
-        (base32 "1xvq44dkzbg4qal4lig1wjwb5cf3n3wpg9pa2lsjwcjs0pzg1mmz"))))
+        (base32 "059600q0rp3lvl7v42xbsqrnmsrzagfm472zcq6yhigssz2xwzm7"))))
     (properties `((upstream-name . "ggEDA")))
     (build-system r-build-system)
     (arguments
@@ -27008,13 +27021,13 @@ interface to create plots using ggplot2'.")
 (define-public r-ggchangepoint
   (package
     (name "r-ggchangepoint")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggchangepoint" version))
        (sha256
-        (base32 "0lh376iw2iprnsbq3sxdi3ygvnxqfk16a2n2qypdf4wvak6nm2g9"))))
+        (base32 "1w6b201wiip9j3593j4gx8v6x3dy68hl7p4bbx09amqiwix149ds"))))
     (properties `((upstream-name . "ggchangepoint")))
     (build-system r-build-system)
     (arguments
@@ -27036,22 +27049,24 @@ interface to create plots using ggplot2'.")
      "This package provides a unified, tidy, ggplot2'-native interface to changepoint
 detection in R. Provides the ggcpt S3 result class with broom'-style
 tidy/glance/augment methods, @code{autoplot()} (with confidence intervals,
-fitted signals, and multivariate facets), composable geoms
-@code{('geom_changepoint()}', @code{geom_cpt_segment()}', @code{geom_cpt_ci()}',
-@code{stat_changepoint()}'), and a @code{cpt_detect()} dispatcher covering over
-thirty methods with introspection via @code{cpt_methods()}': penalised/optimal
-partitioning (PELT, @code{BinSeg}, @code{SegNeigh}, AMOC, FPOP, CROPS penalty
-paths, fastcpd', change-in-slope via cpop'), multiscale and search methods (WBS,
-WBS2, NOT, MOSUM, Isolate-Detect, TGUH, SMUCE/HSMUCE with confidence intervals),
-nonparametric and kernel methods ('changepoint.np', ecp', @code{kcpRS}',
-@code{CptNonPar}', sequential cpm', self-normalisation via SNSeg'), Bayesian
-methods ('bcp', online ocp', Rbeast'), high-dimensional and multivariate methods
-('@code{InspectChangepoint}', ocd', changepoint.geo'), regression breaks
-('strucchange', segmented', @code{EnvCpt}'), and robust detection under drift
-and autocorrelation ('@code{DeCAFS}').  Also includes method comparison,
-batch/panel detection, bootstrap stability diagnostics, accuracy metrics,
-Bayesian posterior and run-length plots, interactive rendering, data simulation
-with canonical test signals, and per-method citations.")
+significance regions, detector statistics, solution paths, scale space, and
+multivariate facets), composable geoms @code{('geom_changepoint()}',
+@code{geom_cpt_segment()}', @code{geom_cpt_ci()}', @code{geom_cpt_region()}',
+@code{geom_cpt_label()}', @code{geom_cpt_event()}', @code{stat_changepoint()}'),
+and a @code{cpt_detect()} dispatcher covering fifty methods with introspection
+via @code{cpt_methods()}': penalised/optimal partitioning, multiscale and search
+methods, nonparametric and kernel methods, Bayesian methods, high-dimensional,
+functional, covariance and network methods, regression breaks, seasonal-trend
+decomposition, the classical single-change tests, and robust detection under
+drift and autocorrelation.  Adds inference (Narrowest Significance Pursuit
+regions, a unified @code{cpt_confint()}', post-detection tests), selection of
+the number of changes, influence and sensitivity diagnostics, supervised
+detection with learned penalties, consensus and method recommendation, event
+annotation and reproducible reports, benchmarks against the Turing Change Point
+Dataset, sequential monitoring with detection-delay accounting, power and study
+design, and an extension mechanism @code{('as_ggcpt()}',
+@code{cpt_register_method()}') that brings external and non-CRAN detectors into
+the same grammar.")
     (license license:gpl3+)))
 
 (define-public r-ggbuildr
@@ -33541,6 +33556,36 @@ hypothesis testing for if this odds ratio is significantly different to 1 (equal
 chance).")
     (license license:gpl2+)))
 
+(define-public r-genoaligner
+  (package
+    (name "r-genoaligner")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "genoaligner" version))
+       (sha256
+        (base32 "0csc762wr82x2dfr366v2par5vpm3yd2pjfglz7h9bp0jxzd7r9h"))))
+    (properties `((upstream-name . "genoaligner")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://github.com/alrobles/genoaligner-r")
+    (synopsis
+     "GPU-Portable Pairwise Sequence Alignment (WFA + Smith-Waterman)")
+    (description
+     "Pairwise sequence alignment from one portable C++17 core: edit-distance
+(Levenshtein / WFA-equivalent) and Smith-Waterman local alignment, both with
+score and CIGAR reconstruction.  The core builds and runs anywhere (it is the
+CPU backend, so it needs no GPU toolchain); the wavefront/GPU backend
+(ROCm/CUDA) computes the same results with acceleration and is tracked in the
+sibling C++ repository.  A batch API aligns many pairs in one call and reports
+how many were resolved, so silent under-serving is impossible.  Designed to slot
+into data.frame/tibble pipelines.")
+    (license license:expat)))
+
 (define-public r-geno2proteo
   (package
     (name "r-geno2proteo")
@@ -35484,20 +35529,20 @@ provides a variety of visualisation tools (Thielecke, L. et al. (2017)
 (define-public r-genalgo
   (package
     (name "r-genalgo")
-    (version "2.2.1")
+    (version "2.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GenAlgo" version))
        (sha256
-        (base32 "16z88nrx145qf69h0ygmp8nir0608hgf2wblf40022xbx0ghg0q3"))))
+        (base32 "0jl9brszlr87b5x27r9s55abb2pmc8l2sgmf7s8fysn3nw9000gq"))))
     (properties `((upstream-name . "GenAlgo")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-oompabase r-mass r-classdiscovery))
-    (home-page "http://oompa.r-forge.r-project.org/")
+    (home-page "http://silicovore.com/OOMPA/classpred.html")
     (synopsis
      "Classes and Methods to Use Genetic Algorithms for Feature Selection")
     (description
@@ -37335,6 +37380,38 @@ Component Analysis and Correspondence Analysis with Instrumental Variables,
 etc.).")
     (license license:gpl2+)))
 
+(define-public r-gdam
+  (package
+    (name "r-gdam")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gdam" version))
+       (sha256
+        (base32 "0jzn55xzi2d50llhdc2rq3wk37dfmv1kgl1wp13d3r131xm83npv"))))
+    (properties `((upstream-name . "gdam")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mgcv r-matrix r-gratia r-ggplot2 r-colorspace))
+    (home-page "https://github.com/fhui28/gdam")
+    (synopsis "Fast Robust Additive Models using Gamma Divergence")
+    (description
+     "This package provides a computationally efficient method (at least at the time
+of development!) for robust additive modeling based on the gamma divergence,
+implementing the methodology of Hui, Ding, and Sugasawa (2026)
+<doi:10.1007/s11222-026-10960-3>.  The method assumes an identity link and
+normally distributed errors, and applies the gamma divergence to the resulting
+restricted maximum likelihood function so as to obtain a loss function that is
+less sensitive to outlying responses.  Because gdam uses a model fitted via the
+mgcv package as the starting point for optimization, and leverages many of its
+existing techniques for estimation and inference, users can take advantage of
+many of the smoothing options available in the mgcv package for constructing
+additive models.")
+    (license license:gpl3+)))
+
 (define-public r-gdalraster
   (package
     (name "r-gdalraster")
@@ -38150,6 +38227,43 @@ Rose BS, Wu J, Noticewala S,@code{McHale} MT, Yashar CM, Vaida F, and Mell LK
 Hwang L, Gulaya S, Xu B, Verma R, Williamson CW, Triplett DP, Rose BS, Shen H,
 Vaida F, Murphy JD, and Mell LK (2016) <DOI:10.1200/JCO.2015.65.0739>.  3.
 Lunn, Mary, and Don @code{McNeil} (1995) <DOI:10.2307/2532940>.")
+    (license license:gpl2+)))
+
+(define-public r-gcemod
+  (package
+    (name "r-gcemod")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gcemod" version))
+       (sha256
+        (base32 "07axa1qjqzzb6pgb04m8d99mppk8sgy5aqkxl79q0m2jrb2hdxfi"))))
+    (properties `((upstream-name . "gcemod")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival r-patchwork r-ggplot2 r-cmprsk))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=gcemod")
+    (synopsis "Generalized Competing Event Models with Lunn-McNeil Testing")
+    (description
+     "Fits generalized competing event (GCE) models and estimates covariate effects on
+omega-plus, the ratio of the hazard for an event of interest to the hazard for a
+competing event, on both the cause-specific (Cox) and subdistribution
+(Fine-Gray) hazard scales.  Confidence intervals and p-values are obtained from
+the Lunn-@code{McNeil} (1995) stacked (augmented) data approach.  The package
+builds GCE risk scores from the model linear predictor, identifies risk-score
+cutpoints that maximize the separation in omega-plus between groups, and
+produces cumulative incidence (\"alligator\") plots by risk group and calibration
+plots of predicted versus observed omega-plus.  It also compares covariate
+effects across the primary, competing, and total (composite) events, and
+estimates covariate effects on the ratio of cumulative incidence functions (a
+cumulative-incidence-scale GCE model).  Methods follow Carmona et al. (2014)
+<doi:10.1016/j.ijrobp.2014.03.047>, Mell et al. (2024)
+<doi:10.1016/j.eururo.2023.01.020>, and Lunn and @code{McNeil} (1995)
+<doi:10.2307/2532940>.")
     (license license:gpl2+)))
 
 (define-public r-gcdnet

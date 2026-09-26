@@ -114,6 +114,36 @@ bibliographic comparison, metadata mapping, file attachment, and optional
 semantic-index queries.")
     (license license:expat)))
 
+(define-public r-zoorisk
+  (package
+    (name "r-zoorisk")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ZooRisk" version))
+       (sha256
+        (base32 "0shj1m5vl2zm09lpmhdfqm8i16z6nj80fcsjm77i6hx31kp5ssg4"))))
+    (properties `((upstream-name . "ZooRisk")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/vinodhpmd/ZooRisk")
+    (synopsis "Quantitative Assessment of Zoonotic Disease Risk")
+    (description
+     "This package provides quantitative tools for assessing zoonotic disease risk
+across animal, human, environmental, and transmission interfaces.  The package
+supports exposure and transmission risk estimation, spillover risk assessment,
+risk scoring, cross-species comparison, transmission-network analysis, Monte
+Carlo uncertainty simulation, and sensitivity analysis.  The One Health
+framework underlying these assessments is described by World Health
+Organization, Food and Agriculture Organization of the United Nations, United
+Nations Environment Programme, and World Organisation for Animal Health (2022)
+<doi:10.4060/cc2289en>.")
+    (license license:expat)))
+
 (define-public r-zoomr
   (package
     (name "r-zoomr")

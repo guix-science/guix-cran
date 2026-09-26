@@ -6,10 +6,11 @@
                 #:prefix license:)
   #:use-module (gnu packages cran)
   #:use-module (gnu packages python-xyz)
+  #:use-module (gnu packages pkg-config)
+  #:use-module (gnu packages maths)
   #:use-module (gnu packages pcre)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages cmake)
-  #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages apparmor)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages web)
@@ -1768,6 +1769,53 @@ provides easy-to-use functions for calculating inter-rater reliability
 statistics and measuring the reliability of one coder compared to the rest of
 the team.")
     (license license:expat)))
+
+(define-public r-uqsa
+  (package
+    (name "r-uqsa")
+    (version "0.8.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "uqsa" version))
+       (sha256
+        (base32 "1k3wzrsb679v835ilkj1ahbaxlzm9vf9yw5yb2wf8amii0pg9z2i"))))
+    (properties `((upstream-name . "uqsa")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list gsl))
+    (propagated-inputs (list r-vinecopula
+                             r-ryacas
+                             r-pracma
+                             r-mvtnorm
+                             r-mass
+                             r-errors
+                             r-digest
+                             r-colorspace
+                             r-cli))
+    (native-inputs (list pkg-config r-knitr))
+    (home-page "https://icpm-kth.github.io/uqsa/")
+    (synopsis "Uncertainty Quantification and Global Sensitivity Analysis")
+    (description
+     "In the field of systems biology, chemical reaction networks are modeled in
+various ways, two of those are: (i) stochastic simulations (e.g. Gillespie
+algorithm) and (ii) ordinary differential equations.  In this package we use a
+simple tabular model description of reaction systems and automatically generate
+C code for either solver type.  We use the ordinary differential equation
+solvers from the GNU Scientific Library and provide an interface that deals with
+lists of simulation experiments.  Each simulation experiment contains both the
+data, and instructions for the model to replicate the data.  We use approximate
+Bayesian computation methods (combined with Markov chain Monte Carlo and
+sequential Monte Carlo, particle filters) as well as classic methods such as
+Random Walk Metropolis (Gaussian transition kernel) and Simplified Manifold
+Metropolis adjusted Langevin algorithm for a Bayesian investigation of the
+modelÂ´s parameter space.  Experiments can be evaluated in a sequence;
+intermediate probability densities are modeled using the @code{VineCopula}
+package.  The package is also intended to be useful in an HPC environment, with
+some functions that use @code{pbdMPI} capabilities.")
+    (license license:gpl3+)))
 
 (define-public r-uptimerobot
   (package
@@ -4571,6 +4619,79 @@ accessible via the URL below.")
 Gaussian noise using Unbalanced Haar wavelets.")
     (license license:gpl2)))
 
+(define-public r-unalr
+  (package
+    (name "r-unalr")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "UnalR" version))
+       (sha256
+        (base32 "0q8hijcx9kykhzjfqi5385qdj85zc1z1dj7s4dm0p35inpjajvy7"))))
+    (properties `((upstream-name . "UnalR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-xts
+                             r-xml
+                             r-webshot
+                             r-treemap
+                             r-tidyselect
+                             r-tidyr
+                             r-sunburstr
+                             r-stringr
+                             r-sp
+                             r-sf
+                             r-scales
+                             r-rlang
+                             r-png
+                             r-plotly
+                             r-maps
+                             r-magrittr
+                             r-lifecycle
+                             r-leaflet
+                             r-jsonlite
+                             r-htmlwidgets
+                             r-htmltools
+                             r-highcharter
+                             r-gtextras
+                             r-gt
+                             r-gridsvg
+                             r-ggspatial
+                             r-ggrepel
+                             r-ggplot2
+                             r-forcats
+                             r-fmsb
+                             r-echarts4r
+                             r-dygraphs
+                             r-dt
+                             r-dplyr
+                             r-data-tree
+                             r-d3r
+                             r-cli))
+    (home-page "https://unal.edu.co")
+    (synopsis "Wrapper for Interactive and Static Data Visualization")
+    (description
+     "This package provides a fast and consistent general-purpose wrapper for
+arranging microdata and generating interactive and static visualizations.
+Offers a library of graphical functions with a highly configurable and simple
+syntax.  Features include HTML tables, time series, bar and pie charts, and maps
+supported by various @code{JavaScript} libraries.  Allows seamless transitions
+between interactive and static graphics without changing the core syntax.
+Originally developed to standardize the publication of official statistics at
+the National University of Colombia <https://unal.edu.co>.  Spanish: Proporciona
+una herramienta de propÃ³sito general rÃ¡pida y consistente para organizar
+microdatos y generar visualizaciones interactivas y estÃ¡ticas.  Ofrece una
+biblioteca de funciones grÃ¡ficas con una sintaxis simple y altamente
+configurable.  Permite transiciones fluidas entre grÃ¡ficos interactivos y
+estÃ¡ticos sin cambiar la sintaxis base.  Desarrollado originalmente para
+estandarizar la publicaciÃ³n de estadÃ­sticas oficiales en la Universidad
+Nacional de Colombia <https://unal.edu.co>.")
+    (license license:gpl3+)))
+
 (define-public r-umx
   (package
     (name "r-umx")
@@ -4655,13 +4776,13 @@ You can use the same queries and get the same datasets by accessing our API.")
 (define-public r-umpire
   (package
     (name "r-umpire")
-    (version "2.0.11")
+    (version "2.0.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Umpire" version))
        (sha256
-        (base32 "1ss3pamkj3071376i3807bh363ybid9w8c3py9k1z6cz6zcvj4w3"))))
+        (base32 "1amlv5jn01jfa2kz6vsqjakarw9zzrg8pikh3vrlgwv65nglghny"))))
     (properties `((upstream-name . "Umpire")))
     (build-system r-build-system)
     (arguments
@@ -4669,7 +4790,7 @@ You can use the same queries and get the same datasets by accessing our API.")
       #:tests? #f))
     (propagated-inputs (list r-mc2d r-bimodalindex))
     (native-inputs (list r-knitr))
-    (home-page "http://oompa.r-forge.r-project.org/")
+    (home-page "http://silicovore.com/OOMPA/standalone.html")
     (synopsis "Simulating Realistic Gene Expression and Clinical Data")
     (description
      "The Ultimate Microrray Prediction, Reality and Inference Engine (UMPIRE) is a

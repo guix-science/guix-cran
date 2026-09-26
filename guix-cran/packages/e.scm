@@ -4314,13 +4314,13 @@ ISBN:978-0132892314).")
 (define-public r-exametrika
   (package
     (name "r-exametrika")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "exametrika" version))
        (sha256
-        (base32 "0xhc82864pc6ixlqxj8cjzxrprm14ihzjbdxgyxfiwsvq2mh7dws"))))
+        (base32 "0ap0rk9d0bwpb1r2xc1qbyc5bhb7j523r2mxp941fab4fdwpsyzi"))))
     (properties `((upstream-name . "exametrika")))
     (build-system r-build-system)
     (arguments
@@ -5341,13 +5341,13 @@ structured CLI logging for debugging.")
 (define-public r-evolqg
   (package
     (name "r-evolqg")
-    (version "0.3-6")
+    (version "0.4-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "evolqg" version))
        (sha256
-        (base32 "1sgghqh9wwvidnxsp7v2sl9acxsmi2zar4v2cg86a9xv6hc7xk7i"))))
+        (base32 "0k5k437q8g05ddhdqx7xbw8lq3x1sm6h0x6rhm2kdjwg9vwl6cx1"))))
     (properties `((upstream-name . "evolqg")))
     (build-system r-build-system)
     (arguments
@@ -6987,13 +6987,13 @@ J. & Zhang, X. (2018) <doi:10.1214/17-AOAS1092>.")
 (define-public r-eurostat
   (package
     (name "r-eurostat")
-    (version "4.0.0")
+    (version "4.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eurostat" version))
        (sha256
-        (base32 "13na6hdwz67f27vd3kvh6brxwxdf76sii0gf2r73ncs6db16q4pm"))))
+        (base32 "18rwyih7bs22hva5mwjn5fwcw9zb87axi6rf3n80c163c3188nlg"))))
     (properties `((upstream-name . "eurostat")))
     (build-system r-build-system)
     (arguments
@@ -7003,12 +7003,12 @@ J. & Zhang, X. (2018) <doi:10.1214/17-AOAS1092>.")
                              r-tidyr
                              r-tibble
                              r-stringr
-                             r-stringi
                              r-rlang
                              r-regions
-                             r-refmanager
                              r-readr
                              r-rappdirs
+                             r-r-utils
+                             r-purrr
                              r-lubridate
                              r-jsonlite
                              r-isoweek
@@ -21449,13 +21449,13 @@ using Stan <https://mc-stan.org/>.")
 (define-public r-egfr
   (package
     (name "r-egfr")
-    (version "1.1.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "egfr" version))
        (sha256
-        (base32 "0sj8bgqxjzainipavi4kjnd71hc851szb19601fbvr818kpripl5"))))
+        (base32 "07dmpbkkxaa666q26q5sia9s0cr1s3wiflgrfm50yj0xx9xa1isq"))))
     (properties `((upstream-name . "egfr")))
     (build-system r-build-system)
     (arguments
@@ -27949,13 +27949,13 @@ interview record using a hierarchy of all common causes for neonates or children
 (define-public r-eattools
   (package
     (name "r-eattools")
-    (version "0.7.9")
+    (version "0.7.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eatTools" version))
        (sha256
-        (base32 "0z7342x82mkkbw4xmcrszryd4xw9w9myqwaaj6gxizb25lnx08yj"))))
+        (base32 "0n3fpj1d8p2knccnxjfj3fvgah9i3v8pb4kkz86cj8zzfjsdk9j3"))))
     (properties `((upstream-name . "eatTools")))
     (build-system r-build-system)
     (arguments

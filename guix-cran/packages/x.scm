@@ -3022,6 +3022,55 @@ whole lot more!")
 (<https://remarkjs.com>).")
     (license license:expat)))
 
+(define-public r-xaihydro
+  (package
+    (name "r-xaihydro")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "xaiHydro" version))
+       (sha256
+        (base32 "11m7r4micl2l3ffpdzi9zays27896y97557r61q5fl3xrikq8jq4"))))
+    (properties `((upstream-name . "xaiHydro")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-rlang
+                             r-patchwork
+                             r-ggplot2
+                             r-dplyr
+                             r-dalex
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=xaiHydro")
+    (synopsis "Explainable AI Tools for Hydro-Climate Modelling")
+    (description
+     "This package provides a unified workflow for applying Explainable Artificial
+Intelligence (XAI) methods to hydro-climate predictive models.  Functions
+implement a permutation-based Monte Carlo SHAP estimator (Strumbelj and
+Kononenko (2014) <doi:10.1007/s10115-013-0679-x>; Lundberg and Lee (2017)
+<doi:10.48550/@code{arXiv.1705.07874>}), a self-contained locally weighted
+linear surrogate LIME (Ribeiro et al. (2016) <doi:10.1145/2939672.2939778>), and
+Partial Dependence Plots with Accumulated Local Effects (Friedman (2001)
+<doi:10.1214/aos/1013203451>; Apley and Zhu (2020) <doi:10.1111/rssb.12377>)
+with hydrology-specific visualisations and interpretation utilities.  Supports
+any model object compatible with the DALEX explainer interface (Biecek (2018)
+<doi:10.18637/jss.v097.i01>), including random forests, gradient boosting, and
+neural networks trained on streamflow, drought indices, flood risk, or
+evapotranspiration data.  Hydrology-standard performance metrics Nash-Sutcliffe
+Efficiency (NSE, Nash and Sutcliffe (1970) <doi:10.1016/0022-1694(70)90255-6>)
+and Kling-Gupta Efficiency (KGE, Gupta et al. (2009)
+<doi:10.1016/j.jhydrol.2009.08.003>) are computed alongside standard regression
+metrics.  Designed to accompany the book chapter: Islam, S., Dheeraj, A., Ali,
+S., Kaushal, R. and Venkatesh, G. (2026).  Explainable Artificial Intelligence
+for Hydro-Climatic Modelling: Methods, Applications, and Implementation Using
+the @code{xaiHydro} R Package.  In Chandniha, S. K. et al. (Eds.), Hydro-Climate
+Analytics: Remote Sensing, AI and Geospatial Modelling.  Springer.")
+    (license license:gpl3)))
+
 (define-public r-xadmix
   (package
     (name "r-xadmix")

@@ -9559,13 +9559,13 @@ datasets.")
 (define-public r-wayfindr
   (package
     (name "r-wayfindr")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WayFindR" version))
        (sha256
-        (base32 "1ipydfw34pw3jmndz61vfqv77vfvss33i7g16kyn34lrc4h8pvdm"))))
+        (base32 "0ck2qdc3qbjmgad9zqj6g7r961bw2ac80q9gs07j4hyq54794lc2"))))
     (properties `((upstream-name . "WayFindR")))
     (build-system r-build-system)
     (arguments
@@ -9573,12 +9573,13 @@ datasets.")
       #:tests? #f))
     (propagated-inputs (list r-xml r-rgraphviz r-keggrest r-igraph r-desctools))
     (native-inputs (list r-knitr))
-    (home-page "http://oompa.r-forge.r-project.org/")
+    (home-page "http://silicovore.com/OOMPA/cytangle.html")
     (synopsis "Computing Graph Structures on WikiPathways")
     (description
      "Converts pathways from @code{WikiPathways} GPML format or KEGG KGML format into
 igraph objects.  Includes tools to find all cycles in the resulting graphs and
-determine which ones involve negative feedback (inhibition).")
+determine which ones involve negative feedback (inhibition).  See
+<doi:10.1093/nargab/lqag051>.")
     (license license:artistic2.0)))
 
 (define-public r-waydown
@@ -10527,13 +10528,13 @@ irrigation information.  For more details see Piernicke et al. (2025)
 (define-public r-watcher
   (package
     (name "r-watcher")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "watcher" version))
        (sha256
-        (base32 "08i6xw8s38057p0zsl0vc0qcr8rmrn2dbjhqn80xnl8yvad3hc5x"))))
+        (base32 "0xba24ibknzsj78j3ahwbci1kpi0r5kjhjzviblym2j91man054i"))))
     (properties `((upstream-name . "watcher")))
     (build-system r-build-system)
     (arguments
