@@ -4520,13 +4520,13 @@ Group on Archival Description (EGAD)
 (define-public r-fsbrain
   (package
     (name "r-fsbrain")
-    (version "0.8.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fsbrain" version))
        (sha256
-        (base32 "09cp1sw8d83cg6rpfnzvgxdyz85j5v7s2j2dnfhz1xv6qgxjas19"))))
+        (base32 "0m7nkvq72m2viv9mxjdka4m4nx1gpa90pkd4s3h4y0n5mchzmdi6"))))
     (properties `((upstream-name . "fsbrain")))
     (build-system r-build-system)
     (arguments
@@ -27501,6 +27501,40 @@ solution paths of the elastic net penalized Cox's proportional hazards model.
 The package is an implementation of Yang, Y. and Zou, H. (2013)
 <doi:10.4310/SII.2013.v6.n2.a1>.")
     (license license:gpl2)))
+
+(define-public r-fastconley
+  (package
+    (name "r-fastconley")
+    (version "0.11.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fastconley" version))
+       (sha256
+        (base32 "0sd65vigw3k7p3iy1mb2xpxdc66386pcqw4dlzhvvw54hfnsvdsh"))))
+    (properties `((upstream-name . "fastconley")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/rbluhm/fastconley")
+    (synopsis "Fast Conley Standard Errors for 'lfe' and 'fixest' Models")
+    (description
+     "Conley (1999) <doi:10.1016/S0304-4076(98)00084-0> spatial heteroscedasticity and
+autocorrelation consistent (HAC) standard errors for fixed effects panel and
+cross-sectional models estimated with @code{felm()} from the lfe package
+(ordinary least squares and instrumental variables) or with @code{feols()},
+@code{feglm()}, and @code{fepois()} from the fixest package.
+Instrumental-variable support is limited to ordinary two-stage least squares.
+Generalized linear model fits use the M-estimation sandwich built from the
+stored scores and inverse Hessian.  The spatial path uses score accumulation, a
+three-dimensional cell-grid neighbour search, and compressed sparse row
+neighbour lists instead of dense distance matrices, yielding large speedups over
+the original conley package <https://github.com/rbluhm/conley> on big
+cross-sections and high-dimensional regressions.")
+    (license license:expat)))
 
 (define-public r-fastbioclim
   (package

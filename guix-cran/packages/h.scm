@@ -11002,6 +11002,47 @@ based on the integrated mean square prediction error and lookahead heuristics
 are provided, and notably fast update functions when adding new observations.")
     (license license:lgpl2.0+)))
 
+(define-public r-heterotests
+  (package
+    (name "r-heterotests")
+    (version "0.11.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "heteroTests" version))
+       (sha256
+        (base32 "0f3m35xk38rjnf7421rci7d53icmjiblz7xpaig5xnvhdlqncrby"))))
+    (properties `((upstream-name . "heteroTests")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-suppdists
+                             r-scales
+                             r-r6
+                             r-mass
+                             r-ggplot2
+                             r-generics
+                             r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/DiogoRibeiro7/heteroTests")
+    (synopsis "Heteroscedasticity Diagnostics for Linear Models")
+    (description
+     "This package provides a unified set of heteroscedasticity diagnostics for
+linear-model workflows.  It implements classical auxiliary-regression tests,
+including those of White (1980) <doi:10.2307/1912934>, Breusch and Pagan (1979)
+<doi:10.2307/1911963>, Koenker (1981) <doi:10.1016/0304-4076(81)90062-2>,
+Goldfeld and Quandt (1965) <doi:10.1080/01621459.1965.10480811> and Harvey
+(1976) <doi:10.2307/1913974>; the score test of Cook and Weisberg (1983)
+<doi:10.1093/biomet/70.1.1>; the ARCH test of Engle (1982)
+<doi:10.2307/1912773>; and group-wise tests of equal variance, including those
+of Bartlett (1937) <doi:10.1098/rspa.1937.0109>, Brown and Forsythe (1974)
+<doi:10.1080/01621459.1974.10482955> and Hartley (1950) <doi:10.2307/2332383>.
+Resampling and scalable variants, simulation utilities, diagnostic visualisation
+and remediation helpers share a consistent interface designed for reproducible
+statistical workflows and integration with common modelling tools.")
+    (license license:asl2.0)))
+
 (define-public r-heteromixgm
   (package
     (name "r-heteromixgm")

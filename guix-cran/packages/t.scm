@@ -7097,13 +7097,13 @@ Smith and Boucher (1987) <https://muse.jhu.edu/article/600574>.")
 (define-public r-trtswitch
   (package
     (name "r-trtswitch")
-    (version "0.2.7")
+    (version "0.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "trtswitch" version))
        (sha256
-        (base32 "0mx2klxblbc48h9g6figf6cg9szmj98zwvj79byvm97jc8lr3syl"))))
+        (base32 "1sckdsn6j8h1m6wihd1h7yazq60n2p234yyd75qh9y1wjdqk3rfc"))))
     (properties `((upstream-name . "trtswitch")))
     (build-system r-build-system)
     (arguments
@@ -24796,13 +24796,13 @@ methods used in the package based on the following publications Stipanuk (1973)
 (define-public r-thsqca
   (package
     (name "r-thsqca")
-    (version "2.0.7")
+    (version "2.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ThSQCA" version))
        (sha256
-        (base32 "1w8gqkph4jyl8dqr5sl0mgxnp865abia1ds24z1bl166l93hxsxd"))))
+        (base32 "1rc6dl7pgz314ilxnq2ssfbw405z83zdc8gbfp1yysbnn7bqb1z8"))))
     (properties `((upstream-name . "ThSQCA")))
     (build-system r-build-system)
     (arguments
@@ -24822,9 +24822,9 @@ threshold variation as an explicit analytical dimension and recording the
 sufficiency solution obtained at each threshold setting.  Also provides Fiss
 (2011) <doi:10.5465/amj.2011.60263120> core/peripheral condition classification
 via @code{compute_fiss_core()} and @code{generate_fiss_chart()}, enabling
-four-symbol configuration charts that distinguish core conditions (present in
-both parsimonious and intermediate solutions) from peripheral conditions
-(intermediate only).  Built on top of the QCA package by Dusa (2019)
+four-symbol configuration charts that distinguish core conditions (conditions of
+the parsimonious term contained in each configuration) from peripheral
+conditions (intermediate only).  Built on top of the QCA package by Dusa (2019)
 <doi:10.1007/978-3-319-75668-4>, with function arguments following QCA
 conventions.  Based on set-theoretic methods by Ragin (2008)
 <doi:10.7208/chicago/9780226702797.001.0001> and established robustness

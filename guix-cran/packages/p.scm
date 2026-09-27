@@ -10505,13 +10505,13 @@ autocorrelation for big datasets.")
 (define-public r-probedeveloper
   (package
     (name "r-probedeveloper")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ProbeDeveloper" version))
        (sha256
-        (base32 "1d9bsixabvbhl0v54r4mixx5vl1ql1bic2mm0dw9avwpr4q71n74"))))
+        (base32 "15z3f9crb2xhqnnqxlq7njlj6xfqsrnanjnsalwavlvm0a8vqiyz"))))
     (properties `((upstream-name . "ProbeDeveloper")))
     (build-system r-build-system)
     (arguments
@@ -11447,13 +11447,13 @@ binomial experiment.")
 (define-public r-priorcon
   (package
     (name "r-priorcon")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "priorCON" version))
        (sha256
-        (base32 "1dhdxannwhrbqjnqkanzcrp01yxnklgywdr7wnrjkmwi6sk7ijjv"))))
+        (base32 "0rrqlj0r1ihgk091x0jrjwqf5bijk4d1jfjvqrc7lgp28j70yhsp"))))
     (properties `((upstream-name . "priorCON")))
     (build-system r-build-system)
     (arguments
@@ -11485,13 +11485,13 @@ problems.")
 (define-public r-prior3d
   (package
     (name "r-prior3d")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "prior3D" version))
        (sha256
-        (base32 "1z7a94h9858ww5n1gp31fk6333cz05c3qzxr6xacgb3m8dzlc5k1"))))
+        (base32 "0rwm9fc9arqhsxzd8yk0gr9vmalq6la3b9hqgm5gzr3xmrh1bnmm"))))
     (properties `((upstream-name . "prior3D")))
     (build-system r-build-system)
     (arguments
@@ -14818,19 +14818,20 @@ subsequent k-means clustering procedure.")
 (define-public r-prcbench
   (package
     (name "r-prcbench")
-    (version "1.1.10")
+    (version "1.1.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "prcbench" version))
        (sha256
-        (base32 "09fby86ynqgplzrkkrivf454zmzyfp04zhbiaf9kqf6bc0mrbp13"))))
+        (base32 "06s8na0kayw9w5l677lb7rwhw466l2rwc4kd5djbq2wq3zldm44i"))))
     (properties `((upstream-name . "prcbench")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rocr
+    (propagated-inputs (list r-yardstick
+                             r-rocr
                              r-rcpp
                              r-r6
                              r-prroc
@@ -15868,13 +15869,13 @@ based on B-spline coefficients is provided.")
 (define-public r-ppmsdr
   (package
     (name "r-ppmsdr")
-    (version "2.0.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ppmSDR" version))
        (sha256
-        (base32 "0ywf48s9pidbp4kyjx19svpm9w7y5w8mrwx7yydp4a15h2rgpz81"))))
+        (base32 "0njb06p2h2958jwk4ljpi8v80jqxnyjaiy7m164a63xnw6ggan6s"))))
     (properties `((upstream-name . "ppmSDR")))
     (build-system r-build-system)
     (arguments
@@ -25254,13 +25255,13 @@ based on Tenenhaus, Esposito Vinzi, Chatelin & Lauro (2005)
 (define-public r-plssem
   (package
     (name "r-plssem")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plssem" version))
        (sha256
-        (base32 "1b5f9i8nlmk2lsvalvh3i2nsmhdchmg7wpi4847h1ac5rcjwqxkv"))))
+        (base32 "1mbhqsfskd1r5s9pkfw7vvc1kxrn1acaa9xsa34czccb2rbyjs0m"))))
     (properties `((upstream-name . "plssem")))
     (build-system r-build-system)
     (arguments
@@ -25269,6 +25270,8 @@ based on Tenenhaus, Esposito Vinzi, Chatelin & Lauro (2005)
     (propagated-inputs (list r-stringr
                              r-rfast
                              r-reformulas
+                             r-rcpparmadillo
+                             r-rcpp
                              r-progressr
                              r-pbivnorm
                              r-mvnfast

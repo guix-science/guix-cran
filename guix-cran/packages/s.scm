@@ -30249,6 +30249,35 @@ applications of specification curve analysis see Simonsohn, Simmons, and Nelson
 (2020) <doi:10.1038/s41562-020-0912-z>.")
     (license license:expat)))
 
+(define-public r-spec2annot
+  (package
+    (name "r-spec2annot")
+    (version "1.3.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Spec2Annot" version))
+       (sha256
+        (base32 "06px3gm023hdbl78v5fgyvvnvxasp14ck8jmpi5kk1yjr8kwz16j"))))
+    (properties `((upstream-name . "Spec2Annot")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr r-rcpp r-magrittr r-data-table))
+    (home-page "https://github.com/odisce/Spec2Annot")
+    (synopsis "Annotation of Mass Spectra")
+    (description
+     "This package provides a comprehensive suite of functions to efficiently annotate
+mass spectra data.  Motivated by the need for rapid and accurate chemical
+identification in high-resolution mass spectrometry, it integrates built-in
+chemical databases and high-performance C++ algorithms.  Users can perform
+mass-to-charge (m/Z) and retention time searches, determine elemental
+compositions of molecules using heuristic rules, including specific isotopes,
+and annotate MS2 spectra with structural metrics using configurable chemistry
+rules.")
+    (license license:cecill)))
+
 (define-public r-spec
   (package
     (name "r-spec")
@@ -52877,13 +52906,13 @@ function, @code{SoftMax} preprocessing and inverse functions.")
 (define-public r-sigminer
   (package
     (name "r-sigminer")
-    (version "2.3.1")
+    (version "2.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sigminer" version))
        (sha256
-        (base32 "0fwmq6p6qyz5pq1vhh26ddrivcqaqnfv1bsnhzfplz1glmv6r0xj"))))
+        (base32 "1d83bdl25d4s6npiiaqx05gb2hmj8kbpcbypnm51aqc3lmzww5md"))))
     (properties `((upstream-name . "sigminer")))
     (build-system r-build-system)
     (arguments
@@ -52893,6 +52922,7 @@ function, @code{SoftMax} preprocessing and inverse functions.")
                              r-rlang
                              r-rcpp
                              r-purrr
+                             r-parallelly
                              r-nmf
                              r-magrittr
                              r-maftools
@@ -63119,13 +63149,13 @@ for methodological details.")
 (define-public r-serolyzer
   (package
     (name "r-serolyzer")
-    (version "1.4.1")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SerolyzeR" version))
        (sha256
-        (base32 "187rsgf779ajq2pj1d6pc6bvx558ib3hgcs3rj0ml4jd7z30w0l4"))))
+        (base32 "1ffnl1i3i620ixx5ldniql2jq8dknyn6hkb35za5czzihfnx4r6p"))))
     (properties `((upstream-name . "SerolyzeR")))
     (build-system r-build-system)
     (arguments
@@ -65582,6 +65612,33 @@ Microscopic findings.  These database types are supported: SQLite and Oracle'.")
 <https://docs.sendgrid.com/api-reference/how-to-use-the-sendgrid-v3-api/authentication>.")
     (license license:expat)))
 
+(define-public r-sencensus
+  (package
+    (name "r-sencensus")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sencensus" version))
+       (sha256
+        (base32 "07yb1y9cikzg2wkmi55jmfq9s5sy65mxjjvhzbp3rbwhrhrsk2nz"))))
+    (properties `((upstream-name . "sencensus")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-readxl r-readr r-jsonlite r-httr))
+    (home-page "https://github.com/Amady01/sencusR")
+    (synopsis "Access to Senegal Demographic and Census Datasets")
+    (description
+     "Download, cache, and analyze census datasets and demographic statistics from
+Senegal.  Datasets are sourced from public census releases provided by the
+Agence Nationale de la Statistique et de la Demographie (ANSD)
+<https://www.ansd.sn> and hosted on @code{GitHub} releases
+<https://github.com/Amady01/sencus>.  Also provides tools to search through
+variable dictionaries and load tabular demographic indicators.")
+    (license license:expat)))
+
 (define-public r-senatebr
   (package
     (name "r-senatebr")
@@ -65787,6 +65844,35 @@ Harring, J., Shen, Z., Leite, W., Suen, K., & Marcoulides, K. (2022).
 his research on ant colony optimization algorithm with continuous domains and
 associated R code, which provided the base for the development of this package.")
     (license license:gpl3)))
+
+(define-public r-semrulesid
+  (package
+    (name "r-semrulesid")
+    (version "0.4.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "semrulesid" version))
+       (sha256
+        (base32 "0rhcv5fkis18nv8pm9gywc8n3z11vkgd9fcbgjj8rafmfmv1fan6"))))
+    (properties `((upstream-name . "semrulesid")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-lavaan))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/zacharyvig/semrulesid")
+    (synopsis "Evaluate Structural Equation Model Identification Rules")
+    (description
+     "Evaluates selected necessary and sufficient identification conditions in
+structural equation models (SEMs), including latent-variable scaling
+constraints.  Output reports rule status and applicability and provides
+diagnostic messages to support model specification and respecification.  The
+package is intended as a diagnostic aid and does not implement a universal
+identification algorithm.  For more details, see Bollen (2026,
+ISBN:978-1009312820).")
+    (license license:gpl3+)))
 
 (define-public r-semptools
   (package

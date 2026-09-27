@@ -20730,6 +20730,38 @@ Valenciana (grant CIAICO/2023/031) and MICIU/AEI/10.13039/501100011033/FEDER, EU
 (grant PID2021-128228NB-I00) for supporting this research.")
     (license license:gpl2+)))
 
+(define-public r-eiballots
+  (package
+    (name "r-eiballots")
+    (version "0.1.0-1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "eiballots" version))
+       (sha256
+        (base32 "1lfw695bab974vy0h056wfjh3md7z0by05f2ayvnaxa0z8phzcbz"))))
+    (properties `((upstream-name . "eiballots")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://doi.org/10.17605/OSF.IO/NP73B")
+    (synopsis
+     "Ballot-Level Microdata and Summaries for Ecological Inference (Florida 2000)")
+    (description
+     "This package provides access to ballot-level electoral microdata from the
+Florida 2000 general election and tools for computing summaries suitable for
+ecological inference.  Includes functions to load data by county or race
+(election), compute marginal distributions at the precinct level, and build
+joint contingency arrays across multiple races for use with ecological inference
+packages.  Data files are stored in a remote repository and downloaded on
+demand; local copies are supported via the data_dir option.  Acknowledgements:
+We thank Jaime Ventura (ANES, University of Michigan) and Dan Keating (The
+Washington Post) for providing the raw data that serve as the starting point for
+the construction of this package.  We also acknowledge funding from the
+Conselleria de EducaciÃ³n, Cultura y Universidades (grant CIACIO/2023/031).")
+    (license license:gpl3+)))
+
 (define-public r-eiaapi
   (package
     (name "r-eiaapi")
@@ -27290,13 +27322,13 @@ rank-loss functions are also given.")
 (define-public r-ebrahim-gof
   (package
     (name "r-ebrahim-gof")
-    (version "2.7.0")
+    (version "2.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ebrahim.gof" version))
        (sha256
-        (base32 "0phgp2znlvy975iabcyk998dybrap97ms4fn0kam75mcnr4xfq0g"))))
+        (base32 "0ryyz69bn318ll7996cy6n2fmdblpa0sirngf3gs91qvasa7fnyp"))))
     (properties `((upstream-name . "ebrahim.gof")))
     (build-system r-build-system)
     (arguments

@@ -20175,54 +20175,36 @@ age-structured population dynamics models described in Erguler and others (2016)
 (define-public r-albi
   (package
     (name "r-albi")
-    (version "0.1.9")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aLBI" version))
        (sha256
-        (base32 "1cym2j8whggf0s4ncivp96namp9adbrxp68rv44b9rvfswgizg9w"))))
+        (base32 "0s3dkl5j310n9af882ga1hyy41q17x64y959a3myfmda976p2mrz"))))
     (properties `((upstream-name . "aLBI")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-openxlsx r-ggplot2 r-dplyr))
+    (propagated-inputs (list r-openxlsx r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Ataher76/aLBI")
-    (synopsis "Estimating Length-Based Indicators for Fish Stock")
+    (synopsis "Estimating Length-Based Indicators for Fish Stock Assessment")
     (description
-     "This package provides tools for estimating length-based indicators from length
-frequency data to assess fish stock status and manage fisheries sustainably.
-Implements methods from Cope and Punt (2009) <doi:10.1577/C08-025.1> for
-data-limited stock assessment and Froese (2004)
-<doi:10.1111/j.1467-2979.2004.00144.x> for detecting overfishing using simple
-indicators.  Key functions include: @code{FrequencyTable()}: Calculate the
-frequency table from the collected and also the extract the length frequency
-data from the frequency table with the upper length_range.  A numeric value
-specifying the bin width for class intervals.  If not provided, the bin width is
-automatically calculated using Wang (2020) <doi:10.1016/j.fishres.2019.105474>
-formula. @code{FreqTM()}: Creates a frequency distribution table for fish length
-data across multiple months using a consistent length class structure.  The bin
-width is determined by either a custom value or Wang's formula, applied
-uniformly across all months.  The function dynamically detects and renames
-columns to Month and Length from the input dataframe.  The maximum observed
-length is included as part of the last class, with the upper bound set to the
-smallest multiple of the bin width greater than or equal to the maximum length.
-Months can be converted to dates using a configurable day and year, with dates
-assigned sequentially in day.month.year format (e.g., 15.01.26).
-@code{FishPar()}: Calculates length-based indicators (LBIs) proposed by Froese
-(2004) <doi:10.1111/j.1467-2979.2004.00144.x> such as the percentage of mature
-fish (Pmat), percentage of optimal length fish (Popt), percentage of mega
-spawners (Pmega), and the sum of these as Pobj.  This function also estimates
-confidence intervals for different lengths, visualizes length frequency
-distributions, and provides data frames containing calculated values.
-@code{FishSS()}: Makes decisions based on input from Cope and Punt (2009)
-<doi:10.1577/C08-025.1> and parameters calculated by @code{FishPar()} (e.g.,
-Pobj, Pmat, Popt, LM_ratio) to determine stock status as target spawning biomass
-(TSB40) and limit spawning biomass (LSB25), and selectivity. @code{LWR()}: Fits
-and visualizes length-weight relationships using linear regression, with options
-for log-transformation and customizable plotting.")
+     "This package provides tools for estimating length-based indicators (LBIs) from
+length-frequency data to assess fish stock status and evaluate growth and
+recruitment overfishing in data-limited fisheries.  Implements the
+sustainability indicators of Froese (2004)
+<doi:10.1111/j.1467-2979.2004.00144.x>, empirical biological reference points
+from Froese and Binohlan (2000) <doi:10.1111/j.1095-8649.2000.tb00870.x>, and
+the decision framework of Cope and Punt (2009) <doi:10.1577/C08-025.1>.
+Incorporates a three-tier Monte Carlo and bootstrap uncertainty propagation
+framework for sustainability indicators, optimum bin size calculations following
+Wang et al. (2020) <doi:10.1016/j.fishres.2019.105474>, multi-month
+length-frequency harmonization, and length-weight relationship fitting.
+Methodology is detailed in Ali et al. (2025)
+<doi:10.1016/j.fishres.2025.107467>.")
     (license license:gpl3)))
 
 (define-public r-albersdown
@@ -30036,6 +30018,41 @@ based on ggplot2.  Special focus on Brazilian corpora and
 political-institutional codebooks.  Inspired by Maerz and Benoit (2025)
 <https://quallmer.github.io/quallmer/>.")
     (license license:expat)))
+
+(define-public r-acousticts
+  (package
+    (name "r-acousticts")
+    (version "2.0.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "acousticTS" version))
+       (sha256
+        (base32 "15x9y9drs4rcdsgh1a2yzpxhpapg8gb2b3bxfv3xzg2yd9fgcsg0"))))
+    (properties `((upstream-name . "acousticTS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-pbapply r-bh))
+    (native-inputs (list r-rmarkdown r-knitr gfortran))
+    (home-page "https://brandynlucca.github.io/acousticTS/")
+    (synopsis "Physics-Based Models for Acoustic Target Strength")
+    (description
+     "Acoustic target strength (TS) represents the intensity of an echo returning from
+an individual scatterer such as bubbles, fish, or zooplankton.  TS can be used
+to convert integrated or volumetric backscatter collected from fisheries
+acoustic surveys into units of number density (e.g. animals per m^3), abundance
+(e.g. number of animals), and biomass (e.g. kg).  This parameter can also be
+used to aid in classifying backscatter, such as separating likely echoes of
+large predatory fish (e.g. adult cod) from smaller prey (e.g. shrimp).  One way
+to estimate TS is to use physics-based models to calculate theoretical TS that
+comprise exact and approximate solutions as well as analytical approaches.  The
+models provided can help provide TS estimates over broad statistical
+distributions of model parameters.  Applications are described by Lucca et al.
+(2023) <doi:10.1121/10.0022459>, with fisheries-acoustics principles from
+Simmonds and @code{MacLennan} (2005) <doi:10.1002/9780470995303>.")
+    (license license:gpl3)))
 
 (define-public r-acorn
   (package

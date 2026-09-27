@@ -19020,6 +19020,42 @@ provides an alternative way of comparing two different JSON lists, returning the
 left/inner/right-join style results.")
     (license license:expat)))
 
+(define-public r-moire
+  (package
+    (name "r-moire")
+    (version "3.7.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "moire" version))
+       (sha256
+        (base32 "10as3ddg8hjpsh4h4ldp1ddsfn486api994raijbr3m2sidgsv78"))))
+    (properties `((upstream-name . "moire")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-rlang
+                             r-rcppprogress
+                             r-rcppparallel
+                             r-rcpp
+                             r-purrr
+                             r-ggplot2
+                             r-dplyr
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/EPPIcenter/moire")
+    (synopsis
+     "Multiplicity of Infection and Allele Frequency Recovery from Noisy Polyallelic Genetics Data")
+    (description
+     "This package provides a Markov Chain Monte Carlo (MCMC) based approach to
+Bayesian estimation of individual level multiplicity of infection, within host
+relatedness, and population allele frequencies from polyallelic genetic data.
+Implements the model described in Murphy and Greenhouse (2024)
+<doi:10.1093/bioinformatics/btae619>.")
+    (license license:gpl3+)))
+
 (define-public r-mogiw
   (package
     (name "r-mogiw")
@@ -30177,13 +30213,13 @@ TaudiÃ¨re A. (2023) <doi:10.21105/joss.06038>.")
 (define-public r-miscmath
   (package
     (name "r-miscmath")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MiscMath" version))
        (sha256
-        (base32 "0wddhz58d8ld1r2bf1n7p7s78wrimaxfn34vwdy9q7785kcl32x8"))))
+        (base32 "1a09s3avskwjgsi9c6sjzdqj8sqn4l3dzabzflr1daab0880rvr0"))))
     (properties `((upstream-name . "MiscMath")))
     (build-system r-build-system)
     (arguments
@@ -42778,6 +42814,35 @@ and serial covariance formulations are inspired by Pinheiro and Bates (2000)
 packages.")
     (license license:gpl3+)))
 
+(define-public r-memtoc
+  (package
+    (name "r-memtoc")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "memtoc" version))
+       (sha256
+        (base32 "1dv165lzahymh1qjy4q2brw2x7xmw4z32478bqsm7k9pjyipbyfs"))))
+    (properties `((upstream-name . "memtoc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ps r-cli r-callr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jcoa05/memtoc")
+    (synopsis "'Tictoc'-Style Memory Usage Tracking")
+    (description
+     "This package provides simple start/stop memory tracking functions
+@code{tic_mem()} and @code{toc_mem()} that can be nested, inspired by the tictoc
+package.  Track RAM usage during code execution with support for logging, custom
+messages, nested tracking blocks, and parallel worker monitoring.  Features
+continuous background polling to estimate peak memory usage across main process
+and workers.  Integrates with the future package ecosystem for automatic worker
+detection.  Designed for monitoring memory consumption in parallel workflows.")
+    (license license:expat)))
+
 (define-public r-memss
   (package
     (name "r-memss")
@@ -46104,13 +46169,13 @@ al. (2025, manuscript submitted).")
 (define-public r-mdbr
   (package
     (name "r-mdbr")
-    (version "0.3.2")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mdbr" version))
        (sha256
-        (base32 "10bpcw9ysmspn5km7z0kinablbm7ylckdd4prb2m1nah8zdhswl0"))))
+        (base32 "0dsa60fsq51k7zj7ph82k0fnhbxy6yf84q3kjbfywdj75jjqb9m6"))))
     (properties `((upstream-name . "mdbr")))
     (build-system r-build-system)
     (arguments
@@ -52011,13 +52076,13 @@ matching and linear regression for causal inference in observational studies.")
 (define-public r-matchit
   (package
     (name "r-matchit")
-    (version "4.8.0")
+    (version "4.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MatchIt" version))
        (sha256
-        (base32 "1pkpc5faaln76hgcqc9wrl1bam3vx5vy553mjb0bzl3hr4cz44i2"))))
+        (base32 "0ga3k95kxng3jvfwim95yqqr9gw94zjynqqqm6gc2lfg79nj2k0f"))))
     (properties `((upstream-name . "MatchIt")))
     (build-system r-build-system)
     (arguments
@@ -55184,6 +55249,68 @@ on: Abdin et al. (2019) <doi:10.1007/s11136-018-2037-7>, Seow et al. (2023)
 <doi:10.1080/14737167.2023.2215430>, Abdin et al. (2021)
 <doi:10.1186/s12888-021-03463-0>, Abdin et al. (2024)
 <doi:10.1080/14737167.2024.2376100>.")
+    (license license:expat)))
+
+(define-public r-mappingas
+  (package
+    (name "r-mappingas")
+    (version "1.13.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mappingAS" version))
+       (sha256
+        (base32 "01hc8cvd12i98qd2l5fanp8gwfrzx3hv7p3bx79y6mc6ykgck8si"))))
+    (properties `((upstream-name . "mappingAS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-units
+                             r-terra
+                             r-shiny
+                             r-sf
+                             r-rlang
+                             r-readxl
+                             r-plotly
+                             r-officer
+                             r-lwgeom
+                             r-leaflet
+                             r-htmlwidgets
+                             r-htmltools
+                             r-ggplot2
+                             r-dt
+                             r-bslib))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lucasbarreirageo/mappingAS")
+    (synopsis
+     "Spatial Metrics and Habitat Conversion for Extinction Risk Assessment")
+    (description
+     "This package provides a spatial analytical framework for preliminary species
+extinction-risk screening following the IUCN Red List Criterion B guidelines.
+From occurrence points it computes the Extent of Occurrence (EOO) and Area of
+Occupancy (AOO) on a data-centred equal-area projection, assigns provisional
+Criterion B categories, and integrates @code{MapBiomas} land-use/land-cover data
+to quantify the proportion of anthropogenic conversion versus remaining natural
+habitat within each range metric, with per-class breakdowns and land-cover time
+series.  Several @code{MapBiomas} initiatives are supported through one
+standardised legend - @code{MapBiomas} Brazil, the Pan-Amazon / Amazonia
+collection (RAISG), Colombia, Argentina, Bolivia, Chile, Ecuador, Peru,
+Venezuela, Paraguay and Uruguay - so a species anywhere these products cover can
+be screened as readily as a Brazilian one.  For ranges outside @code{MapBiomas}
+coverage it can fall back to the global Esri / Impact Observatory 10 m annual
+land cover derived from Sentinel-2 (the product behind the @code{ArcGIS} Living
+Atlas Land Cover Explorer), so a species anywhere on Earth can be screened.  It
+also integrates @code{MapBiomas} Fire to compute burned-area metrics and fire
+time series, and quantifies the overlap of the range with protected areas from
+the global World Database on Protected Areas (WDPA). @code{MapBiomas} data are
+read either locally over the network via GDAL /vsicurl/ (no Google Earth Engine
+account required) or server-side through Google Earth Engine (GEE) for
+large-scale assessments.  Outputs include interactive and publication ready maps
+and charts, spatial (shapefile/'@code{GeoPackage}') and raster exports, and a
+written assessment report (HTML, text or Word).  An interactive shiny
+application ties the whole workflow together for reproducible conservation
+planning.")
     (license license:expat)))
 
 (define-public r-mappestrisk

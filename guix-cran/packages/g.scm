@@ -9611,6 +9611,38 @@ regression and general linear models.  We have also included a comparison of GPU
 and CPU performance on different matrix operations.")
     (license license:artistic2.0)))
 
+(define-public r-gpuinfo
+  (package
+    (name "r-gpuinfo")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gpuinfo" version))
+       (sha256
+        (base32 "0s3yy5q2cpd1zzh9vlb265g5lk86b748b02pd779jak4kj66d5d4"))))
+    (properties `((upstream-name . "gpuinfo")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/tkcaccia/gpuinfo")
+    (synopsis "Lightweight Hardware and GPU Compute Detection")
+    (description
+     "Detects central processing unit and graphics processing unit hardware and
+reports the apparent availability of CUDA', Metal', ROCm', and @code{OpenCL}
+compute backends.  Detection uses operating-system information, documented
+platform interfaces, and optional command-line utilities, without requiring a
+GPU framework, Python', or a vendor software development kit.  Backend
+interpretation follows the official CUDA
+<https://docs.nvidia.com/cuda/cuda-driver-api/>, Metal
+<https://developer.apple.com/documentation/metal>, ROCm
+<https://rocm.docs.amd.com/>, and @code{OpenCL}
+<https://registry.khronos.org/@code{OpenCL/>} documentation.  Missing hardware,
+drivers, libraries, and utilities are handled safely.")
+    (license license:expat)))
+
 (define-public r-gptzeror
   (package
     (name "r-gptzeror")
@@ -17536,13 +17568,13 @@ algorithm so we do not have to fit all models.")
 (define-public r-glmbayescore
   (package
     (name "r-glmbayescore")
-    (version "0.5.3")
+    (version "0.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmbayesCore" version))
        (sha256
-        (base32 "0a157pk59y5grnxb28ybad0csz0mk8f6phy29rphgbd0p37g630g"))))
+        (base32 "1b8xcqhwgqdp9576b75hpicn7vrld06ndvpxfh3ngwqgwhnva8gw"))))
     (properties `((upstream-name . "glmbayesCore")))
     (build-system r-build-system)
     (arguments
@@ -26961,6 +26993,32 @@ polygons and rectangles, without relying on external image files.  The package
 is intended for educational demonstration, reproducible visualization, and
 procedural graphics in R.")
     (license license:gpl3)))
+
+(define-public r-ggcheysson
+  (package
+    (name "r-ggcheysson")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggCheysson" version))
+       (sha256
+        (base32 "054wf1l5ns525a0jxvzcfkn4p3n7hlzbr7rln94f7sfh960h653l"))))
+    (properties `((upstream-name . "ggCheysson")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/friendly/ggCheysson")
+    (synopsis "Graphic Styles of Emile Cheysson for 'ggplot2'")
+    (description
+     "This package implements for ggplot2 the stylistic elements (fonts, hatched
+patterns, color palettes) used by Emile Cheysson in the Albums de Statistique
+Graphique', sometimes called the pinnacle of the Golden Age of Statistical
+Graphics.")
+    (license license:gpl3+)))
 
 (define-public r-ggchernoff
   (package
@@ -38127,6 +38185,42 @@ Description of the method is available from: Han and @code{DeOliveira} (2018)
 <https://developers.google.com/chart/interactive/docs/gallery/geochart>,
 allowing the user to download contents to use as a reference for related
 services like Google Trends'.")
+    (license license:gpl3)))
+
+(define-public r-gcf
+  (package
+    (name "r-gcf")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gcf" version))
+       (sha256
+        (base32 "1mi43r2rpvirb25nfpw6nd8nsjq72a7ydhp16l2153vgk3g9s16y"))))
+    (properties `((upstream-name . "gcf")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-spdep r-sf r-ranger r-geocomplexity))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=gcf")
+    (synopsis "Generalized Covariate Field")
+    (description
+     "Generates generalized covariate field (GCF) variables from spatial covariates
+observed at projected coordinates, and selects a stable subset of them for
+geospatial prediction.  For each input covariate the method builds
+spatial-pattern features (local indicator of spatial association, local Geary's
+c, log local variance, rank quantile entropy, geocomplexity, log scale variance,
+local variogram exponent, and signed z-score and median absolute deviation
+outlier strengths over a series of buffer radii) and neighbourhood-distribution
+features (buffer-wise quantiles of the covariate values surrounding each
+location), reduces the buffer and quantile sweeps to a compact set of
+interpretable functional summaries, and selects variables by random forest
+importance combined with spatial-block stability resampling and group voting.
+The GCF method is positioned as prediction-oriented feature construction: its
+output feeds any downstream regression learner.  Methods are described in Song
+(2026) <doi:10.1080/13658816.2026.2729719>.")
     (license license:gpl3)))
 
 (define-public r-gcestim

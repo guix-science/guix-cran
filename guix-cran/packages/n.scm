@@ -896,13 +896,13 @@ framework for continuous data.")
 (define-public r-nullabor
   (package
     (name "r-nullabor")
-    (version "0.3.15")
+    (version "0.3.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nullabor" version))
        (sha256
-        (base32 "12maz2fvqin3pg6hlp6d6vv0acghm29za3nf4lykiplxjdrvhg38"))))
+        (base32 "0j7d8p90l8gzd5ivhkyv3hv73rm5cvbl9wq1qmdvv744xqpwzbm2"))))
     (properties `((upstream-name . "nullabor")))
     (build-system r-build-system)
     (arguments
@@ -9528,13 +9528,13 @@ code from the rxode2 package (Wang, Hallow, and James 2015
 (define-public r-nlmixr2rpt
   (package
     (name "r-nlmixr2rpt")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmixr2rpt" version))
        (sha256
-        (base32 "1qizvjxfi3k4rvwpv2igm197p8rw0knkn8cwx2i595czyvzgqahg"))))
+        (base32 "01r1dqchnch49f3cfp1f4vc5ad5b21mvnkjbfqbpqk52sbdb1ccs"))))
     (properties `((upstream-name . "nlmixr2rpt")))
     (build-system r-build-system)
     (arguments
@@ -9548,10 +9548,12 @@ code from the rxode2 package (Wang, Hallow, and James 2015
                              r-onbrand
                              r-nlmixr2extra
                              r-nlmixr2est
+                             r-knitr
                              r-ggpubr
                              r-ggplot2
                              r-ggforce
                              r-flextable
+                             r-equatags
                              r-dplyr
                              r-cli))
     (native-inputs (list r-knitr))
@@ -13361,13 +13363,13 @@ efficiency.")
 (define-public r-neutroibdanalysis
   (package
     (name "r-neutroibdanalysis")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NeutroIBDAnalysis" version))
        (sha256
-        (base32 "1hfixz408w93fbk9h2xi05hccc0maxcdhcad7f7ri5il86vx669d"))))
+        (base32 "0bwb9byjch5rs8ym70mdg5ms8rjqb6l5v8j5sgi5j9sgww2czr2s"))))
     (properties `((upstream-name . "NeutroIBDAnalysis")))
     (build-system r-build-system)
     (arguments
@@ -19758,19 +19760,19 @@ information about ONNX Runtime see <https://onnxruntime.ai/>.")
 (define-public r-natcpp
   (package
     (name "r-natcpp")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "natcpp" version))
        (sha256
-        (base32 "14ndyd2gm6zwi2z8ycsnssfc7qcz6arc791wl0wag12bznsgv46q"))))
+        (base32 "082r9k94l26hxzv0jz7x34m0ghklav6ygs8f1s6s85m4yzi8v6w8"))))
     (properties `((upstream-name . "natcpp")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcppthread r-rcpp r-matrix))
+    (propagated-inputs (list r-rcppthread r-rcppeigen r-rcpp r-matrix))
     (home-page "https://github.com/natverse/natcpp")
     (synopsis "Fast C++ Primitives for the 'NeuroAnatomy Toolbox'")
     (description

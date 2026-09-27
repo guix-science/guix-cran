@@ -6051,13 +6051,13 @@ data for custom conversion workflows.")
 (define-public r-rstudio-prefs
   (package
     (name "r-rstudio-prefs")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rstudio.prefs" version))
        (sha256
-        (base32 "02h9ps51bimg5xkbljf318p5wgcxfpx59cjjbjfvl5rhkn96ij13"))))
+        (base32 "1mb6spw1lnmjdcjs74fb7d0k03f68la5skrpwy2ahrlca1x6zivn"))))
     (properties `((upstream-name . "rstudio.prefs")))
     (build-system r-build-system)
     (arguments
@@ -34486,13 +34486,13 @@ FFTW for RFIF for RFIF installation instructions.")
 (define-public r-rfia
   (package
     (name "r-rfia")
-    (version "1.1.4")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rFIA" version))
        (sha256
-        (base32 "0xm6sxyryc9pnvq75xhfvy8sydfkzjbl318gqkbamaksbj05q5vv"))))
+        (base32 "0d0qz34vg5q0hhi9gdjg98inffg6rxqr2v9fp1sq77xm7wpd8ccv"))))
     (properties `((upstream-name . "rFIA")))
     (build-system r-build-system)
     (arguments
@@ -34524,9 +34524,7 @@ dplyr', tidyr', and sf') facilitates efficient space-time query and data
 summary, and supports common data representations and API design.  The package
 implements design-based estimation procedures outlined by Bechtold & Patterson
 (2005) <doi:10.2737/SRS-GTR-80>, and has been validated against estimates and
-sampling errors produced by FIA EVALIDator'.  Current development is focused on
-the implementation of spatially-enabled model-assisted and model-based
-estimators to improve population, change, and ratio estimates.")
+sampling errors produced by FIA EVALIDator'.")
     (license license:gpl3)))
 
 (define-public r-rfempimp
@@ -54093,6 +54091,53 @@ petabytes of data.  Methods are provided that enable working with Yandex
 Clickhouse databases via DBI methods and using dplyr'/'dbplyr idioms.")
     (license license:gpl2)))
 
+(define-public r-rclade
+  (package
+    (name "r-rclade")
+    (version "1.1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Rclade" version))
+       (sha256
+        (base32 "12a8y9vsnp3sf977yksfq8z95rpiq870jvavsi16hayqvrbabgnl"))))
+    (properties `((upstream-name . "Rclade")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridislite
+                             r-tidytree
+                             r-stringr
+                             r-rlang
+                             r-ggtree
+                             r-ggplot2
+                             r-deeptime
+                             r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/zengzichao/Rclade")
+    (synopsis
+     "Automated Deep-Time Phylogenetic Tree Collapsing and Visualization")
+    (description
+     "This package provides a single-function pipeline for automated collapsing and
+visualization of large phylogenetic trees with geological timescales.
+Automatically parses taxonomic labels from multiple formats (GTDB, Silva, NCBI,
+embedded, custom), identifies Most Recent Common Ancestors (MRCAs), assigns
+color-blind-safe palettes, executes batch collapsing with automatic
+nesting-aware ordering, integrates deeptime geologic time scales with adaptive
+time breaks and unit switching, and manages smart legend layout.  Supports
+special ancestral node identifiers (LUCA, LACA, LBCA) for highlighting key nodes
+in the tree of life.  Provides external taxonomy file support for trees with
+incomplete or missing taxonomic labels.  Features real-time logging with
+timestamps, step tracking, and multiple log levels.  Includes comprehensive
+input validation for tree and sequence file formats.  Reduces a 60-line manual
+workflow to a single function call while preserving full compatibility with the
+ggtree'/'deeptime ecosystem.  The visualization pipeline builds on ggtree Yu et
+al. (2017) <doi:10.1111/2041-210X.12628>, deeptime Gearty (2025)
+<doi:10.1080/20964471.2025.2537516>, and ape Paradis and Schliep (2019)
+<doi:10.1093/bioinformatics/bty633>.")
+    (license license:expat)))
+
 (define-public r-rclabels
   (package
     (name "r-rclabels")
@@ -58948,13 +58993,13 @@ shiny application.")
 (define-public r-ras
   (package
     (name "r-ras")
-    (version "1.0.3")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RAS" version))
        (sha256
-        (base32 "1mr3gcrvn7r884gbhr9lfwmcbqa248azjjv8cqwhqzgq5p20zqlx"))))
+        (base32 "028bpg5y6dz02785xbz3q9r6d5b99pr7wq1lvxnnjqdhimgh6h96"))))
     (properties `((upstream-name . "RAS")))
     (build-system r-build-system)
     (arguments
@@ -58968,9 +59013,13 @@ shiny application.")
 genome-wide association studies (GWAS).  For each single nucleotide polymorphism
 (SNP), RAS quantifies the strength of association within its surrounding genomic
 region, arranges these regional scores along the chromosome into a signal
-profile, and applies changepoint detection to locate association regions,
-improving statistical power while controlling the false positive rate.  The
-method is described in Jiang and Zhang (2025) <doi:10.1073/pnas.2419721122>.")
+profile, and locates association regions on that profile with one of two
+detectors: the original changepoint detector, or a box-scan region detector that
+also delimits broad plateau-shaped regions.  Genotypes can be streamed from a
+chunked on-disk format through compiled code so that peak memory no longer grows
+with chromosome size, and the regional weights can be taken from an independent
+external GWAS (harmonised summary statistics) instead of a within-sample split.
+The method is described in Jiang and Zhang (2025) <doi:10.1073/pnas.2419721122>.")
     (license license:expat)))
 
 (define-public r-rartrials

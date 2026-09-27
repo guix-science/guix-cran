@@ -899,6 +899,38 @@ methods in detecting the most interesting signal patterns in pharmacogenetics
 Judong Shen (2022) <doi:10.13140/RG.2.2.28323.53280>.")
     (license license:gpl2)))
 
+(define-public r-cwad
+  (package
+    (name "r-cwad")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cwad" version))
+       (sha256
+        (base32 "1qs5l57lh42blr2jcvbw9sp4y5h78ssavrakxzwnc49llgjbbxk9"))))
+    (properties `((upstream-name . "cwad")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/bkpraveenars-del/cwad")
+    (synopsis
+     "Connectivity-Weighted Allocation and Comparison of Field-Plot Designs")
+    (description
+     "This package provides a reproducible mixed-model toolkit for plant-breeding
+trial design.  It evaluates any replication allocation under a known genetic
+relationship (kinship) matrix using one common linear-mixed-model engine on
+genotype means.  Crucially, allocation and analysis model are crossed rather
+than confounded: every allocation can be scored both with and without kinship,
+so the precision gain attributable to a design can be separated from the gain
+attributable to the kinship-based analysis adopted alongside it.  It computes
+A-optimal, connectivity-aware allocations via rank-1 Sherman-Morrison updates,
+and provides Monte-Carlo stress tests for outlier shrinkage and for an
+incorrectly specified kinship matrix, each with a matched control arm.")
+    (license license:gpl3)))
+
 (define-public r-cvtools
   (package
     (name "r-cvtools")

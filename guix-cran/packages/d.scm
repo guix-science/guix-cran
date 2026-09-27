@@ -6623,6 +6623,38 @@ spatio-temporal data, such as vehicle trajectories.  You can explore the
 spatial, temporal, and multivariate aspects of the data simultaneously.")
     (license license:expat)))
 
+(define-public r-drisdiagnostics
+  (package
+    (name "r-drisdiagnostics")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "drisdiagnostics" version))
+       (sha256
+        (base32 "1vmh2a5bj0aqvlmcdw4890cr8lzk0lxl65m99hb3xfwbq71k2ymk"))))
+    (properties `((upstream-name . "drisdiagnostics")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-ggplot2))
+    (home-page "https://cran.r-project.org/package=drisdiagnostics")
+    (synopsis
+     "Diagnostic Systems for Plant Nutrient Analysis (DRIS, MDRIS, PASS)")
+    (description
+     "This package provides implementations of the Diagnosis and Recommendation
+Integrated System (DRIS), the Modified DRIS (MDRIS), and the Plant Analysis with
+Standardized Scores (PASS) approaches for nutrient diagnosis in crops.  These
+methods allow quantitative evaluation of nutrient imbalances using ratio-based
+indices and standardized scores, supporting improved fertilizer use efficiency
+and crop management decisions.  The DRIS method is described in Walworth, J.L.
+and Sumner, M.E. (1987) <doi:10.1007/978-1-4612-4682-4_4>.  The MDRIS approach
+is detailed in Beverly, R.B. (1987) <doi:10.1080/01904168709363672>.  The PASS
+method combining DRIS and sufficiency ranges is presented in Baldock, J.O. and
+Schulte, E.E. (1996) <doi:10.2134/agronj1996.00021962008800030015x>.")
+    (license license:gpl3)))
+
 (define-public r-drip
   (package
     (name "r-drip")
@@ -13163,6 +13195,32 @@ duration of events e.g. sample collection dates or periods of hospital stays.
 Matching records are assigned a unique group ID. Index and duplicate records are
 removed or further analyses as required.")
     (license license:gpl3)))
+
+(define-public r-diy-sem-plot
+  (package
+    (name "r-diy-sem-plot")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "diy.sem.plot" version))
+       (sha256
+        (base32 "0xkd9d84g6i5ysp8ma1c4xmpyi28yy5fvnkx9nlc91fs3vvak5fl"))))
+    (properties `((upstream-name . "diy.sem.plot")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-patchwork r-lavaan r-ggtext r-ggplot2 r-ggforce))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/snagy86/diy.sem.plot")
+    (synopsis "Manually Plot Path Diagrams for Structural Equation Models")
+    (description
+     "Manually plot fully customisable path diagrams for structural equation models
+(SEM).  Map out node positions using simple coordinates and specify where on the
+perimeter of each node paths begin and end.  Extensive fine-tuning options allow
+the creation of a path diagram exactly as envisioned, entirely within R.")
+    (license license:expat)))
 
 (define-public r-dixon
   (package

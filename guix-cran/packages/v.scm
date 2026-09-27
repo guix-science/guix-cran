@@ -3242,22 +3242,26 @@ also many practical uses under the XAI paradigm.")
 (define-public r-visualizesimon2stage
   (package
     (name "r-visualizesimon2stage")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VisualizeSimon2Stage" version))
        (sha256
-        (base32 "10bls9xibb6iv3cghizxi1clfjclvikmsrfjvamnaw3pjv93h2wb"))))
+        (base32 "01pc2n9p6hjp52lvird3p13zqqr1bbx2c1j6agz5pr8s23c6vgnl"))))
     (properties `((upstream-name . "VisualizeSimon2Stage")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-scales r-officer r-ggplot2 r-geomtextpath
+    (propagated-inputs (list r-scales
+                             r-officer
+                             r-ggrepel
+                             r-ggplot2
+                             r-geomtextpath
                              r-flextable))
     (native-inputs (list r-quarto))
-    (home-page "https://cran.r-project.org/package=VisualizeSimon2Stage")
+    (home-page "https://github.com/tingtingzhan/VisualizeSimon2Stage")
     (synopsis "Visualize Simon's Two-Stage Design")
     (description
      "To visualize the probabilities of early termination, fail and success of Simon's

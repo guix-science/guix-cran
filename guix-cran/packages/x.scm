@@ -1099,6 +1099,35 @@ graphics for data exploration and model diagnostics.")
 CDISC compliance.")
     (license license:expat)))
 
+(define-public r-xplus
+  (package
+    (name "r-xplus")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "xplus" version))
+       (sha256
+        (base32 "03jy082nl8pqm35xzhmcipgldnf6yxg3nkyqgcjksfqqkdg2nv5v"))))
+    (properties `((upstream-name . "xplus")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-matrix r-glmnet))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/alrobles/xplus")
+    (synopsis
+     "Positive and Unlabeled Learning from Unbalanced Cases and Sparse Structures")
+    (description
+     "This package provides PLUS-derived extensions for positive and unlabeled (PU)
+learning from unbalanced cases and sparse structures, based on Zhou et al.
+(2022) <doi:10.1371/journal.pcbi.1009956>.  Iteratively relabels unlabeled
+observations via penalised logistic regression and pseudo-label updates, then
+refits a final sparse model.  Includes weighted bootstrap sampling, convergence
+diagnostics, prediction, coefficient extraction, and assessment utilities.")
+    (license license:gpl3+)))
+
 (define-public r-xplortext
   (package
     (name "r-xplortext")

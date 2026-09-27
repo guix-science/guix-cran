@@ -3426,6 +3426,41 @@ and more data sets are at <https://github.com/profyliu/bsnsing/>.")
     (description "Bayes screening and model discrimination follow-up designs.")
     (license license:gpl3+)))
 
+(define-public r-bslibdash
+  (package
+    (name "r-bslibdash")
+    (version "0.7.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bslibdash" version))
+       (sha256
+        (base32 "17yxdn65w12f55b10gghmfln8gzd1jfpmbl71qx0z0jv5vg7y6l4"))))
+    (properties `((upstream-name . "bslibdash")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shinyjs
+                             r-shiny
+                             r-sass
+                             r-rlang
+                             r-htmltools
+                             r-glue
+                             r-bslib
+                             r-bsicons))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Novartis/bslibdash")
+    (synopsis "'Bootstrap' 5 Dashboard Framework for 'shiny' Apps")
+    (description
+     "This package provides a dashboard layer for shiny applications built on bslib
+and Bootstrap 5.  Includes a dashboard page shell, sidebar navigation, cards,
+value boxes, header drop-down menus and feedback components that inherit the
+active bslib theme and follow Bootstrap design patterns.  Function names mirror
+those of the shinydashboard package wherever the underlying concepts are shared,
+allowing existing applications to migrate with minimal changes.")
+    (license license:expat)))
+
 (define-public r-bsl
   (package
     (name "r-bsl")
@@ -10143,13 +10178,13 @@ statistics.")
 (define-public r-boiwsa
   (package
     (name "r-boiwsa")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "boiwsa" version))
        (sha256
-        (base32 "0qzxbxglxpkjvpay9rc2ckpgfnsx74szgxnxkr67cwx3h76s1lr8"))))
+        (base32 "15zcbxq6irnr40kns94nwjhc54ilkkqyg1jh86z9jn15dddvi3rc"))))
     (properties `((upstream-name . "boiwsa")))
     (build-system r-build-system)
     (arguments
@@ -10157,6 +10192,7 @@ statistics.")
       #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-rlang
+                             r-patchwork
                              r-lubridate
                              r-hmisc
                              r-gridextra
@@ -17744,13 +17780,13 @@ documents the calculations in detail: <https://www.dbfz.de/en/BMP>.")
 (define-public r-biofetchr
   (package
     (name "r-biofetchr")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biofetchR" version))
        (sha256
-        (base32 "10s7zhjpxyhs6ii6xrpipgkr73i1g3iqr631n0p93xp79azdmiyp"))))
+        (base32 "12xchiyv98ixcxbm5xq41g45z2i5h91ybrh2kdi0mb81qpjavb88"))))
     (properties `((upstream-name . "biofetchR")))
     (build-system r-build-system)
     (arguments
@@ -17789,7 +17825,7 @@ user-supplied marine overlays.  The package also supports native-range and
 invasive-status evidence workflows using the World Register of Marine Species
 (@code{WoRMS}) <https://www.marinespecies.org/>, evidence derived from
 Standardising and Integrating Alien Species (S@code{InAS})
-<https://zenodo.org/records/18220953>, and Global Register of Introduced and
+<https://zenodo.org/records/21933976>, and Global Register of Introduced and
 Invasive Species (GRIIS) <https://griis.org/> style species-country records.
 These tools are intended for biodiversity, macroecological and invasion-biology
 analyses where occurrence records need to be processed consistently,
@@ -22576,6 +22612,43 @@ Plan Based on New Compounded Three-Parameter Weibull Model\".  Axioms, 11(9):
 438. <doi:10.3390/axioms11090438>.")
     (license license:gpl2+)))
 
+(define-public r-bgfanalyzer
+  (package
+    (name "r-bgfanalyzer")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bgfanalyzer" version))
+       (sha256
+        (base32 "06bv2n0wxh62hmm745vj8ap612ryaxkydwlc80gfwlx31nk8pmsk"))))
+    (properties `((upstream-name . "bgfanalyzer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo r-rlang r-plotly r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=bgfanalyzer")
+    (synopsis "Analyze Microbial Biogas Fermentation Data")
+    (description
+     "This package provides a new S3 class object and relevant methods to analyze
+biogas fermentation data.  It includes three workflows.  One is specialized to a
+commercially available lab-scale fermentation system (see e.g. Nwaigwe (2018)
+<doi:10.1115/ES2018-7553>).  The second provides more flexibility and allows to
+import data from plain text files.  The last workflow offers the most
+flexibility as it doesn't expect external input files but relays on interactive
+user input.  Although the focus is set on biogas fermentations, concepts and
+workflows may be also applicable to other fermentations even if not a gaseous
+product is measured.  Furthermore, it provides functions that bridge to
+established plot engines (e.g. ggplot2 or plotly') for data visualisation.
+bgfanalyzer catches up an idea of Hafner et al. (2018)
+<doi:10.1016/j.softx.2018.06.005> of using R to standardize research within the
+biogas field.  For more details on standardization efforts within the biogas
+research field see Hollinger et al. (2016) <doi:10.2166/wst.2016.336> and
+Hollinger et al. (2021) <doi:10.2166/wst.2020.569>.")
+    (license license:expat)))
+
 (define-public r-bgeva
   (package
     (name "r-bgeva")
@@ -22942,13 +23015,13 @@ methodological framework is detailed in Guo G. (2023)
 (define-public r-bfi
   (package
     (name "r-bfi")
-    (version "3.1.0")
+    (version "3.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BFI" version))
        (sha256
-        (base32 "0z7vwz9lv37lq69qisx9w8vbrarzapdw09aywg5d74pss51h1h9b"))))
+        (base32 "03s9bjjk8lj35nn5l4lykkwy6rx398wrbsjmq8dayknmmrw6fh0r"))))
     (properties `((upstream-name . "BFI")))
     (build-system r-build-system)
     (arguments
@@ -22963,7 +23036,7 @@ obtained from local data sets in the separate centers.  In this version of the
 package, the BFI methodology is programmed for linear, logistic and survival
 regression models.  For GLMs, see Jonker, Pazira and Coolen (2024)
 <doi:10.1002/sim.10072>; for survival models, see Pazira, Massa, Weijers, Coolen
-and Jonker (2025) <doi:10.48550/@code{arXiv.2404.17464>}; and for heterogeneous
+and Jonker (2026) <doi:10.1080/02664763.2025.2511932>; and for heterogeneous
 populations, see Jonker, Pazira and Coolen (2025) <doi:10.1017/rsm.2025.6>.")
     (license license:expat)))
 
