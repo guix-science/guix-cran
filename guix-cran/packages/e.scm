@@ -9293,6 +9293,32 @@ hypothesis test functions.  Data sets are included for all examples from Cumming
 & Calin-Jageman (2024) <ISBN:9780367531508>.")
     (license license:gpl3)))
 
+(define-public r-escaper
+  (package
+    (name "r-escaper")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "escapeR" version))
+       (sha256
+        (base32 "0ir0n3bgggcjw05p3l6h8zw4ivd3cpsaa05y5z492c7qlkvachf5"))))
+    (properties `((upstream-name . "escapeR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/TiagoAMarques/escapeR")
+    (synopsis "Escape Room Adventures for Learning R in Ecological Statistics")
+    (description
+     "This package provides a lightweight classroom game where students learn R by
+solving ecological-statistics puzzles inside a virtual escape room.  The package
+remembers each player's progress, offers hints, and uses tasks inspired by
+introductory R teaching material, numerical ecology, ecological modelling, and
+distance sampling.")
+    (license license:gpl3+)))
+
 (define-public r-escalation
   (package
     (name "r-escalation")
@@ -20626,19 +20652,19 @@ France, Spain, Portugal and the United Kingdom.\" <doi:10.1111/rsp3.12379>.")
 (define-public r-eidosapi
   (package
     (name "r-eidosapi")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eidosapi" version))
        (sha256
-        (base32 "0jj0ss49y4ykjn2xnrzqwmshwsyw2xspmg3ddaxs3p247my2yf3h"))))
+        (base32 "1hi3glnjm1pi4z73wh1rhns0flklxzhzy2qbn49x5623h0qhdf9k"))))
     (properties `((upstream-name . "eidosapi")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-readxl r-jsonlite r-httr r-fuzzyjoin r-curl))
+    (propagated-inputs (list r-jsonlite r-httr r-fuzzyjoin))
     (home-page "https://github.com/hmirceb/eidosapi")
     (synopsis
      "Connect to the Taxonomic Services of the Spanish Inventory of Natural Patrimony and Biodiversity")

@@ -6103,42 +6103,6 @@ that build upon the foundational survey package of Lumley (2004)
 describes the three core packages in this collection.")
     (license license:gpl3+)))
 
-(define-public r-surveytidy
-  (package
-    (name "r-surveytidy")
-    (version "0.6.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "surveytidy" version))
-       (sha256
-        (base32 "100kyi835jmdd3cx5mhh3kblbadz9jvmz5f7i3cl8khs3nxwdbhc"))))
-    (properties `((upstream-name . "surveytidy")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-withr
-                             r-vctrs
-                             r-tidyselect
-                             r-tidyr
-                             r-surveycore
-                             r-s7
-                             r-rlang
-                             r-haven
-                             r-dplyr
-                             r-cli))
-    (home-page "https://jdenn0514.github.io/surveytidy/")
-    (synopsis "Tidy 'dplyr'/'tidyr' Verbs for Survey Design Objects")
-    (description
-     "This package provides dplyr and tidyr verbs, survey-aware recoding helpers, and
-row-wise statistics for survey design objects created with the surveycore
-package. @code{filter()} uses domain estimation to preserve variance estimation
-validity; other verbs preserve design variables and metadata automatically.
-Also supports survey_collection objects for applying the same operation across a
-list of surveys.")
-    (license license:gpl3+)))
-
 (define-public r-surveytable
   (package
     (name "r-surveytable")
@@ -6599,47 +6563,6 @@ paper on \"K-Fold Cross-Validation for Complex Sample Surveys\" by Wieczorek,
 Guerin, and @code{McMahon} (2022) <doi:10.1002/sta4.454> explains why differing
 how we take folds based on survey design is useful.")
     (license (list license:gpl2 license:gpl3))))
-
-(define-public r-surveycore
-  (package
-    (name "r-surveycore")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "surveycore" version))
-       (sha256
-        (base32 "04la0r44bm36xkhwiq23q8k9g0g2wq7r7ha7w0pibqxlsdzhx12x"))))
-    (properties `((upstream-name . "surveycore")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyselect
-                             r-tibble
-                             r-s7
-                             r-rlang
-                             r-pbivnorm
-                             r-marginaleffects
-                             r-dplyr
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/JDenn0514/surveycore")
-    (synopsis "Core Survey Analysis Infrastructure")
-    (description
-     "This package provides a modern, S7'-based foundation for survey analysis
-spanning both probability and non-probability samples.  Probability sample
-designs include Taylor series linearization, replicate weights (BRR, Fay,
-jackknife, bootstrap), and two-phase estimation, following Lumley (2004)
-<doi:10.18637/jss.v009.i08>.  Non-probability sample designs support bootstrap
-and jackknife variance estimation for opt-in panels and convenience samples.
-Provides a unified estimator interface for means, frequencies, totals,
-quantiles, ratios, correlations, regression, and t-tests, with weighted
-polychoric and polyserial correlation following Mannan (2025)
-<doi:10.2139/ssrn.6580480>.  A metadata system preserves haven'-style variable
-labels, value labels, and question-preface attributes through all operations.
-Uses a tidyselect interface throughout.")
-    (license license:gpl3+)))
 
 (define-public r-surveycc
   (package
@@ -17020,13 +16943,13 @@ Search Discovery team to help analyze keyword ranking data.")
 (define-public r-statsapps
   (package
     (name "r-statsapps")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statsapps" version))
        (sha256
-        (base32 "1lbjqik4pzynjab0hkgrb10i3s6pfsspny9hw7y430pscpdgzn9n"))))
+        (base32 "1q934hv4vk7w050aakm00dp4d5pxm77ir9cynimsipj0swl4221v"))))
     (properties `((upstream-name . "statsapps")))
     (build-system r-build-system)
     (arguments
@@ -46440,6 +46363,36 @@ Learning methods that have embedded feature reduction in order to shrink down
 the feature space into a small and yet robust set.")
     (license license:gpl3)))
 
+(define-public r-sivmethod
+  (package
+    (name "r-sivmethod")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SIVMethod" version))
+       (sha256
+        (base32 "1yf03qjf5pyjmsmqrsjq24zfhbkv1cr6vals357h0dmd771h42x9"))))
+    (properties `((upstream-name . "SIVMethod")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-glmnet))
+    (home-page "https://github.com/Greatknee/SIVMethod")
+    (synopsis
+     "Identification, Estimation and Inference Based on Structural Error Projection")
+    (description
+     "Estimation and inference for regression models with endogenous regressors using
+a semiparametric projection approach.  Instrumental variables are constructed
+internally from observed regressors by projecting out a space of basis functions
+used to represent the conditional mean of the structural error.  A least
+absolute shrinkage and selection operator (LASSO) procedure selects basis
+functions for the projection.  Tools are provided for simulation studies and
+empirical applications.  The methods are based on Dong, Gao, Linton and Peng
+(2026) <doi:10.48550/@code{arXiv.2607.05699>}.")
+    (license license:expat)))
+
 (define-public r-sits
   (package
     (name "r-sits")
@@ -49020,6 +48973,32 @@ response model parameterizations.  Supports multivariate normal and correlated
 gamma latent traits, reproducible replications, parameter conversion, and
 structured storage of generated datasets.  The graded response model follows
 Samejima (1969).")
+    (license license:expat)))
+
+(define-public r-simpreg
+  (package
+    (name "r-simpreg")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "simPreg" version))
+       (sha256
+        (base32 "1mn8jn8g1z9cnc2v8i9q3cpvhdh0lgb3h1g67drsy361lyywl2gb"))))
+    (properties `((upstream-name . "simPreg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=simPreg")
+    (synopsis "Simulate Pregnancy Data with Time-Varying Exposure")
+    (description
+     "Simulates pregnancy data in a time-to-event framework, allowing a time-varying
+exposure.  Default parameters for gestational length and exposure timing are
+provided but may also be user-specified.  Users can further specify hazard
+ratios for spontaneous and non-spontaneous live birth and late
+miscarriage/stillbirth following exposure.")
     (license license:expat)))
 
 (define-public r-simpr-interaction
@@ -55565,43 +55544,6 @@ the basic functions of sbm'.")
     (description
      "Shiny wrappers for the RGL package.  This package exposes RGL's ability to
 export @code{WebGL} visualization in a shiny-friendly format.")
-    (license license:expat)))
-
-(define-public r-shinyreprex
-  (package
-    (name "r-shinyreprex")
-    (version "0.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "shinyreprex" version))
-       (sha256
-        (base32 "0w6d0qnixsi3gq1c0c2sq4nmy9p75p7pnx19qhkspiril40q2j8g"))))
-    (properties `((upstream-name . "shinyreprex")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-styler
-                             r-s7
-                             r-rlang
-                             r-renv
-                             r-purrr
-                             r-constructive
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/AscentSoftware/shinyreprex")
-    (synopsis "Reproducible Code for 'Shiny' Objects")
-    (description
-     "This package provides functionality to extract reactive expressions from a shiny
-application and convert them into stand-alone R scripts.  This enables users to
-reproduce tables and visualisations outside the interactive UI, facilitating
-integration into static reports or automated workflows without requiring access
-to the original application source code.")
     (license license:expat)))
 
 (define-public r-shinyreports
@@ -64198,13 +64140,13 @@ control design and for a single-stage design.")
 (define-public r-seqcomp
   (package
     (name "r-seqcomp")
-    (version "0.1.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "seqcomp" version))
        (sha256
-        (base32 "06s739kf7hgsnbvs0mx5kxqqfdvj8x9x7fb9p1bg651rv9pwinyi"))))
+        (base32 "1n4b7xx6i8cpmyrd2p11p82kw6lzi7gk3zq0w3vkwsaz4mh4j1zf"))))
     (properties `((upstream-name . "seqcomp")))
     (build-system r-build-system)
     (arguments
@@ -64215,10 +64157,17 @@ control design and for a single-stage design.")
     (home-page "https://github.com/alasgarliakbar/seqcomp")
     (synopsis "Sequential Comparison of Probabilistic Forecasts")
     (description
-     "This package implements tools for sequential comparison of probabilistic
-forecasts, including binary and categorical scoring rules, anytime-valid
-confidence sequences, e-processes, Winkler-score comparisons, lag handling, and
-predictable-bound e-processes.")
+     "This package implements tools for the anytime-valid sequential comparison of two
+or more probabilistic forecasters.  Provides binary, categorical, and quantile
+scoring rules, together with finite-sample confidence sequences and e-processes
+following Choe and Ramdas (2024) <doi:10.1287/opre.2021.0792>.  Extends to
+multi-model evaluation via Sequential Model Confidence Sets, following Arnold,
+Gavrilopoulos, Schulz, and Ziegel (2026) <doi:10.1093/jrsssb/qkag066>, using
+closure principles, joint confidence sequences, and accelerated closed-testing.
+Adaptive betting fractions for the strong null (@code{aGRAPA} and ONS-m) are
+adapted from Waudby-Smith and Ramdas (2024) <doi:10.1093/jrsssb/qkad009>.  Also
+includes Winkler-score comparisons, lag handling, and predictable-bound betting
+e-processes.")
     (license license:expat)))
 
 (define-public r-seqalignr
@@ -66409,19 +66358,19 @@ graphical representation of structural equation models.")
 (define-public r-semicontmanova
   (package
     (name "r-semicontmanova")
-    (version "0.2")
+    (version "0.2-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "semicontMANOVA" version))
        (sha256
-        (base32 "1xak8jmskwmg95jhkx8564qdfqbzqhdqv0jxlfiyxi64axrv8qcj"))))
+        (base32 "1snn17kk3fh9l25d0v32qnb6y4z14nycgmfr7hxbck10j521hcmr"))))
     (properties `((upstream-name . "semicontMANOVA")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-mvtnorm r-matrixcalc))
+    (propagated-inputs (list r-mvtnorm))
     (home-page "https://cran.r-project.org/package=semicontMANOVA")
     (synopsis
      "Multivariate ANalysis of VAriance with Ridge Regularization for Semicontinuous High-Dimensional Data")
@@ -73418,13 +73367,13 @@ Robins (1997) <doi:10.2307/2670119>.")
 (define-public r-scoringutils
   (package
     (name "r-scoringutils")
-    (version "2.2.0")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scoringutils" version))
        (sha256
-        (base32 "1iaqcc3i2mvxj6x6514ppidgklbnvbr0xxk2rv2mpgsijlmwdr0p"))))
+        (base32 "0n7h7wkdx0389q6msiwkxda4qs6lk3whsln1lmw5k33wngc0s15s"))))
     (properties `((upstream-name . "scoringutils")))
     (build-system r-build-system)
     (arguments
@@ -73432,6 +73381,7 @@ Robins (1997) <doi:10.2307/2670119>.")
       #:tests? #f))
     (propagated-inputs (list r-scoringrules
                              r-purrr
+                             r-lifecycle
                              r-ggplot2
                              r-data-table
                              r-cli

@@ -633,32 +633,6 @@ Analysis, @code{StructuralEquations} and Causal Inference (3rd edition).
 Cambridge University Press.")
     (license license:expat)))
 
-(define-public r-pwrss
-  (package
-    (name "r-pwrss")
-    (version "1.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "pwrss" version))
-       (sha256
-        (base32 "1xaqm8lmhj381v8768qfdr07awsb6yl04ph3vhnq58sgiyjgi8zn"))))
-    (properties `((upstream-name . "pwrss")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list r-knitr gfortran))
-    (home-page "https://metinbulus.github.io/pwrss/")
-    (synopsis
-     "Statistical Power, Sample Size, and Detectable Effect Calculations")
-    (description
-     "Flexible and comprehensive functions for statistical power, minimum required
-sample size, and minimum detectable effect calculations across a wide range of
-commonly used hypothesis tests in psychological, biomedical, and social
-sciences.")
-    (license license:gpl3+)))
-
 (define-public r-pwrrasch
   (package
     (name "r-pwrrasch")
@@ -16152,13 +16126,13 @@ have been extracted from documentation of the PPI found at
 (define-public r-pphotspot
   (package
     (name "r-pphotspot")
-    (version "0.1-2")
+    (version "0.1-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pphotspot" version))
        (sha256
-        (base32 "1asavdqx6jgcdgj9ahb45qssbzai5rpaxkh0jbsgbwxzcscsbr6v"))))
+        (base32 "19dvdy6h4igdrv1hcn7vv4jggi9ki42rrk5b1vnlxbz2gfghirgw"))))
     (properties `((upstream-name . "pphotspot")))
     (build-system r-build-system)
     (arguments
@@ -17783,42 +17757,6 @@ benchmarks.  The results can optionally be exported to an Excel workbook and
 visualized using a bar chart.")
     (license license:gpl3)))
 
-(define-public r-pould
-  (package
-    (name "r-pould")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "pould" version))
-       (sha256
-        (base32 "00afsj9ma58pxka65hyhaqsp5zayk4mgi90daqzq5nx6lchkmj4m"))))
-    (properties `((upstream-name . "pould")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-reshape2
-                             r-haplo-stats
-                             r-ggplot2
-                             r-gap
-                             r-bigdawg))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=pould")
-    (synopsis "Phased or Unphased Linkage Disequilibrium")
-    (description
-     "Computes the D', Wn, and conditional asymmetric linkage disequilibrium (ALD)
-measures for pairs of genetic loci.  Performs these linkage disequilibrium (LD)
-calculations on phased genotype data recorded using Genotype List (GL) String or
-columnar formats.  Alternatively, generates expectation-maximization (EM)
-estimated haplotypes from phased data, or performs LD calculations on EM
-estimated haplotypes.  Performs sign tests comparing LD values for phased and
-unphased datasets, and generates heat-maps for each LD measure.  Described by
-Osoegawa et al. (2019a) <doi:10.1016/j.humimm.2019.01.010>, and Osoegawa et.
-al. (2019b) <doi:10.1016/j.humimm.2019.05.018>.")
-    (license license:gpl3+)))
-
 (define-public r-pottsutils
   (package
     (name "r-pottsutils")
@@ -18200,52 +18138,6 @@ and can accommodate both continuous and binary outcomes.")
      "This package provides adds postfix and infix logic operators for if, then,
 unless, and otherwise.")
     (license license:gpl2)))
-
-(define-public r-postlink
-  (package
-    (name "r-postlink")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "postlink" version))
-       (sha256
-        (base32 "19q8s9iv07ay23yaqaz7k3z1h0qi8l0gaidkbff50hg9xg854hxr"))))
-    (properties `((upstream-name . "postlink")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survival
-                             r-stanheaders
-                             r-rstantools
-                             r-rstan
-                             r-rcppparallel
-                             r-rcppeigen
-                             r-rcpp
-                             r-nleqslv
-                             r-label-switching
-                             r-bh))
-    (home-page "https://postlink-group.github.io/postlink/")
-    (synopsis "Post-Linkage Data Analysis")
-    (description
-     "This package provides a suite of statistical tools for post-linkage data
-analysis (PLDA), designed to account for record linkage errors in downstream
-modeling.  The package implements a familiar, formula-based regression interface
-that adjusts for linkage uncertainty, accommodating workflows where direct
-access to unlinked primary files is restricted.  It consolidates diverse
-adjustment methodologies, all of which support generalized linear models
-(linear, logistic, Poisson, and Gamma).  These methodologies include weighting
-approaches (Chambers (2009) <https://hdl.handle.net/10779/uow.27788247>;
-Chambers et al. (2023) <doi:10.1002/wics.1596>), mixture modeling (Slawski et
-al. (2025) <doi:10.1093/jrsssa/qnae083>), and Bayesian mixture modeling (Gutman
-et al. (2016) <doi:10.1002/sim.6586>).  For time-to-event data, both the
-weighting (Vo et al. (2024) <doi:10.1002/sim.9960>) and mixture modeling
-approaches accommodate Cox proportional hazards models, while the Bayesian
-approaches extend to parametric survival analysis.  Additionally, the package
-leverages mixture modeling for contingency table analyses and Bayesian methods
-to enable the multiple imputation of latent match status.")
-    (license license:expat)))
 
 (define-public r-postlightmercury
   (package
@@ -21523,13 +21415,13 @@ based on bi-allelic marker dosage data.  Submitted to BMC Bioinformatics (2021).
 (define-public r-polyglotsql
   (package
     (name "r-polyglotsql")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "polyglotSQL" version))
        (sha256
-        (base32 "1k492v35n08qwx2m3hpcz5p1b8i9s8sjzhf2ff5450vpz5jv68nb"))))
+        (base32 "0g1hwgy37xzvv4k6cbdif875jsdccs2pbiaky3pi7q4w44x2nsdp"))))
     (properties `((upstream-name . "polyglotSQL")))
     (build-system r-build-system)
     (arguments
@@ -23494,32 +23386,6 @@ continual reassessment method (PO-CRM) of Wages, Conaway and O'Quigley (2011)
 agents.  Provides a function for generating a set of initial guesses (skeleton)
 for the toxicity probabilities at each combination that correspond to the set of
 possible orderings of the toxicity probabilities specified by the user.")
-    (license license:gpl2)))
-
-(define-public r-pocre
-  (package
-    (name "r-pocre")
-    (version "0.6.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "POCRE" version))
-       (sha256
-        (base32 "0kni15dr7qhldn68w51mzg6pyk95dx717qy0f9230hpbg97791hz"))))
-    (properties `((upstream-name . "POCRE")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-pracma r-ggplot2 r-ebayesthresh))
-    (home-page "https://cran.r-project.org/package=POCRE")
-    (synopsis "Penalized Orthogonal-Components Regression")
-    (description
-     "Penalized orthogonal-components regression (POCRE) is a supervised dimension
-reduction method for high-dimensional data.  It sequentially constructs
-orthogonal components (with selected features) which are maximally correlated to
-the response residuals.  POCRE can also construct common components for multiple
-responses and thus build up latent-variable models.")
     (license license:gpl2)))
 
 (define-public r-pnt
@@ -27298,13 +27164,13 @@ genotypes for a genetic marker.")
 (define-public r-pldamixture
   (package
     (name "r-pldamixture")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pldamixture" version))
        (sha256
-        (base32 "0gqk17n8vrbfxzyqfmxyw53dh7dakcgyhgg27k5mcby6mkc42yhb"))))
+        (base32 "0kz3i25i9swbn3sy6iiakc9ab42cwp6nm7f9c9hhhsz7bv8jwdg5"))))
     (properties `((upstream-name . "pldamixture")))
     (build-system r-build-system)
     (arguments
@@ -27318,8 +27184,8 @@ genotypes for a genetic marker.")
 containing mismatch errors.  Only the linked data file may be accessible and
 information about the record linkage process may be limited or unavailable.
 Implements the General Framework for Regression with Mismatched Data developed
-by Slawski et al. (2023) <doi:10.48550/@code{arXiv.2306.00909>}.  The framework
-uses a mixture model for pairs of linked records whose two components reflect
+by Slawski et al. (2025) <doi:10.1093/jrsssa/qnae083>.  The framework uses a
+mixture model for pairs of linked records whose two components reflect
 distributions conditional on match status, i.e., correct match or mismatch.
 Inference is based on composite likelihood and the Expectation-Maximization (EM)
 algorithm.  The package currently supports Cox Proportional Hazards Regression
@@ -29192,6 +29058,48 @@ and performs all HTTP requests, downloads, builds and installations in parallel.
 on where the error originated.")
     (license license:gpl2)))
 
+(define-public r-pkgcheck
+  (package
+    (name "r-pkgcheck")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pkgcheck" version))
+       (sha256
+        (base32 "0smb6smr2sbpvfj18v5z7b7222j7lfimf911y4vw0lxr9khbjm4y"))))
+    (properties `((upstream-name . "pkgcheck")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-srr
+                             r-rvest
+                             r-rprojroot
+                             r-rmarkdown
+                             r-rappdirs
+                             r-praise
+                             r-pkgstats
+                             r-httr2
+                             r-goodpractice
+                             r-gh
+                             r-gert
+                             r-fs
+                             r-curl
+                             r-covr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://docs.ropensci.org/pkgcheck/")
+    (synopsis "Package Checks for 'rOpenSci'")
+    (description
+     "Check whether a package is ready for submission to the @code{rOpenSci} peer
+review system ('@code{rOpenSci} authors (2026) <doi:10.5281/zenodo.2553043>
+\"'@code{rOpenSci} Packages: Development, Maintenance, and Peer Review\").
+Incorporates the goodpractice package and many additional checks, including
+aspects related to maintenance of online public code repositories.")
+    (license license:gpl3)))
+
 (define-public r-pkgcache
   (package
     (name "r-pkgcache")
@@ -30094,19 +30002,19 @@ to predicted output.")
 (define-public r-pipeflow
   (package
     (name "r-pipeflow")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pipeflow" version))
        (sha256
-        (base32 "1ih39kn0i33llm0b34wn74y7fbz390cixh541ywwbbc74s274rjf"))))
+        (base32 "0dp9pkgs9wn4j7lnkm08l74jwin3k4113zv696qd649m2fm6m5k3"))))
     (properties `((upstream-name . "pipeflow")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpp r-r6 r-lgr r-jsonlite r-data-table))
+    (propagated-inputs (list r-rcpp r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://rpahl.github.io/pipeflow/")
     (synopsis "Fast Interactive Data Analysis Pipelines")

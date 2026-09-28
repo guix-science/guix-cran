@@ -10596,6 +10596,43 @@ assumptions and applies equally well to continuous and categorical predictors
 and outcomes.")
     (license license:gpl3+)))
 
+(define-public r-cphazard
+  (package
+    (name "r-cphazard")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CPHazard" version))
+       (sha256
+        (base32 "0jmdv4jpix44lpis6blfwvlnzj90w41jabz1h2hmi5i5563g59qq"))))
+    (properties `((upstream-name . "CPHazard")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival r-lamw r-envstats))
+    (home-page "https://cran.r-project.org/package=CPHazard")
+    (synopsis
+     "Hazard Change Point Models for Different Lifetime Distributions")
+    (description
+     "Estimates the parameters of models with a single change-point in the hazard rate
+for time-to-event data.  Supported models include the exponential (Gijbels &
+GÃ¼rler (2003) <doi:10.1023/B:LIDA.0000012424.71723.9d>, Matthews & Farewell
+(1982) <doi:10.2307/2530460>), Exponential-Lindley (Joshi & Rattihalli (2020)
+<doi:10.1007/978-981-15-5414-8_29>), Lindley (Joshi, Jose, & Bhati (2016)
+<doi:10.1080/03610918.2015.1096381>), log-logistic (Nadar, Upadhyay, & Joshi
+(2025) <doi:10.3390/math13091457>), and Weibull (Williams & Kim (2013)
+<doi:10.1080/03610926.2011.600505>) hazard change-point models.  Provides
+functions for generating random variates and evaluating the probability density
+function (PDF) and the cumulative distribution function (CDF) of the fitted
+change-point models.  Includes Kaplan-Meier and Nelson-Aalen diagnostic plots,
+together with goodness-of-fit measures such as the Akaike Information Criterion
+(AIC), the Bayesian Information Criterion (BIC), distance metrics such as the
+L1-norm and L2-norm, and the Kolmogorov-Smirnov (K-S) statistic for model
+evaluation.")
+    (license license:expat)))
+
 (define-public r-cpglib
   (package
     (name "r-cpglib")
@@ -19175,31 +19212,6 @@ shared on Zenodo.")
 <doi:10.1371/journal.pcbi.1009098>.  Provides easy access to contact data for
 177 countries, for use in epidemiological, demographic or social sciences
 research.")
-    (license license:expat)))
-
-(define-public r-constructive
-  (package
-    (name "r-constructive")
-    (version "1.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "constructive" version))
-       (sha256
-        (base32 "1p0m92zrny1zdnw815l5vv27y6dbrgxmgb999ggvskgh2rmhd292"))))
-    (properties `((upstream-name . "constructive")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-waldo r-rlang r-diffobj r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/cynkra/constructive")
-    (synopsis "Display Idiomatic Code to Construct Most R Objects")
-    (description
-     "Prints code that can be used to recreate R objects.  In a sense it is similar to
-@code{base::dput()} or @code{base::deparse()} but constructive strives to use
-idiomatic constructors.")
     (license license:expat)))
 
 (define-public r-construct
@@ -44554,6 +44566,33 @@ translation and image generation have been moved to other packages
 @code{deepRstudio} and @code{stableDiffusion4R}'.")
     (license license:artistic2.0)))
 
+(define-public r-chat-api
+  (package
+    (name "r-chat-api")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "chat.api" version))
+       (sha256
+        (base32 "0v01z2bxx72vv6dai9xz04c0a8riaci6hs57p0vq72084awfq85j"))))
+    (properties `((upstream-name . "chat.api")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/cornball-ai/chat.api")
+    (synopsis "Transport-Agnostic Chat Contract")
+    (description
+     "This package provides a transport-agnostic contract for chat-room connectivity:
+connect, poll, and send against one interface, with adapters for Matrix
+<https://spec.matrix.org/>, Slack <https://api.slack.com/>, Telegram
+<https://core.telegram.org/bots/api>, and Internet Relay Chat (IRC).  An
+in-memory adapter supports local testing.  Capability flags describe support for
+threads, markup dialects, encryption, and per-message identity.  Platform
+clients are supplied by optional packages; the core interface uses only base R.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-chartreview
   (package
     (name "r-chartreview")
@@ -52823,37 +52862,6 @@ treatment effects and subgroup treatment effects.  See Wang et al. (2025)
 <doi:10.1017/rsm.2025.5> for a detailed guide on using the package.")
     (license license:gpl3+)))
 
-(define-public r-causalmbsts
-  (package
-    (name "r-causalmbsts")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CausalMBSTS" version))
-       (sha256
-        (base32 "1mjw2zyddkci6vkbyz3d94l5z1aj3rc2w6lag5igbfv4q0n5qcrp"))))
-    (properties `((upstream-name . "CausalMBSTS")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mixmatrix
-                             r-matrix
-                             r-mass
-                             r-kfas
-                             r-forecast
-                             r-cholwishart))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=CausalMBSTS")
-    (synopsis "MBSTS Models for Causal Inference and Forecasting")
-    (description
-     "This package infers the causal effect of an intervention on a multivariate
-response through the use of Multivariate Bayesian Structural Time Series models
-(MBSTS) as described in Menchetti & Bojinov (2020) <@code{arXiv:2006.12269>}.
-The package also includes functions for model building and forecasting.")
-    (license license:gpl3+)))
-
 (define-public r-causalloopanalytics
   (package
     (name "r-causalloopanalytics")
@@ -58088,13 +58096,13 @@ separately under the Creative Commons Attribution 4.0 International (CC BY 4.0).
 (define-public r-campsismod
   (package
     (name "r-campsismod")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "campsismod" version))
        (sha256
-        (base32 "1c5wbr6dh357yzr1bn2bqbfihf9nyma8m444fwnc3hmri8fad8j7"))))
+        (base32 "1rca19kanhs9yzxynqz2fcvwlhzx8pp0bapr460n50k016599vcv"))))
     (properties `((upstream-name . "campsismod")))
     (build-system r-build-system)
     (arguments

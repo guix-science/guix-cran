@@ -1213,31 +1213,6 @@ supports deployment to @code{DigitalOcean} and includes validation tools to
 ensure _server.yml files are correctly formatted.")
     (license license:expat)))
 
-(define-public r-bunsen
-  (package
-    (name "r-bunsen")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bunsen" version))
-       (sha256
-        (base32 "0vhdnj2j7w1jhy8lrazdqmrp533f2kxcihyfl1k87dl33xv9y15r"))))
-    (properties `((upstream-name . "bunsen")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survival r-rcpp r-clustermq r-boot))
-    (home-page "https://openpharma.github.io/bunsen/")
-    (synopsis "Marginal Survival Estimation with Covariate Adjustment")
-    (description
-     "This package provides an efficient and robust implementation for estimating
-marginal Hazard Ratio (HR) and Restricted Mean Survival Time (RMST) with
-covariate adjustment using Daniel et al. (2021) <doi:10.1002/bimj.201900297> and
-Karrison et al. (2018) <doi:10.1177/1740774518759281>.")
-    (license license:gpl3+)))
-
 (define-public r-bundesbank
   (package
     (name "r-bundesbank")
@@ -20800,36 +20775,6 @@ PID2020-113125RB-I00/MCIN/AEI/10.13039/501100011033.  It has also been partially
 funded by the Public University of Navarra (project PJUPNA2001).")
     (license license:gpl3)))
 
-(define-public r-bigdawg
-  (package
-    (name "r-bigdawg")
-    (version "3.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "BIGDAWG" version))
-       (sha256
-        (base32 "01wq090bnjnqrd54kpi8pfjaa3f2nf2bzb3lksk8rshvvngxs34s"))))
-    (properties `((upstream-name . "BIGDAWG")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml r-haplo-stats))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/IgDAWG/BIGDAWG")
-    (synopsis "Case-Cotrol Analysis of Multi-Allelic Loci")
-    (description
-     "Data sets and functions for chi-squared Hardy-Weinberg and case-control
-association tests of highly polymorphic genetic data [e.g., human leukocyte
-antigen (HLA) data].  Performs association tests at multiple levels of
-polymorphism (haplotype, locus and HLA amino-acids) as described in Pappas DJ,
-Marin W, Hollenbach JA, Mack SJ (2016) <doi:10.1016/j.humimm.2015.12.006>.
-Combines rare variants to a common class to account for sparse cells in tables
-as described by Hollenbach JA, Mack SJ, Thomson G, Gourraud PA (2012)
-<doi:10.1007/978-1-61779-842-9_14>.")
-    (license license:gpl3+)))
-
 (define-public r-bigdatastatmeth
   (package
     (name "r-bigdatastatmeth")
@@ -21335,13 +21280,13 @@ citation(\"bidsr\") for details and attributions.")
 (define-public r-bidser
   (package
     (name "r-bidser")
-    (version "0.5.0")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bidser" version))
        (sha256
-        (base32 "008x701rxf2scs0l95xn97wkffbivk29kap710c42wrhdd4y9zkf"))))
+        (base32 "1d722qxglca2gyf0gfpnafn1pc27k56aaxsa78qlngy2j8x290vv"))))
     (properties `((upstream-name . "bidser")))
     (build-system r-build-system)
     (arguments
@@ -22333,6 +22278,35 @@ analysis.")
 Nieto-Barajas (2003), Nieto-Barajas & Walker (2007) and Nieto-Barajas & Yin
 (2008).")
     (license license:gpl2+)))
+
+(define-public r-bgns
+  (package
+    (name "r-bgns")
+    (version "0.4.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bgns" version))
+       (sha256
+        (base32 "0xippcv2jkqycm999nsjlh8lwaid3ydwpg94rpvlvirws9xy27h9"))))
+    (properties `((upstream-name . "bgns")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrix))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/metaddict/bgns")
+    (synopsis "Biweight Graph and Network Statistics")
+    (description
+     "This package provides memory-efficient biweight midcorrelation and exact
+bicor-based k-nearest-neighbor graph construction for dense and sparse numeric
+matrices.  Dense, sparse, and mixed-input paths avoid materializing full dense
+similarity matrices for tidy and k-nearest-neighbor workflows where possible.
+The implementation supports pairwise finite-overlap handling and robust
+correlation-based graph construction for biological expression matrices and
+other high-dimensional numeric data.")
+    (license license:gpl3)))
 
 (define-public r-bgmyc4
   (package
@@ -25186,13 +25160,13 @@ Ye et al (2023) <doi:10.1080/24754269.2023.2205802>.")
 (define-public r-beebdc
   (package
     (name "r-beebdc")
-    (version "1.3.4")
+    (version "1.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BeeBDC" version))
        (sha256
-        (base32 "03scdf81ngnvkm8ip5l7yr8cyfqib04k8y1vlfba0ch84p50k95n"))))
+        (base32 "0wyfbjddhsghjjvn67sc27qlm2wwvg0rmmkf32wmlng050wjlzsd"))))
     (properties `((upstream-name . "BeeBDC")))
     (build-system r-build-system)
     (arguments
@@ -30004,13 +29978,13 @@ Pawel, and Tendeiro (2025) <doi:10.31234/osf.io/pgdac_v3>.")
 (define-public r-bayespostest
   (package
     (name "r-bayespostest")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesPostEst" version))
        (sha256
-        (base32 "1la1mg6zaj6x16rfx981fazaq103gxz9bwp60hxvym5x4n6bwzf7"))))
+        (base32 "0bz4r7q500v9qapgpcw5raga3zlrpl2lj04gi7f8xcci42z8h8lr"))))
     (properties `((upstream-name . "BayesPostEst")))
     (build-system r-build-system)
     (arguments
@@ -30021,16 +29995,13 @@ Pawel, and Tendeiro (2025) <doi:10.31234/osf.io/pgdac_v3>.")
                              r-texreg
                              r-rocr
                              r-rlang
-                             r-rjags
                              r-reshape2
                              r-r2jags
-                             r-hdinterval
                              r-ggridges
                              r-ggplot2
                              r-dplyr
                              r-coda
-                             r-catools
-                             r-cardata))
+                             r-catools))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ShanaScogin/BayesPostEst")
     (synopsis

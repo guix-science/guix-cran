@@ -2358,6 +2358,48 @@ And offers utility functions that support checking the structure of GTFS
 objects.")
     (license license:expat)))
 
+(define-public r-gtfshift
+  (package
+    (name "r-gtfshift")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GTFShift" version))
+       (sha256
+        (base32 "0rki2cs6frpb4a9whrd8gw21xr5pl5vhzyzka5ibnvq5hlblgi2j"))))
+    (properties `((upstream-name . "GTFShift")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-withr
+                             r-tidytransit
+                             r-tidyselect
+                             r-tidyr
+                             r-stringr
+                             r-sf
+                             r-rlang
+                             r-purrr
+                             r-osmdata
+                             r-lubridate
+                             r-jsonlite
+                             r-httr
+                             r-gtfstools
+                             r-dplyr
+                             r-callr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/U-Shift/GTFShift")
+    (synopsis
+     "Explore and Analyse General Transit Feed Specification (GTFS) Files with a Focus on Urban Mobility")
+    (description
+     "This package provides a bundle of methods to harmonize GTFS and OSM data,
+enabling the integration and exploration of different layers of transit data,
+starting with the planned operations (GTFS), but also the infrastructure
+topology (OSM) and real-time information (GTFS-RT).")
+    (license (list license:gpl2+ license:gpl3+))))
+
 (define-public r-gtfs2gps
   (package
     (name "r-gtfs2gps")
@@ -18094,13 +18136,13 @@ Supports processing images that cannot fit in memory.")
 (define-public r-glcdp
   (package
     (name "r-glcdp")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glcdp" version))
        (sha256
-        (base32 "1z49l46811faxyzq2w15s2ikcg8g9r83ll0dpm4jll37wpa8w3jn"))))
+        (base32 "0fyhcwckmdq6r8wfchh4q2i31a851dqny0qnwsvsm1az776mwzkq"))))
     (properties `((upstream-name . "glcdp")))
     (build-system r-build-system)
     (arguments
@@ -18426,19 +18468,19 @@ Bonat (2026) <doi:10.21105/joss.08991>.")
 (define-public r-gkwdist
   (package
     (name "r-gkwdist")
-    (version "1.1.5")
+    (version "1.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gkwdist" version))
        (sha256
-        (base32 "0cy6n6khl2k8ii07dz4bnmxk0lk8c3515qvc01f9mbq3c7hn00gj"))))
+        (base32 "09n8c1659sf92lx188j9v4md12gp98xjhsbpawcczm1sl3i4l36a"))))
     (properties `((upstream-name . "gkwdist")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-numderiv r-magrittr))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-magrittr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/evandeilton/gkwdist")
     (synopsis "Generalized Kumaraswamy Distribution Family")
@@ -25177,13 +25219,13 @@ PNG files, external resources, or as a list column containing raster image data.
 (define-public r-ggimage
   (package
     (name "r-ggimage")
-    (version "0.3.5")
+    (version "0.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggimage" version))
        (sha256
-        (base32 "0cxqwc39sacaz52126b5xgnwrb681y7mzm9s4w56aya1bba1ascn"))))
+        (base32 "1z22bcqz91hsc6zc686jc2ngmppwia5mw03nkfass5fdjz7z1hsn"))))
     (properties `((upstream-name . "ggimage")))
     (build-system r-build-system)
     (arguments
@@ -25689,13 +25731,13 @@ the exact pixel dimensions needed.")
 (define-public r-ggfoundry
   (package
     (name "r-ggfoundry")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggfoundry" version))
        (sha256
-        (base32 "0m7r1845vx3snxadqbg3vxyxsh115h7bi5h3q3x1n4c1nd5y45r7"))))
+        (base32 "0kkmy3bmlbysk12lhay20gavppf4gnmx8zlq8wlvd7y2ijj8aimd"))))
     (properties `((upstream-name . "ggfoundry")))
     (build-system r-build-system)
     (arguments
@@ -27875,6 +27917,43 @@ Sequential inversion with a tangent predictor, a certified quadrature
 preconditioner, and comparison solvers (the plain fixed point, Broyden's method,
 full Newton, Anderson acceleration, and limited-memory BFGS) are included.  Uses
 base R only.")
+    (license license:expat)))
+
+(define-public r-gfpop
+  (package
+    (name "r-gfpop")
+    (version "1.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gfpop" version))
+       (sha256
+        (base32 "0qv27i766a5qgvfckr0mcw8m88dbsaxzdgb906r17ygjm5dcga7c"))))
+    (properties `((upstream-name . "gfpop")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=gfpop")
+    (synopsis "Graph-Constrained Functional Pruning Optimal Partitioning")
+    (description
+     "Penalized parametric change-point detection by functional pruning dynamic
+programming algorithm.  The successive means are constrained using a graph
+structure with edges defining the nature of the changes These changes can be
+unconstrained (type std), up or down constrained (type up and down) or
+constrained by a minimal size jump (type abs).  The type null means that the
+graph allows us to stay on the same segment.  To each edge we can associate some
+additional properties: a minimal gap size, a penalty, some robust parameters
+(K,a) for biweight (K) and Huber losses (K and a).  The user can also constrain
+the inferred means to lie between some minimal and maximal values.  Data is
+modeled by a cost with possible use of a robust loss, biweight and Huber (see
+edge parameters K and a).  These costs should have a quadratic, log-linear or a
+log-log representation.  This includes quadratic Gaussian cost (type = mean'),
+log-linear cost (type = variance', poisson or exp') and log-log cost (type =
+negbin').  More details in the paper published in the Journal of Statistical
+Software: <doi:10.18637/jss.v106.i06>.")
     (license license:expat)))
 
 (define-public r-gformulami
@@ -31580,6 +31659,45 @@ boxes, properties, and coordinate reference systems; working with newline
 delimited @code{GeoJSON}'; and serializing to/from Geobuf binary @code{GeoJSON}
 format.")
     (license license:expat)))
+
+(define-public r-geoidep
+  (package
+    (name "r-geoidep")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geoidep" version))
+       (sha256
+        (base32 "15b0llqlnixj6c85p5y2ali50h90nizsmn069giqv9vyypfgrhq4"))))
+    (properties `((upstream-name . "geoidep")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-terra
+                             r-sf
+                             r-rvest
+                             r-lifecycle
+                             r-jsonlite
+                             r-httr2
+                             r-dplyr
+                             r-cli
+                             r-archive))
+    (native-inputs (list r-knitr))
+    (home-page "https://geografo.pe/geoidep/")
+    (synopsis
+     "Download Geographic Data on Various Topics Provided and Managed by the Spatial Data Infrastructure of Peru")
+    (description
+     "This package provides R users with easy access to official cartographic data
+from Peru across a range of topics, including society, transport, environment,
+agriculture, climate, and more.  It also includes data from regional government
+entities and technical-scientific institutions, all managed by Peru's Spatial
+Data Infrastructure.  For more information, please visit:
+<https://www.geoidep.gob.pe/>.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-geoheatmap
   (package

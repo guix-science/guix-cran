@@ -7235,30 +7235,6 @@ spatial clustering of applications with noise).  Designed for students and
 practitioners in data science and artificial intelligence.")
     (license license:expat)))
 
-(define-public r-drda
-  (package
-    (name "r-drda")
-    (version "2.0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "drda" version))
-       (sha256
-        (base32 "1f93g35yg3kqybqnby08n5l7bgqghxypkpp4ivj9164b3yj8iy39"))))
-    (properties `((upstream-name . "drda")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/albertopessia/drda")
-    (synopsis "Dose-Response Data Analysis")
-    (description
-     "Fit logistic functions to observed dose-response continuous data and evaluate
-goodness-of-fit measures.  See Malyutina A., Tang J., and Pessia A. (2023)
-<doi:10.18637/jss.v106.i04>.")
-    (license license:expat)))
-
 (define-public r-drcte
   (package
     (name "r-drcte")
@@ -17935,13 +17911,13 @@ Lebart et al. (2006, ISBN: 978-2-10-049616-7).")
 (define-public r-dime
   (package
     (name "r-dime")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DIME" version))
        (sha256
-        (base32 "1kbs5s3pgjlqiikcd54v9ym9yw40q6x1bgl7k0570l7i3mvcfvsj"))))
+        (base32 "126gdz67p0rzhram7wnwv5vysjs8frgpk1h91k7jyk96x0q5vyh0"))))
     (properties `((upstream-name . "DIME")))
     (build-system r-build-system)
     (arguments
@@ -34252,6 +34228,33 @@ methods are based on and improved from the reference: Liang, C.-S., Wu, H., Li,
 H.-Y., Zhang, Q., Li, Z. & He, K.-B. (2020)
 <doi:10.1016/j.scitotenv.2020.140923>.")
     (license license:gpl2+)))
+
+(define-public r-datapond
+  (package
+    (name "r-datapond")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "datapond" version))
+       (sha256
+        (base32 "1n9mxkf563n2pmvsy5dlfxlrba59h3iycj5nfj75g2x1das27c7m"))))
+    (properties `((upstream-name . "datapond")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite r-duckdb r-dbi r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/datapond-db/datapond-r")
+    (synopsis "Query Curated 'DuckDB' Databases Built from Public Data")
+    (description
+     "Connects to the datapond registry of curated @code{DuckDB} databases built from
+public government and research data (immigration courts, campaign finance,
+clinical trials, Medicare, and more).  Databases are attached remotely over HTTP
+so only the byte ranges a query touches are transferred, or downloaded once for
+local use.  Returns standard DBI connections that work with dbplyr'.")
+    (license license:expat)))
 
 (define-public r-datapackager
   (package

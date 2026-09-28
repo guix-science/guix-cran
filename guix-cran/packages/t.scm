@@ -8316,6 +8316,42 @@ application of the method can be found in Danaei et al (2013)
 <doi:10.1177/0962280211403603>.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
+(define-public r-trialdiff
+  (package
+    (name "r-trialdiff")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "trialdiff" version))
+       (sha256
+        (base32 "01jcc5i7vlw5wv7raacdil7hwkyf3p1ws1apiik742qz9z4245rl"))))
+    (properties `((upstream-name . "trialdiff")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-jsonlite
+                             r-htmltools
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Hirujan-R/trialdiff")
+    (synopsis "Clinical Trial Data-Cut Change Detection and Impact Assessment")
+    (description
+     "This package provides a transparent, rule-based framework for detecting changes
+between successive data cuts of clinical trial datasets, classifying those
+changes into clinically meaningful categories, tracing user-defined data
+lineage, and assessing which downstream analyses and outputs may be affected.
+The package is designed to complement existing low-level data frame comparison
+tools by adding clinical-trial-specific classification, lineage and
+impact-assessment layers on top of deterministic comparison.  The rule-based
+classification is similar in spirit to the data validation infrastructure of van
+der Loo and de Jonge (2021) <doi:10.18637/jss.v097.i10>.")
+    (license license:expat)))
+
 (define-public r-triager
   (package
     (name "r-triager")
@@ -18682,13 +18718,13 @@ parsing, no inference magic, and explicit-only behavior.")
 (define-public r-tinyplot
   (package
     (name "r-tinyplot")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinyplot" version))
        (sha256
-        (base32 "1cplyblm2r0xpgvw925bkh6czs90q272c10vfykhbvy73hrynzz6"))))
+        (base32 "0gap0czdsyhxv1ss42dp56bklvah9q8vxy8cf18ar8npvyjw5x7j"))))
     (properties `((upstream-name . "tinyplot")))
     (build-system r-build-system)
     (arguments
@@ -18839,13 +18875,13 @@ library for reading and writing DNG and TIFF files.")
 (define-public r-tinycodet
   (package
     (name "r-tinycodet")
-    (version "0.7.1")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinycodet" version))
        (sha256
-        (base32 "1wdlwf92d4q6d026sz49rzpc9iiyzbj8hda09056pz9qqqzxhvja"))))
+        (base32 "09b00167kipcsz64cv0xs295xp437zisnyd7ajj70yszj4fg6g9q"))))
     (properties `((upstream-name . "tinycodet")))
     (build-system r-build-system)
     (arguments
@@ -35712,13 +35748,13 @@ in conversational corpora.  For more details, see Dingemanse et al., (2022)
 (define-public r-talib
   (package
     (name "r-talib")
-    (version "0.9-2")
+    (version "0.9-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "talib" version))
        (sha256
-        (base32 "161jiahnhmn6w3wjpk3rfpsrgd0nlwjf6k4s8cipppd4yh757d7v"))))
+        (base32 "1lrbdifw2lvqr85v25b0ya2w669nqsas5yi2wc4cv60s1n7555z9"))))
     (properties `((upstream-name . "talib")))
     (build-system r-build-system)
     (arguments

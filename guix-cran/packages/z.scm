@@ -361,26 +361,28 @@ included.")
 (define-public r-zmisc
   (package
     (name "r-zmisc")
-    (version "0.2.3")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "zmisc" version))
        (sha256
-        (base32 "1mkk8a93xqwzrs99g6zmd5x3yn0qrz3v44y35jas9wl8x92bzr9f"))))
+        (base32 "01w6jn39fb1m21sx5fpjf7kls6gvlfjx4dph7cm2vrbiq5fg02cb"))))
     (properties `((upstream-name . "zmisc")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-rlang r-glue r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/torfason/zmisc/")
     (synopsis "Vector Look-Ups and Safer Sampling")
     (description
      "This package provides a collection of utility functions that facilitate looking
-up vector values from a lookup table, annotate values in at table for clearer
+up vector values from a lookup table, annotate values in a table for clearer
 viewing, and support a safer approach to vector sampling, sequence generation,
-and aggregation.")
+and aggregation.  Also included is a family of argument checks which return
+their input so that they compose nicely in a pipe.")
     (license license:expat)))
 
 (define-public r-zmij

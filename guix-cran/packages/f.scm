@@ -11774,13 +11774,13 @@ described by Cox (2012) <doi:10.1016/j.neuroimage.2011.08.056>.")
 (define-public r-fmradio
   (package
     (name "r-fmradio")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FMradio" version))
        (sha256
-        (base32 "08wxpn1sklq7fvy8f698vjy7sn62hxiyhqknjaclpl3hzcq31y6j"))))
+        (base32 "1kbs9a27mlaga57s2kd38vwys7fiyhk6wb24rc9m3dpjgd7f4a6w"))))
     (properties `((upstream-name . "FMradio")))
     (build-system r-build-system)
     (arguments
@@ -23421,13 +23421,13 @@ detection tools and depths for functional data like functional boxplot,
 (define-public r-fdanova
   (package
     (name "r-fdanova")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fdANOVA" version))
        (sha256
-        (base32 "1pycq5a4czqzi8wcfmlc9ncg827j7n0qxyj90wcv39nbcrnl3da1"))))
+        (base32 "0lv9z230w5vmqb0pw2pnfvnchy2c43gzps04w2ak3y8f6wh0am24"))))
     (properties `((upstream-name . "fdANOVA")))
     (build-system r-build-system)
     (arguments
@@ -30579,37 +30579,6 @@ data.table object @code{factorSPGMI}'.  The @code{stocksCRSP} and
 @code{factorsSPGMI} data are not covered by the GPL-2 license, are not provided
 as open source of any kind, and they are not to be redistributed in any form.")
     (license license:gpl2)))
-
-(define-public r-facilityepimath
-  (package
-    (name "r-facilityepimath")
-    (version "0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "facilityepimath" version))
-       (sha256
-        (base32 "1p4ayhb6mbzyaxbg19rlpra90mbi0yhf1lv3dzcb9q3sm9phq25w"))))
-    (properties `((upstream-name . "facilityepimath")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mass))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/EpiForeSITE/facilityepimath")
-    (synopsis
-     "Analyze Mathematical Models of Healthcare Facility Transmission")
-    (description
-     "Calculate useful quantities for a user-defined differential equation model of
-infectious disease transmission among individuals in a healthcare facility.
-Input rates of transition between states of individuals with and without the
-disease-causing organism, distributions of states at facility admission,
-relative infectivity of transmissible states, and the facility length of stay
-distribution.  Calculate the model equilibrium and the basic facility
-reproduction number, as described in Toth et al. (2025)
-<doi:10.1371/journal.pcbi.1013577>.")
-    (license license:expat)))
 
 (define-public r-facetsviz
   (package

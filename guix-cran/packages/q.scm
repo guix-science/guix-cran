@@ -1275,50 +1275,6 @@ columns of a data.frame.")
      "Translate SQL SELECT statements into lists of R expressions.")
     (license license:asl2.0)))
 
-(define-public r-querychat
-  (package
-    (name "r-querychat")
-    (version "0.4.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "querychat" version))
-       (sha256
-        (base32 "1k99zphlz2cjhy3jkn0w52y4hcr7ldbvw47r1rg1gzkbv27k1xc9"))))
-    (properties `((upstream-name . "querychat")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zip
-                             r-yaml
-                             r-whisker
-                             r-shinychat
-                             r-shiny
-                             r-s7
-                             r-rlang
-                             r-r6
-                             r-promises
-                             r-lifecycle
-                             r-jsonlite
-                             r-htmltools
-                             r-ellmer
-                             r-dbi
-                             r-coro
-                             r-cli
-                             r-bslib
-                             r-bsicons))
-    (native-inputs (list r-knitr))
-    (home-page "https://posit-dev.github.io/querychat/r/")
-    (synopsis
-     "Filter and Query Data Frames in 'shiny' Using an LLM Chat Interface")
-    (description
-     "Adds an LLM-powered chatbot to your shiny app, that can turn your users natural
-language questions into SQL queries that run against your data, and return the
-result as a reactive data frame.  Use it to drive reactive calculations,
-visualizations, downloads, and more.")
-    (license license:expat)))
-
 (define-public r-querybuilder
   (package
     (name "r-querybuilder")
@@ -5934,13 +5890,13 @@ the effects of exposure mixtures; <doi:10.1289/EHP5838>.")
 (define-public r-qgcomp
   (package
     (name "r-qgcomp")
-    (version "2.19.5")
+    (version "2.19.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qgcomp" version))
        (sha256
-        (base32 "068g3hd721r184j7102f4ccfq6mrb748db5x39c2vxir7hsn8p3d"))))
+        (base32 "1m6z4s0cbzrji312z407bm8m5y5ypr7xrs78z85j5jdaj27wvnac"))))
     (properties `((upstream-name . "qgcomp")))
     (build-system r-build-system)
     (arguments
@@ -5960,7 +5916,7 @@ the effects of exposure mixtures; <doi:10.1289/EHP5838>.")
                              r-arm
                              r-aer))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/alexpkeil1/qgcomp/")
+    (home-page "https://github.com/alexpkeil1/qgcomp")
     (synopsis "Quantile G-Computation")
     (description
      "G-computation for a set of time-fixed exposures with quantile-based basis

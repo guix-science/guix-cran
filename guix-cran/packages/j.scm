@@ -4124,19 +4124,19 @@ application which depends on your OS.")
 (define-public r-jgd
   (package
     (name "r-jgd")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jgd" version))
        (sha256
-        (base32 "1w8mm6piw2wi4r642dsqqadpl7x0969vz6daf9wyn3whkwqv9ml4"))))
+        (base32 "0x4xh99fqlhrl3sghx1c1yd2c7sf05h61jymc3rfd882k83gw36d"))))
     (properties `((upstream-name . "jgd")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://github.com/grantmcdermott/jgd")
+    (home-page "https://github.com/REditorSupport/jgd")
     (synopsis "JSON Graphics Device")
     (description
      "This package provides a graphics device that translates R plotting operations

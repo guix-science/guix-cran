@@ -1174,13 +1174,13 @@ Tatjana. (2019) <doi:10.1016/j.insmatheco.2018.12.001>.")
 (define-public r-ltgsmd
   (package
     (name "r-ltgsmd")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ltgsmd" version))
        (sha256
-        (base32 "1mpb6kmn9mxdx999wqcav77c7nm6w62vaxdhlps5awhbckykmzhd"))))
+        (base32 "1dgws3dgfv40dw094x826zbnrd6k17r2k1wj9igi1f1iz4fnyrpq"))))
     (properties `((upstream-name . "ltgsmd")))
     (build-system r-build-system)
     (arguments
@@ -1198,9 +1198,9 @@ bias-corrected-accelerated nonparametric bootstrap confidence intervals with
 study x group stratification, denominator-sensitivity profiles, and multi-site
 meta-analytic wrappers.  Includes denominator-diagnostic reporting, a pluggable
 reliability estimator interface, and an explicit interface for specifying the
-target reference distribution.  Companion software to the methodological paper
-\"The Denominator Chooses the Estimand: A Target-Population True-Score Framework
-for Standardized Mean Differences\" (Nakamura, in press, Psychological Methods).")
+target reference distribution.  Companion software to Nakamura (2026) \"The
+Denominator Chooses the Estimand: A Target-Population True-Score Framework for
+Standardized Mean Differences\" <doi:10.1037/met0000875>.")
     (license license:expat)))
 
 (define-public r-ltfhplus

@@ -1416,33 +1416,6 @@ for faster performance.  Note: iterpc is no longer being maintained.  Users are
 recommended to switch to arrangements'.")
     (license license:gpl2)))
 
-(define-public r-iterors
-  (package
-    (name "r-iterors")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "iterors" version))
-       (sha256
-        (base32 "07sk801cyvwshn3ajsb9590s8pqmpwcc4h64d3ysjh0qiipbkw43"))))
-    (properties `((upstream-name . "iterors")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rlang))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/crowding/iterors")
-    (synopsis "Fast, Compact Iterators and Tools")
-    (description
-     "This package provides a fresh take on iterators in R. Designed to be
-cross-compatible with the iterators package, but using the @code{nextOr} method
-will offer better performance as well as more compact code.  With batteries
-included: includes a collection of iterator constructors and combinators ported
-and refined from the iterators', itertools', and itertools2 packages.")
-    (license license:gpl3+)))
-
 (define-public r-iterlap
   (package
     (name "r-iterlap")
@@ -2161,6 +2134,37 @@ plots are complete with respect to subplot treatments and (iii) when blocks are
 incomplete with respect to main plot treatments and main plots are incomplete
 with respect to subplot treatments.")
     (license license:gpl2+)))
+
+(define-public r-ispat3d
+  (package
+    (name "r-ispat3d")
+    (version "0.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ISPAT3D" version))
+       (sha256
+        (base32 "0ivcjdkhjvgdwxyfnjaw2jrd3p078yw46v8qgzw6j3fk59r4xbxk"))))
+    (properties `((upstream-name . "ISPAT3D")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-gpboost))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/sagnikbhadury/ISPAT-3D")
+    (synopsis
+     "Spatial Conditional Association Networks in Registered Tumor Volumes")
+    (description
+     "Fits tumor-zone-specific conditional cell-density networks from registered
+three-dimensional multiplex imaging.  An anisotropic Matern-3/2 Gaussian process
+is estimated per variable and zone using a Vecchia likelihood on spatially
+balanced anchors; predictions at all selected cells yield residual covariance
+sufficient statistics.  Gaussian maximum likelihood then fits a shared-plus-zone
+factor covariance model.  A matched section-wise planar fit uses the same
+selected cells and covariance estimator.  This extends the spatially informed
+cell-density analysis of Bhadury et al. (2026) <doi:10.1038/s41598-026-35341-8>.")
+    (license license:expat)))
 
 (define-public r-isoweek
   (package
@@ -10413,6 +10417,53 @@ graphical interface for generating labels without requiring programming
 expertise.")
     (license license:gpl3+)))
 
+(define-public r-insectecol
+  (package
+    (name "r-insectecol")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "insectecol" version))
+       (sha256
+        (base32 "1iviz1knxk1czhqfk3qq3pp91ci4bs6l3pdwk2hd9iknrp1ks0v3"))))
+    (properties `((upstream-name . "insectecol")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-sysfonts
+                             r-showtext
+                             r-scales
+                             r-readr
+                             r-ragg
+                             r-openxlsx
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://github.com/SeaGhost-0/insectecol")
+    (synopsis "Insect Ecology Data Analysis Toolkit")
+    (description
+     "This package provides a collection of analytical tools for insect ecology
+research, currently covering age-stage, two-sex life table analysis and
+dose-response bioassays.  The life table module supports fast batch processing
+of multi-group datasets, validates raw csv data, computes cohort size, mean
+fecundity, age-stage survival rates, age-specific survival, age-specific
+fecundity, life expectancy, and derived population parameters (net reproductive
+rate, intrinsic and finite rates of increase, mean generation time),
+simultaneously generates age-stage survival curves for all groups, and exports
+all tabular results and plots to Excel in a single run.  The bioassay module
+estimates lethal concentrations by the traditional and the weighted (improved)
+linear regression methods and by probit analysis, with Abbott correction, 95%
+confidence intervals and chi-square goodness-of-fit tests; the lethal proportion
+can be set freely (e.g., 25%, 50%, 70% or 90%), so any LC value such as the
+LC25, LC70 or LC90 can be computed, not only the LC50.  The regression plots and
+tables are exported to Excel'.  Planned extensions include more insect ecology
+indicators, such as median lethal temperature/time (LT50) and thermal constants
+(effective accumulated temperature).")
+    (license license:expat)))
+
 (define-public r-insect
   (package
     (name "r-insect")
@@ -13378,45 +13429,6 @@ including CROISSANT, Edge Cross-Validation (ECV), and Node Cross-Validation
 multiple loss functions (L2, binomial deviance, AUC).  Includes network
 simulation utilities for SBM, RDPG, and latent space models.")
     (license license:expat)))
-
-(define-public r-incubate
-  (package
-    (name "r-incubate")
-    (version "1.4.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "incubate" version))
-       (sha256
-        (base32 "14y3r2c2hr9s16g2laiimxiw2gy48ikxq6gvd9y938jpv71k19il"))))
-    (properties `((upstream-name . "incubate")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-survival
-                             r-rlang
-                             r-purrr
-                             r-minqa
-                             r-mass
-                             r-glue
-                             r-future-apply
-                             r-future
-                             r-cpp11))
-    (native-inputs (list r-knitr))
-    (home-page "https://gitlab.com/imb-dev/incubate/")
-    (synopsis
-     "Parametric Time-to-Event Analysis with Variable Incubation Phases")
-    (description
-     "Fit parametric models for time-to-event data that show an initial incubation
-period', i.e.  a variable delay phase where no events occur.  The delayed
-Weibull distribution serves as the foundational data model.  For parameter
-estimation, different flavours of maximum likelihood estimation ('MLE') and the
-method of maximum product of spacings estimation ('MPSE') are implemented.
-Bootstrap confidence intervals for parameters and significance tests in a two
-group setting are provided.")
-    (license license:lgpl3+)))
 
 (define-public r-inctools
   (package

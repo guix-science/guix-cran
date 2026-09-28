@@ -1348,32 +1348,6 @@ terra'.  Outputs describe hydraulic classes and do not by themselves establish
 biological habitat quality or species occurrence.")
     (license license:gpl3)))
 
-(define-public r-hydrome
-  (package
-    (name "r-hydrome")
-    (version "2.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "HydroMe" version))
-       (sha256
-        (base32 "0y1acgf2hjp0hsd69pb5bs6v3ggmfnc03qz318s3wzq1766h4h5a"))))
-    (properties `((upstream-name . "HydroMe")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=HydroMe")
-    (synopsis
-     "Estimating Water Retention and Infiltration Model Parameters using Experimental Data")
-    (description
-     "Estimates the parameters of infiltration and water retention models using the
-curve-fitting methods as shown in Omuto and Gumbe (2009)
-<doi:10.1016/j.cageo.2008.08.011>.  The models considered are those that are
-commonly used in soil science.  Version 2 of the package has new models for
-water retention characteristic curves.")
-    (license (list license:gpl2+ license:gpl3+))))
-
 (define-public r-hydroloom
   (package
     (name "r-hydroloom")

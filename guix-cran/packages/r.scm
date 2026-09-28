@@ -18378,13 +18378,13 @@ Kronecker-covariance structure using the Matrix Minimum Covariance Determinant
 (define-public r-robustlpa
   (package
     (name "r-robustlpa")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RobustLPA" version))
        (sha256
-        (base32 "028nyalyssf9j3zqiiwlbcb7capcaszpy6wawk454hn9fk30f4ii"))))
+        (base32 "0ls0bj22ghwpi99y3l5xcl6msiyynlxhqhfzdhzq6a2g3bx45jq3"))))
     (properties `((upstream-name . "RobustLPA")))
     (build-system r-build-system)
     (arguments
@@ -18400,19 +18400,29 @@ Kronecker-covariance structure using the Matrix Minimum Covariance Determinant
 Analysis (LPA) models that are robust to multivariate outliers and missing data.
  By integrating a high-performance C++ engine via @code{RcppArmadillo}', it
 reliably extracts latent profiles using both Expectation-Maximization (EM) and
-Markov Chain Monte Carlo (MCMC) Bayesian estimation.  The EM engine implements a
-Full Information Maximum Likelihood (FIML) approach, Huber weighting, and LASSO
-regularization with k-fold cross-validation for optimal penalty tuning.  The
-MCMC engine utilizes a Bayesian Lasso approach with Laplace priors, the same
-Huber down-weighting available in the EM engine, multiple chains (4 by default),
-and classic Gelman-Rubin/effective sample size convergence diagnostics.  It
-supports multiple geometric variance-covariance models, along with functions for
-bootstrapped likelihood ratio tests (BLRT), BCH auxiliary variable analysis, and
-plotting.  For methodological details on the Bootstrapped Likelihood Ratio Test,
-see Nylund et al. (2007) <doi:10.1080/10705510701575396>.  For robust clustering
-methods, see Garcia-Escudero et al. (2010) <doi:10.1007/s11634-010-0064-5>.  For
-BCH auxiliary variable analysis, see Bolck et al. (2004)
-<doi:10.1093/pan/mph001>.")
+Markov Chain Monte Carlo (MCMC) Bayesian estimation.  Robustness is obtained
+either by Huber-type down-weighting or by mixtures of multivariate t
+distributions (a likelihood-based robust model, see Peel and @code{McLachlan}
+(2000) <doi:10.1023/A:1008981510081>).  Missing data are handled by full
+information maximum likelihood with the exact EM treatment of incomplete
+observations (data augmentation in the MCMC engine).  The EM engine also
+supports LASSO regularization with k-fold cross-validation for penalty tuning;
+the MCMC engine uses a Bayesian Lasso with Laplace priors, multiple chains,
+Gelman-Rubin/effective sample size diagnostics and the widely applicable
+information criterion.  It supports six geometric variance-covariance models,
+along with functions for bootstrapped likelihood ratio tests (BLRT), BCH
+auxiliary variable analysis, and plotting.  For longitudinal data, it fits
+robust growth mixture models and latent class growth analysis (Muthen and
+Shedden (1999) <doi:10.1111/j.0006-341X.1999.00463.x>) for one or several
+outcomes measured on unbalanced occasions, with Gaussian, Huber-weighted or
+multivariate-t (Pinheiro, Liu and Wu (2001) <doi:10.1198/10618600152628059>)
+latent classes, by EM and MCMC, and optional adaptive LASSO penalties (Zou
+(2006) <doi:10.1198/016214506000000735>) that identify stable trajectories and
+the outcomes that differentiate the classes.  For methodological details on the
+Bootstrapped Likelihood Ratio Test, see Nylund et al. (2007)
+<doi:10.1080/10705510701575396>.  For robust clustering methods, see
+Garcia-Escudero et al. (2010) <doi:10.1007/s11634-010-0064-5>.  For BCH
+auxiliary variable analysis, see Bolck et al. (2004) <doi:10.1093/pan/mph001>.")
     (license license:gpl3+)))
 
 (define-public r-robustlmm
@@ -27102,49 +27112,6 @@ series scores).  The latest version of the cruncher can be downloaded here:
      "Interface to JDemetra+ 3.x (<https://github.com/jdemetra>) time series analysis
 software.  It offers full access to txt, csv, xml and spreadsheets files which
 are meant to be read by JDemetra+ Graphical User Interface.")
-    (license (license:fsdg-compatible "EUPL"))))
-
-(define-public r-rjd3production
-  (package
-    (name "r-rjd3production")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rjd3production" version))
-       (sha256
-        (base32 "0s101zsmcz4qs36217m8cwalhs79d7gj4abxi5mch6apda6h8389"))))
-    (properties `((upstream-name . "rjd3production")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo
-                             r-yaml
-                             r-usethis
-                             r-tidyr
-                             r-tbox
-                             r-shiny
-                             r-rjd3x13
-                             r-rjd3workspace
-                             r-rjd3toolkit
-                             r-rjd3providers
-                             r-rjd3jars
-                             r-lintr
-                             r-flextable
-                             r-dygraphs
-                             r-date4ts
-                             r-constructive))
-    (native-inputs (list r-quarto r-knitr))
-    (home-page "https://github.com/InseeFr/rjd3production")
-    (synopsis "Prepare for Production of Seasonal Adjustment with 'JDemetra+'")
-    (description
-     "This package provides a comprehensive tool for setting up seasonal data
-pipelines using JDemetra+ (version 3) and rjdverse'.  This includes setting up a
-new working environment, creating and selecting calendar regressors, managing
-specifications (trading-days regressors and outliers) at the workspace level,
-making a workspace usable by the cruncher', removing insignificant outliers, and
-comparing workspaces.")
     (license (license:fsdg-compatible "EUPL"))))
 
 (define-public r-rjd3jars
@@ -36260,13 +36227,13 @@ database models, export and import results in consistent patterns.")
 (define-public r-resultcheck
   (package
     (name "r-resultcheck")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "resultcheck" version))
        (sha256
-        (base32 "1shqlq71llhvvm6xa3fzck9kbimpqskx25sgywh4p8lw64vm0457"))))
+        (base32 "1xm6r93vlwbzdjyj80izy1x20v6bkj9accp47x4gzbkxvg395dlw"))))
     (properties `((upstream-name . "resultcheck")))
     (build-system r-build-system)
     (arguments
@@ -44406,13 +44373,13 @@ instruments and event arms.")
 (define-public r-redcapsync
   (package
     (name "r-redcapsync")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "REDCapSync" version))
        (sha256
-        (base32 "1jid0nfpah6cn6mlbv7m0d9rl8jaij6m4013kvfddhqhsq5a6ras"))))
+        (base32 "0arkyfsywnv69m2cd8bvvrnql53raxsv56iy944zjj274vbcmcrz"))))
     (properties `((upstream-name . "REDCapSync")))
     (build-system r-build-system)
     (arguments
@@ -44426,6 +44393,7 @@ instruments and event arms.")
                              r-r6
                              r-openxlsx2
                              r-lubridate
+                             r-keyring
                              r-hoardr
                              r-dplyr
                              r-cli
@@ -50166,13 +50134,13 @@ natively.")
 (define-public r-rdacca-hp
   (package
     (name "r-rdacca-hp")
-    (version "1.1-3")
+    (version "1.1-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rdacca.hp" version))
        (sha256
-        (base32 "1d9b4gh0kaxg0cmqn8yzfw2z0yz3rgf16sz6c54r1j6rgkr1n9bb"))))
+        (base32 "06z5i9m5yzlgshy3xrsj5n2q8f3s9v2v4vlqv79vj8mrg5vn0gzx"))))
     (properties `((upstream-name . "rdacca.hp")))
     (build-system r-build-system)
     (arguments
@@ -54257,13 +54225,13 @@ Jacobson & Truax (1991).  Referenced article: Jacobson, N. S., & Truax, P.
 (define-public r-rcicr
   (package
     (name "r-rcicr")
-    (version "1.4.1")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rcicr" version))
        (sha256
-        (base32 "0fs0bzllqbnnnv01lz5x0d2hyv2xbmxsyxm21aqvrpjmil42q7db"))))
+        (base32 "0s99ndyh6ihwxndk5pczi16wl3d2xnc12nb1krmng1xqz93iwz7h"))))
     (properties `((upstream-name . "rcicr")))
     (build-system r-build-system)
     (arguments

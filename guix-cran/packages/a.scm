@@ -10816,13 +10816,13 @@ API reference <https://developers.arcgis.com/rest/places/>.")
 (define-public r-arcgislayers
   (package
     (name "r-arcgislayers")
-    (version "0.6.1")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arcgislayers" version))
        (sha256
-        (base32 "0vr26x1jk3kyx94xzlbqhrqi97sd0yqh3igdxn9sgn6r67w2jkda"))))
+        (base32 "1j9wg63hc15h12jr2lv11hncnicvm4b5czsc42hjnbx0b0szynlp"))))
     (properties `((upstream-name . "arcgislayers")))
     (build-system r-build-system)
     (arguments
@@ -17902,13 +17902,13 @@ theoretical/numerical approaches.  See more in the article Vincent et al. (2017)
 (define-public r-amapro
   (package
     (name "r-amapro")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "amapro" version))
        (sha256
-        (base32 "1kbly71pac4ksn33lbi24yr0fx0vld9bwp0346v2ns783k02c3y0"))))
+        (base32 "13krf1gpi3bn2xm9fbpa4ayqbf9szq6cvwkx8aqm83jrxmb8n3h3"))))
     (properties `((upstream-name . "amapro")))
     (build-system r-build-system)
     (arguments
@@ -20210,20 +20210,35 @@ Methodology is detailed in Ali et al. (2025)
 (define-public r-albersdown
   (package
     (name "r-albersdown")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "albersdown" version))
        (sha256
-        (base32 "0hy45wfmhs35cvfdsw7xbiwz69vz47lbpg57b71wjzajcbkkdscn"))))
+        (base32 "1czrahd3npnanzjfq5hgw3zsr7nvi8qdg18wc00cz34vk7if8p65"))))
     (properties `((upstream-name . "albersdown")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:modules '((guix build r-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-ggplot2))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/bbuchsbaum/albersdown")
     (synopsis "Minimalist Theme and Vignette Kit for 'pkgdown' and R Markdown")
     (description

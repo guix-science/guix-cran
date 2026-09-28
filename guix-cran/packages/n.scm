@@ -12211,13 +12211,13 @@ package.")
 (define-public r-ngme2
   (package
     (name "r-ngme2")
-    (version "0.9.8")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ngme2" version))
        (sha256
-        (base32 "1kji41hn4fx6s07dda33ly9hqjhq5bjxs74vamnxf3qp11kad510"))))
+        (base32 "0mf2yivrqis4wa3zqkj3rhyapk1l66qxhdsz63mfjga2j3kdixr4"))))
     (properties `((upstream-name . "ngme2")))
     (build-system r-build-system)
     (arguments
@@ -15541,6 +15541,45 @@ centrality-based source estimation.  Additionally, we provide public
 transportation network data as well as methods for data preparation, source
 estimation performance analysis and visualization.")
     (license license:gpl3)))
+
+(define-public r-netop
+  (package
+    (name "r-netop")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "netOP" version))
+       (sha256
+        (base32 "095r70vqs9f695x6nyxrkjil01ijjihawvr7k1xya4n2xqs3rh60"))))
+    (properties `((upstream-name . "netOP")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-rspectra
+                             r-rcppeigen
+                             r-rcpp
+                             r-matrix
+                             r-irlba
+                             r-cluster))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/sayan-ch/netOP")
+    (synopsis
+     "Network Data Operations and Overlapping Partitions Based Methods for Large Networks")
+    (description
+     "This package implements methods for generating, embedding, and clustering random
+networks and for estimating and selecting statistical network models.  Provides
+SONNET (Subsampling ON NETwork), a scalable subsampling-based divide-and-conquer
+method for community detection described by Chakrabarty, Sengupta and Chen
+(2025) <doi:10.5705/ss.202022.0108>, and NETCROP (NETwork CRoss-validation using
+Overlapping Partitions), an overlapping-partition framework for network
+cross-validation, model selection, and regularization tuning described by
+Chakrabarty, Sengupta and Chen (2026) <doi:10.48550/@code{arXiv.2504.06903>}.
+Also includes spectral and latent-space methods, loss functions, and helper
+functions for statistical analysis of network data.")
+    (license license:gpl2+)))
 
 (define-public r-netmhc2pan
   (package
@@ -20947,21 +20986,22 @@ NADA and adds new functionality.")
 (define-public r-nacho
   (package
     (name "r-nacho")
-    (version "2.0.6")
+    (version "2.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NACHO" version))
        (sha256
-        (base32 "1v1ypjsa5yzl6mrgmakngz7zf3ksmv7ac2nf6i30dshikln8mk9i"))))
+        (base32 "0yfrldrb9nmi1vz4ycxzfbb988wkrqpar5w0j3hzd6b88bm0392y"))))
     (properties `((upstream-name . "NACHO")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (inputs (list pandoc pandoc))
+    (inputs (list pandoc))
     (propagated-inputs (list r-shinywidgets
                              r-shiny
+                             r-scales
                              r-rmarkdown
                              r-knitr
                              r-ggrepel

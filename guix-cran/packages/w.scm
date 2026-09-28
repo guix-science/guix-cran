@@ -3247,6 +3247,42 @@ various data sets.  The methodology is based on \"The Whale Optimization
 Algorithm\" by Mirjalili and Lewis (2016) <doi:10.1016/j.advengsoft.2016.01.008>.")
     (license license:gpl2+)))
 
+(define-public r-wnpmle
+  (package
+    (name "r-wnpmle")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "wnpmle" version))
+       (sha256
+        (base32 "1sjfpd4dili7qrivfxsgs5f8w0f5v91iqc27q8155i7fqqz0s5c1"))))
+    (properties `((upstream-name . "wnpmle")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tmb r-survival r-mass))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/abellach/wnpmle")
+    (synopsis
+     "Weighted NPMLE for Recurrent Events with a Competing Terminal Event")
+    (description
+     "This package provides regression modeling and prediction for the marginal mean
+of recurrent events in the presence of a competing terminal event using the
+weighted nonparametric maximum likelihood estimator (@code{wNPMLE}) of Bellach
+and Kosorok (2026) <doi:10.48550/@code{arXiv.2605.25934>}.  Two classes of
+transformation models are implemented: Box-Cox transformation models and
+logarithmic transformation models.  These extend the proportional means model of
+Ghosh and Lin (2002) <doi:10.17615/pt0g-y207> and the transformation model
+framework of Zeng and Lin (2006) <doi:10.1093/biomet/93.3.627>.  Parameter
+estimation is performed using automatic differentiation through the Template
+Model Builder (TMB) framework.  Standard errors are computed using sandwich
+variance estimators that account for estimation of the inverse-probability
+censoring weights following Bellach, Kosorok, RÃ¼schendorf and Fine (2019)
+<doi:10.1080/01621459.2017.1401540>.")
+    (license license:gpl3+)))
+
 (define-public r-wnominate
   (package
     (name "r-wnominate")
@@ -4272,6 +4308,36 @@ operations, and inverts observed shares to abilities by a damped Newton method
 with analytic slopes.  A dependency-free base-R port of the reference python
 package winning'.  Performances are times: lowest wins.")
     (license license:expat)))
+
+(define-public r-winn
+  (package
+    (name "r-winn")
+    (version "0.1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "winn" version))
+       (sha256
+        (base32 "0a2i57cmb5ssa1hxng9jzasxkwxvvafh5v84d8ig57d315jg0j8w"))))
+    (properties `((upstream-name . "winn")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mgcv r-lmtest))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ratschlab/winn")
+    (synopsis "White Noise Normalization for Mass Spectrometry Profiling Data")
+    (description
+     "This package provides a decision-guided workflow for correcting technical
+variability in chemical profiling data.  Tests for white noise identify measured
+features that need correction while preserving those that already pass.  The
+workflow combines robust outlier adjustment, adaptive drift detection,
+change-point segmentation, batch correction, and probabilistic quotient
+normalization in a single pipeline or as modular steps.  It supports parameter
+tuning using pooled quality-control samples as well as operation for studies
+without pooled controls.")
+    (license license:gpl3)))
 
 (define-public r-wingen
   (package
@@ -6469,40 +6535,6 @@ up to three levels.  Random effects are estimated using the PIRLS algorithm from
 lme4@code{pureR} (Walker and Bates (2013)
 <https://github.com/lme4/lme4@code{pureR>}).")
     (license license:gpl2)))
-
-(define-public r-welo
-  (package
-    (name "r-welo")
-    (version "0.1.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "welo" version))
-       (sha256
-        (base32 "1ms551cpq0i6chx2ygxdh9jbkzfkbvnv9mcxicyf3m2zqjcr251y"))))
-    (properties `((upstream-name . "welo")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xts
-                             r-rio
-                             r-reshape2
-                             r-rdpack
-                             r-ggplot2
-                             r-boot))
-    (home-page "https://cran.r-project.org/package=welo")
-    (synopsis "Weighted and Standard Elo Rates")
-    (description
-     "Estimates the standard and weighted Elo (WElo, Angelini et al., 2022
-<doi:10.1016/j.ejor.2021.04.011>) rates.  The current version provides Elo and
-WElo rates for tennis, according to different systems of weights (games or sets)
-and scale factors (constant, proportional to the number of matches, with more
-weight on Grand Slam matches or matches played on a specific surface).
-Moreover, the package gives the possibility of estimating the (bootstrap)
-standard errors for the rates.  Finally, the package includes betting functions
-that automatically select the matches on which place a bet.")
-    (license license:gpl3)))
 
 (define-public r-weirs
   (package

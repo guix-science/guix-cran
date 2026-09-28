@@ -252,6 +252,49 @@ visualization utilities including radar charts and grouped boxplots.  For more
 information, see <https://github.com/Hirriririir/@code{MyoScore>}.")
     (license license:expat)))
 
+(define-public r-myman
+  (package
+    (name "r-myman")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "myman" version))
+       (sha256
+        (base32 "03y5m9zbly9fznssmnyds60ah8mm07hlml08rsk7yzragqsg18nb"))))
+    (properties `((upstream-name . "myman")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/eddelbuettel/myman")
+    (synopsis "Draw from Sequence of 'My Man' Posts by Kevin Kruse")
+    (description
+     "Starting on the afternoon of July 17, 2026, Kevin Kruse fired off an astonishing
+array of @code{BlueSky} replies to an initial post of his featuring a certain
+government figure:
+<https://bsky.app/profile/did:plc:cnpe7qvcyjrhm6w7w7e4atur/post/3mqum4mxsuk2g>.
+This lasted a week and generated nearly seven hundred posts.  A second wave
+started on August 12, 2026, with this post:
+<https://bsky.app/profile/kevinmkruse.bsky.social/post/3mstvbjpagc2a>.  A third
+wave started on August 17, 2026, with
+<https://bsky.app/profile/kevinmkruse.bsky.social/post/3mtcpiw7gi22j>.  A fourth
+wave started on August 27, 2026, with
+<https://bsky.app/profile/kevinmkruse.bsky.social/post/3mu3pugs2yk2f>.  A fifth
+wave ran on August 30, 2026, beginning with
+<https://bsky.app/profile/kevinmkruse.bsky.social/post/3mudbzy5ksk25>.  A sixth
+wave started September 4, 2026, with
+<https://bsky.app/profile/kevinmkruse.bsky.social/post/3muparqtdkk2w>.  A
+seventh wave started September 12, 2026, with
+<https://bsky.app/profile/kevinmkruse.bsky.social/post/3mvdol6xu5k2s>.  All of
+the over fourteen hundred posts from these series start with My man ...  and
+make for excellent input to a fortunes'-like package.  So this small package
+obliges and offers a random draw each time its @code{myman()} function is
+called.  The overall package structure follows package fortunes', and atrrr was
+used to (bulk-)retrieve posts.  Neither package is required to run this package
+to display random selections.")
+    (license license:gpl2+)))
+
 (define-public r-myis
   (package
     (name "r-myis")
@@ -1272,27 +1315,6 @@ diagnostics.  See Thorson et al.  2022 <doi:10.1002/ecy.3637>.")
      "This package provides functions to run fixed effects or random effects
 multivariate meta-analysis.")
     (license license:gpl3)))
-
-(define-public r-mvtests
-  (package
-    (name "r-mvtests")
-    (version "2.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MVTests" version))
-       (sha256
-        (base32 "075958fdhh5g6jjpli1520vvqxd7g81s9kj4fijg4w0xyz2c5jlp"))))
-    (properties `((upstream-name . "MVTests")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mvtnorm))
-    (home-page "https://cran.r-project.org/package=MVTests")
-    (synopsis "Multivariate Hypothesis Tests")
-    (description "Multivariate hypothesis tests and confidence intervals...")
-    (license license:gpl2)))
 
 (define-public r-mvt
   (package
@@ -11205,6 +11227,47 @@ The other group of functions is for matching or comparing sets of mutational
 signatures. @code{mSigTools} stands for mutational Signature analysis Tools.")
     (license license:gpl3)))
 
+(define-public r-msigspectra
+  (package
+    (name "r-msigspectra")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mSigSpectra" version))
+       (sha256
+        (base32 "17j37rl69lpndkagsrrp2l97r0db8j21shkil0qk588nknpfbbyi"))))
+    (properties `((upstream-name . "mSigSpectra")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringi
+                             r-s4vectors
+                             r-rcpp
+                             r-iranges
+                             r-genomicranges
+                             r-genomeinfodb
+                             r-fastrc
+                             r-data-table
+                             r-bsgenome))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/steverozen/mSigSpectra")
+    (synopsis
+     "Build Mutational-Spectrum Catalogs from Variant Call Format Files")
+    (description
+     "Reads variant call format (VCF) files in a caller-agnostic way, annotates
+variants with flanking sequence context and transcriptional strand, and builds
+mutational-spectrum catalogs of single base substitutions (SBS), doublet base
+substitutions (DBS), and small insertions and deletions (indels, ID) at several
+resolutions (SBS96, SBS192, SBS1536, DBS78, DBS136, DBS144, ID83, ID89, ID166,
+ID476) and in both counts and density representations.  Successor to the
+numerical core of the ICAMS package with plotting, shiny', and portable document
+format (PDF) reporting removed; plotting is provided separately by
+@code{mSigPlot}'.  Used in the preparation of Rozen et al. (2026)
+<doi:10.5281/zenodo.18451842>.")
+    (license license:gpl3)))
+
 (define-public r-msigseg
   (package
     (name "r-msigseg")
@@ -20673,13 +20736,13 @@ prediction for each data chunk, before reading the next chunk of data.")
 (define-public r-modelltest
   (package
     (name "r-modelltest")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modeLLtest" version))
        (sha256
-        (base32 "0xc11r5nhpdzirdjsxdscjci4f4fyqi08v429kyhc2ah840afqz3"))))
+        (base32 "1zvxwaqyhsc5n71rq1hi3smp43p1rfbfvdl6xx1lp282gbb1hjyf"))))
     (properties `((upstream-name . "modeLLtest")))
     (build-system r-build-system)
     (arguments
@@ -26752,13 +26815,13 @@ cluster centers for the method with initial cluster centers.")
 (define-public r-mkinfer
   (package
     (name "r-mkinfer")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MKinfer" version))
        (sha256
-        (base32 "0cv03iyghl9v2f2qzrbbqxz171zkbycfj5dyzl8f913z836l4h9h"))))
+        (base32 "1l7jib60h3h8bapiy5ivd15xalg2438varyi7jnnvkdfjbr6ilqr"))))
     (properties `((upstream-name . "MKinfer")))
     (build-system r-build-system)
     (arguments
@@ -26768,6 +26831,7 @@ cluster centers for the method with initial cluster centers.")
                              r-nlme
                              r-mkdescr
                              r-miceadds
+                             r-hypergeo
                              r-ggplot2
                              r-exactranktests
                              r-boot
@@ -26779,7 +26843,8 @@ cluster centers for the method with initial cluster centers.")
      "Computation of various confidence intervals (Altman et al. (2000),
 ISBN:978-0-727-91375-3; Hedderich and Sachs (2018), ISBN:978-3-662-56657-2)
 including bootstrapped versions (Davison and Hinkley (1997),
-ISBN:978-0-511-80284-3) as well as Hsu (Hedderich and Sachs (2018),
+ISBN:978-0-511-80284-3) as well as Xiao (Xiao (2018),
+<doi:10.17654/TS054010021>), Hsu (Hedderich and Sachs (2018),
 ISBN:978-3-662-56657-2), permutation (Janssen (1997),
 <doi:10.1016/S0167-7152(97)00043-6>), bootstrap (Davison and Hinkley (1997),
 ISBN:978-0-511-80284-3), intersection-union (Sozu et al. (2015),
@@ -32323,13 +32388,13 @@ G. (2017, submitted).")
 (define-public r-mildsvm
   (package
     (name "r-mildsvm")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mildsvm" version))
        (sha256
-        (base32 "1x4xlgr6azi7vy65ghyagw2jbif6gyvgk1zdn6hg0xd06ml0sxl4"))))
+        (base32 "1jrrkip68l8gw2fnlbawad7ijns7xdvami6w19b6mjs9i1ni4483"))))
     (properties `((upstream-name . "mildsvm")))
     (build-system r-build-system)
     (arguments
@@ -46165,6 +46230,33 @@ test for evaluating covariate effects on the cure rate in mixture cure models,
 using MDC-based statistics.  The methodology is described in Monroy-Castillo et
 al. (2025, manuscript submitted).")
     (license license:gpl3)))
+
+(define-public r-mdbx
+  (package
+    (name "r-mdbx")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mdbx" version))
+       (sha256
+        (base32 "0bgim1qmw3mm2vvcc5jal0l1lwgdca1ywa7hrn99j03lbwlbw8ix"))))
+    (properties `((upstream-name . "mdbx")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-cpp11))
+    (home-page "https://pedrobtz.github.io/mdbx/")
+    (synopsis "Bindings to the 'libmdbx' Embedded Key-Value Store")
+    (description
+     "This package provides low-level bindings to libmdbx', a compact and fast
+transactional key-value store built on memory-mapped files
+(<https://libmdbx.dqdkfa.ru/>).  Database environments, transactions, and
+byte-oriented read and write operations are exposed directly.  The libmdbx
+sources are bundled and compiled into the package, so no system library
+installation is required.")
+    (license license:expat)))
 
 (define-public r-mdbr
   (package
