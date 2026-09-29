@@ -1552,13 +1552,13 @@ terrestrial water cycle data across various spatio-temporal scales.")
 (define-public r-twbparser
   (package
     (name "r-twbparser")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "twbparser" version))
        (sha256
-        (base32 "1f1j7r5ssfanqx2wj0p2s4wclgpaasxi94w6pf4vjc0ah04ng0lk"))))
+        (base32 "10s81xa2xsaqnjhxhrji5a1f355609hs8b2rqhhws8vj70a44508"))))
     (properties `((upstream-name . "twbparser")))
     (build-system r-build-system)
     (arguments
@@ -1576,7 +1576,7 @@ terrestrial water cycle data across various spatio-temporal scales.")
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://prigasg.github.io/twbparser/")
-    (synopsis "Parse 'Tableau' Workbooks into Tidy Data and Dependency Graphs")
+    (synopsis "Parse 'Tableau' Workbooks into Functional Data")
     (description
      "High-performance parsing of Tableau workbook files into tidy data frames and
 dependency graphs for other visualization tools like R Shiny or Power BI
@@ -4166,6 +4166,35 @@ are provided.  The robust pseudo-periodogram of Molinares et.  al. (2009)
 M-estimator of the long-memory parameter d based on the robustification of the
 GPH estimator proposed by Reisen et al. (2017) <doi:10.1016/j.jspi.2017.02.008>.")
     (license license:gpl2+)))
+
+(define-public r-tsqlem
+  (package
+    (name "r-tsqlem")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TSQLEM" version))
+       (sha256
+        (base32 "0f1zw81dx5jzjd4i8m9zyap62c8qphhnir9qlbyr6kxjcbcp0jjw"))))
+    (properties `((upstream-name . "TSQLEM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mvtnorm r-matrix r-mass r-lavaan))
+    (home-page "https://cran.r-project.org/package=TSQLEM")
+    (synopsis
+     "Two Stage Estimation for Generalized Structural Equation Models")
+    (description
+     "This package provides a framework to estimate high dimensional generalized
+structural equation models using two stage quasi-likelihood
+expectation-maximization.  The structural model supports binomial (logit and
+probit), Poisson, negative binomial, and gamma distributions for the outcome
+variable.  Hattab (2026) \"A Two Stage Quasi-Likelihood Estimation Method for
+High Dimensional Generalized Structural Equation Models\"
+<doi:10.48550/@code{arXiv.2608.16017>}.")
+    (license license:gpl3+)))
 
 (define-public r-tsqca
   (package
@@ -11452,13 +11481,13 @@ classification model pipelines can be implemented using their model name from
 (define-public r-transferegovr
   (package
     (name "r-transferegovr")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "transferegovr" version))
        (sha256
-        (base32 "0pffzrp9992fydnz24i70bd3vjp0y8jj9wb40x8h6l5vl63igpv5"))))
+        (base32 "0c0gl0s81qfrhzyhspafv6lfbz55vssp2yg0nv2r2fsjij9z2mby"))))
     (properties `((upstream-name . "transferegovr")))
     (build-system r-build-system)
     (arguments
@@ -11473,14 +11502,15 @@ classification model pipelines can be implemented using their model name from
 programming interfaces of the Brazilian federal government's @code{TransfereGov}
 platform
 (<https://www.gov.br/transferegov/pt-br/ferramentas-gestao/dados-abertos>).
-Covers the special transfers, fund-to-fund transfers, and decentralized credit
-('TED') modules, which together publish forty-eight tables on action plans,
-programs, budget commitments, financial execution, management reports, and
-payment orders.  The APIs are built on @code{PostgREST}', so the package exposes
-its filtering, column selection, and ordering operators directly, and returns
-tidy tibbles with types taken from the published schema.  Automatic pagination,
-request throttling, retries with exponential backoff, and an optional response
-cache are included.")
+Covers the special transfers, fund-to-fund transfers, partnership management,
+and decentralized credit ('TED') modules, which together publish seventy-four
+tables on action plans, programs, proposals, partnerships, budget commitments,
+credit notes, financial execution, management reports, and payment orders.
+Filters are the services own typed query parameters, validated against the
+published schema before a request is made, and results are returned as tidy
+tibbles with types taken from that schema.  Automatic pagination, request
+throttling, retries with exponential backoff, and an optional response cache are
+included.")
     (license license:expat)))
 
 (define-public r-transda
@@ -16105,13 +16135,13 @@ nodes in the network.")
 (define-public r-tna
   (package
     (name "r-tna")
-    (version "1.2.3")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tna" version))
        (sha256
-        (base32 "1xrkw2x8lqgpbl2m827532gfabj55drcyp432xr4vl9jlp49lmxw"))))
+        (base32 "1gcpyvkfhgsz051myxma58179skdsgxarxhm46vxdzxm3k473vca"))))
     (properties `((upstream-name . "tna")))
     (build-system r-build-system)
     (arguments
@@ -19992,13 +20022,13 @@ correlations among the variables in a data-driven way.")
 (define-public r-tiltdens
   (package
     (name "r-tiltdens")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tiltdens" version))
        (sha256
-        (base32 "0dw7r5j4pws5q9q2ybv2vbbrywwzniqiw0iz5681rl0lca9yvrb5"))))
+        (base32 "0l0v6j3fbavq2mg1r94029xqvag49w819z2z1psd7fyrj0y3yv0j"))))
     (properties `((upstream-name . "tiltdens")))
     (build-system r-build-system)
     (arguments
@@ -30153,6 +30183,36 @@ is a part of the statnet suite of packages for network analysis.  See Krivitsky
 and Handcock (2014) <doi:10.1111/rssb.12014> and Carnegie, Krivitsky, Hunter,
 and Goodreau (2015) <doi:10.1080/10618600.2014.903087>.")
     (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
+
+(define-public r-tera
+  (package
+    (name "r-tera")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tera" version))
+       (sha256
+        (base32 "1lp9gm6gmz28w52khay79mzg0l19dzdwm1iksr6qrlkkil52n73s"))))
+    (properties `((upstream-name . "tera")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-yyjsonr r-rlang r-r6 r-cli))
+    (native-inputs (list r-quarto r-knitr))
+    (home-page "https://github.com/kbvernon/tera-r")
+    (synopsis "Generate Text and Documents with the Tera Templating Engine")
+    (description
+     "The tera package uses extendr to provide access to Vincent Prouillet's Tera
+templating engine in Rust.  Users mainly interact with a Tera R6 object, which
+serves as a template library with encapsulated methods for rendering templates
+with a given context.  Template syntax supports additional logic, including
+built-in filters, tests, and functions, as well as loops, conditions, and
+inheritance.  Documentation for Tera's templating syntax can be found at
+<https://keats.github.io/tera/>.")
+    (license license:expat)))
 
 (define-public r-teqr
   (package

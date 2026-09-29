@@ -379,20 +379,20 @@ main reference is @code{DePaolis} at al (2022) <doi:10.1007/s41109-022-00519-2>.
 (define-public r-xtpqardl
   (package
     (name "r-xtpqardl")
-    (version "1.0.1")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xtpqardl" version))
        (sha256
-        (base32 "13hv9b35mrpm4c2ky91yi45r6hcc7ysm1njibx9kyhl1xmzypzz0"))))
+        (base32 "1g88j7r6sgiya6rq007g4g84smahhkzxmcd9hk4xhmxxr3jljp7h"))))
     (properties `((upstream-name . "xtpqardl")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-quantreg))
-    (home-page "https://cran.r-project.org/package=xtpqardl")
+    (home-page "https://github.com/muhammedalkhalaf/xtpqardl")
     (synopsis "Panel Quantile Autoregressive Distributed Lag Model")
     (description
      "Estimation of Panel Quantile Autoregressive Distributed Lag (PQARDL) models that
@@ -403,8 +403,7 @@ correction term speed of adjustment, half-life of adjustment, and performs Wald
 tests for parameter equality across quantiles.  Based on the econometric
 frameworks of Pesaran, Shin, and Smith (1999)
 <doi:10.1080/01621459.1999.10474156>, Cho, Kim, and Shin (2015)
-<doi:10.1016/j.jeconom.2015.02.030>, and Bildirici and Kayikci (2022)
-<doi:10.1016/j.energy.2022.124303>.")
+<doi:10.1016/j.jeconom.2015.05.003>, and Bildirici and Kayikci (2022).")
     (license license:gpl3)))
 
 (define-public r-xtife
@@ -1588,6 +1587,35 @@ and documents.  It can be used in companion with R packages XML or xml2 to
 generate XML documents.  The fast XML generation is implemented using the Rcpp
 package.")
     (license license:expat)))
+
+(define-public r-xmlrectr
+  (package
+    (name "r-xmlrectr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "xmlrectr" version))
+       (sha256
+        (base32 "0q1g98y43bd5zdiarhcyfdwqsrvv6w58vlfjarcgry3wzzzl2f0b"))))
+    (properties `((upstream-name . "xmlrectr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2 r-xml r-tibble))
+    (native-inputs (list pkg-config r-knitr))
+    (home-page "https://github.com/larry77/xmlrectr")
+    (synopsis "Rectangle Arbitrary 'XML' into Analysis-Friendly Tables")
+    (description
+     "Converts arbitrary XML into canonical node tables and analysis-friendly
+rectangular outputs without requiring a vocabulary-specific parser.  Supports
+conservative structure proposals, explicit reusable profiles, advisory XSD
+inspection, bounded streaming, CSV and Parquet output, an analyst-oriented
+single-table projection, and record-level parallel execution with automatic
+scheduling.  The native implementation uses libxml2 for structural acceleration
+while the R implementation remains the semantic reference.")
+    (license license:gpl3)))
 
 (define-public r-xmlr
   (package

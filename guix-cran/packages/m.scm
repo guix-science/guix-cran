@@ -12069,6 +12069,46 @@ more than two survival curves whether the proportional hazards hypothesis is
 verified or not.")
     (license license:gpl3+)))
 
+(define-public r-msca
+  (package
+    (name "r-msca")
+    (version "1.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MSCA" version))
+       (sha256
+        (base32 "0hg2mf47gsn92axf4p3nxaba26p4c74zddx6sawy10pkdn8a1lcg"))))
+    (properties `((upstream-name . "MSCA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang
+                             r-rcppparallel
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-matrix
+                             r-fastkmedoids
+                             r-dplyr
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=MSCA")
+    (synopsis
+     "Unsupervised Clustering of Multiple Censored Time-to-Event Endpoints")
+    (description
+     "This package provides basic tools and wrapper functions for computing clusters
+of instances described by multiple time-to-event censored endpoints.  From
+long-format datasets, where one instance is described by one or more dated
+records, the main function, @code{`make_state_matrices()}`, creates state
+matrices.  Based on these matrices, optimised procedures using the Jaccard
+distance between instances enable the construction of longitudinal typologies.
+The package is under active development, with additional tools for graphical
+representation of typologies planned.  For methodological details, see our
+accompanying paper: `Delord M, Douiri A (2025)
+<doi:10.1186/s12874-025-02476-7>`.")
+    (license license:gpl3)))
+
 (define-public r-msbstatsdata
   (package
     (name "r-msbstatsdata")
@@ -21564,6 +21604,32 @@ distance decay of similarity.")
 programs and compare their economic and genetic impact.  Associated publication:
 Pook et al. (2020) <doi:10.1534/g3.120.401193>.")
     (license license:gpl3+)))
+
+(define-public r-mobius
+  (package
+    (name "r-mobius")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Mobius" version))
+       (sha256
+        (base32 "1041ak0r48kd3m3fynkb1f76xmhf1g1cyim42kcc77vr3sjzndd1"))))
+    (properties `((upstream-name . "Mobius")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rgl r-rfast r-directional))
+    (home-page "https://cran.r-project.org/package=Mobius")
+    (synopsis "Mobius Transport for Directional Data")
+    (description
+     "Density evaluation, random generation, and maximum likelihood estimation for the
+Mobius-von Mises-Fisher and isotropic scaled von Mises-Fisher distributions on
+the hypersphere, introduced in Garcia-Portugues and Kato (2026)
+<doi:10.48550/@code{arXiv.2607.29280>}.  Both distributions arise from Mobius
+transport of a von Mises-Fisher distribution.")
+    (license license:gpl2+)))
 
 (define-public r-mobilitydatapt
   (package
@@ -34695,13 +34761,13 @@ two classification results.")
 (define-public r-micemd
   (package
     (name "r-micemd")
-    (version "1.10.1")
+    (version "1.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "micemd" version))
        (sha256
-        (base32 "1lxy004i808gxxr0laaxy2vgh3an20q3sfx3gi36vmrisas76qwa"))))
+        (base32 "0v93jr516833yg5pg5n2k1ar6gi3k3aqa572sn60xh6rwgbvbrhy"))))
     (properties `((upstream-name . "micemd")))
     (build-system r-build-system)
     (arguments
@@ -38460,36 +38526,48 @@ Fisher, David J., et al. (2017) <DOI:10.1136/bmj.j573>) and model visualization.
 (define-public r-metaviz
   (package
     (name "r-metaviz")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metaviz" version))
        (sha256
-        (base32 "0jvv49rw66v7saj2y1q88rp6fyzq7473af5d3k77ymvjbpqyrbyz"))))
+        (base32 "1qx9724s9ysadpv4kv85q4zk5acaclx7wgni4x41wfx2hwm523pr"))))
     (properties `((upstream-name . "metaviz")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcolorbrewer
+    (propagated-inputs (list r-tidyr
+                             r-scales
+                             r-rcolorbrewer
                              r-nullabor
+                             r-moments
                              r-metafor
+                             r-magrittr
+                             r-gtable
                              r-gridextra
                              r-ggpubr
                              r-ggplot2
-                             r-dplyr))
+                             r-ggpattern
+                             r-ggnewscale
+                             r-ggbeeswarm
+                             r-dplyr
+                             r-desctools))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Mkossmeier/metaviz")
     (synopsis
      "Forest Plots, Funnel Plots, and Visual Funnel Plot Inference for Meta-Analysis")
     (description
      "This package provides a compilation of functions to create visually appealing
-and information-rich plots of meta-analytic data using ggplot2'.  Currently
-allows to create forest plots, funnel plots, and many of their variants, such as
-rainforest plots, thick forest plots, additional evidence contour funnel plots,
-and sunset funnel plots.  In addition, functionalities for visual inference with
-the funnel plot in the context of meta-analysis are provided.")
+and information-rich plots of meta-analytic data using ggplot2'.  Provides
+functions to create forest plots, funnel plots, and many of their variants,
+including rainforest plots, thick forest plots, additional evidence contour
+funnel plots, and sunset funnel plots.  In addition, functionalities for visual
+inference with funnel plots in the context of meta-analysis are provided.
+Further functionalities include plots for comparing fixed-effect and
+random-effects models and dedicated visualizations for three-level
+meta-analysis.")
     (license license:gpl2)))
 
 (define-public r-metavcov
@@ -46234,13 +46312,13 @@ al. (2025, manuscript submitted).")
 (define-public r-mdbx
   (package
     (name "r-mdbx")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mdbx" version))
        (sha256
-        (base32 "0bgim1qmw3mm2vvcc5jal0l1lwgdca1ywa7hrn99j03lbwlbw8ix"))))
+        (base32 "0w1vh5k2idmw0spqqvz2sd296mq4v34l03g0bsb83asixr0fa5zm"))))
     (properties `((upstream-name . "mdbx")))
     (build-system r-build-system)
     (arguments
@@ -51414,19 +51492,20 @@ and Coxhead's coefficient are included for comparison and flexibility.")
 (define-public r-matrixcorr
   (package
     (name "r-matrixcorr")
-    (version "0.12.2")
+    (version "0.12.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "matrixCorr" version))
        (sha256
-        (base32 "0vjbhzn45iq45v77bcsg850i67fa9sgniywvj9374p9lvyq9y3c4"))))
+        (base32 "1nksbm70nh4ysr786gmqxd6ln6ksa8izybi45ivahr6xi80k9i70"))))
     (properties `((upstream-name . "matrixCorr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang
+    (propagated-inputs (list r-robustbase
+                             r-rlang
                              r-rcpparmadillo
                              r-rcpp
                              r-matrix
@@ -51449,8 +51528,9 @@ overall intraclass correlation for wide data, repeated-measures correlation, and
 agreement/reliability analyses based on Cohen's kappa, weighted kappa,
 multi-rater kappa, Gwet's AC1/AC2, Krippendorff's alpha, Bland-Altman methods,
 Lin's concordance correlation coefficient, Poisson GLMM concordance for count
-data, and repeated-measures intraclass/concordance correlation.  Implemented
-with optimized C++ backends using BLAS/@code{OpenMP} and memory-aware symmetric
+data, and repeated-measures intraclass/concordance correlation, including robust
+concordance based on minimum covariance determinant estimates.  Implemented with
+optimized C++ backends using BLAS/@code{OpenMP} and memory-aware symmetric
 updates, and returns standard R objects with print/summary/plot methods plus
 optional Shiny viewers for matrix inspection.  Methods based on Ledoit and Wolf
 (2004) <doi:10.1016/S0047-259X(03)00096-4>; high-dimensional shrinkage
@@ -54120,6 +54200,51 @@ inspired by the \"comment\" window of <https://github.com/>.")
 maintained by Jordan Mark Barbone.")
     (license license:expat)))
 
+(define-public r-mariposa
+  (package
+    (name "r-mariposa")
+    (version "0.7.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mariposa" version))
+       (sha256
+        (base32 "0cbfsl5j6sr6kfg0z48w843jqrbd1calylvkwk14m9wbfdx1y49j"))))
+    (properties `((upstream-name . "mariposa")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tibble
+                             r-rlang
+                             r-htmltools
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://YannickDiehl.github.io/mariposa/")
+    (synopsis "'SPSS'-Compatible Statistical Tools for Survey Data")
+    (description
+     "Statistical analysis of survey data with full support for survey weights,
+grouped operations, and tidyverse integration.  Provides 80 functions for data
+import/export ('SPSS', Stata', SAS', Excel') with label roundtripping and tagged
+NA preservation, label management (variable labels, value labels, type
+conversions, missing value declaration), data transformation (recoding, dummy
+coding, standardization, centering), descriptive statistics, codebook
+generation, hypothesis testing, correlation analysis, post-hoc comparisons,
+weighted statistics, scale analysis, regression, non-parametric tests, exact
+tests, factorial ANOVA, and ANCOVA. Every analysis offers compact @code{print()}
+and detailed @code{summary()} output with toggleable sections.  Statistical
+results are validated against SPSS version 29 within documented per-tier
+tolerances (see the compatibility vignette for per-function status).  Methods
+follow the published algorithms of IBM Corp. (2023, \"IBM SPSS Statistics
+Algorithms\"), the Lilliefors-corrected normality test of Dallal and Wilkinson
+(1986) <doi:10.1080/00031305.1986.10475419>, and the adjusted standardized
+residuals of Haberman (1973) <doi:10.2307/2529686>.  Designed for survey
+researchers, social scientists, and students working with complex survey
+designs.")
+    (license license:expat)))
+
 (define-public r-marinet
   (package
     (name "r-marinet")
@@ -54552,20 +54677,25 @@ visualising maritime routes.")
 (define-public r-marcxmlr
   (package
     (name "r-marcxmlr")
-    (version "0.2.1")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "marcxmlr" version))
        (sha256
-        (base32 "0az26a8lqr896qy7prqml3kvg4s82g58a0vcybzz6i6hnycah38i"))))
+        (base32 "0zm9d0d9wdqf1i7r72pv3vdisizm9y8wnahw1phvcj1brk5v30f5"))))
     (properties `((upstream-name . "marcxmlr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list zlib libxml2))
-    (propagated-inputs (list r-xml2 r-tibble r-rlang r-purrr))
+    (propagated-inputs (list r-xml2
+                             r-tibble
+                             r-rlang
+                             r-purrr
+                             r-futurize
+                             r-future))
     (native-inputs (list pkg-config))
     (home-page "https://github.com/larry77/marcxmlr")
     (synopsis "Faithful and Scalable MARCXML Parsing")
@@ -55927,6 +56057,35 @@ globe visualizations; layer sf objects to create filled maps, circle maps,
 heatmaps', and three-dimensional graphics; and customize map styles and views.
 The package also includes utilities to use Mapbox and @code{MapLibre} maps in
 Shiny web applications.")
+    (license license:expat)))
+
+(define-public r-mapfit
+  (package
+    (name "r-mapfit")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mapfit" version))
+       (sha256
+        (base32 "1n2argzs9r41x2sp4bwrfx8dl5yzjr8nn4a7y2fk0slmijq5qlsc"))))
+    (properties `((upstream-name . "mapfit")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp r-r6 r-matrix r-deformula))
+    (home-page "https://github.com/okamumu/mapfit")
+    (synopsis "PH/MAP Parameter Estimation")
+    (description
+     "Estimation methods for phase-type distribution (PH) and Markovian arrival
+process (MAP) from empirical data (point and grouped data) and density function.
+ The tool is based on the following researches: Okamura et al. (2009)
+<doi:10.1109/TNET.2008.2008750>, Okamura and Dohi (2009)
+<doi:10.1109/QEST.2009.28>, Okamura et al. (2011)
+<doi:10.1016/j.peva.2011.04.001>, Okamura et al. (2013) <doi:10.1002/asmb.1919>,
+Horvath and Okamura (2013) <doi:10.1007/978-3-642-40725-3_10>, Okamura and Dohi
+(2016) <doi:10.15807/jorsj.59.72>.")
     (license license:expat)))
 
 (define-public r-mapedit

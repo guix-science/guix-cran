@@ -1587,13 +1587,13 @@ and interactive way.")
 (define-public r-rwa
   (package
     (name "r-rwa")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rwa" version))
        (sha256
-        (base32 "0lh7j8y82b76vc4awq5zxk4hnam0f4i60d0lv0i9jd2lgp04v6bx"))))
+        (base32 "0s553w12m6jlr0vk82ywdsx45fcrivp45s94fwps27hp2204drvh"))))
     (properties `((upstream-name . "rwa")))
     (build-system r-build-system)
     (arguments
@@ -16620,6 +16620,33 @@ constrained programming (MIQPQC) problems as well as all variants/combinations
 of LP, QP, QCP, IP.")
     (license license:gpl3)))
 
+(define-public r-roi-plugin-coinclp
+  (package
+    (name "r-roi-plugin-coinclp")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ROI.plugin.coinclp" version))
+       (sha256
+        (base32 "04x52vidpvv7bhgl8aqzgqhkmk5skh37ah5ywg0xycqvm9nzg9k0"))))
+    (properties `((upstream-name . "ROI.plugin.coinclp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-slam r-roi r-coinclp))
+    (home-page "https://github.com/SamLovick/ROI.plugin.coinclp")
+    (synopsis "'COIN-OR' 'Clp' Plugin for the 'R' Optimization Infrastructure")
+    (description
+     "Registers the COIN-OR Clp linear programming solver, through the coinclp
+package, with the R Optimization Infrastructure ('ROI').  Linear programs with
+continuous variables are then solved by ROI_solve(op, solver = \"coinclp\"),
+keeping sparse constraint matrices sparse all the way to the solver, and
+returning dual values, reduced costs and row activities alongside the primal
+solution.")
+    (license (license:fsdg-compatible "EPL"))))
+
 (define-public r-roi-plugin-clarabel
   (package
     (name "r-roi-plugin-clarabel")
@@ -21606,13 +21633,13 @@ retrieve results within R.")
 (define-public r-rnentropy
   (package
     (name "r-rnentropy")
-    (version "1.2.3")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RNentropy" version))
        (sha256
-        (base32 "1kflx1i01ddq803i0vj79zfjs9y0sl8dzra9j5x84m6wcjbn71kl"))))
+        (base32 "1kqlqqfm1sqivv62dy35y8s2605wl1iskqd0d8wv4iyfr0ris7i8"))))
     (properties `((upstream-name . "RNentropy")))
     (build-system r-build-system)
     (arguments
@@ -21627,8 +21654,9 @@ identification of genes showing a significant variation of expression across
 multiple conditions.  Given expression estimates from any number of RNA-Seq
 samples and conditions it identifies genes or transcripts with a significant
 variation of expression across all the conditions studied, together with the
-samples in which they are over- or under-expressed.  Zambelli et al. (2018)
-<doi:10.1093/nar/gky055>.")
+samples in which they are over- or under-expressed.  It also detects genes whose
+relative isoform usage changes across samples (isoform switching).  Zambelli et
+al. (2018) <doi:10.1093/nar/gky055>.")
     (license license:gpl3)))
 
 (define-public r-rneighborqtl
@@ -44373,13 +44401,13 @@ instruments and event arms.")
 (define-public r-redcapsync
   (package
     (name "r-redcapsync")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "REDCapSync" version))
        (sha256
-        (base32 "0arkyfsywnv69m2cd8bvvrnql53raxsv56iy944zjj274vbcmcrz"))))
+        (base32 "00986hqqmjynksml3cib6833zyqvvkrcg5vja4s69m4vhkcdbb6f"))))
     (properties `((upstream-name . "REDCapSync")))
     (build-system r-build-system)
     (arguments
@@ -44393,7 +44421,6 @@ instruments and event arms.")
                              r-r6
                              r-openxlsx2
                              r-lubridate
-                             r-keyring
                              r-hoardr
                              r-dplyr
                              r-cli
@@ -56476,13 +56503,13 @@ as well as the ability to integrate with other data sources.")
 (define-public r-rbfmvar
   (package
     (name "r-rbfmvar")
-    (version "2.0.2")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rbfmvar" version))
        (sha256
-        (base32 "0ap0irwr0iy01qsc6bd3f3bllbq3cbgzb2i5ivz9v7lvvq9r1cq9"))))
+        (base32 "1nqagjhbz1wwlna3bwbvrmrwg2b46mp1l5mwjxvh8bfn32bzjx8j"))))
     (properties `((upstream-name . "rbfmvar")))
     (build-system r-build-system)
     (arguments
@@ -56493,7 +56520,7 @@ as well as the ability to integrate with other data sources.")
     (synopsis "Residual-Based Fully Modified Vector Autoregression")
     (description
      "This package implements the Residual-Based Fully Modified Vector Autoregression
-(RBFM-VAR) estimator of Chang (2000) <doi:10.1017/S0266466600166071>.  The
+(RBFM-VAR) estimator of Chang (2000) <doi:10.1017/S0266466600166058>.  The
 RBFM-VAR procedure extends Phillips (1995) FM-VAR to handle any unknown mixture
 of I(0), I(1), and I(2) components without prior knowledge of the number or
 location of unit roots.  Provides automatic lag selection via information

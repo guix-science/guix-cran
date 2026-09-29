@@ -7831,13 +7831,13 @@ Object Localization Based on Image Superpixelization\"
 (define-public r-boundedur
   (package
     (name "r-boundedur")
-    (version "1.0.1")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "boundedur" version))
        (sha256
-        (base32 "09gyd420akcyl1aa5gb0zd2hkxscd3276mbjf113ah0ifb4my18m"))))
+        (base32 "1wk524i5sjjy66540h0sqm92g8v8372d6br7faaql2p4vcv69c5y"))))
     (properties `((upstream-name . "boundedur")))
     (build-system r-build-system)
     (arguments
@@ -7847,7 +7847,7 @@ Object Localization Based on Image Superpixelization\"
     (synopsis "Unit Root Tests for Bounded Time Series")
     (description
      "This package implements unit root tests for bounded time series following
-Cavaliere and Xu (2014) <doi:10.1016/j.jeconom.2013.08.012>.  Standard unit root
+Cavaliere and Xu (2014) <doi:10.1016/j.jeconom.2013.08.026>.  Standard unit root
 tests (ADF, Phillips-Perron) have non-standard limiting distributions when the
 time series is bounded.  This package provides modified ADF and M-type tests
 (MZ-alpha, MZ-t, MSB) with p-values computed via Monte Carlo simulation of
@@ -13235,13 +13235,13 @@ situations.")
 (define-public r-blockcv
   (package
     (name "r-blockcv")
-    (version "4.0-0")
+    (version "4.0-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "blockCV" version))
        (sha256
-        (base32 "0km4nszanmz0ish8r7lcqr1jnw2dcxky3kba2zv7gm0kzlxdynlh"))))
+        (base32 "0nj3xzmv35ryx8z4gz543lgj2i07r4y6bnb8623cbl6w5c3ymzb6"))))
     (properties `((upstream-name . "blockCV")))
     (build-system r-build-system)
     (arguments
@@ -13652,13 +13652,13 @@ immature trial data.  See Che et al. (2022) <doi:10.1177/0272989X221134545>.")
 (define-public r-blend
   (package
     (name "r-blend")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Blend" version))
        (sha256
-        (base32 "0qxwsmn0vp6abjd7q3pkbxbmy4iapzgrvg6w1pkbb23zh3w1z01x"))))
+        (base32 "1d8grsm71vhfm9a8qwfg1nza4pm83mr0lpmh2bagxyalaq3bwvg4"))))
     (properties `((upstream-name . "Blend")))
     (build-system r-build-system)
     (arguments
@@ -13680,6 +13680,44 @@ intervals on both parametric and nonparametric effects can be validated on
 finite samples.  The Markov chain Monte Carlo algorithms of the proposed and
 alternative models are efficiently implemented in C++'.")
     (license license:gpl2)))
+
+(define-public r-blaunet
+  (package
+    (name "r-blaunet")
+    (version "3.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Blaunet" version))
+       (sha256
+        (base32 "0qd9w9v42qnnac7yfd59jn2qgsvcz666jvxlj7q2f07ggh5fd53v"))))
+    (properties `((upstream-name . "Blaunet")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sna
+                             r-shiny
+                             r-rgl
+                             r-network
+                             r-ergm
+                             r-bslib))
+    (home-page "https://www.facebook.com/groups/425015561030239/")
+    (synopsis
+     "Calculate and Analyze Blau Statuses for Measuring Social Distance")
+    (description
+     "Calculate and analyze Blau statuses for quantifying social distance between
+individuals belonging to organizations.  Relational (network) data can be
+incorporated for additional analyses.  The methods build on affiliation ecology
+and Blau space as described by @code{McPherson} (1983) <doi:10.2307/2117719>,
+@code{McPherson} and Ranger-Moore (1991) <doi:10.1093/sf/70.1.19>,
+@code{McPherson}, Popielarz and Drobnic (1992) <doi:10.2307/2096202>,
+@code{McPherson} and Rotolo (1996) <doi:10.2307/2096330>, and @code{McPherson}
+(2004) <doi:10.1093/icc/13.1.263>.  The implementation of Blau-space analyses in
+Blaunet is described by Genkin et al. (2018) <doi:10.1371/journal.pone.0204990>.
+ This project is supported by the Defense Threat Reduction Agency (DTRA) Grant
+HDTRA-10-1-0043.")
+    (license license:gpl3)))
 
 (define-public r-blatr
   (package
@@ -21055,13 +21093,13 @@ autoregressive parameters as described in Elbayoumi and Mostafa (2023)
 (define-public r-bifrost
   (package
     (name "r-bifrost")
-    (version "0.1.4")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bifrost" version))
        (sha256
-        (base32 "14jn3xya5svc2n8z6szzs0kz1abg7pna9i6wqlxhpap18gzxbfdz"))))
+        (base32 "0ajhwk1sw031dpkpbbakdn1gkpzf2x08wnykh6c6ccw8n8ni8b7d"))))
     (properties `((upstream-name . "bifrost")))
     (build-system r-build-system)
     (arguments
@@ -21069,28 +21107,35 @@ autoregressive parameters as described in Elbayoumi and Mostafa (2023)
       #:tests? #f))
     (propagated-inputs (list r-viridis
                              r-txtplot
+                             r-rrphylo
+                             r-progressr
+                             r-plotrix
                              r-phytools
                              r-mvmorph
+                             r-jsonlite
                              r-future-apply
                              r-future
+                             r-digest
+                             r-cli
                              r-ape))
-    (native-inputs (list r-knitr))
     (home-page "https://jakeberv.com/bifrost/")
     (synopsis
      "Branch-Level Inference Framework for Recognizing Optimal Shifts in Traits")
     (description
-     "This package provides methods for detecting and visualizing cladogenic shifts in
-multivariate trait data on phylogenies.  Implements penalized-likelihood
-multivariate generalized least squares models, enabling analyses of
-high-dimensional trait datasets and large trees via
-@code{searchOptimalConfiguration()}.  Includes a greedy step-wise shift-search
-algorithm following approaches developed in Smith et al. (2023)
-<doi:10.1111/nph.19099> and Berv et al. (2024) <doi:10.1126/sciadv.adp0114>.
-Methods build on multivariate GLS approaches described in Clavel et al. (2019)
-<doi:10.1093/sysbio/syy045> and implemented in the @code{mvgls()} function from
-the @code{mvMORPH} package.  Documentation and vignettes are available at
-<https://jakeberv.com/bifrost/>, including worked examples for the jaw-shape
-dataset.")
+     "This package provides methods for detecting, visualizing, and evaluating
+cladogenic shifts in multivariate trait data on phylogenies.  Implements
+penalized-likelihood multivariate generalized least squares models and a greedy
+step-wise shift search for high-dimensional trait datasets and large trees via
+@code{searchOptimalConfiguration()}.  Provides tools for inspecting search
+trajectories, summarizing branch and lineage rates, analyzing shift timing and
+magnitudes, estimating post-hoc regime covariance and integration, and running
+simulation-based calibration and tuning.  The search follows approaches
+developed in Smith et al. (2023) <doi:10.1111/nph.19099> and Berv et al. (2024)
+<doi:10.1126/sciadv.adp0114>.  Methods build on multivariate generalized least
+squares approaches described in Clavel et al. (2019) <doi:10.1093/sysbio/syy045>
+and implemented in the @code{mvgls()} function from the @code{mvMORPH} package.
+Documentation and worked examples are available at
+<https://jakeberv.com/bifrost/>.")
     (license license:gpl2+)))
 
 (define-public r-bifiesurvey
@@ -24184,19 +24229,20 @@ use with the caret package.")
 (define-public r-bessel
   (package
     (name "r-bessel")
-    (version "0.7-0")
+    (version "0.7-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Bessel" version))
        (sha256
-        (base32 "0fyv5w953f0w14cnhnmjzxwbnr4f43cjr9vh1cwi2zcn61aiyklf"))))
+        (base32 "1qwlqcfjlh1ryd8ajqyh09vpdxlhzpkx22n63z3gmxm1zhf5qs4l"))))
     (properties `((upstream-name . "Bessel")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rmpfr))
+    (native-inputs (list gfortran))
     (home-page "https://specfun.r-forge.r-project.org/")
     (synopsis "Computations and Approximations for Bessel Functions")
     (description
@@ -29872,13 +29918,13 @@ continuous and categorical inputs and scalar output (Collins et al., 2023
 (define-public r-bayesppdsurv
   (package
     (name "r-bayesppdsurv")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesPPDSurv" version))
        (sha256
-        (base32 "1sl9ccnvcjgq0xsm6pqx6dwz49q127g5aqz6npdzgxqi1xrmamgp"))))
+        (base32 "18cbh8yr2cnrfks6ija73m78skaahs0bcj4mqaa9j6qgvl2dcck8"))))
     (properties `((upstream-name . "BayesPPDSurv")))
     (build-system r-build-system)
     (arguments
@@ -29886,17 +29932,17 @@ continuous and categorical inputs and scalar output (Collins et al., 2023
       #:tests? #f))
     (propagated-inputs (list r-tidyr r-rcppdist r-rcpparmadillo r-rcpp r-dplyr))
     (home-page "https://cran.r-project.org/package=BayesPPDSurv")
-    (synopsis "Bayesian Power Prior Design for Survival Data")
+    (synopsis "Bayesian Power Prior Design for Survival Outcomes")
     (description
      "Bayesian power/type I error calculation and model fitting using the power prior
-and the normalized power prior for proportional hazards models with piecewise
-constant hazard.  The methodology and examples of applying the package are
-detailed in <doi:10.48550/@code{arXiv.2404.05118>}.  The Bayesian clinical trial
-design methodology is described in Chen et al. (2011)
-<doi:10.1111/j.1541-0420.2011.01561.x>, and Psioda and Ibrahim (2019)
-<doi:10.1093/biostatistics/kxy009>.  The proportional hazards model with
-piecewise constant hazard is detailed in Ibrahim et al. (2001)
-<doi:10.1007/978-1-4757-3447-8>.")
+and the normalized power prior for time-to-event endpoints.  The proportional
+hazards model with piecewise constant hazard (piecewise exponential) is
+implemented.  The methodology and examples of applying the package are detailed
+in <doi:10.32614/RJ-2026-009>.  The Bayesian clinical trial design methodology
+is described in Chen et al. (2011) <doi:10.1111/j.1541-0420.2011.01561.x>, and
+Psioda and Ibrahim (2019) <doi:10.1093/biostatistics/kxy009>.  The proportional
+hazards model with piecewise constant hazard is detailed in Ibrahim et al.
+(2001) <doi:10.1007/978-1-4757-3447-8>.")
     (license license:gpl3+)))
 
 (define-public r-bayesppd

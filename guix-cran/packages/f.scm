@@ -3848,6 +3848,38 @@ profile segmentation is required, the procedure can be parallelized using the
 future package.")
     (license license:gpl2+)))
 
+(define-public r-fssgam
+  (package
+    (name "r-fssgam")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FSSgam" version))
+       (sha256
+        (base32 "0lw7a70an26c2sdx8qxxb6d1qsm6bpjn2sjii02isnhgqpq2vz78"))))
+    (properties `((upstream-name . "FSSgam")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-nnet r-mumin r-mgcv r-foreach r-dosnow))
+    (home-page "https://github.com/beckyfisher/FSSgam_package")
+    (synopsis "Full Subsets Multiple Regression Using GAMs")
+    (description
+     "Full-subsets information-theoretic approaches are increasingly used to explore
+predictive power and variable importance when a wide range of candidate
+predictors are being considered.  This package provides functions that can be
+used to construct, fit, and compare a complete model set of possible ecological
+or environmental predictors for a given response variable of interest.  Models
+are based on Generalized Additive Models (GAMs) and build on the @code{MuMIn}
+package.  Advantages include the capacity to fit more predictors than there are
+replicates, automatic removal of models with correlated predictors, and support
+for model sets that include interactions between factors and smooth predictors,
+as well as smooth-by-smooth interactions via @code{te()}.  Methods are described
+in Fisher et al. (2018) <doi:10.1002/ece3.4134>.")
+    (license license:asl2.0)))
+
 (define-public r-fssg
   (package
     (name "r-fssg")
@@ -7334,13 +7366,13 @@ and read tabular-data-resources to and from disk.")
 (define-public r-fqardl
   (package
     (name "r-fqardl")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fqardl" version))
        (sha256
-        (base32 "0niswa1ll42kv37jm9sa6gqcjcfcp44xglvdmr8bi8lc64igcph3"))))
+        (base32 "0xy424zv53c2ncz371qmnxc7kscfl9w3by4pwqvqr33s9zd0n3j9"))))
     (properties `((upstream-name . "fqardl")))
     (build-system r-build-system)
     (arguments
@@ -7360,12 +7392,11 @@ decomposition following Shin, Yu & Greenwood-Nimmo (2014)
 <doi:10.1007/978-1-4899-8008-3_9>; (3) Multi-Threshold NARDL (MTNARDL) -
 multiple regime asymmetry analysis; (4) Fourier Unit Root Tests - ADF and KPSS
 tests with Fourier terms following Enders & Lee (2012)
-<doi:10.1016/j.econlet.2012.05.019> and Becker, Enders & Lee (2006)
-<doi:10.1111/j.1467-9892.2006.00490.x>.  Features automatic lag and frequency
+<doi:10.1016/j.econlet.2012.04.081> and Becker, Enders & Lee (2006)
+<doi:10.1111/j.1467-9892.2006.00478.x>.  Features automatic lag and frequency
 selection, PSS bounds testing following Pesaran, Shin & Smith (2001)
 <doi:10.1002/jae.616>, bootstrap cointegration tests, Wald tests for asymmetry,
-dynamic multiplier computation, and publication-ready visualizations.  Ported
-from Stata/Python by Dr. Merwan Roudane.")
+dynamic multiplier computation, and publication-ready visualizations.")
     (license license:gpl3)))
 
 (define-public r-fqar
@@ -11619,13 +11650,13 @@ of Skew Heavy-Tailed Errors.")
 (define-public r-fmritools
   (package
     (name "r-fmritools")
-    (version "0.7.2")
+    (version "0.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fMRItools" version))
        (sha256
-        (base32 "11lcsq7y242ldj485bs1sl5f52710y07igiv40pjk9xgl5lwf98a"))))
+        (base32 "1vyg7yifsjbx0vsyhfkm20qvkjcgpl6lkad4f37im46c5k2w52fj"))))
     (properties `((upstream-name . "fMRItools")))
     (build-system r-build-system)
     (arguments
@@ -17226,6 +17257,35 @@ dynamics of migratory fish.  Datasets contain both basic size information on a
 per fish basis, as well as otolith data that contains a per day record of fish
 growth history.  All data in this package was collected by the author, from
 2015-2016, in the Wellington region of New Zealand.")
+    (license license:gpl3)))
+
+(define-public r-fishboot
+  (package
+    (name "r-fishboot")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fishboot" version))
+       (sha256
+        (base32 "15559338q6skljliqdvrpmy9naxadz6p26909vlvlc0dkwxfh46r"))))
+    (properties `((upstream-name . "fishboot")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tropfishr r-ks r-foreach r-fishmethods
+                             r-doparallel))
+    (home-page "https://github.com/rschwamborn/fishboot")
+    (synopsis
+     "Bootstrap-Based Methods for the Study of Fish Stocks and Aquatic Populations")
+    (description
+     "This package provides a suite of bootstrap-based models and tools for analyzing
+fish stocks and aquatic populations.  Designed for ecologists and fisheries
+scientists, it supports data from length-frequency distributions,
+tag-and-recapture studies, and hard structure readings (e.g., otoliths).  See
+Schwamborn et al., 2019 for background.  The package includes functions for
+bootstrapped fitting of growth curves and plotting.")
     (license license:gpl3)))
 
 (define-public r-fishbc
@@ -23717,13 +23777,13 @@ classification, unsupervised classification and functional analysis of variance.
 (define-public r-fd
   (package
     (name "r-fd")
-    (version "1.0-12.5")
+    (version "1.0-12.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FD" version))
        (sha256
-        (base32 "15aa8zpn9hm2kgghnprqy0sk65n55f2j4hhwzs0lh9kfv2m9p9a9"))))
+        (base32 "0qxizgg2z06fhcy0ymwa3f1crgk6q9z237ayzg5xpmd4b52vbp4z"))))
     (properties `((upstream-name . "FD")))
     (build-system r-build-system)
     (arguments
@@ -24245,6 +24305,45 @@ functions.  For more details see chapter 8 of Horvath and Rice (2024)
 <doi:10.1007/978-3-031-51609-2>.  Additional papers are forthcoming.  Focused
 works are also included in the documentation of corresponding functions.")
     (license license:gpl3+)))
+
+(define-public r-fcgr
+  (package
+    (name "r-fcgr")
+    (version "1.2-0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FCGR" version))
+       (sha256
+        (base32 "1w9fvx4blapq7jgcv0gva8rskhvqs7zv1lz1qrwiwd3x44qmj50w"))))
+    (properties `((upstream-name . "FCGR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sfsmisc
+                             r-pspline
+                             r-nlme
+                             r-mgcv
+                             r-mass
+                             r-kernsmooth
+                             r-kerdiest))
+    (home-page "https://cran.r-project.org/package=FCGR")
+    (synopsis "Fatigue Crack Growth in Reliability")
+    (description
+     "Fatigue Crack Growth in Reliability estimates the distribution of material
+lifetime due to mechanical fatigue efforts.  The FCGR package provides
+simultaneous crack growth curves fitting to different specimens in materials
+under mechanical stress efforts.  Linear mixed-effects models with smoothing
+B-Splines and the linearized Paris-Erdogan law are applied.  Once defined the
+fail for a determined crack length, the distribution function of failure times
+to fatigue is obtained.  The density function is estimated by applying
+nonparametric binned kernel density estimate ('bkde') and the kernel estimator
+of the distribution function ('kde').  The results of Pinheiro and Bates method
+based on nonlinear mixed-effects regression ('nlme') can be also retrieved.  The
+package contains the @code{crack.growth()}, @code{PLOT.cg()}, @code{IB.F()}, and
+Alea.A (database) functions.")
+    (license license:gpl2+)))
 
 (define-public r-fcfdr
   (package
@@ -26207,26 +26306,33 @@ front-end and a fast back-end using collapse and cheapr'.")
 (define-public r-fastpls
   (package
     (name "r-fastpls")
-    (version "0.2")
+    (version "0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastPLS" version))
        (sha256
-        (base32 "1cjmpci3jwq6zpav1rydis77fgcqblpqlbhhpg2wcv432z28yyl0"))))
+        (base32 "07xmlyzwnacbmsr6vh37nzs5wcbb8gfcglr2wvc65wdsvhlfslp7"))))
     (properties `((upstream-name . "fastPLS")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix))
-    (home-page "https://cran.r-project.org/package=fastPLS")
-    (synopsis "Fast Implementation of Partial Least Square")
+    (inputs (list))
+    (propagated-inputs (list r-float))
+    (native-inputs (list pkg-config r-knitr))
+    (home-page "https://github.com/tkcaccia/fastPLS")
+    (synopsis "Fast Partial Least Squares for High-Dimensional Data")
     (description
-     "An implementation in Rcpp / @code{RcppArmadillo} of Partial Least Square
-algorithms.  This package includes other functions to perform the double
-cross-validation and a fast correlation.")
-    (license license:gpl3)))
+     "Fast implementations of partial least squares models for high-dimensional
+regression and classification.  The @code{fastPLS} software provides compiled
+implementations of PLS-SVD, a SIMPLS-family estimator, OPLS and kernel PLS,
+together with truncated singular value decomposition backends, discriminant
+classifiers, cross-validation utilities and optional CUDA or Apple Metal
+acceleration when the required system libraries are available.  Compact latent
+prediction and memory-aware numerical routes support analyses with large
+predictor or multivariate-response matrices.")
+    (license license:expat)))
 
 (define-public r-fastpcs
   (package

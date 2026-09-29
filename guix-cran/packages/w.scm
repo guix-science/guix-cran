@@ -2100,6 +2100,43 @@ invariant.  See more details in Buj, Cook, Asimov and Hurley (2005)
 <doi:10.48550/@code{arXiv.2311.08181>}.")
     (license license:expat)))
 
+(define-public r-wowi
+  (package
+    (name "r-wowi")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "wowi" version))
+       (sha256
+        (base32 "1v2kwmi4h8grv466x7valbcm379apy3jaf76fi2f8h692h2cs9jz"))))
+    (properties `((upstream-name . "wowi")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-tibble
+                             r-stringr
+                             r-shinycssloaders
+                             r-shiny
+                             r-rsatscan
+                             r-rlang
+                             r-openxlsx
+                             r-mwana
+                             r-htmltools
+                             r-dt
+                             r-dplyr
+                             r-bslib))
+    (native-inputs (list r-quarto))
+    (home-page "https://github.com/tiwowi/wowi")
+    (synopsis "Detect Spatial Clusters of High Rates of Acute Malnutrition")
+    (description
+     "Utilities for detecting statistically significant spatial clusters of high acute
+malnutrition rates using a Bernoulli spatial scan statistic, implemented via the
+@code{SaTScan} software <https://www.satscan.org/>.")
+    (license license:gpl3+)))
+
 (define-public r-wotply
   (package
     (name "r-wotply")

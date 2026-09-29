@@ -10,6 +10,7 @@
   #:use-module (gnu packages duckdb)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages web)
+  #:use-module (gnu packages compression)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages java)
@@ -437,13 +438,13 @@ dimension reduction layout.")
 (define-public r-quitefastmst
   (package
     (name "r-quitefastmst")
-    (version "0.9.1")
+    (version "0.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quitefastmst" version))
        (sha256
-        (base32 "1c889l5mv1fq71sknixfb0pmrgxbv0lxf37q77xlla42c4bjy18n"))))
+        (base32 "17q7x8vfbb6vsabkr8rv0m6vpf3cak2mz28d3b12ljphc2xyc7zx"))))
     (properties `((upstream-name . "quitefastmst")))
     (build-system r-build-system)
     (arguments
@@ -2694,13 +2695,13 @@ control.")
 (define-public r-quak
   (package
     (name "r-quak")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quak" version))
        (sha256
-        (base32 "0yss6fxri5mml67qw1dkpi9756qjns5cwjcaxxlmyb8k5w5jrq4v"))))
+        (base32 "04pkaw3vrvyi7a4zn4rpc8vg8lnrh9gf6m2kbzg4pih8xhcqr8x3"))))
     (properties `((upstream-name . "quak")))
     (build-system r-build-system)
     (arguments
@@ -2713,7 +2714,7 @@ control.")
                              r-dbi
                              r-curl
                              r-cli))
-    (home-page "https://github.com/pedrobtz/quak")
+    (home-page "https://pedrobtz.github.io/quak/")
     (synopsis "Query 'Azure Data Lake Storage Gen2' with 'DuckDB'")
     (description
      "This package provides convenience utilities for using @code{DuckDB} directly
@@ -5480,6 +5481,31 @@ Quantuccia').")
 to financial markets including point-in-time fundamentals, ownership and
 symbology.")
     (license license:gpl3)))
+
+(define-public r-qio
+  (package
+    (name "r-qio")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qio" version))
+       (sha256
+        (base32 "0fr06xh4irxxsw9mggmw6g1vyybpr4ir4hj822769wj277xz6yax"))))
+    (properties `((upstream-name . "qio")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list zlib))
+    (home-page "https://pedrobtz.github.io/qio/")
+    (synopsis "Read and Write 'Apache Parquet' Files")
+    (description
+     "Read and write Apache Parquet files.  Whole files are read with a single call,
+and larger ones can be opened to inspect their schema and read selected columns,
+row groups, or batches.  Built on the bundled C library carquet', with no
+required R package dependencies.")
+    (license license:expat)))
 
 (define-public r-qindex-data
   (package

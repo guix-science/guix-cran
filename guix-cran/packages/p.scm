@@ -11519,13 +11519,13 @@ loading analysis.")
 (define-public r-printtree
   (package
     (name "r-printtree")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "printtree" version))
        (sha256
-        (base32 "11q3c8mj4kc8wz37x1kc90qpafqgp8vk5yfq3jlpc5phq8rsriwk"))))
+        (base32 "190z2zhmfy8amf0dzlmhv89n7szimalq80s5lh4aw0mwnw4zvb1q"))))
     (properties `((upstream-name . "printtree")))
     (build-system r-build-system)
     (arguments
@@ -29061,13 +29061,13 @@ on where the error originated.")
 (define-public r-pkgcheck
   (package
     (name "r-pkgcheck")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pkgcheck" version))
        (sha256
-        (base32 "0smb6smr2sbpvfj18v5z7b7222j7lfimf911y4vw0lxr9khbjm4y"))))
+        (base32 "0222y6afkvgz5py25hfkbws9d8zja5058kz5xmakws542721bch7"))))
     (properties `((upstream-name . "pkgcheck")))
     (build-system r-build-system)
     (arguments
@@ -34947,13 +34947,13 @@ pharmaversesdtm package.")
 (define-public r-pharmaverseadamjnj
   (package
     (name "r-pharmaverseadamjnj")
-    (version "0.0.6")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pharmaverseadamjnj" version))
        (sha256
-        (base32 "06rg1rq8y02kypf6cikkp66j4di6x7v6zp61p0fhlvbg4bp5fwkv"))))
+        (base32 "14x34aigd59szs05f1qpqqw4jlaqmqbm2d2k5xql5h5j2p7w42jz"))))
     (properties `((upstream-name . "pharmaverseadamjnj")))
     (build-system r-build-system)
     (arguments
@@ -35989,13 +35989,13 @@ Linear Regression That's interpretable (FLIRTI) by James et al. (2009)
 (define-public r-pfim
   (package
     (name "r-pfim")
-    (version "7.0.3")
+    (version "8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PFIM" version))
        (sha256
-        (base32 "0026208c2cjvi35fknxzcg4mnv6zrl1viv31zxppypkjl5m5sc59"))))
+        (base32 "1c4f9sa9gx5l096cply6im0v273lfczhakl2gg2m4s0p3fw8cq53"))))
     (properties `((upstream-name . "PFIM")))
     (build-system r-build-system)
     (arguments
@@ -36005,14 +36005,14 @@ Linear Regression That's interpretable (FLIRTI) by James et al. (2009)
                              r-stringr
                              r-scales
                              r-s7
+                             r-rmarkdown
+                             r-rlang
                              r-rcpparmadillo
                              r-rcpp
                              r-purrr
-                             r-pracma
                              r-matrix
                              r-knitr
                              r-kableextra
-                             r-inline
                              r-ggplot2
                              r-desolve
                              r-deriv))
@@ -36021,14 +36021,11 @@ Linear Regression That's interpretable (FLIRTI) by James et al. (2009)
     (synopsis "Population Fisher Information Matrix")
     (description
      "Evaluate or optimize designs for nonlinear mixed effects models using the Fisher
-Information matrix.  Methods used in the package refer to MentrÃ© F, Mallet A,
-Baccar D (1997) <doi:10.1093/biomet/84.2.429>, Retout S, Comets E, Samson A,
-MentrÃ© F (2007) <doi:10.1002/sim.2910>, Bazzoli C, Retout S, MentrÃ© F (2009)
-<doi:10.1002/sim.3573>, Le Nagard H, Chao L, Tenaillon O (2011)
-<doi:10.1186/1471-2148-11-326>, Combes FP, Retout S, Frey N, MentrÃ© F (2013)
-<doi:10.1007/s11095-013-1079-3> and Seurat J, Tang Y, MentrÃ© F, Nguyen TT
-(2021) <doi:10.1016/j.cmpb.2021.106126>.")
-    (license license:gpl3+)))
+Information matrix.  Supports population, individual, and Bayesian FIMs',
+covariates, inter-occasion variability, and D-optimal search ('Fedorov-Wynn',
+multiplicative, simplex, PSO', PGBO').")
+    (license (list license:gpl3
+                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-pfica
   (package
@@ -37398,37 +37395,6 @@ updated dabestr functions.")
 <doi:10.1214/22-BA1353> for estimating marginal likelihoods via permutation
 counting.")
     (license license:bsd-2)))
-
-(define-public r-permrand
-  (package
-    (name "r-permrand")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "permRand" version))
-       (sha256
-        (base32 "02sfadcaf47zwflj9brxsdnw0c5f1p0a7p8yq5nflkfvjinq616z"))))
-    (properties `((upstream-name . "permRand")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr r-stringr r-magrittr r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/m-mellers/permRand")
-    (synopsis "Permutation Randomization")
-    (description
-     "This package provides randomization using permutation for applications.  To
-provide a Quality Control (QC) check, QC samples can be randomized within
-strata.  A second function allows for the ability to âswitchâ samples to
-meet set requirements and perform a certain amount of minimization on these
-switches.  The functions are flexible for users by specifying strata size and
-number of QC samples per strata.  The randomization meets the following
-requirements â¢ QC sample requirements: QC samples not adjacent, QC samples
-from same mother must follow certain patterns.  â¢ Matched sample sets must be
-within a single strata, and next to each other.")
-    (license license:gpl3+)))
 
 (define-public r-permpath
   (package
@@ -47725,13 +47691,13 @@ series.  In addition, random number generation is also implemented.")
 (define-public r-paneltests
   (package
     (name "r-paneltests")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "paneltests" version))
        (sha256
-        (base32 "05wkdp86yj2n38kg9zwxmznwicf2dbrp8rx19hppgv9jidasp2wh"))))
+        (base32 "1sysjdkvpx3jmqdbzjz32b1pvnqdwsf9hw3ixpxy94hzzk2jyyr6"))))
     (properties `((upstream-name . "paneltests")))
     (build-system r-build-system)
     (arguments
@@ -47748,13 +47714,13 @@ heterogeneity test, and Pesaran (2004) <doi:10.2139/ssrn.572504> cross-sectional
 dependence test via @code{xtpretest()}; (2) missing-data detection, mechanism
 testing, and imputation for unbalanced panels via @code{xtmispanel()}; (3)
 quantile-regression cross-sectional dependence tests (T_tau and T-tilde_tau
-statistics) of Demetrescu, Hosseinkouchack and Rodrigues (2023)
-<doi:10.1016/j.jeconom.2022.09.001> via @code{xtcsdq()}; and (4) the panel
-quantile-regression slope homogeneity S-hat and D-hat statistics of Galvao,
-Juhl, Montes-Rojas and Olmo (2017) <doi:10.1080/07350015.2015.1054493> via
-@code{xtqsh()}.  Together these tests address three fundamental pre-testing
-questions: (i) are slopes homogeneous? (ii) is there cross-sectional dependence?
-and (iii) is the panel balanced and is missingness ignorable?")
+statistics) of Demetrescu, Hosseinkouchack and Rodrigues (2023) via
+@code{xtcsdq()}; and (4) the panel quantile-regression slope homogeneity S-hat
+and D-hat statistics of Galvao, Juhl, Montes-Rojas and Olmo (2017)
+<doi:10.1093/jjfinec/nbx016> via @code{xtqsh()}.  Together these tests address
+three fundamental pre-testing questions: (i) are slopes homogeneous? (ii) is
+there cross-sectional dependence? and (iii) is the panel balanced and is
+missingness ignorable?")
     (license license:gpl3)))
 
 (define-public r-panelsur
@@ -50315,6 +50281,33 @@ step.  On top of that, we extend the PAGFL to time-varying coefficient functions
 (FUSE-TIME), following Haimerl et al. (2025)
 <doi:10.48550/@code{arXiv.2503.23165>}.")
     (license license:agpl3+)))
+
+(define-public r-pagerankr
+  (package
+    (name "r-pagerankr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pagerankr" version))
+       (sha256
+        (base32 "1vpvjas8h8ngv188lbhjb910anzjdrpcz19ds6i80yhs33sirkpp"))))
+    (properties `((upstream-name . "pagerankr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rurl r-igraph))
+    (native-inputs (list r-knitr))
+    (home-page "https://pagerankr-63ad30.gitlab.io/")
+    (synopsis "Modular Toolkit for PageRank Calculation")
+    (description
+     "This package provides a set of modular, pipeable functions to calculate
+@code{PageRank} scores from edge lists and redirect reports, common in SEO
+analysis.  Functions handle URL cleaning, redirect resolution, edge
+deduplication, isolate handling, and @code{PageRank} computation using base R
+for data manipulation and igraph for core @code{PageRank} calculation.")
+    (license license:expat)))
 
 (define-public r-pagenum
   (package

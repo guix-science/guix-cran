@@ -7484,20 +7484,20 @@ visualises the rhomboidal layout and the decomposition into principal minors.")
 (define-public r-hlmlab
   (package
     (name "r-hlmlab")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hlmLab" version))
        (sha256
-        (base32 "0xl2i5qmqdghszsfrm81h20p9mklf15jbl9i7bp149pz5wp1pgfq"))))
+        (base32 "1rlldj86xfvvybycqvqw1rva5fslib7khyp9kvic19p5nnkla9p9"))))
     (properties `((upstream-name . "hlmLab")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-scales r-lme4 r-ggplot2 r-dplyr))
-    (home-page "https://github.com/causalfragility-lab/hlmLab")
+    (home-page "https://github.com/subirhait/hlmLab")
     (synopsis
      "Hierarchical Linear Modeling with Visualization and Decomposition")
     (description
@@ -7509,14 +7509,16 @@ ISBN:9781849202015), intraclass correlation (ICC) estimation and design effect
 computation as described in Shrout and Fleiss (1979)
 <doi:10.1037/0033-2909.86.2.420>, and contextual effect decomposition via the
 Mundlak (1978) <doi:10.2307/1913646> specification distinguishing within- and
-between-cluster components.  Supports visualization of random slopes and
-cross-level interactions following Hofmann and Gavin (1998)
-<doi:10.1177/014920639802400504> and Hamaker and Muthen (2020)
-<doi:10.1037/met0000239>.  Multilevel models are estimated using lme4 (Bates et
-al., 2015 <doi:10.18637/jss.v067.i01>).  An optional Shiny application enables
-interactive exploration of model components and parameter variation.  The
-implementation follows the multilevel modeling framework of Raudenbush and Bryk
-(2002, ISBN:9780761919049).")
+between-cluster components, with the uncertainty of the contextual contrast
+obtained from the full fixed-effect covariance matrix.  Teaching displays cover
+simulated intraclass correlations, partial pooling of cluster means,
+random-slope heterogeneity, and cross-level interaction with an observed Level-2
+moderator, following Hofmann and Gavin (1998) <doi:10.1177/014920639802400504>
+and Hamaker and Muthen (2020) <doi:10.1037/met0000239>.  Multilevel models are
+estimated using lme4 (Bates et al., 2015 <doi:10.18637/jss.v067.i01>).  An
+optional Shiny application enables interactive exploration of model components
+and parameter variation.  The implementation follows the multilevel modeling
+framework of Raudenbush and Bryk (2002, ISBN:9780761919049).")
     (license license:expat)))
 
 (define-public r-hlmdiag
@@ -8313,6 +8315,34 @@ Extinction) on a phylogeny and character sets to test for hidden shifts in trait
 dependent rates of diversification.  Beaulieu and O'Meara (2016)
 <doi:10.1093/sysbio/syw022>.")
     (license license:gpl2+)))
+
+(define-public r-hirt
+  (package
+    (name "r-hirt")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hIRT" version))
+       (sha256
+        (base32 "133ndlknd271ywgi5qgvr8lbmfragd751sdqbgschp1cqhramdcb"))))
+    (properties `((upstream-name . "hIRT")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rms r-matrix r-ltm))
+    (home-page "https://github.com/xiangzhou09/hIRT")
+    (synopsis "Hierarchical Item Response Theory Models")
+    (description
+     "Implementation of a class of hierarchical item response theory (IRT) models
+where both the mean and the variance of latent preferences (ability parameters)
+may depend on observed covariates.  The current implementation includes both the
+two-parameter latent trait model for binary data and the graded response model
+for ordinal data.  Both are fitted via the Expectation-Maximization (EM)
+algorithm.  Asymptotic standard errors are derived from the observed information
+matrix.  See Zhou (2019) <doi:10.1017/pan.2018.63> for details.")
+    (license license:gpl3+)))
 
 (define-public r-hirisplexr
   (package
@@ -16502,6 +16532,48 @@ generalized central limit theorem.  For detailed examples type
 vignette(\"harmonicmeanp\") after installation.  Version 3.0 addresses errors in
 versions 1.0 and 2.0 that led function p.hmp to control the familywise error
 rate only in the weak sense, rather than the strong sense as intended.")
+    (license license:gpl3)))
+
+(define-public r-harf
+  (package
+    (name "r-harf")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "harf" version))
+       (sha256
+        (base32 "0zdzwhsgmx96155sxx0z4dpbb2c62d2vmk9ja81d8pasm0i73by3"))))
+    (properties `((upstream-name . "harf")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rsvd
+                             r-rgcca
+                             r-ranger
+                             r-pracma
+                             r-pls
+                             r-matrixstats
+                             r-foreach
+                             r-fastpls
+                             r-data-table
+                             r-clusterr
+                             r-arf))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://bips-hb.github.io/harf/")
+    (synopsis "Adversarial Random Forests for Omics Synthesis")
+    (description
+     "We extend Adversarial Random Forests to a high-dimensional framework.  The
+method partitions the feature space into regions where the assumption of feature
+independence within tree leaves is more likely to hold.  Region-specific
+adversarial random forest models are trained to capture local dependence
+structures, while an additional adversarial random forest is fitted to a
+meta-space representation to model dependencies between regions.  New
+observations are generated by first sampling from the meta-space model and then
+conditionally sampling from each region-specific model.  The proposed
+methodology is described in Fouodo et al. (2026)
+<doi:10.64898/2026.09.09.750490>.")
     (license license:gpl3)))
 
 (define-public r-harbinger

@@ -5039,13 +5039,13 @@ deep-neural networks using tensorflow'.")
 (define-public r-janssonr
   (package
     (name "r-janssonr")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "janssonr" version))
        (sha256
-        (base32 "0sa0frax0n042fvpv18nr1g21kd86974lxw7gdzxym72rbw10ps3"))))
+        (base32 "173y3njyl06kg0v4wixjh7l9dh7fdjm638apqwbwlplpc86nlx3f"))))
     (properties `((upstream-name . "janssonr")))
     (build-system r-build-system)
     (arguments

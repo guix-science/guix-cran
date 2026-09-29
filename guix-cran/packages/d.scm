@@ -682,32 +682,32 @@ matrices.")
 (define-public r-dyncount
   (package
     (name "r-dyncount")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DynCount" version))
        (sha256
-        (base32 "1jq79vj83016s5cayq7c6l82by7s699f6nnraml1j9byn4g5wv5n"))))
+        (base32 "1wk1m1q2hm8m5w71nmp6r88hvjfazdwarjn6cl3kw94x6km16x1s"))))
     (properties `((upstream-name . "DynCount")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-generics))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=DynCount")
-    (synopsis "Bayesian Dynamic Models for Poisson and Binomial Time Series")
+    (synopsis "Bayesian Dynamic Models for Count Time Series")
     (description
-     "Fits Bayesian state-space models for non-Gaussian time series using a latent
-log-rate (Poisson) or latent logit (binomial) formulation.  The latent
-trajectory follows a first-order random walk or a stationary AR(1) process,
-sampled by Metropolis-within-Gibbs using the implied Gaussian Markov random
-field (GMRF) full conditionals.  Four innovation structures are supported for
-the latent increments: constant-variance Gaussian, Student-t, a finite scale
-mixture of normals, and stochastic volatility.  Both families support
-time-constant zero inflation.  The package provides simulation, fitting,
-forecasting, summary and plotting tools.  It implements and extends the
-methodology of Zens and Bijak (2026) <doi:10.1214/26-AOAS2171>.")
+     "Fits Bayesian state-space models for count time series using a latent log-rate
+(Poisson), latent logit (binomial) or latent additive-log-ratio (multinomial
+choice counts) formulation.  Each latent trajectory follows a first-order random
+walk or a stationary AR(1) process and is sampled by Metropolis-within-Gibbs
+using the implied Gaussian Markov random field full conditionals.  The latent
+increments can be Gaussian, Student-t, a finite scale mixture of normals, or
+follow a stochastic volatility process, and the Poisson and binomial families
+support zero inflation.  It implements and extends the methodology of Zens and
+Bijak (2026) <doi:10.1214/26-AOAS2171>.")
     (license license:expat)))
 
 (define-public r-dyncorr
@@ -5778,13 +5778,13 @@ prescriptions.  Based on Pye et al (2018) <doi:10.1002/pds.4440>.")
 (define-public r-drugexposurediagnostics
   (package
     (name "r-drugexposurediagnostics")
-    (version "1.1.10")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DrugExposureDiagnostics" version))
        (sha256
-        (base32 "04n49m48f0x0y0q2yjaw894gmxw7mjcy0h5gi5714q9qnwam594y"))))
+        (base32 "1f9ky79w7s1k2rqkm4haj30mdm2hix301hpw90wqc085yy3k0d9x"))))
     (properties `((upstream-name . "DrugExposureDiagnostics")))
     (build-system r-build-system)
     (arguments
@@ -8201,6 +8201,40 @@ are used.  Multiple thresholds estimation based on Markov Chain Monte Carlo
 (MCMC) is allowed, and model selection of linear model, threshold model and
 multiple threshold model is also allowed.")
     (license license:gpl3+)))
+
+(define-public r-dpsynth
+  (package
+    (name "r-dpsynth")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DPSynth" version))
+       (sha256
+        (base32 "1svk8r0frihm95rjqpzz4kdvbbfmpavzr9vndyhfph6w0rvkrmva"))))
+    (properties `((upstream-name . "DPSynth")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mass))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/MukulBijalwan/DPSynth")
+    (synopsis "Differentially Private Synthetic Data with Guaranteed Utility")
+    (description
+     "Differentially private (DP) synthetic data generation for tabular data.
+Provides DP Gaussian mixture models, DP Gaussian copulas, DP histogram marginals
+and a Private Aggregation of Teacher Ensembles (PATE) synthesizer for mixed-type
+data, together with a standardized utility evaluation framework (univariate
+fidelity, propensity score MSE, multivariate dependence, downstream task
+performance), empirical disclosure risk auditing (membership inference,
+attribute disclosure, record linkage) and privacy budget accounting (basic,
+advanced and Renyi DP composition).  The implementation follows Dwork and Roth
+(2014) <doi:10.1561/0400000042> and Dwork et al. (2006)
+<doi:10.1007/11681878_14> for the DP mechanisms, Papernot et al. (2017)
+<doi:10.1145/3133956.3133982> for the PATE synthesizer, and Woo et al. (2009)
+<doi:10.2202/1557-4679.1203> for the disclosure risk evaluation framework.")
+    (license license:expat)))
 
 (define-public r-dpseg
   (package
@@ -26013,6 +26047,54 @@ the distribution to be Gamma, Exponential or Weibull.  For details see Chen
 <doi:10.12988/pms.2014.4616>.")
     (license license:gpl2)))
 
+(define-public r-deltatools
+  (package
+    (name "r-deltatools")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DeltaTools" version))
+       (sha256
+        (base32 "0vh608qkk8s8rpnbhhc3v1z7b0a2dy86l0rk34bbly1n7amvw1na"))))
+    (properties `((upstream-name . "DeltaTools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-twang
+                             r-tableone
+                             r-stringr
+                             r-sjplot
+                             r-rocr
+                             r-rms
+                             r-resourceselection
+                             r-proc
+                             r-plotly
+                             r-parameters
+                             r-minpack-lm
+                             r-mgcv
+                             r-matchit
+                             r-lmtest
+                             r-ldbounds
+                             r-glmnet
+                             r-ggplot2
+                             r-gbm
+                             r-dplyr
+                             r-desctools
+                             r-data-table
+                             r-caret
+                             r-broom))
+    (home-page "https://cran.r-project.org/package=DeltaTools")
+    (synopsis "DELTA Analytic Tools and Learning Curve Analysis")
+    (description
+     "This package provides a collection of tools for researchers interested in
+carrying out parametric estimation of learning curves and device effects based
+on the publication by Ssemaganda et al. (2025) <doi:10.2147/MDER.S520191> with
+modified versions of propensity score matching (PSM) and inverse probability of
+treatment weighting (IPTW).")
+    (license (list license:gpl2 license:gpl3))))
+
 (define-public r-deltatest
   (package
     (name "r-deltatest")
@@ -27090,13 +27172,13 @@ deep time visualization.")
 (define-public r-deepstrapp
   (package
     (name "r-deepstrapp")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "deepSTRAPP" version))
        (sha256
-        (base32 "0lhyhw3f850nqbnlf4djdm59adxjp2snbp2h88625wqjddd94rmg"))))
+        (base32 "1fm1y30r0n8ikyixzxnbx0j51jcxq23vqz8lbwv77hv36nd8nxld"))))
     (properties `((upstream-name . "deepSTRAPP")))
     (build-system r-build-system)
     (arguments
@@ -27105,6 +27187,7 @@ deep time visualization.")
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-scales
+                             r-rlang
                              r-rcpp
                              r-rcolorbrewer
                              r-qpdf
@@ -37707,19 +37790,21 @@ cluster analysis, discriminant analysis...) for such probability densities.")
 (define-public r-dact
   (package
     (name "r-dact")
-    (version "0.1.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DACT" version))
        (sha256
-        (base32 "0jndn2iawbd3jvkvgiskvdhzzadcj8xj87hnfqvmzm9v80p8s7rl"))))
+        (base32 "0fas2a6s4gq421l9n9mr94mg67qbrk9qvgq5h1k26gws6kdqhj19"))))
     (properties `((upstream-name . "DACT")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-mvtnorm
+    (propagated-inputs (list r-survival
+                             r-mvtnorm
+                             r-mass
                              r-jsonlite
                              r-foreach
                              r-dplyr
@@ -37736,7 +37821,11 @@ the understanding and application of cutting-edge statistical solutions in
 clinical trials.  For this reason, the software is free for non-commercial
 scientific research, including but not limited to academic researchers and
 research/teaching institutions.  Computing codes are available upon request.
-For more details see P. Gao (2024) <doi:10.1080/10543406.2024.2341673>.")
+For more details see P. Gao (2024) <doi:10.1080/10543406.2024.2341673>.  Gao,
+P., Zhang, W. (2024) <doi:10.1080/10543406.2024.2358796>.  P. Gao & Y. Li (2024)
+<doi:10.1080/10543406.2023.2233590>.  P. Gao, Y. Li (2024)
+<doi:10.1080/10543406.2024.2342518>.  Gao, P., L. Liu, and C. Mehta. (2013)
+<doi:10.1002/sim.5847>.")
     (license license:expat)))
 
 (define-public r-dacf

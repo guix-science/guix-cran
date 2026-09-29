@@ -2071,13 +2071,13 @@ analytical solution.")
 (define-public r-lsmjml
   (package
     (name "r-lsmjml")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LSMjml" version))
        (sha256
-        (base32 "0yv20wwbz5iyl54f9dx7bnkzgz0lp0h95ihd6i3253zsl38dgjms"))))
+        (base32 "0rh4x4dppd6gghfxsy0vpd3jjsif9jr1jbgb3hp8m9b1mf00h7m7"))))
     (properties `((upstream-name . "LSMjml")))
     (build-system r-build-system)
     (arguments
@@ -2092,11 +2092,12 @@ analytical solution.")
 multidimensional Euclidean latent space.  As such, interactions among persons,
 items, and person-item combinations can be revealed that are unmodelled in more
 conventional item response theory models.  This package implements the methods
-from Molenaar & Jeon (in press) and can be used to fit Latent Space Item
-Response Models to data using joint maximum likelihood estimation.  The package
-can handle binary data, ordinal data, and data with mixed scales.  The package
-incorporates facilities for data simulation, rotation of the latent space, and
-K-fold cross-validation to select the number of dimensions of the latent space.")
+from Molenaar & Jeon (2026)<doi:10.1017/psy.2025.10068> and can be used to fit
+Latent Space Item Response Models to data using joint maximum likelihood
+estimation.  The package can handle binary data, ordinal data, and data with
+mixed scales.  The package incorporates facilities for data simulation, rotation
+of the latent space, and K-fold cross-validation to select the number of
+dimensions of the latent space.")
     (license license:gpl3)))
 
 (define-public r-lsmeans
@@ -3854,13 +3855,13 @@ are described in Robin, Josse, Moulines and Sardy (2019)
 (define-public r-lorenzregression
   (package
     (name "r-lorenzregression")
-    (version "2.3.1")
+    (version "2.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LorenzRegression" version))
        (sha256
-        (base32 "10kg7f2ah0pzjhv6i1sf9ydby02i96k6ni0gmj7n3qyjimhcf05m"))))
+        (base32 "19q8x6qbz9nyw4f0jc1bi2x4kmncqiacs6ib7q263f4ril79xnay"))))
     (properties `((upstream-name . "LorenzRegression")))
     (build-system r-build-system)
     (arguments
@@ -3885,7 +3886,8 @@ are described in Robin, Josse, Moulines and Sardy (2019)
 package proposes functions to assess inequality and graphically represent it.
 The Lorenz Regression procedure is introduced in Heuchenne and Jacquemain (2022)
 <doi:10.1016/j.csda.2021.107347> and in Jacquemain, A., C. Heuchenne, and E.
-Pircalabelu (2024) <doi:10.1214/23-EJS2200>.")
+Pircalabelu (2024) <doi:10.1214/23-EJS2200>.  The implementation is described in
+Jacquemain and Heuchenne (2026) <doi:10.18637/jss.v117.i06>.")
     (license license:gpl3)))
 
 (define-public r-lorentz

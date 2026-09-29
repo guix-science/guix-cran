@@ -899,6 +899,32 @@ methods in detecting the most interesting signal patterns in pharmacogenetics
 Judong Shen (2022) <doi:10.13140/RG.2.2.28323.53280>.")
     (license license:gpl2)))
 
+(define-public r-cwise
+  (package
+    (name "r-cwise")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cWise" version))
+       (sha256
+        (base32 "1alndc33bqg9xpdg3cq1i8f0jxykf7yh50smfvicqs5rs6avyf57"))))
+    (properties `((upstream-name . "cWise")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales r-mvtnorm r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/YukiAtsusaka/cWise")
+    (synopsis "Crosswise Models for Sensitive Survey Questions")
+    (description
+     "This package implements a bias-corrected crosswise estimator and its extensions
+for sensitive survey questions.  The methods are described in Atsusaka and
+Stevenson (2023). \"A bias-corrected estimator for the crosswise model with
+inattentive respondents\" <doi:10.1017/pan.2021.43>.")
+    (license license:gpl3)))
+
 (define-public r-cwad
   (package
     (name "r-cwad")
@@ -18879,6 +18905,48 @@ new estimator to measure the distance between word embeddings as described in
 Green et al. (2025) <doi:10.1017/pan.2024.22>.")
     (license license:gpl3)))
 
+(define-public r-contentvalidr
+  (package
+    (name "r-contentvalidr")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "contentvalidR" version))
+       (sha256
+        (base32 "1fb3vvd48dcx2gh3z5nfg39krl7gra02gr3racrawz0vzpyy0rip"))))
+    (properties `((upstream-name . "contentvalidR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/JUhalt/contentvalidR")
+    (synopsis "Tools for Substantive and Content Validity Pretesting")
+    (description
+     "This package provides quantitative tools for substantive and content-oriented
+scale pretesting.  Implements item-sort indices from Anderson and Gerbing (1991)
+<doi:10.1037/0021-9010.76.5.732>, exact item-sort inference following Howard and
+Melloy (2016) <doi:10.1007/s10869-015-9404-y>, empirical interpretation
+benchmarks from Colquitt et al. (2019) <doi:10.1037/apl0000406>, and the
+construct-rating procedure of Hinkin and Tracey (1999)
+<doi:10.1177/109442819922004> with HTC/HTD indices and repeated-measures item
+screening.  The expert-panel workflow combines Aiken's V with score confidence
+intervals, Lawshe content validity ratios with exact inference, content validity
+indices with modified kappa and score intervals, item-objective congruence, and
+panel-level agreement using Krippendorff's alpha as described by Hayes and
+Krippendorff (2007) <doi:10.1080/19312450709336664>.  Also provides judge and
+rater heterogeneity analysis following the generalizability-theory treatment of
+content-validity ratings in Crocker, Llabre and Miller (1988)
+<doi:10.1111/j.1745-3984.1988.tb00309.x>, content-domain coverage and
+expert-perceived content structure following Sireci and Geisinger (1992)
+<doi:10.1177/014662169201600102>, comparison across successive pretest rounds,
+and exact expert-panel planning.  Where published methods compete, users choose
+among them through arguments with evidence-based defaults.  User-facing
+workflows emphasize interpretable summaries and transparent review
+recommendations rather than isolated coefficients.")
+    (license license:gpl3)))
+
 (define-public r-contentvalidity
   (package
     (name "r-contentvalidity")
@@ -25095,13 +25163,13 @@ to absolute humidity and evaluates the performance of comfort indices.")
 (define-public r-comexr
   (package
     (name "r-comexr")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "comexr" version))
        (sha256
-        (base32 "1jkdc73vpp8x0yrb9v3rfl6l9255i4i2scavd0dfk7iwhvixf9n2"))))
+        (base32 "18wrmiifc54qc3b7q2kgckkwc58k4nrdkk7li9kh2lvwzqmrwvaw"))))
     (properties `((upstream-name . "comexr")))
     (build-system r-build-system)
     (arguments
@@ -27148,13 +27216,13 @@ prioritizing R colors when available.")
 (define-public r-cointsmall
   (package
     (name "r-cointsmall")
-    (version "1.0.2")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cointsmall" version))
        (sha256
-        (base32 "0b2f42yibvnha01b12hxmjfc28khp5qbar3gpsx6k6slxnza27v5"))))
+        (base32 "0f2dgby7ncnbz2bc882xpq69cbwzp4xiklmiqqdglb7hg5rkg1ah"))))
     (properties `((upstream-name . "cointsmall")))
     (build-system r-build-system)
     (arguments
@@ -27168,7 +27236,8 @@ small sample sizes, following the methodology of Trinh (2022)
 <https://ideas.repec.org/p/ema/worpap/2022-01.html>.  Supports models with no
 breaks, breaks in constant only, and breaks in both constant and slope.
 Provides endogenous break date detection using ADF or SSR minimization criteria,
-with small-sample adjusted critical values via response surface methodology.")
+with the size-corrected 5% critical values of the response surfaces in Trinh
+(2022), for up to three regressors.")
     (license license:gpl3)))
 
 (define-public r-cointreg
@@ -40994,6 +41063,32 @@ hierarchical code validation.  Data from Centro FIC Chile DEIS
 <https://deis.minsal.cl/centrofic/>.")
     (license license:expat)))
 
+(define-public r-cidian
+  (package
+    (name "r-cidian")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cidian" version))
+       (sha256
+        (base32 "16mdhjp90m7c9pg49gpv6x2gdh7a0nyvmy58g2jm03wv9r9vqwai"))))
+    (properties `((upstream-name . "cidian")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list xz))
+    (propagated-inputs (list r-rlang r-cli))
+    (home-page "https://github.com/Yousa-Mirage/r-cidian")
+    (synopsis "Read and Parse Chinese Input-Method Dictionaries")
+    (description
+     "Read Chinese input-method dictionary files into a common R data model.  The Rust
+backend supports Sogou, QQ Pinyin, and Baidu dictionary formats and preserves
+source metadata, code components, and weights.  This is useful for building a
+custom Chinese word segmentation dictionary.")
+    (license license:expat)))
+
 (define-public r-cici
   (package
     (name "r-cici")
@@ -41285,13 +41380,13 @@ size.")
 (define-public r-churon
   (package
     (name "r-churon")
-    (version "0.1.12")
+    (version "0.1.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "churon" version))
        (sha256
-        (base32 "18ch3scarxfqx9rb0mm7f10gaxxgpip1wrz6l4ks8wsv41249jw6"))))
+        (base32 "00qw81pgmpg0w69qp0lv7nya2ywrvld776da4h7aay5xfz6xnr2s"))))
     (properties `((upstream-name . "churon")))
     (build-system r-build-system)
     (arguments
@@ -44001,13 +44096,13 @@ data manipulation pipelines.")
 (define-public r-checkstring
   (package
     (name "r-checkstring")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "checkstring" version))
        (sha256
-        (base32 "141lh759sw4xr77xg7gfj7zbl2753ivy4ky92ysy4wwgwj5x4srp"))))
+        (base32 "1x8makhdf6iggwc4zgabc9hxbkz59ln78xi1fdbx8lr5hwg09akz"))))
     (properties `((upstream-name . "checkstring")))
     (build-system r-build-system)
     (arguments
@@ -56157,6 +56252,36 @@ variable selection using CAR scores, and for estimating corresponding regression
 coefficients.  Both shrinkage as well as empirical estimators are available.")
     (license license:gpl3+)))
 
+(define-public r-cardiovagal
+  (package
+    (name "r-cardiovagal")
+    (version "0.1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cardiovagal" version))
+       (sha256
+        (base32 "1478zg5rh7f65b3yjlzs5d5si0lbjvrykibvwbxzknib83r7rzqr"))))
+    (properties `((upstream-name . "cardiovagal")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-equivalence))
+    (home-page "https://cran.r-project.org/package=cardiovagal")
+    (synopsis
+     "Automatic Equivalence Testing for Cross-Species Cardiovagal Homeostasis")
+    (description
+     "Automates cardiovagal state regulation mapping by translating raw, noisy
+mammalian heart rate variability intervals into a standardized linear index
+using fixed physiological anchors.  The package incorporates natural log data
+compression and utilizes two-one-sided tests (TOST) and Bayesian Region of
+Practical Equivalence (ROPE) thresholds to mathematically verify cross-species
+homeostatic synchronization.  Methodologies for equivalence testing and regional
+practical equivalence bounds follow Lakens (2017) <doi:10.1177/1948550617697177>
+and Kruschke (2018) <doi:10.1177/2515245918771304>.")
+    (license license:expat)))
+
 (define-public r-cardiodatasets
   (package
     (name "r-cardiodatasets")
@@ -58096,13 +58221,13 @@ separately under the Creative Commons Attribution 4.0 International (CC BY 4.0).
 (define-public r-campsismod
   (package
     (name "r-campsismod")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "campsismod" version))
        (sha256
-        (base32 "1rca19kanhs9yzxynqz2fcvwlhzx8pp0bapr460n50k016599vcv"))))
+        (base32 "07vq0cgsb1755kwrw37m2gjaacn60z6q789gb9s2kggs6zdb334p"))))
     (properties `((upstream-name . "campsismod")))
     (build-system r-build-system)
     (arguments

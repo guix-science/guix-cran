@@ -4642,13 +4642,13 @@ income brackets.  More information about the data source can be found at
 (define-public r-ironseed
   (package
     (name "r-ironseed")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ironseed" version))
        (sha256
-        (base32 "0h7sbz1lfcwq8a5la0l0jy6p62gpp7zdria0k9hgyxi5i76ia6gf"))))
+        (base32 "009ifiqc3xpma5lkpyf6g00zapbcw9lscp0175i6fmb8sd25w0lr"))))
     (properties `((upstream-name . "ironseed")))
     (build-system r-build-system)
     (arguments
@@ -21354,13 +21354,13 @@ VMS database, the ICES DATSU web services, and the ICES @code{SharePoint} site
 (define-public r-icesat2vegr
   (package
     (name "r-icesat2vegr")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ICESat2VegR" version))
        (sha256
-        (base32 "1qagjpawylqx153s3wihsa2qkql4dbh21ln95bkshz1z2z96pv9n"))))
+        (base32 "1ds2x6zg584yr8gq8hvvbp05ym38xx5fpl8lcmp3n0lpq1jhwzmr"))))
     (properties `((upstream-name . "ICESat2VegR")))
     (build-system r-build-system)
     (arguments

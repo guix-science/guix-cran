@@ -979,13 +979,13 @@ test (Kim, 2009) <doi:10.1016/j.frl.2009.04.003>.")
 (define-public r-vrpr
   (package
     (name "r-vrpr")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vrpr" version))
        (sha256
-        (base32 "06mn14iqmgdb7qhw2blsc4bbaxgliz1b47s45gkp62qbjvdikd0w"))))
+        (base32 "0qm3m7vf39k626fcils1qv3qd2krgx4585a8z221w80ixb0jdhwv"))))
     (properties `((upstream-name . "vrpr")))
     (build-system r-build-system)
     (arguments
@@ -6268,6 +6268,34 @@ online app @code{QuickPed} at <https://magnusdv.shinyapps.io/quickped>.")
 lists, pluralising words conditionally, spelling out numbers if they are at the
 start of sentences, writing out dates in full following US or UK style, and
 managing capitalisations in tidy data.")
+    (license license:expat)))
+
+(define-public r-veracrop
+  (package
+    (name "r-veracrop")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VeraCrop" version))
+       (sha256
+        (base32 "1w96ikj99yamarpi4gwgs6cd7pv88kkdlf06dhrk0fl1skidsma4"))))
+    (properties `((upstream-name . "VeraCrop")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=VeraCrop")
+    (synopsis "Yield Gap Analysis Using Comparative Performance Analysis")
+    (description
+     "This package implements automated variable-type detection, preprocessing,
+encoding, scaling, model diagnostics, variable selection, and yield gap
+computation for agricultural comparative performance analysis (CPA).  The
+comparative performance analysis approach is described in de Bie (2004)
+<doi:10.1016/j.scienta.2003.11.017>.  For an overview of yield gap assessment
+methodologies, see Kamkar et al. (2025) <doi:10.1016/j.agsy.2025.104392>.")
     (license license:expat)))
 
 (define-public r-venny

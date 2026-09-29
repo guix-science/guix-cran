@@ -663,6 +663,56 @@ Research Scholarship in Cognitive Aging and Age-Related Memory Loss, American
 Brain Foundation, and the American Academy of Neurology.")
     (license license:expat)))
 
+(define-public r-eyeprocess
+  (package
+    (name "r-eyeprocess")
+    (version "0.11.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "eyeprocess" version))
+       (sha256
+        (base32 "08581ns4rfxs8iihhiskklv02d4lvplivfi0g7qwcz1dr5wsk5xg"))))
+    (properties `((upstream-name . "eyeprocess")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr))
+    (native-inputs (list r-knitr))
+    (home-page "https://stefanosbalaskas.github.io/eyeprocess/")
+    (synopsis
+     "Harmonize Eye-Tracking, Pupillometry, Biometrics, and Psychometric Process Data")
+    (description
+     "This package provides an extensible, vendor-neutral framework for importing,
+validating, harmonizing, transforming, visualizing, and modelling eye-tracking,
+pupillometry, behavioural, and biometric process data.  The package uses
+explicit timebase and coordinate-space registries, preserves native fields and
+provenance, and offers first-class adapters for Gazepoint Analysis and Gazepoint
+Biometrics exports alongside generic and vendor-specific importers.  Downstream
+tools support trial and area of interest reconstruction, signal-quality
+auditing, feature derivation, scanpath analysis, response-time and item-response
+workflows, and optional psychometric modelling engines.  An integrated Gazepoint
+workflow produces quality-control evidence, media-trial reconstruction, plots,
+analysis-ready process tables, item response theory (IRT)-ready response
+structures, and reproducible reports.  Brain Imaging Data Structure (BIDS)
+interoperability for eye-tracking and validation-release infrastructure support
+disk-backed storage, independent multi-vendor evidence, grouped validation,
+simulation calibration, model-equivalence audits, and explicitly experimental
+advanced psychometric process models.  Research-scale infrastructure adds
+deterministic resumable Monte Carlo execution, atomic validation checkpoints,
+explicit advanced-model promotion gates, independent multi-vendor evidence
+registries, stable object contracts, partitioned disk-backed storage, optional
+probabilistic engines, and a fully synthetic multimodal benchmark for
+reproducibility testing.  The measurement-intelligence programme adds
+probabilistic and compositional area of interest (AOI) analysis,
+measurement-uncertainty propagation, calibration and device-transportability
+audits, process reliability, phase-amplitude pupil registration,
+informative-missingness sensitivity, temporal and spatial process models,
+item-bank decision optimization, fairness monitoring, conditional process
+reference distributions, and evidence-provenance graphs.")
+    (license license:expat)))
+
 (define-public r-eyelinkreader
   (package
     (name "r-eyelinkreader")
@@ -9751,6 +9801,35 @@ validate'.  See also Van der Loo and De Jonge (2018)
 occur during the execution of code to automatically search for solutions.")
     (license license:gpl2+)))
 
+(define-public r-erri
+  (package
+    (name "r-erri")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ERRI" version))
+       (sha256
+        (base32 "1hb4nsasm6gf1bsvcr9ipx4604s8c4b7psgknvqp6s89d7rf5gb4"))))
+    (properties `((upstream-name . "ERRI")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ERRI")
+    (synopsis "Economic Resilience and Recovery Index")
+    (description
+     "Estimates multidimensional economic resilience following a disruption by
+comparing observed outcomes with a counterfactual path.  Components describe
+shock depth, cumulative loss, recovery time, recovery strength, post-shock
+stability, and positive transformation.  The package supports grouped analysis,
+residual-bootstrap uncertainty, alternative weighting schemes, ranking
+probabilities, sensitivity analysis, shock screening, and diagnostic plots.
+Methods are designed for regional, sectoral, market, and other regularly
+observed economic time series.")
+    (license license:gpl3+)))
+
 (define-public r-erpm
   (package
     (name "r-erpm")
@@ -12196,13 +12275,13 @@ evidence / Bayes factor), and online learning.")
 (define-public r-epizootic
   (package
     (name "r-epizootic")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epizootic" version))
        (sha256
-        (base32 "1v49d4wak4wgcf85lak7bw72qwyap34mnmjmm0p5gwx0s7lqnngq"))))
+        (base32 "1midbkz51xvk3m3pyxxrl8hwq9hshbjrzffp2bxlmdjdrckyg9vb"))))
     (properties `((upstream-name . "epizootic")))
     (build-system r-build-system)
     (arguments
@@ -13582,16 +13661,45 @@ short time forecast of the trend incidence curve as described in Morel et al.
 (2022) <doi:10.1101/2022.11.05.22281904>.")
     (license license:gpl2+)))
 
+(define-public r-epiilmct
+  (package
+    (name "r-epiilmct")
+    (version "1.1.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EpiILMCT" version))
+       (sha256
+        (base32 "1dnx256d27b8id0v5lkb58f3jkkn1fsjqvsv27sqlcj1vj8rzwbx"))))
+    (properties `((upstream-name . "EpiILMCT")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-igraph r-coda))
+    (native-inputs (list gfortran))
+    (home-page "https://github.com/waleedalmutiry/EpiILMCT/")
+    (synopsis
+     "Continuous Time Distance-Based and Network-Based Individual Level Models for Epidemics")
+    (description
+     "This package provides tools for simulating from continuous-time individual level
+models of disease transmission, and carrying out infectious disease data
+analyses with the same models.  The epidemic models considered are
+distance-based and/or contact network-based models within
+Susceptible-Infectious-Removed (SIR) or Susceptible-Infectious-Notified-Removed
+(SINR) compartmental frameworks. <doi:10.18637/jss.v098.i10>.")
+    (license license:gpl2+)))
+
 (define-public r-epiilm
   (package
     (name "r-epiilm")
-    (version "1.5.3")
+    (version "1.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EpiILM" version))
        (sha256
-        (base32 "0iawk4846vbwawwr4k0i6r4abf6fbc755ffvw3amjn1qv0ad8j71"))))
+        (base32 "1z0pksc1rcb8nyakb496hfn26c4qh0zrdy03hbb6lpsfn3fxlzwx"))))
     (properties `((upstream-name . "EpiILM")))
     (build-system r-build-system)
     (arguments

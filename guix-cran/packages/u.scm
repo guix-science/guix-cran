@@ -3135,13 +3135,13 @@ same.")
 (define-public r-unitrootests
   (package
     (name "r-unitrootests")
-    (version "1.1.0")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "unitrootests" version))
        (sha256
-        (base32 "09wjnpmr9yzfg091j6ai5jbzgrqwn40i743537jrhb5nwizy1rg3"))))
+        (base32 "1cp59x8kzclf306r4apd5ymvmh6xr8s1a2gnin6mimgm12ac35x5"))))
     (properties `((upstream-name . "unitrootests")))
     (build-system r-build-system)
     (arguments
@@ -4392,13 +4392,13 @@ inference procedure described in @code{MacKinnon} and Webb (2020)
 (define-public r-underdisp
   (package
     (name "r-underdisp")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "underdisp" version))
        (sha256
-        (base32 "1cp59r10537hp1bpki039m81lvvgq26z2w4frw9xf8n6xm4mbcw5"))))
+        (base32 "12mw706y2r8q4k3m4l57cfvh068xbb2q3b19y99wwl53d6mhb9lv"))))
     (properties `((upstream-name . "underdisp")))
     (build-system r-build-system)
     (arguments
@@ -4406,19 +4406,26 @@ inference procedure described in @code{MacKinnon} and Webb (2020)
       #:tests? #f))
     (propagated-inputs (list r-vgam r-rcpp r-numderiv r-mass))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/bagozzib/underdisp")
+    (home-page "https://CRAN.R-project.org/package=underdisp")
     (synopsis "Diagnostics and Models for Underdispersed Count Data")
     (description
      "This package provides tools for detecting and modeling underdispersion in count
-data (conditional variance below the conditional mean), a phenomenon overlooked
-by the Poisson and negative binomial defaults.  Provides a screening diagnostic
-that benchmarks at-risk dispersion against a zero-truncated Poisson; the
-continuous parameter binomial (CPB) regression and its zero-truncated variant,
-with an interpretable observation-specific bound and high-dimensional
-fixed-effects support; validated bootstrap (for coefficients) and
-profile-likelihood (for the dispersion parameter) inference; and quantities of
-interest including predicted probabilities and the implied ceiling.  The
-likelihood is implemented in C++ for speed.")
+data (conditional variance below the conditional mean), the case the Poisson and
+negative binomial defaults cannot represent.  Provides a screening diagnostic
+that benchmarks at-risk dispersion against a zero-truncated Poisson,
+regression-adjusted tests of equidispersion, and a dispersion profile that
+compares the variance-to-mean curves of competing families against the data; the
+continuous parameter binomial (CPB) and generalized event count (Katz)
+regressions with zero-truncated, hurdle, and zero-inflated forms and
+high-dimensional fixed effects with a split-panel jackknife bias correction;
+matched Poisson, negative binomial, COM-Poisson (rate- and mean-parameterized),
+generalized Poisson, gamma-count, and double Poisson regressions through the
+same interface, with frequency weights, offsets, and analytic, robust, and
+cluster-robust standard errors; bootstrap and profile-likelihood inference;
+proper scoring rules, rootograms, PIT histograms, and simulation methods; and
+quantities of interest including predicted distributions, the implied ceiling,
+rate ratios, and first differences with an extensive/intensive decomposition.
+The likelihoods are implemented in C++.")
     (license license:gpl3)))
 
 (define-public r-uncover

@@ -1123,6 +1123,34 @@ bivariate and multivariate variograms; fitting variogram models; phase locking
 and synchrony analysis; generating autocorrelated and cross-correlated matrices.")
     (license license:gpl2+)))
 
+(define-public r-syncerdata
+  (package
+    (name "r-syncerdata")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SyncERdata" version))
+       (sha256
+        (base32 "17yzmr866wbqqp3yx2gd8arjizdwb4sz65vzg45k4xjpk95dqgsd"))))
+    (properties `((upstream-name . "SyncERdata")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/katleenwils/SyncERdata")
+    (synopsis "Example Datasets for 'SyncER'")
+    (description
+     "Bundled example datasets used by the @code{SyncER} package vignette and test
+suite: synthetic radiocarbon-dated event records for five cores and the
+corresponding completed rbacon'/'rplum age-depth model output (raw,
+synchronized, and synchronized-without-14C variants).  These data let
+@code{SyncER} demonstrate and test its full workflow reproducibly, without
+requiring users to install rbacon'/'rplum or re-run Bayesian age-depth
+modelling.  This package contains the synthetic data from Wils & Ramisch (2026)
+<doi:10.1038/s41598-026-67943-7>.")
+    (license license:gpl3+)))
+
 (define-public r-syncdr
   (package
     (name "r-syncdr")
@@ -3138,6 +3166,39 @@ on the @code{survey::svypredmean()} function.  Supported regression analyses are
 based on @code{survey::svyglm()} and @code{svyVGAM::svy_vglm()} functions (for
 multinomial logistic regression models).")
     (license license:gpl3+)))
+
+(define-public r-svylocadj
+  (package
+    (name "r-svylocadj")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "svyLocAdj" version))
+       (sha256
+        (base32 "0fbn2jmxxw0zp8lvfbbjd5hc66mc483fd2irih9g4aqhinim4vch"))))
+    (properties `((upstream-name . "svyLocAdj")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-sptimer
+                             r-sf
+                             r-rstan
+                             r-ggplot2
+                             r-geodist
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=svyLocAdj")
+    (synopsis
+     "Modelling Survey Data (E.g., DHS) with Adjustment for Location Perturbations")
+    (description
+     "Bayesian spatial models for survey data, such as Demographic and Health Survey
+(DHS), with spatial cluster location displacement adjustments.  The package
+implements models for (1) continuous, (2) binary, (3) count and (4) spatially
+varying models for continuous outcomes.  For more details see Bakar et al.
+(2026) <doi:10.1093/jrsssa/qnag068>.")
+    (license license:gpl2+)))
 
 (define-public r-svylme
   (package
@@ -6319,6 +6380,49 @@ in Dong et al. (2026) <doi:10.1093/jssam/smaf048>, Wakefield et al. (2025)
 calculation, estimation of expected precision for the estimates of totals, and
 calculation of optimal sample size allocation.")
     (license license:gpl2+)))
+
+(define-public r-surveyncd
+  (package
+    (name "r-surveyncd")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SurveyNCD" version))
+       (sha256
+        (base32 "158gsp7g9kpdrp9zrjyhawbzrrd7dlp0f6nz142487qppimnw97k"))))
+    (properties `((upstream-name . "SurveyNCD")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-survey
+                             r-rlang
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/StatAid-Research-Lab/SurveyNCD")
+    (synopsis "Survey-Weighted Analysis of Self-Reported Health Indicators")
+    (description
+     "Analyses population health survey data from the World Health Organization (WHO)
+Stepwise Approach to Non-Communicable Disease (NCD) Risk Factor Surveillance
+(STEPS), Demographic and Health Surveys (DHS), Multiple Indicator Cluster
+Surveys (MICS), and similar complex sample surveys, where chronic conditions are
+self-reported rather than coded using the International Classification of
+Diseases (ICD) and estimates must account for stratification, clustering, and
+sampling weights.  Includes a self-reported multimorbidity index based on the
+Functional Comorbidity Index (FCI) described by Groll et al. (2005)
+<doi:10.1016/j.jclinepi.2004.10.018>, design-weighted population prevalence
+estimation via the survey package, a survey-weighted concentration index for
+health inequality analysis, a DHS anthropometric z-score categoriser, a
+choropleth mapping helper, and exploratory survey-weighted gradient boosting
+(via xgboost') with SHapley Additive @code{exPlanations} (SHAP) based
+explainability.  The gradient boosting component applies case weights but does
+not yet propagate cluster and strata design effects into variance estimates; it
+should be treated as exploratory rather than as design-based inference.")
+    (license license:expat)))
 
 (define-public r-surveygraph
   (package
@@ -20287,6 +20391,32 @@ characteristic curve (AUCROC), as well as their winsorized versions when
 applicable.")
     (license license:expat)))
 
+(define-public r-stabplot
+  (package
+    (name "r-stabplot")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "stabplot" version))
+       (sha256
+        (base32 "1n00isgkx6phyvqmpphvvqk9kcrp4gr0s161swql0cipd3a30qi9"))))
+    (properties `((upstream-name . "stabplot")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-latex2exp r-glmnet r-ggplot2))
+    (home-page "https://github.com/MahdiNouraie/stabplot")
+    (synopsis "Stability Plots for Lasso Stability Selection")
+    (description
+     "This package provides stability selection with Lasso and two diagnostic plots
+for assessing selection stability.  The Regustab plot shows stability across the
+regularisation parameter grid, while the Convstab plot shows stability as a
+function of the number of subsamples.  Methods are described in Nouraie and
+Muller (2026) <doi:10.1080/03610926.2026.2715517>.")
+    (license license:expat)))
+
 (define-public r-stablepopulation
   (package
     (name "r-stablepopulation")
@@ -24732,6 +24862,41 @@ the amount of spatial balance in a sample, adjust design weights, and more.  For
 additional details, see Dumelle et al. (2023) <doi:10.18637/jss.v105.i03>.")
     (license license:gpl3+)))
 
+(define-public r-spsurv
+  (package
+    (name "r-spsurv")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spsurv" version))
+       (sha256
+        (base32 "1bsx8xsh763dl9ywyd3maq78giyd2zaia4nlikvsk16paq2m45bx"))))
+    (properties `((upstream-name . "spsurv")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridis
+                             r-survival
+                             r-stanheaders
+                             r-rstan
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-generics
+                             r-coda
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/rvpanaro/spsurv")
+    (synopsis "Bernstein Polynomial Based Semiparametric Survival Analysis")
+    (description
+     "Semiparametric survival analysis based on Bernstein polynomials.  spsurv
+includes proportional hazards, proportional odds and accelerated failure time
+frameworks for right-censored data.  RV Panaro (2020)
+<doi:10.48550/@code{arXiv.2003.10548>}.")
+    (license license:gpl3)))
+
 (define-public r-spsur
   (package
     (name "r-spsur")
@@ -25818,32 +25983,25 @@ modeling, machine learning, visualization, and sports analytics research.")
 (define-public r-sportsfeatures
   (package
     (name "r-sportsfeatures")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sportsfeatures" version))
        (sha256
-        (base32 "18wlsfip0mffr95l3zh2hvfmgdah6af2j2wm2y39qjn94wm8bk5m"))))
+        (base32 "0vfl2pln32gzhzd3k480njs4v17w398sjqpp9w6nnyavsmp3ipz4"))))
     (properties `((upstream-name . "sportsfeatures")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble r-modelsummary r-mice r-lme4))
+    (native-inputs (list r-quarto))
     (home-page "https://cran.r-project.org/package=sportsfeatures")
-    (synopsis
-     "Longitudinal Sports Analytics Asset and Workload Feature Processing")
+    (synopsis "Simulation Framework for Sports Physiology and Analytics")
     (description
-     "This package provides a synthetic, longitudinal athletic dataset generated
-through a transparent, rule-based simulation engine.  Captures individual
-activity sessions across multiple athletes, environmental conditions, and
-physiological responses.  Specifically designed as an alternative to legacy
-teaching datasets by introducing realistic hierarchical repeated measures,
-complex two-way covariate interactions, and a deliberate Missing Not At Random
-(MNAR) tracking mechanism suitable for advanced imputation workflows.
-Methodologies implemented are based on van Buuren (2018)
-<doi:10.1201/9780429492259> and Bates et al. (2015) <doi:10.18637/jss.v067.i01>.")
+     "This package provides a rule-based simulation environment for modeling
+real-world athlete performance, dynamic training sessions, hierarchical
+variance, and missing telemetry data.")
     (license license:expat)))
 
 (define-public r-sportscausal
@@ -29954,13 +30112,13 @@ policy for package size.")
 (define-public r-specmine
   (package
     (name "r-specmine")
-    (version "4.0.0")
+    (version "4.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "specmine" version))
        (sha256
-        (base32 "12qwi5x308bzvpb5md4yxr0v00dkpzcm2zqqs45rcvgvki0vpx8d"))))
+        (base32 "0iszx736iyjykadks7ysphld8m2dz005dwdyfwiyk678cg5n9jz7"))))
     (properties `((upstream-name . "specmine")))
     (build-system r-build-system)
     (arguments
@@ -30175,13 +30333,13 @@ applications of specification curve analysis see Simonsohn, Simmons, and Nelson
 (define-public r-spec2annot
   (package
     (name "r-spec2annot")
-    (version "1.3.4")
+    (version "1.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Spec2Annot" version))
        (sha256
-        (base32 "06px3gm023hdbl78v5fgyvvnvxasp14ck8jmpi5kk1yjr8kwz16j"))))
+        (base32 "02l6ki75jzgrlnqabk3q1lmm33sdngxsydm4ds33bzbq5ndr6dmq"))))
     (properties `((upstream-name . "Spec2Annot")))
     (build-system r-build-system)
     (arguments
@@ -53413,13 +53571,13 @@ algorithm and to process data visualization.")
 (define-public r-sidrar
   (package
     (name "r-sidrar")
-    (version "0.5.1")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sidrar" version))
        (sha256
-        (base32 "0pjcngd4067088ic6l76lf7n9jqb0ifh9sl8f903pdbc07nnd6fk"))))
+        (base32 "12gl7wdfgk9ag2ihfncvabz6lm7x9qr2rlgr546dy0pbf3q5isvr"))))
     (properties `((upstream-name . "sidrar")))
     (build-system r-build-system)
     (arguments
@@ -55284,6 +55442,41 @@ mid-execution inside a larger host program.")
     (description
      "Enhance the bookmarkable state feature of shiny with additional customization
 such as storage location and storage repositories leveraging the pins package.")
+    (license license:expat)))
+
+(define-public r-shinysnap
+  (package
+    (name "r-shinysnap")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "shinysnap" version))
+       (sha256
+        (base32 "0vk6h68y7qk16js2v7b9arazragz6v0j7sr03rl5gisin93hdaxs"))))
+    (properties `((upstream-name . "shinysnap")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zmij
+                             r-shiny
+                             r-r6
+                             r-promises
+                             r-jsonlite
+                             r-htmltools))
+    (native-inputs (list r-knitr))
+    (home-page "https://nanx.me/shinysnap/")
+    (synopsis "Save and Restore the State of 'shiny' Applications")
+    (description
+     "Save the state of applications built with shiny', the web application framework
+by Chang et al. (2026) <doi:10.32614/CRAN.package.shiny>.  Users can share their
+work and continue it in another session.  Input values and selected values held
+by the server are saved in JSON (@code{JavaScript} Object Notation) files that
+can be read and edited by hand.  Saved state can be restored without reloading
+the page or setting up bookmarking.  Restoration waits for inputs that appear as
+the page changes and reports which values were restored, missing, or could not
+be applied.")
     (license license:expat)))
 
 (define-public r-shinyseo
@@ -61631,13 +61824,13 @@ Factorial Technology along with examples using the sft R package.")
 (define-public r-sfreapportion
   (package
     (name "r-sfreapportion")
-    (version "0.2.0")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sfReapportion" version))
        (sha256
-        (base32 "1lwb189ql1i4bgll91zzabqmdm27a0zvrqxw61f5hf3hibklgpah"))))
+        (base32 "1waq3njpg8rjchbp9cxvy8a6l8q2rw0ckqgpiqgjlblgn5kd1sbs"))))
     (properties `((upstream-name . "sfReapportion")))
     (build-system r-build-system)
     (arguments
@@ -75106,13 +75299,13 @@ assembly).")
 (define-public r-scholid
   (package
     (name "r-scholid")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scholid" version))
        (sha256
-        (base32 "0gl2d7dr5jpzsch0czak5akpjm1f1pwq5gbv14zsznd0ls3a3snf"))))
+        (base32 "1nqr6dbwslnxig2jk2nv0sr1zh4cgj321nfk1plp84xidy0nd2la"))))
     (properties `((upstream-name . "scholid")))
     (build-system r-build-system)
     (arguments
@@ -75123,8 +75316,8 @@ assembly).")
     (synopsis "Scholarly and Academic Identifier Utilities")
     (description
      "Detects, normalizes, classifies, and extracts scholarly identifier strings.
-Provides lightweight, dependency-free helpers for twenty identifier types,
-including DOIs, ORCID @code{iDs}, ISBNs, ISSNs, @code{arXiv} and @code{PubMed}
+Provides lightweight, dependency-free helpers for identifier types including
+DOIs, ORCID @code{iDs}, ISBNs, ISSNs, @code{arXiv} and @code{PubMed}
 identifiers, ROR and ISNI, @code{OpenAlex} and ADS bibcodes, RRID, ARK, SWHID,
 and selected life-science accessions (@code{UniProt}, @code{RefSeq}, SRA, GEO,
 @code{BioProject}, and genome assemblies).  Functions are vectorized,
@@ -82890,6 +83083,38 @@ which based on Wilcox (1979) <doi:10.1177/001316447903900302> and Kleinman
     (description
      "Select best combination of auxiliary variables with certain criterion.")
     (license license:gpl3)))
+
+(define-public r-saebenchmarking
+  (package
+    (name "r-saebenchmarking")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "saebenchmarking" version))
+       (sha256
+        (base32 "0cy4qd7rjdq5vdb39h7mrgn9wrjar96i4j4zcrj5y5rmcwf7rii2"))))
+    (properties `((upstream-name . "saebenchmarking")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr r-sae))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/fionaaudia/saebenchmarking")
+    (synopsis
+     "Benchmarking Small Area Estimates and Their Mean Squared Errors")
+    (description
+     "Adjusts model-based small area estimates so that their weighted aggregate agrees
+with the weighted aggregate of the direct estimates, using the difference,
+ratio, and optimum benchmarking methods described in Rao and Molina (2015,
+ISBN:978-1-118-73578-7) and Wang, Fuller and Qu (2008).  The mean squared error
+(MSE) of the benchmarked empirical best linear unbiased predictor (EBLUP) under
+the Fay-Herriot model is estimated with the second-order approximation or the
+parametric bootstrap of Steorts and Ghosh (2013) <doi:10.5705/ss.2012.053>.  The
+posterior MSE of the benchmarked hierarchical Bayes (HB) estimator follows
+Datta, Ghosh, Steorts and Maples (2011) <doi:10.1007/s11749-010-0218-y>.")
+    (license license:expat)))
 
 (define-public r-sae4health
   (package

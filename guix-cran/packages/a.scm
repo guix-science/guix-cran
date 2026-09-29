@@ -9803,13 +9803,13 @@ analysis in a common tabular data structure.")
 (define-public r-ardlverse
   (package
     (name "r-ardlverse")
-    (version "2.0.0")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ardlverse" version))
        (sha256
-        (base32 "0l2fmmdb57b2ahz44pwybqcgxg3jmsvr0jb3cf3z3r4y4ncflfk2"))))
+        (base32 "1nf8f7wzgnjdmzbblfgji1ki7kygmf97vvhzrinvmjb6jkhzz70z"))))
     (properties `((upstream-name . "ardlverse")))
     (build-system r-build-system)
     (arguments
@@ -9822,13 +9822,13 @@ analysis in a common tabular data structure.")
      "This package provides a unified framework for Autoregressive Distributed Lag
 (ARDL) modeling and cointegration analysis.  Implements Panel ARDL with Pooled
 Mean Group (PMG), Mean Group (MG), and Dynamic Fixed Effects (DFE) estimators
-following Pesaran, Shin & Smith (1999) <doi:10.1002/jae.616>.  Provides
-bootstrap-based bounds testing per Pesaran, Shin & Smith (2001)
+following Pesaran, Shin and Smith (1999) <doi:10.1080/01621459.1999.10474156>.
+Provides bootstrap-based bounds testing per Pesaran, Shin & Smith (2001)
 <doi:10.1002/jae.616>.  Includes Quantile Nonlinear ARDL (QNARDL) combining
 distributional and asymmetric effects based on Shin, Yu & Greenwood-Nimmo (2014)
 <doi:10.1007/978-1-4899-8008-3_9>, and Fourier ARDL for modeling smooth
 structural breaks following Enders & Lee (2012)
-<doi:10.1016/j.econlet.2012.05.019>.  Features include Augmented ARDL (AARDL)
+<doi:10.1016/j.econlet.2012.04.081>.  Features include Augmented ARDL (AARDL)
 with deferred t and F tests, Multiple-Threshold NARDL for complex asymmetries,
 Rolling/Recursive ARDL for time-varying relationships, and Panel NARDL for
 nonlinear panel cointegration.  All methods include comprehensive diagnostics,
@@ -12866,13 +12866,13 @@ assignment.")
 (define-public r-apifetch
   (package
     (name "r-apifetch")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "apifetch" version))
        (sha256
-        (base32 "0b8lqvi62b47ia8vqf0jpb92gf6qp6gw3wn6g5xrhmzdvzxpr5ff"))))
+        (base32 "0cxj8b0gra0h7fhxcdij48w6c66x4cjrbqwg99hqhfjpvv9667rf"))))
     (properties `((upstream-name . "apifetch")))
     (build-system r-build-system)
     (arguments
@@ -20357,13 +20357,13 @@ Miyazaki, Yamada, Yatsuhashi, and Imai (2022) <doi:10.7910/DVN/Z9UKSH>.")
 (define-public r-alakazam
   (package
     (name "r-alakazam")
-    (version "1.4.3")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "alakazam" version))
        (sha256
-        (base32 "116b2pqkl1142mcf2yk6v71zc9nqqyl9fq7sw7cvjm6fpx6f8inz"))))
+        (base32 "1v4lkgm326krahlgvyqklld1v2m9da7zjida6fpx4239zsxarlqh"))))
     (properties `((upstream-name . "alakazam")))
     (build-system r-build-system)
     (arguments
