@@ -17614,6 +17614,40 @@ Beverly et al. (2010) <doi:10.1071/WF09071>, Beverly et al. (2021)
 <doi:10.1007/s11069-023-05885-3> for background and methodology.")
     (license license:gpl3+)))
 
+(define-public r-firedata
+  (package
+    (name "r-firedata")
+    (version "2.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fireData" version))
+       (sha256
+        (base32 "0rgxlyicaz912w7q96qvfc0mwx65p1q0x4zx893sfj1q29wmbc6j"))))
+    (properties `((upstream-name . "fireData")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml
+                             r-r6
+                             r-openssl
+                             r-jsonlite
+                             r-httr
+                             r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Kohze/fireData")
+    (synopsis "Connect to 'Google Firebase'")
+    (description
+     "This package provides an interface to Google Firebase services
+<https://firebase.google.com/>, including Firebase Realtime Database', Cloud
+Firestore', Firebase Authentication', and Cloud Storage for Firebase'.  Supports
+interactive use and shiny applications as well as automated server-side
+workflows.  Data frames and objects can be stored and retrieved, users can be
+authenticated, and files can be managed through the services application
+programming interfaces.")
+    (license license:expat)))
+
 (define-public r-firebase-auth-rest
   (package
     (name "r-firebase-auth-rest")
@@ -25571,13 +25605,13 @@ Bojanowski, Matthijs Douze, Herve Jegou, Tomas Mikolov, 2016,
 (define-public r-fastsurvival
   (package
     (name "r-fastsurvival")
-    (version "0.2.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FastSurvival" version))
        (sha256
-        (base32 "1q4dcl6a0xpwkl5jvm4d564ca5blzfz0dxrlwq60d9wryz1kkav1"))))
+        (base32 "1apxcjqapyviifs5kd1gvr44nv6mggp6dvbn3q22k5zywc2326mp"))))
     (properties `((upstream-name . "FastSurvival")))
     (build-system r-build-system)
     (arguments
@@ -30685,6 +30719,37 @@ data.table object @code{factorSPGMI}'.  The @code{stocksCRSP} and
 @code{factorsSPGMI} data are not covered by the GPL-2 license, are not provided
 as open source of any kind, and they are not to be redistributed in any form.")
     (license license:gpl2)))
+
+(define-public r-facilityepimath
+  (package
+    (name "r-facilityepimath")
+    (version "0.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "facilityepimath" version))
+       (sha256
+        (base32 "07z7rnzv14l6xr40xc7330jkc5v3qcfd732h9k977hwq09zyj8rc"))))
+    (properties `((upstream-name . "facilityepimath")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mass))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/EpiForeSITE/facilityepimath")
+    (synopsis
+     "Analyze Mathematical Models of Healthcare Facility Transmission")
+    (description
+     "Calculate useful quantities for a user-defined differential equation model of
+infectious disease transmission among individuals in a healthcare facility.
+Input rates of transition between states of individuals with and without the
+disease-causing organism, distributions of states at facility admission,
+relative infectivity of transmissible states, and the facility length of stay
+distribution.  Calculate the model equilibrium and the basic facility
+reproduction number, as described in Toth et al. (2025)
+<doi:10.1371/journal.pcbi.1013577>.")
+    (license license:expat)))
 
 (define-public r-facetsviz
   (package

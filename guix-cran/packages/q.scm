@@ -2597,26 +2597,27 @@ scores following Sokolova and Lapalme (2009 <doi:10.1016/j.ipm.2009.03.002>).")
 (define-public r-quallmer
   (package
     (name "r-quallmer")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quallmer" version))
        (sha256
-        (base32 "0ffr41gpbqcv5yr91i9m90mzv8av284zka33wmydi688psv9dvxa"))))
+        (base32 "0i92cpyh31287pfm79raxk89zq2gbandc2f37nbv4wahh45z0vhw"))))
     (properties `((upstream-name . "quallmer")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-yardstick
-                             r-vctrs
+    (propagated-inputs (list r-vctrs
                              r-tibble
                              r-rlang
                              r-lifecycle
-                             r-irr
+                             r-jsonlite
+                             r-httr2
                              r-ellmer
                              r-digest
+                             r-curl
                              r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://quallmer.github.io/quallmer/")
@@ -2626,12 +2627,12 @@ scores following Sokolova and Lapalme (2009 <doi:10.1016/j.ipm.2009.03.002>).")
 language models ('LLMs') via the ellmer package, supporting providers including
 @code{OpenAI}', Anthropic', Google', Azure', and local models via Ollama'.
 Provides a codebook'-based workflow for defining coding instructions and
-applying them to texts, images, and other data.  Includes built-in codebooks for
-common applications such as sentiment analysis and policy coding, and functions
-for creating custom codebooks for specific research questions.  Supports
-systematic replication across models and settings, computing inter-coder
-reliability statistics including Krippendorff's alpha (Krippendorff 2019,
-<doi:10.4135/9781071878781>) and Fleiss kappa (Fleiss 1971,
+applying them to texts, images, audio recordings, and other data.  Includes
+built-in codebooks for common applications such as sentiment analysis and policy
+coding, and functions for creating custom codebooks for specific research
+questions.  Supports systematic replication across models and settings,
+computing inter-coder reliability statistics including Krippendorff's alpha
+(Krippendorff 2019, <doi:10.4135/9781071878781>) and Fleiss kappa (Fleiss 1971,
 <doi:10.1037/h0031619>), as well as gold-standard validation metrics including
 accuracy, precision, recall, and F1 scores following Sokolova and Lapalme (2009,
 <doi:10.1016/j.ipm.2009.03.002>).  Provides audit trail functionality for
@@ -4983,6 +4984,41 @@ Rowland and Tozer (2011, ISBN:978-0-683-07404-8), Gabrielsson and Weiner (1997,
 ISBN:978-91-9765-100-4), and Gibaldi and Perrier (1982, ISBN:978-0824710422).")
     (license license:gpl3)))
 
+(define-public r-qpmr
+  (package
+    (name "r-qpmr")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qpmR" version))
+       (sha256
+        (base32 "1y408igpsfd9qwybzihjmbxx1y19qz4rd4qnx5s1zh0ll9l7s4rf"))))
+    (properties `((upstream-name . "qpmR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-qz))
+    (native-inputs (list r-knitr))
+    (home-page "https://mustapha-wasseja.github.io/qpmR/")
+    (synopsis "Quarterly Projection Models for Monetary Policy Analysis")
+    (description
+     "An end-to-end implementation of the semi-structural quarterly projection models
+used in central-bank forecasting and policy analysis systems: model declaration
+with model-consistent expectations, a generalized Schur solver with
+Blanchard-Kahn diagnostics following Klein (2000)
+<doi:10.1016/S0165-1889(99)00045-7>, Kalman filtering and smoothing for latent
+states such as the output gap and the neutral rate, historical shock
+decompositions, conditional forecasts that distinguish announced from
+unanticipated policy paths, an auditable judgment ledger, forecast rounds with
+revision decompositions, Bayesian estimation with identification diagnostics
+following Iskrev (2010) <doi:10.1016/j.jmoneco.2009.12.007>, and reporting.  The
+canonical small open economy model of Berg, Karam and Laxton (2006)
+<doi:10.5089/9781451863413.001> ships as a calibrated template, with extension
+blocks for disaggregated food inflation and managed exchange rates.")
+    (license license:expat)))
+
 (define-public r-qploidy
   (package
     (name "r-qploidy")
@@ -5485,13 +5521,13 @@ symbology.")
 (define-public r-qio
   (package
     (name "r-qio")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qio" version))
        (sha256
-        (base32 "0fr06xh4irxxsw9mggmw6g1vyybpr4ir4hj822769wj277xz6yax"))))
+        (base32 "1kv7di2v0ifhbxnaw1s5frwhanhrd4c10las63lr87dn11xlca1m"))))
     (properties `((upstream-name . "qio")))
     (build-system r-build-system)
     (arguments

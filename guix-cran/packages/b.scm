@@ -25282,6 +25282,46 @@ datasets without downloading them in full.  See <https://bedrock.bio> for
 available datasets and documentation.")
     (license license:gpl3+)))
 
+(define-public r-bedrock
+  (package
+    (name "r-bedrock")
+    (version "0.1.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bedrock" version))
+       (sha256
+        (base32 "0n72fz6z5r0labb5fcr0piypygbh2vxvxap13kycd7x8gzv5937v"))))
+    (properties `((upstream-name . "bedrock")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
+    (propagated-inputs (list r-readxl
+                             r-rcpp
+                             r-httr
+                             r-expm
+                             r-data-table
+                             r-cli
+                             r-abind))
+    (native-inputs (list r-r-rsp))
+    (home-page "https://andrisignorell.github.io/bedrock/")
+    (synopsis "Base Functions for the 'DescToolsX' Ecosystem")
+    (description
+     "This package provides the low level utilities on which the @code{DescToolsX}
+ecosystem is built.  Covered are data manipulation and reshaping, predicates for
+data inspection and validation, vector and string operations, handling of labels
+and metadata, and routines from number theory and combinatorics.  All functions
+share a common naming and argument scheme and are implemented as S3 generics
+wherever several input types are meaningful, with performance critical parts
+written in C++.  The package is self contained and can be used on its own,
+independently of the higher level packages of the suite.")
+    (license license:gpl2+)))
+
 (define-public r-bedassle
   (package
     (name "r-bedassle")

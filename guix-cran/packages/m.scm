@@ -55579,13 +55579,13 @@ images or html, interactive maps.")
 (define-public r-mapperalgo
   (package
     (name "r-mapperalgo")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MapperAlgo" version))
        (sha256
-        (base32 "0nhx301lgxj3zj8v4q9qxixkjpvgqrarg9vk59br30a13jhviw07"))))
+        (base32 "0hps1wxybh2fya4m23q77iawklm4klrhmw85n1f1rf4c5cp4majk"))))
     (properties `((upstream-name . "MapperAlgo")))
     (build-system r-build-system)
     (arguments
@@ -58556,26 +58556,26 @@ plots.")
 (define-public r-maidr
   (package
     (name "r-maidr")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maidr" version))
        (sha256
-        (base32 "12g4rr0d6lp274a1i0qqw3msx1rb8b8pqwzw3p43ckyn03y8q2lz"))))
+        (base32 "0bp1knibza6bzy7bmgwj4vnmqdmgpv7yb04kd4mzpprh4mihhp7g"))))
     (properties `((upstream-name . "maidr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-xml2
+                             r-svglite
                              r-shiny
                              r-rlang
                              r-r6
                              r-jsonlite
                              r-htmlwidgets
                              r-htmltools
-                             r-gridsvg
                              r-ggplotify
                              r-ggplot2
                              r-curl
@@ -58588,10 +58588,12 @@ plots.")
 (Multimodal Access and Interactive Data Representation) system.  Converts
 ggplot2 and Base R plots into accessible HTML/SVG formats with keyboard
 navigation, screen reader support, and sonification capabilities.  Supports bar
-charts (simple, grouped, stacked), histograms, line plots, scatter plots, box
-plots, violin plots, candlestick (OHLC) charts, heat maps, density/smooth
-curves, faceted plots, multi-panel layouts (including patchwork), and
-multi-layered plot combinations.  Enables data exploration for users with visual
+charts (simple, grouped, stacked), pie charts, histograms, line plots, step
+plots, scatter plots, box plots, violin plots, candlestick (OHLC) charts, heat
+maps, density/smooth curves, faceted plots, multi-panel layouts (including
+patchwork), and multi-layered plot combinations.  Also makes plotly',
+highcharter and echarts4r htmlwidgets accessible by attaching the matching MAIDR
+@code{JavaScript} adapter.  Enables data exploration for users with visual
 impairments through multiple sensory modalities.  For more details see the MAIDR
 project <https://maidr.ai/>.")
     (license license:gpl3+)))

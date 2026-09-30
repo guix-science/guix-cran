@@ -11249,6 +11249,34 @@ analysis where auxiliary information from related source datasets can improve
 estimation efficiency in the target domain.")
     (license license:gpl3)))
 
+(define-public r-transfrgov
+  (package
+    (name "r-transfrgov")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "transfRgov" version))
+       (sha256
+        (base32 "1hwcvh20a6daj4vwj8ns5m76gvvnm4bvncysl1y2aq87nj0w9ach"))))
+    (properties `((upstream-name . "transfRgov")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-readr r-jsonlite r-janitor r-httr))
+    (home-page "https://github.com/DistintiveLab/transfRgov")
+    (synopsis
+     "Acquisition and Reading of Brazilian Federal Government Fund Transfers")
+    (description
+     "Downloads, reads and organizes data on federal fund transfers to Brazilian
+municipalities.  Data are retrieved from the @code{TransfereGov} \"Fundo a Fundo\"
+API, from the Portal da TransparÃªncia open data service and from the Tesouro
+Transparente CKAN catalogue.  The package offers one reader per API endpoint,
+helpers that map SIAFI municipality codes to IBGE codes, and routines that fetch
+the monthly transfer archives and the tax waiver records published as open data.")
+    (license license:expat)))
+
 (define-public r-transfr
   (package
     (name "r-transfr")
@@ -29963,13 +29991,13 @@ builds on geepack <doi:10.18637/jss.v015.i02> (HÃ¸jsgaard, Halekoh and Yan,
 (define-public r-tern
   (package
     (name "r-tern")
-    (version "0.9.11")
+    (version "0.9.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tern" version))
        (sha256
-        (base32 "0i1s1smym0yn4yfwixayc71qkzyjn2prc94slq3m0k7q0ld1clb2"))))
+        (base32 "0n8qxxhip0jy57731pqc9zjn55fmjxgqfrsk0fxgc8crghjxnm2b"))))
     (properties `((upstream-name . "tern")))
     (build-system r-build-system)
     (arguments
@@ -29998,7 +30026,7 @@ builds on geepack <doi:10.18637/jss.v015.i02> (HÃ¸jsgaard, Halekoh and Yan,
                              r-car
                              r-broom))
     (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://insightsengineering.github.io/tern/")
+    (home-page "https://pharmaverse.github.io/tern/")
     (synopsis "Create Common TLGs Used in Clinical Trials")
     (description
      "Table, Listings, and Graphs (TLG) library for common outputs used in clinical

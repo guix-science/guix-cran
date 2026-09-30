@@ -10499,19 +10499,19 @@ Klumb (2023) <doi:10.18637/jss.v105.i06>.")
 (define-public r-erglm
   (package
     (name "r-erglm")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "erglm" version))
        (sha256
-        (base32 "07kjmaqiz4ns7h7wcbbjx7amn7chlv8d8iinmgz4r2wx3m1rhx6g"))))
+        (base32 "0vfpn272xcaj0pnyka04sagri57r2v124izbkh039pdywqvy5jw6"))))
     (properties `((upstream-name . "erglm")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-withr r-tibble r-rlang r-mvtnorm r-dplyr))
+    (propagated-inputs (list r-mvtnorm))
     (home-page "https://github.com/djnavarro/erglm")
     (synopsis "Exposure-Response Tools for GLM-Based Models")
     (description

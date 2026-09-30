@@ -7368,6 +7368,34 @@ these cross-expression patterns.  See Sarwar et al. (2025)
 <https://github.com/gillislab/@code{CrossExpression/>} for more details.")
     (license license:expat)))
 
+(define-public r-crossdomainadjust
+  (package
+    (name "r-crossdomainadjust")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CrossDomainAdjust" version))
+       (sha256
+        (base32 "1xnqy2wkds7d43929vx9n6hgx2rkwbwm3kql48azd8dv21nwlvzc"))))
+    (properties `((upstream-name . "CrossDomainAdjust")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=CrossDomainAdjust")
+    (synopsis "Lambda-Controlled Cross-Domain Feature Adjustment")
+    (description
+     "This package provides cross-domain feature adjustment methods for biological and
+other tabular data.  Domain labels define group centroids, and singular value
+decomposition of their offsets from a common anchor estimates a domain-shift
+subspace.  An orthogonal projection removes a user-controlled fraction of each
+sample's component in that subspace.  A correction strength of zero preserves
+the input; a strength of one removes the entire learned subspace component.
+Intermediate values provide partial correction.  The fitted transformation can
+be applied to new samples without refitting.")
+    (license license:expat)))
+
 (define-public r-crossdes
   (package
     (name "r-crossdes")
@@ -13289,6 +13317,35 @@ matrix are from a Poisson or a negative binomial distribution.")
      "Modeling under- and over-dispersed count data using extended Poisson process
 models as in the article Faddy and Smith (2011) <doi:10.18637/jss.v069.i06> .")
     (license license:gpl2)))
+
+(define-public r-countryscales
+  (package
+    (name "r-countryscales")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "countryscales" version))
+       (sha256
+        (base32 "1fqcavm20xqpj4ws7flsx7i4j565id48zgd7db9s524g1h06rllq"))))
+    (properties `((upstream-name . "countryscales")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales r-rlang r-plyr r-i18n r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/trekonom/countryscales")
+    (synopsis "Country Scales")
+    (description
+     "Format numbers, percentages and currencies, and label ggplot2 axes, using
+country- or locale-specific conventions such as the thousands separator, decimal
+mark, currency symbol placement, and sign placement.  Locale data is sourced
+from the Unicode Common Locale Data Repository (CLDR,
+<https://cldr.unicode.org>) via the i18n package, covering several hundred
+locales in addition to dedicated helpers for Germany, Switzerland and the United
+States.")
+    (license license:expat)))
 
 (define-public r-countryatlas
   (package
@@ -22971,27 +23028,26 @@ and lowers an @code{OpenTimelineIO}
 (define-public r-compositionalzerocens
   (package
     (name "r-compositionalzerocens")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Compositionalzerocens" version))
        (sha256
-        (base32 "1qc6vm7b2fz278q81n31063c6xd5wlgxamz5w0rsdibzg39ip2xg"))))
+        (base32 "0iw8dd39jxizbr6fcy4llkby3fxpsrdqknhvgaxfifq7wgjais0b"))))
     (properties `((upstream-name . "Compositionalzerocens")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rfast r-far r-compositional))
+    (propagated-inputs (list r-truncatednormal r-rfast r-far r-compositional))
     (home-page "https://cran.r-project.org/package=Compositionalzerocens")
     (synopsis
      "Modelling Zero Values in Compositional Data Using a Censored Model")
     (description
      "Modelling structural zeros in compositional data assuming a latent Gaussian
 model, where MLE is performed via the EM algorithm.  The relevant paper is
-Tsagris M. (2026).  Modelling structural zeros in compositional data via a
-zero-censored multivariate normal model. <doi:10.48550/@code{arXiv.2208.13073>}.")
+Tsagris and Alharbi (2026) <doi:10.48550/@code{arXiv.2208.13073>}.")
     (license license:gpl2+)))
 
 (define-public r-compositionalzadr
@@ -27325,13 +27381,13 @@ and plotting methods for a clear presentation of the results.")
 (define-public r-cointests
   (package
     (name "r-cointests")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cointests" version))
        (sha256
-        (base32 "052495cj81rqzr64a31p7i4vqqgikyyx72l92iks58dmxs58in5q"))))
+        (base32 "02i46vgnannh5p5gdmqyvk59qwaxx8bxymfls97kkmq2n9ksf5xy"))))
     (properties `((upstream-name . "cointests")))
     (build-system r-build-system)
     (arguments
@@ -27346,7 +27402,7 @@ Fourier-based cointegration tests (FADL, FEG, FEG2, Tsong) that accommodate
 smooth structural breaks via flexible Fourier terms, and panel CADF
 cointegration tests with structural breaks using the Common Correlated Effects
 (CCE) estimator following Banerjee, Arcabic and Lee (2017)
-<doi:10.1016/j.econmod.2017.03.004>, Tsong, Lee, Tsai and Hu (2016)
+<doi:10.1016/j.econmod.2016.11.004>, Tsong, Lee, Tsai and Hu (2016)
 <doi:10.1007/s00181-015-1028-6>, and Banerjee and Carrion-i-Silvestre (2025)
 <doi:10.1080/07350015.2024.2327844>.")
     (license license:gpl3)))
@@ -35027,6 +35083,43 @@ structure in the residual variance matrix.")
      "Render tables in text format in the terminal using ANSI strings thanks to the
 cli and crayon packages.")
     (license license:gpl3+)))
+
+(define-public r-clis
+  (package
+    (name "r-clis")
+    (version "0.3.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "clis" version))
+       (sha256
+        (base32 "0b717q723awv2dv046ljyn6lnibskqnk3gq0dmbvwvp70bwjp8xw"))))
+    (properties `((upstream-name . "clis")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-gamlss-dist r-gamlss))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Raydonal/clis")
+    (synopsis
+     "Conformal Local Influence Screening for Bounded-Response Regression")
+    (description
+     "This package provides fast, statistically calibrated influence diagnostics for
+zero-or-one inflated beta (BIc) regression models with variable dispersion.  The
+core idea is to use the conformal normal curvature of Poon and Poon (1999)
+<doi:10.1111/1467-9868.00162> as a non-conformity score within a split-conformal
+testing procedure, yielding per-observation conformal p-values whose
+Benjamini-Hochberg adjustment controls the false discovery rate at a
+user-specified level (Bates and others, 2023) <doi:10.1214/22-AOS2244>.  Unlike
+classical local influence diagnostics, which rely on visual inspection of index
+plots and do not scale beyond a few hundred observations, clis provides a
+finite-sample error guarantee and runs in linear time per observation after a
+single model fit.  Methods for four perturbation schemes, block decomposition of
+influence into the inflation-probability and conditional-mean/precision
+components, penalised additive (semiparametric) submodels, and a full suite of
+diagnostic plots are included.")
+    (license license:gpl3)))
 
 (define-public r-cliquepercolation
   (package
@@ -57382,13 +57475,13 @@ Arias-Pulido H et al. (2008) <doi:10.1002/gcc.20577>.  Davis S, Meltzer PS
 (define-public r-canvasxpress
   (package
     (name "r-canvasxpress")
-    (version "1.65.2")
+    (version "1.70.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "canvasXpress" version))
        (sha256
-        (base32 "02gg2yb0lvqlfgrrifykac2a8wmnvahxibyr9kmqlqhl78p8x72i"))))
+        (base32 "0gg0jg3zymydrlg41n2jks59z8pw0n0cr60a4jc2bid57n5ai632"))))
     (properties `((upstream-name . "canvasXpress")))
     (build-system r-build-system)
     (arguments

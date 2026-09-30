@@ -235,6 +235,32 @@ Langa-Weir classification system.  For details regarding the; HRS
 <https://hrsdata.isr.umich.edu/data-products/langa-weir-classification-cognitive-function-1995-2022>.")
     (license license:expat)))
 
+(define-public r-lwbgt
+  (package
+    (name "r-lwbgt")
+    (version "0.4.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lwbgt" version))
+       (sha256
+        (base32 "1iqpr8x0zk22b0ha2v1h35cr339jjc74cbnz0jjcav6qil7hg27f"))))
+    (properties `((upstream-name . "lwbgt")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (home-page "https://github.com/zyf0717/lwbgt")
+    (synopsis "Reference-Compatible Outdoor Wet Bulb Globe Temperature")
+    (description
+     "Computes outdoor wet bulb globe temperature using the reference-compatible
+Liljegren numerical model described by Liljegren et al. (2008)
+<doi:10.1080/15459620802310770>.  Provides dependency-free, vectorized access to
+the native calculation with explicit input units, per-row validation, and
+deterministic failure reporting.")
+    (license license:asl2.0)))
+
 (define-public r-lvplot
   (package
     (name "r-lvplot")

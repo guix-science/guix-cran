@@ -9479,6 +9479,36 @@ categorical and dichotomous variables.  It is largely based on the package
 gtsummary'; Sjoberg DD et al. (2021) <doi:10.32614/RJ-2021-053>.")
     (license license:lgpl3)))
 
+(define-public r-summary2joint
+  (package
+    (name "r-summary2joint")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "summary2joint" version))
+       (sha256
+        (base32 "19iihn5cycl3pa56g2x0lnj14v8k5qy297z6ajd8z3f03l3pfvjz"))))
+    (properties `((upstream-name . "summary2joint")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-numderiv r-mvtnorm))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=summary2joint")
+    (synopsis "Joint Distribution Estimation from Marginal Study Summaries")
+    (description
+     "Estimates latent Gaussian joint distributions for normal continuous, binary, and
+ordinal variables using marginal summaries from independent studies of a common
+population.  Fits a pairwise Gaussian working criterion using exact summary
+moments, with study-level sandwich uncertainty.  Supports prespecified
+independent groups, joint event probabilities, and synthetic patient generation.
+ Identification requires repeated joint reporting of variable pairs;
+heterogeneous populations, rare categories, and small study collections require
+caution.")
+    (license license:gpl3)))
+
 (define-public r-summariser
   (package
     (name "r-summariser")
@@ -21424,6 +21454,33 @@ criteria proposed by Jayasankar et al.,2021
 <https://eprints.cmfri.org.in/11364/>).")
     (license license:gpl2+)))
 
+(define-public r-sspilot
+  (package
+    (name "r-sspilot")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ssPilot" version))
+       (sha256
+        (base32 "18cxi5ahy8yjf890pk7hcvny87nl4j53ixhg1l6w293a9jfg70r7"))))
+    (properties `((upstream-name . "ssPilot")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-ggplot2))
+    (native-inputs (list r-quarto))
+    (home-page "https://github.com/joeldadiboe-rgb/ssPilot")
+    (synopsis
+     "Sample Size Calculation for External Pilot Studies for a Continuous Endpoint")
+    (description
+     "An implementation of sample size calculations for external pilot studies that
+minimize the overall trial sample size for the external pilot and main trial for
+a continuous endpoint as described in Whitehead et al. (2016)
+<doi:10.1177/0962280215588241>.")
+    (license license:gpl2+)))
+
 (define-public r-ssp
   (package
     (name "r-ssp")
@@ -25064,6 +25121,38 @@ All area-level covariates are considered at all available scales to enter a
 model, but the SS algorithms are constrained to select each area-level covariate
 at a single spatial scale.")
     (license license:gpl2+)))
+
+(define-public r-spscsfa
+  (package
+    (name "r-spscsfa")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spscsfa" version))
+       (sha256
+        (base32 "07xd24mv937rbyxwds1wr1bkhk8j6ff1pg8mp1a6vjywhriwnypj"))))
+    (properties `((upstream-name . "spscsfa")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-np r-formula))
+    (home-page "https://cran.r-project.org/package=spscsfa")
+    (synopsis "Semiparametric Smooth-Coefficient Stochastic Frontier Analysis")
+    (description
+     "This package provides semiparametric smooth-coefficient stochastic frontier
+analysis following Sun and Kumbhakar (2013) <doi:10.1016/j.econlet.2013.05.001>
+where the coefficients of the parametric part vary smoothly with a set of
+nonparametric variables.  Inefficiency term is allowed to depend on a set of
+determinants through heteroskedasticity.  Smooth coefficients are estimated
+using nonparametric regression and the remaining frontier parameters are
+estimated by maximum likelihood.  Technical efficiency and inefficiency are
+computed using the Battese and Coelli (1988) <doi:10.1016/0304-4076(88)90053-X>
+and Jondrow et al. (1982) <doi:10.1016/0304-4076(82)90004-5> methods,
+respectively.  Confidence intervals for technical efficiency are computed using
+the approach of Horrace and Schmidt (1996) <doi:10.1007/BF00157044>.")
+    (license license:agpl3+)))
 
 (define-public r-spscomps
   (package
@@ -53227,13 +53316,13 @@ clusters, @code{SigClust} can be used iteratively.")
 (define-public r-sigbridgerutils
   (package
     (name "r-sigbridgerutils")
-    (version "0.2.6")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SigBridgeRUtils" version))
        (sha256
-        (base32 "1mar0b0ki0z4wmmmpjxnr0nwnrcybnci1yk9h91ghp38kxbkqhqb"))))
+        (base32 "13546kyxhsl1k3l31r6z7w5izvnbilj1kybmd02ig93zf1i72q5g"))))
     (properties `((upstream-name . "SigBridgeRUtils")))
     (build-system r-build-system)
     (arguments
@@ -53241,12 +53330,16 @@ clusters, @code{SigClust} can be used iteratively.")
       #:tests? #f))
     (propagated-inputs (list r-rlang
                              r-reticulate
+                             r-rcpparmadillo
+                             r-rcpp
                              r-purrr
                              r-processx
                              r-data-table
                              r-cli
-                             r-chk))
-    (home-page "https://cran.r-project.org/package=SigBridgeRUtils")
+                             r-chk
+                             r-beachmat
+                             r-assorthead))
+    (home-page "https://github.com/WangLabCSU/SigBridgeRUtils")
     (synopsis "Some Utilities & Base Supports for 'SigBridgeR'")
     (description
      "This package provides fundamental function support for @code{SigBridgeR} and its
@@ -75664,6 +75757,33 @@ geometry optimization processes in real-time.  The software supports processing
 .log files remotely using with @code{rbase::url()}.  This software is a suitcase
 for saving time and energy for the researchers, supporting multiple versions of
 Gaussian'.")
+    (license license:expat)))
+
+(define-public r-scflex
+  (package
+    (name "r-scflex")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "scFlex" version))
+       (sha256
+        (base32 "1jmr2z7v1qad12h0cmbs1zj2a3v2d22v06gil38068smcj9pky7z"))))
+    (properties `((upstream-name . "scFlex")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-seuratobject r-reticulate r-matrix))
+    (home-page "https://github.com/mohamednhassan/scFlex")
+    (synopsis "Flexible Conversion Between Single-Cell Data Objects")
+    (description
+     "This package provides conversion among Seurat', @code{SingleCellExperiment}',
+@code{AnnData}', and Loom single-cell data representations while preserving
+expression matrices, cell and feature metadata, and dimensionality reductions
+when supported by the target format.  The package performs alignment and
+validity checks during conversion and reports unsupported or unavailable
+components rather than silently reconstructing them.")
     (license license:expat)))
 
 (define-public r-scf

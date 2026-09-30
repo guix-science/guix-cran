@@ -2548,13 +2548,13 @@ pairwise tests as suggested by Armstrong and Poirier (2025)
 (define-public r-vizmodules
   (package
     (name "r-vizmodules")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VizModules" version))
        (sha256
-        (base32 "1yqspp9ff5ba7nmyy1z5dxmr3358h367axp4nb1ir6gjh63axn8a"))))
+        (base32 "0ldl92f9v807sbndnzkarqf1j79bxd75gkgd79j5g0zdwc6fc8dp"))))
     (properties `((upstream-name . "VizModules")))
     (build-system r-build-system)
     (arguments

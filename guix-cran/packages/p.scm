@@ -633,6 +633,32 @@ Analysis, @code{StructuralEquations} and Causal Inference (3rd edition).
 Cambridge University Press.")
     (license license:expat)))
 
+(define-public r-pwrss
+  (package
+    (name "r-pwrss")
+    (version "1.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pwrss" version))
+       (sha256
+        (base32 "01pqplnk820qrjv7mb5k6bs3gpymln351rix702rgqprbcnwrgcd"))))
+    (properties `((upstream-name . "pwrss")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://metinbulus.github.io/pwrss/")
+    (synopsis
+     "Statistical Power, Sample Size, and Detectable Effect Calculations")
+    (description
+     "Flexible and comprehensive functions for statistical power, minimum required
+sample size, and minimum detectable effect calculations across a wide range of
+commonly used hypothesis tests in psychological, biomedical, and social
+sciences.")
+    (license license:gpl3+)))
+
 (define-public r-pwrrasch
   (package
     (name "r-pwrrasch")
@@ -24973,28 +24999,28 @@ handling, asynchronous evaluation, and plugin support.")
 (define-public r-plug
   (package
     (name "r-plug")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plug" version))
        (sha256
-        (base32 "1100icc6wxmsss1zqp04hrr1mhm3vnnwm9c6212ffr5wl0mjra3m"))))
+        (base32 "1jmds24z1w9srpzv1bc1lrl1aliq2bv1d3lvyw6byays1m2pd6km"))))
     (properties `((upstream-name . "plug")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tibble r-keyring r-httr2 r-glue))
-    (home-page "<https://github.com/StrategicProjects/plug>")
+    (home-page "https://github.com/StrategicProjects/plug")
     (synopsis "Secure and Intuitive Access to 'Plug' Interface")
     (description
      "This package provides a secure and user-friendly interface to interact with the
 Plug <https://plugbytpf.com.br> API'.  It enables developers to store and manage
-tokens securely using the keyring package, retrieve data from API endpoints with
-the httr2 package, and handle large datasets with chunked data fetching.
-Designed for simplicity and security, the package facilitates seamless
-integration with Plug ecosystem.")
+credentials and tokens securely using the keyring package, and to retrieve data
+from API endpoints with the httr2 package, using SQL queries built safely from
+templates.  Designed for simplicity and security, the package facilitates
+seamless integration with the Plug ecosystem.")
     (license license:expat)))
 
 (define-public r-plucr

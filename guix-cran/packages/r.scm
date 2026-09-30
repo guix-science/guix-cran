@@ -604,13 +604,13 @@ different.")
 (define-public r-rxode2
   (package
     (name "r-rxode2")
-    (version "5.1.7")
+    (version "5.1.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rxode2" version))
        (sha256
-        (base32 "1fd7lwxwqd47n4bx6fl21csnm2n6qfra1yrl8kjh9d3j06b0ndmd"))))
+        (base32 "0fsvbwsqizlbsy2aw7h54wyg9cj2f5ng3i2xiqgx7sxw57rihzii"))))
     (properties `((upstream-name . "rxode2")))
     (build-system r-build-system)
     (arguments
@@ -10319,6 +10319,41 @@ Simphony models within R environment, making easier the tasks of running and
 analyzing model output data for automated parameter calibration and for carrying
 out uncertainty and sensitivity analysis using the power of R environment.")
     (license license:expat)))
+
+(define-public r-rregsptt
+  (package
+    (name "r-rregsptt")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rReGSPTT" version))
+       (sha256
+        (base32 "01zsbld21bzfq91ywxw8iln6iawfbsl6pw289s19adg5iyn6ayn1"))))
+    (properties `((upstream-name . "rReGSPTT")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=rReGSPTT")
+    (synopsis
+     "Repetitive Group Acceptance Sampling Inspection Plans for Time Truncated Life Test")
+    (description
+     "Designing repetitive group acceptance sampling inspection plans for
+time-truncated life tests.  The package uses a distribution-free formulation in
+which the user supplies the failure probability.  The functions compute
+operating characteristic probabilities and average sample numbers subject to a
+consumer's risk constraint.  The package also provides graphical and comparative
+tools for comparing repetitive group, group and single sampling inspection
+plans.  Sherman (1965) <doi:10.2307/1266124>; Aslam and Jun (2013)
+<doi:10.1007/s00170-013-4747-x>.  Saha et al. (2025)
+<doi:10.1007/s41872-025-00305-w>; Tripathi et al. (2020)
+<doi:10.1080/02664763.2020.1759031>; Tripathi and Aslam (2024)
+<doi:10.1285/i20705948v17n3p636>; Tripathi et al. (2022)
+<doi:10.1007/s40745-020-00267-z>; Saha et al. (2021)
+<doi:10.1080/21681015.2021.1893843>; Tripathi et al. (2023)
+<doi:10.1007/s41872-023-00221-x>.")
+    (license license:gpl3)))
 
 (define-public r-rregm
   (package
@@ -27008,13 +27043,13 @@ X-11 decomposition.")
 (define-public r-rjd3workspace
   (package
     (name "r-rjd3workspace")
-    (version "3.8.0")
+    (version "3.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rjd3workspace" version))
        (sha256
-        (base32 "0a4lhmvrvzcgb28rxbz57z7f59xkac17sq7f68dsh15vm4dqnsdy"))))
+        (base32 "1bgxgi8fka0fp3rlimr9krcahbgi49yssipcg52hjvwrpmanqsbl"))))
     (properties `((upstream-name . "rjd3workspace")))
     (build-system r-build-system)
     (arguments
@@ -56251,6 +56286,32 @@ the vector.")
 @code{BioUML} repository and launching @code{BioUML} analyses.")
     (license license:gpl2)))
 
+(define-public r-rbiogeme
+  (package
+    (name "r-rbiogeme")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rbiogeme" version))
+       (sha256
+        (base32 "03z4apj5xhwp7a04s4ij1m95gi9xg249bgdjrapyn1yprnmvnd3c"))))
+    (properties `((upstream-name . "rbiogeme")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list python))
+    (propagated-inputs (list r-reticulate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/michelbierlaire/rbiogeme")
+    (synopsis "Interface to 'Biogeme'")
+    (description
+     "Uses the Python implementation of Biogeme as the numerical backend for
+specifying and estimating discrete-choice models in R. The default native
+requirement is biogeme==3.3.5'.")
+    (license license:expat)))
+
 (define-public r-rbiodatacr
   (package
     (name "r-rbiodatacr")
@@ -62734,6 +62795,48 @@ components in the presence of outliers in multi-source data.  It decomposes the
 multi-source data into joint, individual and residual (noise) contributions.
 The decomposition is robust to outliers and noise in the data.  The method is
 illustrated in Ponzi et al (2021) <@code{arXiv:2101.09110>}.")
+    (license license:expat)))
+
+(define-public r-raisr
+  (package
+    (name "r-raisr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "raisr" version))
+       (sha256
+        (base32 "011md0g3cf4j0cspkg3f6symql3b7ya3yv0g4z3c5hnxjn5dpgyf"))))
+    (properties `((upstream-name . "raisr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list libarchive))
+    (propagated-inputs (list r-tibble
+                             r-stringi
+                             r-rlang
+                             r-readr
+                             r-curl
+                             r-cli
+                             r-archive))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/StrategicProjects/raisr")
+    (synopsis "Access 'RAIS' Microdata from the Brazilian Ministry of Labour")
+    (description
+     "Download and read the public, non-identified microdata of the RAIS (RelaÃ§Ã£o
+Anual de InformaÃ§Ãµes Sociais), the annual census of formal employment
+relationships and establishments published by the Brazilian Ministry of Labour
+and Employment through the PDET FTP server
+<ftp://ftp.mtps.gov.br/pdet/microdados/RAIS/>.  Lists the years and archives
+available on the server, resolves which regional or state archive holds a given
+state, downloads it with an idempotent local cache, and reads the 7z archives as
+a stream, filtering by state and selecting columns before anything is kept in
+memory, so that a single state can be extracted from a regional file of tens of
+millions of records.  Handles the two header generations of the files (up to the
+RAIS 2022 and from the RAIS 2023 onwards) with the same normalized column names,
+provides the official record layout and a helper to consolidate the employment
+stock, admissions, separations and December payroll.")
     (license license:expat)))
 
 (define-public r-raiser

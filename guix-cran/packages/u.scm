@@ -1128,6 +1128,39 @@ Based on the framework described by Da Re et al. (2023)
 <doi:10.1111/2041-210X.14209>.")
     (license license:gpl2+)))
 
+(define-public r-usdt
+  (package
+    (name "r-usdt")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "uSDT" version))
+       (sha256
+        (base32 "1s8yx07dscbli1kc2wqp1w6v65kix20gigijz8mal2crn1022y0c"))))
+    (properties `((upstream-name . "uSDT")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-lme4 r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/RicardoReySaez/uSDT")
+    (synopsis
+     "Hierarchical Signal Detection Theory Models for Unconscious Processing")
+    (description
+     "Fits hierarchical signal detection theory (SDT) models to paired direct and
+indirect measures, the design used to test for unconscious processing.
+Continuous indirect measures (typically response times) are dichotomized with
+the within-subject median split of Meyen et al. (2022) <doi:10.1037/xge0001065>
+so that both tasks are placed on a common sensitivity scale.  The package
+estimates a binomial probit mixed model in which the two sensitivities are
+correlated random effects, and tests the three hypotheses of interest: the
+group-level difference between sensitivities, their latent correlation, and the
+latent regression of the indirect on the direct measure, whose intercept is the
+test for unconscious processing.  Frequentist estimation uses lme4'.")
+    (license license:gpl3)))
+
 (define-public r-usdoj
   (package
     (name "r-usdoj")

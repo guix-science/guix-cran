@@ -1242,13 +1242,13 @@ conditional importance methods.")
 (define-public r-xplaineff
   (package
     (name "r-xplaineff")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xplaineff" version))
        (sha256
-        (base32 "0jhpfddpdr10hxfirw0nxgx3mrwfqbpmgj9zs9pg86qqmwiqqw54"))))
+        (base32 "0h7pim361j6571hkzhcylhgl66zphaiks7n5br8j91qra1z8zz0y"))))
     (properties `((upstream-name . "xplaineff")))
     (build-system r-build-system)
     (arguments
@@ -1265,6 +1265,7 @@ conditional importance methods.")
                              r-data-table
                              r-cli
                              r-checkmate))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/mlr-org/xplaineff")
     (synopsis
      "Decomposing Global Feature Effects Based on Feature Interactions")

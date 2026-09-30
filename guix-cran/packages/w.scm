@@ -3933,6 +3933,46 @@ for example.")
 arguments.")
     (license license:expat)))
 
+(define-public r-wisp-data
+  (package
+    (name "r-wisp-data")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "WISP.data" version))
+       (sha256
+        (base32 "14szadkgyjsr4k00z01y2ap68hndw3if82p0j6lv0p5q7n7bsdjk"))))
+    (properties `((upstream-name . "WISP.data")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridis
+                             r-units
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-shinyjs
+                             r-shiny
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-plotly
+                             r-lubridate
+                             r-lifecycle
+                             r-httr2
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/oggioniale/WISP.data")
+    (synopsis "Management and Analysis of WISPstation Hyperspectral Data")
+    (description
+     "Automate the acquisition, quality control, analysis, and visualization of
+spectral data collected by the WISPstation fixed spectroradiometer.")
+    (license license:gpl3+)))
+
 (define-public r-wishmom
   (package
     (name "r-wishmom")
@@ -8285,13 +8325,13 @@ Twitter data for research and commercial purposes.")
 (define-public r-weatheroz
   (package
     (name "r-weatheroz")
-    (version "3.0.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "weatherOz" version))
        (sha256
-        (base32 "1sn6j78bhxbq34akpa2sv30r6bxjzzqwf9myd6b25n27k030b4b9"))))
+        (base32 "1h39sfcxbf5gf2pii5wxwjw3qk7hkd5fdm7lx765n5dgsnzg9aa1"))))
     (properties `((upstream-name . "weatherOz")))
     (build-system r-build-system)
     (arguments

@@ -297,6 +297,36 @@ Magdalinos and Phillips (2009) <doi:10.1017/S0266466608090154> and Kostakis,
 Magdalinos and Stamatogiannis (2015) <doi:10.1093/rfs/hhu139>.")
     (license license:gpl3)))
 
+(define-public r-ivue
+  (package
+    (name "r-ivue")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ivue" version))
+       (sha256
+        (base32 "18jpncjxmp4wi7569smrw4h02cyphph6l182c2rvp26whr58d097"))))
+    (properties `((upstream-name . "ivue")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-htmlwidgets r-htmltools))
+    (native-inputs (list r-knitr))
+    (home-page "https://pgajer.github.io/ivue/")
+    (synopsis "Interactive 3D Visualization of Data and Graphs")
+    (description
+     "This package creates interactive three-dimensional point clouds and embedded
+weighted graphs with numerical or categorical annotations.  Provides reusable
+continuous and categorical color scales, matching legends, highlighting, and
+geometric edge, path, and label layers.  Supports multiple weighted-graph
+formats and optional layouts through igraph', with explicit distance or strength
+weight semantics.  Renders browser widgets using rgl without requiring a native
+graphics window.  Plays recorded coordinate frames with interactive controls and
+exports orthographic graph animations to GIF.")
+    (license license:gpl3+)))
+
 (define-public r-ivtools
   (package
     (name "r-ivtools")

@@ -2312,16 +2312,48 @@ create and modify formulas.  Has a flagship function to quickly determine
 relationships between categorical and continuous variables in the data set.")
     (license license:expat)))
 
+(define-public r-autoslider-trade
+  (package
+    (name "r-autoslider-trade")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "autoslider.trade" version))
+       (sha256
+        (base32 "1ggbcasp8vzfbaig16r7xzxyckrszckjks52f06q94xwpyqyqcwc"))))
+    (properties `((upstream-name . "autoslider.trade")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rtables
+                             r-rlistings
+                             r-ggplot2
+                             r-formatters
+                             r-cowplot
+                             r-autoslider-core
+                             r-assertthat))
+    (home-page "https://cran.r-project.org/package=autoslider.trade")
+    (synopsis "Slide Automation for Trading Tables, Listings and Figures")
+    (description
+     "This package provides a downstream package of autoslider.core that produces
+tables, listings and figures for finance trading, in the same style as
+autoslider'.  Where autoslider.core automates clinical study outputs, this
+package automates trading outputs from price and trade data: performance tables,
+equity curves and trade listings.")
+    (license license:asl2.0)))
+
 (define-public r-autoslider-core
   (package
     (name "r-autoslider-core")
-    (version "0.3.3")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "autoslider.core" version))
        (sha256
-        (base32 "0npa0qf5bl6749xpxryxjc6hqzqqa7g2ahx4r4rm8p42jidbhpy0"))))
+        (base32 "1dmirdim5hpdpi7bh15987vaz208s51jvwsi20z1fgxa7m1lbqna"))))
     (properties `((upstream-name . "autoslider.core")))
     (build-system r-build-system)
     (arguments
@@ -2337,6 +2369,7 @@ relationships between categorical and continuous variables in the data set.")
                              r-rlistings
                              r-rlang
                              r-officer
+                             r-jsonlite
                              r-gtsummary
                              r-gridextra
                              r-ggpubr
@@ -2346,7 +2379,6 @@ relationships between categorical and continuous variables in the data set.")
                              r-flextable
                              r-dplyr
                              r-cli
-                             r-checkmate
                              r-assertthat))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/pharmaverse/autoslider.core")
@@ -6495,13 +6527,13 @@ more informative error messages and facilitates debugging.")
 (define-public r-assemblykor
   (package
     (name "r-assemblykor")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "assemblykor" version))
        (sha256
-        (base32 "1hqlpczf913lr07wikgrk26fpyz9l0nqvqw0qmg1lws9kbb5f0x6"))))
+        (base32 "0fk6vz3r2zl97hxlwjxa270pc14gjkgxabdbk52fijz4ldp100c4"))))
     (properties `((upstream-name . "assemblykor")))
     (build-system r-build-system)
     (arguments
@@ -19887,13 +19919,13 @@ information is available via citation(\"ALFAM2\").")
 (define-public r-alepe
   (package
     (name "r-alepe")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "alepe" version))
        (sha256
-        (base32 "1z6liv4w4cx3lhc448abaclm83ywddl5g0ink1x0ah3k9y08dcil"))))
+        (base32 "0ii1vr4k922imhznxmn26vrwpbjgnbi80mnzpcpv0n31x3kkhvaw"))))
     (properties `((upstream-name . "alepe")))
     (build-system r-build-system)
     (arguments
@@ -30710,6 +30742,32 @@ much faster than expected, time sensitive tasks such as the writing of
 statistical analysis plans might need to be rushed. @code{accrualPlot} provides
 functions to aid the tracking of accrual and predict when a trial will reach
 it's intended sample size.")
+    (license license:expat)))
+
+(define-public r-accmv
+  (package
+    (name "r-accmv")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "accmv" version))
+       (sha256
+        (base32 "11dxhjp4mhvq1734lmq2c2mk2yb80wfsq9hpgsf6nccs45f970jj"))))
+    (properties `((upstream-name . "accmv")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/mathcg/ACCMV")
+    (synopsis "Inference with Available Complete-Case Missing Values")
+    (description
+     "This package implements inverse probability weighted, regression adjustment, and
+multiply robust estimators under the available complete-case missing value
+assumption of Cheng, Chen, Smith, and Zhao (2022)
+<doi:10.48550/@code{arXiv.2207.02289>}.  Supports one or two primary variables,
+exponential-tilt sensitivity analysis, regression weights, and nonparametric
+bootstrap confidence intervals.")
     (license license:expat)))
 
 (define-public r-accessrmd

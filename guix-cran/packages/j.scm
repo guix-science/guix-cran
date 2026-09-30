@@ -364,13 +364,13 @@ manuscript corresponding to this package [Lyu, P. et al., (2023),
 (define-public r-jumble
   (package
     (name "r-jumble")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jumble" version))
        (sha256
-        (base32 "0kixpwim6bj6kmraps57qshanvs5fma7prbiwpqc438q7kjp3kq3"))))
+        (base32 "1yp007c1pr6vmqk6lqwf8kgfmrii8sc3mak93l46map84rwzxjlw"))))
     (properties `((upstream-name . "jumble")))
     (build-system r-build-system)
     (arguments

@@ -5236,38 +5236,30 @@ automatically see patched functions.")
 (define-public r-hotellingellipse
   (package
     (name "r-hotellingellipse")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HotellingEllipse" version))
        (sha256
-        (base32 "1d7af7wdjkp2r5x49p76si5jwj7jxd5mngkip7x91rbjj0v0wagp"))))
+        (base32 "0i5ndlmm8jg88g6fm7nhzgk9c8rm8a3n43z1hsk6k84f0gk6nknr"))))
     (properties `((upstream-name . "HotellingEllipse")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-rgl
-                             r-purrr
-                             r-magrittr
-                             r-lifecycle
-                             r-ggplot2
-                             r-ggforce
-                             r-factominer
-                             r-dplyr))
+    (propagated-inputs (list r-tibble r-magrittr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ChristianGoueguel/HotellingEllipse")
     (synopsis "Hotellingâs T-Squared Statistic and Ellipse")
     (description
      "This package provides functions to calculate the Hotellingâs T-squared
 statistic and corresponding confidence ellipses.  Provides the semi-axes of the
-Hotellingâs T-squared ellipses at 95% and 99% confidence levels.  Enables
-users to obtain the coordinates in two or three dimensions at user-defined
-confidence levels, allowing for the construction of 2D or 3D ellipses with
-customized confidence levels.  Bro and Smilde (2014) <DOI:10.1039/c3ay41907j>.
-Brereton (2016) <DOI:10.1002/cem.2763>.")
+Hotellingâs T-squared ellipses at user-defined confidence levels (95% and 99%
+by default).  Enables users to obtain the coordinates in two or three dimensions
+at user-defined confidence levels, allowing for the construction of 2D or 3D
+ellipses with customized confidence levels.  Bro and Smilde (2014)
+<DOI:10.1039/c3ay41907j>.  Brereton (2016) <DOI:10.1002/cem.2763>.")
     (license license:expat)))
 
 (define-public r-hotelling

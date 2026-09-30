@@ -6415,19 +6415,20 @@ centile outputs with plug-in (uncalibrated) intervals.")
 (define-public r-drmeta
   (package
     (name "r-drmeta")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "drmeta" version))
        (sha256
-        (base32 "03rv9a3fxkxxgp2j1q66blfg1wq4p6yv0mkx99xilksmj6d0kfj2"))))
+        (base32 "1cmin00w6rng3yg7yiinsbj29ph8kb6i4yfb6s3f88xwg36sq87d"))))
     (properties `((upstream-name . "drmeta")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://github.com/causalfragility-lab/drmeta")
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/subirhait/drmeta")
     (synopsis "Design-Indexed Location-Scale Meta-Analysis")
     (description
      "Fits constrained and unrestricted meta-analytic location-scale models in which
@@ -6438,12 +6439,14 @@ the conventional random-effects model as a nested special case, exact estimation
 at the nonnegative scale-gradient boundary, design-indexed heterogeneity
 summaries, scale-attenuation measures, prediction of fitted heterogeneity,
 leave-one-out influence diagnostics, and parametric-bootstrap inference for the
-scale gradient.  Because the scale-gradient null lies on the boundary of the
-constrained parameter space, standard chi-square likelihood-ratio references do
-not apply (Self and Liang, 1987, <doi:10.1080/01621459.1987.10478472>).  The
-general location-scale parent model is described in Viechtbauer and Lopez-Lopez
-(2022, <doi:10.1002/jrsm.1562>).  A scale model reweights studies and does not
-adjust the mean for design-linked bias.")
+scale gradient.  A grouped scale diagnostic checks whether a monotone curve
+misses an interior peak or trough.  Because the scale-gradient null lies on the
+boundary of the constrained parameter space, standard chi-square
+likelihood-ratio references do not apply (Self and Liang, 1987,
+<doi:10.1080/01621459.1987.10478472>).  The general location-scale parent model
+is described in Viechtbauer and Lopez-Lopez (2022, <doi:10.1002/jrsm.1562>).  A
+scale model reweights studies and does not adjust the mean for design-linked
+bias.")
     (license license:expat)))
 
 (define-public r-drmaic
@@ -28963,6 +28966,31 @@ development.  Users interested in these extended features are encouraged to
 contact the package authors.")
     (license license:gpl2+)))
 
+(define-public r-debiasedinference
+  (package
+    (name "r-debiasedinference")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "debiasedInference" version))
+       (sha256
+        (base32 "1nl04l0yp79l87as8nsfsx58y82h9khnhh49zqz0ah050rrd0qcg"))))
+    (properties `((upstream-name . "debiasedInference")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/mathcg/debiased-inference")
+    (synopsis "Bootstrap Inference with Debiased Nonparametric Estimators")
+    (description
+     "This package implements debiased kernel density and local-linear regression
+estimators with empirical-bootstrap simultaneous confidence bands, as proposed
+by Cheng and Chen (2019) <doi:10.1214/19-EJS1575>.  Also provides bandwidth
+selectors and grid-based confidence sets for density level sets and inverse
+regression.")
+    (license license:expat)))
+
 (define-public r-debest
   (package
     (name "r-debest")
@@ -29149,13 +29177,13 @@ compared from data.  The method is described in Boettcher and Dethlefsen (2003),
 (define-public r-deadwood
   (package
     (name "r-deadwood")
-    (version "0.9.0-3")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "deadwood" version))
        (sha256
-        (base32 "0835ynyh693vqwkcs53a04pvw8x5hwpfs4llf7df8lipc1m81dsp"))))
+        (base32 "16x4wwhf7y2w8bl2l91sb0m9jhsqa14kvjk83byv18n5kvz97b4j"))))
     (properties `((upstream-name . "deadwood")))
     (build-system r-build-system)
     (arguments
@@ -29165,17 +29193,19 @@ compared from data.  The method is described in Boettcher and Dethlefsen (2003),
     (propagated-inputs (list r-rcpp r-quitefastmst))
     (home-page "https://deadwood.gagolewski.com/")
     (synopsis
-     "Outlier Detection via Trimming of Mutual Reachability Minimum Spanning Trees")
+     "Outlier Detection via Pruning Mutual Reachability Minimum Spanning Trees")
     (description
-     "This package implements an anomaly detection algorithm based on mutual
-reachability minimum spanning trees: deadwood trims protruding tree segments and
-marks small debris as outliers; see Gagolewski (2026)
-<https://deadwood.gagolewski.com/>.  More precisely, the use of a mutual
-reachability distance pulls peripheral points farther away from each other.
-Tree edges with weights beyond the detected elbow point are removed.  All the
-resulting connected components whose sizes are smaller than a given threshold
-are deemed anomalous.  The Python version of deadwood is available via
-@code{PyPI}'.")
+     "This package implements an anomaly detection algorithm based on a dataset's
+mutual reachability minimum spanning tree: deadwood prunes protruding tree
+segments and marks small debris as outliers; see Gagolewski (2026)
+<https://deadwood.gagolewski.com/>.  More precisely, tree edges with weights
+greater than the detected elbow point are removed.  All the resulting connected
+components whose sizes do not exceed a prespecified threshold are deemed
+anomalous.  The use of a mutual reachability distance pulls peripheral
+observations farther away from one another.  If the dataset is comprised of
+well-separated clusters of heterogeneous densities, an attempt to split the
+dataset and refine the outlierness markers will be made.  The Python version of
+deadwood is available via @code{PyPI}'.")
     (license license:agpl3)))
 
 (define-public r-deadband
