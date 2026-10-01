@@ -26239,13 +26239,13 @@ incomplete.  See Shilts et al. (2018) <doi:10.7717/peerj.4327>.")
 (define-public r-deltabreedquery
   (package
     (name "r-deltabreedquery")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "deltabreedquery" version))
        (sha256
-        (base32 "1g2a549lfq1b67y3srwg0qz80smlmfk37dsamhcyic4vyszislsq"))))
+        (base32 "0jrblf3k7lxbf9bkx6wzkc56ysr13nngb19dynxiwm8a94fr7zkb"))))
     (properties `((upstream-name . "deltabreedquery")))
     (build-system r-build-system)
     (arguments
@@ -27219,13 +27219,13 @@ inst/COPYRIGHTS for details on third-party code.")
 (define-public r-deepspat
   (package
     (name "r-deepspat")
-    (version "0.3.3")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "deepspat" version))
        (sha256
-        (base32 "1dkdc9lix4xg5ad7h6703az91h9d4h04853wcvyj69a4b27hzfn7"))))
+        (base32 "11jimk3yaaqp2myh6dakqhx4s9npqqdhkw0hrz51jd2rmly5s2k8"))))
     (properties `((upstream-name . "deepspat")))
     (build-system r-build-system)
     (arguments
@@ -35167,13 +35167,13 @@ reports.")
 (define-public r-datadiff
   (package
     (name "r-datadiff")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datadiff" version))
        (sha256
-        (base32 "1h6wwwisrsa7qp6vq3q0b2jrv9av3yqpq2b1ppggq2q18im2xwdi"))))
+        (base32 "1dm50r8lqvd7g34dnhz7r8809pjf1rbqpyqx562rrs2brj8w8m3d"))))
     (properties `((upstream-name . "datadiff")))
     (build-system r-build-system)
     (arguments

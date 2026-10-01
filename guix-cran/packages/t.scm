@@ -28029,6 +28029,47 @@ the vertical and horizontal dimensions, respectively.  It exports tables in the
 PDF automatically.")
     (license license:expat)))
 
+(define-public r-text2speech
+  (package
+    (name "r-text2speech")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "text2speech" version))
+       (sha256
+        (base32 "1xvxr8ayflzg1wk9lprnc4aj73ag2m9znc2lwdpz4x6ngp91wdj2"))))
+    (properties `((upstream-name . "text2speech")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-tuner
+                             r-tidyr
+                             r-magrittr
+                             r-knitr
+                             r-jsonlite
+                             r-httr2
+                             r-googlelanguager
+                             r-googleauthr
+                             r-dplyr
+                             r-conrad
+                             r-cli
+                             r-aws-signature))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jhudsl/text2speech")
+    (synopsis "Text to Speech Conversion")
+    (description
+     "Converts text into speech using various text-to-speech (TTS) engines and
+provides an unified interface for accessing their functionality.  With this
+package, users can easily generate audio files of spoken words, phrases, or
+sentences from plain text data.  The package supports multiple TTS engines,
+including Google's Cloud Text-to-Speech API', Amazon Polly', Microsoft's
+Cognitive Services Text to Speech REST API', the Speechify Text-to-Speech API',
+and a free TTS engine called Coqui TTS'.")
+    (license license:gpl3)))
+
 (define-public r-text2sdgdata
   (package
     (name "r-text2sdgdata")
@@ -31439,19 +31480,19 @@ accuracy.  It is included here as is, without warranty.")
 (define-public r-telegramr
   (package
     (name "r-telegramr")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "telegramR" version))
        (sha256
-        (base32 "0a65slindcw781gayvpann1j1y81ynz2xprkg60w2hgjf9adc8i1"))))
+        (base32 "0qn7max71ljh4lkxfrm88pmskqyzjhjhqzlpvzwzyv8g9vj8r4cz"))))
     (properties `((upstream-name . "telegramR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (inputs (list zlib openssl))
+    (inputs (list zlib openssl openssl))
     (propagated-inputs (list r-xml2
                              r-tibble
                              r-rcpp
@@ -34445,13 +34486,13 @@ documentation for their respective functions in this package.")
 (define-public r-taxify
   (package
     (name "r-taxify")
-    (version "0.5.5")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "taxify" version))
        (sha256
-        (base32 "0gyhcql55fph2kk13hkighnb91mlfx71lcvbgilmpbigyvdhhjc6"))))
+        (base32 "0j456fldagrmhqjgf74hwa898wzvrsi7jx5iikm9f9cd7vbss9x1"))))
     (properties `((upstream-name . "taxify")))
     (build-system r-build-system)
     (arguments

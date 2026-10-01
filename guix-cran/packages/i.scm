@@ -2104,37 +2104,6 @@ for analysis.  Trial design options include group sequential looks for safety,
 superiority, futility, and adjustment of randomization probabilities.")
     (license license:gpl2)))
 
-(define-public r-ispdata
-  (package
-    (name "r-ispdata")
-    (version "1.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ispdata" version))
-       (sha256
-        (base32 "16vzfwn4q1q0k1m01ibknwm37j2d4x63a3zrrqj25mq8nrg134bs"))))
-    (properties `((upstream-name . "ispdata")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sf
-                             r-readr
-                             r-openxlsx
-                             r-janitor
-                             r-dplyr
-                             r-curl))
-    (home-page "https://cran.r-project.org/package=ispdata")
-    (synopsis
-     "Access Data from the Public Security Institute of the State of Rio De Janeiro")
-    (description
-     "Allows access to data from the Rio de Janeiro Public Security Institute (ISP),
-such as criminal statistics, data on gun seizures and femicide.  The package
-also contains the spatial data of Pacifying Police Units (UPPs) and Integrated
-Public Safety Regions, Areas and Circumscriptions.")
-    (license license:expat)))
-
 (define-public r-ispd
   (package
     (name "r-ispd")
@@ -8277,13 +8246,13 @@ wrappers to functions in the gstat and sp packages.")
 (define-public r-inti
   (package
     (name "r-inti")
-    (version "0.7.4")
+    (version "0.7.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inti" version))
        (sha256
-        (base32 "1nr37gxm2ch00wqvg2453qqql48rqsmg41hmqh4hgbl3r47bhyd2"))))
+        (base32 "13dbs4b5416b28p2f2vnyjxl4zvn9n2zjy0b6whc3np5ww75fdy7"))))
     (properties `((upstream-name . "inti")))
     (build-system r-build-system)
     (arguments
@@ -11293,13 +11262,13 @@ separates the responsibilities of use and construction.")
 (define-public r-infoxtr
   (package
     (name "r-infoxtr")
-    (version "0.2")
+    (version "0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "infoxtr" version))
        (sha256
-        (base32 "1h9p59lyn0hs2dw4y08l5y59j0invd5j30kqkvny4gdh8in58m18"))))
+        (base32 "1jhv26yzk22ag4s7jw06wnmfpi5s04b4p9hjzc67w5zzjwmmxlxv"))))
     (properties `((upstream-name . "infoxtr")))
     (build-system r-build-system)
     (arguments
@@ -11317,7 +11286,9 @@ variables from Kraskov et al. (2004) <doi:10.1103/@code{PhysRevE.69.066138>},
 knockoff conditional mutual information described in Zhang & Chen (2025)
 <doi:10.1126/sciadv.adu6464>, synergistic-unique-redundant decomposition
 introduced by Martinez-Sanchez et al. (2024) <doi:10.1038/s41467-024-53373-4>,
-allowing detection of complex and diverse relationships among variables.")
+and information imbalance gain following Del Tatto et al. (2024)
+<doi:10.1073/pnas.2317256121>, allowing detection of complex and diverse
+relationships among variables.")
     (license license:gpl3)))
 
 (define-public r-infotest
@@ -13198,13 +13169,13 @@ numbers for not only a product or weighted index numbers as the Laspeyres index
 (define-public r-indexconstruction
   (package
     (name "r-indexconstruction")
-    (version "0.1-3")
+    (version "0.2-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IndexConstruction" version))
        (sha256
-        (base32 "08bi3x7a9plxshgj6hq58mzkf1117a7p0fd1akqjh7k8mgywifwf"))))
+        (base32 "0g06wmz0bacbdzfamynvvjxc7fyjdisjfmxfqdzan5g1d734hwi2"))))
     (properties `((upstream-name . "IndexConstruction")))
     (build-system r-build-system)
     (arguments

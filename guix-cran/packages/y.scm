@@ -185,13 +185,13 @@ channel including geography, traffic sources, time period, etc.")
 (define-public r-yrnd
   (package
     (name "r-yrnd")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "yrnd" version))
        (sha256
-        (base32 "1w8n7h1i3snh3w45k5l3w1q49dbip5xa611hf0gsx5gv6xrd8n9w"))))
+        (base32 "1wqp2c8a8qjg37falmn2h6561nsbqk35faxnj48hda0bxvzh2x05"))))
     (properties `((upstream-name . "yrnd")))
     (build-system r-build-system)
     (arguments
@@ -215,18 +215,20 @@ channel including geography, traffic sources, time period, etc.")
      "This package provides with parametric Risk Neutral Densities (RNDs) and
 cumulative densities of futures prices on fixed-income products.  It relies on
 options on Short Term Interest Rate futures or options on government bond
-futures.  It models the futures price as a mixture of lognormal densities.
-Leveraging on this, the package provides with the RNDs and cumulative densities
-of the money market rate or the government bond yield inferred from the futures
-price, using the RND of the futures price.  The package also extracts from the
-RND of the government bond futures price simultaneously the RND of the
-cheapest-to-deliver bond yield at options maturity and the RND of the ctd bond
-repo rate from options maturity to futures maturity.  The package also provides
-with the probability attached to each bond in the delivery basket of a
-government bond futures to be the cheapest at maturity, and also the non
-parametric distribution of the spread between two bond yields, using two RNDs
-based on options on bond futures of the same maturity.  The package leverages on
-the works of Melick, W. R. and Thomas, C. P. (1997) <doi:10.2307/2331318> and B.
+futures.  It models the futures price at options maturity as a mixture of
+lognormal densities.  Leveraging on this, the package provides with the RNDs and
+cumulative densities of the money market rate or the government bond yield
+inferred from the futures price, using the RND of the futures price.  The
+package also extracts from options prices on bond futures in one go the RND of
+the cheapest-to-deliver (ctd) bond repo rate from options to futures maturity
+and the RND of the ctd bond yield at options maturity.  The package also
+provides with the probability attached to each bond in the delivery basket of a
+government bond futures to be the cheapest at options maturity from an
+examination of either the implied repo rate or the net basis of bonds in the
+delivery basket.  At last, the package provides with the non parametric
+distribution of the spread between two bond yields, using two RNDs based on
+options on bond futures of the same maturity.  The package leverages on the
+works of Melick, W. R. and Thomas, C. P. (1997) <doi:10.2307/2331318> and B.
 Bahra (1998) <doi:10.2139/ssrn.77429>.")
     (license license:gpl3)))
 

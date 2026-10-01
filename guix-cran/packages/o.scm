@@ -6828,25 +6828,19 @@ Numerical and graphical output for all methods is easily obtained.")
 (define-public r-optimalbinningwoe
   (package
     (name "r-optimalbinningwoe")
-    (version "1.13.5")
+    (version "1.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OptimalBinningWoE" version))
        (sha256
-        (base32 "1myf1r9m5y4727acqx0njx8zzpp6ais5k1dzdgzhzwyjzvh8xgb9"))))
+        (base32 "0wxk5yjgf7bbqj0a09pm5g3hj9k2jrqdlgkydnxrnlh3mgdapcml"))))
     (properties `((upstream-name . "OptimalBinningWoE")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-rlang
-                             r-recipes
-                             r-rcppnumerical
-                             r-rcppeigen
-                             r-rcpp
-                             r-dials))
+    (propagated-inputs (list r-tibble r-rlang r-recipes r-rcpp r-dials))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/evandeilton/OptimalBinningWoE")
     (synopsis "Optimal Binning and Weight of Evidence Framework for Modeling")
@@ -9069,13 +9063,13 @@ camera device.")
 (define-public r-opencr
   (package
     (name "r-opencr")
-    (version "2.2.7")
+    (version "2.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openCR" version))
        (sha256
-        (base32 "13z547bfbnmlnlmnir98j26gn82ksfhfzbqdgcfnb768w33hjv7v"))))
+        (base32 "0f8c1qpsiyrr389k51vci6ygvf33hdgrkk5vh24rd4r7yysl444d"))))
     (properties `((upstream-name . "openCR")))
     (build-system r-build-system)
     (arguments
@@ -15263,19 +15257,19 @@ Bayesian approach.")
 (define-public r-octawave
   (package
     (name "r-octawave")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "octawave" version))
        (sha256
-        (base32 "1zmqh4jwxgmn6616cnadcw546wmbxyjyymzwz1rzvm7h0h2zjjck"))))
+        (base32 "01j1s7qccha6xvmp8bq0jggnlxnkzhswbb3yszr2gxhjq86ipdnz"))))
     (properties `((upstream-name . "octawave")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-plotly r-matlab))
+    (propagated-inputs (list r-sync3d r-plotly r-matlab))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=octawave")
     (synopsis "Spatial Octahedral Quantum Wave Functions")

@@ -979,13 +979,13 @@ test (Kim, 2009) <doi:10.1016/j.frl.2009.04.003>.")
 (define-public r-vrpr
   (package
     (name "r-vrpr")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vrpr" version))
        (sha256
-        (base32 "0qm3m7vf39k626fcils1qv3qd2krgx4585a8z221w80ixb0jdhwv"))))
+        (base32 "1za9xkhljni7j403v2y4nr7zqvgc8xy958n9mkrc88acw06janj4"))))
     (properties `((upstream-name . "vrpr")))
     (build-system r-build-system)
     (arguments
@@ -6969,13 +6969,13 @@ Yashunin (2018) <doi:10.1109/TPAMI.2018.2889473>.")
 (define-public r-vectra
   (package
     (name "r-vectra")
-    (version "0.12.4")
+    (version "0.13.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vectra" version))
        (sha256
-        (base32 "15ld6rnwr2q175nvxh6a5fk7602gzwhwg2dzfc0xgk0r0rdpzism"))))
+        (base32 "1ppjg4wqyjm2sv07jwwla6drff1ld6yqx0sg4wqpmlirv1rb4v7v"))))
     (properties `((upstream-name . "vectra")))
     (build-system r-build-system)
     (arguments

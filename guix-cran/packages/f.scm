@@ -693,30 +693,6 @@ which randomly generate trapezoidal fuzzy numbers using some well-known
 statistical distributions.")
     (license license:gpl3)))
 
-(define-public r-fuzzyranktests
-  (package
-    (name "r-fuzzyranktests")
-    (version "0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fuzzyRankTests" version))
-       (sha256
-        (base32 "1q510sf3p5qczfriy4gm6wxah0ngacvwdrxjpwhmpcsh4rfxagpv"))))
-    (properties `((upstream-name . "fuzzyRankTests")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list r-knitr))
-    (home-page "http://www.stat.umn.edu/geyer/fuzz/")
-    (synopsis "Fuzzy Rank Tests and Confidence Intervals")
-    (description
-     "Does fuzzy tests and confidence intervals (following Geyer and Meeden,
-Statistical Science, 2005, <doi:10.1214/088342305000000340>) for sign test and
-Wilcoxon signed rank and rank sum tests.")
-    (license license:expat)))
-
 (define-public r-fuzzyr
   (package
     (name "r-fuzzyr")
@@ -7366,13 +7342,13 @@ and read tabular-data-resources to and from disk.")
 (define-public r-fqardl
   (package
     (name "r-fqardl")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fqardl" version))
        (sha256
-        (base32 "0xy424zv53c2ncz371qmnxc7kscfl9w3by4pwqvqr33s9zd0n3j9"))))
+        (base32 "1cs3lpks8b5mvpy0lzh4rg017al5xhrxk8cbaay7kjkl9sdk0w2v"))))
     (properties `((upstream-name . "fqardl")))
     (build-system r-build-system)
     (arguments
@@ -9385,13 +9361,13 @@ References: Atkins et al.  2018 <doi:10.1111/2041-210X.13061>; Hardiman et al.
 (define-public r-forestploter
   (package
     (name "r-forestploter")
-    (version "1.1.4")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "forestploter" version))
        (sha256
-        (base32 "00a3d6cq10m6z7y178cv4k0yvqspgzzyy4581kgfb6s859j6jg71"))))
+        (base32 "1xmd2dwxhbjp5yj0x0iadz5qjjgdal6azjcw70g8mcvrpa1l4y4k"))))
     (properties `((upstream-name . "forestploter")))
     (build-system r-build-system)
     (arguments
@@ -9403,8 +9379,9 @@ References: Atkins et al.  2018 <doi:10.1111/2041-210X.13061>; Hardiman et al.
     (synopsis "Create a Flexible Forest Plot")
     (description
      "Create a forest plot based on the layout of the data.  Confidence intervals in
-multiple columns by groups can be done easily.  Editing the plot,
-inserting/adding text, applying a theme to the plot, and much more.")
+multiple columns by groups can be done easily.  The plot is built step by step
+with the pipe, adding the axis, the labels and a style, editing the plot,
+inserting/adding text, and much more.")
     (license license:expat)))
 
 (define-public r-forestmodel
@@ -16550,13 +16527,13 @@ Approximate Maximum Likelihood and the Cross-Entropy methods.  See Bee, M.
 (define-public r-fitdistrbayes
   (package
     (name "r-fitdistrbayes")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fitdistrBayes" version))
        (sha256
-        (base32 "0304xgh7r5f22911hncq6vjld7s919s6j9py0b6nd9iyfrdg167s"))))
+        (base32 "0v9fdpbm4njf048b1g6kajdyqbyj4d2gcnqx4anwl40l4g4wv3lf"))))
     (properties `((upstream-name . "fitdistrBayes")))
     (build-system r-build-system)
     (arguments
@@ -24855,13 +24832,13 @@ another set of genes.")
 (define-public r-fbardl
   (package
     (name "r-fbardl")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fbardl" version))
        (sha256
-        (base32 "00b440kd1hmjxr06wsf40ldsxa0xbcc7gkvdhzxammy7w8rhpk6y"))))
+        (base32 "0wirix76zcp1v4hang9fsn97nc6prijkk84laalbp4hf5kdpssyi"))))
     (properties `((upstream-name . "fbardl")))
     (build-system r-build-system)
     (arguments
@@ -24874,12 +24851,13 @@ another set of genes.")
 (FBARDL) bounds testing approach for cointegration analysis.  Combines the
 Pesaran, Shin & Smith (2001) <doi:10.1002/jae.616> ARDL bounds testing framework
 with Fourier terms to capture structural breaks following Yilanci, Bozoklu &
-Gorus (2020) <doi:10.1080/00036846.2019.1686454>, and bootstrap critical values
+Gorus (2020) <doi:10.1016/j.scs.2020.102035>, and bootstrap critical values
 based on @code{McNown}, Sam & Goh (2018) <doi:10.1080/00036846.2017.1366643> and
-Bertelli, Vacca & Zoia (2022) <doi:10.1016/j.econmod.2022.105987>.  Features
-include automatic lag selection via AIC/BIC, optimal Fourier frequency selection
-by minimum SSR, long-run and short-run coefficient estimation, diagnostic tests,
-and dynamic multiplier analysis.")
+Bertelli, Vacca & Zoia (2022) <doi:10.1016/j.econmod.2022.105987>, with
+finite-sample bounds test critical values from Kripfganz and Schneider (2020)
+<doi:10.1111/obes.12377>.  Features include automatic lag selection via AIC/BIC,
+optimal Fourier frequency selection by minimum SSR, long-run and short-run
+coefficient estimation, diagnostic tests, and dynamic multiplier analysis.")
     (license license:gpl3)))
 
 (define-public r-fb4package
@@ -25699,6 +25677,44 @@ Baracaldo, L., King, B., Yan, H., Lin, Y., Miolane, N., & Gu, M. (2025).
 \"Unsupervised cell segmentation by fast Gaussian processes.\" @code{arXiv}
 preprint <doi:10.48550/@code{arXiv.2505.18902>}.")
     (license license:expat)))
+
+(define-public r-fastsae
+  (package
+    (name "r-fastsae")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fastsae" version))
+       (sha256
+        (base32 "1smrmivm0hyf0wjk6ds3i7978rzkv5q0cc9dgx34cvmd9xzpkq15"))))
+    (properties `((upstream-name . "fastsae")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-lme4
+                             r-ggplot2
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://ridsonap.github.io/fastsae/")
+    (synopsis "Fast Implementation of Small Area Estimation Methods")
+    (description
+     "This package provides high-performance implementations of Small Area Estimation
+(SAE) methods leveraging C++ ('Rcpp', @code{RcppArmadillo}') and @code{OpenMP}
+multi-threading.  Supports standard area-level Fay-Herriot models (Fay and
+Herriot, 1979 <doi:10.1080/01621459.1979.10482505>), Spatial Fay-Herriot models
+(Pratesi and Salvati, 2008 <doi:10.1002/env.861>), Spatio-Temporal Fay-Herriot
+models (Marhuenda et al., 2013 <doi:10.1016/j.csda.2013.01.016>), and unit-level
+Battese-Harter-Fuller models (Battese et al., 1988
+<doi:10.1080/01621459.1988.10478561>).  Features include empirical best linear
+unbiased prediction (EBLUP), analytical and bootstrap Mean Squared Error (MSE)
+estimation, automatic handling of unsampled domains, and modern S3 diagnostic
+methods.")
+    (license license:gpl3+)))
 
 (define-public r-fastrweb
   (package
@@ -28301,6 +28317,36 @@ International Maize and Wheat Improvement Center (1988, ISBN: 968-6127-19-4) for
 farm-management, extension, and on-farm research.")
     (license license:expat)))
 
+(define-public r-farm
+  (package
+    (name "r-farm")
+    (version "0.1.5.15")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FARM" version))
+       (sha256
+        (base32 "0zb4kmdjz2i5gyn923wnvy116vk2caay4pfnjyi4ys53zi1qcj2f"))))
+    (properties `((upstream-name . "FARM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-dplyr))
+    (home-page "https://cran.r-project.org/package=FARM")
+    (synopsis "Forward Angular Relevance Measure")
+    (description
+     "The original implementation of the Forward Angular Relevance Measure (FARM).
+The algorithm relies on a forward alignment approach for compared time series
+based on the dynamic time warping (DTW) principle.  It considers the differences
+between data point as source in a combined distance metric that is used for
+series alignment.  The algorithm returns a global and a series of local
+relevance measures relying on correlation coefficients.  A normalization of time
+series is not part of the algorithm but recommended for best results.  The FARM
+method is introduced in: Christen et al. (2023)
+<doi:10.48550/@code{arXiv.2304.11028>}.")
+    (license license:gpl3)))
+
 (define-public r-farff
   (package
     (name "r-farff")
@@ -29712,6 +29758,61 @@ trial, assuming a hierarchical recruitment model.  Estimate the time until the
 main trial recruits to target, given the recruitment data observed in the pilot.")
     (license license:expat)))
 
+(define-public r-fafa
+  (package
+    (name "r-fafa")
+    (version "1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FAfA" version))
+       (sha256
+        (base32 "0sk96lg7bl2a4vipzjsl3gfws3j27665mhm3ngfmw35gxv3b6y4i"))))
+    (properties `((upstream-name . "FAfA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shinycssloaders
+                             r-shiny
+                             r-semplot
+                             r-readxl
+                             r-qgraph
+                             r-psych
+                             r-naniar
+                             r-mvnormaltest
+                             r-missforest
+                             r-mice
+                             r-lavaan
+                             r-itemrest
+                             r-haven
+                             r-golem
+                             r-ggplot2
+                             r-eganet
+                             r-efa-mrfa
+                             r-bslib
+                             r-bsicons
+                             r-amelia))
+    (home-page "https://github.com/AFarukKILIC/FAfA")
+    (synopsis "Factor Analysis for All")
+    (description
+     "This package provides a comprehensive Shiny-based graphical user interface for
+conducting a wide range of factor analysis procedures.  F@code{AfA} (Factor
+Analysis for All) guides users through data uploading, assumption checking
+(descriptives, collinearity, multivariate normality, outliers), data wrangling
+(variable exclusion, data splitting), factor retention analysis (e.g., Parallel
+Analysis, Hull method, EGA), Exploratory Factor Analysis (EFA) with various
+rotation and extraction methods, internal split-sample EFA replication analysis,
+Confirmatory Factor Analysis (CFA) for model testing, Reliability Analysis
+(e.g., Cronbach's Alpha, @code{McDonald's} Omega), Measurement Invariance
+testing across groups, and item weighting techniques.  The application leverages
+established R packages such as lavaan and psych to perform these analyses,
+offering an accessible platform for researchers and students.  Results are
+presented in user-friendly tables and plots, with options for downloading
+outputs.  Analysis projects can be saved and restored, and reproducible R, HTML,
+and PDF workflow reports can be generated.")
+    (license license:agpl3)))
+
 (define-public r-faersquarterlydata
   (package
     (name "r-faersquarterlydata")
@@ -30914,13 +31015,13 @@ published in Statistics and Computing <doi: 10.1007/s11222-017-9744-8>.")
 (define-public r-fabricqueryr
   (package
     (name "r-fabricqueryr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fabricQueryR" version))
        (sha256
-        (base32 "0nd69z27dncnc89hws2g7234b31wadf14vmgx0kmsl41k5hivb5b"))))
+        (base32 "184abig4hxzqlmp4akl6aqbl2jyj3md2j32x4lims1bnhrr4xrrx"))))
     (properties `((upstream-name . "fabricQueryR")))
     (build-system r-build-system)
     (arguments

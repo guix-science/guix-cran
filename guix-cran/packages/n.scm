@@ -9454,13 +9454,13 @@ targets by simplifying and standardizing models and datasets.")
 (define-public r-nlmixr2scm
   (package
     (name "r-nlmixr2scm")
-    (version "0.4")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmixr2scm" version))
        (sha256
-        (base32 "1nxhayvvar82r23xlink481kndf9lrlkdgqqi830w8vh7rd2nryh"))))
+        (base32 "006aminqq00afp9pc4q565b42ypcgysgwh42fbvfzrnhffmyw1z0"))))
     (properties `((upstream-name . "nlmixr2scm")))
     (build-system r-build-system)
     (arguments
@@ -14926,19 +14926,19 @@ model via heatmaps.")
 (define-public r-netutils
   (package
     (name "r-netutils")
-    (version "0.8.6")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "netUtils" version))
        (sha256
-        (base32 "05z1bnq8lss3b3i7h6yi74g2id1ac0v4kxjwmw2n61lk02qfw09b"))))
+        (base32 "06d7xfxb3ig1dyvxrfbky056fidgir7gj2h2r4f5j84zd0s9kzvf"))))
     (properties `((upstream-name . "netUtils")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-igraph))
+    (propagated-inputs (list r-rcpp r-igraph))
     (home-page "https://github.com/schochastics/netUtils/")
     (synopsis "Collection of Tools for Network Analysis")
     (description
@@ -15126,13 +15126,13 @@ website (2017)
 (define-public r-netsimr
   (package
     (name "r-netsimr")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NetSimR" version))
        (sha256
-        (base32 "0bkyj4y75v7n2kf4kdmp77rshzyi1k766zg440lbh9bkv4q40aw2"))))
+        (base32 "1iwp096k3pxpia9lza703cnbkbhk72vq0lqy5cj6kqy67sqqvfg4"))))
     (properties `((upstream-name . "NetSimR")))
     (build-system r-build-system)
     (arguments
@@ -15394,13 +15394,13 @@ undirected, multiplex, multimodal, signed, and other networks.")
 (define-public r-netrankr
   (package
     (name "r-netrankr")
-    (version "1.2.4")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "netrankr" version))
        (sha256
-        (base32 "00rb2743n4b4nf0brvgc58kiiyzprcsy2rg65dzpqqlpsiy6ivd1"))))
+        (base32 "1bkrsvhzvhwlwv6bijv2cccn35kri62kxw8yfwdar1b9hp62635s"))))
     (properties `((upstream-name . "netrankr")))
     (build-system r-build-system)
     (arguments

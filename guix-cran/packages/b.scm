@@ -6600,20 +6600,20 @@ aggregator.  Its use is illustrated with a simple example.")
 (define-public r-bradleyterry2
   (package
     (name "r-bradleyterry2")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BradleyTerry2" version))
        (sha256
-        (base32 "1whjc5cawmgkcm7qvhyvyq3bw4pcxd78vbjbibhsr35fdwf0cvq6"))))
+        (base32 "0gs3f8g6cmywgw13jlrynnj03s5igxqp574n00psb7m4f7xlpxvi"))))
     (properties `((upstream-name . "BradleyTerry2")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-qvcalc r-lme4 r-gtools r-brglm))
-    (native-inputs (list r-litedown r-knitr))
+    (propagated-inputs (list r-reformulas r-qvcalc r-gtools r-brglm))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/hturner/BradleyTerry2")
     (synopsis "Bradley-Terry Models")
     (description
@@ -20288,13 +20288,13 @@ homozygosity-based check for odd ploidy.  For more details about the included
 (define-public r-bigplsr
   (package
     (name "r-bigplsr")
-    (version "0.7.2")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bigPLSR" version))
        (sha256
-        (base32 "1irlba0dvvwiifxfyvc33f7c9czlc4a25ca65bh88lsax7xycina"))))
+        (base32 "1kk6jskabizjl84qmdyj1qb84wikfi24k6yz9p0ylw4i7s7aqjq6"))))
     (properties `((upstream-name . "bigPLSR")))
     (build-system r-build-system)
     (arguments
@@ -20322,8 +20322,7 @@ more details about some of the techniques featured in the package, Dayal and
 <doi:10.1002/(SICI)1099-128X(199701)11:1%3C73::AID-CEM435%3E3.0.CO;2-%23>,
 Rosipal & Trejo (2001) <https://www.jmlr.org/papers/v2/rosipal01a.html>,
 Tenenhaus, Viennet, and Saporta (2007) <doi:10.1016/j.csda.2007.01.004>, Rosipal
-(2004) <doi:10.1007/978-3-540-45167-9_17>, Rosipal (2019)
-<https://ieeexplore.ieee.org/document/8616346>, Song, Wang, and Bai (2024)
+(2004) <doi:10.1007/978-3-540-45167-9_17>, Song, Wang, and Bai (2024)
 <doi:10.1016/j.chemolab.2024.105238>.  Includes kernel logistic PLS with
 C++'-accelerated alternating iteratively reweighted least squares (IRLS)
 updates, streamed reproducing kernel Hilbert space (RKHS) solvers with reusable
@@ -26989,13 +26988,13 @@ Catalogue (<https://data.gov.bc.ca>), the Government of Canada Open Data Portal
 (define-public r-bclogit
   (package
     (name "r-bclogit")
-    (version "1.1")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bclogit" version))
        (sha256
-        (base32 "0cvcsi3ymsi1jwhvnhra5v3vv8axln09dpz8pfv8kk6lmlxmrlwx"))))
+        (base32 "1bkg45a4nz3n3sgxsy7k4w1b3n76dalkgnpw7jrrqagjmy4yfc0m"))))
     (properties `((upstream-name . "bclogit")))
     (build-system r-build-system)
     (arguments
@@ -27007,14 +27006,12 @@ Catalogue (<https://data.gov.bc.ca>), the Government of Canada Open Data Portal
                              r-rcppparallel
                              r-rcppeigen
                              r-rcpp
-                             r-glmmtmb
                              r-geepack
                              r-fastlogisticregressionwrap
                              r-coda
                              r-checkmate
                              r-bh))
-    (home-page
-     "https://github.com/Tennenbaum-J/bclogit_package_and_paper_repo")
+    (home-page "https://github.com/tennenbaumj/bclogit_package_and_paper_repo")
     (synopsis "Conditional Logistic Regression")
     (description
      "This package performs inference for Bayesian conditional logistic regression
@@ -31360,13 +31357,13 @@ of specific algorithms.")
 (define-public r-bayesics
   (package
     (name "r-bayesics")
-    (version "3.0.2")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesics" version))
        (sha256
-        (base32 "10iv0d1fcbv27bxrg1zllgq7wl9640wbh9vykix5mb84f0pv1flg"))))
+        (base32 "1y8rvgc6r4lkq98llh96sjyxpy7jskmxqp7nvwgnxcqw9pfi7vsv"))))
     (properties `((upstream-name . "bayesics")))
     (build-system r-build-system)
     (arguments
@@ -36020,56 +36017,6 @@ at Babson College.  Included are compact descriptive statistics for data frames
 and lists, expanded reporting and graphics for linear regressions, and formatted
 reports for best subsets analyses.")
     (license license:gpl2+)))
-
-(define-public r-bapred
-  (package
-    (name "r-bapred")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bapred" version))
-       (sha256
-        (base32 "1pnhq1li0c4pvgvwsaxxzsgbdyjnb96s1hciqanzgbd1d4577lvp"))))
-    (properties `((upstream-name . "bapred")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sva
-                             r-mnormt
-                             r-mass
-                             r-lme4
-                             r-glmnet
-                             r-fuzzyranktests
-                             r-fnn
-                             r-biobase
-                             r-affyplm
-                             r-affy))
-    (home-page "https://cran.r-project.org/package=bapred")
-    (synopsis
-     "Batch Effect Removal and Addon Normalization (in Phenotype Prediction using Gene Data)")
-    (description
-     "Various tools dealing with batch effects, in particular enabling the removal of
-discrepancies between training and test sets in prediction scenarios.  Moreover,
-addon quantile normalization and addon RMA normalization (Kostka & Spang, 2008)
-is implemented to enable integrating the quantile normalization step into
-prediction rules.  The following batch effect removal methods are implemented:
-FAbatch, @code{ComBat}, (f)SVA, mean-centering, standardization, Ratio-A and
-Ratio-G. For each of these we provide an additional function which enables a
-posteriori ('addon') batch effect removal in independent batches ('test data').
-Here, the (already batch effect adjusted) training data is not altered.  For
-evaluating the success of batch effect adjustment several metrics are provided.
-Moreover, the package implements a plot for the visualization of batch effects
-using principal component analysis.  The main functions of the package for batch
-effect adjustment are @code{ba()} and @code{baaddon()} which enable batch effect
-removal and addon batch effect removal, respectively, with one of the seven
-methods mentioned above.  Another important function here is @code{bametric()}
-which is a wrapper function for all implemented methods for evaluating the
-success of batch effect removal.  For (addon) quantile normalization and (addon)
-RMA normalization the functions @code{qunormtrain()}, @code{qunormaddon()},
-@code{rmatrain()} and @code{rmaaddon()} can be used.")
-    (license license:gpl2)))
 
 (define-public r-baorista
   (package

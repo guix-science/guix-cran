@@ -1276,6 +1276,50 @@ columns of a data.frame.")
      "Translate SQL SELECT statements into lists of R expressions.")
     (license license:asl2.0)))
 
+(define-public r-querychat
+  (package
+    (name "r-querychat")
+    (version "0.4.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "querychat" version))
+       (sha256
+        (base32 "0jld3p7lg0knap6nrjv39rbjvg8cvvhb690v2v1h17p22idj2prd"))))
+    (properties `((upstream-name . "querychat")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zip
+                             r-yaml
+                             r-whisker
+                             r-shinychat
+                             r-shiny
+                             r-s7
+                             r-rlang
+                             r-r6
+                             r-promises
+                             r-lifecycle
+                             r-jsonlite
+                             r-htmltools
+                             r-ellmer
+                             r-dbi
+                             r-coro
+                             r-cli
+                             r-bslib
+                             r-bsicons))
+    (native-inputs (list r-knitr))
+    (home-page "https://posit-dev.github.io/querychat/r/")
+    (synopsis
+     "Filter and Query Data Frames in 'shiny' Using an LLM Chat Interface")
+    (description
+     "Adds an LLM-powered chatbot to your shiny app, that can turn your users natural
+language questions into SQL queries that run against your data, and return the
+result as a reactive data frame.  Use it to drive reactive calculations,
+visualizations, downloads, and more.")
+    (license license:expat)))
+
 (define-public r-querybuilder
   (package
     (name "r-querybuilder")
@@ -7555,13 +7599,13 @@ checking the convergence of the chains.")
 (define-public r-qadf
   (package
     (name "r-qadf")
-    (version "1.0.0")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qadf" version))
        (sha256
-        (base32 "0zcynpx8f5sb9pwgl8gy5vp5vs6db27l4mpfnxmysz36sfihcamr"))))
+        (base32 "0s0q2fhdqf5y082dxm3xyvaw7has5jzn7siwy4v7y71lf677ri3d"))))
     (properties `((upstream-name . "qadf")))
     (build-system r-build-system)
     (arguments
@@ -7576,7 +7620,7 @@ root test proposed by Koenker and Xiao (2004) <doi:10.1198/016214504000001114>.
 The test examines unit root behaviour across the conditional distribution of a
 time series using quantile regression, providing a richer characterisation of
 persistence than standard ADF tests.  Critical values follow Hansen (1995)
-<doi:10.1017/S0266466600009713>.  Lag order selection is supported via AIC, BIC,
+<doi:10.1017/S0266466600009993>.  Lag order selection is supported via AIC, BIC,
 or the t-statistic sequential testing approach.")
     (license license:gpl3)))
 

@@ -21430,19 +21430,19 @@ a light, pastel aesthetic.  Syntax follows the viridis package.")
 (define-public r-ggtaichi
   (package
     (name "r-ggtaichi")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggtaichi" version))
        (sha256
-        (base32 "0y2rrsjnih2zacyll63lxd4s91hb9a5nfnaw6wifaw05wifc7jn4"))))
+        (base32 "1j0z424pcbqxs2685cbvnhd2yzjv7xfsqx3rc48znyqxpivd7fn7"))))
     (properties `((upstream-name . "ggtaichi")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang r-ggplot2 r-ggnewscale))
+    (propagated-inputs (list r-rlang r-ggplot2 r-ggnewscale r-farver))
     (native-inputs (list r-knitr))
     (home-page "https://pursuitofdatascience.github.io/ggtaichi/")
     (synopsis "Taichi-Diagram Visualization for Two Data Sources")
@@ -23187,13 +23187,13 @@ optional Shiny application.")
 (define-public r-ggpop
   (package
     (name "r-ggpop")
-    (version "1.8.0")
+    (version "1.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggpop" version))
        (sha256
-        (base32 "0gxfnr7d3fmzjfazly7sy63fpylchd9yb26a9dndvmwri5ah6ypl"))))
+        (base32 "1y8s2jj7g9kf8hb2c60kgnlgd0x54snx3b5nchqz6n7v987p4w24"))))
     (properties `((upstream-name . "ggpop")))
     (build-system r-build-system)
     (arguments
@@ -28281,13 +28281,13 @@ Markov chain approach with non response.")
 (define-public r-gfdsurv
   (package
     (name "r-gfdsurv")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GFDsurv" version))
        (sha256
-        (base32 "0vnjg84l1fxxg8cnvwmvjmggmx5bk3jnv2k6m7z4yhcfwd7bk9sc"))))
+        (base32 "1gz7492y140q14hsb4a91r19rgcsmfwhygqifyjzrj03a9c4wjw3"))))
     (properties `((upstream-name . "GFDsurv")))
     (build-system r-build-system)
     (arguments
@@ -32938,6 +32938,41 @@ Andrea Riebler, Geir-Arne Fuglstad (2024) <doi:10.32614/RJ-2024-027>.  Umut
 Altay, John Paige, Andrea Riebler, Geir-Arne Fuglstad (2023)
 <doi:10.1177/1471082X231219847>.")
     (license license:gpl2+)))
+
+(define-public r-geoaddsae2
+  (package
+    (name "r-geoaddsae2")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geoaddSAE2" version))
+       (sha256
+        (base32 "0zpx2194ac1db4a57zjfjkc6nddmgnnk8mlci9h9pbd670gn724q"))))
+    (properties `((upstream-name . "geoaddSAE2")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sae r-mgcv))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=geoaddSAE2")
+    (synopsis "Geoadditive Small Area Estimation for Area-Level Model")
+    (description
+     "Fits area-level geoadditive small area estimation (SAE) models by extending the
+Fay-Herriot area-level model with linear, nonlinear, and spatial effects.  The
+Fay-Herriot model is described by Fay and Herriot (1979)
+<doi:10.1080/01621459.1979.10482505>.  Geoadditive models combine nonlinear
+covariate effects and spatial variation as described by Kammann and Wand (2003)
+<doi:10.1111/1467-9876.00385>, while their application to small area estimation
+is discussed by Pusponegoro et al. (2019) <doi:10.21108/JDSA.2019.2.15>.
+Nonlinear covariate effects are represented using penalized splines, while
+spatial effects are represented using a smooth function of geographic
+coordinates.  Models are estimated using restricted maximum likelihood (REML),
+and mean squared error (MSE) is estimated using a parametric bootstrap.  The
+package also provides comparisons with the Fay-Herriot and spatial Fay-Herriot
+(SFH) models.")
+    (license license:gpl3+)))
 
 (define-public r-genwin
   (package
@@ -38308,13 +38343,13 @@ services like Google Trends'.")
 (define-public r-gcf
   (package
     (name "r-gcf")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gcf" version))
        (sha256
-        (base32 "1mi43r2rpvirb25nfpw6nd8nsjq72a7ydhp16l2153vgk3g9s16y"))))
+        (base32 "1p5yfdyd0vmj7way3xwhmbixnijx1ibnmzdds1lqd7npszlfw6j5"))))
     (properties `((upstream-name . "gcf")))
     (build-system r-build-system)
     (arguments

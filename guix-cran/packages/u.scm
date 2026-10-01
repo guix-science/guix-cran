@@ -4425,13 +4425,13 @@ inference procedure described in @code{MacKinnon} and Webb (2020)
 (define-public r-underdisp
   (package
     (name "r-underdisp")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "underdisp" version))
        (sha256
-        (base32 "12mw706y2r8q4k3m4l57cfvh068xbb2q3b19y99wwl53d6mhb9lv"))))
+        (base32 "058cwiy9ls31jwm61v8sdl3lshqx1nam4h2briwizb1bv5kr684q"))))
     (properties `((upstream-name . "underdisp")))
     (build-system r-build-system)
     (arguments

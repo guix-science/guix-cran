@@ -23,6 +23,7 @@
   #:use-module (gnu packages julia)
   #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages photo)
+  #:use-module (gnu packages backup)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -9144,13 +9145,13 @@ for ggplot2 for discrete coloring.")
 (define-public r-crawlee
   (package
     (name "r-crawlee")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crawlee" version))
        (sha256
-        (base32 "1llgljzb2ddy95sapri3yi2cf4qvbn7j25ppyv2198rkrgvww95b"))))
+        (base32 "1ya47pz7zwq7zz4cfqpa7qnw215972dh1ph9cb5rvjh4kz79gr9w"))))
     (properties `((upstream-name . "crawlee")))
     (build-system r-build-system)
     (arguments
@@ -13091,13 +13092,13 @@ packages into a target R version using pak'.  Includes a Shiny dashboard
 (define-public r-couplr
   (package
     (name "r-couplr")
-    (version "1.7.1")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "couplr" version))
        (sha256
-        (base32 "1fmbx0jz40nr19i6s4gi4c0n7li0gwsyaj96xh57x5mcpn1mrfis"))))
+        (base32 "17fcdysnkyjm4bcjxxpirwfzpfrkr761fbig58kr9j6cd56kmcyg"))))
     (properties `((upstream-name . "couplr")))
     (build-system r-build-system)
     (arguments
@@ -20946,13 +20947,13 @@ Typen und Syndromen.  Zeitschrift fÃ¼r Klinische Psychologie und Psychotherapi
 (define-public r-confoundvis
   (package
     (name "r-confoundvis")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "confoundvis" version))
        (sha256
-        (base32 "12vxij8gcrw71c35rnpb53vjpysk9gldqlmnfv7s29fql7dy8652"))))
+        (base32 "1m2vxaf10gb6rfkw366j6ibwrwgrpz6imjvwyyl49mqymwm2zdf8"))))
     (properties `((upstream-name . "confoundvis")))
     (build-system r-build-system)
     (arguments
@@ -20960,22 +20961,21 @@ Typen und Syndromen.  Zeitschrift fÃ¼r Klinische Psychologie und Psychotherapi
       #:tests? #f))
     (propagated-inputs (list r-rlang r-ggplot2))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/causalfragility-lab/confoundvis")
+    (home-page "https://github.com/subirhait/confoundvis")
     (synopsis
      "Visualization Tools for Sensitivity Analysis of Unmeasured Confounding")
     (description
-     "This package provides visualization tools for sensitivity analysis to unmeasured
-confounding in observational studies.  Includes contour-based sensitivity plots,
-robustness curves, and benchmark-oriented graphics that help researchers assess
-how strong omitted confounding would need to be to attenuate, invalidate, or
-reverse estimated effects.  Supports regression-based sensitivity analysis
-frameworks, including impact threshold approaches (Frank, 2000,
-<doi:10.1177/0049124100029002001>), partial R-squared methods (Cinelli and
-Hazlett, 2020, <doi:10.1111/rssb.12348>), and E-value style metrics
-(@code{VanderWeele} and Ding, 2017, <doi:10.7326/M16-2607>).  Emphasizes clear,
-interpretable, and publication-ready graphical summaries for transparent
-reporting of causal sensitivity analyses across the social, behavioral, health,
-and educational sciences.")
+     "Visualization and reporting tools for sensitivity analysis to unmeasured
+confounding in observational studies.  A common confoundsens object stores a
+sensitivity path (the treatment effect as a function of hypothetical confounder
+strength) regardless of the framework that produced it, so the same robustness
+curves, contour plots, covariate benchmark (\"sensitivity Love\") plots, and
+plain-language reports can be drawn for impact threshold analysis (Frank, 2000,
+<doi:10.1177/0049124100029002001>), partial R-squared omitted-variable bias
+analysis (Cinelli and Hazlett, 2020, <doi:10.1111/rssb.12348>), and E-values
+(@code{VanderWeele} and Ding, 2017, <doi:10.7326/M16-2607>).  Paths can be
+computed directly from fitted linear models or converted from results produced
+by the sensemakr', konfound', and EValue packages.")
     (license license:gpl3)))
 
 (define-public r-conformalsmallest
@@ -28165,19 +28165,19 @@ Meta-Learners.\" A tutorial for this package can be found at
 (define-public r-cograph
   (package
     (name "r-cograph")
-    (version "2.4.4")
+    (version "2.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cograph" version))
        (sha256
-        (base32 "0c6a3fxk9cdxib13llnljrsp047li4k7vf08p8dalhcghdca8717"))))
+        (base32 "0xiaaiwwf1jvg1vnrzx93bghrjqsjfzqbavdsbm2rj1rx12z7iha"))))
     (properties `((upstream-name . "cograph")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-r6 r-matrix r-ggplot2))
+    (propagated-inputs (list r-r6 r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://sonsoles.me/cograph/")
     (synopsis "Analysis and Visualization of Complex Networks")
@@ -30884,6 +30884,31 @@ hexagonal grids or user-supplied polygons, and heavy operations leverage a
 special functions that can be saved in registries and linked to other functions.
  Utilities for documenting your generators, and new conditions is provided for
 package development.")
+    (license license:expat)))
+
+(define-public r-cncleanr
+  (package
+    (name "r-cncleanr")
+    (version "0.2.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cncleanr" version))
+       (sha256
+        (base32 "034nnvldnjycnrvsrn0nhag1szp68l7m27ygrkmv1b7aw3v8iiza"))))
+    (properties `((upstream-name . "cncleanr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/Jorungandr/cncleanr")
+    (synopsis "Parse Compact Numbers in Chinese Data")
+    (description
+     "Parses compact numeric values, qualified quantities, and ranges commonly found
+in Chinese tables and spreadsheets.  It handles Chinese magnitude suffixes,
+currencies, percentages, full-width characters, financial negatives, and
+configurable missing-value markers while reporting values that cannot be parsed
+safely.")
     (license license:expat)))
 
 (define-public r-cncagui
@@ -38047,6 +38072,44 @@ trees in practice.")
 differential expression; see Simon's book for details on typical problem types.")
     (license license:asl2.0)))
 
+(define-public r-classbound
+  (package
+    (name "r-classbound")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "classbound" version))
+       (sha256
+        (base32 "0inlwlffnyvf9ihl8i3h6l3rx077n5ghy9vylhaahwk78l8fx6dl"))))
+    (properties `((upstream-name . "classbound")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny
+                             r-rlang
+                             r-rcolorbrewer
+                             r-ggplot2
+                             r-ggnewscale
+                             r-dt
+                             r-class))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/natydasilva/classbound")
+    (synopsis "Visualization for Classification Decision Boundaries")
+    (description
+     "Exploring, visualizing, and comparing classification decision boundaries.
+Provides a unified interface for fitting classifiers and rendering 2D decision
+boundary plots, with support for 2D slice visualization (fixing non-plotted
+dimensions at reference values) and projection-based visualization for
+high-dimensional data (including Principal Component Analysis (PCA) and tour
+projections from the tourr package).  Supports native R classifiers, tidymodels
+workflows, and custom user-supplied models via a flexible adapter system.
+Includes an interactive Shiny application ('explorapp') for visual exploration,
+data simulation, drawing, model comparison, probability surfaces, and
+reproducible exports.")
+    (license license:gpl2+)))
+
 (define-public r-clarketest
   (package
     (name "r-clarketest")
@@ -43333,13 +43396,13 @@ package.")
 (define-public r-chevron
   (package
     (name "r-chevron")
-    (version "0.2.14")
+    (version "0.2.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chevron" version))
        (sha256
-        (base32 "0dmlj38pzmrh55308f4dzlyhjp1ck1xn7y74ik06i7l3g3byfg4p"))))
+        (base32 "1x7h6g6rkhs218wwik4274iw902sjwi8l98vx054al06pd6mzfrm"))))
     (properties `((upstream-name . "chevron")))
     (build-system r-build-system)
     (arguments
@@ -47064,13 +47127,13 @@ academic awards, professional recognition, and similar uses.")
 (define-public r-certara-xpose-nlme
   (package
     (name "r-certara-xpose-nlme")
-    (version "2.0.2")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Certara.Xpose.NLME" version))
        (sha256
-        (base32 "08irp7mfl07k531ancx1r85jv1rgg7fjhvjj2xlpxkskpw5ihcgj"))))
+        (base32 "07ci665zw9p271fa8r6589l3z8w8xw2rssnsk7gsaxmgmaias2n5"))))
     (properties `((upstream-name . "Certara.Xpose.NLME")))
     (build-system r-build-system)
     (arguments
@@ -52352,13 +52415,13 @@ updating of the in-control parameter estimates.  See Capizzi and Masarotto
 (define-public r-caustests
   (package
     (name "r-caustests")
-    (version "1.1.1")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "caustests" version))
        (sha256
-        (base32 "0vzxsfzgv2wg61zfg104skmmpz3m8k7ph736d0r310y62wf4nmra"))))
+        (base32 "0snqphb353y21k41h0wbjvs9yzfl9p5xha6k9yanvbvkqcscfcj6"))))
     (properties `((upstream-name . "caustests")))
     (build-system r-build-system)
     (arguments
@@ -52378,7 +52441,7 @@ Fourier-based tests with single frequency (Enders and Jones, 2016)
 Quantiles (Cheng et al., 2021) <doi:10.1007/s12076-020-00263-0>.  For panel
 data: Panel Fourier Toda-Yamamoto (Yilanci and Gorus, 2020)
 <doi:10.1007/s11356-020-10092-9> and Panel Quantile Causality tests (Wang and
-Nguyen, 2022) <doi:10.1080/1331677X.2021.1952089>, as well as Group-Mean and
+Nguyen, 2022) <doi:10.1080/1331677X.2021.1948436>, as well as Group-Mean and
 Pooled Fully Modified OLS estimators for panel cointegrating polynomial
 regressions (Wagner and Reichold, 2023) <doi:10.1080/07474938.2023.2178141>.
 All tests include bootstrap inference for robust p-values.")
@@ -59637,6 +59700,47 @@ Alberti 2015 <doi:10.1016/j.softx.2015.07.001>.")
 period.  More details can be found in Bardhan et al. (2022)
 <DOI:10.18805/ag.D-5418>.")
     (license license:gpl3)))
+
+(define-public r-cagedr
+  (package
+    (name "r-cagedr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cagedr" version))
+       (sha256
+        (base32 "097b3yfj8vgf07l50yj8x4c01kn05mdi1slck71lp6832mzlhs8q"))))
+    (properties `((upstream-name . "cagedr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list libarchive))
+    (propagated-inputs (list r-tibble
+                             r-stringi
+                             r-rlang
+                             r-readr
+                             r-curl
+                             r-cli
+                             r-archive))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/StrategicProjects/cagedr")
+    (synopsis
+     "Access Novo CAGED Microdata from the Brazilian Ministry of Labour")
+    (description
+     "Download and read the public, non-identified microdata of the Novo CAGED
+(Cadastro Geral de Empregados e Desempregados), the monthly registry of formal
+employment movements published by the Brazilian Ministry of Labour and
+Employment through the PDET FTP server <ftp://ftp.mtps.gov.br/pdet/microdados/>.
+ Lists the reference months available on the server, downloads the three monthly
+files (movements declared on time, declared late, and exclusions) with an
+idempotent local cache, and reads the national 7z archives as a stream,
+filtering by state and selecting columns before anything is kept in memory, so
+that a single state can be extracted without loading the full national file.
+Also provides the official record layout and a helper to consolidate admissions,
+separations and net balance by reference month.")
+    (license license:expat)))
 
 (define-public r-caft
   (package

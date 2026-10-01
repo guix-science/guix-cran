@@ -5906,13 +5906,13 @@ Evaluation (NSE), for example in ggplot2', dplyr', or data.table'.")
 (define-public r-whep
   (package
     (name "r-whep")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "whep" version))
        (sha256
-        (base32 "08jky2182p6qmljfvrydp5dghi8bxic1fccbzcp6mf2y687wn4kp"))))
+        (base32 "1g64bmzl5ki195zgkyzb73yfcw3mx3dsrmgxgiv9chsn3fhx79wb"))))
     (properties `((upstream-name . "whep")))
     (build-system r-build-system)
     (arguments
@@ -6783,13 +6783,13 @@ with a condition established upon person ability and item difficulty.")
 (define-public r-weightit
   (package
     (name "r-weightit")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WeightIt" version))
        (sha256
-        (base32 "1ma7zhpz6r21q4qppnhrsin9h72yhgwbjg8q63x2zw3950mhmfw0"))))
+        (base32 "1rxj9wqksxf7c685ff844s01a0zscn4w4qj4g0wl9kwj6a7ikz68"))))
     (properties `((upstream-name . "WeightIt")))
     (build-system r-build-system)
     (arguments

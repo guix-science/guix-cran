@@ -4641,13 +4641,13 @@ Deep Learning\".")
 (define-public r-attachment
   (package
     (name "r-attachment")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "attachment" version))
        (sha256
-        (base32 "18kc7nac62v9jb4kiaay4ycrii1q3zyn30bpqkj109yxg02q5zka"))))
+        (base32 "1zbgh4crzylvrr2dayqilg50mgfwlblibmzk0sqpwckws0rbyv79"))))
     (properties `((upstream-name . "attachment")))
     (build-system r-build-system)
     (arguments
@@ -8040,13 +8040,13 @@ dividers.")
 (define-public r-artma
   (package
     (name "r-artma")
-    (version "0.4.1")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "artma" version))
        (sha256
-        (base32 "0knmyb1m8kh1sxnvhk6s1zcf7xj8x3i25nkic79hfpsyw1r32iyw"))))
+        (base32 "1w5w6gc5br130scmcnsx9gipsplhr6yk21sdn0xxv7sccjfm79jv"))))
     (properties `((upstream-name . "artma")))
     (build-system r-build-system)
     (arguments
@@ -9835,13 +9835,13 @@ analysis in a common tabular data structure.")
 (define-public r-ardlverse
   (package
     (name "r-ardlverse")
-    (version "2.0.2")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ardlverse" version))
        (sha256
-        (base32 "1nf8f7wzgnjdmzbblfgji1ki7kygmf97vvhzrinvmjb6jkhzz70z"))))
+        (base32 "1ydqf7vclcbn0by5vxlg9zd76hpqd52nmlb09wxw48h057ly1nza"))))
     (properties `((upstream-name . "ardlverse")))
     (build-system r-build-system)
     (arguments
@@ -20789,13 +20789,13 @@ MÃ¸lgaard, and Schytt (2025) <DOI:10.1037/met0000769>.")
 (define-public r-aisanalyze
   (package
     (name "r-aisanalyze")
-    (version "3.1.2")
+    (version "3.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AISanalyze" version))
        (sha256
-        (base32 "1acpfi1hgaa7byc69gjqiwch55akfd985l3fxnzjmpfggnq5l3l7"))))
+        (base32 "0ml17nwsap1y1jaji7as8p6prdfqlw7p5l2zf0xqkyjbig521p8j"))))
     (properties `((upstream-name . "AISanalyze")))
     (build-system r-build-system)
     (arguments
@@ -26807,6 +26807,58 @@ the \"Analysis Data Model Implementation Guide\" (CDISC Analysis Data Model Team
 2021, <https://www.cdisc.org/standards/foundational/adam>).")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
+(define-public r-admetshiny
+  (package
+    (name "r-admetshiny")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "admetshiny" version))
+       (sha256
+        (base32 "1am4cji4y03sssnwwd48s5zary0qahdmbkgvgc59f973qkjrwwbn"))))
+    (properties `((upstream-name . "admetshiny")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-webchem
+                             r-viridislite
+                             r-uwot
+                             r-shiny
+                             r-rtsne
+                             r-rmarkdown
+                             r-rcdk
+                             r-openxlsx
+                             r-magrittr
+                             r-ggrepel
+                             r-ggplot2
+                             r-ggally
+                             r-fmsb
+                             r-fingerprint
+                             r-dt
+                             r-dplyr
+                             r-cluster))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/xavierclementegarcia/admetshiny")
+    (synopsis
+     "Interactive ADMET and Drug-Likeness Analysis of Small Molecules")
+    (description
+     "This package provides an interactive Shiny application and a toolbox of R
+functions for the management, calculation, filtering, visualization and
+exploratory analysis of molecular descriptors and ADMET (Absorption,
+Distribution, Metabolism, Excretion and Toxicity) properties of small molecules.
+ Computes descriptors locally via the Chemistry Development Kit (CDK), and
+offers drug-likeness filters (Lipinski, Veber, Ghose, Egan, Muegge), the
+BOILED-Egg model for gastrointestinal absorption and blood-brain barrier
+permeability, a P-glycoprotein (P-gp, also known as ATP-binding cassette
+sub-family B member 1, ABCB1) substrate Random Forest classifier, Principal
+Component Analysis (PCA), t-Distributed Stochastic Neighbor Embedding (t-SNE),
+Uniform Manifold Approximation and Projection (UMAP), radar plots and Tanimoto /
+AGglomerative NESting (AGNES) clustering to support compound prioritization in
+early-stage drug discovery.")
+    (license license:expat)))
+
 (define-public r-adlp
   (package
     (name "r-adlp")
@@ -30020,6 +30072,47 @@ arbitrary text input.")
      "This package provides a Tool for Semi-Automating the Statistical Disclosure
 Control of Research Outputs.")
     (license license:expat)))
+
+(define-public r-acrer
+  (package
+    (name "r-acrer")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ACRER" version))
+       (sha256
+        (base32 "1h9zzvkl0ilv404ccmml7d3s5rmhl10jnf1nqgngiir9sf3x2wnr"))))
+    (properties `((upstream-name . "ACRER")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-sqldf
+                             r-sf
+                             r-rsqlite
+                             r-reshape2
+                             r-quadprog
+                             r-pracma
+                             r-pivottabler
+                             r-magrittr
+                             r-knitr
+                             r-dplyr
+                             r-dbi
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ACRER")
+    (synopsis "Accessibility for Recreation in R")
+    (description
+     "Recreation model that simulates household types, group types, expected visiting
+duration, and total visits from city zip codes to surrounding destination areas.
+ The methodology is based on the accessibility model described in Bervaes et al.
+(1996) \"Een model voor het gebruik van de groene ruimte in stadslandschappen
+(Fase I)\" <https://www.wur.nl/en/library>, with optimization procedures based on
+Goldfarb and Idnani (1983) <doi:10.1007/BF02591962> and Vanderbei et al. (1986)
+<doi:10.1007/BF01840454>.")
+    (license license:gpl3+)))
 
 (define-public r-acr
   (package

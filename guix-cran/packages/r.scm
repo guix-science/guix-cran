@@ -3918,13 +3918,13 @@ centered on an approach using machine learning for path classification.")
 (define-public r-rtpcr
   (package
     (name "r-rtpcr")
-    (version "2.1.9")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtpcr" version))
        (sha256
-        (base32 "1n79a7h1bzqqk36zkdlwx2qmy8zlppvr53yc992ihmx1rgvjls6v"))))
+        (base32 "0lij3zv1436vcwlxdvn36d2chavynvpg56z1vc7lyd9hwh3n0xcr"))))
     (properties `((upstream-name . "rtpcr")))
     (build-system r-build-system)
     (arguments
@@ -27177,6 +27177,50 @@ software.  It offers full access to txt, csv, xml and spreadsheets files which
 are meant to be read by JDemetra+ Graphical User Interface.")
     (license (license:fsdg-compatible "EUPL"))))
 
+(define-public r-rjd3production
+  (package
+    (name "r-rjd3production")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rjd3production" version))
+       (sha256
+        (base32 "1vzc8yyrs6z1ysn48dygzzzjfilkcqw7xvv842wp5wyh642q726j"))))
+    (properties `((upstream-name . "rjd3production")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-yaml
+                             r-usethis
+                             r-tidyr
+                             r-tbox
+                             r-shiny
+                             r-rlang
+                             r-rjd3x13
+                             r-rjd3workspace
+                             r-rjd3toolkit
+                             r-rjd3providers
+                             r-rjd3jars
+                             r-lintr
+                             r-flextable
+                             r-dygraphs
+                             r-date4ts
+                             r-checkmate))
+    (native-inputs (list r-quarto r-knitr))
+    (home-page "https://github.com/InseeFr/rjd3production")
+    (synopsis "Prepare for Production of Seasonal Adjustment with 'JDemetra+'")
+    (description
+     "This package provides a comprehensive tool for setting up seasonal data
+pipelines using JDemetra+ (version 3) and rjdverse'.  This includes setting up a
+new working environment, creating and selecting calendar regressors, managing
+specifications (trading-days regressors and outliers) at the workspace level,
+making a workspace usable by the cruncher', removing insignificant outliers, and
+comparing workspaces.")
+    (license (license:fsdg-compatible "EUPL"))))
+
 (define-public r-rjd3jars
   (package
     (name "r-rjd3jars")
@@ -37330,13 +37374,13 @@ Information Systems and Energy Efficient Systems at the University of Bamberg.")
 (define-public r-reside
   (package
     (name "r-reside")
-    (version "0.3.2")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RESIDE" version))
        (sha256
-        (base32 "1f0llk8g8flirh5kwjfbnba1np6bm6jqs16sgsymz8f2jcx23mni"))))
+        (base32 "0qwibjjgsg30iq5sg19795bw7zv6wi8fys9ifdbmha2f93ddwl69"))))
     (properties `((upstream-name . "RESIDE")))
     (build-system r-build-system)
     (arguments
@@ -37345,7 +37389,6 @@ Information Systems and Energy Efficient Systems at the University of Bamberg.")
     (propagated-inputs (list r-tibble
                              r-simstudy
                              r-rdp
-                             r-matrixcalc
                              r-magrittr
                              r-dplyr
                              r-bestnormalize))
@@ -37353,14 +37396,14 @@ Information Systems and Energy Efficient Systems at the University of Bamberg.")
     (home-page "https://hehta.github.io/RESIDE/")
     (synopsis "Rapid Easy Synthesis to Inform Data Extraction")
     (description
-     "Developed to assist researchers with planning analysis, prior to obtaining data
-from Trusted Research Environments (TREs) also known as safe havens.  With
-functionality to export and import marginal distributions as well as synthesise
-data, both with and without correlations from these marginal distributions.
-Using a multivariate cumulative distribution (COPULA).  Additionally the
-International Stroke Trial (IST) is included as an example dataset under ODC-By
-licence Sandercock et al. (2011) <doi:10.7488/ds/104>, Sandercock et al. (2011)
-<doi:10.1186/1745-6215-12-101>.")
+     "Assists researchers with planning analysis prior to obtaining data from Trusted
+Research Environments (TREs), also known as safe havens.  Marginal distributions
+of one or more related data frames can be exported from a TRE and imported
+elsewhere, where data can be synthesised from them, with or without user
+specified correlations, by sampling from a multivariate cumulative distribution
+(copula).  The International Stroke Trial (IST) is included as an example
+dataset under the ODC-By licence, Sandercock et al. (2011) <doi:10.7488/ds/104>,
+Sandercock et al. (2011) <doi:10.1186/1745-6215-12-101>.")
     (license license:gpl3+)))
 
 (define-public r-resi
@@ -43234,13 +43277,13 @@ Klawonn and colleagues (2020) <doi:10.1515/labmed-2020-0005>, (2022)
 (define-public r-reflectr
   (package
     (name "r-reflectr")
-    (version "2.1.4")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reflectR" version))
        (sha256
-        (base32 "1wk04c8c83vp6gf141s0vi3z797lm2z95nizpmr6ya16pqkskii2"))))
+        (base32 "0lj7z12x7mp147mg26zvdywvc2a8h6pnvqdx5s5n4f6pwbdj9bly"))))
     (properties `((upstream-name . "reflectR")))
     (build-system r-build-system)
     (arguments
@@ -51692,13 +51735,13 @@ of system variables.  This package provides similar functionality.")
 (define-public r-rcppfastfloat
   (package
     (name "r-rcppfastfloat")
-    (version "0.0.5")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppFastFloat" version))
        (sha256
-        (base32 "1sm1cr4v3ihp062m6rpg6kd1q1kqw40zxdrrv0qz1mvyy4v0s6p9"))))
+        (base32 "1b3z7g1fk8q083qvxll6phq7p0rm84krlf794d60bv2fzfkl1dyw"))))
     (properties `((upstream-name . "RcppFastFloat")))
     (build-system r-build-system)
     (arguments
@@ -64976,6 +65019,33 @@ user manual (see <https://docs.conveyal.com/changelog>) corresponds with the R5
 version that r5r depends on.  This version of r5r depends on R5 v7.1.")
     (license license:expat)))
 
+(define-public r-r4vn
+  (package
+    (name "r-r4vn")
+    (version "1.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "R4VN" version))
+       (sha256
+        (base32 "04l3yyd82a9dvqz2ldc3mhq4ij55w3m8igk1whar5zqnlbv5nzr7"))))
+    (properties `((upstream-name . "R4VN")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survey))
+    (home-page "https://cran.r-project.org/package=R4VN")
+    (synopsis "Health Data Analysis and Publication-Ready Reporting")
+    (description
+     "This package provides short and consistent commands for data management,
+descriptive and inferential statistics, epidemiological analyses, regression
+models, survival and longitudinal analyses, diagnostic accuracy, scale
+assessment, meta-analysis, machine learning, study design, publication-ready
+tables, graphics, and reporting.  Commands accept an explicit data frame or an
+active data frame selected with @code{usedf()}.")
+    (license license:expat)))
+
 (define-public r-r4subtrace
   (package
     (name "r-r4subtrace")
@@ -66915,13 +66985,13 @@ one-click switching between proxy and non-proxy states.")
 (define-public r-r-matlab
   (package
     (name "r-r-matlab")
-    (version "3.8.0")
+    (version "3.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "R.matlab" version))
        (sha256
-        (base32 "07ad1kkf242lxyd5xc2kskpj5dgi92hnyla51rkj3nyx1wh27br9"))))
+        (base32 "17a6cg7zy49fg0djj2c2daw0iqlgasn3hgmjvlvl57yjmyzbissb"))))
     (properties `((upstream-name . "R.matlab")))
     (build-system r-build-system)
     (arguments

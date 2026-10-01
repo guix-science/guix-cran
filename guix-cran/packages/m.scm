@@ -1641,26 +1641,61 @@ applied.")
 (define-public r-mvprobit
   (package
     (name "r-mvprobit")
-    (version "0.1-10")
+    (version "0.1-12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mvProbit" version))
        (sha256
-        (base32 "1iy249mc5fi72l0lcvjrn40fn6q1m8hj8njcl0li2z6lzydifkd4"))))
+        (base32 "0as0wdr3996qabwsdqgwln8nynp991amr9s397wx0z7x40pnkmzy"))))
     (properties `((upstream-name . "mvProbit")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-mvtnorm r-misctools r-maxlik r-bayesm r-abind))
-    (home-page "http://www.sampleSelection.org")
+    (home-page "https://r-forge.r-project.org/projects/sampleselection/")
     (synopsis "Multivariate Probit Models")
     (description
      "This package provides tools for estimating multivariate probit models,
 calculating conditional and unconditional expectations, and calculating marginal
 effects on conditional and unconditional expectations.")
     (license license:gpl2+)))
+
+(define-public r-mvpred
+  (package
+    (name "r-mvpred")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mvPred" version))
+       (sha256
+        (base32 "0y6hhmv6pd438cw65b1w6vwad6xlkaln7fxql8l9454j480yf8rk"))))
+    (properties `((upstream-name . "mvPred")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-toweranna
+                             r-regtools
+                             r-qeml
+                             r-missforest
+                             r-mice
+                             r-amelia))
+    (home-page "https://github.com/matloff/mvPred")
+    (synopsis "Methods for Handling Missing Values in Linear Modeling")
+    (description
+     "This package provides user-friendly methods for handling missing data in
+regression modeling, including available-case linear regression, multiple
+imputation, random-forest imputation, and the Tower method.  Implemented
+approaches include chained-equation imputation described by van Buuren and
+Groothuis-Oudshoorn (2011) <doi:10.18637/jss.v045.i03>, multiple imputation
+described by Honaker, King and Blackwell (2011) <doi:10.18637/jss.v045.i07>,
+random-forest imputation described by Stekhoven and Buehlmann (2012)
+<doi:10.1093/bioinformatics/btr597>, and the Tower method described by Matloff
+and Mohanty (2023) <https://CRAN.R-project.org/package=@code{toweranNA>}.")
+    (license license:expat)))
 
 (define-public r-mvpot
   (package
@@ -18883,43 +18918,6 @@ Hall-Buckley-Eagleson method, Wood's F method, and the Lindsay-Pilla-Basak
 method.")
     (license (list license:gpl2 license:gpl3))))
 
-(define-public r-mombf
-  (package
-    (name "r-mombf")
-    (version "3.5.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mombf" version))
-       (sha256
-        (base32 "0pyq8jlx36075b77p5kalq5fn0y8f3s7l8crn3gvpjmp9shqv22y"))))
-    (properties `((upstream-name . "mombf")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survival
-                             r-sparsematrixstats
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-pracma
-                             r-ncvreg
-                             r-mvtnorm
-                             r-mgcv
-                             r-mclust
-                             r-matrix
-                             r-intervals
-                             r-glmnet
-                             r-glasso
-                             r-dplyr))
-    (home-page "https://github.com/davidrusi/mombf")
-    (synopsis "Model Selection with Bayesian Methods and Information Criteria")
-    (description
-     "Model selection and averaging for regression and mixtures, inclusing Bayesian
-model selection and information criteria (BIC, EBIC, AIC, GIC).")
-    (license (list license:gpl2+
-                   (license:fsdg-compatible "file://LICENSE")))))
-
 (define-public r-mom
   (package
     (name "r-mom")
@@ -19808,13 +19806,13 @@ downloads of MODIS time series directly to your R workspace or your computer.")
 (define-public r-modisfast
   (package
     (name "r-modisfast")
-    (version "1.0.2")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modisfast" version))
        (sha256
-        (base32 "1vas9a92qr8b6sdg0q92cm3z9h476639274phrfrp8gyyjl5ld7x"))))
+        (base32 "0klpdbdxwg5289z19rn1p8d56avsx6i5ryi6xic6xbcmgicp8sr9"))))
     (properties `((upstream-name . "modisfast")))
     (build-system r-build-system)
     (arguments
@@ -19828,6 +19826,7 @@ downloads of MODIS time series directly to your R workspace or your computer.")
                              r-purrr
                              r-magrittr
                              r-lubridate
+                             r-jsonlite
                              r-httr
                              r-dplyr
                              r-curl
@@ -25408,39 +25407,37 @@ by the package's @code{moimle()} function.")
 (define-public r-mlmoderator
   (package
     (name "r-mlmoderator")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlmoderator" version))
        (sha256
-        (base32 "1hjprlgkmw0vm4z2vr5fa56vbmx4s7achkqjfassxci0hz6fpk46"))))
+        (base32 "15l9vcv1zczx813kf8v2cjyx55x488g4iwrszzwmawivfwxl2spx"))))
     (properties `((upstream-name . "mlmoderator")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang r-lme4 r-ggplot2))
+    (propagated-inputs (list r-rlang r-lmertest r-lme4 r-ggplot2))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/causalfragility-lab/mlmoderator")
+    (home-page "https://github.com/subirhait/mlmoderator")
     (synopsis
      "Probing, Plotting, and Interpreting Multilevel Interaction Effects")
     (description
-     "This package provides a unified workflow for probing, plotting, and assessing
-the robustness of cross-level interaction effects in two-level mixed-effects
-models fitted with lme4 (Bates et al., 2015) <doi:10.18637/jss.v067.i01>.
-Implements simple slopes analysis following Aiken and West (1991,
-ISBN:9780761907121), Johnson-Neyman intervals following Johnson and Fay (1950)
-<doi:10.1007/BF02288864> and Bauer and Curran (2005)
-<doi:10.1207/s15327906mbr4003_5>, and grand- or group-mean centering as
-described in Enders and Tofighi (2007) <doi:10.1037/1082-989X.12.2.121>.
-Includes a slope variance decomposition that separates fixed-effect uncertainty
-from random-slope variance (tau11), a contour surface plot of predicted outcomes
-over the full predictor-by-moderator space, and robustness diagnostics
-comprising intraclass correlation coefficient shift analysis and
-leave-one-cluster-out (LOCO) stability checks.  Designed for researchers in
-education, psychology, biostatistics, epidemiology, organizational science, and
-other fields where outcomes are clustered within higher-level units.")
+     "This package provides a workflow for probing, plotting, and checking cross-level
+interaction effects in two-level mixed-effects models fitted with lme4 (Bates et
+al., 2015) <doi:10.18637/jss.v067.i01>.  Implements simple slopes analysis
+following Aiken and West (1991, ISBN:9780761907121), Johnson-Neyman intervals
+following Johnson and Fay (1950) <doi:10.1007/BF02288864> and Bauer and Curran
+(2005) <doi:10.1207/s15327906mbr4003_5>, and grand- or group-mean centering as
+described in Enders and Tofighi (2007) <doi:10.1037/1082-989X.12.2.121>.  Tests
+and intervals use Satterthwaite degrees of freedom via @code{lmerTest}
+(Kuznetsova et al., 2017) <doi:10.18637/jss.v082.i13> by default, with
+Kenward-Roger and between-cluster alternatives.  Also provides confidence and
+new-cluster prediction intervals for simple slopes in random-slope models,
+contour plots of predicted outcomes over the predictor-by-moderator space, and
+leave-one-cluster-out influence diagnostics for the interaction.")
     (license license:expat)))
 
 (define-public r-mlml2r
@@ -27153,6 +27150,34 @@ the sample average.  For more details see Thaning and Nieuwenhuis (2025)
 functional principal components implemented with bamlss'.  Implementation for
 Volkmann, Umlauf, Greven (2023) <@code{arXiv:2311.06409>}.")
     (license license:gpl3)))
+
+(define-public r-mizu
+  (package
+    (name "r-mizu")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mizu" version))
+       (sha256
+        (base32 "0bndpzm6898cssszid92jpdlcx1wa9swcv09gbmadz0zd49iv0i5"))))
+    (properties `((upstream-name . "mizu")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/shikokuchuo/mizu-r")
+    (synopsis "Single-Producer Single-Consumer Channels")
+    (description
+     "This package provides a single-producer single-consumer channel with bounded
+capacity, optional timeouts on receives, and sentinel return values for full,
+timeout, and closed states.  The ring buffer is implemented in C: sends and
+receives are constant-time operations, values are delivered in first-in
+first-out order, and a closed channel drains its buffered values before
+reporting the closed state.  The transport is in-process: both ends of a channel
+live in the calling R process, which suits the channel to prototyping producer
+and consumer designs and to testing channel-based logic.")
+    (license license:expat)))
 
 (define-public r-mizer
   (package
@@ -32231,6 +32256,40 @@ harmonized results across different devices.  It also includes scripts to
 reproduce results in the related publication (John, D., Tang.  Q., Albinali, F.
 and Intille, S. (2019) <doi:10.1123/jmpb.2018-0068>).")
     (license license:expat)))
+
+(define-public r-miml
+  (package
+    (name "r-miml")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MIML" version))
+       (sha256
+        (base32 "152p3dqr40zb2k8kh7f148qkyxymln4w1f47jahah8510y9dmzgc"))))
+    (properties `((upstream-name . "MIML")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival r-lightgbm r-data-table))
+    (home-page "https://cran.r-project.org/package=MIML")
+    (synopsis
+     "Machine Learning Imputation, Clustering and Survival Analysis for Longitudinal Proteomic Data")
+    (description
+     "Imputes missing biomarker measurements in a wide longitudinal serum panel with
+gradient-boosted decision trees, groups the completed panel by Bayesian
+consensus clustering, and compares the resulting patient subgroups by
+Kaplan-Meier, log-rank and Cox analysis.  The imputation learner is described in
+Ke et al. (2017)
+<https://papers.nips.cc/paper/6907-lightgbm-a-highly-efficient-gradient-boosting-decision-tree>
+and the clustering method in Lock and Dunson (2013)
+<doi:10.1093/bioinformatics/btt425>.  Imputed values are conditional-mean
+predictions, so the procedure is a machine-learning single imputation; the
+completions carry no between-imputation variance and must not be pooled by
+Rubin's rules.  Two panels from Gene Expression Omnibus accession GSE65622 are
+included, one for each survival endpoint.")
+    (license license:gpl3)))
 
 (define-public r-mimisbm
   (package
@@ -50267,13 +50326,13 @@ at stationary sites.")
 (define-public r-mazamacoreutils
   (package
     (name "r-mazamacoreutils")
-    (version "0.6.2")
+    (version "0.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MazamaCoreUtils" version))
        (sha256
-        (base32 "17ifw3i77f8jzjv3bf23829in495dp15x25mnzfad4z9diw1whl9"))))
+        (base32 "0rspjhs2iji780p48vka5pyhxv3gfx3307iaaxd6g0ik2i4ba7n3"))))
     (properties `((upstream-name . "MazamaCoreUtils")))
     (build-system r-build-system)
     (arguments

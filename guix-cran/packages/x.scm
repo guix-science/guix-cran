@@ -325,13 +325,13 @@ Porter (2023) <https://stephenporter.org/files/xtsum_handout.pdf>,
 (define-public r-xtrec
   (package
     (name "r-xtrec")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xtrec" version))
        (sha256
-        (base32 "1908jx3mypnr1csch29gz0y6r7ywq404866ab7d1nmx792rd6qzh"))))
+        (base32 "1y9qq5c3q6bammg9rhnnajisvirqbjk9ds070j9drmr6yxwlk2ng"))))
     (properties `((upstream-name . "xtrec")))
     (build-system r-build-system)
     (arguments
@@ -341,7 +341,7 @@ Porter (2023) <https://stephenporter.org/files/xtsum_handout.pdf>,
     (synopsis "Panel Unit Root Test Based on Recursive Detrending")
     (description
      "This package implements the recursively detrended panel unit root tests proposed
-by Westerlund (2015) <doi:10.1016/j.jeconom.2014.09.013>.  Two variants are
+by Westerlund (2015) <doi:10.1016/j.jeconom.2014.06.015>.  Two variants are
 provided: the basic t-REC test assuming iid errors, and the robust t-RREC test
 that accounts for serial correlation, cross-sectional dependence, and
 heteroskedasticity via defactoring and BIC-selected lag augmentation.  Both
@@ -405,6 +405,49 @@ frameworks of Pesaran, Shin, and Smith (1999)
 <doi:10.1080/01621459.1999.10474156>, Cho, Kim, and Shin (2015)
 <doi:10.1016/j.jeconom.2015.05.003>, and Bildirici and Kayikci (2022).")
     (license license:gpl3)))
+
+(define-public r-xtifedml
+  (package
+    (name "r-xtifedml")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "xtifedml" version))
+       (sha256
+        (base32 "0pawdrfm8rhsfdv742h0k95i5h3szj3zb59ydhig7nzp2kb4095y"))))
+    (properties `((upstream-name . "xtifedml")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-readstata13
+                             r-r6
+                             r-mvtnorm
+                             r-mlr3tuning
+                             r-mlr3misc
+                             r-mlr3learners
+                             r-mlr3
+                             r-mlmetrics
+                             r-magrittr
+                             r-dplyr
+                             r-data-table
+                             r-clustergeneration
+                             r-checkmate))
+    (home-page "https://cran.r-project.org/package=xtifedml")
+    (synopsis
+     "Double Machine Learning for Static Panel Models with Interactive Fixed Effects")
+    (description
+     "This package implements partially linear panel regression (PLPR) models with
+interactive fixed effects, high-dimensional confounding variables, and an
+exogenous treatment variable within the double machine learning framework.
+Estimates the structural parameter (treatment effect) in static panel data
+models with interactive fixed effects using the approach established in Chen et
+al. (2026) <doi:10.48550/@code{arXiv.2608.01137>}.  Builds on the
+object-oriented package @code{DoubleML} (Bach et al., 2024)
+<doi:10.18637/jss.v108.i03> and xtdml (Polselli, 2025)
+<doi:10.48550/@code{arXiv.2512.15965>}, using the mlr3 ecosystem.")
+    (license (list license:gpl2 license:gpl3))))
 
 (define-public r-xtife
   (package
@@ -575,13 +618,13 @@ is based on Pesaran, Shin, and Smith (2001) <doi:10.1002/jae.616>.")
 (define-public r-xtbreakcoint
   (package
     (name "r-xtbreakcoint")
-    (version "1.0.4")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xtbreakcoint" version))
        (sha256
-        (base32 "0miz6lvwy70fg2x2l10vzcnrafrwk92xdbfd39qspp7rr2mp4rzb"))))
+        (base32 "0277fhcxlq4arc4rc28i50j6bzq8hrwfzw2p8ly8wqmnvp0qh6dk"))))
     (properties `((upstream-name . "xtbreakcoint")))
     (build-system r-build-system)
     (arguments

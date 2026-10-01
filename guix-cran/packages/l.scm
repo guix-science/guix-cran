@@ -12177,6 +12177,35 @@ higher order polynomial models.  Jhang et al. (2004)
 <doi:10.1043/1543-2165(2004)128%3C44:EOLITC%3E2.0.CO;2>.")
     (license license:expat)))
 
+(define-public r-limpidr
+  (package
+    (name "r-limpidr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "limpidR" version))
+       (sha256
+        (base32 "1kx2v4wm9nqzwml0lv6177ryz6bxwjp3q22pj0pwmz5pbh93irrl"))))
+    (properties `((upstream-name . "limpidR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=limpidR")
+    (synopsis "Reproducible Analysis of Freshwater Microplastic Data")
+    (description
+     "This package provides validation, harmonization, descriptive analysis,
+compositional analysis, transparent risk components, grouped cross-validation,
+visualization, and predictive modelling tools for freshwater microplastic
+datasets.  The package includes synthetic demonstration data conforming to the
+LIMPID-India data model and emphasizes explicit units, provenance, percentage
+closure, non-imputation of missing environmental covariates, and leakage-aware
+model evaluation.")
+    (license license:expat)))
+
 (define-public r-limorhyde2
   (package
     (name "r-limorhyde2")
@@ -19797,6 +19826,36 @@ available from <https://github.com/MAnalytics/akmedoids>.")
  Replace error-prone @code{LaTeX} syntax with readable, modular functions that
 make mathematical typesetting straightforward and maintainable.")
     (license license:gpl3+)))
+
+(define-public r-latexr
+  (package
+    (name "r-latexr")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "latexr" version))
+       (sha256
+        (base32 "00pf4zf7dyr1zngm0fcz6xxdhwhmjmz8jcnfgq782gw2lgvk3kvl"))))
+    (properties `((upstream-name . "latexr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-r6 r-purrr))
+    (home-page "https://github.com/rodrigoesborges/latexr")
+    (synopsis "Translate 'LaTeX' Formulas to R Code")
+    (description
+     "This package implements a minimal @code{LaTeX} parser that translates
+mathematical formulas into R code strings.  Supports arithmetic operators,
+implicit multiplication, fractions, Greek letters, common mathematical
+functions, and statistical notation for means, medians, and rolling sums.  Input
+from visual formula editors such as @code{MathQuill} is normalized
+automatically, and the resulting string can be evaluated with @code{parse()} and
+@code{eval()}, or converted into an R function with @code{latex2fun()}.  The
+implementation follows the tree-walking interpreter design of Nystrom (2021)
+<https://craftinginterpreters.com/>.")
+    (license license:expat)))
 
 (define-public r-latexpdf
   (package

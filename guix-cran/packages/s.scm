@@ -3054,13 +3054,13 @@ permutation tests.  Includes simulation utilities replicating Wang et al. (2023
 (define-public r-svyse
   (package
     (name "r-svyse")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "svySE" version))
        (sha256
-        (base32 "01s9nky1j40yssl801zbjzd96s12nwvmkmb5a33z7mpz5bxzdyi5"))))
+        (base32 "017ph66pz5ajswq2b5byqcqamkgni6sj6xvdfd3rnxdnfh01z2cx"))))
     (properties `((upstream-name . "svySE")))
     (build-system r-build-system)
     (arguments
@@ -3072,14 +3072,15 @@ permutation tests.  Includes simulation utilities replicating Wang et al. (2023
     (synopsis "Sampling Error Estimation for Complex Surveys")
     (description
      "Estimates sampling errors and produces indicator tables for complex survey data.
- Supports weighted totals, proportions, standard errors, confidence intervals,
-coefficients of variation, design effects, unweighted frequencies, grouped
-estimates, domain estimates, optional stratification and clustering variables,
-and customizable exports to .xlsx files.  Survey estimation is based on
-design-based inference using Taylor series linearization implemented in the
-survey package (Lumley, 2004, <doi:10.18637/jss.v009.i08>; Lumley, 2010,
-ISBN:9780470284308).  The package provides a reproducible workflow for official
-statistics, household surveys, and applied survey research.")
+ Supports weighted totals, proportions, standard errors, confidence intervals
+(Wald or logit-transformed for proportions), coefficients of variation, design
+effects, unweighted frequencies, grouped estimates, domain estimates, optional
+stratification and clustering variables, and customizable exports to .xlsx
+files.  Survey estimation is based on design-based inference using Taylor series
+linearization implemented in the survey package (Lumley, 2004,
+<doi:10.18637/jss.v009.i08>; Lumley, 2010, ISBN:9780470284308).  The package
+provides a reproducible workflow for official statistics, household surveys, and
+applied survey research.")
     (license license:expat)))
 
 (define-public r-svyroc
@@ -3558,6 +3559,33 @@ determine the decision on testing hypotheses over one or two population means.
 In sum, Sv-plots will be appealing visualization tools.  Complete description of
 this methodology can be found in the article, Wijesuriya (2020)
 <doi:10.1080/03610918.2020.1851716>.")
+    (license license:gpl3)))
+
+(define-public r-svpchange
+  (package
+    (name "r-svpchange")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "svpChange" version))
+       (sha256
+        (base32 "1rf3594d296amyxydgambwiagwg3jdkm0c40s0f21kjshj0wylrl"))))
+    (properties `((upstream-name . "svpChange")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (home-page "https://github.com/vrunge/svpChange")
+    (synopsis "Smallest Valid Partitioning for Change-Point Detection")
+    (description
+     "This package provides methods for detecting multiple change-points and
+segmenting univariate time series using Smallest Valid Partitioning (SVP).  SVP
+searches for a partition with the smallest number of segments whose segments
+satisfy a user-defined or built-in validity test.  Among partitions with the
+same number of segments, it minimizes a within-segment sum-of-squared-errors
+criterion.")
     (license license:gpl3)))
 
 (define-public r-svn
@@ -20051,13 +20079,13 @@ treated (ATT), and provides placebo-in-time confidence intervals and p-values.")
 (define-public r-staggr
   (package
     (name "r-staggr")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "staggR" version))
        (sha256
-        (base32 "0i8xlyzbssm5s59wy1zdz4swv8xwfhafdkbdr01ba15bq0kxxzsz"))))
+        (base32 "0h1gxzfyx02p7rkh0bnnnpaxym769i3dbfi7yk135fqxb2prgx4p"))))
     (properties `((upstream-name . "staggR")))
     (build-system r-build-system)
     (arguments
@@ -20750,13 +20778,13 @@ Lima et al (2021) <doi:10.1038/s41598-020-79317-8>, Meinshausen and Buhlmann
 (define-public r-staat1cho
   (package
     (name "r-staat1cho")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "staat1cho" version))
        (sha256
-        (base32 "1k7gmyynfd9zkkpijpzphiyxyn808hw6mjrqxgfipy8zhllbvx3s"))))
+        (base32 "1dsban5k8mpp13bvyq8zk75il64fd0ss3q5msczr8mcycgfw5qxv"))))
     (properties `((upstream-name . "staat1cho")))
     (build-system r-build-system)
     (arguments
@@ -21928,19 +21956,20 @@ correlation functions.")
 (define-public r-sslfmm
   (package
     (name "r-sslfmm")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SSLfmm" version))
        (sha256
-        (base32 "19y7bjjywj31iycml72airj797plpznmqr5hznpnamq8wg4dnid5"))))
+        (base32 "1skxqkkbn3ipq8sjlaqcp60vpsrsnxjb579bp332014rmv1ry1v0"))))
     (properties `((upstream-name . "SSLfmm")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://cran.r-project.org/package=SSLfmm")
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/wujrtudou/SSLfmm")
     (synopsis
      "Semi-Supervised Learning with Mixed Missingness in Finite Mixture Models")
     (description
@@ -32128,13 +32157,13 @@ spatial error model, Journal of Statistical Computation and Simulation,
 (define-public r-spatialrisk
   (package
     (name "r-spatialrisk")
-    (version "0.8.2")
+    (version "0.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spatialrisk" version))
        (sha256
-        (base32 "1563p77zyw7v7x2mrqr2c49kiwkzf7xg51gqcwwpqpjf72qhlwd2"))))
+        (base32 "0iibnk8r1hm3sqvxyfpdfx1m8pixc4cynrkr08hy60ikhqik3s5q"))))
     (properties `((upstream-name . "spatialrisk")))
     (build-system r-build-system)
     (arguments
@@ -40651,13 +40680,13 @@ including @code{expect_snapshot_data()} for data.frames and
 (define-public r-snapkrig
   (package
     (name "r-snapkrig")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "snapKrig" version))
        (sha256
-        (base32 "1ncxr44h9497caaq5c5v10qsrqyh3flcs1f8h220hcd3zmw93y4x"))))
+        (base32 "1zf0zn5y8kjn0zkcrk6n7k6kj2xc0hmvkl9xp0g2msvd0s8k4z0f"))))
     (properties `((upstream-name . "snapKrig")))
     (build-system r-build-system)
     (arguments
@@ -49490,13 +49519,13 @@ polynomials and adaptive methods for integrating an arbitrary function.")
 (define-public r-simplicialcomplex
   (package
     (name "r-simplicialcomplex")
-    (version "0.1.2")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SimplicialComplex" version))
        (sha256
-        (base32 "1d5darjxmv4id6gla4dfih4g6sl02i4rhyk8p6wc1spdl4ykfhf0"))))
+        (base32 "14pam9xhah43rpgvlcqcx5kqsjizrfdszavm4b868k7ixnzy5rjs"))))
     (properties `((upstream-name . "SimplicialComplex")))
     (build-system r-build-system)
     (arguments
@@ -49504,6 +49533,7 @@ polynomials and adaptive methods for integrating an arbitrary function.")
       #:tests? #f))
     (propagated-inputs (list r-rann
                              r-matrix
+                             r-mass
                              r-igraph
                              r-gtools
                              r-ggplot2
@@ -62156,13 +62186,13 @@ can also be used via the website interface at <http://sfinx.ugent.be>.")
 (define-public r-sfhotspot
   (package
     (name "r-sfhotspot")
-    (version "1.0.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sfhotspot" version))
        (sha256
-        (base32 "1cy157rq1f9fyqnlcsfryjl8snar48dzgxqs4flg7ba44wlrmx3p"))))
+        (base32 "1gbp548jk3arzdsw5fdpkmxf1wiqc497y2sxxxqcpp90kvlzv3g0"))))
     (properties `((upstream-name . "sfhotspot")))
     (build-system r-build-system)
     (arguments
@@ -62173,10 +62203,14 @@ can also be used via the website interface at <http://sfinx.ugent.be>.")
                              r-spatialkde
                              r-sf
                              r-rlang
+                             r-isoband
+                             r-ggspatial
                              r-ggplot2
-                             r-cli))
-    (native-inputs (list r-quarto))
-    (home-page "http://pkgs.lesscrime.info/sfhotspot/")
+                             r-dbscan
+                             r-cli
+                             r-classint))
+    (native-inputs (list r-knitr))
+    (home-page "https://pkgs.lesscrime.info/sfhotspot/")
     (synopsis "Hot-Spot Analysis with Simple Features")
     (description
      "Identify and understand clusters of points (typically representing the locations
@@ -63681,13 +63715,13 @@ images/containers.")
 (define-public r-serad
   (package
     (name "r-serad")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "serad" version))
        (sha256
-        (base32 "10i7z24nc823zb3zxlf4dqhwx5asyjsbaphz2h47zfcxcs5dmq0y"))))
+        (base32 "0lc9cgr67y26ss8p0ndqhgbprflmzlwabq70qnr8092waws746w1"))))
     (properties `((upstream-name . "serad")))
     (build-system r-build-system)
     (arguments
@@ -65177,6 +65211,33 @@ clustering and imputation simultaneously.")
 <https://app.sensortower.com/api/docs/app_analysis>.  Composes discovery,
 metadata, rankings, sales, audience and specialist estimates through ordinary
 data frames with explicit identifiers, units and error handling.")
+    (license license:expat)))
+
+(define-public r-sensorleak
+  (package
+    (name "r-sensorleak")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sensorLeak" version))
+       (sha256
+        (base32 "032ngl0nkkb7xghq3qg0wb0hx04jr9fa061hgjbyaz0fav6asag8"))))
+    (properties `((upstream-name . "sensorLeak")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/division55/sensorLeak")
+    (synopsis "Leakage Detection for Environmental Sensor Data")
+    (description
+     "This package provides tools for identifying potential information leakage and
+validation risks in machine learning workflows using environmental sensor data.
+The package includes checks for temporal ordering, shared sensors, spatial
+proximity, and overlapping temporal windows.  The diagnostics are motivated by
+considerations of spatial and temporal structure in model validation (Roberts et
+al., 2017) <doi:10.1111/ecog.02881>.")
     (license license:expat)))
 
 (define-public r-sensominer
@@ -70217,6 +70278,51 @@ lookups.  We use it to implement fast k-Nearest Neighbor and Rectangular range
 lookups in 2 dimenions.  The primary target is high performance interactive
 graphics.")
     (license license:lgpl2.0+)))
+
+(define-public r-searchlight
+  (package
+    (name "r-searchlight")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "searchlight" version))
+       (sha256
+        (base32 "1nbw2iccb3nw5a4242m6hgjnfxk6fychxn66g22kr39np4nnycrl"))))
+    (properties `((upstream-name . "searchlight")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-withr
+                             r-tidyr
+                             r-tibble
+                             r-suncalc
+                             r-spdep
+                             r-sf
+                             r-rlang
+                             r-readr
+                             r-posterior
+                             r-mass
+                             r-jsonlite
+                             r-httr2
+                             r-ggplot2
+                             r-dplyr
+                             r-digest
+                             r-commonmark
+                             r-cli
+                             r-carbayes))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/BlackThrive/searchlight")
+    (synopsis "Audited Analysis of Police Stop and Search Records")
+    (description
+     "Acquire and audit public police stop and search archives for England and Wales,
+retaining provenance and explicit coverage information.  Designed for
+exposure-based ethnic disparity analysis with separately reported sampling and
+assumption uncertainty.  Contains public sector information licensed under the
+Open Government Licence v3.0.")
+    (license license:expat)))
 
 (define-public r-searcher
   (package

@@ -8514,6 +8514,47 @@ statistics, draws empirical 3D item category response curves, draws theoretical
 simulation studies.")
     (license license:gpl2+)))
 
+(define-public r-estbanr
+  (package
+    (name "r-estbanr")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "estbanr" version))
+       (sha256
+        (base32 "0p9a4bfapz4dxxrpkxcf7cv0rnwq8f1gm6kyr142fhrq9sfndlig"))))
+    (properties `((upstream-name . "estbanr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-stringi
+                             r-rlang
+                             r-readr
+                             r-httr2
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://strategicprojects.github.io/estbanr/")
+    (synopsis "Brazilian Monthly Banking Statistics by Municipality (ESTBAN)")
+    (description
+     "Download, read and tidy the ESTBAN (Estatistica Bancaria Mensal por Municipio,
+Monthly Banking Statistics by Municipality) files published by the Brazilian
+Central Bank (Banco Central do Brasil) for every bank branch and municipality in
+Brazil.  Each file reports balance-sheet accounts of the COSIF (Plano Contabil
+das Instituicoes do Sistema Financeiro Nacional, the chart of accounts of the
+Brazilian financial system) such as credit operations, deposits and savings.
+Files are fetched from the official site
+<https://www.bcb.gov.br/estatisticas/estatisticabancariamunicipios> with an
+idempotent local cache, read from their Latin-1 encoded CSV (comma-separated
+values) layout into tibbles, optionally filtered by state, and aggregated by
+municipality.  Includes tools to detect and impute institution-month non-reports
+(an institution present in the file with every account equal to zero), which
+would otherwise be mistaken for zero balances.")
+    (license license:expat)))
+
 (define-public r-estats
   (package
     (name "r-estats")
@@ -22389,13 +22430,13 @@ lower bound calculation.")
 (define-public r-efa-dimensions
   (package
     (name "r-efa-dimensions")
-    (version "0.1.9.1")
+    (version "0.1.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EFA.dimensions" version))
        (sha256
-        (base32 "10bhj3b31lzgsd6klg5j42z7kj3cy9vj45rsj6l4ln8v3xbjgchc"))))
+        (base32 "0ffrj8iq9y4znxpzpqcn45y0a7jcwzbv49xfb24rxs7x0xr16ww1"))))
     (properties `((upstream-name . "EFA.dimensions")))
     (build-system r-build-system)
     (arguments
@@ -22408,7 +22449,6 @@ lower bound calculation.")
                              r-lavaan
                              r-gparotation
                              r-efatools))
-    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=EFA.dimensions")
     (synopsis
      "Exploratory Factor Analysis Functions for Assessing Dimensionality")
@@ -26050,6 +26090,42 @@ growth through the normalized difference vegetation index (NDVI).  Please see
 Souza et al. (2016) <doi:10.1002/hyp.10953>.")
     (license license:gpl2)))
 
+(define-public r-ecoglmm
+  (package
+    (name "r-ecoglmm")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ecoGLMM" version))
+       (sha256
+        (base32 "1lm5y41lgbwf2m8kj3rmaamgb4drsdfdsllvlqy615h18q3w0p0g"))))
+    (properties `((upstream-name . "ecoGLMM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-writexl
+                             r-performance
+                             r-mumin
+                             r-glmmtmb
+                             r-ggplot2
+                             r-ggeffects
+                             r-dharma))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/andre-fcsantos/ecoGLMM")
+    (synopsis
+     "Reproducible Ecological Generalized Linear Mixed Model Pipelines")
+    (description
+     "Fits and compares generalized linear mixed models for multiple ecological
+responses and environmental predictors.  The package supports additive and
+temporal-interaction candidate models, AICc model selection, likelihood-ratio
+tests, coefficient extraction, Nakagawa R-squared, simulation-based diagnostics,
+figures, and spreadsheet exports.  Model selection follows Burnham and Anderson
+(2002, ISBN:9780387953649); marginal and conditional R-squared follow Nakagawa
+and Schielzeth (2013) <doi:10.1111/j.2041-210x.2012.00261.x>.")
+    (license license:expat)))
+
 (define-public r-ecoensemble
   (package
     (name "r-ecoensemble")
@@ -28476,13 +28552,13 @@ output SVG elements into a SVG file.")
 (define-public r-easysurv
   (package
     (name "r-easysurv")
-    (version "2.0.2")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "easysurv" version))
        (sha256
-        (base32 "1yiwqizc806fmannszyalb3zv6f631pp3f6n5ps599kn8fn5bvrl"))))
+        (base32 "08aqhfc3mcw5hbzwbf4zq2dxy25lnwxfr6z5qvj4j07xvnv64skx"))))
     (properties `((upstream-name . "easysurv")))
     (build-system r-build-system)
     (arguments
@@ -29504,13 +29580,13 @@ functions support various bioinformatics workflows.  See Wei Cui (2024) <doi:
 (define-public r-easybgm
   (package
     (name "r-easybgm")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "easybgm" version))
        (sha256
-        (base32 "1nqsd99pkr6nh42sxpv15sbsj7n3ffhv06lrh2fzgi798k45b9gq"))))
+        (base32 "08y7w8nq37dfj51z3byznm7snxczcjrfcfrqsn9jiw95fmq4n3r7"))))
     (properties `((upstream-name . "easybgm")))
     (build-system r-build-system)
     (arguments

@@ -2656,13 +2656,13 @@ Beffa, Junxi Wang, Jialiang Li, Frank Pessler, Frank Klawonn (2014)
 (define-public r-huito
   (package
     (name "r-huito")
-    (version "0.2.7")
+    (version "0.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "huito" version))
        (sha256
-        (base32 "05j4dxgnv9r78h5kf3lh0k3b0sh7x4rn6lxw89lsp0nw6a7dvf3b"))))
+        (base32 "0w7h8gvgz4hvvxy85ys9l1yfhq7bzp6ra096abr0cq2z06gl65m1"))))
     (properties `((upstream-name . "huito")))
     (build-system r-build-system)
     (arguments
@@ -6448,6 +6448,30 @@ The package automatically imports multiple HOBO data records, removes duplicate
 records, identifies impossible values, subsets user-defined time ranges, and
 summarizes environmental data.")
     (license license:expat)))
+
+(define-public r-hobbs
+  (package
+    (name "r-hobbs")
+    (version "0.4.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hobbs" version))
+       (sha256
+        (base32 "1b81nwsaz0ygpam134jsadi79116a1q5cfkcc5vdwj78qvprq7xm"))))
+    (properties `((upstream-name . "hobbs")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (home-page "https://hobbs-dev.github.io/")
+    (synopsis "High Dimensional Bayesian Omnibus Sampler")
+    (description
+     "Enables high dimensional statistical modeling using Bayesian inference and
+provides a probabilistic programming language for high dimensional problems.
+See Kleinsasser (2026) <doi:10.5281/zenodo.22309216>.")
+    (license license:gpl3)))
 
 (define-public r-hoasso
   (package
@@ -17011,6 +17035,35 @@ compatible, haversine function.  For the first publication on the haversine
 calculation see Joseph de Mendoza y RÃ­os (1795)
 <https://books.google.cat/books?id=030t0@code{OqlX2AC>} (In Spanish).")
     (license license:expat)))
+
+(define-public r-hannlp
+  (package
+    (name "r-hannlp")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HanNLP" version))
+       (sha256
+        (base32 "11xg43amm9lg3bhi7aygmi8bk4dy0gpca4l028zv1qzk0crbxgzp"))))
+    (properties `((upstream-name . "HanNLP")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/ShapeLayer/HanNLP")
+    (synopsis "Korean Morphological Analysis and Hangul Utilities")
+    (description
+     "This package provides Korean morphological analysis, part-of-speech (POS)
+tagging, noun extraction, Hangul (Korean script) conversion utilities,
+concordance search, mutual information statistics, and user dictionary
+management tools for Korean text research.  The morphological analyzer backend
+is derived from the @code{KoNLP} package and the @code{HanNanum} analyzer, and
+is reimplemented in native C so that no Java runtime is required.  Bundled
+dictionary and statistical resources allow analysis to work out of the box, and
+optional dictionaries can be loaded at runtime from the Sejong and NIADic
+packages when they are installed and loaded.")
+    (license license:gpl3)))
 
 (define-public r-hann
   (package

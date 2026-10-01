@@ -2095,13 +2095,13 @@ determination of the best fit model.")
 (define-public r-punycoder
   (package
     (name "r-punycoder")
-    (version "1.2.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "punycoder" version))
        (sha256
-        (base32 "0ksxmfwlr7zz3q1fwdmyql5fh0lpw6ssg3gyyxvmgbqsdv591s80"))))
+        (base32 "1kxvr6jfaa26fzxig8d4a91w04c62cpqn4r6adnqxcd2yaf0j3kf"))))
     (properties `((upstream-name . "punycoder")))
     (build-system r-build-system)
     (arguments
@@ -2109,7 +2109,7 @@ determination of the best fit model.")
       #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (native-inputs (list pkg-config r-knitr))
-    (home-page "https://bart-turczynski.github.io/punycoder/")
+    (home-page "https://gitlab.com/bart-turczynski/punycoder")
     (synopsis "Unicode and Punycode Domain Name Processing")
     (description
      "High-performance Unicode and Punycode processing for internationalized domain
@@ -2119,12 +2119,9 @@ Encoding of RFC 5890/5891); they perform the raw transform plus
 letter-digit-hyphen checks and do not apply Unicode IDNA normalization.
 @code{host_normalize()} is the Unicode Technical Standard #46 host-normalization
 entry point, mapping a host name to a canonical lowercase ASCII comparison form
-(non-transitional profile, pinned Unicode version).  The @code{url_encode()} /
-@code{url_decode()} / @code{parse_url()} helpers do best-effort host extraction
-and rewriting in URL-shaped strings and are deliberately not RFC 3986 / WHATWG
-URL parsers or canonicalizers; they are deprecated in favor of dedicated URL
-packages.  Aimed at host normalization and data analysis workflows.  Used as the
-Punycode and IDNA engine by the pslr and rurl packages.")
+(non-transitional profile, pinned default Unicode version, selectable per call
+from the set the build ships).  Aimed at host normalization and data analysis
+workflows.  Used as the Punycode and IDNA engine by the pslr and rurl packages.")
     (license license:expat)))
 
 (define-public r-pump
@@ -2727,29 +2724,34 @@ Moss and De Bin (2019) <@code{arXiv:1911.12445>}.")
 (define-public r-publicationbiasbenchmark
   (package
     (name "r-publicationbiasbenchmark")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PublicationBiasBenchmark" version))
        (sha256
-        (base32 "14h734cpq00chm56ysdsrzq61vk4hnby03iflnvbds72sg3vq24j"))))
+        (base32 "1ldqijwxzfr5lcn4hbai0kclfxzi3bc2f4yngxddw37i4s75458q"))))
     (properties `((upstream-name . "PublicationBiasBenchmark")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-sandwich
+                             r-rstan
+                             r-robumeta
                              r-rdpack
                              r-pwr
                              r-puniform
+                             r-publipha
+                             r-phacking
                              r-osfr
                              r-numderiv
                              r-metafor
                              r-mass
                              r-maive
                              r-lmtest
-                             r-clubsandwich))
+                             r-clubsandwich
+                             r-callr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/FBartos/PublicationBiasBenchmark")
     (synopsis "Benchmark for Publication Bias Correction Methods")
@@ -17493,13 +17495,13 @@ metadata about workspaces and users are also supported.")
 (define-public r-powerbal
   (package
     (name "r-powerbal")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "poweRbal" version))
        (sha256
-        (base32 "0s682l4ad1fdnj86czwy7dwj95k9wpb5rh3lg0rr5r69h0z40qq3"))))
+        (base32 "1n9q6wriwan2lvqx94b1zsp74mnajayygyrf8y3jjddi5qh86xg9"))))
     (properties `((upstream-name . "poweRbal")))
     (build-system r-build-system)
     (arguments
@@ -21761,13 +21763,13 @@ the base temperature for growing degree days (Yang et al. (1995)
 (define-public r-polle
   (package
     (name "r-polle")
-    (version "1.6.4")
+    (version "1.6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "polle" version))
        (sha256
-        (base32 "0cnvx483daz8vj4i05477llmip1q3jxw46pnz33nlx7zvchlzjrl"))))
+        (base32 "0wx0wphsla11c46af5zvdhv00yqz9m2yxbc1qq5dz8p0093wwm24"))))
     (properties `((upstream-name . "polle")))
     (build-system r-build-system)
     (arguments
@@ -21775,7 +21777,6 @@ the base temperature for growing degree days (Yang et al. (1995)
       #:tests? #f))
     (propagated-inputs (list r-targeted
                              r-survival
-                             r-superlearner
                              r-progressr
                              r-policytree
                              r-lava
@@ -29950,6 +29951,40 @@ exploited more efficiently.  Allocation free problem updates and re-solves are
 also provided.")
     (license license:bsd-2)))
 
+(define-public r-pipr
+  (package
+    (name "r-pipr")
+    (version "1.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pipr" version))
+       (sha256
+        (base32 "159qhgyivi7gayqn6fc7abdxjcl1hlbvsywslj8pqrjdjj38qgd8"))))
+    (properties `((upstream-name . "pipr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vroom
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-jsonlite
+                             r-httr2
+                             r-curl
+                             r-cli
+                             r-attempt
+                             r-arrow))
+    (home-page "https://worldbank.github.io/pipr/")
+    (synopsis "Client for the Poverty and Inequality Platform ('PIP') API")
+    (description
+     "An interface to compute poverty and inequality indicators for more than 160
+countries and regions from the World Bank's database of household surveys,
+through the Poverty and Inequality Portal (PIP).")
+    (license license:expat)))
+
 (define-public r-pipetime
   (package
     (name "r-pipetime")
@@ -35682,13 +35717,13 @@ inference on diversity indexes, writing data.frame with Chinese characters.")
 (define-public r-pgenlibr
   (package
     (name "r-pgenlibr")
-    (version "0.6.2")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pgenlibr" version))
        (sha256
-        (base32 "1gv2a8kq8gjz0cgzcs2xhxr43vzd3c2smvvvy1d5s9qdi8w20dg7"))))
+        (base32 "0n1q99ai01bjxn5n4154r83wldz7y7j4j8sylr9i1lj17dj1gvmr"))))
     (properties `((upstream-name . "pgenlibr")))
     (build-system r-build-system)
     (arguments
@@ -35701,8 +35736,9 @@ inference on diversity indexes, writing data.frame with Chinese characters.")
     (synopsis "'PLINK' 2 Binary (.pgen) Reader")
     (description
      "This package provides a thin wrapper over PLINK 2's core libraries which
-provides an R interface for reading .pgen files.  A minimal .pvar loader is also
-included.  Chang et al. (2015) <doi:10.1186/s13742-015-0047-8>.")
+provides an R interface for reading .pgen files.  A minimal .pvar loader and a
+basic .pgen writer are also included.  Chang et al. (2015)
+<doi:10.1186/s13742-015-0047-8>.")
     (license license:lgpl3+)))
 
 (define-public r-pgee-mixed
@@ -39678,6 +39714,36 @@ pedigree structure ('Vazquez et al., 2010') <doi:10.2527/jas.2009-1952>.")
     (description "Pedigree related functions.")
     (license license:gpl2+)))
 
+(define-public r-pediatric-zcalc
+  (package
+    (name "r-pediatric-zcalc")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pediatric.zcalc" version))
+       (sha256
+        (base32 "0f0zw8nbxj32vf2q7ff4q0ks3lcbc418bx8h3yvwx1yfqcimbmr9"))))
+    (properties `((upstream-name . "pediatric.zcalc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-pracma r-gamlss-dist))
+    (home-page "https://github.com/bips-hb/pediatric.zcalc")
+    (synopsis
+     "Z-Score Calculator for Biomarkers: Childhood to Young Adulthood")
+    (description
+     "This package provides tools to compute individual percentile ranks and z-scores
+for clinical biomarkers in children, adolescents and young adults, based on
+age-, sex-, and height-specific reference data from the IDEFICS (Identification
+and prevention of Dietary and lifestyle-induced health EFfects In Children and
+@code{infantS}) study and the Biomarkers4Pediatrics collaboration.  Supports the
+computation of a composite Metabolic Syndrome (@code{MetS}) score and associated
+monitoring/action levels for health monitoring.  For more details see Ahrens et
+al. (2014) <doi:10.1038/ijo.2014.130>.")
+    (license license:gpl3)))
+
 (define-public r-pedgene
   (package
     (name "r-pedgene")
@@ -41063,13 +41129,13 @@ sample.")
 (define-public r-pdfcombiner
   (package
     (name "r-pdfcombiner")
-    (version "1.9.8")
+    (version "1.9.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pdfcombiner" version))
        (sha256
-        (base32 "1yid4ygg67yz2n3ahwv4009cn70w2l2z4q8f13xfx8wrbirhcszb"))))
+        (base32 "046yw73zm8yk3iwfvl7mizsfi7661j23aj4zgky0v6y9snhvmyni"))))
     (properties `((upstream-name . "pdfcombiner")))
     (build-system r-build-system)
     (arguments
@@ -46662,6 +46728,40 @@ dimensions and categories, highlighting single flows and displaying mouse over
 information.  The plotly.js dependency is quite heavy and therefore is
 outsourced into a separate package.")
     (license license:expat)))
+
+(define-public r-parbayesianoptimization
+  (package
+    (name "r-parbayesianoptimization")
+    (version "1.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ParBayesianOptimization" version))
+       (sha256
+        (base32 "00wi1vkkrmhi0lfyvnh33wzny6wpmcj8740f0aqj94zpgvgj2hfr"))))
+    (properties `((upstream-name . "ParBayesianOptimization")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-lhs
+                             r-ggpubr
+                             r-ggplot2
+                             r-foreach
+                             r-dicekriging
+                             r-dbscan
+                             r-data-table
+                             r-crayon))
+    (native-inputs (list r-quarto))
+    (home-page "https://github.com/novica/ParBayesianOptimization")
+    (synopsis "Parallel Bayesian Optimization of Hyperparameters")
+    (description
+     "Fast, flexible framework for implementing Bayesian optimization of model
+hyperparameters according to the methods described in Snoek et al. (2012)
+<doi:10.48550/@code{arXiv.1206.2944>}.  The package allows the user to run
+scoring function in parallel, save intermediary results, and tweak other aspects
+of the process to fully utilize the computing resources available to the user.")
+    (license license:gpl2)))
 
 (define-public r-parasiter
   (package
