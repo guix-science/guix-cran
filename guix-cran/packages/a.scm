@@ -7822,13 +7822,13 @@ NB-frequent itemsets and NB-precise rules.  Michael Hahsler (2006)
 (define-public r-arulescba
   (package
     (name "r-arulescba")
-    (version "1.2.9")
+    (version "1.2.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arulesCBA" version))
        (sha256
-        (base32 "0p6wsqlh5jldsa0nqw2vzjzdvby5j3lbiamsafmclw6cipdblwp2"))))
+        (base32 "1d9pkwhb4cc2qf850ra8qsdfscg732ggwnhihhzd0pp6056snci7"))))
     (properties `((upstream-name . "arulesCBA")))
     (build-system r-build-system)
     (arguments
@@ -7836,6 +7836,7 @@ NB-frequent itemsets and NB-precise rules.  Michael Hahsler (2006)
       #:tests? #f))
     (inputs (list openjdk))
     (propagated-inputs (list r-matrix r-glmnet r-discretization r-arules))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/mhahsler/arulesCBA")
     (synopsis "Classification Based on Association Rules")
     (description
@@ -17159,52 +17160,6 @@ and receiver sets.  The endogenous-effect and case-control estimation machinery
 follows Juozaitiene and Wit (2024) <doi:10.1093/jrsssa/qnae132>.")
     (license license:expat)))
 
-(define-public r-amnlfa
-  (package
-    (name "r-amnlfa")
-    (version "1.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "aMNLFA" version))
-       (sha256
-        (base32 "1bks7g6zc8817gr4j1mxzmyhw23mwafb6816a26vylk8d9k9d315"))))
-    (properties `((upstream-name . "aMNLFA")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-stringi
-                             r-reshape2
-                             r-plyr
-                             r-mplusautomation
-                             r-gridextra
-                             r-ggplot2
-                             r-dplyr
-                             r-devtools))
-    (home-page "https://cran.r-project.org/package=aMNLFA")
-    (synopsis "Automated Moderated Nonlinear Factor Analysis Using 'M-plus'")
-    (description
-     "Automated generation, running, and interpretation of moderated nonlinear factor
-analysis models for obtaining scores from observed variables, using the method
-described by Gottfredson and colleagues (2019)
-<doi:10.1016/j.addbeh.2018.10.031>.  This package creates M-plus input files
-which may be run iteratively to test two different types of covariate effects on
-items: (1) latent variable impact (both mean and variance); and (2) differential
-item functioning.  After sequentially testing for all effects, it also creates a
-final model by including all significant effects after adjusting for multiple
-comparisons.  Finally, the package creates a scoring model which uses the final
-values of parameter estimates to generate latent variable scores. \\n\\n This
-package generates TEMPLATES for M-plus inputs, which can and should be
-inspected, altered, and run by the user.  In addition to being presented without
-warranty of any kind, the package is provided under the assumption that everyone
-who uses it is reading, interpreting, understanding, and altering every M-plus
-input and output file.  There is no one right way to implement moderated
-nonlinear factor analysis, and this package exists solely to save users time as
-they generate M-plus syntax according to their own judgment.")
-    (license license:gpl2)))
-
 (define-public r-ammoniaconcentration
   (package
     (name "r-ammoniaconcentration")
@@ -23699,13 +23654,13 @@ Bayesian Inference: the aghq Package\" <@code{arXiv:2101.04468>}.")
 (define-public r-aghmatrix
   (package
     (name "r-aghmatrix")
-    (version "3.0.1")
+    (version "3.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AGHmatrix" version))
        (sha256
-        (base32 "0v0km5djj2ir13xzxb6pzr201dsxqf6w04xm9m8savhvz91swmkn"))))
+        (base32 "1kbysxw3n7ai6p2r5kwmavs14mb5v20j8n8n6pa7krmhs1x22d42"))))
     (properties `((upstream-name . "AGHmatrix")))
     (build-system r-build-system)
     (arguments
@@ -30779,13 +30734,13 @@ X, Lu W and Rabinowitz J (2017) <doi:10.1021/acs.analchem.7b00396>.")
 (define-public r-accsamplingdesign
   (package
     (name "r-accsamplingdesign")
-    (version "0.0.9")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AccSamplingDesign" version))
        (sha256
-        (base32 "0l8p4a2gglpij1mdxlra4827qj7s4nnxla9g5rscnfvkfpv3ihsf"))))
+        (base32 "033dv1zd7qwkwi57hsi10rxpd4zgs4vj6zir51pl8y1hx33i1idk"))))
     (properties `((upstream-name . "AccSamplingDesign")))
     (build-system r-build-system)
     (arguments

@@ -44,13 +44,13 @@
 (define-public r-hzip
   (package
     (name "r-hzip")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HZIP" version))
        (sha256
-        (base32 "181l02vd9r87jp5clz2qyqgglcf3ljkmfjfba4fx4q87nm8h6j6n"))))
+        (base32 "053n1i9hqanh8sxahc2xzks76znx0jyjg3higqjjx00qj0a1zps6"))))
     (properties `((upstream-name . "HZIP")))
     (build-system r-build-system)
     (arguments
@@ -16077,13 +16077,13 @@ procedures.")
 (define-public r-hatemicoint
   (package
     (name "r-hatemicoint")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hatemicoint" version))
        (sha256
-        (base32 "0w6gc7fd05isd90l3257j6rskpzzkf3z2r7mwbi06xvmmidffidi"))))
+        (base32 "1bmyp5ypnqbhmlg09s1rz85nds6h1nq6l7pnwb8kh4mv7kjdsdik"))))
     (properties `((upstream-name . "hatemicoint")))
     (build-system r-build-system)
     (arguments
@@ -16097,7 +16097,11 @@ two unknown structural breaks (regime shifts) in the cointegrating relationship.
  The test provides three test statistics: ADF* (Augmented Dickey-Fuller), Zt*
 (Phillips-Perron Z_t), and Za* (Phillips-Perron Z_alpha), along with
 endogenously determined break dates.  Critical values are based on simulations
-from Hatemi-J (2008) <doi:10.1007/s00181-007-0175-9>.")
+from Hatemi-J (2008) <doi:10.1007/s00181-007-0175-9>.  The long-run variance in
+the Phillips statistics is estimated by default with a prewhitened quadratic
+spectral kernel and the automatic bandwidth of Andrews (1991)
+<doi:10.2307/2938229>, following Andrews and Monahan (1992)
+<doi:10.2307/2951574>.")
     (license license:gpl3)))
 
 (define-public r-hatchr

@@ -2301,13 +2301,13 @@ via both ggplot2 and interactive plotly visualizations.  See Korkmaz et al.
 (define-public r-mvmorph
   (package
     (name "r-mvmorph")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mvMORPH" version))
        (sha256
-        (base32 "10yvpzi1kji0mpcfcrzf1c7bcfr9cqqfb4y28n5f413iihwyds32"))))
+        (base32 "1kq0czcpsk4livdf98wg56fxzk67hv7gjmh5z49mjwkvvqfhypd2"))))
     (properties `((upstream-name . "mvMORPH")))
     (build-system r-build-system)
     (arguments
@@ -3281,13 +3281,13 @@ components) of the response (Francom et al., 2025 <DOI:10.1137/24M1644092>).")
 (define-public r-mvardlurt
   (package
     (name "r-mvardlurt")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mvardlurt" version))
        (sha256
-        (base32 "14hnscq4pyz58cd5azq1npgdr29ikczgpdylq0cvld8mbfa5f5v9"))))
+        (base32 "1gyqrc8bcfmf3lz0cfr1j767442xk5w6my6hxzkmjn5zqxsvmkgw"))))
     (properties `((upstream-name . "mvardlurt")))
     (build-system r-build-system)
     (arguments
@@ -3297,12 +3297,16 @@ components) of the response (Francom et al., 2025 <DOI:10.1137/24M1644092>).")
     (synopsis "Multivariate ARDL Unit Root Test")
     (description
      "This package implements the multivariate autoregressive distributed lag (ARDL)
-unit root test proposed by Sam, @code{McNown}, Goh, and Goh (2024)
-<doi:10.1080/03796205.2024.2439101>.  The test augments the standard ADF
-regression with lagged levels of a covariate to improve power when cointegration
-exists.  Bootstrap critical values ensure correct size regardless of nuisance
-parameters.  Provides automatic lag selection via AIC/BIC, diagnostic tests, and
-comprehensive inference tables following the four-case framework.")
+unit root test of Sam, @code{McNown}, Goh and Goh (2025)
+<doi:10.1080/03796205.2024.2439101>.  The test augments the ADF regression with
+the lagged level, the current difference and lagged differences of one or more
+covariates so that cointegration between the series under test and the
+covariates is taken into account.  The t statistic on the lagged level of the
+series and the joint F statistic on the lagged levels of the covariates are
+bootstrapped with the respective null imposed (residual bootstrap), giving
+critical values and p-values.  Provides automatic lag selection via AIC or BIC,
+diagnostic plots, and the four-case classification of the order of integration
+of the series.")
     (license license:gpl3)))
 
 (define-public r-mvar-pt
@@ -9455,6 +9459,65 @@ method are available in Carter et al (2010)
 <doi:10.1111/j.1467-9876.2010.00711.x>.")
     (license license:gpl3)))
 
+(define-public r-mudnester
+  (package
+    (name "r-mudnester")
+    (version "0.7.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mudnester" version))
+       (sha256
+        (base32 "1bnjs7h4fqaq4s3il7099a6vkjpslw9i1x4w985l1vvbqqy105sh"))))
+    (properties `((upstream-name . "mudnester")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-lubridate
+                             r-janitor
+                             r-dplyr
+                             r-digest))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/nrsmoll/mudnester")
+    (synopsis "Surveillance Data Cleaning and Preparation for Public Health")
+    (description
+     "Clean, prepare, and aggregate surveillance data for public health analysis.
+Provides structural data cleaning and standardisation @code{(clean_the_nest()}),
+age categorisation against ~50 published schemes with publication-ready
+labelling @code{(preening()}), time-unit aggregation with zero-filling and
+seasonal awareness @code{(roost()}), joint aggregation of several linked event
+dates (e.g. onset, admission, ICU, complication, fatality) into one table of
+comparable rate columns @code{(flyway()}), under-ascertainment correction via a
+stratified, time-varying multiplier factor supplied directly, derived by the
+ratio (multiplier) method, or derived by inverting an externally sourced
+severity rate (e.g. an infection-fatality-rate anchor) against an observed
+severity ratio @code{(corncrake()}), comorbidity detection from ICD-10-AM
+clinical coding @code{(plumage()}), vaccine coverage data construction
+@code{(brood()}), hash-based de-identification @code{(molting()}), and relinking
+of previously de-identified data @code{(homing()}). @code{brood()} produces a
+brood_df object supporting two population models: pre-aggregated denominators
+(population_model = \"pre_aggregated\") and record-level cohort designs
+(population_model = \"cohort\").  The cohort model handles single time-point
+coverage snapshots, interrupted time series analysis via a built-in sweep
+returning monthly coverage rates (time_series = TRUE), and birth cohort designs
+with person-time computation.  This cohort/time-series coverage model was
+applied in Roughan et al. (2026) <doi:10.33321/cdi.2026.50.031> to estimate
+infant immunisation coverage against respiratory syncytial virus over an
+18-month period.  Both wide format (one row per person with dose columns, from
+@code{starling'::murmuration()}) and long format (one row per dose) are
+accepted. @code{corncrake()} returns both a point-corrected count and
+uncertainty bounds wherever they can be derived, including the inverse
+relationship between a severity-anchored factor and the bounds of its own
+reference rate.  Built for Australian public health surveillance practice but
+not specific to it -- see individual function documentation for notes on
+non-Australian use (e.g. Northern Hemisphere season boundaries).")
+    (license license:expat)))
+
 (define-public r-mudfold
   (package
     (name "r-mudfold")
@@ -11109,38 +11172,6 @@ the original Python implementation that inspired this tool.")
      "This package provides functions and datasets from Hilbe, J.M., and Robinson,
 A.P. 2013.  Methods of Statistical Model Estimation.  Chapman & Hall / CRC.")
     (license license:gpl3)))
-
-(define-public r-msma
-  (package
-    (name "r-msma")
-    (version "3.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "msma" version))
-       (sha256
-        (base32 "0cgfiyygd3qhdy6mbpg54ih5vr54n68qghvmdc4hf7rxn7fadcqh"))))
-    (properties `((upstream-name . "msma")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=msma")
-    (synopsis "Multiblock Sparse Multivariable Analysis")
-    (description
-     "Several functions can be used to analyze multiblock multivariable data.  If the
-input is a single matrix, then principal components analysis (PCA) is
-implemented.  If the input is a list of matrices, then multiblock PCA is
-implemented.  If the input is two matrices, for exploratory and objective
-variables, then partial least squares (PLS) analysis is implemented.  If the
-input is two lists of matrices, for exploratory and objective variables, then
-multiblock PLS analysis is implemented.  Additionally, if an extra outcome
-variable is specified, then a supervised version of the methods above is
-implemented.  For each method, sparse modeling is also incorporated.  Functions
-for selecting the number of components and regularized parameters are also
-provided.")
-    (license license:gpl2+)))
 
 (define-public r-msinference
   (package
@@ -19499,13 +19530,13 @@ instance on pokemon, world of warcraft, house tasks or food nutrition analyses."
 (define-public r-modsem
   (package
     (name "r-modsem")
-    (version "1.0.22")
+    (version "1.0.23")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modsem" version))
        (sha256
-        (base32 "16xpl19pcrzgnk7iwfln7rn0l1a57m81a8lqs8gkybqfgph254ky"))))
+        (base32 "1l3gqcdapmv5qc8iclzlz9rnbxxkfricxas86dbjdisiadhsd492"))))
     (properties `((upstream-name . "modsem")))
     (build-system r-build-system)
     (arguments
@@ -24015,13 +24046,13 @@ classification evaluation metrics based on confusion matrix.")
 (define-public r-mlt-docreg
   (package
     (name "r-mlt-docreg")
-    (version "1.1-13")
+    (version "1.1-14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlt.docreg" version))
        (sha256
-        (base32 "176h5zdiy5yfb62rf5pwh5mkwy90h7jlj6mabgqjsm9xgpmxs5q5"))))
+        (base32 "1jga5lfhxazsmw6ynwqhagyzwlb624i90mkcyyi7ky2jj3zywrni"))))
     (properties `((upstream-name . "mlt.docreg")))
     (build-system r-build-system)
     (arguments
@@ -24036,7 +24067,7 @@ classification evaluation metrics based on confusion matrix.")
                              r-flexsurv
                              r-eha))
     (native-inputs (list r-knitr))
-    (home-page "http://ctm.R-forge.R-project.org")
+    (home-page "https://codeberg.org/thothorn/tram")
     (synopsis
      "Most Likely Transformations: Documentation and Regression Tests")
     (description
@@ -31025,20 +31056,18 @@ reference to Loher P, Telonis AG, Rigoutsos I (2017) <doi:10.1038/srep41184>.")
 (define-public r-minter
   (package
     (name "r-minter")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "minter" version))
        (sha256
-        (base32 "06izl5vzmpcli6f3rg8bk1y1d8asprg05wrjm6l8frynnp4wmqsd"))))
+        (base32 "14x7pv4l1p7lmbk7rwrd2wana36x3i32zn0qdglrwqhgs8zh8bcb"))))
     (properties `((upstream-name . "minter")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-checkmate))
-    (native-inputs (list r-knitr))
     (home-page "https://fdecunta.github.io/minter/")
     (synopsis
      "Effect Sizes for Meta-Analysis of Interactions from Factorial Experiments")
@@ -33514,13 +33543,13 @@ also be easily manipulated with functions provided in the package.")
 (define-public r-midasinla
   (package
     (name "r-midasinla")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "midasINLA" version))
        (sha256
-        (base32 "1ps2lfg664dli26zmavd0pf9q304gy3985mv3q72x93a0x26y5li"))))
+        (base32 "078ydlkny393lz09fhcq964jf696kd3yjmdlwclpgpfvbqwc83wn"))))
     (properties `((upstream-name . "midasINLA")))
     (build-system r-build-system)
     (arguments
@@ -33531,11 +33560,12 @@ also be easily manipulated with functions provided in the package.")
     (home-page "https://cran.r-project.org/package=midasINLA")
     (synopsis "Spatial MIDAS Models Using INLA")
     (description
-     "This package provides tools for fitting spatial Mixed Data Sampling (MIDAS)
-regression models using Integrated Nested Laplace Approximation (INLA).  The
-package is designed for settings where responses and explanatory variables are
-observed at different temporal frequencies and supports both constant and
-spatially varying regression coefficients.")
+     "This package provides tools for fitting spatial Mixed-Data Sampling (MIDAS)
+regression models using Integrated Nested Laplace Approximation (INLA) (Rue et
+al., 2009) <doi:10.1111/j.1467-9868.2008.00700.x>.  The package is designed for
+settings where responses and explanatory variables are observed at different
+temporal frequencies and supports both constant and spatially varying regression
+coefficients.")
     (license license:gpl3)))
 
 (define-public r-midasim
@@ -35844,13 +35874,13 @@ Zhao, S. (2019, ISBN: 978-1-4822-5657-4), CRC Press.")
 (define-public r-mgwrsar
   (package
     (name "r-mgwrsar")
-    (version "1.3.2")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mgwrsar" version))
        (sha256
-        (base32 "0qyyxjqdg6z04dk6x9nmbsgky3rhdcl2pjvwy4jd1spld7m1zjwg"))))
+        (base32 "0f2p9ns9bbw5a7jhq8im0s70aa0v2q327d39w1mz2jysniww2lfa"))))
     (properties `((upstream-name . "mgwrsar")))
     (build-system r-build-system)
     (arguments
@@ -35858,7 +35888,6 @@ Zhao, S. (2019, ISBN: 978-1-4822-5657-4), CRC Press.")
       #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-sp
-                             r-smut
                              r-sf
                              r-rlang
                              r-rhpcblasctl
@@ -45585,13 +45614,13 @@ provided in the package function as well as at
 (define-public r-mdsopt
   (package
     (name "r-mdsopt")
-    (version "0.7-7")
+    (version "0.8-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mdsOpt" version))
        (sha256
-        (base32 "0frf1ll0618m29xyqsh1v0fzb3rw5dchn7pqcm9vy0sr9d8dahx1"))))
+        (base32 "13zwh1k0n5xz5zd3s2sc5z2pcyv7jqn5fqrgiqrm9wp4ycj68pbq"))))
     (properties `((upstream-name . "mdsOpt")))
     (build-system r-build-system)
     (arguments
@@ -45610,7 +45639,7 @@ provided in the package function as well as at
     (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=mdsOpt")
     (synopsis
-     "Searching for Optimal MDS Procedure for Metric and Interval-Valued Data")
+     "Searching for Optimal MDS Procedure for Metric, Nonmetric and Interval-Valued Data")
     (description
      "Selecting the optimal multidimensional scaling (MDS) procedure for metric data
 via metric MDS (ratio, interval, mspline) and nonmetric MDS (ordinal).
@@ -45620,8 +45649,12 @@ optimal multidimensional scaling procedure for interval-valued data by varying
 all combinations of normalization and optimization methods.Selecting the optimal
 MDS procedure for statistical data referring to the evaluation of tourist
 attractiveness of Lower Silesian counties. (Borg, I., Groenen, P.J.F., Mair, P.
-(2013) <doi:10.1007/978-3-642-31848-1>, Walesiak, M. (2016)
-<doi:10.15611/ekt.2016.2.01>, Walesiak, M. (2017) <doi:10.15611/ekt.2017.3.01>).")
+(2013) <doi:10.1007/978-3-642-31848-1>, Dehnel, G., Walesiak, M. (2019)
+<doi:10.21307/stattrans-2019-014>, Walesiak, M. (2016)
+<doi:10.15611/ekt.2016.2.01>, Walesiak, M. (2017) <doi:10.15611/ekt.2017.3.01>),
+Walesiak, M., Dehnel, G. (2020) <doi:10.3390/su12187664>, Walesiak, M., Dehnel,
+G., Dudek, A. (2025) <doi:10.15611/aoe.2025.1.12>, Walesiak, M., Dehnel, G.
+(2026) <doi:10.1371/journal.pone.0333545>.")
     (license license:gpl2+)))
 
 (define-public r-mdsmap
@@ -54713,13 +54746,13 @@ based on a Gibbs function.")
 (define-public r-mardist
   (package
     (name "r-mardist")
-    (version "1.0.1")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mardist" version))
        (sha256
-        (base32 "0xqg87sihfwp709pw7nsraivpi0x9mqkj9d9gkzf1x9i1gxbfiwz"))))
+        (base32 "1xylazmga1alxa1lk8l0llhh955gjsivcvm1d4lpf1chzr08j05w"))))
     (properties `((upstream-name . "mardist")))
     (build-system r-build-system)
     (arguments
@@ -54729,8 +54762,18 @@ based on a Gibbs function.")
     (home-page "https://cran.r-project.org/package=mardist")
     (synopsis "Calculation of Maritime Distances")
     (description
-     "This package provides tools and utilities for calculating distances and
-visualising maritime routes.")
+     "This package provides tools for calculating and visualizing maritime distances
+and routes between geographic points.  At its core, it implements a fast
+Haversine formula implemented in data.table to compute great circle distances
+across sea regions (i.e.  avoiding land mass).  The package builds a spatial
+network graph from port and cluster coordinates and uses a shortest path
+algorithm to identify optimal maritime routes between origin-destination pairs.
+For visualization, the package exports maps displaying individual routes,
+multi-destination networks, or continuous routes through specified waypoints.
+Utility functions identify the nearest network nodes to arbitrary coordinates
+and handle the antimeridian discontinuities common in Pacific maritime mapping.
+The package is particularly suited for analyzing shipping lanes, trade routes,
+and vessel trajectory data.")
     (license (license:fsdg-compatible "EUPL"))))
 
 (define-public r-marcxmlr
@@ -56064,13 +56107,13 @@ samples.")
 (define-public r-mapgl
   (package
     (name "r-mapgl")
-    (version "0.5.0")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapgl" version))
        (sha256
-        (base32 "1nzcbx4wvygzqgmn5s0hpnqy7iffl1fi1gh9cd8nk4550myw68ps"))))
+        (base32 "0yycsrggabcd30kmj2bg9fgfyx4ahkvd42vjzqbrjdddn1vz6wr4"))))
     (properties `((upstream-name . "mapgl")))
     (build-system r-build-system)
     (arguments
@@ -56896,20 +56939,19 @@ categorical and mixed-type dissimilarities.")
 (define-public r-manydata
   (package
     (name "r-manydata")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "manydata" version))
        (sha256
-        (base32 "08zcl7b87c2lnkd64ghwwzrqaiz2fnsx3pzkvabkhsmmdvfyn918"))))
+        (base32 "029ghxx9drryi4lrk6ms6szbzaqam7zajvyx1qk3hs8vvwrsxzdr"))))
     (properties `((upstream-name . "manydata")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyr
-                             r-text2vec
                              r-stringr
                              r-remotes
                              r-purrr

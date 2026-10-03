@@ -2264,13 +2264,13 @@ the running server use the osrm package for R
 (define-public r-osrm
   (package
     (name "r-osrm")
-    (version "5.0.0")
+    (version "6.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "osrm" version))
        (sha256
-        (base32 "04q8sf322bym8vlxjx4jc085v7x6f783ifs89ld9vyb04yjwga1c"))))
+        (base32 "0as1avalv0m3ajwr24a0dy42q3ybvdjmz06jcdls06s5ba9y0q4x"))))
     (properties `((upstream-name . "osrm")))
     (build-system r-build-system)
     (arguments
@@ -2278,14 +2278,14 @@ the running server use the osrm package for R
       #:tests? #f))
     (propagated-inputs (list r-sf r-rcppsimdjson r-mapiso r-googlepolylines
                              r-curl))
-    (home-page "https://github.com/riatelab/osrm")
+    (home-page "https://codeberg.org/riatelab/osrm")
     (synopsis
      "Interface Between R and the OpenStreetMap-Based Routing Service OSRM")
     (description
      "An interface between R and the OSRM API. OSRM is a routing service based on
-@code{OpenStreetMap} data.  See <http://project-osrm.org/> for more information.
- This package enables the computation of routes, trips, isochrones and travel
-distances matrices (travel time and kilometric distance).")
+@code{OpenStreetMap} data.  See <https://project-osrm.org/> for more
+information.  This package enables the computation of routes, trips, isochrones
+and travel distances matrices (travel time and kilometric distance).")
     (license license:gpl3+)))
 
 (define-public r-osnmtf
@@ -5305,13 +5305,13 @@ your workflow for optimal productivity.")
 (define-public r-orbitr
   (package
     (name "r-orbitr")
-    (version "0.3.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "orbitr" version))
        (sha256
-        (base32 "1rm16xrap78y00sjwvk8csfx632gkwbqh8rb8h67xh2lwbmnj5nx"))))
+        (base32 "1bfa3mkabva0pz7bp7qr51giaidv1rxsjacbf4a8b8k9wv5lvzp3"))))
     (properties `((upstream-name . "orbitr")))
     (build-system r-build-system)
     (arguments
@@ -9147,13 +9147,13 @@ computing power of GPUs and other HPC accelerator devices.")
 (define-public r-opencis
   (package
     (name "r-opencis")
-    (version "0.1.2")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "opencis" version))
        (sha256
-        (base32 "14gjdx53vsl4av17ln36qxqyj6l5vfv5rmskb4g5nnd39acvgd5s"))))
+        (base32 "0dm48h8pn2qn64axr47cw0ppqnjrkxrfnhfkd1rnmswcfskrxza3"))))
     (properties `((upstream-name . "opencis")))
     (build-system r-build-system)
     (arguments
@@ -15044,13 +15044,13 @@ stored in a MS SQL Server database.  For more details see Marcon (2021)
 (define-public r-odbc
   (package
     (name "r-odbc")
-    (version "1.7.1")
+    (version "1.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "odbc" version))
        (sha256
-        (base32 "0km8ypbqr4mn0wy40rprvx8svr2rqyjx4km0cjmzgisqlqmvf892"))))
+        (base32 "1v09n5bagnvx322f8cq48gky7w4yjckm88vx7qalbxq0ipsv7yvy"))))
     (properties `((upstream-name . "odbc")))
     (build-system r-build-system)
     (arguments

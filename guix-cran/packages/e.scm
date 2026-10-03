@@ -6040,13 +6040,13 @@ exponential.")
 (define-public r-eventstudyr
   (package
     (name "r-eventstudyr")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eventstudyr" version))
        (sha256
-        (base32 "0sgdw58a0mmbnj48dq2ybashjhpvnvhgi5fr5r08bs63nlband7k"))))
+        (base32 "0w9a5pn5r5qyirqx61qrmrpfq0am78grb2i0cwgyl3xrsmvpfh9v"))))
     (properties `((upstream-name . "eventstudyr")))
     (build-system r-build-system)
     (arguments
@@ -10699,13 +10699,13 @@ Aguilar-Elena and is described in Aguilar-Elena (2015)
 (define-public r-eratosthenes
   (package
     (name "r-eratosthenes")
-    (version "0.0.9")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eratosthenes" version))
        (sha256
-        (base32 "0i8sz1s2mhq191blrhxx1sig4s12h8a8hyy4rr0vdnn6ib85njf1"))))
+        (base32 "1wglbnbgx9m37b6pkzyygwchf8n1yyb1v9kpjwi0x373ip52f25i"))))
     (properties `((upstream-name . "eratosthenes")))
     (build-system r-build-system)
     (arguments
@@ -16783,13 +16783,13 @@ factor.")
 (define-public r-encharter
   (package
     (name "r-encharter")
-    (version "0.11")
+    (version "0.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "encharter" version))
        (sha256
-        (base32 "0l4g4lrksds9kkf71glx0vgi6q6wq7agxsix9vcjgzl6ilrrjk08"))))
+        (base32 "1qf5ak2brkifnb1416mcxaww7fcwhlcjaqjj5xmagb1jj26xs2gp"))))
     (properties `((upstream-name . "encharter")))
     (build-system r-build-system)
     (arguments
@@ -22909,6 +22909,36 @@ in water after treatment with an Al- or Fe-based coagulant.  Data and methods
 are provided to optimise empirical coefficients.")
     (license license:gpl3)))
 
+(define-public r-eduresearchr
+  (package
+    (name "r-eduresearchr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "eduResearchR" version))
+       (sha256
+        (base32 "1ak7gnvvr0p24yq1m41aayl9w191prbcv2rwg7iank1fgjdl2ixj"))))
+    (properties `((upstream-name . "eduResearchR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jlmarmanillo-jlms/eduResearchR")
+    (synopsis
+     "Collection of Educational Datasets for Research and Statistical Analysis")
+    (description
+     "Curates a comprehensive and robust collection of 15 classic educational,
+economic, and social science datasets meticulously tailored for empirical
+research, project-based learning, and academic instruction in higher education.
+It streamlines exploratory data analysis, business intelligence modeling,
+regression techniques, and hypothesis testing by providing ready-to-use data
+structures sourced from prominent community packages (Kleiber and Zeileis (2008)
+<https://CRAN.R-project.org/package=AER>; Fox and Weisberg (2019)
+<https://CRAN.R-project.org/package=@code{carData>}).")
+    (license license:gpl3)))
+
 (define-public r-educineq
   (package
     (name "r-educineq")
@@ -27532,13 +27562,13 @@ rank-loss functions are also given.")
 (define-public r-ebrahim-gof
   (package
     (name "r-ebrahim-gof")
-    (version "2.8.0")
+    (version "2.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ebrahim.gof" version))
        (sha256
-        (base32 "0ryyz69bn318ll7996cy6n2fmdblpa0sirngf3gs91qvasa7fnyp"))))
+        (base32 "0wlsz1msfyya1ycd05sl0q9z3pk2lfnhnqlfiv5yd9as02r1z9x6"))))
     (properties `((upstream-name . "ebrahim.gof")))
     (build-system r-build-system)
     (arguments

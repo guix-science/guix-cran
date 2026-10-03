@@ -32,6 +32,33 @@
   #:use-module (guix-cran packages b)
   #:use-module (guix-cran packages a))
 
+(define-public r-zujson
+  (package
+    (name "r-zujson")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "zujson" version))
+       (sha256
+        (base32 "07zdlb6mwf4qkcgld1zxzycn9l9p3jhj3ff2smw4l88kwylpdz73"))))
+    (properties `((upstream-name . "zujson")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/pedrobtz/zujson")
+    (synopsis "Lightweight JSON Parsing and Serialization")
+    (description
+     "Converts between JSON text and ordinary R vectors and lists through a small,
+predictable set of functions, backed by vendored yyjson
+<https://github.com/ibireme/yyjson> and requiring no system JSON library.
+Parsing accepts character, raw and file input and reports failures through
+structured conditions; serialization writes UTF-8 bytes suitable for use
+directly as an HTTP request body.  The type mapping is deliberately narrow and
+fully documented, so what goes in and what comes out are both predictable.")
+    (license license:expat)))
+
 (define-public r-ztils
   (package
     (name "r-ztils")

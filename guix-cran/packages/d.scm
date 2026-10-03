@@ -3196,13 +3196,13 @@ makes publication ready documentation of a data pipeline simple.")
 (define-public r-dtpcrm
   (package
     (name "r-dtpcrm")
-    (version "0.1.1")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dtpcrm" version))
        (sha256
-        (base32 "0k25fm0z3snpx1v2kwd50svgnkjhn5c0hy1gnlw2lif6rjz1fzd9"))))
+        (base32 "0v3max9vz0yxrcz5wkanq384jiilmn6ma9fmvg2cnicdasvpy431"))))
     (properties `((upstream-name . "dtpcrm")))
     (build-system r-build-system)
     (arguments
@@ -3216,7 +3216,7 @@ makes publication ready documentation of a data pipeline simple.")
      "This package provides the dose transition pathways (DTP) to project in advance
 the doses recommended by a model-based design for subsequent patients (stay,
 escalate, deescalate or stop early) using all the accumulated toxicity
-information; See Yap et al (2017) <doi: 10.1158/1078-0432.CCR-17-0582>.  DTP can
+information; See Yap et al (2017) <doi:10.1158/1078-0432.CCR-17-0582>.  DTP can
 be used as a design and an operational tool and can be displayed as a table or
 flow diagram.  The dtpcrm package also provides the modified continual
 reassessment method (CRM) and time-to-event CRM (TITE-CRM) with added practical
@@ -4870,13 +4870,13 @@ implemented based on the DStorage class.")
 (define-public r-dsir
   (package
     (name "r-dsir")
-    (version "0.9.0")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DSIR" version))
        (sha256
-        (base32 "1hzci1g2vj2nkgv5z5ajdwbsyp0ms5spnnywsq4c340v18lx30q7"))))
+        (base32 "12ag0lk9g6mfxc74h29l4zyahrfr5iph8g91c9x7lim2j2y4hfn5"))))
     (properties `((upstream-name . "DSIR")))
     (build-system r-build-system)
     (arguments
@@ -8672,13 +8672,13 @@ transformations through pipeline operations.")
 (define-public r-dplr
   (package
     (name "r-dplr")
-    (version "1.7.9")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dplR" version))
        (sha256
-        (base32 "0axhacqfvdds6g2grl6j69rh97hbm6ygyi6a4q3danfssy82fysc"))))
+        (base32 "0f7qdqdx1q05m3wcqkgihkqgqh33708vpmhzfv204515i8snhlay"))))
     (properties `((upstream-name . "dplR")))
     (build-system r-build-system)
     (arguments
@@ -8696,8 +8696,9 @@ transformations through pipeline operations.")
                              r-lifecycle
                              r-lattice
                              r-digest
+                             r-data-table
                              r-boot))
-    (native-inputs (list gfortran))
+    (native-inputs (list r-knitr gfortran))
     (home-page "https://github.com/OpenDendro/dplR")
     (synopsis "Dendrochronology Program Library in R")
     (description
@@ -22138,13 +22139,13 @@ scramble sensitive Personally Identifiable Information ('PII').")
 (define-public r-devianlm
   (package
     (name "r-devianlm")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "devianLM" version))
        (sha256
-        (base32 "15rgww7j9qp6qisq8ckxh6fhg5wmm55w8q1p8a7qj96jn553x3ja"))))
+        (base32 "1h5fpnppphsnwlcacvvflp6jlrldx34fsd7b543b17cfcb098b29"))))
     (properties `((upstream-name . "devianLM")))
     (build-system r-build-system)
     (arguments
@@ -22159,10 +22160,14 @@ scramble sensitive Personally Identifiable Information ('PII').")
 linear model.  The procedure is based on the maximum of the absolute value of
 the studentized residuals, which is a parameter-free statistic.  This approach
 generalizes several procedures used to detect abnormal values during
-longitudinal monitoring of biological markers.  For methodological details, see:
-Berthelot G., SauliÃ¨re G., Dedecker J. (2025). \"DE@code{ViaN-LM} An R Package
-for Detecting Abnormal Values in the Gaussian Linear Model\".  HAL Id:
-hal-05230549. <https://hal.science/hal-05230549>.")
+longitudinal monitoring of biological markers.  Methodological details are
+provided in Berthelot G., SauliÃ¨re G., and Dedecker J. (2025),
+\"DE@code{ViaN-LM} An R Package for Detecting Abnormal Values in the Gaussian
+Linear Model\", HAL Id: hal-05230549, <https://hal.science/hal-05230549>, and in
+Berthelot G., Gelein B., Meinadier E., Orhant E., and Dedecker J. (2026), \"A
+guide to z-score-based methods, with illustrations from biological data sets\",
+The Journal of Sport and Exercise Science 10, 54â70,
+<doi:10.36905/jses.2026.01.06>.")
     (license license:gpl3)))
 
 (define-public r-devfunc
@@ -25536,13 +25541,13 @@ dendrogram and hclust objects and to set/get labels.")
 (define-public r-dendroanalyst
   (package
     (name "r-dendroanalyst")
-    (version "0.1.6")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dendRoAnalyst" version))
        (sha256
-        (base32 "1vi57yfn3aybyc245qg9a7c7mmvr8rsyrcr5zi04id9hac33nyls"))))
+        (base32 "197wvqijdd192036y2q3wh585p7jhc89cjzy72byxwlajblbhfmj"))))
     (properties `((upstream-name . "dendRoAnalyst")))
     (build-system r-build-system)
     (arguments
@@ -25571,16 +25576,36 @@ dendrogram and hclust objects and to set/get labels.")
     (home-page "https://cran.r-project.org/package=dendRoAnalyst")
     (synopsis "Tool for Processing and Analyzing Dendrometer Data")
     (description
-     "There are various functions for managing and cleaning data before the
-application of different approaches.  This includes identifying and erasing
-sudden jumps in dendrometer data not related to environmental change,
-identifying the time gaps of recordings, and changing the temporal resolution of
-data to different frequencies.  Furthermore, the package calculates daily
-statistics of dendrometer data, including the daily amplitude of tree growth.
-Various approaches can be applied to separate radial growth from daily cyclic
-shrinkage and expansion due to uptake and loss of stem water.  In addition, it
-identifies periods of consecutive days with user-defined climatic conditions in
-daily meteorological data, then check what trees are doing during that period.")
+     "This package provides tools for importing, cleaning, analyzing, and visualizing
+high-resolution dendrometer data and for linking them with climate data.
+Dendrometer and climate records can be imported with automatic date-time parsing
+@code{(read.dendrometer()}, @code{read.climate()}) and checked for a regular
+temporal resolution @code{(reso_dm()}).  Preprocessing functions detect and
+correct artificial jumps with a threshold-based or an automatic changepoint
+method @code{(jump.locator()}), detect and fill gaps with spline, seasonal, or
+network interpolation @code{(dm.na.interpolation()},
+@code{network.interpolation()}), and truncate or resample the series
+@code{(dendro.truncate()}, @code{dendro.resample()}).  Daily statistics
+@code{(daily.data()}), the stem-cycle approach @code{(phase.sc()}), and the
+zero-growth approach @code{(phase.zg()}) separate radial growth from reversible
+stem shrinkage and swelling.  The function @code{phase.zg()} also returns
+metrics of tree water deficit (TWD) phases, including the event-based ABr index,
+and the daily drought indices of Peters et al. (2025) <doi:10.1111/nph.70266>.
+Climate data can be summarized at daily and sub-daily scales and attached to
+daily, phase-level, and point-level outputs @code{(dm_add_climate()}).
+Event-based climate analyses, superposed epoch analyses, and adverse-period
+analyses @code{(dm_event_climate()}, @code{dm_epoch_test()}, @code{clim.twd()})
+relate tree responses to climate conditions.  Seasonal growth can be fitted with
+Gompertz, logistic, Richards, generalized additive model, LOESS, and spline
+functions, detrended, and compared among methods @code{(dm.growth.fit()},
+@code{dm.detrend.fit()}, @code{dm.growth.evaluate()}).  Running correlations
+with climate @code{(mov.cor.dm()}) and wavelet power and coherence analyses
+based on @code{WaveletComp} @code{(dm_wavelet()}, @code{dm_wavelet_coherence()})
+are also provided.  Most outputs have dedicated plot methods, and an optional
+shiny application @code{(dendroanalyst()}) allows the complete workflow to be
+run without programming.  The zero-growth approach follows Zweifel et al. (2016)
+<doi:10.1111/nph.13995>, and the first version of the package is described in
+Aryal et al. (2020) <doi:10.1016/j.dendro.2020.125772>.")
     (license license:gpl3)))
 
 (define-public r-demulticoder
@@ -29177,13 +29202,13 @@ compared from data.  The method is described in Boettcher and Dethlefsen (2003),
 (define-public r-deadwood
   (package
     (name "r-deadwood")
-    (version "0.9.1")
+    (version "0.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "deadwood" version))
        (sha256
-        (base32 "16x4wwhf7y2w8bl2l91sb0m9jhsqa14kvjk83byv18n5kvz97b4j"))))
+        (base32 "032b1fd71pvhc7kpbgvvs471girh8mk45xp27k9c0jsrwp6p0mc3"))))
     (properties `((upstream-name . "deadwood")))
     (build-system r-build-system)
     (arguments
@@ -32409,39 +32434,6 @@ the false discovery rate with the Benjamini-Yekutieli procedure.  The method is
 described in Hall and Castellano (2023) <doi:10.1101/2023.05.05.539427>.")
     (license license:gpl3+)))
 
-(define-public r-dawar
-  (package
-    (name "r-dawar")
-    (version "0.3.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dawaR" version))
-       (sha256
-        (base32 "083r1fpr071ly5587lw01g77cjwfxwhr8s2xsq9zi5yl7c518dy5"))))
-    (properties `((upstream-name . "dawaR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyrss
-                             r-sf
-                             r-rlang
-                             r-memoise
-                             r-httr2
-                             r-curl
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://dawar.aleksanderbl.dk/")
-    (synopsis "An API Wrapper for 'DAWA' - 'The Danish Address Web API'")
-    (description
-     "This package provides functions for interacting with all sections of the
-official Danish Address Web API (also known as DAWA')
-<https://api.dataforsyningen.dk>.  The development of this package is completely
-independent from the government agency, Klimadatastyrelsen, who maintains the
-API.")
-    (license license:gpl3+)))
-
 (define-public r-dawai
   (package
     (name "r-dawai")
@@ -34298,48 +34290,51 @@ efficient way.")
 (define-public r-dataprep
   (package
     (name "r-dataprep")
-    (version "0.1.5")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dataprep" version))
        (sha256
-        (base32 "1v48ry6xk0qg73j6js6m6fqd1bdhjv500bndb60zzl2qifrjfk2a"))))
+        (base32 "1q0fqbqk55fgasqvjskpmzf9jnanmn3f2a445aijdylshnhvp3s2"))))
     (properties `((upstream-name . "dataprep")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-zoo
-                             r-scales
-                             r-reshape2
-                             r-ggplot2
-                             r-foreach
-                             r-dplyr
-                             r-doparallel
-                             r-data-table))
+    (propagated-inputs (list r-rcpp r-ggplot2))
     (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://cran.r-project.org/package=dataprep")
-    (synopsis "Efficient and Flexible Data Preprocessing Tools")
+    (home-page "https://github.com/chunshengliang/dataprep")
+    (synopsis
+     "Fast, Efficient, and Versatile Data Preprocessing and Reshaping with 'C++', 'OpenMP' & 'SIMD'")
     (description
-     "Efficiently and flexibly preprocess data using a set of data filtering,
-deletion, and interpolation tools.  These data preprocessing methods are
-developed based on the principles of completeness, accuracy, threshold method,
-and linear interpolation and through the setting of constraint conditions, time
-completion & recovery, and fast & efficient calculation and grouping.  Key
-preprocessing steps include deletions of variables and observations, outlier
-removal, and missing values (NA) interpolation, which are dependent on the
-incomplete and dispersed degrees of raw data.  They clean data more accurately,
-keep more samples, and add no outliers after interpolation, compared with
-ordinary methods.  Auto-identification of consecutive NA via run-length based
-grouping is used in observation deletion, outlier removal, and NA interpolation;
-thus, new outliers are not generated in interpolation.  Conditional extremum is
-proposed to realize point-by-point weighed outlier removal that saves
-non-outliers from being removed.  Plus, time series interpolation with values to
-refer to within short periods further ensures reliable interpolation.  These
-methods are based on and improved from the reference: Liang, C.-S., Wu, H., Li,
-H.-Y., Zhang, Q., Li, Z. & He, K.-B. (2020)
-<doi:10.1016/j.scitotenv.2020.140923>.")
+     "Fast, efficient, and versatile preprocessing and reshaping of tabular and
+time-series data.  Most heavy routines are implemented in C++ via Rcpp', with
+optional @code{OpenMP} parallelization and SIMD acceleration ('AVX2 / AVX-512')
+on supported hardware.  The 0.1.8 release rewrites the cleaning routines in C++
+and delivers a 1.1â1146Ã speedup over 0.1.5.  The @code{melt()} and
+@code{dcast()} reshaping functions achieve a 0.6Ãâ1628.9Ã speedup for
+@code{melt()} and a 1.9Ãâ799.8Ã speedup for @code{dcast()} relative to every
+one of the seven major alternatives in the R and Python ecosystems, at every
+tested scale (from 1,000 to 100,000,000 rows), and produce output identical to
+reshape2', data.table', tidyr', pandas', polars', dask', and duckdb'.  Core
+preprocessing steps include variable deletion by missing fraction, observation
+deletion by consecutive missing runs, point-by-point weighted outlier removal
+via conditional extremum, traditional percentile-based outlier removal, and
+linear interpolation within short time periods.  The package also provides fast
+reshaping, descriptive statistics, missing-value diagnosis, multiple imputation
+strategies, winsorization, several outlier detection methods (IQR, MAD,
+percentile), data transformation and standardization, categorical encoding,
+duplicate removal, data validation, data quality reporting, and stratified
+sampling.  Feature-engineering helpers cover binning, high-correlation and
+low-variance filtering, and string cleaning.  Time-series tools cover
+detrending, diurnal-cycle removal, rolling statistics, lag creation, resampling,
+simple decomposition, day/night and season flags, log returns, drift detection,
+and panel balancing.  Fit/transform-style machine-learning interfaces prevent
+data leakage during preprocessing.  Methods are based on, and improved from:
+Liang, C.-S., Wu, H., Li, H.-Y., Zhang, Q., Li, Z. & He, K.-B. (2020)
+<doi:10.1016/j.scitotenv.2020.140923>.  This work was supported by the National
+Natural Science Foundation of China (No.  12301674).")
     (license license:gpl2+)))
 
 (define-public r-datapond
@@ -35610,13 +35605,13 @@ package.")
 (define-public r-databaseconnector
   (package
     (name "r-databaseconnector")
-    (version "7.2.0")
+    (version "8.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DatabaseConnector" version))
        (sha256
-        (base32 "1bmv4gsdn7rw9y2c5w53hcpkfll5xwdpwz9p8yqj9a9d8nvmf1f5"))))
+        (base32 "17lgv5q4mwlr0mgcmvcg4ns2shrc0jjqllwbp7805laa33g3wx7b"))))
     (properties `((upstream-name . "DatabaseConnector")))
     (build-system r-build-system)
     (arguments

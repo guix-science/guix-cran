@@ -15,7 +15,7 @@
   #:use-module (gnu packages tls)
   #:use-module (gnu packages image)
   #:use-module (gnu packages algebra)
-  #:use-module (gnu packages geo)
+  #:use-module (gnu packages xiph)
   #:use-module (gnu packages ghostscript)
   #:use-module (gnu packages pulseaudio)
   #:use-module (gnu packages audio)
@@ -2390,13 +2390,13 @@ static since 2013.")
 (define-public r-worldbank
   (package
     (name "r-worldbank")
-    (version "0.10.0")
+    (version "0.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "worldbank" version))
        (sha256
-        (base32 "0xrk58x01rh63p10fdnb57f71i2r1gdrwc4brbbz8bnaar5cj6w6"))))
+        (base32 "14k4r8fbrqzff6yw6zf47bqyapjajbn7yr7yd2bl8gs65rdhkyai"))))
     (properties `((upstream-name . "worldbank")))
     (build-system r-build-system)
     (arguments
@@ -2407,8 +2407,8 @@ static since 2013.")
     (synopsis "Client for the 'World Bank' APIs")
     (description
      "Download and search data from the World Bank APIs, including the Indicators API,
-the Poverty and Inequality Platform (PIP) API, the Finances One API, and the
-Projects API. See
+the Poverty and Inequality Platform (PIP) API, the Finances One API, the
+Projects API, and the Documents & Reports API. See
 <https://datahelpdesk.worldbank.org/knowledgebase/articles/889386-developer-information-overview>
 for further details.")
     (license license:expat)))
@@ -11100,24 +11100,21 @@ an examples can be found in the package website
 (define-public r-warbler
   (package
     (name "r-warbler")
-    (version "1.1.37")
+    (version "1.1.38")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "warbleR" version))
        (sha256
-        (base32 "1walcj3lpdk5ch42rd1g6ia3gak0zk1pfv7hmpl18dwn6m944fqa"))))
+        (base32 "1cj1dfg51dm40nzckl56zdksnnvf4bl6rc44i75l3q1nclj6xnv9"))))
     (properties `((upstream-name . "warbleR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (inputs (list sox libsndfile ghostscript gdal fftw))
+    (inputs (list sox libsndfile ghostscript flac fftw))
     (propagated-inputs (list r-tuner
-                             r-testthat
                              r-seewave
-                             r-rjson
-                             r-rcurl
                              r-rcpp
                              r-pbapply
                              r-naturesounds
@@ -11137,10 +11134,10 @@ an examples can be found in the package website
 structure of animal acoustic signals in R'. @code{warbleR} makes use of the
 basic sound analysis tools from the packages @code{tuneR} and seewave', and
 offers new tools for exploring and quantifying acoustic signal structure.  The
-package allows to organize and manipulate multiple sound files, create
+package allows users to organize and manipulate multiple sound files, create
 spectrograms of complete recordings or individual signals in different formats,
 run several measures of acoustic structure, and characterize different
-structural levels in acoustic signals (Araya-Salas et al 2016
+structural levels in acoustic signals (Araya-Salas and Smith-Vidaurre 2017
 <doi:10.1111/2041-210X.12624>).")
     (license license:gpl2+)))
 
@@ -11183,13 +11180,13 @@ DJ(1995) <https://publications.iwmi.org/pdf/H_17571i.pdf>.")
 (define-public r-waou
   (package
     (name "r-waou")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "waou" version))
        (sha256
-        (base32 "1dba05c8dwjdiwhiwnipi8d8lczzinxznirs8vnk1k5fbp2n5d78"))))
+        (base32 "1y2ks8hgbm0y2v6wrhd0zxk4j0vrpgdp0q27lxg5fp4hixyy8r8d"))))
     (properties `((upstream-name . "waou")))
     (build-system r-build-system)
     (arguments

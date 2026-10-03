@@ -1734,13 +1734,13 @@ and Singh and Chaudhari (2018) <doi:10.24432/C5P605>.")
 (define-public r-urbin
   (package
     (name "r-urbin")
-    (version "0.1-16")
+    (version "0.1-18")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "urbin" version))
        (sha256
-        (base32 "0jw2ih916m1nrhmdggpg5kx3ldhvpr2fpxmm638nb366zmynaf0z"))))
+        (base32 "1803v94lf3nmc2nwa54lgd4ar3yj49gd5nprxrnhw7qixjjd2gyd"))))
     (properties `((upstream-name . "urbin")))
     (build-system r-build-system)
     (arguments
@@ -1806,13 +1806,13 @@ the team.")
 (define-public r-uqsa
   (package
     (name "r-uqsa")
-    (version "0.8.0")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "uqsa" version))
        (sha256
-        (base32 "1k3wzrsb679v835ilkj1ahbaxlzm9vf9yw5yb2wf8amii0pg9z2i"))))
+        (base32 "0an9r4225mil4a4qd8l5aacxf84vimgg4ijkxfzpnskdxadz1wm6"))))
     (properties `((upstream-name . "uqsa")))
     (build-system r-build-system)
     (arguments
@@ -5233,6 +5233,34 @@ Moreover, accounts for differences in spelling between how a user references a
 location and how a location is captured in location dictionaries.  For more
 information on the algorithm, see Milusheva et al. (2021)
 <doi:10.1371/journal.pone.0244317>.")
+    (license license:expat)))
+
+(define-public r-ulavalssd
+  (package
+    (name "r-ulavalssd")
+    (version "0.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "UlavalSSD" version))
+       (sha256
+        (base32 "12d0254pz6kxixdjmrkc2nry54sgsc4kwdczrnarqzh49g17kclb"))))
+    (properties `((upstream-name . "UlavalSSD")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/AurelienNicosiaULaval/UlavalSSD")
+    (synopsis "Quebec Data and Tools for Introductory Data Science")
+    (description
+     "Historical weather observations and food-establishment conviction records from
+Quebec for teaching data import, missing values, exploratory analysis and
+reproducible reporting.  Includes bilingual prompts and feedback for a penguin
+data-cleaning exercise, and an optional static R code-style diagnostic based on
+lintr', as described by Hester and others (2025) <doi:10.21105/joss.07240>.
+Data are distributed as fixed teaching snapshots and require no network access
+during use.")
     (license license:expat)))
 
 (define-public r-ukpolice

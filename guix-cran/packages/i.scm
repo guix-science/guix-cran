@@ -2104,6 +2104,37 @@ for analysis.  Trial design options include group sequential looks for safety,
 superiority, futility, and adjustment of randomization probabilities.")
     (license license:gpl2)))
 
+(define-public r-ispdata
+  (package
+    (name "r-ispdata")
+    (version "1.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ispdata" version))
+       (sha256
+        (base32 "16vzfwn4q1q0k1m01ibknwm37j2d4x63a3zrrqj25mq8nrg134bs"))))
+    (properties `((upstream-name . "ispdata")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sf
+                             r-readr
+                             r-openxlsx
+                             r-janitor
+                             r-dplyr
+                             r-curl))
+    (home-page "https://cran.r-project.org/package=ispdata")
+    (synopsis
+     "Access Data from the Public Security Institute of the State of Rio De Janeiro")
+    (description
+     "Allows access to data from the Rio de Janeiro Public Security Institute (ISP),
+such as criminal statistics, data on gun seizures and femicide.  The package
+also contains the spatial data of Pacifying Police Units (UPPs) and Integrated
+Public Safety Regions, Areas and Circumscriptions.")
+    (license license:expat)))
+
 (define-public r-ispd
   (package
     (name "r-ispd")
@@ -10899,13 +10930,13 @@ Geological Survey (USGS) Idaho National Laboratory Project Office.")
 (define-public r-inlavaan
   (package
     (name "r-inlavaan")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "INLAvaan" version))
        (sha256
-        (base32 "1xvaww4nzmfvkbkqh5j58x869gqja28fl2gmwai48377w8dpxz8l"))))
+        (base32 "1sv348ay9g0lqdgfq4g08i8xlx1wla43dsggcga7m4xbm5zz1l61"))))
     (properties `((upstream-name . "INLAvaan")))
     (build-system r-build-system)
     (arguments

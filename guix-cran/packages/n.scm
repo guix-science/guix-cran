@@ -6958,13 +6958,13 @@ Leskovec(2016),available at <@code{arXiv:1607.00653>}.")
 (define-public r-nocturn
   (package
     (name "r-nocturn")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nocturn" version))
        (sha256
-        (base32 "1rqc28q4n7wqgfwcmmfancv86kwwn0rfjxx4lsd4xnlbdd31k1zw"))))
+        (base32 "1p54rkkkjzjy1g6n2y866b6fszncbiwwadsg92303945qjmjv9d2"))))
     (properties `((upstream-name . "nocturn")))
     (build-system r-build-system)
     (arguments
@@ -20986,13 +20986,13 @@ NADA and adds new functionality.")
 (define-public r-nacho
   (package
     (name "r-nacho")
-    (version "2.0.7")
+    (version "2.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NACHO" version))
        (sha256
-        (base32 "0yfrldrb9nmi1vz4ycxzfbb988wkrqpar5w0j3hzd6b88bm0392y"))))
+        (base32 "133g2ninm3dsm33rixga8lx6xwcz1wj6ymv58ljda7kp7nm5w0p7"))))
     (properties `((upstream-name . "NACHO")))
     (build-system r-build-system)
     (arguments

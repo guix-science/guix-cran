@@ -7422,13 +7422,13 @@ details, see Novo and Sanchez-Sellero (2025)
 (define-public r-qardlr
   (package
     (name "r-qardlr")
-    (version "1.0.1")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qardlr" version))
        (sha256
-        (base32 "0gsl3ci7gaxy70z46n1j5pdi67pba57j2phazr6mjgq7qpswhq3a"))))
+        (base32 "0jm11673nd05a1zwp37rinn0hd3nzxwcrighzd0myq8l3ax0353z"))))
     (properties `((upstream-name . "qardlr")))
     (build-system r-build-system)
     (arguments
@@ -7439,7 +7439,7 @@ details, see Novo and Sanchez-Sellero (2025)
     (synopsis "Quantile Autoregressive Distributed Lag Model")
     (description
      "This package implements the Quantile Autoregressive Distributed Lag (QARDL)
-model of Cho, Kim and Shin (2015) <doi:10.1016/j.jeconom.2015.01.003>.
+model of Cho, Kim and Shin (2015) <doi:10.1016/j.jeconom.2015.05.003>.
 Estimates quantile-specific long-run (beta), short-run autoregressive (phi), and
 impact (gamma) parameters.  Features include BIC-based automatic lag selection,
 Error Correction Model (ECM) parameterization, Wald tests for parameter

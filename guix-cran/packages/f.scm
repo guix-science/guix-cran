@@ -5835,13 +5835,13 @@ command and returns an R object of class nifti or necessary output.")
 (define-public r-freestiler
   (package
     (name "r-freestiler")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "freestiler" version))
        (sha256
-        (base32 "14apgi3am5iibknzxmms9xq9zk18jjpqdis5r4cqcxr3856dif16"))))
+        (base32 "1b62qyyar6ddx66ddri1q09rxdxlgdz0cgn7qlqn90byyhrhhliz"))))
     (properties `((upstream-name . "freestiler")))
     (build-system r-build-system)
     (arguments
@@ -8255,13 +8255,13 @@ presence of all four gametes is also called phylogenetic incompatibility.")
 (define-public r-foundryr
   (package
     (name "r-foundryr")
-    (version "0.1.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "foundryR" version))
        (sha256
-        (base32 "0scms4c8ph0jdx7xmah858yg7ffkl5ddn8ajzg3h36pk5b7kcjb3"))))
+        (base32 "0j92nrj5n4746pqc2mqqhj0i4qm4vip5bp7jw91x78x2wibb82f0"))))
     (properties `((upstream-name . "foundryR")))
     (build-system r-build-system)
     (arguments
@@ -8283,13 +8283,13 @@ presence of all four gametes is also called phylogenetic incompatibility.")
     (home-page "https://github.com/farach/foundryR")
     (synopsis "Data Frame Workflows for 'Microsoft Foundry'")
     (description
-     "Work with Microsoft Azure AI Foundry from data-frame-oriented R workflows.
-Provides data-frame-returning helpers for Azure AI Content Safety', Azure
-@code{OpenAI} Responses API calls, strict structured extraction, vector
-representations, files, batch jobs, audio, media, and chat completions.
-Supports research annotation, safety gates, semantic search, and tidymodels
-recipes.  Helps teams keep model workflows inside their Azure environment while
-preserving analyzable outputs.  See the Microsoft Foundry REST API documentation
+     "Work with Microsoft Foundry from data-frame-oriented R workflows.  Provides
+data-frame-returning helpers for Azure AI Content Safety', Azure @code{OpenAI}
+Responses API calls, strict structured extraction, vector representations,
+files, batch jobs, audio, media, and chat completions.  Supports research
+annotation, safety gates, semantic search, and tidymodels recipes.  Helps teams
+keep model workflows inside their Azure environment while preserving analyzable
+outputs.  See the Microsoft Foundry REST API documentation
 <https://learn.microsoft.com/rest/api/microsoft-foundry/> and Azure AI Content
 Safety documentation
 <https://learn.microsoft.com/azure/ai-services/content-safety/>.")
@@ -13305,20 +13305,22 @@ visualization platform <https://developers.flourish.studio/api/introduction/>.")
 (define-public r-florabr
   (package
     (name "r-florabr")
-    (version "1.3.1")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "florabr" version))
        (sha256
-        (base32 "15frlskwzhx26czgxbn4cqhx48vy5j0iznzk2zygizfkwwjjm72m"))))
+        (base32 "0das77wg08ww02yfsbjhs98lfyddwkd2zq45hygmd67bb5gpfk57"))))
     (properties `((upstream-name . "florabr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xml
-                             r-terra
+    (propagated-inputs (list r-terra
+                             r-stringi
+                             r-r-utils
+                             r-jsonlite
                              r-httr
                              r-foreach
                              r-dosnow
@@ -14808,13 +14810,13 @@ Causal Inference Conference's Data Challenge.  See Kokandakar et al. (2023)
 (define-public r-flexbart
   (package
     (name "r-flexbart")
-    (version "2.0.3")
+    (version "2.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flexBART" version))
        (sha256
-        (base32 "0s5404864vq3wjs5fdxjr871jkv8yq3wrs3s84kyyxqqv9lfrawp"))))
+        (base32 "1y8rrf46lpl986shxzpmnzwd43pzm5ycy0ahn9np9mh01brb0p2j"))))
     (properties `((upstream-name . "flexBART")))
     (build-system r-build-system)
     (arguments
@@ -14834,7 +14836,7 @@ fitting heteroscedastic BART models, in which both the mean and log-variance are
 approximated with separate regression tree ensembles.  A formula interface
 allows for different splitting variables to be used in each ensemble.  For more
 details see Deshpande (2025) <doi:10.1080/10618600.2024.2431072> and Deshpande
-et al. (2024) <doi:10.1214/24-BA1470>.")
+et al. (2026) <doi:10.1214/24-BA1470>.")
     (license license:gpl3+)))
 
 (define-public r-flex
@@ -25126,19 +25128,19 @@ variable parameters.  Extended documentation at
 (define-public r-faunabr
   (package
     (name "r-faunabr")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "faunabr" version))
        (sha256
-        (base32 "1cqvm0qlsbyjaa4afpqxzl3wjmlkii2gnqpfwva5rk63xighfmkw"))))
+        (base32 "01nhsy343nhd57v2wij4m6sbay2ahx4ab2pbrd7ngwdy5cbk30z6"))))
     (properties `((upstream-name . "faunabr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xml r-terra r-httr r-data-table))
+    (propagated-inputs (list r-terra r-httr r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://wevertonbio.github.io/faunabr/")
     (synopsis "Explore CatÃ¡logo TaxÃ´nomico da Fauna do Brasil Database")
@@ -28816,6 +28818,41 @@ Works on any cost function.  For detailed information see Gabel et al. (2019)
 <doi:10.1371/journal.pcbi.1007230>.")
     (license license:expat)))
 
+(define-public r-famnesia
+  (package
+    (name "r-famnesia")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "famnesia" version))
+       (sha256
+        (base32 "1g1nnzm7d9436q8yzv5ggjcsnzrn5p39yb4cs01sm28k8a6qsm3m"))))
+    (properties `((upstream-name . "famnesia")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shinyjs
+                             r-shiny
+                             r-pedtools
+                             r-pedprobr
+                             r-pedmut
+                             r-pedfamilias
+                             r-htmltools
+                             r-dt
+                             r-bslib))
+    (home-page "https://magnusdv.shinyapps.io/famnesia/")
+    (synopsis "Anonymising Familias Files")
+    (description
+     "This package provides a shiny application for anonymising files exported from
+the Familias software for forensic kinship analysis (Egeland et al. (2000)
+<doi:10.1016/s0379-0738(00)00147-x>).  Pedigrees, marker data, allele
+frequencies and mutation models can be masked or modified, with options for
+preserving likelihood ratios exactly.  The application is built on the pedsuite
+packages for pedigree analysis.")
+    (license license:gpl3+)))
+
 (define-public r-famle
   (package
     (name "r-famle")
@@ -29761,13 +29798,13 @@ main trial recruits to target, given the recruitment data observed in the pilot.
 (define-public r-fafa
   (package
     (name "r-fafa")
-    (version "1.4")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FAfA" version))
        (sha256
-        (base32 "0sk96lg7bl2a4vipzjsl3gfws3j27665mhm3ngfmw35gxv3b6y4i"))))
+        (base32 "15gfalkic44mkbdm5lxn73i89mzgs0wa8adh39hgh4lhrm2i05z2"))))
     (properties `((upstream-name . "FAfA")))
     (build-system r-build-system)
     (arguments
@@ -29799,16 +29836,27 @@ main trial recruits to target, given the recruitment data observed in the pilot.
      "This package provides a comprehensive Shiny-based graphical user interface for
 conducting a wide range of factor analysis procedures.  F@code{AfA} (Factor
 Analysis for All) guides users through data uploading, assumption checking
-(descriptives, collinearity, multivariate normality, outliers), data wrangling
-(variable exclusion, data splitting), factor retention analysis (e.g., Parallel
-Analysis, Hull method, EGA), Exploratory Factor Analysis (EFA) with various
-rotation and extraction methods, internal split-sample EFA replication analysis,
-Confirmatory Factor Analysis (CFA) for model testing, Reliability Analysis
-(e.g., Cronbach's Alpha, @code{McDonald's} Omega), Measurement Invariance
-testing across groups, and item weighting techniques.  The application leverages
-established R packages such as lavaan and psych to perform these analyses,
-offering an accessible platform for researchers and students.  Results are
-presented in user-friendly tables and plots, with options for downloading
+(descriptive statistics, collinearity, multivariate normality, outliers), data
+wrangling (variable exclusion, data splitting), exploratory factor analysis
+(EFA) with various rotation and extraction methods, confirmatory factor analysis
+(CFA), reliability analysis (e.g., Cronbach's Alpha, @code{McDonald's} Omega),
+and measurement invariance testing across groups.  Factor retention methods
+include parallel analysis following Horn (1965) <doi:10.1007/BF02289447>,
+optimized parallel analysis following Timmerman and Lorenzo-Seva (2011)
+<doi:10.1037/a0023353>, permutation parallel analysis for categorical variables
+following Lubbe (2019) <doi:10.1037/met0000171>, the Hull method following
+Lorenzo-Seva et al. (2011) <doi:10.1080/00273171.2011.564527>, minimum average
+partial criteria following Velicer (1976) <doi:10.1007/BF02293557> and O'Connor
+(2000) <doi:10.3758/BF03200807>, and the empirical Kaiser criterion following
+Braeken and van Assen (2017) <doi:10.1037/met0000074>.  Exploratory graph
+analysis follows Golino and Epskamp (2017) <doi:10.1371/journal.pone.0174035>,
+with bootstrap stability assessment following Christensen and Golino (2021)
+<doi:10.3390/psych3030032>.  Internal split-sample EFA replication follows
+Osborne and Fitzpatrick (2012) <doi:10.7275/h0bd-4d11>.  Model-specific dynamic
+fit index cutoffs for CFA follow @code{McNeish} and Wolf (2023)
+<doi:10.1037/met0000425>.  Item weighting follows KÄ±lÄ±Ã§ (2026)
+<doi:10.3758/s13428-026-03095-w>.  Analyses use established R packages such as
+lavaan and psych'.  Results are presented in tables and plots with downloadable
 outputs.  Analysis projects can be saved and restored, and reproducible R, HTML,
 and PDF workflow reports can be generated.")
     (license license:agpl3)))

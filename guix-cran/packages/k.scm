@@ -2050,6 +2050,42 @@ lets you define your own layouts.  The package comes with a default letter
 layout based on DIN 5008B'.")
     (license license:gpl3)))
 
+(define-public r-koma
+  (package
+    (name "r-koma")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "koma" version))
+       (sha256
+        (base32 "1qfn8h00c96s79r4lpv5gkxjf38p9msgrvpj38qjkwxpnhr6d1z0"))))
+    (properties `((upstream-name . "koma")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tempdisagg
+                             r-rlang
+                             r-purrr
+                             r-progressr
+                             r-glue
+                             r-foreach
+                             r-dofuture
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://timothymerlin.github.io/koma/")
+    (synopsis "Bayesian Simultaneous Equation Models for Forecasting")
+    (description
+     "Estimate and forecast Bayesian simultaneous equation models for macroeconomic
+time series.  Provides tools to specify systems of behavioral equations and
+accounting identities, transform and manage time series, simulate from the
+posterior using a Metropolis-within-Gibbs sampler, and generate unconditional
+and conditional forecasts with user-defined priors and restrictions.  Methods
+are described in Rathke A. and Sarferaz S. (forthcoming) \"Bayesian Estimation of
+Simultaneous Equations Model\".")
+    (license license:gpl3+)))
+
 (define-public r-kollar
   (package
     (name "r-kollar")

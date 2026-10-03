@@ -2720,13 +2720,13 @@ more at <https://getbootstrap.com/>.")
 (define-public r-bstfa
   (package
     (name "r-bstfa")
-    (version "0.1.0")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BSTFA" version))
        (sha256
-        (base32 "1zh8d40vz0kw6m9ijml59jdyv6rhiqnlpbxvcgzx1rjd9wfjm3pr"))))
+        (base32 "0ykdvldjf2hq33fvyc9yfg3k84zm97wfpf4fxrbmb25c6j93k3yj"))))
     (properties `((upstream-name . "BSTFA")))
     (build-system r-build-system)
     (arguments
@@ -2746,6 +2746,7 @@ more at <https://getbootstrap.com/>.")
                              r-lubridate
                              r-ggpubr
                              r-ggplot2
+                             r-geosphere
                              r-coda))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=BSTFA")
@@ -5901,13 +5902,13 @@ Guthrie & Franck (2024) <doi:10.1080/00031305.2024.2339266>.")
 (define-public r-brazilmet
   (package
     (name "r-brazilmet")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BrazilMet" version))
        (sha256
-        (base32 "1j9x99vsix4rs1all2qbn8g2q10a203qb4ryjbk8fl4d6hgqms4h"))))
+        (base32 "1xxc26f0xxxaifr1xil7cqirr7pvixgdqhhi7whjhzapzfq1xzx0"))))
     (properties `((upstream-name . "BrazilMet")))
     (build-system r-build-system)
     (arguments
@@ -5921,7 +5922,8 @@ Guthrie & Franck (2024) <doi:10.1080/00031305.2024.2339266>.")
                              r-readxl
                              r-lubridate
                              r-dplyr))
-    (home-page "https://cran.r-project.org/package=BrazilMet")
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/FilgueirasR/BrazilMet")
     (synopsis
      "Download and Processing of Automatic Weather Stations (AWS) Data of INMET-Brazil")
     (description
@@ -20853,13 +20855,13 @@ high-dimensional applications such as omics and precision-medicine research.")
 (define-public r-bigdatape
   (package
     (name "r-bigdatape")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BigDataPE" version))
        (sha256
-        (base32 "1bcv8rifw2ri1pia0877vc3k40is6v3llkf5fbnrzmchga50ndqn"))))
+        (base32 "0rwhvlcwnj5rm7pn27i3p68p4blrasgz7ch9jvnfcxb8yll0mhn2"))))
     (properties `((upstream-name . "BigDataPE")))
     (build-system r-build-system)
     (arguments
@@ -20867,7 +20869,7 @@ high-dimensional applications such as omics and precision-medicine research.")
       #:tests? #f))
     (propagated-inputs (list r-apifetch))
     (native-inputs (list r-knitr))
-    (home-page "<https://strategicprojects.github.io/BigDataPE/>")
+    (home-page "https://strategicprojects.github.io/BigDataPE/")
     (synopsis "Secure and Intuitive Access to 'BigDataPE' 'API' Datasets")
     (description
      "Designed to simplify the process of retrieving datasets from the Big Data PE
@@ -20936,13 +20938,13 @@ specified.  A direct base to base converter is included.")
 (define-public r-bigbang
   (package
     (name "r-bigbang")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bigbang" version))
        (sha256
-        (base32 "01w68dd76bxxkiahnlrgaglvk9my3360ybqhyning4bbm2k6wcd3"))))
+        (base32 "1rpj9ha2hlwcr4dvp1233aavk3cgi8nj8sd5p7ww8hh0k63ffh0f"))))
     (properties `((upstream-name . "bigbang")))
     (build-system r-build-system)
     (arguments
@@ -25284,13 +25286,13 @@ available datasets and documentation.")
 (define-public r-bedrock
   (package
     (name "r-bedrock")
-    (version "0.1.9")
+    (version "0.1.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bedrock" version))
        (sha256
-        (base32 "0n72fz6z5r0labb5fcr0piypygbh2vxvxap13kycd7x8gzv5937v"))))
+        (base32 "05ssic11nlvhcjaki7wcvrbv00dwlmq49gangsaffa0gmbj12cnw"))))
     (properties `((upstream-name . "bedrock")))
     (build-system r-build-system)
     (arguments
@@ -33333,13 +33335,13 @@ Analgesia.")
 (define-public r-bayesbrainmap
   (package
     (name "r-bayesbrainmap")
-    (version "0.2.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesBrainMap" version))
        (sha256
-        (base32 "1dzh2v2la2ajpva85s74jrc6icchk3gqb7gqkfxcrs4xymqnsra3"))))
+        (base32 "1q5zwxnsjlr34hfm45cz58d83zv51c3zbbbpydkdb8gd3qzljhv4"))))
     (properties `((upstream-name . "BayesBrainMap")))
     (build-system r-build-system)
     (arguments
@@ -33351,7 +33353,6 @@ Analgesia.")
                              r-matrix
                              r-foreach
                              r-fmritools
-                             r-fmriscrub
                              r-abind))
     (home-page "https://github.com/mandymejia/BayesBrainMap")
     (synopsis

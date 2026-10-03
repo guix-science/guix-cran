@@ -238,19 +238,18 @@ Langa-Weir classification system.  For details regarding the; HRS
 (define-public r-lwbgt
   (package
     (name "r-lwbgt")
-    (version "0.4.1")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lwbgt" version))
        (sha256
-        (base32 "1iqpr8x0zk22b0ha2v1h35cr339jjc74cbnz0jjcav6qil7hg27f"))))
+        (base32 "1i4wl4i3md6ql3dg8pdq3k1yrx2c0fxky958qqb4vxbzgzrmlzhi"))))
     (properties `((upstream-name . "lwbgt")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (inputs (list))
     (home-page "https://github.com/zyf0717/lwbgt")
     (synopsis "Reference-Compatible Outdoor Wet Bulb Globe Temperature")
     (description
@@ -622,13 +621,13 @@ plotting of equivalent dose distributions.")
 (define-public r-lumbermark
   (package
     (name "r-lumbermark")
-    (version "0.9.0")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lumbermark" version))
        (sha256
-        (base32 "01wkcinrln781nmh2bcx5fk9ill1gm6ykzh5gj9pibg8zz1wpkb1"))))
+        (base32 "0j48npngpgwfpryivazb23i6wfcab7mc6pakvr329kkn4x61qw3j"))))
     (properties `((upstream-name . "lumbermark")))
     (build-system r-build-system)
     (arguments
@@ -643,11 +642,13 @@ plotting of equivalent dose distributions.")
      "This package implements a fast and resistant divisive clustering algorithm which
 identifies a specified number of clusters: lumbermark iteratively chops off
 sizeable limbs that are joined by protruding segments of a dataset's mutual
-reachability minimum spanning tree; see Gagolewski (2026)
-<https://lumbermark.gagolewski.com/>.  The use of a mutual reachability distance
-pulls peripheral points farther away from each other.  When combined with the
-deadwood package, it can act as an outlier detector.  The Python version of
-lumbermark is available via @code{PyPI}'.")
+reachability minimum spanning tree (Gagolewski, 2026
+<DOI:10.48550/@code{arXiv.2604.07143>}).  The use of a mutual reachability
+distance pulls peripheral points farther away from each other.  It is a viable
+alternative to the HDBSCAN* algorithm and can be viewed as a divisive version of
+Genie.  The resulting partitions of different granularities are properly nested.
+ When combined with the deadwood package, it can act as an outlier detector.
+The Python version of lumbermark is available via @code{PyPI}'.")
     (license license:agpl3)))
 
 (define-public r-lumberjack
@@ -8260,13 +8261,13 @@ to covariates only or also to outcome values.")
 (define-public r-lmmsolver
   (package
     (name "r-lmmsolver")
-    (version "1.0.14")
+    (version "1.0.14.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LMMsolver" version))
        (sha256
-        (base32 "1f9hs9z8rf4zmkpmazpdpnzn4azh9j0z01slzdhbqlgar12h92hh"))))
+        (base32 "00mxx017lk27cfadpsnja4z79lp13xqzv56p4mjy6rvsn43ya5nd"))))
     (properties `((upstream-name . "LMMsolver")))
     (build-system r-build-system)
     (arguments
@@ -12516,6 +12517,39 @@ Travers Ching, Xun Zhu, Lana X. Garmire (2018)
 <doi:10.1371/journal.pcbi.1006076>.")
     (license license:gpl2)))
 
+(define-public r-likinginitiative
+  (package
+    (name "r-likinginitiative")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "likingInitiative" version))
+       (sha256
+        (base32 "13cpm2r19rk9d3yfxjr9mabj581zvlsfyb3ly8d7xik0f822sq3j"))))
+    (properties `((upstream-name . "likingInitiative")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-readr
+                             r-jsonlite
+                             r-httr2
+                             r-fs
+                             r-cli))
+    (home-page "https://liking-rating-frontend.onrender.com")
+    (synopsis "Access the Liking Rating Database")
+    (description
+     "Download and work with the Liking Rating Database, a curated collection of
+subjective liking ratings from published decision-making studies, described in
+Fernandez, Goyal and Krajbich (2026) <doi:10.5281/zenodo.22216442>.  Data is
+read from versioned release files and cached for the session, so a pinned
+version returns the same rows regardless of when it is run.  Provides access by
+dataset, by item across studies, or as the whole corpus, together with the
+metadata and citations needed to report it.")
+    (license license:expat)))
+
 (define-public r-likertmaker
   (package
     (name "r-likertmaker")
@@ -14134,13 +14168,13 @@ and push notifications, and more.")
 (define-public r-lgrdata
   (package
     (name "r-lgrdata")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lgrdata" version))
        (sha256
-        (base32 "0h1crdhqfp6hzx30lp0w015scf2566hhrl2i7mkxy868rkl3aig9"))))
+        (base32 "16ans0phv0a0wyf13mgwq4in7aa05kxk7rj9f3nx5f1a8r0i3h6c"))))
     (properties `((upstream-name . "lgrdata")))
     (build-system r-build-system)
     (arguments
@@ -14149,8 +14183,8 @@ and push notifications, and more.")
     (home-page "https://cran.r-project.org/package=lgrdata")
     (synopsis "Example Datasets for a Learning Guide to R")
     (description
-     "This package provides a largish collection of example datasets, including
-several classics.  Many of these datasets are well suited for regression,
+     "This package provides a collection of example datasets, including several
+classics.  Many of these datasets are well suited for regression,
 classification, and visualization.")
     (license license:cc0)))
 
@@ -20690,13 +20724,13 @@ Barometer project.  The publicly available data can be downloaded from:
 (define-public r-laopendata
   (package
     (name "r-laopendata")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "laOpenData" version))
        (sha256
-        (base32 "01zg80gzmnkspq884yv2v3p3rhp8l9688zv0ygya9158qgnypgdv"))))
+        (base32 "07qa3md176yjhc9v8p7b33w1vm5wr267hlx56jn4f8qw59hrsslz"))))
     (properties `((upstream-name . "laOpenData")))
     (build-system r-build-system)
     (arguments
@@ -20709,7 +20743,7 @@ Barometer project.  The publicly available data can be downloaded from:
                              r-httr
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://martinezc1.github.io/laOpenData/")
+    (home-page "https://nyc-open-data-lab.github.io/laOpenData/")
     (synopsis "Convenient Access to Los Angeles Open Data API Endpoints")
     (description
      "This package provides simple, reproducible access to datasets from the Los

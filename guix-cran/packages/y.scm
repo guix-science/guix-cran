@@ -1256,6 +1256,31 @@ be useful for large files when only a subset is needed (but please see the note
 in the help page for this function).")
     (license license:lgpl3)))
 
+(define-public r-yalebraille
+  (package
+    (name "r-yalebraille")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "yaleBraille" version))
+       (sha256
+        (base32 "0823f1r9agk3jjyyxh9s38cg6hspbx65ll7xaw1hx7x0gb9g8zrq"))))
+    (properties `((upstream-name . "yaleBraille")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sysfonts r-showtext))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/wininger/yaleBraille")
+    (synopsis "Generate Braille-Enabled Graphics")
+    (description
+     "This package provides tools for rendering and visualizing Braille patterns in R,
+using the liblouis translation library.  For more information see
+<https://github.com/wininger/@code{yaleBraille>}.")
+    (license license:lgpl2.1+)))
+
 (define-public r-yaimpute
   (package
     (name "r-yaimpute")

@@ -5677,40 +5677,39 @@ Work-Conference on Artificial Neural Networks.  Springer, 2017
 (define-public r-tselca
   (package
     (name "r-tselca")
-    (version "1.1.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tseLCA" version))
        (sha256
-        (base32 "0zipp9gcmrqnf7sb002g3vkc181r25ixz2lwbing5s0lf4knwbyn"))))
+        (base32 "0wri2gbggcbx5nzza111i9zrg48gqrkr8pwrdymgpbd2nvi9rac1"))))
     (properties `((upstream-name . "tseLCA")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-multilevlca r-cli))
+    (propagated-inputs (list r-multilevlca r-formula r-cli))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://samleebyu.github.io/tseLCA/")
     (synopsis "Three-Step Estimation for Latent Class Analysis")
     (description
-     "This package implements BCH (Bolck-Croon-Hagenaars) <doi:10.1093/pan/mph001> and
-ML (Vermunt's maximum likelihood) <doi:10.1093/pan/mpq025> approaches for
-three-step estimation of latent class models with covariates and distal
-outcomes, following Bakk, Tekle & Vermunt (2013) <doi:10.1177/0081175012470644>,
-Bakk, Oberski & Vermunt (2014) <https://www.jstor.org/stable/24573086>, and Bakk
-& Kuha (2018) <doi:10.1007/s11336-017-9592-7>.  Built on @code{multilevLCA}
-(Lyrvall et al., 2025) <doi:10.1080/00273171.2025.2473935> for Step-1
-measurement model estimation, this package extends it with support for Gaussian,
-Poisson, and binomial distal outcome families.  Unlike @code{poLCA}', which
-relies on one-step estimation and cannot accommodate a measurement model from a
-different sample, this package uses a stepwise approach to prevent the
-structural model from influencing latent class formation.  Implements correct
-sandwich variance estimation that propagates measurement uncertainty from the
-first-step through classification-error correction in the final step (Bakk,
-Oberski & Vermunt, 2014).  Supports polytomous items and missing data in the
-measurement model with full information maximum likelihood.  A data-generating
-process replicating the Bakk & Kuha (2018) simulation study is included.")
+     "Bias-adjusted three-step estimation of latent class models with covariates and
+distal outcomes.  The latent class measurement model is estimated first, with
+@code{multilevLCA} (Lyrvall et al., 2025) <doi:10.1080/00273171.2025.2473935>,
+and held fixed; observations are then classified; and the classes are related to
+covariates and distal outcomes with the maximum likelihood correction of Vermunt
+(2010) <doi:10.1093/pan/mpq025> and Bakk, Tekle and Vermunt (2013)
+<doi:10.1177/0081175012470644>, or the correction of Bolck, Croon and Hagenaars
+(2004) <doi:10.1093/pan/mph001>.  Standard errors account for the uncertainty of
+the measurement model (Bakk, Oberski and Vermunt, 2014)
+<doi:10.1093/pan/mpu003>.  Includes class enumeration, modal and proportional
+class assignment, covariate formulas, Gaussian, Poisson, binomial, and
+multinomial distal outcomes, the two-step estimator of Bakk and Kuha (2018)
+<doi:10.1007/s11336-017-9592-7>, measurement models applied to new samples, and
+full-information maximum likelihood for missing indicators, standard methods for
+fitted models, and a data-generating process replicating the simulation design
+of Bakk and Kuha (2018).")
     (license license:gpl3+)))
 
 (define-public r-tseind
@@ -5743,13 +5742,13 @@ Weisberg, Herbert (2005, ISBN:0-226-89128-3); Biemer, Paul (2010)
 (define-public r-tseffects
   (package
     (name "r-tseffects")
-    (version "0.3.1")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tseffects" version))
        (sha256
-        (base32 "1pgiay71parlfpma697hs2n8rn4143gdmbfisgdiwagmv41i88n4"))))
+        (base32 "1d3zm0s98c7p9nndn6ngi7syjxq3whbdm971ap2m3gzdsm8gi3wy"))))
     (properties `((upstream-name . "tseffects")))
     (build-system r-build-system)
     (arguments
@@ -5758,23 +5757,24 @@ Weisberg, Herbert (2005, ISBN:0-226-89128-3); Biemer, Paul (2010)
     (propagated-inputs (list r-sandwich r-mpoly r-ggplot2 r-car))
     (native-inputs (list r-knitr))
     (home-page "https://sorenjordan.github.io/tseffects/")
-    (synopsis "Dynamic Inferences from Time Series (with Interactions)")
+    (synopsis
+     "Dynamic Effects from Single-Equation Time Series Models (with Interactions)")
     (description
      "Autoregressive distributed lag (A[R]DL) models (and their reparameterized
 equivalent, the Generalized Error-Correction Model [GECM]) are the workhorse
-models in uncovering dynamic inferences.  ADL models are simple to estimate;
-this is what makes them attractive.  Once these models are estimated, what is
-less clear is how to uncover a rich set of dynamic inferences from these models.
- We provide tools for recovering those inferences.  These tools apply to
-traditional time-series quantities of interest and are built from the Impulse
-Response Function and Step Response Function (sometimes described as a pulse
-effect or a cumulative effect).  They also allow for a variety of shock
+dynamic linear models in uncovering dynamic inferences.  ADL models are simple
+to estimate; this is what makes them attractive.  Once these models are
+estimated, what is less clear is how to uncover a rich set of dynamic inferences
+from these models.  We provide tools for recovering those inferences.  These
+tools apply to traditional time-series quantities of interest and are built from
+the Impulse Response Function and Step Response Function (sometimes described as
+a pulse effect or a cumulative effect).  They also allow for a variety of shock
 histories to be applied to the independent variable (beyond just a one-time,
 one-unit increase) as well as the recovery of inferences in levels for shocks
-applied to (in)dependent variables in differences (what we call the Generalized
-Dynamic Response Function).  These effects are also available for the general
+applied to (in)dependent variables in differences through the Generalized
+Dynamic Response Function.  These tools are also available for the general
 conditional dynamic model advocated by Warner, Vande Kamp, and Jordan (2026
-<doi:10.1017/psrm.2026.10087>).  We also provide the formulae for these effects.")
+<doi:10.1017/psrm.2026.10087>).")
     (license license:gpl2+)))
 
 (define-public r-tseal
@@ -8729,19 +8729,20 @@ Jackman (2008) <doi:10.18637/jss.v027.i08>.")
 (define-public r-trendseries
   (package
     (name "r-trendseries")
-    (version "1.4.0")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "trendseries" version))
        (sha256
-        (base32 "0hzah4rai7iffp4x5lcrbybwn05nixyjaniiskfcrhr4qfcw1mai"))))
+        (base32 "03ydbgsimnl2yg0z5wrsgjmwsir9xr9pfjfwyy8xwp668l210s02"))))
     (properties `((upstream-name . "trendseries")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tsbox
+    (propagated-inputs (list r-vctrs
+                             r-tsbox
                              r-tibble
                              r-rlang
                              r-rcpproll
@@ -8756,8 +8757,10 @@ Jackman (2008) <doi:10.18637/jss.v027.i08>.")
     (description
      "This package provides a unified interface to extract trends, cycles, and
 seasonal components from monthly and quarterly time series using established
-econometric filters and smoothing methods, with frequency-aware defaults for
-common economic frequencies.")
+filters and smoothers from econometrics and signal extraction, with
+frequency-aware defaults for common economic frequencies.  Rolling and
+year-to-date aggregations are also available, including the compounded
+accumulation of rates of change.")
     (license license:expat)))
 
 (define-public r-trendsegmentr
@@ -9210,13 +9213,13 @@ total evidence dating analyses.")
 (define-public r-treess
   (package
     (name "r-treess")
-    (version "0.2.6")
+    (version "0.2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "treeSS" version))
        (sha256
-        (base32 "1j63lxx2w58nah6icd2kazgbndgy2i2n09177i631krca21i9zw8"))))
+        (base32 "0fi97rkc6p49lmwvyzdcmlvid33x4q0355ghmqqfch1zll5qf28l"))))
     (properties `((upstream-name . "treeSS")))
     (build-system r-build-system)
     (arguments
@@ -10163,13 +10166,13 @@ species, population, or genes) and the data used to create them.")
 (define-public r-treebalance
   (package
     (name "r-treebalance")
-    (version "1.2.0")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "treebalance" version))
        (sha256
-        (base32 "0mj621kx0gsik8ds0gch3g5b7ndbncw4hin2h2jzlgp7hylkmlhi"))))
+        (base32 "096gk4nz2wym0p9prfbrgnlfn4rs1ygr2f6wwd0mb5xf9lvikgb0"))))
     (properties `((upstream-name . "treebalance")))
     (build-system r-build-system)
     (arguments
@@ -10181,8 +10184,8 @@ species, population, or genes) and the data used to create them.")
     (description
      "The aim of the R package treebalance is to provide functions for the computation
 of a large variety of (im)balance indices for rooted trees.  The package
-accompanies the book Tree balance indices: a comprehensive survey by M. Fischer,
-L. Herbst, S. Kersting, L. Kuehn and K. Wicke (2023) <ISBN: 978-3-031-39799-8>,
+accompanies the book Tree Balance Indices - A Comprehensive Survey by M.
+Fischer, L. Herbst, S. Kersting, L. Kuehn and K. Wicke (2023)
 <doi:10.1007/978-3-031-39800-1>, which gives a precise definition for the terms
 balance index and imbalance index (Chapter 4) and provides an overview of the
 terminology in this manual (Chapter 2).  For further information on (im)balance
@@ -10194,17 +10197,17 @@ Colijn-Plazzotta rank, the normal, corrected, quadratic and equal weights
 Colless index, the family of Colless-like indices, the family of I-based
 indices, the Rogers J index, the Furnas rank, the rooted quartet index, the
 s-shape statistic, the Sackin index, the symmetry nodes index, the total
-cophenetic index and the variance of leaf depths.  Additionally, we include 9
+cophenetic index and the variance of leaf depths.  Additionally, we include 6
 tree shape statistics that satisfy the definition of an (im)balance index but
 have not been thoroughly analyzed in terms of tree balance in the literature
-yet.  These are: the total internal path length, the total path length, the
-average vertex depth, the maximum width, the modified maximum difference in
-widths, the maximum depth, the maximum width over maximum depth, the stairs1 and
-the stairs2 index.  As input, most functions of treebalance require a rooted
+yet.  These are: the maximum width, the modified maximum difference in widths,
+the maximum depth, the maximum width over maximum depth, the stairs1 and the
+stairs2 index.  As input, most functions of treebalance require a rooted
 (phylogenetic) tree in phylo format (as introduced in ape 1.9 in November 2006).
  phylo is used to store (phylogenetic) trees with no vertices of out-degree one.
  For further information on the format we kindly refer the reader to E. Paradis
-(2012) <http://ape-package.ird.fr/misc/@code{FormatTreeR_24Oct2012.pdf>}.")
+(2012)
+<https://emmanuelparadis.github.io/misc/@code{FormatTreeR_24Oct2012.pdf>}.")
     (license license:gpl3)))
 
 (define-public r-tree3d
@@ -11826,13 +11829,13 @@ in Kook et al. (2023, <doi:10.1080/01621459.2024.2395588>).")
 (define-public r-tram
   (package
     (name "r-tram")
-    (version "1.4-5")
+    (version "1.4-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tram" version))
        (sha256
-        (base32 "1sxb6f1xa3y81gc98w02jhvxyakbdv4jynw06fm62sfq2b1f2d1d"))))
+        (base32 "0irb6zpizhj0h6282vsyg226wxbvba6dnjacv1l25dvqpna4mgii"))))
     (properties `((upstream-name . "tram")))
     (build-system r-build-system)
     (arguments
@@ -13238,13 +13241,13 @@ function, and maximum likelihood estimation.")
 (define-public r-tptest
   (package
     (name "r-tptest")
-    (version "1.0.3")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tptest" version))
        (sha256
-        (base32 "1bmhz902wf1vms39h3vjw7wmv11ymjfmah0ykfvygvkx59s0zhbp"))))
+        (base32 "03l8qir74hn3zq1cqg4af608rc4n3xkqzpxgak6sy229p9qfys62"))))
     (properties `((upstream-name . "tptest")))
     (build-system r-build-system)
     (arguments
@@ -19529,6 +19532,43 @@ series functionality from packages including dplyr', stats', xts', forecast',
 slider', padr', recipes', and rsample'.")
     (license license:gpl3+)))
 
+(define-public r-timesift
+  (package
+    (name "r-timesift")
+    (version "0.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "timesift" version))
+       (sha256
+        (base32 "12zkk6zq8k6zi43iwvrs7asdv31qgpryb9knxknqqvrdfx6vwk7s"))))
+    (properties `((upstream-name . "timesift")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect r-rlang r-cpp11))
+    (native-inputs (list r-knitr))
+    (home-page "https://gillescolling.com/timesift/")
+    (synopsis "Learn Predictive Representations of Time-Varying Data")
+    (description
+     "Fits and compares representations of time-varying data against a prediction
+target.  Given a table of targets and a table of time-stamped series belonging
+to them, it builds each candidate representation, from the record unreduced
+through a calendar grain such as a week or a month to a lookback anchored on
+each target, fits the requested learners on each, scores every candidate on one
+set of held-out folds, and stacks the out-of-fold predictions into an ensemble.
+Calendar-aware binning keeps a bin a real week or month rather than a fixed
+block of hours.  Learners, response heads and metrics are registered rather than
+hard-coded, so adding one is a registration and not a fork of the fitting code.
+The penalised baseline is an elastic net fitted by cyclic coordinate descent
+along a warm-started path, following Friedman, Hastie and Tibshirani (2010)
+<doi:10.18637/jss.v033.i01>.  The shipped default is presence-absence with a
+joint multi-label head scored by the true skill statistic of Allouche, Tsoar and
+Kadmon (2006) <doi:10.1111/j.1365-2664.2006.01214.x>, the setting used for
+species distribution modelling from microclimate loggers.")
+    (license license:expat)))
+
 (define-public r-timeseriesdatasets
   (package
     (name "r-timeseriesdatasets")
@@ -20050,13 +20090,13 @@ correlations among the variables in a data-driven way.")
 (define-public r-tiltdens
   (package
     (name "r-tiltdens")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tiltdens" version))
        (sha256
-        (base32 "0l0v6j3fbavq2mg1r94029xqvag49w819z2z1psd7fyrj0y3yv0j"))))
+        (base32 "1cw6rksszh5wnwlalz9r91wb4qfgz2dqy6x64syypnh22whfzim8"))))
     (properties `((upstream-name . "tiltdens")))
     (build-system r-build-system)
     (arguments
@@ -24472,13 +24512,13 @@ analysis.")
 (define-public r-tidier
   (package
     (name "r-tidier")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidier" version))
        (sha256
-        (base32 "0n6gzanssni5l5wmm5iqql1k2wfxg7dzq1rk3dhar7rpyxghdnf1"))))
+        (base32 "142983f21c9hggnyzv2d97idr473g0gvyiycypzi2a9f6pp17wm8"))))
     (properties `((upstream-name . "tidier")))
     (build-system r-build-system)
     (arguments
@@ -24488,15 +24528,14 @@ analysis.")
                              r-slider
                              r-rlang
                              r-magrittr
-                             r-furrr
                              r-dplyr
-                             r-dbplyr
                              r-checkmate))
     (home-page "https://github.com/talegari/tidier")
-    (synopsis "Enhanced 'mutate'")
+    (synopsis "Enhanced 'mutate' with 'Apache Spark' Style Window Operations")
     (description
-     "This package provides Apache Spark style window aggregation for R dataframes and
-remote dbplyr tables via mutate in dplyr flavour.")
+     "Window operations for R dataframes with by', order_by and frame defined by
+rows_between or range_between', inspired by Apache Spark via mutate in dplyr
+flavor.")
     (license license:gpl3+)))
 
 (define-public r-tidetables
@@ -31148,6 +31187,33 @@ such as area under the curve (Myerson et al., 2001,
 <doi:10.1901/jeab.2001.76-235>) and ED50 (Yoon & Higgins, 2008,
 <doi:10.1016/j.drugalcdep.2007.12.011>).")
     (license license:gpl3)))
+
+(define-public r-tempo
+  (package
+    (name "r-tempo")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TEMPO" version))
+       (sha256
+        (base32 "0fpsyq9v9lrcrpjg31dk08zxdiyjip774y5qa7xfsqrzymzsz2j6"))))
+    (properties `((upstream-name . "TEMPO")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/RProjectRomania/TEMPO")
+    (synopsis
+     "Tools for Romania's National Institute of Statistics Tempo Data")
+    (description
+     "Download table metadata and data from the Romanian National Institute of
+Statistics TEMPO Online database.  Tables can be listed in Romanian or English
+and downloaded as CSV files.")
+    (license (list license:gpl3
+                   (license:fsdg-compatible "EUPL-1.1")))))
 
 (define-public r-templr
   (package

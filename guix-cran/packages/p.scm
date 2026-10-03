@@ -1477,19 +1477,25 @@ into literature are given in vignette.")
 (define-public r-pvaluefunctions
   (package
     (name "r-pvaluefunctions")
-    (version "1.6.3")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pvaluefunctions" version))
        (sha256
-        (base32 "1zmic5gh5rv27axg512sa8b1jihk8391agk0pzbsjm3kynr7ys7q"))))
+        (base32 "0m4a9318yf2lbsx2hlvqsryahgr74c29fbbiyyajf2gbr7k947j6"))))
     (properties `((upstream-name . "pvaluefunctions")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-zipfr r-scales r-pracma r-gsl r-ggplot2))
+    (propagated-inputs (list r-zipfr
+                             r-scales
+                             r-rlang
+                             r-pracma
+                             r-gsl
+                             r-ggplot2
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/DInfanger/pvaluefunctions")
     (synopsis
@@ -2910,6 +2916,33 @@ that expand ggplot2 plots and functions relevant for introductory papers in
 Epidemiology or Public Health.  Please note that use of the provided data sets
 is for educational purposes only.")
     (license license:gpl2)))
+
+(define-public r-pubformat
+  (package
+    (name "r-pubformat")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pubformat" version))
+       (sha256
+        (base32 "0qdrbka51xqfjnk1hy0i51v19n8r093zxd07ghrrc6aywjv7ypy3"))))
+    (properties `((upstream-name . "pubformat")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Reynolds826/pubformat")
+    (synopsis "Publication-Ready Formatting for Statistical Results")
+    (description
+     "This package provides tools for converting statistical results into consistent,
+publication-ready character output.  Current functionality includes formatting
+p-values, confidence intervals, and correlation coefficients using
+publication-friendly conventions.  The package emphasizes consistent reporting
+while preserving the underlying statistical results and statistical
+decision-making.")
+    (license license:expat)))
 
 (define-public r-pubchemr
   (package
@@ -5001,13 +5034,13 @@ Diekmann, B. Lisser, M. Nool, B. Sommeijer & A.M. de Roos (2001)
 (define-public r-pspi
   (package
     (name "r-pspi")
-    (version "1.2")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PSPI" version))
        (sha256
-        (base32 "1p3kjjrlqmy4mm80q7cmn0gqbj1yinwhqz5nv5h0j99blfwjyb21"))))
+        (base32 "0nvmb6j9n8h3ab9813nga3ybrgj66awz2n7ydxysp2g2h1jd0bjh"))))
     (properties `((upstream-name . "PSPI")))
     (build-system r-build-system)
     (arguments
@@ -5024,7 +5057,8 @@ Diekmann, B. Lisser, M. Nool, B. Sommeijer & A.M. de Roos (2001)
                              r-dplyr
                              r-arm))
     (home-page "https://cran.r-project.org/package=PSPI")
-    (synopsis "Propensity Score Predictive Inference for Generalizability")
+    (synopsis
+     "Propensity Score Predictive Inference for Generalizability and Transportability")
     (description
      "This package provides a suite of Propensity Score Predictive Inference (PSPI)
 methods to generalize treatment effects in trials to target populations.  The
@@ -6136,13 +6170,13 @@ be used to calculate the cross spectrum (multivariate analyses).")
 (define-public r-pscr
   (package
     (name "r-pscr")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PScr" version))
        (sha256
-        (base32 "0cbmb1z4iwxw82m3f3y5iyr2hd1mgqsrvn7ip4rmsqy3zakyh06s"))))
+        (base32 "0167nbyapjwv4rhajrnnlh7x2v488y3n19wvkaq892qrw5q62wz7"))))
     (properties `((upstream-name . "PScr")))
     (build-system r-build-system)
     (arguments
@@ -6152,13 +6186,13 @@ be used to calculate the cross spectrum (multivariate analyses).")
     (home-page "https://cran.r-project.org/package=PScr")
     (synopsis "Estimation for the Power Series Cure Rate Model")
     (description
-     "Provide estimation for particular cases of the power series cure rate model
-<doi:10.1080/03610918.2011.639971>.  For the distribution of the concurrent
-causes the alternative models are the Poisson, logarithmic, negative binomial
-and Bernoulli (which are includes in the original work), the polylogarithm model
-<doi:10.1080/00949655.2018.1451850> and the Flory-Schulz
-<doi:10.3390/math10244643>.  The estimation procedure is based on the EM
-algorithm discussed in <doi:10.1080/03610918.2016.1202276>.  For the
+     "This package provides estimation and simulation tools for particular cases of
+the power series cure rate model <doi:10.1080/03610918.2011.639971>.  For the
+distribution of the concurrent causes the alternative models are the Poisson,
+logarithmic, negative binomial and Bernoulli (which are includes in the original
+work), the polylogarithm model <doi:10.1080/00949655.2018.1451850> and the
+Flory-Schulz <doi:10.3390/math10244643>.  The estimation procedure is based on
+the EM algorithm discussed in <doi:10.1080/03610918.2016.1202276>.  For the
 distribution of the time-to-event the alternative models are slash half-normal,
 Weibull, gamma and Birnbaum-Saunders distributions.")
     (license license:gpl2+)))
@@ -16294,13 +16328,13 @@ see Wood, S.N., Pya, N. & Safken, B. (2016) <doi:10.1080/01621459.2016.1180986>.
 (define-public r-ppforest2
   (package
     (name "r-ppforest2")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ppforest2" version))
        (sha256
-        (base32 "1lf4x2sdj1zpchd97qadkcm99bp22q9lfqc133bl2wfwnv7bpkp8"))))
+        (base32 "1vyy9v7zlf7hm7r9r7f3sylcjmz9rm7bd6lga7399s26hgk0bi0d"))))
     (properties `((upstream-name . "ppforest2")))
     (build-system r-build-system)
     (arguments
@@ -16308,7 +16342,7 @@ see Wood, S.N., Pya, N. & Safken, B. (2016) <doi:10.1080/01621459.2016.1180986>.
       #:tests? #f))
     (propagated-inputs (list r-rcppeigen r-rcpp))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ppforest2")
+    (home-page "https://andres-vidal.github.io/ppforest2-r/")
     (synopsis "Projection Pursuit Oblique Decision Trees and Random Forests")
     (description
      "Builds decision trees by splitting on linear combinations of randomly chosen
@@ -29088,13 +29122,13 @@ on where the error originated.")
 (define-public r-pkgcheck
   (package
     (name "r-pkgcheck")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pkgcheck" version))
        (sha256
-        (base32 "0222y6afkvgz5py25hfkbws9d8zja5058kz5xmakws542721bch7"))))
+        (base32 "01crb8n0zb56v5kf3flcvyi2cy1p8cgjw0af4r87j848rdch3mks"))))
     (properties `((upstream-name . "pkgcheck")))
     (build-system r-build-system)
     (arguments
@@ -31986,13 +32020,13 @@ trees in NEXUS and Newick formats, while preserving annotations.")
 (define-public r-phylospatial
   (package
     (name "r-phylospatial")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phylospatial" version))
        (sha256
-        (base32 "0w61w1jv9pprl31nbd2qw04c8pyq6idaf59xq0b7s22ffr2rf9yv"))))
+        (base32 "0yp6zwq27b9khmnw805nsxsnvxq38vcvgfyhgcr6cabxrmjihxa5"))))
     (properties `((upstream-name . "phylospatial")))
     (build-system r-build-system)
     (arguments
@@ -40629,6 +40663,37 @@ Calculations and Graphs are provided.")
      "Compute and tune some positive definite and sparse covariance estimators.")
     (license license:gpl2)))
 
+(define-public r-pdrobust
+  (package
+    (name "r-pdrobust")
+    (version "0.3.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PDRobust" version))
+       (sha256
+        (base32 "0d5n9yajcrzz925jsrji1zdryysp15cy0sk1l4pvnw2bqx0bgb96"))))
+    (properties `((upstream-name . "PDRobust")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rootsolve r-quantreg r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/whhuan/PD_Robust")
+    (synopsis "Robust Longitudinal Effects Under Truncation by Death")
+    (description
+     "This package implements principal-stratification methods for estimating
+time-specific and pooled heterogeneous treatment effects in longitudinal studies
+where outcomes may be truncated by death.  Supports continuous and binary
+outcomes, explicit data validation and standardization, and covariate-dependent
+treatment effects.  Fits propensity-score, principal-score, and outcome models
+and provides subject-level bootstrap inference, covariate-balance diagnostics,
+principal-stratum summaries, treatment-group-specific survival odds ratios, and
+outcome-noise sensitivity analysis.  Methodological background is provided in
+<doi:10.48550/@code{arXiv.2608.06654>}.")
+    (license license:expat)))
+
 (define-public r-pdr
   (package
     (name "r-pdr")
@@ -43754,6 +43819,33 @@ elimination of heterogeneity.  R. C. Bose and K. R. Nair (1939)
 <http://www.jstor.org/stable/40383923>.")
     (license license:gpl2+)))
 
+(define-public r-pbgof
+  (package
+    (name "r-pbgof")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PBGoF" version))
+       (sha256
+        (base32 "00xybcs837z1dgp776nhbs7z5kszjcsfhzxr5pnjii810850r42a"))))
+    (properties `((upstream-name . "PBGoF")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sn))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=PBGoF")
+    (synopsis "Parametric Bootstrap Tests for the Skew-Normal Distribution")
+    (description
+     "This package provides goodness-of-fit tests for the skew-normal distribution
+with estimated parameters.  Implements Kolmogorov-Smirnov and CramÃ©r-von Mises
+tests using parametric bootstrap or precomputed simulation quantiles, together
+with robust parameter estimation procedures.  Package methods and documentation
+are described by Li and Khang (2026) <https://github.com/Divo-Lee/PB@code{GoF>}.")
+    (license license:gpl2+)))
+
 (define-public r-pbdslap
   (package
     (name "r-pbdslap")
@@ -44511,13 +44603,13 @@ robust to parameter perturbations.")
 (define-public r-pathwayspace
   (package
     (name "r-pathwayspace")
-    (version "1.5.1")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PathwaySpace" version))
        (sha256
-        (base32 "18dg2wi187jrl8hb8dmlmmp7wgkh4yz04abj3bgaypgv1qwp670n"))))
+        (base32 "1i5m6mdg2vxn2rs4lnzlpd7pdkzfnh95za2apy09l9jp3gpqfj4s"))))
     (properties `((upstream-name . "PathwaySpace")))
     (build-system r-build-system)
     (arguments
@@ -48031,13 +48123,13 @@ Mechanistic Models\" <doi:10.1080/01621459.2019.1604367>.")
 (define-public r-panelmatch
   (package
     (name "r-panelmatch")
-    (version "3.1.3")
+    (version "3.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PanelMatch" version))
        (sha256
-        (base32 "0d25c5y3ms4rcf4hyc3cfjfvyj8dw57sy7bgvm81z78kd7rzbm9m"))))
+        (base32 "0hh3zk5ilnlpi85wr73yh3594icvf4gk76mnpskwdq7h5pgia36q"))))
     (properties `((upstream-name . "PanelMatch")))
     (build-system r-build-system)
     (arguments
@@ -48060,7 +48152,7 @@ Mechanistic Models\" <doi:10.1080/01621459.2019.1604367>.")
     (description
      "This package implements a set of methodological tools that enable researchers to
 apply matching methods to time-series cross-sectional data.  Imai, Kim, and Wang
-(2023) <http://web.mit.edu/insong/www/pdf/tscs.pdf> proposes a nonparametric
+(2023) <https://web.mit.edu/insong/www/pdf/tscs.pdf> proposes a nonparametric
 generalization of the difference-in-differences estimator, which does not rely
 on the linearity assumption as often done in practice.  Researchers first select
 a method of matching each treated observation for a given unit in a particular
@@ -48379,13 +48471,13 @@ personalized oncology.  Bioinformatics <doi:10.1093/bioinformatics/btad022>.")
 (define-public r-pamscapes
   (package
     (name "r-pamscapes")
-    (version "0.15.0")
+    (version "0.17.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PAMscapes" version))
        (sha256
-        (base32 "1kji9d2s2iby3q9q2z1gynn0gfqqm9nkxyjqla3wm11v1nimxwjp"))))
+        (base32 "0wvzkidxip8niz3zxwqvdyrhq4cic1pr10rrgqb9xwjnaqa50s37"))))
     (properties `((upstream-name . "PAMscapes")))
     (build-system r-build-system)
     (arguments
@@ -50411,13 +50503,13 @@ step.  On top of that, we extend the PAGFL to time-varying coefficient functions
 (define-public r-pagerankr
   (package
     (name "r-pagerankr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pagerankr" version))
        (sha256
-        (base32 "1vpvjas8h8ngv188lbhjb910anzjdrpcz19ds6i80yhs33sirkpp"))))
+        (base32 "1xswxmg0wv3pfhklvs229inlnzvi4zk1id9cgslbh1nn8fgxm3n4"))))
     (properties `((upstream-name . "pagerankr")))
     (build-system r-build-system)
     (arguments
@@ -50425,7 +50517,7 @@ step.  On top of that, we extend the PAGFL to time-varying coefficient functions
       #:tests? #f))
     (propagated-inputs (list r-rurl r-igraph))
     (native-inputs (list r-knitr))
-    (home-page "https://pagerankr-63ad30.gitlab.io/")
+    (home-page "https://bart-turczynski.gitlab.io/pagerankr/")
     (synopsis "Modular Toolkit for PageRank Calculation")
     (description
      "This package provides a set of modular, pipeable functions to calculate

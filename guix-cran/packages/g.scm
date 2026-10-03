@@ -6474,13 +6474,13 @@ details see Hsu, L. and Wang, C. (2007). <doi:10.1016/j.techfore.2006.02.005>.")
 (define-public r-greybox
   (package
     (name "r-greybox")
-    (version "2.0.8")
+    (version "2.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "greybox" version))
        (sha256
-        (base32 "0g6qxrz8mrxgw07dhx3i9w4ajqbp1v42lfxmnmfbapcvcqdg484x"))))
+        (base32 "1d90msjyvcf9rid47vhg72acnphy3822gyfjy8bp9gp8ghx7527l"))))
     (properties `((upstream-name . "greybox")))
     (build-system r-build-system)
     (arguments
@@ -6495,7 +6495,7 @@ details see Hsu, L. and Wang, C. (2007). <doi:10.1016/j.techfore.2006.02.005>.")
                              r-nloptr
                              r-generics))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/config-i1/greybox")
+    (home-page "https://openforecast.org/packages/")
     (synopsis "Toolbox for Model Building and Forecasting")
     (description
      "This package implements functions and instruments for regression model building
@@ -19271,13 +19271,13 @@ that the data are optimally primed for precise and thorough analysis.")
 (define-public r-giscor
   (package
     (name "r-giscor")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "giscoR" version))
        (sha256
-        (base32 "06z3y8a7zifz3v7j58kx2i1i4ypi7snd6mn47sdcscpi8lgmqcjj"))))
+        (base32 "0xyfalikwya8aba2zb7v942y2sx8mmw8fmiplg2wnxvz35f54gnp"))))
     (properties `((upstream-name . "giscoR")))
     (build-system r-build-system)
     (arguments
@@ -19298,9 +19298,10 @@ that the data are optimally primed for precise and thorough analysis.")
      "This package provides tools to download global and European spatial data from
 the Eurostat GISCO (Geographic Information System of the Commission) data
 distribution <https://ec.europa.eu/eurostat/web/gisco>.  The package provides
-helpers for country boundaries, NUTS regions, administrative units, statistical
-units, transport networks, basic service locations and other GISCO datasets.
-This package is not officially related to or endorsed by Eurostat'.")
+helpers for country boundaries, Nomenclature of Territorial Units for Statistics
+('NUTS') regions, administrative units, statistical units, transport networks,
+basic service locations and other GISCO datasets.  This package is neither
+affiliated with nor endorsed by Eurostat'.")
     (license license:gpl3)))
 
 (define-public r-giraf
@@ -19334,45 +19335,34 @@ using MCMC samplers for large lattices.")
 (define-public r-gipsda
   (package
     (name "r-gipsda")
-    (version "0.1.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gipsDA" version))
        (sha256
-        (base32 "0v3w65c95ajx2lk3ll80n7017rcyfcfgzpfgbxfzigrjvi318b0a"))))
+        (base32 "1n60j4gwvcaz913si7fqqj8x85c0a0rq7fldv92hmnddyhvjn5xw"))))
     (properties `((upstream-name . "gipsDA")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringi
-                             r-rlang
-                             r-permutations
-                             r-patchwork
-                             r-numbers
-                             r-mass
-                             r-lattice
-                             r-jsonlite
-                             r-gips
-                             r-ggplot2
-                             r-dplyr))
-    (home-page "https://AntoniKingston.github.io/gipsDA/")
-    (synopsis "Training DA Models Utilizing 'gips'")
+    (propagated-inputs (list r-stringi r-mass r-lattice r-jsonlite r-gips))
+    (native-inputs (list r-knitr))
+    (home-page "https://antonikingston.github.io/gipsDA/")
+    (synopsis
+     "Discriminant Analysis with Permutation-Invariant Covariance Models")
     (description
      "Extends classical linear and quadratic discriminant analysis by incorporating
-permutation group symmetries into covariance matrix estimation.  The package
-leverages methodology from the gips framework to identify and impose permutation
-structures that act as a form of regularization, improving stability and
-interpretability in settings with symmetric or exchangeable features.  Several
-discriminant analysis variants are provided, including pooled and class-specific
-covariance models, as well as multi-class extensions with shared or independent
-symmetry structures.  For more details about gips methodology see and Graczyk et
-al. (2022) <doi:10.1214/22-AOS2174> and Chojecki, Morgen, KoÅodziejek (2025,
-<doi:10.18637/jss.v112.i07>).")
-    (license license:gpl3)))
+permutation-group symmetries into covariance matrix estimation.  Methods based
+on the gips framework identify and impose permutation structures that regularize
+covariance estimates and improve stability and interpretability for symmetric or
+exchangeable features.  The package provides pooled and class-specific
+covariance models, including multi-class variants with shared or independently
+estimated symmetry structures.  The underlying methodology is described by
+Graczyk et al. (2022) <doi:10.1214/22-AOS2174> and Chojecki, Morgen, and
+KoÅodziejek (2025) <doi:10.18637/jss.v112.i07>.")
+    (license license:gpl3+)))
 
 (define-public r-gips
   (package
@@ -27012,13 +27002,13 @@ intuitively displayed.")
 (define-public r-ggchinaflag
   (package
     (name "r-ggchinaflag")
-    (version "0.4.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggChinaFlag" version))
        (sha256
-        (base32 "0fvfa03l9dn1p3dlxhjgqy6s929irpqz4wcafpgglqdj0r6j1g92"))))
+        (base32 "0ghp6achly9vibbm059k20z375pdgcspvrcz37az8h1rds681d2a"))))
     (properties `((upstream-name . "ggChinaFlag")))
     (build-system r-build-system)
     (arguments
@@ -27039,13 +27029,13 @@ procedural graphics in R.")
 (define-public r-ggcheysson
   (package
     (name "r-ggcheysson")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggCheysson" version))
        (sha256
-        (base32 "054wf1l5ns525a0jxvzcfkn4p3n7hlzbr7rln94f7sfh960h653l"))))
+        (base32 "1r6n9xlfalqjvc70czqn03982cw1ymna4qv28hzd50vdhkim2xcy"))))
     (properties `((upstream-name . "ggCheysson")))
     (build-system r-build-system)
     (arguments
@@ -31663,13 +31653,13 @@ format.")
 (define-public r-geoidep
   (package
     (name "r-geoidep")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geoidep" version))
        (sha256
-        (base32 "15b0llqlnixj6c85p5y2ali50h90nizsmn069giqv9vyypfgrhq4"))))
+        (base32 "1wsi1c5hvacjdv1d7schmav2j76z4w6v2g6nz34nlvymmbi4khzy"))))
     (properties `((upstream-name . "geoidep")))
     (build-system r-build-system)
     (arguments
@@ -35494,29 +35484,31 @@ Census data and neural networks.")
 (define-public r-genderapi
   (package
     (name "r-genderapi")
-    (version "1.0.3")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "genderapi" version))
        (sha256
-        (base32 "1hp7cycvml0p4jkmz6rjcn3l09q2dqn85n6dl6jlg904f07ypkxx"))))
+        (base32 "1mnfkkx1j1jjma3w3mhpj04zzp40qajcr7392ybvhv4jaaxrrqfy"))))
     (properties `((upstream-name . "genderapi")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-jsonlite r-httr))
-    (home-page "https://github.com/GenderAPI/genderapi-R")
-    (synopsis "Client for 'GenderAPI.io'")
+    (propagated-inputs (list r-jsonlite r-curl))
+    (home-page "https://www.genderapi.io/api-documentation")
+    (synopsis "Official 'GenderAPI.io' V2 Client")
     (description
-     "This package provides an interface to the @code{GenderAPI.io} web service
-(<https://www.genderapi.io>) for determining gender from personal names, email
-addresses, or social media usernames.  Functions are available to submit single
-or batch queries and retrieve additional information such as accuracy scores and
-country-specific gender predictions.  This package simplifies integration of
-@code{GenderAPI.io} into R workflows for data cleaning, user profiling, and
-analytics tasks.")
+     "Official @code{GenderAPI.io} V2 client for R. Provides an interface to the
+@code{GenderAPI.io} V2 web service <https://www.genderapi.io/api-documentation>
+that infers gender from personal names, email addresses and usernames, runs
+batches of up to 50 items, reads credit usage and validates phone numbers.
+Responses are returned as parsed lists with all fields kept, including unknown
+results, confidence metadata, billing status and batch summaries; errors are
+raised as structured conditions.  Requests are never retried and redirects are
+never followed.  Results are inferences, not verified identity, and can be
+unknown.")
     (license license:expat)))
 
 (define-public r-gender
@@ -37564,13 +37556,13 @@ Information Facility (GBIF - <https://www.gbif.org/>) using a Shiny interface.")
 (define-public r-gdatools
   (package
     (name "r-gdatools")
-    (version "2.3")
+    (version "2.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GDAtools" version))
        (sha256
-        (base32 "0z8fanwjx3pg8pahxfdz00h8my3jk6cxpjlpkp22ygwxs1w4hfj6"))))
+        (base32 "1i4j8sviqzzm1b2x48nrwvjdmhv765sc7yr5ji56jykc151cp02b"))))
     (properties `((upstream-name . "GDAtools")))
     (build-system r-build-system)
     (arguments

@@ -4886,6 +4886,51 @@ arrays (stars) objects.  Use c-squares codes to quickly join or query spatial
 data.")
     (license license:gpl3+)))
 
+(define-public r-cspstandsegmentation
+  (package
+    (name "r-cspstandsegmentation")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CspStandSegmentation" version))
+       (sha256
+        (base32 "00cm92asxv1lfyn1wj8hfgw5rmiziwn9b6640bi9yvwspmcaxf25"))))
+    (properties `((upstream-name . "CspStandSegmentation")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra
+                             r-sf
+                             r-rgl
+                             r-rcsf
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-rann
+                             r-magrittr
+                             r-lidr
+                             r-igraph
+                             r-foreach
+                             r-doparallel
+                             r-dbscan
+                             r-data-table
+                             r-conicfit
+                             r-colorspace
+                             r-bh))
+    (home-page "https://github.com/JulFrey/CspStandSegmentation")
+    (synopsis
+     "Comparative Shortest Path Forest Stand Segmentation from LiDAR Data")
+    (description
+     "Functionality for segmenting individual trees from a forest stand scanned with a
+close-range (e.g., terrestrial or mobile) laser scanner.  The complete workflow
+from a raw point cloud to a complete tabular forest inventory is provided.  The
+package contains several algorithms for detecting tree bases and a graph-based
+algorithm to attach all remaining points to these tree bases.  It builds heavily
+on the @code{lidR} package.  A description of the segmentation algorithm can be
+found in Larysch et al. (2025) <doi:10.1007/s10342-025-01796-z>.")
+    (license license:gpl3)))
+
 (define-public r-csppdata
   (package
     (name "r-csppdata")
@@ -13351,13 +13396,13 @@ States.")
 (define-public r-countryatlas
   (package
     (name "r-countryatlas")
-    (version "2.0.1")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "countryatlas" version))
        (sha256
-        (base32 "01snnibdpf09ndsgzcld9mzmmc67s6byrm52y73a9ckmsz4ysdj4"))))
+        (base32 "0r21jrr3nqf9abphyf0gdn7jz82irfmd54mqrq465838n4sshv0r"))))
     (properties `((upstream-name . "countryatlas")))
     (build-system r-build-system)
     (arguments
@@ -13371,7 +13416,8 @@ States.")
                              r-ggplot2
                              r-dplyr
                              r-countrycode
-                             r-cli))
+                             r-cli
+                             r-cachem))
     (native-inputs (list r-knitr))
     (home-page "https://pursuitofdatascience.github.io/countryatlas/")
     (synopsis "Join World Bank Data, Country Codes and Maps on the ISO Spine")
@@ -13387,11 +13433,15 @@ the join machinery for the user's own data; ships curated reference data
 adds analysis helpers (per-capita, regional roll-ups, ranking, inequality and
 convergence statistics); and turns one hand-drawn choropleth into a full
 vocabulary of projected, area-honest maps (binned and quantile choropleths,
-proportional-symbol, spike, bivariate, cartogram, tile-grid, flow,
-small-multiple, animated, globe and interactive), and can hand its curated,
-ISO-reconciled tables to ggsql for database-side spatial rendering.  Heavy
-spatial dependencies stay optional, and a bundled offline snapshot lets every
-example, test and vignette run without the network.")
+proportional-symbol, spike, bivariate, value-by-alpha, cartogram, tile-grid,
+flow, small-multiple, animated, globe and interactive), and can hand its
+curated, ISO-reconciled tables to ggsql for database-side spatial rendering.
+Honesty is treated as a feature rather than a slogan: classification methods can
+be compared side by side, missing data can be hatched rather than greyed,
+coverage and provenance travel with the plot, and the distortion each projection
+introduces can be measured and drawn.  Heavy spatial dependencies stay optional,
+and a bundled offline snapshot lets every example, test and vignette run without
+the network.")
     (license license:gpl3+)))
 
 (define-public r-countries
@@ -16653,13 +16703,13 @@ and Liming Xiang (2026) <doi:10.1093/biomtc/ujag087>.")
 (define-public r-copularemada
   (package
     (name "r-copularemada")
-    (version "1.7.5")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CopulaREMADA" version))
        (sha256
-        (base32 "00f12x61snpdr9750l3jm7bvig1ymlb1d3fv1phhwfxm89p8xywg"))))
+        (base32 "141bpfh8ki7yg7mjnsvpyb1kw3qjxs3khw0msis3xnf7hnirzflc"))))
     (properties `((upstream-name . "CopulaREMADA")))
     (build-system r-build-system)
     (arguments
@@ -16690,7 +16740,9 @@ mixed model for meta-analysis of two diagnostic tests accounting for within and
 between studies dependence in Nikoloulopoulos (2024)
 <doi:10.1177/09622802241269645>.  The 1-truncated D-vine copula mixed models for
 meta-analysis of diagnostic accuracy studies without a gold standard
-(Nikoloulopoulos, 2025) <doi:10.1093/biomtc/ujaf037>.")
+(Nikoloulopoulos, 2025) <doi:10.1093/biomtc/ujaf037>.  The 1-truncated C-vine
+copula mixed models for network meta-analysis of multiple diagnostic tests
+(Nikoloulopoulos, 2026) <doi:10.48550/@code{arXiv.2605.18167>}.")
     (license license:gpl2+)))
 
 (define-public r-copulareg
@@ -27711,13 +27763,13 @@ Common Data Model.")
 (define-public r-cohortsurvival
   (package
     (name "r-cohortsurvival")
-    (version "1.1.2")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortSurvival" version))
        (sha256
-        (base32 "1hvaaxgfnr63l5scfwyxv8d6msdclh1ls31qa15lfb9xi58d66kf"))))
+        (base32 "1wk33ibcnsz5vxfjhhg2nq50mg1zmq35rh9425103zx1yknj920z"))))
     (properties `((upstream-name . "CohortSurvival")))
     (build-system r-build-system)
     (arguments
@@ -30820,19 +30872,20 @@ information from the Chinese ID number.")
 (define-public r-cnefetools
   (package
     (name "r-cnefetools")
-    (version "0.2.5")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cnefetools" version))
        (sha256
-        (base32 "0j45qkayxyx1gdk0756n8j8makyhzzm7w2x80nw66akmc00p10r1"))))
+        (base32 "136r726bqlxan1whiqkm2vgfbg9dmnsz9mrfr3rphqm8l8lxj4v0"))))
     (properties `((upstream-name . "cnefetools")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-withr
+                             r-tidyr
                              r-sf
                              r-rlang
                              r-piggyback
@@ -33505,34 +33558,30 @@ imputation, to check the fit of imputation models, etc.")
 (define-public r-clusteriv
   (package
     (name "r-clusteriv")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clusterIV" version))
        (sha256
-        (base32 "1bd2s5fy98fc68rlw1pwn504sd727a8bm9x0g8i2cr16fivasmim"))))
+        (base32 "02x5019w7jgy4lfk2jnyjf405km2pzyf5i5mi4qvql50wmlxr978"))))
     (properties `((upstream-name . "clusterIV")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (native-inputs (list r-knitr))
     (home-page
      "https://github.com/atal-kat/Clustered-Estimation-and-Inference")
-    (synopsis "Clustered Jackknife Instrumental Variables Estimation")
+    (synopsis "Clustered Instrumental Variables Estimation and Inference")
     (description
-     "This package provides tools for instrumental variables estimation and inference
-under clustered errors with many instruments.  The current release provides the
+     "This package implements instrumental variables estimation and inference for one
+endogenous regressor and one-way clustered errors.  Includes the
 cluster-jackknife IV estimator (CJIVE) of Frandsen, Leslie and @code{McIntyre}
-(2025) <doi:10.1162/rest.a.263> for a single endogenous regressor in a
-just-identified design, with cluster-robust inference: each observation's
-first-stage value is fitted leaving out its entire cluster, which removes the
-many-instrument bias that survives clustering.  The leave-cluster-out fits use
-an exact Woodbury block update -- one factorisation of the instrument Gram
-matrix plus a small solve per cluster -- so the estimator scales to large
-samples.  A companion @code{iv_compare()} reports ordinary least squares,
-two-stage least squares, the observation-level jackknife and CJIVE on a common
-cluster-robust standard error.")
+(2025) <doi:10.1162/rest.a.263> and the cluster-jackknife Anderson-Rubin and
+score tests of Ligtenberg (2025) <doi:10.48550/@code{arXiv.2306.08559>}, which
+are robust to weak and many instruments.  Supports multiple excluded
+instruments, covariates, precision weights, and high-dimensional fixed effects.")
     (license license:expat)))
 
 (define-public r-clustering-sc-dp
@@ -35478,13 +35527,13 @@ Beam (2018) <@code{arXiv:1804.01486>}.")
 (define-public r-clinsigmeasures
   (package
     (name "r-clinsigmeasures")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ClinSigMeasures" version))
        (sha256
-        (base32 "0vyn1j4qfxgh65jrq7wmm8nfw78vqllmrsdbzspl7hgf5zh477k1"))))
+        (base32 "0lk4bqckicwgb1c1l129b5awp7x7d0j6kqn4xsc4n4zy34pafnxm"))))
     (properties `((upstream-name . "ClinSigMeasures")))
     (build-system r-build-system)
     (arguments
@@ -36944,20 +36993,21 @@ for integral dataset cleaning.")
 (define-public r-clickhousehttp
   (package
     (name "r-clickhousehttp")
-    (version "1.0.0")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ClickHouseHTTP" version))
        (sha256
-        (base32 "0ibr9szm16bpjnab8slw9bfh2r1lgzk4ggdb2804gjlrlxa7r7mz"))))
+        (base32 "16vx76h0d9z7vqdmqj2060ydrk8hs260f2b1m4c4bxm2pamzcqv5"))))
     (properties `((upstream-name . "ClickHouseHTTP")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-jsonlite r-httr2 r-dbi r-data-table r-arrow))
-    (home-page "https://github.com/patzaw/ClickHouseHTTP")
+    (native-inputs (list r-knitr))
+    (home-page "https://patzaw.github.io/ClickHouseHTTP/")
     (synopsis "Simple HTTP Database Interface to 'ClickHouse'")
     (description
      "@code{ClickHouse} (<https://clickhouse.com/>) is an open-source, high
@@ -39788,13 +39838,13 @@ circular boxplots and additional implementation details, see Berlinski et al.
 (define-public r-circuitscaper
   (package
     (name "r-circuitscaper")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "circuitscaper" version))
        (sha256
-        (base32 "1fbyffmvm6p5bskiqdz5qm7fxmpk8fyh28prb2i6rvrpvf1xcb0i"))))
+        (base32 "1jqn5rncmaxyrkxz7j4ay7mqnr281w4ps211rp35fc1yar3ji2w1"))))
     (properties `((upstream-name . "circuitscaper")))
     (build-system r-build-system)
     (arguments
@@ -41188,13 +41238,13 @@ implemented for comparison.")
 (define-public r-ciecl
   (package
     (name "r-ciecl")
-    (version "0.9.6")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ciecl" version))
        (sha256
-        (base32 "136vxz5rbrm5z5q68crz2zn67j9qb94ll5h86s3pnalks477s9ch"))))
+        (base32 "1d9lkngzbyrbj4xwa1zv4p8lxynd7b4bpg2gqs0xqj4jz7z3kxav"))))
     (properties `((upstream-name . "ciecl")))
     (build-system r-build-system)
     (arguments
@@ -41204,10 +41254,14 @@ implemented for comparison.")
                              r-stringr
                              r-stringdist
                              r-rsqlite
+                             r-rlang
+                             r-lifecycle
+                             r-httr2
                              r-dplyr
-                             r-dbi))
+                             r-dbi
+                             r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://rodotasso.github.io/ciecl/")
+    (home-page "https://docs.ropensci.org/ciecl/")
     (synopsis
      "International Classification of Diseases 'ICD-10'/'ICD-11' for Chile")
     (description
@@ -52732,20 +52786,21 @@ effects.")
 (define-public r-causalreg
   (package
     (name "r-causalreg")
-    (version "0.1.2")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "causalreg" version))
        (sha256
-        (base32 "07zralrn24hn6a62qidp7g0d1nzh1qnzb6hfwgjry1xj52hnkspc"))))
+        (base32 "16xbzmfc13fl8pz991x0bxqsl8jssvc2hdr97i9sq1cxnnfm1bnn"))))
     (properties `((upstream-name . "causalreg")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-mgcv))
-    (home-page "https://cran.r-project.org/package=causalreg")
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-mgcv))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/franciscorichter/causalreg")
     (synopsis "Causal Generalized Linear Models")
     (description
      "An implementation of methods for causal discovery in a structural causal model
@@ -53275,13 +53330,13 @@ letting packages share a single definition instead of each defining its own.")
 (define-public r-causalfrag
   (package
     (name "r-causalfrag")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "causalfrag" version))
        (sha256
-        (base32 "0qc9xdz0y4zj9vqa3mzmdx2aj674k5nkn6kbjvq67s2a1ml9n4yd"))))
+        (base32 "1rjhfn0lb4c90fmx5af8wjlz7cn2jar6wywhciivnm01bqh80cjy"))))
     (properties `((upstream-name . "causalfrag")))
     (build-system r-build-system)
     (arguments
@@ -53289,20 +53344,21 @@ letting packages share a single definition instead of each defining its own.")
       #:tests? #f))
     (propagated-inputs (list r-rlang r-jsonlite r-glue r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/causalfragility-lab/causalfrag")
-    (synopsis "Cross-Framework Causal Fragility Index")
+    (home-page "https://github.com/subirhait/causalfrag")
+    (synopsis "Cross-Framework Sensitivity Analysis with an OLS Crosswalk")
     (description
-     "This package provides a unified workflow for running, classifying, visualizing,
-and interpreting sensitivity analyses for unmeasured confounding across multiple
-causal frameworks.  Introduces the Causal Fragility Index (CFI), a single 0-100
-composite score that integrates evidence from the partial R-squared robustness
-value approach (Cinelli and Hazlett, 2020, <doi:10.1111/rssb.12348>), E-value
-metrics (@code{VanderWeele} and Ding, 2017, <doi:10.7326/M16-2607>), and the
-Impact Threshold for a Confounding Variable (Frank, 2000,
-<doi:10.1177/0049124100029002001>) into one interpretable measure of robustness.
- The package also provides template-based plain-language narrative
-interpretation and publication-ready reporting, with optional integration with
-the confoundvis package for sensitivity plots.")
+     "Runs, classifies, interprets and reports sensitivity analyses for unmeasured
+confounding across the partial R-squared robustness value approach (Cinelli and
+Hazlett, 2020, <doi:10.1111/rssb.12348>), E-values (@code{VanderWeele} and Ding,
+2017, <doi:10.7326/M16-2607>), and the impact threshold for a confounding
+variable and robustness of inference to replacement (Frank, 2000,
+<doi:10.1177/0049124100029002001>; Frank, Maroulis, Duong and Kelcey, 2013,
+<doi:10.3102/0162373713493129>).  An ordinary least squares crosswalk reports
+the robustness values, impact threshold and replacement percentage computed from
+the focal t statistic and residual degrees of freedom, makes explicit that their
+agreement is largely fixed by that shared input, and flags the boundary band in
+which they disagree.  Template-based plain-language reports are included, with
+optional integration with the confoundvis package for plots.")
     (license license:expat)))
 
 (define-public r-causaleffect

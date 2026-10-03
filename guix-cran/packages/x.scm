@@ -489,19 +489,18 @@ external dependencies.")
 (define-public r-xtfifevd
   (package
     (name "r-xtfifevd")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xtfifevd" version))
        (sha256
-        (base32 "18nnbhry2p0nxyibklw1dmf1mqaj1zg5hlm34vi238f7iqb1vyz7"))))
+        (base32 "0anf6gw40jm182hw8s7pa22vdgh1bypqr5jz3s8lfls3ca0d13xf"))))
     (properties `((upstream-name . "xtfifevd")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-mass))
     (home-page "https://github.com/muhammedalkhalaf/xtfifevd")
     (synopsis
      "Panel Fixed Effects Filtered and Variance Decomposition Estimation")
@@ -511,9 +510,9 @@ panel data models.  Provides three estimation methods: FEVD (Fixed Effects
 Vector Decomposition) from Plumper and Troeger (2007) <doi:10.1093/pan/mpm002>,
 and FEF (Fixed Effects Filtered) and FEF-IV (instrumental variables variant)
 from Pesaran and Zhou (2018) <doi:10.1080/07474938.2016.1222225>.  All methods
-use the correct Pesaran-Zhou variance estimators that account for generated
-regressor uncertainty, avoiding the size distortions documented in the
-literature.")
+use the Pesaran and Zhou variance estimators, which account for generated
+regressor uncertainty, and report the full covariance matrix of the
+time-varying, time-invariant and intercept coefficients.")
     (license license:gpl3)))
 
 (define-public r-xtdml
@@ -562,13 +561,13 @@ mlr3 ecosystem.")
 (define-public r-xtdhcoint
   (package
     (name "r-xtdhcoint")
-    (version "1.0.1")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xtdhcoint" version))
        (sha256
-        (base32 "00bhc0xa7h1d8njd8y76sq7vcnlaikcqa1l297b83kmajxxjsd8d"))))
+        (base32 "1wc92rwz3aybhd8gshnhcbfb9y9gvsgrxak8svkkpi2vj1pxhw75"))))
     (properties `((upstream-name . "xtdhcoint")))
     (build-system r-build-system)
     (arguments
@@ -578,7 +577,7 @@ mlr3 ecosystem.")
     (synopsis "Durbin-Hausman Panel Cointegration Tests")
     (description
      "This package implements the Durbin-Hausman panel cointegration tests of
-Westerlund (2008) <doi:10.1002/jae.963>.  The tests are robust to
+Westerlund (2008) <doi:10.1002/jae.967>.  The tests are robust to
 cross-sectional dependence through common factor extraction using principal
 components.  Provides both group-mean (DHg) and panel (DHp) test statistics with
 automatic factor number selection via information criteria.")
@@ -587,13 +586,13 @@ automatic factor number selection via information criteria.")
 (define-public r-xtcspqardl
   (package
     (name "r-xtcspqardl")
-    (version "1.0.2")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xtcspqardl" version))
        (sha256
-        (base32 "1c5gzyh5b65cbzy6b0ya3saaqvz49kwsx5xnq6mpl2s60c4p02ci"))))
+        (base32 "1qmsp21qll4yx6q9hz284bkbb38nbp2ki2hsp1s4mm1apkh1gfk6"))))
     (properties `((upstream-name . "xtcspqardl")))
     (build-system r-build-system)
     (arguments
@@ -610,9 +609,9 @@ cross-sectional dependence.  The package handles unobserved common factors
 through cross-sectional averages following Pesaran (2006)
 <doi:10.1111/j.1468-0262.2006.00692.x> and Chudik and Pesaran (2015)
 <doi:10.1016/j.jeconom.2015.03.007>.  Quantile regression for dynamic panels
-follows Harding, Lamarche, and Pesaran (2018)
-<doi:10.1016/j.jeconom.2018.07.010>.  The ARDL approach to cointegration testing
-is based on Pesaran, Shin, and Smith (2001) <doi:10.1002/jae.616>.")
+follows Harding, Lamarche, and Pesaran (2020) <doi:10.1002/jae.2753>.  The ARDL
+approach to cointegration testing is based on Pesaran, Shin, and Smith (2001)
+<doi:10.1002/jae.616>.")
     (license license:gpl3)))
 
 (define-public r-xtbreakcoint
@@ -646,13 +645,13 @@ components and break structures.")
 (define-public r-xtbhst
   (package
     (name "r-xtbhst")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xtbhst" version))
        (sha256
-        (base32 "0fk8d97h4sf9c31n1zgml8d0h38d3dxbaab2kbldph54b4wiv7pm"))))
+        (base32 "1x2nj6cr8a56vsfwmqpnwrgldn9g6w030zqsnq0yji7idxrgl0x5"))))
     (properties `((upstream-name . "xtbhst")))
     (build-system r-build-system)
     (arguments
@@ -661,12 +660,14 @@ components and break structures.")
     (home-page "https://github.com/muhammedalkhalaf/xtbhst")
     (synopsis "Bootstrap Slope Heterogeneity Test for Panel Data")
     (description
-     "This package implements the bootstrap slope heterogeneity test for panel data
-based on Blomquist and Westerlund (2015) <doi:10.1007/s00181-015-0978-z>.  Tests
-the null hypothesis that slope coefficients are homogeneous across
-cross-sectional units.  Provides both standard and adjusted Delta statistics
-with bootstrap p-values.  Supports partialling out of control variables and
-cross-sectional averages for dealing with cross-sectional dependence.")
+     "This package implements the bootstrap slope heterogeneity test for panel data of
+Blomquist and Westerlund (2016) <doi:10.1007/s00181-015-0978-z>.  Tests the null
+hypothesis that slope coefficients are homogeneous across cross-sectional units
+using a block bootstrap of the Swamy-type statistic, with the unit-specific
+variance estimator of the paper or that of Pesaran and Yamagata (2008)
+<doi:10.1016/j.jeconom.2007.05.010>, whose Delta and adjusted Delta statistics
+are reported with asymptotic p-values.  Supports partialling out of control
+variables and cross-sectional averages.")
     (license license:gpl3)))
 
 (define-public r-xsub

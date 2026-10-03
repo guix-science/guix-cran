@@ -1463,13 +1463,13 @@ functions.")
 (define-public r-symengine
   (package
     (name "r-symengine")
-    (version "0.2.13")
+    (version "0.2.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "symengine" version))
        (sha256
-        (base32 "13k6vy0pwhhss7hhnmyh6g127cjc0fkgkn1nwi90wkynms82hgqq"))))
+        (base32 "0j6hvpmpgk73xpiwa9sbcm0hj19m40c0ykn37qcg0c700wlb48ix"))))
     (properties `((upstream-name . "symengine")))
     (build-system r-build-system)
     (arguments
@@ -2680,19 +2680,24 @@ formats as well as other swatch file formats can be found at
 (define-public r-swash
   (package
     (name "r-swash")
-    (version "2.0.2")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "swash" version))
        (sha256
-        (base32 "0g4w3dmi686h6wr7bnmqz71gm2s769bpsn3p962w38hyp6v0h9lr"))))
+        (base32 "14jicrqy9vyvz8psl215jrm9z0r3792bbw0p8wqs4d3ymm9dh3z6"))))
     (properties `((upstream-name . "swash")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-zoo r-strucchange r-spdep r-sf r-lubridate))
+    (propagated-inputs (list r-zoo
+                             r-strucchange
+                             r-spdep
+                             r-sfdep
+                             r-sf
+                             r-lubridate))
     (home-page "https://cran.r-project.org/package=swash")
     (synopsis
      "Health Geography Toolbox for Model-Based Analysis of Infections Panel Data")
@@ -2704,9 +2709,10 @@ velocity may be analysed with the Swash-Backwash Model for the Single Epidemic
 Wave and corresponding functions for bootstrap confidence intervals, country
 comparison, and visualization of results.  Differences in epidemic growth
 between regions may be analysed using logistic growth models, exponential growth
-models, Hawkes processes and breakpoint analyses.  All functionalities are
-accessed by the class \"infpan\" for infections panel data defined in this
-package, which is built from a data.frame provided by the user.")
+models, Hawkes processes and breakpoint analyses.  Cluster and hotspot analyses
+can be conducted using neighborhood matrices.  All functionalities are accessed
+by the class \"infpan\" for infections panel data defined in this package, which
+is built from a data.frame provided by the user.")
     (license license:gpl2+)))
 
 (define-public r-swarmverse
@@ -4258,13 +4264,13 @@ and Clark (2019) <doi:10.1007/s13524-019-00785-3>.")
 (define-public r-svartca
   (package
     (name "r-svartca")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SVARtca" version))
        (sha256
-        (base32 "12jwbgsxpg75ds3bqcw2bcxzakhqcjparkr2jw0vrqcxz7agns2h"))))
+        (base32 "14aqvpawwx6mvsfww7m9gmik2jgc4ib2dcqp00hv6p5xwhd4lrh9"))))
     (properties `((upstream-name . "SVARtca")))
     (build-system r-build-system)
     (arguments
@@ -4276,7 +4282,7 @@ and Clark (2019) <doi:10.1007/s13524-019-00785-3>.")
     (description
      "This package implements Transmission Channel Analysis (TCA) for structural
 vector autoregressive (SVAR) models following the methodology of Wegner, Lieb,
-and Smeekes (2025) <doi:10.48550/@code{arXiv.2405.18987>}.  TCA decomposes
+Smeekes and Wilms (2025) <doi:10.48550/@code{arXiv.2405.18987>}.  TCA decomposes
 impulse response functions (IRFs) into contributions from distinct transmission
 channels using a systems form representation and directed acyclic graph (DAG)
 path analysis.  Supports overlapping channels, exhaustive 3-way and 4-way
@@ -8437,13 +8443,13 @@ applied to binary classification problems and used for prediction.")
 (define-public r-supersurv
   (package
     (name "r-supersurv")
-    (version "0.1.7")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SuperSurv" version))
        (sha256
-        (base32 "0ws6r212f7abanjy1v27xd9r4hcrbp3c23v2m3kzprlvmdi52qvh"))))
+        (base32 "1y07kpga0ha7vkxkpfmss0152g8jacvnjq7wha5vfyhqaqxdk48j"))))
     (properties `((upstream-name . "SuperSurv")))
     (build-system r-build-system)
     (arguments
@@ -8451,7 +8457,7 @@ applied to binary classification problems and used for prediction.")
       #:tests? #f))
     (propagated-inputs (list r-survival r-nnls r-magrittr r-future-apply
                              r-dplyr))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/yuelyu21/SuperSurv")
     (synopsis
      "Unified Framework for Machine Learning Ensembles in Survival Analysis")
@@ -12038,37 +12044,41 @@ package vignette.")
 (define-public r-streamcattools
   (package
     (name "r-streamcattools")
-    (version "0.11.0")
+    (version "0.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "StreamCatTools" version))
        (sha256
-        (base32 "0gj1mwxxyc232g7xy7s3qyyihihzlx6vj1v9ygwrwd4n07a5cir1"))))
+        (base32 "17sdyzx8k8glk6syhkagl5hsmrl3i6kw8x8av8ap4vhn5199ki0c"))))
     (properties `((upstream-name . "StreamCatTools")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tigris
+                             r-tidyr
+                             r-tibble
+                             r-stringr
                              r-sf
                              r-patchwork
-                             r-nhdplustools
                              r-jsonlite
+                             r-hydrogeofetch
                              r-httr2
                              r-ggplot2
                              r-ggpattern
+                             r-dplyr
                              r-curl
                              r-cowplot))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://usepa.github.io/StreamCatTools/")
-    (synopsis "'StreamCatTools'")
+    (synopsis "Tools for Working with 'StreamCat' and 'LakeCat' Data")
     (description
      "This package provides tools for using the @code{StreamCat} and @code{LakeCat}
 API and interacting with the @code{StreamCat} and @code{LakeCat} database.
 Convenience functions in the package wrap the API for @code{StreamCat} on
 <https://api.epa.gov/@code{StreamCat/streams/metrics>}.")
-    (license license:cc0)))
+    (license license:expat)))
 
 (define-public r-streambugs
   (package
@@ -28377,13 +28387,13 @@ in Brown et al (2012) <doi:10.1111/j.1755-0998.2011.03108.x>.")
 (define-public r-spicy
   (package
     (name "r-spicy")
-    (version "0.12.0")
+    (version "0.13.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spicy" version))
        (sha256
-        (base32 "1f4jzr5q6jg2irhbvl3dm9grw6zxgr18x7w3615yc9ydq9p90ab7"))))
+        (base32 "119qkd4h0g4q3309z29g8pk2b94wlck5hgry3gi6d6zhsm4w6553"))))
     (properties `((upstream-name . "spicy")))
     (build-system r-build-system)
     (arguments
@@ -28398,20 +28408,22 @@ in Brown et al (2012) <doi:10.1111/j.1755-0998.2011.03108.x>.")
                              r-dplyr
                              r-crayon))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/amaltawfik/spicy/")
+    (home-page "https://amaltawfik.github.io/spicy/")
     (synopsis
-     "Descriptive Statistics, Summary Tables, and Data Management Tools")
+     "Publication-Ready Tables for Descriptive Statistics and Regression Models")
     (description
-     "This package provides tabulation, descriptive-summary, and variable-inspection
-tools for applied data analysis.  Frequency tables and cross-tabulations with
-contingency-table association measures (Cramer's V, Phi, Goodman-Kruskal Gamma,
-Kendall's Tau-b, Somers D, and others); categorical and continuous summary
-tables; regression coefficient tables for one or more lm or glm fits side by
-side; and outcome-by-group comparison tables from linear models with optional
-additive covariate adjustment.  All table outputs follow APA conventions and
-expose broom'-compatible @code{tidy()} / @code{glance()} methods for downstream
-pipelines.  Helpers cover interactive codebooks, variable-label extraction,
-clipboard export, and row-wise descriptive summaries.")
+     "This package provides publication-ready tables for descriptive statistics and
+regression models: frequency tables and cross-tabulations with association
+measures (Cramer's V, Kendall's Tau-b, and others), categorical and continuous
+summary tables, by group or from a complex survey design, and regression tables
+for one or more models side by side, across more than thirty model classes from
+mixed-effects to survival and Bayesian, with robust standard errors, average
+marginal effects, and univariable screening.  Tables follow APA conventions by
+default, can switch to named journal styles such as JAMA, NEJM, or The Lancet,
+and render identically in the console and in gt', tinytable', flextable', Word',
+Excel', or the clipboard.  Declared missing values in labelled data are honored
+and disclosed throughout the descriptive tables.  Helpers cover codebooks,
+variable inspection, and row-wise summaries.")
     (license license:expat)))
 
 (define-public r-spichanges
@@ -35319,13 +35331,13 @@ and Yamagata (2024) <doi:10.1093/jjfinec/nbad002>, and Gungor and Luger (2016)
 (define-public r-spant
   (package
     (name "r-spant")
-    (version "4.4.0")
+    (version "4.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spant" version))
        (sha256
-        (base32 "13klj0nrgv9x5gfvhxmz9khkra6rw9id1w16sba3s8iysxl8v44w"))))
+        (base32 "18zr7zkn3vdvhjik75ppf97pz29mn4y2p85ph1ac8kxa3bjpab44"))))
     (properties `((upstream-name . "spant")))
     (build-system r-build-system)
     (arguments
@@ -52917,13 +52929,13 @@ properly by screen readers.")
 (define-public r-signnet
   (package
     (name "r-signnet")
-    (version "1.0.6")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "signnet" version))
        (sha256
-        (base32 "10896mkybqmsx1b8iilx69jxylqz5rwz3zpyh9581qq65gim55dr"))))
+        (base32 "1qy9qhnrf32v270cmi6crkw1vdapkwsf0ca2cqw8mrz3hs5myqf0"))))
     (properties `((upstream-name . "signnet")))
     (build-system r-build-system)
     (arguments
@@ -57181,13 +57193,13 @@ hosted by a static web server.")
 (define-public r-shinylight
   (package
     (name "r-shinylight")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinylight" version))
        (sha256
-        (base32 "0kqblyxzdknnnhi8ma4aviqrsysnfarz5pfqjzs86wsrp1ghplzj"))))
+        (base32 "0dk9jdhi93fr2shh9h45nmd56y428fqgwx0jhvsg139kgjhx99pd"))))
     (properties `((upstream-name . "shinylight")))
     (build-system r-build-system)
     (arguments
@@ -57456,6 +57468,30 @@ and plotly'.  Relatively small samples are obtained from the original data using
 a specific algorithm.  The samples are updated according to a user-defined x
 range.  Jonas Van Der Donckt, Jeroen Van Der Donckt, Emiel Deprost (2022)
 <https://github.com/predict-idlab/plotly-resampler>.")
+    (license license:expat)))
+
+(define-public r-shinyhierarchy
+  (package
+    (name "r-shinyhierarchy")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "shinyHierarchy" version))
+       (sha256
+        (base32 "0p1i47sbc3kq3jzijxgaib5syan24znbxkrfcb635cikxvwkzgg4"))))
+    (properties `((upstream-name . "shinyHierarchy")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny r-jsonlite r-htmltools))
+    (home-page "https://cran.r-project.org/package=shinyHierarchy")
+    (synopsis "Hierarchical Input Component for Shiny")
+    (description
+     "Hierarchical slicer-style input for Shiny applications with multi-selection,
+tri-state checkboxes, search, cascading selection, and a structured selection
+value for analytics workflows.")
     (license license:expat)))
 
 (define-public r-shinyheatmaply
@@ -59740,13 +59776,13 @@ extrapolation.  R Shiny apps for most of the methods are included.")
 (define-public r-shazam
   (package
     (name "r-shazam")
-    (version "1.3.2")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shazam" version))
        (sha256
-        (base32 "1fjy944n34gn1klzlakww14s9pxdz60d5ba9bddp1i2z97ljv7hv"))))
+        (base32 "0zm8vn9cyy21dwx719zikrkdwnblwldwigfw4q6qpsihd9r74xam"))))
     (properties `((upstream-name . "shazam")))
     (build-system r-build-system)
     (arguments
@@ -59772,7 +59808,7 @@ extrapolation.  R Shiny apps for most of the methods are included.")
                              r-ape
                              r-alakazam))
     (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "http://shazam.readthedocs.io")
+    (home-page "https://shazam.readthedocs.io")
     (synopsis "Immunoglobulin Somatic Hypermutation Analysis")
     (description
      "This package provides a computational framework for analyzing mutations in
@@ -66144,13 +66180,13 @@ associated R code, which provided the base for the development of this package."
 (define-public r-semrulesid
   (package
     (name "r-semrulesid")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "semrulesid" version))
        (sha256
-        (base32 "0rhcv5fkis18nv8pm9gywc8n3z11vkgd9fcbgjj8rafmfmv1fan6"))))
+        (base32 "0a0x2lrjd1b6pvpmyb3mk02z1hsq3sgy8i0vy80yw4pm17mf6r5f"))))
     (properties `((upstream-name . "semrulesid")))
     (build-system r-build-system)
     (arguments

@@ -69,13 +69,13 @@
 (define-public r-rzooroh
   (package
     (name "r-rzooroh")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RZooRoH" version))
        (sha256
-        (base32 "0bqimp40rmbj9bdl5n1ygzlv3rw2myn75y2mnvckn8jpmi6qxlk8"))))
+        (base32 "0d909r0b85nz69r4yh5xx0ky1y51nc6v2h86qfsjnn52jf2zr53l"))))
     (properties `((upstream-name . "RZooRoH")))
     (build-system r-build-system)
     (arguments
@@ -94,14 +94,21 @@ autozygosity (or inbreeding coefficient).  HBD segments and autozygosity are
 assigned to multiple HBD classes with a model-based approach relying on a
 mixture of exponential distributions.  The rate of the exponential distribution
 is distinct for each HBD class and defines the expected length of the HBD
-segments.  These HBD classes are therefore related to the age of the segments
-(longer segments and smaller rates for recent autozygosity / recent common
-ancestor).  The functions allow to estimate the parameters of the model (rates
-of the exponential distributions, mixing proportions), to estimate global and
-local autozygosity probabilities and to identify HBD segments with the Viterbi
-decoding.  The method is fully described in Druet and Gautier (2017)
-<doi:10.1111/mec.14324> and Druet and Gautier (2022)
-<doi:10.1016/j.tpb.2022.03.001>.")
+segments.  This rate is called the \"rate of coancestry change\".  The HBD classes
+are therefore related to the age of the segments (longer segments and smaller
+rates for recent autozygosity / recent common ancestor).  The functions allow to
+estimate the parameters of the model (rates of the exponential distributions
+called also rates of coancestry change; mixing proportions related to the
+inbreeding rate per layer or generation), to estimate global and local
+autozygosity probabilities and to identify HBD segments with the Viterbi
+decoding.  Functions also allow to compute identity-by-descent (IBD) between
+pairs of haplotypes, to estimate kinship between pairs of individuals and to
+predict inbreeding in the future progeny of a genotyped couple.  The current
+model is fully described in Druet and Gautier (2022)
+<doi:10.1016/j.tpb.2022.03.001>.  The model and its properties were originally
+presented in Druet and Gautier (2017) <doi:10.1111/mec.14324>.  Extension to IBD
+and kinship analyses is described in Forneris et al. (2025)
+<doi:10.1111/1755-0998.14068>.")
     (license license:gpl3)))
 
 (define-public r-rzmq
@@ -686,20 +693,20 @@ sub-structure masking are as described in: Giri et al. (2015)
 (define-public r-rxkcd
   (package
     (name "r-rxkcd")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RXKCD" version))
        (sha256
-        (base32 "16s0s37s2kch9w386qgc4sqksjhw7yawfxhnj3dd0wj25cbnqckh"))))
+        (base32 "0hqdhkr1fv5yar0rpgjs6gx2wrg2wfw36nb0maazi7h6vk28brry"))))
     (properties `((upstream-name . "RXKCD")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-text2vec
-                             r-png
+    (propagated-inputs (list r-png
+                             r-matrix
                              r-jsonlite
                              r-jpeg
                              r-httr
@@ -709,8 +716,8 @@ sub-structure masking are as described in: Giri et al. (2015)
     (synopsis "Get XKCD Comic from R")
     (description
      "Visualize your favorite XKCD comic strip directly from R. Includes full-text
-search with BM25 ranking and semantic similarity search via local @code{GloVe}
-embeddings, powered by a local @code{DuckDB} cache.")
+search with BM25 ranking and semantic similarity search via latent semantic
+analysis, powered by a local @code{DuckDB} cache.")
     (license license:gpl2)))
 
 (define-public r-rwunderground
@@ -2180,13 +2187,13 @@ MÃ¼ller (2022) <https://CRAN.R-project.org/package=dplyr>.")
 (define-public r-rvec
   (package
     (name "r-rvec")
-    (version "1.0.1")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rvec" version))
        (sha256
-        (base32 "0jkybbggp6iv470pvjvmrkq5443gl0c9ha8k3rdrkh3rdqnk84hl"))))
+        (base32 "19y4x095fap9hcxn5cll1yf19413x2iq611ayp53n4x4kzr7s57w"))))
     (properties `((upstream-name . "rvec")))
     (build-system r-build-system)
     (arguments
@@ -2422,13 +2429,13 @@ you use.")
 (define-public r-rurl
   (package
     (name "r-rurl")
-    (version "3.0.1")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rurl" version))
        (sha256
-        (base32 "0k7pdgh5l7wblpcn6qhdf4bc2pg4al20mfd1xnh7hfn901cf40z5"))))
+        (base32 "0hxy1i4gsqdbilr1ic0aw7ll60kccqpbvd4sxvyf15nl5cs4krgc"))))
     (properties `((upstream-name . "rurl")))
     (build-system r-build-system)
     (arguments
@@ -2826,6 +2833,40 @@ and out-of-sample evaluations.  rumidas also offers a summary tool, which
 synthesizes the main information of the estimated model.  There is also the
 possibility of generating one-step-ahead and multi-step-ahead forecasts.")
     (license license:gpl3)))
+
+(define-public r-rumengp
+  (package
+    (name "r-rumengp")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rumenGP" version))
+       (sha256
+        (base32 "151brzfhgcd1i3xzddf4qjrykm38amk36a1vbip55pgblk9m3mfc"))))
+    (properties `((upstream-name . "rumenGP")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-readxl
+                             r-purrr
+                             r-minpack-lm
+                             r-lubridate
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://araujorodrig-lab.github.io/rumenGP/")
+    (synopsis "Rumen Gas Production Modeling, Comparison, and Visualization")
+    (description
+     "This package provides tools for importing, processing, visualizing, fitting,
+comparing, and interpreting in vitro rumen gas production data.  Supports ANKOM
+RF workflows, generic gas production datasets, and pressure-based measurements.
+Includes multiple kinetic models, custom nonlinear models, model comparison
+workflows, treatment-level ranking, diagnostic tools, and visualization
+functions for rumen fermentation studies.")
+    (license license:expat)))
 
 (define-public r-rum
   (package
@@ -5422,26 +5463,22 @@ related to the Microsoft Office software suite, including Microsoft Word
 (define-public r-rtables
   (package
     (name "r-rtables")
-    (version "0.6.16")
+    (version "0.6.17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtables" version))
        (sha256
-        (base32 "0vkapmssqlrvipr0bj3fzds9vkx8f95219a3hki2qls01by2gm43"))))
+        (base32 "11s1l59d44ic5n4v7xqfqfywcpgix1m43rk8280wsvs4x81x1ssa"))))
     (properties `((upstream-name . "rtables")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringi
-                             r-magrittr
-                             r-lifecycle
-                             r-htmltools
-                             r-formatters
+    (propagated-inputs (list r-stringi r-lifecycle r-htmltools r-formatters
                              r-checkmate))
     (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://github.com/insightsengineering/rtables")
+    (home-page "https://github.com/pharmaverse/rtables")
     (synopsis "Reporting Tables")
     (description
      "Reporting tables often have structure that goes beyond simple rectangular data.
@@ -11070,13 +11107,13 @@ S., and J. M. Lees (1996)<doi:10.1785/BSSA0860061853>.")
 (define-public r-rqti
   (package
     (name "r-rqti")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rqti" version))
        (sha256
-        (base32 "1a4fsg7a61yw3ssagn72zhrhr0zzn0ywzdxzy2p59lfl2w9m3nny"))))
+        (base32 "1cgncbqvcykl8zdfsq5c2r8lnlwx6r7wbmrapqjz04mp2cv2x946"))))
     (properties `((upstream-name . "rqti")))
     (build-system r-build-system)
     (arguments
@@ -12780,13 +12817,13 @@ in linear instrumental variable models\" <doi:10.48550/@code{arXiv.2506.12771>}.
 (define-public r-rpic
   (package
     (name "r-rpic")
-    (version "0.6.2")
+    (version "0.11.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rpic" version))
        (sha256
-        (base32 "1wk5r79f5vmkh2wl8d1ysb71f0c15ygr83si8h1bv8xa90qhh0g0"))))
+        (base32 "08pfvbgglrasrrkk4290p3dzwmyh835vg1h63vzdc3as6hkynzmf"))))
     (properties `((upstream-name . "rpic")))
     (build-system r-build-system)
     (arguments
@@ -15825,6 +15862,31 @@ analysis of continuous outcomes introduced by Tan et al. (2017)
 residuals and estimates in linear scales are available from the package, and
 outcomes with ties are supported.")
     (license license:lgpl3)))
+
+(define-public r-rolog
+  (package
+    (name "r-rolog")
+    (version "0.9.29")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rolog" version))
+       (sha256
+        (base32 "1npljvcj8rbarz7pvfr1cbvibjcn2yj3s3vma9gd4r0n42ccv5pi"))))
+    (properties `((upstream-name . "rolog")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rswipl r-rcpp))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/mgondan/rolog")
+    (synopsis "Query 'SWI'-'Prolog' from R")
+    (description
+     "This R package connects to SWI-Prolog, <https://www.swi-prolog.org/>, so that R
+can send deterministic and non-deterministic queries to prolog (consult,
+query/submit, once, findall).")
+    (license (license:fsdg-compatible "FreeBSD"))))
 
 (define-public r-rolocisccnbs
   (package
@@ -22783,19 +22845,19 @@ Peterson and Harrell (1990) <https://www.jstor.org/stable/2347760>.")
 (define-public r-rmpw
   (package
     (name "r-rmpw")
-    (version "0.0.6")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rmpw" version))
        (sha256
-        (base32 "1hlzzajgpacl66hb0lpm4ab7r64rqm78d58c975ks3hbspx029xc"))))
+        (base32 "01bss12kq3b9n8rvafmz6mnd0lbn4n6nv3ipnfvd15wchm5ww066"))))
     (properties `((upstream-name . "rmpw")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-mass r-gtools))
+    (propagated-inputs (list r-mass r-gtools r-boot))
     (home-page "https://cran.r-project.org/package=rmpw")
     (synopsis "Causal Mediation Analysis Using Weighting Approach")
     (description
@@ -24116,6 +24178,41 @@ documents and Jupyter notebooks, with or without code chunks.  Returns results
 as a data frame.")
     (license license:gpl3)))
 
+(define-public r-rmdsptt
+  (package
+    (name "r-rmdsptt")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rMDSPTT" version))
+       (sha256
+        (base32 "0iragq0yqc74qppl9wgaaw1xcf3lwbgyprdjkagjajy1c14i553i"))))
+    (properties `((upstream-name . "rMDSPTT")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=rMDSPTT")
+    (synopsis
+     "Multiple Dependent State Sampling Inspection Plan for Time Truncated Life Test")
+    (description
+     "This package provides functions for designing multiple dependent state sampling
+inspection plans for time-truncated life tests.  The package determines the
+minimum sample size required to satisfy a specified consumer's risk constraint
+and evaluates the probability of acceptance under different quality and
+termination ratios.  Users can directly provide failure probabilities, allowing
+the sampling plan to be applied to different lifetime distributions without
+requiring distribution-specific functions.  Provide operating characteristic
+analysis, sample size analysis, and graphical comparison with single sampling
+inspection plans.  Aslam et al. (2016) <doi:10.1080/08982112.2015.1068331>; Rao
+et al. (2020) <doi:10.1080/25742558.2020.1857915>; Balamurali et al. (2017)
+<doi:10.1080/07474946.2016.1275459>; Saha et al. (2021)
+<doi:10.1080/21681015.2021.1893843>; Tripathi et al. (2020)
+<doi:10.1007/s40745-020-00267-z>; Tripathi et al. (2023)
+<doi:10.1007/s41872-023-00221-x>.")
+    (license license:gpl3)))
+
 (define-public r-rmdplugr
   (package
     (name "r-rmdplugr")
@@ -25385,13 +25482,13 @@ as various distance measures in addition to the default Euclidean distance.")
 (define-public r-rlmstudio
   (package
     (name "r-rlmstudio")
-    (version "0.2.2")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rlmstudio" version))
        (sha256
-        (base32 "0m04sj0kwzxhzvvzjb66gyrqyjki8r09w82c925k52awrd07xv5q"))))
+        (base32 "06l4p6i223kkghyl7cwzdll86hgm5jis2q2bb2nkh88c2x878376"))))
     (properties `((upstream-name . "rlmstudio")))
     (build-system r-build-system)
     (arguments
@@ -25402,10 +25499,10 @@ as various distance measures in addition to the default Euclidean distance.")
     (home-page "https://jmgirard.github.io/rlmstudio/")
     (synopsis "Access and Control LM Studio")
     (description
-     "This package provides a community-maintained R wrapper for the LM Studio command
-line interface and API. Provides functions to manage the local daemon and
-server, download and load models, and interact with Large Language Models
-(LLMs).")
+     "Run local Large Language Models (LLMs) over many texts from R without sending
+data to a third party.  A community-maintained wrapper for the LM Studio command
+line interface and API that provides functions to manage the local daemon and
+server, download and load models, and score, label, or generate text at scale.")
     (license license:expat)))
 
 (define-public r-rlistings
@@ -31876,13 +31973,13 @@ required minimum number of groups against the termination ratio.  Saha et al.
 (define-public r-rgrpc
   (package
     (name "r-rgrpc")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rgrpc" version))
        (sha256
-        (base32 "1rmbqqfrf80fp3jyjmj29rrzsb2zq3wjmn2gzsd4bdlryjm3lwbz"))))
+        (base32 "06gg1s60fc3q5gvcb77xciihbg9drflr86idmgfhldaag3hsnjmp"))))
     (properties `((upstream-name . "rgrpc")))
     (build-system r-build-system)
     (arguments
@@ -46557,13 +46654,13 @@ fitting, and bootstrap resampling techniques for a desired sample size.")
 (define-public r-realestatebr
   (package
     (name "r-realestatebr")
-    (version "1.0.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "realestatebr" version))
        (sha256
-        (base32 "080q16jrnqiasig9mjkxb1igx339y4rgpwzk1ncf0j2d9y940lys"))))
+        (base32 "197ljhpinpab42fp8xcnz97lim6kmln9mnlsjyds6sc3bwp4gaw8"))))
     (properties `((upstream-name . "realestatebr")))
     (build-system r-build-system)
     (arguments
@@ -46580,11 +46677,12 @@ fitting, and bootstrap resampling techniques for a desired sample size.")
                              r-rlang
                              r-readxl
                              r-readr
-                             r-rbcb
                              r-purrr
                              r-lubridate
+                             r-jsonlite
                              r-janitor
                              r-httr
+                             r-getbcbdata
                              r-dplyr
                              r-cli))
     (native-inputs (list r-knitr))
@@ -46592,10 +46690,15 @@ fitting, and bootstrap resampling techniques for a desired sample size.")
     (synopsis "Import Brazilian Real Estate Data into R")
     (description
      "This package provides access to Brazilian real estate market data from multiple
-official sources: the Central Bank of Brazil (BCB), the Brazilian Association of
-Real Estate Developers (ABRAINC), the Brazilian Association of Real Estate
-Credit and Savings Entities (ABECIP), the Getulio Vargas Foundation (FGV), and
-the Bank for International Settlements (BIS).")
+official sources: the Central Bank of Brazil (BCB) <https://www.bcb.gov.br/>,
+the Brazilian Association of Real Estate Developers (ABRAINC)
+<https://abrainc.org.br/>, the Brazilian Association of Real Estate Credit and
+Savings Entities (ABECIP) <https://www.abecip.org.br/>, the Getulio Vargas
+Foundation (FGV) <https://portalibre.fgv.br/>, and the Bank for International
+Settlements (BIS) <https://www.bis.org/>, as well as Brazil's Federal Revenue
+Service <https://www.gov.br/receitafederal/pt-br/>, the Brazilian Institute of
+Geography and Statistics (IBGE) <https://www.ibge.gov.br/>, and the Ministry of
+Cities <https://www.gov.br/cidades/pt-br/>.")
     (license license:expat)))
 
 (define-public r-readyomics
@@ -49970,13 +50073,13 @@ then be imported to access the check functions in other packages.")
 (define-public r-rdborrow
   (package
     (name "r-rdborrow")
-    (version "0.0.4.1")
+    (version "0.0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rdborrow" version))
        (sha256
-        (base32 "1gb85kv14wh8hfqris3q6fh8l3klsjwj1bwbdrgxk7bzy9ib9wrl"))))
+        (base32 "1xvzwy9sxawdwli5ynv60wsdggz3rmmknds0xk5zpjaj1fnd5x7y"))))
     (properties `((upstream-name . "rdborrow")))
     (build-system r-build-system)
     (arguments
@@ -51763,13 +51866,13 @@ more detail in <doi:10.1002/spe.2984>.  fast_float is licensed under the Apache
 (define-public r-rcppfastad
   (package
     (name "r-rcppfastad")
-    (version "0.0.5")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppFastAD" version))
        (sha256
-        (base32 "0r8xjvpzck2m1nzn9q9cxbjiaf8jnhk4nlmlxrqax1shgacj38p3"))))
+        (base32 "0zb10i9d428maa58sn564zxqxviszyfprwqjr56an6imrlpw8sqp"))))
     (properties `((upstream-name . "RcppFastAD")))
     (build-system r-build-system)
     (arguments
@@ -59658,13 +59761,13 @@ validated for Picea abies, Larix Siberica, Pinus cembra and Pinus sylvestris.")
 (define-public r-raptools
   (package
     (name "r-raptools")
-    (version "1.23.0")
+    (version "1.24.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "raptools" version))
        (sha256
-        (base32 "0kjvj5iqzcqqnq9hhdf4aqrnmj77wb66555jfmh0s3c4xm8d0cxb"))))
+        (base32 "0c2b39arp9isjh3mg4fp2r08cc2v17v4i6hwyamz6nic0xir53hd"))))
     (properties `((upstream-name . "raptools")))
     (build-system r-build-system)
     (arguments
@@ -59688,8 +59791,7 @@ Integrated Discrimination Improvement (IDI), Net Reclassification Improvement
 (NRI), and difference in Area Under the Curves (AUCs), Brier scores and Brier
 skill.  Plots include Risk Assessment Plots, Decision curves and Calibration
 plots.  Methods are described in Pickering and Endre (2012)
-<doi:10.1373/clinchem.2011.167965> and Pencina et al. (2008)
-<doi:10.1002/sim.2929>.")
+<doi:10.2215/CJN.09590911> and Pencina et al. (2008) <doi:10.1002/sim.2929>.")
     (license license:gpl3)))
 
 (define-public r-rapsimng-wheat
@@ -66861,13 +66963,13 @@ back regression coefficients.")
 (define-public r-r02pro
   (package
     (name "r-r02pro")
-    (version "0.2")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r02pro" version))
        (sha256
-        (base32 "1w8vq6ldhvvpcw6kq1nrfrr15ji5zc5p7nhqcr03ixw4qc20lx9w"))))
+        (base32 "0m3vd29skk7pcm6p8iz4clz53f0ar6z8g2hhjrb1s2b89ssf69n3"))))
     (properties `((upstream-name . "r02pro")))
     (build-system r-build-system)
     (arguments
