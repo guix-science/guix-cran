@@ -32677,13 +32677,13 @@ analyzing marketing data from <https://datorama.com>.")
 (define-public r-datom
   (package
     (name "r-datom")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datom" version))
        (sha256
-        (base32 "12m1kfdxqvi3g8291impr23w15n47ivc9gxnavqx96kvvgcs93qg"))))
+        (base32 "1b5sbynziw9h03rrsyv87wvl3v3p0s82b1am1i4ad2pcnjpq762w"))))
     (properties `((upstream-name . "datom")))
     (build-system r-build-system)
     (arguments

@@ -30732,13 +30732,13 @@ genomic regions where the copy number differs from the norm.")
 (define-public r-cnorm
   (package
     (name "r-cnorm")
-    (version "3.6.2")
+    (version "3.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cNORM" version))
        (sha256
-        (base32 "02dszb5wff7n7lah7p930869hwj7zv8xpvc852p628y2yw7w7c1x"))))
+        (base32 "1rbqkb9b1xjf74q3g275qqf2cbl638ily8pil2z8arfzp8va6z1d"))))
     (properties `((upstream-name . "cNORM")))
     (build-system r-build-system)
     (arguments
@@ -30749,23 +30749,25 @@ genomic regions where the copy number differs from the norm.")
     (home-page "https://www.psychometrica.de/cNorm_en.html")
     (synopsis "Continuous Norming")
     (description
-     "Generates continuous test norms in psychometrics and biometrics, and analyzing
-model fit.  The package offers both distribution-free modeling using Taylor
-polynomials and parametric modeling using the beta-binomial and the Sinh-Arcsinh
-distribution.  Originally developed for achievement tests, it is applicable to a
-wide range of mental, physical, or other test scores dependent on continuous or
-discrete explanatory variables.  The package provides several advantages: It
-minimizes deviations from representativeness in subsamples, interpolates between
-discrete levels of explanatory variables, and significantly reduces the required
-sample size compared to conventional norming per age group. @code{cNORM} enables
-graphical and analytical evaluation of model fit, accommodates a wide range of
-scales including those with negative and descending values, and as well supports
-conventional norming.  It generates norm tables including confidence intervals.
-Methods for addressing representativeness issues are available through Iterative
-Proportional Fitting.  Based on Lenhard et al. (2016)
+     "Generates continuous test norms in psychometrics and biometrics, and analyzes
+model fit.  The package offers distribution-free modeling using Taylor
+polynomials, as well as parametric modeling using the beta-binomial distribution
+(for bounded accuracy tests), the Conway-Maxwell-Poisson distribution (for
+speeded tests and count data with over-, equi-, or under-dispersion), and the
+Sinh-Arcsinh (SHASH) distribution.  Originally developed for psychological and
+educational assessment, it is applicable to a wide range of mental, physical, or
+other test scores dependent on continuous or discrete explanatory variables.
+The package minimizes deviations from representativeness in subsamples,
+interpolates between discrete levels of explanatory variables, and significantly
+reduces the required sample size compared to conventional norming per age group.
+@code{cNORM} enables graphical and analytical evaluation of model fit,
+accommodates a wide range of scales including those with negative and descending
+values, and supports conventional norming.  It generates norm tables including
+confidence intervals and provides methods for addressing representativeness
+issues through Iterative Proportional Fitting.  Based on Lenhard et al. (2016)
 <doi:10.1177/1073191116656437>, Lenhard et al. (2019)
 <doi:10.1371/journal.pone.0222279>, Lenhard and Lenhard (2021)
-<doi:10.1177/0013164420928457> and Gary et al. (2023)
+<doi:10.1177/0013164420928457>, and Gary et al. (2023)
 <doi:10.1007/s00181-023-02456-0>.")
     (license license:agpl3)))
 

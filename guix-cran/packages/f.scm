@@ -6143,13 +6143,13 @@ spherical data.  References: Petersen, A., & MÃ¼ller, H.-G. (2019)
 (define-public r-frci
   (package
     (name "r-frci")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FRCI" version))
        (sha256
-        (base32 "1l665c507k7n63fcxdzacgivdnibd9yvq98amlbq41p6z3l2mi2k"))))
+        (base32 "0f9q9z9zlcfnincl7g0jzmj5km1slnm5gjm72pkfxm8ynh6gsigv"))))
     (properties `((upstream-name . "FRCI")))
     (build-system r-build-system)
     (arguments
@@ -6159,8 +6159,8 @@ spherical data.  References: Petersen, A., & MÃ¼ller, H.-G. (2019)
     (home-page "https://cran.r-project.org/package=FRCI")
     (synopsis "Fuzzy & Randomized Confidence Intervals")
     (description
-     "This package contains the methods proposed by Geyer and Meeden
-(2005)<doi:10.1214/088342305000000340> and Trigo et al. (2025)
+     "This package contains the methods proposed by Geyer and Meeden (2005)
+<doi:10.1214/088342305000000340> and Trigo et al. (2025)
 <doi:10.47749/T/UNICAMP.2025.1500297> to construct fuzzy confidence intervals.
 Compute and plot the fuzzy membership functions of the methods, and the expected
 length compared with the infimum.")
@@ -11715,13 +11715,13 @@ detailed by Friedman and Glover (2006) <doi:10.1002/jmri.20583>.")
 (define-public r-fmrihrf
   (package
     (name "r-fmrihrf")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fmrihrf" version))
        (sha256
-        (base32 "1nfj3wnqmz3mxnjq5ak78a94cvfs0n7vifx8w5mclpfmy0ak85wn"))))
+        (base32 "0nxlvjcj63ya0mhfddcaqz4cb98y577kq8kmrp3lbh62nx70py6h"))))
     (properties `((upstream-name . "fmrihrf")))
     (build-system r-build-system)
     (arguments
@@ -11734,6 +11734,7 @@ detailed by Friedman and Glover (2006) <doi:10.1002/jmri.20583>.")
                              r-numderiv
                              r-memoise
                              r-matrix
+                             r-jsonlite
                              r-cli
                              r-assertthat))
     (native-inputs (list r-knitr))
@@ -23996,13 +23997,13 @@ results are obtained by merging the significant probes detected.")
 (define-public r-fcps
   (package
     (name "r-fcps")
-    (version "1.4.1")
+    (version "1.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FCPS" version))
        (sha256
-        (base32 "14wghwnvs3ypi0shdhsyh8dg9wzwjg14inzvn20frmv5ays38d87"))))
+        (base32 "0nfn8rp0ghdv1dvy1xfdi7knyj7far7nbimkgxzdqmq479nqpkv3"))))
     (properties `((upstream-name . "FCPS")))
     (build-system r-build-system)
     (arguments
@@ -28702,24 +28703,26 @@ Estimation of Feature Allocations\" <doi:10.1080/10618600.2023.2204136>.")
 (define-public r-fancycut
   (package
     (name "r-fancycut")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fancycut" version))
        (sha256
-        (base32 "1vfd7vhl4wmdia8zh6fkpmw64rkfqdmadvrnaqyf72kw5gpck8li"))))
+        (base32 "0qs3vagyzn9n594pmcr02cc1l6rl0m2x1wk4ffkm5c3cf5ndj24w"))))
     (properties `((upstream-name . "fancycut")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (home-page "https://cran.r-project.org/package=fancycut")
-    (synopsis "Fancy Version of 'base::cut'")
+    (synopsis "Fancy Version of base::cut()")
     (description
-     "This package provides the function @code{fancycut()} which is like @code{cut()}
-except you can mix left open and right open intervals with point values,
-intervals that are closed on both ends and intervals that are open on both ends.")
+     "This package provides two functions @code{fancycut()} and @code{wafflecut()},
+which essentially do the same thing, with slightly different syntax.  These
+function allow for turning a numeric vector into a factor, like @code{cut()}.
+However, unlike @code{cut()} they give the user more control over how to specify
+the intervals.")
     (license license:cc0)))
 
 (define-public r-fanc
@@ -31368,13 +31371,13 @@ on the minimization of a penalized likelihood.")
 (define-public r-fable-prophet
   (package
     (name "r-fable-prophet")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fable.prophet" version))
        (sha256
-        (base32 "12y2k05plg6d6lgqk6617q6z5m6xz33zdsjh56k86h230qqw68rp"))))
+        (base32 "157zawsglwhzizs9qx81k5d9ccg94xcyz8w3c1kzzgc3a0hi8myg"))))
     (properties `((upstream-name . "fable.prophet")))
     (build-system r-build-system)
     (arguments

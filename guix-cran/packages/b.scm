@@ -37484,13 +37484,13 @@ name \"Bagged @code{OutlierTrees}\".  To learn more about the base procedure
 (define-public r-bage
   (package
     (name "r-bage")
-    (version "0.10.10")
+    (version "0.10.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bage" version))
        (sha256
-        (base32 "1sydkq8258rfrn9xpc00bbr8aw6miyxr3xwzlymk4yw66zxq2yky"))))
+        (base32 "02y2918xr9gi6a3n9n5djry20c38k7wc7hfllyfx7j1z3id5qyzy"))))
     (properties `((upstream-name . "bage")))
     (build-system r-build-system)
     (arguments

@@ -29986,13 +29986,13 @@ An alternative to ggtern', which uses the ggplot2 family of plotting functions."
 (define-public r-tern-mmrm
   (package
     (name "r-tern-mmrm")
-    (version "0.3.3")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tern.mmrm" version))
        (sha256
-        (base32 "0b0hj70kvpf3n1ji3zkjlikh6bz0mydz99i1dc9v9zj0a66r2435"))))
+        (base32 "1ng1qlins4j3q29b63pyajqbmqyfln5lfcyw8prg7qq12rk5xx3v"))))
     (properties `((upstream-name . "tern.mmrm")))
     (build-system r-build-system)
     (arguments
@@ -30004,7 +30004,6 @@ An alternative to ggtern', which uses the ggplot2 family of plotting functions."
                              r-rlang
                              r-parallelly
                              r-mmrm
-                             r-magrittr
                              r-lifecycle
                              r-ggplot2
                              r-generics
@@ -30033,13 +30032,13 @@ on mmrm <https://cran.r-project.org/package=mmrm> by SabanÃ©s BovÃ© et al.
 (define-public r-tern-gee
   (package
     (name "r-tern-gee")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tern.gee" version))
        (sha256
-        (base32 "0z1mkr1bydx9r0wq70l35s92qh2wk059l18s7sixgchlm8d8a8qr"))))
+        (base32 "011sn1x9qciwy0wxzn1yg0c6dz3k9sjh3nx4ghfrmiaxs58kxmhx"))))
     (properties `((upstream-name . "tern.gee")))
     (build-system r-build-system)
     (arguments

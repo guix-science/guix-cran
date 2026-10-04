@@ -29955,13 +29955,13 @@ to provide superior results for predicting association football outcomes.")
 (define-public r-piqp
   (package
     (name "r-piqp")
-    (version "0.6.2")
+    (version "0.6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "piqp" version))
        (sha256
-        (base32 "08fvv07xrhjk3n2hl1cb53ra3jzjj8c8djy1lfl6rm623zj9yq2g"))))
+        (base32 "0way8zp8fjq82mfh01cxi249nk5nl9avbcis57w7bna3hk10582y"))))
     (properties `((upstream-name . "piqp")))
     (build-system r-build-system)
     (arguments

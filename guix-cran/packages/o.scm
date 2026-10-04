@@ -12632,20 +12632,19 @@ of @code{OmegaG} do not necessarily represent the policy of the ALSAC.")
 (define-public r-olympicrshiny
   (package
     (name "r-olympicrshiny")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OlympicRshiny" version))
        (sha256
-        (base32 "10aq9mcnb7yp2jwz897qmng3p0vwrm1rzny8nc9lzm6gisw50lby"))))
+        (base32 "04r5zybcw83w1ixj0x437xpakp8546ih7q9sdwpf2yhl3774b4rs"))))
     (properties `((upstream-name . "OlympicRshiny")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-summarytools
-                             r-shinythemes
+    (propagated-inputs (list r-shinythemes
                              r-shinybusy
                              r-shiny
                              r-golem
@@ -12656,9 +12655,11 @@ of @code{OmegaG} do not necessarily represent the policy of the ALSAC.")
     (home-page "https://github.com/Amalan-ConStat/OlympicRshiny")
     (synopsis "'Shiny' Application for Olympic Data")
     (description
-     "Shiny Application to visualize Olympic Data.  From 1896 to 2016.  Even Winter
-Olympics events are included.  Data is from Kaggle at
-<https://www.kaggle.com/heesoo37/120-years-of-olympic-history-athletes-and-results>.")
+     "This package provides a Shiny application for exploring and visualizing Olympic
+Games data from 1896 onwards, including both Summer and Winter Olympic Games.
+The application provides interactive visualizations of athletes, countries,
+sports, events, and medal results.  Olympic data are obtained from the
+@code{olympicAthletes} R package.")
     (license license:expat)))
 
 (define-public r-olympicathletes

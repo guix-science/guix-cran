@@ -4458,24 +4458,21 @@ Meier (2020) <doi:10.1080/10503307.2019.1612114>.")
 (define-public r-susographql
   (package
     (name "r-susographql")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "susographql" version))
        (sha256
-        (base32 "1drh8vqkdmvd9v80ibjx3jhnp5f8ggs445mr6r9j69ygw259npbk"))))
+        (base32 "03d01nqi47i19f23w5vlnq2mqx0xf2j2gf96c9f3kgbhzqh5r11l"))))
     (properties `((upstream-name . "susographql")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-withr
-                             r-stringr
                              r-rlang
-                             r-readr
                              r-lubridate
-                             r-jsonlite
                              r-httr2
                              r-glue
                              r-data-table
@@ -4485,13 +4482,13 @@ Meier (2020) <doi:10.1080/10503307.2019.1612114>.")
     (synopsis "Comprehensive Interface to the Survey Solutions 'GraphQL' API")
     (description
      "This package provides a complete suite of tools for interacting with the Survey
-Solutions @code{GraphQL} API <https://demo.mysurvey.solutions/graphql/>.  This
-package encompasses all currently available queries and mutations, including the
-latest features for map uploads.  It is built on the modern httr2 package,
-offering a streamlined and efficient interface without relying on external
-@code{GraphQL} client packages.  In addition to core API functionalities, the
-package includes a range of helper functions designed to facilitate the use of
-available query filters.")
+Solutions @code{GraphQL} API <https://demo.mysurvey.solutions/>.  This package
+encompasses all currently available queries and mutations, including the latest
+features for map uploads.  It is built on the modern httr2 package, offering a
+streamlined and efficient interface without relying on external @code{GraphQL}
+client packages.  In addition to core API functionalities, the package includes
+a range of helper functions designed to facilitate the use of available query
+filters.")
     (license license:gpl3+)))
 
 (define-public r-susier
@@ -21578,13 +21575,13 @@ hinge loss, squared-hinge loss, and logistic loss.")
 (define-public r-ssnbler
   (package
     (name "r-ssnbler")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SSNbler" version))
        (sha256
-        (base32 "0hgrklm615kwx8swzbmf8r606rikbyvbhmb41c9j8wb6j8a0a5v1"))))
+        (base32 "1xc8k3vwzyb9racwry4pl3s0sfb4aaz3cb4zy7y6izwpssnivpwa"))))
     (properties `((upstream-name . "SSNbler")))
     (build-system r-build-system)
     (arguments
@@ -63224,13 +63221,13 @@ Schuurman, N.K. (2022) <doi: 10.31234/osf.io/ryg69>.")
 (define-public r-serrsbayes
   (package
     (name "r-serrsbayes")
-    (version "0.5-0")
+    (version "0.6-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "serrsBayes" version))
        (sha256
-        (base32 "1w8fs9k4zhy0hwkm30dvi360n28cl2gn9vdqaak64g0nlvb9jy1w"))))
+        (base32 "0kdgyxlzxn1rifvkh62imm64i0smxjwl7jix7lgfvk6qqz1zlcl0"))))
     (properties `((upstream-name . "serrsBayes")))
     (build-system r-build-system)
     (arguments
@@ -63243,14 +63240,14 @@ Schuurman, N.K. (2022) <doi: 10.31234/osf.io/ryg69>.")
     (description
      "Sequential Monte Carlo (SMC) algorithms for fitting a generalised additive mixed
 model (GAMM) to surface-enhanced resonance Raman spectroscopy (SERRS), using the
-method of Moores et al. (2016) <@code{arXiv:1604.07299>}.  Multivariate
-observations of SERRS are highly collinear and lend themselves to a reduced-rank
-representation.  The GAMM separates the SERRS signal into three components: a
-sequence of Lorentzian, Gaussian, or pseudo-Voigt peaks; a smoothly-varying
-baseline; and additive white noise.  The parameters of each component of the
-model are estimated iteratively using SMC. The posterior distributions of the
-parameters given the observed spectra are represented as a population of
-weighted particles.")
+method of Moores et al. (2026) <doi:10.48550/@code{arXiv.1604.07299>}.
+Multivariate observations of SERRS are highly collinear and lend themselves to a
+reduced-rank representation.  The GAMM separates the SERRS signal into three
+components: a sequence of Lorentzian, Gaussian, or pseudo-Voigt peaks; a
+smoothly-varying baseline; and additive white noise.  The parameters of each
+component of the model are estimated iteratively using SMC. The posterior
+distributions of the parameters given the observed spectra are represented as a
+population of weighted particles.")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file://LICENSE")))))
 

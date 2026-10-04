@@ -23027,13 +23027,13 @@ Data API <https://educationdata.urban.org/> into a data.frame for analysis.")
 (define-public r-educabr
   (package
     (name "r-educabr")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "educabR" version))
        (sha256
-        (base32 "0mng4pzlh01vw56sa9g6b657x8n0qahxfvw0952q0wj6r0qkgffr"))))
+        (base32 "1zbqszwi4x3xdrm2yr6ldbk1jvjms8savzzflsi29nxqi9d0wddz"))))
     (properties `((upstream-name . "educabR")))
     (build-system r-build-system)
     (arguments

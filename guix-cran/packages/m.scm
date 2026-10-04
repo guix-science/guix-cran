@@ -335,13 +335,13 @@ Chen and Shao (1999) <doi:10.1214/ss/1009211804>, Roberts and Rosenthal (1998)
 (define-public r-myio
   (package
     (name "r-myio")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "myIO" version))
        (sha256
-        (base32 "1j05c78c6nq36ky4sjs2lxa2d2gxg96w69ksxmrfbl87yflfx5w9"))))
+        (base32 "1m6dgipfkypvvh5w4rrzsfj1fc47qarxi9vxxkslqa0hqdc3vf0i"))))
     (properties `((upstream-name . "myIO")))
     (build-system r-build-system)
     (arguments
@@ -11172,6 +11172,41 @@ the original Python implementation that inspired this tool.")
      "This package provides functions and datasets from Hilbe, J.M., and Robinson,
 A.P. 2013.  Methods of Statistical Model Estimation.  Chapman & Hall / CRC.")
     (license license:gpl3)))
+
+(define-public r-msma
+  (package
+    (name "r-msma")
+    (version "4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "msma" version))
+       (sha256
+        (base32 "1ghmww2h2m4fcanzj2rajwwhzzcq63s734v03kra54cxi5azm4a0"))))
+    (properties `((upstream-name . "msma")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=msma")
+    (synopsis "Multiblock Sparse Multivariable Analysis")
+    (description
+     "Several functions can be used to analyze multiblock multivariable data.  If the
+input is a single matrix, then principal components analysis (PCA) is
+implemented.  If the input is a list of matrices, then multiblock PCA is
+implemented.  If the input is two matrices, for exploratory and objective
+variables, then partial least squares (PLS) analysis is implemented.  If the
+input is two lists of matrices, for exploratory and objective variables, then
+multiblock PLS analysis is implemented.  Additionally, if an extra outcome
+variable is specified, then a supervised version of the methods above is
+implemented.  For each method, sparse modeling is also incorporated.  Functions
+for selecting the number of components and regularized parameters are also
+provided.  Version 4.0 adds opt-in supervised sparse soft-structured principal
+component analysis, reconstruction, and repeated split reconstruction-based
+parameter selection while preserving the default Version 3.2 computational
+paths.")
+    (license license:gpl2+)))
 
 (define-public r-msinference
   (package
@@ -44282,13 +44317,13 @@ from existing R packages, and some data donations.")
 (define-public r-medicalcoder
   (package
     (name "r-medicalcoder")
-    (version "0.9.0")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "medicalcoder" version))
        (sha256
-        (base32 "08njiyvpb2w3vrqg3jih1k91bh08awxb7llf8088spvvp66wpz1a"))))
+        (base32 "1wncr73bnzbjm0kyaf6hi9xsa1j8qcwmr1xghxi6yz07jwk656n2"))))
     (properties `((upstream-name . "medicalcoder")))
     (build-system r-build-system)
     (arguments

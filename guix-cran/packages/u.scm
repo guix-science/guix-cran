@@ -4269,13 +4269,13 @@ presentations, and HTML outputs.")
 (define-public r-ungroup
   (package
     (name "r-ungroup")
-    (version "1.4.4")
+    (version "1.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ungroup" version))
        (sha256
-        (base32 "12dqhysz26l1jrnf4sz43hdpsxch8g1iah7cxsx7rcac42lhzwdk"))))
+        (base32 "12qsvd1jv7jcj4rja8zsc8fv3haqz59cyza1pzvwlvrxh557mqn8"))))
     (properties `((upstream-name . "ungroup")))
     (build-system r-build-system)
     (arguments

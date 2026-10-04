@@ -5791,25 +5791,34 @@ The included vignettes demonstrate the encryption procedures.")
 (define-public r-homomorpher
   (package
     (name "r-homomorpher")
-    (version "0.3")
+    (version "1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "homomorpheR" version))
        (sha256
-        (base32 "1apmk29j8ijcxsbriw69zhc3pif9i5cbdy42qpxa6l2y1n4d9qp2"))))
+        (base32 "04yp033zs8m7lnc00zz8dp53480711l8r6narzzly3563156gcji"))))
     (properties `((upstream-name . "homomorpheR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sodium r-r6 r-gmp))
+    (propagated-inputs (list r-sodium
+                             r-s7
+                             r-rlang
+                             r-openfhe-r
+                             r-gmp
+                             r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/bnaras/homomorpheR")
+    (home-page "https://bnaras.github.io/homomorpheR/")
     (synopsis "Homomorphic Computations in R")
     (description
-     "Homomorphic computations in R for privacy-preserving applications.  Currently
-only the Paillier Scheme is implemented.")
+     "Privacy-preserving statistics across sites that never share their data, using
+fully homomorphic encryption through the openfhe.R interface to @code{OpenFHE}
+(CKKS, BFV, BGV), with n-of-n threshold key generation so that no single party
+can decrypt.  Ships master/worker primitives that let ordinary R modeling code
+run across sites, and a frozen implementation of the Paillier additive scheme
+kept for backward compatibility.")
     (license license:expat)))
 
 (define-public r-homnormal
