@@ -18585,6 +18585,39 @@ the alpha-shape, identify the connected components and facilitate the
 three-dimensional graphical visualization of the estimated set.")
     (license license:gpl2)))
 
+(define-public r-alphasdm
+  (package
+    (name "r-alphasdm")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AlphaSDM" version))
+       (sha256
+        (base32 "0nxfgamq5cn8jk8jfrlskny8mg3spz6f15ik9xlzcx5nr6x17058"))))
+    (properties `((upstream-name . "AlphaSDM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sf r-reticulate r-jsonlite))
+    (native-inputs (list r-knitr))
+    (home-page "https://james-longo.github.io/AlphaSDM/")
+    (synopsis
+     "Species Distribution Models on 'AlphaEarth' Satellite Embeddings")
+    (description
+     "Fits species distribution models and maps habitat suitability at up to 10 m
+resolution from occurrence records alone, using the @code{AlphaEarth}
+Foundations satellite embeddings (Brown et al.  2025)
+<doi:10.48550/@code{arXiv.2507.22291>}.  The embeddings, 64 values per pixel per
+year from a geospatial foundation model, replace environmental layers, so none
+need to be sourced or aligned.  Provides tools to format occurrence records,
+place pseudo-absences, train and evaluate an ensemble of machine learning
+models, and export habitat-suitability rasters.  Sampling, model training and
+prediction all run on Google Earth Engine', which requires a free account for
+noncommercial use.")
+    (license license:expat)))
+
 (define-public r-alphapowerhazard
   (package
     (name "r-alphapowerhazard")
@@ -22793,13 +22826,13 @@ Y. P., Goncalves, L. S. A. (2025) <doi:10.4025/actasciagron.v47i1.73889>.")
 (define-public r-agrobox
   (package
     (name "r-agrobox")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "agrobox" version))
        (sha256
-        (base32 "1kqb54lw2a02k8mgccrxwsng2bii0jhlbgm8rhggdh8nlgxdlwhf"))))
+        (base32 "1851am805xj4x2nba1wq92687lbdvjcwz73y83l3fba2a6s3d0ga"))))
     (properties `((upstream-name . "agrobox")))
     (build-system r-build-system)
     (arguments
@@ -22823,42 +22856,54 @@ Y. P., Goncalves, L. S. A. (2025) <doi:10.4025/actasciagron.v47i1.73889>.")
 agroindustrial and agricultural experiments.  The package provides functions to
 perform one-way and two-way ANOVA with post-hoc tests (Tukey HSD and Duncan
 MRT), Welch ANOVA for heteroscedastic data, and the Games-Howell post-hoc test
-as a robust alternative when variance homogeneity fails.  Normality of residuals
-is assessed with the Shapiro-Wilk test and homoscedasticity with the
-Fligner-Killeen test; the appropriate statistical path is selected automatically
-based on these diagnostics.  Coefficients of variation and statistical power
-(via one-way ANOVA power analysis) are reported alongside the post-hoc letter
-display.  High-level wrappers allow automated multi-variable analysis with
-optional clustering by one or two experimental factors, with support for custom
-level ordering and relabeling.  Results are returned as ggplot2 boxplots with
-mean and letter annotations, wide-format summary tables ready for publication or
-@code{LaTeX} rendering, and structured decision summaries for rapid agronomic
-interpretation.  Direct export to Excel spreadsheets and high-resolution image
-tables is also supported.  Functions follow methods widely used in agronomy,
-field trials, and plant breeding.  Key references: Tukey (1949)
-<doi:10.2307/3001913>; Duncan (1955) <doi:10.2307/3001478>; Welch (1951)
-<doi:10.2307/2332579>; Games and Howell (1976) <doi:10.2307/2529858>; Shapiro
-and Wilk (1965) <doi:10.2307/2333709>; Fligner and Killeen (1976)
-<doi:10.2307/2529096>; Cohen (1988, ISBN:9781138892899); Wickham (2016,
-ISBN:9783319242750) for ggplot2'; see also agricolae
+as a robust alternative when variance homogeneity fails.  When residual
+normality fails, the Kruskal-Wallis test (with agricolae or Dunn post-hoc
+letters) or, for blocked designs, the Friedman test is used, so that letters are
+always obtained through a defensible route.  Normality of residuals is assessed
+with the Shapiro-Wilk test and homoscedasticity with the Fligner-Killeen test;
+the appropriate statistical path is selected automatically based on these
+diagnostics.  Coefficients of variation and statistical power (via one-way ANOVA
+power analysis) are reported alongside the post-hoc letter display, and each
+figure includes a note describing the statistical route used, its rationale,
+advantages, limitations and scope.  High-level wrappers allow automated
+multi-variable analysis with optional clustering by one or two experimental
+factors, with support for custom level ordering and relabeling.  Results are
+returned as ggplot2 boxplots with mean and letter annotations, wide-format
+summary tables ready for publication or @code{LaTeX} rendering, and structured
+decision summaries for rapid agronomic interpretation.  Direct export to Excel
+spreadsheets and high-resolution image tables is also supported.  Functions
+follow methods widely used in agronomy, field trials, and plant breeding.  Key
+references: Tukey (1949) <doi:10.2307/3001913>; Duncan (1955)
+<doi:10.2307/3001478>; Welch (1951) <doi:10.2307/2332579>; Games and Howell
+(1976) <doi:10.2307/2529858>; Shapiro and Wilk (1965) <doi:10.2307/2333709>;
+Fligner and Killeen (1976) <doi:10.2307/2529096>; Kruskal and Wallis (1952)
+<doi:10.1080/01621459.1952.10483441>; Dunn (1964)
+<doi:10.1080/00401706.1964.10490181>; Friedman (1937)
+<doi:10.1080/01621459.1937.10503522>; Cohen (1988, ISBN:9781138892899); Wickham
+(2016, ISBN:9783319242750) for ggplot2'; see also agricolae
 <https://CRAN.R-project.org/package=agricolae> and rstatix
 <https://CRAN.R-project.org/package=rstatix>.  Version en espanol: Conjunto de
 herramientas para el analisis estadistico, visualizacion y generacion de
 reportes en ensayos agroindustriales y agricolas.  Incluye ANOVA univariado y
 bifactorial con pruebas post-hoc (Tukey HSD y Duncan MRT), ANOVA de Welch para
 datos heterocedasticos y la prueba post-hoc de Games-Howell como alternativa
-robusta cuando falla la homogeneidad de varianzas.  La normalidad de residuos se
-evalua con la prueba de Shapiro-Wilk y la homogeneidad de varianzas con la
-prueba de Fligner-Killeen; la ruta estadistica apropiada se selecciona
-automaticamente segun estos diagnosticos.  Se reportan coeficientes de variacion
-y potencia estadistica junto con las letras de separacion de medias.  Los
-envoltorios de alto nivel permiten analisis multivariable automatizado con
-agrupamiento opcional por uno o dos factores experimentales, con soporte para
-orden y etiquetado personalizado de niveles.  Los resultados se devuelven como
-boxplots con anotaciones de medias y letras, tablas resumen en formato ancho
-listas para publicacion o renderizado en @code{LaTeX}, y resumenes de decision
-para interpretacion agronomica rapida.  Tambien se soporta exportacion directa a
-Excel e imagenes de alta resolucion para informes tecnicos.")
+robusta cuando falla la homogeneidad de varianzas.  Cuando falla la normalidad
+de residuos se usa la prueba de Kruskal-Wallis (con letras de agricolae o de
+Dunn) o, en disenos en bloques, la prueba de Friedman, de modo que las letras se
+obtienen siempre por una ruta defendible.  La normalidad de residuos se evalua
+con la prueba de Shapiro-Wilk y la homogeneidad de varianzas con la prueba de
+Fligner-Killeen; la ruta estadistica apropiada se selecciona automaticamente
+segun estos diagnosticos.  Se reportan coeficientes de variacion y potencia
+estadistica junto con las letras de separacion de medias, y cada grafico incluye
+una nota que describe la ruta estadistica usada, por que, sus ventajas,
+desventajas y alcance.  Los envoltorios de alto nivel permiten analisis
+multivariable automatizado con agrupamiento opcional por uno o dos factores
+experimentales, con soporte para orden y etiquetado personalizado de niveles.
+Los resultados se devuelven como boxplots con anotaciones de medias y letras,
+tablas resumen en formato ancho listas para publicacion o renderizado en
+@code{LaTeX}, y resumenes de decision para interpretacion agronomica rapida.
+Tambien se soporta exportacion directa a Excel e imagenes de alta resolucion
+para informes tecnicos.")
     (license license:expat)))
 
 (define-public r-agrmt

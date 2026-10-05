@@ -688,13 +688,13 @@ see Di Nardo E., Guarino G., Senato D. (2009) <@code{arXiv:0807.5008>},
 (define-public r-kst
   (package
     (name "r-kst")
-    (version "0.5-5")
+    (version "0.5-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kst" version))
        (sha256
-        (base32 "02mzgygrh7lm43jsajhzrqvpp1hl56b6a313yb7l6p6jk86s4mjp"))))
+        (base32 "1is5lvfcvbqirs17z4vvj81vrzz70cl63wwhyagswbvma6f3jfdf"))))
     (properties `((upstream-name . "kst")))
     (build-system r-build-system)
     (arguments

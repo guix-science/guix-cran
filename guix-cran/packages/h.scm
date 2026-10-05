@@ -11604,13 +11604,13 @@ through comms.")
 (define-public r-heplots
   (package
     (name "r-heplots")
-    (version "1.8.5")
+    (version "1.8.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "heplots" version))
        (sha256
-        (base32 "0jkdbav0xmmqa8csgha69smi41hiqv0rp68g08jbfayladdjz5hb"))))
+        (base32 "0mgrxnghlrd6rp6y1900163y5hy2c97lpwiaz433jgh1347jg6a5"))))
     (properties `((upstream-name . "heplots")))
     (build-system r-build-system)
     (arguments
@@ -11621,6 +11621,7 @@ through comms.")
                              r-purrr
                              r-mass
                              r-magrittr
+                             r-glue
                              r-generics
                              r-car
                              r-boot))

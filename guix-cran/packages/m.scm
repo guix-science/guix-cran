@@ -15110,13 +15110,13 @@ are calculated considering the complex survey design.")
 (define-public r-mpindex
   (package
     (name "r-mpindex")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mpindex" version))
        (sha256
-        (base32 "1pzl5109wazzai1i10zcjycf5ky2v8s7f69hwycx23fqmiplc40k"))))
+        (base32 "05wx6iiv1ccrl1h9h3sx6zqlzhcz0gv0azw90rljx36dsp346np9"))))
     (properties `((upstream-name . "mpindex")))
     (build-system r-build-system)
     (arguments
@@ -15124,7 +15124,6 @@ are calculated considering the complex survey design.")
       #:tests? #f))
     (propagated-inputs (list r-tsg
                              r-tibble
-                             r-stringr
                              r-rlang
                              r-openxlsx
                              r-lifecycle
@@ -19872,13 +19871,13 @@ downloads of MODIS time series directly to your R workspace or your computer.")
 (define-public r-modisfast
   (package
     (name "r-modisfast")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modisfast" version))
        (sha256
-        (base32 "0klpdbdxwg5289z19rn1p8d56avsx6i5ryi6xic6xbcmgicp8sr9"))))
+        (base32 "02n4ni5mda7s1515h281innnlzk6djkp8qkgifbchrz7i5hzq3mn"))))
     (properties `((upstream-name . "modisfast")))
     (build-system r-build-system)
     (arguments
@@ -36512,13 +36511,13 @@ complex latent geometry underlying the relationship.")
 (define-public r-mgbt
   (package
     (name "r-mgbt")
-    (version "1.1.6")
+    (version "1.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MGBT" version))
        (sha256
-        (base32 "0q3ch5dcrc37ipwc2iaqd0kqb12m4l83375pajbw69pajqawr4iq"))))
+        (base32 "0slr1fikc397zfn4f887xkmx1yf595wxi7wzl4z9w27znji6vly9"))))
     (properties `((upstream-name . "MGBT")))
     (build-system r-build-system)
     (arguments
@@ -39572,13 +39571,13 @@ code, and functions to read solved @code{MetaPost} paths back into R.")
 (define-public r-metaplus
   (package
     (name "r-metaplus")
-    (version "1.0-8")
+    (version "1.0-10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metaplus" version))
        (sha256
-        (base32 "05rn0ikp0h4p385637dz43fvxp5pj9x7gdfm1r8xip674prp8nvb"))))
+        (base32 "19q0d8dpafcyjvzwl8nyd79s2zpnawbsmv64yb07c8l8n5635a3r"))))
     (properties `((upstream-name . "metaplus")))
     (build-system r-build-system)
     (arguments

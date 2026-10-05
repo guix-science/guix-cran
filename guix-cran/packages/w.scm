@@ -8379,36 +8379,6 @@ Commons (CC) Attribution 3.0 licence or Public Access Licence (PAL) as
 appropriate, see <https://www.bom.gov.au/copyright> for further details.")
     (license license:gpl3+)))
 
-(define-public r-weathermrjd
-  (package
-    (name "r-weathermrjd")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "weatherMRJD" version))
-       (sha256
-        (base32 "06a3bvzxx8g6gp60fn57z52dv68wqqm2ghm63fnpxlpv7wnnv42s"))))
-    (properties `((upstream-name . "weatherMRJD")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=weatherMRJD")
-    (synopsis
-     "Weather Analysis and Markov Regime Switching Jump Diffusion Models")
-    (description
-     "This package provides statistical tools for analyzing weather patterns,
-temperature anomalies, and climate risk.  Implements Markov regime-switching
-jump diffusion (MRJD) models to capture abrupt shifts, extreme weather events,
-and structural breaks in environmental time series data.  Estimates model
-parameters using maximum likelihood estimation and offers utility functions for
-simulating regime-dependent stochastic processes.  The regime-switching
-methodology is based on Hamilton (1989) \"Analysis of Time Series Subject to
-Changes in Regime\" <doi:10.2307/1912559>.")
-    (license license:expat)))
-
 (define-public r-weathermetrics
   (package
     (name "r-weathermetrics")

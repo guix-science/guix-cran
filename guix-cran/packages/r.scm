@@ -20044,13 +20044,13 @@ Zhang, Sha Cao (2020) <doi:10.48550/@code{arXiv.2005.11599>}.")
 (define-public r-robmixglm
   (package
     (name "r-robmixglm")
-    (version "1.2-8")
+    (version "1.2-9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "robmixglm" version))
        (sha256
-        (base32 "16f9jhka6haz9fm19j2rfkrm6gacsdxzrs41pb7i9bivjbiqxmfj"))))
+        (base32 "0jaj6vwc2plda209ycnfv3nwzqils40vf49hlrl8cvm49g2vcj3v"))))
     (properties `((upstream-name . "robmixglm")))
     (build-system r-build-system)
     (arguments
@@ -49184,13 +49184,13 @@ It is based on the theoretical results presented in Strothmann et al. (2022)
 (define-public r-rdlocrand
   (package
     (name "r-rdlocrand")
-    (version "2.0")
+    (version "3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rdlocrand" version))
        (sha256
-        (base32 "1whrhsg8pazs2zw84hplv93awcifdf6rl9vfxikl7yhhnj79q2jx"))))
+        (base32 "15kldqxdhpcbs4yb3fhzwjsswfq1900k4bkinm6bzpyli6r4vw9i"))))
     (properties `((upstream-name . "rdlocrand")))
     (build-system r-build-system)
     (arguments

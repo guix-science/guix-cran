@@ -23407,13 +23407,13 @@ inference.")
 (define-public r-ibdfindr
   (package
     (name "r-ibdfindr")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ibdfindr" version))
        (sha256
-        (base32 "0xfhqmync23q0660gd7fnwmkl47irzbbpj848km7caqryqi0mp2h"))))
+        (base32 "01bx4452xil0cxpy78ypym3dpz6msgyl9w3icl15vi1k4952j6g3"))))
     (properties `((upstream-name . "ibdfindr")))
     (build-system r-build-system)
     (arguments
@@ -23421,17 +23421,16 @@ inference.")
       #:tests? #f))
     (propagated-inputs (list r-ribd r-pedtools r-ibdsim2 r-ggplot2 r-forrel))
     (home-page "https://github.com/magnusdv/ibdfindr")
-    (synopsis "HMM Toolkit for Inferring IBD Segments from SNP Genotypes")
+    (synopsis "HMM Toolkit for Inferring IBD Segments from SNP Data")
     (description
      "This package implements continuous-time hidden Markov models (HMMs) to infer
-identity-by-descent (IBD) segments shared by two individuals from their
-single-nucleotide polymorphism (SNP) genotypes.  Provides posterior
-probabilities at each marker (forward-backward algorithm), prediction of IBD
-segments (Viterbi algorithm), and functions for visualising results.  Supports
-both autosomal data and X-chromosomal data.  The current model has two states,
-non-IBD and IBD1, and is intended for unilineal relationships.  The methodology
-and package are described in Vigeland et al. (2026)
-<doi:10.1016/j.fsigen.2025.103409>.")
+identity-by-descent (IBD) segments shared by two individuals.  Supports two- and
+three-state models using single-nucleotide polymorphism (SNP) genotypes or
+genotype likelihoods.  Provides posterior probabilities at each marker
+(forward-backward algorithm), prediction of IBD segments (Viterbi algorithm),
+and functions for visualising results.  Supports both autosomal data and
+X-chromosomal data.  The methodology and package are described in Vigeland et
+al. (2026) <doi:10.1016/j.fsigen.2025.103409>.")
     (license license:gpl3+)))
 
 (define-public r-ibd

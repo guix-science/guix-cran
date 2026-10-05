@@ -2202,6 +2202,48 @@ items-within-person nested design, along with design-study summaries for
 relative and absolute decisions.")
     (license license:expat)))
 
+(define-public r-gtheory4llm
+  (package
+    (name "r-gtheory4llm")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Gtheory4LLM" version))
+       (sha256
+        (base32 "1j9f42cd6ppap0ddyav6jq105wmlflzzrj3h9g8h6hrqhi6snmhf"))))
+    (properties `((upstream-name . "Gtheory4LLM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-openmx r-matrix))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Veronica0206/Gtheory4LLM")
+    (synopsis "Generalizability Theory for LLM Subjective Tasks")
+    (description
+     "Studies the reliability and generalizability of subjective judgments produced by
+large language models (LLMs), including annotation, rating, and structured
+LLM-as-a-judge tasks.  Specifies evaluator, prompt, generation, and repeated-run
+facets through crossed or explicitly nested random sources with configurable
+item interactions.  Fits univariate models, joint Gaussian models, and joint
+discrete models for binary, ordinal, and unordered categorical outcomes, with
+source-specific covariance.  Gaussian models use exact balanced likelihood;
+discrete models use a dense first-order Laplace approximation with Gaussian
+latent random effects.  Supported balanced decision studies compare evaluator,
+prompt, and replication allocations using observed Gaussian or explicitly
+requested latent binary and ordinal reliability, with random or fixed facets
+after Brennan (2001).  Gaussian fits report asymptotic Wald standard errors for
+their variance components and delta-method intervals for the coefficients;
+discrete fits report point estimates only.  Scalar nominal reliability and joint
+Gaussian-discrete fitting are not implemented.  Includes three publicly archived
+LLM annotation datasets covering hate-speech, mental-health, and drug-review
+tasks.  Discrete fitting is limited to small models; the preflight report
+describes supported designs and computational limits.  Generalizability
+coefficients follow the variance-decomposition framework of Brennan (2001)
+<doi:10.1007/978-1-4757-3456-0>.")
+    (license license:gpl3)))
+
 (define-public r-gtfswizard
   (package
     (name "r-gtfswizard")
@@ -6075,13 +6117,13 @@ association, function, or causality.")
 (define-public r-gridmicrotex
   (package
     (name "r-gridmicrotex")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gridmicrotex" version))
        (sha256
-        (base32 "05b08sg4c6fbq1j63b2lz0ba8vlncbc8gslp9qdh91qklklszb0d"))))
+        (base32 "048rwp7z45sqcp52pv768x0da8wvpv2k8j45j6x10nv8xwyz9z1l"))))
     (properties `((upstream-name . "gridmicrotex")))
     (build-system r-build-system)
     (arguments
@@ -14217,13 +14259,13 @@ diagnostic plots, for the underlying manuscript see Fischer, Oja (2015)
 (define-public r-gmwmx2
   (package
     (name "r-gmwmx2")
-    (version "0.0.5")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gmwmx2" version))
        (sha256
-        (base32 "0jfnpffyb3dybyspx78vf6zh3zhwk69zmrvfg197pk3gzhw83fxn"))))
+        (base32 "17cagm13lflg1mc5aasb7qpx4dbmd0zdj2w02k4qz3sc68m5nyv5"))))
     (properties `((upstream-name . "gmwmx2")))
     (build-system r-build-system)
     (arguments
@@ -14244,14 +14286,14 @@ diagnostic plots, for the underlying manuscript see Fischer, Oja (2015)
     (synopsis
      "Estimate Functional and Stochastic Parameters of Linear Models with Correlated Residuals and Missing Data")
     (description
-     "This package implements the Generalized Method of Wavelet Moments with Exogenous
-Inputs estimator (GMWMX) presented in Voirol, L., Xu, H., Zhang, Y., Insolia,
-L., Molinari, R. and Guerrier, S. (2024) <doi:10.48550/@code{arXiv.2409.05160>}.
- The GMWMX estimator allows to estimate functional and stochastic parameters of
-linear models with correlated residuals in presence of missing data.  The gmwmx2
-package provides functions to load and plot Global Navigation Satellite System
-(GNSS) data from the Nevada Geodetic Laboratory and functions to estimate linear
-model model with correlated residuals in presence of missing data.")
+     "This package implements the Wavelet Moment Regression (WAMORE) inference
+framework presented in Voirol, L., Xu, H., Zhang, Y., Insolia, L., Molinari, R.
+and Guerrier, S. (2026) <doi:10.48550/@code{arXiv.2607.16264>}.  Provides
+computationally efficient estimation of functional and stochastic parameters of
+linear models with correlated residuals, including settings with missing data.
+Includes functions to download and plot Global Navigation Satellite System
+(GNSS) position time series from the Nevada Geodetic Laboratory and estimate
+tectonic velocities and crustal uplift using composite stochastic models.")
     (license license:agpl3)))
 
 (define-public r-gmwmx
@@ -28745,13 +28787,13 @@ documentation and examples <https://magosil86.github.io/getspres/>.")
 (define-public r-getspanel
   (package
     (name "r-getspanel")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "getspanel" version))
        (sha256
-        (base32 "0ibz0g722358y3ga13f8sxxzhrdbllf084sqgd5465j50f8nnscx"))))
+        (base32 "0b60nmpcng7mfjarj30k3ffg620c51g9m4n3ggg2f2bwg43m6qbn"))))
     (properties `((upstream-name . "getspanel")))
     (build-system r-build-system)
     (arguments
@@ -31070,6 +31112,36 @@ functions from this package.")
      "This package provides a ggplot2 extension that allows text to follow curved
 paths.  Curved text makes it easier to directly label paths or neatly annotate
 in polar co-ordinates.")
+    (license license:expat)))
+
+(define-public r-geomorphr
+  (package
+    (name "r-geomorphr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geomorphR" version))
+       (sha256
+        (base32 "1njfflvic0a91h8adn691gxds9w2rssjxlj0fdszrl6nwqh6sxyn"))))
+    (properties `((upstream-name . "geomorphR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sf r-progressr r-future-apply r-future r-dplyr))
+    (home-page "https://github.com/MakiJota/geomorphR")
+    (synopsis "Geometric Features for Building Footprints in Sf Objects")
+    (description
+     "Extracts reproducible geometric and urban-morphology descriptors from polygon
+and multipart polygon building footprints stored as sf objects.  Methods include
+area, perimeter, compactness, shape, bounding-box, topology, convexity, and
+orientation measures, together with optional building-height, floor-count,
+gross-floor-area, floor-space-index, coverage, volume, and floor-height metrics
+derived from explicitly named attribute columns.  The resulting sf objects
+preserve the source attributes and geometry for spatial analysis, visualization,
+and downstream statistical or machine-learning workflows, with optional
+future-based parallel processing for larger datasets.")
     (license license:expat)))
 
 (define-public r-geomorph

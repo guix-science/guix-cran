@@ -4718,13 +4718,13 @@ al (2020) <doi:10.1002/sim.8438> and Li et al (2021)
 (define-public r-broadcast
   (package
     (name "r-broadcast")
-    (version "0.1.9.6")
+    (version "0.1.9.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "broadcast" version))
        (sha256
-        (base32 "052qnp3xznvixs7viiybq6p3dcbjizxnc05cvl3af4cakik8winc"))))
+        (base32 "16g4n4cg6ygysvc14qxs4lwz60wwz4hnfskfiw1yhhrvgcvmvq9z"))))
     (properties `((upstream-name . "broadcast")))
     (build-system r-build-system)
     (arguments
@@ -24047,13 +24047,13 @@ developed by Fabio M. Bayer.")
 (define-public r-bet
   (package
     (name "r-bet")
-    (version "0.5.4")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BET" version))
        (sha256
-        (base32 "13yc78idgdxp2sadx3pl8c8dffxinr0aywygbfmbz35zvwl7qa4r"))))
+        (base32 "13lxajm36icg49iynnyb42ia9b3iv6d1yxcr0flmvcr2dvh1rq4l"))))
     (properties `((upstream-name . "BET")))
     (build-system r-build-system)
     (arguments
@@ -24070,7 +24070,7 @@ American Statistical Association, 114:528, 1620-1637,
 Zhou. (2023).  BEAUTY Powered BEAST, <doi:10.48550/@code{arXiv.2103.00674>} and
 Wan Zhang, Zhigen Zhao, Michael Baiocchi, Yao Li, Kai Zhang. (2023)
 @code{SorBET}: A Fast and Powerful Algorithm to Test Dependence of Variables,
-Techinical report.")
+Technical report.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-bestsdp

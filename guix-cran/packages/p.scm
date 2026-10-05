@@ -40697,19 +40697,19 @@ outcome-noise sensitivity analysis.  Methodological background is provided in
 (define-public r-pdr
   (package
     (name "r-pdr")
-    (version "1.9.4")
+    (version "1.9.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pdR" version))
        (sha256
-        (base32 "0b31fwlh2diab0aifllxlibyny0nr4zyg44d4mlcbpilxyb1cs09"))))
+        (base32 "1grrlsf67npp03ywj7rwa97n5275ijiji9svvg6w53ic0av8ivfl"))))
     (properties `((upstream-name . "pdR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-uroot r-plm r-pglm r-lme4 r-glmmtmb))
+    (propagated-inputs (list r-plm r-pglm))
     (home-page "https://cran.r-project.org/package=pdR")
     (synopsis
      "Threshold Model and Unit Root Tests in Cross-Section and Time Series Data")

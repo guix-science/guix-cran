@@ -3745,13 +3745,13 @@ human-readable dataset keys or official Socrata dataset identifiers.")
 (define-public r-ctoclient
   (package
     (name "r-ctoclient")
-    (version "0.2.0")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ctoclient" version))
        (sha256
-        (base32 "105y735q3zgfcwhawxx6y1w59mpfczlzh9h8kjr0xbnzl803w7zs"))))
+        (base32 "047qm1i2p59y5s2lj5vph59j7sz88wyyi9bv6fm99ddylqslgzv8"))))
     (properties `((upstream-name . "ctoclient")))
     (build-system r-build-system)
     (arguments
@@ -13137,13 +13137,13 @@ packages into a target R version using pak'.  Includes a Shiny dashboard
 (define-public r-couplr
   (package
     (name "r-couplr")
-    (version "1.8.0")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "couplr" version))
        (sha256
-        (base32 "17fcdysnkyjm4bcjxxpirwfzpfrkr761fbig58kr9j6cd56kmcyg"))))
+        (base32 "0p43fsdv5r6g34s03xh4srr837jhgc7bk6973vifw65hcl9sg013"))))
     (properties `((upstream-name . "couplr")))
     (build-system r-build-system)
     (arguments
@@ -20056,19 +20056,19 @@ downloaded from <https://shop.acer.org/acer-conquest-5.html>.")
 (define-public r-conover-test
   (package
     (name "r-conover-test")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "conover.test" version))
        (sha256
-        (base32 "02p7dsc72vdyyks5902qjl2vqhdfbpk8dl2in65amfzhzvw8971p"))))
+        (base32 "09xgwf7jw6k7chf3apgw9rjwp21f178nmigbanqbpmwsyn86ikn5"))))
     (properties `((upstream-name . "conover.test")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-scrutiny r-rlang))
+    (propagated-inputs (list r-rlang))
     (home-page "https://cran.r-project.org/package=conover.test")
     (synopsis "Conover-Iman Test of Multiple Comparisons Using Rank Sums")
     (description

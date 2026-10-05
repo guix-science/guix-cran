@@ -7922,50 +7922,6 @@ affiliated with the @code{OpenStreetMap.org} mapping project.")
     (license (list license:gpl2
                    (license:fsdg-compatible "file LICENCE")))))
 
-(define-public r-openspecy
-  (package
-    (name "r-openspecy")
-    (version "1.5.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "OpenSpecy" version))
-       (sha256
-        (base32 "00jhzypjlw8m0pik1x8j61hfd94xp6j48r4pn8m3dza54308bj41"))))
-    (properties `((upstream-name . "OpenSpecy")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-yaml
-                             r-signal
-                             r-shiny
-                             r-plotly
-                             r-mmand
-                             r-jsonlite
-                             r-jpeg
-                             r-hyperspec
-                             r-glmnet
-                             r-digest
-                             r-data-table
-                             r-catools))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/wincowgerDEV/OpenSpecy-package/")
-    (synopsis "Analyze, Process, Identify, and Share Raman and (FT)IR Spectra")
-    (description
-     "Raman and (FT)IR spectral analysis tool for plastic particles and other
-environmental samples (Cowger et al.  2021, <doi:10.1021/acs.analchem.1c00123>).
- With @code{read_any()}, Open Specy provides a single function for reading
-individual, batch, or map spectral data files like .asp, .csv, .jdx, .spc, .spa,
-.0, and .zip. @code{process_spec()} simplifies processing spectra, including
-smoothing, baseline correction, range restriction and flattening, intensity
-conversions, wavenumber alignment, and min-max normalization.  Spectra can be
-identified in batch using an onboard reference library (Cowger et al.  2020,
-<doi:10.1177/0003702820929064>) using @code{match_spec()}.  A Shiny app is
-available via @code{run_app()} or online at
-<https://www.openanalysis.org/openspecy/>.")
-    (license (license:fsdg-compatible "CC BY 4.0"))))
-
 (define-public r-opensourceap-downloadr
   (package
     (name "r-opensourceap-downloadr")

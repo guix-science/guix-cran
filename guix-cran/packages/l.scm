@@ -4224,19 +4224,19 @@ are employed for path detection.")
 (define-public r-loopanalyst
   (package
     (name "r-loopanalyst")
-    (version "1.2-7")
+    (version "1.2-8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LoopAnalyst" version))
        (sha256
-        (base32 "1fp7j1q20xpgysdpyy2z3p1fzrr4bv6mjyb7hn3nh820z0bl554y"))))
+        (base32 "13qny1a560446035d7gxrwpj64cm5nw3441b5nkvyqiqj1zr2mkw"))))
     (properties `((upstream-name . "LoopAnalyst")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-nlme))
+    (propagated-inputs (list r-rlang r-nlme))
     (home-page "https://alexisdinno.com/LoopAnalyst/")
     (synopsis "Collection of Tools to Conduct Levins' Loop Analysis")
     (description
@@ -18782,31 +18782,35 @@ Kittipong and Sirinapa(2021)<DOI: 10.14456/sjst-psu.2021.89>.")
 (define-public r-lboxcox
   (package
     (name "r-lboxcox")
-    (version "1.2")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lboxcox" version))
        (sha256
-        (base32 "0jklfgw7dwslafsivb9z2q1vgv367kk9gbgjabz04y0kracxaa8q"))))
+        (base32 "1q0s1fi7ni7vnlyippz5kg73b34l88qpnb9gjn5fcj3alvky2j0n"))))
     (properties `((upstream-name . "lboxcox")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-survey
-                             r-r-utils
                              r-maxlik
                              r-mass
                              r-foreach
-                             r-dplyr
-                             r-doparallel))
+                             r-doparallel
+                             r-caret))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=lboxcox")
     (synopsis "Implementation of Logistic Box-Cox Regression")
     (description
-     "This package implements a logistic box-cox model.  This model is fully described
-in Xing, L. et al. (2021) <doi:10.1002/cjs.11587>.")
+     "This package implements a logistic Box-Cox model that adds a shape parameter to
+a routine logistic regression model to flexibly estimate the shape and strength
+of the relationship between a binary outcome and a continuous predictor,
+adjusting for covariates and survey weights.  This model is fully described in
+Xing, L. et al. (2021) <doi:10.1002/cjs.11587>.  This version extends the
+original lboxcox package (1.1) with numerically stabilized likelihood/gradient
+calculations, vectorized data preprocessing, and a bootstrap-ensemble estimator.")
     (license license:gpl3)))
 
 (define-public r-lbm

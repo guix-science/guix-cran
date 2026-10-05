@@ -37328,41 +37328,42 @@ For more details see: <doi:10.5281/zenodo.10137768>.")
 (define-public r-sommer
   (package
     (name "r-sommer")
-    (version "4.4.7")
+    (version "4.4.87")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sommer" version))
        (sha256
-        (base32 "1kv62r5x9ygz2v6722gg268pnbf35fvb5bp0jng29y4fgvn0vca3"))))
+        (base32 "0s0wja1xccb14wbml1svdpll6piz7wqjik82whgva3mw54n63q2k"))))
     (properties `((upstream-name . "sommer")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rcppprogress
+                             r-rcppeigen
                              r-rcpparmadillo
                              r-rcpp
                              r-matrix
                              r-mass
                              r-enhancer
                              r-crayon))
-    (native-inputs (list r-knitr))
+    (native-inputs (list pkg-config r-knitr))
     (home-page "https://github.com/covaruber/sommer")
     (synopsis "Solving Mixed Model Equations in R")
     (description
      "Structural multivariate-univariate linear mixed model solver for estimation of
 multiple random effects with unknown variance-covariance structures (e.g.,
-heterogeneous and unstructured) and known covariance among levels of random
-effects (e.g., pedigree and genomic relationship matrices) (Covarrubias-Pazaran,
-2016 <doi:10.1371/journal.pone.0156744>; Maier et al., 2015
+unstructured, diagonal, autoregressive, factor analytic, reduced rank, among
+others) and known covariance among levels of random effects (e.g., pedigree and
+genomic relationship matrices) (Covarrubias-Pazaran, 2016
+<doi:10.1371/journal.pone.0156744>; Maier et al., 2015
 <doi:10.1016/j.ajhg.2014.12.006>; Jensen et al., 1997).  REML estimates can be
 obtained using the Direct-Inversion Newton-Raphson and Direct-Inversion Average
 Information algorithms for the problems r x r (r being the number of records) or
 using the Henderson-based average information algorithm for the problem c x c (c
-being the number of coefficients to estimate).  Spatial models can also be
-fitted using the two-dimensional spline functionality available.")
-    (license license:gpl2+)))
+being the number of coefficients to estimate).")
+    (license license:gpl3)))
 
 (define-public r-sommd
   (package
@@ -49779,13 +49780,13 @@ are saved using @code{saveRDS()} and @code{readRDS()}).")
 (define-public r-simplephenotypes
   (package
     (name "r-simplephenotypes")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simplePHENOTYPES" version))
        (sha256
-        (base32 "0f5mzlx6vcvq6cvyz4v9yr1k2acgnxizg8clsxdm6hpi4maizrpk"))))
+        (base32 "0qv40g2lip9zqj1zssm56g8pcf18djjcmkicgb81slc3z630svlx"))))
     (properties `((upstream-name . "simplePHENOTYPES")))
     (build-system r-build-system)
     (arguments
@@ -52696,13 +52697,13 @@ other entities such as institutes, countries, etc.")
 (define-public r-sii
   (package
     (name "r-sii")
-    (version "1.2.4")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SII" version))
        (sha256
-        (base32 "09wn05p7q38d0hvjdj2cpx2n935kzncwykcph8941mhs7f6p1l1x"))))
+        (base32 "15i5cq6a85fs195ff987anrgngvm26lhhxy4a1ans2bqhxiipvwq"))))
     (properties `((upstream-name . "SII")))
     (build-system r-build-system)
     (arguments
@@ -52714,34 +52715,28 @@ other entities such as institutes, countries, etc.")
      "Calculate ANSI/ASA S3.5-1997 (R2024) Speech Intelligibility Index")
     (description
      "Calculates the American National Standards Institute (ANSI) S3.5-1997 Speech
-Intelligibility Index (SII) (ANSI 1997, (ANSI, 1997)), a standard method for
-computing the intelligibility of speech from acoustical measurements of speech,
-noise, and hearing thresholds.  This package includes data frames corresponding
-to Tables 1 - 4 in the ANSI standard as well as functions utilizing these tables
-and user-provided hearing threshold and noise level measurements to compute the
-SII score.  The methods implemented here extend the standard computations to
-allow calculation of SII when the measured frequencies do not match those
-required by the standard by applying interpolation.  Furthermore, the package
-now includes a native, highly optimized C++ implementation of the canonical
-Moore & Glasberg (2004) specific loudness model for impaired hearing, which
-structurally mirrors the bramslow2004 implementation from the Auditory Modeling
-Toolbox (AMT) to calculate loudness in perceptual sones.  It also includes
-advanced methods to predict aided SII based on hearing aid prescriptive
-rationales, introducing Open-NL (Open Non-Linear), a novel theoretical
-optimization framework.  Open-NL utilizes a Nelder-Mead simplex algorithm to
-maximize the ANSI SII metric, subject to computational physiological loudness
-penalties and simulated hardware Maximum Power Output (MPO) constraints, to
-derive theoretical gain targets.  The package also provides functions to
-calculate real-ear insertion gains, estimate maximum power output (SSPL90), and
-prescribe dynamic range compression.  NOTE: This package is explicitly flagged
-as a non-clinical academic tool designed exclusively for theoretical modeling
-and simulation.  It has not undergone clinical validation and is strictly
-contraindicated for general clinical fitting.  Unapproved use for direct patient
-care is prohibited.  Any application of this tool to human subjects must occur
-exclusively within the strictly controlled context of Institutional Review Board
-(IRB) approved research studies.  Development of this package was originally
-funded by the Center for Bioscience Education and Technology (CBET) of the
-Rochester Institute of Technology (RIT).")
+Intelligibility Index (SII) (ANSI, 1997), a standard method for computing the
+intelligibility of speech from acoustical measurements of speech, noise, and
+hearing thresholds.  This package includes data frames corresponding to Tables 1
+- 4 in the ANSI standard as well as functions utilizing these tables and
+user-provided hearing threshold and noise level measurements to compute the SII
+score.  The methods implemented here extend the standard computations to allow
+calculation of SII when the measured frequencies do not match those required by
+the standard by applying interpolation.  The package also includes a native C++
+implementation of the AUDMOD specific loudness model for impaired hearing
+(Bramslow, 2004), ported from the bramslow2004 implementation in the Auditory
+Modeling Toolbox (AMT), to calculate loudness in sones.  It provides methods to
+predict aided SII under hearing aid prescriptive rationales, including Open-NL
+(Open Non-Linear), a theoretical optimization framework that uses a Nelder-Mead
+simplex search to maximize the SII (by default with the Johnson and Dillon
+(2011) desensitization correction), subject to loudness penalties and simulated
+Maximum Power Output (MPO) constraints.  Further functions calculate real-ear
+insertion gains, estimate maximum power output (SSPL90), and prescribe dynamic
+range compression.  Open-NL and the prescription functions are research tools
+for theoretical modeling and simulation; they have not been clinically validated
+and are not intended for fitting hearing aids to patients.  Development of this
+package was originally funded by the Center for Bioscience Education and
+Technology (CBET) of the Rochester Institute of Technology (RIT).")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -74316,13 +74311,13 @@ speed.  This package is part of the rethomics framework
 (define-public r-scoper
   (package
     (name "r-scoper")
-    (version "1.5.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scoper" version))
        (sha256
-        (base32 "1vjm94gg82xfr1j0h4m8i08f9pzn9h1nm7ak5mdzpqf5h7dz2nyj"))))
+        (base32 "148nyxgc5gs5kndgr8m7z4hj7mbmxlym61y7b016w1il052iyf8b"))))
     (properties `((upstream-name . "scoper")))
     (build-system r-build-system)
     (arguments
@@ -74845,13 +74840,13 @@ bars for data collected from one-way or higher factorial designs.")
 (define-public r-scip
   (package
     (name "r-scip")
-    (version "1.10.0-4")
+    (version "1.10.1-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scip" version))
        (sha256
-        (base32 "1ifq8qb472zsmybamplgm2gywd87725l8l4jpiqdh4iig39w9clx"))))
+        (base32 "0wbf8289imzrw8bld7aqp4pm5yx221jgxq473zdvjnpy6ncqf67v"))))
     (properties `((upstream-name . "scip")))
     (build-system r-build-system)
     (arguments
@@ -77495,13 +77490,13 @@ and Avellone et al. (2025) <doi:10.1016/j.ins.2025.123032>.")
 (define-public r-scaledescr
   (package
     (name "r-scaledescr")
-    (version "0.2.7")
+    (version "0.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scaledescr" version))
        (sha256
-        (base32 "0nm4w4dnmdsi83i35inq7ihd0d9spxl6zhyvxsp2z1alymmsjciz"))))
+        (base32 "0zy299jp0bwaxw8s6s4n3kxrqd3vz58ygsp8c6jmiiy6xhgsiqpi"))))
     (properties `((upstream-name . "scaledescr")))
     (build-system r-build-system)
     (arguments
@@ -81190,13 +81185,13 @@ for survey statisticians and researchers.  Sampling methods follow Kalton (1983)
 (define-public r-sampleselection
   (package
     (name "r-sampleselection")
-    (version "1.2-14")
+    (version "1.2-16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sampleSelection" version))
        (sha256
-        (base32 "01b04rv2fg1mqzjd6b8qn4852ibi2jp52j9rdjvd4hv8n6dyhfkb"))))
+        (base32 "1ch817zjqq52lqfzp70akpzgg09rn47px7f693skrk5472xfqd9k"))))
     (properties `((upstream-name . "sampleSelection")))
     (build-system r-build-system)
     (arguments

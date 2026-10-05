@@ -9902,13 +9902,13 @@ Graph Models (ERGM) for networks.")
 (define-public r-erplots
   (package
     (name "r-erplots")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "erplots" version))
        (sha256
-        (base32 "1n03fmwvqi87h4h47r417dqdw5jzpqlilanjhi6qp3s62ipp19jy"))))
+        (base32 "11dazpdpqs3l1brnhiyj97a6jk0577bhiqlgwlrw1g8x7zxw2whd"))))
     (properties `((upstream-name . "erplots")))
     (build-system r-build-system)
     (arguments
@@ -9917,6 +9917,7 @@ Graph Models (ERGM) for networks.")
     (propagated-inputs (list r-withr
                              r-tidyselect
                              r-tibble
+                             r-survival
                              r-scales
                              r-rlang
                              r-purrr
@@ -27339,43 +27340,6 @@ detailed in Guan, Y; Page, G.L.; Reich, B.J.; Ventrucci, M.; Yang, S; (2020)
 available.  The semi-parametric model relies on INLA'.  The INLA package can be
 obtained from <https://www.r-inla.org/>.")
     (license (list license:gpl2+ license:gpl3+))))
-
-(define-public r-ecan
-  (package
-    (name "r-ecan")
-    (version "0.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ecan" version))
-       (sha256
-        (base32 "1b4vw7qv39if0b0yqhnxfysxxi8wxnpwkq0l2mxqf6fg1fddyqc5"))))
-    (properties `((upstream-name . "ecan")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vegan
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-purrr
-                             r-mass
-                             r-magrittr
-                             r-labdsv
-                             r-jsonlite
-                             r-ggplot2
-                             r-dplyr
-                             r-dendextend
-                             r-cluster))
-    (home-page "https://github.com/matutosi/ecan")
-    (synopsis "Ecological Analysis and Visualization")
-    (description
-     "Support ecological analyses such as ordination and clustering.  Contains
-consistent and easy wrapper functions of stat', vegan', and labdsv packages, and
-visualisation functions of ordination and clustering.")
-    (license license:expat)))
 
 (define-public r-ec50estimator
   (package

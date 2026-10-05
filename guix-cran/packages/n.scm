@@ -17436,13 +17436,13 @@ co-authorship networks).")
 (define-public r-nematode
   (package
     (name "r-nematode")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Nematode" version))
        (sha256
-        (base32 "0pnhkkl0p2cmdawsinm0dw70rgs2dskphjvr67pl739mv9qykszg"))))
+        (base32 "00n16cavpr1l5wb58chihxsbjk481kbxglywm5w8bnxl2jz849r7"))))
     (properties `((upstream-name . "Nematode")))
     (build-system r-build-system)
     (arguments

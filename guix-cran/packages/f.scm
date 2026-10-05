@@ -23167,6 +23167,42 @@ component-wise gradient boosting algorithm.  For a manual on how to use
 FDboost', see Brockhaus, Ruegamer, Greven (2017) <doi:10.18637/jss.v094.i10>.")
     (license license:gpl2)))
 
+(define-public r-fdb
+  (package
+    (name "r-fdb")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fdb" version))
+       (sha256
+        (base32 "0gwl08ip73f4s40qkhscb99ww6s0iannl1y0jg4pcq7xyqfwwvmz"))))
+    (properties `((upstream-name . "fdb")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/yamagubed/fdb")
+    (synopsis
+     "Frequentist Dynamic Borrowing for Hybrid-Control Survival Trials")
+    (description
+     "This package implements a class of likelihood-informed frequentist dynamic
+borrowing methods for hybrid-control survival trials based on penalized Cox
+partial likelihood estimation.  Implements four likelihood-informed penalty
+structures (precision-weighted L1, smoothed integrated-gate,
+information-adaptive minimax concave penalty (MCP), and
+likelihood-ratio-weighted L1), together with the adaptive lasso borrowing
+approach of Li et al. (2023, <doi:10.1002/bimj.202100406>).  Provides
+conditional model-based standard errors and local plug-in sandwich variance
+approximations, with smoothed penalties.  Tools for design-stage lambda
+calibration via simulation, including a two-stage coarse-fine grid search,
+drift-level early stopping, and per-method tuning under both inference types,
+are also provided.  A simulation harness for evaluating type I error and
+statistical power across population drift scenarios is included.")
+    (license license:expat)))
+
 (define-public r-fdatest
   (package
     (name "r-fdatest")

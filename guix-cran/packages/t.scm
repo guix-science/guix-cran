@@ -15721,13 +15721,13 @@ strings, pasting and combining rows together across columns, etc.")
 (define-public r-tongfen
   (package
     (name "r-tongfen")
-    (version "0.3.8")
+    (version "0.3.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tongfen" version))
        (sha256
-        (base32 "0jvij0qgacc8ap6gaxn9fp72bhim2kcvn1jzs463h0bw8dxfalql"))))
+        (base32 "19ksz41pk0f0q9mrj6vs4mvqkd9wxykl99i3q8nlm6j60pg416qk"))))
     (properties `((upstream-name . "tongfen")))
     (build-system r-build-system)
     (arguments
@@ -15740,6 +15740,7 @@ strings, pasting and combining rows together across columns, etc.")
                              r-rlang
                              r-readr
                              r-purrr
+                             r-nanoparquet
                              r-lifecycle
                              r-dplyr))
     (native-inputs (list r-rmarkdown r-knitr))
@@ -24929,13 +24930,13 @@ methods used in the package based on the following publications Stipanuk (1973)
 (define-public r-thsqca
   (package
     (name "r-thsqca")
-    (version "2.0.8")
+    (version "2.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ThSQCA" version))
        (sha256
-        (base32 "1rc6dl7pgz314ilxnq2ssfbw405z83zdc8gbfp1yysbnn7bqb1z8"))))
+        (base32 "0zb3jzagz302kgx6w1xx5ygahs2xzjy87hghzxwjdj17dbr2xia3"))))
     (properties `((upstream-name . "ThSQCA")))
     (build-system r-build-system)
     (arguments
@@ -24961,8 +24962,10 @@ conditions (intermediate only).  Built on top of the QCA package by Dusa (2019)
 <doi:10.1007/978-3-319-75668-4>, with function arguments following QCA
 conventions.  Based on set-theoretic methods by Ragin (2008)
 <doi:10.7208/chicago/9780226702797.001.0001> and established robustness
-protocols by Oana and Schneider (2024) <doi:10.1177/00491241211036158>.  This
-package supersedes TSQCA'; see the NEWS file for migration guidance.")
+protocols by Oana and Schneider (2024) <doi:10.1177/00491241211036158>.  The
+threshold-sweep framework is described in Toyoda (2026)
+<doi:10.1007/s11135-026-03092-3>.  This package supersedes TSQCA'; see the NEWS
+file for migration guidance.")
     (license license:expat)))
 
 (define-public r-thriftr

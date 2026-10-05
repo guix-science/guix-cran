@@ -24651,13 +24651,13 @@ Data Analysis 157.  107140.")
 (define-public r-depcensoring
   (package
     (name "r-depcensoring")
-    (version "0.1.10")
+    (version "0.1.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "depCensoring" version))
        (sha256
-        (base32 "171xfgdixicnapxkwhv4ylvb7sy751vab7pgc3mmh5qbmk2364x6"))))
+        (base32 "0lhyf3rsf641a3n8arpyc47xr5650m1ip122gaxbx46z5a1qhpnb"))))
     (properties `((upstream-name . "depCensoring")))
     (build-system r-build-system)
     (arguments
@@ -24666,14 +24666,12 @@ Data Analysis 157.  107140.")
     (propagated-inputs (list r-survival
                              r-splines2
                              r-rvinecopulib
-                             r-rafalib
                              r-r6
                              r-pbivnorm
                              r-numderiv
                              r-nloptr
                              r-nleqslv
                              r-mvtnorm
-                             r-matrixcalc
                              r-matrix
                              r-mass
                              r-lubridate
@@ -37261,6 +37259,38 @@ theory of knowledge spaces.  This package implements data analysis methods and
 procedures for simulating data and quasi orders and transforming different
 formulations in knowledge space theory.  See package?DAKS for an overview.")
     (license license:gpl2+)))
+
+(define-public r-daisytools
+  (package
+    (name "r-daisytools")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "daisytools" version))
+       (sha256
+        (base32 "0sd25qcach3w5da7rssxi48z58hz7v6kkkigwxx70inbcsxy3j7m"))))
+    (properties `((upstream-name . "daisytools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-rlang
+                             r-plotly
+                             r-ggplot2
+                             r-data-table
+                             r-cowplot))
+    (native-inputs (list r-knitr))
+    (home-page "https://daisy-model.github.io/daisy-r-tools/")
+    (synopsis "Reading and Visualizing Output from 'Daisy' Simulations")
+    (description
+     "Read, transform, and visualize log files produced by Daisy simulations.
+Supports importing dlf output files, reshaping depth-dependent and time-series
+data, and creating static and interactive plots for exploratory analysis and
+comparison of simulation results.")
+    (license license:gpl3+)))
 
 (define-public r-daisieprep
   (package

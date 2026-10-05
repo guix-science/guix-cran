@@ -1259,13 +1259,13 @@ in the help page for this function).")
 (define-public r-yalebraille
   (package
     (name "r-yalebraille")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "yaleBraille" version))
        (sha256
-        (base32 "0823f1r9agk3jjyyxh9s38cg6hspbx65ll7xaw1hx7x0gb9g8zrq"))))
+        (base32 "0gy77zp6b6bc0i54r82v4ybjhcvq892cr9landpr4l8c3xv2sn8f"))))
     (properties `((upstream-name . "yaleBraille")))
     (build-system r-build-system)
     (arguments
