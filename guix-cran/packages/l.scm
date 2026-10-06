@@ -8790,13 +8790,13 @@ Caamal-Pat et.al. (2021) <doi:10.3389/fgene.2021.680569>.")
 (define-public r-lme4breeding
   (package
     (name "r-lme4breeding")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lme4breeding" version))
        (sha256
-        (base32 "1q1m4xyyh9ga5jhzp3kard62qlairwffk05df6xs5pg099xgkxwd"))))
+        (base32 "1yqbira9k7m901nc373hs2ik6hd32l6j6ch17silzxpphxc64qsz"))))
     (properties `((upstream-name . "lme4breeding")))
     (build-system r-build-system)
     (arguments

@@ -5486,13 +5486,13 @@ alternative area-targeted conservation scenarios.")
 (define-public r-multiscaler
   (package
     (name "r-multiscaler")
-    (version "0.7.0")
+    (version "0.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multiScaleR" version))
        (sha256
-        (base32 "0bhjpv4wqd5aa9jl4wk7k1v9c7cv728jwzl82jyc6ij9nfgvv6ka"))))
+        (base32 "1njgcv47s466gi8nbksnmz6az7mkrlyvyn635vbsjh29f83rimfl"))))
     (properties `((upstream-name . "multiScaleR")))
     (build-system r-build-system)
     (arguments
@@ -16402,13 +16402,13 @@ simplifies the use and interpretation of effect sizes and confidence intervals."
 (define-public r-motbfs
   (package
     (name "r-motbfs")
-    (version "2.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MoTBFs" version))
        (sha256
-        (base32 "0x4cic8ja81l0bva8qrc7w6vk6la27pxkyjpg428inc8g6migg4x"))))
+        (base32 "1pjrshf2b73mw7bv2wjirfz1bqyl1hjjahqa0f7dkpdfwp12kifd"))))
     (properties `((upstream-name . "MoTBFs")))
     (build-system r-build-system)
     (arguments
@@ -17398,13 +17398,13 @@ wordpiece tokenization algorithm for words not found in the lookup table.")
 (define-public r-morph
   (package
     (name "r-morph")
-    (version "1.1.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "morph" version))
        (sha256
-        (base32 "0qx3wdcrilcp1hlsgaxbb4afcnkyx0nxwampm59ssc3zps2wh2cq"))))
+        (base32 "0lmnxbcgzg0g8hh47hj2jrd7yc9g6i8z47764fzslfsh4rsh8g6f"))))
     (properties `((upstream-name . "morph")))
     (build-system r-build-system)
     (arguments
@@ -17414,11 +17414,17 @@ wordpiece tokenization algorithm for words not found in the lookup table.")
     (home-page "https://cran.r-project.org/package=morph")
     (synopsis "3D Segmentation of Voxels into Morphologic Classes")
     (description
-     "Automatically segments a 3D array of voxels into mutually exclusive
-morphological elements.  This package extends existing work for segmenting 2D
-binary raster data.  A paper documenting this approach has been accepted for
-publication in the journal Landscape Ecology.  Detailed references will be
-updated here once those are known.")
+     "Automatically segments a 3D array that represents a volume of binary voxels into
+mutually exclusive morphological elements.  This package extends existing work
+for segmenting 2D binary raster data.  A paper documenting this approach has
+been published in the journal Landscape Ecology: Remmel, T.K. (2022)
+<doi:10.1007/s10980-021-01384-7>.  The output is a cartridge (list object) that
+maintains the input array, the segmentation results in array format, and a
+summary table.  Plotting functionality is provided to produce interactive visual
+outputs from the produced results cartridge, allowing custom plotting to be
+performed separately from the segmentation, which speeds-up processing.  While
+the old functions persist, they are being phased out and will eventually be
+replaced with the new @code{runmorph3d()} and @code{plotmorph3d()} functions.")
     (license license:gpl3)))
 
 (define-public r-mori
@@ -25747,24 +25753,27 @@ For details see Yang et al. (2026) <doi:10.1038/s42003-026-10420-8>.")
 (define-public r-mlim
   (package
     (name "r-mlim")
-    (version "0.3.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlim" version))
        (sha256
-        (base32 "16p3nprnxc0cghfbwcs3hf57aasqpvd4qv3wajhzrajqhmclzn0q"))))
+        (base32 "02jzphmif550qnwx6a7m6b61w0vibqav60kz4m1bv7i0y8h3j7nq"))))
     (properties `((upstream-name . "mlim")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-missranger
+    (propagated-inputs (list r-readstata13
+                             r-paradox
+                             r-mlr3tuning
+                             r-mlr3pipelines
+                             r-mlr3
+                             r-missranger
                              r-mice
                              r-memuse
-                             r-md-log
-                             r-h2o
-                             r-curl))
+                             r-md-log))
     (home-page "https://github.com/haghish/mlim")
     (synopsis "Single and Multiple Imputation with Automated Machine Learning")
     (description
@@ -31004,31 +31013,31 @@ distributions.")
 (define-public r-mintyr
   (package
     (name "r-mintyr")
-    (version "0.1.3")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mintyr" version))
        (sha256
-        (base32 "10cbw3rz7mbwbmmvb2clh9skn1k2xs2hp0mk1xq9rdls5m55l0vg"))))
+        (base32 "1f42kr6jwhxgx2ix1hkghan60gxvbz0xcslna6m61wfd634plmvy"))))
     (properties `((upstream-name . "mintyr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-writexl r-rsample r-readxl r-data-table))
+    (propagated-inputs (list r-writexl r-readxl r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://tony2015116.github.io/mintyr/")
-    (synopsis "High-Performance Phenotypic Data Pipelines for Breeding")
+    (synopsis "Grouped and Nested Data Pipelines Built on 'data.table'")
     (description
-     "This package provides a streamlined toolkit specifically designed for genomic
-selection and quantitative genetics in animal breeding.  It provides
-high-performance data manipulation backed by data.table', focusing on
-multi-breed and multi-trait nested grouping operations.  Features include
-zero-copy data importing, automated cross-validation splitting, and robust tools
-to generate and batch-export formatted phenotypic files required by various
-breeding software (e.g., ASReml-R', HIBLUP', DMU'), heavily optimizing iterative
-variance component analysis and large-scale evaluation pipelines.")
+     "This package provides a toolkit for grouped and nested data pipelines built on
+data.table': import many Excel / CSV files (including multi-row headers) into
+one table, reshape and nest data by trait and group, run reproducible
+(stratified) k-fold cross-validation inside every group, summarise groups with
+report-ready descriptive statistics, and write each piece back to its own file
+or sheet.  Developed for animal breeding, where it prepares phenotypic files for
+ASReml-R', HIBLUP or DMU', but useful for any multi-group, multi-variable
+analysis.")
     (license license:expat)))
 
 (define-public r-mintriadic
@@ -31790,13 +31799,13 @@ only includes regularized (quasi-)newton optimization (Kanzow and Steck et al.
 (define-public r-mini007
   (package
     (name "r-mini007")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mini007" version))
        (sha256
-        (base32 "1clbaavm81a6gq5z2hb6cz2f48rizan9kcqhddlxsyvp99z21vj0"))))
+        (base32 "1v9f2rghvdmk637a71vz1rk08ih7swgwj9w0qm8zyj5cfgcmhnxk"))))
     (properties `((upstream-name . "mini007")))
     (build-system r-build-system)
     (arguments
@@ -31805,6 +31814,7 @@ only includes regularized (quasi-)newton optimization (Kanzow and Steck et al.
     (propagated-inputs (list r-uuid
                              r-rlang
                              r-r6
+                             r-mirai
                              r-glue
                              r-ellmer
                              r-diagrammer
@@ -57220,13 +57230,13 @@ corresponding cumulative distribution function.  Garrido-MartÃ­n et al. (2022)
 (define-public r-manova-rm
   (package
     (name "r-manova-rm")
-    (version "0.5.4")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MANOVA.RM" version))
        (sha256
-        (base32 "03y6qzbh696h282pq8as2zy16y7j95d04qvn3labivd5qygfwfhp"))))
+        (base32 "023y7md6wdl79s5hs6208l4qs4afaj6nps16lfqznpy23rr6nkl1"))))
     (properties `((upstream-name . "MANOVA.RM")))
     (build-system r-build-system)
     (arguments
@@ -57234,6 +57244,7 @@ corresponding cumulative distribution function.  Garrido-MartÃ­n et al. (2022)
       #:tests? #f))
     (propagated-inputs (list r-plyr
                              r-plotrix
+                             r-mvtnorm
                              r-multcomp
                              r-matrix
                              r-mass

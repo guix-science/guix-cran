@@ -1558,32 +1558,33 @@ respectively.  For the details of these methods, see the reference section of
 (define-public r-itemrest
   (package
     (name "r-itemrest")
-    (version "0.2.5")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ItemRest" version))
        (sha256
-        (base32 "199cfh9xpcc0dcavci6rnhnlbrr9180dngcskrr461qric9sgx5z"))))
+        (base32 "14lgwzwk8q5b93wx1xilvfqxibll37bkb8fr7b7ii5w5n375ibds"))))
     (properties `((upstream-name . "ItemRest")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-qgraph r-psych r-gtools))
+    (propagated-inputs (list r-qgraph r-psych r-gtools r-gparotation r-clue))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ahmetcaliskan1987/ItemRest")
     (synopsis
      "Automated Item Removal Strategies for Exploratory Factor Analysis")
     (description
-     "Automates the identification and comparative evaluation of item-removal
-strategies in exploratory factor analysis, producing transparent summaries
-(explained variance, loading ranges, reliability) to support comfortable,
-reproducible decisions.  The criteria are based on best practices and
-established heuristics (e.g., Costello & Osborne (2005) <doi:10.7275/jyj1-4868>,
-Howard (2016) <doi:10.1080/10447318.2015.1087664>).  Includes flexible
-thresholds for factor loadings (min_loading) and cross-loading differences
-(loading_diff).")
+     "Identifies candidate item sets through threshold-driven iterative removal
+searches in exploratory factor analysis.  Provides a no-removal baseline,
+numerical diagnostics, factor reliability, holdout evaluation, and bootstrap
+search stability to support transparent screening and documented content review
+rather than automatic measurement decisions.  The loading criteria are based on
+best practices and established heuristics (e.g., Costello & Osborne (2005)
+<doi:10.7275/jyj1-4868>, Howard (2016) <doi:10.1080/10447318.2015.1087664>).
+Includes flexible thresholds for factor loadings (min_loading) and cross-loading
+differences (loading_diff).")
     (license license:expat)))
 
 (define-public r-itemanalysis
@@ -3839,50 +3840,6 @@ Additionally, most functions are accompanied with plots.  The package is
 designed to be used in an educational setting alongside the ISCAM textbook.")
     (license license:expat)))
 
-(define-public r-isca
-  (package
-    (name "r-isca")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ISCA" version))
-       (sha256
-        (base32 "1n0p009r1296354vd7k8xg9yiy8a8xzqa1a2y4d2ig5wyhnypnzx"))))
-    (properties `((upstream-name . "ISCA")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyselect
-                             r-tibble
-                             r-stringr
-                             r-plyr
-                             r-magrittr
-                             r-hmisc
-                             r-e1071
-                             r-dplyr
-                             r-data-table
-                             r-broom))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ISCA")
-    (synopsis "Compare Heterogeneous Social Groups")
-    (description
-     "The Inductive Subgroup Comparison Approach ('ISCA') offers a way to compare
-groups that are internally differentiated and heterogeneous.  It starts by
-identifying the social structure of a reference group against which a minority
-or another group is to be compared, yielding empirical subgroups to which
-minority members are then matched based on how similar they are.  The modelling
-of specific outcomes then occurs within specific subgroups in which majority and
-minority members are matched.  ISCA is characterized by its data-driven,
-probabilistic, and iterative approach and combines fuzzy clustering, Monte Carlo
-simulation, and regression analysis. @code{ISCA_random_assignments()} assigns
-subjects probabilistically to subgroups. @code{ISCA_clustertable()} provides
-summary statistics of each cluster across iterations. @code{ISCA_modeling()}
-provides Ordinary Least Squares regression results for each cluster across
-iterations.  For further details please see Drouhot (2021) <doi:10.1086/712804>.")
-    (license license:gpl3+)))
-
 (define-public r-isatabr
   (package
     (name "r-isatabr")
@@ -4100,13 +4057,13 @@ models from data with different shape and using different software.")
 (define-public r-irtq
   (package
     (name "r-irtq")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "irtQ" version))
        (sha256
-        (base32 "0l74cz4mmj69j68mbmj3rb6wj9zicrpx1cf4dxhx5hr3c2s4lh4p"))))
+        (base32 "18gi0lnh59rd9nq7l3ymsh4bmgmr6dp2wpkjszw9mmn9vn1mi5wz"))))
     (properties `((upstream-name . "irtQ")))
     (build-system r-build-system)
     (arguments
@@ -4119,12 +4076,12 @@ models from data with different shape and using different software.")
                              r-rfast
                              r-reshape2
                              r-purrr
-                             r-mirt
                              r-matrix
                              r-janitor
                              r-gridextra
                              r-ggplot2
                              r-dplyr))
+    (native-inputs (list r-knitr))
     (home-page "https://hwangQ.github.io/irtQ/")
     (synopsis "Unidimensional Item Response Theory Modeling")
     (description
@@ -4132,10 +4089,13 @@ models from data with different shape and using different software.")
 includes both dichotomous and polytomous items, calibrate pretest item
 parameters, estimate examinees abilities, and examine the IRT model-data fit on
 item-level in different ways as well as provide useful functions related to IRT
-analyses such as IRT model-data fit evaluation and differential item functioning
-analysis.  The @code{bring.flexmirt()} and @code{write.flexmirt()} functions
-were written by modifying the @code{read.flexmirt()} function (Pritikin & Falk
-(2022) <doi:10.1177/0146621620929431>).  The @code{bring.bilog()} and
+analyses such as differential item functioning analysis.  In addition, the
+package provides a set of classical test theory functions for computing item-
+and test-level statistics (e.g., item difficulty, item-total correlation, and
+coefficient alpha) and for scoring and analyzing selected-response item data.
+The @code{bring.flexmirt()} and @code{write.flexmirt()} functions were written
+by modifying the @code{read.flexmirt()} function (Pritikin & Falk (2020)
+<doi:10.1177/0146621620929431>).  The @code{bring.bilog()} and
 @code{bring.parscale()} functions were written by modifying the
 @code{read.bilog()} and @code{read.parscale()} functions, respectively (Weeks
 (2010) <doi:10.18637/jss.v035.i12>).  The @code{bisection()} function was
@@ -10450,13 +10410,13 @@ expertise.")
 (define-public r-insectecol
   (package
     (name "r-insectecol")
-    (version "1.0.1")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "insectecol" version))
        (sha256
-        (base32 "1iviz1knxk1czhqfk3qq3pp91ci4bs6l3pdwk2hd9iknrp1ks0v3"))))
+        (base32 "00agziiqzzrj0x05s7xwyjhm8xknskg4ryg3mkgajp6z8a7xkzx3"))))
     (properties `((upstream-name . "insectecol")))
     (build-system r-build-system)
     (arguments
@@ -10476,22 +10436,39 @@ expertise.")
     (synopsis "Insect Ecology Data Analysis Toolkit")
     (description
      "This package provides a collection of analytical tools for insect ecology
-research, currently covering age-stage, two-sex life table analysis and
-dose-response bioassays.  The life table module supports fast batch processing
-of multi-group datasets, validates raw csv data, computes cohort size, mean
+research, currently covering age-stage, two-sex life table analysis,
+dose-response bioassays, temperature-dependent development and insect phenology
+prediction.  The life table module follows the age-stage, two-sex life table
+theory of Chi (1988) <doi:10.1093/ee/17.1.26> and Chi et al. (2020)
+<doi:10.1127/entomologia/2020/0936>.  It supports fast batch processing of
+multi-group datasets, validates raw csv data, computes cohort size, mean
 fecundity, age-stage survival rates, age-specific survival, age-specific
 fecundity, life expectancy, and derived population parameters (net reproductive
 rate, intrinsic and finite rates of increase, mean generation time),
 simultaneously generates age-stage survival curves for all groups, and exports
 all tabular results and plots to Excel in a single run.  The bioassay module
 estimates lethal concentrations by the traditional and the weighted (improved)
-linear regression methods and by probit analysis, with Abbott correction, 95%
-confidence intervals and chi-square goodness-of-fit tests; the lethal proportion
-can be set freely (e.g., 25%, 50%, 70% or 90%), so any LC value such as the
-LC25, LC70 or LC90 can be computed, not only the LC50.  The regression plots and
-tables are exported to Excel'.  Planned extensions include more insect ecology
-indicators, such as median lethal temperature/time (LT50) and thermal constants
-(effective accumulated temperature).")
+linear regression methods and by probit analysis (Bliss, 1934)
+<doi:10.1126/science.79.2037.38>, with the control-mortality correction of
+Abbott (1925) <doi:10.1093/jee/18.2.265a>, 95% confidence intervals and
+chi-square goodness-of-fit tests; the lethal proportion can be set freely (e.g.,
+25%, 50%, 70% or 90%), so any LC value such as the LC25, LC70 or LC90 can be
+computed, not only the LC50.  The regression plots and tables are exported to
+Excel'.  The degree-day module estimates the developmental threshold temperature
+and the effective accumulated temperature by the linear degree-day method
+(Campbell et al., 1974) <doi:10.2307/2402197>, and fits the common nonlinear
+temperature- dependent development models following Logan et al. (1976)
+<doi:10.1093/ee/5.6.1133> (Logan-6), Lactin et al. (1995)
+<doi:10.1093/ee/24.1.68> and Briere et al. (1999) <doi:10.1093/ee/28.1.22>, plus
+a 7-parameter Wang model; it selects the best model by AICc, predicts durations
+and accumulates field degree-days.  The emergence module applies the
+stage-grading method to a single survey of the population stage structure, i.e.
+to stage-frequency data (Kiritani and Nakasuji, 1967) <doi:10.1007/bf02514921>
+and Manly (1974) <doi:10.1007/bf00345751>, and projects the beginning, peak and
+end of the adult emergence period (the 16%, 50% and 84% quantiles), optionally
+shifting the eclosion dates by the pre-oviposition period and the egg duration
+to forecast larval hatch.  Further extensions, such as median lethal
+temperature/time (LT50), are planned.")
     (license license:expat)))
 
 (define-public r-insect
@@ -12568,13 +12545,13 @@ squared coefficient of variation is based on Garcia-Penalosa, C., & Orgiazzi, E.
 (define-public r-inedemogr
   (package
     (name "r-inedemogr")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inedemogR" version))
        (sha256
-        (base32 "0svr4qgzmh4vv0mqviwria2vpf0skhp5li9xcjzvq92r2bjcmkyc"))))
+        (base32 "1y0p3g9fgllyxkbzlxqnswgxb9qxjqb45w1rknv6fwacfibjfa3n"))))
     (properties `((upstream-name . "inedemogR")))
     (build-system r-build-system)
     (arguments
@@ -21491,13 +21468,13 @@ change, sea-ice freeboard', and vegetation canopy height begun by ICESat in
 (define-public r-icesadvice
   (package
     (name "r-icesadvice")
-    (version "2.1.1")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "icesAdvice" version))
        (sha256
-        (base32 "1i47kz45m45nn23j0ydq8vahw97py2im80yxadlqbvldjcm98vdw"))))
+        (base32 "19yc5qdm8zjwxyb1mmy0nb9i1356cyja9z2n666akw4d7d36683l"))))
     (properties `((upstream-name . "icesAdvice")))
     (build-system r-build-system)
     (arguments

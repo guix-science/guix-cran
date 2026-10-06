@@ -7922,6 +7922,52 @@ affiliated with the @code{OpenStreetMap.org} mapping project.")
     (license (list license:gpl2
                    (license:fsdg-compatible "file LICENCE")))))
 
+(define-public r-openspecy
+  (package
+    (name "r-openspecy")
+    (version "2.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OpenSpecy" version))
+       (sha256
+        (base32 "05gj1jckpg4pjjbgf9477wbz05zixilffwzgc106qqqfz15yxi86"))))
+    (properties `((upstream-name . "OpenSpecy")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zip
+                             r-shiny
+                             r-png
+                             r-plotly
+                             r-mmand
+                             r-matrixstats
+                             r-jsonlite
+                             r-jpeg
+                             r-hyperspec
+                             r-hdf5r
+                             r-glmnet
+                             r-digest
+                             r-data-table
+                             r-cluster
+                             r-catools))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/wincowgerDEV/OpenSpecy-package/")
+    (synopsis "Analyze, Process, Identify, and Share Raman and (FT)IR Spectra")
+    (description
+     "Raman and (FT)IR spectral analysis tool for plastic particles and other
+environmental samples (Cowger et al.  2025, <doi:10.1021/acs.analchem.5c00962>).
+ With @code{read_any()}, Open Specy provides a single function for reading
+individual, batch, or map spectral data files like .asp, .csv, .jdx, .spc, .spa,
+.0, and .zip. @code{process_spec()} simplifies processing spectra, including
+smoothing, baseline correction, range restriction and flattening, intensity
+conversions, wavenumber alignment, and min-max normalization.  Spectra can be
+identified in batch using an onboard reference library using
+@code{match_spec()}.  A bundled Shiny app is available via @code{run_app()} or
+online at <https://www.openanalysis.org/@code{OpenSpecyV2/>}.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
+
 (define-public r-opensourceap-downloadr
   (package
     (name "r-opensourceap-downloadr")
@@ -14588,27 +14634,29 @@ interpolation, and for integrating quantities that represent arrays.")
 (define-public r-odiffr
   (package
     (name "r-odiffr")
-    (version "0.5.1")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "odiffr" version))
        (sha256
-        (base32 "0r7sy6lb5pchi7ndv7bhay03hd4p1nb427zkdqm88zy86nn9d8fh"))))
+        (base32 "194amlaz882rv5rv3a37j6v635zdmd60cifbsldplhxchy1rr7ja"))))
     (properties `((upstream-name . "odiffr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/BenWolst/odiffr")
+    (home-page "https://benwolst.github.io/odiffr/")
     (synopsis "Fast Pixel-by-Pixel Image Comparison Using 'odiff'")
     (description
-     "R bindings to odiff', a blazing-fast pixel-by-pixel image comparison tool
-<https://github.com/@code{dmtrKovalenko/odiff>}.  Supports PNG, JPEG, WEBP, and
-TIFF with configurable thresholds, antialiasing detection, and region ignoring.
-Requires system installation of odiff'.  Ideal for visual regression testing in
-automated workflows.")
+     "R bindings to odiff', a fast SIMD pixel-by-pixel image comparison tool
+<https://github.com/@code{dmtrKovalenko/odiff>}.  Compares PNG, JPEG, WEBP, TIFF
+and BMP images, plots and PDF pages with configurable thresholds, antialiasing
+detection and ignore regions.  Provides testthat expectations and snapshot
+testing (including for shinytest2 screenshots), batch and directory comparison,
+HTML, Markdown and JUnit reports, baseline approval and audit records.  Requires
+the odiff binary, which can be downloaded with @code{install_odiff()}.")
     (license license:expat)))
 
 (define-public r-odetector

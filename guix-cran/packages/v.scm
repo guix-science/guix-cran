@@ -2944,13 +2944,13 @@ of mortality models.")
 (define-public r-vital
   (package
     (name "r-vital")
-    (version "2.0.3")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vital" version))
        (sha256
-        (base32 "003k3kcddcyad6zssvgqqlp1llqc5gcxyd5s18xk8rsqv43l659f"))))
+        (base32 "1fs88s7skn22d4srsiscb7mndlzff2v9xippq7rfg0msg1pp1xvq"))))
     (properties `((upstream-name . "vital")))
     (build-system r-build-system)
     (arguments
@@ -2962,6 +2962,7 @@ of mortality models.")
                              r-tidyr
                              r-tibble
                              r-stmomo
+                             r-rvest
                              r-rlang
                              r-purrr
                              r-patchwork

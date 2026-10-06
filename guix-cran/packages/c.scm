@@ -2812,13 +2812,13 @@ of GPU-accelerated machine learning libraries powered by CUDA
 (define-public r-cucumber
   (package
     (name "r-cucumber")
-    (version "2.1.1")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cucumber" version))
        (sha256
-        (base32 "1xkac688szxjs9sfnc3zwin6dg9072fizrcwaklwvqy62r1gri8q"))))
+        (base32 "16n7y0shjl6hhn2gw1a7hm0vm0zvph6jpyk5cxcd88wj7krfc11n"))))
     (properties `((upstream-name . "cucumber")))
     (build-system r-build-system)
     (arguments
@@ -2829,6 +2829,7 @@ of GPU-accelerated machine learning libraries powered by CUDA
                              r-testthat
                              r-stringr
                              r-rlang
+                             r-r6
                              r-purrr
                              r-glue
                              r-fs
@@ -16446,6 +16447,42 @@ are extracted from the colorffy website.  See
 <https://www.colorffy.com/gradients/catalog>.")
     (license license:expat)))
 
+(define-public r-coratool
+  (package
+    (name "r-coratool")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CORAtool" version))
+       (sha256
+        (base32 "15i5kw7hqhsql3fz88zj3r70pvsrwqh4nzdiz90sf0k9rddqjmi0"))))
+    (properties `((upstream-name . "CORAtool")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/youngchanresearcher/CORAtool")
+    (synopsis "Combinational Regularity Analysis")
+    (description
+     "Searches configurational data for causes that are each an insufficient but
+non-redundant part of an unnecessary but sufficient (INUS) condition for their
+effect, so that cause-effect relations are marked by conjunctivity and
+disjunctivity.  The method, Combinational Regularity Analysis (CORA), borrows
+its Boolean minimisation algorithms from switching circuit analysis.  Truth
+tables are minimised either with the classical Quine-@code{McCluskey} algorithm
+over positive and don't care terms or with @code{McCluskey's} modified algorithm
+over positive and negative terms, and the resulting prime implicant charts are
+solved with Petrick's method.  Multi-value conditions and structures with simple
+as well as complex effects are supported, together with a configurational
+data-mining search and two-level logic diagrams.  The package is an R port of
+the Python packages CORA and LOGIGRAM described in SebechlebskÃ¡, Mkrtchyan and
+Thiem (2023) <doi:10.21105/joss.05019>; it computes in plain R and requires no
+Python installation.  It is an independent implementation and is not endorsed by
+the authors of the original packages.")
+    (license license:gpl3+)))
+
 (define-public r-coranking
   (package
     (name "r-coranking")
@@ -17500,13 +17537,13 @@ marginal likelihood, and distributional transform), for three types of outcomes
 (define-public r-copbasic
   (package
     (name "r-copbasic")
-    (version "2.2.16")
+    (version "2.2.17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "copBasic" version))
        (sha256
-        (base32 "1k8aia44h2gwwrl66f7dkzwfx6ngw029dkim2w8nj6bkhzp79sw7"))))
+        (base32 "1591liv2cpc38vc1zz9vvbg2xnkm4pklh82p14m5hap0rnm5wd04"))))
     (properties `((upstream-name . "copBasic")))
     (build-system r-build-system)
     (arguments
@@ -35702,13 +35739,13 @@ tedious pieces.")
 (define-public r-clinicalutilityrecal
   (package
     (name "r-clinicalutilityrecal")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ClinicalUtilityRecal" version))
        (sha256
-        (base32 "17xj9cmdkjrzx7mshka2hlkxh8887sprdqix7fd8jcr9bmc6ad9r"))))
+        (base32 "04qka30869cpfgv1kr03ddz3vgmw3i12xzgnfd07zcak9lwa9h2s"))))
     (properties `((upstream-name . "ClinicalUtilityRecal")))
     (build-system r-build-system)
     (arguments
@@ -54629,20 +54666,19 @@ tibbles, lists, etc..")
 (define-public r-catastro
   (package
     (name "r-catastro")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CatastRo" version))
        (sha256
-        (base32 "16zqbgc1c8y59jy1sbpnrjacnl41pnym0g76hhnzj6bly84wn6gn"))))
+        (base32 "0jyhl84hlfybm5g2cfymwh4907xgd3793vmb3k9lk660lvyr6vin"))))
     (properties `((upstream-name . "CatastRo")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-xml2
-                             r-tibble
                              r-terra
                              r-sf
                              r-rappdirs
@@ -54655,9 +54691,10 @@ tibbles, lists, etc..")
     (home-page "https://ropenspain.github.io/CatastRo/")
     (synopsis "Interface to the Spanish 'Catastro' Web Services")
     (description
-     "Access public spatial data from the Spanish Catastro through its INSPIRE and
-related web services.  Retrieve parcel, building, address and map image data,
-and convert between parcel references and coordinates.")
+     "Access public spatial data from the Spanish Catastro through its Infrastructure
+for Spatial Information in Europe ('INSPIRE') and related web services.
+Retrieve parcel, building, address and map image data and convert between
+property reference codes and coordinates.")
     (license license:gpl2)))
 
 (define-public r-catascience

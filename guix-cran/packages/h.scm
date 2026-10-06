@@ -2822,13 +2822,13 @@ be primarily used internally by other hubverse packages.  See Reich et al.
 (define-public r-hubevals
   (package
     (name "r-hubevals")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hubEvals" version))
        (sha256
-        (base32 "1qzd8awf6q1kd6g5z8l4gx1lskgr0pq8xzwyqdcs3lgd1dq3b7r4"))))
+        (base32 "0akvzirm546d1rlzkkphzg90np51p1d2zba4vrd5jvnwcra63bp0"))))
     (properties `((upstream-name . "hubEvals")))
     (build-system r-build-system)
     (arguments
@@ -4426,6 +4426,48 @@ packages.  Functions that aid semiparametric regression analysis are also
 included.")
     (license license:gpl2+)))
 
+(define-public r-hrtnomaly
+  (package
+    (name "r-hrtnomaly")
+    (version "26.9.19")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HRTnomaly" version))
+       (sha256
+        (base32 "028mcw4vid6gaz8fwfbx90cm18i4wnk3g6vxpcpw427974jlkzm8"))))
+    (properties `((upstream-name . "HRTnomaly")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-purrr r-dplyr))
+    (home-page "https://cran.r-project.org/package=HRTnomaly")
+    (synopsis "Historical, Relational, and Tail Anomaly-Detection Algorithms")
+    (description
+     "The presence of outliers in a dataset can substantially bias the results of
+statistical analyses.  To correct for outliers, micro edits are manually
+performed on all records.  A set of constraints and decision rules is typically
+used to aid the editing process.  However, straightforward decision rules might
+overlook anomalies arising from disruption of linear relationships.
+Computationally efficient methods are provided to identify historical, tail, and
+relational anomalies at the data-entry level (Sartore et al., 2024;
+<doi:10.6339/24-JDS1136>).  A score statistic is developed for each anomaly
+type, using a distribution-free approach motivated by the BienaymÃ©-Chebyshev's
+inequality, and fuzzy logic is used to detect cellwise outliers resulting from
+different types of anomalies.  Each data entry is individually scored and
+individual scores are combined into a final score to determine anomalous
+entries.  In contrast to fuzzy logic, Bayesian bootstrap and a Bayesian test
+based on empirical likelihoods are also provided as studied by Sartore et al.
+(2024; <doi:10.3390/stats7040073>).  These algorithms allow for a more nuanced
+approach to outlier detection, as it can identify outliers at data-entry level
+which are not obviously distinct from the rest of the data. --- This research
+was supported in part by the U.S. Department of Agriculture, National
+Agriculture Statistics Service.  The findings and conclusions in this
+publication are those of the authors and should not be construed to represent
+any official USDA, or US Government determination or policy.")
+    (license license:agpl3)))
+
 (define-public r-hrtlfmc
   (package
     (name "r-hrtlfmc")
@@ -4501,13 +4543,13 @@ three functions are based on results in Poetscher and Preinerstorfer (2021)
 (define-public r-hrri
   (package
     (name "r-hrri")
-    (version "1.0.6")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HRRI" version))
        (sha256
-        (base32 "0l4pbgypm8mdjid43qrja39vnqhxj0bn74ivpf7lzf6g2jn981i1"))))
+        (base32 "0p2px6h8vj6c889kc9qk1dv4k7m6454rb36mkybfbjzbk989bzy1"))))
     (properties `((upstream-name . "HRRI")))
     (build-system r-build-system)
     (arguments
@@ -6461,13 +6503,13 @@ summarizes environmental data.")
 (define-public r-hobbs
   (package
     (name "r-hobbs")
-    (version "0.4.4")
+    (version "0.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hobbs" version))
        (sha256
-        (base32 "1b81nwsaz0ygpam134jsadi79116a1q5cfkcc5vdwj78qvprq7xm"))))
+        (base32 "1dahsja5ag4hf4c6iqmf4llfnzv8llp5zxzhc9nf5xwjs5p593kv"))))
     (properties `((upstream-name . "hobbs")))
     (build-system r-build-system)
     (arguments
@@ -8251,13 +8293,13 @@ series.  An introducing paper is Irpino A. Verde R. (2015) <doi:
 (define-public r-histdata
   (package
     (name "r-histdata")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HistData" version))
        (sha256
-        (base32 "0y1bd5jcrrjlwal1rgybvpx5wdgdbkss50h0x4118qyhqrhhrzac"))))
+        (base32 "00p71h0a74bxcxpjyxscan492gxafbbx82x0m3dm9nf10w6g00mn"))))
     (properties `((upstream-name . "HistData")))
     (build-system r-build-system)
     (arguments
@@ -15857,13 +15899,13 @@ forms for the covariates.  Rava, D. and Xu, R. (2021) <@code{arXiv:2112.09535>}.
 (define-public r-hawkinr
   (package
     (name "r-hawkinr")
-    (version "2.0.1")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hawkinR" version))
        (sha256
-        (base32 "1mgcn95kifihxykxsbh09jllaq4kqjv2pvhy21gckagamaf4gbzs"))))
+        (base32 "1xq9nw2rm7rqqfkvamvv59hc3399898pzl05xg6sngbzwi49kp6x"))))
     (properties `((upstream-name . "hawkinR")))
     (build-system r-build-system)
     (arguments

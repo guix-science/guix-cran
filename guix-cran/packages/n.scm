@@ -15367,13 +15367,13 @@ randomization and non-degree preserving.")
 (define-public r-netrics
   (package
     (name "r-netrics")
-    (version "1.0.3")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "netrics" version))
        (sha256
-        (base32 "1lj5cx5914hzbk8gyspajbwpq9gngahf6lrmvsnrsrmlb0xyirh6"))))
+        (base32 "0259iwzqpmgqhmci6h4cg6kgi8xzx90jvf26vdmd50nmc9hd5pcn"))))
     (properties `((upstream-name . "netrics")))
     (build-system r-build-system)
     (arguments

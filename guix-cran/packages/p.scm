@@ -8073,13 +8073,13 @@ and will be added in future updates.")
 (define-public r-proreg
   (package
     (name "r-proreg")
-    (version "1.3.2")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PROreg" version))
        (sha256
-        (base32 "1z29108xnrsjcphpbd8h7z8kvfm4y8m8d4j8c1vlgdhbwj2nwqgq"))))
+        (base32 "1mv01syy3sdmjrpdpvfa89py3pc3ws1qq5z9ippxv895ghwgczv8"))))
     (properties `((upstream-name . "PROreg")))
     (build-system r-build-system)
     (arguments

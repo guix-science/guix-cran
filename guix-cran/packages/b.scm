@@ -6135,6 +6135,50 @@ to reach typical significance levels: @code{brQCA()}.  Data included come from
 @code{McVeigh} et al. (2014) <doi:10.1177/0003122414534065>.")
     (license license:gpl3)))
 
+(define-public r-brapir2
+  (package
+    (name "r-brapir2")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "brapiR2" version))
+       (sha256
+        (base32 "1ygbp98bycznahradiql9d8vrin79p9sqrkx51dw8sj28v48n5yc"))))
+    (properties `((upstream-name . "brapiR2")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-purrr
+                             r-jsonlite
+                             r-httr2
+                             r-glue
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ropensci/brapiR2")
+    (synopsis
+     "Tidyverse-Native Client for the 'BrAPI' v2 (Breeding API) Specification")
+    (description
+     "This package provides pipe-friendly, stateless read access to the Breeding API
+('@code{BrAPI}') v2.1 specification, an open community standard for plant
+breeding data interchange maintained by the @code{BrAPI} project
+<https://brapi.org>.  Wraps 32 of the 37 @code{BrAPI} v2.1 entities across all
+four modules, Core, Germplasm, Phenotyping, and Genotyping, covering 49 of the
+specification's 138 retrieval ('GET and search) endpoints and returning tidy
+tibbles ready for analysis.  Write and update endpoints are out of scope by
+design.  Features include automatic pagination, async search handling, response
+caching, parallel batch fetching, and convenience functions for genomic
+selection workflows (e.g. dosage matrix extraction).  Designed for plant
+breeders and bioinformaticians who need programmatic access to plant breeding
+databases that implement the @code{BrAPI} v2 specification.")
+    (license license:expat)))
+
 (define-public r-brant
   (package
     (name "r-brant")
@@ -17166,13 +17210,13 @@ environmental science, and healthcare.")
 (define-public r-biomes
   (package
     (name "r-biomes")
-    (version "0.9.4")
+    (version "0.9.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biomes" version))
        (sha256
-        (base32 "0f9gcabrj7ix0a53w2laqw01yp1k3x3s0p4aprrqh3a9i18906xj"))))
+        (base32 "0j0xw2dy2srrhsgn4s6fddkcn3l4ychsqw9x6qg31sxwhmqskcfg"))))
     (properties `((upstream-name . "biomes")))
     (build-system r-build-system)
     (arguments
@@ -17191,14 +17235,14 @@ environmental science, and healthcare.")
     (synopsis
      "Reproducible Occurrence-to-Biome Classification Using 31 Global Biome Schemes")
     (description
-     "Reproducibly classifies occurrence records into biome classes using 31 published
-global terrestrial biome schemes compiled by Fischer and colleagues (2022)
-<doi:10.1111/geb.13574>, provided as harmonised raster layers at 10x10 km
-resolution globally.  Includes functions to choose the most suitable biome
-scheme for a dataset by a data-driven ranking, to classify occurrence records,
-and to tabulate and visualise the result.  Works with user-provided occurrences
-or a taxon name, in which case occurrences are downloaded from GBIF
-(<https://www.gbif.org>) and cleaned automatically.")
+     "Reproducibly classifies occurrence records into biomes using 31 published global
+biome schemes compiled by Fischer and colleagues (2022) <doi:10.1111/geb.13574>,
+provided as harmonised raster layers at 10x10 km resolution globally.  Includes
+functions to choose the most suitable biome scheme for a dataset by a
+data-driven ranking, to classify occurrence records, and to tabulate and
+visualise the result.  Works with user-provided occurrences or a taxon name, in
+which case occurrences are downloaded from GBIF (<https://www.gbif.org>) and
+cleaned automatically.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-biomass
@@ -20256,13 +20300,13 @@ for dense or sparse matrices.")
 (define-public r-bigpopa
   (package
     (name "r-bigpopa")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BIGpopA" version))
        (sha256
-        (base32 "1q321kfdcan8ilxn17wiflvcfhknfni1y6cvfdjmks9ry1ixpmvy"))))
+        (base32 "1ywy5yx2j99blsff2ad838r5b0nfxijzdihj7j6awd8laqbdnfay"))))
     (properties `((upstream-name . "BIGpopA")))
     (build-system r-build-system)
     (arguments
@@ -20282,7 +20326,8 @@ assign parentage from SNP genotype data using Mendelian error rates, validate
 parent-offspring trios, and estimate genome-wide breed or line composition using
 quadratic programming.  Pedigree validation and parentage assignment support any
 ploidy, using a polysomic Mendelian test for even ploidy and a
-homozygosity-based check for odd ploidy.  For more details about the included
+homozygosity-based check for odd ploidy.  Genotypes can be supplied as dosage
+tables, VCF files, or PLINK .ped files.  For more details about the included
 @code{breedTools} functions, see Funkhouser et al. (2017)
 <doi:10.2527/tas2016.0003>.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
@@ -26735,30 +26780,6 @@ framework, including estimation and tools for evaluating goodness-of-fit.")
 <https://www.openbsd.org/papers/bcrypt-paper.pdf> derived from the
 @code{OpenBSD} implementation.")
     (license license:bsd-2)))
-
-(define-public r-bcrp
-  (package
-    (name "r-bcrp")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bcRP" version))
-       (sha256
-        (base32 "03mv3nfia5qicwwawi2s0akyg0bfxycwl1r0y0laf16qlhsfsdpc"))))
-    (properties `((upstream-name . "bcRP")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-yyjsonr r-tibble r-readr r-httr2))
-    (home-page "https://github.com/JulioCollazos64/bcRP")
-    (synopsis "Access 'BCRPDATA' API")
-    (description
-     "Search and access more than ten thousand datasets included in BCRPDATA (see
-<https://estadisticas.bcrp.gob.pe/estadisticas/series/ayuda/bcrpdata> for more
-information).")
-    (license license:gpl3+)))
 
 (define-public r-bcrocsurface
   (package
@@ -34622,13 +34643,13 @@ and its predictions should not be used as the sole basis for clinical decisions.
 (define-public r-basifor
   (package
     (name "r-basifor")
-    (version "0.7.9")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "basifoR" version))
        (sha256
-        (base32 "08d2nz3ip72nnay0zd3xsk6z8vzlll565gsk44biqhhwycxds0hm"))))
+        (base32 "1yn9y4bx66lxk8q154lspgdmrp6y3643mgbarlvbnbq6y0p2gypx"))))
     (properties `((upstream-name . "basifoR")))
     (build-system r-build-system)
     (arguments

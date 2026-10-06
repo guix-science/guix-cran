@@ -979,6 +979,28 @@ can be found at
 <https://docs.aws.amazon.com/@code{AmazonECS/latest/APIReference/Welcome.html>}.")
     (license license:gpl3)))
 
+(define-public r-aws-ec2metadata
+  (package
+    (name "r-aws-ec2metadata")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "aws.ec2metadata" version))
+       (sha256
+        (base32 "1r63wbj75kr277wl3nz13z8l7c4rp4c99r3ism90icxb65jpd61i"))))
+    (properties `((upstream-name . "aws.ec2metadata")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite r-curl))
+    (home-page "https://github.com/cloudyr/aws.ec2metadata")
+    (synopsis "Get EC2 Instance Metadata")
+    (description
+     "Retrieve Amazon EC2 instance metadata from within the running instance.")
+    (license license:gpl2+)))
+
 (define-public r-awr-kinesis
   (package
     (name "r-awr-kinesis")
@@ -6031,13 +6053,13 @@ also generalizes mark-capture-recapture analysis.")
 (define-public r-ast2ast
   (package
     (name "r-ast2ast")
-    (version "1.0")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ast2ast" version))
        (sha256
-        (base32 "1magqdmsgksdn342jga7inbdijhb2ssy1kmxhi5cg5v9jlx9sbp9"))))
+        (base32 "0yzsag9wrnwm0ccadd724igpcq1868wpvfvrb5mm4dmzc897d9f9"))))
     (properties `((upstream-name . "ast2ast")))
     (build-system r-build-system)
     (arguments
@@ -20777,13 +20799,13 @@ MÃ¸lgaard, and Schytt (2025) <DOI:10.1037/met0000769>.")
 (define-public r-aisanalyze
   (package
     (name "r-aisanalyze")
-    (version "3.1.3")
+    (version "3.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AISanalyze" version))
        (sha256
-        (base32 "0ml17nwsap1y1jaji7as8p6prdfqlw7p5l2zf0xqkyjbig521p8j"))))
+        (base32 "1r4yna0918kg20l5hdpv1y794nyv17ffz7qxh1rb1pbqr9ips2fh"))))
     (properties `((upstream-name . "AISanalyze")))
     (build-system r-build-system)
     (arguments
@@ -22822,6 +22844,34 @@ correlations and creative graphics used in agricultural sciences (Agronomy,
 Zootechnics, Food Science and related areas).  Shimizu, G. D., Marubayashi, R.
 Y. P., Goncalves, L. S. A. (2025) <doi:10.4025/actasciagron.v47i1.73889>.")
     (license license:gpl2+)))
+
+(define-public r-agrometindices
+  (package
+    (name "r-agrometindices")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AgroMetIndices" version))
+       (sha256
+        (base32 "086w23jhxv5vdq77ncd3dh6wxa2w9y5qws4vf2zkrjygcwkbkmsc"))))
+    (properties `((upstream-name . "AgroMetIndices")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=AgroMetIndices")
+    (synopsis
+     "Agrometeorological Indices for Daily, Monthly, and Seasonal Time Scales")
+    (description
+     "This package provides methods for calculating agrometeorological indices from
+daily weather data at daily, monthly, and user-defined seasonal time scales.
+The package includes temperature, rainfall, growing degree days, heat and cold
+stress, wet and dry spells, extreme rainfall, and seasonal completeness indices,
+along with functions for meteorological data quality assessment and crop-season
+definition.  For method details see <doi:10.1002/wcc.147> and
+<doi:10.1038/s41598-026-55293-3>.")
+    (license license:expat)))
 
 (define-public r-agrobox
   (package
@@ -30665,13 +30715,13 @@ PRISM raster.  See the examples, testing versions and more details from:
 (define-public r-acdcquery
   (package
     (name "r-acdcquery")
-    (version "1.2.3")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "acdcquery" version))
        (sha256
-        (base32 "08sjcq58ah5z9d4wzjm02p4gq7mkqcbzyddpnzw7l4nj786pawqj"))))
+        (base32 "06xkgi6xw666bkc1iqa2vkbqkws7xma7vrmw1jhg3gjswiaznw04"))))
     (properties `((upstream-name . "acdcquery")))
     (build-system r-build-system)
     (arguments

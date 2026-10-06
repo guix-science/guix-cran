@@ -3593,13 +3593,13 @@ settings with a single continuous covariate.")
 (define-public r-wmap
   (package
     (name "r-wmap")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WMAP" version))
        (sha256
-        (base32 "192835s2wpgchmx03y5r3mjyfn4g2k6sfy4yd81dq2z6sqcwaz3x"))))
+        (base32 "0q705jf3c0xigssa5xmm4hyxkv6bhi8wkr4g29srl5lhdp4g0w4h"))))
     (properties `((upstream-name . "WMAP")))
     (build-system r-build-system)
     (arguments
@@ -6551,13 +6551,13 @@ can be calculated and plotted.")
 (define-public r-westerlund
   (package
     (name "r-westerlund")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Westerlund" version))
        (sha256
-        (base32 "1lmjws3li49fjdkij6icgqnnh217ymwg81zajgwjhzrpff1c8i88"))))
+        (base32 "004fi4cb4hzajisj7zlsj6668bhhmbxfybdksp4g5n004kdyx9gn"))))
     (properties `((upstream-name . "Westerlund")))
     (build-system r-build-system)
     (arguments
@@ -8378,6 +8378,36 @@ Australian Government Bureau of Meteorology and released under a Creative
 Commons (CC) Attribution 3.0 licence or Public Access Licence (PAL) as
 appropriate, see <https://www.bom.gov.au/copyright> for further details.")
     (license license:gpl3+)))
+
+(define-public r-weathermrjd
+  (package
+    (name "r-weathermrjd")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "weatherMRJD" version))
+       (sha256
+        (base32 "06a3bvzxx8g6gp60fn57z52dv68wqqm2ghm63fnpxlpv7wnnv42s"))))
+    (properties `((upstream-name . "weatherMRJD")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=weatherMRJD")
+    (synopsis
+     "Weather Analysis and Markov Regime Switching Jump Diffusion Models")
+    (description
+     "This package provides statistical tools for analyzing weather patterns,
+temperature anomalies, and climate risk.  Implements Markov regime-switching
+jump diffusion (MRJD) models to capture abrupt shifts, extreme weather events,
+and structural breaks in environmental time series data.  Estimates model
+parameters using maximum likelihood estimation and offers utility functions for
+simulating regime-dependent stochastic processes.  The regime-switching
+methodology is based on Hamilton (1989) \"Analysis of Time Series Subject to
+Changes in Regime\" <doi:10.2307/1912559>.")
+    (license license:expat)))
 
 (define-public r-weathermetrics
   (package

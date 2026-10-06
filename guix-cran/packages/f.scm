@@ -1854,43 +1854,6 @@ Puglielli et al. (2021) <doi:10.1111/nph.16952>, Carmona et al. (2021)
 more information.")
     (license license:gpl3)))
 
-(define-public r-funresmech
-  (package
-    (name "r-funresmech")
-    (version "1.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "funresMech" version))
-       (sha256
-        (base32 "0jl3l2vfvbnsnfg928wd8nw7ccjxcw27883hd49d9hv18zcvw5ap"))))
-    (properties `((upstream-name . "funresMech")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-shinythemes
-                             r-shinybs
-                             r-shiny
-                             r-rmarkdown
-                             r-rlang
-                             r-plotly
-                             r-magrittr
-                             r-ggplot2
-                             r-future
-                             r-dplyr
-                             r-deoptim))
-    (home-page "https://github.com/Segon03/funresMech")
-    (synopsis "Mechanistic Functional Response Analysis")
-    (description
-     "This package implements the mechanistic functional response model proposed by
-Okuyama (2012) <doi:10.1016/j.biocontrol.2011.10.008> for host-parasitoid
-systems.  Provides tools for model fitting, likelihood profiling, stochastic
-simulation, and visualization of parasitism distributions.  Includes an
-interactive shiny application for complete analysis workflows, built with plotly
-for interactive graphics and rmarkdown for reproducible reports.")
-    (license license:expat)))
-
 (define-public r-funreg
   (package
     (name "r-funreg")
@@ -17242,20 +17205,24 @@ growth history.  All data in this package was collected by the author, from
 (define-public r-fishboot
   (package
     (name "r-fishboot")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fishboot" version))
        (sha256
-        (base32 "15559338q6skljliqdvrpmy9naxadz6p26909vlvlc0dkwxfh46r"))))
+        (base32 "01ysi8lksgn34x6lrpbbymkj868zx4kflnr430g61xpsjwrih0wj"))))
     (properties `((upstream-name . "fishboot")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tropfishr r-ks r-foreach r-fishmethods
-                             r-doparallel))
+    (propagated-inputs (list r-tropfishr
+                             r-ks
+                             r-foreach
+                             r-fishmethods
+                             r-doparallel
+                             r-cli))
     (home-page "https://github.com/rschwamborn/fishboot")
     (synopsis
      "Bootstrap-Based Methods for the Study of Fish Stocks and Aquatic Populations")
@@ -17264,8 +17231,9 @@ growth history.  All data in this package was collected by the author, from
 fish stocks and aquatic populations.  Designed for ecologists and fisheries
 scientists, it supports data from length-frequency distributions,
 tag-and-recapture studies, and hard structure readings (e.g., otoliths).  See
-Schwamborn et al., 2019 for background.  The package includes functions for
-bootstrapped fitting of growth curves and plotting.")
+Schwamborn et al., 2019 <doi:10.1016/j.ecolmodel.2018.12.001> for background.
+The package includes functions for bootstrapped fitting of growth curves and
+plotting.")
     (license license:gpl3)))
 
 (define-public r-fishbc
@@ -22915,13 +22883,13 @@ Karny, M., Ettler, P. (2010) <doi:10.1198/TECH.2009.08104>.")
 (define-public r-fdm2id
   (package
     (name "r-fdm2id")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fdm2id" version))
        (sha256
-        (base32 "0kyjcalxvqwg9pdss747mmf4fz3mqsmc9vjn6bjv5v783iqvf7hs"))))
+        (base32 "17wryi9pym40hgp601jq33132rlvxb1i3fx02fhc9zfy94swaxzj"))))
     (properties `((upstream-name . "fdm2id")))
     (build-system r-build-system)
     (arguments

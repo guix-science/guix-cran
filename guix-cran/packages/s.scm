@@ -6391,13 +6391,13 @@ in Dong et al. (2026) <doi:10.1093/jssam/smaf048>, Wakefield et al. (2025)
 (define-public r-surveyplanning
   (package
     (name "r-surveyplanning")
-    (version "4.0")
+    (version "4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "surveyplanning" version))
        (sha256
-        (base32 "19ydgcwyvkhknf4qmlw7j25skcj9a4rd6s8j5n7bdqpljl60zync"))))
+        (base32 "0ph55ffpjxnp0rm26nhhv7gadpsjzk1pl16fdidm6ww850dqrbyx"))))
     (properties `((upstream-name . "surveyplanning")))
     (build-system r-build-system)
     (arguments
@@ -27346,6 +27346,36 @@ data for reporting, and exporting manageable Excel files for downstream
 analysis.")
     (license license:expat)))
 
+(define-public r-splitpopsurv
+  (package
+    (name "r-splitpopsurv")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "splitpopsurv" version))
+       (sha256
+        (base32 "11ard7idfgm6433w4r7955c2p46njl7cigfwfsyxngk3qk4accv7"))))
+    (properties `((upstream-name . "splitpopsurv")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-maxlik))
+    (home-page "https://github.com/nobifukuda/splitpopsurv")
+    (synopsis "Split-Population (Cure / Mover-Stayer) Survival Models")
+    (description
+     "Maximum-likelihood estimation of split-population (cure / mover-stayer) survival
+models: an accelerated failure-time regression for event timing among \"movers\",
+combined with a logistic regression on the probability of belonging to the
+immune \"stayer\" population.  Five baseline timing distributions are provided --
+log-logistic, Weibull, log-normal, gamma, and the generalized gamma that nests
+the other four -- following Schmidt & Witte (1989, Journal of Econometrics) and
+Yamaguchi (1992, 1998, Sociological Methodology).  This is an R translation of a
+set of Stata ml programs, with the log-likelihood corrected to match the
+published model and verified by simulation against known parameters.")
+    (license license:expat)))
+
 (define-public r-splitknockoff
   (package
     (name "r-splitknockoff")
@@ -28790,13 +28820,13 @@ this dataset.")
 (define-public r-sphereclust
   (package
     (name "r-sphereclust")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sphereclust" version))
        (sha256
-        (base32 "0apjhwz7c6sjcrrldp665j0753xxg231w1j7hsmia6s78w4nnzdr"))))
+        (base32 "17yr97mdczbgs805hvlvjivy7f6dhis28mz07kx14rkdbx9mm5fv"))))
     (properties `((upstream-name . "sphereclust")))
     (build-system r-build-system)
     (arguments
@@ -31042,13 +31072,13 @@ Association Studies of Binary Traits: Accounting for Covariate Effects\"
 (define-public r-spcf
   (package
     (name "r-spcf")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spCF" version))
        (sha256
-        (base32 "09gr66047l565rkxzh31xkwz4bakk4z5vz5lp2gf0z5kphlmrba5"))))
+        (base32 "16qri4qclqqz261kcw1419wp6zdcdimbpr95crc77jh98y6843jv"))))
     (properties `((upstream-name . "spCF")))
     (build-system r-build-system)
     (arguments
@@ -35051,13 +35081,13 @@ with nested data.")
 (define-public r-sparklyr
   (package
     (name "r-sparklyr")
-    (version "1.9.5")
+    (version "1.9.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sparklyr" version))
        (sha256
-        (base32 "1x82p1b6dhfhg8rpg839fflwhycm50bvmxl6yr16h1fl1yhc1k9j"))))
+        (base32 "04mf0kzpr5apicins8nkc2g0j49p0h74p4v4kham49r1c7nglj4g"))))
     (properties `((upstream-name . "sparklyr")))
     (build-system r-build-system)
     (arguments
@@ -67253,13 +67283,13 @@ the semaphore.")
 (define-public r-semanticfa
   (package
     (name "r-semanticfa")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "semanticfa" version))
        (sha256
-        (base32 "0vsd84fark7z4ny0a4cxin3kbw14rkkii3dabcn9f9rz6gz2n4jb"))))
+        (base32 "04qrr4cmhc1rhlvxwl4ssrf2rfmvaxsqjrdlj6ghvz07kkrcqdd4"))))
     (properties `((upstream-name . "semanticfa")))
     (build-system r-build-system)
     (arguments
@@ -82241,13 +82271,13 @@ additional support for stochastic experimentation.")
 (define-public r-safestats
   (package
     (name "r-safestats")
-    (version "0.8.8")
+    (version "0.8.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "safestats" version))
        (sha256
-        (base32 "0f1wiwy6v7nmdz72gcc10ayrf62rjhh0j23zpypi50xpvcmmkln9"))))
+        (base32 "1dvqcjxlv714wy3igxs1n7ys31rbc0l4fq7vj7g6g6a57r9xkjcd"))))
     (properties `((upstream-name . "safestats")))
     (build-system r-build-system)
     (arguments

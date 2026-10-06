@@ -17114,13 +17114,13 @@ microarray, RNA-seq, proteomics, or phosphoproteomics data.  See Yang P et al
 (define-public r-directional
   (package
     (name "r-directional")
-    (version "7.8")
+    (version "7.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Directional" version))
        (sha256
-        (base32 "1b224hj2ldklrkaz6if432cjgx2x0m8jsq9in8vhxdzqb5ws636c"))))
+        (base32 "0hx89sqdfmqhpghg5salf7i6aknx7kfpqihs6hv4k8pldcmrb5m8"))))
     (properties `((upstream-name . "Directional")))
     (build-system r-build-system)
     (arguments

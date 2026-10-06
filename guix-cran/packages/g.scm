@@ -29227,19 +29227,20 @@ of the data provided by the University of East Anglia Climate Research Unit,
 (define-public r-getbcbdata
   (package
     (name "r-getbcbdata")
-    (version "0.9.1")
+    (version "0.9.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GetBCBData" version))
        (sha256
-        (base32 "1j6qdfp6ln0ifs04sx1p8rqzad10i4gwfmdzwnmhxd01qfc7cf3z"))))
+        (base32 "0i5x3qxig9a30zg2mmpd7ljyb2zns1m9vlgxdwnxz8p6zq0p450b"))))
     (properties `((upstream-name . "GetBCBData")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-purrr
+    (propagated-inputs (list r-xml2
+                             r-purrr
                              r-parallelly
                              r-memoise
                              r-jsonlite
@@ -29248,7 +29249,6 @@ of the data provided by the University of East Anglia Climate Research Unit,
                              r-dplyr
                              r-curl
                              r-cli))
-    (native-inputs (list r-knitr))
     (home-page "https://github.com/msperlin/GetBCBData/")
     (synopsis
      "Imports Datasets from BCB (Central Bank of Brazil) using Its Official API")
@@ -33004,13 +33004,13 @@ Altay, John Paige, Andrea Riebler, Geir-Arne Fuglstad (2023)
 (define-public r-geoaddsae2
   (package
     (name "r-geoaddsae2")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geoaddSAE2" version))
        (sha256
-        (base32 "0zpx2194ac1db4a57zjfjkc6nddmgnnk8mlci9h9pbd670gn724q"))))
+        (base32 "1kyvkz1s07h0vy550blj5j7b78zqknj2iffnbffhlpvrq0y4sq9m"))))
     (properties `((upstream-name . "geoaddSAE2")))
     (build-system r-build-system)
     (arguments
@@ -36898,13 +36898,13 @@ modeling, as discussed in the forthcoming work of Dimitrova et al. (2026).")
 (define-public r-gedi2
   (package
     (name "r-gedi2")
-    (version "2.3.4")
+    (version "2.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gedi2" version))
        (sha256
-        (base32 "1niysw0gh4hgih2gwbdsc3q644sp873jgqlypi1yg44yxc3rpb42"))))
+        (base32 "0qi2pr4bcb2s7h6yhz6j916syy2qg2s0wqjm3zjqbab5ac8p43br"))))
     (properties `((upstream-name . "gedi2")))
     (build-system r-build-system)
     (arguments
@@ -36925,8 +36925,10 @@ with thin R wrappers to enable analysis of large-scale single-cell datasets.
 The package supports multiple data modalities including count matrices, paired
 data (splicing, RNA velocity, CITE-seq), and binary indicators.  It implements a
 latent variable model with block coordinate descent optimization for
-dimensionality reduction and batch effect correction.  Core algorithms are
-described in Madrigal et al. (2024) <doi:10.1038/s41467-024-50963-0>.")
+dimensionality reduction and batch effect correction.  The method is described
+in Mikaeili Namini et al. (2026) <doi:10.1093/bioinformatics/btag334>, building
+on the original GEDI model of Madrigal et al. (2024)
+<doi:10.1038/s41467-024-50963-0>.")
     (license license:expat)))
 
 (define-public r-gecko

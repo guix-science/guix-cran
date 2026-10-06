@@ -3956,6 +3956,41 @@ experiments and calculation of goal-finding strategies.  This package is
 centered on an approach using machine learning for path classification.")
     (license license:gpl3)))
 
+(define-public r-rtprep
+  (package
+    (name "r-rtprep")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rtprep" version))
+       (sha256
+        (base32 "0kzh88m13xr73ira5x3adw0dbp92kpa1zmclz4w7h8hm2r9a8g8p"))))
+    (properties `((upstream-name . "rtprep")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/GidonFrischkorn/rtprep")
+    (synopsis "Screening, Trimming, and Aggregating Response Time Data")
+    (description
+     "This package provides a uniform interface to common response time preprocessing
+decisions that precede analysing aggregated response times or fitting an
+evidence accumulation model.  Screening rules from different preprocessing
+routines -- absolute cutoffs, standard deviation and median absolute deviation
+criteria, recursive moving criteria, and model-based mixture flagging -- all
+return the same per-trial object, so that consequences of a preprocessing choice
+can be compared rather than assumed.  The package also provides aggregation into
+EZ-diffusion summary statistics, diagnostics reporting what each rule removed
+and where rules disagree.  Finally, generators for response time data with
+contaminants of known type are provided, so that a chosen pipeline can be tested
+against ground truth.  Screening criteria follow Van Selst and Jolicoeur (1994)
+<doi:10.1080/14640749408401131>, the contaminant mixture Ratcliff and Tuerlinckx
+(2002) <doi:10.3758/BF03196302>, and the EZ-diffusion equations Wagenmakers, van
+der Maas and Grasman (2007) <doi:10.3758/BF03194023>.")
+    (license license:gpl2+)))
+
 (define-public r-rtpcr
   (package
     (name "r-rtpcr")
@@ -32405,13 +32440,13 @@ function for authorization and loading reports.")
 (define-public r-rgof
   (package
     (name "r-rgof")
-    (version "4.0.0")
+    (version "4.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rgof" version))
        (sha256
-        (base32 "0p2qkbfprvjg13lnhvm3ml8jfv9v0c0h1wkgr3sipx8yky2pskki"))))
+        (base32 "1jpmmdg4xak3hna93g1zapmgqk62mpj1lkhj8k1ynhsfxb7r0g66"))))
     (properties `((upstream-name . "Rgof")))
     (build-system r-build-system)
     (arguments
@@ -33397,13 +33432,13 @@ methods are based on digital image processing and plant phenotyping approaches
 (define-public r-rgbif
   (package
     (name "r-rgbif")
-    (version "3.8.5")
+    (version "3.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rgbif" version))
        (sha256
-        (base32 "1pl5wml0w951p5h69pnf4glwhg8k2ipf2qgzjw1h13hms8vz6ayp"))))
+        (base32 "0nd9l985n7rznjkvbawbgjx0hi9bhbfqr9c04abrf4pcnxa76djw"))))
     (properties `((upstream-name . "rgbif")))
     (build-system r-build-system)
     (arguments
@@ -36523,13 +36558,13 @@ models.")
 (define-public r-restrictr
   (package
     (name "r-restrictr")
-    (version "0.1.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "restrictR" version))
        (sha256
-        (base32 "0n7if6f3xdfzz4ihmz0l9rx8mn19jyny7p00q3y8dc06bxr0n0vc"))))
+        (base32 "0i824aqa0v9rplb03bdf8jrx6swnh82rpcb1964b7ysb61w5zxyw"))))
     (properties `((upstream-name . "restrictR")))
     (build-system r-build-system)
     (arguments
@@ -36537,13 +36572,13 @@ models.")
       #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://gillescolling.com/restrictR/")
-    (synopsis "Composable Runtime Contracts for R")
+    (synopsis "Composable Runtime Contracts")
     (description
      "Build reusable validators from small building blocks using the base pipe
 operator.  Define runtime contracts once with @code{restrict()} and enforce them
 anywhere in code.  Validators compose naturally, support dependent rules via
-formulas, and produce clear, path-aware error messages.  No DSL, no operator
-overloading, just idiomatic R.")
+formulas, and produce clear, path-aware error messages.  No domain-specific
+language, no operator overloading, just idiomatic R.")
     (license license:expat)))
 
 (define-public r-restorenet
@@ -45424,25 +45459,21 @@ Monopoly Profit Maximization, Cournot's Duopoly, Solow (1956,
 (define-public r-recommenderlab
   (package
     (name "r-recommenderlab")
-    (version "1.0.7")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "recommenderlab" version))
        (sha256
-        (base32 "0kakm8byqq7fa4qcgk405pg5y1ca3szqkkz9hi642x47ihl2icci"))))
+        (base32 "104y3skw67lqmd6flglx0ljx18nmn8qrn3fgzfzqvdgjch3arsrd"))))
     (properties `((upstream-name . "recommenderlab")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-registry
-                             r-recosystem
-                             r-proxy
-                             r-matrixstats
-                             r-matrix
-                             r-irlba
+    (propagated-inputs (list r-registry r-proxy r-matrixstats r-matrix
                              r-arules))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/mhahsler/recommenderlab")
     (synopsis "Lab for Developing and Testing Recommender Algorithms")
     (description
@@ -50555,13 +50586,13 @@ graphing.")
 (define-public r-rcxl
   (package
     (name "r-rcxl")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rcxl" version))
        (sha256
-        (base32 "1p5zmvmafpnfqkix15nfqki63wwgldv3aspbl74a797y68nh99b9"))))
+        (base32 "044dqil4fhj0i1fbpcj0vc60fdglx26bcfnqldlvli8i2zjnpnsc"))))
     (properties `((upstream-name . "rcxl")))
     (build-system r-build-system)
     (arguments
@@ -59900,6 +59931,95 @@ used by fababean model in the Agricultural Production Systems @code{sIMulator}
 ('APSIM') Next Generation.  Includes tools for crop process calculations,
 parameter management and customisation, enabling users to explore, modify and
 apply fababean model components.")
+    (license license:expat)))
+
+(define-public r-rapsimng-decide-sowing
+  (package
+    (name "r-rapsimng-decide-sowing")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rapsimng.decide.sowing" version))
+       (sha256
+        (base32 "1vd7na98lgc5ndddqlsjcph5ksfagjm8ic8lgb8fzbm6f7mki4zq"))))
+    (properties `((upstream-name . "rapsimng.decide.sowing")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-rlang r-rapsimng-decide-core r-knitr
+                             r-dplyr))
+    (home-page "https://sowing.decide.rapsimng.bangyou.me/")
+    (synopsis
+     "Analyse APSIM Next Generation Simulation Outputs for Sowing Decision")
+    (description
+     "This package provides functions to analyse Agricultural Production Systems
+@code{sIMulator} ('APSIM') Next Generation simulation outputs to support sowing
+decision under specified environments and management assumptions.  The package
+focuses on transparent, reproducible summarisation of model outputs such as
+sowing window, establishment risk, and early crop development, without
+performing APSIM simulations, interpreting user intent, or making normative
+recommendations.")
+    (license license:expat)))
+
+(define-public r-rapsimng-decide-nitrogen
+  (package
+    (name "r-rapsimng-decide-nitrogen")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rapsimng.decide.nitrogen" version))
+       (sha256
+        (base32 "1gplf44hvj5ff1l6656is4h3wjnbkl9jarwlypqfna7vi0k35k0w"))))
+    (properties `((upstream-name . "rapsimng.decide.nitrogen")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-rlang r-rapsimng-decide-core r-knitr
+                             r-dplyr))
+    (home-page "https://nitrogen.decide.rapsimng.bangyou.me/")
+    (synopsis
+     "Analyse APSIM Next Generation Simulation Outputs for Nitrogen Decision")
+    (description
+     "This package provides functions to analyse Agricultural Production Systems
+@code{sIMulator} ('APSIM') Next Generation simulation outputs to support
+nitrogen decision under specified environments and management assumptions.  The
+package focuses on transparent, reproducible summarisation of model outputs such
+as nitrogen requirements, uptake, and efficiency, without performing APSIM
+simulations, interpreting user intent, or making normative recommendations.")
+    (license license:expat)))
+
+(define-public r-rapsimng-decide-cultivar
+  (package
+    (name "r-rapsimng-decide-cultivar")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rapsimng.decide.cultivar" version))
+       (sha256
+        (base32 "0daqm7f88jxlkycaz00ah0z188s1pfbwclqwajh31bg91ah6z916"))))
+    (properties `((upstream-name . "rapsimng.decide.cultivar")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-rlang r-rapsimng-decide-core r-knitr
+                             r-dplyr))
+    (home-page "https://cultivar.decide.rapsimng.bangyou.me/")
+    (synopsis
+     "Analyse APSIM Next Generation Simulation Outputs for Cultivar Comparison")
+    (description
+     "This package provides functions to analyse Agricultural Production Systems
+@code{sIMulator} ('APSIM') Next Generation simulation outputs to support
+cultivar-level comparison under specified environments and management
+assumptions.  The package focuses on transparent, reproducible summarisation of
+model outputs such as yield, phenology timing, and stress exposure, without
+performing APSIM simulations, interpreting user intent, or making normative
+recommendations.")
     (license license:expat)))
 
 (define-public r-rapsimng-decide-core

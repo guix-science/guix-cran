@@ -14338,13 +14338,13 @@ is available on @code{gitHub}: <https://github.com/Docma-TU/@code{toscaData>}.")
 (define-public r-toro
   (package
     (name "r-toro")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "toro" version))
        (sha256
-        (base32 "1byi2q5qapmqp1dw1i2143wqmah2dfn8shhvykq6jinywaw7r6fw"))))
+        (base32 "1920y52rhy120smf5h24325yj4dg675cz5l9dc3rj8w1qchc72zv"))))
     (properties `((upstream-name . "toro")))
     (build-system r-build-system)
     (arguments
@@ -14373,18 +14373,23 @@ is available on @code{gitHub}: <https://github.com/Docma-TU/@code{toscaData>}.")
                              r-base64enc))
     (native-inputs (list esbuild))
     (home-page "https://epi-interactive-ltd.github.io/toro/")
-    (synopsis
-     "Interactive & Customisable Maps using the 'MapLibre GL JS' Library")
+    (synopsis "High-Performance Interactive Mapping")
     (description
-     "Create interactive maps that can keep up with complex visualisations and large
-datasets, with this useful interface to the @code{MapLibre} GL JS
-(<https://maplibre.org/maplibre-gl-js/docs/>) library.  Users can create maps
-directly in the console, or as an HTML widget within Shiny web applications, and
-render spatial data quickly with many customisable options (clusters, custom
-icons, map layers, and backgrounds).  The goal of the package is to make it
-easier to interpret and explore large spatial datasets within the context of a
-Shiny dashboard, without having long loading times waiting for a map to update
-with new data.")
+     "Interactive spatial visualisations are a cornerstone for exploring and
+communicating complexity, and are commonly embedded into reports or interactive
+dashboards.  However, as the amount of data grows, so do the demands on
+functionality, especially for technical and scientific data.  To bridge this gap
+and create a mapping package that is high performing, a modern approach is
+needed that draws from best software engineering practices.  Toro provides
+bindings to @code{MapLibre} GL JS', an open-source
+@code{JavaScript'/'TypeScript} library for rendering interactive maps in the
+browser, built from the ground up for responsiveness and scale, by the
+@code{MapLibre} Organization (2020) <https://github.com/@code{MapLibre>}.  This
+connection allows users to create interactive maps that can easily be integrated
+into both Quarto and the R Shiny dashboard framework.  Toro thereby enables
+spatial visualisation and exploration of data that might otherwise be too
+limited, too slow, or too hard to scale using more traditional interactive
+mapping tools such as leaflet'.")
     (license license:agpl3+)))
 
 (define-public r-tornado
@@ -16637,13 +16642,13 @@ Database (TMDb) is a popular user editable database for movies and TV shows (see
 (define-public r-tmcalculator
   (package
     (name "r-tmcalculator")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TmCalculator" version))
        (sha256
-        (base32 "07a66zl9qb4sr49w63i1mvb9aprmjl4j0x8djvf3ig7lxzyhj4nq"))))
+        (base32 "1dj1apznyhhm1d8q4xl3vaqb76i63ds557hyqsdq5pfa78yfrlzj"))))
     (properties `((upstream-name . "TmCalculator")))
     (build-system r-build-system)
     (arguments
@@ -16664,35 +16669,37 @@ Database (TMDb) is a popular user editable database for movies and TV shows (see
     (description
      "Accurate calculation of nucleic acid melting temperature (Tm) is fundamental to
 many molecular biology applications, and this software scales Tm analysis from
-individual sequences to genomeâwide thermodynamic profiling.  This package
+individual sequences to genome-wide thermodynamic profiling.  This package
 extends Tm analysis from simple sequence level computation to comprehensive
 genome-wide thermodynamic profiling.  It takes four input sources: sequence
 strings, a FASTA file, an installed BSgenome package named by string, or a
 GRanges carrying sequences.  A regions argument selects what to cover and window
 and slide set the resolution at which it is tiled.  The implementation provides
 three Tm calculation methods: the Wallace rule (Thein & Wallace, 1986),
-empirical GCâcontent formulas (Marmur, 1962; Schildkraut, 2010; Wetmur, 1991;
-Untergasser, 2012; von Ahsen, 2001), and nearestâneighbor thermodynamics
-(Breslauer, 1986; Sugimoto, 1996; Allawi, 1998; @code{SantaLucia}, 2004; Freier,
-1986; Xia, 1998; Chen, 2012; Bommarito, 2000; Turner, 2010; Sugimoto, 1995;
-Allawi, 1997; @code{SantaLucia}, 2005; Zuber, 2022; Ghosh, 2020, 2023).
-Nearest-neighbor parameter sets are provided for DNA, RNA and RNA/DNA hybrid
-duplexes.  These include sets obtained by melting-temperature optimization that
-are fitted directly at a stated sodium concentration (Weber, 2015; Ferreira,
-2019; Basilio Barbosa, 2019; Banerjee, 2020), which replace salt correction
-rather than being corrected; salt correction is skipped automatically when the
-requested condition matches the one a set was fitted at.  The Zuber (2022) set
-additionally replaces the single terminal-AU penalty with end terms that depend
-on the penultimate base pair, applied automatically at both duplex ends.
-Parameter sets measured under molecular crowding (Ghosh, 2020, 2023) are also
-provided for DNA and RNA duplexes, so that duplex stability can be evaluated
-under cell-like rather than dilute-solution conditions.  Corrections are
-otherwise supported for salt ions (@code{SantaLucia}, 1996, 1998; Owczarzy,
-2004, 2008) and for chemical conditions such as dimethyl sulfoxide and
-formamide.  A compiled C++ core, and task partitioning by region across
-@code{BiocParallel} workers through a BPPARAM argument, profile the human genome
-in 3 minutes on a six-core laptop.  This package returns result as a GRanges
-object for interoperability with Bioconductor workflows and downstream
+empirical GC-content formulas (Marmur, 1962; Schildkraut, 1965; Wetmur, 1991;
+Untergasser, 2012; von Ahsen, 2001), and nearest-neighbor thermodynamics
+(Breslauer, 1986; Sugimoto, 1996; Allawi, 1997, 1998; @code{SantaLucia}, 2004;
+Freier, 1986; Xia, 1998; Chen, 2012; Bommarito, 2000; Turner, 2010; Sugimoto,
+1995; Peyret, 1999; @code{SantaLucia} & Peyret, 2001; Watkins &
+@code{SantaLucia}, 2005; Zuber, 2022; Ghosh, 2020, 2023).  Nearest-neighbor
+parameter sets are provided for DNA, RNA and RNA/DNA hybrid duplexes.  These
+include sets obtained by melting-temperature optimization that are fitted
+directly at a stated sodium concentration (Weber, 2015; Ferreira, 2019; Basilio
+Barbosa, 2019; Banerjee, 2020), which replace salt correction rather than being
+corrected; salt correction is skipped automatically when the requested condition
+matches the one a set was fitted at.  The Zuber (2022) set additionally replaces
+the single terminal-AU penalty with end terms that depend on the penultimate
+base pair, applied automatically at both duplex ends.  Parameter sets measured
+under molecular crowding (Ghosh, 2020, 2023) are also provided for DNA and RNA
+duplexes, so that duplex stability can be evaluated under cell-like rather than
+dilute-solution conditions.  Salt corrections are otherwise applied to the
+nearest-neighbor model (@code{SantaLucia}, 1996, 1998; Owczarzy, 2004, 2008),
+while each empirical GC-content formula carries the salt term it was published
+with; corrections for chemical conditions such as dimethyl sulfoxide and
+formamide apply to both.  A compiled C++ core, and task partitioning by region
+across @code{BiocParallel} workers through a BPPARAM argument, profile the human
+genome in 3 minutes on a six-core laptop.  This package returns result as a
+GRanges object for interoperability with Bioconductor workflows and downstream
 multi-omics analyses.  Data-level integration reconciles Tm windows with
 external multi-omics GRanges objects through overlap, nearest-feature,
 windowed-count, and binned-average strategies, returning a single unified
@@ -22545,13 +22552,13 @@ approach, but an uninformative prior is also available.")
 (define-public r-tidyllm
   (package
     (name "r-tidyllm")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyllm" version))
        (sha256
-        (base32 "1jw8gvxh4r9sgcvz2n2n8js084dbnj2px897lis0lv29xnfp0shz"))))
+        (base32 "16xqjby2y7jz75yz0cwvc4pf5kgc0a8l77fqp00bjvmq1d5kgr4s"))))
     (properties `((upstream-name . "tidyllm")))
     (build-system r-build-system)
     (arguments
@@ -23246,13 +23253,13 @@ operations.")
 (define-public r-tidyfinance
   (package
     (name "r-tidyfinance")
-    (version "0.8.0")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyfinance" version))
        (sha256
-        (base32 "0y2m8zmh7gybfkxb0ibp4ibh4jpg96ay6kh1ilhksvgyhyqlzvnk"))))
+        (base32 "1bw1x607ragmbmyppjngrj4r7lhan13k61w7fv7id15zf0jla9wa"))))
     (properties `((upstream-name . "tidyfinance")))
     (build-system r-build-system)
     (arguments
@@ -25789,6 +25796,48 @@ details see Bhattacharyya et al. (2022) <doi:10.1007/s11071-021-07099-3>.")
      "This package provides a user-friendly R data package that is intended to make
 Turkish higher education statistics more accessible.")
     (license license:gpl3)))
+
+(define-public r-thesistats
+  (package
+    (name "r-thesistats")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ThesiStats" version))
+       (sha256
+        (base32 "1k4idykjz7wwf7qkz6k323gijw5w68zxj6fg7xanxknp0ln94gfk"))))
+    (properties `((upstream-name . "ThesiStats")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-stringi
+                             r-stringdist
+                             r-semtools
+                             r-rlang
+                             r-readr
+                             r-psych
+                             r-lavaan
+                             r-gtable
+                             r-gridextra
+                             r-ggplot2
+                             r-dplyr
+                             r-broom))
+    (home-page "https://github.com/jventural/ThesiStats")
+    (synopsis "Statistical Tools for Quantitative Theses")
+    (description
+     "This package provides helpers for the analyses that quantitative theses in the
+social and behavioral sciences repeat: renaming and scoring items, recoding
+Likert responses, cleaning sociodemographic variables written in Spanish (age,
+academic term, degree and university), descriptive statistics, univariate and
+multivariate normality checks, omega reliability from ordinal confirmatory
+factor models, correlation matrices in table format, and two-group or
+several-group comparisons with effect sizes.")
+    (license license:gpl3+)))
 
 (define-public r-thesface
   (package
@@ -35945,13 +35994,13 @@ in conversational corpora.  For more details, see Dingemanse et al., (2022)
 (define-public r-talib
   (package
     (name "r-talib")
-    (version "0.9-3")
+    (version "0.9-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "talib" version))
        (sha256
-        (base32 "1lrbdifw2lvqr85v25b0ya2w669nqsas5yi2wc4cv60s1n7555z9"))))
+        (base32 "1vpmjbzx2n7jy5yjnb50vl1rscg8035kpgfa2raiqyxaa7i5kkxk"))))
     (properties `((upstream-name . "talib")))
     (build-system r-build-system)
     (arguments

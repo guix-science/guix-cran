@@ -41,6 +41,34 @@
   #:use-module (guix-cran packages b)
   #:use-module (guix-cran packages a))
 
+(define-public r-xyt
+  (package
+    (name "r-xyt")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "xyt" version))
+       (sha256
+        (base32 "0mas10yvxy734mm8a2bvvjbip16xbzjh5sy53xyif04ir2a67cf6"))))
+    (properties `((upstream-name . "xyt")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/AustralianAntarcticDivision/xyt")
+    (synopsis "Extract Raster Time Series Values at Points in Space and Time")
+    (description
+     "Extract values from a time series of rasters at points that each carry their own
+date-time.  The series is described by a reader function rather than by data
+held in memory, so only the time slices actually needed are read.  Values are
+taken from the slice nearest in time, or interpolated linearly between the two
+slices that bracket each point.  Derived from the @code{extract()} method of
+package raadtools'.")
+    (license license:gpl3)))
+
 (define-public r-xyomics
   (package
     (name "r-xyomics")
@@ -3026,6 +3054,39 @@ morphological relationships between object lengths using photographic data
 collected from drones.  The Bayesian model is described in \"Bayesian approach
 for predicting photogrammetric uncertainty in morphometric measurements derived
 from drones\" (Bierlich et al., 2021, <doi:10.3354/meps13814>).")
+    (license license:expat)))
+
+(define-public r-xbioclim
+  (package
+    (name "r-xbioclim")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "xbioclim" version))
+       (sha256
+        (base32 "000za4qpnxn58h7rb6flpiypwhimbsgq6x7nf9cn524lsgmjhkgr"))))
+    (properties `((upstream-name . "xbioclim")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://alrobles.github.io/xbioclim/")
+    (synopsis "Bioclimatic Variables from Monthly Climate Data")
+    (description
+     "Computes the 19 standard bioclimatic variables (BIO01-BIO19) from monthly
+climate data.  The variable set was originally proposed by Nix (1986,
+ISBN:978-0-644-04887-3) for the BIOCLIM modelling system and is also distributed
+with the CHELSA climatologies (Karger et al., 2017
+<doi:10.1038/sdata.2017.122>).  Provides both individual variable functions and
+a unified interface to compute all 19 variables at once.  Designed as an R
+implementation of the xbioclim C++ library (Robles Fernandez, 2026
+<https://github.com/alrobles/xbioclimcpp>).  Supports single-pixel vectors and
+block-based raster processing via terra for memory-efficient handling of large
+spatial datasets.  Includes helpers to transform ERA5-Land hourly reanalysis
+data (MuÃ±oz-Sabater et al., 2021 <doi:10.5194/essd-13-4349-2021>) into monthly
+climate inputs.")
     (license license:expat)))
 
 (define-public r-xaringanthemer

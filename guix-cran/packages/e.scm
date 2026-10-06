@@ -16235,13 +16235,13 @@ big for CRAN, can be found here on the package's Github Pages website:
 (define-public r-enhancer
   (package
     (name "r-enhancer")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "enhancer" version))
        (sha256
-        (base32 "0j4nspzs44ns2x47dpny3yqbysgzgrabk6aq0sch51fq8j0z2zcg"))))
+        (base32 "13cjrkpakfhk7w7ym4kr4barhvl90gmcgvbaxg7lzqlpkkwfs3hx"))))
     (properties `((upstream-name . "enhancer")))
     (build-system r-build-system)
     (arguments
@@ -27340,6 +27340,44 @@ detailed in Guan, Y; Page, G.L.; Reich, B.J.; Ventrucci, M.; Yang, S; (2020)
 available.  The semi-parametric model relies on INLA'.  The INLA package can be
 obtained from <https://www.r-inla.org/>.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-ecan
+  (package
+    (name "r-ecan")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ecan" version))
+       (sha256
+        (base32 "108yfrbkyqxrs8cqpj4fsm8phvgdc3m4bnm6gvv7pwf9q2l7m8r9"))))
+    (properties `((upstream-name . "ecan")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vegan
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-mass
+                             r-magrittr
+                             r-labdsv
+                             r-jsonlite
+                             r-ggplot2
+                             r-dplyr
+                             r-dendextend
+                             r-cluster))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/matutosi/ecan")
+    (synopsis "Ecological Analysis and Visualization")
+    (description
+     "Support ecological analyses such as ordination and clustering.  Contains
+consistent and easy wrapper functions of stat', vegan', and labdsv packages, and
+visualisation functions of ordination and clustering.")
+    (license license:expat)))
 
 (define-public r-ec50estimator
   (package
