@@ -8768,6 +8768,43 @@ Numbers proposed by Chao, Chiu and Jost (2014)
 <doi:10.1146/annurev-ecolsys-120213-091540>.")
     (license license:expat)))
 
+(define-public r-hilldiv3
+  (package
+    (name "r-hilldiv3")
+    (version "3.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hilldiv3" version))
+       (sha256
+        (base32 "14k1rspnyfrzd1fg86wp8kbk6k6q8wrmhk8j0zg8121ckrha11kl"))))
+    (properties `((upstream-name . "hilldiv3")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-cli r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/alberdilab/hilldiv3")
+    (synopsis "Integral Analysis of Diversity Based on Hill Numbers")
+    (description
+     "Measures and compares the diversity of biological communities (e.g. tables of
+operational taxonomic units (OTUs), amplicon sequence variants (ASVs) or
+metagenome-assembled genomes (MAGs)) based on Hill numbers, in a unified
+framework for neutral, phylogenetic and functional diversity measurement,
+diversity partitioning, (dis)similarity measurement, diversity profiles,
+evenness and redundancy.  The statistical framework encompasses richness,
+Shannon and Simpson diversity, Faith's phylogenetic diversity (PD), Rao's
+quadratic entropy and Sorensen- and @code{UniFrac-type} dissimilarities, all
+grounded in a single Hill-number framework.  Methods are described in Jost
+(2007) <doi:10.1890/06-1736.1>, Chao et al. (2010) <doi:10.1098/rstb.2010.0272>,
+Chiu et al. (2014) <doi:10.1890/12-0960.1> and reviewed in Alberdi & Gilbert
+(2019) <doi:10.1111/1755-0998.13014>.  Optional import adapters interoperate
+with the Bioconductor packages phyloseq', @code{SummarizedExperiment} and
+@code{TreeSummarizedExperiment}', which are available from
+<https://bioconductor.org>.")
+    (license license:gpl3)))
+
 (define-public r-hildareadr
   (package
     (name "r-hildareadr")
@@ -17562,6 +17599,40 @@ its performance given by Benkeser and van der Laan (2016)
 algorithm was described by Hejazi, Coyle, and van der Laan (2020)
 <doi:10.21105/joss.02526>.")
     (license license:gpl3)))
+
+(define-public r-hal
+  (package
+    (name "r-hal")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hal" version))
+       (sha256
+        (base32 "1m1l26fx5dpyah3hgb9qgqlbijsimqi50813w5l45mivnvkk0qjd"))))
+    (properties `((upstream-name . "hal")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang
+                             r-r6
+                             r-processx
+                             r-jsonlite
+                             r-curl
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://arclite-red.github.io/hal/")
+    (synopsis "Agentic Coding Assistants")
+    (description
+     "This package provides a native R interface to agentic coding assistants.  Talks
+directly to local command line interfaces ('@code{GitHub} Copilot', Anthropic
+Claude Code') over standard input/output and to a local vscode.lm bridge inside
+Positron', providing multi-model chat, tool calling, and in-session R
+evaluation.  Supports a single stateful @code{hal()} session as well as
+disposable @code{hal_ask()} / @code{hal_do()} pipeline verbs, plot capture so
+models can see graphics, verified data transforms, and user-defined tools.")
+    (license license:expat)))
 
 (define-public r-hakaiapi
   (package

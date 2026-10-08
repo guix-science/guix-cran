@@ -15131,13 +15131,13 @@ textbook of Tukey (1977) <ISBN: 978-0201076165>.")
 (define-public r-letsrept
   (package
     (name "r-letsrept")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "letsRept" version))
        (sha256
-        (base32 "1ajzx36k365rcdnx6k8nawqkyadb58qy14jp7hgmcwy1l6bmlqr4"))))
+        (base32 "03gzgr7i7j4wxil9pcjilaqqq212qxffsifckc1yiggh3jydi1qs"))))
     (properties `((upstream-name . "letsRept")))
     (build-system r-build-system)
     (arguments
@@ -15864,6 +15864,37 @@ includes political, sociodemographic, career, online presence, public attention,
 and visual information for over 67,000 contemporary and historical politicians
 from 16 countries.")
     (license license:gpl3)))
+
+(define-public r-legiretraite
+  (package
+    (name "r-legiretraite")
+    (version "0.1.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "legiretraite" version))
+       (sha256
+        (base32 "05ib4mh6a2w273d6r5iykz7bk2zqw8qlrnkmnpfyg5kvkqjnrq12"))))
+    (properties `((upstream-name . "legiretraite")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-lubridate
+                             r-logger
+                             r-data-table
+                             r-checkmate
+                             r-arrow))
+    (home-page "https://git.drees.fr/drees_code_public/outils/legiretraite")
+    (synopsis
+     "Recueil De ParamÃ¨tres LÃ©gislatifs et RÃ©glementaires Sur Les Retraites FranÃ§aises")
+    (description
+     "Fournit un recueil de paramÃ¨tres lÃ©gislatifs et rÃ©glementaires sur les
+retraites franÃ§aises, ainsi que des fonctions pour rechercher ces paramÃ¨tres
+par gÃ©nÃ©ration et catÃ©gorie d'assurÃ© et pour reconstituer les Ã©chantillons
+des enquÃªtes interrÃ©gimes EIR et EIC de la DREES.")
+    (license (license:fsdg-compatible "EUPL-1.2"))))
 
 (define-public r-legion
   (package
@@ -21659,6 +21690,43 @@ sequence-to-sequence model with Lambda-style temporal aggregation.  Provides
 transformations, uncertainty estimates, diagnostics, and publication-ready
 plots.")
     (license license:gpl3)))
+
+(define-public r-lambdastar
+  (package
+    (name "r-lambdastar")
+    (version "0.8.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lambdastar" version))
+       (sha256
+        (base32 "1r1aszy09vccdj4axx6x87ixbjm5j5rnwpxxwzy9zx3kyjsbw4m5"))))
+    (properties `((upstream-name . "lambdastar")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-boot))
+    (home-page "https://cran.r-project.org/package=lambdastar")
+    (synopsis "Measurement and Linear Hypothesis Models for Lambda Star")
+    (description
+     "Estimates intrinsic and captured noncentrality from parallel measurements and
+evaluates the numerical parsimony functional for an explicitly encoded
+hypothesis matrix, formula, or compatible linear model.  Includes common-case
+model comparisons, quantized entropy capacity, controlled temperature
+integration, and explicit singularity diagnostics.  Uses manuscript projection
+estimates by default, with an explicit alternative population estimator.
+Supports common nuisance adjustment and ordinary case or cluster percentile
+bootstrap intervals, with diagnostics for undefined estimates and preserved
+model coding.  Provides reusable row-bound design specifications and explicit
+conditional term blocks, named linear restrictions, explicit predictor-grid
+contrasts, and fixed or reevaluated basis recipes under a homogeneous isotropic
+measurement-fluctuation assumption.  Supports explicit known-reference mean
+hypotheses and paired differences from parallel measurement pairs.  Encodes
+fixed person-by-occasion models with parallel indicators, implicit person
+adjustment and whole-person bootstrap with distinct sampled copies.  The
+underlying method is described in Hammes (2026) <doi:10.5281/zenodo.22962377>.")
+    (license license:asl2.0)))
 
 (define-public r-lama
   (package

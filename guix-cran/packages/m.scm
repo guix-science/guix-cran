@@ -2772,13 +2772,13 @@ dose-response surfaces.")
 (define-public r-mvglmmrank
   (package
     (name "r-mvglmmrank")
-    (version "1.2-6")
+    (version "1.2-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mvglmmRank" version))
        (sha256
-        (base32 "17qkq3hb9s157v10qi5dlh0m6x0x594da450h5qbp2kmc1xf8pwa"))))
+        (base32 "0dykapjg6ry3gjx1mnxfslsfsfs5ksawgjdhddqdiyfxrw59lnzd"))))
     (properties `((upstream-name . "mvglmmRank")))
     (build-system r-build-system)
     (arguments
@@ -10426,25 +10426,25 @@ creating documents and presentations.")
 (define-public r-msu
   (package
     (name "r-msu")
-    (version "0.0.1")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "msu" version))
        (sha256
-        (base32 "1vhh9725dbywmzihnmsq1jircpn91r8227j2f76fvma9rwss90p7"))))
+        (base32 "00m41652fjp26qpkdjbd6yigl991fi8m18cghr85ijs01qsjyk1w"))))
     (properties `((upstream-name . "msu")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-entropy))
+    (propagated-inputs (list r-infotheo))
     (home-page "https://cran.r-project.org/package=msu")
     (synopsis "Multivariate Symmetric Uncertainty and Other Measurements")
     (description
      "Estimators for multivariate symmetrical uncertainty based on the work of Gustavo
-Sosa et al. (2016) <@code{arXiv:1709.08730>}, total correlation, information
-gain and symmetrical uncertainty of categorical variables.")
+Sosa et al. (2016) <doi:10.48550/@code{arXiv.1709.08730>}, total correlation,
+information gain and symmetrical uncertainty of categorical variables.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -12600,13 +12600,13 @@ contrasts.  See Fang et al. (2025) <doi:10.48550/@code{arXiv.2507.17190>}.")
 (define-public r-mrstdcrt
   (package
     (name "r-mrstdcrt")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MRStdCRT" version))
        (sha256
-        (base32 "1xbl8pj89y3zvlxchd7gzpcwwn2lp7r3vcjcqchjp9v5r3alg6xq"))))
+        (base32 "1l84kk0rb62cpsrhj76nd4gfqiri7phlrzgspvzd5rcy5a7bmwkj"))))
     (properties `((upstream-name . "MRStdCRT")))
     (build-system r-build-system)
     (arguments
@@ -16846,24 +16846,24 @@ provide widely-used tables out of the box.")
 (define-public r-mortalitylaws
   (package
     (name "r-mortalitylaws")
-    (version "2.2.0")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MortalityLaws" version))
        (sha256
-        (base32 "1cr8kpjlfs02zw10fzkq8jnb6rvfgxanfpydj74gbczmivg6pgpc"))))
+        (base32 "0mgcfwx1jhjj84wpv2vq5qwlrfnd11ls2npqkkqvxbi5k6rrxjj3"))))
     (properties `((upstream-name . "MortalityLaws")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr r-rvest r-rcurl r-pbapply r-httr))
+    (propagated-inputs (list r-pbapply r-httr))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/mpascariu/MortalityLaws")
+    (home-page "https://mpascariu.github.io/MortalityLaws/")
     (synopsis "Parametric Mortality Models, Life Tables and HMD")
     (description
-     "Fit the most popular human mortality laws', and construct full and abridge life
+     "Fit the most popular human mortality laws', and construct full and abridged life
 tables given various input indices.  A mortality law is a parametric function
 that describes the dying-out process of individuals in a population during a
 significant portion of their life spans.  For a comprehensive review of the most
@@ -22419,13 +22419,13 @@ Rosenbaum and Rubin (1985).")
 (define-public r-mmrm
   (package
     (name "r-mmrm")
-    (version "0.3.18")
+    (version "0.3.19")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mmrm" version))
        (sha256
-        (base32 "0zh538wkbq8m7zrlixgq0g7a2zrb4bkz801k4cy51b5inqjnipp6"))))
+        (base32 "08qm24av6ycb4v60p28xipqsdmvzifb1d7k097imflh0wg5gd8wq"))))
     (properties `((upstream-name . "mmrm")))
     (build-system r-build-system)
     (arguments
@@ -24118,13 +24118,13 @@ mlt.")
 (define-public r-mlt
   (package
     (name "r-mlt")
-    (version "1.8-2")
+    (version "1.8-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlt" version))
        (sha256
-        (base32 "0mcgb54wbmrindbvy9n3nsazhm68551jvfw9hsn1zv9bb41kcag3"))))
+        (base32 "19fdp484hlkx0zh4wdck942iawil4y273dwwfalxjny1dyqqlv7p"))))
     (properties `((upstream-name . "mlt")))
     (build-system r-build-system)
     (arguments
@@ -33587,13 +33587,13 @@ also be easily manipulated with functions provided in the package.")
 (define-public r-midasinla
   (package
     (name "r-midasinla")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "midasINLA" version))
        (sha256
-        (base32 "078ydlkny393lz09fhcq964jf696kd3yjmdlwclpgpfvbqwc83wn"))))
+        (base32 "1jil3v6vzz5z5fkcsd11xxqy9s6b5kkx3dv7kz93ax7dkmfji3qi"))))
     (properties `((upstream-name . "midasINLA")))
     (build-system r-build-system)
     (arguments
@@ -33601,7 +33601,7 @@ also be easily manipulated with functions provided in the package.")
       #:tests? #f))
     (propagated-inputs (list r-matrixstats r-matrix))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=midasINLA")
+    (home-page "https://stephen-villejo.github.io/midasINLA/")
     (synopsis "Spatial MIDAS Models Using INLA")
     (description
      "This package provides tools for fitting spatial Mixed-Data Sampling (MIDAS)
@@ -37689,13 +37689,13 @@ is possible with or without available data from a pilot study.")
 (define-public r-metrosp
   (package
     (name "r-metrosp")
-    (version "1.2.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metrosp" version))
        (sha256
-        (base32 "02rk5zv14yaa5ql13xlswnjyb8q2fbm6ayzj5jwa0qb4r54mi5y1"))))
+        (base32 "0m6c27dknfhrpnqrwzlkzpf5qiyk66f5k2sw41j8k3f1xs1rma2c"))))
     (properties `((upstream-name . "metrosp")))
     (build-system r-build-system)
     (arguments
@@ -37708,11 +37708,13 @@ is possible with or without available data from a pilot study.")
     (description
      "This package provides passenger demand data for the SÃ£o Paulo metro system,
 covering 2012 to 2026.  Datasets include monthly passenger entries and
-transported counts by line, average weekday station entries, daily station
-entries, and spatial geometries for metro and commuter train lines and stations.
- The bundled datasets are a fixed snapshot, so analyses stay reproducible and
-examples run offline; more recent data is published separately as the upstream
-sources are updated.")
+transported counts by line, average weekday passengers transported by station,
+daily station entries, and spatial geometries for metro and commuter train lines
+and stations.  The bundled datasets are a fixed snapshot, so analyses stay
+reproducible and examples run offline.  More recent data is published to
+@code{GitHub} releases as the upstream sources are updated, and
+@code{read_metro_demand()} downloads, caches, and reads it, optionally pinned to
+a dated monthly batch.")
     (license license:expat)))
 
 (define-public r-metropolis
@@ -37992,13 +37994,13 @@ visit the vignettes <https://adriancorrendo.github.io/metrica/>.")
 (define-public r-metr
   (package
     (name "r-metr")
-    (version "0.18.3")
+    (version "0.19.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metR" version))
        (sha256
-        (base32 "1va41i873hvzd2pgcnj8jj3nd6bpbi6iyr76skfwc6pzki2cn5ga"))))
+        (base32 "15anymw3hgpdhzvk7nv8w6xmixbphpf80h35vzp5qq2vp4d0m70h"))))
     (properties `((upstream-name . "metR")))
     (build-system r-build-system)
     (arguments
@@ -38654,6 +38656,33 @@ package by Jakub Nowosad'<https://jakubnowosad.com/colorblindcheck/>.")
      "This package provides a tool for implementing so called deft approach (see
 Fisher, David J., et al. (2017) <DOI:10.1136/bmj.j573>) and model visualization.")
     (license license:gpl3)))
+
+(define-public r-metaweave
+  (package
+    (name "r-metaweave")
+    (version "0.4.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "metaweave" version))
+       (sha256
+        (base32 "035glaqyiwh9xdy6k67aqjwncbdgr6ibrw4ad24gkywz3b32q243"))))
+    (properties `((upstream-name . "metaweave")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/fgabriel1891/metaweave")
+    (synopsis "Spatial Ecological Network Inference")
+    (description
+     "This package provides a model-agnostic framework for reconstructing and
+analysing spatially explicit ecological networks from species distributions and
+ecological inference models.  Supports arbitrary ecological groups and includes
+stochastic block and maximum-entropy inference backends, simulation helpers,
+network summaries, and spatial mapping utilities.")
+    (license license:expat)))
 
 (define-public r-metaviz
   (package
@@ -45181,19 +45210,20 @@ were programed by several mlr developers.")
 (define-public r-measurer
   (package
     (name "r-measurer")
-    (version "0.0.3")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "measureR" version))
        (sha256
-        (base32 "0lf3bkh5jsi8i2d4xcvhwzcsszmq5dy11hzhgd4n053llj70abk4"))))
+        (base32 "059ip1myzmplnnpvdn7cm952q0jf29252wjrzfwa704h0wfgkxra"))))
     (properties `((upstream-name . "measureR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-viridislite
+    (propagated-inputs (list r-writexl
+                             r-viridislite
                              r-tidyverse
                              r-tidyr
                              r-tibble
@@ -45211,13 +45241,16 @@ were programed by several mlr developers.")
                              r-readr
                              r-purrr
                              r-psych
+                             r-pdftools
                              r-officer
                              r-mirt
                              r-magick
                              r-lavaan
                              r-knitr
                              r-kableextra
+                             r-jsonlite
                              r-irr
+                             r-httr
                              r-haven
                              r-ggplot2
                              r-flextable

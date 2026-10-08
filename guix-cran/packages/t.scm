@@ -2386,6 +2386,37 @@ results.  It facilitates easy processing of this data and the creation of visual
 representations based on these election results.")
     (license license:expat)))
 
+(define-public r-turflp
+  (package
+    (name "r-turflp")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "turfLP" version))
+       (sha256
+        (base32 "0faz5nax0zw8zm2y64mq9db00dmwi1lhw9xpjdw3fflma1s1diyd"))))
+    (properties `((upstream-name . "turfLP")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrix r-highs))
+    (home-page "https://github.com/aigorahub/turfLP")
+    (synopsis "TURF Analysis with Integer Linear Programming")
+    (description
+     "Finds product portfolios that maximize TURF (total unduplicated reach and
+frequency) with integer linear programming, following Serra (2013)
+<doi:10.1016/j.foodqual.2012.10.001>.  The maximum reach problem is the maximal
+covering location problem of Church and @code{ReVelle} (1974)
+<doi:10.1007/BF01942293>.  The package solves it as an integer linear program,
+so it finds exact optima without enumerating every portfolio.  Ties on reach are
+broken by frequency and then by the harmonic mean of the individual product
+reaches.  The package also finds the smallest portfolio that reaches every
+reachable respondent.  For related work on TURF for large data sets, see Ennis,
+Fayle, and Ennis (2012) <doi:10.1016/j.foodqual.2011.06.004>.")
+    (license license:expat)))
+
 (define-public r-turboem
   (package
     (name "r-turboem")
@@ -7402,13 +7433,13 @@ Science, pages 107-120 <doi: 10.1007/BFb0017135>.")
 (define-public r-troopdata
   (package
     (name "r-troopdata")
-    (version "1.0.4")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "troopdata" version))
        (sha256
-        (base32 "1r2k9673hq1bmnlhb5kwjgy4czfmd57aazr33zfwd6wmfpwkjpd7"))))
+        (base32 "1gzagbhvx1l0pyd4di1jvgpwc32glrjmf1kd7a1m6m1hv2gk5397"))))
     (properties `((upstream-name . "troopdata")))
     (build-system r-build-system)
     (arguments
@@ -20462,13 +20493,13 @@ package.")
 (define-public r-tigger
   (package
     (name "r-tigger")
-    (version "1.1.3")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tigger" version))
        (sha256
-        (base32 "18giljqmlf82va2j2r4y3nm6qsll2nnxxlbp1av2ay9d5nlnk5py"))))
+        (base32 "10kfxncjdyhfhl8mx2f106frbfxr0fad1jqds772sdb66c80a4ka"))))
     (properties `((upstream-name . "tigger")))
     (build-system r-build-system)
     (arguments
@@ -20487,7 +20518,7 @@ package.")
                              r-doparallel
                              r-alakazam))
     (native-inputs (list r-knitr))
-    (home-page "http://tigger.readthedocs.io")
+    (home-page "https://tigger.readthedocs.io")
     (synopsis "Infers Novel Immunoglobulin Alleles from Sequencing Data")
     (description
      "This package infers the V genotype of an individual from immunoglobulin (Ig)
@@ -36636,13 +36667,13 @@ tabular format (data.frame) using a standard template system.")
 (define-public r-tabulergm
   (package
     (name "r-tabulergm")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tabulergm" version))
        (sha256
-        (base32 "1srwaqhc5dhc8b131svjrlpc0s8f65liinndq1f8zj8nm9xsvr8c"))))
+        (base32 "1qmdixxhisdl1smwgvklv8zj463wyr770ac3956j5pkpx2gb8qak"))))
     (properties `((upstream-name . "tabulergm")))
     (build-system r-build-system)
     (arguments
@@ -37189,13 +37220,13 @@ tidymodels ecosystem.")
 (define-public r-tablet
   (package
     (name "r-tablet")
-    (version "0.9.1")
+    (version "0.9.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tablet" version))
        (sha256
-        (base32 "1l3qrwdfqigyjrvsrldjnk7v453br280b62w2ikq17k1mk23y6y3"))))
+        (base32 "0w9jlh1qwjcw8kbb7wnqrwk3ndaiwap9k0nxn8xw56ajwvy01brw"))))
     (properties `((upstream-name . "tablet")))
     (build-system r-build-system)
     (arguments

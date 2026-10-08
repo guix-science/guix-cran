@@ -3263,13 +3263,13 @@ methodological comparisons and simulation studies.")
 (define-public r-exmort
   (package
     (name "r-exmort")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "exmort" version))
        (sha256
-        (base32 "1kfn6jsqxf4biz3hbvqihbyzrhx6x431w1lkghbpmfviqzbahk0s"))))
+        (base32 "1nmhi5z1zn1n24s486wcma1d62j02gzkdb71yg1fkbvd09cbxbam"))))
     (properties `((upstream-name . "exmort")))
     (build-system r-build-system)
     (arguments
@@ -3319,7 +3319,7 @@ methodological comparisons and simulation studies.")
                              r-dplyr
                              r-data-table
                              r-base64enc))
-    (native-inputs (list esbuild))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/shanlong-who/exmort")
     (synopsis "All-Cause and Excess Mortality Calculator")
     (description
@@ -3330,11 +3330,11 @@ the app fits one or more statistical baseline models (historical average,
 negative binomial regression, quasi-Poisson regression, zero-inflated Poisson
 regression, ARIMA (autoregressive integrated moving average) and SARIMA
 (seasonal ARIMA) models, GAM (generalized additive model) splines, and the model
-of Karlinsky and Kobak (2021) <doi:10.7554/@code{eLife.69336>}) on a
-user-defined baseline period, projects the expected deaths into the
-post-baseline period, and reports excess deaths, P-scores (excess deaths as a
-percentage of expected deaths) and confidence limits with tables, plots and
-downloadable reports.  Launch the application with @code{run_app()}.")
+of Karlinsky and Kobak (2021) <doi:10.7554/@code{eLife.69336>}) using periods
+outside the supplied events, estimates expected deaths across the observed
+series, and reports excess deaths, P-scores (excess deaths as a percentage of
+expected deaths) and confidence limits with tables, plots and downloadable
+reports.  Launch the application with @code{run_app()}.")
     (license license:gpl3)))
 
 (define-public r-exiftoolr
@@ -10700,13 +10700,13 @@ Aguilar-Elena and is described in Aguilar-Elena (2015)
 (define-public r-eratosthenes
   (package
     (name "r-eratosthenes")
-    (version "1.0.2")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eratosthenes" version))
        (sha256
-        (base32 "1wglbnbgx9m37b6pkzyygwchf8n1yyb1v9kpjwi0x373ip52f25i"))))
+        (base32 "1rwpaia9b68fyr52r04r4jj01zvac30bwv718hhji475djr9qf10"))))
     (properties `((upstream-name . "eratosthenes")))
     (build-system r-build-system)
     (arguments
@@ -10724,7 +10724,9 @@ sampler with consistent batch means to assess convergence.  Features reporting
 on Monte Carlo standard errors, as well as tools for rule-based estimation of
 dates of production and use of artifact types, aligning and checking relative
 sequences, and evaluating the impact of the omission of relative/absolute events
-upon one another.")
+upon one another.  Collins-Elliott (2026) \"eratosthenes: Synchronizing
+archaeological chronologies with a focus on artifact types\"
+<doi:10.21105/joss.09260>.")
     (license license:gpl3+)))
 
 (define-public r-erah
@@ -15326,27 +15328,22 @@ Loos, M., Gerber, C., Corona, F., Hollender, J., Singer, H. (2015)
 (define-public r-envigcms
   (package
     (name "r-envigcms")
-    (version "0.8.0")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "enviGCMS" version))
        (sha256
-        (base32 "1wjp3hk32j4f7pf2awllxcf9lrcfc0ppc1frzcksgw8phpbkd40q"))))
+        (base32 "1hd9g0ab3p38jixdfhz913vh0c0xk27jys30y7xyd4i8ymd40a2q"))))
     (properties `((upstream-name . "enviGCMS")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rdisop
-                             r-rcolorbrewer
-                             r-mixtools
-                             r-igraph
-                             r-data-table
-                             r-biocparallel
-                             r-animation))
+    (propagated-inputs (list r-rdisop r-rcolorbrewer r-igraph r-data-table
+                             r-biocparallel))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/yufree/enviGCMS")
+    (home-page "https://yufree.github.io/enviGCMS/")
     (synopsis "GC/LC-MS Data Analysis for Environmental Science")
     (description
      "Gas/Liquid Chromatography-Mass Spectrometer(GC/LC-MS) Data Analysis for
@@ -18008,13 +18005,13 @@ maximum likelihood method, introduced by introduced by Ozaki (1979)
 (define-public r-emgcr
   (package
     (name "r-emgcr")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EMGCR" version))
        (sha256
-        (base32 "0qwgajl0rh75sr3rxk767jjv1m0wrykf5334896c0v53xs3g6jbs"))))
+        (base32 "1fiazb77bhfz7fpjyv7bmxryzvsl0lgp23sdndr9nx759bv0b40y"))))
     (properties `((upstream-name . "EMGCR")))
     (build-system r-build-system)
     (arguments
@@ -18022,23 +18019,24 @@ maximum likelihood method, introduced by introduced by Ozaki (1979)
       #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-survival
-                             r-knitr
                              r-ggplot2
                              r-formula
                              r-flexsurv
                              r-actuar))
-    (home-page "https://cran.r-project.org/package=EMGCR")
-    (synopsis "Fit a Mixture Cure Rate Model with Custom Link Function")
+    (home-page "https://github.com/carrascojalmar/EMGCR")
+    (synopsis
+     "Mixture Cure Rate Models with Flexible Link Functions via the EM Algorithm")
     (description
-     "This package provides tools to fit Mixture Cure Rate models via the
-Expectation-Maximization (EM) algorithm, allowing for flexible link functions in
-the cure component and various survival distributions in the latency part.  The
-package supports user-specified link functions, includes methods for parameter
-estimation and model diagnostics, and provides residual analysis tailored for
-cure models.  The classical theory methods used are described in Berkson, J. and
-Gage, R. P. (1952) <doi:10.2307/2281318>, Dempster, A. P., Laird, N. M. and
-Rubin, D. B. (1977) <https://www.jstor.org/stable/2984875>, BazÃ¡n, J.,
-Torres-AvilÃ©s, F., Suzuki, A. and Louzada, F. (2017)<doi:10.1002/asmb.2215>.")
+     "Fits mixture cure rate models by the Expectation-Maximization (EM) algorithm.
+The incidence component (the probability of being uncured) accepts the logit,
+probit, cauchit, power logit and reversed power logit link functions, and the
+latency component accepts the exponential, Rayleigh, Weibull, log-normal,
+log-logistic and inverse Gaussian distributions.  The package provides parameter
+estimates with standard errors, simulation of data from the model, and
+diagnostic tools based on residuals and simulated envelopes.  The methods build
+on Berkson and Gage (1952) <doi:10.2307/2281318>, Dempster, Laird and Rubin
+(1977) <doi:10.1111/j.2517-6161.1977.tb01600.x> and BazÃ¡n, Torres-AvilÃ©s,
+Suzuki and Louzada (2017) <doi:10.1002/asmb.2215>.")
     (license license:gpl3)))
 
 (define-public r-emgaussian
@@ -19812,6 +19810,38 @@ president) aggregated by state, city, and electoral zones.")
 1920, and various predictors, as used in
 <https://www.vanderwalresearch.com/blog/15-elections>.")
     (license license:gpl2+)))
+
+(define-public r-electedbr
+  (package
+    (name "r-electedbr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "electedBR" version))
+       (sha256
+        (base32 "0ifd10m1lihcvhvdmh5vf1hbd94gzgq5zx9pyvp61fp3ihd69mi0"))))
+    (properties `((upstream-name . "electedBR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-rlang r-nanoparquet r-httr2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/StrategicProjects/electedBR")
+    (synopsis "Brazilian Election Winners and Sitting Members of Congress")
+    (description
+     "Retrieves the candidates elected in Brazilian municipal and general elections
+since 2018, consolidated from the open data of the Superior Electoral Court
+(TSE, <https://dadosabertos.tse.jus.br/>) and distributed as yearly Parquet
+files, together with the federal deputies and senators currently serving
+according to the open data APIs of the Chamber of Deputies
+(<https://dadosabertos.camara.leg.br/>) and the Federal Senate
+(<https://www12.senado.leg.br/dados-abertos>).  Election results and current
+office holding are kept as distinct queries; electoral roles, service history
+and provenance are preserved.  Every function returns a tibble with English
+column names and has a Portuguese alias.")
+    (license license:gpl3)))
 
 (define-public r-electdecomp
   (package
@@ -23806,6 +23836,60 @@ intermediate, mutable object that is built progressively by fundamental
 experimental components like units, treatments, and their relation.  The system
 aids in experimental planning, management and workflow.")
     (license license:expat)))
+
+(define-public r-edi
+  (package
+    (name "r-edi")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EDI" version))
+       (sha256
+        (base32 "1bnfm1k35kihvq2wlhpsjljqsd9jh39jg7lcp0476b87ybirj9an"))))
+    (properties `((upstream-name . "EDI")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival
+                             r-rhpcblasctl
+                             r-rcppnumerical
+                             r-rcppeigen
+                             r-rcpp
+                             r-randomizr
+                             r-r6
+                             r-numderiv
+                             r-missranger
+                             r-missforest
+                             r-mass
+                             r-digest
+                             r-data-table
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/kapelner/EDI")
+    (synopsis "Experimental Design and Inference")
+    (description
+     "This package implements a comprehensive suite of experimental designs, both
+fixed (e.g., block, stratified, matched-pair, cluster, factorial, and
+mixed-integer-programming-based optimal designs) and sequential (including
+matching-on-the-fly designs, biased coin designs, and covariate-adaptive urn
+designs that assign treatment one subject at a time while maintaining covariate
+balance), for continuous, incidence, count, proportion, survival, and ordinal
+response types.  For each design and response type combination, provides the
+corresponding inference procedures, including exact, asymptotic,
+distribution-free, and resampling-based (bootstrap, jackknife, and
+randomization) methods, so that estimation and testing are always matched to how
+the data were generated.  An @code{InferenceSuite} facility runs all applicable
+inference procedures for a given design and response type at once and reports a
+single Cauchy-combined p-value summarizing their evidence.  A built-in
+simulation framework supports power analysis and operating-characteristic
+studies across designs, response types, and inference procedures, with optional
+parallelization via mirai'.  Missing covariate data is handled automatically via
+built-in imputation.  Core numerical routines are implemented in C++ via Rcpp
+for speed on large designs and simulation studies.  Machine-specific tuning for
+optimization is included.")
+    (license license:gpl3)))
 
 (define-public r-edgemodelr
   (package
@@ -28866,13 +28950,13 @@ measurement uncertainty following Bignardi et al. (2025)
 (define-public r-easyrasch2
   (package
     (name "r-easyrasch2")
-    (version "1.3.1")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "easyRasch2" version))
        (sha256
-        (base32 "0gn5hwd1q4bl7qy03q7snqpvkhp5m28nipxrxbq1lxam2q53wgqi"))))
+        (base32 "1rk821pcsm839ym6i42mwl490qkcswn6fy7cka1hpl7nv9a89hv7"))))
     (properties `((upstream-name . "easyRasch2")))
     (build-system r-build-system)
     (arguments
@@ -28892,11 +28976,12 @@ independence, ordered response category thresholds, and invariance across
 subgroups -- together with item fit, targeting, reliability, category
 functioning, and descriptive item-response plots.  A distinguishing feature is
 the use of simulation-based critical values to replace rule-of-thumb cutoffs for
-conditional infit mean-square, Yen's Q3 local-dependence statistic, the largest
-residual-PCA eigenvalue, ordinal CFA fit indices, and partial-gamma DIF and
-local-dependence coefficients, optionally augmented with multiplicity-corrected
-bootstrap p-values.  Outputs are @code{knitr::kable()} tables and ggplot2
-figures suitable for direct inclusion in Quarto and R Markdown reports.")
+conditional infit mean-square, item-rest-score gamma, Yen's Q3 local-dependence
+statistic, the largest residual-PCA eigenvalue, ordinal CFA fit indices, and
+partial-gamma DIF and local-dependence coefficients, optionally augmented with
+multiplicity-corrected bootstrap p-values.  Outputs are @code{knitr::kable()}
+tables and ggplot2 figures suitable for direct inclusion in Quarto and R
+Markdown reports.")
     (license license:gpl3+)))
 
 (define-public r-easyr
@@ -29575,13 +29660,13 @@ Census APIs (<https://www.census.gov/data/developers/data-sets.html>).")
 (define-public r-easybio
   (package
     (name "r-easybio")
-    (version "1.2.3")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "easybio" version))
        (sha256
-        (base32 "1pklvb0mwihlj7ahn6c833wms7iw3m7j0zar8cna8m874k8a34pn"))))
+        (base32 "1x7cmq7n500crfjnn96yvz3rwsig6xbnw355n129nk2czggrawc5"))))
     (properties `((upstream-name . "easybio")))
     (build-system r-build-system)
     (arguments
@@ -29589,6 +29674,7 @@ Census APIs (<https://www.census.gov/data/developers/data-sets.html>).")
       #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-r6
+                             r-lifecycle
                              r-httr2
                              r-ggplot2
                              r-data-table
@@ -29599,10 +29685,10 @@ Census APIs (<https://www.census.gov/data/developers/data-sets.html>).")
      "Comprehensive Single-Cell Annotation and Transcriptomic Analysis Toolkit")
     (description
      "This package provides a comprehensive toolkit for single-cell annotation with
-the @code{CellMarker2.0} database (see Xia Li, Peng Wang, Yunpeng Zhang (2023)
-<doi: 10.1093/nar/gkac947>).  Streamlines biological label assignment in
-single-cell RNA-seq data and facilitates transcriptomic analysis, including
-preparation of TCGA<https://portal.gdc.cancer.gov/> and
+the @code{CellMarker} 3.0 database
+<https://bio-bigdata.hrbmu.edu.cn/@code{CellMarker/>}.  Streamlines biological
+label assignment in single-cell RNA-seq data and facilitates transcriptomic
+analysis, including preparation of TCGA<https://portal.gdc.cancer.gov/> and
 GEO<https://www.ncbi.nlm.nih.gov/geo/> datasets, differential expression
 analysis and visualization of enrichment analysis results.  Additional utility
 functions support various bioinformatics workflows.  See Wei Cui (2024) <doi:

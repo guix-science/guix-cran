@@ -32,6 +32,36 @@
   #:use-module (guix-cran packages b)
   #:use-module (guix-cran packages a))
 
+(define-public r-zuyaml
+  (package
+    (name "r-zuyaml")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "zuyaml" version))
+       (sha256
+        (base32 "10nlfy1h1na15xgq1qwri6s4fblnjgiqawnnnbijclq72zg2nh5y"))))
+    (properties `((upstream-name . "zuyaml")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/pedrobtz/zuyaml")
+    (synopsis "Parse and Emit 'YAML' 1.2")
+    (description
+     "Converts between YAML 1.2 (<https://yaml.org/spec/1.2.2/>) and ordinary R
+objects using a bundled copy of the cyaml C11 parser and emitter
+(<https://github.com/andrewmd5/cyaml>), so there is no system dependency and no
+runtime dependency beyond R itself.  Ambiguous YAML features are handled
+strictly and predictably: duplicate keys are refused by default, the YAML 1.2
+core schema is followed so that yes and no resolve as strings, and integers
+beyond double precision are preserved rather than silently rounded.  A stream of
+documents and a sequence are different things, and the interface keeps them
+apart.  Input size, nesting depth and the number of values materialised are all
+bounded, which makes the parser usable on untrusted input.")
+    (license license:expat)))
+
 (define-public r-zujson
   (package
     (name "r-zujson")
@@ -57,6 +87,37 @@ Parsing accepts character, raw and file input and reports failures through
 structured conditions; serialization writes UTF-8 bytes suitable for use
 directly as an HTTP request body.  The type mapping is deliberately narrow and
 fully documented, so what goes in and what comes out are both predictable.")
+    (license license:expat)))
+
+(define-public r-zuhtml
+  (package
+    (name "r-zuhtml")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "zuhtml" version))
+       (sha256
+        (base32 "110g5vcgp4dm31p2lyfcf9p5asbgfki7zilldc58f1468i9q8s64"))))
+    (properties `((upstream-name . "zuhtml")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/pedrobtz/zuhtml")
+    (synopsis "Parse 'HTML' with a Bundled 'Gumbo' Parser")
+    (description
+     "Parses real-world HTML with a bundled copy of the Gumbo parser
+(<https://codeberg.org/gumbo-parser/gumbo-parser>), which follows the WHATWG
+parsing algorithm, so that no system library is required.  Documents become
+immutable trees navigated with a documented subset of CSS selectors.
+Attributes, text, lists, tables, links, forms and page metadata ('JSON-LD',
+microdata) are extracted into ordinary character vectors, lists and data frames,
+and nodes convert to Markdown'.  Input is a string, raw bytes, a file, a URL or
+a connection, and raw input is decoded as browsers decode it, from a byte-order
+mark or a <meta> declaration.  Parsing is bounded by limits on input size,
+native memory and nesting depth.")
     (license license:expat)))
 
 (define-public r-ztils

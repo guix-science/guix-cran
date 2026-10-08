@@ -807,13 +807,13 @@ well as a host of other functions.  Warren, Geneva, and Lanfear (2017),
 (define-public r-rwsearch
   (package
     (name "r-rwsearch")
-    (version "5.2.6")
+    (version "5.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RWsearch" version))
        (sha256
-        (base32 "01dyyyim7r0flp37jzwbh9c5rkzq6cqsixpxdxhv5xkagjmklpfd"))))
+        (base32 "1mw9idq9vl74sdmn3mfkyfkgcyq6qk9fkikam6b0wnrd6fnb7bc9"))))
     (properties `((upstream-name . "RWsearch")))
     (build-system r-build-system)
     (arguments
@@ -1091,13 +1091,13 @@ on the Wildbook framework is available at: <http://www.wildbook.org/doku.php>.")
 (define-public r-rwig
   (package
     (name "r-rwig")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rwig" version))
        (sha256
-        (base32 "13if58miam506q2k44wg8qn57ajgzgqnlqj7adw8a9wy5z6g9h2z"))))
+        (base32 "0gap0imarllw1j5idji2wn76wdb3qd8f9xr3144swal73ijnl6kb"))))
     (properties `((upstream-name . "rwig")))
     (build-system r-build-system)
     (arguments
@@ -2837,13 +2837,13 @@ possibility of generating one-step-ahead and multi-step-ahead forecasts.")
 (define-public r-rumengp
   (package
     (name "r-rumengp")
-    (version "0.1.1")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rumenGP" version))
        (sha256
-        (base32 "151brzfhgcd1i3xzddf4qjrykm38amk36a1vbip55pgblk9m3mfc"))))
+        (base32 "0c0yg6s85wa7ljdvhpiwrvpzmk0yrqp9caihkl9b1g9dnqp5j8c2"))))
     (properties `((upstream-name . "rumenGP")))
     (build-system r-build-system)
     (arguments
@@ -8935,6 +8935,38 @@ visualizes this index with minimal hassle.")
      "Ray Shooting Depth functions are provided for bivariate analysis.  This mainly
 includes functions for computing the bivariate depth as well as RS median.
 Drawing functions for depth bags are also provided.")
+    (license license:gpl2)))
+
+(define-public r-rsdcm
+  (package
+    (name "r-rsdcm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rsDCM" version))
+       (sha256
+        (base32 "1wchapjbhycsv0dpln8j961lcpp3wnslhkkrnzpfmck5y5d18ci3"))))
+    (properties `((upstream-name . "rsDCM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrix r-mass r-expm))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Kay202/rsDCM")
+    (synopsis "Robust and Sparse Dynamic Causal Modelling for Functional MRI")
+    (description
+     "This package provides a robust and sparse method for group-level Dynamic Causal
+Modelling (DCM) of functional magnetic resonance imaging (@code{fMRI}) data:
+Student-t weighting of subjects for robustness, combined with a nonlocal
+product-moment (@code{pMOM}) spike-and-slab prior for sparse selection of
+group-level effects (<doi:10.48550/@code{arXiv.2609.06379>}).  The package also
+provides an R implementation of single-subject DCM for @code{fMRI} using
+variational Laplace inversion (Friston et al., 2003
+<doi:10.1016/S1053-8119(03)00202-7>), including the bilinear neural state
+equation and the Buxton-Friston hemodynamic response model, ported from the
+SPM25 (version 25.01.02) toolbox for MATLAB'.")
     (license license:gpl2)))
 
 (define-public r-rsdc
@@ -21107,13 +21139,13 @@ and no registration is required.")
 (define-public r-roaddb
   (package
     (name "r-roaddb")
-    (version "0.2.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "roadDB" version))
        (sha256
-        (base32 "1aqnmr66wzdcs5qa0csc5hbgjbpbxb6wxs7an6wds6qi4frd6m2v"))))
+        (base32 "0y3m5n44jl58xl553m3ncc7nbzizq13z8524c8xarr8zmysjlm09"))))
     (properties `((upstream-name . "roadDB")))
     (build-system r-build-system)
     (arguments
@@ -32059,6 +32091,32 @@ Links against the system @code{gRPC} library for C++'.")
 Computing.")
     (license license:lgpl3)))
 
+(define-public r-rgrind
+  (package
+    (name "r-rgrind")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rgrind" version))
+       (sha256
+        (base32 "1l6pmpvyh10rcg2b1wmmf1qvx98xf58nk7ils9fwbb8z76dxsys9"))))
+    (properties `((upstream-name . "rgrind")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://devwebwacky.github.io/rgrind/")
+    (synopsis "Gamified Algorithmic and Data Wrangling Challenges for R")
+    (description
+     "An in-console, gamified learning and practice engine for R. Solve algorithmic
+and data-wrangling challenges directly in the R console, get instant styled
+feedback with worked explanations, and track your progress locally with a
+solving streak, attempt history, and an activity heatmap.")
+    (license license:expat)))
+
 (define-public r-rgremlinsconjoint
   (package
     (name "r-rgremlinsconjoint")
@@ -37412,13 +37470,13 @@ For more details on Feature Selection see Theng and Bhoyar (2023)
 (define-public r-resin
   (package
     (name "r-resin")
-    (version "2.3.1")
+    (version "2.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ResIN" version))
        (sha256
-        (base32 "0mgr2jn7yg41lg47n0daryqkkvrgs7mq1vsyrb7yjz61q9crympd"))))
+        (base32 "06jkj1wy3df34lan4j2acnxbd5hjnb4f1yfy2ay0zkfi4mavjr00"))))
     (properties `((upstream-name . "ResIN")))
     (build-system r-build-system)
     (arguments
@@ -37433,6 +37491,7 @@ For more details on Feature Selection see Theng and Bhoyar (2023)
                              r-parallelly
                              r-network
                              r-igraph
+                             r-ggrepel
                              r-ggraph
                              r-ggplot2
                              r-foreach
@@ -48814,20 +48873,19 @@ times; see the manual for details.  Also see Hu and Tak (2020)
 (define-public r-rdrobust
   (package
     (name "r-rdrobust")
-    (version "4.0.0")
+    (version "4.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rdrobust" version))
        (sha256
-        (base32 "0vx32gba27iqxsmd6ik4jaapyx04hxcz3xj2iz692h7cpnsddw3q"))))
+        (base32 "0cxfv090wjaksxxhamv7hq5zg2q125p87n662vl6sjqm64jhz1ix"))))
     (properties `((upstream-name . "rdrobust")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-mass r-ggplot2))
-    (native-inputs (list r-knitr))
     (home-page "https://github.com/rdpackages/rdrobust")
     (synopsis
      "Robust Data-Driven Statistical Inference in Regression-Discontinuity Designs")
@@ -58476,13 +58534,13 @@ parameter.")
 (define-public r-ratesci
   (package
     (name "r-ratesci")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ratesci" version))
        (sha256
-        (base32 "1yl90vkdm6cnv1jh8gx66y5bs54id25zbb33kn7ppwakdcxv0szf"))))
+        (base32 "0wybf648pz7ac34bbbz1j79bvb6135vmcgdkpabqqrznk4n7i1l8"))))
     (properties `((upstream-name . "ratesci")))
     (build-system r-build-system)
     (arguments
@@ -61887,13 +61945,13 @@ other consolidated methods as Random Forests (Maia M, et.  al, 2021)
 (define-public r-randomlca
   (package
     (name "r-randomlca")
-    (version "1.1-4")
+    (version "1.1-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "randomLCA" version))
        (sha256
-        (base32 "04qb2r4mpgsi077npf05gw1mf5halbc2r275mx4dil7s4d29javb"))))
+        (base32 "1qx1z319h2cdzl61rkcyy6rzn8nzggjfk4j8k889dgk1nm73v8aa"))))
     (properties `((upstream-name . "randomLCA")))
     (build-system r-build-system)
     (arguments
@@ -61903,14 +61961,7 @@ other consolidated methods as Random Forests (Maia M, et.  al, 2021)
                   (add-after 'unpack 'set-HOME
                     (lambda _
                       (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-rfast
-                             r-matrix
-                             r-lattice
-                             r-foreach
-                             r-fastghquad
-                             r-dorng
-                             r-doparallel
-                             r-boot))
+    (propagated-inputs (list r-rfast r-matrix r-lattice r-fastghquad r-boot))
     (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=randomLCA")
     (synopsis "Random Effects Latent Class Analysis")

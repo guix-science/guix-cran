@@ -1854,6 +1854,45 @@ Puglielli et al. (2021) <doi:10.1111/nph.16952>, Carmona et al. (2021)
 more information.")
     (license license:gpl3)))
 
+(define-public r-funresmech
+  (package
+    (name "r-funresmech")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "funresMech" version))
+       (sha256
+        (base32 "1njcrjc9xcdav8m15qwsn6y3mnwn4cx0wrydpyalmxq17850wg9i"))))
+    (properties `((upstream-name . "funresMech")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shinythemes
+                             r-shinybs
+                             r-shiny
+                             r-rmarkdown
+                             r-rlang
+                             r-rcpp
+                             r-plotly
+                             r-magrittr
+                             r-ggplot2
+                             r-future
+                             r-dplyr
+                             r-deoptim))
+    (home-page "https://github.com/Segon03/funresMech")
+    (synopsis "Mechanistic Functional Response Analysis")
+    (description
+     "This package implements the mechanistic functional response model proposed by
+Okuyama (2012) <doi:10.1016/j.biocontrol.2011.10.008> for host-parasitoid
+systems.  Provides tools for model fitting, likelihood profiling, stochastic
+simulation, and visualization of parasitism distributions.  The stochastic
+simulation engine is implemented in C++ via Rcpp'.  Includes an interactive
+shiny application for complete analysis workflows, built with plotly for
+interactive graphics and rmarkdown for reproducible reports.")
+    (license license:expat)))
+
 (define-public r-funreg
   (package
     (name "r-funreg")
@@ -5769,23 +5808,22 @@ Contains a brain surface mesh, given by a list of vertices and a list of faces."
 (define-public r-freesurfer
   (package
     (name "r-freesurfer")
-    (version "1.8.1")
+    (version "1.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "freesurfer" version))
        (sha256
-        (base32 "04wmgbbz2i1ipxmdrznkrnv8vrhp9qnm82ssmp4mqnlrcdr4ncyz"))))
+        (base32 "0khbr57wvj666wgmghjs6hfpn488i42zd8v141fmg4z5amyaz09j"))))
     (properties `((upstream-name . "freesurfer")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (inputs (list))
-    (propagated-inputs (list r-reshape2 r-r-utils r-neurobase))
+    (propagated-inputs (list r-r-utils r-neurobase r-lifecycle r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=freesurfer")
-    (synopsis "Wrapper Functions for 'Freesurfer'")
+    (home-page "https://johnmuschelli.com/freesurfer/")
+    (synopsis "Wrapper Functions for 'FreeSurfer'")
     (description
      "Wrapper functions that interface with Freesurfer
 <https://surfer.nmr.mgh.harvard.edu/>, a powerful and commonly-used neuroimaging
@@ -8625,13 +8663,13 @@ for clean, consistent visual styling with a minimal dependency footprint.")
 (define-public r-forrel
   (package
     (name "r-forrel")
-    (version "1.9.0")
+    (version "1.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "forrel" version))
        (sha256
-        (base32 "1skzxbq1k51lhv9yxkpsyr119hk04yzc4mqqiq7fwkx2m7kpnkjl"))))
+        (base32 "1l0zclgyrsrgj0dx8a8r8lf016z8h3ja6nyln5b1aamcnb459cms"))))
     (properties `((upstream-name . "forrel")))
     (build-system r-build-system)
     (arguments
@@ -8652,9 +8690,11 @@ power analysis.  forrel is part of the pedsuite', a collection of packages for
 pedigree analysis, further described in the book Pedigree Analysis in R
 (Vigeland, 2021, ISBN:9780128244302).  Several functions deal specifically with
 power analysis in missing person cases, implementing methods described in
-Vigeland et al. (2020) <doi:10.1016/j.fsigen.2020.102376>.  Data import from the
-Familias software (Egeland et al. (2000) <doi:10.1016/S0379-0738(00)00147-X>) is
-supported through the @code{pedFamilias} package.")
+Vigeland et al. (2020) <doi:10.1016/j.fsigen.2020.102376>.  Methods for checking
+pairwise relationships are described in Egeland and Vigeland (2025)
+<doi:10.1016/j.fsigen.2025.103270>.  Data exchange with the Familias software
+(Egeland et al. (2000) <doi:10.1016/S0379-0738(00)00147-X>) is supported through
+the @code{pedFamilias} package.")
     (license license:gpl2+)))
 
 (define-public r-forplo
@@ -10762,13 +10802,13 @@ business), and emissions metric (e.g. carbon dioxide equivalent, methane).")
 (define-public r-footbayes
   (package
     (name "r-footbayes")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "footBayes" version))
        (sha256
-        (base32 "1ksj95g54l8l1w0wl0y1mccakph99k80hhsjx6scj1z14q9zkrwm"))))
+        (base32 "1mj64200hbyh3vzrgk3hbvk7qrlb9r5966ssfb2x0ni7jakal78a"))))
     (properties `((upstream-name . "footBayes")))
     (build-system r-build-system)
     (arguments
@@ -10795,9 +10835,16 @@ business), and emissions metric (e.g. carbon dioxide equivalent, methane).")
     (description
      "This is the first package allowing for the estimation, visualization and
 prediction of the most well-known football models: double Poisson, bivariate
-Poisson, Skellam, student_t, diagonal-inflated bivariate Poisson, and
-zero-inflated Skellam.  It supports both maximum likelihood estimation (MLE, for
-static models only) and Bayesian inference.  For Bayesian methods, it
+Poisson, Dixon-Coles, negative binomial, Skellam, student_t, diagonal-inflated
+bivariate Poisson, and zero-inflated Skellam.  It supports both maximum
+likelihood estimation (MLE, for static models only) and Bayesian inference.
+Team abilities can be static or dynamic over weeks or seasons, with alternative
+specifications of the evolution variance: a common variance (Owen, 2011),
+variance inflation after the summer break (Koopman and Lit, 2015)
+<doi:10.1111/rssa.12042>, and weighted dynamic models with commensurate priors
+(MacrÃ¬-Demartino, Egidi and Torelli, 2026) <doi:10.1093/jrsssc/qlag032>.
+Historical team strengths can be estimated through a Bayesian
+Bradley-Terry-Davidson model and used as a covariate.  For Bayesian methods, it
 incorporates several techniques: MCMC sampling with Hamiltonian Monte Carlo,
 variational inference using either the Pathfinder algorithm or Automatic
 Differentiation Variational Inference (ADVI), and the Laplace approximation.
@@ -14203,32 +14250,46 @@ proportional and non linear effects are described in Remontet, L. et al. (2007)
 (define-public r-flexrl
   (package
     (name "r-flexrl")
-    (version "0.1.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FlexRL" version))
        (sha256
-        (base32 "0liiiwmgpdq32dx7kcbj7dcjkcxr9cykcn9rn4pmimqc4dfhmx2d"))))
+        (base32 "16haw4dc53bcavkyabav1pmh921vdpln20lhfxyy0kh6j7l5mmqc"))))
     (properties `((upstream-name . "FlexRL")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-testit r-rcpp r-progress r-matrix))
+    (propagated-inputs (list r-synthpop
+                             r-reclin2
+                             r-rcpp
+                             r-multilink
+                             r-mice
+                             r-matrix
+                             r-fedmatch
+                             r-fastlink
+                             r-diyar
+                             r-cli
+                             r-brl
+                             r-arf))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/robachowyk/FlexRL")
-    (synopsis "Flexible Model for Record Linkage")
+    (synopsis "Flexible Record Linkage and Linked Data Quality Assessment")
     (description
-     "Implementation of the Stochastic Expectation Maximisation (@code{StEM}) approach
-to Record Linkage described in the paper by K. Robach, S. L. van der Pas, M. A.
-van de Wiel and M. H. Hof (2024, <doi:10.1093/jrsssc/qlaf016>); see
-citation(\"@code{FlexRL}\") for details.  This is a record linkage method, for
-finding the common set of records among 2 data sources based on Partially
-Identifying Variables (PIVs) available in both sources.  It includes modelling
-of dynamic Partially Identifying Variables (e.g. postal code) that may evolve
-over time and registration errors (missing values and mistakes in the
-registration).  Low memory footprint.")
+     "Probabilistically link records that refer to the same entities across two data
+sources without a unique identifier, using partially identifying variables such
+as product code, brand, category, birth year, sex or postal code. @code{FlexRL}
+implements a Stochastic Expectation Maximisation (@code{StEM}) approach to
+Record Linkage (Robach et al., 2025, <doi:10.1093/jrsssc/qlaf016>).  The model
+accounts for registration errors (missing values and mistakes) and for variables
+that change over time, enforces one-to-one assignment, and has a low memory
+footprint.  The package also provides tools for inference on linked data: two
+estimators of the false discovery proportion of a linkage (Robach et al., 2025,
+<doi:10.1002/sim.70292>), based on linkage scores and on synthetic data, and
+diagnostics comparing the linked sample with the source data.  These tools also
+apply on the linkage output of other record linkage packages.")
     (license license:gpl3+)))
 
 (define-public r-flexreg

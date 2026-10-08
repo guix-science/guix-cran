@@ -2180,13 +2180,13 @@ in gt using the familiar officer package and syntax from the officeverse'.")
 (define-public r-gtheoryr
   (package
     (name "r-gtheoryr")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gtheoryr" version))
        (sha256
-        (base32 "0sh2k3b9v3x4vq2lpr0f46rbfzw531xpiqm80aaxjyvy4jns5819"))))
+        (base32 "025jx2gfqjhsx0gcisd7abzc1zzlsk0vwpiib1g17ylj6va689qn"))))
     (properties `((upstream-name . "gtheoryr")))
     (build-system r-build-system)
     (arguments
@@ -2197,9 +2197,13 @@ in gt using the familiar officer package and syntax from the officeverse'.")
     (description
      "This package provides a small, beginner-friendly interface for estimating
 variance components in simple generalizability theory designs.  The package
-currently supports a fully crossed persons-by-items design and a simple
-items-within-person nested design, along with design-study summaries for
-relative and absolute decisions.")
+currently supports a fully crossed persons-by-items design, generic balanced
+crossed designs with one or more additional facets such as raters, occasions, or
+forms, and a simple items-within-person nested design, along with design-study
+summaries for relative and absolute decisions.  Includes data diagnostics,
+measurement error intervals, design comparison and cost planning, sensitivity
+analysis, Gaussian simulation and parametric bootstrap uncertainty estimates for
+balanced crossed designs.")
     (license license:expat)))
 
 (define-public r-gtheory4llm
@@ -15669,6 +15673,47 @@ IUPAC-compact, WURCS, LINUCS, Linear Code, @code{GlycoCT}, KCF, and
 the format and parse the structure string.")
     (license license:expat)))
 
+(define-public r-glymotif
+  (package
+    (name "r-glymotif")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "glymotif" version))
+       (sha256
+        (base32 "0va5fjqj9yx1sxfx8v61smnp1jqr4xjsyqs34m1n42zx0h7rvh7n"))))
+    (properties `((upstream-name . "glymotif")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-rcpp
+                             r-purrr
+                             r-lifecycle
+                             r-igraph
+                             r-glyrepr
+                             r-glyparse
+                             r-glydraw
+                             r-cli
+                             r-checkmate
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://glycoverse.github.io/glymotif/")
+    (synopsis "Extract Glycan Motifs from Glycan Structures")
+    (description
+     "Identify, count, and match recurring substructures in glycan structures.
+Supports concrete and generic monosaccharide matching, several structural
+alignment modes, node-to-node mappings, and batch analysis using subgraph
+isomorphism.  Includes curated motif annotations derived from the
+@code{GlycoMotif} resource <https://glycomotif.glyomics.org/>.  Integrates with
+glyrepr and glyparse for structural glycomics workflows.")
+    (license license:expat)))
+
 (define-public r-glydraw
   (package
     (name "r-glydraw")
@@ -26095,6 +26140,77 @@ preventing over-interpretation.  Most graphs are made with ggplot2', which means
 that you can use the + syntax to manually add as many graphical pieces you want,
 or change theme elements.  3D graphs are made with plotly'.")
     (license license:gpl3+)))
+
+(define-public r-ggextreme
+  (package
+    (name "r-ggextreme")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggextreme" version))
+       (sha256
+        (base32 "1v60smzrsrjza56yhrs7brd3wv9m6zy5s48lqv809v5h31gbaxap"))))
+    (properties `((upstream-name . "ggextreme")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-systemfonts
+                             r-scales
+                             r-rlang
+                             r-ragg
+                             r-jsonlite
+                             r-igraph
+                             r-htmlwidgets
+                             r-htmltools
+                             r-ggplot2
+                             r-ggiraph
+                             r-gdtools))
+    (native-inputs (list r-knitr))
+    (home-page "https://choxos.github.io/ggextreme/")
+    (synopsis "Bar Chart Races and Interactive Plots for Clinical Research")
+    (description
+     "Presentation quality charts built on ggplot2 that the package itself does not
+provide.  The bar chart race interpolates values on a uniform time grid, ranks
+every frame on its own values and eases bars into new positions, so a reordering
+field stays readable.  Frames are ordinary ggplot2 objects laid out on a fixed
+pixel grid, which keeps the axis and label column from drifting between them,
+and are encoded to GIF or MP4.  Circular images, such as the bundled country
+flags, can be placed at the end of each bar.  Causal diagrams are drawn as
+directed acyclic graphs whose nodes and arrows each carry a rationale and
+references, shown on hover and opened with clickable links on click, through
+ggiraph'; the same diagram is also available as a static ggplot2 object.
+Network plots for network meta-analysis are drawn from arm level data, with the
+baseline characteristics and outcomes of every arm shown side by side on click.
+Forest plots for metafor and meta fits carry each study's record and risk of
+bias traffic lights, and replay a cumulative meta-analysis as an animation;
+funnel plots shade where each study would be significant and carry the pooled
+estimate without it, trim and fill and the tests for small-study effects; league
+tables for netmeta fits show the direct and indirect evidence behind every
+estimate.  Kaplan-Meier plots read survival and the hazard ratio at any time
+under the pointer, beside a risk table and proportional hazards tests, and
+swimmer plots give each patient a lane with their responses, progression and
+death.  Nomograms of regression models, from linear and generalized linear
+models to mixed, Cox, parametric survival, ordinal and multinomial models, have
+a handle per predictor and compute each prediction with its confidence interval
+in the page.  Choropleth maps of the world or of any sf map step or play through
+the years, with several measures side by side for the same year.  Causal
+diagrams can also show which paths between an exposure and an outcome an
+adjustment set leaves open, by the backdoor criterion; Kaplan-Meier plots give
+the restricted mean survival time up to a horizon the reader can move; league
+tables and network plots show where each network estimate's evidence comes from;
+and swimmer plots can carry a waterfall of best change and each patient's course
+beside the lanes.  Four explorers put a threshold or an assumption in the
+reader's hands: the cutoff of a diagnostic test, with what it means for 1,000
+people at any prevalence; the strength of unmeasured confounding, with E-values;
+the choices of a multiverse of analyses; and the threshold that defines a
+responder.  Plots after CI@code{NeMA} judge the confidence in each estimate of a
+network meta-analysis in six domains, with every judgment's reason and source,
+and show what lies behind them: each study's contribution, the estimates against
+a movable range of little difference, direct against indirect evidence, and a
+league table and a network marked with the judgments.")
+    (license license:expat)))
 
 (define-public r-ggexametrika
   (package
@@ -39992,6 +40108,37 @@ a standard format, and can recalculate derived, physiological quantities using
 imported or predefined equations.  The package also allows users to assess the
 sensitivity of their results to different assumptions used in the calculations.
 See also Tholen (2024) <doi:10.1093/aobpla/plae035>.")
+    (license license:gpl3)))
+
+(define-public r-garrettrank
+  (package
+    (name "r-garrettrank")
+    (version "0.1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GarrettRank" version))
+       (sha256
+        (base32 "0054vyc6akxhkxnhw008x58x54ryik25z9jh7yv7ad8vbxqsn1qr"))))
+    (properties `((upstream-name . "GarrettRank")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-pheatmap r-ggplot2))
+    (home-page "https://cran.r-project.org/package=GarrettRank")
+    (synopsis "Garrett Ranking Analysis and Visualization")
+    (description
+     "This package performs Garrett ranking analysis of respondent-ranked items such
+as constraints, problems, factors, or priorities.  The package converts
+respondent rankings into Garrett scores, calculates mean Garrett scores and
+final ranks and provides methods for summarizing,tabulating and visualizing
+ranking results.  It also provides Kendall's coefficient of concordance for
+assessing the degree of agreement among respondents.  Garrett ranking does not
+accommodate tied ranks and Kendall's coefficient of concordance is likewise
+computed for untied ranking data.For more details see Garrett and Woodworth
+(1969) <https://books.google.com/books?id=@code{aoqSmQEACAAJ>} and Buragohain
+and Dubey (2021) <doi:10.5958/2454-552X.2021.00055.4>.")
     (license license:gpl3)))
 
 (define-public r-garray

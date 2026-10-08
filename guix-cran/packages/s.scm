@@ -8808,13 +8808,13 @@ dissimilarity measures.")
 (define-public r-supercell
   (package
     (name "r-supercell")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SuperCell" version))
        (sha256
-        (base32 "1wrjy6cb1271l1jspvr1s139mqnbpx90a01af1d2jiqnw4yavnzl"))))
+        (base32 "0ylimvqx1x0h20rglnk3wz7lga155pxgsa53bvg6rzkk824d4626"))))
     (properties `((upstream-name . "SuperCell")))
     (build-system r-build-system)
     (arguments
@@ -14850,13 +14850,13 @@ expression in tissues.  For further details, see Higgins C., Li J.J., Carey M.
 (define-public r-sticsrfiles
   (package
     (name "r-sticsrfiles")
-    (version "1.7.0")
+    (version "1.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SticsRFiles" version))
        (sha256
-        (base32 "1vyx04bf0a9ww4msz3yzq0zdwrcc45ybaa0hvql7s5zwvxdq9l66"))))
+        (base32 "17vhr4pi0wkch1x5k2c8hyr79zrdch12jx47672gq65m9055c8fy"))))
     (properties `((upstream-name . "SticsRFiles")))
     (build-system r-build-system)
     (arguments
@@ -14872,6 +14872,7 @@ expression in tissues.  For further details, see Higgins C., Li J.J., Carey M.
                              r-rstudioapi
                              r-rlang
                              r-lubridate
+                             r-httr
                              r-foreach
                              r-dplyr
                              r-doparallel
@@ -15500,13 +15501,13 @@ the ability to export results in common formats.")
 (define-public r-stepreg
   (package
     (name "r-stepreg")
-    (version "1.6.8")
+    (version "1.6.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "StepReg" version))
        (sha256
-        (base32 "0dgvpgxfzrvdh1bm8sk40a2iyjrd97nzwj5dm2dhcmldn5b5hj1k"))))
+        (base32 "0xj33r3wi3w6lqxh3dr1avnkwsssslpcxwsa02f7gaqrl3fcgwvj"))))
     (properties `((upstream-name . "StepReg")))
     (build-system r-build-system)
     (arguments
@@ -19149,13 +19150,13 @@ visualization location and to provide web services.")
 (define-public r-starsextra
   (package
     (name "r-starsextra")
-    (version "0.2.8")
+    (version "0.2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "starsExtra" version))
        (sha256
-        (base32 "0r3nqdgwx0nz1q9nm9nfc1awdbm3n52pqrc5hln6dw23wbpvzfd3"))))
+        (base32 "1bz8vf1x5r81gfhkcdframhszswhr5c35s0lgsmbq5cybfr4va9q"))))
     (properties `((upstream-name . "starsExtra")))
     (build-system r-build-system)
     (arguments
@@ -26268,13 +26269,13 @@ explicitly supported.  See ?as_spork and ?as_previews.")
 (define-public r-sporelag
   (package
     (name "r-sporelag")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SporeLag" version))
        (sha256
-        (base32 "18p0hq1wjp8fi07j71cmg2vndykildxdv5gsjiiqy5cfpmm9svh9"))))
+        (base32 "1cx5l35cjfdrqya0408msbi49mkm9ahglqy4ymmsz5dkhra4sijw"))))
     (properties `((upstream-name . "SporeLag")))
     (build-system r-build-system)
     (arguments
@@ -26469,13 +26470,13 @@ completely show them when clicking on them.")
 (define-public r-spoccupancy
   (package
     (name "r-spoccupancy")
-    (version "0.8.1")
+    (version "0.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spOccupancy" version))
        (sha256
-        (base32 "14fzwrpg616r3nbs7whcv3g0kdyd2davnz8rk3q5lf5l9s38s197"))))
+        (base32 "1rh2hfprh2m18gd18191vhm31fm98dxxwivcw19wz96c6lpbr5fq"))))
     (properties `((upstream-name . "spOccupancy")))
     (build-system r-build-system)
     (arguments
@@ -30145,13 +30146,13 @@ are adapted from the autosurv package by Suresh et al., (2022)
 (define-public r-specsverification
   (package
     (name "r-specsverification")
-    (version "0.5-3")
+    (version "0.5-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SpecsVerification" version))
        (sha256
-        (base32 "1v76lilyj65f04881yw19v0qi7n08ysdnr7sc4hf5d8wnmvdh3v3"))))
+        (base32 "1wr7gw0q5qz02bvldfbr558r4nnqkfdw2n4j8ck8q4mqr154ksjv"))))
     (properties `((upstream-name . "SpecsVerification")))
     (build-system r-build-system)
     (arguments
@@ -30733,13 +30734,13 @@ module of the Python library spreg <https://pysal.org/spreg/api.html#dgp>.")
 (define-public r-spdesign
   (package
     (name "r-spdesign")
-    (version "0.0.6")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spdesign" version))
        (sha256
-        (base32 "0g6azwpfgkxcb6496k9b60d4lhdklk4762n9vqlfffa34s4930wf"))))
+        (base32 "13x38ds37bjpykzzf2hwxq81lmf3cqflqm8n9bi6dd2xkkc8qh4i"))))
     (properties `((upstream-name . "spdesign")))
     (build-system r-build-system)
     (arguments
@@ -30752,7 +30753,7 @@ module of the Python library spreg <https://pysal.org/spreg/api.html#dgp>.")
                              r-future
                              r-dplyr
                              r-cli))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://spdesign.edsandorf.me")
     (synopsis "Designing Stated Preference Experiments")
     (description
@@ -30763,7 +30764,7 @@ using state-of-the-art methods.  For an overview of stated choice experimental
 design theory, see e.g., Rose, J. M. & Bliemer, M. C. J. (2014) in Hess S. &
 Daly.  A. <doi:10.4337/9781781003152>.  The package website can be accessed at
 <https://spdesign.edsandorf.me>.  We acknowledge funding from the European
-Unionâs Horizon 2020 research and innovation program under the Marie
+Union's Horizon 2020 research and innovation program under the Marie
 Sklodowska-Curie grant INS@code{PiRE} (Grant agreement ID: 793163).  The package
 features in Mariel et al. (2025) Environmental Valuation with Discrete Choice
 Experiments in R. (<doi:10.1007/978-3-031-89338-4>).")
@@ -31072,13 +31073,13 @@ Association Studies of Binary Traits: Accounting for Covariate Effects\"
 (define-public r-spcf
   (package
     (name "r-spcf")
-    (version "0.2.2")
+    (version "0.2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spCF" version))
        (sha256
-        (base32 "16qri4qclqqz261kcw1419wp6zdcdimbpr95crc77jh98y6843jv"))))
+        (base32 "1bd6d5czk2yj10da0mjyqryg7n2lrp29zs8j1km545x8i8klhdll"))))
     (properties `((upstream-name . "spCF")))
     (build-system r-build-system)
     (arguments
@@ -32982,6 +32983,36 @@ datasets include pre-processed environmental predictors ready for statistical
 modelling.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
+(define-public r-spatialcvr
+  (package
+    (name "r-spatialcvr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spatialcvR" version))
+       (sha256
+        (base32 "012c65plb1mlv4lrsb7pzrl99cbms671q7j03i9xr42jrgj1yfvs"))))
+    (properties `((upstream-name . "spatialcvR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sf))
+    (native-inputs (list r-knitr))
+    (home-page "https://sowsalim01.github.io/spatialcvR/")
+    (synopsis "Spatial Cross-Validation for Machine Learning")
+    (description
+     "Spatial cross-validation and model evaluation for geospatial machine learning
+applications.  Addresses spatial dependence in observations by implementing
+spatial block, buffered, and clustering cross-validation methods.  Includes
+spatial leakage detection, model performance metrics, and spatial residual
+diagnostics for assessing model generalization across geographic space.  Methods
+based on Brenning (2012) <doi:10.1016/j.cageo.2012.02.001>, Pohjankukka et al.
+(2017) <doi:10.1016/j.isprsjprs.2017.07.001>, and Roberts et al. (2017)
+<doi:10.1111/ecog.02881>.")
+    (license license:expat)))
+
 (define-public r-spatialcovariance
   (package
     (name "r-spatialcovariance")
@@ -34627,13 +34658,13 @@ classifiers include those from Dudoit et al. (2002)
 (define-public r-sparsediff
   (package
     (name "r-sparsediff")
-    (version "0.4.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sparsediff" version))
        (sha256
-        (base32 "1z6c3af37vld4rz6dzziiaf4jf6wmg190rj2sq5swgacxclknqp8"))))
+        (base32 "08blwbgnw7l71zax56kbghc0048hbmjpl63h65nknzz41k9zy6wc"))))
     (properties `((upstream-name . "sparsediff")))
     (build-system r-build-system)
     (arguments
@@ -35901,13 +35932,13 @@ al. (2026) <doi:10.1093/bioinformatics/btag052>.")
 (define-public r-spaci
   (package
     (name "r-spaci")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spaci" version))
        (sha256
-        (base32 "120ayrxx1pc9kf5hvpg86gf7423zgyz8hr1jzpcabzj1yxnw09fx"))))
+        (base32 "15gch7cafqcmml50pm34mpp2s9gq09xjb9kp6kdv9affgknc1air"))))
     (properties `((upstream-name . "spaci")))
     (build-system r-build-system)
     (arguments
@@ -35927,8 +35958,8 @@ neighbourhood-exposure distance. @code{recoverU+} is a doubly robust estimator
 that augments the propensity-score and control-outcome models with a partially
 recovered spatial confounder and a neighbourhood-exposure term.  The package
 also provides the naive propensity score, DAPS and @code{recoverU} comparators,
-and a simulator for the spatial confounding/interference data-generating
-process.")
+a simulator for the spatial confounding/interference data-generating process and
+spatial inference tools.")
     (license license:expat)))
 
 (define-public r-spacetimebss
@@ -36379,13 +36410,13 @@ builds on Bibina and Dougherty (2025) <doi:10.2139/ssrn.6324519>.")
 (define-public r-southparkrshiny
   (package
     (name "r-southparkrshiny")
-    (version "1.0.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SouthParkRshiny" version))
        (sha256
-        (base32 "0xzy66wa3712zpiarjjwfd93wdspkvnwk374gzabcrjw5jz16pi7"))))
+        (base32 "0yd9pcpbzw8550yksi3zd34i5s265n4mj74knh71frrvb69fv5q3"))))
     (properties `((upstream-name . "SouthParkRshiny")))
     (build-system r-build-system)
     (arguments
@@ -36393,16 +36424,20 @@ builds on Bibina and Dougherty (2025) <doi:10.2139/ssrn.6324519>.")
       #:tests? #f))
     (propagated-inputs (list r-shinydashboard
                              r-shiny
+                             r-patchwork
                              r-knitr
                              r-kableextra
                              r-golem
+                             r-ggtext
+                             r-ggraph
                              r-ggpubr
                              r-ggplot2
+                             r-ggimage
                              r-config
                              r-bslib
                              r-box))
     (home-page "https://github.com/Amalan-ConStat/SouthParkRshiny")
-    (synopsis "Data and 'Shiny' Application for the Show 'SouthPark'")
+    (synopsis "Data and 'Shiny' Application for the Tv Show 'SouthPark'")
     (description
      "Ratings, votes, swear words and sentiments are analysed for the show
 @code{SouthPark} through a Shiny application after web scraping from IMDB and
@@ -36897,13 +36932,13 @@ capture-mark-recapture.  Input data must be formatted in the style produced by
 (define-public r-sorcering
   (package
     (name "r-sorcering")
-    (version "1.2.3")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sorcering" version))
        (sha256
-        (base32 "00d8winnajy3bg6prncv9cicjazicm1f6nhn9wn5l56jk1403baf"))))
+        (base32 "021gyqzr0ab0y5knmxm1bgp8wmklz3ggljca4kzcnp2aqj97a9cf"))))
     (properties `((upstream-name . "sorcering")))
     (build-system r-build-system)
     (arguments
@@ -37142,13 +37177,13 @@ nominal outlyingness are computed based on the framework of Costa and Papatsouma
 (define-public r-sonify
   (package
     (name "r-sonify")
-    (version "0.0-1")
+    (version "0.1-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sonify" version))
        (sha256
-        (base32 "1wkqqgf8fhhaz1dmri2zzr8cdwmx3cgrxbprrz3yily5r1m17d15"))))
+        (base32 "0bvib2v9swsijbk54zqw6imd08yl11yr710yr0lv69axd53lc6ml"))))
     (properties `((upstream-name . "sonify")))
     (build-system r-build-system)
     (arguments
@@ -43068,13 +43103,13 @@ analysis of the data.")
 (define-public r-smatr
   (package
     (name "r-smatr")
-    (version "3.5-1")
+    (version "3.5-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smatr" version))
        (sha256
-        (base32 "06jivj4f6kw1c88qrkrii3hkynxyjrddabhzqkz6pvck3x35gaqs"))))
+        (base32 "0qblwwjbfnvy6dw0cg4spswpn4v3niplfilxw4k13j0rlbvyrjxi"))))
     (properties `((upstream-name . "smatr")))
     (build-system r-build-system)
     (arguments
@@ -63773,13 +63808,13 @@ images/containers.")
 (define-public r-serad
   (package
     (name "r-serad")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "serad" version))
        (sha256
-        (base32 "0lc9cgr67y26ss8p0ndqhgbprflmzlwabq70qnr8092waws746w1"))))
+        (base32 "0vvhf8l5gjq7l0qqsv3q25bjv56kchd3z6vwnjqsmrq7i93q5bmx"))))
     (properties `((upstream-name . "serad")))
     (build-system r-build-system)
     (arguments
@@ -64433,35 +64468,43 @@ details on the implemented methods.")
 (define-public r-seqexpmatch
   (package
     (name "r-seqexpmatch")
-    (version "0.1.1")
+    (version "0.1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SeqExpMatch" version))
        (sha256
-        (base32 "07yifbwgsy4d7p2x54zzfpd6m3y8531y1rbvxkbnk4yd4546z6vc"))))
+        (base32 "1ml49c4s0fhjnq53xia53ldn6d1va52zi5w60ski2cpvvrz6fiki"))))
     (properties `((upstream-name . "SeqExpMatch")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-r6 r-doparallel r-checkmate))
-    (home-page "https://cran.r-project.org/package=SeqExpMatch")
+    (home-page
+     "https://github.com/kapelner/matching_on_the_fly_designs_R_package_and_paper_repr")
     (synopsis
      "Sequential Experimental Design via Matching on-the-Fly with Estimation and Testing")
     (description
-     "Generates the following sequential two-arm experimental designs: (1) completely
-randomized (Bernoulli) (2) balanced completely randomized (3) Efron's (1971)
-Biased Coin (4) Atkinson's (1982) Covariate-Adjusted Biased Coin (5) Kapelner
-and Krieger's (2014) Covariate-Adjusted Matching on the Fly (6) Kapelner and
-Krieger's (2021) CARA Matching on the Fly with Differential Covariate Weights
-(7) Kapelner and Krieger's (2021) CARA Matching on the Fly with Differential
-Covariate Weights (Stepwise) and also provides the following types of inference:
-(1) estimation (with both Z-style estimators and OLS estimators), (2)
-frequentist testing (via asymptotic distribution results and via employing the
-nonparameteric randomization test) and (3) frequentist confidence intervals
-(only under the superpopulation sampling assumption currently).  Details can be
-found in Kapelner and Krieger (2021) <doi:10.1111/biom.13561>.")
+     "DEPRECATED. This package is deprecated and no longer maintained; all of its
+functionality has been superseded by the EDI package, which provides faster,
+more general, and actively maintained implementations of the same sequential
+designs and inference procedures.  Please migrate to EDI'.  This package
+previously generated the following sequential two-arm experimental designs: (1)
+completely randomized (Bernoulli) (2) balanced completely randomized (3) Efron's
+(1971) Biased Coin (4) Atkinson's (1982) Covariate-Adjusted Biased Coin (5)
+Kapelner and Krieger's (2014) Covariate-Adjusted Matching on the Fly (6)
+Kapelner and Krieger's (2021) CARA Matching on the Fly with Differential
+Covariate Weights (7) Kapelner and Krieger's (2021) CARA Matching on the Fly
+with Differential Covariate Weights (Stepwise) and also provides the following
+types of inference: (1) estimation (with both Z-style estimators and OLS
+estimators), (2) frequentist testing (via asymptotic distribution results and
+via employing the nonparameteric randomization test) and (3) frequentist
+confidence intervals (only under the superpopulation sampling assumption
+currently).  Details can be found in Kapelner and Krieger (2021)
+<doi:10.1111/biom.13561>.  The EDI package is on CRAN at
+<https://CRAN.R-project.org/package=EDI> and on @code{GitHub} at
+<https://github.com/kapelner/EDI>.")
     (license license:gpl3)))
 
 (define-public r-seqdesign
@@ -67518,13 +67561,13 @@ functionality to extract and evaluate the relevant probabilities.")
 (define-public r-selfcontrolledcohort
   (package
     (name "r-selfcontrolledcohort")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SelfControlledCohort" version))
        (sha256
-        (base32 "1jrpy02lb4l60n3mjgh8p3gc7kzmignv43ffcpjpnlgxp6kwsfs0"))))
+        (base32 "1yijn99g1zpnqd22pp9ysy5fyvc564w6hwcd669pw7gia1cnpmqp"))))
     (properties `((upstream-name . "SelfControlledCohort")))
     (build-system r-build-system)
     (arguments
@@ -67539,6 +67582,7 @@ functionality to extract and evaluate the relevant probabilities.")
                              r-empiricalcalibration
                              r-dplyr
                              r-databaseconnector
+                             r-cohortgenerator
                              r-cli
                              r-checkmate
                              r-andromeda))
@@ -74117,6 +74161,55 @@ decomposition of a weighted graph, as proposed by Eidsaa and Almaas (2013)
 usage make it suitable for large graphs.")
     (license license:gpl3)))
 
+(define-public r-scorecraft
+  (package
+    (name "r-scorecraft")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "scorecraft" version))
+       (sha256
+        (base32 "0a9c33ybhjaj7pm8wjrr2n395xg7hdpmmjnjr8w16m82dbfi33a8"))))
+    (properties `((upstream-name . "scorecraft")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xgboost r-rcpparmadillo r-rcpp
+                             r-optimalbinningwoe r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/evandeilton/scorecraft")
+    (synopsis
+     "Scorecard Development and Internal Ratings-Based Risk Parameters")
+    (description
+     "Builds points scorecards for binary targets (credit risk, fraud, propensity) on
+the optimal binning and weight of evidence engine of @code{OptimalBinningWoE}',
+and takes them to the risk parameters of the internal ratings-based (IRB)
+approach.  Variables are selected through optimal binning, eight admission
+rules, hold-out revalidation with frozen bins and a consensus of glmnet',
+xgboost', lightgbm and ranger models weighted by out-of-sample performance; the
+audit funnel never drops a candidate from the report.  The scorecard is fitted
+with an explicit, auditable scale alignment (a log-odds regression on the raw
+score composed with the points-to-double-the-odds map); cut-offs are swept with
+frozen cuts; reject inference is reported as a sensitivity band; the population
+and characteristic stability indices (PSI and CSI) are monitored with both the
+fixed and the sample-size-adjusted threshold; and production SQL is generated in
+fourteen dialects, with the agreement between R and SQL verified by test.  The
+IRB layer builds the default flag; calibrates the scorecard to a long-run
+default rate with rating grades, margins of conservatism and floors to give the
+probability of default (PD); models workout loss given default (LGD) in two
+stages with downturn and in-default estimates; models credit conversion factors
+from facility snapshots to give the exposure at default (EAD); and computes
+expected loss, risk weights, regulatory capital and expected credit loss from
+parameter tables selected by framework preset.  The heavy numeric kernels (rank
+correlation of wide weight of evidence tables, exact concordance counts for
+Somers D, streamed expected credit loss paths) are compiled with
+@code{RcppArmadillo}'.  The scorecard methodology follows Siddiqi (2017)
+<doi:10.1002/9781119282396> and Thomas et al. (2017)
+<doi:10.1137/1.9781611974560>.")
+    (license license:expat)))
+
 (define-public r-scorecardmodelutils
   (package
     (name "r-scorecardmodelutils")
@@ -77252,13 +77345,13 @@ The VAM method is outlined in: Frost (2020) <doi:10.1093/nar/gkaa582>.")
 (define-public r-scape
   (package
     (name "r-scape")
-    (version "2.3.5")
+    (version "2.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scape" version))
        (sha256
-        (base32 "1sy9ilyaidkjaqj3j54gcbacqdxy26ajwvwwms365pwrswc01jnl"))))
+        (base32 "06f5dwvw50amg197d8d7ic52nwnkqxw01hy6h3w4vgysl749ns2l"))))
     (properties `((upstream-name . "scape")))
     (build-system r-build-system)
     (arguments

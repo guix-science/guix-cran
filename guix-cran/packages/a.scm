@@ -3260,13 +3260,13 @@ possible by representing R expressions using a tree structure.")
 (define-public r-autograph
   (package
     (name "r-autograph")
-    (version "1.2.3")
+    (version "1.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "autograph" version))
        (sha256
-        (base32 "1jhv27hjc4hg7ja2dzhj0c74k02nr19lpbvrpgchbm0kmlwvi0q2"))))
+        (base32 "0zx3pjwp97ak5a3yicrvd9fcw3w48x14fkapyzs1xbcfhr226ffc"))))
     (properties `((upstream-name . "autograph")))
     (build-system r-build-system)
     (arguments
@@ -7819,13 +7819,13 @@ the C++ implementation of @code{cSPADE} by Mohammed J. Zaki.")
 (define-public r-arulesnbminer
   (package
     (name "r-arulesnbminer")
-    (version "0.1.9")
+    (version "0.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arulesNBMiner" version))
        (sha256
-        (base32 "13sdpks5wm4xmd0xwz7qzlxdyd7r09ak2wdwy1dy7jdmd04caf02"))))
+        (base32 "02j1x19jhlbcw9dqgc0wfs5w5rsp92mlfp0g54z5yzx3qkwsy5gb"))))
     (properties `((upstream-name . "arulesNBMiner")))
     (build-system r-build-system)
     (arguments
@@ -7833,6 +7833,7 @@ the C++ implementation of @code{cSPADE} by Mohammed J. Zaki.")
       #:tests? #f))
     (inputs (list openjdk))
     (propagated-inputs (list r-rjava r-arules))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/mhahsler/arulesNBMiner")
     (synopsis "Mining NB-Frequent Itemsets and NB-Precise Rules")
     (description
@@ -17647,6 +17648,35 @@ be used as well.  The book's companion website is available at
 <https://www.routledge.com/Designing-Experiments-and-Analyzing-Data-A-Model-Comparison-Perspective/Maxwell-Delaney-Kelley/p/book/9781041253846>.")
     (license license:gpl3+)))
 
+(define-public r-ambs
+  (package
+    (name "r-ambs")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ambs" version))
+       (sha256
+        (base32 "0rjx64ni1c300dhfmra9db9iqv95cvxmakp446vg0xp00ql0s4zr"))))
+    (properties `((upstream-name . "ambs")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=ambs")
+    (synopsis "Bayesian Alpha-Mixture Survival Models")
+    (description
+     "This package implements Bayesian estimation for alpha-mixture survival models
+with right-censored data.  Weibull-Weibull, Gamma-Weibull, and
+Lognormal-Lognormal component specifications are supported, with all component
+parameters treated as unknown.  The package provides identifiability handling,
+adaptive Markov chain Monte Carlo sampling, convergence diagnostics, model
+comparison criteria, and posterior survival, hazard, and density estimation.
+The methodology extends the framework described by Luan et al. (2026)
+<doi:10.3390/math14101772>.  Danish Ezwan, David Goldberg, and Ting Huang
+contributed equally to the package.")
+    (license license:gpl3+)))
+
 (define-public r-ambre
   (package
     (name "r-ambre")
@@ -25008,6 +25038,58 @@ narrative texts and word-level representations to support exploratory text
 analysis and teaching workflows.")
     (license license:expat)))
 
+(define-public r-aersn
+  (package
+    (name "r-aersn")
+    (version "0.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "aersn" version))
+       (sha256
+        (base32 "1ckp2w5c4z3xkn3amyh0af4fb8r6a5iwr4h09ajad3iifc4daahn"))))
+    (properties `((upstream-name . "aersn")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sandwich r-lpsolve))
+    (native-inputs (list r-knitr))
+    (home-page
+     "https://www.janeway.econ.cam.ac.uk/publication/affine-equivariant-adjusted-range-self-normalization")
+    (synopsis
+     "Affine-Equivariant Adjusted-Range Self-Normalization for Time-Series Inference")
+    (description
+     "Tuning-free inference on fixed-dimensional parameters of dependent time series
+using affine-equivariant adjusted-range self-normalization.  The centered
+partial-sum path of estimated influence contributions is normalized by its
+increment hull, the convex hull of all path increments.  The gauge of the hull
+provides an asymptotically pivotal test statistic and an affine-equivariant
+confidence region without estimating the long-run covariance matrix, and its
+support function gives simultaneous confidence intervals for linear contrasts.
+For a single parameter the construction reduces exactly to adjusted-range
+self-normalization, whose limiting distribution is available in closed form.
+The Brownian reference law is simulated on a grid matched to the sample size or
+a supplied common variance-accumulation profile; inference for dependent
+observations remains asymptotic.  Five further methods are provided for
+comparison on the same estimate and influence contributions: componentwise
+adjusted ranges after lag-zero partial prewhitening, quadratic
+self-normalization following Shao (2010) <doi:10.1111/j.1467-9868.2009.00737.x>,
+kernel long-run covariance estimation with automatic bandwidth selection
+following Andrews (1991) <doi:10.2307/2938229> and Newey and West (1994)
+<doi:10.2307/2297912>, Bartlett fixed-b inference following Kiefer and Vogelsang
+(2005) <doi:10.1017/S0266466605050565>, and the equal-weighted cosine method of
+Lazarus, Lewis, Stock and Watson (2018) <doi:10.1080/07350015.2018.1506926>.
+Model interfaces are provided for sample means, linear regression, smooth
+generalized method of moments, and conditional likelihood scores; other
+estimators are handled through user-supplied influence contributions.  The
+methods follow Hong, Lin, Linton, Newey and Sun (2026), Cambridge Working Papers
+in Economics No.  2678
+<https://www.janeway.econ.cam.ac.uk/publication/affine-equivariant-adjusted-range-self-normalization>
+and, for the scalar case, Hong, Linton, @code{McCabe}, Sun and Wang (2024)
+<doi:10.1016/j.jeconom.2023.105603>.")
+    (license license:expat)))
+
 (define-public r-aerosampler
   (package
     (name "r-aerosampler")
@@ -27044,13 +27126,13 @@ are based on Vehtari, Simpson, Gelman, Yao, and Gabry (2024)
 (define-public r-adjustedcurves
   (package
     (name "r-adjustedcurves")
-    (version "0.11.4")
+    (version "0.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adjustedCurves" version))
        (sha256
-        (base32 "002hwvczvm06ph3rh17hz8xnp46fyy7zh3ai5539a6sdzs5ck4ha"))))
+        (base32 "0dazj8i74cfi92y1i9r7r7qv597ygr8h7n97y9dkaa9fhv92zb06"))))
     (properties `((upstream-name . "adjustedCurves")))
     (build-system r-build-system)
     (arguments

@@ -16,6 +16,7 @@
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages c)
   #:use-module (gnu packages python)
+  #:use-module (gnu packages compression)
   #:use-module (gnu packages julia)
   #:use-module (gnu packages web)
   #:use-module (gnu packages duckdb)
@@ -2268,13 +2269,13 @@ mixture models approach.  See Gaynor et al. (2024) <doi:10.1002/aps3.11606>.")
 (define-public r-npwbs
   (package
     (name "r-npwbs")
-    (version "0.5.0")
+    (version "1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "npwbs" version))
        (sha256
-        (base32 "1wnv5jaapsfah2l35xr50hqx0q15ahiv5zgkdwhdv73xwnq5kmmi"))))
+        (base32 "0k9c8pr8nridrykb3vk3gslg82zkilgknkzy3gwbqwjr1h1ygqpg"))))
     (properties `((upstream-name . "npwbs")))
     (build-system r-build-system)
     (arguments
@@ -2290,9 +2291,9 @@ univariate sequences using Wild Binary Segmentation, as described in Ross (2026)
 \"Nonparametric Detection of Multiple Location-Scale Change Points via Wild
 Binary Segmentation\" <doi:10.48550/@code{arXiv.2107.01742>}.  The package
 provides Mann--Whitney, Mood, Lepage, CramÃ©r--von Mises, modified Baumgartner,
-and standardised Zhang Z_C rank-based statistics, together with method-specific
-thresholds for controlling the probability of incorrectly detecting a change
-point in a homogeneous sequence.")
+standardised Zhang Z_C, and standardised Anderson--Darling rank-based
+statistics, together with method-specific thresholds for controlling the
+probability of incorrectly detecting a change point in a homogeneous sequence.")
     (license license:gpl3)))
 
 (define-public r-nptest
@@ -13717,18 +13718,19 @@ visualizations of regional brain measures.  Mowinckel (2020).")
 (define-public r-neuroim2
   (package
     (name "r-neuroim2")
-    (version "0.13.0")
+    (version "0.19.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "neuroim2" version))
        (sha256
-        (base32 "06y3xa4d2m51zxdn8fqa070xcb0xa6jb4hiqr4d495vm8wh3vddw"))))
+        (base32 "0lmzq3pjkccxzbd0fpim6g3mfsrkw457cp0pvk83ahxpcp3n3lsj"))))
     (properties `((upstream-name . "neuroim2")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (inputs (list zlib))
     (propagated-inputs (list r-stringr
                              r-rniftyreg
                              r-rnifti
@@ -13736,6 +13738,7 @@ visualizations of regional brain measures.  Mowinckel (2020).")
                              r-rcpparmadillo
                              r-rcpp
                              r-purrr
+                             r-patchwork
                              r-mmap
                              r-matrix
                              r-magrittr
@@ -16589,20 +16592,22 @@ methods, please refer to the paper by H Du, S Wen, Y Guo, F Jin, BD Gallas
 (define-public r-nestimate
   (package
     (name "r-nestimate")
-    (version "0.8.5")
+    (version "0.9.24")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Nestimate" version))
        (sha256
-        (base32 "1y34aq6y9i564cslxwbp1xasshmr8dbk9sxs3gz1wslgfw03xfvf"))))
+        (base32 "1a3lm2l9my694q97cxia9x3wkliq56ssxfz3lpsy0mn8bf3ap930"))))
     (properties `((upstream-name . "Nestimate")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-scales
+                             r-psychnets
                              r-nnet
+                             r-idiographic
                              r-ggplot2
                              r-data-table
                              r-cluster
@@ -16780,13 +16785,13 @@ in both static and interactive output at the downstream.")
 (define-public r-nestage
   (package
     (name "r-nestage")
-    (version "0.8.0")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NeStage" version))
        (sha256
-        (base32 "0ss1ma9bm5pj410y1l2lsyp4nhzlnv430mqqy1phbzrl8i1ifrm7"))))
+        (base32 "0d4n6js2ahh9vhf1ks3krc8j14aggars3wmlk5zfrq98lkv2ay8q"))))
     (properties `((upstream-name . "NeStage")))
     (build-system r-build-system)
     (arguments

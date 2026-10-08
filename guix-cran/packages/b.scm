@@ -11424,13 +11424,13 @@ of distributions, including Mohammadi and et al. (2013)
 (define-public r-bmiselect
   (package
     (name "r-bmiselect")
-    (version "1.0.9")
+    (version "1.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BMIselect" version))
        (sha256
-        (base32 "0l8z3kwc37zg1v3qnwxq7l7qkljpsawy7ap6qxx79kws6b30g63x"))))
+        (base32 "0z74bncfg293hzn95vr8lv00csynbqdpcl1s52zvysx7qbqvx14c"))))
     (properties `((upstream-name . "BMIselect")))
     (build-system r-build-system)
     (arguments
@@ -17141,13 +17141,13 @@ by Zuur et al. (2009) <doi:10.1007/978-0-387-87458-6>.")
 (define-public r-biometryassist
   (package
     (name "r-biometryassist")
-    (version "1.5.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biometryassist" version))
        (sha256
-        (base32 "0kx2qi4z6mdgb0yk4p65v6cj2yvcxgf86rk3xdv6189bjhshgr40"))))
+        (base32 "0nmmmq5aawrqni4wpndjcy0jxzhppyzdqi5ij0l849i291n3gvql"))))
     (properties `((upstream-name . "biometryassist")))
     (build-system r-build-system)
     (arguments
@@ -20816,13 +20816,13 @@ simulating networks with local dependence to assess the goodness-of-fit.")
 (define-public r-bigdm
   (package
     (name "r-bigdm")
-    (version "0.5.8")
+    (version "0.5.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bigDM" version))
        (sha256
-        (base32 "0yhfvg5bbslnmfhc1vam395aa7175jyz6qrvf4h235v90zxw0a0n"))))
+        (base32 "1lg9sg3csjbc7c2azarl2mf52y585skm5w18cm2b02s6fk472x7d"))))
     (properties `((upstream-name . "bigDM")))
     (build-system r-build-system)
     (arguments
@@ -20983,13 +20983,13 @@ specified.  A direct base to base converter is included.")
 (define-public r-bigbang
   (package
     (name "r-bigbang")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bigbang" version))
        (sha256
-        (base32 "1rpj9ha2hlwcr4dvp1233aavk3cgi8nj8sd5p7ww8hh0k63ffh0f"))))
+        (base32 "0v21zigv6ps8ixpis8mdr4wd9dasaqql2lfrd950q3vkcxaa0jyv"))))
     (properties `((upstream-name . "bigbang")))
     (build-system r-build-system)
     (arguments
@@ -23517,6 +23517,36 @@ methods can be found in Zhao et al. (2020) <@code{arXiv:2004.07743>}.")
     (description "The sample size according to the Bethel's procedure.")
     (license license:gpl2+)))
 
+(define-public r-betbetter
+  (package
+    (name "r-betbetter")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "betbetter" version))
+       (sha256
+        (base32 "0k4369v6nr6gvr28b40vqq7dknyfn4a36widcldym7ccrk58y66b"))))
+    (properties `((upstream-name . "betbetter")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite r-httr2))
+    (native-inputs (list r-knitr))
+    (home-page "https://betbetter.world/api/")
+    (synopsis "Access the Bet Better Open Sports Model API")
+    (description
+     "Retrieves published statistical model estimates for upcoming sporting fixtures
+from the Bet Better open API, covering Australian rules football, baseball,
+basketball, American football, ice hockey, association football, tennis and
+mixed martial arts.  For each rated selection the interface returns the model's
+estimated probability that the selection occurs, together with the decimal odds
+implied by that probability.  No registration or authentication is required.
+Bookmaker prices are not published by the API and are therefore not available
+through this package.")
+    (license license:expat)))
+
 (define-public r-betategarch
   (package
     (name "r-betategarch")
@@ -25487,23 +25517,21 @@ dose-response relationship and plot the dose-response curve.")
 (define-public r-beautils
   (package
     (name "r-beautils")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "beautils" version))
        (sha256
-        (base32 "06qgybj1pxmr29cig70sfgsw2hjcsf48qirj332rrszl098d32mi"))))
+        (base32 "0malhm9vkl481sj97j2qcn4hgzlx9gsws2dkg3rhmi8y18308bnx"))))
     (properties `((upstream-name . "beautils")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-uuid
-                             r-tidyr
+    (propagated-inputs (list r-tidyr
                              r-rstudioapi
                              r-rlang
-                             r-qrencoder
                              r-purrr
                              r-glue
                              r-ggplot2
@@ -25513,13 +25541,14 @@ dose-response relationship and plot the dose-response curve.")
     (home-page "https://cran.r-project.org/package=beautils")
     (synopsis "Field Planning and Biostatistics Utilities")
     (description
-     "This package provides a collection of utility functions for biostatistics,
-agricultural trial planning, and experimental design.  Key features include
-generating experimental designs (like Latin Square, Alpha-Lattice by Patterson
-and Williams (1976) <doi:10.2307/2335087>, and Factorial), fieldbook creation,
-layout sketching, QR code-based label generation, and descriptive statistical
-tools to easily handle most common descriptive statistics for quantitative
-variables as described by Field, A., Miles, J., & Field, Z. (2012,
+     "This package provides a toolkit for agricultural trial planning, experimental
+design, and applied biostatistics.  Supports generating field designs such as
+Latin Square, Alpha-Lattice (Patterson and Williams, 1976
+<doi:10.2307/2335087>), and Factorial layouts, with automatic fieldbook creation
+and layout sketching.  Includes a built-in QR Code engine (powered by the Nayuki
+C library <https://github.com/nayuki/QR-Code-generator>) for generating
+printable plot labels in PDF. Also provides descriptive statistics utilities for
+quantitative variables following Field, Miles, and Field (2012,
 ISBN:978-1-4462-0045-2).")
     (license license:expat)))
 
@@ -27967,6 +27996,38 @@ and Chris Wallace (2023) <doi:10.1093/bioinformatics/btad393> \"BBmix: a Bayesia
 beta-binomial mixture model for accurate genotyping from RNA-sequencing.\".")
     (license license:gpl2)))
 
+(define-public r-bbmbc
+  (package
+    (name "r-bbmbc")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BBMBC" version))
+       (sha256
+        (base32 "1ab25y6i5qsvfia8y4a6nfrkcfzib8x57rxjfzfvdiyf013lsvd1"))))
+    (properties `((upstream-name . "BBMBC")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-glmmtmb r-foreach r-doparallel))
+    (home-page "https://cran.r-project.org/package=BBMBC")
+    (synopsis
+     "Beta-Binomial Models for Vaccine-Specific Memory B Cell Frequency and Power Calculations")
+    (description
+     "This package provides tools to model overdispersed vaccine-specific memory B
+cell frequencies using Beta-Binomial generalized linear models, specifically
+designed for analyzing vaccine-induced cellular immune responses.  Includes
+method-of-moments dispersion estimation, likelihood ratio testing across
+experimental arms, and Monte Carlo simulation frameworks to calculate
+statistical power and Type I error rates.  The methodologies are directly
+motivated by the analysis of immunology data in Vaccination with
+@code{mRNA-encoded} membrane-anchored HIV envelope trimers elicited tier 2
+neutralizing antibodies in a phase 1 clinical trial (Parks et al.  2025)
+<doi:10.1126/scitranslmed.ady6831>.")
+    (license license:expat)))
+
 (define-public r-bbl
   (package
     (name "r-bbl")
@@ -29781,6 +29842,33 @@ mixed hierarchies (Mix-Cond and TD-cond) (Zambon et al., 2024)
 with Bayesian treatment of the covariance matrix (Carrara et al., 2025) <doi:
 10.48550/@code{arXiv.2506.19554>}.")
     (license license:lgpl3+)))
+
+(define-public r-bayesre
+  (package
+    (name "r-bayesre")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BayesRE" version))
+       (sha256
+        (base32 "084a657zmxk8viafd538l6apyp50fkyasw2ysj0rkazm412n5sr6"))))
+    (properties `((upstream-name . "BayesRE")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rstan r-ggplot2 r-bayesplot))
+    (home-page "https://cran.r-project.org/package=BayesRE")
+    (synopsis "Bayesian Multiple Linear Regression Estimation for Crop Yield")
+    (description
+     "This package implements Bayesian multiple linear regression models for
+estimating crop yield response to climatic variables.  Posterior predictions and
+regional sensitivity coefficients are returned and can be visualised with
+built-in plotting utilities.  Methods are based on Stan (Carpenter et al. (2017)
+<doi:10.18637/jss.v076.i01>) and Bayesian workflow described in Gelman et al.
+(2013, ISBN:9781439840955).")
+    (license license:expat)))
 
 (define-public r-bayesqrsurvey
   (package

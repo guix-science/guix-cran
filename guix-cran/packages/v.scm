@@ -979,13 +979,13 @@ test (Kim, 2009) <doi:10.1016/j.frl.2009.04.003>.")
 (define-public r-vrpr
   (package
     (name "r-vrpr")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vrpr" version))
        (sha256
-        (base32 "1za9xkhljni7j403v2y4nr7zqvgc8xy958n9mkrc88acw06janj4"))))
+        (base32 "0ah8lgslcg6vm7br827mlgaqbzqhxc0bxsmy9lfb46xd9z20v42v"))))
     (properties `((upstream-name . "vrpr")))
     (build-system r-build-system)
     (arguments
@@ -6302,19 +6302,20 @@ methodologies, see Kamkar et al. (2025) <doi:10.1016/j.agsy.2025.104392>.")
 (define-public r-venny
   (package
     (name "r-venny")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "venny" version))
        (sha256
-        (base32 "0vmf7crh2dxkna5dab0vdcd3ag6hfgfz4qph146jdpygrrghd8p1"))))
+        (base32 "1xwap4ndg1xv7x89i9a4iw2avahr7nqf5fmkwjahvzchvsj0zmx3"))))
     (properties `((upstream-name . "venny")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-polyclip r-ggplot2))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/P10911004-NPUST/venny")
     (synopsis "Venn Diagram")
     (description
@@ -6394,13 +6395,13 @@ further customisations.")
 (define-public r-venndiagramlab
   (package
     (name "r-venndiagramlab")
-    (version "2.4.2")
+    (version "2.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vennDiagramLab" version))
        (sha256
-        (base32 "0akvaaazmpnlny4z6jpmna8mq56qngffnn4kvhnkyzn3isnrg29a"))))
+        (base32 "1xr1l4g3i3rvfgwvkwi7jb1p482xch7sqklcdgcwm3jl9q38jbmv"))))
     (properties `((upstream-name . "vennDiagramLab")))
     (build-system r-build-system)
     (arguments

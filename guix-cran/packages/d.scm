@@ -620,6 +620,37 @@ described for a survival outcome in: Devaux, Helmer, Genuer & Proust-Lima (2023)
      "An anonymization algorithm to resist neighbor label attack in a dynamic network.")
     (license license:expat)))
 
+(define-public r-dynet
+  (package
+    (name "r-dynet")
+    (version "0.5.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Dynet" version))
+       (sha256
+        (base32 "19zqihfd5xr2arck0j19ckm2jn63phwsdgfmrbq62ggmyxnaagzm"))))
+    (properties `((upstream-name . "Dynet")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2 r-cograph))
+    (native-inputs (list r-knitr))
+    (home-page "https://pak.dynasite.org/Dynet/")
+    (synopsis "Tidy Temporal Network Analysis")
+    (description
+     "Building, analysis and visualisation of temporal networks.  Supports several
+formats of relational data: interval data with explicit start and end times,
+contact data of instantaneous events, threaded interactions such as forum or
+chat data, and co-presence logs.  Every analysis returns a tidy data frame
+carrying proper vertex labels.  Metrics cover time-varying centrality,
+graph-level structure, edge formation and dissolution, burstiness,
+time-respecting paths, reachability and mixing.  Offers a wide variety of
+network visualisations and animations, as well as plots of temporal network
+metrics across time.")
+    (license license:expat)))
+
 (define-public r-dynemu
   (package
     (name "r-dynemu")
@@ -6754,6 +6785,35 @@ status.  This link <https://drill.apache.org/docs> contains more information
 about Apache Drill.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-driftwatch
+  (package
+    (name "r-driftwatch")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "driftwatch" version))
+       (sha256
+        (base32 "11nllmi85c8xrbznzps17ladkzscsmz4262r53958kz4f1haa3zi"))))
+    (properties `((upstream-name . "driftwatch")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/edidatasolutions/driftwatch")
+    (synopsis "Sequential Monitoring of Item Parameter Drift")
+    (description
+     "Ongoing surveillance of item parameter drift for continuous testing programs and
+pre-equated item banks.  Estimates item difficulty in rolling calibration
+windows, runs sequential cumulative sum (CUSUM) detection (Page, 1954,
+<doi:10.1093/biomet/41.1-2.100>; applied to testing by Veerkamp and Glas, 2000,
+<doi:10.3102/10769986025004373>) with change-point estimation, separates gradual
+drift from abrupt jumps, tunes alarm thresholds for a bank-wide false-alarm
+target by simulation on the program's own design, quantifies score and pass-rate
+impact, and records recommended actions in an audit log.")
+    (license license:expat)))
+
 (define-public r-drifter
   (package
     (name "r-drifter")
@@ -7736,6 +7796,46 @@ language around its contents.")
 dragon kings (DKs).  The statistical methods in this package were reviewed in
 Wheatley & Sornette (2015) <doi:10.2139/ssrn.2645709>.")
     (license license:gpl3)))
+
+(define-public r-dragonfarm
+  (package
+    (name "r-dragonfarm")
+    (version "0.3.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dragonfarm" version))
+       (sha256
+        (base32 "0kqaxs01cihjmky54g95bqkpgl0h8ns6v5dpv5rxg44m8ygcn445"))))
+    (properties `((upstream-name . "dragonfarm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zip
+                             r-withr
+                             r-sortable
+                             r-shiny
+                             r-rlang
+                             r-reticulate
+                             r-ps
+                             r-processx
+                             r-plotly
+                             r-jsonlite
+                             r-glue
+                             r-cli
+                             r-bslib))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/tejas4patel/dragon-farm")
+    (synopsis "Fine-Tune Small Language Models with LoRA from R")
+    (description
+     "Fine-tune small (100M to 3B parameter) causal language models with @code{LoRA}
+(Low-Rank Adaptation) from R. Datasets are mapped to chat-format prompts and
+responses, training runs in a background Python process built on Hugging Face
+transformers and peft', and a shiny app offers drag-and-drop dataset upload and
+column mapping.  Python dependencies are declared through reticulate and
+resolved automatically on first use.")
+    (license license:expat)))
 
 (define-public r-dragmapr
   (package
@@ -17598,35 +17698,6 @@ estimation through the use of alternating direction method of multipliers
 optimization with a variety of different loss functions.")
     (license license:expat)))
 
-(define-public r-dineq
-  (package
-    (name "r-dineq")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dineq" version))
-       (sha256
-        (base32 "1xrhrdc970f7hm9xng9z7xmshnmmz89cn3gmnyabzprx44ccr9sl"))))
-    (properties `((upstream-name . "dineq")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-hmisc r-boot))
-    (home-page "https://cran.r-project.org/package=dineq")
-    (synopsis "Decomposition of (Income) Inequality")
-    (description
-     "Decomposition of (income) inequality by population sub groups.  For a
-decomposition on a single variable the mean log deviation can be used (see
-Mookherjee Shorrocks (1982) <DOI:10.2307/2232673>).  For a decomposition on
-multiple variables a regression based technique can be used (see Fields (2003)
-<DOI:10.1016/s0147-9121(03)22001-x>).  Recentered influence function regression
-for marginal effects of the (income or wealth) distribution (see Firpo et al.
-(2009) <DOI:10.3982/ECTA6822>).  Some extensions to inequality functions to
-handle weights and/or missings.")
-    (license license:gpl3)))
-
 (define-public r-dinamic-duo
   (package
     (name "r-dinamic-duo")
@@ -24495,32 +24566,32 @@ vignette runs without further setup.")
 (define-public r-depguard
   (package
     (name "r-depguard")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "depguard" version))
        (sha256
-        (base32 "1sy7cz2dil7psdl91qib3jiwlp470h3xmjfa4i96kawgjp08bbg9"))))
+        (base32 "1c5cch8z90d7mwmbbphwzrx90z4l47f6jkhfvf5j6mc8nz7n87q8"))))
     (properties `((upstream-name . "depguard")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sessioninfo r-cli))
+    (propagated-inputs (list r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/sunraycodes/depguard")
     (synopsis
-     "Manifest-Based Dependency Conflict Detection for Sandboxed R Sessions")
+     "Manifest-Based Dependency Conflict Detection for Sandboxed and Desktop R Sessions")
     (description
-     "This package provides lightweight, manifest-based checking of R package
-dependencies (including transitive dependencies) against the currently installed
-environment, without requiring a full project lockfile.  Designed for sandboxed
-or ephemeral notebook environments (e.g. Kaggle, Colab, Binder) where
-renv'-style lockfile ownership is impractical.  Includes session snapshot/diff
-tools (building on sessioninfo') to detect when an install silently changes the
-version of a package that is already loaded, and optional single-package version
-rollback.")
+     "Lightweight, offline-first checking of R package dependencies against the
+currently installed environment, without requiring a full project lockfile.
+Verifies a declared manifest of package versions, including version constraints
+declared by transitive dependencies, reports session-level snapshot differences
+(including stale versions still loaded in a running session), detects packages
+shadowed by another library, and offers single-package version rollback.
+Designed for hosted notebooks (e.g. Kaggle, Colab, Binder) where renv'-style
+lockfile ownership is impractical, and equally usable on a normal desktop.")
     (license license:expat)))
 
 (define-public r-dependentsimr
@@ -26289,6 +26360,42 @@ into a consistent, R-friendly data frame format that resembles how the data
 appears on the @code{DeltaBreed} web interface as closely as possible.")
     (license license:asl2.0)))
 
+(define-public r-delta-sharing
+  (package
+    (name "r-delta-sharing")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "delta.sharing" version))
+       (sha256
+        (base32 "0r8m5yfqhgzgx3m698xws81vcx8g7xqccyh5yn1yc1ca95q45r71"))))
+    (properties `((upstream-name . "delta.sharing")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-r6
+                             r-purrr
+                             r-openssl
+                             r-nanoarrow
+                             r-jsonlite
+                             r-jose
+                             r-httr2
+                             r-fs
+                             r-cli
+                             r-arrow))
+    (native-inputs (list r-knitr))
+    (home-page "https://zacdav-db.github.io/delta-sharing-r/")
+    (synopsis "Client for the Delta Sharing Protocol")
+    (description
+     "Connects R to Delta Sharing servers for share discovery, table metadata,
+snapshot reads, and change data feed reads.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-delta
   (package
     (name "r-delta")
@@ -27242,13 +27349,13 @@ inst/COPYRIGHTS for details on third-party code.")
 (define-public r-deepspat
   (package
     (name "r-deepspat")
-    (version "0.3.4")
+    (version "0.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "deepspat" version))
        (sha256
-        (base32 "11jimk3yaaqp2myh6dakqhx4s9npqqdhkw0hrz51jd2rmly5s2k8"))))
+        (base32 "0gm2397whpan4ihid6qmk61vil1cfmbw7nbnq3fpw4vkj077k98k"))))
     (properties `((upstream-name . "deepspat")))
     (build-system r-build-system)
     (arguments
@@ -28514,6 +28621,37 @@ Shannon (1948) <doi:10.1002/j.1538-7305.1948.tb01338.x>, classify systems by
 infrastructure type (static, periodic, continuous, human-in-the-loop), and
 evaluate subgroup disparities in decision exposure and stability.  Applications
 include education, policy, health, and organisational research.")
+    (license license:expat)))
+
+(define-public r-decisionfacets
+  (package
+    (name "r-decisionfacets")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "decisionfacets" version))
+       (sha256
+        (base32 "1f7gsa8yzm8rvgb3g2ylj20bkc2iwkjdf9jw3frqwaiwi8p586jc"))))
+    (properties `((upstream-name . "decisionfacets")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/edidatasolutions/decisionfacets")
+    (synopsis "Decision Accuracy and Consistency for Rater-Mediated Exams")
+    (description
+     "Answers \"would this candidate have passed with a different set of raters?\" for
+rater-mediated exams such as oral examinations, objective structured clinical
+examinations and essay scoring.  Builds on the many-facet extension of the
+rating scale model (Andrich, 1978, <doi:10.1007/BF02293814>) to compute
+counterfactual pass probabilities under the observed, an average-severity and a
+random rater panel, under an explicit decision rule (raw total, fair average or
+measure), and splits expected misclassification into measurement error and rater
+assignment, extending item response theory classification accuracy (Lee, 2010,
+<doi:10.1111/j.1745-3984.2009.00096.x>) to rater effects.  Models can be fitted
+with TAM or a built-in joint maximum likelihood estimator.")
     (license license:expat)))
 
 (define-public r-decisiondrift
@@ -33104,6 +33242,51 @@ Statistics).  Includes panel identification algorithms for linking individuals
 across survey waves.")
     (license license:expat)))
 
+(define-public r-datazoom-saude
+  (package
+    (name "r-datazoom-saude")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "datazoom.saude" version))
+       (sha256
+        (base32 "0qy612krvsgzrjj26zbnynwgc0qh65hc7rw3kr7sif1da1dkf6pl"))))
+    (properties `((upstream-name . "datazoom.saude")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-sf
+                             r-readxl
+                             r-readr
+                             r-rcpp
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-jsonlite
+                             r-janitor
+                             r-hmisc
+                             r-dplyr
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://datazoom.com.br/en/dz_saude/")
+    (synopsis "Download Brazilian Health Data from DATASUS")
+    (description
+     "This package provides a comprehensive set of functions to easily download,
+clean, and standardize various public health datasets from DATASUS
+<https://datasus.saude.gov.br/>, the Department of Informatics of the Brazilian
+Unified Health System (SUS).  This package streamlines access to crucial health
+information, including mortality (SIM), hospital admissions (SIH), live births
+(SINASC), hospital beds (CNES-LT), and outpatient procedures (SIASUS), making
+the data ready for epidemiological and public health analyses.")
+    (license license:expat)))
+
 (define-public r-datazoom-amazonia
   (package
     (name "r-datazoom-amazonia")
@@ -33382,13 +33565,13 @@ underlying data and compression format.")
 (define-public r-datasus
   (package
     (name "r-datasus")
-    (version "0.16.1")
+    (version "0.16.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datasus" version))
        (sha256
-        (base32 "00543nl6d4ph9nkv13v1kws26dk253kv1pb0pczw6n761ayy5321"))))
+        (base32 "0iy0765x1qd6pfksagdgp2qavf5f2dgx91rpqi0gnszspbynaaby"))))
     (properties `((upstream-name . "datasus")))
     (build-system r-build-system)
     (arguments
@@ -33912,6 +34095,38 @@ to support teaching, methodological research, and the development of SDA
 techniques.")
     (license license:gpl2+)))
 
+(define-public r-datascan
+  (package
+    (name "r-datascan")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "datascan" version))
+       (sha256
+        (base32 "02hmv8vhpspg7qwvq1r78zgygd3a342djrljc4hpr1j72fr6x83s"))))
+    (properties `((upstream-name . "datascan")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-pillar
+                             r-magrittr
+                             r-glue
+                             r-dplyr
+                             r-cli))
+    (home-page "https://github.com/emitanaka/datascan")
+    (synopsis "Scan Data for Quick Structural Summaries and Checks")
+    (description
+     "Scans data for checking columns that are constant, one-to-one, missing or all
+unique.  Users can also try to identify the columns that uniquely index the
+observational unit and whether some columns are nested or complete.")
+    (license license:expat)))
+
 (define-public r-datarobot
   (package
     (name "r-datarobot")
@@ -34174,13 +34389,13 @@ website
 (define-public r-dataqualitydashboard
   (package
     (name "r-dataqualitydashboard")
-    (version "2.8.9")
+    (version "2.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DataQualityDashboard" version))
        (sha256
-        (base32 "1jxyzmnkj52b9f93khc7qwwm6a32inf88yikdv8aqzqlsk0vzb8m"))))
+        (base32 "17a5sd8k8xf4zv7yxnly8bj37kskrmbydrzppl6zpw50cz10ym1k"))))
     (properties `((upstream-name . "DataQualityDashboard")))
     (build-system r-build-system)
     (arguments

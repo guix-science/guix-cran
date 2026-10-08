@@ -2866,6 +2866,33 @@ purpose (information criteria, cross-validation, stability selection).")
 equation.")
     (license license:gpl2)))
 
+(define-public r-quadriceps
+  (package
+    (name "r-quadriceps")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quadriceps" version))
+       (sha256
+        (base32 "1d6p1v5kzv4n8adcdqv5cbhmzbsfmxszk2501ysjh9fm5nf29m03"))))
+    (properties `((upstream-name . "quadriceps")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/NittanyLion/quadriceps-r")
+    (synopsis
+     "Positive-Weight Cubature Rules for the Gaussian Weight and the Cube")
+    (description
+     "Positive-weight cubature rules in several dimensions for the Gaussian weight
+(ghpos) and the uniform weight on the cube (lepos): the smallest rules known to
+the author for dimensions 2 to 5, with a fallback to the cheapest tensor product
+of lower-dimensional rules elsewhere.  The rules are described in Pinkse (2026)
+<doi:10.48550/@code{arXiv.2609.26840>}, <doi:10.5281/zenodo.22904159>.  The R
+twin of the Julia package Quadriceps.jl'.")
+    (license license:expat)))
+
 (define-public r-quadratik
   (package
     (name "r-quadratik")

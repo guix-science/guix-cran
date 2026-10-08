@@ -7925,13 +7925,13 @@ affiliated with the @code{OpenStreetMap.org} mapping project.")
 (define-public r-openspecy
   (package
     (name "r-openspecy")
-    (version "2.0.1")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OpenSpecy" version))
        (sha256
-        (base32 "05gj1jckpg4pjjbgf9477wbz05zixilffwzgc106qqqfz15yxi86"))))
+        (base32 "1ys9s7446pdbmkkncz3a65xiaz1bb3khkx9978z8l2xs6qbhygy0"))))
     (properties `((upstream-name . "OpenSpecy")))
     (build-system r-build-system)
     (arguments
@@ -14168,6 +14168,32 @@ and Chien (2022) <doi:10.18637/jss.v104.i06>.")
 (and maybe others) find useful when developing data science software.  Includes
 tools for simulation, data transformation, input validation, and more.")
     (license license:gpl3+)))
+
+(define-public r-oeis-tools
+  (package
+    (name "r-oeis-tools")
+    (version "0.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oeis.tools" version))
+       (sha256
+        (base32 "14zwwvvcn2k3rm6pbz91m98vagc51ly84swrxb3lm2vsm4m8nam7"))))
+    (properties `((upstream-name . "oeis.tools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite r-httr2 r-gmp r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/oeistools/oeis-tools-R")
+    (synopsis "Access and Visualize Integer Sequences from the OEIS")
+    (description
+     "Programmatic access, analysis, and visualization of integer sequences from the
+On-Line Encyclopedia of Integer Sequences (OEIS) <https://oeis.org>.  Fetches
+sequence metadata and b-files, stores terms as arbitrary-precision integers via
+gmp', and plots them with ggplot2'.")
+    (license license:expat)))
 
 (define-public r-oefpil
   (package

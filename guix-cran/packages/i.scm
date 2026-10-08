@@ -2224,13 +2224,13 @@ calender format yyyy-mm-dd to and from ISO 8601 week format yyyy-Www-d.")
 (define-public r-isowater
   (package
     (name "r-isowater")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "isoWater" version))
        (sha256
-        (base32 "1ylp3sym75j29kc6a5803jifllxygrr2y4appz5zdd7kxy65q32z"))))
+        (base32 "0j0fdlvf051sj5pvwv4nf17r18i21gfzqhsq1r1jg02w1qsfbhhy"))))
     (properties `((upstream-name . "isoWater")))
     (build-system r-build-system)
     (arguments
@@ -2589,13 +2589,13 @@ soil texture charts, ceramic phase diagram).")
 (define-public r-isopam
   (package
     (name "r-isopam")
-    (version "3.6")
+    (version "3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "isopam" version))
        (sha256
-        (base32 "0ns340m9imkpp64lhvdcc0jbhbhy9gdzc2q01l3sc3i31zn1wfrj"))))
+        (base32 "0q94h439cgsgi5j5zrm4i9rkc92a12n2n4rqs2sdxqdrcz1y7876"))))
     (properties `((upstream-name . "isopam")))
     (build-system r-build-system)
     (arguments
@@ -2603,8 +2603,10 @@ soil texture charts, ceramic phase diagram).")
       #:tests? #f))
     (propagated-inputs (list r-vegan
                              r-tibble
+                             r-rspectra
                              r-ps
                              r-proxy
+                             r-igraph
                              r-ggplot2
                              r-future-apply
                              r-future
@@ -10076,13 +10078,13 @@ hashtag, popularity, user or location, and to access public users profile data."
 (define-public r-instantiate
   (package
     (name "r-instantiate")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "instantiate" version))
        (sha256
-        (base32 "1myd80di5w6d3qxfhhnwkhr98ck8xqybxz7rw37q89m8ik2n9yfz"))))
+        (base32 "125gs4l9lgygyy7j3giydwwal3lbps14r9134c4v4mf8szadj77m"))))
     (properties `((upstream-name . "instantiate")))
     (build-system r-build-system)
     (arguments
@@ -10131,6 +10133,32 @@ software.  Software installation is initiated through a GUI (just run
 downloading it, running the installer, deleting the installation file, copy and
 updating old packages to the new R installation.")
     (license license:gpl2)))
+
+(define-public r-installationdriver
+  (package
+    (name "r-installationdriver")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "installationDriver" version))
+       (sha256
+        (base32 "098qdkl4rcr06fjmsglwhf38l8k0sxxjfzli84l7rnccgsb0gv03"))))
+    (properties `((upstream-name . "installationDriver")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vprint))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=installationDriver")
+    (synopsis "Recursively Determine and Install Missing Dependencies")
+    (description
+     "For a list of specified package, we automate recursively determining and
+installing the missing CRAN package dependencies (\"Depends\", \"Imports\",
+\"@code{LinkingTo}\").  The main mechanisms used are
+@code{tools::package_dependencies()} and @code{utils::install.packages()}.")
+    (license license:gpl2+)))
 
 (define-public r-install-load
   (package
@@ -11576,13 +11604,13 @@ provided.")
 (define-public r-influential
   (package
     (name "r-influential")
-    (version "2.3.2")
+    (version "2.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "influential" version))
        (sha256
-        (base32 "0abgji1s24crzzzrfqmal1p112ll10vv7n57x212c06ip96ikwim"))))
+        (base32 "0n0fc0v6ya13bm56f4dpwrc611wlkj4agsn0wg8qf1dgpmy11m1h"))))
     (properties `((upstream-name . "influential")))
     (build-system r-build-system)
     (arguments
@@ -13831,6 +13859,41 @@ no longer have to worry about using specific typed variants of NA or explicitly
 declaring integer outputs, and evaluate outputs somewhat lazily, so you don't
 waste time on long operations that won't be used.")
     (license license:expat)))
+
+(define-public r-incaam
+  (package
+    (name "r-incaam")
+    (version "1.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IncAAM" version))
+       (sha256
+        (base32 "1l8wdp7vn4g6v61pxvxl3p6mcpmlfikby4m03wg3y3nfwslad2bs"))))
+    (properties `((upstream-name . "IncAAM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-purrr
+                             r-posterior
+                             r-minpack-lm
+                             r-ggplot2
+                             r-dplyr
+                             r-brms))
+    (home-page "https://cran.r-project.org/package=IncAAM")
+    (synopsis
+     "Bayesian Age-at-Maturity Analysis from Increment-Width Growth Series")
+    (description
+     "Bayesian hierarchical nonlinear mixed-effects analysis for estimating age at
+sexual maturity from annual increment-width growth series.  The method estimates
+age at maturity using tangent-ratio and jerk approaches and provides a posterior
+threshold-crossing ogive with an estimated A50.  Methodological details and
+applications are described in Campana, SmoliÅski, Morrongiello and Black (2026,
+in press).")
+    (license license:gpl3)))
 
 (define-public r-inca
   (package
@@ -18462,13 +18525,13 @@ software is described in Pritikin & Falk (2020) <doi:10.1177/0146621620929431>."
 (define-public r-ieugwasr
   (package
     (name "r-ieugwasr")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ieugwasr" version))
        (sha256
-        (base32 "0p56qxs3ap8hicqq9zxy00h7jnckph4lniq46wm9iix2l92z1qn6"))))
+        (base32 "0yv5h1mb7jadagcxw8r08qfignsflh9mlpj1dbg2s3iwwlcr3mbg"))))
     (properties `((upstream-name . "ieugwasr")))
     (build-system r-build-system)
     (arguments
@@ -21363,13 +21426,13 @@ VMS database, the ICES DATSU web services, and the ICES @code{SharePoint} site
 (define-public r-icesat2vegr
   (package
     (name "r-icesat2vegr")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ICESat2VegR" version))
        (sha256
-        (base32 "1ds2x6zg584yr8gq8hvvbp05ym38xx5fpl8lcmp3n0lpq1jhwzmr"))))
+        (base32 "06v9maifgkhwl9vgas7pjr8b1mjmvlqv3q5l39lyx09wk51b7jmi"))))
     (properties `((upstream-name . "ICESat2VegR")))
     (build-system r-build-system)
     (arguments

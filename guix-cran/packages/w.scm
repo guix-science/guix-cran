@@ -1758,13 +1758,13 @@ for investment purposes.  See Kumar and Padakandla(2022)
 (define-public r-wpproj
   (package
     (name "r-wpproj")
-    (version "0.2.3")
+    (version "0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WpProj" version))
        (sha256
-        (base32 "07d1f9mf31nb80f45pcamvjm3dsghhfkkrqf0zy4pv9cm8rhqh0g"))))
+        (base32 "0cwk1iq8qcrx33vl1hcnm0vlpjwyzgcmb6ih5fi6dfkv86mn5f9m"))))
     (properties `((upstream-name . "WpProj")))
     (build-system r-build-system)
     (arguments
@@ -1787,10 +1787,10 @@ for investment purposes.  See Kumar and Padakandla(2022)
                              r-magrittr
                              r-lifecycle
                              r-glmnet
+                             r-future
                              r-foreach
                              r-dplyr
-                             r-dorng
-                             r-doparallel
+                             r-dofuture
                              r-bh
                              r-approxot))
     (home-page "https://github.com/ericdunipace/WpProj")
@@ -7025,13 +7025,13 @@ example-specific cost values).")
 (define-public r-weightedrank
   (package
     (name "r-weightedrank")
-    (version "0.7.0")
+    (version "0.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "weightedRank" version))
        (sha256
-        (base32 "1iyyc3rb91f5xqrr7rr0bzrw3fq9ldfys6hcj9dc6npdbg4j9vih"))))
+        (base32 "1hy0l5dkalib02dzimfk05cd23dvp3y7h9a17xcwbf8qx0nlk5sw"))))
     (properties `((upstream-name . "weightedRank")))
     (build-system r-build-system)
     (arguments
@@ -9605,13 +9605,13 @@ path, not just a handler function.")
 (define-public r-waypoint
   (package
     (name "r-waypoint")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Waypoint" version))
        (sha256
-        (base32 "1vbka5366b3nbzfzkr2qsz31imcr1z2v5csi9wh7sbnazsw6fif5"))))
+        (base32 "1ych1q526xrwrgmnqhvrwr8q68m0j65hr1mhfsk58n93fhpq08bq"))))
     (properties `((upstream-name . "Waypoint")))
     (build-system r-build-system)
     (arguments
