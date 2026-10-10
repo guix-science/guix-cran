@@ -5281,13 +5281,13 @@ Gaussian.")
 (define-public r-brickster
   (package
     (name "r-brickster")
-    (version "0.2.14")
+    (version "0.2.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "brickster" version))
        (sha256
-        (base32 "13p7sfmrjd712zq2w7fa6h2ya5lrh1c1h3caxv7srd6nwvcsgzdv"))))
+        (base32 "1jqx2xgyfywb2lsmfc45xqb0fjdknyzm1l062hl8hhhdc4fd7lkw"))))
     (properties `((upstream-name . "brickster")))
     (build-system r-build-system)
     (arguments
@@ -7610,6 +7610,32 @@ designed for the cleaning of heart rates, but suitable for filtering any
 slowly-changing physiological variable.For more information see Signer
 (2010)<doi:10.1111/j.2041-210X.2009.00010.x>.")
     (license license:gpl3+)))
+
+(define-public r-boxdensityplot
+  (package
+    (name "r-boxdensityplot")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BoxDensityPlot" version))
+       (sha256
+        (base32 "1crbg1mbcqlip49r1z182c5234nwqc4a6cxakggm59p86nmvq9ql"))))
+    (properties `((upstream-name . "BoxDensityPlot")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-rlang r-readxl r-ggplot2 r-dplyr))
+    (home-page "https://cran.r-project.org/package=BoxDensityPlot")
+    (synopsis "Multi-Trait Density and Boxplot Visualization")
+    (description
+     "Reads wide-format phenotypic data (one row per genotype or sample, one column
+per trait) from CSV or Excel files, reshapes it to long format, and produces
+faceted figures that combine a mirrored density curve with a boxplot for each
+trait.  Density curves can be drawn on the left, right, or both sides of the
+box, and figures can be saved automatically at publication resolution.")
+    (license license:expat)))
 
 (define-public r-boxcoxmix
   (package
@@ -17069,13 +17095,13 @@ Rapid Bioassessment Protocols (Barbour et al.  1999)
 (define-public r-biomod2
   (package
     (name "r-biomod2")
-    (version "4.3-4-6")
+    (version "4.3-4-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biomod2" version))
        (sha256
-        (base32 "07rm4392vxh8cd45wl3qybmjcp19m52z8qf7gq6idd454hk9qikv"))))
+        (base32 "1vy90jbp63cpq240vyzg2j2b7mm2fv420f0qkva9kxlrmji42bsd"))))
     (properties `((upstream-name . "biomod2")))
     (build-system r-build-system)
     (arguments
@@ -17100,12 +17126,14 @@ Rapid Bioassessment Protocols (Barbour et al.  1999)
     (home-page "https://biomodhub.github.io/biomod2/")
     (synopsis "Ensemble Platform for Species Distribution Modeling")
     (description
-     "This package provides functions for species distribution modeling, calibration
-and evaluation, ensemble of models, ensemble forecasting and visualization.  The
-package permits to run consistently up to 10 single models on a
-presence/absences (resp presences/pseudo-absences) dataset and to combine them
-in ensemble models and ensemble projections.  Some bench of other evaluation and
-visualisation tools are also available within the package.")
+     "This package provides functions for species distribution modelling, to
+calibrate, evaluate, and project species-environment relationships across space
+and time using multiple modelling algorithms and ensemble forecasting.  It
+accommodates diverse ecological data types (presence-only, presence-absence,
+counts, multi-class abundance, or relative/absolute abundance) within a unified
+modelling workflow which includes cross-validation schemes, pseudo-absence
+selection strategies, expanded model parametrization options, a dozen of
+algorithms, and tools for exploring and visualizing outputs.")
     (license license:gpl3)))
 
 (define-public r-biomixmodel
@@ -22741,20 +22769,21 @@ Extreme Value random variable.")
 (define-public r-bgev
   (package
     (name "r-bgev")
-    (version "0.2")
+    (version "0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bgev" version))
        (sha256
-        (base32 "0760n9jy6wj20agsc9zrapz8gdypc1khqzam5rkwq32bpk5dnlms"))))
+        (base32 "1y3p6z9cf2y3i8y0vh1czy6zs3ngi2kvnjzrmv5s449az0ixknnj"))))
     (properties `((upstream-name . "bgev")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-mass r-envstats r-deoptim))
-    (home-page "https://cran.r-project.org/package=bgev")
+    (propagated-inputs (list r-numderiv r-nleqslv r-mass r-envstats))
+    (native-inputs (list r-knitr))
+    (home-page "https://thiagodoregosousa.github.io/bgev/")
     (synopsis "Bimodal GEV Distribution with Location Parameter")
     (description
      "Density, distribution function, quantile function random generation and
@@ -22762,7 +22791,7 @@ estimation of bimodal GEV distribution given in Otiniano et al. (2023)
 <doi:10.1007/s10651-023-00566-7>.  This new generalization of the well-known GEV
 (Generalized Extreme Value) distribution is useful for modeling heterogeneous
 bimodal data from different areas.")
-    (license license:gpl3)))
+    (license license:gpl2+)))
 
 (define-public r-bgdata
   (package
@@ -23574,13 +23603,13 @@ with leverage (one-component, two-component, skewed versions).")
 (define-public r-betastability
   (package
     (name "r-betastability")
-    (version "0.0.4")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "betaStability" version))
        (sha256
-        (base32 "10cg268d75i89xxqkbnh7ld4dvc7x5j936dwkbagy8z2vlqdmm2c"))))
+        (base32 "0x7hhh5s63s1rcn5bf3ph6avvlxgjkphk4sasl20ja8vn1vdh168"))))
     (properties `((upstream-name . "betaStability")))
     (build-system r-build-system)
     (arguments
@@ -23590,13 +23619,15 @@ with leverage (one-component, two-component, skewed versions).")
                              r-vegan
                              r-usedist
                              r-reshape2
+                             r-raster
                              r-randomforest
                              r-mgcv
                              r-glmnet
                              r-ggplot2
                              r-gdm
+                             r-elevatr
                              r-bbmisc))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/gaoyu19920914/betaStability/")
     (synopsis
      "Quantify the Compositional Stability of Each Community Based on a Single Sampling Event")
@@ -27865,48 +27896,6 @@ regression is another major contribution of this package.  See details in the
 references Barreto-Souza, Mayrink and Simas (2022) <doi:10.1111/anzs.12354> and
 Barreto-Souza, Mayrink and Simas (2020) <@code{arXiv:2003.05157>}.")
     (license license:gpl2)))
-
-(define-public r-bbqr
-  (package
-    (name "r-bbqr")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bbqr" version))
-       (sha256
-        (base32 "1nq3p5jnhxb1ld36652vhqm13wp6iwkwi3zixg7w5c57h3gln0bq"))))
-    (properties `((upstream-name . "bbqr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list r-knitr gfortran))
-    (home-page "https://github.com/fernandorubiogarcia/bbqr")
-    (synopsis "Bayesian Quantile Regression with Lasso and Adaptive Lasso")
-    (description
-     "Markov chain Monte Carlo samplers for Bayesian quantile regression, based on the
-asymmetric Laplace distribution and the location-scale mixture representation of
-Kozumi and Kobayashi (2011) <doi:10.1080/00949655.2010.496117>.  A binary
-response and an observed continuous response are both supported, each with three
-penalty layers behind one interface: no penalty, following Benoit and Van den
-Poel (2012) <doi:10.1002/jae.1216>; the Bayesian lasso, following Benoit,
-Al-Hamzawi and Yu (2013) <doi:10.1007/s00180-013-0439-0>; and the Bayesian
-adaptive lasso of Rubio Garcia (2023)
-<https://soar.wichita.edu/entities/publication/a2f86232-4704-4ec2-b685-751e7b04ec42>.
- In the binary family each is available as published and in a corrected form,
-the default, in which every improper prior component is replaced by a proper one
-so that the posterior exists unconditionally; the continuous family ships the
-corrected form only.  The continuous adaptive-lasso layer at its default
-reproduces the penalty of Alhamzawi, Yu and Benoit (2012)
-<doi:10.1177/1471082X1101200304>.  A binary threshold model identifies the
-coefficient vector only up to a positive scale, so the binary samplers expose
-the identification anchor as an explicit argument, allowing fixing the scale of
-the error distribution, fixing a single coefficient, and constraining the norm
-of the coefficient vector to be compared directly; an observed response
-identifies the scale, so the continuous samplers have no anchor and draw it
-every sweep.  The MCMC cores are written in Fortran and called from R.")
-    (license license:gpl2+)))
 
 (define-public r-bbni
   (package
@@ -35546,6 +35535,46 @@ Sciences grant 1106891.  Any opinions, findings, and conclusions or
 recommendations expressed in this material are those of the author(s) and do not
 necessarily reflect the views of the National Science Foundation.")
     (license license:gpl3+)))
+
+(define-public r-barulho
+  (package
+    (name "r-barulho")
+    (version "2.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "baRulho" version))
+       (sha256
+        (base32 "0q2dp25gj7hgvmxymwjlyd5wq8qf4awsy5yikvsigc73bh60ssm6"))))
+    (properties `((upstream-name . "baRulho")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-warbler
+                             r-viridis
+                             r-tuner
+                             r-sim-diffproc
+                             r-seewave
+                             r-rlang
+                             r-png
+                             r-ohun
+                             r-fftw
+                             r-cli
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ropensci/baRulho")
+    (synopsis "Quantifying (Animal) Sound Degradation")
+    (description
+     "Intended to facilitate acoustic analysis of (animal) sound propagation
+experiments, which typically aim to quantify changes in signal structure when
+transmitted in a given habitat by broadcasting and re-recording animal sounds at
+increasing distances.  The package offers a workflow with functions to prepare
+the data set for analysis as well as to calculate and visualize several
+degradation metrics, including blur ratio, signal-to-noise ratio, excess
+attenuation and envelope correlation among others (Dabelsteen et al 1993
+<doi:10.1121/1.406682>).")
+    (license license:gpl2+)))
 
 (define-public r-bartxviz
   (package

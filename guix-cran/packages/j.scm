@@ -2822,13 +2822,13 @@ Concepts and diagnostics build on tidy data principles as described in Wickham
 (define-public r-joinpointr
   (package
     (name "r-joinpointr")
-    (version "1.1.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "joinpointR" version))
        (sha256
-        (base32 "0ky9l5l1rgi3sbwl0xwlgwlgx0z8f64m4mq81ia8cchzi6czxyah"))))
+        (base32 "19j07sn9h5nwd8z93kbg15gb3hzv8s2dv90fy2rg3kk8ib36czk8"))))
     (properties `((upstream-name . "joinpointR")))
     (build-system r-build-system)
     (arguments
@@ -2837,24 +2837,20 @@ Concepts and diagnostics build on tidy data principles as described in Wickham
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
-                             r-segmented
-                             r-scales
                              r-rlang
+                             r-readr
                              r-purrr
-                             r-officer
+                             r-lubridate
                              r-ggplot2
-                             r-forcats
                              r-flextable
-                             r-dplyr
-                             r-cols4all))
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/datos-ine/joinpointR")
     (synopsis "Tidy Tools for Joinpoint Regression Models")
     (description
      "This package provides tools to fit joinpoint regression models with a log-linear
-specification by levels of a categorical variable.  The package acts as a
-wrapper around the segmented package, facilitating model fitting, selection, and
-interpretation.  It includes functions to estimate the Annual Percent Change
+specification by levels of one or two categorical variable(s) using the
+grid-search method.  It includes functions to estimate the Annual Percent Change
 (APC) and the Average Annual Percent Change (AAPC), along with their 95%
 confidence intervals, and to generate formatted summary tables and plots of
 results.")
@@ -4124,13 +4120,13 @@ application which depends on your OS.")
 (define-public r-jgd
   (package
     (name "r-jgd")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jgd" version))
        (sha256
-        (base32 "0x4xh99fqlhrl3sghx1c1yd2c7sf05h61jymc3rfd882k83gw36d"))))
+        (base32 "0yxmgvjml4pbj6bhjxj0z3bb5dnffxx75djlgr7dgfggy4gvakag"))))
     (properties `((upstream-name . "jgd")))
     (build-system r-build-system)
     (arguments

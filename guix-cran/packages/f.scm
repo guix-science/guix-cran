@@ -965,35 +965,28 @@ for further details.")
 (define-public r-fuzzyclass
   (package
     (name "r-fuzzyclass")
-    (version "0.1.7")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FuzzyClass" version))
        (sha256
-        (base32 "1vlk8dr5i9z72ad91n5ibplgfbs2c94laf8nm04knnmc5jpvrkh9"))))
+        (base32 "01q7lbpsn4gr6ka49h122z5kmw2ypqqmx101dxwgcni2fj7wb6yg"))))
     (properties `((upstream-name . "FuzzyClass")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-trapezoid
-                             r-tidyr
-                             r-tibble
                              r-rootsolve
-                             r-rlang
                              r-rdpack
-                             r-purrr
                              r-mvtnorm
                              r-mass
-                             r-foreach
                              r-envstats
                              r-e1071
-                             r-dplyr
-                             r-doparallel
                              r-catools))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/leapigufpb/FuzzyClass")
+    (home-page "https://leapigufpb.github.io/FuzzyClass/")
     (synopsis "Fuzzy and Non-Fuzzy Classifiers")
     (description
      "It provides classifiers which can be used for discrete variables and for
@@ -3264,13 +3257,13 @@ models.  The package contains six vignettes containing detailed examples.")
 (define-public r-fuj
   (package
     (name "r-fuj")
-    (version "0.2.2")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fuj" version))
        (sha256
-        (base32 "0wr0ln2iwc1cjyh63qpilqmv5lgp6r43jy9swwczh3ph8k0gi3vz"))))
+        (base32 "0csnla85dk5ac7kbjywrdm2gi6gsd53dcp44vkz2yxcnwiikrc5m"))))
     (properties `((upstream-name . "fuj")))
     (build-system r-build-system)
     (arguments
@@ -5888,13 +5881,13 @@ Tietze forms.  To cite the package in publications please use Hankin (2022)
 (define-public r-freedom
   (package
     (name "r-freedom")
-    (version "1.0.1")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "freedom" version))
        (sha256
-        (base32 "1mrdl2cqdm2c68lx7lyixgiqw6xzwnx9c8j5q4annhiz107i9i22"))))
+        (base32 "1ivvank4jg31z979rjxd1bjwy1kh43afh5d3w85a4pbwc5c7smk9"))))
     (properties `((upstream-name . "freedom")))
     (build-system r-build-system)
     (arguments
@@ -9908,13 +9901,13 @@ that control for confounding.  The method is described in De and Huling (2025)
 (define-public r-forestat
   (package
     (name "r-forestat")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "forestat" version))
        (sha256
-        (base32 "0bw6kkdq65d1jwhim80iwq6lcdfyawf8xfg1kc86qdhvrg2zf4wm"))))
+        (base32 "06hyvcnm8irmsmikzzaiasxzkc7cmczzw08jgg3cwfw0zzw5550f"))))
     (properties `((upstream-name . "forestat")))
     (build-system r-build-system)
     (arguments
@@ -24534,13 +24527,13 @@ provided by several algorithms (such as @code{GreConD}, ASSO, RSF, RSF-ES,
 (define-public r-fcall
   (package
     (name "r-fcall")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fcall" version))
        (sha256
-        (base32 "1f6lmpz1ja3dncm9677fpjvl8pzxpyamzk9jm43nl7fhzmlm8ag9"))))
+        (base32 "1w1w0smda3gylhfbmwrapfhp3hnbarvf5qa9ja9vfa86zhg1sysw"))))
     (properties `((upstream-name . "fcall")))
     (build-system r-build-system)
     (arguments
@@ -24553,8 +24546,7 @@ provided by several algorithms (such as @code{GreConD}, ASSO, RSF, RSF-ES,
                              r-rlang
                              r-purrr
                              r-glue
-                             r-dplyr
-                             r-cli))
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://ketchbrookanalytics.github.io/fcall/")
     (synopsis
@@ -25651,13 +25643,13 @@ Bojanowski, Matthijs Douze, Herve Jegou, Tomas Mikolov, 2016,
 (define-public r-fastsurvival
   (package
     (name "r-fastsurvival")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FastSurvival" version))
        (sha256
-        (base32 "1apxcjqapyviifs5kd1gvr44nv6mggp6dvbn3q22k5zywc2326mp"))))
+        (base32 "120rx12773kmkr6aj0nzsn573a08r666xrh778qsrj7qbl0x0k71"))))
     (properties `((upstream-name . "FastSurvival")))
     (build-system r-build-system)
     (arguments
@@ -25682,14 +25674,18 @@ test @code{(rmw_fast()}), the weighted Kaplan-Meier (Pepe-Fleming) test
 @code{(wkm_fast()}), the average hazard with survival weight
 @code{(ahsw_fast()}), and the Kalbfleisch-Prentice average hazard ratio
 @code{(ahr_fast()}).  The simulation layer generates individual patient data
-@code{(simdata_fast()}), performs interim or sequential analyses
-@code{(analysis_fast()}), and aggregates operating characteristics
-@code{(simsummary_fast()}).  A visualization layer assembles design-stage
-scenarios @code{(gen_scenario_fast()}) and builds analysis-stage Kaplan-Meier
-curves @code{(kmcurve_fast()}), each with plot and print methods.  All functions
-are designed for repeated evaluation inside large simulation loops, such as
-adaptive sample-size re-estimation, probability-of-success calculations, and
-regional consistency evaluation in multi-regional trials.  Core computations are
+@code{(simdata_fast()}), determines the calendar time of each analysis from
+combined event and calendar-time rules @code{(cutoff_fast()}), performs interim
+or sequential analyses @code{(analysis_fast()}), compares several experimental
+arms with a shared control @code{(pairwise_fast()}), applies treatment switching
+at progression or after an interim analysis @code{(switch_fast()}), and
+aggregates operating characteristics @code{(simsummary_fast()}).  A
+visualization layer assembles design-stage scenarios
+@code{(gen_scenario_fast()}) and builds analysis-stage Kaplan-Meier curves
+@code{(kmcurve_fast()}), each with plot and print methods.  All functions are
+designed for repeated evaluation inside large simulation loops, such as adaptive
+sample-size re-estimation, probability-of-success calculations, and regional
+consistency evaluation in multi-regional trials.  Core computations are
 implemented in C++ via Rcpp for maximum performance.  Methodological background
 is described in Collett (2014, ISBN:9780429196294).")
     (license license:expat)))

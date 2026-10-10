@@ -237,43 +237,6 @@ Quantitative and Qualitative Factors\" by Qian Xiao, Abhyuday Mandal, C. Devon
 Lin, and Xinwei Deng (2022) <doi:10.1137/19M1288462>.")
     (license license:gpl2)))
 
-(define-public r-ezfragility
-  (package
-    (name "r-ezfragility")
-    (version "2.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "EZFragility" version))
-       (sha256
-        (base32 "1bsjk20dkpz00im65nblpgb5s7bh6idi5rss68bqc9la4c87dnkc"))))
-    (properties `((upstream-name . "EZFragility")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-viridis
-                             r-rlang
-                             r-reshape2
-                             r-ramify
-                             r-progress
-                             r-glue
-                             r-ggtext
-                             r-ggplot2
-                             r-foreach
-                             r-epoch))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/Jiefei-Wang/EZFragility")
-    (synopsis "Compute Neural Fragility for Ictal iEEG Time Series")
-    (description
-     "This package provides tools to compute the neural fragility matrix from
-intracranial electrocorticographic (@code{iEEG}) recordings, enabling the
-analysis of brain dynamics during seizures.  The package implements the method
-described by Li et al. (2017) <doi:10.23919/ACC.2017.7963378> and includes
-functions for data preprocessing ('Epoch'), fragility computation
-('@code{calcAdjFrag}'), and visualization.")
-    (license license:gpl3+)))
-
 (define-public r-ezecm
   (package
     (name "r-ezecm")
@@ -4227,13 +4190,13 @@ files for Moodle'.")
 (define-public r-exams
   (package
     (name "r-exams")
-    (version "2.4-4")
+    (version "2.4-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "exams" version))
        (sha256
-        (base32 "06qd82q6ascxlnndz9qmnnj21y8yspa1ig021chiw1x5vfhhg76d"))))
+        (base32 "1zl98z201fz27p9xgrgclrl46r97v77xf52ca8g0dv3592j0ac83"))))
     (properties `((upstream-name . "exams")))
     (build-system r-build-system)
     (arguments
@@ -7991,6 +7954,35 @@ Parallel computing with @code{OpenMP} is possible on supported platforms.")
     (description
      "This package creates simple to highly customized tables for a wide selection of
 descriptive statistics, with or without weighting the data.")
+    (license license:gpl3+)))
+
+(define-public r-et0tempmodels
+  (package
+    (name "r-et0tempmodels")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ET0TempModels" version))
+       (sha256
+        (base32 "1hyj6pnlynxjn9czxaacy6z8fvf3h5v5jgd369a6gz4c8glva9bs"))))
+    (properties `((upstream-name . "ET0TempModels")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/samirigfri/ET0TempModels")
+    (synopsis "Evapotranspiration Estimation Using Temperature-Based Models")
+    (description
+     "This package provides functions to estimate daily reference evapotranspiration
+(ET0) using 10 temperature-based empirical models, with the Food and Agriculture
+Organization (FAO) Penman-Monteith method included as the standard reference for
+model comparison.  Includes statistical evaluation metrics, such as
+Nash-Sutcliffe efficiency (NSE), root mean square error (RMSE), mean absolute
+error (MAE), and mean bias error (MBE), and visualization tools (scatter plots
+and Taylor diagrams).  Based on Singh et al. (2026)
+<doi:10.1016/j.ejrh.2026.103925>.")
     (license license:gpl3+)))
 
 (define-public r-et-nwfva
@@ -22092,23 +22084,21 @@ continuous and categorical covariates.")
 (define-public r-effectcheck
   (package
     (name "r-effectcheck")
-    (version "0.2.3")
+    (version "0.7.17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "effectcheck" version))
        (sha256
-        (base32 "0wdsgpmzfgy88czwv3gq2dcrzgx33gxmylzq5wi6jagl9apj7b8x"))))
+        (base32 "07qdzdbncp1hmma7mgqi3a3l1nsvc3hwig9af5mivgy77whii7vd"))))
     (properties `((upstream-name . "effectcheck")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xml2
-                             r-tibble
+    (propagated-inputs (list r-tibble
                              r-stringr
                              r-stringi
-                             r-rvest
                              r-purrr
                              r-logger
                              r-glue
@@ -22118,17 +22108,18 @@ continuous and categorical covariates.")
     (synopsis "Statistical Consistency Checker for Published Research Results")
     (description
      "This package provides a conservative, assumption-aware statistical consistency
-checker for published research results.  Parses test statistics, effect sizes,
-and confidence intervals from text, PDF, HTML, and Word documents across
-multiple citation styles including American Psychological Association (APA),
-Harvard, Frontiers, PLOS ONE, Scientific Reports, Nature Human Behaviour,
-@code{PeerJ}, @code{eLife}, PNAS, and others.  Recomputes effect sizes using all
-plausible variants when design is ambiguous, and validates internal consistency.
- Supports t-tests, F-tests/ANOVA, correlations, chi-square, z-tests, regression,
-and nonparametric tests.  Provides statcheck'-compatible API functions for batch
-processing of files and directories.  Explicitly tracks all assumptions and
-uncertainty in output.  Detects decision errors (significance reversals) similar
-to statcheck'.  Note: this package is under active development and results
+checker for already-extracted research-results text.  Parses test statistics,
+effect sizes, and confidence intervals across multiple citation styles including
+American Psychological Association (APA), Harvard, Frontiers, PLOS ONE,
+Scientific Reports, Nature Human Behaviour, @code{PeerJ}, @code{eLife}, PNAS,
+and others.  Recomputes effect sizes using all plausible variants when design is
+ambiguous, and validates internal consistency.  Supports t-tests, F-tests/ANOVA,
+correlations, chi-square, z-tests, regression, and nonparametric tests.
+Explicitly tracks all assumptions and uncertainty in output.  Detects decision
+errors (significance reversals) similar to statcheck'.  From v0.4.0 file
+extraction is no longer part of the package â pair with an external extractor
+(e.g., docpluck at <https://docpluck.app>) and pass the resulting text to
+@code{check_text()}.  Note: this package is under active development and results
 should be independently verified.  Use is at the sole responsibility of the
 user.  Contributions and verification reports are welcome.")
     (license license:expat)))

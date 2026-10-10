@@ -6583,23 +6583,19 @@ package has no external dependencies.")
 (define-public r-locuszoomr
   (package
     (name "r-locuszoomr")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "locuszoomr" version))
        (sha256
-        (base32 "14mv685aabflzq51qa6jqx7a6b1cqjib59i23q9mdv9ncms17d07"))))
+        (base32 "0g913cg72cms7d6j1wlhany6xz81n5mifhsyiwcq14yc26qf0lml"))))
     (properties `((upstream-name . "locuszoomr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-zoo
-                             r-shinywidgets
-                             r-shinyfeedback
-                             r-shinycssloaders
-                             r-shiny
+    (propagated-inputs (list r-shiny
                              r-rtracklayer
                              r-rlang
                              r-rcpp
@@ -6609,14 +6605,11 @@ package has no external dependencies.")
                              r-iranges
                              r-htmltools
                              r-gtools
-                             r-ggrepel
                              r-ggplot2
                              r-gggrid
                              r-genomicranges
                              r-genomeinfodb
                              r-ensembldb
-                             r-dt
-                             r-dplyr
                              r-cowplot
                              r-biocgenerics
                              r-annotationfilter))
@@ -8595,13 +8588,13 @@ directional and fluctuating selection in age-structured populations.")
 (define-public r-lmest
   (package
     (name "r-lmest")
-    (version "3.2.8")
+    (version "4.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LMest" version))
        (sha256
-        (base32 "1vbhpx0kga23q02rcv29gixxsyf1j1hw13gb5inp3airfr392nf6"))))
+        (base32 "0gmzh65a2j6pgk5xca847wxm57b4aadqkjcqpvbrlqr4djxw6sax"))))
     (properties `((upstream-name . "LMest")))
     (build-system r-build-system)
     (arguments
@@ -21493,6 +21486,44 @@ regular square or hexagonal grid, and the grid should have projected
 coordinates.")
     (license license:expat)))
 
+(define-public r-land4health
+  (package
+    (name "r-land4health")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "land4health" version))
+       (sha256
+        (base32 "0snd3pc2id6wsxxjg7gpcd9xcmp34jf2vwff63jdgkmx2q6zz6h2"))))
+    (properties `((upstream-name . "land4health")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-terra
+                             r-sf
+                             r-rgee
+                             r-reticulate
+                             r-rappdirs
+                             r-ows4r
+                             r-lifecycle
+                             r-httr2
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/harmonize-tools/land4health/")
+    (synopsis "Remote Sensing Metrics for Spatial Health Analysis")
+    (description
+     "Calculate and extract remote sensing metrics for spatial analysis in the field
+of health.  The package offers R users a quick and straightforward way to obtain
+areal or zonal statistics of key environmental indicators, covariates, and
+vector-borne disease data ideal for modeling infectious diseases within the
+framework of spatial epidemiology.")
+    (license license:expat)))
+
 (define-public r-lancor
   (package
     (name "r-lancor")
@@ -21903,13 +21934,13 @@ models).")
 (define-public r-lakefetch
   (package
     (name "r-lakefetch")
-    (version "0.1.3")
+    (version "0.1.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lakefetch" version))
        (sha256
-        (base32 "0w5bvgvwk2mcd8j5n2cv0a7i83nn1937c1xx7nqjs8apnk0javf3"))))
+        (base32 "02hnkk1fw77aphanc44frj7sw8vbgmk2xdhh448qrygfixipi4ji"))))
     (properties `((upstream-name . "lakefetch")))
     (build-system r-build-system)
     (arguments
@@ -21917,7 +21948,7 @@ models).")
       #:tests? #f))
     (propagated-inputs (list r-sf r-osmdata r-ggplot2))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/jeremylfarrell/lakefetch")
+    (home-page "https://docs.ropensci.org/lakefetch/")
     (synopsis "Calculate Fetch and Wave Exposure for Lake Sampling Points")
     (description
      "Calculates fetch (open water distance) and wave exposure metrics for lake

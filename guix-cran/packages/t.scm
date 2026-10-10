@@ -5138,13 +5138,13 @@ Thamotheram (2024)
 (define-public r-tsgarch
   (package
     (name "r-tsgarch")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tsgarch" version))
        (sha256
-        (base32 "1cbaghc36cdkdiidc42q9zzjr2gb9v6vwz52322dy86rcn7hfs4d"))))
+        (base32 "0y2ddhmz8fy7z3k9g347wrz22x9431n1f03qb5r8wa3bl4kqac9c"))))
     (properties `((upstream-name . "tsgarch")))
     (build-system r-build-system)
     (arguments
@@ -6518,6 +6518,42 @@ developed using the algorithm of Paul and Garai (2021)
      "Tsallis distribution also known as the q-exponential family distribution.
 Provide distribution d, p, q, r functions, fitting and testing functions.
 Project initiated by Paul Higbie and based on Cosma Shalizi's code.")
+    (license license:gpl2+)))
+
+(define-public r-tsahr
+  (package
+    (name "r-tsahr")
+    (version "0.2.8.17")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tsahr" version))
+       (sha256
+        (base32 "067agdr2k0xnaj3i1p2cmpr37w5v5psfzafjxzv6zasqn2m8zkg3"))))
+    (properties `((upstream-name . "tsahr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-readxl r-rcpp r-metafor r-ggplot2))
+    (home-page "https://github.com/tarak-dhaouadi/tsahr")
+    (synopsis "Trial Sequential Analysis for Meta-Analyses of Hazard Ratios")
+    (description
+     "This package performs Trial Sequential Analysis (TSA) for meta-analyses of
+time-to-event outcomes reported as hazard ratios.  Implements the Schoenfeld
+required-events sample-size formula generalised for unequal allocation, the
+Diversity (D-squared) heterogeneity adjustment of Wetterslev et al. (2009), and
+O'Brien-Fleming-type alpha- and beta-spending trial sequential monitoring
+boundaries computed at the inverse-variance information based on observed
+study-level log-HR standard errors (not merely event counts), via a compiled
+(C++) recursive numerical integration engine ported from the R package RTSA
+(Soerensen, Olsen, Lange and Gluud; an R implementation of the Trial Sequential
+Analysis software of the Copenhagen Trial Unit, <https://ctu.dk/tools>), with no
+fixed software-imposed limit on the number of looks (subject to available
+computational resources).  Produces a cumulative Z-curve plot with efficacy,
+futility, and conventional significance boundaries.  Methodology follows
+Miladinovic et al. (2013) <doi:10.1016/j.jclinepi.2012.11.007> and Wetterslev et
+al. (2009) <doi:10.1186/1471-2288-9-86>.")
     (license license:gpl2+)))
 
 (define-public r-ts
@@ -8222,13 +8258,13 @@ Clinical Research.")
 (define-public r-trialsimulator
   (package
     (name "r-trialsimulator")
-    (version "1.35.8")
+    (version "1.39.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TrialSimulator" version))
        (sha256
-        (base32 "0kqr3c8imgj7l3w5rx1pl5dw4bcy16bqppll3c05xhwava5z1myb"))))
+        (base32 "0jnb0as9r57rynrf24r4w18gqy24755gp1g0i6pdg6425zq007sk"))))
     (properties `((upstream-name . "TrialSimulator")))
     (build-system r-build-system)
     (arguments
@@ -11575,6 +11611,38 @@ throttling, retries with exponential backoff, and an optional response cache are
 included.")
     (license license:expat)))
 
+(define-public r-transdif
+  (package
+    (name "r-transdif")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "transDIF" version))
+       (sha256
+        (base32 "1fbx6f5arns5yxyzc3svvjhvhcbr3mxhc22kaqqxf8sb508ynp5g"))))
+    (properties `((upstream-name . "transDIF")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/edidatasolutions/transDIF")
+    (synopsis "Score Comparability for Translated and Adapted Exams")
+    (description
+     "An adaptation-comparability workflow for small, lower-scoring and unbalanced
+language groups where standard differential item functioning (DIF) tools (Magis,
+Beland, Tuerlinckx and De Boeck, 2010, <doi:10.3758/BRM.42.3.847>) break down.
+Calibrates the Rasch model in each language group, links the groups robustly
+through the densest cluster of items rather than assuming DIF cancels out (on
+anchor selection see Kopf, Zeileis and Strobl, 2015,
+<doi:10.1177/0013164414529792>), detects small-sample DIF with an
+empirical-Bayes spike-and-slab model and local false discovery rates (Efron,
+2004, <doi:10.1198/016214504000000089>), quantifies whether item-level DIF
+accumulates into different pass rates, explains DIF by item features to give
+translators actionable guidance, and drafts a comparability report.")
+    (license license:expat)))
+
 (define-public r-transda
   (package
     (name "r-transda")
@@ -12434,6 +12502,43 @@ about climate risk has been included.")
     (description
      "Access Open Trade Statistics API from R to download international trade data.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
+(define-public r-tradesimr
+  (package
+    (name "r-tradesimr")
+    (version "0.18.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tradesimr" version))
+       (sha256
+        (base32 "071ib9pf65hkrgbd10kff41fa4qk88k8fgaz5gkg4knh4j9xiz6b"))))
+    (properties `((upstream-name . "tradesimr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp r-r6 r-data-table))
+    (home-page "https://github.com/OliverLDS/tradesimr")
+    (synopsis "Execution and Simulation Engine for Trading Strategies")
+    (description
+     "An R-native trading simulation package with a C++ execution core that turns
+strategy intentions and explicit orders into simulated trades, positions, cash,
+profit and loss, risk, and performance outputs under configurable execution,
+margin, funding, and cost assumptions.  The package provides historical replay,
+incremental exchange stepping, durable event tables, append-only agent command
+logs, registered assets, per-agent shared-cash cross-margin live accounts, AI
+agent competitors, scheduled live-feed stepping, strategy-backed AI agents with
+diagnostics, calibrated and coordinated multi-asset market simulation with
+static covariance, AR-GARCH, factor, and regime models, durable per-feed
+simulation state, profile-aware heterogeneous inventory and margin execution
+with atomic mixed-profile order groups, optional portfolio-margin enforcement
+through a multi-asset C++ step kernel, local live-service APIs, import/export
+helpers, separate replay, live-state, and agent dashboard exports, and installed
+local orchestration scripts.  It is designed to consume signals, order intents,
+or target exposure decisions from compatible strategy packages and market data
+from compatible adapters.")
+    (license license:expat)))
 
 (define-public r-trader
   (package
@@ -15815,13 +15920,13 @@ of R objects such as lists, data.frames, numeric, logical, and date vectors.")
 (define-public r-toml
   (package
     (name "r-toml")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "toml" version))
        (sha256
-        (base32 "09kdjgiw54i3687s5b638srmy0prk4jlw0ih3vq0r8llclqjdp96"))))
+        (base32 "0v4bpwvisv0yrid9gfzw5q857y4axxyx8y7bqix4kyd15b2zj5ck"))))
     (properties `((upstream-name . "toml")))
     (build-system r-build-system)
     (arguments
@@ -22489,6 +22594,34 @@ parallelize the simulations.  Generates plots and @code{LaTeX} tables
 summarizing the results from the simulation.")
     (license license:expat)))
 
+(define-public r-tidymatrix
+  (package
+    (name "r-tidymatrix")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidymatrix" version))
+       (sha256
+        (base32 "18j4hg2kw4zfsjcw0gzjnqwnh5di0niikmzwh5m8vnbq6n3q3dac"))))
+    (properties `((upstream-name . "tidymatrix")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-rlang r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://raivokolde.github.io/tidymatrix/")
+    (synopsis
+     "Tidyverse-Style Operations on Matrices with Row and Column Metadata")
+    (description
+     "This package provides a unified data structure for matrices with associated row
+and column metadata, enabling tidyverse'-style data manipulation.  Following the
+approach of tidygraph', users can activate rows, columns, or the matrix itself
+and operate on it with familiar dplyr verbs, while the matrix and both metadata
+tables are kept consistent.")
+    (license license:expat)))
+
 (define-public r-tidylpa
   (package
     (name "r-tidylpa")
@@ -22629,13 +22762,13 @@ integration into data workflows.  Web services are available at
 (define-public r-tidylearn
   (package
     (name "r-tidylearn")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidylearn" version))
        (sha256
-        (base32 "039f675r0xidk8mp5is9rqqy0pbp2sf9b5ias63c2gdanvs6lldi"))))
+        (base32 "1f06a2isnwrscs4vh70h5j3xnf2czgbbdj4f9dd2a0jd3pgs7nxm"))))
     (properties `((upstream-name . "tidylearn")))
     (build-system r-build-system)
     (arguments
@@ -25004,6 +25137,38 @@ protocols by Oana and Schneider (2024) <doi:10.1177/00491241211036158>.  The
 threshold-sweep framework is described in Toyoda (2026)
 <doi:10.1007/s11135-026-03092-3>.  This package supersedes TSQCA'; see the NEWS
 file for migration guidance.")
+    (license license:expat)))
+
+(define-public r-throughyear
+  (package
+    (name "r-throughyear")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "throughyear" version))
+       (sha256
+        (base32 "0d5s9f3xnm4im8n71j94zy0qr3dzcbjp5r58qh0fh30622dn88g8"))))
+    (properties `((upstream-name . "throughyear")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/edidatasolutions/throughyear")
+    (synopsis "Linking, Routing and Fairness for Through-Year Assessment")
+    (description
+     "Treats a through-year assessment system (interims during the year feeding a
+multistage summative) as the unit of analysis.  Links interims to the summative
+scale with a latent multivariate normal model that carries each score's
+measurement error forward and handles missing interims, estimated by the EM
+algorithm (Dempster, Laird and Rubin, 1977,
+<doi:10.1111/j.2517-6161.1977.tb01600.x>) with SQUAREM acceleration (Varadhan
+and Roland, 2008, <doi:10.1111/j.1467-9469.2007.00585.x>); simulates cold-start
+versus prior-informed routing in a two-stage multistage test; checks whether
+priors disadvantage late enrollers, low scorers or fast growers; and evaluates
+decision accuracy and consistency of through-year scores against a single
+summative.")
     (license license:expat)))
 
 (define-public r-thriftr
@@ -30153,13 +30318,13 @@ builds on geepack <doi:10.18637/jss.v015.i02> (HÃ¸jsgaard, Halekoh and Yan,
 (define-public r-tern
   (package
     (name "r-tern")
-    (version "0.9.12")
+    (version "0.9.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tern" version))
        (sha256
-        (base32 "0n8qxxhip0jy57731pqc9zjn55fmjxgqfrsk0fxgc8crghjxnm2b"))))
+        (base32 "0lalc9i3v3hp0wlxqzh4qkm4fkzsvqjzvm1ga8frprd46yb8wsdr"))))
     (properties `((upstream-name . "tern")))
     (build-system r-build-system)
     (arguments
@@ -32190,13 +32355,13 @@ supporting reproducible research and analysis.")
 (define-public r-teal-picks
   (package
     (name "r-teal-picks")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal.picks" version))
        (sha256
-        (base32 "089r8q6w9z5bwln2ah26fgf89m7nxq8hi2m0b00gqj75fq1lf24f"))))
+        (base32 "0gw7h5gp6w6h75jvhxnjgbsvmnab22r9ynhg8bq3g8xhibwwjcza"))))
     (properties `((upstream-name . "teal.picks")))
     (build-system r-build-system)
     (arguments
@@ -32229,13 +32394,13 @@ and transformed into analysis-ready data within teal modules.")
 (define-public r-teal-modules-general
   (package
     (name "r-teal-modules-general")
-    (version "0.8.0")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal.modules.general" version))
        (sha256
-        (base32 "0fadnzlarhigkc08fpi3lmzr5amnck97w9dh6rqi1q9dn9xaaf3x"))))
+        (base32 "1258wdv6drpls898bv9rfqmm2jrxpqjijw92nk98c8n20mx47mkm"))))
     (properties `((upstream-name . "teal.modules.general")))
     (build-system r-build-system)
     (arguments
@@ -32298,25 +32463,27 @@ and analysis.")
 (define-public r-teal-modules-clinical
   (package
     (name "r-teal-modules-clinical")
-    (version "0.13.0")
+    (version "0.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal.modules.clinical" version))
        (sha256
-        (base32 "1mrk8lxr6bnrkamyz7b4phzp8ly136b7hbcljgfzkdzzcl1bgjiz"))))
+        (base32 "19mq37p1xvjar10znbyifgzmx67575x1q69922q4dxdifnhnni9j"))))
     (properties `((upstream-name . "teal.modules.clinical")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-vistime
+                             r-tidyselect
                              r-tern-mmrm
                              r-tern-gee
                              r-tern
                              r-teal-widgets
                              r-teal-transform
                              r-teal-reporter
+                             r-teal-picks
                              r-teal-logger
                              r-teal-data
                              r-teal-code

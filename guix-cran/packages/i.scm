@@ -4059,13 +4059,13 @@ models from data with different shape and using different software.")
 (define-public r-irtq
   (package
     (name "r-irtq")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "irtQ" version))
        (sha256
-        (base32 "18gi0lnh59rd9nq7l3ymsh4bmgmr6dp2wpkjszw9mmn9vn1mi5wz"))))
+        (base32 "1s5sj4i67l0mk6n99dscp8gd823aax9pk4wfiz9kjv3kyb40ap26"))))
     (properties `((upstream-name . "irtQ")))
     (build-system r-build-system)
     (arguments
@@ -7611,13 +7611,13 @@ cells and the new corrected coordinates.")
 (define-public r-invasible
   (package
     (name "r-invasible")
-    (version "0.1.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "invasible" version))
        (sha256
-        (base32 "01mqxlnx1hfljkcyxi8g2l6xc0250w0rimfkqyq3pmw0kms53kls"))))
+        (base32 "1snxylpfar3dx2fgd8dyfp8663nmf1lrv3b6z0mwag47lml1yah4"))))
     (properties `((upstream-name . "invasible")))
     (build-system r-build-system)
     (arguments
@@ -10438,19 +10438,20 @@ expertise.")
 (define-public r-insectecol
   (package
     (name "r-insectecol")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "insectecol" version))
        (sha256
-        (base32 "00agziiqzzrj0x05s7xwyjhm8xknskg4ryg3mkgajp6z8a7xkzx3"))))
+        (base32 "1fr48rw9sw0mgs9l1qfj8jfjx6lp3ybqx0id5xqlkkyqy1nc10rw"))))
     (properties `((upstream-name . "insectecol")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyr
+                             r-systemfonts
                              r-sysfonts
                              r-showtext
                              r-scales
@@ -21426,13 +21427,13 @@ VMS database, the ICES DATSU web services, and the ICES @code{SharePoint} site
 (define-public r-icesat2vegr
   (package
     (name "r-icesat2vegr")
-    (version "0.0.4")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ICESat2VegR" version))
        (sha256
-        (base32 "06v9maifgkhwl9vgas7pjr8b1mjmvlqv3q5l39lyx09wk51b7jmi"))))
+        (base32 "1vs3n1fcaxzdsgvgfa0df6hz83cxjv4f5hmnlx221b6y6a7g6b6s"))))
     (properties `((upstream-name . "ICESat2VegR")))
     (build-system r-build-system)
     (arguments

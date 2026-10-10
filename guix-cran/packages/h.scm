@@ -11213,6 +11213,46 @@ critiquing articles it is often better to convert to another of those measures.
 Some conversions are provided here and confidence intervals are also available.")
     (license license:gpl2)))
 
+(define-public r-heterogeneouspeereffects
+  (package
+    (name "r-heterogeneouspeereffects")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "heterogeneouspeereffects" version))
+       (sha256
+        (base32 "0rlzl1rar4ivfmsyl59cgpdrpmilnvfzc5jxx3cyzhc1ghrqj030"))))
+    (properties `((upstream-name . "heterogeneouspeereffects")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-purrr
+                             r-mvtnorm
+                             r-mass
+                             r-ggplot2
+                             r-flextable
+                             r-dplyr
+                             r-caret))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/LaurineMir/heterogeneouspeereffects")
+    (synopsis "Heterogeneous Peer Effect")
+    (description
+     "Heterogeneous Peer Effect Package provides two-step Generalized Method of
+Moments (GMM) estimators for heterogeneous peer effects in group-level treatment
+models developed by Pasquier, Rossi and Wang (2026)
+<https://crest.science/wp-content/uploads/2026/09/2026-11.pdf>.  The package
+separates the direct effect of treatment from within-group and between-group
+spillover effects, using a cross-fitted, semiparametric approach that leaves the
+propensity score unspecified and estimates it nonparametrically.  Two
+identification settings are implemented: one in which eligibility for treatment
+coincides with group identity, and one in which identity is orthogonal to
+eligibility, allowing peer effects to differ across subgroups (e.g. by gender).
+Point estimates, standard errors, and test statistics are returned for the
+direct effect and for each within- and between-group peer effect.")
+    (license license:expat)))
+
 (define-public r-heterogen
   (package
     (name "r-heterogen")
@@ -12910,13 +12950,13 @@ that takes the guesswork out of everything.")
 (define-public r-healthyr-data
   (package
     (name "r-healthyr-data")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "healthyR.data" version))
        (sha256
-        (base32 "09iicmirkr1z46v2v7m8n3a9liyapk7d3ck08mdlca3vwqmsa173"))))
+        (base32 "05wwk8fbcl0rksn60nwj5i9vlr973kfsh3511s29mgrsyszr8xyp"))))
     (properties `((upstream-name . "healthyR.data")))
     (build-system r-build-system)
     (arguments
@@ -17431,13 +17471,13 @@ patterns.")
 (define-public r-ham
   (package
     (name "r-ham")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ham" version))
        (sha256
-        (base32 "1ma3n6c8lalpz6dg4ph5rgqkrnq8f817i533b91q9jswjjsiwdqb"))))
+        (base32 "03sgkcs1wq1lvg9ibqj5awbqlml59qa4x0faahp3xv4mqv7ww2s2"))))
     (properties `((upstream-name . "ham")))
     (build-system r-build-system)
     (arguments

@@ -1151,6 +1151,39 @@ modelling.  This package contains the synthetic data from Wils & Ramisch (2026)
 <doi:10.1038/s41598-026-67943-7>.")
     (license license:gpl3+)))
 
+(define-public r-syncer
+  (package
+    (name "r-syncer")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SyncER" version))
+       (sha256
+        (base32 "16iqyr2ll77my9dmjn0j75nfsdimqi75kgb9lr18v8c00891j3n7"))))
+    (properties `((upstream-name . "SyncER")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-readr
+                             r-pracma
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/katleenwils/SyncER")
+    (synopsis "Synchronicity Testing for Event Records")
+    (description
+     "Evaluation of synchronous deposition across different event records using a
+log-ratio approach, and syncing age-depth models based on the availability of
+isochrons.  Following the methodology of Wils & Ramisch (2026)
+<doi:10.1038/s41598-026-67943-7>.  The synthetic example dataset used in the
+examples, tests and vignette is distributed separately in the companion data
+package @code{SyncERdata}'.")
+    (license license:gpl3+)))
+
 (define-public r-syncdr
   (package
     (name "r-syncdr")
@@ -4402,13 +4435,13 @@ alignment to uncover the structure of complex DNA rearrangements.")
 (define-public r-suwo
   (package
     (name "r-suwo")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "suwo" version))
        (sha256
-        (base32 "1s5fw5rzll99p234mqfl3ns5mm306adlyrkl1r9hirn0ldqlc2vg"))))
+        (base32 "10wn7dpc9g7m6lmjkydxpshqvx7drq8lawnvlnr0v845f3jmyqny"))))
     (properties `((upstream-name . "suwo")))
     (build-system r-build-system)
     (arguments
@@ -7892,13 +7925,13 @@ BOF2OCPO3), @code{GlaxoSmithKline} Biologicals, Baekeland Mandaat
 (define-public r-surreal
   (package
     (name "r-surreal")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "surreal" version))
        (sha256
-        (base32 "1dzhj01r3v4kk0ha3jd34yfdcy185bpmmf740pvz1zcpnm87rg9v"))))
+        (base32 "0x0v1ys30ly8sckdnjg0h6163nlmx1va2y2p61xy3q5xz4n7g26h"))))
     (properties `((upstream-name . "surreal")))
     (build-system r-build-system)
     (arguments
@@ -8218,13 +8251,13 @@ frame management, including how to handle missing data.")
 (define-public r-suppr
   (package
     (name "r-suppr")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "suppr" version))
        (sha256
-        (base32 "12w0g4z489yl8fk191dgyaqsraxcpa08374yz0c36yn5pmnzw7hn"))))
+        (base32 "1bkbr4yfbmvh0bdscbrc2bhnqx4ig5v622lfdc1ig775p5p5kawm"))))
     (properties `((upstream-name . "suppr")))
     (build-system r-build-system)
     (arguments
@@ -9899,13 +9932,13 @@ X., Yao, J. and Xue, L. (2022) <doi:10.1080/07350015.2020.1813589>.")
 (define-public r-suessr
   (package
     (name "r-suessr")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SuessR" version))
        (sha256
-        (base32 "19pvhiq67qmkf0khacyzyfc3428sfyf9kyr5g1kq7sja132k0bk3"))))
+        (base32 "17c32k584i93mlvaaizni4nzkq7852pap05ib0mqvk4i2mh23ksk"))))
     (properties `((upstream-name . "SuessR")))
     (build-system r-build-system)
     (arguments
@@ -9916,7 +9949,7 @@ X., Yao, J. and Xue, L. (2022) <doi:10.1080/07350015.2020.1813589>.")
      "Suess and Laws Corrections for Marine Stable Carbon Isotope Data")
     (description
      "Generates region-specific Suess and Laws corrections for stable carbon isotope
-data from marine organisms collected between 1850 and 2023.  Version 0.1.6 of
+data from marine organisms collected between 1850 and 2025.  Version 0.1.7 of
 @code{SuessR} contains four built-in regions: the Bering Sea ('Bering Sea'), the
 Aleutian archipelago ('Aleutian Islands'), the Gulf of Alaska ('Gulf of
 Alaska'), and the subpolar North Atlantic ('Subpolar North Atlantic').  Users
@@ -10167,13 +10200,13 @@ gamma, generalized gamma, and p-gamma.  For details, see Dassios et al (2019)
 (define-public r-subtools
   (package
     (name "r-subtools")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "subtools" version))
        (sha256
-        (base32 "1agw230pkdys9n38x2f8j28mlk4a6fp3im7f3jih9qv2fchn2d5p"))))
+        (base32 "05g7ldv6g5v3l22prfdqrk2xg5dzgg4yfgva9nb7ny7ggghjfxlp"))))
     (properties `((upstream-name . "subtools")))
     (build-system r-build-system)
     (arguments
@@ -16875,13 +16908,13 @@ validity, model correctness, or scientific appropriateness.")
 (define-public r-statuser
   (package
     (name "r-statuser")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statuser" version))
        (sha256
-        (base32 "0xn1fn91w8vdx9ca20ls9fm4xv16y53x4zljyf4kq76glyn60j0n"))))
+        (base32 "04v9z8gcxcwgbizw2z5r40aa630l4i4d6k2hykvjszi371g6w3qh"))))
     (properties `((upstream-name . "statuser")))
     (build-system r-build-system)
     (arguments
@@ -18462,13 +18495,13 @@ ISBN:978-0-470-98581-6).")
 (define-public r-statcuber
   (package
     (name "r-statcuber")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "STATcubeR" version))
        (sha256
-        (base32 "1j5q0kll16csbwpvfaxs2g907i1g98lz5sd6zwbfpqq7908am5jb"))))
+        (base32 "0153cw6xgrhqmhaaca12da9n3967d0cn912g77k0v7p8d7925fda"))))
     (properties `((upstream-name . "STATcubeR")))
     (build-system r-build-system)
     (arguments
@@ -36190,19 +36223,19 @@ computational efficiency.")
 (define-public r-spaalign
   (package
     (name "r-spaalign")
-    (version "0.0.6")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spaAlign" version))
        (sha256
-        (base32 "11b6y73qb7pnli6dcj7qrbjhgiqd7d6vn9h11f13rj2b9xclsw44"))))
+        (base32 "0dd9ddmbv8h3gvwacj9a71hrnc89symqgvjchl4p5rrpys4va9g6"))))
     (properties `((upstream-name . "spaAlign")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://cran.r-project.org/package=spaAlign")
+    (home-page "https://omodolor.github.io/spaAlign/")
     (synopsis
      "Stratigraphic Plug Alignment for Integrating Plug-Based and XRF Data")
     (description
@@ -46037,25 +46070,21 @@ a P-P plot and a tail plot.")
 (define-public r-sketchy
   (package
     (name "r-sketchy")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sketchy" version))
        (sha256
-        (base32 "1lv8i0jbdlf899lmv4cd7lrgllw683qal7gbs8mfccgq69kcrny8"))))
+        (base32 "1cv864c2ph9qcah8l5124kgw1hy9bzb21h5xzmdsmd2bdn36vfrd"))))
     (properties `((upstream-name . "sketchy")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xaringanextra
-                             r-urlchecker
+    (propagated-inputs (list r-urlchecker
                              r-stringr
-                             r-stringi
                              r-rmarkdown
-                             r-remotes
-                             r-packrat
                              r-knitr
                              r-git2r
                              r-crayon
@@ -47642,6 +47671,38 @@ sample-by-variable file ready for genome-wide association analysis.  See Annis
 et al. (2021) <doi:10.21203/rs.3.rs-873449/v1> for details.")
     (license license:expat)))
 
+(define-public r-sint
+  (package
+    (name "r-sint")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SINT" version))
+       (sha256
+        (base32 "18fzna0lysdg0nvlh3q4hw61armm8fdq4j0ivj76f6cgn2hh1k43"))))
+    (properties `((upstream-name . "SINT")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Silvestro26/SINT")
+    (synopsis "Simulation and Analysis of Social Influence Network Models")
+    (description
+     "This package provides tools for specifying, analyzing and simulating models of
+social influence network theory based on the Friedkin-Johnsen model, Friedkin
+and Johnsen (1990) <doi:10.1080/0022250X.1990.9990069>, which includes the
+consensus model of @code{DeGroot} (1974) <doi:10.1080/01621459.1974.10480137> as
+a special case.  Equilibrium opinions, total influence matrices and convergence
+diagnostics are computed in closed form, also for signed networks with
+antagonistic ties, Altafini (2013) <doi:10.1109/TAC.2012.2224251>.  Simulations
+allow influence weights and susceptibilities to depend on time and on the state
+of the system, and can couple latent opinions with manifest responses through
+logistic or threshold response functions, whose results are aggregated into
+collective outcomes by quota rules.")
+    (license license:gpl3+)))
+
 (define-public r-sinrelef-ld
   (package
     (name "r-sinrelef-ld")
@@ -48577,13 +48638,13 @@ method benchmarking functions are also provided.  Described in Yao and Ochoa
 (define-public r-simtost
   (package
     (name "r-simtost")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SimTOST" version))
        (sha256
-        (base32 "1dgjiw9g7yp3nfdl9nraqlkaazw8bm6k20jb52kdj619lvx9hnjv"))))
+        (base32 "1xys34ryccspzgi3qayw4k6r9cal7v1804112i3nqw7dzxnb0fl5"))))
     (properties `((upstream-name . "SimTOST")))
     (build-system r-build-system)
     (arguments
@@ -52696,6 +52757,53 @@ also included in SILFS for selecting tuning parameters.  For more details of
 Subgroup Identification with Latent Factor Structure Method, please refer to He
 et al. (2024) <doi:10.48550/@code{arXiv.2407.00882>}.")
     (license (list license:gpl2 license:gpl3))))
+
+(define-public r-silentema
+  (package
+    (name "r-silentema")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "silentema" version))
+       (sha256
+        (base32 "1yb5sqrwj2z3c22hixpdl0f2d5gmqlwmr26vfykqlsznjy0yq8r6"))))
+    (properties `((upstream-name . "silentema")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/hsiutingyu/silentema")
+    (synopsis
+     "Dynamic Missingness Graphs and Sensitivity Analysis for EMA Data")
+    (description
+     "This package provides tools for diagnosing and correcting informative
+nonresponse in ecological momentary assessment (EMA) and other
+experience-sampling designs.  Declares the assumed nonresponse mechanism as a
+dynamic missingness graph built from a taxonomy of seven motifs, following the
+graphical missing-data framework of Mohan and Pearl (2021)
+<doi:10.1080/01621459.2021.1874961>; checks by d-separation which within-person
+and between-person estimands of a two-level vector autoregressive model remain
+recoverable and by which estimator; tests whether skipped prompts were
+informative (the silence test and the sensor-gap test, with cluster-robust
+inference after Cameron and Miller (2015) <doi:10.3368/jhr.50.2.317>); estimates
+the temporal and contemporaneous networks from answered adjacent prompts with
+the half-panel jackknife of Dhaene and Jochmans (2015)
+<doi:10.1093/restud/rdv007>, by inverse-probability weighting on an observed
+context, and by full-information maximum likelihood with the state-space
+expectation-maximization (EM) algorithm of Shumway and Stoffer (1982)
+<doi:10.1111/j.1467-9892.1982.tb00349.x>; profiles the estimates over a
+self-censoring sensitivity parameter (inverse-probability weighting with a fixed
+probit selection model whose intercept is calibrated to the response rate);
+calibrates that parameter from passive sensors, randomized probes, or the
+post-skip contrast; computes worst-case bounds for person means in the spirit of
+Manski (2003) <doi:10.1007/b97478>; writes a preregistration-ready missingness
+declaration; and simulates experience-sampling data under every motif.  The
+methods are described in Yu (2026, manuscript under review); the accompanying
+materials are archived at <https://osf.io/x6d2t/>.")
+    (license license:gpl3+)))
 
 (define-public r-siland
   (package
@@ -64591,6 +64699,32 @@ includes Winkler-score comparisons, lag handling, and predictable-bound betting
 e-processes.")
     (license license:expat)))
 
+(define-public r-seqbench
+  (package
+    (name "r-seqbench")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "seqbench" version))
+       (sha256
+        (base32 "0n63d0w6vb0ydialrmczzcq9xdzn335hm56xddmswpfhkyx211zi"))))
+    (properties `((upstream-name . "seqbench")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-rlang r-ggplot2 r-generics r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/castlaboratory/seqbench")
+    (synopsis "Anytime-Valid Sequential Benchmarking of Algorithms")
+    (description
+     "Sequential, anytime-valid comparison of algorithms on paired losses with a
+practical-equivalence margin.  Confidence sequences for the mean paired
+difference, superiority/equivalence/continue decisions, cost accounting and
+auditable trajectories.")
+    (license license:gpl3+)))
+
 (define-public r-seqalignr
   (package
     (name "r-seqalignr")
@@ -67895,13 +68029,13 @@ lasso function implements Gaussian, logistic and Cox survival models.")
 (define-public r-selectiontools
   (package
     (name "r-selectiontools")
-    (version "26.4")
+    (version "26.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SelectionTools" version))
        (sha256
-        (base32 "0jqqlhw58xp6r7csy28b5l5j95x8z159q9zff9aziy5avsfjyh9b"))))
+        (base32 "0l1bhwn8ly228rqmlq6sm945v1xmm0b7jz0p4d7rkqy6hmnv8cz7"))))
     (properties `((upstream-name . "SelectionTools")))
     (build-system r-build-system)
     (arguments
@@ -72414,13 +72548,13 @@ units.")
 (define-public r-sctenifoldnet
   (package
     (name "r-sctenifoldnet")
-    (version "1.4")
+    (version "1.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scTenifoldNet" version))
        (sha256
-        (base32 "0yp0swj7hf70dmxlha3qiybdwp205i8k6z8qi170rpqqci8hqgb0"))))
+        (base32 "0swc3xk26wlrsv56zvdfr4p5lbr6k0qncqv2d6ln8z0xv9xpzsw9"))))
     (properties `((upstream-name . "scTenifoldNet")))
     (build-system r-build-system)
     (arguments
@@ -72428,12 +72562,9 @@ units.")
       #:tests? #f))
     (propagated-inputs (list r-rspectra
                              r-rhpcblasctl
-                             r-rcpparmadillo
-                             r-rcpp
+                             r-ps
                              r-matrix
                              r-mass
-                             r-future
-                             r-furrr
                              r-cli))
     (home-page "https://github.com/cailab-tamu/scTenifoldNet")
     (synopsis
@@ -72450,13 +72581,13 @@ See <doi:10.1016/j.patter.2020.100139> for more details.")
 (define-public r-sctenifoldknk
   (package
     (name "r-sctenifoldknk")
-    (version "1.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scTenifoldKnk" version))
        (sha256
-        (base32 "0bajihph11npx38yla0v6p7k05h57jil0rdw3blry72cxv2xfv4s"))))
+        (base32 "15i7869h83vn5daxlrba065jggmbwxfpg84xcchg507sqz2gn0l1"))))
     (properties `((upstream-name . "scTenifoldKnk")))
     (build-system r-build-system)
     (arguments
@@ -72482,7 +72613,9 @@ setting the geneâs outdegree edges to zero.  Then, it compares the knocked 
 @code{scGRN} with the WT @code{scGRN} to identify differentially regulated
 genes, called virtual-knockout perturbed genes, which are used to assess the
 impact of the gene knockout and reveal the geneâs function in the analyzed
-cells.")
+cells.  It also predicts the direction (up or down) of the response of each gene
+from the WT expression, and reads all knockouts of a network from a single heat
+kernel, which makes transcriptome-wide knockout screens practical.")
     (license license:gpl2+)))
 
 (define-public r-scstability

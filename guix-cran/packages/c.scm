@@ -6198,13 +6198,13 @@ Wikipedia; (<https://en.wikipedia.org/wiki/Classical_cipher>).")
 (define-public r-crypto2
   (package
     (name "r-crypto2")
-    (version "2.0.5")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crypto2" version))
        (sha256
-        (base32 "1sxvyq2n59v999j1mf8kwv368rdrrcvxr57v0zn2cy0cxscsp7ry"))))
+        (base32 "1xz53chhfkyn3y5s78splmp4cinviwrmhc6ahnad6g7wyi6ipz0a"))))
     (properties `((upstream-name . "crypto2")))
     (build-system r-build-system)
     (arguments
@@ -6218,17 +6218,23 @@ Wikipedia; (<https://en.wikipedia.org/wiki/Classical_cipher>).")
                              r-lubridate
                              r-jsonlite
                              r-janitor
+                             r-httr
                              r-dplyr
                              r-cli
                              r-base64enc))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/sstoeckl/crypto2")
     (synopsis
-     "Download Crypto Currency Data from 'CoinMarketCap' without 'API'")
+     "Download Crypto Currency Data from 'CoinMarketCap' and 'CoinGecko'")
     (description
      "Retrieves crypto currency information and historical prices as well as
 information on the exchanges they are listed on.  Historical data contains daily
-open, high, low and close values for all crypto currencies.  All data is scraped
-from <https://coinmarketcap.com> via their web-api'.")
+open, high, low and close values for all crypto currencies.  The package draws
+on two complementary sources: @code{CoinMarketCap} <https://coinmarketcap.com>
+(primary, via the crypto_* functions) and @code{CoinGecko}
+<https://www.coingecko.com> (secondary, via the cg_* functions).  Both sources
+are queried without an API key; the two function families return tibbles with
+identical column conventions so downstream pipelines work on either source.")
     (license license:expat)))
 
 (define-public r-cry
@@ -18600,13 +18606,13 @@ unknown but semiparametric ('Li and Guo (2021) <@code{arXiv:2010.09922>}).")
 (define-public r-controlcharts
   (package
     (name "r-controlcharts")
-    (version "0.0.19")
+    (version "0.0.23")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "controlcharts" version))
        (sha256
-        (base32 "1mabmhlmlb18dr47c7jj7zix77p78a6bwqk2j1776y4gz82l8a2i"))))
+        (base32 "0jqrhs185pwgxi16wavffjin39nkdf2w7xq3shzkvkmqixlr1ak0"))))
     (properties `((upstream-name . "controlcharts")))
     (build-system r-build-system)
     (arguments
@@ -18627,19 +18633,22 @@ unknown but semiparametric ('Li and Guo (2021) <@code{arXiv:2010.09922>}).")
                                     ((source . target) (minify source
                                                                #:target target)))
                                   '())))))))
-    (propagated-inputs (list r-quickjsr r-jsutils r-htmlwidgets r-htmltools
+    (propagated-inputs (list r-rlang
+                             r-quickjsr
+                             r-jsutils
+                             r-htmlwidgets
+                             r-htmltools
                              r-crosstalk))
     (native-inputs (list r-knitr esbuild))
     (home-page "https://aus-doh-safety-and-quality.github.io/controlcharts/")
     (synopsis
-     "Interactive Plotting for Funnel Plots and Statistical Process Control Charts")
+     "Interactive Plotting for Funnel, Sigma, and Statistical Process Control Charts")
     (description
-     "Generate fully interactive and dynamic funnel plots and statistical process
-control ('SPC') charts.  All data manipulation, calculation, and plotting is
-done in @code{JavaScript}', allowing for completely dynamic charts without the
-need for a Shiny server.  For more details see Spiegelhalter (2004)
-<doi:10.1002/sim.1970> and Pfadt & Wheeler (1995)
-<doi:10.1901/jaba.1995.28-349>.")
+     "Generate interactive funnel plots, multi-indicator sigma charts, and statistical
+process control ('SPC') charts.  Chart calculation and plotting use
+@code{JavaScript}, allowing dynamic charts without a Shiny server.  For more
+details see Spiegelhalter (2004) <doi:10.1002/sim.1970> and Pfadt & Wheeler
+(1995) <doi:10.1901/jaba.1995.28-349>.")
     (license license:expat)))
 
 (define-public r-control
@@ -24918,26 +24927,19 @@ for details under the FGM and general copulas, respectively.")
 (define-public r-commondatamodel
   (package
     (name "r-commondatamodel")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CommonDataModel" version))
        (sha256
-        (base32 "01q9z1pmji87pk0bcign3p9fj8f5zvx1b2whpxv8mkh01zw28wdm"))))
+        (base32 "10wfpwvhak5f5400dxbxiay3xx327fmgmcqplbp0v38485j5l9qn"))))
     (properties `((upstream-name . "CommonDataModel")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-sqlrender
-                             r-rmarkdown
-                             r-rjava
-                             r-readr
-                             r-dplyr
-                             r-dbi
-                             r-databaseconnector))
+    (propagated-inputs (list r-stringr r-sqlrender r-readr r-databaseconnector))
     (home-page "https://cran.r-project.org/package=CommonDataModel")
     (synopsis "OMOP CDM DDL and Documentation Generator")
     (description
@@ -36743,13 +36745,13 @@ Brazil's National Institute of Meteorology (INMET)
 (define-public r-climate
   (package
     (name "r-climate")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "climate" version))
        (sha256
-        (base32 "1kpnb4dn5x4l1cxwis994sfh4zgw2c2n4sk9gk4sjj0sp5l0g4qy"))))
+        (base32 "0zfgqs7jzaxzp4nf2wqksnnhg5vib0f59fprd449vwwpaaiwbl61"))))
     (properties `((upstream-name . "climate")))
     (build-system r-build-system)
     (arguments
@@ -38327,6 +38329,34 @@ partitional clustering techniques based on nearest neighbor distances.")
 analysis, applied to isotope data extracted from clams.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-clampseg
+  (package
+    (name "r-clampseg")
+    (version "1.3-0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "clampSeg" version))
+       (sha256
+        (base32 "0zmkr22wqf0y3bk4kinsfm08hk6l7cyh2p8v1cbsbidzdsar9nvn"))))
+    (properties `((upstream-name . "clampSeg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stepr r-lowpassfilter))
+    (home-page "https://cran.r-project.org/package=clampSeg")
+    (synopsis "Idealisation of Patch Clamp Recordings")
+    (description
+     "This package implements the model-free multiscale idealisation approaches:
+Jump-Segmentation by M@code{UltiResolution} Filter (JSMURF), Hotz et al. (2013)
+<doi:10.1109/TNB.2013.2284063>, JUmp Local @code{dEconvolution} Segmentation
+filter (JULES), Pein et al. (2018) <doi:10.1109/TNB.2018.2845126>, and
+Heterogeneous Idealization by Local testing and DEconvolution (HILDE), Pein et
+al. (2021) <doi:10.1109/TNB.2020.3031202>.  Further details on how to use them
+are given in Pein, Eltzner and Munk (2021) <doi:10.1007/s00249-021-01506-8>.")
+    (license license:gpl3)))
+
 (define-public r-clam
   (package
     (name "r-clam")
@@ -39339,6 +39369,34 @@ Python engine via a local @code{FastAPI} server over HTTP', so no reticulate
 dependency is needed at runtime.")
     (license license:expat)))
 
+(define-public r-citesperu
+  (package
+    (name "r-citesperu")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "citesperu" version))
+       (sha256
+        (base32 "19dk058x9qs5jsk4c12ii5vpl6whglc4c8n1jfdhkndk9wddfmjl"))))
+    (properties `((upstream-name . "citesperu")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-dplyr r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/PaulESantos/citesperu")
+    (synopsis "Peruvian Species Checklists from CITES Publications")
+    (description
+     "This package provides tools and official datasets for working with Peruvian
+fauna and flora checklists published by the Ministry of the Environment (MINAM)
+under the Convention on International Trade in Endangered Species of Wild Fauna
+and Flora (CITES).  Includes official datasets for fauna (2018, 2019, 2023) and
+flora (2018), with tools for reproducible data preparation, checklist queries,
+scientific name matching and summaries by appendix and taxonomic group.")
+    (license license:expat)))
+
 (define-public r-citesource
   (package
     (name "r-citesource")
@@ -40305,31 +40363,25 @@ permissions to deploy from builds.")
 (define-public r-circhelp
   (package
     (name "r-circhelp")
-    (version "1.1")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "circhelp" version))
        (sha256
-        (base32 "1w8m4dawq6hd9pjgmqydhf4c3f7gllzlwmxmbxirg61psk38x4wk"))))
+        (base32 "00gh8fb9xcfdi38h56i3b06swi9v45csjxx22lrv36q1y6hj1alw"))))
     (properties `((upstream-name . "circhelp")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-patchwork
+    (propagated-inputs (list r-rlang
+                             r-patchwork
                              r-mathjaxr
                              r-mass
                              r-ggplot2
-                             r-gamlss
                              r-data-table))
-    (native-inputs (list r-ragg
-                         r-patchwork
-                         r-mgcv
-                         r-mass
-                         r-knitr
-                         r-ggplot2
-                         r-gamlss))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://achetverikov.github.io/circhelp/index.html")
     (synopsis "Circular Analyses Helper Functions")
     (description
@@ -57629,6 +57681,30 @@ particularly useful for highlighting the relationships between a selected row
 (or column) category and the column (or row) categories.  See Borg-Groenen
 (2005, ISBN:978-0-387-28981-6); Yelland (2010) <doi:10.3888/tmj.12-4>.")
     (license license:gpl2+)))
+
+(define-public r-caples
+  (package
+    (name "r-caples")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "caples" version))
+       (sha256
+        (base32 "02vipg3nyl5hs79lm58na343v49gdlp31g589gqmb7kvnjvd5c9g"))))
+    (properties `((upstream-name . "caples")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/RobinMahachi/caples")
+    (synopsis "Fast, Plain-English Readouts for A/B/n Tests")
+    (description
+     "Sizes and reads out A/B/n tests on conversion rates in a few function calls.
+Supports unequal traffic splits, multiple treatment arms with multiplicity
+correction, sample ratio mismatch checks, achieved minimum detectable effects,
+and plain-English summaries.")
+    (license license:expat)))
 
 (define-public r-capl
   (package

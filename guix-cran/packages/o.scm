@@ -611,13 +611,13 @@ publishable @code{LaTeX} code to present the sample information.")
 (define-public r-overturer
   (package
     (name "r-overturer")
-    (version "0.2.5")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "overtureR" version))
        (sha256
-        (base32 "1w71isyv8irhalhlzkrj1s5yfi7lcm2y9s543fmaf9y93a07j7q9"))))
+        (base32 "01zl6prjz7bb6njqnzv5rpm37xiz8zl2v24nfzmy7wnn89ipnz0k"))))
     (properties `((upstream-name . "overtureR")))
     (build-system r-build-system)
     (arguments
@@ -7057,13 +7057,13 @@ al. (2022) <doi:10.1186/s12874-021-01471-y> for a description of our methods.")
 (define-public r-optholdoutsize
   (package
     (name "r-optholdoutsize")
-    (version "0.1.0.2")
+    (version "0.1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OptHoldoutSize" version))
        (sha256
-        (base32 "13awb31whjsva7jprk7hk6sy7g0b1f8b8rg723a2hlln7il6388s"))))
+        (base32 "13vk6wa24q456l3iab10q0hv9m31gfp9yvd52jrblyj06pwm1zk3"))))
     (properties `((upstream-name . "OptHoldoutSize")))
     (build-system r-build-system)
     (arguments
@@ -9470,13 +9470,13 @@ into R.")
 (define-public r-openalexr
   (package
     (name "r-openalexr")
-    (version "3.1.0")
+    (version "3.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openalexR" version))
        (sha256
-        (base32 "0rqpir84x1a2lfvabl1hqvzr5hddrl9yw45i72d1z2f9v5yssdml"))))
+        (base32 "1mahgqzxiix1fp83s790nd9fdnjy4x5chl9xa217cpsrh54ac2bp"))))
     (properties `((upstream-name . "openalexR")))
     (build-system r-build-system)
     (arguments
@@ -9488,7 +9488,7 @@ into R.")
      "Getting Bibliographic Records from 'OpenAlex' Database Using 'DSL' API")
     (description
      "This package provides a set of tools to extract bibliographic content from
-@code{OpenAlex} database using API <https://developers.openalex.org/>.")
+@code{OpenAlex} database using API <https://help.openalex.org/>.")
     (license license:expat)))
 
 (define-public r-openairtools
@@ -12917,13 +12917,13 @@ you run open-source large language models locally on your machine.")
 (define-public r-olinkanalyzevignettes
   (package
     (name "r-olinkanalyzevignettes")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OlinkAnalyzeVignettes" version))
        (sha256
-        (base32 "0s5m16pdif0cwn9pq3fc9c1bmzp8nyj8apc871ky9h5l0ym7485m"))))
+        (base32 "07vyz6699p33p4bccrwiqq74fdpbnjbh0651l9pjvs2hqbc4fq5c"))))
     (properties `((upstream-name . "OlinkAnalyzeVignettes")))
     (build-system r-build-system)
     (arguments
@@ -13354,13 +13354,13 @@ vector-borne disease data.")
 (define-public r-ohun
   (package
     (name "r-ohun")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ohun" version))
        (sha256
-        (base32 "0a8iw2ni7hgbw6agyz2g18pk874wmnxf1bva8s4sbdsnbkxbcwa0"))))
+        (base32 "173xl8vwr281pvc1i5k0yfklcvf500mjni2njna20rvy9l1xza89"))))
     (properties `((upstream-name . "ohun")))
     (build-system r-build-system)
     (arguments
@@ -13370,6 +13370,7 @@ vector-borne disease data.")
                              r-tuner
                              r-sf
                              r-seewave
+                             r-rraven
                              r-rlang
                              r-igraph
                              r-ggplot2

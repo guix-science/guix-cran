@@ -6723,13 +6723,13 @@ implemented methods are based on the following research: Qiu, P. (1998)
 (define-public r-drimmr
   (package
     (name "r-drimmr")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "drimmR" version))
        (sha256
-        (base32 "050xqfjsbpv3xzqvmzp0s0bvqs5809s2y2bv1fklpgdn2sbqf7kq"))))
+        (base32 "18a5k3y1fim09w0haicd6mcz869ll6phykln824vifwg1x6cg4bq"))))
     (properties `((upstream-name . "drimmR")))
     (build-system r-build-system)
     (arguments
@@ -6743,6 +6743,7 @@ implemented methods are based on the following research: Qiu, P. (1998)
                              r-foreach
                              r-dplyr
                              r-doparallel))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=drimmR")
     (synopsis
      "Estimation, Simulation and Reliability of Drifting Markov Models")
@@ -29798,13 +29799,13 @@ in <@code{arXiv:2004.03758>}.")
 (define-public r-ddiwr
   (package
     (name "r-ddiwr")
-    (version "0.21")
+    (version "0.22")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DDIwR" version))
        (sha256
-        (base32 "0i90m55dwyd6ji0qghhw6q7pzkls08qrl70dncy3aq4iljmqslpb"))))
+        (base32 "1r8kpx0sm0clxyijdf6dj1xnkq154ci07nbh0pyrdazk7rkyybxr"))))
     (properties `((upstream-name . "DDIwR")))
     (build-system r-build-system)
     (arguments

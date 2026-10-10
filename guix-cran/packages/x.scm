@@ -2106,6 +2106,31 @@ Excel data.")
 charts and work with Microsoft Excel files.")
     (license license:expat)))
 
+(define-public r-xlamisc
+  (package
+    (name "r-xlamisc")
+    (version "0.5.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "xlamisc" version))
+       (sha256
+        (base32 "0i48bncy18b2ly8pha6ff4wz48p3fb9gyhrm9qfllk94hmc11wnj"))))
+    (properties `((upstream-name . "xlamisc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-cli r-checkmate))
+    (home-page "https://r-xla.github.io/xlamisc/")
+    (synopsis "Helper Functions for 'r-xla'")
+    (description
+     "Frequently used generics and helper functions used in anvl and its companion
+packages stablehlo and pjrt'.  Comes with S3 generics to query arrays (shape,
+data type, device) and to convert them to R arrays and raw vectors, as well as a
+class for data types.")
+    (license license:expat)))
+
 (define-public r-xkcddata
   (package
     (name "r-xkcddata")

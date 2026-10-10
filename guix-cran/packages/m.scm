@@ -255,13 +255,13 @@ information, see <https://github.com/Hirriririir/@code{MyoScore>}.")
 (define-public r-myman
   (package
     (name "r-myman")
-    (version "0.1.0")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "myman" version))
        (sha256
-        (base32 "03y5m9zbly9fznssmnyds60ah8mm07hlml08rsk7yzragqsg18nb"))))
+        (base32 "1wabvj9nbayhwm2pk3hqxgdis8a4zjf6vd6s3nsafhm0qr7akg0z"))))
     (properties `((upstream-name . "myman")))
     (build-system r-build-system)
     (arguments
@@ -286,8 +286,14 @@ wave ran on August 30, 2026, beginning with
 wave started September 4, 2026, with
 <https://bsky.app/profile/kevinmkruse.bsky.social/post/3muparqtdkk2w>.  A
 seventh wave started September 12, 2026, with
-<https://bsky.app/profile/kevinmkruse.bsky.social/post/3mvdol6xu5k2s>.  All of
-the over fourteen hundred posts from these series start with My man ...  and
+<https://bsky.app/profile/kevinmkruse.bsky.social/post/3mvdol6xu5k2s>.  An
+eighth wave started September 16, 2026, with
+<https://bsky.app/profile/kevinmkruse.bsky.social/post/3mvnmq23nw22y>.  A ninth
+wave started October 1, 2026 with
+<https://bsky.app/profile/kevinmkruse.bsky.social/post/3mwtx2jztkk2g>.  A tenth
+wave started October 4, 2026, with
+<https://bsky.app/profile/kevinmkruse.bsky.social/post/3mx333hlmdc2o>.  All of
+the over seventeen hundred posts from these series start with My man ...  and
 make for excellent input to a fortunes'-like package.  So this small package
 obliges and offers a random draw each time its @code{myman()} function is
 called.  The overall package structure follows package fortunes', and atrrr was
@@ -2143,13 +2149,13 @@ data.")
 (define-public r-mvngmod
   (package
     (name "r-mvngmod")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MVNGmod" version))
        (sha256
-        (base32 "1p11b94z4ypr1yxq48nj4sygvgh03ja1lambnxwlsh2sddr60q31"))))
+        (base32 "0vdhhnmmv1pjlfl50qdq34f509f2qlsxwnwfxxnc34l9sw04m4wx"))))
     (properties `((upstream-name . "MVNGmod")))
     (build-system r-build-system)
     (arguments
@@ -2158,6 +2164,7 @@ data.")
     (propagated-inputs (list r-truncnorm
                              r-purrr
                              r-pracma
+                             r-numderiv
                              r-maxlik
                              r-matrixcalc
                              r-matlib
@@ -40395,6 +40402,47 @@ Mira, A., Beja, P., Pita, R. (2017) <doi:10.1016/j.ecolmodel.2017.06.013>;
 Mestre, F., Pita, R., Mira, A., Beja, P. (2020) <doi:10.1186/s12898-019-0273-5>.")
     (license license:gpl2+)))
 
+(define-public r-metalabr
+  (package
+    (name "r-metalabr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "metalabr" version))
+       (sha256
+        (base32 "0gnbqp318xz5rgj4myarwwn4sq6fb9j3q26r3g59s03w7b99zy1p"))))
+    (properties `((upstream-name . "metalabr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-metafor
+                             r-magrittr
+                             r-jsonlite
+                             r-httr
+                             r-hmisc
+                             r-ggplot2
+                             r-dplyr
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/langcog/metalabr")
+    (synopsis "Access MetaLab Community-Augmented Meta-Analysis Data")
+    (description
+     "Read released, versioned data from @code{MetaLab}
+(<https://metalab.stanford.edu>), a database of community-augmented
+meta-analyses of language acquisition and cognitive development; validate
+candidate datasets against the @code{MetaLab} field specification; compute
+standardized effect sizes; and draw the standard @code{MetaLab} visualizations
+(scatter, violin, forest, and funnel plots) backed by multilevel random-effects
+models.")
+    (license license:expat)))
+
 (define-public r-metajam
   (package
     (name "r-metajam")
@@ -46102,13 +46150,13 @@ selection, manipulation, and graphics.")
 (define-public r-mditools
   (package
     (name "r-mditools")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mditools" version))
        (sha256
-        (base32 "1fsnmvi4bzafxc5j22j77zsx7ypphcf758vdgc4fxbipq288fc5y"))))
+        (base32 "1vq5z0j879n2qa6vvyr0410dn419hmwkzh7wamp6h3cfir55rwdv"))))
     (properties `((upstream-name . "mditools")))
     (build-system r-build-system)
     (arguments
@@ -55393,13 +55441,13 @@ to save maps in different formats (PNG, SVG).")
 (define-public r-mapsf
   (package
     (name "r-mapsf")
-    (version "1.2.2")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapsf" version))
        (sha256
-        (base32 "1xqwbik5di1s8b56fb33bfssqpvpg0mfvgcg0knz8ay7fn75fa7r"))))
+        (base32 "06a5wwk4ky2rkhq2vxlrwx1lkkjl7m69bb40rzsg0l3w9lmwss7n"))))
     (properties `((upstream-name . "mapsf")))
     (build-system r-build-system)
     (arguments

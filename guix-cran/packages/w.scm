@@ -2529,13 +2529,13 @@ results.")
 (define-public r-wordvector
   (package
     (name "r-wordvector")
-    (version "0.6.4")
+    (version "0.6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wordvector" version))
        (sha256
-        (base32 "0r3kwpf30fkfydl20674pn1jk30wy9i46v5ch9xbrr7xdbx6p993"))))
+        (base32 "02ipkj60rq6y1z55hcfxmx1aik3yp9sl0dcc2w8jcbhzv2yq14jc"))))
     (properties `((upstream-name . "wordvector")))
     (build-system r-build-system)
     (arguments
@@ -3287,13 +3287,13 @@ Algorithm\" by Mirjalili and Lewis (2016) <doi:10.1016/j.advengsoft.2016.01.008>
 (define-public r-wnpmle
   (package
     (name "r-wnpmle")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wnpmle" version))
        (sha256
-        (base32 "1sjfpd4dili7qrivfxsgs5f8w0f5v91iqc27q8155i7fqqz0s5c1"))))
+        (base32 "00agyscf1dfhjzscha062lhgfyc2z43gyddvhprr0xvqj1s1qnvw"))))
     (properties `((upstream-name . "wnpmle")))
     (build-system r-build-system)
     (arguments
@@ -4130,13 +4130,13 @@ for supporting this research.")
 (define-public r-wintime
   (package
     (name "r-wintime")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wintime" version))
        (sha256
-        (base32 "0l9yiksz695kz4lcdx3ih80h77hnmy3mp72c2zr6wklf5v83h7s4"))))
+        (base32 "1yi2pcgd8wv886phbbygqy8hcjww5qkk64h5zjwa8na82zr4s0lr"))))
     (properties `((upstream-name . "wintime")))
     (build-system r-build-system)
     (arguments

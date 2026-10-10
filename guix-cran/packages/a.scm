@@ -1663,46 +1663,6 @@ validity.  Checks if it is used on @code{GitHub}', CRAN and Bioconductor'.
 Checks for unintended meanings by querying Wiktionary and Wikipedia.")
     (license license:expat)))
 
-(define-public r-av1r
-  (package
-    (name "r-av1r")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "AV1R" version))
-       (sha256
-        (base32 "0fbpswdmfrjs1phakzv7pjk55nnm6iyqrw4pa0yk5fbhprk3lpm2"))))
-    (properties `((upstream-name . "AV1R")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list))
-    (native-inputs (list pkg-config))
-    (home-page "https://github.com/Zabis13/AV1R")
-    (synopsis "'AV1' Video Encoding for Biological Microscopy Data")
-    (description
-     "Converts legacy microscopy video formats (H.264/H.265, AVI/MJPEG, TIFF stacks)
-to the modern AV1 codec with minimal quality loss.  Typical use cases include
-compressing large TIFF stacks from confocal microscopy and time-lapse
-experiments from hundreds of gigabytes to manageable sizes, re-encoding MP4
-files exported from @code{CellProfiler}', @code{ImageJ'/'Fiji}', and microscope
-software with approximately 2x better compression at the same visual quality,
-and converting legacy AVI (MJPEG) and H.265 recordings to a single patent-free
-format suited for long-term archival.  Automatically selects the best available
-backend: GPU hardware acceleration via Vulkan VK_KHR_VIDEO_ENCODE_AV1 or VAAPI
-(tested on AMD RDNA4; bundled headers, builds with any Vulkan SDK >= 1.3.275),
-with automatic fallback to CPU encoding through FFmpeg and SVT-AV1'.  User
-controls quality via a single CRF parameter; each backend adapts automatically
-(CPU and Vulkan use CRF directly, VAAPI targets 55 percent of input bitrate).
-TIFF stacks use near-lossless CRF 5 by default, with optional proportional
-scaling via tiff_scale (multiplier or bounding box, aspect ratio always
-preserved).  Small frames are automatically scaled up to meet hardware encoder
-minimums.  Audio tracks are preserved automatically.  Provides a simple R API
-for batch conversion of entire experiment folders.")
-    (license license:expat)))
-
 (define-public r-av
   (package
     (name "r-av")
@@ -10074,6 +10034,33 @@ database can be found at the following URL
 West (1997).  Particular cases include the extraction of trend and seasonal
 components.")
     (license license:gpl2+)))
+
+(define-public r-ardea
+  (package
+    (name "r-ardea")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ardea" version))
+       (sha256
+        (base32 "0qqjky432y917blmk5f0ajz0x11ljn4j6fr8bdynwfp2cc793205"))))
+    (properties `((upstream-name . "ardea")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/npcooley/ardea")
+    (synopsis "Infrastructure for Interacting with GPUs")
+    (description
+     "Compiling, managing, and dispatching functions to GPUs.  Will compile tooling
+for successfully detected frameworks, currently limited to: @code{OpenCL}
+(<https://www.khronos.org/opencl/resources>), CUDA
+(<https://docs.nvidia.com/cuda/>), and Metal
+(<https://developer.apple.com/documentation/metal>).")
+    (license license:gpl3)))
 
 (define-public r-ard
   (package
@@ -25333,13 +25320,13 @@ analysis.\"Adverse event enrichment tests using VAERS\" Shuoran Li, Lili Zhao
 (define-public r-aedseo
   (package
     (name "r-aedseo")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aedseo" version))
        (sha256
-        (base32 "1pbbi674sskvln8izb2afii8d215b9qf3wlma1b4hb6c0d6kjxx3"))))
+        (base32 "10x7r925c5y0x29qcyscnhdv03dv6dq8z3pmb0307hg0xchwvd93"))))
     (properties `((upstream-name . "aedseo")))
     (build-system r-build-system)
     (arguments
@@ -26362,13 +26349,13 @@ are used for diagnostics and inference.")
 (define-public r-admtools
   (package
     (name "r-admtools")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admtools" version))
        (sha256
-        (base32 "17xyy6s65x3zadaqaijyvl1v1zblj8y3p4psvwcyf313bh849nz6"))))
+        (base32 "1x4fah5x5zni7d6cm4a0sa0snnnxv72vhyb7s330vwgpa5kv64ff"))))
     (properties `((upstream-name . "admtools")))
     (build-system r-build-system)
     (arguments

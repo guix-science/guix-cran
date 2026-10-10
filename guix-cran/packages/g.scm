@@ -1854,6 +1854,33 @@ Registro Civil.  English: Chilean baby names registered from 1920 to 2021 by the
 Civil Registry Service.")
     (license license:cc0)))
 
+(define-public r-gtxlsx
+  (package
+    (name "r-gtxlsx")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gtxlsx" version))
+       (sha256
+        (base32 "1x8jh484zmn8xwq8shy33165za4mk5pk32jsznhb0blp70spn6hk"))))
+    (properties `((upstream-name . "gtxlsx")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-openxlsx2))
+    (home-page "https://janmarvin.github.io/gtxlsx/")
+    (synopsis "Write 'gt' and HTML Tables into 'openxlsx2' Workbooks")
+    (description
+     "Turns a gt table into a range of cells in an openxlsx2 workbook, keeping the
+heading, column spanners, row groups, stub, summary rows, footnotes and the
+styling set through gt'.  Numbers stay numbers wherever a spreadsheet number
+format can reproduce what gt shows.  A second entry point does the same for a
+plain HTML table, so output from other table packages can be written to a
+worksheet as well; that path needs nothing beyond openxlsx2'.")
+    (license license:expat)))
+
 (define-public r-gtwas
   (package
     (name "r-gtwas")
@@ -2378,13 +2405,13 @@ retrieve current data or to process archived data.")
 (define-public r-gtfsio
   (package
     (name "r-gtfsio")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gtfsio" version))
        (sha256
-        (base32 "0wyb07sk51xz2wwdhvv2646148y9jqkcn0lxw2p2szrp2ww3fdda"))))
+        (base32 "04bw637csv1780xskbra31pwbahwbczjv9bdmcq32kqcs7g7axpm"))))
     (properties `((upstream-name . "gtfsio")))
     (build-system r-build-system)
     (arguments
@@ -2407,13 +2434,13 @@ objects.")
 (define-public r-gtfshift
   (package
     (name "r-gtfshift")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GTFShift" version))
        (sha256
-        (base32 "0rki2cs6frpb4a9whrd8gw21xr5pl5vhzyzka5ibnvq5hlblgi2j"))))
+        (base32 "0n8qvd3pbv4ssznqql2lq8crnkc1qi1dcvlq66dfdnl0873w45ih"))))
     (properties `((upstream-name . "GTFShift")))
     (build-system r-build-system)
     (arguments
@@ -5240,43 +5267,48 @@ approach by Lan-@code{DeMets} (1994) <doi:10.1002/sim.4780131308>.")
 (define-public r-grouprar
   (package
     (name "r-grouprar")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grouprar" version))
        (sha256
-        (base32 "0n7pd93a3v3ii85g2ms02zdvy8rkb0j8kfp1bvmfy71kd1ghc7d5"))))
+        (base32 "06isca9pvhmqds5s0xsxx23i2ig9q63f76flxapng7iy9xz2jy6x"))))
     (properties `((upstream-name . "grouprar")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr r-stringr r-gridextra r-ggplot2
-                             r-extradistr))
+    (propagated-inputs (list r-extradistr))
     (home-page "https://cran.r-project.org/package=grouprar")
     (synopsis "Group Response Adaptive Randomization for Clinical Trials")
     (description
-     "Implement group response-adaptive randomization procedures, which also
-integrates standard non-group response-adaptive randomization methods as
-specialized instances.  It is also uniquely capable of managing complex
-scenarios, including those with delayed and missing responses, thereby expanding
-its utility in real-world applications.  This package offers 16 functions for
-simulating a variety of response adaptive randomization procedures.  These
-functions are essential for guiding the selection of statistical methods in
-clinical trials, providing a flexible and effective approach to trial design.
-Some of the detailed methodologies and algorithms used in this package, please
-refer to the following references: LJ Wei (1979) <doi:10.1214/aos/1176344614> L.
-J. WEI and S. DURHAM (1978) <doi:10.1080/01621459.1978.10480109> Durham, S. D.,
-@code{FlournoY}, N. AND LI, W. (1998) <doi:10.2307/3315771> Ivanova, A.,
-Rosenberger, W. F., Durham, S. D. and Flournoy, N. (2000)
-<https://www.jstor.org/stable/25053121> Bai Z D, Hu F, Shen L. (2002)
-<doi:10.1006/jmva.2001.1987> Ivanova, A. (2003) <doi:10.1007/s001840200220> Hu,
-F., & Zhang, L. X. (2004) <doi:10.1214/aos/1079120137> Hu, F., & Rosenberger, W.
-F. (2006, ISBN:978-0-471-65396-7).  Zhang, L. X., Chan, W. S., Cheung, S. H., &
-Hu, F. (2007) <https://www.jstor.org/stable/26432528> Zhang, L., & Rosenberger,
-W. F. (2006) <doi:10.1111/j.1541-0420.2005.00496.x> Hu, F., Zhang, L. X.,
-Cheung, S. H., & Chan, W. S. (2008) <doi:10.1002/cjs.5550360404>.")
+     "This package implements group response-adaptive randomization procedures, which
+include standard (non-group) response-adaptive randomization methods as special
+cases.  The package also handles delayed and missing responses, which broadens
+its use in real-world trials.  It offers functions for simulating a variety of
+response-adaptive randomization procedures, to help guide the choice of design
+for a clinical trial, including the doubly adaptive biased coin design and the
+multi-arm efficient randomized adaptive design (ERADE), k-arm optimal target
+allocations, group sequential monitoring, and a function that computes
+allocation probabilities for an ongoing trial.  For details of the methods and
+algorithms, see the following references: Wei, L. J. (1979)
+<doi:10.1214/aos/1176344614>; Wei, L. J. and Durham, S. (1978)
+<doi:10.1080/01621459.1978.10480109>; Durham, S. D., Flournoy, N. and Li, W.
+(1998) <doi:10.2307/3315771>; Ivanova, A., Rosenberger, W. F., Durham, S. D. and
+Flournoy, N. (2000) <https://www.jstor.org/stable/25053121>; Bai, Z. D., Hu, F.
+and Shen, L. (2002) <doi:10.1006/jmva.2001.1987>; Ivanova, A. (2003)
+<doi:10.1007/s001840200220>; Hu, F. and Zhang, L. X. (2004)
+<doi:10.1214/aos/1079120137>; Hu, F. and Rosenberger, W. F. (2006,
+ISBN:978-0-471-65396-7); Zhang, L. X., Chan, W. S., Cheung, S. H. and Hu, F.
+(2007) <https://www.jstor.org/stable/26432528>; Zhang, L. and Rosenberger, W. F.
+(2006) <doi:10.1111/j.1541-0420.2005.00496.x>; Hu, F., Zhang, L. X., Cheung, S.
+H. and Chan, W. S. (2008) <doi:10.1002/cjs.5550360404>; Tymofyeyev, Y.,
+Rosenberger, W. F. and Hu, F. (2007) <doi:10.1198/016214506000000906>; Hu, F.,
+Zhang, L. X. and He, X. (2009) <doi:10.1214/08-AOS655>; Zhu, H. and Hu, F.
+(2010) <doi:10.1214/10-AOS796>; Zhai, G., Li, Y., Zhang, L. and Hu, F. (2024)
+<doi:10.1002/sim.10220>; Alkhnefr, N., Hu, F. and Zhai, G. (2025)
+<doi:10.1177/09622802251362644>.")
     (license license:gpl2+)))
 
 (define-public r-groupr
@@ -21784,44 +21816,31 @@ oceanography research communities.")
 (define-public r-ggsql
   (package
     (name "r-ggsql")
-    (version "0.3.3")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggsql" version))
        (sha256
-        (base32 "1mg09vflp3cqagzc30l740fh303w7m0drk9h8dqy31pmlslxv4gg"))))
+        (base32 "13l62ik82s8plkhnipm5d3d653lhk07c4rwjbgj9y9ajv517ifvr"))))
     (properties `((upstream-name . "ggsql")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f
-      #:modules '((guix build r-build-system)
-                  ((guix build minify-build-system)
-                   #:select (minify))
-                  (guix build utils)
-                  (ice-9 match))
-      #:imported-modules `(,@%r-build-system-modules (guix build
-                                                      minify-build-system))
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'process-javascript
-                    (lambda* (#:key inputs #:allow-other-keys)
-                      (with-directory-excursion "inst/"
-                        (for-each (match-lambda
-                                    ((source . target) (minify source
-                                                               #:target target)))
-                                  '())))))))
+      #:tests? #f))
     (inputs (list))
     (propagated-inputs (list r-yaml
                              r-rlang
                              r-r6
                              r-nanoarrow
+                             r-lifecycle
                              r-knitr
                              r-jsonlite
                              r-htmlwidgets
                              r-htmltools
+                             r-digest
                              r-cli))
-    (native-inputs (list r-quarto pkg-config esbuild))
+    (native-inputs (list r-quarto pkg-config))
     (home-page "https://r.ggsql.org")
     (synopsis "Grammar of Graphics for SQL")
     (description
@@ -22972,13 +22991,13 @@ without values.")
 (define-public r-ggrandomforests
   (package
     (name "r-ggrandomforests")
-    (version "3.5.3")
+    (version "3.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggRandomForests" version))
        (sha256
-        (base32 "1522jwc5xrs6685mql603hv36i541xwqs6abzmd7ffrk6qpkcvcr"))))
+        (base32 "0ds6mdk0sfrgbgwcdammic6pwgqa1lv6yykcy1g1sf81fb4zgc43"))))
     (properties `((upstream-name . "ggRandomForests")))
     (build-system r-build-system)
     (arguments
@@ -35246,13 +35265,13 @@ other gene features.")
 (define-public r-genekitr
   (package
     (name "r-genekitr")
-    (version "1.2.8")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "genekitr" version))
        (sha256
-        (base32 "04hjz6g4jzbghv28z1nfz7adx9lk93v0h1m17vpf548z0mkv6zyh"))))
+        (base32 "1rzgsffa8ycva397shnv1l32xl74zqp5m2f6mack8nxrv4n7nxjg"))))
     (properties `((upstream-name . "genekitr")))
     (build-system r-build-system)
     (arguments

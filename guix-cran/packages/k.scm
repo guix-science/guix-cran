@@ -1762,6 +1762,44 @@ near linear time.")
 variables.")
     (license license:gpl2+)))
 
+(define-public r-kotory
+  (package
+    (name "r-kotory")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "KOTORY" version))
+       (sha256
+        (base32 "1cbv94xnk3lvy2y7a1kipjrrzprz4l8msm3jxdsin8pzw1llnxwk"))))
+    (properties `((upstream-name . "KOTORY")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-robustbase))
+    (home-page "https://github.com/ebrahimkhaled/KOTORY")
+    (synopsis
+     "Robust Three-Group Tests for Heteroscedasticity in Linear Regression")
+    (description
+     "Tests for heteroscedasticity in the linear regression model that sort the data
+by a regressor, split them into three equal parts and compare the error scale of
+the parts.  The ordinary least squares version @code{kah3.test()} refers the
+ratio of the largest to the smallest residual mean square to its exact null
+distribution, Hartley's maximum F-ratio with three groups; the robust version
+@code{kah.robust.test()} replaces the mean squares by least trimmed squares
+scales, so that outliers neither create nor hide heteroscedasticity, and refers
+the ratio to a maximum F-ratio with simulated effective degrees of freedom, to a
+Monte Carlo reference or to a residual bootstrap.  The distribution, density,
+quantile and random generation functions of the maximum F-ratio are provided,
+together with @code{run.all.het()}', which runs the proposed tests next to the
+Goldfeld-Quandt, Breusch-Pagan, White and robust modified Goldfeld-Quandt tests
+in one call.  For more details see Hartley (1950)
+<doi:10.1093/biomet/37.3-4.308>, Goldfeld and Quandt (1965)
+<doi:10.1080/01621459.1965.10480811> and Rousseeuw (1984)
+<doi:10.1080/01621459.1984.10477105>.")
+    (license license:gpl3)))
+
 (define-public r-kosis
   (package
     (name "r-kosis")
@@ -5289,6 +5327,32 @@ players in a network.")
      "Efficient implementation of permutation tests for keyword analysis in corpus
 linguistics as described in Mildenberger (2023) <@code{arXiv:2308.13383>}.")
     (license license:gpl2+)))
+
+(define-public r-keynublicdongle
+  (package
+    (name "r-keynublicdongle")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "KeyNubLicDongle" version))
+       (sha256
+        (base32 "1dnpmmcfj5gzdrjms0m8l02m8dix86ai1vg4xcm3gnry1j9jmsgv"))))
+    (properties `((upstream-name . "KeyNubLicDongle")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://www.keynub.com/developers/r/")
+    (synopsis "Client for the 'KeyNub' USB License Dongle")
+    (description
+     "Verifies that a @code{KeyNub} USB license dongle is genuine, reads and writes
+the license records it holds, reads and increments its monotonic counters, and
+encrypts data so that only a dongle can decrypt it.  The work is done by the
+vendor's native library, which the package loads at run time; the package
+installs without it and reports where it looked.  Runs on Windows, Linux and
+@code{macOS}.")
+    (license license:asl2.0)))
 
 (define-public r-keylist
   (package

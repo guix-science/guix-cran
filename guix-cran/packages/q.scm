@@ -7504,13 +7504,13 @@ to the distributions of quadratic forms of Gaussian variables\"
 (define-public r-qapproach
   (package
     (name "r-qapproach")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qapproach" version))
        (sha256
-        (base32 "07dpfn9c3zb273mdav108v16v0wzrlaal1wbdpyqkmzfn40296gw"))))
+        (base32 "1vazywc91x5l5zsn38wkdlp4z812n6d7zvwiirgid5dwcjp1wn7d"))))
     (properties `((upstream-name . "qapproach")))
     (build-system r-build-system)
     (arguments

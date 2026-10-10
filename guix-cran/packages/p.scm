@@ -6866,6 +6866,46 @@ precursor, peptide and protein level.  Computing dynamic swath window sizes
 based on MS1 or MS2 signal distributions.")
     (license license:gpl3)))
 
+(define-public r-proxymix
+  (package
+    (name "r-proxymix")
+    (version "0.16.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "proxymix" version))
+       (sha256
+        (base32 "16syfhqv3dxrv0pdlik2js537v82m16rq9pyyjn305dlw46mfcnb"))))
+    (properties `((upstream-name . "proxymix")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-s7
+                             r-rlang
+                             r-mvnfast
+                             r-data-table
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/max578/proxymix")
+    (synopsis
+     "Kullback-Leibler Optimal Gaussian Mixture Proxies for Target Densities")
+    (description
+     "Fits multivariate Gaussian-mixture proxies that are Kullback-Leibler optimal to
+user-supplied target densities on real Euclidean space.  Three fitting regimes
+are unified under one verb: (i) closed-form moment matching for a single
+component, (ii) classical expectation-maximisation when independent samples are
+available, and (iii) importance-sampled expectation-maximisation that minimises
+the Kullback-Leibler divergence when the target can be evaluated point-wise but
+not (cheaply) sampled.  Closed-form Gaussian-mixture operators (density,
+sampling, marginalisation, conditioning, divergence) round out the toolkit.  The
+conditioning operator drives multiple imputation of data missing at random,
+covering the multimodal and heteroscedastic cases a single-Gaussian model cannot
+represent.  Implements the regime hierarchy of van der Hoek and Elliott (2024)
+<doi:10.1080/07362994.2024.2372605>.")
+    (license license:expat)))
+
 (define-public r-proxreg
   (package
     (name "r-proxreg")
@@ -15231,13 +15271,13 @@ Management, Learning Curves, Bayesian Methods, and more.")
 (define-public r-pqtldata
   (package
     (name "r-pqtldata")
-    (version "0.6")
+    (version "0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pQTLdata" version))
        (sha256
-        (base32 "02dlblibn5dcabq6vsh5klq9pxqx3frz1inc2f2jmjp3qjvk1pmf"))))
+        (base32 "1sc1apak6yd3jyr7zi4iskxcds6qw49l5j5xrpwrrsf9jzxcbxs8"))))
     (properties `((upstream-name . "pQTLdata")))
     (build-system r-build-system)
     (arguments
@@ -21477,13 +21517,13 @@ based on bi-allelic marker dosage data.  Submitted to BMC Bioinformatics (2021).
 (define-public r-polyglotsql
   (package
     (name "r-polyglotsql")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "polyglotSQL" version))
        (sha256
-        (base32 "0g1hwgy37xzvv4k6cbdif875jsdccs2pbiaky3pi7q4w44x2nsdp"))))
+        (base32 "15rb5qzfvj8mjj15izkkaxxbsn9l09jbm5vbwhkzdjfybzqxwlnj"))))
     (properties `((upstream-name . "polyglotSQL")))
     (build-system r-build-system)
     (arguments
@@ -31064,6 +31104,38 @@ also provides utilities that recommends a normalisation technique based on the
 distribution of the data.")
     (license license:expat)))
 
+(define-public r-piecemeal
+  (package
+    (name "r-piecemeal")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "piecemeal" version))
+       (sha256
+        (base32 "1c1myxwgbr8qkkpq3j8ndgc4z1zbaz9zwykg0vd0n2mafj6l5gf7"))))
+    (properties `((upstream-name . "piecemeal")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rsqlite
+                             r-rlang
+                             r-r6
+                             r-purrr
+                             r-filelock
+                             r-dbi
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=piecemeal")
+    (synopsis "Wrangle Large Simulation Studies")
+    (description
+     "An R6 class to set up, run, monitor, collate, and debug large simulation studies
+comprising many small independent replications and treatment configurations.
+Parallel processing, reproducibility, fault- and error-tolerance, and ability to
+resume an interrupted or timed-out simulation study are built in.")
+    (license license:gpl3+)))
+
 (define-public r-piecemaker
   (package
     (name "r-piecemaker")
@@ -35015,13 +35087,13 @@ pharmaversesdtm package.")
 (define-public r-pharmaverseadamjnj
   (package
     (name "r-pharmaverseadamjnj")
-    (version "0.0.7")
+    (version "0.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pharmaverseadamjnj" version))
        (sha256
-        (base32 "14x34aigd59szs05f1qpqqw4jlaqmqbm2d2k5xql5h5j2p7w42jz"))))
+        (base32 "040zpxfskr2dqgl1jb85sz8c1prn4ww7r12zn7br2xj0h9ypbqkd"))))
     (properties `((upstream-name . "pharmaverseadamjnj")))
     (build-system r-build-system)
     (arguments
@@ -40794,25 +40866,26 @@ methods implemented with simulation techniques.")
 (define-public r-pdp
   (package
     (name "r-pdp")
-    (version "0.8.3")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pdp" version))
        (sha256
-        (base32 "0mg5s1k9xaagqzc2q30qdyzx14dg0v6kvd36p2c43wfx884nx4zp"))))
+        (base32 "18zj7ajpnwbfvfx28lsna3mhf8wr751k85wr6k6am6d4yjahvdr4"))))
     (properties `((upstream-name . "pdp")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang r-lattice r-ggplot2 r-foreach))
+    (propagated-inputs (list r-tinyplot r-lattice))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/bgreenwell/pdp")
     (synopsis "Partial Dependence Plots")
     (description
      "This package provides a general framework for constructing partial dependence
-(i.e., marginal effect) plots from various types machine learning models in R.")
+(i.e., marginal effect) plots from various types of machine learning models in
+R.")
     (license license:gpl2+)))
 
 (define-public r-pdokr
@@ -46744,13 +46817,13 @@ instruments.  Based on a paper by Hutton (1992) <doi:10.1017/S0956796800000411>.
 (define-public r-parcc
   (package
     (name "r-parcc")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ParCC" version))
        (sha256
-        (base32 "0m5kb3rvymdlyryyyxp3bidcvrpqmhbdljx5b7w9pcrlwwp7md0j"))))
+        (base32 "1ssqxg1lihk42zb0mi89jfbyhwc8dxjw38kaqniw548ycj1dvq8i"))))
     (properties `((upstream-name . "ParCC")))
     (build-system r-build-system)
     (arguments
@@ -50286,6 +50359,38 @@ Hurley and R.W. Oldford (2011) <doi:10.1007/s00180-011-0229-5>.")
      "Normalization of numerical matrices by minimizing the mean/median/mode
 difference between all column pairs.")
     (license license:agpl3+)))
+
+(define-public r-pairedrand
+  (package
+    (name "r-pairedrand")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PairedRand" version))
+       (sha256
+        (base32 "0djni0yanarbdf1h6c13w9swj0nymax6ncfv1rv2lr15ip1dc1h4"))))
+    (properties `((upstream-name . "PairedRand")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-nbpmatching
+                             r-magrittr
+                             r-gtsummary
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=PairedRand")
+    (synopsis "Paired Randomization Functions")
+    (description
+     "This package provides tools for generating simulated study data, creating
+matched participant pairs using optimal nonbipartite matching, randomizing
+participants within pairs into study groups, and assessing post-randomization
+balance using descriptive summary statistics and standardized mean differences.
+The matching methodology is based on Lu et al. (2011)
+<doi:10.1198/tast.2011.08294>.")
+    (license license:expat)))
 
 (define-public r-paireddata
   (package

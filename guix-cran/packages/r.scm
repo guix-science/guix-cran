@@ -11121,13 +11121,13 @@ assets.")
 (define-public r-rqualify
   (package
     (name "r-rqualify")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rqualify" version))
        (sha256
-        (base32 "10h660virk27x3bab02lri37rpmfbp7k54cxscsy0q8yj80zq81d"))))
+        (base32 "1c8jjjy76hwfz8pvnmapcz413ip74lzxp9miidfxsr7hqnxwa8mp"))))
     (properties `((upstream-name . "rqualify")))
     (build-system r-build-system)
     (arguments
@@ -24641,6 +24641,39 @@ of the regularization parameter, as well as benchmark methods such as median
 imputation and mode imputation.")
     (license license:gpl3+)))
 
+(define-public r-rmchsptt
+  (package
+    (name "r-rmchsptt")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rMCHSPTT" version))
+       (sha256
+        (base32 "1mcawqg3jy2s64iky4s8n1pgnihyyr11fg5737siindb0wbbr0ql"))))
+    (properties `((upstream-name . "rMCHSPTT")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=rMCHSPTT")
+    (synopsis
+     "Modified Chain Sampling Inspection Plan for Time-Truncated Life Tests")
+    (description
+     "Designing and comparing modified chain sampling inspection plan (M@code{ChSP}).
+This package implements @code{ChSP-1}, M@code{ChSP-1}, Multiple Dependent State
+Sampling (MDS), and Modified Chain Sampling plans (M@code{ChSP}).  The plans use
+user-supplied failure probabilities and determine the minimum sample size
+subject to consumer's risk constraints.  Functions are provided to compare the
+required sample sizes of the four plans and visualize their performance.  The
+distribution-free formulation allows the methods to be used with different
+lifetime distributions.  Luca (2018) <doi:10.1080/02664763.2017.1375084>;
+Tripathi et al. (2021) <doi:10.32604/csse.2021.015624>; Tripathi et al. (2023)
+<doi:10.1007/s41872-023-00215-9>; Rao et al. (2025)
+<doi:10.1080/27684520.2025.2531810>; Tripathi and Saha (2023)
+<doi:10.1007/s13198-023-02221-7>.")
+    (license license:gpl3)))
+
 (define-public r-rmcfs
   (package
     (name "r-rmcfs")
@@ -28282,13 +28315,13 @@ disease-type agnostic.")
 (define-public r-riskweightedassets
   (package
     (name "r-riskweightedassets")
-    (version "1.1.1")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "riskweightedassets" version))
        (sha256
-        (base32 "199b5f7y49968whpaj7a55jk051j7j87dbff2hbbyd8z3g2ax1k9"))))
+        (base32 "18wq6vlwppb7nbrcgdr133cwazgywa3sk7w6nifnfa3p2lk1znv3"))))
     (properties `((upstream-name . "riskweightedassets")))
     (build-system r-build-system)
     (arguments
@@ -32206,30 +32239,30 @@ still permitting the use of GRASS 7'.")
 (define-public r-rgraphspace
   (package
     (name "r-rgraphspace")
-    (version "1.5.2")
+    (version "1.5.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RGraphSpace" version))
        (sha256
-        (base32 "1yn1i67gkzixjfmz9kr1jzk4fh6b9agcp5cfifxf64cgnj8nrpf1"))))
+        (base32 "066q4ym7dxg6ybkk54a35n76yk1sl769nvy2lnmjfihqbhv1q5gl"))))
     (properties `((upstream-name . "RGraphSpace")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidygraph
-                             r-sf
                              r-scales
                              r-rlang
                              r-matrix
                              r-lifecycle
                              r-igraph
+                             r-gtable
                              r-ggrastr
                              r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/sysbiolab/RGraphSpace")
-    (synopsis "Lightweight Interface Between 'igraph' and 'ggplot2' Graphics")
+    (synopsis "Rendering Graphs as Coherent Spatial Objects in 'ggplot2'")
     (description
      "An interface for rendering igraph objects as ggplot2 graphics within a
 normalized coordinate space.  R@code{GraphSpace} implements new geometries that
@@ -32238,7 +32271,9 @@ under standard aesthetic mappings.  Node features are resolved on demand,
 supporting high-dimensional data without expanding node tables.  Spatial
 alignment is available at the pixel level, with node coordinates anchored to
 pixel centers through a half-pixel offset, enabling precise node positioning
-over external reference frames such as images and maps.")
+over external reference frames such as images and maps.  Core functionality
+builds on igraph', ggplot2', and tidygraph'; optional geometry and large
+raster-background images use sf and terra when installed.")
     (license license:artistic2.0)))
 
 (define-public r-rgraphics
@@ -34009,13 +34044,13 @@ accurate estimates across temporal scales and regions.")
 (define-public r-rfpermute
   (package
     (name "r-rfpermute")
-    (version "2.5.5")
+    (version "2.5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rfPermute" version))
        (sha256
-        (base32 "02l6vbqq6lk09iwb9y5bm8kk3lyg914bgsc8qz8zysv8y4bh47fh"))))
+        (base32 "1kl1xfsixwxz72a1ch8pixpvc81rrr52z6c0797bkr6jbkw1czmj"))))
     (properties `((upstream-name . "rfPermute")))
     (build-system r-build-system)
     (arguments
@@ -34027,6 +34062,7 @@ accurate estimates across temporal scales and regions.")
                              r-scales
                              r-rlang
                              r-randomforest
+                             r-proc
                              r-gridextra
                              r-ggplot2
                              r-dplyr
@@ -36333,6 +36369,36 @@ distributed no-SQL system, use rich queries and react to data changes in
 real-time.")
     (license license:gpl3)))
 
+(define-public r-retestr
+  (package
+    (name "r-retestr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "retestR" version))
+       (sha256
+        (base32 "01gmvh510dxk823r62i6n8wxzvhcw1lwcdh54dbnzv0w75f1pk4a"))))
+    (properties `((upstream-name . "retestR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/edidatasolutions/retestR")
+    (synopsis "Model-Based Anomaly Detection for Repeat Test-Takers")
+    (description
+     "Flags repeat test-takers whose second-attempt performance departs from what a
+growth model predicts, using independent evidence sources: model-expected score
+gain (accounting for regression to the mean, time between attempts and
+remediation), differential performance on exposed versus new items (Sinharay,
+2017, <doi:10.3102/1076998616673872>), and differential response speed under a
+lognormal response-time model (van der Linden, 2006,
+<doi:10.3102/10769986031002181>).  Evidence is combined into a risk index
+calibrated by parametric bootstrap under the no-misconduct model, so flagging
+thresholds carry explicit false-positive rates.")
+    (license license:expat)))
+
 (define-public r-retentionflow
   (package
     (name "r-retentionflow")
@@ -36837,19 +36903,19 @@ large datasets.")
 (define-public r-restatapi
   (package
     (name "r-restatapi")
-    (version "0.25.0")
+    (version "0.30.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "restatapi" version))
        (sha256
-        (base32 "1w291z84qk69qcmf2vn5b5yb62a0l4il65vc0qzvz049b7h2z9qa"))))
+        (base32 "0p3b4ijanh7kdfh260wcz8kbgrh2ipkb6k7xwjcbvgif892yx323"))))
     (properties `((upstream-name . "restatapi")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xml2 r-rjson r-data-table))
+    (propagated-inputs (list r-xml2 r-jsonlite r-data-table))
     (home-page "https://github.com/eurostat/restatapi")
     (synopsis "Search and Retrieve Data from Eurostat Database")
     (description
@@ -50162,13 +50228,13 @@ then be imported to access the check functions in other packages.")
 (define-public r-rdborrow
   (package
     (name "r-rdborrow")
-    (version "0.0.4.2")
+    (version "0.0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rdborrow" version))
        (sha256
-        (base32 "1xvzwy9sxawdwli5ynv60wsdggz3rmmknds0xk5zpjaj1fnd5x7y"))))
+        (base32 "02qrpgd5sg6vvzz90dwm13fjj12fisasiqd196bbab11y6hkish5"))))
     (properties `((upstream-name . "rdborrow")))
     (build-system r-build-system)
     (arguments
@@ -50194,7 +50260,7 @@ weighting (AIPW), difference-in-differences (DID), and synthetic control
 approaches for borrowing external control information, as well as a simulation
 module for generating trial and external control data, evaluating estimator
 performance via Monte Carlo studies, and conducting power analyses for sample
-size determination.  Methods are based on Zhou et al. (2024)
+size determination.  Methods are based on Zhou et al. (2025)
 <doi:10.1093/jrsssa/qnae075> and Zhou et al. (2024)
 <doi:10.1080/10543406.2024.2330209>.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
@@ -51604,13 +51670,13 @@ Further integration and extensions are planned.")
 (define-public r-rcppsimdjson
   (package
     (name "r-rcppsimdjson")
-    (version "0.1.15")
+    (version "0.1.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppSimdJson" version))
        (sha256
-        (base32 "0wkhj1wqpkv25l6fgdzgm6lpbjsp6l3vbpnaa9ily86yqh8whbdq"))))
+        (base32 "0s33fchrq77b8s05drkr476scyhr00j9a0idp2qflc2ai2v9p5k1"))))
     (properties `((upstream-name . "RcppSimdJson")))
     (build-system r-build-system)
     (arguments
@@ -60944,27 +61010,31 @@ univariate @code{rankFD} package to multivariate data.")
 (define-public r-rankinplot
   (package
     (name "r-rankinplot")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rankinPlot" version))
        (sha256
-        (base32 "1kf8xwzx2mjgv3ad1yj70gm0mrsyghwkmjk98pwcj3a82qk94skr"))))
+        (base32 "19ha0014b0zm9g4216rlc4yf608rqnnny39rnfqwlvrl6wnkc3q2"))))
     (properties `((upstream-name . "rankinPlot")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-scales r-ggplot2))
+    (propagated-inputs (list r-scales r-rlang r-rcolorbrewer r-lifecycle
+                             r-ggplot2))
     (home-page "https://cran.r-project.org/package=rankinPlot")
     (synopsis
      "Convenient Plotting for the Modified Rankin Scale and Other Ordinal Outcome Data")
     (description
      "This package provides convenient tools for visualising ordinal outcome data
-following the \"Grotta Bar\" approach pioneered by The National Institute of
-Neurological Disorders and Stroke rt-PA Stroke Study Group (1995)
-<doi:10.1056/NEJM199512143332401>.")
+following conventions within stroke research literature.  It currently supports
+the \"Grotta Bar\" approach pioneered by The National Institute of Neurological
+Disorders and Stroke rt-PA Stroke Study Group (1995)
+<doi:10.1056/NEJM199512143332401> and Probability-Probability plots for
+visualising Desirability of Outcome Ranking (DOOR) scales with large numbers of
+categories proposed by Johns et al. (2026) <doi:10.1177/17474930261475853>.")
     (license license:gpl2+)))
 
 (define-public r-rankinma
