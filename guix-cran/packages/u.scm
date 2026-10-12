@@ -4735,13 +4735,13 @@ Nacional de Colombia <https://unal.edu.co>.")
 (define-public r-umx
   (package
     (name "r-umx")
-    (version "4.65.0")
+    (version "4.80.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "umx" version))
        (sha256
-        (base32 "0rqz0jhnhn50s629r1xpd6cbgs2s5ws8pgw7h2ig6fic0g6746sy"))))
+        (base32 "15vzpqq8z7aihw0kvhhbvjqzi9wybhp8nsvzpr06y710rj96g1hj"))))
     (properties `((upstream-name . "umx")))
     (build-system r-build-system)
     (arguments
@@ -4769,14 +4769,19 @@ Nacional de Colombia <https://unal.edu.co>.")
                              r-gert
                              r-diagrammer
                              r-cowplot))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/tbates/umx#readme")
     (synopsis "Structural Equation Modeling and Twin Modeling in R")
     (description
-     "Quickly create, run, and report structural equation models, and twin models.
-See ?umx for help, and umx_open_CRAN_page(\"umx\") for NEWS. Timothy C. Bates,
-Michael C. Neale, Hermine H. Maes, (2019).  umx: A library for Structural
+     "Quickly create, run, and report structural equation and twin models.  See ?umx
+for help, and umx_open_CRAN_page(\"umx\") for NEWS. Citations are: * Timothy C.
+Bates, Michael C. Neale, Hermine H. Maes, (2019).  umx: A library for Structural
 Equation and Twin Modelling in R. Twin Research and Human Genetics, 22, 27-41.
-<doi:10.1017/thg.2019.2>.")
+<doi:10.1017/thg.2019.2>. * Luis F.S. Castro-de-Araujo, Nathan A. Gillespie,
+Michael C. Neale, and Timothy Charles Bates (2026).  umx version 4.5: Extending
+Twin and Path-Based SEM in R with CLPM, MR-@code{DoC}, Definition Variables,
+Onyx Integration, and Censored Distributions.  Twin Research and Human Genetics,
+1-6. <doi:10.1017/thg.2026.10056>.")
     (license license:gpl3)))
 
 (define-public r-umweltapir
@@ -4971,6 +4976,39 @@ formula data and includes utilities for calculating common molecular parameters
 (e.g., double bond equivalents, DBE).  A graphical user interface is available
 via the shiny'-based ume application.")
     (license license:expat)))
+
+(define-public r-umda
+  (package
+    (name "r-umda")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "UMDA" version))
+       (sha256
+        (base32 "02xwb09gc1hnk9gwab0q72n0cxs98yczfiirl3lc4bnb5jad8kay"))))
+    (properties `((upstream-name . "UMDA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-eeea))
+    (home-page "https://cran.r-project.org/package=UMDA")
+    (synopsis "Univariate Marginal Distribution Algorithm")
+    (description
+     "This package implements the Univariate Marginal Distribution Algorithm (UMDA),
+an Estimation of Distribution Algorithm (EDA) for continuous optimization
+problems.  The method iteratively selects the best individuals from a
+population, estimates an independent marginal probability distribution for each
+decision variable, and generates new candidate solutions by sampling from the
+estimated distributions.  This process allows the probability model to adapt
+toward promising regions of the search space.  The implementation supports
+normal, triangular, histogram-based, and uniform probability distributions,
+together with an optional explicit exploration strategy for the initialization
+of the population.  The implemented explicit exploration strategy in this
+package is described in Salinas Gutierrez and MuÃ±oz Zavala (2023)
+<doi:10.1016/j.asoc.2023.110230>.")
+    (license license:gpl3)))
 
 (define-public r-umbridge
   (package

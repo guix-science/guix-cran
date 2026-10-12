@@ -7786,13 +7786,13 @@ manipulation.")
 (define-public r-openxlsx2
   (package
     (name "r-openxlsx2")
-    (version "1.29")
+    (version "1.30")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openxlsx2" version))
        (sha256
-        (base32 "0x2visr8hrg7w8l2wmsnn6iaqfbiky5568rbjhyhagnj31fpb96x"))))
+        (base32 "1dssz881390hx8ric4q1zw17fqy5wnd4a40lfwizsl4jmicvi1b9"))))
     (properties `((upstream-name . "openxlsx2")))
     (build-system r-build-system)
     (arguments
@@ -12548,13 +12548,13 @@ Y to predict Y.")
 (define-public r-omicflow
   (package
     (name "r-omicflow")
-    (version "1.6.0")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OmicFlow" version))
        (sha256
-        (base32 "1djric71mgk0cpjx19qfwkmbgz5sdqhawsw3rm2aw9wabwkypmss"))))
+        (base32 "0mgm62lkri9y00x3hh2ka5f3l05gyrrg94wskiqrl7c03bam1dim"))))
     (properties `((upstream-name . "OmicFlow")))
     (build-system r-build-system)
     (arguments
@@ -12562,7 +12562,6 @@ Y to predict Y.")
       #:tests? #f))
     (propagated-inputs (list r-yyjsonr
                              r-vegan
-                             r-rstatix
                              r-rhdf5
                              r-rcppparallel
                              r-rcpparmadillo
@@ -12570,17 +12569,17 @@ Y to predict Y.")
                              r-rcolorbrewer
                              r-r6
                              r-patchwork
+                             r-matrixtests
+                             r-matrixstats
                              r-matrix
-                             r-magrittr
+                             r-lifecycle
                              r-jsonvalidate
-                             r-jsonlite
                              r-ggrepel
-                             r-ggpubr
                              r-ggplot2
                              r-data-table
                              r-cli
                              r-ape))
-    (home-page "https://github.com/agusinac/OmicFlow")
+    (home-page "https://agusinac.github.io/OmicFlow/")
     (synopsis "Fast and Efficient (Automated) Analysis of Sparse Omics Data")
     (description
      "This package provides a generalised data structure for fast and efficient
@@ -15189,6 +15188,74 @@ enables the creation and analysis of geographic entities representing large
 scale mobility patterns, from daily travel between zones in cities to migration
 between countries.")
     (license license:gpl3)))
+
+(define-public r-ocupacoesbr
+  (package
+    (name "r-ocupacoesbr")
+    (version "0.8.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ocupacoesBR" version))
+       (sha256
+        (base32 "15w1x6g5n2rayab7xaj2ccy5wlhm2mnpvi6bvwiqlk8lw0lsg6rx"))))
+    (properties `((upstream-name . "ocupacoesBR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/moraespeixoto/ocupacoesBR")
+    (synopsis
+     "Traduz a OcupaÃ§Ã£o Declarada ao TSE em ClassificaÃ§Ãµes Padronizadas. English: Translates Occupations Declared to the TSE into Standardized Classifications")
+    (description
+     "Traduz a ocupaÃ§Ã£o registrada em fontes brasileiras para a ClassificaÃ§Ã£o
+Internacional Uniforme de OcupaÃ§Ãµes (ISCO-88 e ISCO-08) e, a partir dela, para
+medidas padronizadas de posiÃ§Ã£o social: o Ã­ndice socioeconÃ´mico ISEI
+(Ganzeboom e Treiman, 1996 <doi:10.1006/ssre.1996.0010>), o prestÃ­gio SIOPS
+(Treiman, 1977, ISBN:0-12-698750-5), o esquema de classes
+Erikson-Goldthorpe-Portocarero (EGP; Erikson, Goldthorpe e Portocarero, 1979
+<doi:10.2307/589632>) e um esquema de classes e estratos desenhado para o dado
+eleitoral.  Traz ainda o ISEI-BR, uma rÃ©gua estimada pelo pacote: o
+procedimento de Ganzeboom, De Graaf e Treiman (1992)
+<doi:10.1016/0049-089X(92)90017-B> refeito sobre a PNAD ContÃ­nua, em vez de
+importado de dado estrangeiro.  As decisÃµes de medida estÃ£o justificadas em
+Peixoto (2026) <doi:10.31235/osf.io/b29kg_v1>.  HÃ¡ duas portas de entrada: o
+cÃ³digo de ocupaÃ§Ã£o declarado nas candidaturas ao Tribunal Superior Eleitoral
+(TSE) e a ClassificaÃ§Ã£o Brasileira de OcupaÃ§Ãµes (CBO-2002 e CBO-94), usada
+na RAIS, no CAGED e no @code{eSocial}.  As tabelas de conversÃ£o derivam das
+sintaxes publicadas do International Stratification and Mobility File (Ganzeboom
+e Treiman) e da tÃ¡bua oficial de conversÃ£o do MinistÃ©rio do Trabalho, e sÃ£o
+geradas por script a partir dos arquivos originais, nunca transcritas
+manualmente.  O dicionÃ¡rio que leva o cÃ³digo do TSE Ã  ISCO-88 Ã©, ao lado do
+ISEI-BR, a outra peÃ§a autoral: foi construÃ­do pelo autor, cÃ³digo a cÃ³digo, e
+Ã© validado contra patrimÃ´nio e escolaridade das prÃ³prias candidaturas.
+English: Translates occupation as recorded in Brazilian sources into the
+International Standard Classification of Occupations (ISCO-88 and ISCO-08) and,
+from it, into standardized measures of social position: the International
+Socio-Economic Index (ISEI; Ganzeboom and Treiman, 1996
+<doi:10.1006/ssre.1996.0010>), the Standard International Occupational Prestige
+Scale (SIOPS; Treiman, 1977, ISBN:0-12-698750-5), the
+Erikson-Goldthorpe-Portocarero (EGP) class scheme (Erikson, Goldthorpe and
+Portocarero, 1979 <doi:10.2307/589632>) and a class and strata scheme designed
+for electoral data.  It also provides ISEI-BR, a scale estimated by the package
+itself: the procedure of Ganzeboom, De Graaf and Treiman (1992)
+<doi:10.1016/0049-089X(92)90017-B> is re-estimated on Brazil's Continuous
+National Household Sample Survey (PNAD ContÃ­nua) instead of importing scores
+estimated on foreign data.  The measurement decisions are justified in Peixoto
+(2026) <doi:10.31235/osf.io/b29kg_v1>.  There are two entry points: the
+occupation code that candidates declare when registering with Brazil's Superior
+Electoral Court (Tribunal Superior Eleitoral, TSE), and the Brazilian
+Classification of Occupations (CBO-2002 and CBO-94), used in the RAIS, CAGED and
+@code{eSocial} administrative records.  The conversion tables derive from the
+published syntax files of the International Stratification and Mobility File
+(Ganzeboom and Treiman) and from the official conversion table of Brazil's
+Ministry of Labor, and are generated by script from the original files, never
+transcribed by hand.  Alongside ISEI-BR, the dictionary that maps TSE occupation
+codes to ISCO-88 is the package's other original contribution: it was built by
+the author code by code and is validated against the declared assets and
+education of the candidates themselves.")
+    (license license:expat)))
 
 (define-public r-octopusr
   (package

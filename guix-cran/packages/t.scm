@@ -16104,6 +16104,39 @@ computed by in Algeri and van Dyk (2018) <@code{arXiv:1803.03858>}.")
     (description "Use the <https://toggl.com> time tracker api through R.")
     (license license:gpl3)))
 
+(define-public r-toeclim
+  (package
+    (name "r-toeclim")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "toeclim" version))
+       (sha256
+        (base32 "0ql78vafc4b7cr71kg6aijngar05c0qlx9827ak69kj6djw2prk4"))))
+    (properties `((upstream-name . "toeclim")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=toeclim")
+    (synopsis "Time of Emergence of Climate Signals from Internal Variability")
+    (description
+     "Detects when a forced climate change signal emerges from internal variability
+('time of emergence') in annual climate time series such as temperature or
+precipitation.  The signal is estimated with a linear, quadratic or locally
+weighted smoother and compared with noise estimated from a baseline period.
+Emergence is defined through configurable signal-to-noise thresholds and
+persistence rules.  Uncertainty in the time of emergence is quantified by
+autoregressive or moving-block bootstrap resampling.  Helpers are provided for
+multi-member ensembles, threshold sensitivity, anomaly and annual aggregation,
+Mann-Kendall trend tests with trend-free prewhitening, and synthetic data
+generation.  The approach builds on Hawkins and Sutton (2012)
+<doi:10.1029/2011GL050087>, Yue et al. (2002) <doi:10.1002/hyp.1095> and Sen
+(1968) <doi:10.1080/01621459.1968.10480934>.")
+    (license license:expat)))
+
 (define-public r-todor
   (package
     (name "r-todor")
@@ -22557,6 +22590,44 @@ level analysis wrapper functions for correlation and principal components
 analysis are provided.")
     (license license:expat)))
 
+(define-public r-tidymedia
+  (package
+    (name "r-tidymedia")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidymedia" version))
+       (sha256
+        (base32 "1sh8rj3ji73syjh50l44nkwcls6c73s8yv40hfs681501zpzc8vq"))))
+    (properties `((upstream-name . "tidymedia")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list mediainfo ffmpeg))
+    (propagated-inputs (list r-withr
+                             r-tibble
+                             r-rlang
+                             r-rappdirs
+                             r-purrr
+                             r-glue
+                             r-dplyr
+                             r-digest
+                             r-cli
+                             r-archive))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jmgirard/tidymedia")
+    (synopsis "Media File Preprocessing and Metadata for the 'tidyverse'")
+    (description
+     "Batch preprocessing and metadata extraction for audio, video and image files,
+built on the command-line programs FFmpeg (<https://ffmpeg.org/>) and
+@code{MediaInfo} (<https://mediaarea.net/en/@code{MediaInfo>}).  Trim, crop,
+scale, convert and standardize files one at a time or across a whole directory,
+and read container and stream metadata back as tibbles for use with the
+tidyverse'.")
+    (license license:gpl3)))
+
 (define-public r-tidymc
   (package
     (name "r-tidymc")
@@ -23922,6 +23993,45 @@ Users can embed the visualizations in their Shiny applications, and export them
 as HTML files or static images.")
     (license license:agpl3)))
 
+(define-public r-tidycreel
+  (package
+    (name "r-tidycreel")
+    (version "8.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidycreel" version))
+       (sha256
+        (base32 "17akrmcwhc1xkyi71qip1xkahlby8xh4gpzmd97jsb8ky2p1iy2f"))))
+    (properties `((upstream-name . "tidycreel")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tibble
+                             r-survey
+                             r-rlang
+                             r-lifecycle
+                             r-ggplot2
+                             r-generics
+                             r-dplyr
+                             r-cli
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/chrischizinski/tidycreel")
+    (synopsis "Tidy Interface for Creel Survey Design and Analysis")
+    (description
+     "This package provides a tidy, pipe-friendly interface for creel survey design,
+data management, estimation, visualisation, and reporting.  A creel survey
+interviews anglers on site to estimate fishing effort, catch, and harvest for a
+water body.  Built on the survey package for design-based inference, with
+support for instantaneous, bus-route, ice, camera, and aerial designs.
+Catch-rate estimators follow Hoenig, Jones, Pollock, Robson and Wade (1997)
+<doi:10.2307/2533116>; bus-route designs follow Kinloch, @code{McGlennon},
+Nicoll and Pike (1997) <doi:10.1016/s0165-7836(97)00068-4>.")
+    (license license:expat)))
+
 (define-public r-tidycpp
   (package
     (name "r-tidycpp")
@@ -24132,41 +24242,50 @@ Methods follow those introduced in Fine and Gray (1999) <doi:10.1002/sim.7501>."
 (define-public r-tidycjk
   (package
     (name "r-tidycjk")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidycjk" version))
        (sha256
-        (base32 "1k4vzdlaa4n17whh5jbnbp2nd3xspgvh1jnxvs1k5s5m8zxm9rag"))))
+        (base32 "0ja5kncis1p09ly22z2a0hwvc68y4b6s1kh3vzkc7c9l9g58d479"))))
     (properties `((upstream-name . "tidycjk")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tibble r-stringi r-dplyr))
-    (home-page "https://pursuitofdatascience.github.io/tidyckj/")
+    (native-inputs (list r-knitr))
+    (home-page "https://pursuitofdatascience.github.io/tidycjk/")
     (synopsis "Tidy Tools for Chinese, Japanese and Korean Text")
     (description
      "This package provides a tidy toolkit for text that is written in Chinese,
 Japanese or Korean.  Most text tooling in R assumes that words are separated by
 whitespace, which CJK writing does not use, so ordinary summaries of a text
 column either treat a sentence as one undifferentiated blob or split it into
-isolated characters.  Word segmentation is therefore a pluggable engine that the
-caller names explicitly rather than a bundled dictionary, because where a word
-ends is a fact about a language and not about Unicode.  tidycjk classifies
-characters by Unicode block, reports which script and which language a text is
-written in, measures how much of a text is CJK, and turns those measurements
-into tibbles that slot straight into a tidyverse workflow.  It also measures
-display width in terminal columns, pads and truncates to a width rather than to
-a character count, and normalises fullwidth and halfwidth forms surgically --
+isolated characters.  Word segmentation is a pluggable engine, with
+dictionary-based segmentation for Chinese and Japanese supplied through ICU and
+further engines registrable by the caller, because where a word ends is a fact
+about a language and not about Unicode.  tidycjk classifies characters by
+Unicode block, reports which script and which language a text is written in,
+measures how much of a text is CJK, and turns those measurements into tibbles
+that slot straight into a tidyverse workflow.  It also measures display width in
+terminal columns, pads, truncates and wraps to a width rather than to a
+character count, and normalises fullwidth and halfwidth forms surgically --
 including composing halfwidth katakana voiced marks into single code points --
-without the collateral damage of a full NFKC pass.  Language detection
-deliberately returns NA rather than guessing when a text is written in Han
-characters only, because Japanese written without kana cannot be distinguished
-from Chinese by script alone.  Everything is derived from the Unicode
-specification; the package makes no network requests and needs no compiled code
-of its own.")
+while offering the Unicode normalisation forms separately for when a full NFKC
+fold is what is wanted.  Romanisation, conversion between simplified and
+traditional Han, conversion between the two kana syllabaries, and decomposition
+of Hangul syllables into jamo are provided on the same vectorised contract.
+Sentence segmentation, character n-grams, punctuation removal by Unicode
+category and locale-aware ordering cover the preprocessing that generic tooling
+gets wrong on CJK, where the sentence terminators are ideographic, a code point
+sort is not an alphabetical one, and the POSIX punctuation class is resolved by
+the C library rather than by Unicode.  Language detection deliberately returns
+NA rather than guessing when a text is written in Han characters only, because
+Japanese written without kana cannot be distinguished from Chinese by script
+alone.  Everything is derived from the Unicode specification; the package makes
+no network requests and needs no compiled code of its own.")
     (license license:gpl3+)))
 
 (define-public r-tidycharts

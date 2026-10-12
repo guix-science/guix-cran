@@ -8077,13 +8077,13 @@ Debruyne et al. (2019) <DOI:10.1007/s11222-018-9831-5>).")
 (define-public r-crmpack
   (package
     (name "r-crmpack")
-    (version "2.2.1")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crmPack" version))
        (sha256
-        (base32 "0ji3n2fyz1cr5v3rfxr01dvkada861i9n2y76978lfg7s1i89jmk"))))
+        (base32 "0nrffnc1sfz9z89yqw7nx40bgv4vw8cr9idlggfbqnfkgkz6fwdj"))))
     (properties `((upstream-name . "crmPack")))
     (build-system r-build-system)
     (arguments
@@ -8107,7 +8107,7 @@ Debruyne et al. (2019) <DOI:10.1007/s11222-018-9831-5>).")
                              r-futile-logger
                              r-dplyr
                              r-checkmate))
-    (native-inputs (list r-quarto r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://docs.crmpack.org/")
     (synopsis "Object-Oriented Implementation of Dose Escalation Designs")
     (description
@@ -13454,13 +13454,13 @@ the network.")
 (define-public r-countries
   (package
     (name "r-countries")
-    (version "1.2.4")
+    (version "1.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "countries" version))
        (sha256
-        (base32 "0k5a32057mh17xby5lir9mkg6ndf65qmcczl676w650khav71c86"))))
+        (base32 "0ar75sp92kxv9a0pa3g66pqrn74a761r4v2x0prp6lplqy4r5865"))))
     (properties `((upstream-name . "countries")))
     (build-system r-build-system)
     (arguments
@@ -15966,13 +15966,13 @@ CORE'-certified conformance engine.")
 (define-public r-coresynth
   (package
     (name "r-coresynth")
-    (version "0.5.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coresynth" version))
        (sha256
-        (base32 "1dw31z9bd4fxl6jznnv51a06cr8ivh80lrsmpnd878xs0na3p6m0"))))
+        (base32 "1pk2bf9z4ffpnfqbvxil49mx1b0adlf6a2j6zcjs6j2rv0vshrkw"))))
     (properties `((upstream-name . "coresynth")))
     (build-system r-build-system)
     (arguments
@@ -18330,6 +18330,37 @@ indicator fiches, makes possible to produce automated reports.  The Eurofound
 report (<doi:10.2806/68012>) \"Upward convergence in the EU: Concepts,
 measurements and indicators\", 2018, is a detailed presentation of convergence.")
     (license (list license:gpl3 license:bsd-3))))
+
+(define-public r-converger
+  (package
+    (name "r-converger")
+    (version "0.99.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ConvergeR" version))
+       (sha256
+        (base32 "1cnn0bakf39ng5wsjkg93ra6f03p5vi2085cqign9xs92qxwvsa4"))))
+    (properties `((upstream-name . "ConvergeR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-seuratobject
+                             r-seurat
+                             r-scales
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/pauldeboissier1/ConvergeR")
+    (synopsis "Whitfield Convergence Score and Seurat Metadata Association")
+    (description
+     "Calculates the convergence score defined by Whitfield et al.  2026
+<doi:10.1158/0008-5472.CAN-25-4403>.  It allows visualization of this score
+alongside qualitative and quantitative Seurat object metadata via barplots and
+density curves, and runs appropriate statistical tests for associations.")
+    (license license:gpl3)))
 
 (define-public r-convergencedfm
   (package
@@ -38332,13 +38363,13 @@ analysis, applied to isotope data extracted from clams.")
 (define-public r-clampseg
   (package
     (name "r-clampseg")
-    (version "1.3-0")
+    (version "1.3-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clampSeg" version))
        (sha256
-        (base32 "0zmkr22wqf0y3bk4kinsfm08hk6l7cyh2p8v1cbsbidzdsar9nvn"))))
+        (base32 "18qs1cqyr14qjnm7qkcp9p9xr365by80zhw6mcabpn6h9xrpv5nh"))))
     (properties `((upstream-name . "clampSeg")))
     (build-system r-build-system)
     (arguments

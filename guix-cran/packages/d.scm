@@ -2364,13 +2364,13 @@ on human communication dynamics.")
 (define-public r-duckspatial
   (package
     (name "r-duckspatial")
-    (version "1.2.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "duckspatial" version))
        (sha256
-        (base32 "1xr9l22acqcm5brlj6ya9kyhy5vs9pcrnkhwhd8jrxi99620791c"))))
+        (base32 "1yfpj9z84fp52ss59cy39vjqckmh5g7mxiz2sll3g5s3csd596dj"))))
     (properties `((upstream-name . "duckspatial")))
     (build-system r-build-system)
     (arguments
@@ -2477,13 +2477,13 @@ protocol from @code{DuckDB}'.")
 (define-public r-duckh3
   (package
     (name "r-duckh3")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "duckh3" version))
        (sha256
-        (base32 "00bh50h2zpmsc4fy0kfq2vsbqhcf7afqmzcxwb1apfv0mjh3kr24"))))
+        (base32 "1isb2cjlb57w4nq40xnscqv992kklssv7vkcw4xkm8m6rfbc12pw"))))
     (properties `((upstream-name . "duckh3")))
     (build-system r-build-system)
     (arguments
@@ -2495,7 +2495,8 @@ protocol from @code{DuckDB}'.")
                              r-dplyr
                              r-dbplyr
                              r-dbi
-                             r-cli))
+                             r-cli
+                             r-bit64))
     (home-page "https://cidree.github.io/duckh3/")
     (synopsis "H3 Extension of 'DuckDB'")
     (description
@@ -20409,6 +20410,43 @@ decompr and gvc packages have each country-industry combination occur along both
 edges of the matrix.")
     (license license:gpl3)))
 
+(define-public r-diagnostysize
+  (package
+    (name "r-diagnostysize")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DiagnostySize" version))
+       (sha256
+        (base32 "0vhw92zvaly19q99p1q72p9ay95y2zilpngw2cbqnzv6m4qayrxg"))))
+    (properties `((upstream-name . "DiagnostySize")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shinydashboard
+                             r-shinybs
+                             r-shiny
+                             r-markdown
+                             r-htmltools
+                             r-dt))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/JanaW09/DiagnostySize_App")
+    (synopsis "App for Calculating the Sample Size in a Diagnostic Study")
+    (description
+     "We developed a shiny app for the optimal sample size calculations for diagnostic
+accuracy studies proposed in Stark and Zapf (2020)
+<doi:10.1177/0962280220913588>, and Stark et al. (2022)
+<doi:10.1186/s12874-022-01564-2>, so people without programming skills can use
+this approach as well.  Until now, this approach was just available via R
+scripts.  This app, @code{DiagnostySize}', lets users apply the optimal sample
+size calculation approach, ensuring that no endpoint (sensitivity or
+specificity) is overpowered.  Within the app, users can run the optimal sample
+size and power calculations for different study designs through a user
+interface.")
+    (license license:gpl3)))
+
 (define-public r-diagmeta
   (package
     (name "r-diagmeta")
@@ -23312,13 +23350,13 @@ investigate the characterization properties of any block design.")
 (define-public r-deseats
   (package
     (name "r-deseats")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "deseats" version))
        (sha256
-        (base32 "1lwcqlhmc108rqhvw3q90ciw46w8pi951r0hlafdzv4pbx6rpwwr"))))
+        (base32 "17hi8mgr792l0qk107y4063jjr30bdhlkc1cl9iwsj5gk8jb3ms8"))))
     (properties `((upstream-name . "deseats")))
     (build-system r-build-system)
     (arguments
@@ -23338,7 +23376,7 @@ investigate the characterization properties of any block design.")
                              r-furrr
                              r-animation))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=deseats")
+    (home-page "https://github.com/dschulz13/deseats")
     (synopsis
      "Data-Driven Locally Weighted Regression for Trend and Seasonality in TS")
     (description
@@ -23348,9 +23386,10 @@ regression approach with automatically selected bandwidth for equidistant
 short-memory time series.  The approach is a combination / extension of the
 algorithms by Feng (2013) <doi:10.1080/02664763.2012.740626> and Feng, Y.,
 Gries, T., and Fritz, M. (2020) <doi:10.1080/10485252.2020.1759598> and a brief
-description of this new method is provided in the package documentation.
-Furthermore, the package allows its users to apply the base model of the Berlin
-procedure, version 4.1, as described in Speth (2004)
+description of this new method is provided in the package documentation and in
+more detail in Schulz (2026) <doi:10.32614/RJ-2026-025>.  Furthermore, the
+package allows its users to apply the base model of the Berlin procedure,
+version 4.1, as described in Speth (2004)
 <https://www.destatis.de/DE/Methoden/Saisonbereinigung/BV41-methodenbericht-Heft3_2004.pdf?__blob=@code{publicationFile>}.
  Permission to include this procedure was kindly provided by the Federal
 Statistical Office of Germany.")
@@ -24945,13 +24984,13 @@ similar set of tools for illustrating distributions, based on ggplot2'.")
 (define-public r-denstest
   (package
     (name "r-denstest")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "denstest" version))
        (sha256
-        (base32 "0vbs7x52zz9rqkn1b9lnhqy5ks4y5j5ak9gh3l505vlw9wz7i4vk"))))
+        (base32 "0ys0jwrxvpw00hd4730k30i3iifvsark4in66p034ax8zyc9ajch"))))
     (properties `((upstream-name . "denstest")))
     (build-system r-build-system)
     (arguments
@@ -24970,8 +25009,8 @@ functions\" <doi:10.1007/s00180-007-0047-y>, which is referred to as DET (Densit
 Equality Testing) in this package for clarity.  FDET compares groups of
 densities based on their global shape using Fourier transforms, while MDET tests
 for differences in distributional moments.  All methods are described in Anarat,
-Krutmann and Schwender (2025), \"Testing for Differences in Extrinsic Skin Aging
-Based on Density Functions\" (Submitted).")
+Krutmann and Schwender (2026), \"Testing for Differences in Extrinsic Skin Aging
+Based on Density Functions\" (Under revision).")
     (license license:gpl3)))
 
 (define-public r-densratio
@@ -32362,6 +32401,33 @@ more informative than DCSI, CDbw, and VIASCKDE indices for unsupervised
 clustering internal assessment of concave-shaped and density-based clusters\",
 @code{PeerJ} Computer Science 11:e3095 (pp.  1-), <doi:10.7717/peerj-cs.3095>.")
     (license license:gpl3)))
+
+(define-public r-dbcturbo
+  (package
+    (name "r-dbcturbo")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dbcturbo" version))
+       (sha256
+        (base32 "18vsizg9wg913cwak8v71sllwqjas13fi7vwd94zg516ar9klq1r"))))
+    (properties `((upstream-name . "dbcturbo")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/GPimentel14/dbcturbo")
+    (synopsis "High-Performance Streaming Reader for 'DATASUS' DBC Files")
+    (description
+     "This package provides a modern, memory-efficient R package for reading and
+converting DBC files produced by the Brazilian Ministry of Health's DATASUS
+system.  DBC files are DBF databases compressed with the PKWare implode
+algorithm.  Unlike read.dbc', this package processes files in streaming mode,
+never loading the full dataset into RAM. It can export directly to CSV or DBF
+and provides R helpers for in-memory reading and Parquet conversion.")
+    (license license:agpl3)))
 
 (define-public r-dbarts
   (package

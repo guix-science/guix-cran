@@ -5638,13 +5638,13 @@ required R package dependencies.")
 (define-public r-qindex
   (package
     (name "r-qindex")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Qindex" version))
        (sha256
-        (base32 "0gydkgvv9z0yycyb90dvfrnnj9nvqcqy0c2rm190l69dy29qsf0d"))))
+        (base32 "18ymgcsa5b9a9kwkk0xixiihxnn3bxbcrazpan7vcfa4ajgps7lw"))))
     (properties `((upstream-name . "Qindex")))
     (build-system r-build-system)
     (arguments
@@ -5657,10 +5657,10 @@ required R package dependencies.")
      "The author has retired from academic research.  Accordingly, this package should
 not be considered a validated tool for use in peer-reviewed publications or as
 the basis for grant applications.  Backward compatibility with user-code
-published in <doi:10.1186/s12859-023-05408-8> and
-<doi:10.1016/j.labinv.2023.100158> is not maintained in versions >= 0.4.0 (June
-2026) of this package.  The authors of those publications are the appropriate
-contacts for reproducibility inquiries.")
+published in <doi:10.1186/s12859-023-05408-8>,
+<doi:10.1016/j.labinv.2023.100158> and <doi:10.1093/bioinformatics/btaf182> is
+not maintained in versions >= 0.4.0 (June 2026) of this package.  The authors of
+those publications are the appropriate contacts for reproducibility inquiries.")
     (license license:gpl2)))
 
 (define-public r-qiitr

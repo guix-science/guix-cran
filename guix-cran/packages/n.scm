@@ -1933,6 +1933,45 @@ See
 and Sigg et al. (2007) <doi:10.1109/MLSP.2007.4414315> for more details.")
     (license license:gpl2+)))
 
+(define-public r-nsca
+  (package
+    (name "r-nsca")
+    (version "0.4.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NSCA" version))
+       (sha256
+        (base32 "14q1869si1pkmb20v5vli92dxf8mcmx45cc6cax1n0qjpals2df6"))))
+    (properties `((upstream-name . "NSCA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scatools r-nca r-ggplot2))
+    (home-page "https://github.com/youngchanresearcher/NSCA")
+    (synopsis "Necessary and Sufficient Condition Analysis")
+    (description
+     "Tests and quantifies bivariate statements in which a condition is both necessary
+and sufficient for an outcome.  Necessity and sufficiency are estimated as two
+empty-space frontiers on diagonally opposite corners of the same scatter plot,
+using the NCA package of Dul (2016) <doi:10.1177/1094428115584005> for the
+necessity side and SCAtools for the sufficiency side.  The two empty zones and
+the region between them tile the analytic scope, which yields the reported areas
+as one identity rather than as separate definitions: a weakest-component effect,
+a normalised geometric mean of the two components, the share of the scope the
+claims jointly rule out, and the data zone they still admit.  The conjunction is
+decided by an intersection-union combination of the two directional permutation
+tests, optionally driven by a single shared permutation sequence so that a
+statistic of both components can also be tested.  These are random-pairing
+screens rather than direct tests of a causal necessary-and-sufficient relation,
+no magnitude benchmarks are asserted for the joint indices, and a dual-threshold
+table separates outcome levels that are out of reach, admitted, or guaranteed.
+An ordinary least-squares line can be drawn alongside the two frontiers as a
+central-tendency reference; it is an average-effect summary and is never treated
+as a component of either claim.")
+    (license license:gpl3+)))
+
 (define-public r-nsc
   (package
     (name "r-nsc")
@@ -12209,49 +12248,6 @@ complete example workflows and information about the utilities offered in the
 package.")
     (license (license:fsdg-compatible "BSD 2-clause License + file LICENSE"))))
 
-(define-public r-ngme2
-  (package
-    (name "r-ngme2")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ngme2" version))
-       (sha256
-        (base32 "0mf2yivrqis4wa3zqkj3rhyapk1l66qxhdsz63mfjga2j3kdixr4"))))
-    (properties `((upstream-name . "ngme2")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-withr
-                             r-rlang
-                             r-rcppeigen
-                             r-rcpp
-                             r-matrix
-                             r-gridextra
-                             r-ggplot2
-                             r-fmesher))
-    (native-inputs (list r-knitr))
-    (home-page "https://davidbolin.github.io/ngme2/")
-    (synopsis "Linear Latent Non-Gaussian Models with Flexible Distributions")
-    (description
-     "Fits and analyzes linear latent non-Gaussian models for temporal, spatial, and
-space-time data.  The package provides model components for autoregressive and
-Ornstein-Uhlenbeck processes, random walks, Matern fields based on stochastic
-partial differential equations, separable and non-separable space-time models,
-graph-based Matern models, bivariate type-G fields, and user-defined sparse
-operators.  Latent fields and observation models can use Gaussian and
-non-Gaussian noise distributions, including normal inverse Gaussian, generalized
-asymmetric Laplace, and skew-t distributions.  Functions are included for
-simulation, likelihood-based estimation, prediction, cross-validation,
-convergence diagnostics, stochastic gradient optimization, batch-means
-confidence intervals, and posterior-like sampling.  The modeling framework is
-described in Bolin, Jin, Simas and Wallin (2026) \"A Unified and Computationally
-Efficient Non-Gaussian Statistical Modeling Framework\"
-<doi:10.48550/@code{arXiv.2602.23987>}.")
-    (license license:gpl3+)))
-
 (define-public r-nglviewer
   (package
     (name "r-nglviewer")
@@ -14058,13 +14054,13 @@ defaults and built-in posterior diagnostics.")
 (define-public r-neuralnetwork
   (package
     (name "r-neuralnetwork")
-    (version "0.1.1")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "neuralnetwork" version))
        (sha256
-        (base32 "0rz55n62n8brbilppgra3qfyw7am1yin0rzdwqjibhv1l1hqwqaf"))))
+        (base32 "1j104w0pgrfg8w9fa75m9r2sa6cvci004g0kl63hpipfn985yxlr"))))
     (properties `((upstream-name . "neuralnetwork")))
     (build-system r-build-system)
     (arguments
@@ -14077,15 +14073,16 @@ defaults and built-in posterior diagnostics.")
     (description
      "This package provides a small multilayer perceptron implementation for R'.  It
 supports regression and classification, multiple hidden layers, mini-batch
-training, Adam, SGD, momentum, Nesterov, RPROP, GRPROP and L-BFGS optimizers,
-dropout, L2 regularization, early stopping, convergence thresholds, gradient
-clipping, sample and class weights, callback hooks, target scaling and robust
-Huber loss for regression, Rcpp forward-pass kernels, formula interfaces, model
-evaluation with balanced classification metrics, cross-validation, compact
-tuning, permutation importance, model persistence helpers, and S3 prediction
-methods.  Methods follow Rumelhart, Hinton and Williams (1986)
-<doi:10.1038/323533a0>, with optimizers including Riedmiller and Braun (1993)
-<doi:10.1109/ICNN.1993.298623>, Nocedal (1980)
+training, adaptive moment estimation, stochastic gradient descent, momentum,
+Nesterov acceleration, resilient backpropagation and limited-memory quasi-Newton
+optimization, dropout, squared-weight regularization, early stopping,
+convergence thresholds, gradient clipping, sample and class weights, callback
+hooks, target scaling and robust Huber loss for regression, Rcpp forward-pass
+kernels, formula interfaces, model evaluation with balanced classification
+metrics, cross-validation, compact tuning, permutation importance, model
+persistence helpers, and standard prediction methods.  Methods follow Rumelhart,
+Hinton and Williams (1986) <doi:10.1038/323533a0>, with optimizers including
+Riedmiller and Braun (1993) <doi:10.1109/ICNN.1993.298623>, Nocedal (1980)
 <doi:10.1090/S0025-5718-1980-0572855-7>, and Kingma and Ba (2014)
 <doi:10.48550/@code{arXiv.1412.6980>}.")
     (license license:expat)))

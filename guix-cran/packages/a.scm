@@ -9819,13 +9819,13 @@ analysis in a common tabular data structure.")
 (define-public r-ardlverse
   (package
     (name "r-ardlverse")
-    (version "2.0.3")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ardlverse" version))
        (sha256
-        (base32 "1ydqf7vclcbn0by5vxlg9zd76hpqd52nmlb09wxw48h057ly1nza"))))
+        (base32 "0n21jlinc4h0qcgn5g4sl5ybcm8hasb5rr0pzwi40qr05k6xvvyi"))))
     (properties `((upstream-name . "ardlverse")))
     (build-system r-build-system)
     (arguments
@@ -9839,16 +9839,20 @@ analysis in a common tabular data structure.")
 (ARDL) modeling and cointegration analysis.  Implements Panel ARDL with Pooled
 Mean Group (PMG), Mean Group (MG), and Dynamic Fixed Effects (DFE) estimators
 following Pesaran, Shin and Smith (1999) <doi:10.1080/01621459.1999.10474156>.
-Provides bootstrap-based bounds testing per Pesaran, Shin & Smith (2001)
-<doi:10.1002/jae.616>.  Includes Quantile Nonlinear ARDL (QNARDL) combining
-distributional and asymmetric effects based on Shin, Yu & Greenwood-Nimmo (2014)
-<doi:10.1007/978-1-4899-8008-3_9>, and Fourier ARDL for modeling smooth
-structural breaks following Enders & Lee (2012)
-<doi:10.1016/j.econlet.2012.04.081>.  Features include Augmented ARDL (AARDL)
-with deferred t and F tests, Multiple-Threshold NARDL for complex asymmetries,
-Rolling/Recursive ARDL for time-varying relationships, and Panel NARDL for
-nonlinear panel cointegration.  All methods include comprehensive diagnostics,
-publication-ready outputs, and visualization tools.")
+Provides the bounds test of Pesaran, Shin and Smith (2001) <doi:10.1002/jae.616>
+with the critical values of Kripfganz and Schneider (2020)
+<doi:10.1111/obes.12377> and with recursive bootstrap critical values following
+Bertelli, Vacca and Zoia (2022) <doi:10.1016/j.econmod.2022.105987> and
+@code{McNown}, Sam and Goh (2018) <doi:10.1080/00036846.2017.1366643>.  Includes
+Quantile Nonlinear ARDL (QNARDL) combining distributional and asymmetric effects
+based on Shin, Yu and Greenwood-Nimmo (2014) <doi:10.1007/978-1-4899-8008-3_9>,
+Fourier ARDL for modeling smooth structural breaks following Enders and Lee
+(2012) <doi:10.1016/j.econlet.2012.04.081>, and Fourier (bootstrap) nonlinear
+ARDL. Features include Augmented ARDL (AARDL) with deferred t and F tests,
+Multiple-Threshold NARDL for complex asymmetries, Rolling/Recursive ARDL for
+time-varying relationships, and Panel NARDL for nonlinear panel cointegration.
+All methods include comprehensive diagnostics, publication-ready outputs, and
+visualization tools.")
     (license license:gpl3)))
 
 (define-public r-ardldml

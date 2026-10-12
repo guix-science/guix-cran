@@ -5119,20 +5119,20 @@ ISBN:9783030813925), \"Multivariate Statistical Methods\".")
 (define-public r-multispline
   (package
     (name "r-multispline")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MultiSpline" version))
        (sha256
-        (base32 "1b1bb0ypfbx0p761y63f493c8ldp2a8nrl0rkbi7a8n0qaszh3si"))))
+        (base32 "1fklfr5f5phjzvrpfq3hhnvpzb5a6y1q9gfs04b9jswr775ivh63"))))
     (properties `((upstream-name . "MultiSpline")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rlang r-mgcv r-lme4 r-ggplot2 r-dplyr))
-    (home-page "https://github.com/causalfragility-lab/MultiSpline")
+    (home-page "https://github.com/subirhait/MultiSpline")
     (synopsis
      "Spline-Based Nonlinear Modeling for Multilevel and Longitudinal Data")
     (description
@@ -5141,13 +5141,17 @@ interpreting nonlinear relationships in single-level, multilevel, and
 longitudinal regression models.  Flexible functional forms are supported using
 natural cubic splines ('splines'), B-splines ('splines'), and GAM smooths
 ('mgcv').  Supports two-way and nested clustering via lme4', automatic knot
-selection by AIC or BIC, multilevel R-squared decomposition (Nakagawa-Schielzeth
-marginal and conditional R-squared with level-specific variance partitioning), a
-postestimation suite returning first and second derivatives with confidence
-bands, turning points and inflection regions, and a model comparison workflow
-contrasting linear, polynomial, and spline fits by AIC, BIC, and
-likelihood-ratio tests.  Cluster heterogeneity in nonlinear effects is supported
-via random-slope spline terms.")
+selection by AIC or BIC, multilevel R-squared decomposition (marginal and
+conditional R-squared of Nakagawa and Schielzeth (2013)
+<doi:10.1111/j.2041-210x.2012.00261.x>, extended to random slopes as in Johnson
+(2014) <doi:10.1111/2041-210X.12225>, with level-specific variance
+partitioning), a postestimation suite returning first and second derivatives
+with confidence bands, turning points and inflection regions, and a model
+comparison workflow contrasting linear, polynomial, and spline fits by AIC, BIC,
+and likelihood-ratio tests.  Cluster heterogeneity in nonlinear effects is
+supported via random-slope spline terms.  Any lme4 random-effects structure can
+be supplied, and population-averaged (marginal) curves are available for
+generalized linear mixed models.")
     (license license:gpl3)))
 
 (define-public r-multispatialccm
@@ -7105,19 +7109,18 @@ data.  Bryer & Pruzek (2011) <doi:10.1080/00273171.2011.636693>.")
 (define-public r-multileveloptimalbayes
   (package
     (name "r-multileveloptimalbayes")
-    (version "0.0.4.0")
+    (version "0.1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MultiLevelOptimalBayes" version))
        (sha256
-        (base32 "0xdsm6c1cmvvvg8mf05hcmk8pd84hk1p4kv2kr1yyhr46rnxr3k5"))))
+        (base32 "0mjvw7crh49ll8rlcvclwmn4bqydm36j71pczv690r19d0hy2298"))))
     (properties `((upstream-name . "MultiLevelOptimalBayes")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-pracma))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=MultiLevelOptimalBayes")
     (synopsis
@@ -16276,13 +16279,13 @@ excellent SES@code{MotifAnalyser} Python package written by Tim Seppelt.")
 (define-public r-motifcluster
   (package
     (name "r-motifcluster")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "motifcluster" version))
        (sha256
-        (base32 "1ynfjz9di1f1cm6bmx81a8mzkjkhclk21mx8b6css953dih06ngb"))))
+        (base32 "0fswgjx0n605mgf39l1xxia0797hg6jmms07nhja4dhijrzy9m77"))))
     (properties `((upstream-name . "motifcluster")))
     (build-system r-build-system)
     (arguments
@@ -16297,7 +16300,7 @@ excellent SES@code{MotifAnalyser} Python package written by Tim Seppelt.")
 networks using motif adjacency matrices.  Methods perform well on large and
 sparse networks, and random sampling methods for generating weighted directed
 networks are also provided.  Based on methodology detailed in Underwood, Elliott
-and Cucuringu (2020) <@code{arXiv:2004.01293>}.")
+and Cucuringu (2020) <doi:10.48550/@code{arXiv.2004.01293>}.")
     (license license:gpl3)))
 
 (define-public r-motif
@@ -18633,6 +18636,48 @@ retrieve Mongolia administrative boundaries (ADM0-ADM2) as sf objects from open
 sources for mapping and spatial analysis.")
     (license license:expat)))
 
+(define-public r-mongolmaps
+  (package
+    (name "r-mongolmaps")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mongolmaps" version))
+       (sha256
+        (base32 "141yg7011z0k70gkaprnsjibsahzsz2fqwrpx8qnmsm9784rycqy"))))
+    (properties `((upstream-name . "mongolmaps")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-stringi
+                             r-sf
+                             r-rlang
+                             r-purrr
+                             r-openssl
+                             r-httr2
+                             r-dplyr
+                             r-curl
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/temuulene/mongolmaps")
+    (synopsis "Maps and Administrative Boundaries of Mongolia and Ulaanbaatar")
+    (description
+     "Ready-to-use sf maps of Mongolia at every openly available administrative level:
+country, economic regions, aimags (provinces), soums and Ulaanbaatar districts,
+and Ulaanbaatar khoroos (subdistricts), with codes and names for every bag.
+Provides a crosswalk between English and Cyrillic names, common spelling
+variants, ISO 3166-2 codes, humanitarian P-codes and National Statistics Office
+codes; helpers to join statistics to maps; thematic layers (settlements, rivers,
+lakes, roads, railways, airports, elevation, land cover, population and
+protected areas); and quick ggplot2 and leaflet maps.  Boundaries derive from
+the Common Operational Dataset published by the National Statistics Office of
+Mongolia and the United Nations Office for the Coordination of Humanitarian
+Affairs <https://data.humdata.org/dataset/cod-ab-mng>.")
+    (license license:expat)))
+
 (define-public r-mongolite
   (package
     (name "r-mongolite")
@@ -18726,20 +18771,20 @@ submit tips directly to the competition from R.")
 (define-public r-monan
   (package
     (name "r-monan")
-    (version "1.1.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MoNAn" version))
        (sha256
-        (base32 "1swa9wmcnlf63sjv92vp0v24di809syp48d79pzanvwwhiflwh27"))))
+        (base32 "164il0r8ji2q5r031ssdc7j909a808x5qc57raldg8fkpyvbp8f8"))))
     (properties `((upstream-name . "MoNAn")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-snowfall))
-    (home-page "https://cran.r-project.org/package=MoNAn")
+    (propagated-inputs (list r-snowfall r-rcpp))
+    (home-page "https://github.com/stocnet/MoNAn")
     (synopsis "Mobility Network Analysis")
     (description
      "This package implements the method to analyse weighted mobility networks or
@@ -18748,7 +18793,9 @@ distribution networks as outlined in: Block, P., Stadtfeld, C., & Robins, G.
 analyse the structure of mobility, incorporating exogenous predictors pertaining
 to individuals and locations known from classical mobility analyses, as well as
 modelling emergent mobility patterns akin to structural patterns known from the
-statistical analysis of social networks.")
+statistical analysis of social networks.  Version 2 runs the simulations in C++
+(using Rcpp') and, besides stochastic approximation (Robbins-Monro), can
+estimate parameters with Geyer-Thompson MCMC maximum likelihood estimation.")
     (license license:gpl3+)))
 
 (define-public r-monad
@@ -26684,42 +26731,6 @@ graphics.")
      "This package implements three bias-correction techniques from Battaglia et al.
 (2025 <doi:10.48550/@code{arXiv.2402.15585>}) to improve inference in regression
 models with covariates generated by AI or machine learning.")
-    (license license:expat)))
-
-(define-public r-ml2pvae
-  (package
-    (name "r-ml2pvae")
-    (version "1.0.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ML2Pvae" version))
-       (sha256
-        (base32 "089cl5mcf06zxs26grk0aqmd0xy9x6svfkfa7dw0m8zqc0s0mkix"))))
-    (properties `((upstream-name . "ML2Pvae")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
-    (inputs (list))
-    (propagated-inputs (list r-tfprobability r-tensorflow r-reticulate r-keras))
-    (native-inputs (list r-r-rsp))
-    (home-page "https://converseg.github.io")
-    (synopsis "Variational Autoencoder Models for IRT Parameter Estimation")
-    (description
-     "Based on the work of Curi, Converse, Hajewski, and Oliveira (2019)
-<doi:10.1109/IJCNN.2019.8852333>.  This package provides easy-to-use functions
-which create a variational autoencoder (VAE) to be used for parameter estimation
-in Item Response Theory (IRT) - namely the Multidimensional Logistic 2-Parameter
-(ML2P) model.  To use a neural network as such, nontrivial modifications to the
-architecture must be made, such as restricting the nonzero weights in the
-decoder according to some binary matrix Q. The functions in this package allow
-for straight-forward construction, training, and evaluation so that minimal
-knowledge of tensorflow or keras is required.")
     (license license:expat)))
 
 (define-public r-ml-msbd
@@ -37077,13 +37088,13 @@ exogenous covariate sampled at a lower frequency.")
 (define-public r-mff
   (package
     (name "r-mff")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MFF" version))
        (sha256
-        (base32 "0biwkgnxh2vgankz1p479g7n95qq84frzdfn7ddpapqkffg2ndnz"))))
+        (base32 "1cf8p5cq1xslkp1i9qdwa9p0iibxlbsaymmr69jj6fn04ny5ldaq"))))
     (properties `((upstream-name . "MFF")))
     (build-system r-build-system)
     (arguments
@@ -49255,6 +49266,34 @@ mcb'.")
 multiple ca and ordered multiple ca via orthogonal polynomials of Emerson.")
     (license license:gpl3+)))
 
+(define-public r-mcatools
+  (package
+    (name "r-mcatools")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MCAtools" version))
+       (sha256
+        (base32 "0pg713wkpg28yrwpy6vyycsmkglf0r7ymd2anm89amfymimydy6q"))))
+    (properties `((upstream-name . "MCAtools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/nskamdem/MCAtools")
+    (synopsis
+     "Multiple Correspondence Analysis Toolkit (Phi-Divergence Framework)")
+    (description
+     "This package provides a toolkit for performing Multiple Correspondence Analysis
+(MCA) based on the phi-divergence framework of Cressie and Read (1984)
+<doi:10.1111/j.2517-6161.1984.tb01318.x>.  Provides implementations for MCA
+computation @code{mca_analysis()}, visualization @code{plot_mca()}, and symbolic
+equation generation @code{generate_mca_equation()}, designed for
+interpretability, flexibility, and analytical consistency with generalized
+divergence measures.")
+    (license license:gpl3)))
+
 (define-public r-mcartest
   (package
     (name "r-mcartest")
@@ -52097,13 +52136,13 @@ Project <https://mathgenealogy.org/>.  Data is gathered from the
 (define-public r-mathr
   (package
     (name "r-mathr")
-    (version "0.1.3")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mathr" version))
        (sha256
-        (base32 "18wj6lx1kjhcfl4y846qmipvl9wbfr0lqp41g9yjrgc7z96rqqvm"))))
+        (base32 "034d1gk0vdpmiq0bkmllqaqjrj2dwf74rbwggbj46d7giakgnkb8"))))
     (properties `((upstream-name . "mathr")))
     (build-system r-build-system)
     (arguments
@@ -52115,7 +52154,8 @@ Project <https://mathgenealogy.org/>.  Data is gathered from the
      "This package provides a collection of undergraduate level mathematical routines
 for quantitative work, covering calculus, distribution functions, random variate
 generation, linear algebra, differential equations and optimization, sized for
-one semester.")
+one semester.  The package is best studied with its source open: every routine
+is short and written to be read.")
     (license license:gpl3)))
 
 (define-public r-mathpix
@@ -54088,13 +54128,13 @@ described in Zempleni et al. (2004) <doi:10.1002/asmb.521>, Dobi and Zempleni
 (define-public r-markovchain
   (package
     (name "r-markovchain")
-    (version "1.1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "markovchain" version))
        (sha256
-        (base32 "1lh5aqyhardfxagnq917znhp684m1vr6cw4wwy7dpnkn3ijg9a5g"))))
+        (base32 "05rhvjxgw9h92nd5jvh3y9lmvjfd6fa8aml22vbjgd865ms7q3hb"))))
     (properties `((upstream-name . "markovchain")))
     (build-system r-build-system)
     (arguments
@@ -54111,12 +54151,15 @@ described in Zempleni et al. (2004) <doi:10.1002/asmb.521>, Dobi and Zempleni
     (home-page "https://github.com/spedygiorgio/markovchain/")
     (synopsis "Easy Handling Discrete Time Markov Chains")
     (description
-     "This package provides functions and S4 methods to create and manage discrete
-time Markov chains more easily.  In addition functions to perform statistical
-(fitting and drawing random variates) and probabilistic (analysis of their
-structural proprieties) analysis are provided.  See Spedicato (2017)
-<doi:10.32614/RJ-2017-036>.  Some functions for continuous times Markov chains
-depend on the suggested ctmcd package.")
+     "Description: Functions and S4 classes to create, manage and analyse discrete
+time Markov chains.  Includes probabilistic analysis of chain structure (state
+classification, hitting times, stationary distributions, spectral and mixing
+diagnostics), statistical inference (maximum likelihood and Bayesian estimation,
+tests of the Markov property, homogeneity, stationarity and order, simulation),
+higher-order and multivariate chains, state aggregation, and import/export to
+JSON, YAML and CSV. Basic support for continuous time Markov chains is also
+provided; some of these functions depend on the suggested ctmcd package.  See
+Spedicato (2017) <doi:10.32614/RJ-2017-036>.")
     (license license:expat)))
 
 (define-public r-markophylo

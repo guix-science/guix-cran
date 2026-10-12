@@ -1447,13 +1447,13 @@ Moment Based Estimation and Canonical Maximum Likelihood).")
 (define-public r-gulfm
   (package
     (name "r-gulfm")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GulFM" version))
        (sha256
-        (base32 "1zq30xkkcl8wnw8mkzxx4y9hqmybn9w5d9znvv68n7bycinwd5b6"))))
+        (base32 "020m7vyrc598sjh0i41r5bh67c4085y9vrxsvh288wnaqmri9ypb"))))
     (properties `((upstream-name . "GulFM")))
     (build-system r-build-system)
     (arguments
@@ -2236,13 +2236,13 @@ balanced crossed designs.")
 (define-public r-gtheory4llm
   (package
     (name "r-gtheory4llm")
-    (version "0.2.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Gtheory4LLM" version))
        (sha256
-        (base32 "1j9f42cd6ppap0ddyav6jq105wmlflzzrj3h9g8h6hrqhi6snmhf"))))
+        (base32 "0lrqm7jp64mii4nl2rnpn7f25sfi6imy6gpvfc735jqw3xsyc2zv"))))
     (properties `((upstream-name . "Gtheory4LLM")))
     (build-system r-build-system)
     (arguments
@@ -2266,7 +2266,9 @@ prompt, and replication allocations using observed Gaussian or explicitly
 requested latent binary and ordinal reliability, with random or fixed facets
 after Brennan (2001).  Gaussian fits report asymptotic Wald standard errors for
 their variance components and delta-method intervals for the coefficients;
-discrete fits report point estimates only.  Scalar nominal reliability and joint
+discrete fits report point estimates only.  Provides fixed-layout Gaussian batch
+projections, bounded cost-aware allocation comparisons, and Gaussian
+simulation-based pilot precision planning.  Scalar nominal reliability and joint
 Gaussian-discrete fitting are not implemented.  Includes three publicly archived
 LLM annotation datasets covering hate-speech, mental-health, and drug-review
 tasks.  Discrete fitting is limited to small models; the preflight report
@@ -5443,13 +5445,13 @@ the basis for grant applications.")
 (define-public r-groupedhyperframe
   (package
     (name "r-groupedhyperframe")
-    (version "0.4.5")
+    (version "0.4.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "groupedHyperframe" version))
        (sha256
-        (base32 "0hv6582a29dirn7ynbqdg11d2is9wvhwy67pcka1riy5r47hw9vw"))))
+        (base32 "0hr5kwj36s8fy89fq95jp8fzw7j0wl864z4dcgx1ngrsjfl8ya6z"))))
     (properties `((upstream-name . "groupedHyperframe")))
     (build-system r-build-system)
     (arguments
@@ -16588,6 +16590,34 @@ finding the best models in terms of some Information Criterion (AIC, AICc or
 BIC).  Can handle very large numbers of candidate models.  Features a Genetic
 Algorithm to find the best models when an exhaustive screening of the candidates
 is not feasible.")
+    (license license:gpl2+)))
+
+(define-public r-glmtree
+  (package
+    (name "r-glmtree")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "glmtree" version))
+       (sha256
+        (base32 "0ya9x5dg2big2ghz90qx0yizdklxnz9zfl61jqm34kcwsj40pdm5"))))
+    (properties `((upstream-name . "glmtree")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-partykit))
+    (native-inputs (list r-knitr))
+    (home-page "https://adimajo.github.io/glmtree/")
+    (synopsis "Logistic Regression Trees")
+    (description
+     "This package provides a logistic regression tree is a decision tree with
+logistic regressions at its leaves.  A particular stochastic expectation
+maximization algorithm is used to draw a few good trees, that are then assessed
+via the user's criterion of choice among BIC / AIC / test set Gini.  The formal
+development is given in a @code{PhD} chapter, see Ehrhardt (2019)
+<https://github.com/adimajo/manuscrit_these/releases/>.")
     (license license:gpl2+)))
 
 (define-public r-glmtrans
@@ -31855,6 +31885,45 @@ brief summary output, and a few methods such as extracting and adding bounding
 boxes, properties, and coordinate reference systems; working with newline
 delimited @code{GeoJSON}'; and serializing to/from Geobuf binary @code{GeoJSON}
 format.")
+    (license license:expat)))
+
+(define-public r-geoindexr
+  (package
+    (name "r-geoindexr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GeoIndexR" version))
+       (sha256
+        (base32 "1mf1168xb5k8fzilvzscc3pwf32icclgcpg3vfwv4mnz92s9x2ir"))))
+    (properties `((upstream-name . "GeoIndexR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/sowsalim01/GeoIndexR")
+    (synopsis
+     "Computation of Spectral and Geospatial Indices from Multispectral Raster Data")
+    (description
+     "This package provides a unified, fast, and extensible framework for calculating
+spectral and geospatial indices from multispectral raster datasets (e.g., NDVI -
+Normalized Difference Vegetation Index, NDWI - Normalized Difference Water
+Index, MNDWI - Modified Normalized Difference Water Index, NDBI - Normalized
+Difference Built-up Index, SAVI - Soil Adjusted Vegetation Index, EVI - Enhanced
+Vegetation Index, GNDVI - Green Normalized Difference Vegetation Index, NDMI -
+Normalized Difference Moisture Index, BSI - Bare Soil Index).  Designed around
+terra @code{SpatRaster} objects, it supports multi-band rasters, automatic band
+resolution, sensor presets (Sentinel-2, Landsat-8/9), customizable index
+parameters, vectorized computations, and comprehensive validation.  Methods
+based on Rouse et al. (1973) , @code{McFeeters} (1996)
+<doi:10.1080/01431169608948714>, Xu (2006) <doi:10.1080/01431160600589179>, Zha
+et al. (2003) <doi:10.1016/S0034-4257(03)00087-7>, Huete (1988)
+<doi:10.1016/0034-4257(88)90106-X>, Gitelson et al. (1996)
+<doi:10.1016/S0034-4257(96)00072-7>, Wilson and Sader (2002)
+<doi:10.1016/S0034-4257(01)00318-2>, and Rikimaru et al. (2002).")
     (license license:expat)))
 
 (define-public r-geoidep

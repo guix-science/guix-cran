@@ -5785,13 +5785,13 @@ Risks.  Method is detailed in: Neykov, Hejblum & Sinnott (2018) <doi:
 (define-public r-kernreg
   (package
     (name "r-kernreg")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kernreg" version))
        (sha256
-        (base32 "043k974wx0kh8f632g3v6izy93rz75cqmq3xz024696bz55i2x0s"))))
+        (base32 "17jwgfybp3b55nd338p1brqpz8g67hplz23jpdgpds2gydc1xqdf"))))
     (properties `((upstream-name . "kernreg")))
     (build-system r-build-system)
     (arguments

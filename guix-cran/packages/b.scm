@@ -16737,19 +16737,20 @@ bioassays for one or several strains/lines/populations.")
 (define-public r-bioregion
   (package
     (name "r-bioregion")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bioregion" version))
        (sha256
-        (base32 "06nfyb03w0pid57ppwqfrba46jhj9gfwz7wl8kb9cqlh37wqbd2v"))))
+        (base32 "14xh7rcnqv6xjlsalzya65xgmmzhnz7pigdjck8d3xrvq16dgjz5"))))
     (properties `((upstream-name . "bioregion")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-vegan
+                             r-tidyr
                              r-sf
                              r-segmented
                              r-rmarkdown
@@ -22289,13 +22290,13 @@ is clear citation of the original publication (see above).")
 (define-public r-bgvar
   (package
     (name "r-bgvar")
-    (version "2.5.9")
+    (version "2.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BGVAR" version))
        (sha256
-        (base32 "0ds9xk2pdcl38jwv94bp1x1z8drx2ri4sd8qp8iyn6bgn73bsfsh"))))
+        (base32 "1wyhcz440h421shbz29myrx10pkpa3ayvg34sycbnqgw5mr8n70r"))))
     (properties `((upstream-name . "BGVAR")))
     (build-system r-build-system)
     (arguments
@@ -27897,6 +27898,48 @@ references Barreto-Souza, Mayrink and Simas (2022) <doi:10.1111/anzs.12354> and
 Barreto-Souza, Mayrink and Simas (2020) <@code{arXiv:2003.05157>}.")
     (license license:gpl2)))
 
+(define-public r-bbqr
+  (package
+    (name "r-bbqr")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bbqr" version))
+       (sha256
+        (base32 "0wr0r92x2fzacqyhn2a564h5ch6c3168q74xqjmap3s80y1k0y0w"))))
+    (properties `((upstream-name . "bbqr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr gfortran))
+    (home-page "https://github.com/fernandorubiogarcia/bbqr")
+    (synopsis "Bayesian Quantile Regression with Lasso and Adaptive Lasso")
+    (description
+     "Markov chain Monte Carlo samplers for Bayesian quantile regression, based on the
+asymmetric Laplace distribution and the location-scale mixture representation of
+Kozumi and Kobayashi (2011) <doi:10.1080/00949655.2010.496117>.  A binary
+response and an observed continuous response are both supported, each with three
+penalty layers behind one interface: no penalty, following Benoit and Van den
+Poel (2012) <doi:10.1002/jae.1216>; the Bayesian lasso, following Benoit,
+Al-Hamzawi and Yu (2013) <doi:10.1007/s00180-013-0439-0>; and the Bayesian
+adaptive lasso of Rubio Garcia (2023)
+<https://soar.wichita.edu/entities/publication/a2f86232-4704-4ec2-b685-751e7b04ec42>.
+ In the binary family each is available as published and in a corrected form,
+the default, in which every improper prior component is replaced by a proper one
+so that the posterior exists unconditionally; the continuous family ships the
+corrected form only.  The continuous adaptive-lasso layer at its default
+reproduces the penalty of Alhamzawi, Yu and Benoit (2012)
+<doi:10.1177/1471082X1101200304>.  A binary threshold model identifies the
+coefficient vector only up to a positive scale, so the binary samplers expose
+the identification anchor as an explicit argument, allowing fixing the scale of
+the error distribution, fixing a single coefficient, and constraining the norm
+of the coefficient vector to be compared directly; an observed response
+identifies the scale, so the continuous samplers have no anchor and draw it
+every sweep.  The MCMC cores are written in Fortran and called from R.")
+    (license license:gpl2+)))
+
 (define-public r-bbni
   (package
     (name "r-bbni")
@@ -28371,13 +28414,13 @@ Perez-Elizalde, S., Jarquin, D., and Crossa, J. (2011)
 (define-public r-bayprior
   (package
     (name "r-bayprior")
-    (version "0.3.2")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayprior" version))
        (sha256
-        (base32 "1r2f9a3cd4wyqsvvzi1q6kmjqsysfr5bn9srw6znfhqxpjy48672"))))
+        (base32 "1nzcizdz648x32wk7446qhcrclqdp2b37v5ljlsinc54myjclxg7"))))
     (properties `((upstream-name . "bayprior")))
     (build-system r-build-system)
     (arguments
@@ -28400,21 +28443,27 @@ Perez-Elizalde, S., Jarquin, D., and Crossa, J. (2011)
                              r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ndohpenngit/bayprior")
-    (synopsis "Bayesian Prior Elicitation and Diagnostics for Clinical Trials")
+    (synopsis
+     "Bayesian Prior Elicitation, Diagnostics, and Regulatory Reporting")
     (description
      "This package provides a toolkit for constructing, validating, and justifying
 Bayesian priors in clinical trial settings.  Implements expert elicitation via
 quantile matching, the roulette method, and moment matching across six
-distribution families, linear and logarithmic expert pooling, prior-data
-conflict diagnostics including the Box p-value, surprise index, information
-divergence, and Mahalanobis distance, sensitivity analyses with tornado and
-influence heatmap plots, sceptical, robust, and power priors, and automated
-prior justification reports.  Includes a fully modular Shiny application for
-interactive use.  Methods based on O'Hagan et al. (2006, ISBN:9780470029886),
-Box (1980) <doi:10.2307/2982063>, Oakley and O'Hagan (2010)
-<https://tonyohagan.co.uk/shelf/>, Schmidli et al. (2014)
-<doi:10.1111/biom.12242>, Ibrahim and Chen (2000) <doi:10.1214/ss/1009212673>,
-Spiegelhalter et al. (1994) <doi:10.2307/2983527>.")
+distribution families, linear and logarithmic expert pooling,
+meta-analytic-predictive (MAP) priors derived from historical trials, prior-data
+conflict diagnostics including the Box p-value (with an exact prior predictive
+option for selected prior and data combinations), an exploratory surprisal
+(S-value) companion to it, surprise index, information divergence, and
+Mahalanobis distance, sensitivity analyses with tornado and influence heatmap
+plots, sceptical, robust, and power priors, and automated prior justification
+reports.  Includes a fully modular Shiny application for interactive use.
+Methods based on O'Hagan et al. (2006, ISBN:9780470029886), Box (1980)
+<doi:10.2307/2982063>, Greenland (2023) <doi:10.1111/sjos.12625>, Oakley and
+O'Hagan (2010) <https://tonyohagan.co.uk/shelf/>, Schmidli et al. (2014)
+<doi:10.1111/biom.12242>, Neuenschwander et al. (2010)
+<doi:10.1177/1740774509356002>, Roever et al. (2021) <doi:10.1002/jrsm.1475>,
+Ibrahim and Chen (2000) <doi:10.1214/ss/1009212673>, Spiegelhalter et al. (1994)
+<doi:10.2307/2983527>.")
     (license license:gpl3)))
 
 (define-public r-bayou

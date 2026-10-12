@@ -2486,26 +2486,26 @@ TIGER/Line shapefiles.")
 (define-public r-rupturesrcpp
   (package
     (name "r-rupturesrcpp")
-    (version "1.0.3")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rupturesRcpp" version))
        (sha256
-        (base32 "0pqn0sslrvbxwp8aahv57c83zpf6qm2rah22jlxvs8xidiy8gjk4"))))
+        (base32 "0p1lj2iylb0jf76v3wr88hwzngksikcap8y88sbd4dcc80dy1y5n"))))
     (properties `((upstream-name . "rupturesRcpp")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-r6 r-patchwork r-ggplot2))
-    (home-page "https://cran.r-project.org/package=rupturesRcpp")
+    (home-page "https://edelweiss611428.github.io/rupturesRcpp/")
     (synopsis "Object-Oriented Interface for Offline Change-Point Detection")
     (description
      "This package provides a collection of efficient implementations of popular
 offline change-point detection algorithms, featuring a consistent,
 object-oriented interface for practical use.")
-    (license (license:fsdg-compatible "CC BY 4.0"))))
+    (license license:expat)))
 
 (define-public r-runuran
   (package
@@ -15626,19 +15626,20 @@ and parsed accordingly.")
 (define-public r-romney
   (package
     (name "r-romney")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Romney" version))
        (sha256
-        (base32 "04w3s0zv73m0ylv7zfxz17hfxw1vdiy00s1kh1kvkc8r4k938f9n"))))
+        (base32 "1gw5npmqbvn7qpj3yapb6pksxj55a5w6q112dy24ayygf8yl2ddr"))))
     (properties `((upstream-name . "Romney")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-psych))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/wernerhertzog/Romney")
     (synopsis "Classical Cultural Consensus Analysis")
     (description
@@ -16210,13 +16211,13 @@ detection of events or structural breaks.")
 (define-public r-rolleigen
   (package
     (name "r-rolleigen")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rolleigen" version))
        (sha256
-        (base32 "1pmk9yiwpld7hqlrmgr1sbh6xrjzv2vzrg192zp889w9778dbhys"))))
+        (base32 "073j0mxn9yssga0w4y83gicp3j3aps3nh7w0lpgx7ah2hyw1q33j"))))
     (properties `((upstream-name . "rolleigen")))
     (build-system r-build-system)
     (arguments
@@ -16233,16 +16234,16 @@ component analysis (Pearson, 1901, <doi:10.1080/14786440109462720>; Hotelling,
 1933, <doi:10.1037/h0071325>) and principal component regression (Massy, 1965,
 <doi:10.1080/01621459.1965.10480787>) over rolling and expanding windows.  For
 each window, the eigenvalues and eigenvectors are computed from the covariance
-matrix and, optionally, ordered from largest to smallest to summarize the
-directions of greatest variation in the data.  A subset of leading components is
-then used to fit a regression that mitigates collinearity in the explanatory
-variables.  Use cases include dimensionality reduction, factor extraction, and
-regression on collinear explanatory variables.  The package supports rolling and
-expanding windows, weights, and handling of missing values via the min_obs,
-complete_obs, and na_restore arguments.  The implementation uses the online and
-offline algorithms from the roll package to compute rolling and expanding
-cross-products efficiently, with parallelism across columns and windows provided
-by @code{RcppParallel}'.")
+matrix and, optionally, ordered from the largest to smallest eigenvalue to
+summarize the directions of greatest variation in the data.  A subset of leading
+components is then used to fit a regression that mitigates collinearity in the
+explanatory variables.  Use cases include dimensionality reduction, factor
+extraction, and regression on collinear explanatory variables.  The package
+supports rolling and expanding windows, weights, and handling of missing values
+via the min_obs, complete_obs, and na_restore arguments.  The implementation
+uses the online and offline algorithms from the roll package to compute rolling
+and expanding cross-products efficiently, with parallelism across columns and
+windows provided by @code{RcppParallel}'.")
     (license license:gpl2+)))
 
 (define-public r-rolldown
@@ -27442,6 +27443,38 @@ comparing workspaces.")
 and rjd3tramoseats').")
     (license (license:fsdg-compatible "EUPL"))))
 
+(define-public r-rjd3filters
+  (package
+    (name "r-rjd3filters")
+    (version "2.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rjd3filters" version))
+       (sha256
+        (base32 "1ipqq7mkd002gdwqhfcaadimf4k48gvxf6k7v3pgq17sdgch3ld8"))))
+    (properties `((upstream-name . "rjd3filters")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list openjdk))
+    (propagated-inputs (list r-rjd3toolkit r-rjd3jars r-rjava r-mass))
+    (home-page "https://github.com/rjdverse/rjd3filters")
+    (synopsis
+     "Trend-Cycle Extraction with Linear Filters with 'JDemetra+ 3.x'")
+    (description
+     "Build and apply symmetric and asymmetric moving averages (= linear filters) for
+trend-cycle extraction.  In particular, it implements several modern approaches
+for real-time estimates from the viewpoint of revisions and time delay in
+detecting turning points.  It includes the local polynomial approach of Proietti
+and Luati (2008), the Reproducing Kernel Hilbert Space (RKHS) of Dagum and
+Bianconcini (2008) and the Fidelity-Smoothness-Timeliness approach of
+Grun-Rehomme, Guggemos, and Ladiray (2018).  It is based on Java libraries
+developed in JDemetra+ (<https://github.com/jdemetra>), time series analysis
+software.")
+    (license (license:fsdg-compatible "EUPL"))))
+
 (define-public r-rjd3bench
   (package
     (name "r-rjd3bench")
@@ -32802,6 +32835,34 @@ either the Glottography organization on @code{GitHub}
 <doi:10.5334/johd.459>.")
     (license license:expat)))
 
+(define-public r-rglobi
+  (package
+    (name "r-rglobi")
+    (version "0.3.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rglobi" version))
+       (sha256
+        (base32 "19fhxb5yw6fdjh3ssd4432g8m9isffps2gj8nsb405gizfhgfjhj"))))
+    (properties `((upstream-name . "rglobi")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-readr r-rcurl r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://docs.ropensci.org/rglobi/")
+    (synopsis "Interface to Global Biotic Interactions")
+    (description
+     "This package provides a programmatic interface to the web service methods
+provided by Global Biotic Interactions ('@code{GloBI}')
+(<https://www.globalbioticinteractions.org/>). @code{GloBI} provides access to
+spatial-temporal species interaction records from sources all over the world.
+rglobi provides methods to search species interactions by location, interaction
+type, and taxonomic name.")
+    (license license:expat)))
+
 (define-public r-rgl2gltf
   (package
     (name "r-rgl2gltf")
@@ -37504,6 +37565,33 @@ panes for page content based on split.js @code{JavaScript} library
      "Electrical properties of resistor networks using matrix methods.")
     (license license:gpl2)))
 
+(define-public r-resistantprocrustes
+  (package
+    (name "r-resistantprocrustes")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ResistantProcrustes" version))
+       (sha256
+        (base32 "0g3m8wqxq69k7sjv2i0zddrbx2r86dfyvhcwlb7gcfz3f5bz8xdm"))))
+    (properties `((upstream-name . "ResistantProcrustes")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-gtools r-gllvm r-fbasics))
+    (home-page "https://cran.r-project.org/package=ResistantProcrustes")
+    (synopsis "Resistant Procrustes Methods for Multivariate Data")
+    (description
+     "This package provides resistant alternatives to the standard Procrustes analysis
+for comparing multivariate datasets, including seven resistant Procrustean
+methods and their associated permutation tests, as well as the standard
+Procrustes analysis and its permutation tests.  Methods are based on Tang and
+Jackson (2026) \"Improving and evaluating resistant alternatives to Procrustes
+analysis for multivariate dataset matching\" <doi:10.1002/env.70073>.")
+    (license license:expat)))
+
 (define-public r-resindex
   (package
     (name "r-resindex")
@@ -39324,13 +39412,13 @@ the workshop.")
 (define-public r-repo-data
   (package
     (name "r-repo-data")
-    (version "0.2.2")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "repo.data" version))
        (sha256
-        (base32 "0qj90zfahnz7ywhs5v3kg0xy59cz04bq18m13bsn6bk653d4rh5g"))))
+        (base32 "1izbzxgih3k72sr7xff8c8z5i7f2cq8ldpc4143zbhq2nrkc6rzs"))))
     (properties `((upstream-name . "repo.data")))
     (build-system r-build-system)
     (arguments
@@ -42906,40 +42994,6 @@ parameters in item response theory (IRT) models (Belzak & Bauer, 2020)
 <https://pubmed.ncbi.nlm.nih.gov/31916799/> using a penalized
 expectation-maximization algorithm.")
     (license license:expat)))
-
-(define-public r-regddm
-  (package
-    (name "r-regddm")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RegDDM" version))
-       (sha256
-        (base32 "17vwqfb93vgbszv2yrjbbgknxp21ah7vnv4697i926nrp26kzvb4"))))
-    (properties `((upstream-name . "RegDDM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-stringr
-                             r-rtdists
-                             r-rstan
-                             r-rlang
-                             r-purrr
-                             r-dplyr))
-    (home-page "https://github.com/biorabbit/RegDDM")
-    (synopsis "Generalized Linear Regression with DDM")
-    (description
-     "Drift-Diffusion Model (DDM) has been widely used to model binary decision-making
-tasks, and many research studies the relationship between DDM parameters and
-other characteristics of the subject.  This package uses RStan to perform
-generalized liner regression analysis over DDM parameters via a single Bayesian
-Hierarchical model.  Compared to estimating DDM parameters followed by a
-separate regression model, @code{RegDDM} reduces bias and improves statistical
-power.")
-    (license license:gpl3+)))
 
 (define-public r-regda
   (package
@@ -56104,6 +56158,33 @@ and \"Refining Binomial Confidence Intervals\" by George Casella (1986)
 <doi:10.2307/3314658>.")
     (license license:gpl3+)))
 
+(define-public r-rbridge
+  (package
+    (name "r-rbridge")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rbridge" version))
+       (sha256
+        (base32 "0fdkkw69jcvvn17mry82lb890gbi6p6ahqglyk7334yb4pak5yqw"))))
+    (properties `((upstream-name . "rbridge")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix))
+    (native-inputs (list r-knitr))
+    (home-page "https://byuzbasi.github.io/rbridge/")
+    (synopsis "Restricted Bridge Estimation")
+    (description
+     "This package implements bridge regression with linear coefficient restrictions
+using the local quadratic approximation described by Yuzbasi, Arashi and Akdeniz
+(2021) <doi:10.1007/s00500-021-05763-9>.  Provides coefficient paths,
+cross-validation, prediction and coefficient extraction for restricted and
+unrestricted linear models.")
+    (license license:gpl3)))
+
 (define-public r-rbreak
   (package
     (name "r-rbreak")
@@ -64139,13 +64220,13 @@ they should be named in a data frame.  See
 (define-public r-radiant-multivariate
   (package
     (name "r-radiant-multivariate")
-    (version "1.6.8")
+    (version "1.6.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "radiant.multivariate" version))
        (sha256
-        (base32 "0h2krvh8zrb26y8jcsh71f3ci73q8b0mkncnmckrzvi9x1rm5mkj"))))
+        (base32 "036z025dmcx20fyv5rcxqjzhvqjnfyxijs7kanj3992siwkhzra9"))))
     (properties `((upstream-name . "radiant.multivariate")))
     (build-system r-build-system)
     (arguments
@@ -64183,13 +64264,13 @@ functionality in radiant.data'.")
 (define-public r-radiant-model
   (package
     (name "r-radiant-model")
-    (version "1.6.12")
+    (version "1.6.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "radiant.model" version))
        (sha256
-        (base32 "1rib4w02rjr1nl1gnmfhxqbxiqma65hyfl4cjqzvpkbzzp0wz4kb"))))
+        (base32 "0ij1lppkgan9wzgkprci1m6zcw78vbcq47dh50sb5pshj88hf95d"))))
     (properties `((upstream-name . "radiant.model")))
     (build-system r-build-system)
     (arguments

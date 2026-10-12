@@ -1438,13 +1438,13 @@ directory within functions and wrap console messages around other functions.")
 (define-public r-wrappedtools
   (package
     (name "r-wrappedtools")
-    (version "0.9.9")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wrappedtools" version))
        (sha256
-        (base32 "1xnm6jlbgsbidbq44j02gj2jrsrlj6ih3g05q9pix8bqyv8d6hrg"))))
+        (base32 "1sb1qhry089dysmpapkhmd6xwqzv038dcchl1r6qf4jpmx3gy3yc"))))
     (properties `((upstream-name . "wrappedtools")))
     (build-system r-build-system)
     (arguments
@@ -1455,6 +1455,7 @@ directory within functions and wrap console messages around other functions.")
                              r-stringr
                              r-rlist
                              r-rlang
+                             r-readr
                              r-purrr
                              r-nortest
                              r-lifecycle
@@ -1475,12 +1476,12 @@ directory within functions and wrap console messages around other functions.")
     (description
      "The main functionalities of wrappedtools are: adding backticks to variable
 names; rounding to desired precision with special case for p-values; selecting
-columns based on pattern and storing their position, name, and backticked name;
-computing and formatting of descriptive statistics (e.g. meanÂ±SD), comparing
-groups and creating publication-ready tables with descriptive statistics and
-p-values; creating specialized plots for correlation matrices.  Functions were
-mainly written for my own daily work or teaching, but may be of use to others as
-well.")
+columns based on pattern and/or class and storing their position, name, and
+backticked name; computing and formatting of descriptive statistics (e.g.
+meanÂ±SD), comparing groups and creating publication-ready tables with
+descriptive statistics and p-values; creating specialized plots for correlation
+matrices.  Functions were mainly written for my own daily work or teaching, but
+may be of use to others as well.")
     (license license:gpl3)))
 
 (define-public r-wrangle
@@ -2938,6 +2939,43 @@ programmatically.  Based on Josh Wardle's game
 wordcloud2.js'.  wordcloud2.js is a @code{JavaScript} library to create wordle
 presentation on 2D canvas or HTML <https://timdream.org/wordcloud2.js/>.")
     (license license:gpl2)))
+
+(define-public r-wordbankr
+  (package
+    (name "r-wordbankr")
+    (version "2.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "wordbankr" version))
+       (sha256
+        (base32 "09xk0sfz5ghqf3xsas889p77fjwaj5c76nb153488v2a39s1hcgf"))))
+    (properties `((upstream-name . "wordbankr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-robustbase
+                             r-rlang
+                             r-quantreggrowth
+                             r-purrr
+                             r-lifecycle
+                             r-jsonlite
+                             r-glue
+                             r-dplyr
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://langcog.github.io/wordbankr/")
+    (synopsis "Accessing the 'Wordbank' Database")
+    (description
+     "Connecting to Wordbank <https://wordbank.stanford.edu>, an open repository for
+developmental vocabulary data from the @code{MacArthur-Bates} Communicative
+Development Inventories (Frank et al.  2017 <doi:10.1017/S0305000916000209>).
+Data are read from a versioned dataset hosted on Redivis', so analyses can be
+pinned to a specific release.")
+    (license license:gpl3)))
 
 (define-public r-worcs
   (package

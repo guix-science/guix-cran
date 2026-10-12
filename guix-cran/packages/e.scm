@@ -117,6 +117,44 @@ telemetry points to summaries, interactive maps, and home range estimates.  It
 is designed to be beginner-friendly and requires minimal data wrangling.")
     (license license:expat)))
 
+(define-public r-ezrshiny
+  (package
+    (name "r-ezrshiny")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EZRShiny" version))
+       (sha256
+        (base32 "0qn1vqxr6ks66jyryd6dswcqs8l5qdnb8w8v046yj251z6z1hg41"))))
+    (properties `((upstream-name . "EZRShiny")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shinywidgets
+                             r-shinyjs
+                             r-shiny
+                             r-plotly
+                             r-here
+                             r-ggiraph
+                             r-dt
+                             r-colourpicker
+                             r-bslib
+                             r-bsicons))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/vari-bbc/EZRShiny")
+    (synopsis "Build Consistent 'shiny' App Layouts with Less Code")
+    (description
+     "Short, consistent wrappers around shiny', bslib and shinyjs for building
+multi-page shiny apps.  One function call builds the page with a navigation bar,
+logo, title and dark mode switch.  Tab functions nest pages up to three levels
+deep, with optional sidebars.  Input functions create full-width inputs with
+optional information tooltips, and helpers switch buttons on and off and show or
+hide tabs from the server.  Includes a starter app template and an example app
+that explores the Titanic passenger data.")
+    (license license:gpl3)))
+
 (define-public r-ezr
   (package
     (name "r-ezr")
@@ -8194,13 +8232,13 @@ estimators and functions for diagnostics of their finite-sample performance.")
 (define-public r-estimatr
   (package
     (name "r-estimatr")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "estimatr" version))
        (sha256
-        (base32 "1y6kg5qqfkbkx93v2baw67vfrnyfr7qdv75gvx9sdcf5wvr261bk"))))
+        (base32 "0bn7gbzbanh824qjhm9dqhjgmdyhz66h9iizqdrd83s8cr05imgw"))))
     (properties `((upstream-name . "estimatr")))
     (build-system r-build-system)
     (arguments
@@ -8772,13 +8810,13 @@ analysis of variance and statistical power calculations.")
 (define-public r-essential8
   (package
     (name "r-essential8")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "essential8" version))
        (sha256
-        (base32 "1xrgc3fgmwljrzm445sz5c2jvbn9wvzymq2y15ynwbllw1703z8h"))))
+        (base32 "1yvl8cv5i2afzfbifmxx7q4pv03z1yhqlsza1fsb25lx7y51w16v"))))
     (properties `((upstream-name . "essential8")))
     (build-system r-build-system)
     (arguments
@@ -8790,10 +8828,10 @@ analysis of variance and statistical power calculations.")
     (synopsis "Reproducible Cardiovascular Health Metric Scoring")
     (description
      "This package provides a reproducible R implementation of the American Heart
-Association Life's Essential 8 cardiovascular health scoring framework for
-complete adult records from people aged 20 years or older.  Calculates the eight
-component scores and their unweighted composite score using the 2022 adult
-definition described by Lloyd-Jones et al. (2022)
+Association Life's Essential 8 cardiovascular health scoring framework for adult
+records from people aged 20 years or older.  Calculates the eight component
+scores and their unweighted composite score from available component data using
+the 2022 adult definition described by Lloyd-Jones et al. (2022)
 <doi:10.1161/CIR.0000000000001078>.")
     (license license:expat)))
 
@@ -15320,19 +15358,19 @@ Loos, M., Gerber, C., Corona, F., Hollender, J., Singer, H. (2015)
 (define-public r-envigcms
   (package
     (name "r-envigcms")
-    (version "0.9.0")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "enviGCMS" version))
        (sha256
-        (base32 "1hd9g0ab3p38jixdfhz913vh0c0xk27jys30y7xyd4i8ymd40a2q"))))
+        (base32 "00s470m0fzlzmhxcl6w5dv4idrh11dn2bvl3isniw6rs51dims5z"))))
     (properties `((upstream-name . "enviGCMS")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rdisop r-rcolorbrewer r-igraph r-data-table
+    (propagated-inputs (list r-rcpp r-rcolorbrewer r-igraph r-data-table
                              r-biocparallel))
     (native-inputs (list r-knitr))
     (home-page "https://yufree.github.io/enviGCMS/")
@@ -27639,13 +27677,13 @@ rank-loss functions are also given.")
 (define-public r-ebrahim-gof
   (package
     (name "r-ebrahim-gof")
-    (version "2.9.0")
+    (version "2.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ebrahim.gof" version))
        (sha256
-        (base32 "0wlsz1msfyya1ycd05sl0q9z3pk2lfnhnqlfiv5yd9as02r1z9x6"))))
+        (base32 "0k4g0zwz5a6i5cpzy4qklvhs2rbb8d3jg5xw597qnlkvn2h265m5"))))
     (properties `((upstream-name . "ebrahim.gof")))
     (build-system r-build-system)
     (arguments
@@ -27676,8 +27714,15 @@ fitted probabilities and invalidates the usual chi-squared references, the
 corrected statistics are referred either to a prepivoting bootstrap by
 @code{shrink.gof()} or to a closed-form reference by @code{calm.gof()}', which
 needs a single fit and is validated for designs in which the number of
-predictors is a sizeable fraction of the sample size.  For more details see
-Hosmer (1980) <doi:10.1080/03610928008827941> and Farrington (1996)
+predictors is a sizeable fraction of the sample size.  For a model fitted
+elsewhere, @code{run.all.external()} tests frozen predictions on validation
+data, and @code{edge.stream()} updates the EDGE test as validation records
+arrive. @code{localize.gof()} and @code{localize.external()} name which part of
+the model is wrong (the intercept, the slope, the link or the covariates) with
+familywise error control.  For comparison, the projection test of Liu et al.  is
+implemented as @code{projection.gof()} and a fast implementation of the
+adaptive-partition test BA@code{GofT} as @code{bagoft.fast()}'.  For more
+details see Hosmer (1980) <doi:10.1080/03610928008827941> and Farrington (1996)
 <doi:10.1111/j.2517-6161.1996.tb02086.x>.")
     (license license:gpl3)))
 

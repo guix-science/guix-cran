@@ -7336,13 +7336,13 @@ and read tabular-data-resources to and from disk.")
 (define-public r-fqardl
   (package
     (name "r-fqardl")
-    (version "1.0.6")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fqardl" version))
        (sha256
-        (base32 "1cs3lpks8b5mvpy0lzh4rg017al5xhrxk8cbaay7kjkl9sdk0w2v"))))
+        (base32 "1d48x90m0mkcn3bc5pqgxd1aiphspc8yc9qwzjai49rdpdwfvzm8"))))
     (properties `((upstream-name . "fqardl")))
     (build-system r-build-system)
     (arguments
@@ -7353,20 +7353,22 @@ and read tabular-data-resources to and from disk.")
     (synopsis
      "Fourier ARDL Methods: Quantile, Nonlinear, Multi-Threshold & Unit Root Tests")
     (description
-     "Comprehensive implementation of advanced ARDL methodologies for cointegration
-analysis with structural breaks and asymmetric effects.  Includes: (1) Fourier
-Quantile ARDL (FQARDL) - quantile regression with Fourier approximation for
-analyzing relationships across the conditional distribution; (2) Fourier
-Nonlinear ARDL (FNARDL) - asymmetric cointegration with partial sum
-decomposition following Shin, Yu & Greenwood-Nimmo (2014)
-<doi:10.1007/978-1-4899-8008-3_9>; (3) Multi-Threshold NARDL (MTNARDL) -
-multiple regime asymmetry analysis; (4) Fourier Unit Root Tests - ADF and KPSS
-tests with Fourier terms following Enders & Lee (2012)
-<doi:10.1016/j.econlet.2012.04.081> and Becker, Enders & Lee (2006)
+     "Implementation of ARDL methods for cointegration analysis with structural breaks
+and asymmetric effects.  Includes: (1) Fourier Quantile ARDL (FQARDL), quantile
+regression with Fourier approximation following the quantile ARDL of Cho, Kim
+and Shin (2015) <doi:10.1016/j.jeconom.2015.05.003>; (2) Fourier Nonlinear ARDL
+(FNARDL), asymmetric cointegration with partial sum decomposition following
+Shin, Yu and Greenwood-Nimmo (2014) <doi:10.1007/978-1-4899-8008-3_9>; (3) a
+deprecated Multi-Threshold NARDL (MTNARDL) function; (4) Fourier unit root
+tests, ADF and KPSS tests with Fourier terms following Enders and Lee (2012)
+<doi:10.1016/j.econlet.2012.04.081> and Becker, Enders and Lee (2006)
 <doi:10.1111/j.1467-9892.2006.00478.x>.  Features automatic lag and frequency
-selection, PSS bounds testing following Pesaran, Shin & Smith (2001)
-<doi:10.1002/jae.616>, bootstrap cointegration tests, Wald tests for asymmetry,
-dynamic multiplier computation, and publication-ready visualizations.")
+selection, Wald bounds statistics with the tables of Pesaran, Shin and Smith
+(2001) <doi:10.1002/jae.616> (no verdict with Fourier terms, for which the
+tables are not valid), recursive bootstrap bounds tests following Bertelli,
+Vacca and Zoia (2022) <doi:10.1016/j.econmod.2022.105987> and @code{McNown}, Sam
+and Goh (2018) <doi:10.1080/00036846.2017.1366643>, Wald tests for asymmetry,
+multiplier computation, and visualizations.")
     (license license:gpl3)))
 
 (define-public r-fqar
@@ -9219,13 +9221,13 @@ calculating textural metrics.")
 (define-public r-forestsearch
   (package
     (name "r-forestsearch")
-    (version "0.1.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "forestsearch" version))
        (sha256
-        (base32 "1m08yl0dqn32vb53ha84jfnxiclw2lmg77y8s32qffaw133vzgni"))))
+        (base32 "0mlr5lk2kp8m6yzc8s7sg1512mfs25apy3jr15hm051pia63hrq1"))))
     (properties `((upstream-name . "forestsearch")))
     (build-system r-build-system)
     (arguments
@@ -9233,12 +9235,13 @@ calculating textural metrics.")
       #:tests? #f))
     (propagated-inputs (list r-weightedsurv
                              r-survival
-                             r-stringr
                              r-rlang
                              r-randomforest
                              r-progressr
                              r-policytree
                              r-patchwork
+                             r-mvtnorm
+                             r-matrix
                              r-gt
                              r-grf
                              r-glmnet
@@ -9250,23 +9253,27 @@ calculating textural metrics.")
                              r-dplyr
                              r-dofuture
                              r-data-table))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-quarto r-knitr))
     (home-page "https://github.com/larry-leon/forestsearch")
     (synopsis
-     "Exploratory Subgroup Identification in Clinical Trials with Survival Endpoints")
+     "Exploratory Subgroup Identification in Survival and GLM Outcomes")
     (description
      "This package implements statistical methods for exploratory subgroup
-identification in clinical trials with survival endpoints.  Provides tools for
-identifying patient subgroups with differential treatment effects using machine
-learning approaches including Generalized Random Forests (GRF), LASSO
-regularization, and exhaustive combinatorial search algorithms.  Features
-bootstrap bias correction using infinitesimal jackknife methods to address
-selection bias in post-hoc analyses.  Designed for clinical researchers
-conducting exploratory subgroup analyses in randomized controlled trials,
-particularly for multi-regional clinical trials (MRCT) requiring regional
-consistency evaluation.  Supports both accelerated failure time (AFT) and Cox
-proportional hazards models with comprehensive diagnostic and visualization
-tools.  Methods are described in LeÃ³n et al. (2024) <doi:10.1002/sim.10163>.")
+identification in clinical trials.  Provides tools for identifying patient
+subgroups with differential treatment effects using machine learning approaches
+including Generalized Random Forests (GRF), LASSO regularization, and exhaustive
+combinatorial search algorithms.  Supports survival endpoints (Cox proportional
+hazards), binary outcomes (log odds ratio, log relative risk, risk difference),
+continuous outcomes (mean difference), and count / rate outcomes (log incidence
+rate ratio via Poisson, quasi-Poisson, or negative-binomial GLMs with optional
+person-time offset).  Features bootstrap bias correction using infinitesimal
+jackknife methods to address selection bias in post-hoc analyses.  Designed for
+clinical researchers conducting exploratory subgroup analyses in randomized
+controlled trials, particularly for multi-regional clinical trials (MRCT)
+requiring regional consistency evaluation.  Methods are described in Leon et al.
+(2024) <doi:10.1002/sim.10163>.  Post-selection inference for the identified
+subgroup follows LeÃ³n and Anderson (2026)
+<doi:10.48550/@code{arXiv.2609.38361>}.")
     (license license:expat)))
 
 (define-public r-forestsas
@@ -9958,6 +9965,40 @@ mixtures.  The methods implemented are described in Haned et al. (2011)
 <doi:10.1016/j.fsigen.2012.11.002> and Gill & Haned (2013)
 <doi:10.1016/j.fsigen.2012.08.008>.")
     (license license:gpl2+)))
+
+(define-public r-forensicr
+  (package
+    (name "r-forensicr")
+    (version "0.0.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "forensicR" version))
+       (sha256
+        (base32 "0lka5vxv6jid8lj3hv8zmixfd770sfvk504jdrmdx4gkiyjj6qmg"))))
+    (properties `((upstream-name . "forensicR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-rmarkdown
+                             r-rlang
+                             r-ggplot2
+                             r-digest
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/kaquadros/forensicR")
+    (synopsis "Crime Scene Documentation and Reconstruction Tools")
+    (description
+     "Supports crime scene investigators in documenting and reconstructing scenes.
+Scene points are mapped from field measurements (baseline, triangulation,
+polar).  Shooting incidents are reconstructed from bullet defects with explicit
+uncertainty, following the methods described in Haag and Haag (2020,
+ISBN:9780128193976) and Hueske (2015, ISBN:9781498707664).  Evidence and custody
+are logged in a structured form, and reproducible scene reports are rendered to
+Word, PDF or HTML.")
+    (license license:expat)))
 
 (define-public r-forensicpopdata
   (package
@@ -19455,13 +19496,13 @@ convenient file sharing on the web.")
 (define-public r-filearray
   (package
     (name "r-filearray")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "filearray" version))
        (sha256
-        (base32 "064zn1pkvhh4764dxnb0mxnwjqjgkn0yby8zvamfn2ri4lz1hyhj"))))
+        (base32 "165p6blns2d51d2510y5q375aabl1zq0rb06v4033xc30bh5cfcj"))))
     (properties `((upstream-name . "filearray")))
     (build-system r-build-system)
     (arguments
@@ -23192,13 +23233,13 @@ FDboost', see Brockhaus, Ruegamer, Greven (2017) <doi:10.18637/jss.v094.i10>.")
 (define-public r-fdb
   (package
     (name "r-fdb")
-    (version "0.2.0")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fdb" version))
        (sha256
-        (base32 "0gwl08ip73f4s40qkhscb99ww6s0iannl1y0jg4pcq7xyqfwwvmz"))))
+        (base32 "1zswqv1hx9v93skjh84yhiwa3zvrnlgksg4pbbrmvffy52lhbsyz"))))
     (properties `((upstream-name . "fdb")))
     (build-system r-build-system)
     (arguments
@@ -24892,13 +24933,13 @@ another set of genes.")
 (define-public r-fbardl
   (package
     (name "r-fbardl")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fbardl" version))
        (sha256
-        (base32 "0wirix76zcp1v4hang9fsn97nc6prijkk84laalbp4hf5kdpssyi"))))
+        (base32 "0mn6lx6b9q4xdbz5c9fyfbr6jd5ig0jrs62n2j0v8g47ixv8a93k"))))
     (properties `((upstream-name . "fbardl")))
     (build-system r-build-system)
     (arguments
@@ -24909,15 +24950,17 @@ another set of genes.")
     (description
      "This package implements the Fourier Bootstrap Autoregressive Distributed Lag
 (FBARDL) bounds testing approach for cointegration analysis.  Combines the
-Pesaran, Shin & Smith (2001) <doi:10.1002/jae.616> ARDL bounds testing framework
-with Fourier terms to capture structural breaks following Yilanci, Bozoklu &
-Gorus (2020) <doi:10.1016/j.scs.2020.102035>, and bootstrap critical values
-based on @code{McNown}, Sam & Goh (2018) <doi:10.1080/00036846.2017.1366643> and
-Bertelli, Vacca & Zoia (2022) <doi:10.1016/j.econmod.2022.105987>, with
-finite-sample bounds test critical values from Kripfganz and Schneider (2020)
-<doi:10.1111/obes.12377>.  Features include automatic lag selection via AIC/BIC,
-optimal Fourier frequency selection by minimum SSR, long-run and short-run
-coefficient estimation, diagnostic tests, and dynamic multiplier analysis.")
+Pesaran, Shin and Smith (2001) <doi:10.1002/jae.616> ARDL bounds testing
+framework with Fourier terms to capture smooth structural breaks, as in Yilanci,
+Bozoklu and Gorus (2020) <doi:10.1016/j.scs.2020.102035>, and recursive
+bootstrap critical values following @code{McNown}, Sam and Goh (2018)
+<doi:10.1080/00036846.2017.1366643> and Bertelli, Vacca and Zoia (2022)
+<doi:10.1016/j.econmod.2022.105987>, with the Fourier frequency and the lags
+selected again in every bootstrap replication (a package choice); finite-sample
+bounds test critical values from Kripfganz and Schneider (2020)
+<doi:10.1111/obes.12377> for models without Fourier terms.  Features include lag
+selection via AIC/BIC, Fourier frequency selection by minimum SSR, long-run and
+short-run coefficient estimation and diagnostic tests.")
     (license license:gpl3)))
 
 (define-public r-fb4package
@@ -31432,13 +31475,13 @@ on the minimization of a penalized likelihood.")
 (define-public r-fable-prophet
   (package
     (name "r-fable-prophet")
-    (version "0.1.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fable.prophet" version))
        (sha256
-        (base32 "157zawsglwhzizs9qx81k5d9ccg94xcyz8w3c1kzzgc3a0hi8myg"))))
+        (base32 "0vg19ycf5im90ah8x9kls117c7yh7shdrfr0jgbsinkmhcr45ynm"))))
     (properties `((upstream-name . "fable.prophet")))
     (build-system r-build-system)
     (arguments
@@ -31446,7 +31489,6 @@ on the minimization of a penalized likelihood.")
       #:tests? #f))
     (propagated-inputs (list r-tsibble
                              r-rlang
-                             r-rcpp
                              r-prophet
                              r-lubridate
                              r-fabletools

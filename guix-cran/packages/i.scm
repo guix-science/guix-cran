@@ -9,6 +9,7 @@
   #:use-module (gnu packages web)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages maths)
+  #:use-module (gnu packages duckdb)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages java)
@@ -1815,13 +1816,13 @@ methodological background is detailed in Chao et al. (2025)
 (define-public r-istats
   (package
     (name "r-istats")
-    (version "1.7")
+    (version "1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iSTATS" version))
        (sha256
-        (base32 "1iay9ncydkhbvpsjla7nqiy74n5lg8w647djp2sfap8jspkdr0gg"))))
+        (base32 "1k2zm96l79kkj50yagw3fbqvga6qkchb98cxi6x6dlxsr4si215l"))))
     (properties `((upstream-name . "iSTATS")))
     (build-system r-build-system)
     (arguments
@@ -1830,22 +1831,21 @@ methodological background is detailed in Chao et al. (2025)
     (propagated-inputs (list r-shinywidgets
                              r-shinybs
                              r-shiny
-                             r-rstudioapi
-                             r-readr
-                             r-plotly
                              r-gtools
                              r-ggplot2
-                             r-data-table
-                             r-cairo))
+                             r-data-table))
     (home-page "https://cran.r-project.org/package=iSTATS")
     (synopsis "Graphical Interface to Perform STOCSY Analyses on NMR Data")
     (description
-     "Launches a shiny based application for Nuclear Magnetic Resonance (NMR)data
+     "Launches a shiny based application for Nuclear Magnetic Resonance (NMR) data
 importation and Statistical TOtal Correlation @code{SpectroscopY} (STOCSY)
 analyses in a full interactive approach.  The theoretical background and
-applications of STOCSY method could be found at Cloarec, O., Dumas, M. E.,
+applications of the STOCSY method are described by Cloarec, O., Dumas, M. E.,
 Craig, A., Barton, R. H., Trygg, J., Hudson, J., Blancher, C., Gauguier, D.,
-Lindon, J. C., Holmes, E. & Nicholson, J. (2005) <doi:10.1021/ac048630x>.")
+Lindon, J. C., Holmes, E. & Nicholson, J. (2005) <doi:10.1021/ac048630x>.
+Spectral alignment follows the interval correlation optimized shifting method of
+Savorani, F., Tomasi, G. & Engelsen, S. B. (2010)
+<doi:10.1016/j.jmr.2009.11.012>.")
     (license license:gpl3+)))
 
 (define-public r-istatr
@@ -5003,6 +5003,44 @@ estimated by maximum likelihood from model with one fixed and one random effect
 (both intercepts).  Help in model checking (normality of subjects means and
 residuals) is provided.")
     (license license:gpl3)))
+
+(define-public r-irelink
+  (package
+    (name "r-irelink")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "irelink" version))
+       (sha256
+        (base32 "093y8iy9xafqzrd1w4z1b8x6a2pk5f9bqbzxvsfv36m760xkgmid"))))
+    (properties `((upstream-name . "irelink")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tibble
+                             r-stringdist
+                             r-rlang
+                             r-glue
+                             r-ggplot2
+                             r-duckdb
+                             r-dbi
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://christophertkenny.com/irelink/")
+    (synopsis "Fast Probabilistic Record Linkage")
+    (description
+     "This package performs fast, scalable probabilistic record linkage and
+deduplication using the Fellegi-Sunter model.  Records lacking a shared unique
+identifier are compared across configurable dimensions using exact, fuzzy, and
+distance-based comparisons, with model parameters estimated via unsupervised
+Expectation-Maximization.  Multiple SQL backends are supported through DBI',
+including execution via @code{DuckDB}'.  This package is a translation of the
+Python splink library by Linacre et al. (2022) <doi:10.23889/ijpds.v7i3.1794>
+into idiomatic R.")
+    (license license:expat)))
 
 (define-public r-iregression
   (package

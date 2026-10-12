@@ -13457,20 +13457,20 @@ dataset (@code{myHouseID}) from the BHPS.")
 (define-public r-lifecontingencies
   (package
     (name "r-lifecontingencies")
-    (version "1.6.0")
+    (version "1.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lifecontingencies" version))
        (sha256
-        (base32 "026vjxskzabc4yrzdxnz7q0l0lv7y12ijmw6nps5dgrsq8isrzi5"))))
+        (base32 "1y4s970x25l2ydafy6dpwpmngzrhzqd1nf2wq2sjrbdhgwhpcwbp"))))
     (properties `((upstream-name . "lifecontingencies")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rcpp r-ggplot2))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-quarto r-knitr))
     (home-page "https://github.com/spedygiorgio/lifecontingencies")
     (synopsis "Financial and Actuarial Mathematics for Life Contingencies")
     (description
@@ -14442,13 +14442,13 @@ test for conditional independence and a test for financial contagion.")
 (define-public r-lfstat
   (package
     (name "r-lfstat")
-    (version "0.9.13")
+    (version "0.9.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lfstat" version))
        (sha256
-        (base32 "1144i40i287ai4pz9i6kzk3qa1pcmcvwqpskyckm8fnqb9zyz3bc"))))
+        (base32 "10a4jbkfd1472bmjxz7pfcd1jqpmmi5valb6j4s9d34grpj20r8k"))))
     (properties `((upstream-name . "lfstat")))
     (build-system r-build-system)
     (arguments
@@ -14463,7 +14463,7 @@ test for conditional independence and a test for financial contagion.")
                              r-latticeextra
                              r-lattice
                              r-dygraphs))
-    (home-page "https://cran.r-project.org/package=lfstat")
+    (home-page "https://github.com/mundl/lfstat")
     (synopsis "Calculation of Low Flow Statistics for Daily Stream Flow Data")
     (description
      "The \"Manual on Low-flow Estimation and Prediction\" (Gustard & Demuth (2009,
@@ -21725,13 +21725,13 @@ plots.")
 (define-public r-lambdastar
   (package
     (name "r-lambdastar")
-    (version "0.8.1")
+    (version "0.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lambdastar" version))
        (sha256
-        (base32 "1r1aszy09vccdj4axx6x87ixbjm5j5rnwpxxwzy9zx3kyjsbw4m5"))))
+        (base32 "13954ma12p50pb87m4bfsj7i4asrk7csyxy08gg0v05dkvipbj65"))))
     (properties `((upstream-name . "lambdastar")))
     (build-system r-build-system)
     (arguments

@@ -873,13 +873,13 @@ Generalized Plackett-Luce likelihoods use Hankin 2024
 (define-public r-hyper-gam
   (package
     (name "r-hyper-gam")
-    (version "0.3.3")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hyper.gam" version))
        (sha256
-        (base32 "0iy2if38zh1kb2xckkjjiwr8wkm14l9z8zf3611xrbby221jh2ax"))))
+        (base32 "0x0hxaz6csif41nwwsfx0vq05h860m4l9b7m584c9qwj6k3g965y"))))
     (properties `((upstream-name . "hyper.gam")))
     (build-system r-build-system)
     (arguments
@@ -13804,6 +13804,36 @@ Markowitz efficient frontier recently developed by Bauder et al. (2021)
 summary and its standard errors, as described in Liang and Heagerty (2016)
 <doi:10.1111/biom.12628>.")
     (license license:gpl2)))
+
+(define-public r-hdrm
+  (package
+    (name "r-hdrm")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hdrm" version))
+       (sha256
+        (base32 "1rms6qvqpywz9yqyhmyjvfd9hjvycy6d6qs360xrbd761h9i65mg"))))
+    (properties `((upstream-name . "hdrm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr r-rcpparmadillo r-rcpp))
+    (home-page "https://github.com/Schnieboli/hdrm")
+    (synopsis "Inference for High-Dimensional Repeated Measures")
+    (description
+     "This package provides one-group and multiple-group tests for expectation vectors
+in high-dimensional repeated-measures designs.  Hypotheses can be specified
+through projection matrices or by selecting predefined effects.  The
+multiple-group procedures cover heterogeneous and equal covariance matrices.
+Centered and standardized chi-square approximations are combined with exact or
+subsampling-based trace estimators.  The functions return p-values, test
+statistics, estimated degrees of freedom, and convergence parameters.  For
+further details, see Sattler and Hichert (2025)
+<doi:10.48550/@code{arXiv.2512.17478>}.")
+    (license license:gpl3+)))
 
 (define-public r-hdrfa
   (package

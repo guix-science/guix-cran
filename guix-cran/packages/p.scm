@@ -21837,13 +21837,13 @@ the base temperature for growing degree days (Yang et al. (1995)
 (define-public r-polle
   (package
     (name "r-polle")
-    (version "1.6.5")
+    (version "1.6.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "polle" version))
        (sha256
-        (base32 "0wx0wphsla11c46af5zvdhv00yqz9m2yxbc1qq5dz8p0093wwm24"))))
+        (base32 "0m7srg1ggpbn1scv48m4ap555grk6sc0wi9p39k2bg8mlhvwfh0z"))))
     (properties `((upstream-name . "polle")))
     (build-system r-build-system)
     (arguments
@@ -26783,6 +26783,50 @@ can be extended to allow for an arbitrary number of nested and crossed random
 effects, making it useful for multilevel and cross-classified models.")
     (license license:gpl2+)))
 
+(define-public r-plmix
+  (package
+    (name "r-plmix")
+    (version "2.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PLMIX" version))
+       (sha256
+        (base32 "12ibcpahldri0a9n87chfp8xjix76ybasihh26z6xac88zfjjdp4"))))
+    (properties `((upstream-name . "PLMIX")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-reshape2
+                             r-rcpp
+                             r-rcdd
+                             r-mcmcpack
+                             r-label-switching
+                             r-gtools
+                             r-gridextra
+                             r-ggplot2
+                             r-ggmcmc
+                             r-foreach
+                             r-fmsb
+                             r-coda
+                             r-abind))
+    (home-page "https://cran.r-project.org/package=PLMIX")
+    (synopsis
+     "Bayesian Analysis of Finite Mixtures of Plackett-Luce Models for Partial Rankings/Orderings")
+    (description
+     "Fit finite mixtures of Plackett-Luce models for partial top rankings/orderings
+within the Bayesian framework.  It provides MAP point estimates via EM algorithm
+and posterior MCMC simulations via Gibbs Sampling.  It also fits MLE as a
+special case of the noninformative Bayesian analysis with vague priors.  In
+addition to inferential techniques, the package assists other fundamental phases
+of a model-based analysis for partial rankings/orderings, by including functions
+for data manipulation, simulation, descriptive summary, model selection and
+goodness-of-fit evaluation.  Main references on the methods are Mollica and
+Tardella (2017) <doi:10.1007/s11336-016-9530-0> and Mollica and Tardella (2014)
+<doi:10.1002/sim.6224>.")
+    (license license:gpl2+)))
+
 (define-public r-plis
   (package
     (name "r-plis")
@@ -28594,13 +28638,13 @@ package directory, and/or a vector of verbs implement via the usethis
 (define-public r-pkgstats
   (package
     (name "r-pkgstats")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pkgstats" version))
        (sha256
-        (base32 "0ba8fw9simbdj8dq1fz6zzm6jjm2q4bgi59l5nj0aznq1zj2m7x9"))))
+        (base32 "0zf03y2lbiafw5jqxw8rxxiparh25ilz9vkm2rmyc8p9x6f23c22"))))
     (properties `((upstream-name . "pkgstats")))
     (build-system r-build-system)
     (arguments
@@ -28634,7 +28678,7 @@ package directory, and/or a vector of verbs implement via the usethis
                              r-cpp11
                              r-checkmate
                              r-brio))
-    (native-inputs (list r-knitr esbuild))
+    (native-inputs (list r-quarto r-knitr esbuild))
     (home-page "https://docs.ropensci.org/pkgstats/")
     (synopsis "Metrics of R Packages")
     (description
@@ -29050,13 +29094,13 @@ For more details on generating pkgdown websites, see Wickham et al. (2025)
 (define-public r-pkgdiff
   (package
     (name "r-pkgdiff")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pkgdiff" version))
        (sha256
-        (base32 "1bbhplvjwfq7ac5x54c45hqymjy44nq7lm0ncrlhcwkihv3d457s"))))
+        (base32 "0wnm5x3vj8gpfnvl6df74cfrjnz3d9qr4wvjkn2cil8sasmy1w6g"))))
     (properties `((upstream-name . "pkgdiff")))
     (build-system r-build-system)
     (arguments
@@ -31277,6 +31321,41 @@ methodology featured in this package is based on Flores (2021)
 \"A new class of information criteria for improved prediction in the presence of
 training/validation data heterogeneity\".")
     (license license:gpl3+)))
+
+(define-public r-picotsize
+  (package
+    (name "r-picotsize")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PICOTsize" version))
+       (sha256
+        (base32 "16zr4cm606wkp6jb7b361nbmdvk7fwbpl2l95zh52x7as7zwrzg2"))))
+    (properties `((upstream-name . "PICOTsize")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny
+                             r-rlang
+                             r-plotly
+                             r-ggplot2
+                             r-epir
+                             r-bslib))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/AtefehRashidi/PICOTsize")
+    (synopsis "Sample Size Calculation for PICOT-Based Study Designs")
+    (description
+     "This package provides sample size calculators for the study designs covered by
+the PICOT framework, including cross-sectional, case-control, cohort,
+superiority, non-inferiority, and equivalence clinical trials, and diagnostic
+test accuracy studies, following Bhardwaj et al. (2024)
+<doi:10.4103/jfmpc.jfmpc_1675_23>.  Calculations are performed using the
+@code{epiR} package as a validated computational backend.  Includes a shiny
+application with a PICOT-based design wizard, an interactive sensitivity plot,
+and automatically generated Methods-section text for manuscripts.")
+    (license license:expat)))
 
 (define-public r-picohdr
   (package
@@ -43366,13 +43445,13 @@ Principal Component Analysis.  Implements the method described in (Luu, 2016)
 (define-public r-pc
   (package
     (name "r-pc")
-    (version "0.2")
+    (version "0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pc" version))
        (sha256
-        (base32 "1ygip37wpd1p69bjhl02n3l1xsyw43iwx5p7yl6x1kjv1v7g3nqb"))))
+        (base32 "1fv7iqmimyw0snw65jxl17nrwrspnzwqci5ww5bv8b18hsa3ah9a"))))
     (properties `((upstream-name . "pc")))
     (build-system r-build-system)
     (arguments
@@ -43384,6 +43463,7 @@ Principal Component Analysis.  Implements the method described in (Luu, 2016)
                              r-rcppthread
                              r-rcpp
                              r-ggplot2))
+    (native-inputs (list r-knitr))
     (home-page "https://stscl.github.io/pc/")
     (synopsis "Pattern Causality Analysis")
     (description

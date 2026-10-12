@@ -1329,6 +1329,30 @@ and quantile functions for symmetric stable, symmetric classical tempered
 stable, and symmetric power tempered stable distributions.")
     (license license:gpl3+)))
 
+(define-public r-symtests
+  (package
+    (name "r-symtests")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "symtests" version))
+       (sha256
+        (base32 "0sph7m1y3z43jafi1j0b1ws4yrcmswpbscd8sccq956d64gdd8ax"))))
+    (properties `((upstream-name . "symtests")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=symtests")
+    (synopsis "Symmetry Tests for Univariate Data")
+    (description
+     "This package implements statistical tests for detecting departures from symmetry
+in univariate data, including procedures based on moments, spacings, order
+statistics, and triples.  The functions provide straightforward tools for
+assessing symmetry in empirical distributions.")
+    (license license:expat)))
+
 (define-public r-symtensor
   (package
     (name "r-symtensor")
@@ -2713,13 +2737,13 @@ formats as well as other swatch file formats can be found at
 (define-public r-swash
   (package
     (name "r-swash")
-    (version "3.0.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "swash" version))
        (sha256
-        (base32 "14jicrqy9vyvz8psl215jrm9z0r3792bbw0p8wqs4d3ymm9dh3z6"))))
+        (base32 "0afni8gzx5gzz409i7wr8v560s8ram4nfhwsdjmbbzrmwf1yqw88"))))
     (properties `((upstream-name . "swash")))
     (build-system r-build-system)
     (arguments
@@ -2739,14 +2763,17 @@ formats as well as other swatch file formats can be found at
 regions, and the velocity of spatial spread differs between countries.  The
 swash library offers a set of model-based analyses for these topics.  Spread
 velocity may be analysed with the Swash-Backwash Model for the Single Epidemic
-Wave and corresponding functions for bootstrap confidence intervals, country
-comparison, and visualization of results.  Differences in epidemic growth
-between regions may be analysed using logistic growth models, exponential growth
-models, Hawkes processes and breakpoint analyses.  Cluster and hotspot analyses
-can be conducted using neighborhood matrices.  All functionalities are accessed
-by the class \"infpan\" for infections panel data defined in this package, which
-is built from a data.frame provided by the user.")
-    (license license:gpl2+)))
+Wave by Cliff and Haggett (2006) <doi:10.1007/s10109-006-0027-8> and
+corresponding functions for bootstrap confidence intervals, country comparison,
+and visualization of results.  Differences in epidemic growth between regions
+may be analysed using logistic growth models, exponential growth models, Hawkes
+processes and breakpoint analyses.  Cluster and hotspot analyses can be
+conducted using neighborhood matrices.  See Wieland (2020)
+<doi:10.18335/region.v7i2.324> for an application of some of the mentioned
+analysis methods.  All functionalities are accessed by the class \"infpan\" for
+infections panel data defined in this package, which is built from a data.frame
+provided by the user.")
+    (license license:gpl3)))
 
 (define-public r-swarmverse
   (package
@@ -3533,13 +3560,13 @@ the method.")
 (define-public r-svrep
   (package
     (name "r-svrep")
-    (version "0.9.1")
+    (version "0.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "svrep" version))
        (sha256
-        (base32 "1b8jc33fvmrv4zcx98z4np8ms21w4j4pwa53pdpl9zz0h4ssksaa"))))
+        (base32 "19pak9946agqzwbic8awkwaa4wbrk0rh5jcw3h8zcls8h67pjsjx"))))
     (properties `((upstream-name . "svrep")))
     (build-system r-build-system)
     (arguments
@@ -16255,13 +16282,13 @@ field(s).")
 (define-public r-steinsampling
   (package
     (name "r-steinsampling")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "steinsampling" version))
        (sha256
-        (base32 "140v03b896qg13m7kq7ksjk6d8ciq1blvxdzzdkhsx50ymgia56s"))))
+        (base32 "1a8myrfy7wmv7y6l0cbyb6mjasd9zizj3l5p2w1h3z8j7q8mq8zq"))))
     (properties `((upstream-name . "steinsampling")))
     (build-system r-build-system)
     (arguments
@@ -36147,13 +36174,13 @@ interactions on different spatial scales.")
 (define-public r-spacc
   (package
     (name "r-spacc")
-    (version "0.8.3")
+    (version "0.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spacc" version))
        (sha256
-        (base32 "0yz5n2hlxndnvhqx529xap811mvxvbvvxg2zdvc8sz13byqyvzx6"))))
+        (base32 "0d97xcdcdfnfh8bydjiwr80dcc0ny4qw3kq9k5cbinysap5ggq70"))))
     (properties `((upstream-name . "spacc")))
     (build-system r-build-system)
     (arguments
@@ -36164,21 +36191,35 @@ interactions on different spatial scales.")
     (home-page "https://gillescolling.com/spacc/")
     (synopsis "Fast Spatial Species Accumulation Curves")
     (description
-     "High-performance spatial species accumulation curves using nearest-neighbor
-algorithms.  Implements @code{kNN} and @code{kNCN} sampling methods with a C++
-backend for speed.  Supports Hill numbers (q=0,1,2), beta diversity partitioning
-(turnover/nestedness), coverage-based rarefaction and extrapolation,
-phylogenetic diversity (Faith's PD, mean pairwise distance, mean nearest taxon
-distance), functional diversity accumulation, diversity-area relationships
-(DAR), endemism-area curves, sampling-effort correction and fragmentation
-analysis, and species-area relationship (SAR) models based on extreme value
-theory (EVT).  Multiple starting points (seeds) provide uncertainty
-quantification.  Methods are described in Chao et al. (2014)
-<doi:10.1890/13-0133.1>, Baselga (2010) <doi:10.1111/j.1466-8238.2009.00490.x>,
-Chao and Jost (2012) <doi:10.1890/11-1952.1>, Faith (1992)
-<doi:10.1016/0006-3207(92)91201-3>, Ma (2018) <doi:10.1002/ece3.4526>,
-Borda-de-Agua et al. (2025) <doi:10.1038/s41467-025-59239-7>, Hanski et al.
-(2013) <doi:10.1073/pnas.1311190110>, and Jost (2007) <doi:10.1890/06-1736.1>.")
+     "High-performance spatial species accumulation curves using fixed-focus spatially
+constrained rarefaction, nearest-centroid expansion, and nearest-neighbor walks
+with a C++ backend for speed.  Supports Hill numbers (q=0,1,2), beta diversity
+partitioning (turnover/nestedness) at site and pooled resolution, coverage-based
+rarefaction and extrapolation of alpha and beta diversity, phylogenetic
+diversity (PD; Faith's PD, @code{EvoHeritage}, mean pairwise distance, mean
+nearest taxon distance), functional diversity accumulation including aggregated
+functional diversity and intraspecific trait variation, phylogenetic and
+functional redundancy, interaction network accumulation, diversity-area
+relationships (DAR), endemism-area curves, sampling-effort correction and
+fragmentation analysis, species-area relationship (SAR) models based on extreme
+value theory (EVT), and area-based richness extrapolation via the total-species
+curve.  Total richness is also estimated from frequency counts, including the
+accumulation rate curve estimator and an estimator for sites sampled without
+replacement, and shift-and-rotate null models test the position of a sampling
+design.  Multiple starting points (seeds) provide uncertainty quantification.
+Methods are described in Chao et al. (2014) <doi:10.1890/13-0133.1>, Baselga
+(2010) <doi:10.1111/j.1466-8238.2009.00490.x>, Chao and Jost (2012)
+<doi:10.1890/11-1952.1>, Faith (1992) <doi:10.1016/0006-3207(92)91201-3>, Ma
+(2018) <doi:10.1002/ece3.4425>, Borda-de-Agua et al. (2025)
+<doi:10.1038/s41467-025-59239-7>, Hanski et al. (2013)
+<doi:10.1073/pnas.1311190110>, Jost (2007) <doi:10.1890/06-1736.1>, Ugland et
+al. (2003) <doi:10.1046/j.1365-2656.2003.00748.x>, Chao et al. (2023)
+<doi:10.1002/ecm.1588>, Chiu (2023) <doi:10.1111/2041-210X.14146>, Chiu et al.
+(2023) <doi:10.1098/rstb.2022.0183>, Rosindell et al. (2024)
+<doi:10.1093/sysbio/syad072>, Wojcik et al. (2024)
+<doi:10.1111/2041-210X.14470>, Ridder et al. (2024)
+<doi:10.1111/2041-210X.14443>, Jones et al. (2025) <doi:10.1111/ddi.70080>, and
+Shestopaloff (2025) <doi:10.1007/s10651-025-00644-y>.")
     (license license:expat)))
 
 (define-public r-spabundance
@@ -45628,13 +45669,13 @@ SKNN is significantly superior to KNN.")
 (define-public r-skmeans
   (package
     (name "r-skmeans")
-    (version "0.2-20")
+    (version "0.2-21")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "skmeans" version))
        (sha256
-        (base32 "1da1lxcx6y8slm9v863ngls9cb53krlm2i9dz928cgkw1b2j75v9"))))
+        (base32 "0l8za3gwh2pqcps3ykbdn0jl2lfyan1kfblp94bgz282aqp760nv"))))
     (properties `((upstream-name . "skmeans")))
     (build-system r-build-system)
     (arguments
@@ -48733,24 +48774,23 @@ matrix is described in Section 5.1 of Christidis, Van Aelst and Zamar (2019)
 (define-public r-simtablr
   (package
     (name "r-simtablr")
-    (version "1.2.0")
+    (version "3.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SimtablR" version))
        (sha256
-        (base32 "1rx3r0jykkab2mwa9jfwdh58dq2wfm9ilps2fwq4y9hqc54645yh"))))
+        (base32 "18y44ppickrq6y27hkc6n6lz98gzbmwrbjaifs3s39d4y9r5n6m5"))))
     (properties `((upstream-name . "SimtablR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-tidyselect
                              r-sandwich
-                             r-openxlsx
-                             r-lmtest
-                             r-flextable
-                             r-dplyr
+                             r-rlang
+                             r-generics
+                             r-digest
                              r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/MatheusTG-14/SimtablR")
@@ -48758,7 +48798,8 @@ matrix is described in Section 5.1 of Christidis, Van Aelst and Zamar (2019)
     (description
      "Streamlines the creation of descriptive frequency tables ('Table 1'), diagnostic
 test accuracy evaluations (sensitivity, specificity, predictive values), and
-multi-outcome regression summaries.  Features automatic tables, prevalence and
+multi-outcome regression summaries.  Features a grammar for publication-ready
+epidemiological tables built on design-aware effect measures, prevalence and
 odds ratio calculations, and seamless integration with flextable for exporting
 results to Microsoft Word and @code{PowerPoint}'.")
     (license license:expat)))
@@ -52604,13 +52645,13 @@ the silhouette width.  See <doi:10.1101/2023.11.07.566055> for details.")
 (define-public r-silicate
   (package
     (name "r-silicate")
-    (version "0.7.1")
+    (version "0.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "silicate" version))
        (sha256
-        (base32 "193n0gh2kg5900si1m94cliyh0fbmp9dybs17vl1xxn34pg9c9s9"))))
+        (base32 "08ypwim3k1i263vigwvj6hharkwmdnnzv6q5iykxw91d445f8pk0"))))
     (properties `((upstream-name . "silicate")))
     (build-system r-build-system)
     (arguments
@@ -57764,13 +57805,13 @@ assistant-like user interfaces.")
 (define-public r-shinyglass
   (package
     (name "r-shinyglass")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyglass" version))
        (sha256
-        (base32 "0vh0f3ppwcz3yhbkhfcs6x6jinny7gnc4ivpixc5di99bbjms9k0"))))
+        (base32 "0cjzdk4gxp7xhhd7k95kbnk72wl5nhriych2arf1sgkdqrvcg9m1"))))
     (properties `((upstream-name . "shinyglass")))
     (build-system r-build-system)
     (arguments
@@ -59568,13 +59609,13 @@ and arithmetic.")
 (define-public r-shidashi
   (package
     (name "r-shidashi")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shidashi" version))
        (sha256
-        (base32 "0gbdcz55igjk818dw0074mk2ifixamil3l2sab53nl1i411bgzni"))))
+        (base32 "1517k0cff2lijkfa3lbhrq5r0wi373jpv8rw50f420cwbk1fcm8z"))))
     (properties `((upstream-name . "shidashi")))
     (build-system r-build-system)
     (arguments
@@ -59599,9 +59640,12 @@ and arithmetic.")
                              r-shinychat
                              r-shiny
                              r-s7
+                             r-promises
+                             r-later
                              r-jsonlite
                              r-httr2
                              r-htmlwidgets
+                             r-htmltools
                              r-formatr
                              r-fastmap
                              r-ellmer
@@ -64292,6 +64336,47 @@ the master files of persons (MP) and households (MH), and social origins (SO).
 It can also match with activity calendar data (CA).")
     (license license:gpl3+)))
 
+(define-public r-seqnet
+  (package
+    (name "r-seqnet")
+    (version "1.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SeqNet" version))
+       (sha256
+        (base32 "04ih520frs5x875738hp4ryqf6w0w6pklwxqyan79rg43q3dwakp"))))
+    (properties `((upstream-name . "SeqNet")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-rdpack
+                             r-rcpp
+                             r-purrr
+                             r-mvtnorm
+                             r-igraph
+                             r-ggplot2
+                             r-fitdistrplus))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=SeqNet")
+    (synopsis "Generate RNA-Seq Data from Gene-Gene Association Networks")
+    (description
+     "This package provides methods to generate random gene-gene association networks
+and simulate RNA-seq data from them, as described in Grimes and Datta (2021)
+<doi:10.18637/jss.v098.i12>.  Includes functions to generate random networks of
+any size and perturb them to obtain differential networks.  Network objects are
+built from individual, overlapping modules that represent pathways.  The
+resulting network has various topological properties that are characteristic of
+gene regulatory networks.  RNA-seq data can be generated such that the
+association among gene expression profiles reflect the underlying network.  A
+reference RNA-seq dataset can be provided to model realistic marginal
+distributions.  Plotting functions are available to visualize a network, compare
+two networks, and compare the expression of two genes across multiple networks.")
+    (license (list license:gpl2 license:gpl3))))
+
 (define-public r-seqmon
   (package
     (name "r-seqmon")
@@ -67143,13 +67228,13 @@ generated by spacyr'.  For further reference, see: Stuhler (2022) <doi:
 (define-public r-semfromkeys
   (package
     (name "r-semfromkeys")
-    (version "0.5.5")
+    (version "0.5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "semFromKeys" version))
        (sha256
-        (base32 "1jhd4xf8rfzynff6jahs7v4m6i2ha60h4icapwrglq2hpsg9pj60"))))
+        (base32 "0yw8dmdwv0zxb6ip7r2bm2kns63kqd7vml1c3adxp54r85a7ldxj"))))
     (properties `((upstream-name . "semFromKeys")))
     (build-system r-build-system)
     (arguments
@@ -69905,13 +69990,13 @@ detector spacing.")
 (define-public r-secr
   (package
     (name "r-secr")
-    (version "5.4.3")
+    (version "5.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "secr" version))
        (sha256
-        (base32 "1warnsihrvx88g5f8dj8lizwsynh3vhj0bjwrsm9mjxnn2cr0kn5"))))
+        (base32 "03r6i1l4amwql67nfk84bgk4ysg0cs9lprlq8dj2hlqyxhhixr6r"))))
     (properties `((upstream-name . "secr")))
     (build-system r-build-system)
     (arguments
@@ -72426,13 +72511,13 @@ error is controlled using false non-discovery rates or higher criticism.")
 (define-public r-sd2r
   (package
     (name "r-sd2r")
-    (version "0.2.1")
+    (version "0.2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sd2R" version))
        (sha256
-        (base32 "0n8m6yvv0b973i3pm5bgd6kkjpcsqp4a699m8rg3sx5fkc5gwgs6"))))
+        (base32 "1qmlh4y61786qvr2sqbn3r4gvjxxx1fh5kkcd8wfv23ix22k3zk0"))))
     (properties `((upstream-name . "sd2R")))
     (build-system r-build-system)
     (arguments
@@ -74297,13 +74382,13 @@ usage make it suitable for large graphs.")
 (define-public r-scorecraft
   (package
     (name "r-scorecraft")
-    (version "0.3.0")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scorecraft" version))
        (sha256
-        (base32 "0a9c33ybhjaj7pm8wjrr2n395xg7hdpmmjnjr8w16m82dbfi33a8"))))
+        (base32 "1b192ydrb1hjmkyalcjv3j41k9dwh4w1fqa8lwrxqw9misc1yv37"))))
     (properties `((upstream-name . "scorecraft")))
     (build-system r-build-system)
     (arguments
@@ -77945,6 +78030,35 @@ PID2021-128228NB-I00) and FundaciÃ³n Mapfre for supporting this research.")
      "This package provides a wrapper for Blizzard's Starcraft II (a 2010 real-time
 strategy game) Application Programming Interface (API).  All documented API
 calls are implemented in an easy-to-use and consistent manner.")
+    (license license:expat)))
+
+(define-public r-sbwadjust
+  (package
+    (name "r-sbwadjust")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sbwadjust" version))
+       (sha256
+        (base32 "17ww1i1fqnamniypviljlk309k9d828h5qig7ma8x3ys8jcidlxv"))))
+    (properties `((upstream-name . "sbwadjust")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival r-quadprog))
+    (home-page "https://github.com/kaylairish/sbwadjust")
+    (synopsis "Stable Balancing Weights for Covariate Adjustment in Trials")
+    (description
+     "Covariate adjustment for randomized trials using stable balancing weights (SBW),
+as proposed by Irish, Zubizarreta, and Luedtke (2026)
+<doi:10.48550/@code{arXiv.2609.01638>}. @code{sbw_weights()} fits exact-balance
+SBW for a two-arm study by a closed-form solve with a nonnegative
+quadratic-programming fallback; @code{sbw_estimate()} computes a closed menu of
+treatment-effect estimands (average treatment effect, relative risk, survival
+ratio, Mann-Whitney, quantile contrasts) from the fitted weights, with bootstrap
+confidence intervals.")
     (license license:expat)))
 
 (define-public r-sbw
