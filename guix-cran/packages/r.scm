@@ -135,30 +135,6 @@ and kinship analyses is described in Forneris et al. (2025)
 <https://zeromq.org/> for more information).")
     (license license:gpl3)))
 
-(define-public r-rzigzag
-  (package
-    (name "r-rzigzag")
-    (version "0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RZigZag" version))
-       (sha256
-        (base32 "1civ8qrk5y95775vzkd2m5arqczgan584r632ixy4q76nd5wa8zc"))))
-    (properties `((upstream-name . "RZigZag")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcppeigen r-rcpp))
-    (home-page "https://cran.r-project.org/package=RZigZag")
-    (synopsis "Zig-Zag Sampler")
-    (description
-     "This package implements the Zig-Zag algorithm (Bierkens, Fearnhead, Roberts,
-2016) <@code{arXiv:1607.03188>} applied and Bouncy Particle Sampler
-<@code{arXiv:1510.02451>} for a Gaussian target and Student distribution.")
-    (license license:gpl2+)))
-
 (define-public r-rzig
   (package
     (name "r-rzig")
@@ -10248,30 +10224,6 @@ users a GUI that allows to choose a most appropriate distribution without any
 knowledge of the R syntax.  Note, this package is a part of the rrisk project.")
     (license license:gpl3+)))
 
-(define-public r-rri
-  (package
-    (name "r-rri")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RRI" version))
-       (sha256
-        (base32 "0msdc5j5vx4snl8r3q5nn0mw2i80jds5pjykhmigcrx6jzg6h6i7"))))
-    (properties `((upstream-name . "RRI")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp))
-    (home-page "https://cran.r-project.org/package=RRI")
-    (synopsis "Residual Randomization Inference for Regression Models")
-    (description
-     "Testing and inference for regression models using residual randomization
-methods.  The basis of inference is an invariance assumption on the regression
-errors, e.g., clustered errors, or doubly-clustered errors.")
-    (license license:gpl2)))
-
 (define-public r-rrgeo
   (package
     (name "r-rrgeo")
@@ -10494,34 +10446,6 @@ details, see Bourguignon and Gallardo (2025a)
 inference through Skovgaard-adjusted likelihood ratio statistics and predictive
 shrinkage estimators reparameterized beta regression models.")
     (license license:gpl2+)))
-
-(define-public r-rreg
-  (package
-    (name "r-rreg")
-    (version "0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rreg" version))
-       (sha256
-        (base32 "05c2yj58zn43zkmqp4iyblsixsq76hsjkchffl5rkqynvgxi0qzi"))))
-    (properties `((upstream-name . "rreg")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-ggplot2 r-directlabels))
-    (home-page "https://cran.r-project.org/package=rreg")
-    (synopsis "Visualization for Norwegian Health Quality Registries")
-    (description
-     "Assists for presentation and visualization of data from the Norwegian Health
-Quality Registries following the standardization based on the requirement
-specified by the National Service for Health Quality Registries.  This
-requirement can be accessed from
-(<https://www.kvalitetsregistre.no/resultater-til-publisering-pa-nett>).
-Unfortunately the website is only available in Norwegian.")
-    (license (list license:gpl2
-                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-rrefine
   (package
@@ -11548,13 +11472,13 @@ package.")
 (define-public r-rpyants
   (package
     (name "r-rpyants")
-    (version "0.0.6")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rpyANTs" version))
        (sha256
-        (base32 "0ii2n3mjv1wr1wdxm3cdgfp4svnc8kifrl8wpm5v6wz14s52m7v2"))))
+        (base32 "1paz77gvdnb1w9rx03d0mlg15wr8l895h3y33n1f0wsp3j02428j"))))
     (properties `((upstream-name . "rpyANTs")))
     (build-system r-build-system)
     (arguments
@@ -28194,13 +28118,13 @@ model.")
 (define-public r-ritalic
   (package
     (name "r-ritalic")
-    (version "0.12.0")
+    (version "0.13.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ritalic" version))
        (sha256
-        (base32 "1sxqv38a2qxjcjby4qwhhmn4pjsv46lfb8wh8c5bhnbrajym9m5j"))))
+        (base32 "00bjlh478xmzq4k2pzfcfsx81x1z5m5g8hsjp9wgmchq4p283g2p"))))
     (properties `((upstream-name . "ritalic")))
     (build-system r-build-system)
     (arguments
@@ -28996,32 +28920,34 @@ content and performance on assessments.")
 (define-public r-risdr
   (package
     (name "r-risdr")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "risdr" version))
        (sha256
-        (base32 "1hy8pf0njgl87y8ixiyvs6pxlw5g51ghc84glv6rz10fypd29plp"))))
+        (base32 "01a0s6pggw8k3pwsk0xr070f51gm1wpja9vh8jzshvrs6zsns494"))))
     (properties `((upstream-name . "risdr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-matrix r-mass))
+    (propagated-inputs (list r-survival r-nnet r-matrix r-mass))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/ilovemaths/risdr")
     (synopsis
      "Regularised and Information-Theoretic Sufficient Dimension Reduction")
     (description
      "This package implements covariance-stabilised sufficient dimension reduction for
-continuous responses with information-theoretic structural dimension selection.
-Supported methods include sliced inverse regression, sliced average variance
-estimation, directional regression, and principal Hessian directions.  Sample,
-ridge, Oracle Approximating Shrinkage, Ledoit-Wolf, and Maximum Entropy
-Covariance (MEC) estimators are provided alongside prediction, resampling,
-simulation, and diagnostic utilities.  The sufficient dimension reduction
-methods build on Li (1991) <doi:10.1080/01621459.1991.10475035>, Li (1992)
+continuous responses, with an additional sparse engine for continuous,
+categorical, and right-censored survival responses and information-theoretic
+structural dimension selection.  Supported methods include sliced inverse
+regression, sliced average variance estimation, directional regression, and
+principal Hessian directions.  Sample, ridge, Oracle Approximating Shrinkage,
+Ledoit-Wolf, and Maximum Entropy Covariance (MEC) estimators are provided
+alongside prediction, resampling, simulation, and diagnostic utilities.  The
+sufficient dimension reduction methods build on Li (1991)
+<doi:10.1080/01621459.1991.10475035>, Li (1992)
 <doi:10.1080/01621459.1992.10476258>, and Li and Wang (2007)
 <doi:10.1198/016214507000000536>.  Covariance shrinkage follows Olorede and
 Yahya (2019) <doi:10.48550/@code{arXiv.1909.13017>}, Ledoit and Wolf (2004)
@@ -31401,34 +31327,6 @@ Complexes (PVCs) and parameterise and plot the resulting Heart Rate Turbulence
 Schmidt et al. <doi:10.1016/S0140-6736(98)08428-1> and extended with suggestions
 from <doi:10.1088/1361-6579/ab98b3>.")
     (license license:gpl2)))
-
-(define-public r-rhpcbenchmark
-  (package
-    (name "r-rhpcbenchmark")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RHPCBenchmark" version))
-       (sha256
-        (base32 "1f94d8z15ybqgc2pccsi1m6563xf26ygri6f4pwxkqjmxkxnk34y"))))
-    (properties `((upstream-name . "RHPCBenchmark")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mvtnorm r-matrix r-cluster))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=RHPCBenchmark")
-    (synopsis "Benchmarks for High-Performance Computing Environments")
-    (description
-     "Microbenchmarks for determining the run time performance of aspects of the R
-programming environment and packages relevant to high-performance computation.
-The benchmarks are divided into three categories: dense matrix linear algebra
-kernels, sparse matrix linear algebra kernels, and machine learning
-functionality.")
-    (license (list license:asl2.0
-                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-rhpc
   (package
@@ -37117,13 +37015,13 @@ responses and identify those that may be problematic.  See Gottfried et al.
 (define-public r-responder
   (package
     (name "r-responder")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "respondeR" version))
        (sha256
-        (base32 "1njv4zmy77f5xpx4xrqqa85qc319bssdpkpmck112ryy3lw6nwxb"))))
+        (base32 "0jcgg11dv73lr9gg23dxp1ksyyv57akih60vh8y6v3s7mwi3dik9"))))
     (properties `((upstream-name . "respondeR")))
     (build-system r-build-system)
     (arguments
@@ -37140,12 +37038,17 @@ deviation and sample size per arm across studies, @code{respondeR} estimates the
 proportion of patients who cross a minimal important difference (MID) threshold
 under a parametric model for the change scores, and contrasts the arms as a risk
 difference, risk ratio, odds ratio or number needed to treat.  It provides
-median, unweighted-mean, weighted-mean and per-study (fixed- or random-effects)
-pooling, the standardized-mean-difference to odds-ratio bridge of
-Anzures-Cabrera, Sarpatwari and Higgins (2011) <doi:10.1002/sim.4298>, a
-threshold-free common-language effect size, and a point-and-click Shiny
-application.  The estimation methods were evaluated in a simulation study by
-Sofi-Mahmudi (2024) <https://hdl.handle.net/11375/30210>.")
+per-study (fixed- or random-effects) pooling with exact tail probabilities, a
+pooled-summary method anchored on the within-study mean difference, median and
+unweighted-mean summaries, the standardized-mean-difference to odds-ratio bridge
+of Anzures-Cabrera, Sarpatwari and Higgins (2011) <doi:10.1002/sim.4298>, a
+threshold-free common-language effect size, results across a range of
+thresholds, GRADE summary-of-findings rows, change-score standard deviation
+imputation, shared-control handling for multi-arm trials, and a point-and-click
+Shiny application.  It can also read a continuous meta-analysis already fitted
+with meta or metafor and convert it to responder risks.  The framework follows
+the simulation study of Sofi-Mahmudi (2024)
+<https://hdl.handle.net/11375/30210>.")
     (license license:gpl3)))
 
 (define-public r-respirometry
@@ -39730,35 +39633,6 @@ data and produce formatted reports.  This package differs from others in that it
 includes tools (wrappers) for both analyzing and reporting data.")
     (license license:asl2.0)))
 
-(define-public r-repfdr
-  (package
-    (name "r-repfdr")
-    (version "1.2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "repfdr" version))
-       (sha256
-        (base32 "0jpk44arg1jib0h2w90h851bs5cd1ss32fab9bfvf9iir2jk8985"))))
-    (properties `((upstream-name . "repfdr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-rcpp))
-    (native-inputs (list r-r-rsp))
-    (home-page "https://github.com/barakbri/repfdr")
-    (synopsis "Replicability Analysis for Multiple Studies of High Dimension")
-    (description
-     "Estimation of Bayes and local Bayes false discovery rates for replicability
-analysis (Heller & Yekutieli, 2014 <doi:10.1214/13-AOAS697> ; Heller at al.,
-2015 <doi: 10.1093/bioinformatics/btu434>).")
-    (license license:gpl2+)))
-
 (define-public r-repello
   (package
     (name "r-repello")
@@ -41512,49 +41386,6 @@ types of regression models.  These are introduced in Stahel, Werner A. (2021)
 notions are also applied to replication studies, as described in the manuscript
 Stahel, Werner A. (2022) \"'Replicability': Terminology, Measuring Success, and
 Strategy\" available in the documentation.")
-    (license license:gpl2)))
-
-(define-public r-relectoral
-  (package
-    (name "r-relectoral")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Relectoral" version))
-       (sha256
-        (base32 "0kpdafdvpcs6iicpc10i634nlk7dqk2nymdnnlkpp5frdxlbycvx"))))
-    (properties `((upstream-name . "Relectoral")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xlsx
-                             r-sf
-                             r-rmarkdown
-                             r-readxl
-                             r-ggplot2
-                             r-ggforce
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=Relectoral")
-    (synopsis "Electoral Analysis")
-    (description
-     "This package provides functions to obtain an important number of electoral
-indicators described in the package, which can be divided into two large
-sections: The first would be the one containing the indicators of electoral
-disproportionality, such as, Rae index, LoosemoreâHanby index, etc.  The
-second group is intended to study the dimensions of the party system vote,
-through the indicators of electoral fragmentation, polarization, volatility,
-etc.  Moreover, multiple seat allocation simulations can also be performed based
-on different allocation systems, such as the D'Hondt method, Sainte-LaguÃ«, etc.
- Finally, some of these functions have been built so that, if the user wishes,
-the data provided by the Spanish Ministry of Home Office for different electoral
-processes held in Spain can be obtained automatically.  All the above will allow
-the users to carry out deep studies on the results obtained in any type of
-electoral process.  The methods are described in: OÃ±ate, Pablo and OcaÃ±a,
-Francisco A. (1999, ISBN:9788474762815); Ruiz RodrÃ­guez, Leticia M. and Otero
-Felipe, Patricia (2011, ISBN:9788474766226).")
     (license license:gpl2)))
 
 (define-public r-releaser
@@ -45698,27 +45529,6 @@ routines.  Also provides functions for creating train-test splits for model
 fitting and evaluation.")
     (license license:bsd-2)))
 
-(define-public r-recombinator
-  (package
-    (name "r-recombinator")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "recombinator" version))
-       (sha256
-        (base32 "1dbsqig2jjp3zypcqxf9c2brb09pv6xikmh6fhz5vgxy5wkyivks"))))
-    (properties `((upstream-name . "recombinator")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-crayon))
-    (home-page "https://cran.r-project.org/package=recombinator")
-    (synopsis "Recombinate Nested Lists to Dataframes")
-    (description "Turns nested lists into data.frames in an orderly manner.")
-    (license license:expat)))
-
 (define-public r-recolorize
   (package
     (name "r-recolorize")
@@ -49639,37 +49449,6 @@ Brown and David Bauer, extending earlier work by George Marsaglia and others.
 The @code{DieHarder} library code is included.")
     (license license:gpl2+)))
 
-(define-public r-rdice
-  (package
-    (name "r-rdice")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Rdice" version))
-       (sha256
-        (base32 "1xibvm690808p2g3jch7rh1825yrpgln2hjfclgxjwn822qvs4xr"))))
-    (properties `((upstream-name . "Rdice")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=Rdice")
-    (synopsis "Collection of Functions to Experiment Dice Rolls")
-    (description
-     "This package provides a collection of functions to simulate dice rolls and the
-like.  In particular, experiments and exercises can be performed looking at
-combinations and permutations of values in dice rolls and coin flips, together
-with the corresponding frequencies of occurrences.  When applying each function,
-the user has to input the number of times (rolls, flips) to toss the dice.
-Needless to say, the more the tosses, the more the frequencies approximate the
-actual probabilities.  Moreover, the package provides functions to generate
-non-transitive sets of dice (like Efron's) and to check whether a given set of
-dice is non-transitive with given probability.")
-    (license license:gpl2)))
-
 (define-public r-rdian
   (package
     (name "r-rdian")
@@ -52406,19 +52185,19 @@ API in the Rcpp package.")
 (define-public r-rcppcgal
   (package
     (name "r-rcppcgal")
-    (version "6.2.1")
+    (version "6.2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppCGAL" version))
        (sha256
-        (base32 "1rssxdqz5h86s5fz1qp740f482mwgd8yxagi9hmg6jhf3bjsp6z0"))))
+        (base32 "00c21a5mdcsqkbjcmqvdh855zz3wz3l00zzp8m781m3b6f550d72"))))
     (properties `((upstream-name . "RcppCGAL")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpp))
+    (propagated-inputs (list r-rcpp r-lifecycle))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ericdunipace/RcppCGAL")
     (synopsis "'Rcpp' Integration for 'CGAL'")
@@ -58043,13 +57822,13 @@ routinely.  Finally, there is an R markdown skeleton for basic reserve analysis.
 (define-public r-ravetools
   (package
     (name "r-ravetools")
-    (version "0.3.2")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ravetools" version))
        (sha256
-        (base32 "009l2mwpyynarrw0cbm0bzbnwqjy6hrayydrin7va7j9b6i2w7li"))))
+        (base32 "0z8h9qijcids5q12753nkxbgm1mw5zkpkj0kb8r1wk00v53v38fw"))))
     (properties `((upstream-name . "ravetools")))
     (build-system r-build-system)
     (arguments

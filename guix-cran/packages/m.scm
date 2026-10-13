@@ -1556,39 +1556,6 @@ latent semantic analysis.  Based on Jones (2019)
 <doi:10.48550/@code{arXiv.1911.11061>}.")
     (license license:expat)))
 
-(define-public r-mvr
-  (package
-    (name "r-mvr")
-    (version "1.33.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MVR" version))
-       (sha256
-        (base32 "1ygz47a2p5r5axql5zsxvsn25pcqyxz6mpw50zfmzrcqdrfa3bg8"))))
-    (properties `((upstream-name . "MVR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-statmod))
-    (home-page "https://github.com/jedazard/MVR")
-    (synopsis "Mean-Variance Regularization")
-    (description
-     "This is a non-parametric method for joint adaptive mean-variance regularization
-and variance stabilization of high-dimensional data.  It is suited for handling
-difficult problems posed by high-dimensional multivariate datasets (p >> n
-paradigm).  Among those are that the variance is often a function of the mean,
-variable-specific estimators of variances are not reliable, and tests statistics
-have low powers due to a lack of degrees of freedom.  Key features include: (i)
-Normalization and/or variance stabilization of the data, (ii) Computation of
-mean-variance-regularized t-statistics (F-statistics to follow), (iii)
-Generation of diverse diagnostic plots, (iv) Computationally efficient
-implementation using C/C++ interfacing and an option for parallel computing to
-enjoy a faster and easier experience in the R environment.")
-    (license (list license:gpl3+
-                   (license:fsdg-compatible "file://LICENSE")))))
-
 (define-public r-mvquickgraphs
   (package
     (name "r-mvquickgraphs")
@@ -3319,13 +3286,13 @@ of the series.")
 (define-public r-mvar-pt
   (package
     (name "r-mvar-pt")
-    (version "2.3.0")
+    (version "2.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MVar.pt" version))
        (sha256
-        (base32 "1ncjvrsywh1hxi3g4mygv8a3pp5m6ncssg6v7bk46ii8grrk9q30"))))
+        (base32 "1zp5p5qzckp1mbkh3qv6jacm950zdy7dasqar7dcgqifmlrzxgsz"))))
     (properties `((upstream-name . "MVar.pt")))
     (build-system r-build-system)
     (arguments
@@ -3349,13 +3316,13 @@ multivariada.")
 (define-public r-mvar
   (package
     (name "r-mvar")
-    (version "2.3.0")
+    (version "2.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MVar" version))
        (sha256
-        (base32 "1cdxdzz8qhwl073jjk14615baaaxsfi3b6f9xlw8zjvbxj7kx38r"))))
+        (base32 "04rclw89xv92k3pxn8h3r04k877pndw26gylrpj885cpcm248vnz"))))
     (properties `((upstream-name . "MVar")))
     (build-system r-build-system)
     (arguments
@@ -5401,13 +5368,13 @@ outcome has three levels. (Meisner, A, Parikh, CR, and Kerr, KF (2017)
 (define-public r-multiscape
   (package
     (name "r-multiscape")
-    (version "1.0.7")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multiscape" version))
        (sha256
-        (base32 "07n9n0xycb2l1g8yn93pvv06xazh13gi5fjyvwg09sk6hkx62crf"))))
+        (base32 "01wy87fiv1qpyscaj019phmkwhg1skihkg3q0vd77pfmziir56ga"))))
     (properties `((upstream-name . "multiscape")))
     (build-system r-build-system)
     (arguments
@@ -5419,8 +5386,10 @@ outcome has three levels. (Meisner, A, Parikh, CR, and Kerr, KF (2017)
                              r-rcpp
                              r-rann
                              r-proto
+                             r-moocore
                              r-matrix
                              r-magrittr
+                             r-lifecycle
                              r-ggrepel
                              r-ggplot2
                              r-exactextractr
@@ -5428,8 +5397,9 @@ outcome has three levels. (Meisner, A, Parikh, CR, and Kerr, KF (2017)
                              r-cli
                              r-bh
                              r-assertthat))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://josesalgr.github.io/multiscape/")
-    (synopsis "Multi-Objective Spatial Planning")
+    (synopsis "Multi-Action, Multi-Objective Spatial Planning")
     (description
      "This package provides a modular framework for exact multi-objective spatial
 planning using mixed-integer programming.  The package supports the definition
@@ -8193,35 +8163,6 @@ regression coefficient matrix.  More details can be referred to Liu et al.
 (2024) <doi:10.48550/@code{arXiv.2402.15071>}.")
     (license license:gpl3)))
 
-(define-public r-multicmp
-  (package
-    (name "r-multicmp")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "multicmp" version))
-       (sha256
-        (base32 "0mz7ksc5h6dy95l3kbsamm191372blhlrj573krc57bj93lmp1a5"))))
-    (properties `((upstream-name . "multicmp")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-numderiv))
-    (home-page "http://dx.doi.org/10.1016/j.jmva.2016.04.007")
-    (synopsis
-     "Flexible Modeling of Multivariate Count Data via the Multivariate Conway-Maxwell-Poisson Distribution")
-    (description
-     "This package provides a toolkit containing statistical analysis models motivated
-by multivariate forms of the Conway-Maxwell-Poisson (COM-Poisson) distribution
-for flexible modeling of multivariate count data, especially in the presence of
-data dispersion.  Currently the package only supports bivariate data, via the
-bivariate COM-Poisson distribution described in Sellers et al. (2016)
-<doi:10.1016/j.jmva.2016.04.007>.  Future development will extend the package to
-higher-dimensional data.")
-    (license license:gpl3)))
-
 (define-public r-multiclassroc
   (package
     (name "r-multiclassroc")
@@ -9255,25 +9196,27 @@ questions across various model organisms.")
 (define-public r-muitreeview
   (package
     (name "r-muitreeview")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "muiTreeView" version))
        (sha256
-        (base32 "1d9lbazxx95xjz4l2bphkqszsn2j4dhmxwmb1gq12l23v0fnsld5"))))
+        (base32 "1d4gnghc91vs53riifpkjp6qb2x9qkxjm1xpi1r8qijjixf9lq1v"))))
     (properties `((upstream-name . "muiTreeView")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-shiny-react r-htmltools))
+    (propagated-inputs (list r-shiny-react r-muimaterial r-htmltools))
     (home-page "https://felixluginbuhl.com/muiTreeView/")
     (synopsis "'MUI X Tree View' for 'shiny' Apps and 'Quarto'")
     (description
-     "Give access to MUI X Tree View components, which lets users navigate
-hierarchical lists of data with nested levels that can be expanded and
-collapsed.")
+     "Wraps the MUI X Tree View React components <https://mui.com/x/react-tree-view/>
+for use in shiny applications and quarto documents, letting users navigate
+hierarchical data with nested levels that can be expanded and collapsed.
+Bundles the MIT-licensed community edition of the @@mui/x-tree-view
+@code{JavaScript} library (the commercial Pro tier is not included).")
     (license license:expat)))
 
 (define-public r-muir
@@ -18771,19 +18714,19 @@ submit tips directly to the competition from R.")
 (define-public r-monan
   (package
     (name "r-monan")
-    (version "2.0.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MoNAn" version))
        (sha256
-        (base32 "164il0r8ji2q5r031ssdc7j909a808x5qc57raldg8fkpyvbp8f8"))))
+        (base32 "1hnibawbj862gkiq3x5gh1i1siaj3rqf697121spzsg1yc9fl8zd"))))
     (properties `((upstream-name . "MoNAn")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-snowfall r-rcpp))
+    (propagated-inputs (list r-rcpp))
     (home-page "https://github.com/stocnet/MoNAn")
     (synopsis "Mobility Network Analysis")
     (description
@@ -22736,42 +22679,6 @@ coefficients in a single generalized estimating equation (GEE) model or across
 multiple GEE models.  GEE models are fit by a modified version of the
 @code{geeM} package.")
     (license license:gpl3)))
-
-(define-public r-mmlr
-  (package
-    (name "r-mmlr")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MMLR" version))
-       (sha256
-        (base32 "1jc33ani6w54j38kxzk0kfj1hjfk80cil2hdja2hcsk6kqwd431d"))))
-    (properties `((upstream-name . "MMLR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-pracma))
-    (home-page "https://cran.r-project.org/package=MMLR")
-    (synopsis "Fitting Markov-Modulated Linear Regression Models")
-    (description
-     "This package provides a set of tools for fitting Markov-modulated linear
-regression, where responses Y(t) are time-additive, and model operates in the
-external environment, which is described as a continuous time Markov chain with
-finite state space.  Model is proposed by Alexander Andronov (2012)
-<@code{arXiv:1901.09600v1>} and algorithm of parameters estimation is based on
-eigenvalues and eigenvectors decomposition.  Markov-switching regression models
-have the same idea of varying the regression parameters randomly in accordance
-with external environment.  The difference is that for Markov-modulated linear
-regression model the external environment is described as a continuous-time
-homogeneous irreducible Markov chain with known parameters while switching
-models consider Markov chain as unobserved and estimation procedure involves
-estimation of transition matrix.  These models have significant differences in
-terms of the analytical approach.  Also, package provides a set of data
-simulation tools for Markov-modulated linear regression (for academical/research
-purposes).  Research project No.  1.1.1.2/VIAA/1/16/075.")
-    (license license:gpl2+)))
 
 (define-public r-mmirestriktor
   (package
@@ -26733,6 +26640,42 @@ graphics.")
 models with covariates generated by AI or machine learning.")
     (license license:expat)))
 
+(define-public r-ml2pvae
+  (package
+    (name "r-ml2pvae")
+    (version "1.0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ML2Pvae" version))
+       (sha256
+        (base32 "089cl5mcf06zxs26grk0aqmd0xy9x6svfkfa7dw0m8zqc0s0mkix"))))
+    (properties `((upstream-name . "ML2Pvae")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
+    (inputs (list))
+    (propagated-inputs (list r-tfprobability r-tensorflow r-reticulate r-keras))
+    (native-inputs (list r-r-rsp))
+    (home-page "https://converseg.github.io")
+    (synopsis "Variational Autoencoder Models for IRT Parameter Estimation")
+    (description
+     "Based on the work of Curi, Converse, Hajewski, and Oliveira (2019)
+<doi:10.1109/IJCNN.2019.8852333>.  This package provides easy-to-use functions
+which create a variational autoencoder (VAE) to be used for parameter estimation
+in Item Response Theory (IRT) - namely the Multidimensional Logistic 2-Parameter
+(ML2P) model.  To use a neural network as such, nontrivial modifications to the
+architecture must be made, such as restricting the nonzero weights in the
+decoder according to some binary matrix Q. The functions in this package allow
+for straight-forward construction, training, and evaluation so that minimal
+knowledge of tensorflow or keras is required.")
+    (license license:expat)))
+
 (define-public r-ml-msbd
   (package
     (name "r-ml-msbd")
@@ -27577,13 +27520,13 @@ addition'.")
 (define-public r-mixtime
   (package
     (name "r-mixtime")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mixtime" version))
        (sha256
-        (base32 "0g9w9ya2z7cl800fyrmf1lwmvy1m43l0bc2jgcyh8cgxdz7l1346"))))
+        (base32 "1jqyzpgkhvrbw2ih95v5qar9lgvcgx6d9bdx5qgv4p1jn3fyj3mp"))))
     (properties `((upstream-name . "mixtime")))
     (build-system r-build-system)
     (arguments
@@ -27841,35 +27784,6 @@ mixture models.  The package performs hypothesis tests and addresses label
 switching issues in mixture models.  The package also allows for parameter
 estimation in mixture of regressions, proportion-varying mixture of regressions,
 and robust mixture of regressions.")
-    (license license:gpl2+)))
-
-(define-public r-mixsal
-  (package
-    (name "r-mixsal")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MixSAL" version))
-       (sha256
-        (base32 "15dymyzfs3bwskaf6xndj291g6nhw7k1q93y1cba55a6fdjh5qz9"))))
-    (properties `((upstream-name . "MixSAL")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mass))
-    (home-page "https://cran.r-project.org/package=MixSAL")
-    (synopsis
-     "Mixtures of Multivariate Shifted Asymmetric Laplace (SAL) Distributions")
-    (description
-     "The current version of the @code{MixSAL} package allows users to generate data
-from a multivariate SAL distribution or a mixture of multivariate SAL
-distributions, evaluate the probability density function of a multivariate SAL
-distribution or a mixture of multivariate SAL distributions, and fit a mixture
-of multivariate SAL distributions using the Expectation-Maximization (EM)
-algorithm (see Franczak et.  al, 2014, <doi:10.1109/TPAMI.2013.216>, for
-details).")
     (license license:gpl2+)))
 
 (define-public r-mixrf
@@ -41030,31 +40944,6 @@ provided.  The implemented methods are described in Sorensen et al. (2020),
 Zanobetti (2000) and Crippa et al. (2018) <doi:10.6000/1929-6029.2018.07.02.1>.")
     (license license:gpl3)))
 
-(define-public r-metafuse
-  (package
-    (name "r-metafuse")
-    (version "2.0-1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "metafuse" version))
-       (sha256
-        (base32 "1zdw22f5kzvy2xr3c2csy873hcags60as567brc2sw17d0apfy8j"))))
-    (properties `((upstream-name . "metafuse")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-matrix r-mass r-glmnet r-evd))
-    (home-page "https://cran.r-project.org/package=metafuse")
-    (synopsis "Fused Lasso Approach in Regression Coefficient Clustering")
-    (description
-     "Fused lasso method to cluster and estimate regression coefficients of the same
-covariate across different data sets when a large number of independent data
-sets are combined.  Package supports Gaussian, binomial, Poisson and Cox PH
-models.")
-    (license license:gpl2)))
-
 (define-public r-metafrontier
   (package
     (name "r-metafrontier")
@@ -41201,47 +41090,6 @@ data using tabular Single Nucleotide Variant (SNV) frequency tables generated by
 variant callers (e.g., @code{iVar} or @code{LoFreq}'), operating independently
 of consensus sequence estimation and multiple sequence alignment.")
     (license license:expat)))
-
-(define-public r-metaensembler
-  (package
-    (name "r-metaensembler")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "metaEnsembleR" version))
-       (sha256
-        (base32 "1vxrzdm4j3h91h0fvps36a8xhs1b8cylw2cw2mhvg20lpcjjdsdv"))))
-    (properties `((upstream-name . "metaEnsembleR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-randomforest
-                             r-gridextra
-                             r-ggplot2
-                             r-gbm
-                             r-e1071
-                             r-caret))
-    (native-inputs (list r-r-rsp))
-    (home-page "https://cran.r-project.org/package=metaEnsembleR")
-    (synopsis "Automated Intuitive Package for Meta-Ensemble Learning")
-    (description
-     "Extends the base classes and methods of caret package for integration of base
-learners.  The user can input the number of different base learners, and specify
-the final learner, along with the train-validation-test data partition split
-ratio.  The predictions on the unseen new data is the resultant of the ensemble
-meta-learning
-<https://machinelearningmastery.com/stacking-ensemble-machine-learning-with-python/>
-of the heterogeneous learners aimed to reduce the generalization error in the
-predictive models.  It significantly lowers the barrier for the practitioners to
-apply heterogeneous ensemble learning techniques in an amateur fashion to their
-everyday predictive problems.")
-    (license license:gpl2+)))
 
 (define-public r-metaeeea
   (package
@@ -44904,28 +44752,6 @@ this kind of data is provided, and some other minor tools useful in
 epidemiological studies.")
     (license license:gpl3)))
 
-(define-public r-med
-  (package
-    (name "r-med")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MED" version))
-       (sha256
-        (base32 "0fy0qmxirkdz5kigy2r7l5czjzws0fhjxy13kv1kqh628ldrp109"))))
-    (properties `((upstream-name . "MED")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=MED")
-    (synopsis "Mediation by Tilted Balancing")
-    (description
-     "Nonparametric estimation and inference for natural direct and indirect effects
-by Chan, Imai, Yam and Zhang (2016) <@code{arXiv:1601.03501>}.")
-    (license license:gpl2+)))
-
 (define-public r-mectx
   (package
     (name "r-mectx")
@@ -46232,31 +46058,6 @@ approach are calculated.  Ditzhaus, M. and Friedrich, S. (2018)
 <@code{arXiv:1807.05504>}.  Ditzhaus, M. and Pauly, M. (2018)
 <@code{arXiv:1808.05627>}.")
     (license (list license:gpl2 license:gpl3))))
-
-(define-public r-mdimnormn
-  (package
-    (name "r-mdimnormn")
-    (version "0.8.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MDimNormn" version))
-       (sha256
-        (base32 "080m0irx5v8l45fg9ig5yzcj92s3ah8a9aha288byszli1cchgpn"))))
-    (properties `((upstream-name . "MDimNormn")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=MDimNormn")
-    (synopsis "Multi-Dimensional MA Normalization for Plate Effect")
-    (description
-     "Normalize data to minimize the difference between sample plates (batch effects).
- For given data in a matrix and grouping variable (or plate), the function
-normn_MA normalizes the data on MA coordinates.  More details are in the
-citation.  The primary method is Multi-MA'.  Other fitting functions on MA
-coordinates can also be employed e.g. loess.")
-    (license license:gpl3)))
 
 (define-public r-mdgof
   (package
@@ -50523,13 +50324,13 @@ at stationary sites.")
 (define-public r-mazamacoreutils
   (package
     (name "r-mazamacoreutils")
-    (version "0.6.3")
+    (version "0.6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MazamaCoreUtils" version))
        (sha256
-        (base32 "0rspjhs2iji780p48vka5pyhxv3gfx3307iaaxd6g0ik2i4ba7n3"))))
+        (base32 "1gb2nfjii6vvzxivrzzydnzf6rc6c3q0a88n0dncmjc3477qlbr2"))))
     (properties `((upstream-name . "MazamaCoreUtils")))
     (build-system r-build-system)
     (arguments
@@ -50903,40 +50704,6 @@ high-dimensional maximin effect.")
      "Constructs a space-filling design under the criterion of maximum-minimum
 distance.  Both discrete and continuous searches are provided.")
     (license license:lgpl2.0+)))
-
-(define-public r-maxentvariableselection
-  (package
-    (name "r-maxentvariableselection")
-    (version "1.0-3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MaxentVariableSelection" version))
-       (sha256
-        (base32 "1cmxfdkm5k85b4ivlfy5521hkfj0gq2pb1qlxxklh0fprw87kp9c"))))
-    (properties `((upstream-name . "MaxentVariableSelection")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-raster r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=MaxentVariableSelection")
-    (synopsis
-     "Selecting the Best Set of Relevant Environmental Variables along with the Optimal Regularization Multiplier for Maxent Niche Modeling")
-    (description
-     "Complex niche models show low performance in identifying the most important
-range-limiting environmental variables and in transferring habitat suitability
-to novel environmental conditions (Warren and Seifert, 2011
-<DOI:10.1890/10-1171.1>; Warren et al., 2014 <DOI:10.1111/ddi.12160>).  This
-package helps to identify the most important set of uncorrelated variables and
-to fine-tune Maxent's regularization multiplier.  In combination, this allows to
-constrain complexity and increase performance of Maxent niche models (assessed
-by information criteria, such as AICc (Akaike, 1974
-<DOI:10.1109/TAC.1974.1100705>), and by the area under the receiver operating
-characteristic (AUC) (Fielding and Bell, 1997 <DOI:10.1017/S0376892997000088>).
-Users of this package should be familiar with Maxent niche modelling.")
-    (license license:gpl2+)))
 
 (define-public r-maxentcpp
   (package
@@ -52971,28 +52738,6 @@ Massachusetts Department of Environmental Protection (2020)
 <https://www.mass.gov/orgs/massachusetts-department-of-environmental-protection>.")
     (license license:cc0)))
 
-(define-public r-masstimate
-  (package
-    (name "r-masstimate")
-    (version "2.0-1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MASSTIMATE" version))
-       (sha256
-        (base32 "1dvidwjw4zgflms5njbd9n85g1gbgfg6hk0fb63q5n65iyxxfmyh"))))
-    (properties `((upstream-name . "MASSTIMATE")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=MASSTIMATE")
-    (synopsis "Body Mass Estimation Equations for Vertebrates")
-    (description
-     "Estimation equations are from a variety of sources and associated error
-estimation.")
-    (license license:gpl2+)))
-
 (define-public r-massprops
   (package
     (name "r-massprops")
@@ -54413,30 +54158,6 @@ Markov model (HMM) implementations of CJS and multistate models with and without
 state uncertainty and a simulation capability for HMM models.")
     (license license:gpl2+)))
 
-(define-public r-markdowninput
-  (package
-    (name "r-markdowninput")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "markdownInput" version))
-       (sha256
-        (base32 "1qxil2liikbbn6w8niyc03fwqvwvdv6wiy98ip8j77729i7g2hln"))))
-    (properties `((upstream-name . "markdownInput")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-shinyace r-shiny r-markdown))
-    (home-page "https://github.com/juliendiot42/markdownInput")
-    (synopsis "Shiny Module for a Markdown Input with Result Preview")
-    (description
-     "An R-Shiny module containing a \"@code{markdownInput}\".  This input allows the
-user to write some markdown code and to preview the result.  This input has been
-inspired by the \"comment\" window of <https://github.com/>.")
-    (license license:gpl3)))
-
 (define-public r-mark
   (package
     (name "r-mark")
@@ -54947,13 +54668,13 @@ and vessel trajectory data.")
 (define-public r-marcxmlr
   (package
     (name "r-marcxmlr")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "marcxmlr" version))
        (sha256
-        (base32 "0zm9d0d9wdqf1i7r72pv3vdisizm9y8wnahw1phvcj1brk5v30f5"))))
+        (base32 "1gbjc68gjpm5q2vx6n2d6fkjrgx6bn8dgi713yscpmxq8m6171r8"))))
     (properties `((upstream-name . "marcxmlr")))
     (build-system r-build-system)
     (arguments
@@ -54966,17 +54687,18 @@ and vessel trajectory data.")
                              r-purrr
                              r-futurize
                              r-future))
-    (native-inputs (list pkg-config))
+    (native-inputs (list pkg-config r-knitr))
     (home-page "https://github.com/larry77/marcxmlr")
     (synopsis "Faithful and Scalable MARCXML Parsing")
     (description
      "Parses Machine-Readable Cataloging ('MARC 21') XML
 <https://www.loc.gov/standards/marcxml/> into a canonical tidy long
 representation while preserving leaders, control fields, data fields,
-indicators, repeated fields, repeated subfields, and source order.  Provides an
-in-memory reader for manageable catalogues and a bounded-memory converter that
-writes larger collections as Parquet datasets, with optional local parallel
-processing.")
+indicators, repeated fields, repeated subfields, and source order.  Provides
+in-memory reading, bounded-memory conversion to Parquet', and reconstruction of
+MARCXML from canonical data.  Supports structural diagnostics for in-memory and
+Arrow'-backed representations, optional recovery from malformed MARC records,
+and local parallel processing.")
     (license license:expat)))
 
 (define-public r-marcox
@@ -57243,13 +56965,13 @@ action.  The reports are self-contained and shareable without a web server.")
 (define-public r-mantar
   (package
     (name "r-mantar")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mantar" version))
        (sha256
-        (base32 "0yz5yzy9axd0sd5bhyz34zlprvlixwb21qib9yakjy2x69kx6426"))))
+        (base32 "0wk1i2sqq9504ikfpz11almhy38vbg88lw6abxwa82z6aq3w4dqj"))))
     (properties `((upstream-name . "mantar")))
     (build-system r-build-system)
     (arguments
@@ -57625,29 +57347,6 @@ project.  Handles package installations, when necessary, via pak'.")
 as a heatmap, which is binned using -log10(p-value) and chromosome position.
 Annotation currently supported is minor allele frequency and gene function high
 impact variants.")
-    (license license:gpl2+)))
-
-(define-public r-mangrove
-  (package
-    (name "r-mangrove")
-    (version "1.21")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Mangrove" version))
-       (sha256
-        (base32 "1qf3fjzf0sb6fqbfdbxwbw6wah3gg2qran4mgg13hcmk4n3j0hxp"))))
-    (properties `((upstream-name . "Mangrove")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=Mangrove")
-    (synopsis "Risk Prediction on Trees")
-    (description
-     "This package provides methods for performing genetic risk prediction from
-genotype data.  You can use it to perform risk prediction for individuals, or
-for families with missing data.")
     (license license:gpl2+)))
 
 (define-public r-mandelbrot

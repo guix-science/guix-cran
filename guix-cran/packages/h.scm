@@ -2418,51 +2418,6 @@ base R not available elsewhere.  The name is a portmanteau of utils and the
 author.")
     (license license:gpl3)))
 
-(define-public r-hurricaneexposure
-  (package
-    (name "r-hurricaneexposure")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "hurricaneexposure" version))
-       (sha256
-        (base32 "0a8xy71dkq2bzdnc90irxmbcxhi0anh87ic22x7b22c3m5605w6s"))))
-    (properties `((upstream-name . "hurricaneexposure")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-stringr
-                             r-rlang
-                             r-rcolorbrewer
-                             r-purrr
-                             r-maps
-                             r-mapproj
-                             r-lubridate
-                             r-lazyeval
-                             r-ggplot2
-                             r-ggmap
-                             r-dplyr
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/geanders/hurricaneexposure")
-    (synopsis
-     "Explore and Map County-Level Hurricane Exposure in the United States")
-    (description
-     "Allows users to create time series of tropical storm exposure histories for
-chosen counties for a number of hazard metrics (wind, rain, distance from the
-storm, etc.).  This package interacts with data available through the
-hurricaneexposuredata package, which is available in a drat repository.  To
-access this data package, see the instructions at
-<https://github.com/geanders/hurricaneexposure>.  The size of the
-hurricaneexposuredata package is approximately 20 MB. This work was supported in
-part by grants from the National Institute of Environmental Health Sciences
-(R00ES022631), the National Science Foundation (1331399), and a NASA Applied
-Sciences Program/Public Health Program Grant (NNX09AV81G).")
-    (license license:gpl2+)))
-
 (define-public r-hurreconr
   (package
     (name "r-hurreconr")
@@ -13152,13 +13107,13 @@ normalization, imputation, and combined marker dispatch.")
 (define-public r-healthiar
   (package
     (name "r-healthiar")
-    (version "0.2.6")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "healthiar" version))
        (sha256
-        (base32 "1q4xngl8mpdasvy02kjnvv7mihmfndqh52z6psld49dyihmfxhkq"))))
+        (base32 "0s5kfl59c4m2vmgf26nd24zsqkjfyxd59nc4yhcbdfdv6mcjp2mv"))))
     (properties `((upstream-name . "healthiar")))
     (build-system r-build-system)
     (arguments
@@ -17897,13 +17852,13 @@ University Press for more information on Hadamard Matrices.")
 (define-public r-hacsim
   (package
     (name "r-hacsim")
-    (version "1.0.7-1")
+    (version "1.0.7-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HACSim" version))
        (sha256
-        (base32 "0ca6fj650cbhqg8q21d1c3x95v751cb46wcq5xr89c5qw2rvsm3x"))))
+        (base32 "0aasbilq6mishvdraz90sa69h5h4msfgbr22mjldqcdrng3vyjfy"))))
     (properties `((upstream-name . "HACSim")))
     (build-system r-build-system)
     (arguments

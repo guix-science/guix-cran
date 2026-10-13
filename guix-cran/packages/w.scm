@@ -432,28 +432,6 @@ a visualization tool for the networks.  More about the methodology can be found
 at <doi:10.1186/s12859-018-2351-7>.")
     (license license:gpl2)))
 
-(define-public r-wtest
-  (package
-    (name "r-wtest")
-    (version "3.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "wtest" version))
-       (sha256
-        (base32 "063ax9mbb2dy33l1cl533mjzpvhf2akw3613pklfjg6bhprlniz7"))))
-    (properties `((upstream-name . "wtest")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=wtest")
-    (synopsis "The W-Test for Genetic Interactions Testing")
-    (description
-     "Perform the calculation of W-test, diagnostic checking, calculate minor allele
-frequency (MAF) and odds ratio.")
-    (license license:gpl2)))
-
 (define-public r-wsyn
   (package
     (name "r-wsyn")
@@ -3769,19 +3747,19 @@ formats: ISO week, epidemiology week (epi week) and calendar date.")
 (define-public r-wkpool
   (package
     (name "r-wkpool")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wkpool" version))
        (sha256
-        (base32 "0f009jnsvc37rm3bvpvg0i2wiiahwa2mimfrvwmxccwa4j3ng41q"))))
+        (base32 "0bs1nz5kg3zg9vn02rz4wqfzcgh66c3x1xf1nq0y0m8fdyf1b7cw"))))
     (properties `((upstream-name . "wkpool")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-wk r-vctrs))
+    (propagated-inputs (list r-wk r-vctrs r-cpp11))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/hypertidy/wkpool")
     (synopsis "Vertex Pool Topology for Well-Known Geometry")
@@ -5789,13 +5767,13 @@ in R using the torch package.")
 (define-public r-whirl
   (package
     (name "r-whirl")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "whirl" version))
        (sha256
-        (base32 "0rciy67dkx8mqi0qrxr55g8as9gxgqvbsj7wv2czw7jjmm9i7rzz"))))
+        (base32 "00snp7yavmfxcwvg7iy0bwfb45wrfl9z66syi8qxa6xn8016x42f"))))
     (properties `((upstream-name . "whirl")))
     (build-system r-build-system)
     (arguments
@@ -7453,44 +7431,6 @@ distributions are included: Rangoli2023, Peng2014, Lai2003, Xie1996, Sarhan2009,
 Rangoli2025, Mustafa2012, and Alwasel2009.")
     (license license:gpl3)))
 
-(define-public r-weibullfit
-  (package
-    (name "r-weibullfit")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "WeibullFit" version))
-       (sha256
-        (base32 "1a80gcqbmvb1rz2dr2syy16wn6ixjn6l40gayys9zy8302hky9ir"))))
-    (properties `((upstream-name . "WeibullFit")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xtable
-                             r-sqldf
-                             r-r-oo
-                             r-r-methodss3
-                             r-optimx
-                             r-mixdist
-                             r-ksamples
-                             r-glue
-                             r-fadist
-                             r-e1071))
-    (home-page "https://cran.r-project.org/package=WeibullFit")
-    (synopsis
-     "Fits and Plots a Dataset to the Weibull Probability Distribution Function")
-    (description
-     "This package provides a single function to fit data of an input data frame into
-one of the selected Weibull functions (w2, w3 and it's truncated versions),
-calculating the scale, location and shape parameters accordingly.  The resulting
-plots and files are saved into the folder parameter provided by the user.
-References: a) John C. Nash, Ravi Varadhan (2011). \"Unifying Optimization
-Algorithms to Aid Software System Users: optimx for R\"
-<doi:10.18637/jss.v043.i09>.")
-    (license license:gpl3)))
-
 (define-public r-wehoop
   (package
     (name "r-wehoop")
@@ -7840,32 +7780,6 @@ distribution is unavailable.  The method implemented by the package is described
 in Poggiato, AndrÃ©oletti, Pollock and Thuiller (2022)
 <doi:10.22541/au.166853394.45823739/v1>.")
     (license license:gpl3)))
-
-(define-public r-webreadr
-  (package
-    (name "r-webreadr")
-    (version "0.4.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "webreadr" version))
-       (sha256
-        (base32 "0l3l5g4zj5faxqi1kqwx9lq91gbj40z2q3csrsmpal08qnwkxs90"))))
-    (properties `((upstream-name . "webreadr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-readr r-rcpp))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/Ironholds/webreadr")
-    (synopsis "Tools for Reading Formatted Access Log Files")
-    (description
-     "R is used by a vast array of people for a vast array of purposes - including web
-analytics.  This package contains functions for consuming and munging various
-common forms of request log, including the Common and Combined Web Log formats
-and various Amazon access logs.")
-    (license license:expat)))
 
 (define-public r-webr
   (package

@@ -1663,6 +1663,32 @@ validity.  Checks if it is used on @code{GitHub}', CRAN and Bioconductor'.
 Checks for unintended meanings by querying Wiktionary and Wikipedia.")
     (license license:expat)))
 
+(define-public r-av1r
+  (package
+    (name "r-av1r")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AV1R" version))
+       (sha256
+        (base32 "0gbrdnkn4ajkrp3gwddpr51xj2i6g41ymmamapkp9p7jx55vd19f"))))
+    (properties `((upstream-name . "AV1R")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list pkg-config))
+    (home-page "https://github.com/Zabis13/AV1R")
+    (synopsis "'AV1' Video Encoding for Biological Microscopy Data")
+    (description
+     "Converts microscopy video and image data (H.264/H.265, AVI/MJPEG, TIFF stacks)
+to the AV1 codec for compact storage, and archives 16-bit image stacks and
+videos losslessly in the FFV1 format.  Encoding runs on the GPU via Vulkan or
+VAAPI when available and falls back to the CPU through FFmpeg and SVT-AV1'.
+Whole experiment folders can be converted at once.")
+    (license license:expat)))
+
 (define-public r-av
   (package
     (name "r-av")
@@ -2660,30 +2686,6 @@ parameters available in each plot type function for customizing the plots (such
 as faceting) and data wrangling (such as variable transformations and
 aggregation).")
     (license license:agpl3+)))
-
-(define-public r-autoplotprotein
-  (package
-    (name "r-autoplotprotein")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Autoplotprotein" version))
-       (sha256
-        (base32 "13mxqmhhdiq7mz4m6nx39dsq7x3bm8fsgskswx48vsq6x2k6byxa"))))
-    (properties `((upstream-name . "Autoplotprotein")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml r-seqinr r-plyr r-plotrix r-ade4))
-    (home-page "https://cran.r-project.org/package=Autoplotprotein")
-    (synopsis "Development of Visualization Tools for Protein Sequence")
-    (description
-     "The image of the amino acid transform on the protein level is drawn, and the
-automatic routing of the functional elements such as the domain and the mutation
-site is completed.")
-    (license license:gpl3)))
 
 (define-public r-autoplotly
   (package
@@ -9624,39 +9626,6 @@ Levenshtein, V.I. (1966)
 (2011) <https://repository.upenn.edu/handle/20.500.14332/2089>.")
     (license license:gpl3)))
 
-(define-public r-arenar
-  (package
-    (name "r-arenar")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "arenar" version))
-       (sha256
-        (base32 "08b865v7ringqzm5m4ib4nrmlyqywir6bjj7alzmg06dy7mrl9s7"))))
-    (properties `((upstream-name . "arenar")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-plumber
-                             r-jsonlite
-                             r-ingredients
-                             r-ibreakdown
-                             r-gistr
-                             r-fairmodels
-                             r-dalex
-                             r-auditor))
-    (native-inputs (list r-knitr))
-    (home-page "https://arenar.drwhy.ai")
-    (synopsis "Arena for the Exploration and Comparison of any ML Models")
-    (description
-     "Generates data for challenging machine learning models in Arena
-<https://arena.drwhy.ai> - an interactive web application.  You can start the
-server with XAI (Explainable Artificial Intelligence) plots to be generated
-on-demand or precalculate and auto-upload data file beside shareable Arena URL.")
-    (license license:gpl3)))
-
 (define-public r-areaplot
   (package
     (name "r-areaplot")
@@ -10130,13 +10099,13 @@ information about Arctos can be found in Cicero et al. (2024)
 (define-public r-arcstat
   (package
     (name "r-arcstat")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arcstat" version))
        (sha256
-        (base32 "13gbavmljslc4hbbqwa396b7ls52n6p4g998nz1r8sa93fybvagc"))))
+        (base32 "1yf1xplj0sfx82zjq98dr1m7svqjir5lq0gwl6hmz7i7iidjdi0w"))))
     (properties `((upstream-name . "arcstat")))
     (build-system r-build-system)
     (arguments
@@ -10309,29 +10278,6 @@ multivariate autoregressive cokriging models with possibly non-nested design can
 be found in Pulong Ma, Georgios Karagiannis, Bledar A Konomi, Taylor G Asher,
 Gabriel R Toro, and Andrew T Cox (2022) <DOI:10.1111/rssc.12558>.")
     (license license:gpl2+)))
-
-(define-public r-arco
-  (package
-    (name "r-arco")
-    (version "0.3-1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ArCo" version))
-       (sha256
-        (base32 "1afjdmcalx3m19jlvqs83fg5qlds59l5zzg3pzk13qk31r0hz7mk"))))
-    (properties `((upstream-name . "ArCo")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-matrix r-glmnet r-boot))
-    (home-page "https://cran.r-project.org/package=ArCo")
-    (synopsis "Artificial Counterfactual Package")
-    (description
-     "Set of functions to analyse and estimate Artificial Counterfactual models from
-Carvalho, Masini and Medeiros (2016) <DOI:10.2139/ssrn.2823687>.")
-    (license license:expat)))
 
 (define-public r-archiveretriever
   (package
@@ -14742,34 +14688,6 @@ optimization settings.  Antares is an open source power system generator, more
 information available here : <https://antares-simulator.org/>.")
     (license license:gpl2+)))
 
-(define-public r-antangiocool
-  (package
-    (name "r-antangiocool")
-    (version "1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "AntAngioCOOL" version))
-       (sha256
-        (base32 "1krwms0y3xppc2y4m0az51wcbh4jq7mlr0jwinp66w8gh4k3qnp2"))))
-    (properties `((upstream-name . "AntAngioCOOL")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rweka r-rpart r-rjava r-caret))
-    (home-page "https://cran.r-project.org/package=AntAngioCOOL")
-    (synopsis "Anti-Angiogenic Peptide Prediction")
-    (description
-     "Machine learning based package to predict anti-angiogenic peptides using
-heterogeneous sequence descriptors. @code{AntAngioCOOL} exploits five descriptor
-types of a peptide of interest to do prediction including: pseudo amino acid
-composition, k-mer composition, k-mer composition (reduced alphabet),
-physico-chemical profile and atomic profile.  According to the obtained results,
-@code{AntAngioCOOL} reached to a satisfactory performance in anti-angiogenic
-peptide prediction on a benchmark non-redundant independent test dataset.")
-    (license license:gpl2)))
-
 (define-public r-ansm5
   (package
     (name "r-ansm5")
@@ -16851,39 +16769,6 @@ properties by using evidence-based methods, as described in
     (license (list license:gpl2
                    (license:fsdg-compatible "file://LICENSE")))))
 
-(define-public r-ampliconduo
-  (package
-    (name "r-ampliconduo")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "AmpliconDuo" version))
-       (sha256
-        (base32 "0vw06x47vc0dqzafgpkn4abdsrhxfs9dq8nnrr2pl49skj5n4hks"))))
-    (properties `((upstream-name . "AmpliconDuo")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xtable r-ggplot2))
-    (home-page "https://cran.r-project.org/package=AmpliconDuo")
-    (synopsis
-     "Statistical Analysis of Amplicon Data of the Same Sample to Identify Artefacts")
-    (description
-     "Increasingly powerful techniques for high-throughput sequencing open the
-possibility to comprehensively characterize microbial communities, including
-rare species.  However, a still unresolved issue are the substantial error rates
-in the experimental process generating these sequences.  To overcome these
-limitations we propose an approach, where each sample is split and the same
-amplification and sequencing protocol is applied to both halves.  This procedure
-should allow to detect likely PCR and sequencing artifacts, and true rare
-species by comparison of the results of both parts.  The @code{AmpliconDuo}
-package, whereas amplicon duo from here on refers to the two amplicon data sets
-of a split sample, is intended to help interpret the obtained read frequency
-distribution across split samples, and to filter the false positive reads.")
-    (license license:gpl3+)))
-
 (define-public r-ample
   (package
     (name "r-ample")
@@ -17547,13 +17432,13 @@ user interface that does not require users to know R.")
 (define-public r-amdconfigurations
   (package
     (name "r-amdconfigurations")
-    (version "0.1.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AMDconfigurations" version))
        (sha256
-        (base32 "0g33yjxc9a736hcnqq0igaqw5112vw77yd70jwaj37wifsyx40rd"))))
+        (base32 "13c0cgai2kaw30zhwx3h60pkcvhblqqg39pwg2njr60ysvkmq4kn"))))
     (properties `((upstream-name . "AMDconfigurations")))
     (build-system r-build-system)
     (arguments
@@ -17565,20 +17450,15 @@ user interface that does not require users to know R.")
     (synopsis
      "Geometric Analysis of Configurations in High-Dimensional Spaces")
     (description
-     "This package provides tools for analysing the geometry of configurations in
-high-dimensional spaces using the Average Membership Degree (AMD) framework and
-synthetic configuration generation.  The package supports a domain-agnostic
-approach to studying the shape, dispersion, and internal structure of point
-clouds, with applications across biological and ecological datasets, including
-those derived from deep-time records.  The AMD framework builds on the idea that
-strongly coupled systems may occupy a limited set of recurrent regimes in state
-space, producing high-occupancy regions separated by sparsely populated
-transitional configurations.  The package focuses on detecting these
-concentration patterns and quantifying their geometric definition without
-assuming any underlying dynamical model.  It provides AMD curve computation,
-cluster assignment, and sigma-equivalent estimation, together with S3 methods
-for plotting, printing, and summarising AMD and sigma-equivalent objects.
-Mendoza (2025) <https://mmendoza1967.github.io/AMDconfigurations/>.")
+     "Computes Average Membership Degree (AMD) from soft-membership matrices and
+constructs AMD curves across candidate configuration counts.  The current curve
+backend uses repeated fuzzy c-means fits while keeping the AMD definition,
+membership estimation, curve construction, and final assignment as separate
+operations.  Fitted memberships, convergence diagnostics, preprocessing
+transformations, seeds, row maps, and process-level reproducibility links are
+retained.  The package reports numerical curve features but leaves their
+scientific interpretation to an explicitly justified analysis.  The method was
+introduced by Mendoza and AraÃºjo (2022) <doi:10.1111/ecog.06289>.")
     (license license:expat)))
 
 (define-public r-amctestmaker
@@ -21554,33 +21434,6 @@ data for Ireland and Northern Ireland (2017), including Wind Generation data.")
     (license (license:fsdg-compatible
               "Creative Commons Attribution 4.0 International License"))))
 
-(define-public r-aimplot
-  (package
-    (name "r-aimplot")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "aimPlot" version))
-       (sha256
-        (base32 "1d52b7kccxba6j7n0gbd7pzs0p87zn32vv8gdf2f7lyr75qzgz7x"))))
-    (properties `((upstream-name . "aimPlot")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-ggplot2))
-    (home-page "https://cran.r-project.org/package=aimPlot")
-    (synopsis "Create Pie Like Plot for Completeness")
-    (description
-     "Create a pie like plot to visualise if the aim or several aims of a project is
-achieved or close to be achieved i.e the aim is achieved when the point is at
-the center of the pie plot.  Imagine it's like a dartboard and the center means
-100% completeness/achievement.  Achievement can also be understood as 100%
-coverage.  The standard distribution of completeness allocated in the pie plot
-is 50%, 80% and 100% completeness.")
-    (license license:gpl2)))
-
 (define-public r-aihuman
   (package
     (name "r-aihuman")
@@ -24780,34 +24633,6 @@ possibility of calculation of affluence line.  Some simple errors are fixed and
 it works with new version of Spatial Statistics packaged.")
     (license license:gpl2)))
 
-(define-public r-affinitymatrix
-  (package
-    (name "r-affinitymatrix")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "affinitymatrix" version))
-       (sha256
-        (base32 "10i7wzl4xiphj5f466ga7c4ha3mkyqn63x1z0jyx50m0b84sggq1"))))
-    (properties `((upstream-name . "affinitymatrix")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mass r-hmisc r-ggrepel r-ggplot2 r-expm))
-    (home-page "https://cran.r-project.org/package=affinitymatrix")
-    (synopsis "Estimation of Affinity Matrix")
-    (description
-     "This package provides tools to study sorting patterns in matching markets and to
-estimate the affinity matrix of both the bipartite one-to-one matching model
-without frictions and with Transferable Utility by Dupuy and Galichon (2014)
-<doi:10.1086/677191> and its unipartite variant by Ciscato', Galichon and Gousse
-(2020) <doi:10.1086/704611>.  It also contains all the necessary tools to
-implement the saliency analysis, to run rank tests of the affinity matrix and to
-build tables and plots summarizing the findings.")
-    (license license:gpl3)))
-
 (define-public r-affinity
   (package
     (name "r-affinity")
@@ -27660,13 +27485,13 @@ estimators on real datasets, and it implements methods to calculate p-values.")
 (define-public r-adespatial
   (package
     (name "r-adespatial")
-    (version "0.3-29")
+    (version "0.3-30")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adespatial" version))
        (sha256
-        (base32 "0rzy0iaw4w3pcdg8lhwhfy5nar7h4c3cfdxml26c9c8b4bv1wc94"))))
+        (base32 "1yqg5r0n2ryjqmhcb9j03m5ykcpn6ina1vbcs9m9dhk1r9r82bdy"))))
     (properties `((upstream-name . "adespatial")))
     (build-system r-build-system)
     (arguments
@@ -30285,19 +30110,19 @@ political-institutional codebooks.  Inspired by Maerz and Benoit (2025)
 (define-public r-acousticts
   (package
     (name "r-acousticts")
-    (version "2.0.6")
+    (version "2.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "acousticTS" version))
        (sha256
-        (base32 "15x9y9drs4rcdsgh1a2yzpxhpapg8gb2b3bxfv3xzg2yd9fgcsg0"))))
+        (base32 "033z86vrjsn1nsvx435zvnhwxzk9p695g8mbb7fq19zfijyhmpqb"))))
     (properties `((upstream-name . "acousticTS")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-pbapply r-bh))
+    (propagated-inputs (list r-testthat r-rcpparmadillo r-rcpp r-pbapply r-bh))
     (native-inputs (list r-rmarkdown r-knitr gfortran))
     (home-page "https://brandynlucca.github.io/acousticTS/")
     (synopsis "Physics-Based Models for Acoustic Target Strength")

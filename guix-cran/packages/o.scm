@@ -12767,13 +12767,13 @@ assessment and variable selection procedures.")
 (define-public r-olsengine
   (package
     (name "r-olsengine")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OLSengine" version))
        (sha256
-        (base32 "08w5zih6qcxxq6gma4jq8n4mj5svnqcqpm8j4afxvw9iqb9nrw5g"))))
+        (base32 "0a9gidb2bgfhgaz4rf58w1nxg1czll6763058v3vsbyvc2c9y6r6"))))
     (properties `((upstream-name . "OLSengine")))
     (build-system r-build-system)
     (arguments
@@ -15494,32 +15494,6 @@ chromatin accessibility and gene expression data at bulk and single-cell levels.
 regulation mechanisms.")
     (license license:gpl3)))
 
-(define-public r-ocp
-  (package
-    (name "r-ocp")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ocp" version))
-       (sha256
-        (base32 "0q52s8j3z3xwnma3sxx6019qxid66bf0a43w4g8xjagplwps57dx"))))
-    (properties `((upstream-name . "ocp")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ocp")
-    (synopsis "Bayesian Online Changepoint Detection")
-    (description
-     "This package implements the Bayesian online changepoint detection method by
-Adams and @code{MacKay} (2007) <@code{arXiv:0710.3742>} for univariate or
-multivariate data.  Gaussian and Poisson probability models are implemented.
-Provides post-processing functions with alternative ways to extract
-changepoints.")
-    (license license:gpl3)))
-
 (define-public r-ocnet
   (package
     (name "r-ocnet")
@@ -16315,33 +16289,6 @@ vintage, retrieval time, and file fingerprint, so analyses can be audited and
 reproduced.  Data is downloaded from the OBR on first use and cached locally for
 subsequent calls.  Data is sourced from the OBR website <https://obr.uk>.")
     (license license:expat)))
-
-(define-public r-obmbpkg
-  (package
-    (name "r-obmbpkg")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "OBMbpkg" version))
-       (sha256
-        (base32 "01wch8wwij3fd0jambk0hpkhlnp4ryrq8qnnr2w1iad9zssjyii5"))))
-    (properties `((upstream-name . "OBMbpkg")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=OBMbpkg")
-    (synopsis
-     "Estimate the Population Size for the Mb Capture-Recapture Model")
-    (description
-     "Applies an objective Bayesian method to the Mb capture-recapture model to
-estimate the population size N. The Mb model is a class of capture-recapture
-methods used to account for variations in capture probability due to animal
-behavior.  Under the Mb formulation, the initial capture of an animal may effect
-the probability of subsequent captures due to their becoming \"trap happy\" or
-\"trap shy.\".")
-    (license license:gpl3)))
 
 (define-public r-obm
   (package

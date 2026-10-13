@@ -7941,34 +7941,6 @@ Bindings for Selenium @code{WebDriver}\"
 <https://CRAN.R-project.org/package=RSelenium>.")
     (license license:gpl3)))
 
-(define-public r-prosper
-  (package
-    (name "r-prosper")
-    (version "0.3.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PROSPER" version))
-       (sha256
-        (base32 "1wdrdqii7d4yfky6706n9xjmabnz99jjja1c80nbj3fp8idsbli5"))))
-    (properties `((upstream-name . "PROSPER")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-data-table))
-    (home-page "https://cran.r-project.org/package=PROSPER")
-    (synopsis "Simulation of Weed Population Dynamics")
-    (description
-     "An environment to simulate the development of annual plant populations with
-regard to population dynamics and genetics, especially herbicide resistance.  It
-combines genetics on the individual level (Renton et al.  2011) with a
-stochastic development on the population level (Daedlow, 2015).  Renton, M,
-Diggle, A, Manalil, S and Powles, S (2011) <doi:10.1016/j.jtbi.2011.05.010>
-Daedlow, Daniel (2015, doctoral dissertation: University of Rostock, Faculty of
-Agriculture and Environmental Sciences.).")
-    (license license:gpl3)))
-
 (define-public r-prosgpv
   (package
     (name "r-prosgpv")
@@ -13569,34 +13541,6 @@ See Nicholas Mattei and Toby Walsh \"@code{PrefLib}: A Library of Preference
 Data\" (2013) <doi:10.1007/978-3-642-41575-3_20>.")
     (license license:gpl3)))
 
-(define-public r-preference
-  (package
-    (name "r-preference")
-    (version "1.1.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "preference" version))
-       (sha256
-        (base32 "12gpiwd69ik4r2l67fvad0jmp78w919nhly4drxhfiizl3mw4jdn"))))
-    (properties `((upstream-name . "preference")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr r-ggplot2))
-    (home-page "https://github.com/kaneplusplus/preference")
-    (synopsis "2-Stage Preference Trial Design and Analysis")
-    (description
-     "Design and analyze two-stage randomized trials with a continuous outcome
-measure.  The package contains functions to compute the required sample size
-needed to detect a given preference, treatment, and selection effect;
-alternatively, the package contains functions that can report the study power
-given a fixed sample size.  Finally, analysis functions are provided to test
-each effect using either summary data (i.e.  means, variances) or raw study data
-<doi:10.18637/jss.v094.c02>.")
-    (license license:lgpl2.0)))
-
 (define-public r-prefer
   (package
     (name "r-prefer")
@@ -18119,13 +18063,13 @@ environmental studies.")
 (define-public r-postshock
   (package
     (name "r-postshock")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "postshock" version))
        (sha256
-        (base32 "18bsnj65q0giryc1hxnxvdn9id5bjv65a1f0562s4cx9fqpkqsqy"))))
+        (base32 "1dq5qslkivx0lh40wyv7xm4a4xb0vpa7i2v8dr24ww53q0mcdqbd"))))
     (properties `((upstream-name . "postshock")))
     (build-system r-build-system)
     (arguments
@@ -21271,31 +21215,6 @@ Shakib, S., Kalisch-Ellett, L., & Caughey, G. E. (2017)
 Kwon, J. W. (2016) <doi:10.5414/cp202484>.  Veehof, L., Stewart, R.,
 Haaijer-Ruskamp, F., & Jong, B. M. (2000) <doi:10.1093/fampra/17.3.261>.")
     (license license:expat)))
-
-(define-public r-polypatex
-  (package
-    (name "r-polypatex")
-    (version "0.9.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PolyPatEx" version))
-       (sha256
-        (base32 "1z1hwvsw7b6cz5xfy35a5ldrzb3fhp3swiyz56v1zqblpsaz8n9g"))))
-    (properties `((upstream-name . "PolyPatEx")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-gtools))
-    (home-page "https://cran.r-project.org/package=PolyPatEx")
-    (synopsis "Paternity Exclusion in Autopolyploid Species")
-    (description
-     "This package provides functions to perform paternity exclusion via allele
-matching, in autopolyploid species having ploidy 4, 6, or 8.  The marker data
-used can be genotype data (copy numbers known) or allelic phenotype data (copy
-numbers not known).")
-    (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
 
 (define-public r-polynomf
   (package
@@ -25852,30 +25771,6 @@ in Crabtree and Nelson (2017) \"Plotrr: Functions for making visual exploratory
 data analysis with nested data easier\" <doi:10.21105/joss.00190>.")
     (license license:expat)))
 
-(define-public r-plotprotein
-  (package
-    (name "r-plotprotein")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "plotprotein" version))
-       (sha256
-        (base32 "14kfb4xxpfp8klz31kb7cpc39636ax2cx2483vqqkciccb28f0ks"))))
-    (properties `((upstream-name . "plotprotein")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml r-seqinr r-plyr r-plotrix r-ade4))
-    (home-page "https://cran.r-project.org/package=plotprotein")
-    (synopsis "Development of Visualization Tools for Protein Sequence")
-    (description
-     "The image of the amino acid transform on the protein level is drawn, and the
-automatic routing of the functional elements such as the domain and the mutation
-site is completed.")
-    (license license:gpl3)))
-
 (define-public r-plotprjnetworks
   (package
     (name "r-plotprjnetworks")
@@ -26131,41 +26026,6 @@ adjust graphical details.")
     (description
      "Includes @code{JavaScript} files that allow plotly maps to render without an
 internet connection.")
-    (license license:expat)))
-
-(define-public r-plotluck
-  (package
-    (name "r-plotluck")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "plotluck" version))
-       (sha256
-        (base32 "16wqj4xfa8b7kal6v8mp2zlhwf9l3y6y5n44qbpvy652gzb2rw2z"))))
-    (properties `((upstream-name . "plotluck")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-scales
-                             r-rcolorbrewer
-                             r-quantreg
-                             r-plyr
-                             r-hmisc
-                             r-hexbin
-                             r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/stefan-schroedl/plotluck")
-    (synopsis "'ggplot2' Version of \"I'm Feeling Lucky!\"")
-    (description
-     "Examines the characteristics of a data frame and a formula to automatically
-choose the most suitable type of plot out of the following supported options:
-scatter, violin, box, bar, density, hexagon bin, spine plot, and heat map.  The
-aim of the package is to let the user focus on what to plot, rather than on the
-\"how\" during exploratory data analysis.  It also automates handling of
-observation weights, logarithmic axis scaling, reordering of factor levels, and
-overlaying smoothing curves and median lines.  Plots are drawn using ggplot2'.")
     (license license:expat)))
 
 (define-public r-plotlsirm
@@ -31616,21 +31476,20 @@ Arrizza (2025) <https://hdl.handle.net/20.500.14243/533471> and Ferrara et al.
 (define-public r-piar
   (package
     (name "r-piar")
-    (version "0.10.1")
+    (version "0.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "piar" version))
        (sha256
-        (base32 "19z9qd9n0ybzkjqj997x3km5bm8afw7km0y3dwajyd1jpi2yyyv8"))))
+        (base32 "1l4rq70rbhg54xcacqjn8xq66a4bwcz2a557vgyb4b1gbw9rjrfn"))))
     (properties `((upstream-name . "piar")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-matrix))
     (native-inputs (list r-litedown))
-    (home-page "https://marberts.github.io/piar/")
+    (home-page "https://cran.r-project.org/package=piar")
     (synopsis "Price Index Aggregation")
     (description
      "Most price indexes are made with a two-step procedure, where period-over-period
@@ -31644,7 +31503,7 @@ the methods described by Balk (2008, <doi:10.1017/CBO9780511720758>), von der
 Lippe (2007, <doi:10.3726/978-3-653-01120-3>), and the CPI manual (2020,
 <doi:10.5089/9781484354841.069>) and PPI manual (2004,
 <doi:10.5089/9781589063044.069>) for bilateral price indexes.")
-    (license license:expat)))
+    (license license:gpl3+)))
 
 (define-public r-phytosanitarycalculator
   (package
@@ -43990,13 +43849,13 @@ elimination of heterogeneity.  R. C. Bose and K. R. Nair (1939)
 (define-public r-pbgof
   (package
     (name "r-pbgof")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PBGoF" version))
        (sha256
-        (base32 "00xybcs837z1dgp776nhbs7z5kszjcsfhzxr5pnjii810850r42a"))))
+        (base32 "1nn5f56dfn9c46nq1cn6vn1gbqfjqd6npf8gvjp71h41yrmy18ak"))))
     (properties `((upstream-name . "PBGoF")))
     (build-system r-build-system)
     (arguments
@@ -44005,13 +43864,13 @@ elimination of heterogeneity.  R. C. Bose and K. R. Nair (1939)
     (propagated-inputs (list r-sn))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=PBGoF")
-    (synopsis "Parametric Bootstrap Tests for the Skew-Normal Distribution")
+    (synopsis "Goodness-of-Fit Tests for Skew-Normal and Skew-t Models")
     (description
-     "This package provides goodness-of-fit tests for the skew-normal distribution
-with estimated parameters.  Implements Kolmogorov-Smirnov and CramÃ©r-von Mises
-tests using parametric bootstrap or precomputed simulation quantiles, together
-with robust parameter estimation procedures.  Package methods and documentation
-are described by Li and Khang (2026) <https://github.com/Divo-Lee/PB@code{GoF>}.")
+     "This package provides precomputed-quantile goodness-of-fit tests for skew-normal
+distributions, parametric-bootstrap tests for skew-normal and skew-t
+distributions, robust fitting, and graphical diagnostics.  Package methods and
+documentation are described by Li, Xu, and Khang (2026)
+<https://github.com/Divo-Lee/PB@code{GoF>}.")
     (license license:gpl2+)))
 
 (define-public r-pbdslap
@@ -45619,27 +45478,6 @@ Also referred to the following implementation:
 <https://github.com/rahulrajpl/@code{PyPASAD>}.")
     (license license:gpl3)))
 
-(define-public r-pas
-  (package
-    (name "r-pas")
-    (version "1.2.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PAS" version))
-       (sha256
-        (base32 "175p3bnpnhknfsc29hri0l2ipz1x6qcxs2bq7awns8lccam466r2"))))
-    (properties `((upstream-name . "PAS")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-glmnet))
-    (home-page "http://statgen.ucr.edu")
-    (synopsis "Polygenic Analysis System (PAS)")
-    (description "An R package for polygenic trait analysis.")
-    (license license:gpl2+)))
-
 (define-public r-parzer
   (package
     (name "r-parzer")
@@ -46723,30 +46561,6 @@ baseline hazards: exponential, Weibull, inverse Weibull (FrÃ©chet), Gompertz,
 lognormal, log-skew-normal, and loglogistic.  Possible Frailty distributions:
 gamma, positive stable, inverse Gaussian and lognormal.")
     (license license:gpl2)))
-
-(define-public r-paretoposstable
-  (package
-    (name "r-paretoposstable")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ParetoPosStable" version))
-       (sha256
-        (base32 "1fwji5wrhbxr089dll812csamvb5q2pxn1607rpirarifgfbj28m"))))
-    (properties `((upstream-name . "ParetoPosStable")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-lmom r-foreach r-doparallel r-adgoftest))
-    (home-page "https://cran.r-project.org/package=ParetoPosStable")
-    (synopsis "Computing, Fitting and Validating the PPS Distribution")
-    (description
-     "Statistical functions to describe a Pareto Positive Stable (PPS) distribution
-and fit it to real data.  Graphical and statistical tools to validate the fits
-are included.")
-    (license (list license:gpl2 license:gpl3))))
 
 (define-public r-pareto
   (package
@@ -49783,235 +49597,6 @@ R packages, and adds their references to a .bib file directly from within your
 document.")
     (license license:gpl3+)))
 
-(define-public r-pakpmics2018mn
-  (package
-    (name "r-pakpmics2018mn")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PakPMICS2018mn" version))
-       (sha256
-        (base32 "1r5cn1mx7i7hif64lhfcdz4xqqfj3j45i092370xhhi19pqq217n"))))
-    (properties `((upstream-name . "PakPMICS2018mn")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-tibble))
-    (native-inputs (list r-r-rsp))
-    (home-page "https://github.com/myaseen208/PakPMICS2018mn")
-    (synopsis
-     "Multiple Indicator Cluster Survey (MICS) 2017-18 Men Questionnaire Data for Punjab, Pakistan")
-    (description
-     "This package provides data set and function for exploration of Multiple
-Indicator Cluster Survey (MICS) 2017-18 Men questionnaire data for Punjab,
-Pakistan.  The results of the present survey are critically important for the
-purposes of Sustainable Development Goals (SDGs) monitoring, as the survey
-produces information on 32 global Sustainable Development Goals (SDGs)
-indicators.  The data was collected from 53,840 households selected at the
-second stage with systematic random sampling out of a sample of 2,692 clusters
-selected using probability proportional to size sampling.  Six questionnaires
-were used in the survey: (1) a household questionnaire to collect basic
-demographic information on all de jure household members (usual residents), the
-household, and the dwelling; (2) a water quality testing questionnaire
-administered in three households in each cluster of the sample; (3) a
-questionnaire for individual women administered in each household to all women
-age 15-49 years; (4) a questionnaire for individual men administered in every
-second household to all men age 15-49 years; (5) an under-5 questionnaire,
-administered to mothers (or caretakers) of all children under 5 living in the
-household; and (6) a questionnaire for children age 5-17 years, administered to
-the mother (or caretaker) of one randomly selected child age 5-17 years living
-in the household (<http://www.mics.unicef.org/surveys>).")
-    (license license:gpl2)))
-
-(define-public r-pakpmics2018mm
-  (package
-    (name "r-pakpmics2018mm")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PakPMICS2018mm" version))
-       (sha256
-        (base32 "08f2n134q545kwysy705mgsy6319ns4l9pwxldlxvbzq0lha4hf9"))))
-    (properties `((upstream-name . "PakPMICS2018mm")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-tibble))
-    (native-inputs (list r-r-rsp))
-    (home-page "https://github.com/myaseen208/PakPMICS2018mm")
-    (synopsis
-     "Multiple Indicator Cluster Survey (MICS) 2017-18 Maternal Mortality Questionnaire Data for Punjab, Pakistan")
-    (description
-     "This package provides data set and function for exploration of Multiple
-Indicator Cluster Survey (MICS) 2017-18 Maternal Mortality questionnaire data
-for Punjab, Pakistan.  The results of the present survey are critically
-important for the purposes of Sustainable Development Goals (SDGs) monitoring,
-as the survey produces information on 32 global Sustainable Development Goals
-(SDGs) indicators.  The data was collected from 53,840 households selected at
-the second stage with systematic random sampling out of a sample of 2,692
-clusters selected using probability proportional to size sampling.  Six
-questionnaires were used in the survey: (1) a household questionnaire to collect
-basic demographic information on all de jure household members (usual
-residents), the household, and the dwelling; (2) a water quality testing
-questionnaire administered in three households in each cluster of the sample;
-(3) a questionnaire for individual women administered in each household to all
-women age 15-49 years; (4) a questionnaire for individual men administered in
-every second household to all men age 15-49 years; (5) an under-5 questionnaire,
-administered to mothers (or caretakers) of all children under 5 living in the
-household; and (6) a questionnaire for children age 5-17 years, administered to
-the mother (or caretaker) of one randomly selected child age 5-17 years living
-in the household (<http://www.mics.unicef.org/surveys>).")
-    (license license:gpl2)))
-
-(define-public r-pakpmics2018hh
-  (package
-    (name "r-pakpmics2018hh")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PakPMICS2018hh" version))
-       (sha256
-        (base32 "0wkjxy8qkndhnyf1w03cr3g7s03cm60yn0lxn5j6hvh019b28nmz"))))
-    (properties `((upstream-name . "PakPMICS2018hh")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-tibble))
-    (native-inputs (list r-r-rsp))
-    (home-page "https://github.com/myaseen208/PakPMICS2018hh")
-    (synopsis
-     "Multiple Indicator Cluster Survey (MICS) 2017-18 Household Questionnaire Data for Punjab, Pakistan")
-    (description
-     "This package provides data set and function for exploration of Multiple
-Indicator Cluster Survey (MICS) 2017-18 Household questionnaire data for Punjab,
-Pakistan.  The results of the present survey are critically important for the
-purposes of Sustainable Development Goals (SDGs) monitoring, as the survey
-produces information on 32 global Sustainable Development Goals (SDGs)
-indicators.  The data was collected from 53,840 households selected at the
-second stage with systematic random sampling out of a sample of 2,692 clusters
-selected using probability proportional to size sampling.  Six questionnaires
-were used in the survey: (1) a household questionnaire to collect basic
-demographic information on all de jure household members (usual residents), the
-household, and the dwelling; (2) a water quality testing questionnaire
-administered in three households in each cluster of the sample; (3) a
-questionnaire for individual women administered in each household to all women
-age 15-49 years; (4) a questionnaire for individual men administered in every
-second household to all men age 15-49 years; (5) an under-5 questionnaire,
-administered to mothers (or caretakers) of all children under 5 living in the
-household; and (6) a questionnaire for children age 5-17 years, administered to
-the mother (or caretaker) of one randomly selected child age 5-17 years living
-in the household (<http://www.mics.unicef.org/surveys>).")
-    (license license:gpl2)))
-
-(define-public r-pakpmics2018fs
-  (package
-    (name "r-pakpmics2018fs")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PakPMICS2018fs" version))
-       (sha256
-        (base32 "009hx1r9a0q0xxrk5zsy39sj1ynj5qjvci37i82yihjvjxb3rj0g"))))
-    (properties `((upstream-name . "PakPMICS2018fs")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-tibble))
-    (native-inputs (list r-r-rsp))
-    (home-page "https://github.com/myaseen208/PakPMICS2018fs")
-    (synopsis
-     "Multiple Indicator Cluster Survey (MICS) 2017-18 Children Age 5-17 Questionnaire Data for Punjab, Pakistan")
-    (description
-     "This package provides data set and function for exploration of Multiple
-Indicator Cluster Survey (MICS) 2017-18 Children Age 5-17 questionnaire data for
-Punjab, Pakistan.  The results of the present survey are critically important
-for the purposes of Sustainable Development Goals (SDGs) monitoring, as the
-survey produces information on 32 global Sustainable Development Goals (SDGs)
-indicators.  The data was collected from 53,840 households selected at the
-second stage with systematic random sampling out of a sample of 2,692 clusters
-selected using probability proportional to size sampling.  Six questionnaires
-were used in the survey: (1) a household questionnaire to collect basic
-demographic information on all de jure household members (usual residents), the
-household, and the dwelling; (2) a water quality testing questionnaire
-administered in three households in each cluster of the sample; (3) a
-questionnaire for individual women administered in each household to all women
-age 15-49 years; (4) a questionnaire for individual men administered in every
-second household to all men age 15-49 years; (5) an under-5 questionnaire,
-administered to mothers (or caretakers) of all children under 5 living in the
-household; and (6) a questionnaire for children age 5-17 years, administered to
-the mother (or caretaker) of one randomly selected child age 5-17 years living
-in the household (<http://www.mics.unicef.org/surveys>).")
-    (license license:gpl2)))
-
-(define-public r-pakpmics2018bh
-  (package
-    (name "r-pakpmics2018bh")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PakPMICS2018bh" version))
-       (sha256
-        (base32 "0c1fy4mp45nay15plpfzv4xjx1dw17zrrild70sfbrmdfdwnjgcl"))))
-    (properties `((upstream-name . "PakPMICS2018bh")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-tibble))
-    (native-inputs (list r-r-rsp))
-    (home-page "https://github.com/myaseen208/PakPMICS2018bh")
-    (synopsis
-     "Multiple Indicator Cluster Survey (MICS) 2017-18 Birth History of Children Questionnaire Data for Punjab, Pakistan")
-    (description
-     "This package provides data set and function for exploration of Multiple
-Indicator Cluster Survey (MICS) 2017-18 Household questionnaire data for Punjab,
-Pakistan.  The results of the present survey are critically important for the
-purposes of SDG monitoring, as the survey produces information on 32 global SDG
-indicators.  The data was collected from 53,840 households selected at the
-second stage with systematic random sampling out of a sample of 2,692 clusters
-selected using Probability Proportional to size sampling.  Six questionnaires
-were used in the survey: (1) a household questionnaire to collect basic
-demographic information on all de jure household members (usual residents), the
-household, and the dwelling; (2) a water quality testing questionnaire
-administered in three households in each cluster of the sample; (3) a
-questionnaire for individual women administered in each household to all women
-age 15-49 years; (4) a questionnaire for individual men administered in every
-second household to all men age 15-49 years; (5) an under-5 questionnaire,
-administered to mothers (or caretakers) of all children under 5 living in the
-household; and (6) a questionnaire for children age 5-17 years, administered to
-the mother (or caretaker) of one randomly selected child age 5-17 years living
-in the household (<http://www.mics.unicef.org/surveys>).")
-    (license license:gpl2)))
-
 (define-public r-pakpmics2018
   (package
     (name "r-pakpmics2018")
@@ -50105,56 +49690,6 @@ Punjab, Pakistan.")
      "This package provides data set and function for exploration of Multiple
 Indicator Cluster Survey 2014 Household Listing questionnaire data for Punjab,
 Pakistan.")
-    (license license:gpl2)))
-
-(define-public r-pakpmics2014hh
-  (package
-    (name "r-pakpmics2014hh")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PakPMICS2014HH" version))
-       (sha256
-        (base32 "1n6cyanqafscizgi1xqmc19w59yigxk5mvqinbivpdr7rydhrac6"))))
-    (properties `((upstream-name . "PakPMICS2014HH")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-data-table))
-    (home-page "https://github.com/MYaseen208/PakPMICS2014HH")
-    (synopsis
-     "Multiple Indicator Cluster Survey (MICS) 2014 Household Questionnaire Data for Punjab, Pakistan")
-    (description
-     "This package provides data set and function for exploration of Multiple
-Indicator Cluster Survey (MICS) 2014 Household questionnaire data for Punjab,
-Pakistan (<http://www.mics.unicef.org/surveys>).")
-    (license license:gpl2)))
-
-(define-public r-pakpmics2014ch
-  (package
-    (name "r-pakpmics2014ch")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PakPMICS2014Ch" version))
-       (sha256
-        (base32 "0gjrx34613d9wzal292zfzh8hmkav271fqb0skdxd1f8rs2c79dg"))))
-    (properties `((upstream-name . "PakPMICS2014Ch")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-data-table))
-    (home-page "https://github.com/MYaseen208/PakPMICS2014Ch")
-    (synopsis
-     "Multiple Indicator Cluster Survey (MICS) 2014 Child Questionnaire Data for Punjab, Pakistan")
-    (description
-     "This package provides data set and functions for exploration of Multiple
-Indicator Cluster Survey (MICS) 2014 Child questionnaire data for Punjab,
-Pakistan (<http://www.mics.unicef.org/surveys>).")
     (license license:gpl2)))
 
 (define-public r-pakpc2023

@@ -1699,35 +1699,6 @@ the computation of the frecuency and point-biserial correlation for each
 distractor and the graphical analysis of each item.")
     (license license:expat)))
 
-(define-public r-italy
-  (package
-    (name "r-italy")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "italy" version))
-       (sha256
-        (base32 "0is90xp6980ja12jzi3816jq1y90ifcw6cvfmybb7invj6rr1cks"))))
-    (properties `((upstream-name . "italy")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=italy")
-    (synopsis "The Italian Survey on Household and Wealth, 2008 and 2010")
-    (description
-     "This package provides two record linkage data sets on the Italian Survey on
-Household and Wealth, 2008 and 2010, a sample survey conducted by the Bank of
-Italy every two years.  The 2010 survey covered 13,702 individuals, while the
-2008 survey covered 13,734 individuals.  The following categorical variables are
-included in this data set: year of birth, working status, employment status,
-branch of activity, town size, geographical area of birth, sex, whether or not
-Italian national, and highest educational level obtained.  Unique identifiers
-are available to assess the accuracy of oneâs method.  Please see Steorts
-(2015) <DOI:10.1214/15-BA965SI> to find more details about the data set.")
-    (license license:cc0)))
-
 (define-public r-iswr
   (package
     (name "r-iswr")
@@ -7069,36 +7040,6 @@ into tumour-immune interactions (Zeng D, et al. (2024)
 <doi:10.1016/j.crmeth.2024.100910>.  Fang Y, et al. (2025)
 <doi:10.1002/mdr2.70001>).")
     (license license:gpl3)))
-
-(define-public r-ioanalysis
-  (package
-    (name "r-ioanalysis")
-    (version "0.3.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ioanalysis" version))
-       (sha256
-        (base32 "0nprfqhwy5j11f5xgzaz8iw991cvgdcdmfca8sdvw8mci0cwkh5m"))))
-    (properties `((upstream-name . "ioanalysis")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-plot3d r-lpsolve r-ggplot2))
-    (home-page "http://www.real.illinois.edu")
-    (synopsis "Input Output Analysis")
-    (description
-     "Calculates fundamental IO matrices (Leontief, Wassily W. (1951)
-<doi:10.1038/scientificamerican1051-15>); within period analysis via various
-rankings and coefficients (Sonis and Hewings (2006)
-<doi:10.1080/09535319200000013>, Blair and Miller (2009)
-<ISBN:978-0-521-73902-3>, Antras et al (2012) <doi:10.3386/w17819>, Hummels,
-Ishii, and Yi (2001) <doi:10.1016/S0022-1996(00)00093-3>); across period
-analysis with impact analysis (Dietzenbacher, van der Linden, and Steenge (2006)
-<doi:10.1080/09535319300000017>, Sonis, Hewings, and Guo (2006)
-<doi:10.1080/09535319600000002>); and a variety of table operators.")
-    (license license:gpl2+)))
 
 (define-public r-io
   (package
@@ -13666,30 +13607,6 @@ a social process mirroring team, group, or organization formation
 with fixed marginals.")
     (license license:gpl3)))
 
-(define-public r-incidental
-  (package
-    (name "r-incidental")
-    (version "0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "incidental" version))
-       (sha256
-        (base32 "012pdwrkzlbnrrkvy67l6nvs1lrjgrzhfh3v4rqzk2ypdvfm3wmx"))))
-    (properties `((upstream-name . "incidental")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-numderiv r-matrixstats r-mass r-ggplot2 r-dlnm))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=incidental")
-    (synopsis "Implements Empirical Bayes Incidence Curves")
-    (description
-     "Make empirical Bayes incidence curves from reported case data using a specified
-delay distribution.")
-    (license license:expat)))
-
 (define-public r-incidenceprevalence
   (package
     (name "r-incidenceprevalence")
@@ -18706,13 +18623,13 @@ the reference sources, respectively.")
 (define-public r-ieegio
   (package
     (name "r-ieegio")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ieegio" version))
        (sha256
-        (base32 "1r43fy0pgby3qwsqcljyhvnzikhzsjy2srbxdqwax4c7lrqpyvfw"))))
+        (base32 "1kqh4w1hh1dya6qpxg2p463h2ggml000vsacvv5gpyrbd2hn4asy"))))
     (properties `((upstream-name . "ieegio")))
     (build-system r-build-system)
     (arguments
@@ -21931,13 +21848,13 @@ to what extent they may exist.")
 (define-public r-icebergr
   (package
     (name "r-icebergr")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "icebergr" version))
        (sha256
-        (base32 "0ysfdiz9awjf5ljrcqri9jcmpsgiy5lqxfiysf9icf3vsc8ldb5q"))))
+        (base32 "1q1gms4p4bf11ny1alr8bsw8axdc5c2p4z509hq035xmr2isx4vb"))))
     (properties `((upstream-name . "icebergr")))
     (build-system r-build-system)
     (arguments
@@ -21946,24 +21863,22 @@ to what extent they may exist.")
     (inputs (list xz))
     (propagated-inputs (list r-tibble r-rlang r-nanoarrow))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/PursuitOfDataScience/icebergr")
+    (home-page "https://pursuitofdatascience.github.io/icebergr/")
     (synopsis "Read and Write 'Apache Iceberg' Tables")
     (description
      "This package provides a native client for Apache Iceberg', the open table format
-used by Snowflake', Databricks', @code{BigQuery}', AWS and Dremio'.  R has
-otherwise been able to read Iceberg tables only by routing through @code{DuckDB}
-as an intermediary, which rules out writes, snapshot management and catalog
-integration.  This package talks to Iceberg directly: it connects to REST and
-AWS Glue catalogs, lists namespaces and tables, reads the schema and partition
-specification of a table, scans data with predicates and projections pushed
-down, travels back through snapshot history, and appends new data.  Apache Arrow
-is the interchange layer throughout, so scan results arrive in R without a
-serialisation round trip.  Built on iceberg-rust', the Apache-governed Rust
-implementation, via extendr'.  Supports table spec versions 1 and 2; see the
-README for the full matrix of supported and unsupported features.  This is a
-community package, not affiliated with or endorsed by The Apache Software
-Foundation; Apache', Apache Iceberg and Iceberg are trademarks of The Apache
-Software Foundation.")
+used by Snowflake', Databricks', @code{BigQuery}', AWS and Dremio'.  Rather than
+reaching Iceberg through a query engine such as @code{DuckDB}', this package
+talks to it directly: it connects to REST and AWS Glue catalogs, lists
+namespaces and tables, reads the schema and partition specification of a table,
+scans data with predicates and projections pushed down, travels back through
+snapshot history, and appends new data.  Apache Arrow is the interchange layer
+throughout, so scan results arrive in R without a serialisation round trip.
+Built on iceberg-rust', the Apache-governed Rust implementation, via extendr'.
+Supports table spec versions 1 and 2; see the README for the full matrix of
+supported and unsupported features.  This is a community package, not affiliated
+with or endorsed by The Apache Software Foundation; Apache', Apache Iceberg and
+Iceberg are trademarks of The Apache Software Foundation.")
     (license license:gpl3+)))
 
 (define-public r-icdpicr2

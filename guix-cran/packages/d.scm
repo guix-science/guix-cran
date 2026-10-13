@@ -17,7 +17,7 @@
   #:use-module (gnu packages compression)
   #:use-module (gnu packages python)
   #:use-module (gnu packages libreoffice)
-  #:use-module (gnu packages docker)
+  #:use-module (gnu packages containers)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages julia)
   #:use-module (gnu packages java)
@@ -470,29 +470,6 @@ list of values), and a default value.  dynparam can also convert parameter sets
 to a @code{ParamHelpers} format, in order to be able to use dynparam in
 conjunction with @code{mlrMBO}'.")
     (license license:expat)))
-
-(define-public r-dynpanel
-  (package
-    (name "r-dynpanel")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dynpanel" version))
-       (sha256
-        (base32 "073kfl5g4d7v8wd2qnpixqrxbac3cqj35z03ax2zlb8h2afa7j62"))))
-    (properties `((upstream-name . "dynpanel")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-gtools))
-    (home-page "https://cran.r-project.org/package=dynpanel")
-    (synopsis "Dynamic Panel Data Models")
-    (description
-     "Computes the first stage GMM estimate of a dynamic linear model with p lags of
-the dependent variables.")
-    (license license:gpl3)))
 
 (define-public r-dynnom
   (package
@@ -3257,33 +3234,6 @@ the lowest dose is too toxic and/or there is a sufficient number of patients
 dosed at the maximum tolerated dose.")
     (license license:gpl2+)))
 
-(define-public r-dtp
-  (package
-    (name "r-dtp")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dtp" version))
-       (sha256
-        (base32 "0qy8nrbq22bfbajkxq6blkq7583pc5mb392gmqb3c9daxmqn42vb"))))
-    (properties `((upstream-name . "dtp")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-plyr r-gtools r-formula))
-    (home-page "https://cran.r-project.org/package=dtp")
-    (synopsis "Dynamic Panel Threshold Model")
-    (description
-     "Compute the dynamic threshold panel model suggested by (Stephanie Kremer,
-Alexander Bick and Dieter Nautz (2013) <doi:10.1007/s00181-012-0553-9>) in which
-they extended the (Hansen (1999) <doi: 10.1016/S0304-4076(99)00025-1>) original
-static panel threshold estimation and the Caner and (Hansen (2004)
-<doi:10.1017/S0266466604205011>) cross-sectional instrumental variable threshold
-model, where generalized methods of moments type estimators are used.")
-    (license license:gpl3)))
-
 (define-public r-dtms
   (package
     (name "r-dtms")
@@ -3660,31 +3610,6 @@ treatment effects using elicited prior distributions\"
     (description
      "Non-iterative estimator for the cumulative distribution of a doubly truncated
 variable.  de UÃ±a-Ãlvarez J. (2018) <doi:10.1007/978-3-319-73848-2_37>.")
-    (license license:gpl2)))
-
-(define-public r-dtda-cif
-  (package
-    (name "r-dtda-cif")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DTDA.cif" version))
-       (sha256
-        (base32 "12vkhqxdhir06s35kr76dwns9m02wyicz3mv4r56fqglsfyw77xr"))))
-    (properties `((upstream-name . "DTDA.cif")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp r-foreach r-doparallel))
-    (home-page "https://cran.r-project.org/package=DTDA.cif")
-    (synopsis "Doubly Truncated Data Analysis, Cumulative Incidence Functions")
-    (description
-     "Nonparametric estimator of the cumulative incidences of competing risks under
-double truncation.  The estimator generalizes the Efron-Petrosian NPMLE
-(Non-Parametric Maximun Likelihood Estimator) to the competing risks setting.
-Efron, B. and Petrosian, V. (1999) <doi:10.2307/2669997>.")
     (license license:gpl2)))
 
 (define-public r-dtda
@@ -4902,13 +4827,13 @@ implemented based on the DStorage class.")
 (define-public r-dsir
   (package
     (name "r-dsir")
-    (version "0.10.0")
+    (version "0.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DSIR" version))
        (sha256
-        (base32 "12ag0lk9g6mfxc74h29l4zyahrfr5iph8g91c9x7lim2j2y4hfn5"))))
+        (base32 "1avsyyfh05x8pzyzxr348bxakmxp374llqvi5wh481vm1gi81da8"))))
     (properties `((upstream-name . "DSIR")))
     (build-system r-build-system)
     (arguments
@@ -4930,11 +4855,13 @@ theme, a flextable defaults helper, a thin pie chart wrapper, built-in regional
 country-code datasets with a WHO region lookup helper, a geometric mean function
 for indicator aggregation, an average annual rate of reduction function for
 indicator progress tracking, direct age standardization against the bundled WHO
-World Standard Population, period life-table construction, a snapshot helper for
+2026 Standard Population, period life-table construction, a snapshot helper for
 reproducible data pulls, and convenience clients for the World Health
-Organization Global Health Observatory (GHO) OData API
-<https://ghoapi.azureedge.net/api/> and the United Nations Sustainable
-Development Goals (SDG) API <https://unstats.un.org/SDGAPI/swagger/>.")
+Organization Global Health Observatory (GHO) through its legacy OData API
+<https://ghoapi.azureedge.net/api/> or the public WHO @code{xMart} OData API
+<https://xmart-api-public.who.int/DATA_>, Global Health Estimates (GHE) through
+WHO @code{xMart}, and the United Nations Sustainable Development Goals (SDG) API
+<https://unstats.un.org/SDGAPI/swagger/>.")
     (license license:expat)))
 
 (define-public r-dsims
@@ -7802,13 +7729,13 @@ Wheatley & Sornette (2015) <doi:10.2139/ssrn.2645709>.")
 (define-public r-dragonfarm
   (package
     (name "r-dragonfarm")
-    (version "0.3.3")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dragonfarm" version))
        (sha256
-        (base32 "0kqaxs01cihjmky54g95bqkpgl0h8ns6v5dpv5rxg44m8ygcn445"))))
+        (base32 "0n23wxkqk7x17n21j0js3zk69difb716y2vx4ahw17833l9v6ay6"))))
     (properties `((upstream-name . "dragonfarm")))
     (build-system r-build-system)
     (arguments
@@ -9218,13 +9145,13 @@ covariates.")
 (define-public r-dparser
   (package
     (name "r-dparser")
-    (version "1.3.1-13")
+    (version "1.3.1-14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dparser" version))
        (sha256
-        (base32 "126q30byc5li11xz22k6d6gxccy9hgh89v078hg0qq996bpz7p0a"))))
+        (base32 "09931l0q3i77sawgk1q22a7cba2kwz8xadg1h6jv59ahyg8a77ls"))))
     (properties `((upstream-name . "dparser")))
     (build-system r-build-system)
     (arguments
@@ -10817,13 +10744,13 @@ and produces a new Word document with numbered references including DOIs.")
 (define-public r-dogoftest
   (package
     (name "r-dogoftest")
-    (version "0.3")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Dogoftest" version))
        (sha256
-        (base32 "12j9j3qf3i9ifh61qwi3fdz229nz4pvhyrcybhvxzgd8nqpxs89b"))))
+        (base32 "1ilyi2czsglwzqwq41p82z88yghin65bklc17ihihdf12rd7h25d"))))
     (properties `((upstream-name . "Dogoftest")))
     (build-system r-build-system)
     (arguments
@@ -14023,13 +13950,13 @@ build upon the paper by del Castillo, Joan & Daoudi, Jalila & Serra, Isabel.
 (define-public r-distspec
   (package
     (name "r-distspec")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "distspec" version))
        (sha256
-        (base32 "02gxnz4vb1l9yxz6fiq5dc0k0j10s8v5agla3d1s6lv3riiqad6w"))))
+        (base32 "1img5418296igpkwm8xxcy211xiqrmg6j02jbmhhxz15v87fjlcw"))))
     (properties `((upstream-name . "distspec")))
     (build-system r-build-system)
     (arguments
@@ -29785,32 +29712,6 @@ simplifies estimation based on (short-)stacking as discussed in Ahrens et al.
 increase robustness to the underlying data generating process.")
     (license license:gpl3+)))
 
-(define-public r-ddm
-  (package
-    (name "r-ddm")
-    (version "1.0-0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DDM" version))
-       (sha256
-        (base32 "19g06qk3lzasj294x9wfij729mlq6ryvjqkn3rgl5xp1w0gx9wi2"))))
-    (properties `((upstream-name . "DDM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=DDM")
-    (synopsis "Death Registration Coverage Estimation")
-    (description
-     "This package provides a set of three two-census methods to the estimate the
-degree of death registration coverage for a population.  Implemented methods
-include the Generalized Growth Balance method (GGB), the Synthetic Extinct
-Generation method (SEG), and a hybrid of the two, GGB-SEG. Each method offers
-automatic estimation, but users may also specify exact parameters or use a
-graphical interface to guess parameters in the traditional way if desired.")
-    (license license:gpl2)))
-
 (define-public r-ddl
   (package
     (name "r-ddl")
@@ -35769,13 +35670,13 @@ resulting paper of that study will be published soon.")
 (define-public r-datacaged
   (package
     (name "r-datacaged")
-    (version "0.2.1")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datacaged" version))
        (sha256
-        (base32 "0hhiy3kjwc24dx3ghkfh812nkz0qnm3xjz3wsp6ybi6d87g8vjk6"))))
+        (base32 "129y830zgmmf7vhbd6v9lyj1d2nxqbdc0xba882w0b4zpvnl1sd9"))))
     (properties `((upstream-name . "datacaged")))
     (build-system r-build-system)
     (arguments

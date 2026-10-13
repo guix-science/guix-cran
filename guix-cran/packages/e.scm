@@ -14,6 +14,7 @@
   #:use-module (gnu packages java)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages gcc)
+  #:use-module (gnu packages duckdb)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages julia)
   #:use-module (gnu packages statistics)
@@ -7203,13 +7204,13 @@ pre-defined SPARQL queries and GET requests.  See Ovadek (2021)
 (define-public r-eunomia
   (package
     (name "r-eunomia")
-    (version "2.1.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Eunomia" version))
        (sha256
-        (base32 "08jajlrbcl3965vfdxpi4z4nyfvij0q9yblkjxyq8mp55h0xhl1b"))))
+        (base32 "0pnhb8wjy3by9m1hip6xqyhdzwb8ifha1x1lza3k2w2wd41fd6k1"))))
     (properties `((upstream-name . "Eunomia")))
     (build-system r-build-system)
     (arguments
@@ -9992,47 +9993,6 @@ reports the goodness-of-fit statistics.  The recurrence interval estimations of
 earthquakes are computed for each distribution.")
     (license license:gpl3)))
 
-(define-public r-erp
-  (package
-    (name "r-erp")
-    (version "2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ERP" version))
-       (sha256
-        (base32 "17i04rgfj9crnvpi7mf2spwmaw9jgw4kn5fx6x9xbl9cvwwx6q4k"))))
-    (properties `((upstream-name . "ERP")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-pacman r-mnormt r-irlba r-fdrtool r-corpcor))
-    (native-inputs (list r-knitr))
-    (home-page "http://erpinr.org")
-    (synopsis "Significance Analysis of Event-Related Potentials Data")
-    (description
-     "This package provides functions for signal detection and identification designed
-for Event-Related Potentials (ERP) data in a linear model framework.  The
-functional F-test proposed in Causeur, Sheu, Perthame, Rufini (2018, submitted)
-for analysis of variance issues in ERP designs is implemented for signal
-detection (tests for mean difference among groups of curves in One-way ANOVA
-designs for example).  Once an experimental effect is declared significant,
-identification of significant intervals is achieved by the multiple testing
-procedures reviewed and compared in Sheu, Perthame, Lee and Causeur (2016,
-<DOI:10.1214/15-AOAS888>).  Some of the methods gathered in the package are the
-classical FDR- and FWER-controlling procedures, also available using function
-p.adjust.  The package also implements the Guthrie-Buchwald procedure (Guthrie
-and Buchwald, 1991 <DOI:10.1111/j.1469-8986.1991.tb00417.x>), which accounts for
-the auto-correlation among t-tests to control erroneous detection of short
-intervals.  The Adaptive Factor-Adjustment method is an extension of the method
-described in Causeur, Chu, Hsieh and Sheu (2012,
-<DOI:10.3758/s13428-012-0230-0>).  It assumes a factor model for the correlation
-among tests and combines adaptively the estimation of the signal and the
-updating of the dependence modelling (see Sheu et al., 2016,
-<DOI:10.1214/15-AOAS888> for further details).")
-    (license license:gpl2+)))
-
 (define-public r-ernm
   (package
     (name "r-ernm")
@@ -12249,13 +12209,13 @@ Swiderski and ML Zelditch (2022) <doi:10.1111/2041-210X.13914>.")
 (define-public r-eplusr
   (package
     (name "r-eplusr")
-    (version "0.17.0")
+    (version "0.18.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eplusr" version))
        (sha256
-        (base32 "02m596sylvsyki7x3g5fh420qhxqdjcm3xda3npz0qnx2gb36rh3"))))
+        (base32 "12jwi27wv8ncks1b7ybkcnx1yr60sw1kwvc2m0yws6m20mp9vmvs"))))
     (properties `((upstream-name . "eplusr")))
     (build-system r-build-system)
     (arguments
@@ -12263,11 +12223,11 @@ Swiderski and ML Zelditch (2022) <doi:10.1111/2041-210X.13914>.")
       #:tests? #f))
     (propagated-inputs (list r-stringi
                              r-s7
-                             r-rsqlite
                              r-r6
                              r-processx
                              r-lubridate
                              r-jsonlite
+                             r-duckdb
                              r-data-table
                              r-cli
                              r-checkmate
@@ -15125,42 +15085,6 @@ input and output.  Both are implemented using a configuration file to allow
 easy, custom configurations that can be used for multiple or all projects.")
     (license license:asl2.0)))
 
-(define-public r-envoutliers
-  (package
-    (name "r-envoutliers")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "envoutliers" version))
-       (sha256
-        (base32 "1wgrrkkpkmf300qb56mq6nxigwnpq551sjxlk05lk3ckawx66srf"))))
-    (properties `((upstream-name . "envoutliers")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-robustbase
-                             r-mass
-                             r-lokern
-                             r-ismev
-                             r-ecp
-                             r-changepoint
-                             r-car))
-    (home-page "https://cran.r-project.org/package=envoutliers")
-    (synopsis "Methods for Identification of Outliers in Environmental Data")
-    (description
-     "Three semi-parametric methods for detection of outliers in environmental data
-based on kernel regression and subsequent analysis of smoothing residuals.  The
-first method (Campulova, Michalek, Mikuska and Bokal (2018) <DOI:
-10.1002/cem.2997>) analyzes the residuals using changepoint analysis, the second
-method is based on control charts (Campulova, Veselik and Michalek (2017) <DOI:
-10.1016/j.apr.2017.01.004>) and the third method (Holesovsky, Campulova and
-Michalek (2018) <DOI: 10.1016/j.apr.2017.06.005>) analyzes the residuals using
-extreme value theory (Holesovsky, Campulova and Michalek (2018) <DOI:
-10.1016/j.apr.2017.06.005>).")
-    (license license:gpl2)))
-
 (define-public r-envnj
   (package
     (name "r-envnj")
@@ -15958,30 +15882,6 @@ Guestrin (2016) <doi:10.1145/2939672.2939785>; Freund and Schapire (1997)
      "Bayesian Model Averaging to create probabilistic forecasts from ensemble
 forecasts and weather observations
 <https://stat.uw.edu/sites/default/files/files/reports/2007/tr516.pdf>.")
-    (license license:gpl2+)))
-
-(define-public r-enscat
-  (package
-    (name "r-enscat")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "EnsCat" version))
-       (sha256
-        (base32 "1rp354fqq2ihjrmqw9j1qdy86md80xml5sgh2zbyabw3zddmgyn2"))))
-    (properties `((upstream-name . "EnsCat")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-seqinr r-ggplot2 r-ggdendro r-dendextend))
-    (home-page "https://github.com/jlp2duke/EnsCat/wiki/How-To-with-Examples")
-    (synopsis "Clustering of Categorical Data")
-    (description
-     "An implementation of the clustering methods of categorical data discussed in
-Amiri, S., Clarke, B., and Clarke, J. (2015).  Clustering categorical data via
-ensembling dissimilarity matrices.  Preprint <@code{arXiv:1506.07930>}.")
     (license license:gpl2+)))
 
 (define-public r-enrollcast
@@ -20969,13 +20869,13 @@ Valenciana (grant CIAICO/2023/031) and MICIU/AEI/10.13039/501100011033/FEDER, EU
 (define-public r-eiballots
   (package
     (name "r-eiballots")
-    (version "0.1.0-1")
+    (version "0.2.0-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eiballots" version))
        (sha256
-        (base32 "1lfw695bab974vy0h056wfjh3md7z0by05f2ayvnaxa0z8phzcbz"))))
+        (base32 "14mbhwx8mp49lxp4qya4niwn9ig5ia9cj0cfz4hpqjzndq7l4n4p"))))
     (properties `((upstream-name . "eiballots")))
     (build-system r-build-system)
     (arguments
@@ -23923,13 +23823,13 @@ optimization is included.")
 (define-public r-edgemodelr
   (package
     (name "r-edgemodelr")
-    (version "0.4.3")
+    (version "0.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "edgemodelr" version))
        (sha256
-        (base32 "1z2s4p6y5q1wbndh9grb5m98xl4gq9ba83g8ksd5lzn48rgpsvdl"))))
+        (base32 "1fr97sam45ax02c5jwk04g8ggrqdcr5r0r4qbzyknmgs24hhv5p6"))))
     (properties `((upstream-name . "edgemodelr")))
     (build-system r-build-system)
     (arguments
@@ -30126,36 +30026,6 @@ providing convenient authentication and access to cloud-hosted NASA
 observation data from any location straight forward and compatible with R
 packages that are widely used with cloud native earth observation data (such as
 terra', sf', etc.).")
-    (license license:expat)))
-
-(define-public r-earlyr
-  (package
-    (name "r-earlyr")
-    (version "0.0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "earlyR" version))
-       (sha256
-        (base32 "0978vv48sj1hs61rdb3xv02s8qz03jcm1c8q1mbb3d033x1q7k22"))))
-    (properties `((upstream-name . "earlyR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-ggplot2 r-epitrix r-epiestim r-distcrete))
-    (native-inputs (list r-knitr))
-    (home-page "https://www.repidemicsconsortium.org/earlyR/")
-    (synopsis
-     "Estimation of Transmissibility in the Early Stages of a Disease Outbreak")
-    (description
-     "This package implements a simple, likelihood-based estimation of the
-reproduction number (R0) using a branching process with a Poisson likelihood.
-This model requires knowledge of the serial interval distribution, and dates of
-symptom onsets.  Infectiousness is determined by weighting R0 by the probability
-mass function of the serial interval on the corresponding day.  It is a
-simplified version of the model introduced by Cori et al. (2013)
-<doi:10.1093/aje/kwt133>.")
     (license license:expat)))
 
 (define-public r-earlygating

@@ -15,7 +15,7 @@
   #:use-module (gnu packages maths)
   #:use-module (gnu packages python-science)
   #:use-module (gnu packages web)
-  #:use-module (gnu packages docker)
+  #:use-module (gnu packages containers)
   #:use-module (gnu packages cmake)
   #:use-module (gnu packages finance)
   #:use-module (gnu packages java)
@@ -109,28 +109,6 @@ of the algorithm described by Liu & Kaplan (2025)
 and implemented in the companion Stata command lzqreg', described in Fitzgerald
 et al. (2026) <doi:10.31222/osf.io/juda7_v1>.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
-
-(define-public r-lzerospikeinference
-  (package
-    (name "r-lzerospikeinference")
-    (version "1.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "LZeroSpikeInference" version))
-       (sha256
-        (base32 "15x29afaq13iwlj66h97k3kczg9rfgp6i9d76rji58hfgh8i8by6"))))
-    (properties `((upstream-name . "LZeroSpikeInference")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=LZeroSpikeInference")
-    (synopsis "Exact Spike Train Inference via L0 Optimization")
-    (description
-     "An implementation of algorithms described in Jewell and Witten (2017)
-<@code{arXiv:1703.08644>}.")
-    (license license:gpl3)))
 
 (define-public r-lyubishchev
   (package
@@ -944,36 +922,6 @@ Pretty-Printing Floating Point Numbers.  In JSM Proceedings, Statistical
 Computing Section.  Alexandria, VA: American Statistical Association.
 2270-2279.")
     (license license:expat)))
-
-(define-public r-lucas
-  (package
-    (name "r-lucas")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "lucas" version))
-       (sha256
-        (base32 "1ws35f2pq2y7nnik40nj4qpz1d499gfc5isr1409pwy6r5knb78q"))))
-    (properties `((upstream-name . "lucas")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rpostgresql r-rpostgis r-plyr r-dbi))
-    (home-page "https://cran.r-project.org/package=lucas")
-    (synopsis "Package to Download and Create the DB of LUCAS Data Harmonized")
-    (description
-     "Reproduces the harmonized DB of the ESTAT survey of the same name.  The survey
-data is served as separate spreadsheets with noticeable differences in the
-collected attributes.  The tool here presented carries out a series of
-instructions that harmonize the attributes in terms of name, meaning, and
-occurrence, while also introducing a series of new variables, instrumental to
-adding value to the product.  Outputs include one harmonized table with all the
-years, and three separate geometries, corresponding to the theoretical point,
-the gps location where the measurement was made and the 250m east-facing
-transect.")
-    (license license:gpl3+)))
 
 (define-public r-lubrilog
   (package
@@ -4540,31 +4488,6 @@ of the original @code{longRPart} package by Stewart and Abdolell (2013)
 <https://cran.r-project.org/package=@code{longRPart>}.")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-longroc
-  (package
-    (name "r-longroc")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "longROC" version))
-       (sha256
-        (base32 "1fs11vqi4hy99d7shzzdvd6ic5gay6rh2027w6j0qpd04n8q88m8"))))
-    (properties `((upstream-name . "longROC")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survival))
-    (home-page "https://cran.r-project.org/package=longROC")
-    (synopsis
-     "Time-Dependent Prognostic Accuracy with Multiply Evaluated Bio Markers or Scores")
-    (description
-     "Time-dependent Receiver Operating Characteristic curves, Area Under the Curve,
-and Net Reclassification Indexes for repeated measures.  It is based on methods
-in Barbati and Farcomeni (2017) <doi:10.1007/s10260-017-0410-2>.")
-    (license license:gpl2+)))
-
 (define-public r-longreadvqs
   (package
     (name "r-longreadvqs")
@@ -5123,53 +5046,6 @@ and unequally spaced time-series.  Biological Rhythm Research, 30(2), 178-201.")
      "Read, register and compare point sets from single molecule localization
 microscopy.")
     (license license:gpl3)))
-
-(define-public r-lolr
-  (package
-    (name "r-lolr")
-    (version "2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "lolR" version))
-       (sha256
-        (base32 "0lrmn9lzyyfr1y0i7qp6xfpdxyisbkajwg0jkrqkiw687psnh2rc"))))
-    (properties `((upstream-name . "lolR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-robustbase
-                             r-robust
-                             r-pls
-                             r-mass
-                             r-irlba
-                             r-ggplot2
-                             r-abind))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/neurodata/lol")
-    (synopsis "Linear Optimal Low-Rank Projection")
-    (description
-     "Supervised learning techniques designed for the situation when the
-dimensionality exceeds the sample size have a tendency to overfit as the
-dimensionality of the data increases.  To remedy this High dimensionality; low
-sample size (HDLSS) situation, we attempt to learn a lower-dimensional
-representation of the data before learning a classifier.  That is, we project
-the data to a situation where the dimensionality is more manageable, and then
-are able to better apply standard classification or clustering techniques since
-we will have fewer dimensions to overfit.  A number of previous works have
-focused on how to strategically reduce dimensionality in the unsupervised case,
-yet in the supervised HDLSS regime, few works have attempted to devise
-dimensionality reduction techniques that leverage the labels associated with the
-data.  In this package and the associated manuscript Vogelstein et al. (2017)
-<@code{arXiv:1709.01233>}, we provide several methods for feature extraction,
-some utilizing labels and some not, along with easily extensible utilities to
-simplify cross-validative efforts to identify the best feature extraction
-method.  Additionally, we include a series of adaptable benchmark simulations to
-serve as a standard for future investigative efforts into supervised HDLSS.
-Finally, we produce a comprehensive comparison of the included algorithms across
-a range of benchmark simulations and real data applications.")
-    (license license:gpl2)))
 
 (define-public r-lolog
   (package
@@ -6477,38 +6353,6 @@ using pixel coordinates and line drawing.  Formatted text is created as a
 data.frame of pixel coordinates (for bitmap fonts) or stroke coordinates (for
 vector fonts).  All text can be easily previewed as a matrix or raster image.  A
 selection of fonts is included with this package.")
-    (license license:expat)))
-
-(define-public r-loewesadditivity
-  (package
-    (name "r-loewesadditivity")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "loewesadditivity" version))
-       (sha256
-        (base32 "0j9vvh2ys09hy2k3mbrlf0p493ymrxvfsdcjw0p6rlls54z9lqqc"))))
-    (properties `((upstream-name . "loewesadditivity")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-viridis
-                             r-tidyr
-                             r-rootsolve
-                             r-rlang
-                             r-metr
-                             r-magrittr
-                             r-gridextra
-                             r-ggplot2
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=loewesadditivity")
-    (synopsis "Loewe's Additivity")
-    (description
-     "Estimate model parameters to determine whether two compounds have synergy,
-antagonism, or Loewe's Additivity.")
     (license license:expat)))
 
 (define-public r-loedata
@@ -13048,31 +12892,6 @@ Characteristic (ROC) curve, using the algorithm of Fawcett (2006)
 AUC metric calculations.")
     (license license:gpl3)))
 
-(define-public r-lifx
-  (package
-    (name "r-lifx")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "lifx" version))
-       (sha256
-        (base32 "0p9ljd3s3lc1rkhzpp801izy9y52f0yc1dsrsxwx5gi89cnib596"))))
-    (properties `((upstream-name . "lifx")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-jsonlite r-httr r-curl r-crayon r-assertthat))
-    (home-page "https://cran.r-project.org/package=lifx")
-    (synopsis "Control 'LIFX' Smart Light Bulbs")
-    (description
-     "Allows you to read and change the state of LIFX smart light bulbs via the LIFX
-developer api <https://api.developer.lifx.com/>.  Covers most LIFX api
-endpoints, including changing light color and brightness, selecting lights by
-id, group or location as well as activating effects.")
-    (license license:gpl3)))
-
 (define-public r-lifttest
   (package
     (name "r-lifttest")
@@ -16535,33 +16354,6 @@ target population.  The methods include the @code{LatEnt} @code{spAce-based}
 LEARNER (D-LEARNER) method described by @code{McGrath} et al. (2024)
 <doi:10.48550/@code{arXiv.2412.20605>}.")
     (license license:gpl3+)))
-
-(define-public r-learnclust
-  (package
-    (name "r-learnclust")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "LearnClust" version))
-       (sha256
-        (base32 "0r2ns1bnsygc6jhr83v1ylfp8fkn3j76233zk5cwsxrq0grx5iqs"))))
-    (properties `((upstream-name . "LearnClust")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-magick))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=LearnClust")
-    (synopsis "Learning Hierarchical Clustering Algorithms")
-    (description
-     "Classical hierarchical clustering algorithms, agglomerative and divisive
-clustering.  Algorithms are implemented as a theoretical way, step by step.  It
-includes some detailed functions that explain each step.  Every function allows
-options to get different results using different techniques.  The package
-explains non expert users how hierarchical clustering algorithms work.")
-    (license (license:fsdg-compatible "Unlimited"))))
 
 (define-public r-learest
   (package

@@ -3257,35 +3257,6 @@ scatterplot visualizations.  For more details see Di Zio, Guarnera and Luzi
 <https://www150.statcan.gc.ca/n1/en/pub/12-001-x/2005001/article/8087-eng.pdf>.")
     (license license:gpl3)))
 
-(define-public r-unitedr
-  (package
-    (name "r-unitedr")
-    (version "0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "unitedR" version))
-       (sha256
-        (base32 "0h4i814awb8419693jz3x5cyhs2x6y5flmz339bg6ivmg13d9h3s"))))
-    (properties `((upstream-name . "unitedR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-plyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=unitedR")
-    (synopsis "Assessment and Evaluation of Formations in United")
-    (description
-     "United is a software tool which can be downloaded at the following website
-<http://www.schroepl.net/pbm/software/united/>.  In general, it is a virtual
-manager game for football teams.  This package contains helpful functions for
-determining an optimal formation for a virtual match in United.  E.g.  knowing
-that the opponent has a strong defensive it is advisable to beat him in the
-midfield.  Furthermore, this package contains functions for computing the
-optimal usage of hardness in a game.")
-    (license license:gpl2+)))
-
 (define-public r-unitcm
   (package
     (name "r-unitcm")

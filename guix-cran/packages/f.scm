@@ -8221,33 +8221,6 @@ Fourier transform.  The Fourier transforms must be evaluated on a regular grid
 for fast evaluation.")
     (license license:expat)))
 
-(define-public r-fourgametep
-  (package
-    (name "r-fourgametep")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "FourgameteP" version))
-       (sha256
-        (base32 "15yn47737768fkjjv8ykc9lw7x58pq44k90d9d4c9hp20zw5f3by"))))
-    (properties `((upstream-name . "FourgameteP")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=FourgameteP")
-    (synopsis "FourGamete Test")
-    (description
-     "The four-gamete test is based on the infinite-sites model which assumes that the
-probability of the same mutation occurring twice (recurrent or parallel
-mutations) and the probability of a mutation back to the original state (reverse
-mutations) are close to zero.  Without these types of mutations, the only
-explanation for observing the four dilocus genotypes (example below) is
-recombination (Hudson and Kaplan 1985, Genetics 111:147-164).  Thus, the
-presence of all four gametes is also called phylogenetic incompatibility.")
-    (license license:gpl2)))
-
 (define-public r-foundryr
   (package
     (name "r-foundryr")
@@ -9328,38 +9301,6 @@ populations and forest stands.  Reference: Yan L, Tan W, Chai Z, et al (2019)
      "This package provides a series of utility functions to help with reshaping
 hierarchy of data tree, and reform the structure of data tree.")
     (license license:expat)))
-
-(define-public r-forestr
-  (package
-    (name "r-forestr")
-    (version "2.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "forestr" version))
-       (sha256
-        (base32 "1kz8f3x2dmsprj2r23gz61fpwg7n14nbjxr16x4cpixvnk427p94"))))
-    (properties `((upstream-name . "forestr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-viridis
-                             r-tidyr
-                             r-tibble
-                             r-plyr
-                             r-moments
-                             r-ggplot2
-                             r-dplyr))
-    (home-page "https://github.com/atkinsjeff/forestr")
-    (synopsis "Ecosystem and Canopy Structural Complexity Metrics from LiDAR")
-    (description
-     "This package provides a toolkit for calculating forest and canopy structural
-complexity metrics from terrestrial @code{LiDAR} (light detection and ranging).
-References: Atkins et al.  2018 <doi:10.1111/2041-210X.13061>; Hardiman et al.
-2013 <doi:10.3390/f4030537>; Parker et al.  2004
-<doi:10.1111/j.0021-8901.2004.00925.x>.")
-    (license license:gpl3)))
 
 (define-public r-forestploter
   (package
@@ -15405,30 +15346,6 @@ covariates are more important to match on.  For more information and examples,
 see the Almost-Matching-Exactly website.")
     (license license:expat)))
 
-(define-public r-flam
-  (package
-    (name "r-flam")
-    (version "3.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "flam" version))
-       (sha256
-        (base32 "0v6kcl4n7wq052p7jdgbzlh9fpk8bzlrqw12i6pib1wd3slj0asa"))))
-    (properties `((upstream-name . "flam")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp r-mass))
-    (home-page "https://cran.r-project.org/package=flam")
-    (synopsis "Fits Piecewise Constant Models with Data-Adaptive Knots")
-    (description
-     "This package implements the fused lasso additive model as proposed in Petersen,
-A., Witten, D., and Simon, N. (2016).  Fused Lasso Additive Model.  Journal of
-Computational and Graphical Statistics, 25(4): 1005-1025.")
-    (license license:gpl2+)))
-
 (define-public r-flagr
   (package
     (name "r-flagr")
@@ -21457,31 +21374,6 @@ palettes are included, reflecting the name of the package.  A paper describing
 the methodology can be found at
 <https://journal.r-project.org/articles/RJ-2021-105/index.html>.")
     (license license:expat)))
-
-(define-public r-fermicatsr
-  (package
-    (name "r-fermicatsr")
-    (version "1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fermicatsR" version))
-       (sha256
-        (base32 "1587f67fypj22rdi1319zq765lcc9z518bzl1jr4lz6c8lrzfm9i"))))
-    (properties `((upstream-name . "fermicatsR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://github.com/sazpark/fermicatsR.git")
-    (synopsis "Fermi Large Area Telescope Catalogs")
-    (description
-     "Data from various catalogs of astrophysical gamma-ray sources detected by NASA's
-Large Area Telescope (The Astrophysical Journal, 697, 1071, 2009 June 1), on
-board the Fermi gamma-ray satellite.  More information on Fermi and its data
-products is available from the Fermi Science Support Center
-(http://fermi.gsfc.nasa.gov/ssc/).")
-    (license license:cc0)))
 
 (define-public r-fer
   (package
@@ -29846,30 +29738,6 @@ testing data in such a way to remove the bias caused by the protected attribute.
 using the methods are further elaborated in the corresponding JSS manuscript,
 see <doi:10.18637/jss.v110.i04>.")
     (license license:gpl3+)))
-
-(define-public r-fahrmeir
-  (package
-    (name "r-fahrmeir")
-    (version "2016.5.31")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Fahrmeir" version))
-       (sha256
-        (base32 "16fbc1zb9x9p04bl7y5nd375pha6bd3hfqqchlk1bqxrj4879y5g"))))
-    (properties `((upstream-name . "Fahrmeir")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=Fahrmeir")
-    (synopsis
-     "Data from the Book \"Multivariate Statistical Modelling Based on Generalized Linear Models\", First Edition, by Ludwig Fahrmeir and Gerhard Tutz")
-    (description
-     "Data and functions for the book \"Multivariate Statistical Modelling Based on
-Generalized Linear Models\", first edition, by Ludwig Fahrmeir and Gerhard Tutz.
-Useful when using the book.")
-    (license license:gpl2+)))
 
 (define-public r-fahb
   (package

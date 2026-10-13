@@ -2542,19 +2542,19 @@ community-maintained and is not officially supported by Qualtrics'.")
 (define-public r-qualpalr
   (package
     (name "r-qualpalr")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qualpalr" version))
        (sha256
-        (base32 "1819idq4jsd7vgg6if47n8yvai13g9804biyv8py9lhw7qh0dibd"))))
+        (base32 "1ws6zpcx8g90ld90rkk9gp7jspxfwsl2s65wij459jgkbd60mg0j"))))
     (properties `((upstream-name . "qualpalr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpp))
+    (propagated-inputs (list r-cpp11))
     (native-inputs (list r-knitr))
     (home-page "https://jolars.github.io/qualpalr/")
     (synopsis "Automatic Generation of Qualitative Color Palettes")

@@ -1249,37 +1249,6 @@ ratio test for sphericity testing to the sample core.  For details, see Sung and
 Hoff (2025) <doi:10.48550/@code{arXiv.2506.17463>}.")
     (license license:gpl3)))
 
-(define-public r-krmm
-  (package
-    (name "r-krmm")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "KRMM" version))
-       (sha256
-        (base32 "0wxzhrrc4lx20nxjny7rcfw3bya7drn88zbrlzx9f531298xwbrk"))))
-    (properties `((upstream-name . "KRMM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-robustbase r-mass r-kernlab r-cvtools))
-    (home-page "https://cran.r-project.org/package=KRMM")
-    (synopsis "Kernel Ridge Mixed Model")
-    (description
-     "Solves kernel ridge regression, within the the mixed model framework, for the
-linear, polynomial, Gaussian, Laplacian and ANOVA kernels.  The model components
-(i.e.  fixed and random effects) and variance parameters are estimated using the
-expectation-maximization (EM) algorithm.  All the estimated components and
-parameters, e.g. BLUP of dual variables and BLUP of random predictor effects for
-the linear kernel (also known as RR-BLUP), are available.  The kernel ridge
-mixed model (KRMM) is described in Jacquin L, Cao T-V and Ahmadi N (2016) A
-Unified and Comprehensible View of Parametric and Kernel Methods for Genomic
-Prediction with Application to Rice.  Front.  Genet.  7:145.
-<doi:10.3389/fgene.2016.00145>.")
-    (license (list license:gpl2 license:gpl3))))
-
 (define-public r-krm
   (package
     (name "r-krm")
@@ -1464,28 +1433,6 @@ plot geographical data.")
      "Estimates kriging models for geographical point-referenced data.  Method is
 described in Gill (2020) <doi:10.1177/1532440020930197>.")
     (license license:gpl2+)))
-
-(define-public r-kriens
-  (package
-    (name "r-kriens")
-    (version "0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "kriens" version))
-       (sha256
-        (base32 "1qi65k9fsbbkbw0w40rv60p5ygrvr10rmlyxdaqa5bdpcmrbly5z"))))
-    (properties `((upstream-name . "kriens")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "http://www.alephdue.com")
-    (synopsis "Continuation Passing Style Development")
-    (description
-     "This package provides basic functions for Continuation-Passing Style
-development.")
-    (license license:bsd-3)))
 
 (define-public r-kraljicmatrix
   (package
@@ -4049,13 +3996,13 @@ functional and structural imaging.")
 (define-public r-kira
   (package
     (name "r-kira")
-    (version "1.0.8")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Kira" version))
        (sha256
-        (base32 "12p99yknf0adzyswi7p3xr8qplzmf3w1scgnjl2mfz8kir7ncw6f"))))
+        (base32 "0yxjza66vgf3lw6lj692l0nyq98irry4zkrs5h0bs7j6d348xwmc"))))
     (properties `((upstream-name . "Kira")))
     (build-system r-build-system)
     (arguments
@@ -6601,30 +6548,6 @@ Ghashti and Thompson (2024) <doi:10.1007/s00357-024-09493-z> for @code{dkps()}
 methodology, and Ghashti (2024) <doi:10.14288/1.0443975> for @code{dkss()}
 methodology.")
     (license license:gpl2+)))
-
-(define-public r-kdist
-  (package
-    (name "r-kdist")
-    (version "0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "kdist" version))
-       (sha256
-        (base32 "18q7njvsb9sbm412c6ms4b4nxg768z9qahws5rnin06gvb25nfcx"))))
-    (properties `((upstream-name . "kdist")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=kdist")
-    (synopsis "K-Distribution and Weibull Paper")
-    (description
-     "Density, distribution function, quantile function and random generation for the
-K-distribution.  A plotting function that plots data on Weibull paper and
-another function to draw additional lines.  See results from package in T
-Lamont-Smith (2018), submitted J. R. Stat.  Soc.")
-    (license license:gpl3)))
 
 (define-public r-kdglm
   (package

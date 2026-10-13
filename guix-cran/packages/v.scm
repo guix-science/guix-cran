@@ -3200,13 +3200,13 @@ approaches follow methods developed by Wei & Simko (2021) and Friendly (2002)
 (define-public r-visualpred
   (package
     (name "r-visualpred")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "visualpred" version))
        (sha256
-        (base32 "1dm65kvff7lhwrizawmxks0az8aihfqa5krhkvfz57q12p4ldb01"))))
+        (base32 "18560k39ik78byjml751rvq4h46wgj3scwmmaz2bw0pzraydk9av"))))
     (properties `((upstream-name . "visualpred")))
     (build-system r-build-system)
     (arguments
@@ -3215,7 +3215,6 @@ approaches follow methods developed by Wei & Simko (2021) and Friendly (2002)
     (propagated-inputs (list r-randomforest
                              r-proc
                              r-nnet
-                             r-mltools
                              r-mba
                              r-mass
                              r-magrittr
@@ -5087,28 +5086,6 @@ text (mojibake).  This package fixes that problem and provides readable output
 with the correct Unicode characters (with or without diacritics).")
     (license license:gpl2+)))
 
-(define-public r-vietnamcode
-  (package
-    (name "r-vietnamcode")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "vietnamcode" version))
-       (sha256
-        (base32 "0vc0c1fg30afar2dkch5h27b8jbglcd9ja6d5hcypnibqz4c68vz"))))
-    (properties `((upstream-name . "vietnamcode")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=vietnamcode")
-    (synopsis "Convert Vietnam Provincial Codes")
-    (description
-     "Converts Vietnam's provinces names and ID across different formats.  Handles
-diacritics and different spellings.")
-    (license license:gpl3)))
-
 (define-public r-videogameinsightsr
   (package
     (name "r-videogameinsightsr")
@@ -6907,13 +6884,13 @@ systems, and helpful in examining its impact in the time series analysis domain.
 (define-public r-vecvec
   (package
     (name "r-vecvec")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vecvec" version))
        (sha256
-        (base32 "05rsvlp39qm2bv3xvs504s7vza59nrald0jyrs55p96fbgkvfjir"))))
+        (base32 "17p38086x9dyi793qac5h9ngc6v9b4f935wgln9b76yrrz8cdkyc"))))
     (properties `((upstream-name . "vecvec")))
     (build-system r-build-system)
     (arguments
@@ -9758,31 +9735,6 @@ Weight-of-Evidence coding in credit scoring is (Siddiqi 2006, ISBN:
 trees and Isotonic Regression to accommodate the trade-off between flexible
 functional forms and maximum information value.")
     (license license:gpl2+)))
-
-(define-public r-varband
-  (package
-    (name "r-varband")
-    (version "0.9.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "varband" version))
-       (sha256
-        (base32 "16z66rx7xq5zan8pnw100c9r5syw1ml4hgzi9mch52aia23v21p9"))))
-    (properties `((upstream-name . "varband")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp))
-    (native-inputs (list r-knitr))
-    (home-page "http://github.com/hugogogo/varband")
-    (synopsis "Variable Banding of Large Precision Matrices")
-    (description
-     "Implementation of the variable banding procedure for modeling local dependence
-and estimating precision matrices that is introduced in Yu & Bien (2016) and is
-available at <https://arxiv.org/abs/1604.07451>.")
-    (license license:gpl3)))
 
 (define-public r-var-spec
   (package

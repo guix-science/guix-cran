@@ -20,7 +20,7 @@
   #:use-module (gnu packages compression)
   #:use-module (gnu packages video)
   #:use-module (gnu packages java)
-  #:use-module (gnu packages docker)
+  #:use-module (gnu packages containers)
   #:use-module (gnu packages duckdb)
   #:use-module (gnu packages tbb)
   #:use-module (gnu packages ghostscript)
@@ -29,6 +29,7 @@
   #:use-module (gnu packages tls)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages sqlite)
+  #:use-module (gnu packages julia)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -13127,30 +13128,6 @@ exposure.  For background see L. Chincarini and D. Kim (2010,
 ISBN:978-0-07-145939-6) \"Quantitative Equity Portfolio Management\".")
     (license license:gpl3)))
 
-(define-public r-strainranking
-  (package
-    (name "r-strainranking")
-    (version "1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "StrainRanking" version))
-       (sha256
-        (base32 "1r8avm9xajqmsy4x7pgh1yaffq7wl5i5kg75kdilydwmii6n19i0"))))
-    (properties `((upstream-name . "StrainRanking")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=StrainRanking")
-    (synopsis "Ranking of Pathogen Strains")
-    (description
-     "Regression-based ranking of pathogen strains with respect to their contributions
-to natural epidemics, using demographic and genetic data sampled in the curse of
-the epidemics.  This package also includes the GMCPIC test.")
-    (license (list license:gpl2+
-                   (license:fsdg-compatible "file://LICENSE")))))
-
 (define-public r-str2str
   (package
     (name "r-str2str")
@@ -15650,30 +15627,6 @@ change-point locations and bands for the unknown signal can be obtained.")
      "L2 penalized logistic regression for both continuous and discrete predictors,
 with forward stagewise/forward stepwise variable selection procedure.")
     (license license:gpl2+)))
-
-(define-public r-steppenal
-  (package
-    (name "r-steppenal")
-    (version "0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "stepPenal" version))
-       (sha256
-        (base32 "08gizl6c606ibbv7x2rdvfw37rghkrprwszha79yngkzpajw8gql"))))
-    (properties `((upstream-name . "stepPenal")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-proc r-mvtnorm r-glmnet r-dfoptim r-caret))
-    (home-page "https://cran.r-project.org/package=stepPenal")
-    (synopsis "Stepwise Forward Variable Selection in Penalized Regression")
-    (description
-     "Model Selection Based on Combined Penalties.  This package implements a stepwise
-forward variable selection algorithm based on a penalized likelihood criterion
-that combines the L0 with L2 or L1 norms.")
-    (license license:gpl2)))
 
 (define-public r-steppedwedge
   (package
@@ -18869,29 +18822,6 @@ anonymization, Word/PDF reports).  Designed to work in resource-constrained
 environments, offline and in French.")
     (license license:gpl3+)))
 
-(define-public r-stat2data
-  (package
-    (name "r-stat2data")
-    (version "2.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Stat2Data" version))
-       (sha256
-        (base32 "1fpp3b4k7x915a9wkpyj4dvvqp0wz7c3lpbh154vrxrdsr712z0k"))))
-    (properties `((upstream-name . "Stat2Data")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://github.com/statmanrobin/Stat2Data")
-    (synopsis "Datasets for Stat2")
-    (description
-     "Datasets for the textbook Stat2: Modeling with Regression and ANOVA (second
-edition).  The package also includes data for the first edition, Stat2: Building
-Models for a World of Data and a few functions for plotting diagnostics.")
-    (license license:gpl3)))
-
 (define-public r-starwarsdb
   (package
     (name "r-starwarsdb")
@@ -21993,33 +21923,6 @@ al., 2016), providing additional robust and flexible sample selection models.")
      "This package performs the EM algorithm for regression models using Skew Scale
 Mixtures of Normal Distributions.")
     (license license:gpl2+)))
-
-(define-public r-ssm
-  (package
-    (name "r-ssm")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SSM" version))
-       (sha256
-        (base32 "1h8yyzh5rn5jay70kyzvwirfndi049a5w28qigrjv5rxd7ml84l7"))))
-    (properties `((upstream-name . "SSM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/peterrobertcurtis/SSM")
-    (synopsis "Fit and Analyze Smooth Supersaturated Models")
-    (description
-     "This package creates an S4 class \"SSM\" and defines functions for fitting smooth
-supersaturated models, a polynomial model with spline-like behaviour.  Functions
-are defined for the computation of Sobol indices for sensitivity analysis and
-plotting the main effects using FANOVA methods.  It also implements the
-estimation of the SSM metamodel error using a GP model with a variety of defined
-correlation functions.")
-    (license license:gpl3)))
 
 (define-public r-sslfmm
   (package
@@ -34188,37 +34091,6 @@ being negative infinity.  It also addresses other possible issues of
 non-existence and non-identifiability of maximum likelihood estimates.")
     (license license:gpl2+)))
 
-(define-public r-sparsemdc
-  (package
-    (name "r-sparsemdc")
-    (version "0.99.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SparseMDC" version))
-       (sha256
-        (base32 "0d3ashk3l9fjdbiyjhaxc05ayyscissrg7lwhnh46hv3fydbixlj"))))
-    (properties `((upstream-name . "SparseMDC")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-foreach r-dorng r-doparallel))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=SparseMDC")
-    (synopsis "Implementation of SparseMDC Algorithm")
-    (description
-     "This package implements the algorithm described in Barron, M., and Li, J. (Not
-yet published).  This algorithm clusters samples from multiple ordered
-populations, links the clusters across the conditions and identifies marker
-genes for these changes.  The package was designed for @code{scRNA-Seq} data but
-is also applicable to many other data types, just replace cells with samples and
-genes with variables.  The package also contains functions for estimating the
-parameters for @code{SparseMDC} as outlined in the paper.  We recommend that
-users further select their marker genes using the magnitude of the cluster
-centers.")
-    (license license:gpl3)))
-
 (define-public r-sparsematest
   (package
     (name "r-sparsematest")
@@ -36102,29 +35974,46 @@ partial support for ACES Color workflows.")
 (define-public r-spacemodr
   (package
     (name "r-spacemodr")
-    (version "0.1.3")
+    (version "0.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spacemodR" version))
        (sha256
-        (base32 "0s1wphb89i2i80xc3a7q3kshskv2fcdima6qkkvn13pxrakx19s3"))))
+        (base32 "0bvkq18za4g12y0yv8088dxiichhph5n0p74m7xq1q6pp93zxjn6"))))
     (properties `((upstream-name . "spacemodR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-terra r-sf r-httr r-ggplot2))
+    (inputs (list julia))
+    (propagated-inputs (list r-terra
+                             r-stanheaders
+                             r-sf
+                             r-rstantools
+                             r-rstan
+                             r-rlang
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-patchwork
+                             r-httr
+                             r-ggplot2
+                             r-dplyr
+                             r-bh))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=spacemodR")
-    (synopsis
-     "Workflow for Environmental Risk Assessment: Habitat, Food Web, Dispersal, Exposure and Risk")
+    (home-page "https://github.com/Qonfluens/spacemodR")
+    (synopsis "Spatial Environmental Risk Assessment Through Food Webs")
     (description
-     "This package provides a set of tools dedicated to modeling food web transfer
-based on an initial ground raster.  It provides a directed acyclic graph
-structure for a set of rasters representing the flow of elements (e.g., food,
-energy, contaminants).  It also includes tools for working with dispersal
-algorithms, enabling the combination of flux data with population movement.")
+     "This package provides a workflow for spatially explicit environmental risk
+assessment of contaminated sites: habitat, food web, dispersal, exposure and
+risk.  Starting from a raster of soil contamination, the package builds habitat
+layers for a set of species, organises them in a directed acyclic graph
+representing a food web, and propagates the flow of elements (e.g., food,
+energy, contaminants) along its links.  It also provides soil interpolation by
+kriging, dispersal by kernel convolution or by circuit theory (through the
+optional Julia package Omniscape'), land cover retrieval for France ('OCS-GE')
+and Europe ('EUNIS'), and Bayesian calibration of transfer models with Stan'.")
     (license license:expat)))
 
 (define-public r-spacci
@@ -39095,34 +38984,6 @@ managing documents within databases.  One can connect with a local
 Cloudant'.  Documents can be inserted directly from vectors, lists, data.frames,
 and JSON'.  Targeted at @code{CouchDB} v2 or greater.")
     (license license:expat)))
-
-(define-public r-sodavis
-  (package
-    (name "r-sodavis")
-    (version "1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "sodavis" version))
-       (sha256
-        (base32 "1jf5sml51qxlpgv5b1rvyig4dm4ijw2hpnk85zf790jp22xm64jw"))))
-    (properties `((upstream-name . "sodavis")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-nnet r-mvtnorm r-mass))
-    (home-page "https://cran.r-project.org/package=sodavis")
-    (synopsis
-     "SODA: Main and Interaction Effects Selection for Logistic Regression, Quadratic Discriminant and General Index Models")
-    (description
-     "Variable and interaction selection are essential to classification in
-high-dimensional setting.  In this package, we provide the implementation of
-SODA procedure, which is a forward-backward algorithm that selects both main and
-interaction effects under logistic regression and quadratic discriminant
-analysis.  We also provide an extension, S-SODA, for dealing with the variable
-selection problem for semi-parametric models with continuous responses.")
-    (license license:gpl2)))
 
 (define-public r-socviz
   (package
@@ -53271,30 +53132,6 @@ principal component analysis with bootstrap significance testing, and automated
 technical interpretation of signal morphology and variance topology.")
     (license license:expat)))
 
-(define-public r-signalhsmm
-  (package
-    (name "r-signalhsmm")
-    (version "1.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "signalHsmm" version))
-       (sha256
-        (base32 "1d4v6cbvcbi8pb5zmn58s01h3jb0kv7yr7qvcnx4p2v82knvhik7"))))
-    (properties `((upstream-name . "signalHsmm")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-shiny r-seqinr r-rcpp))
-    (home-page "https://github.com/michbur/signalhsmm")
-    (synopsis "Predict Presence of Signal Peptides")
-    (description
-     "Predicts the presence of signal peptides in eukaryotic protein using hidden
-semi-Markov models.  The implemented algorithm can be accessed from both the
-command line and GUI.")
-    (license license:gpl3)))
-
 (define-public r-signacx
   (package
     (name "r-signacx")
@@ -61053,13 +60890,13 @@ HTML tags.")
 (define-public r-sgt
   (package
     (name "r-sgt")
-    (version "2.0")
+    (version "2.0-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sgt" version))
        (sha256
-        (base32 "0qb3maj5idwafs40fpdfrwzkadnh5yg8fvfzfs51p9yy69kbmlkx"))))
+        (base32 "1grxvk1q4x636yxfm9f9sik123qin27pfqk237jpfqp329kkn48r"))))
     (properties `((upstream-name . "sgt")))
     (build-system r-build-system)
     (arguments
@@ -64272,13 +64109,13 @@ proportions in one- and two-samples, and the Pearson's correlation coefficient."
 (define-public r-seqtarget
   (package
     (name "r-seqtarget")
-    (version "1.4.4")
+    (version "1.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SEQTaRget" version))
        (sha256
-        (base32 "0d4nj9v9wpn1b185izkbi86b5l4p486rx1ypsy7dncxhk763ymb9"))))
+        (base32 "17wyav0ngijprcrw6y5xbcsgq2ynd5ghyvbyzhi7rlw3z3xggr1f"))))
     (properties `((upstream-name . "SEQTaRget")))
     (build-system r-build-system)
     (arguments
@@ -64293,8 +64130,6 @@ proportions in one- and two-samples, and the Pearson's correlation coefficient."
                              r-future-apply
                              r-future
                              r-fastglm
-                             r-dorng
-                             r-dofuture
                              r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://causalinference.github.io/SEQTaRget/")
@@ -65931,39 +65766,6 @@ analysis), for variable importance measures of data, as well as for
 interpretability of machine learning models.  Most of the functions have to be
 applied on scalar output, but several functions support multi-dimensional
 outputs.")
-    (license license:gpl2)))
-
-(define-public r-sensiphy
-  (package
-    (name "r-sensiphy")
-    (version "0.8.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "sensiPhy" version))
-       (sha256
-        (base32 "1kjkdklva5wzmw071gbn1v9g5cf0wzmvwgy5y0dgi530v6byaw8j"))))
-    (properties `((upstream-name . "sensiPhy")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-phytools
-                             r-phylolm
-                             r-ggplot2
-                             r-geiger
-                             r-caper
-                             r-ape))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/paternogbc/sensiPhy")
-    (synopsis "Sensitivity Analysis for Comparative Methods")
-    (description
-     "An implementation of sensitivity analysis for phylogenetic comparative methods.
-The package is an umbrella of statistical and graphical methods that estimate
-and report different types of uncertainty in PCM: (i) Species Sampling
-uncertainty (sample size; influential species and clades). (ii) Phylogenetic
-uncertainty (different topologies and/or branch lengths). (iii) Data uncertainty
-(intraspecific variation and measurement error).")
     (license license:gpl2)))
 
 (define-public r-sensibo-sky
@@ -71363,40 +71165,6 @@ exponentially distributed random variables with different rate parameters).  For
 more details see Gatto and Baumgartner (2014) <doi:10.1007/s11009-012-9316-5>.")
     (license license:agpl3)))
 
-(define-public r-sdprior
-  (package
-    (name "r-sdprior")
-    (version "1.0-0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "sdPrior" version))
-       (sha256
-        (base32 "0g4crlasnvxz752n3az5jc681jvvj2g87c3a8s2h1i2vh64p5h37"))))
-    (properties `((upstream-name . "sdPrior")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-pscl
-                             r-mvtnorm
-                             r-mgcv
-                             r-mass
-                             r-gb2
-                             r-doparallel))
-    (home-page "https://cran.r-project.org/package=sdPrior")
-    (synopsis
-     "Scale-Dependent Hyperpriors in Structured Additive Distributional Regression")
-    (description
-     "Utility functions for scale-dependent and alternative hyperpriors.  The
-distribution parameters may capture location, scale, shape, etc.  and every
-parameter may depend on complex additive terms (fixed, random, smooth, spatial,
-etc.) similar to a generalized additive model.  Hyperpriors for all effects can
-be elicitated within the package.  Including complex tensor product interaction
-terms and variable selection priors.  The basic model is explained in in Klein
-and Kneib (2016) <doi:10.1214/15-BA983>.")
-    (license license:gpl2)))
-
 (define-public r-sdpdmod
   (package
     (name "r-sdpdmod")
@@ -72076,35 +71844,25 @@ and FarrÃ© (2017) <doi:10.2901/EUROSTAT.C2017.001>.")
 (define-public r-sdcnway
   (package
     (name "r-sdcnway")
-    (version "1.0.1")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SDCNway" version))
        (sha256
-        (base32 "0zmjc3xh4qvwyrq4ma2k6q08f4ny4iqnl5a640pj17jk8awzwbg0"))))
+        (base32 "1q44fbjnnh6g04rjm08yr8rn6gq25hmd6qrdng59g25182s61s79"))))
     (properties `((upstream-name . "SDCNway")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
+      #:tests? #f))
     (propagated-inputs (list r-rdpack r-plyr r-mass r-ggplot2 r-dplyr))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=SDCNway")
     (synopsis "Tools to Evaluate Disclosure Risk")
     (description
-     "This package provides tools for calculating disclosure risk measures for
-microdata, including record-level and file-level measures.  The record-level
-disclosure risk is estimated primarily using exhaustive tabulation.  The
-file-level disclosure risk is estimated by fitting loglinear models on the
-observed sample counts in cells formed by key variables and their interactions.
-Funded by the National Center for Education Statistics.  See Skinner and Shlomo
-(2008) <doi:10.1198/016214507000001328> for a description of the file-level risk
-measures and the loglinear model approach.")
+     "This package provides functions and tools for calculating disclosure risk
+measures.  This includes record-level measures primarily using exhaustive
+tabulation, as well as file-level measures using a loglinear model.")
     (license license:gpl2)))
 
 (define-public r-sdcmicro
@@ -78486,39 +78244,6 @@ modeled and incorporated into the Bayesian information criterion framework.
 Additionally, we also provide the implementation of a two-step algorithm to
 generate the candidate model pool.")
     (license license:gpl3)))
-
-(define-public r-sbic
-  (package
-    (name "r-sbic")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "sBIC" version))
-       (sha256
-        (base32 "1fx17c9w7v6wi02i293vjdahwxx4b5a118r655cl12gsd5qwqj11"))))
-    (properties `((upstream-name . "sBIC")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp
-                             r-r-oo
-                             r-r-methodss3
-                             r-polca
-                             r-mclust
-                             r-igraph
-                             r-hash
-                             r-flexmix
-                             r-combinat))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/Lucaweihs/sBIC")
-    (synopsis "Computing the Singular BIC for Multiple Models")
-    (description
-     "Computes the @code{sBIC} for various singular model collections including:
-binomial mixtures, factor analysis models, Gaussian mixtures, latent forests,
-latent class analyses, and reduced rank regressions.")
-    (license license:gpl3+)))
 
 (define-public r-sbi
   (package

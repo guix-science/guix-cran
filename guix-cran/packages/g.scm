@@ -980,31 +980,6 @@ then make a single integrated forest plot containing multiple windows of which
 each shows the result of individual SNPs (or other items of interest).")
     (license license:expat)))
 
-(define-public r-gwasbycluster
-  (package
-    (name "r-gwasbycluster")
-    (version "0.1.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GWASbyCluster" version))
-       (sha256
-        (base32 "0ivlkxbh8m23vbnjfmhk0vfczd5b8lzy9w4gm1m6jpvdm40kn70x"))))
-    (properties `((upstream-name . "GWASbyCluster")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-snpstats r-rootsolve r-limma r-biobase))
-    (home-page "https://cran.r-project.org/package=GWASbyCluster")
-    (synopsis
-     "Identifying Significant SNPs in Genome Wide Association Studies (GWAS) via Clustering")
-    (description
-     "Identifying disease-associated significant SNPs using clustering approach.  This
-package is implementation of method proposed in Xu et al (2019)
-<DOI:10.1038/s41598-019-50229-6>.")
-    (license license:gpl2+)))
-
 (define-public r-gwas2crispr
   (package
     (name "r-gwas2crispr")
@@ -3324,32 +3299,6 @@ Recommender System <doi:10.1080/01621459.2016.1219261> for the details.")
 discrete variables as outcomes and predictors (inspired by the superpc R package
 <https://cran.r-project.org/package=superpc>).")
     (license license:expat)))
-
-(define-public r-gsparo
-  (package
-    (name "r-gsparo")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GSparO" version))
-       (sha256
-        (base32 "0xna2crxqwy8fj0s79rxbdcaz9x912rp1vdwqv1557fsnmfv2yf0"))))
-    (properties `((upstream-name . "GSparO")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-threeway r-ggplot2))
-    (home-page "https://cran.r-project.org/package=GSparO")
-    (synopsis "Group Sparse Optimization")
-    (description
-     "Approaches a group sparse solution of an underdetermined linear system.  It
-implements the proximal gradient algorithm to solve a lower regularization model
-of group sparse learning.  For details, please refer to the paper \"Y. Hu, C. Li,
-K. Meng, J. Qin and X. Yang.  Group sparse optimization via l_{p,q}
-regularization.  Journal of Machine Learning Research, to appear, 2017\".")
-    (license license:gpl2+)))
 
 (define-public r-gsodr
   (package
@@ -21421,13 +21370,13 @@ crossed designs (each lightness level appears across hues).")
 (define-public r-ggtime
   (package
     (name "r-ggtime")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggtime" version))
        (sha256
-        (base32 "0029s2lwianv4b6al33vz1x90kgwlm81wazdjcljiiinca4z0vkx"))))
+        (base32 "04cq0zscaflzlqhlynx7lyfnvabwp9x782lwid63pbvj38yif3bf"))))
     (properties `((upstream-name . "ggtime")))
     (build-system r-build-system)
     (arguments
@@ -21441,7 +21390,6 @@ crossed designs (each lightness level appears across hues).")
                              r-s7
                              r-rlang
                              r-mixtime
-                             r-lubridate
                              r-lifecycle
                              r-gtable
                              r-ggplot2
@@ -30353,13 +30301,13 @@ bootstrap variograms.")
 (define-public r-geothinner
   (package
     (name "r-geothinner")
-    (version "2.1.2")
+    (version "2.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeoThinneR" version))
        (sha256
-        (base32 "0v9isw9jxw3dlb6x18kx803gwbpinn7fyqw65ffp1lmxmkm8v6rl"))))
+        (base32 "1j1i1cqfj707nka2l84520f57hw1mj38hplsyzsd069r1lrpd0vk"))))
     (properties `((upstream-name . "GeoThinneR")))
     (build-system r-build-system)
     (arguments
@@ -36768,31 +36716,6 @@ provides any combination of three modified generalized estimating equations and
 11 bias-adjusted covariance estimators.")
     (license license:gpl2+)))
 
-(define-public r-geesmv
-  (package
-    (name "r-geesmv")
-    (version "1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "geesmv" version))
-       (sha256
-        (base32 "0gm953z8q5cc1adl3d6vj5djg2inc880zfcdl5gd56fnb5gl6h1w"))))
-    (properties `((upstream-name . "geesmv")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-nlme r-matrixcalc r-mass r-gee))
-    (home-page "https://cran.r-project.org/package=geesmv")
-    (synopsis
-     "Modified Variance Estimators for Generalized Estimating Equations")
-    (description
-     "Generalized estimating equations with the original sandwich variance estimator
-proposed by Liang and Zeger (1986), and eight types of more recent modified
-variance estimators for improving the finite small-sample performance.")
-    (license license:gpl3+)))
-
 (define-public r-geer
   (package
     (name "r-geer")
@@ -38471,31 +38394,6 @@ models.")
     (description
      "Likelihood inference in Gaussian copula marginal regression models.")
     (license license:gpl2+)))
-
-(define-public r-gclm
-  (package
-    (name "r-gclm")
-    (version "0.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gclm" version))
-       (sha256
-        (base32 "0b1nr8k8m48x78m6fkga11ikkcxyjsjpvqcd1lp6n9n4hv7akmfp"))))
-    (properties `((upstream-name . "gclm")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list gfortran))
-    (home-page "https://github.com/gherardovarando/gclm")
-    (synopsis "Graphical Continuous Lyapunov Models")
-    (description
-     "Estimation of covariance matrices as solutions of continuous time Lyapunov
-equations.  Sparse coefficient matrix and diagonal noise are estimated with a
-proximal gradient method for an l1-penalized loss minimization problem.  Varando
-G, Hansen NR (2020) <@code{arXiv:2005.10483>}.")
-    (license license:expat)))
 
 (define-public r-gclink
   (package
@@ -40227,34 +40125,6 @@ accommodate tied ranks and Kendall's coefficient of concordance is likewise
 computed for untied ranking data.For more details see Garrett and Woodworth
 (1969) <https://books.google.com/books?id=@code{aoqSmQEACAAJ>} and Buragohain
 and Dubey (2021) <doi:10.5958/2454-552X.2021.00055.4>.")
-    (license license:gpl3)))
-
-(define-public r-garray
-  (package
-    (name "r-garray")
-    (version "1.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "garray" version))
-       (sha256
-        (base32 "0s2dgi556x9jnhafvzz4qkxdbq9dm12gsvsqd2g9iy3468fx9flq"))))
-    (properties `((upstream-name . "garray")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=garray")
-    (synopsis
-     "Generalized Array Arithmetic for Ragged Arrays with Named Margins")
-    (description
-     "Organize a so-called ragged array as generalized arrays, which is simply an
-array with sub-dimensions denoting the subdivision of dimensions (grouping of
-members within dimensions).  By the margins (names of dimensions and
-sub-dimensions) in generalized arrays, operators and utility functions provided
-in this package automatically match the margins, doing map-reduce style parallel
-computation along margins.  Generalized arrays are also cooperative to R's
-native functions that work on simple arrays.")
     (license license:gpl3)))
 
 (define-public r-garma

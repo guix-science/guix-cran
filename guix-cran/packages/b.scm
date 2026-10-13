@@ -20329,13 +20329,13 @@ for dense or sparse matrices.")
 (define-public r-bigpopa
   (package
     (name "r-bigpopa")
-    (version "2.1.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BIGpopA" version))
        (sha256
-        (base32 "1ywy5yx2j99blsff2ad838r5b0nfxijzdihj7j6awd8laqbdnfay"))))
+        (base32 "0z6w7a5nvi6zhw7gm163dw7hsl034f0h31i8rqpd2pl699zs5dsf"))))
     (properties `((upstream-name . "BIGpopA")))
     (build-system r-build-system)
     (arguments
@@ -28983,32 +28983,6 @@ covariates.  To these ends, @code{BayesTSM} estimates a progressive three-state
 model with censoring due to intervention using Bayesian estimation methods, as
 described in Klausch et al. (2023) <doi:10.1214/22-AOAS1669>.")
     (license license:expat)))
-
-(define-public r-bayestreeprior
-  (package
-    (name "r-bayestreeprior")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "BayesTreePrior" version))
-       (sha256
-        (base32 "13igmvw1wj8kzfijzsrhdqr52kv4vqrm91i71ay6f7jnkry3spaw"))))
-    (properties `((upstream-name . "BayesTreePrior")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=BayesTreePrior")
-    (synopsis "Bayesian Tree Prior Simulation")
-    (description
-     "This package provides a way to simulate from the prior distribution of Bayesian
-trees by Chipman et al. (1998) <DOI:10.2307/2669832>.  The prior distribution of
-Bayesian trees is highly dependent on the design matrix X, therefore using the
-suggested hyperparameters by Chipman et al. (1998) <DOI:10.2307/2669832> is not
-recommended and could lead to unexpected prior distribution.  This work is part
-of my master thesis (expected 2016).")
-    (license license:gpl3)))
 
 (define-public r-bayestree
   (package

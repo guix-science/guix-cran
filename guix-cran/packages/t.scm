@@ -9,7 +9,6 @@
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages bioconductor)
-  #:use-module (gnu packages algebra)
   #:use-module (gnu packages duckdb)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages statistics)
@@ -24,7 +23,7 @@
   #:use-module (gnu packages perl)
   #:use-module (gnu packages tex)
   #:use-module (gnu packages tls)
-  #:use-module (gnu packages docker)
+  #:use-module (gnu packages containers)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages cmake)
   #:use-module (guix-cran packages z)
@@ -4092,40 +4091,6 @@ an instrumental variable and therefore can recover causal estimand in the
 presence of unmeasured confounding under some assumptions.  A.Ying, R. Xu and J.
 Murphy. (2019) <doi:10.1002/sim.8071>.")
     (license license:lgpl2.0+)))
-
-(define-public r-tsrepr
-  (package
-    (name "r-tsrepr")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "TSrepr" version))
-       (sha256
-        (base32 "1bplh808byfi86rz2bs1ikiggg0a1k0z282vidhygvl927hz2fa4"))))
-    (properties `((upstream-name . "TSrepr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-wavelets
-                             r-rcpp
-                             r-quantreg
-                             r-mgcv
-                             r-mass
-                             r-dtt))
-    (native-inputs (list r-knitr))
-    (home-page "https://petolau.github.io/package/")
-    (synopsis "Time Series Representations")
-    (description
-     "This package provides methods for representations (i.e.  dimensionality
-reduction, preprocessing, feature extraction) of time series to help more
-accurate and effective time series data mining.  Non-data adaptive, data
-adaptive, model-based and data dictated (clipped) representation methods are
-implemented.  Also various normalisation methods (min-max, z-score, Box-Cox,
-Yeo-Johnson), and forecasting accuracy measures are implemented.")
-    (license (list license:gpl3
-                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-tsqr
   (package
@@ -16783,31 +16748,6 @@ while adding secure web requests, bearer-token authentication, structured
 errors, retries, safe query encoding, and automatic pagination.")
     (license license:artistic2.0)))
 
-(define-public r-tmdb
-  (package
-    (name "r-tmdb")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "TMDb" version))
-       (sha256
-        (base32 "062n9mi2f9g2xxpnymja57xnpl855d8mwyfwci7a8cq4c7w7avj7"))))
-    (properties `((upstream-name . "TMDb")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringi r-jsonlite r-httr))
-    (home-page "https://cran.r-project.org/package=TMDb")
-    (synopsis "Access to TMDb API")
-    (description
-     "This package provides an R-interface to the TMDb API (see TMDb API on
-<https://developers.themoviedb.org/3/getting-started/introduction>).  The Movie
-Database (TMDb) is a popular user editable database for movies and TV shows (see
-<https://www.themoviedb.org>).")
-    (license license:artistic2.0)))
-
 (define-public r-tmcalculator
   (package
     (name "r-tmcalculator")
@@ -27592,37 +27532,6 @@ new version also supports unobserved component ARIMA model specification and
 estimation for structural time series analysis.")
     (license license:gpl2+)))
 
-(define-public r-tfaddons
-  (package
-    (name "r-tfaddons")
-    (version "0.10.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tfaddons" version))
-       (sha256
-        (base32 "16adig97qmafval6i29pqdinsgbwjz2isajxdx1xvbf1mrawkmz0"))))
-    (properties `((upstream-name . "tfaddons")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tensorflow r-rstudioapi r-reticulate r-purrr
-                             r-keras))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/henry090/tfaddons")
-    (synopsis "Interface to 'TensorFlow SIG Addons'")
-    (description
-     "@code{TensorFlow} SIG Addons <https://www.tensorflow.org/addons> is a repository
-of community contributions that conform to well-established API patterns, but
-implement new functionality not available in core @code{TensorFlow}'.
-@code{TensorFlow} natively supports a large number of operators, layers,
-metrics, losses, optimizers, and more.  However, in a fast moving field like
-Machine Learning, there are many interesting new developments that cannot be
-integrated into core @code{TensorFlow} (because their broad applicability is not
-yet clear, or it is mostly used by a smaller subset of the community).")
-    (license license:asl2.0)))
-
 (define-public r-tfactsr
   (package
     (name "r-tfactsr")
@@ -34747,24 +34656,19 @@ and local taxonomic assignment.")
 (define-public r-taxodist
   (package
     (name "r-taxodist")
-    (version "0.8.0")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "taxodist" version))
        (sha256
-        (base32 "00ijj4ycw4nw3dvgvg863zivf9sb2j3b9r0dq45158cz6alw2jjn"))))
+        (base32 "13y3pg473gnjdrramj9g3dannnc2vfaf87a9ppqhl1152ybky3x6"))))
     (properties `((upstream-name . "taxodist")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-rvest
-                             r-purrr
-                             r-jsonlite
-                             r-httr
-                             r-cli))
+    (propagated-inputs (list r-stringr r-rvest r-jsonlite r-httr r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/rodrigosqrt3/taxodist")
     (synopsis "Taxonomic Hierarchy Distances and Lineage Analysis")
@@ -34775,11 +34679,12 @@ nodes, distance is defined as the reciprocal of the depth of their most recent
 common ancestor; identical nodes have distance zero.  This definition yields an
 ultrametric within each connected hierarchy.  Functions are provided for
 auditable name resolution, online or user-supplied lineage analysis, clade
-membership, pairwise and matrix distance calculation, hierarchical clustering,
-principal coordinates analysis, portable JSON analysis bundles, and cache
-management.  Distance matrices are returned as base R dist objects.  The
-distances represent classification depth rather than evolutionary time or
-phylogenetic branch length.")
+membership, pairwise, matrix, and cross-set distance calculation, classification
+trees with named clades, hierarchical clustering, principal coordinates
+analysis, portable and comparable JSON analysis bundles, and cache management.
+Distance matrices are returned as base R dist objects.  The distances represent
+classification depth rather than evolutionary time or phylogenetic branch
+length.")
     (license license:gpl3+)))
 
 (define-public r-taxnames
@@ -36311,13 +36216,13 @@ in conversational corpora.  For more details, see Dingemanse et al., (2022)
 (define-public r-talib
   (package
     (name "r-talib")
-    (version "0.9-4")
+    (version "0.9-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "talib" version))
        (sha256
-        (base32 "1vpmjbzx2n7jy5yjnb50vl1rscg8035kpgfa2raiqyxaa7i5kkxk"))))
+        (base32 "0p01pj9zz992j54l5ygyp60ik48fx2cp2xnarjmp614r64k43x3p"))))
     (properties `((upstream-name . "talib")))
     (build-system r-build-system)
     (arguments
@@ -36925,30 +36830,6 @@ can be exported with formats and colors to Excel', html and markdown.")
 algorithm as described by Fouskakis and Draper (2007)
 <doi:10.1111/j.1751-5823.2002.tb00174.x>.")
     (license license:gpl2+)))
-
-(define-public r-tabulog
-  (package
-    (name "r-tabulog")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tabulog" version))
-       (sha256
-        (base32 "0n6qjd7kmvxx5na71f358pw3bbwa69vh8qjkrs5mkb3izxabcq67"))))
-    (properties `((upstream-name . "tabulog")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-yaml))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=tabulog")
-    (synopsis "Parsing Semi-Structured Log Files into Tabular Format")
-    (description
-     "Convert semi-structured log files (such as Apache access.log files) into a
-tabular format (data.frame) using a standard template system.")
-    (license license:expat)))
 
 (define-public r-tabulergm
   (package

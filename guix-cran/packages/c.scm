@@ -3625,13 +3625,13 @@ density, ring width and percent latewood for each ring) are then obtained.")
 (define-public r-ctreemi
   (package
     (name "r-ctreemi")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ctreeMI" version))
        (sha256
-        (base32 "1fygl90r2dd95dwbzkr9d74vi6pzr41jni6fq0s837alhribyfwl"))))
+        (base32 "1c25cdwlxyp64j12lnh2rg3zxjk2i12k4wvqcq4k1b57rvlcjpwc"))))
     (properties `((upstream-name . "ctreeMI")))
     (build-system r-build-system)
     (arguments
@@ -7670,27 +7670,19 @@ interest via the @code{CropScape}
 (define-public r-crops
   (package
     (name "r-crops")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crops" version))
        (sha256
-        (base32 "0h6nvqjxmd8s838yrgg79hqy8r26hyvw2j1cksdv6n9h6gm26vs3"))))
+        (base32 "1k8dm07ms65646zsmw0ysz6w5fnvq1x19h5xy84c0db1v364wp4c"))))
     (properties `((upstream-name . "crops")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyverse
-                             r-tibble
-                             r-sets
-                             r-reshape
-                             r-rdpack
-                             r-memoise
-                             r-magrittr
-                             r-ggplot2
-                             r-cowplot))
+    (propagated-inputs (list r-sets r-rdpack r-memoise r-magrittr))
     (home-page "https://cran.r-project.org/package=crops")
     (synopsis "Changepoints for a Range of Penalties (CROPS)")
     (description
@@ -8385,38 +8377,6 @@ guide sequences and off-target data can be generated through the R console with
 Palindromic Repeats) and the associated protein Cas9 refer to a technique used
 in genome editing.")
     (license license:gpl3)))
-
-(define-public r-crisp
-  (package
-    (name "r-crisp")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "crisp" version))
-       (sha256
-        (base32 "1gs8jnd9y9pd55w6kwv9mvmg3wd8hjiw3lwx7k242pxccsxklfxq"))))
-    (properties `((upstream-name . "crisp")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-matrix r-mass))
-    (home-page "https://cran.r-project.org/package=crisp")
-    (synopsis
-     "Fits a Model that Partitions the Covariate Space into Blocks in a Data- Adaptive Way")
-    (description
-     "This package implements convex regression with interpretable sharp partitions
-(CRISP), which considers the problem of predicting an outcome variable on the
-basis of two covariates, using an interpretable yet non-additive model.  CRISP
-partitions the covariate space into blocks in a data-adaptive way, and fits a
-mean model within each block.  Unlike other partitioning methods, CRISP is fit
-using a non-greedy approach by solving a convex optimization problem, resulting
-in low-variance fits.  More details are provided in Petersen, A., Simon, N., and
-Witten, D. (2016).  Convex Regression with Interpretable Sharp Partitions.
-Journal of Machine Learning Research, 17(94): 1-31
-<http://jmlr.org/papers/volume17/15-344/15-344.pdf>.")
-    (license license:gpl2+)))
 
 (define-public r-crimeutils
   (package
@@ -17421,67 +17381,6 @@ entropy based two-sample test is also implemented.  Please refer to Ma and Sun
 <doi:10.48550/@code{arXiv.2403.07892>} for more information.")
     (license license:gpl2+)))
 
-(define-public r-cope
-  (package
-    (name "r-cope")
-    (version "0.2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cope" version))
-       (sha256
-        (base32 "1r02nb6wy25ixhdcbqqz167s7ny3hydpxfxry5ar4136qvcamgyy"))))
-    (properties `((upstream-name . "cope")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-nlme
-                             r-mvtnorm
-                             r-matrix
-                             r-mass
-                             r-maps
-                             r-fields
-                             r-abind))
-    (home-page "https://cran.r-project.org/package=cope")
-    (synopsis "Coverage Probability Excursion (CoPE) Sets")
-    (description
-     "This package provides functions to compute and plot Coverage Probability
-Excursion (@code{CoPE}) sets for real valued functions on a 2-dimensional
-domain. @code{CoPE} sets are obtained from repeated noisy observations of the
-function on the entire domain.  They are designed to bound the excursion set of
-the target function at a given level from above and below with a predefined
-probability.  The target function can be a parameter in spatially-indexed linear
-regression.  Support by NIH grant R01 CA157528 is gratefully acknowledged.")
-    (license license:gpl2)))
-
-(define-public r-copcts
-  (package
-    (name "r-copcts")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CopCTS" version))
-       (sha256
-        (base32 "1j0bhkjk181y9k69442diswgwax5whmh5vfqydhf3b1r5ll1wkm3"))))
-    (properties `((upstream-name . "CopCTS")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-msm r-copula r-copbasic))
-    (home-page "https://cran.r-project.org/package=CopCTS")
-    (synopsis
-     "Copula-Based Semiparametric Analysis for Time Series Data with Detection Limits")
-    (description
-     "Semiparametric estimation for censored time series with lower detection limit.
-The latent response is a sequence of stationary process with Markov property of
-order one.  Estimation of copula parameter(COPC) and Conditional quantile
-estimation are included for five available copula functions.  Copula selection
-methods based on L2 distance from empirical copula function are also included.")
-    (license (list license:gpl2+ license:gpl3+))))
-
 (define-public r-copcor
   (package
     (name "r-copcor")
@@ -21566,13 +21465,13 @@ deployment-specific settings.")
 (define-public r-configr
   (package
     (name "r-configr")
-    (version "0.3.5")
+    (version "0.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "configr" version))
        (sha256
-        (base32 "1qlfza9fwqdhw37gxhgxgp4x2dg1qlvdw0rf9fn6a8hgjaj9z8a3"))))
+        (base32 "1i86wfk43yzlwb97f2hjlvblaiaxx3ni0fkah5hxf4hbri7xgwbk"))))
     (properties `((upstream-name . "configr")))
     (build-system r-build-system)
     (arguments
@@ -22448,18 +22347,19 @@ CNVs.  Brucker, A., et al. (2020) <doi:10.1101/666875>.")
 (define-public r-concstats
   (package
     (name "r-concstats")
-    (version "0.1.6")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "concstats" version))
        (sha256
-        (base32 "1gcv6lsrfdb12alaksmw40fv8p909hifjwrrgy9r12nb4ci3fg0x"))))
+        (base32 "0lmxg43b0615a9d9p648kyf739i2yxg6d226axr5zn7rwhcgl117"))))
     (properties `((upstream-name . "concstats")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-tibble r-checkmate))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/ropensci/concstats/")
     (synopsis "Market Structure, Concentration and Inequality Measures")
@@ -23013,33 +22913,6 @@ Implementations\", Academic Press, ISBN:978-0-12-398387-9).")
 expressions use usual loops @code{(for()}, @code{while()} and @code{repeat()})
 and usual @code{if()} as list producers.  In many cases it gives more concise
 notation than standard \"*apply + filter\" strategy.")
-    (license license:gpl2)))
-
-(define-public r-compr
-  (package
-    (name "r-compr")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CompR" version))
-       (sha256
-        (base32 "1k4q0yanvhdh3ksia7d42lxky19yci5vxhmi6h716g9sxzfsjk6b"))))
-    (properties `((upstream-name . "CompR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mass))
-    (home-page "https://cran.r-project.org/package=CompR")
-    (synopsis "Paired Comparison Data Analysis")
-    (description
-     "Different tools for describing and analysing paired comparison data are
-presented.  Main methods are estimation of products scores according Bradley
-Terry Luce model.  A segmentation of the individual could be conducted on the
-basis of a mixture distribution approach.  The number of classes can be tested
-by the use of Monte Carlo simulations.  This package deals also with
-multi-criteria paired comparison data.")
     (license license:gpl2)))
 
 (define-public r-comppareto
@@ -35640,27 +35513,6 @@ sensitivity, specificity, positive and negative predictive values, Youden index,
 number needed to treat, number needed to diagnose, and predictive summary index.")
     (license license:gpl3)))
 
-(define-public r-clinsig
-  (package
-    (name "r-clinsig")
-    (version "1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "clinsig" version))
-       (sha256
-        (base32 "1wgfl9kks57yizrf8z6x7dhmbl3a80q8nnj3a5n2hpc9yr8l9ijf"))))
-    (properties `((upstream-name . "clinsig")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=clinsig")
-    (synopsis "Clinical Significance Functions")
-    (description
-     "This package provides functions for calculating clinical significance.")
-    (license license:gpl2+)))
-
 (define-public r-clinpubr
   (package
     (name "r-clinpubr")
@@ -40606,35 +40458,6 @@ corresponding coefficient estimates, and cips', which takes the lmps object as
 input to select variables and perform inferences using two types of voting.")
     (license license:expat)))
 
-(define-public r-ciplot
-  (package
-    (name "r-ciplot")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CIplot" version))
-       (sha256
-        (base32 "0hx3dn7d8hvsh75747d9046iqriy3bjnchph8xllnvlhkrm4di1f"))))
-    (properties `((upstream-name . "CIplot")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-multcomp r-mass))
-    (home-page "https://github.com/toshi-ara/CIplot")
-    (synopsis "Functions to Plot Confidence Interval")
-    (description
-     "Plot confidence interval from the objects of statistical tests such as
-@code{t.test()}, @code{var.test()}, @code{cor.test()}, @code{prop.test()} and
-@code{fisher.test()} ('htest class), Tukey test @code{[TukeyHSD()}], Dunnett
-test @code{[glht()} in multcomp package], logistic regression @code{[glm()}],
-and Tukey or Games-Howell test @code{[posthocTGH()} in userfriendlyscience
-package].  Users are able to set the styles of lines and points.  This package
-contains the function to calculate odds ratios and their confidence intervals
-from the result of logistic regression.")
-    (license license:gpl2+)))
-
 (define-public r-ciphertext
   (package
     (name "r-ciphertext")
@@ -42286,27 +42109,6 @@ the package ships with a number of chore helpers for R package development,
 users can create custom helpers just by writing some instructions in a markdown
 file.")
     (license license:expat)))
-
-(define-public r-chords
-  (package
-    (name "r-chords")
-    (version "0.95.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "chords" version))
-       (sha256
-        (base32 "1v6zvl1mv9fyf6hx1fpbj3i7s893n4y1w4j9rw1arps006qz2jqn"))))
-    (properties `((upstream-name . "chords")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-matrix r-mass))
-    (home-page "https://cran.r-project.org/package=chords")
-    (synopsis "Estimation in Respondent Driven Samples")
-    (description "Maximum likelihood estimation in respondent driven samples.")
-    (license license:gpl2)))
 
 (define-public r-chopthin
   (package
@@ -45092,33 +44894,6 @@ Neyman (1934) <doi:10.2307/2342192> and Neyman (1938)
 <doi:10.1080/01621459.1938.10503378>).")
     (license license:gpl2+)))
 
-(define-public r-chartql
-  (package
-    (name "r-chartql")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "chartql" version))
-       (sha256
-        (base32 "108csn7q8qrjhiss54f5bliv3av7psq7kfryspajbdb6wm9ciz3p"))))
-    (properties `((upstream-name . "chartql")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr r-ggplot2))
-    (home-page "https://github.com/rmsyed/chartql")
-    (synopsis "Simplified Language for Plots and Charts")
-    (description
-     "This package provides a very simple syntax for the user to generate custom
-plot(s) without having to remember complicated ggplot2 syntax.  The chartql
-package uses ggplot2 and manages all the syntax complexities internally.  As an
-example, to generate a bar chart of company sales faceted by product category
-further faceted by season of the year, we simply write: \"CHART bar X category,
-season Y sales\".")
-    (license license:gpl3)))
-
 (define-public r-charr
   (package
     (name "r-charr")
@@ -46062,13 +45837,13 @@ well.")
 (define-public r-cgvr
   (package
     (name "r-cgvr")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cgvR" version))
        (sha256
-        (base32 "1m3ga030p3d456jzz19n6xiahrvd604bwvmcxvdymijpky1m55j8"))))
+        (base32 "03ii244ldpmikl8f895h69adpm4wmaw0il5i64h66xagh5saa7wv"))))
     (properties `((upstream-name . "cgvR")))
     (build-system r-build-system)
     (arguments
@@ -59733,34 +59508,6 @@ entities that they represent. @code{iCalendar} is an open standard for
 exchanging calendar and scheduling information between users and computers,
 described at <https://icalendar.org/>.")
     (license license:asl2.0)))
-
-(define-public r-calcunique
-  (package
-    (name "r-calcunique")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "calcUnique" version))
-       (sha256
-        (base32 "012mjayj90m5gsd8mhm2ic00pa0bnrjiidq9mv4vxj8slwp641rz"))))
-    (properties `((upstream-name . "calcUnique")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://github.com/stephenbfroehlich/calcUnique")
-    (synopsis "Simple Wrapper for Computationally Expensive Functions")
-    (description
-     "This is a one-function package that will pass only unique values to a
-computationally-expensive function that returns an output of the same length as
-the input.  In importing and working with tidy data, it is common to have index
-columns, often including time stamps that are far from unique.  Some functions
-to work with these such as text conversion to other variable types (e.g.
-@code{as.POSIXct()}), various @code{grep()}-based functions, and often the
-@code{cut()} function are relatively slow when working with tens of millions of
-rows or more.")
-    (license license:expat)))
 
 (define-public r-calcthemall-prm
   (package
