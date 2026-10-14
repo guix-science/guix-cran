@@ -125,13 +125,13 @@ boundaries.")
 (define-public r-oystermapr
   (package
     (name "r-oystermapr")
-    (version "1.5.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oystermapR" version))
        (sha256
-        (base32 "10avhda9d53p57gvwv30mg6k596hk0pkjdag7w94q14y80v4sv3x"))))
+        (base32 "0cjkvcx6sm36i9w6w86pvv9igsswhz82zrccyhb9z5mxsbrxr2bg"))))
     (properties `((upstream-name . "oystermapR")))
     (build-system r-build-system)
     (arguments
@@ -144,16 +144,15 @@ boundaries.")
      "Predict and Map Oyster Growth Suitability from Environmental Data")
     (description
      "Predicts spatial suitability for oyster growth from environmental survey data
-using Analytic Hierarchy Process (AHP) weighted scoring.  Users supply sensor
-data from Acoustic Doppler Current Profilers (ADCP),
-Conductivity-Temperature-Depth (CTD) sensors, bathymetric sonar, and sidescan
-sonar, specify a target species, and receive per-location suitability scores, a
-five-band @code{GeoTIFF} heatmap for QGIS', contour lines, and a formatted PDF
-or HTML report.  Supports seventeen species across global aquaculture regions,
-including Ostrea edulis, Magallana gigas, Crassostrea virginica, Crassostrea
-hongkongensis, and thirteen further species; see @code{list_species()}.
-Includes ocean acidification scoring via in-house aragonite saturation state
-(Omega_arag) calculation using Lueker et al. (2000)
+using rank-reciprocal weighted scoring.  Users supply sensor data from Acoustic
+Doppler Current Profilers (ADCP), Conductivity-Temperature-Depth (CTD) sensors,
+bathymetric sonar, and sidescan sonar, specify a target species, and receive
+per-location suitability scores, a five-band @code{GeoTIFF} heatmap for QGIS',
+contour lines, and a formatted PDF or HTML report.  Supports seventeen species
+across global aquaculture regions, including Ostrea edulis, Magallana gigas,
+Crassostrea virginica, Crassostrea hongkongensis, and thirteen further species;
+see @code{list_species()}.  Includes ocean acidification scoring via in-house
+aragonite saturation state (Omega_arag) calculation using Lueker et al. (2000)
 <doi:10.1016/S0304-4203(00)00022-0> and Mucci (1983)
 <doi:10.1357/002224083788520153> equilibrium constants (no external
 dependencies), variable impact diagnostics @code{(variable_impact()}),
@@ -167,7 +166,15 @@ Bloom (HAB) risk and anthropogenic disturbance scoring with optional live
 International Council for the Exploration of the Sea (ICES) data integration,
 hybrid larval dispersal connectivity scoring (union-find Gaussian kernel plus
 optional @code{OpenDrift} or Finite Volume Community Ocean Model ('FVCOM')
-connectivity matrix), and batch multi-species comparison.")
+connectivity matrix), batch multi-species comparison, and evidence-weighted
+scoring in which each variable's weight is its published rank multiplied by the
+measured reliability and realised spread of that layer, with the fraction of the
+species evidence base the survey observed reported alongside the score rather
+than normalised away, and lineage-specific tolerance profiles for related
+populations, in which thinly sampled lineages borrow strength from relatives
+across a genetic distance matrix only where tolerance is shown to track
+relatedness, with inverse mapping of where each lineage is more likely to occur
+and which source population suits a site.")
     (license license:gpl3+)))
 
 (define-public r-oyster
@@ -10651,13 +10658,13 @@ nonassociative.  See the package vignette for more details.")
 (define-public r-onewaytests
   (package
     (name "r-onewaytests")
-    (version "3.1")
+    (version "3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "onewaytests" version))
        (sha256
-        (base32 "06fjaascmalcxfbsrgdf3i2039iqjpgdg4vsgwysiqff28hk9fs2"))))
+        (base32 "1p4qz01pqzrdl1aj3yifwsv2nagp4r6a24sdglrbhnca6fak5h58"))))
     (properties `((upstream-name . "onewaytests")))
     (build-system r-build-system)
     (arguments
@@ -10667,38 +10674,40 @@ nonassociative.  See the package vignette for more details.")
     (home-page "https://cran.r-project.org/package=onewaytests")
     (synopsis "One-Way Tests in Independent Groups Designs")
     (description
-     "This package performs one-way tests in independent groups designs including
-homoscedastic and heteroscedastic tests.  These are one-way analysis of variance
-(ANOVA), Welch's heteroscedastic F test, Welch's heteroscedastic F test with
-trimmed means and Winsorized variances, Brown-Forsythe test, Alexander-Govern
-test, James second order test, Kruskal-Wallis test, Scott-Smith test, Box F
-test, Johansen F test, Generalized tests equivalent to Parametric Bootstrap and
-Fiducial tests, Alvandi's F test, Alvandi's generalized p-value, approximate F
+     "This package performs one-way tests for independent groups designs under
+homoscedasticity and heteroscedasticity.  The tests described by Dag et al.
+(2018) <doi:10.32614/RJ-2018-022> include one-way analysis of variance (ANOVA),
+Welch's heteroscedastic F test, Welch's heteroscedastic F test with trimmed
+means and Winsorized variances, Brown-Forsythe test, Alexander-Govern test,
+James second-order test, and Kruskal-Wallis test.  Additional tests described by
+Kasikci et al. (2026) <doi:10.32614/RJ-2026-014> include Scott-Smith test, Box F
+test, Johansen F test, generalized tests equivalent to parametric bootstrap and
+fiducial tests, Alvandi's F test, Alvandi's generalized p-value, approximate F
 test, B square test, Cochran test, Weerahandi's generalized F test, modified
 Brown-Forsythe test, adjusted Welch's heteroscedastic F test, Welch-Aspin test,
-Permutation F test.  The package performs pairwise comparisons and graphical
-approaches.  Also, the package includes Student's t test, Welch's t test and
-Mann-Whitney U test for two samples.  Moreover, it assesses variance homogeneity
-and normality of data in each group via tests and plots (Dag et al., 2018,
-<https://journal.r-project.org/archive/2018/RJ-2018-022/RJ-2018-022.pdf>).")
+and permutation F test.  The package also provides pairwise comparisons and
+graphical methods, as well as Student's t test, Welch's t test, and Mann-Whitney
+U test for two independent samples.  It assesses variance homogeneity and
+within-group normality using tests and plots.")
     (license license:gpl2+)))
 
 (define-public r-oneway
   (package
     (name "r-oneway")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oneway" version))
        (sha256
-        (base32 "0xmbbscfk1cw8ny4vvd4ba0bpbzalgwjy1hfwqfh8jjxzb07vi44"))))
+        (base32 "1dz21c4h4i458zm6rn6a6r971dg2jgnz9ym2q0hv4n9bwh213y75"))))
     (properties `((upstream-name . "oneway")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-varequal r-outlying r-normality))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/P10911004-NPUST/oneway")
     (synopsis "One-Way Statistical Analyses")
     (description

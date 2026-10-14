@@ -5542,13 +5542,13 @@ recoding of nominal data.")
 (define-public r-qlcal
   (package
     (name "r-qlcal")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qlcal" version))
        (sha256
-        (base32 "08grdg2mzszrxrjnvgnw24wljg2ly1xdfngk0051gxphznjbdvli"))))
+        (base32 "10khxbg9imzpchscvy0j014v0d8spn4p9g0bg6azkddwmn5ny1hk"))))
     (properties `((upstream-name . "qlcal")))
     (build-system r-build-system)
     (arguments

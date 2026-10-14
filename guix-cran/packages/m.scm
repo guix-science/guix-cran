@@ -10241,13 +10241,13 @@ Mohamed Bisher(2022)
 (define-public r-mta
   (package
     (name "r-mta")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MTA" version))
        (sha256
-        (base32 "0fsn3plw2hh4hbdrzgpjbb7hnfxfxcjz9wgzpn9jy3w910cxv5jj"))))
+        (base32 "1cf5gmrzgwjq9pq1m4fhqcx38lhqy3zg4hlglirzas5fxl8m06gs"))))
     (properties `((upstream-name . "MTA")))
     (build-system r-build-system)
     (arguments
@@ -10255,7 +10255,7 @@ Mohamed Bisher(2022)
       #:tests? #f))
     (propagated-inputs (list r-sf r-igraph))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/riatelab/MTA/")
+    (home-page "https://codeberg.org/riatelab/MTA")
     (synopsis "Multiscalar Territorial Analysis")
     (description
      "Build multiscalar territorial analysis based on various contexts.")
@@ -16992,13 +16992,13 @@ first step to tailor new models for more specific situations.")
 (define-public r-morse
   (package
     (name "r-morse")
-    (version "3.3.5")
+    (version "3.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "morse" version))
        (sha256
-        (base32 "1wv8flpq6bs4vj88ba1lj4xnaf8w78zgz8mcncawg0s03qc5ybrr"))))
+        (base32 "0m5myy27hfhww3sik71d8m6vp0jyrd5azggjm4v4b6flzbhkllkq"))))
     (properties `((upstream-name . "morse")))
     (build-system r-build-system)
     (arguments
@@ -17013,7 +17013,6 @@ first step to tailor new models for more specific situations.")
                              r-magrittr
                              r-gridextra
                              r-ggplot2
-                             r-epitools
                              r-dplyr
                              r-desolve
                              r-coda))
@@ -23914,28 +23913,34 @@ networks and between-subjects networks.")
 (define-public r-mlumr
   (package
     (name "r-mlumr")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlumr" version))
        (sha256
-        (base32 "038f1l8dscmnvmhz703ir3pakb084pjbbaskq5lpddb1jbmvw84a"))))
+        (base32 "0p6021h7ljk9vbcv97xmn5y4wm2gl76yp8nslxbp525pm1wj9iwm"))))
     (properties `((upstream-name . "mlumr")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
-    (propagated-inputs (list r-stanheaders
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
+    (propagated-inputs (list r-survival
+                             r-stanheaders
+                             r-splines2
                              r-rstantools
                              r-rstan
                              r-rcppparallel
                              r-rcppeigen
                              r-rcpp
                              r-randtoolbox
-                             r-copula
+                             r-ggplot2
                              r-bh))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://github.com/choxos/mlumr")
     (synopsis
      "Multilevel Unanchored Meta-Regression for Indirect Treatment Comparisons")
@@ -23943,12 +23948,15 @@ networks and between-subjects networks.")
      "Bayesian multilevel unanchored meta-regression (ML-UMR) for indirect treatment
 comparisons using individual patient data (IPD) and aggregate data (@code{AgD}).
  Implements shared prognostic factor assumption (SPFA) and relaxed SPFA models
-for binary, continuous, and count outcomes via Stan'.  Also provides simulated
-treatment comparison (STC) via parametric G-computation and naive unadjusted
-benchmarks.  ML-UMR is an adaptation of the ML-NMR methodology (Phillippo et al.
- 2020, <doi:10.1111/rssa.12579>) implemented in the multinma package (GPL-3) to
-the unanchored two-trial case; the public API deliberately mirrors multinma's so
-users can move between ML-NMR and ML-UMR with the same workflow.")
+for binary, continuous, count, and time-to-event (survival) outcomes via Stan',
+including parametric and flexible M-spline survival baselines.  Also provides a
+one-arm simulated treatment comparison (STC) via comparator-population
+G-computation and naive unadjusted benchmarks.  ML-UMR is an adaptation of the
+ML-NMR methodology (Phillippo et al.  2020, <doi:10.1111/rssa.12579>)
+implemented in the multinma package (GPL-3) to the unanchored two-trial case.
+The public API uses familiar names for data setup, integration and effect
+summaries, but ML-NMR and ML-UMR specifications and fitted objects are not
+interchangeable because their evidence structures and models differ.")
     (license license:gpl3)))
 
 (define-public r-mlts
@@ -24079,13 +24087,13 @@ mlt.")
 (define-public r-mlt
   (package
     (name "r-mlt")
-    (version "1.8-3")
+    (version "1.8-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlt" version))
        (sha256
-        (base32 "19fdp484hlkx0zh4wdck942iawil4y273dwwfalxjny1dyqqlv7p"))))
+        (base32 "19sk5bx428qh467jh3g7qkhq5s01sjf0kiqv6051a11xcmsbdxns"))))
     (properties `((upstream-name . "mlt")))
     (build-system r-build-system)
     (arguments
@@ -29886,13 +29894,13 @@ A.M.Gun,M.K.Gupta,B.Dasgupta(2019,ISBN:81-87567-81-3).")
 (define-public r-missinghe
   (package
     (name "r-missinghe")
-    (version "1.6.1")
+    (version "1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "missingHE" version))
        (sha256
-        (base32 "0l8dqj2xl3abv6450zpkfx9rmjx724w20bc0lz5d4x4lcp5brhd4"))))
+        (base32 "0a98wnmjkkk7asww67s74bp75s1w4njbjrgsvfkjmh4fhxxw34gx"))))
     (properties `((upstream-name . "missingHE")))
     (build-system r-build-system)
     (arguments
@@ -29909,18 +29917,14 @@ A.M.Gun,M.K.Gupta,B.Dasgupta(2019,ISBN:81-87567-81-3).")
                              r-bcea
                              r-bayesplot))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=missingHE")
-    (synopsis "Missing Outcome Data in Health Economic Evaluation")
+    (home-page "https://github.com/AnGabrio/missingHE")
+    (synopsis "Missing Cost Effectiveness Models")
     (description
-     "This package contains a suite of functions for health economic evaluations with
-missing outcome data.  The package can fit different types of statistical models
-under a fully Bayesian approach using the software JAGS (which should be
-installed locally and which is loaded in @code{missingHE} via the R package
-R2jags').  Three classes of models can be fitted under a variety of missing data
-assumptions: selection models, pattern mixture models and hurdle models.  In
-addition to model fitting, @code{missingHE} provides a set of specialised
-functions to assess model convergence and fit, and to summarise the statistical
-and economic results using different types of measures and graphs.  The methods
+     "This package performs Bayesian cost-effectiveness analysis with missing outcome
+data.  Three classes of models can be fitted under a variety of missing data
+assumptions: selection models, pattern mixture models and hurdle models.  The
+package allows to assess model convergence and summarise the statistical and
+economic results using different types of measures and graphs.  The methods
 implemented are described in Mason (2018) <doi:10.1002/hec.3793>, Molenberghs
 (2000) <doi:10.1007/978-1-4419-0300-6_18> and Gabrio (2019)
 <doi:10.1002/sim.8045>.")
@@ -37487,26 +37491,28 @@ using a fixed amount of memory.")
 (define-public r-mevr
   (package
     (name "r-mevr")
-    (version "1.1.1")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mevr" version))
        (sha256
-        (base32 "107gp0lbgy4hfi38x07h4z8sf1phkywqk58hfr2d97dil4mnwlz0"))))
+        (base32 "1kkh7d5dzxfxv8lb6i8116vmri90l58pmw1qs5rjv4bs5lzz6yjc"))))
     (properties `((upstream-name . "mevr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rlang
+                             r-mmand
                              r-mgcv
                              r-foreach
                              r-envstats
                              r-dplyr
                              r-doparallel
+                             r-data-table
                              r-bamlss))
-    (home-page "https://cran.r-project.org/package=mevr")
+    (home-page "https://haraldschellander.github.io/mevr/")
     (synopsis "Fitting the Metastatistical Extreme Value Distribution MEVD")
     (description
      "Extreme value analysis with the metastatistical extreme value distribution MEVD
@@ -54161,21 +54167,26 @@ state uncertainty and a simulation capability for HMM models.")
 (define-public r-mark
   (package
     (name "r-mark")
-    (version "0.8.3")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mark" version))
        (sha256
-        (base32 "0ysyakbp3z5rn3awjz70yscx9svd1y8f206bmd1f4fyv442dpyjq"))))
+        (base32 "03np7g3vgvhm7zad66d3g0an2wlwdgmdsnibmawx7kzyiaap5waw"))))
     (properties `((upstream-name . "mark")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang r-magrittr r-fuj r-fs r-cli))
+    (propagated-inputs (list r-rlang
+                             r-magrittr
+                             r-fuj
+                             r-fs
+                             r-cnd
+                             r-cli))
     (home-page "https://CRAN.R-project.org/package=mark")
-    (synopsis "Miscellaneous, Analytic R Kernels")
+    (synopsis "Multipurpose Aids for R Kit")
     (description
      "Miscellaneous functions and wrappers for development in other packages created,
 maintained by Jordan Mark Barbone.")
@@ -54485,32 +54496,33 @@ a conditional risk model.")
 (define-public r-margevt
   (package
     (name "r-margevt")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "margEVT" version))
        (sha256
-        (base32 "0lrsvlc3wf211p8fvkw047xiwg6a6q03kxmvzq00rxm3njf6kdg9"))))
+        (base32 "119f5mhzv6xijzp0p1shpzc59pr0gmys7nsrx07ndh1v4v4dh52v"))))
     (properties `((upstream-name . "margEVT")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-vars))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/rodrigosqrt3/margEVT")
     (synopsis
      "Regularized Point Processes and Stochastic Marginalization for Extremes")
     (description
      "This package implements a non-stationary extreme value analysis framework by
-coupling a covariate-driven Non-Homogeneous Poisson Process (NHPP) with
-Elastic-Net regularization and analytical gradients.  Provides methods for
-estimating conditional return levels and unconditional (marginalized) return
-levels via parametric stochastic integration over stable Vector Autoregressive
-VAR(p) or univariate autoregressive covariate trajectories, or non-parametric
-annual-block resampling.  Supports block-specific penalty controls, operational
-active-set thresholds, conditional parametric bootstrap inference, and
-walk-forward assessment.")
+coupling a covariate-driven non-homogeneous Poisson process (NHPP) with
+(adaptive) elastic-net regularization and analytical gradients.  Provides
+methods for estimating conditional return levels and unconditional
+(marginalized) return levels via parametric stochastic integration over stable
+vector autoregressive VAR(p) covariate trajectories, or non-parametric
+annual-block resampling.  Supports block-specific penalty controls, BIC
+selection along a regularization path, Karush-Kuhn-Tucker convergence checks,
+time-rescaling residual diagnostics, conditional parametric bootstrap inference,
+and walk-forward assessment.")
     (license license:gpl3+)))
 
 (define-public r-margaret

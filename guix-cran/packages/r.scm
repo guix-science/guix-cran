@@ -587,13 +587,13 @@ different.")
 (define-public r-rxode2
   (package
     (name "r-rxode2")
-    (version "5.1.7.1")
+    (version "5.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rxode2" version))
        (sha256
-        (base32 "0fsvbwsqizlbsy2aw7h54wyg9cj2f5ng3i2xiqgx7sxw57rihzii"))))
+        (base32 "03myb21qanmrhpk8r0b2chackrynqlmklj23rahzgdnwmjh109b8"))))
     (properties `((upstream-name . "rxode2")))
     (build-system r-build-system)
     (arguments
@@ -601,12 +601,10 @@ different.")
       #:tests? #f))
     (propagated-inputs (list r-vctrs
                              r-sys
-                             r-stanheaders
                              r-sitmo
                              r-rxode2ll
+                             r-rxode2lincmt
                              r-rex
-                             r-rcppparallel
-                             r-rcppeigen
                              r-rcpparmadillo
                              r-rcpp
                              r-qs2
@@ -4552,19 +4550,18 @@ statistics on income and living conditions surveys.")
 (define-public r-rtinycc
   (package
     (name "r-rtinycc")
-    (version "0.1.15")
+    (version "0.1.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rtinycc" version))
        (sha256
-        (base32 "1iimdrncl67649vxx31q9imjd0iiyld88rv3yj7kc6srvhm1vfh3"))))
+        (base32 "0xv2wvr314ksncrp926k5nvhgybjd1ri3xn84r2hmih9s10fz82h"))))
     (properties `((upstream-name . "Rtinycc")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-lambda-r))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/sounkou-bioinfo/Rtinycc")
     (synopsis
@@ -5130,6 +5127,60 @@ endpoints.  Runs Apple's on-device Foundation Models through the rtemis-afm
 bridge <https://github.com/rtemis-org/rtemis-afm>.")
     (license license:gpl3+)))
 
+(define-public r-rtemis-draw
+  (package
+    (name "r-rtemis-draw")
+    (version "0.5.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rtemis.draw" version))
+       (sha256
+        (base32 "1anch3c82s6wbqss9mzpxhsnmkq1mfwf89l2kxpicqlxh8nbxq4n"))))
+    (properties `((upstream-name . "rtemis.draw")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:modules '((guix build r-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (propagated-inputs (list r-viridislite
+                             r-signal
+                             r-s7
+                             r-rtemis-core
+                             r-jsonlite
+                             r-htmlwidgets
+                             r-htmltools))
+    (native-inputs (list esbuild))
+    (home-page "https://www.rtemis.org")
+    (synopsis "Schema-Driven Interactive Charts, Network Graphs, and Maps")
+    (description
+     "Create interactive statistical charts, network graphs and choropleth maps.
+Charts are rendered with the ECharts @code{JavaScript} library, networks with
+Sigma.js and maps with @code{MapLibre} GL JS'.  A high-level interface of
+plotting functions builds a complete visualization from data in a single call,
+while a low-level interface gives full control over every option.  Both are
+based on the same type-checked and validated S7 configuration objects.
+Configurations can be saved to and restored from JSON files, and each chart type
+has a published JSON Schema that other interfaces can implement.  Visualizations
+display as htmlwidgets that automatically adapt to light and dark themes, work
+in R Markdown', Quarto and shiny', and can be exported to Scalable Vector
+Graphics (SVG) files using Node.js'.")
+    (license license:bsd-3)))
+
 (define-public r-rtemis-core
   (package
     (name "r-rtemis-core")
@@ -5631,13 +5682,13 @@ tagging messages with a priority level and application type, as well as masking
 (define-public r-rsynthbio
   (package
     (name "r-rsynthbio")
-    (version "4.2.0")
+    (version "4.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rsynthbio" version))
        (sha256
-        (base32 "1ckyrnwgifnma5vdshqhm657ycd3qf8x52rv3s5m4gvnrb8dpx22"))))
+        (base32 "0r694awzxanyq3kygjrfcbap9pd5ghzq3l2s7b3fb73nx1y7s210"))))
     (properties `((upstream-name . "rsynthbio")))
     (build-system r-build-system)
     (arguments
@@ -11018,13 +11069,13 @@ optimal fertilizer application rates.")
 (define-public r-rquantlib
   (package
     (name "r-rquantlib")
-    (version "0.4.28")
+    (version "0.4.29")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RQuantLib" version))
        (sha256
-        (base32 "1asxh2hsgvr0yjx6sr2gy4djhbhhyvldlpm5mbcxy0j9016y73lp"))))
+        (base32 "0y8c2i6fcj7xji6bki4l1ic2zpf3ywbprjdgimjkjd5smgz85llw"))))
     (properties `((upstream-name . "RQuantLib")))
     (build-system r-build-system)
     (arguments
@@ -17174,13 +17225,13 @@ HernÃ ndez-Orallo, JosÃ©, et al. (2004) <doi:10.1145/1046456.1046489>.")
 (define-public r-rocsurvcomp
   (package
     (name "r-rocsurvcomp")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ROCsurvcomp" version))
        (sha256
-        (base32 "19mfd6sj2c0a2gpp5q4f2d5lqlq02dqjwxj818s0179p1z1jbah5"))))
+        (base32 "1psj5x2bk42fh7xw8vvbnmv7g8z95d5xpnmx5lh1a11d4m00sd7l"))))
     (properties `((upstream-name . "ROCsurvcomp")))
     (build-system r-build-system)
     (arguments
@@ -17193,13 +17244,19 @@ HernÃ ndez-Orallo, JosÃ©, et al. (2004) <doi:10.1145/1046456.1046489>.")
      "ROC-Based Methods for Comparing Survival Distributions with Right, Left, and Doubly Censored Data")
     (description
      "This package implements nonparametric and semiparametric methods for comparing
-two survival distributions under non-proportional hazards (non-PH).  The methods
-are based on the Receiver Operating Characteristic (ROC) curve length (Bantis et
-al. (2021) <doi:10.1002/sim.8869>) and the overlap coefficient (OVL)
-(Franco-Pereira et al. (2021) <doi:10.1177/09622802211046386>), as well as a
-joint ROC length-OVL-based approach.  These methods do not require prior
-knowledge of the underlying non-PH pattern and can accommodate right, left, and
-doubly censored data.")
+two survival distributions under non-proportional hazards (non-PH) with right,
+left, or doubly censored data.  The methods are based on the Receiver Operating
+Characteristic (ROC) curve length and its kernel-based estimate (Bantis et al.
+(2021) <doi:10.1002/sim.8869>) and the overlap coefficient (OVL) and its
+kernel-based estimate (Schmid and Schmidt (2006)
+<doi:10.1016/j.csda.2005.01.014>), as well as a new joint inference approach
+involving both the kernel-based ROC length and the kernel-based OVL. These
+methods do not require prior knowledge of the underlying non-PH pattern.  The
+methods also accommodate the \"last is censored\" phenomenon for right-censored
+data by using flexible parametric approaches only for the portion of the tail of
+the distribution that corresponds to time values beyond the last observed event
+(see also Bantis et al. (2017) <doi:10.1002/sim.7394>).  The analogous \"first is
+censored\" phenomenon is also accommodated for left-censored data.")
     (license license:gpl3)))
 
 (define-public r-rocsi
@@ -27038,13 +27095,13 @@ adjustment.")
 (define-public r-rjdmarkdown
   (package
     (name "r-rjdmarkdown")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rjdmarkdown" version))
        (sha256
-        (base32 "1g1r11zi8agifndlnayrh1vbz570s2x535kn89yz1llrk378v9c5"))))
+        (base32 "0bnxxwjc27hw5h9rmvfpbj4gfijbn3m8z2x0f6vrcr0l75dx9jzv"))))
     (properties `((upstream-name . "rjdmarkdown")))
     (build-system r-build-system)
     (arguments
@@ -28118,13 +28175,13 @@ model.")
 (define-public r-ritalic
   (package
     (name "r-ritalic")
-    (version "0.13.0")
+    (version "0.13.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ritalic" version))
        (sha256
-        (base32 "00bjlh478xmzq4k2pzfcfsx81x1z5m5g8hsjp9wgmchq4p283g2p"))))
+        (base32 "0k0kz9fgq3l5r4a59g078vkyhw44paa8imdx5zp295zb96gs1ila"))))
     (properties `((upstream-name . "ritalic")))
     (build-system r-build-system)
     (arguments
@@ -40538,13 +40595,13 @@ source (<https://github.com/@code{LemmyNet/lemmy-js-client>}).")
 (define-public r-remm
   (package
     (name "r-remm")
-    (version "1.2.1")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rEMM" version))
        (sha256
-        (base32 "13pxw0np8pn895wcb3rxvc0s7ayr968567fx4p2z8gnz2hp7g62j"))))
+        (base32 "0wr3wy95hsdiy55k2fws2pqbjd4kj82944g2skn8ng6yky4ja9zh"))))
     (properties `((upstream-name . "rEMM")))
     (build-system r-build-system)
     (arguments
@@ -40556,18 +40613,20 @@ source (<https://github.com/@code{LemmyNet/lemmy-js-client>}).")
                              r-igraph
                              r-clustergeneration
                              r-cluster))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/mhahsler/rEMM")
     (synopsis
      "Extensible Markov Model for Modelling Temporal Relationships Between Clusters")
     (description
      "This package implements TRACDS (Temporal Relationships between Clusters for Data
-Streams), a generalization of Extensible Markov Model (EMM).  TRACDS adds a
+Streams), a generalization of the Extensible Markov Model (EMM).  TRACDS adds a
 temporal or order model to data stream clustering by superimposing a dynamically
-adapting Markov Chain.  Also provides an implementation of EMM (TRACDS on top of
-@code{tNN} data stream clustering).  Development of this package was supported
-in part by NSF IIS-0948893 and R21HG005912 from the National Human Genome
-Research Institute.  Hahsler and Dunham (2010) <doi:10.18637/jss.v035.i05>.")
-    (license license:gpl2)))
+adapting Markov Chain.  It also provides an implementation of EMM (TRACDS on top
+of @code{tNN} data stream clustering).  Development of this package was
+supported in part by NSF IIS-0948893 and R21HG005912 from the National Human
+Genome Research Institute.  Hahsler and Dunham (2010)
+<doi:10.18637/jss.v035.i05>.")
+    (license license:gpl3)))
 
 (define-public r-remla
   (package
@@ -48765,13 +48824,13 @@ publications.")
 (define-public r-rdrw
   (package
     (name "r-rdrw")
-    (version "1.0.4")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rdrw" version))
        (sha256
-        (base32 "157dzrqfffb9wxfrxbzwa36a23bxyw49ngdgqvwn80fa64r7jqzv"))))
+        (base32 "14qg3pq24nb03kv9vk3gpg7cvv8i0l75xx24phnb2rpx8l40rhhk"))))
     (properties `((upstream-name . "Rdrw")))
     (build-system r-build-system)
     (arguments
@@ -52994,13 +53053,13 @@ within the Global Talent Mentoring platform.
 (define-public r-rcoletum
   (package
     (name "r-rcoletum")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RColetum" version))
        (sha256
-        (base32 "0rdir6cyy8853rrgkj6kx1qjxfbm0yc1ha9b4jg79mhphy1m5jr1"))))
+        (base32 "0d251dzf3hh204nwz1cq9pcvbri26881dzc8wh1if14wndsvjhzx"))))
     (properties `((upstream-name . "RColetum")))
     (build-system r-build-system)
     (arguments
@@ -55940,13 +55999,13 @@ and \"Refining Binomial Confidence Intervals\" by George Casella (1986)
 (define-public r-rbridge
   (package
     (name "r-rbridge")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rbridge" version))
        (sha256
-        (base32 "0fdkkw69jcvvn17mry82lb890gbi6p6ahqglyk7334yb4pak5yqw"))))
+        (base32 "0k96qgy8z777bcvz9gm8gs983x8nkn412p0dd8jj5f9zzqvq4y97"))))
     (properties `((upstream-name . "rbridge")))
     (build-system r-build-system)
     (arguments

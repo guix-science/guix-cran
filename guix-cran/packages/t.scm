@@ -5243,13 +5243,13 @@ series data using nonlinear growth models.")
 (define-public r-tsfknn
   (package
     (name "r-tsfknn")
-    (version "0.6.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tsfknn" version))
        (sha256
-        (base32 "1yw0k2ivx31b4170wf93vvha4jpkapg4sg5j59igiayf750x1j6h"))))
+        (base32 "0fqs7zhz2f30gxavf44pz54siq6lbxn1ww6kj1mbj7zymrc5nzf7"))))
     (properties `((upstream-name . "tsfknn")))
     (build-system r-build-system)
     (arguments
@@ -5264,21 +5264,21 @@ series data using nonlinear growth models.")
 Martinez, Maria P. Frias, Maria D. Perez-Godoy and Antonio J. Rivera (2019)
 <doi:10.1007/s10462-017-9593-z>.  When the forecasting horizon is higher than 1,
 two multi-step ahead forecasting strategies can be used.  The model built is
-autoregressive, that is, it is only based on the observations of the time
-series.  The nearest neighbors used in a prediction can be consulted and
-plotted.")
+univariate and autoregressive, that is, it is only based on the observations of
+the time series.  The nearest neighbors used in a prediction can be consulted
+and plotted.")
     (license license:gpl2)))
 
 (define-public r-tsfgrnn
   (package
     (name "r-tsfgrnn")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tsfgrnn" version))
        (sha256
-        (base32 "0pbscnz2mr7nnxvgcs7sw3awq78p5r4h0nwwycn6fi7wq7ngpd92"))))
+        (base32 "11ciy5mjap86cdzvl0aah2n3vpjkiwzv76a9s4fwipjhv77p0qra"))))
     (properties `((upstream-name . "tsfgrnn")))
     (build-system r-build-system)
     (arguments
@@ -8758,6 +8758,48 @@ Khandakar Y (2008) <doi:10.18637/jss.v027.i03>, Simon Jackman (2024)
 Jackman (2008) <doi:10.18637/jss.v027.i08>.")
     (license license:gpl3+)))
 
+(define-public r-trendslr
+  (package
+    (name "r-trendslr")
+    (version "2.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TrendSLR" version))
+       (sha256
+        (base32 "1g1m311gqvcg21w9xxy196z8vp0hhp43lq1qj8b89mab637ssns1"))))
+    (properties `((upstream-name . "TrendSLR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-tseries
+                             r-rssa
+                             r-plyr
+                             r-imputets
+                             r-forecast
+                             r-changepoint))
+    (home-page "https://cran.r-project.org/package=TrendSLR")
+    (synopsis
+     "Estimating Trend, Velocity, and Acceleration from Sea Level Records")
+    (description
+     "This package provides tools for analysing annual average ocean water level time
+series, estimating mean sea level trends, velocities, and accelerations using
+Singular Spectrum Analysis (SSA).  The detailed methodology for resolving mean
+sea level with improved temporal resolution follows Watson (2018) \"Improved
+Techniques to Estimate Mean Sea Level, Velocity and Acceleration from Long Ocean
+Water Level Time Series to Augment Sea Level (and Climate Change) Research\"
+<https://unsworks.unsw.edu.au/entities/publication/5e835c87-aa0a-4457-807e-29d354e91d45>.
+ Additional methodological developments and applications are described in Watson
+(2020) \"Status of Mean Sea Level Rise around the USA\"
+<doi:10.3390/geohazards2020005> and Watson and Lim (2020) \"An Update on the
+Status of Mean Sea Level Rise around the Korean Peninsula\"
+<doi:10.3390/atmos11111153>.  Includes multiple gap-filling methods for
+incomplete records, diagnostic tools for inspecting SSA components, and plotting
+functions for generating publication-quality screen and file outputs.")
+    (license license:gpl3)))
+
 (define-public r-trendseries
   (package
     (name "r-trendseries")
@@ -11893,13 +11935,13 @@ in Kook et al. (2023, <doi:10.1080/01621459.2024.2395588>).")
 (define-public r-tram
   (package
     (name "r-tram")
-    (version "1.4-6")
+    (version "1.4-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tram" version))
        (sha256
-        (base32 "0irb6zpizhj0h6282vsyg226wxbvba6dnjacv1l25dvqpna4mgii"))))
+        (base32 "1zk0vpv07xwqnhqvshv64v0nbbbci4cialhzcb3z4s7l7d92ghra"))))
     (properties `((upstream-name . "tram")))
     (build-system r-build-system)
     (arguments
@@ -14588,13 +14630,13 @@ learning models.")
 (define-public r-torchvision
   (package
     (name "r-torchvision")
-    (version "0.9.0")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "torchvision" version))
        (sha256
-        (base32 "03j75rcyhkqiww589mprcz842xj8lw9ykw39flm1hsv4kqx3spfc"))))
+        (base32 "15z3309k3558inczx95c17i7vg4s5qljmxql8na6cms1whkibc5j"))))
     (properties `((upstream-name . "torchvision")))
     (build-system r-build-system)
     (arguments
@@ -21916,13 +21958,13 @@ Vanderbilt University.")
 (define-public r-tidyrates
   (package
     (name "r-tidyrates")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyrates" version))
        (sha256
-        (base32 "00j4s13q8vvh5m28rspwm2kf59gcbhmaif31746p2g8499535di8"))))
+        (base32 "1vkwa4rb3ds2nsdgifk8im6r8hf51phchb7wmipxm68fwf8ghqjy"))))
     (properties `((upstream-name . "tidyrates")))
     (build-system r-build-system)
     (arguments
@@ -21934,7 +21976,6 @@ Vanderbilt University.")
                              r-purrr
                              r-magrittr
                              r-forcats
-                             r-epitools
                              r-dplyr
                              r-checkmate))
     (native-inputs (list r-knitr))
@@ -21942,8 +21983,8 @@ Vanderbilt University.")
     (synopsis "Tidy Epidemiological Rates")
     (description
      "Compute age-adjusted rates by direct and indirect methods and other
-epidemiological indicators in a tidy way, wrapping functions from the epitools
-package.")
+epidemiological indicators in a tidy way, using internal statistical
+calculations.")
     (license license:expat)))
 
 (define-public r-tidyquery
@@ -35153,13 +35194,13 @@ performances over time.")
 (define-public r-tatooheene
   (package
     (name "r-tatooheene")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tatooheene" version))
        (sha256
-        (base32 "1jw2s6pbs5qif2rqy1j21lvcqlqh8jh3yi9dlcm9lkagwppzwxhk"))))
+        (base32 "0fyq2r9h6hdjp8l4h6x60m6amkymda1bkdj5pcam4pzdriyk6a43"))))
     (properties `((upstream-name . "tatooheene")))
     (build-system r-build-system)
     (arguments

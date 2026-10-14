@@ -4706,13 +4706,13 @@ Nacional de Colombia <https://unal.edu.co>.")
 (define-public r-umx
   (package
     (name "r-umx")
-    (version "4.80.0")
+    (version "4.80.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "umx" version))
        (sha256
-        (base32 "15vzpqq8z7aihw0kvhhbvjqzi9wybhp8nsvzpr06y710rj96g1hj"))))
+        (base32 "1rdxklk0hcpmcn8im02i71lvdn9l4ngvdjndlqxaglb13x8f6g43"))))
     (properties `((upstream-name . "umx")))
     (build-system r-build-system)
     (arguments
@@ -4730,7 +4730,6 @@ Nacional de Colombia <https://unal.edu.co>.")
                              r-openmx
                              r-nlme
                              r-mvtnorm
-                             r-mumin
                              r-matrix
                              r-mass
                              r-lavaan

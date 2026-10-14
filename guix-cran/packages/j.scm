@@ -227,13 +227,13 @@ based on Janzen (2018, <doi:10.1101/058107>) and Janzen (2022,
 (define-public r-junco
   (package
     (name "r-junco")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "junco" version))
        (sha256
-        (base32 "1sih83jfwql26k425h0nsh6l1av9wmazcyzigrb6lb2cdsn1ycm0"))))
+        (base32 "0f1y0m4n0dyd5790xicjp1bcrxckaima45caqxx7b392qhf1gnx1"))))
     (properties `((upstream-name . "junco")))
     (build-system r-build-system)
     (arguments
@@ -245,7 +245,6 @@ based on Janzen (2018, <doi:10.1101/058107>) and Janzen (2022,
                              r-tibble
                              r-tern
                              r-survival
-                             r-stringi
                              r-rtables-officer
                              r-rtables
                              r-rlistings
@@ -257,7 +256,6 @@ based on Janzen (2018, <doi:10.1101/058107>) and Janzen (2022,
                              r-formatters
                              r-flextable
                              r-emmeans
-                             r-dplyr
                              r-checkmate
                              r-broom
                              r-assertthat))
@@ -4017,13 +4015,13 @@ such as variables, loops, conditions and inheritance.")
 (define-public r-jiebars
   (package
     (name "r-jiebars")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jiebaRS" version))
        (sha256
-        (base32 "0cd21873nk6f405hidygr714lw8jmjsw2mkfnjd8smr05rxy0g8k"))))
+        (base32 "1gw2s5zbahd0ynkky447ismpbsff7mk2ks3z1g9djnllp7dsl2xj"))))
     (properties `((upstream-name . "jiebaRS")))
     (build-system r-build-system)
     (arguments

@@ -4505,13 +4505,13 @@ suitable for direct use in the WINFAP software, hence the name of the package.")
 (define-public r-wineq
   (package
     (name "r-wineq")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wINEQ" version))
        (sha256
-        (base32 "174s9621nl6h4id4sr9x8n89cla1sdldk9a81825kpar5rh2dfp4"))))
+        (base32 "05j53g7x0qs7qcg21mnx49fli7sa4mwy18mravqwpwjl5dxy2vsi"))))
     (properties `((upstream-name . "wINEQ")))
     (build-system r-build-system)
     (arguments
@@ -4522,11 +4522,10 @@ suitable for direct use in the WINFAP software, hence the name of the package.")
     (synopsis "Inequality Measures for Weighted Data")
     (description
      "Computes inequality measures of a given variable taking into account weights.
-Suitable for ratio, interval and ordered scale.  Includes Gini, Theil, Leti
-index, Palma ratio, 20:20 ratio, Allison and Foster index, Jenkins index, Cowell
-and Flechaire index, Abul Naga and Yalcin index, Apouey index, Blair and Lacy
-index.  Bootstrap provides distribution of inequality measures enabling
-significance tests.")
+Suitable for ratio, interval and ordered scale.  Includes measures developed by
+Gini, Theil, Leti, Palma ratio, 20:20 ratio, Allison and Foster, Jenkins, Cowell
+and Flechaire, Abul Naga and Yalcin, Apouey, Blair and Lacy.  Bootstrap provides
+distribution of inequality measures enabling significance tests.")
     (license license:gpl3)))
 
 (define-public r-windsorair

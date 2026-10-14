@@ -352,13 +352,13 @@ applied to the data rather than resampling units from the data.  See Xu et al.
 (define-public r-fvddppkg
   (package
     (name "r-fvddppkg")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FVDDPpkg" version))
        (sha256
-        (base32 "0277cdllqdvkzs888hbn4ygppni09ky64n3pl8gnm244px36fqy5"))))
+        (base32 "13d12nh4lmplg49kk7ki11m9zzm047zak9az6rzj169g0ar7y4b4"))))
     (properties `((upstream-name . "FVDDPpkg")))
     (build-system r-build-system)
     (arguments
@@ -378,7 +378,9 @@ times each value is observed in the population.  The package implements
 methodologies presented in Ascolani, Lijoi and Ruggiero (2021)
 <doi:10.1214/20-BA1206> and Ascolani, Lijoi and Ruggiero (2023)
 <doi:10.3150/22-BEJ1504> that make it possible to study the process at the time
-of data collection or to predict its evolution in future or in the past.")
+of data collection or to predict its evolution in future or in the past.  The
+package itself is described in Ascolani, Damato and Ruggiero (2024)
+<doi:10.1089/cmb.2024.0600>.")
     (license license:lgpl3+)))
 
 (define-public r-fuzzywuzzyr
@@ -9881,6 +9883,46 @@ evaluation.  Reference: Lei X, Fu L, Li H, et al (2018)
 <doi:10.3390/f8040119>.")
     (license license:gpl3+)))
 
+(define-public r-foresightr
+  (package
+    (name "r-foresightr")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "foresightr" version))
+       (sha256
+        (base32 "0z9dzm6dxpiznvgxwsnb08cgb6an9g1xx52d9cxmrl5xxbbmbrm8"))))
+    (properties `((upstream-name . "foresightr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-tibble r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/StrategicProjects/foresightr")
+    (synopsis "Forecasts Chosen by What Would Have Worked")
+    (description
+     "Time series forecasting that replays the past before trusting a model: a
+rolling-origin backtest, Tashman (2000) <doi:10.1016/S0169-2070(00)00065-0>,
+refits every candidate at each origin, the choice is made by out-of-sample
+error, and prediction intervals are quantiles of the errors actually observed,
+for each horizon and for totals of the next periods.  Models include seasonal
+ARIMA by exact maximum likelihood with automatic orders, Hyndman and Khandakar
+(2008) <doi:10.18637/jss.v027.i03>; exponential smoothing in state space form,
+Hyndman, Koehler, Snyder and Grose (2002) <doi:10.1016/S0169-2070(01)00110-8>;
+the Theta method, Assimakopoulos and Nikolopoulos (2000)
+<doi:10.1016/S0169-2070(00)00066-2>; a trend with changepoints and events in the
+manner of Taylor and Letham (2018) <doi:10.1080/00031305.2017.1380080>; TBATS,
+De Livera, Hyndman and Snyder (2011) <doi:10.1198/jasa.2011.tm09771>;
+seasonal-trend decompositions by LOESS for one or several seasonal periods,
+Bandara, Hyndman and Bergmeir (2021) <doi:10.48550/@code{arXiv.2107.13462>}; the
+method of Croston (1972) <doi:10.1057/jors.1972.50> for intermittent demand; and
+ensembles.  The computations are done by the Rust crate foresight', bundled with
+the package.")
+    (license license:expat)))
+
 (define-public r-forensim
   (package
     (name "r-forensim")
@@ -13113,13 +13155,13 @@ style-polymorphic plant populations.\".")
 (define-public r-flowcluster
   (package
     (name "r-flowcluster")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flowcluster" version))
        (sha256
-        (base32 "08i4kqa9f7wiazvdd1lfyd0svl5hqklz4ylxg6xa9x90b0sjvnaz"))))
+        (base32 "1d56f3dbfbis2xcmz7kkc2hsx2v695c240avz49x89sqmplm70kb"))))
     (properties `((upstream-name . "flowcluster")))
     (build-system r-build-system)
     (arguments
@@ -25415,13 +25457,13 @@ Emergency Department with concurrent local temperature.")
 (define-public r-fasttreeid
   (package
     (name "r-fasttreeid")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fasttreeid" version))
        (sha256
-        (base32 "0b9wsb8w456fq2psh8r9c53bbl0p22ccdkk35c5y30cgwddjyvbr"))))
+        (base32 "1svi4kbdxdf17x434ybbilwl3h3bf3629ms8bq3c78ykksgdrkmk"))))
     (properties `((upstream-name . "fasttreeid")))
     (build-system r-build-system)
     (arguments

@@ -1856,25 +1856,38 @@ prediction for the data.")
 (define-public r-bucss
   (package
     (name "r-bucss")
-    (version "1.2.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BUCSS" version))
        (sha256
-        (base32 "1nf0xpy5r49yfd0xydzxxxrc6isj14s8lswrf5nhh7g60nkkwcxr"))))
+        (base32 "0l5ysz93i63mr4kbiv8xz2bcgllhkgfxb6pqrrb9ccl7v56aw2i0"))))
     (properties `((upstream-name . "BUCSS")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://cran.r-project.org/package=BUCSS")
+    (propagated-inputs (list r-withr r-generics))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/yelleKneK/BUCSS")
     (synopsis "Bias and Uncertainty Corrected Sample Size")
     (description
-     "Bias- and Uncertainty-Corrected Sample Size.  BUCSS implements a method of
-correcting for publication bias and uncertainty when planning sample sizes in a
-future study from an original study.  See Anderson, Kelley, & Maxwell (2017;
-Psychological Science, 28, 1547-1562).")
+     "This package implements sample size planning for a future study from the summary
+statistics of a prior study, correcting the prior effect for publication bias
+and uncertainty so the planned study attains its target statistical power more
+reliably than methods that take a sample effect size at face value.  Planners
+cover the one-sample, paired, independent, and Welch t tests; between-subjects
+analysis of variance and covariance; within-subjects and split-plot analysis of
+variance; a regression coefficient, the squared multiple correlation, and a
+subset of predictors; the Pearson correlation; a two-group multivariate
+comparison; and the chi square difference between nested models.  The regression
+planners can treat the predictors as fixed or as sampled, the within-subjects
+and split-plot planners accept a sphericity correction, and each plan reports
+the effect size it is built on.  A simulation function audits how often a plan
+attains its target power.  The method is described in Anderson, Kelley, and
+Maxwell (2017) <doi:10.1177/0956797617723724> and extended to replication
+studies in Anderson and Kelley (2024) <doi:10.1037/met0000520>.")
     (license license:gpl3+)))
 
 (define-public r-bubblyr
@@ -33822,13 +33835,13 @@ implemented in this package are described in Roman-Palacios et al. (2021)
 (define-public r-bawir
   (package
     (name "r-bawir")
-    (version "1.5.5")
+    (version "1.5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BAwiR" version))
        (sha256
-        (base32 "12w3fvm6mrk9jp0bf6g2kh837cabq86dyinkpw48jpxpg21qh1d3"))))
+        (base32 "0g1qvz5w9q6dm90jic17bak3v97hn4bvr1scxd0k6iwhagk0fcsc"))))
     (properties `((upstream-name . "BAwiR")))
     (build-system r-build-system)
     (arguments
@@ -35357,20 +35370,20 @@ as well as custom uncertainty models and delay estimation methods.")
 (define-public r-basefun
   (package
     (name "r-basefun")
-    (version "1.2-6")
+    (version "1.2-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "basefun" version))
        (sha256
-        (base32 "1ga1czds08gwi4ha95hyxlp7asq27b2r5pnxa0kdf08ci02lqdsc"))))
+        (base32 "1m1058g5bz8jxnhyvr8nlqbv9iji07v55fmgm8w7lbnj0glrqqkm"))))
     (properties `((upstream-name . "basefun")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-variables r-polynom r-orthopolynom r-matrix))
-    (home-page "http://ctm.R-forge.R-project.org")
+    (home-page "https://codeberg.org/thothorn/tram")
     (synopsis "Infrastructure for Computing with Basis Functions")
     (description "Some very simple infrastructure for basis functions.")
     (license license:gpl2)))

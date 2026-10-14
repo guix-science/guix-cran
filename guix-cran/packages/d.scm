@@ -3550,27 +3550,24 @@ upon publication.")
 (define-public r-dteassurance
   (package
     (name "r-dteassurance")
-    (version "1.1.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DTEAssurance" version))
        (sha256
-        (base32 "00sf9b2i5p91va141wk9n5lwmxnyn4076fzpbhhswsxzdlbnfba0"))))
+        (base32 "1x96m0flii5dl1bg4kb5f8kz4kv459zmchb32bil834b4fwhkjm4"))))
     (properties `((upstream-name . "DTEAssurance")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-survival
-                             r-shiny
                              r-shelf
                              r-rpact
                              r-rlang
-                             r-rjags
                              r-nphrct
                              r-nph
-                             r-nleqslv
                              r-magrittr
                              r-future-apply
                              r-dplyr))

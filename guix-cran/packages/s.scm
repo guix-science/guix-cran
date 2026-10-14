@@ -11992,13 +11992,13 @@ Lee et al. (2016) <doi:10.1016/j.jhydrol.2016.08.059> and Lee et al. (2019)
 (define-public r-streammoa
   (package
     (name "r-streammoa")
-    (version "1.3-1")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "streamMOA" version))
        (sha256
-        (base32 "12fa19z31a9046xn6v5w0kj4pmprdfmzakiwikg3y0k31fpjhqk6"))))
+        (base32 "0g1dnvgz7yy0c9dcvr2dqq264lcd8cckdvxsk5rracgvj1fbwh7r"))))
     (properties `((upstream-name . "streamMOA")))
     (build-system r-build-system)
     (arguments
@@ -12006,7 +12006,8 @@ Lee et al. (2016) <doi:10.1016/j.jhydrol.2016.08.059> and Lee et al. (2019)
       #:tests? #f))
     (inputs (list openjdk))
     (propagated-inputs (list r-stream r-rjava r-proxy))
-    (home-page "https://cran.r-project.org/package=streamMOA")
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mhahsler/streamMOA")
     (synopsis "Interface for MOA Stream Clustering Algorithms")
     (description
      "Interface for data stream clustering algorithms implemented in the MOA (Massive
@@ -17506,13 +17507,13 @@ in this package, type help(package='statnet').")
 (define-public r-statmatchlcm
   (package
     (name "r-statmatchlcm")
-    (version "1.2")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statMatchLCM" version))
        (sha256
-        (base32 "18rg69bshyrz73qq7q5g5bqnr0zdbsh1b1siivabb7bd6rmvby6g"))))
+        (base32 "1d40j11q3a51hzq7x7qyqgjz062xc2c5yfxh00x072wjb632ym6z"))))
     (properties `((upstream-name . "statMatchLCM")))
     (build-system r-build-system)
     (arguments
@@ -17522,17 +17523,18 @@ in this package, type help(package='statnet').")
     (home-page "https://cran.r-project.org/package=statMatchLCM")
     (synopsis "Statistical Matching Using Latent Class Models")
     (description
-     "This package provides tools for statistical matching based on latent class
-models.  The package implements statistical matching procedures based on latent
-class models.  It allows researchers to perform data integration when no unique
-identifiers are available by modeling the joint distribution of variables
-through latent categorical structures.  The package supports estimation of
-latent class models, probabilistic matching between donor and recipient data
-sets, and generation of synthetic linked data under uncertainty.  It is
-particularly useful in survey research and data fusion applications where
-combining information from multiple sources is required while preserving
-statistical properties and accounting for measurement error and missing data
-mechanisms.")
+     "This package provides a revised framework (1.2->2.0) for statistical matching of
+categorical data based on latent class models, including multiple imputation,
+predictive modeling, nearest-neighbour hot-deck matching, and probabilistic
+assignment of categorical target variables.  It allows researchers to perform
+data integration when no unique identifiers are available by modeling the joint
+distribution of variables through latent categorical structures.  The package
+supports estimation of latent class models, probabilistic matching between donor
+and recipient data sets, and generation of synthetic linked data under
+uncertainty.  It is particularly useful in survey research and data fusion
+applications where combining information from multiple sources is required while
+preserving statistical properties and accounting for measurement error and
+missing data mechanisms.")
     (license license:gpl3)))
 
 (define-public r-statmatch
@@ -41350,13 +41352,13 @@ products can be found at <https://earth.esa.int/eogateway/missions/smos/data>.")
 (define-public r-smoots
   (package
     (name "r-smoots")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smoots" version))
        (sha256
-        (base32 "1drlnh22gn6fdziplnja5w7gc5lyvpjq54aqqmwfh6h78ivcg0vs"))))
+        (base32 "152mb27l17kwa6fp0f2fq3lhwly103yxph7j1ryrfzwz6qcdx0cv"))))
     (properties `((upstream-name . "smoots")))
     (build-system r-build-system)
     (arguments
@@ -41380,7 +41382,8 @@ user.  A Nadaraya-Watson kernel smoother is also built-in as a comparison.  With
 version 1.1.0, a linearity test for the trend function, forecasting methods and
 backtesting approaches are implemented as well.  The smoothing methods of the
 package are described in Feng, Y., Gries, T., and Fritz, M. (2020)
-<doi:10.1080/10485252.2020.1759598>.")
+<doi:10.1080/10485252.2020.1759598>.  The software itself is introduced in Feng,
+Y., Gries, T., Letmathe, S., and Schulz, D. (2022) <doi:10.32614/RJ-2022-017>.")
     (license license:gpl3)))
 
 (define-public r-smoothy
@@ -66685,13 +66688,13 @@ and Van Keilegom (2024) <doi:10.1080/01621459.2022.2161387>.")
 (define-public r-seminrextras
   (package
     (name "r-seminrextras")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "seminrExtras" version))
        (sha256
-        (base32 "1yc2skfggwdsnq2bzj2if6gqbm0q8a6raj8d07nb0kz5vpcgz9jk"))))
+        (base32 "0a2xprjk8hdvmwljxv6iw4xirc7pixcbygslz950i6jsi1g971zi"))))
     (properties `((upstream-name . "seminrExtras")))
     (build-system r-build-system)
     (arguments
@@ -66715,13 +66718,13 @@ print, summary, and plot methods.")
 (define-public r-seminr
   (package
     (name "r-seminr")
-    (version "2.5.0")
+    (version "2.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "seminr" version))
        (sha256
-        (base32 "1xjgfq4k3z5n7bf2qdj7s7ca1rv5zvxgrmf6bzxprmsaz8d7qzpl"))))
+        (base32 "19g5mgl0gy0l1qszpddfcjpn9nzjkayxx6m3adfp6495vycwmhxh"))))
     (properties `((upstream-name . "seminr")))
     (build-system r-build-system)
     (arguments
@@ -71079,6 +71082,31 @@ graphical user interface.")
 spatial data science, while serving as a basis for other packages maintained by
 Wenbo Lv.")
     (license license:gpl3)))
+
+(define-public r-sds
+  (package
+    (name "r-sds")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sds" version))
+       (sha256
+        (base32 "19l9bx5fvqwf2p42r592v49535gdi8wqfq4mbc46vklsjw7q7zl9"))))
+    (properties `((upstream-name . "sds")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-dsn r-countrycode))
+    (home-page "https://github.com/hypertidy/sds")
+    (synopsis "Spatial Data Sources")
+    (description
+     "Descriptions of spatial data sources that can be read directly with or without
+download.  Most sources are readable by GDAL software.  There are functions for
+imagery, elevation, and a variety of easily accessible data streams including
+image tile servers, links to online files, and geographic data services.")
+    (license license:expat)))
 
 (define-public r-sdrt
   (package
@@ -77131,36 +77159,36 @@ Wickham.")
 (define-public r-scatools
   (package
     (name "r-scatools")
-    (version "0.4.3")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SCAtools" version))
        (sha256
-        (base32 "0ahqfb04fp8qyqn2r70327h29q4pidjynkjhrzwj3cwfj9d7fwxv"))))
+        (base32 "0jds3c6ax2xxxzagyls5z8607zqgdqakgnsn3g0qhcww1h5kaik1"))))
     (properties `((upstream-name . "SCAtools")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-nca r-ggplot2))
+    (propagated-inputs (list r-quantreg r-nca r-ggplot2))
     (home-page "https://github.com/youngchanresearcher/SCAtools")
-    (synopsis "Direction-Aware Sufficiency Condition Analysis")
+    (synopsis "Direction-Aware Sufficient Condition Analysis")
     (description
-     "This package provides a direction-aware interface for analysing bivariate
-sufficiency statements from empty-space frontier patterns.  Logical sufficiency
-directions (high or low levels of a condition and outcome) are kept separate
-from the physical location of the empty corner in the scatter plot.  Computation
-is delegated to version 5 of the NCA package based on Dul (2016)
-<doi:10.1177/1094428115584005>, using the contraposition between necessity and
-sufficiency.  Threshold tables are computed in actual units and converted by
-this package, so percentage, percentile and standard-deviation scales follow one
-stated reporting convention in every sufficiency direction.  Includes tidy
-summaries, threshold rules, plots, random-data generation, permutation tests,
-and power analysis.  An ordinary least-squares line can be drawn beside the
-frontier as a central-tendency reference; it is an average-effect summary and
-never a component of a sufficiency claim.  An empty-space pattern alone does not
-establish causality or deterministic sufficiency.")
+     "Tests whether a high or low level of a condition is enough to guarantee a high
+or low level of an outcome.  Such a claim predicts that one corner of the
+condition-outcome scatter plot is empty of observations.  The package estimates
+the boundary of that empty corner, its size as a share of the scope (the effect
+size), a permutation test against random pairing, and a threshold table giving
+the condition level that guarantees each outcome level, in actual units,
+percentages, percentiles or standard deviations.  Each of the four directions
+(high or low condition, high or low outcome) is stated as a claim and mapped to
+its empty corner.  Because a condition can rule out low outcomes while barely
+moving the average, results can be set beside ordinary least-squares and median
+regression slopes, showing whether the data hold an average effect, a
+sufficiency effect or both.  Also provides plots, influential-case diagnostics,
+scope-sensitivity and resampling checks, random-data generation and power
+analysis for planning studies.  Frontiers are estimated with the NCA package.")
     (license license:gpl3+)))
 
 (define-public r-scarabee
@@ -81338,6 +81366,41 @@ samples from sampling data frames; determine which observations are missing from
 a random sample, missing by strata, duplicated within a dataset; and perform
 data analysis, including proportions, margins of error and upper and lower
 bounds for simple, stratified and cluster sample designs.")
+    (license license:expat)))
+
+(define-public r-sampleone
+  (package
+    (name "r-sampleone")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sampleone" version))
+       (sha256
+        (base32 "0061c4ihb14hj34nv88r3pq9wl9aabl4w3ksp8xan2a8n89dzbqs"))))
+    (properties `((upstream-name . "sampleone")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mdelapi/sampleone")
+    (synopsis "Survey Sampling Methods for Teaching and Practice")
+    (description
+     "Planning, selection, and estimation for surveys under the main probability
+sampling designs taught in introductory sampling courses: simple random sampling
+with and without replacement, stratified sampling (proportional, Neyman, and
+cost-based allocation), systematic sampling, one- and two-stage cluster
+sampling, and ratio and regression estimators.  Functions accept a superset of
+the inputs a given formula requires and silently ignore arguments that are not
+needed for the selected computation.  Each function returns a structured object
+with the point estimate, the associated variance and confidence interval, a
+step-by-step breakdown of the calculation, and a short pedagogical note
+suggesting related methods to explore, making the package suitable both for
+applied survey work and for classroom use.  Methods follow Cochran (1977,
+ISBN:0-471-16240-X) and Bolfarine & Bussab (2005, ISBN:8521203675), among others
+referenced in each function's documentation.")
     (license license:expat)))
 
 (define-public r-sampledatasets

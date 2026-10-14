@@ -7067,6 +7067,39 @@ ISBN:978-0816211043).")
 networks using data from @code{OpenStreetMap} <https://www.openstreetmap.org>.")
     (license license:gpl3+)))
 
+(define-public r-greenmanurer
+  (package
+    (name "r-greenmanurer")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GreenManureR" version))
+       (sha256
+        (base32 "02pmqigszkb8mr7a9v7xh48ap7dcq1hx4y4vfy8knl8kkzpx1igw"))))
+    (properties `((upstream-name . "GreenManureR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=GreenManureR")
+    (synopsis "Green Manure Decomposition, Nutrient Release and Crop Response")
+    (description
+     "This package provides tools for analysing green manure and cover crop
+experiments, for example with Mucuna, sunhemp and dhaincha.  Fits single-pool,
+double-pool and asymptotic litterbag decomposition models and ranks them by the
+corrected Akaike information criterion, estimates the time to 50 percent mass
+loss with Monte-Carlo confidence intervals, and quantifies nitrogen, phosphorus,
+potassium and other nutrient release over time.  Further functions compute
+nutrient inputs, crop uptake, apparent nitrogen recovery and fertilizer nitrogen
+replacement value, estimate residual effects of green manures on succeeding
+kharif and rabi crops, link decomposition, nutrient release and crop response in
+a joint analysis, and generate standardized tables, diagnostic plots and a Word
+report.")
+    (license license:expat)))
+
 (define-public r-greenfeedr
   (package
     (name "r-greenfeedr")
@@ -31230,13 +31263,13 @@ in polar co-ordinates.")
 (define-public r-geomorphr
   (package
     (name "r-geomorphr")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geomorphR" version))
        (sha256
-        (base32 "1njfflvic0a91h8adn691gxds9w2rssjxlj0fdszrl6nwqh6sxyn"))))
+        (base32 "0nf777wa37d98g4ndmwgwmwmrzss8hjksy57hq7y4jan470ysyh4"))))
     (properties `((upstream-name . "geomorphR")))
     (build-system r-build-system)
     (arguments
@@ -31244,17 +31277,20 @@ in polar co-ordinates.")
       #:tests? #f))
     (propagated-inputs (list r-sf r-progressr r-future-apply r-future r-dplyr))
     (home-page "https://github.com/MakiJota/geomorphR")
-    (synopsis "Geometric Features for Building Footprints in Sf Objects")
+    (synopsis "Geometric Features and Footprint Comparison for 'sf' Objects")
     (description
      "Extracts reproducible geometric and urban-morphology descriptors from polygon
-and multipart polygon building footprints stored as sf objects.  Methods include
-area, perimeter, compactness, shape, bounding-box, topology, convexity, and
-orientation measures, together with optional building-height, floor-count,
-gross-floor-area, floor-space-index, coverage, volume, and floor-height metrics
-derived from explicitly named attribute columns.  The resulting sf objects
-preserve the source attributes and geometry for spatial analysis, visualization,
-and downstream statistical or machine-learning workflows, with optional
-future-based parallel processing for larger datasets.")
+and multipart polygon building footprints stored as sf objects, including area,
+perimeter, compactness, shape, topology, convexity, orientation, and optional
+building-height and floor-area metrics.  Compares polygon footprints across
+periods using the intersection-over-union (Jaccard) index (Jaccard, 1912)
+<doi:10.1111/j.1469-8137.1912.tb05611.x> to identify new constructions,
+potential demolitions, and footprint changes.  Supports vector file formats
+readable by sf', including Shapefiles and @code{GeoPackage} (GPKG) vector files
+with named layers, optional boundary clipping, and reprojection to a common
+coordinate reference system.  Returned sf objects preserve source attributes and
+geometry for spatial analysis and downstream workflows, with optional parallel
+processing using future for larger feature-extraction jobs.")
     (license license:expat)))
 
 (define-public r-geomorph
@@ -33671,13 +33707,13 @@ for generalized Ornstein-Uhlenbeck processes.")
 (define-public r-genotriplo
   (package
     (name "r-genotriplo")
-    (version "2.2.1")
+    (version "2.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GenoTriplo" version))
        (sha256
-        (base32 "0x5acnlsix7wxix1i9b6ylc04ak95xrq2qh2j3lsyiym2059dfvq"))))
+        (base32 "01vshk5yaq5in06k9bqhrpdi60yp8yi9i5n8v7pdsqzrv74nfl2r"))))
     (properties `((upstream-name . "GenoTriplo")))
     (build-system r-build-system)
     (arguments

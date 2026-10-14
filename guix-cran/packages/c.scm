@@ -10408,25 +10408,31 @@ of the objective function.  For more details see de Paz (2024)
 (define-public r-cpop
   (package
     (name "r-cpop")
-    (version "1.0.9")
+    (version "1.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cpop" version))
        (sha256
-        (base32 "1jknih73hd09hkarm98znv2p6l2nw2mw9pg9c79zs5h0jbpfga4d"))))
+        (base32 "1amh9a10rjd4dnisi7zasxa7v5bvwl6rznfly8pxdxkxxfk7il8y"))))
     (properties `((upstream-name . "cpop")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rdpack
+    (propagated-inputs (list r-tidyverse
+                             r-tibble
+                             r-sets
+                             r-reshape
+                             r-rdpack
                              r-rcpp
                              r-pracma
                              r-pacman
                              r-mathjaxr
+                             r-magrittr
                              r-ggplot2
-                             r-crops))
+                             r-crops
+                             r-cowplot))
     (home-page "https://cran.r-project.org/package=cpop")
     (synopsis
      "Detection of Multiple Changes in Slope in Univariate Time-Series")
@@ -15399,19 +15405,19 @@ interpretation.")
 (define-public r-corpower
   (package
     (name "r-corpower")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CoRpower" version))
        (sha256
-        (base32 "08chsbbl74rskinp68pwzpvnxx5lkfqf71j7ryp1cwy7199h3jyw"))))
+        (base32 "1pq9sr4myqcpr97nkfzkc98am0lm6zi503rf0yqwm6lsn48xr8bv"))))
     (properties `((upstream-name . "CoRpower")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-survival r-osdesign))
+    (propagated-inputs (list r-survival))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mjuraska/CoRpower")
     (synopsis
@@ -15440,16 +15446,16 @@ calculating additional requisite design parameters pertaining to the target
 population of active treatment recipients observed to be at risk at the
 biomarker sampling timepoint.  Subsequently, the power calculation employs an
 inverse probability weighted logistic regression model fitted by the
-@code{tps()} function in the @code{osDesign} package.  Power results as well as
-the relationship between the correlate of risk effect size and treatment
-efficacy can be visualized using various plotting functions.  To link power
-calculations for detecting a correlate of risk and a correlate of treatment
-efficacy, a baseline immunogenicity predictor (BIP) can be simulated according
-to a specified classification rule (for dichotomous or trichotomous BIPs) or
-correlation with the biomarker response (for continuous BIPs), then outputted
-along with biomarker response data under assignment to treatment, and clinical
-endpoint data for both treatment and placebo groups.")
-    (license license:gpl2)))
+@code{tps()} function adapted from the @code{osDesign} package.  Power results
+as well as the relationship between the correlate of risk effect size and
+treatment efficacy can be visualized using various plotting functions.  To link
+power calculations for detecting a correlate of risk and a correlate of
+treatment efficacy, a baseline immunogenicity predictor (BIP) can be simulated
+according to a specified classification rule (for dichotomous or trichotomous
+BIPs) or correlation with the biomarker response (for continuous BIPs), then
+outputted along with biomarker response data under assignment to treatment, and
+clinical endpoint data for both treatment and placebo groups.")
+    (license license:gpl3+)))
 
 (define-public r-corporaexplorer
   (package
@@ -17214,13 +17220,13 @@ free Copernicus Marine account.  See <https://marine.copernicus.eu/> and
 (define-public r-copernicusmarine
   (package
     (name "r-copernicusmarine")
-    (version "0.4.9")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CopernicusMarine" version))
        (sha256
-        (base32 "0kq0gbr3x50di7n27sn3hcn4946nmpk9xrh114nj6m07sncrrc8m"))))
+        (base32 "0izf9zylhln5ldkji9za181a0h26aliv3nnjba8wvny19dfyvwii"))))
     (properties `((upstream-name . "CopernicusMarine")))
     (build-system r-build-system)
     (arguments
@@ -44217,13 +44223,13 @@ spatial gradients.")
 (define-public r-checktor
   (package
     (name "r-checktor")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "checktor" version))
        (sha256
-        (base32 "12dm5bjs8hsqxpl1z3bnmmlv53j5rp36appr8c00hnjk75663m7q"))))
+        (base32 "0yxdvsipkwja3msjwd872jvg25q9bnsyqw0c6iz5nw8j9kah1ll7"))))
     (properties `((upstream-name . "checktor")))
     (build-system r-build-system)
     (arguments
@@ -47944,30 +47950,31 @@ Projection Pursuit.")
 (define-public r-cepiweek
   (package
     (name "r-cepiweek")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cepiweek" version))
        (sha256
-        (base32 "0lwc923piiy6nx54lj271r7axx7zdzvvac7r4simf62bhwa29wd0"))))
+        (base32 "1y1vkwv7sa8hwndyi5h9zycn20sljmya2ry3bwx6dck7dcagfww4"))))
     (properties `((upstream-name . "cepiweek")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-lubridate))
-    (home-page "https://cran.r-project.org/package=cepiweek")
+    (home-page "https://github.com/DanielDegina/cepiweek")
     (synopsis
      "Continuous Epidemiological Week Indexing for Time-Series Analysis")
     (description
      "This package provides a simple algorithm to generate a continuous
-epidemiological week index from date variables in a dataframe.  Weeks are
-computed as sequential 7-day intervals starting from the earliest observed date.
- They do not reset at calendar year boundaries and are not ISO 8601 nor MMWR
-calendar weeks.  The approach is intended for epidemiological modeling and
-time-series analysis where temporal continuity is required.  The generated weeks
-are sequential and do not reset at calendar year boundaries.")
+epidemiological week index from date variables in a data frame.  Weeks are
+computed as sequential 7-day intervals aligned to Mondays, starting from the
+earliest observed date or from a user-supplied start date.  They do not reset at
+calendar year boundaries and are not ISO 8601 nor MMWR calendar weeks.  Missing
+or non-convertible dates are returned as NA instead of stopping the computation.
+ The approach is intended for epidemiological modeling and time-series analysis
+where temporal continuity is required.")
     (license license:expat)))
 
 (define-public r-cepiigeodist

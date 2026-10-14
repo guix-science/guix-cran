@@ -404,13 +404,13 @@ Cox models and return tidy result.")
 (define-public r-ezbakr
   (package
     (name "r-ezbakr")
-    (version "0.1.0")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EZbakR" version))
        (sha256
-        (base32 "0d9k68zw81sf43liw3nbq3102rgnk4fbmy54wfac1kh8pn8z81gp"))))
+        (base32 "0a8jl3kd8k1x3zfmsqshlwa9frzqgx81xbs5d9vp3w1f408xgp56"))))
     (properties `((upstream-name . "EZbakR")))
     (build-system r-build-system)
     (arguments
@@ -14030,6 +14030,47 @@ deterministic and stochastic models can be simulated and plotted.")
 management of patient level public health data for surveillance and analysis
 held by the UK Health Security Agency, UKHSA.")
     (license license:gpl3+)))
+
+(define-public r-epidist
+  (package
+    (name "r-epidist")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "epidist" version))
+       (sha256
+        (base32 "0c26jmapcn121g0dhfqm8skj96gvaz9gv861paf5kx0glqir6kfz"))))
+    (properties `((upstream-name . "epidist")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rstan
+                             r-purrr
+                             r-primarycensored
+                             r-lubridate
+                             r-dplyr
+                             r-cli
+                             r-checkmate
+                             r-brms))
+    (native-inputs (list r-knitr))
+    (home-page "https://epidist.epinowcast.org/")
+    (synopsis "Estimate Epidemiological Delay Distributions with 'brms'")
+    (description
+     "Understanding and accurately estimating epidemiological delay distributions is
+important for public health policy.  These estimates influence epidemic
+situational awareness, control strategies, and resource allocation.  This
+package provides methods to address the key challenges in estimating these
+distributions, including truncation, interval censoring, and dynamical biases,
+following Park et al. (2024) <doi:10.1101/2024.01.12.24301247> and Charniga et
+al. (2024) <doi:10.1371/journal.pcbi.1012520>.  These issues are frequently
+overlooked, resulting in biased conclusions.  Built on top of brms', it allows
+for flexible modelling including time-varying and spatial effects and partially
+pooled estimates of demographic characteristics.")
+    (license license:expat)))
 
 (define-public r-epidisplay
   (package

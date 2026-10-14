@@ -9718,13 +9718,13 @@ covariate selection.")
 (define-public r-nlmixr2est
   (package
     (name "r-nlmixr2est")
-    (version "7.1.0")
+    (version "7.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmixr2est" version))
        (sha256
-        (base32 "1iycazy36bkip6gr8j8vavcagz7yx3fib6nb8lhapbjcyr8gn5jb"))))
+        (base32 "0lrjxlvr2x0wzsw5zxnpkvvj18g4m9061xffqr7r71vi5n6an8vv"))))
     (properties `((upstream-name . "nlmixr2est")))
     (build-system r-build-system)
     (arguments
@@ -9741,7 +9741,6 @@ covariate selection.")
                              r-nlme
                              r-n1qn1
                              r-minqa
-                             r-matrix
                              r-lotri
                              r-lbfgsb3c
                              r-l0learn

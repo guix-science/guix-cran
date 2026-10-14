@@ -9446,19 +9446,19 @@ of Huling and Yu (2021) <doi:10.1111/biom.13546>.")
 (define-public r-hierportfolios
   (package
     (name "r-hierportfolios")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HierPortfolios" version))
        (sha256
-        (base32 "0dxg9ynwgyq68ikvky2gjak2x2smv9aq8jg9360sb8nhj7z6jnm1"))))
+        (base32 "0m8pgwi4vhc0xb3awqijv1hl56fg379vbqfhyb4zxj0dlmy4bkbg"))))
     (properties `((upstream-name . "HierPortfolios")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-fastcluster r-cluster))
+    (propagated-inputs (list r-fastcluster r-cvxr r-cluster))
     (home-page "https://github.com/ctruciosm/HierPortfolios")
     (synopsis "Hierarchical Risk Clustering Portfolio Allocation Strategies")
     (description
@@ -9469,7 +9469,8 @@ The implemented methods are: Hierarchical risk parity (De Prado, 2016) <DOI:
 contribution portfolio (Raffinot, 2018) <DOI: 10.2139/ssrn.3237540>.  A
 Constrained Hierarchical Risk Parity Algorithm with Cluster-based Capital
 Allocation (Pfitzingera and Katzke, 2019)
-<https://www.ekon.sun.ac.za/wpapers/2019/wp142019/wp142019.pdf>.")
+<https://www.ekon.sun.ac.za/wpapers/2019/wp142019/wp142019.pdf>.  Hierarchical
+Risk Budgeting (Koumou, 2024) <DOI: 10.3905/jfds.2024.1.156>.")
     (license license:gpl2)))
 
 (define-public r-hiernet

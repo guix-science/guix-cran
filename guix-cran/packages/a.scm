@@ -11770,6 +11770,40 @@ about APSIM see (<https://www.apsim.info/>) and for APSIM next generation
 (<https://apsimnextgeneration.netlify.app/>).")
     (license license:gpl3)))
 
+(define-public r-apsimwise
+  (package
+    (name "r-apsimwise")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "apsimwise" version))
+       (sha256
+        (base32 "12ga8c95r12wk0f29i3pcrd6diz83fh3v24bqifp7p1r5gkk0ld1"))))
+    (properties `((upstream-name . "apsimwise")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyweather
+                             r-rapsimng-wheat
+                             r-rapsimng-lupin
+                             r-rapsimng-lentil
+                             r-rapsimng-fababean
+                             r-rapsimng-chickpea
+                             r-rapsimng-canola
+                             r-rapsimng))
+    (native-inputs (list r-quarto r-knitr))
+    (home-page "https://apsimwise.bangyou.me/")
+    (synopsis "Unified Access to the APSIMWISE Ecosystem")
+    (description
+     "This package provides a unified interface to R packages supporting the
+Agricultural Production Systems @code{sIMulator} (APSIM), crop modelling,
+weather analysis, and agricultural decision support.  It simplifies installation
+and loading of related packages and provides consistent user-facing functions
+across multiple crop types.")
+    (license license:expat)))
+
 (define-public r-apsimeval
   (package
     (name "r-apsimeval")

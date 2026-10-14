@@ -4623,19 +4623,19 @@ subpathways in the cancer dataset with multi-phenotype samples.")
 (define-public r-pssmooth
   (package
     (name "r-pssmooth")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pssmooth" version))
        (sha256
-        (base32 "08syh52gjaf72kq01v6b5dljmwi29nvmjmkkgmjb97zsi15z1wd3"))))
+        (base32 "16a7dxmhjplqnxb2c10k852knmvnzy1670v8zqqjlqc40b5xi6l2"))))
     (properties `((upstream-name . "pssmooth")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-osdesign r-np r-mass r-chngpt))
+    (propagated-inputs (list r-np r-mass r-chngpt))
     (home-page "https://github.com/mjuraska/pssmooth")
     (synopsis
      "Flexible and Efficient Evaluation of Principal Surrogates/Treatment Effect Modifiers")
@@ -4657,7 +4657,7 @@ flexible three-phase sampling design in the paper for details).  Bootstrap-based
 procedures are available for pointwise and simultaneous confidence intervals and
 testing of four relevant hypotheses.  Summary and plotting functions are
 provided for estimation results.")
-    (license license:gpl2)))
+    (license license:gpl3+)))
 
 (define-public r-pssmcool
   (package
@@ -5143,20 +5143,20 @@ Durban, M. (2020) <doi:10.1007/s10260-019-00492-8>.")
 (define-public r-psp
   (package
     (name "r-psp")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psp" version))
        (sha256
-        (base32 "07c3fb32qx1cx8ry6bwk192dbfhsifhicbfq462zjhwncykjg74s"))))
+        (base32 "1b9hvn7dmvsxm83l0jv2ipv77276cxw4h65yvw7r9fxv169cf4gc"))))
     (properties `((upstream-name . "psp")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-data-table))
-    (home-page "https://github.com/lenarddome/psp")
+    (home-page "https://lenarddome.com/psp/")
     (synopsis "Parameter Space Partitioning MCMC for Global Model Evaluation")
     (description
      "This package implements an n-dimensional parameter space partitioning algorithm
@@ -18185,6 +18185,52 @@ and can accommodate both continuous and binary outcomes.")
 unless, and otherwise.")
     (license license:gpl2)))
 
+(define-public r-postlink
+  (package
+    (name "r-postlink")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "postlink" version))
+       (sha256
+        (base32 "088jyabyss525gaxli7v8jyn1zq924pfqzzlk4ic4vnbhp6jkxym"))))
+    (properties `((upstream-name . "postlink")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival
+                             r-stanheaders
+                             r-rstantools
+                             r-rstan
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-nleqslv
+                             r-label-switching
+                             r-bh))
+    (home-page "https://postlink-group.github.io/postlink/")
+    (synopsis "Post-Linkage Data Analysis")
+    (description
+     "This package provides a suite of statistical tools for post-linkage data
+analysis (PLDA), designed to account for record linkage errors in downstream
+modeling.  The package implements a familiar, formula-based regression interface
+that adjusts for linkage uncertainty, accommodating workflows where direct
+access to unlinked primary files is restricted.  It consolidates diverse
+adjustment methodologies, all of which support generalized linear models
+(linear, logistic, Poisson, and Gamma).  These methodologies include weighting
+approaches (Chambers (2009) <https://hdl.handle.net/10779/uow.27788247>;
+Chambers et al. (2023) <doi:10.1002/wics.1596>), mixture modeling (Slawski et
+al. (2025) <doi:10.1093/jrsssa/qnae083>), and Bayesian mixture modeling (Gutman
+et al. (2016) <doi:10.1002/sim.6586>).  For time-to-event data, both the
+weighting (Vo et al. (2024) <doi:10.1002/sim.9960>) and mixture modeling
+approaches accommodate Cox proportional hazards models, while the Bayesian
+approaches extend to parametric survival analysis.  Additionally, the package
+leverages mixture modeling for contingency table analyses and Bayesian methods
+to enable the multiple imputation of latent match status.")
+    (license license:expat)))
+
 (define-public r-postlightmercury
   (package
     (name "r-postlightmercury")
@@ -23468,6 +23514,38 @@ and Statistics - IBGE. The data must be downloaded from the official website
 <https://www.ibge.gov.br/>.  Further analysis must be made using package
 survey'.")
     (license license:gpl3)))
+
+(define-public r-pnotp
+  (package
+    (name "r-pnotp")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pnotp" version))
+       (sha256
+        (base32 "1266kfb58jsv7nrq6i55mhv8jwxxcjm8i625m16fnznjlpqfa31k"))))
+    (properties `((upstream-name . "pnotp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rstudioapi
+                             r-rlang
+                             r-jsonlite
+                             r-httr2
+                             r-curl
+                             r-cli))
+    (home-page "https://pnotp.ai")
+    (synopsis "Client for the 'PnotP' Platform")
+    (description
+     "Access the @code{PnotP} platform <https://pnotp.ai> from R and RStudio'.  One
+account API key drives data-compliant large language model chat, where every
+response carries a retention receipt; model training with pause, resume and
+cancel; model deployments and live inference; and hosted agents.  Includes
+RStudio addins to chat with the language model from the IDE, and a bridge to
+ellmer for tool calling and streaming.")
+    (license license:expat)))
 
 (define-public r-pnd-heter-cluster
   (package
@@ -29068,13 +29146,13 @@ on where the error originated.")
 (define-public r-pkgcheck
   (package
     (name "r-pkgcheck")
-    (version "0.3.3")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pkgcheck" version))
        (sha256
-        (base32 "0wvyd8xjh0gbhrq8a6lza9i5d5rgl5iaifr594kn525k2hp67wr3"))))
+        (base32 "0lv87za9idh74wp02hfnq5yvfw0djshscdx62q9iw4jr6qbhq5ml"))))
     (properties `((upstream-name . "pkgcheck")))
     (build-system r-build-system)
     (arguments
@@ -30043,13 +30121,13 @@ to predicted output.")
 (define-public r-pipeflow
   (package
     (name "r-pipeflow")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pipeflow" version))
        (sha256
-        (base32 "0dp9pkgs9wn4j7lnkm08l74jwin3k4113zv696qd649m2fm6m5k3"))))
+        (base32 "05xybvr3akpm0kif95092sg23wd2d83k4dccpfxdgzakk9zhj0wy"))))
     (properties `((upstream-name . "pipeflow")))
     (build-system r-build-system)
     (arguments
@@ -35392,13 +35470,13 @@ available here <https://www.postgresql.org/docs/current/index.html>.")
 (define-public r-pgt
   (package
     (name "r-pgt")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pgt" version))
        (sha256
-        (base32 "17ni03amlb9gb36mivsi1innrp70vkvwk8sb0nn9vl2gzlhhkk2h"))))
+        (base32 "1bil78qrwhy73njg6r67zp62qw7dshgpbji5a14wr3laamxzlagq"))))
     (properties `((upstream-name . "pgt")))
     (build-system r-build-system)
     (arguments
@@ -35411,17 +35489,18 @@ available here <https://www.postgresql.org/docs/current/index.html>.")
      "Data Envelopment Analysis for Pollution-Generating Technologies")
     (description
      "Nonparametric efficiency analysis for pollution-generating technologies under
-the materials-balance principle.  Implements the weak-G-disposability model of
-Rodseth (2025) <doi:10.1007/s11123-025-00768-0> and its factorially determined
-multi-output representation, the by-production intersection technology of Murty,
-Russell and Levkoff (2012) <doi:10.1016/j.jeem.2012.02.005>, the
-materials-balance cost model of Coelli, Lauwers and Van Huylenbroeck (2007)
-<doi:10.1007/s11123-007-0052-8> and a weak-disposability reference model, with a
-pre-estimation audit of every materials-balance account, metafrontier
-decompositions, bad-output shadow prices, marginal abatement cost curves, a
-cross-axiom comparison harness, a global Malmquist-Luenberger productivity index
-and subsampling sensitivity intervals.  Estimators are solved with
-@code{lpSolveAPI}'.")
+the materials-balance principle.  Implements the weak-G-disposability technology
+of Hampf and Rodseth (2015) <doi:10.1016/j.eneco.2015.04.001>, scored by the
+minimal-emission programme of Rodseth (2025) <doi:10.1007/s11123-025-00768-0>
+with its directional representation and five-component decomposition, the
+by-production intersection technology of Murty, Russell and Levkoff (2012)
+<doi:10.1016/j.jeem.2012.02.005>, the materials-balance cost model of Coelli,
+Lauwers and Van Huylenbroeck (2007) <doi:10.1007/s11123-007-0052-8> and a
+weak-disposability reference model, with a pre-estimation audit of every
+materials-balance account, metafrontier decompositions, bad-output shadow
+prices, marginal abatement cost curves, a cross-axiom comparison harness, a
+global Malmquist-Luenberger productivity index and subsampling sensitivity
+intervals.  Estimators are solved with @code{lpSolveAPI}'.")
     (license license:gpl3+)))
 
 (define-public r-pgrn
@@ -43179,13 +43258,13 @@ implemented.  Functions for incorporating background knowledge are provided.")
 (define-public r-pcal1
   (package
     (name "r-pcal1")
-    (version "1.5.9")
+    (version "1.5.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pcaL1" version))
        (sha256
-        (base32 "1vprg93whv0l4mvgmq6c3bsxlyfbhswlf8yi3y5x2kc3cbf76s3y"))))
+        (base32 "1a89w9cxzkmbhnf6lg105w1yra9ycd9303bj1dhbnzda11i5v870"))))
     (properties `((upstream-name . "pcaL1")))
     (build-system r-build-system)
     (arguments

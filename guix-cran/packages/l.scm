@@ -17283,6 +17283,35 @@ E.Nordhausen K., Oja H., Ruiz-Gazen A. (2016) Combining Linear Dimension
 Reduction Subspaces <doi:10.1007/978-81-322-3643-6_7>.")
     (license license:gpl2+)))
 
+(define-public r-ldpdist
+  (package
+    (name "r-ldpdist")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ldpdist" version))
+       (sha256
+        (base32 "1v8ny7qxgw0c435yybhzs1r0fbx53sy3srw1n06jhzl8xvdwkrkq"))))
+    (properties `((upstream-name . "ldpdist")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=ldpdist")
+    (synopsis "Local Differential Privacy Tools for Distributional Inference")
+    (description
+     "Estimates cumulative distribution functions and quantiles under local
+differential privacy.  Provides binary and categorical randomization mechanisms,
+isotonic distribution estimators, and simulation interfaces for sequential
+quantile estimation with self-normalized inference and asymptotic confidence
+sequences.  Distribution estimators operate on privatized reports; quantile
+interfaces simulate local randomization internally.  Methods include the
+quantile procedure of Liu et al. (2023)
+<https://proceedings.mlr.press/v202/liu23q.html> and the distribution estimator
+of Liu, Hu and Kong (2024) <https://proceedings.mlr.press/v235/liu24z.html>.")
+    (license license:gpl3)))
+
 (define-public r-ldnn
   (package
     (name "r-ldnn")
@@ -19831,33 +19860,6 @@ comparison of datasets, along with fitting of datasets using the LATER model.")
 which are commonly used indexes for the study of hand preference (laterality) in
 non-human primates.")
     (license license:gpl2+)))
-
-(define-public r-later2
-  (package
-    (name "r-later2")
-    (version "0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "later2" version))
-       (sha256
-        (base32 "1rsayhzs5xa83bnzh58lh2cyr7i5m5h2pl76wq951fk0npg45w12"))))
-    (properties `((upstream-name . "later2")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-cpp4r))
-    (native-inputs (list r-litedown))
-    (home-page "https://github.com/pachadotdev/later2")
-    (synopsis
-     "Utilities for Scheduling Functions to Execute Later with Event Loops")
-    (description
-     "Executes arbitrary R or C functions some time after the current time, after the
-R execution stack has emptied.  The functions are scheduled in an event loop.
-This is a derived work from the later package aiming to reduce the number of
-dependencies.")
-    (license license:asl2.0)))
 
 (define-public r-latentstate
   (package
