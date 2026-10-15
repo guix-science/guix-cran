@@ -8782,13 +8782,13 @@ mixtures of both.  For details see Li, Munk, Sieling and Walther (2016)
 (define-public r-essentialstools
   (package
     (name "r-essentialstools")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "essentialstools" version))
        (sha256
-        (base32 "0864kd5dx1wpylrrqlckzrckcpfnxgqnn9d9bl9di0hgaxnx8v88"))))
+        (base32 "1g1lbnp6g11fn5d3078bwv9sw8l275kmfvl532ignbbf1ab6kcvm"))))
     (properties `((upstream-name . "essentialstools")))
     (build-system r-build-system)
     (arguments
@@ -15292,6 +15292,34 @@ evaluate expressions in attached environments.  Together, these (and other)
 functions pair to provide a robust alternative to @code{base::library()} and
 @code{base::source()}.")
     (license license:gpl3)))
+
+(define-public r-envipathr
+  (package
+    (name "r-envipathr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "enviPathR" version))
+       (sha256
+        (base32 "1hb1yyhhmfmcwdqf5g8c4l93qwk8nqp6mn2aqa3ajksxys19lzdd"))))
+    (properties `((upstream-name . "enviPathR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr r-httr2 r-biocparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://envipath.github.io/enviPathR/")
+    (synopsis "Client for the 'enviPath' 'RESTful' API")
+    (description
+     "The environmental pathway database ('@code{enviPath}') is a key resource for the
+functional annotation and pathway prediction of microbial communities, providing
+knowledge on biotransformation pathways along with the chemical reactions and
+produced compounds.  This package enables the programmatic access to
+@code{enviPath} by porting the database RESTful API from R. This includes
+methods to both retrieve entries and predict pathways for custom compounds.")
+    (license license:artistic2.0)))
 
 (define-public r-envipat
   (package
@@ -21915,13 +21943,13 @@ research, technological development and demonstration under Grant Agreement no
 (define-public r-effectstars2
   (package
     (name "r-effectstars2")
-    (version "0.1-3")
+    (version "0.1-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EffectStars2" version))
        (sha256
-        (base32 "0yh4krqjh1jb7gjxb9z4f5bzarps0g9jfqbbva782a881dhcdl1x"))))
+        (base32 "04cn20kji890ic8bdgpq3n0523yd80fwljk01ln1jpnhvk60xh4z"))))
     (properties `((upstream-name . "EffectStars2")))
     (build-system r-build-system)
     (arguments
@@ -21942,13 +21970,13 @@ objects from the VGAM package.")
 (define-public r-effectstars
   (package
     (name "r-effectstars")
-    (version "1.9-1")
+    (version "1.9-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EffectStars" version))
        (sha256
-        (base32 "131w5bdc615gaa2czi4wyc2f96jcg24ahcmggajrvyhxmi6rag5x"))))
+        (base32 "0mjlnyriy5hqgvm4m50li36k3mvvcm9srqa8njdw9wlg93dw1d0j"))))
     (properties `((upstream-name . "EffectStars")))
     (build-system r-build-system)
     (arguments

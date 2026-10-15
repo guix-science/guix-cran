@@ -5423,22 +5423,24 @@ the augmented epsilon-constraint method, see Mavrotas (2009)
 (define-public r-multiscalescp
   (package
     (name "r-multiscalescp")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MultiscaleSCP" version))
        (sha256
-        (base32 "0dy2r957x4s4lcm4x5dvm4qagypzbaphjppfl9ymn9nraqf1pl5s"))))
+        (base32 "0pc5khq4hb3nsdbxaw9ibvq7jqfz0bk9v8qqmazg9f2mi0ddqf36"))))
     (properties `((upstream-name . "MultiscaleSCP")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble
+    (propagated-inputs (list r-units
+                             r-tibble
                              r-terra
                              r-sf
                              r-rlang
+                             r-rcpp
                              r-raster
                              r-r6
                              r-prioritizr
@@ -5459,9 +5461,12 @@ using the H3 hierarchical hexagonal grid system (Uber Technologies (2024)
 <doi:10.1111/cobi.14376>).  Supports the definition and solution of conservation
 problems across nested H3 resolutions with resolution-specific features, costs,
 and management attributes, including cross-scale connectivity penalties derived
-from parent-child relationships.  Also includes utilities to evaluate solutions
-using multiscale-aware diagnostics and to post-process optimization outputs into
-alternative area-targeted conservation scenarios.")
+from parent-child relationships.  Includes a multiscale minimum-set objective
+that allows planning units at different resolutions to contribute toward feature
+representation targets while accounting for overlapping costs and feature
+amounts across nested planning units.  Also includes utilities to evaluate
+solutions using multiscale-aware diagnostics and to post-process optimization
+outputs into alternative area-targeted conservation scenarios.")
     (license license:expat)))
 
 (define-public r-multiscaler
@@ -29407,13 +29412,13 @@ of Health and Human Services.")
 (define-public r-misty
   (package
     (name "r-misty")
-    (version "0.8.3")
+    (version "0.8.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "misty" version))
        (sha256
-        (base32 "07g9w6swssiqdjj4rbbq1av9ql0rda4csiqq5drzg8xc4db9194n"))))
+        (base32 "173iyb78dj7sb42vvqlj47ywwsdkdmkaysi9dw2dsj5xxhby8q37"))))
     (properties `((upstream-name . "misty")))
     (build-system r-build-system)
     (arguments
@@ -43535,13 +43540,13 @@ Foundation under Grants No.  SES-1921523 and DMS-2015552.")
 (define-public r-melodi
   (package
     (name "r-melodi")
-    (version "1.1.2")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "melodi" version))
        (sha256
-        (base32 "0ir7pml31b6fq0b0ymd2jc93ny28lc5bp4gjlgsw1ls34awpprrw"))))
+        (base32 "16d9ig7xz0imldwqgkpx3l61h2q2g4j9qgpcxcskq5amv2ndb9f6"))))
     (properties `((upstream-name . "melodi")))
     (build-system r-build-system)
     (arguments
@@ -46068,13 +46073,13 @@ approach are calculated.  Ditzhaus, M. and Friedrich, S. (2018)
 (define-public r-mdgof
   (package
     (name "r-mdgof")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MDgof" version))
        (sha256
-        (base32 "1s9k5waz9x5zwc9m53x39ybwh737i6ssb5dxgh913mddg7532wc9"))))
+        (base32 "1df0w98gq22fya7r31vj9mxnm738fv3pcw4r1fq3ps9da9rvvhhi"))))
     (properties `((upstream-name . "MDgof")))
     (build-system r-build-system)
     (arguments
@@ -46589,13 +46594,13 @@ abstract syntax trees as well as translating and displaying the documents.")
 (define-public r-md2sample
   (package
     (name "r-md2sample")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MD2sample" version))
        (sha256
-        (base32 "0k6dcsn79j3sfvbdajqpp3x038jhh1jp53xs2pw0bi8qzvbzmcbb"))))
+        (base32 "01mn6xs6dl2gpnif479jbh344m5zamz7vwsr0a9aj9n5gzj51pqa"))))
     (properties `((upstream-name . "MD2sample")))
     (build-system r-build-system)
     (arguments
@@ -51225,21 +51230,20 @@ distribution without the integer restriction on the degrees of freedom.")
 (define-public r-matrixprofiler
   (package
     (name "r-matrixprofiler")
-    (version "0.1.10")
+    (version "0.1.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "matrixprofiler" version))
        (sha256
-        (base32 "0jij5fb21zvga4dpf9w1cgqfa7wd43kyxg5kwqdh9y4frm897lwy"))))
+        (base32 "0zhlmi4xz9b5w1h37irm777hgqa91y35ksq54yls33qar4543qa7"))))
     (properties `((upstream-name . "matrixprofiler")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcppthread r-rcppprogress r-rcppparallel r-rcpp
-                             r-checkmate))
-    (home-page "https://github.com/matrix-profile-foundation/matrixprofiler")
+    (propagated-inputs (list r-rcppthread r-rcpp r-checkmate))
+    (home-page "https://matrix-profile-foundation.github.io/matrixprofiler/")
     (synopsis "Matrix Profile for R")
     (description
      "This is the core functions needed by the tsmp package.  The low level and
@@ -56604,13 +56608,13 @@ generating fictional state names.")
 (define-public r-manynet
   (package
     (name "r-manynet")
-    (version "2.3.4")
+    (version "2.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "manynet" version))
        (sha256
-        (base32 "1sxawk5a9byq55467l9a949cmvawzx7pahfy0kris3qr167k9aqr"))))
+        (base32 "00lhrwml7b7g600r3li0vl4hkp52p6h3ypqlhxbl5szl7jq9w2dm"))))
     (properties `((upstream-name . "manynet")))
     (build-system r-build-system)
     (arguments
@@ -59273,13 +59277,13 @@ sensitivity analyses, scenario analyses, etc.")
 (define-public r-maestro
   (package
     (name "r-maestro")
-    (version "1.3.1")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maestro" version))
        (sha256
-        (base32 "0g01dxidcaaj9h7043kn792rvxl95isz39mzm37x88q4dkibmgw0"))))
+        (base32 "0yxrc2in4qf03sc165lskmi3dqfnx1rfnc2fdzwr172a1sz4qlr1"))))
     (properties `((upstream-name . "maestro")))
     (build-system r-build-system)
     (arguments

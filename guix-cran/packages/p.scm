@@ -636,13 +636,13 @@ Cambridge University Press.")
 (define-public r-pwrss
   (package
     (name "r-pwrss")
-    (version "1.3.1")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pwrss" version))
        (sha256
-        (base32 "01pqplnk820qrjv7mb5k6bs3gpymln351rix702rgqprbcnwrgcd"))))
+        (base32 "1kl15yrm59izz8fl6lm54hmbagn07hd0gk6jsi8q67qxkc1cy295"))))
     (properties `((upstream-name . "pwrss")))
     (build-system r-build-system)
     (arguments
@@ -2726,6 +2726,41 @@ implements a variant of the p-value based selection model of Hedges (1992)
 implements the mixture of truncated normals model for p-hacking described in
 Moss and De Bin (2019) <@code{arXiv:1911.12445>}.")
     (license license:gpl3)))
+
+(define-public r-publicdataau
+  (package
+    (name "r-publicdataau")
+    (version "0.4.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "publicdataau" version))
+       (sha256
+        (base32 "0i9qaijyz9cdsyjn5k09wv6z8yh05d71zikwrmanw7n3h3zs80dv"))))
+    (properties `((upstream-name . "publicdataau")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-rlang r-jsonlite r-httr2))
+    (native-inputs (list r-knitr))
+    (home-page "https://publicdata.au/")
+    (synopsis "Australian Government Open Data from 'publicdata.au'")
+    (description
+     "Search, filter, total and download the Australian government open data
+republished at <https://publicdata.au/>, where every version of a dataset is
+kept at a URL that never changes.  Rows and totals come from the site's query
+API as typed, labelled tibble data frames, and whole tables from its files in
+any of twelve formats.  Map layers come as sf objects, and rows that carry the
+code of an area join to the Australian Bureau of Statistics boundaries in one
+call.  The @code{DuckDB} file of any version can be attached over the web and
+queried in place with DBI or dplyr'.  Downloads can be kept in a cache, since a
+version never changes, the changes between versions are listed row by row, and
+the source file, fetch time and checksum of every version are on record.  Every
+answer carries the version it came from and the attribution the publisher's
+licence requires, and citations come as @code{BibTeX}'.  Any dataset the site
+serves works by its slug, so a new dataset needs no new release.")
+    (license license:expat)))
 
 (define-public r-publicationbiasbenchmark
   (package
@@ -16694,30 +16729,35 @@ based on data nuggets.  Reference papers: [1] Beavers et al., (2024)
 (define-public r-pp
   (package
     (name "r-pp")
-    (version "0.6.4-1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PP" version))
        (sha256
-        (base32 "1a00zxm7ika4iv68d0vfg5d22h5dfwpg1mzai5kcjwjzia84dvgi"))))
+        (base32 "0vdhfc5i1gah6h6di86bp6ln13pqjh3c7da60ygjrarmms89ls48"))))
     (properties `((upstream-name . "PP")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpp))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/jansteinfeld/PP")
+    (propagated-inputs (list r-tinyplot r-rcpp))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/manuelreif/PP")
     (synopsis "Person Parameter Estimation")
     (description
-     "The PP package includes estimation of (MLE, WLE, MAP, EAP, ROBUST) person
-parameters for the 1,2,3,4-PL model and the GPCM (generalized partial credit
-model).  The parameters are estimated under the assumption that the item
-parameters are known and fixed.  The package is useful e.g. in the case that
-items from an item pool / item bank with known item parameters are administered
-to a new population of test-takers and an ability estimation for every
-test-taker is needed.")
+     "Estimation of person parameters (abilities) for the 1, 2, 3 and 4 parameter
+logistic model, the (generalized) partial credit model and tests that mix
+dichotomous and polytomous items, under the assumption that the item parameters
+are known and fixed: maximum likelihood, weighted likelihood (Warm, 1989
+<doi:10.1007/BF02294627>), maximum and expected a posteriori and robust
+estimation (Schuster and Yuan, 2011 <doi:10.3102/1076998610396890>).  Further
+features are jackknife estimates (Wainer and Wright, 1980
+<doi:10.1007/BF02293910>), plausible values, the person fit statistics lz, lz*
+(Snijders, 2001 <doi:10.1007/BF02294437>), infit and outfit, and the simulation
+of response data.  Models fitted with the @code{eRm} package can be passed on
+directly.  The package is useful, e.g., when items of an item bank are given to
+a new sample of persons.")
     (license license:gpl3)))
 
 (define-public r-powrpriori
@@ -27785,13 +27825,13 @@ al.(1997)<doi:10.4141/P96-130>.")
 (define-public r-plantmix
   (package
     (name "r-plantmix")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plantmix" version))
        (sha256
-        (base32 "1lk3qc18hirpdr63m0fwj6da2sikz1w0xi06k20dhmw0f1dgb87j"))))
+        (base32 "1n92k90vn8vzbq4kyld5npys39ic5345pvyfhkjl1lnv3iz09pgx"))))
     (properties `((upstream-name . "plantmix")))
     (build-system r-build-system)
     (arguments
@@ -27814,7 +27854,7 @@ as those based on general and specific mixing abilities (GMA-SMA) as well as
 direct and social breeding values (DBV-SBV), also known as direct and indirect
 genetic effects (DGE-IGE).  More details in Forst et al (2019,
 <doi:10.1016/j.fcr.2019.107571>) for GMA-SMA models, and Salomon et al (2026,
-<doi:10.64898/2026.03.27.714849>) for DBV-SBV models.  The package also provides
+<doi:10.1093/genetics/iyag177>) for DBV-SBV models.  The package also provides
 functions to optimize experimental designs, simulate data sets and compute
 interaction indices.")
     (license license:agpl3)))
@@ -32335,6 +32375,36 @@ al. (2007) <doi:10.1371/journal.pone.0000296> Laffan, S. W. et al. (2016)
 <doi:10.1111/j.1365-294X.2009.04311.x>.")
     (license license:gpl3+)))
 
+(define-public r-phylopred
+  (package
+    (name "r-phylopred")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "phylopred" version))
+       (sha256
+        (base32 "0yj1dlxfbi69nkqqwgww85iax9j04zr7wcpxm3c3bllqkv8rnh0i"))))
+    (properties `((upstream-name . "phylopred")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xplus))
+    (home-page "https://github.com/alrobles/phylopred")
+    (synopsis "Predicting Species Interactions from Phylogenetic Distance")
+    (description
+     "This package provides tools to model and predict host-parasite (and other
+pairwise species) interactions from phylogenetic distance under presence-only
+data.  Provides pairwise host-sharing logistic models with cluster-aware
+bootstrap and slope comparison between clades, presence-only performance metrics
+(a threshold efficiency metric and a phylogenetic partial receiver operating
+characteristic (ROC) adapted from Peterson, Papes and Soberon (2008)
+<doi:10.1016/j.ecolmodel.2007.11.008>), positive-unlabeled host prediction, and
+leave-hosts-out validation.  Methods build on Robles-Fernandez and Lira-Noriega
+(2017) <doi:10.3389/fams.2017.00017>.")
+    (license license:expat)))
+
 (define-public r-phylopath
   (package
     (name "r-phylopath")
@@ -35128,13 +35198,13 @@ Statistical Programming.")
 (define-public r-pharmaverseadam
   (package
     (name "r-pharmaverseadam")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pharmaverseadam" version))
        (sha256
-        (base32 "0kladk4fxhhqh1isg8mwdp6nx7nsqvn2p3gknl8jnqjsia3ga2l3"))))
+        (base32 "0jqhwvbk5kydjq2skp6yfxnxx1rn3hcdlvmzk54j26qjsk89c44j"))))
     (properties `((upstream-name . "pharmaverseadam")))
     (build-system r-build-system)
     (arguments
@@ -39416,13 +39486,13 @@ estimate, and order statistic estimate.")
 (define-public r-peerperformance
   (package
     (name "r-peerperformance")
-    (version "2.4.0")
+    (version "2.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PeerPerformance" version))
        (sha256
-        (base32 "1bfvlb1gqjqiydcj1pq2awr8mqixlmr0adpzsjswp5y0xmw21vqb"))))
+        (base32 "1hqwp0jg0l715sapm3fxi2jr14ggvbsy86nybza63pfxim9h5c4a"))))
     (properties `((upstream-name . "PeerPerformance")))
     (build-system r-build-system)
     (arguments
@@ -39442,8 +39512,8 @@ correcting for luck with the false discovery approach of Storey (2002)
 Sharpe ratios, or modified Sharpe ratios, the latter using the equality test of
 Ardia and Boudt (2015) <doi:10.1016/j.frl.2015.02.008>.  Funds can be screened
 within a universe or against a separate peer group, over rolling windows, and
-results come with bootstrap confidence intervals, summary, plot, and tidy data
-frame methods.")
+results come with peer-bootstrap intervals, summary, plot, and tidy data frame
+methods.")
     (license license:gpl2+)))
 
 (define-public r-peeky
@@ -47186,13 +47256,13 @@ by time-resolved spectroscopy via a Shiny GUI.")
 (define-public r-paramdemo
   (package
     (name "r-paramdemo")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "paramDemo" version))
        (sha256
-        (base32 "180ygqr9k6bjg4k4ikm80wa9jv6vfkyp2y4dghmqlghrgyva4hh6"))))
+        (base32 "19rqa2xz7jb7n07wd00k4wh1vc6ybpp22gq09fp0i8wm7xpb8wi6"))))
     (properties `((upstream-name . "paramDemo")))
     (build-system r-build-system)
     (arguments

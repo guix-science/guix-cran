@@ -325,13 +325,13 @@ regression models.  The R Journal, 8 (1), 132-148. <doi:10.32614/RJ-2016-009>.")
 (define-public r-fwb
   (package
     (name "r-fwb")
-    (version "0.6.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fwb" version))
        (sha256
-        (base32 "17byhjxv851f6hxcakqgaxvg4z7822qvx0p43nx5gvapk47w226l"))))
+        (base32 "0l49vzsq1y0cbac15n89pmc30xzlgrakb86bsi6y4gh37l583kin"))))
     (properties `((upstream-name . "fwb")))
     (build-system r-build-system)
     (arguments
@@ -4678,6 +4678,33 @@ are distributed under the Norwegian License for Open Data 2.0 (NLOD)
 <https://data.norge.no/nlod/en/2.0> and Creative Commons 4.0
 <https://creativecommons.org/licenses/by/4.0/>.")
     (license license:expat)))
+
+(define-public r-frostlake
+  (package
+    (name "r-frostlake")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "frostlake" version))
+       (sha256
+        (base32 "1jnqvlim9v3vg15jk3g0w47iw3fprb8flpigfq4ax17h5h3z7vr5"))))
+    (properties `((upstream-name . "frostlake")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite r-dbi r-curl))
+    (home-page "https://github.com/Frostlake-DB/frostlake-r")
+    (synopsis "'DBI' Backend for the 'Frostlake' Database Engine")
+    (description
+     "This package provides a DBI'-compliant driver for Frostlake', a SQL engine
+emulating core Snowflake features.  Speaks the engine's HTTP protocol against a
+running @code{DatabaseHttpServer}': one POST per statement with a session id the
+server issues on first contact, so session state (current database/schema,
+transactions) persists across statements.  Query results arrive as data frames
+with Snowflake types mapped to R types.")
+    (license license:asl2.0)))
 
 (define-public r-frontmatter
   (package
@@ -11294,13 +11321,13 @@ interactive introduction, see
 (define-public r-focus
   (package
     (name "r-focus")
-    (version "0.1.10")
+    (version "0.1.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "focus" version))
        (sha256
-        (base32 "02y5s21hba1wwm3hxwwdmhbkchqpv6qkhvbnr0bb06ackxc9z3fc"))))
+        (base32 "1mhji5sjy1ln8wkypxkij716w080lr3mn8zaj1nmfbxqikakah5a"))))
     (properties `((upstream-name . "focus")))
     (build-system r-build-system)
     (arguments

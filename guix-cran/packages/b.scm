@@ -4728,6 +4728,38 @@ al (2020) <doi:10.1002/sim.8438> and Li et al (2021)
 <doi:10.1016/j.jspi.2020.12.001>.")
     (license license:asl2.0)))
 
+(define-public r-brochure
+  (package
+    (name "r-brochure")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "brochure" version))
+       (sha256
+        (base32 "1z11x6jlv3j8wj51m3x98jijx1r4hpkgp1afjlcaz62jfvaxlpdh"))))
+    (properties `((upstream-name . "brochure")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny
+                             r-routr
+                             r-rlang
+                             r-purrr
+                             r-htmltools
+                             r-attempt))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/colinfay/brochure")
+    (synopsis "Multipage 'Shiny' Apps")
+    (description
+     "Build natively multi-page Shiny applications, serving content on several
+endpoints instead of a single page.  Pages are declared with their own user
+interface and server function and are dispatched by URL with routr', including
+parameterised routes.  Redirections, request and response middleware, and
+helpers to read and set cookies are also provided.")
+    (license license:expat)))
+
 (define-public r-broadcast
   (package
     (name "r-broadcast")
@@ -10041,13 +10073,13 @@ correlation, and descriptive statistics table for the securities.")
 (define-public r-boldnode
   (package
     (name "r-boldnode")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BOLDNODE" version))
        (sha256
-        (base32 "03k5m7king682aan5304q3irhv2lr92fwzvd157ly36nc2jc7czx"))))
+        (base32 "0152nmwfcz6vdfjjr03q9abrzqi5j0ncb9fqd8ay7n5jbiy4qzw3"))))
     (properties `((upstream-name . "BOLDNODE")))
     (build-system r-build-system)
     (arguments
@@ -19813,18 +19845,19 @@ features of a lot of the songs and lyrics for several of the songs as well.")
 (define-public r-bild
   (package
     (name "r-bild")
-    (version "1.2-1")
+    (version "1.3-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bild" version))
        (sha256
-        (base32 "18fcfaavqdhx0n5l4mhg5ibg9wp01amxj1qin25immsx6pwmp9gb"))))
+        (base32 "031bp1qryb41fvm0m93r169nsglbpzcbgmxwwm06i7bdfp099m98"))))
     (properties `((upstream-name . "bild")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-tibble r-ggplot2 r-generics))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=bild")
     (synopsis "Package for BInary Longitudinal Data")
@@ -19833,7 +19866,7 @@ features of a lot of the songs and lyrics for several of the songs as well.")
 for serial dependence among observations from a given individual and a random
 intercept term.  Estimation is via maximization of the exact likelihood of a
 suitably defined model.  Missing values and unbalanced data are allowed, with
-some restrictions.  M. Helena Goncalves et al.(2007) <DOI:
+some restrictions.  M. Helena Goncalves et al. (2012) <DOI:
 10.18637/jss.v046.i09>.")
     (license license:gpl2+)))
 
@@ -29390,28 +29423,30 @@ and maintained trends drawing from Schotman and van Dijk (1991)
 (define-public r-bayessim
   (package
     (name "r-bayessim")
-    (version "1.0.4")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesSIM" version))
        (sha256
-        (base32 "04ag9q8ffk2cwmywjvzg4nnnxi3a2ah2d6m5jcpd53c1b7qimx11"))))
+        (base32 "1qprzcx77cmz0l244sdad0rva30fa7fhhy58ais2i2wbgb00amrv"))))
     (properties `((upstream-name . "BayesSIM")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyr
+                             r-posterior
                              r-patchwork
                              r-nimble
                              r-mvtnorm
                              r-mass
                              r-magrittr
+                             r-loo
                              r-ggplot2
                              r-dplyr
                              r-coda))
-    (home-page "https://cran.r-project.org/package=BayesSIM")
+    (home-page "https://github.com/Seowoo-Jung/BayesSIM")
     (synopsis
      "Integrated Interface of Bayesian Single Index Models using 'nimble'")
     (description

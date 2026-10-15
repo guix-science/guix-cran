@@ -10500,13 +10500,13 @@ object created will need to be modified through a theme.")
 (define-public r-waterbalancer
   (package
     (name "r-waterbalancer")
-    (version "0.1.21")
+    (version "0.1.22")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WaterBalanceR" version))
        (sha256
-        (base32 "0xj7p6g1p7n38qdwzgb65a35hjb81w409nj72qxnsd63hm4ljjc3"))))
+        (base32 "1lj8hdad9mry21z99knljjpf7f5m6jhq2gp8cm8836ld19gf799x"))))
     (properties `((upstream-name . "WaterBalanceR")))
     (build-system r-build-system)
     (arguments

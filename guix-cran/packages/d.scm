@@ -1118,13 +1118,13 @@ such dynamic value elements.  This package aims to reduce those challenges.")
 (define-public r-dynamicmultiplex
   (package
     (name "r-dynamicmultiplex")
-    (version "1.3.1")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dynamicmultiplex" version))
        (sha256
-        (base32 "00syx56f53dwxkk0kg0ayq94mdxzxkfqbmd9s44hb17ln0crg72b"))))
+        (base32 "1kz6pygp76lh2lrvk3yh65ahmz46agg3r1hsi2agg7yjw8nabpfw"))))
     (properties `((upstream-name . "dynamicmultiplex")))
     (build-system r-build-system)
     (arguments
@@ -1132,17 +1132,21 @@ such dynamic value elements.  This package aims to reduce those challenges.")
       #:tests? #f))
     (propagated-inputs (list r-rlang r-igraph r-clue))
     (home-page "https://github.com/jfedgerton/dynamic_multiplex")
-    (synopsis "Community Detection for Evolving Multiplex Networks")
+    (synopsis "Tracking Communities in Changing Temporal Networks")
     (description
-     "Multiplex temporal community detection with customizable interlayer coupling.
-Runs Louvain or Leiden community detection on each network layer and constructs
-interlayer ties using Jaccard similarity, overlap coefficient, node-strength
-weighted variants, or direct node identity links, and also provides a two-stage
-snapshot-and-match tracker that aligns independently detected per-layer
-communities across time with the Hungarian assignment algorithm.  Supports
-user-specified layer connectivity via the layer_links argument, enabling
-adjacent-only temporal coupling that avoids the long-range pooling problem in
-standard multislice approaches.")
+     "This package provides tools for temporal networks that change over time, where
+nodes enter and leave, groups form, split, merge and dissolve, and periods
+differ in size.  The temporal fitters track nodes and communities across
+periods.  A community keeps one identifier while it persists, and a newly formed
+group receives a new one.  Two-stage fitters run Louvain or Leiden community
+detection in each period and link communities in linked periods by Jaccard
+similarity, the overlap coefficient or node-strength weighted variants.  The
+layer_links argument sets which periods are directly linked, adjacent periods
+only by default.  By default all periods are fitted jointly, so later periods
+can change earlier labels, and tracking = filtered prevents this.  Multislice
+modularity (Mucha et al.  2010) <doi:10.1126/science.1184819> and Hungarian
+matching are included as comparison methods, and a bootstrap stability score
+helps choose between the two-stage and multislice approaches.")
     (license license:expat)))
 
 (define-public r-dynamac
@@ -5090,6 +5094,35 @@ optimization, model visualization, prediction and performance evaluation.  The
 philosophy of the package is described in Guo (2025)
 <doi:10.1038/s41598-025-93333-6>.")
     (license license:asl2.0)))
+
+(define-public r-dsdp
+  (package
+    (name "r-dsdp")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dsdp" version))
+       (sha256
+        (base32 "1j796q4wfjrzcxjs7336q48lah48zm93rflr04ns3ckl0k2m7ipi"))))
+    (properties `((upstream-name . "dsdp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-ggplot2))
+    (native-inputs (list r-rmarkdown r-knitr gfortran))
+    (home-page "https://tsuchiya-lab.github.io/dsdp/")
+    (synopsis "Density Estimation with Semidefinite Programming")
+    (description
+     "The models of probability density functions are Gaussian or exponential
+distributions with polynomial correction terms.  Using a maximum likelihood
+method, dsdp computes parameters of Gaussian or exponential distributions
+together with degrees of polynomials by a grid search, and coefficient of
+polynomials by a variant of semidefinite programming.  It adopts Akaike
+Information Criterion for model selection.  See a vignette for a tutorial and
+more on our Github repository <https://github.com/tsuchiya-lab/dsdp/>.")
+    (license license:expat)))
 
 (define-public r-dscoretest
   (package
@@ -31529,13 +31562,13 @@ computed from observed predictors.")
 (define-public r-dbspatial
   (package
     (name "r-dbspatial")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dbSpatial" version))
        (sha256
-        (base32 "0fnrwi0np509wmnj6h5w9xzxw83dc6gidx33ipc0lpm30rl8i2is"))))
+        (base32 "1h2q68pn9rl2mp3bn3f0agq82xrhjj8kb5bm5zmknf46lrd5rp6y"))))
     (properties `((upstream-name . "dbSpatial")))
     (build-system r-build-system)
     (arguments
@@ -34144,13 +34177,13 @@ heartdisease data under CC BY 4.0, see the heartdisease help page).")
 (define-public r-dataretrieval
   (package
     (name "r-dataretrieval")
-    (version "2.7.26")
+    (version "2.7.27")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dataRetrieval" version))
        (sha256
-        (base32 "1bclv5cgpnrpivmfqx819bc7ndvkad3qmgb9wa1px2aixdgzygsq"))))
+        (base32 "1cq7q2syhkwn8n3ldzfz8jf2pvgdpa3i8cpcnb8vpq2gawcsywhp"))))
     (properties `((upstream-name . "dataRetrieval")))
     (build-system r-build-system)
     (arguments

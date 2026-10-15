@@ -22768,13 +22768,13 @@ approach, but an uninformative prior is also available.")
 (define-public r-tidyllm
   (package
     (name "r-tidyllm")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyllm" version))
        (sha256
-        (base32 "16xqjby2y7jz75yz0cwvc4pf5kgc0a8l77fqp00bjvmq1d5kgr4s"))))
+        (base32 "07aaykqw64c53wkasida72yawyr1asz25pqb3hh94byn3snrph3c"))))
     (properties `((upstream-name . "tidyllm")))
     (build-system r-build-system)
     (arguments
@@ -26685,6 +26685,30 @@ Braun, N., Neuffer, J., and Kempa-Liehr A.W. (2018)
 <doi:10.1016/j.softx.2020.100456>, and Kats Facebook Infrastructure Data Science
 (2021) <https://facebookresearch.github.io/Kats/>.")
     (license license:expat)))
+
+(define-public r-theeuh
+  (package
+    (name "r-theeuh")
+    (version "0.1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "theeuh" version))
+       (sha256
+        (base32 "1g13k7i4md59lnihx9z4cbvvq4gfqbzznz4dhxad97879kr0im8c"))))
+    (properties `((upstream-name . "theeuh")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-churon))
+    (home-page "https://github.com/mrchypark/theeuh")
+    (synopsis "Write Spaces to Korean Sentences")
+    (description
+     "Restores spacing in Korean sentences using a bundled neural network model and
+ONNX Runtime <https://onnxruntime.ai/> through churon'.  Inference runs locally
+without a web service or automatic downloads.")
+    (license license:gpl3+)))
 
 (define-public r-thamesmix
   (package

@@ -1666,13 +1666,13 @@ Checks for unintended meanings by querying Wiktionary and Wikipedia.")
 (define-public r-av1r
   (package
     (name "r-av1r")
-    (version "0.1.4")
+    (version "0.1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AV1R" version))
        (sha256
-        (base32 "0gbrdnkn4ajkrp3gwddpr51xj2i6g41ymmamapkp9p7jx55vd19f"))))
+        (base32 "19vxmjhksk61hbyw0pj03ja1rfc2fq8qsay3v7l770lxzq63dway"))))
     (properties `((upstream-name . "AV1R")))
     (build-system r-build-system)
     (arguments
@@ -20690,13 +20690,13 @@ themselves with the core aisdk provider registry on load.")
 (define-public r-aiscreenr
   (package
     (name "r-aiscreenr")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AIscreenR" version))
        (sha256
-        (base32 "10a008y3wyknlly128m4s5n2dhil4cywbrf0hsyj39544hxv9c11"))))
+        (base32 "0a304ixb474a2sy7c6l1nppjfnm0wqam2z1324w8blshcdd04nir"))))
     (properties `((upstream-name . "AIscreenR")))
     (build-system r-build-system)
     (arguments
@@ -30099,13 +30099,13 @@ Goldfarb and Idnani (1983) <doi:10.1007/BF02591962> and Vanderbei et al. (1986)
 (define-public r-acr
   (package
     (name "r-acr")
-    (version "0.3.4")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "acR" version))
        (sha256
-        (base32 "0qnkrwpmb2cw4bqb71m3k6ldpr4bw66s5gf4cncv4yjrxvyl18r1"))))
+        (base32 "1r1vjb16hypl9glbwqdw90jz9bsc4rzq75m5fdjdnrbmv6v4p1cf"))))
     (properties `((upstream-name . "acR")))
     (build-system r-build-system)
     (arguments

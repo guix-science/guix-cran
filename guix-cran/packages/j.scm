@@ -13,6 +13,9 @@
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages java)
+  #:use-module (gnu packages ruby-check)
+  #:use-module (gnu packages ruby-xyz)
+  #:use-module (gnu packages ruby)
   #:use-module (gnu packages pkg-config)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -4414,6 +4417,43 @@ visualization design was first introduced by Lahtinen, Lavikka, et al. (2023,
 sequencing data.  The clonevol package is not available on CRAN but can be
 installed from its @code{GitHub} repository
 (<https://github.com/hdng/clonevol>).")
+    (license license:expat)))
+
+(define-public r-jekylldown
+  (package
+    (name "r-jekylldown")
+    (version "0.3.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jekylldown" version))
+       (sha256
+        (base32 "1d43bz1dr995vpw4b1j0pxln3ayvxvkklcsg7qxrdg2qp8varxmx"))))
+    (properties `((upstream-name . "jekylldown")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list ruby jekyll bundler))
+    (propagated-inputs (list r-yaml
+                             r-xfun
+                             r-servr
+                             r-processx
+                             r-knitr
+                             r-fs
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/allanvc/jekylldown")
+    (synopsis
+     "Create, Build and Serve 'Jekyll' Websites from 'R Markdown' and 'Quarto'")
+    (description
+     "Do for Jekyll what blogdown does for Hugo': create sites from the most popular
+themes ('al-folio', Chirpy', Minimal Mistakes', minima'), write posts in R
+Markdown or Quarto that are knitted to Markdown consumed natively by Jekyll',
+customize theme colors, fonts and elements declaratively from R, migrate
+blogdown'/'Hugo sites, build and serve the site locally with live reload, and
+diagnose the Ruby/'Jekyll toolchain.  Jekyll is invoked strictly via its command
+line interface; no R-Ruby language bridge is used.")
     (license license:expat)))
 
 (define-public r-jds-rmd

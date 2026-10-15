@@ -440,13 +440,13 @@ relationships at the lower and upper boundary of the data range.")
 (define-public r-uteals
   (package
     (name "r-uteals")
-    (version "0.0.5")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "uteals" version))
        (sha256
-        (base32 "16lz7laxqg40f83rdm77w6mwbvp9d344vnqszw34ayp39mvng5iq"))))
+        (base32 "1ib073qqxykihnmzyw024phxl0v3axgddjpkzq3p6w5jg7hd0rbs"))))
     (properties `((upstream-name . "uteals")))
     (build-system r-build-system)
     (arguments

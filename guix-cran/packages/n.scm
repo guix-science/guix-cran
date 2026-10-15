@@ -4167,13 +4167,13 @@ Kiefel and Bathke (2022) <doi:10.1515/stat-2022-0112>.")
 (define-public r-nparld
   (package
     (name "r-nparld")
-    (version "2.3.1")
+    (version "2.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nparLD" version))
        (sha256
-        (base32 "0jhqnbvh7y9d1m0rv1n2cidqn14n30mp56dl9a8h4prj386n1wkj"))))
+        (base32 "0ydd4azzb7w4pq2lb17mwdlijcdnda7ngmxk4yk6ywgwccgxwzjj"))))
     (properties `((upstream-name . "nparLD")))
     (build-system r-build-system)
     (arguments
@@ -4186,7 +4186,7 @@ Kiefel and Bathke (2022) <doi:10.1515/stat-2022-0112>.")
                              r-mass
                              r-ggplot2))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=nparLD")
+    (home-page "https://github.com/FrankKonietschke/nparLD")
     (synopsis
      "Nonparametric Analysis of Longitudinal Data in Factorial Experiments")
     (description
@@ -6023,13 +6023,13 @@ nonlinear mixed effects modeling.  See package?nonmemica'.")
 (define-public r-nonmem2rx
   (package
     (name "r-nonmem2rx")
-    (version "0.1.11")
+    (version "0.1.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nonmem2rx" version))
        (sha256
-        (base32 "1w94s0q49mz3ygmg71awa38xab6pn3c7hpkn5dkv5yp0hjdd830f"))))
+        (base32 "1x0ci8xsfycljs0zv9y5kfqlpkbggh1vwsvc57295xghhgmcnawc"))))
     (properties `((upstream-name . "nonmem2rx")))
     (build-system r-build-system)
     (arguments
@@ -6048,7 +6048,7 @@ nonlinear mixed effects modeling.  See package?nonmemica'.")
                              r-crayon
                              r-cli
                              r-checkmate))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://nlmixr2.github.io/nonmem2rx/")
     (synopsis "Converts 'NONMEM' Models to 'rxode2'")
     (description
@@ -9718,13 +9718,13 @@ covariate selection.")
 (define-public r-nlmixr2est
   (package
     (name "r-nlmixr2est")
-    (version "7.2.0")
+    (version "7.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmixr2est" version))
        (sha256
-        (base32 "0lrjxlvr2x0wzsw5zxnpkvvj18g4m9061xffqr7r71vi5n6an8vv"))))
+        (base32 "09h9yay4xn34821pbw85bz53axm19xxd5zbl2gdg0a13bs8q40zb"))))
     (properties `((upstream-name . "nlmixr2est")))
     (build-system r-build-system)
     (arguments
@@ -12246,6 +12246,49 @@ babbler is a simple Markov chain.  The package also offers a vignette with
 complete example workflows and information about the utilities offered in the
 package.")
     (license (license:fsdg-compatible "BSD 2-clause License + file LICENSE"))))
+
+(define-public r-ngme2
+  (package
+    (name "r-ngme2")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ngme2" version))
+       (sha256
+        (base32 "00c4hrhvixvk7ad991r7c5jwr32408n4vkd2ppsai94m07ivb39y"))))
+    (properties `((upstream-name . "ngme2")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-rlang
+                             r-rcppeigen
+                             r-rcpp
+                             r-matrix
+                             r-gridextra
+                             r-ggplot2
+                             r-fmesher))
+    (native-inputs (list r-knitr))
+    (home-page "https://davidbolin.github.io/ngme2/")
+    (synopsis "Linear Latent Non-Gaussian Models with Flexible Distributions")
+    (description
+     "Fits and analyzes linear latent non-Gaussian models for temporal, spatial, and
+space-time data.  The package provides model components for autoregressive and
+Ornstein-Uhlenbeck processes, random walks, Matern fields based on stochastic
+partial differential equations, separable and non-separable space-time models,
+graph-based Matern models, bivariate type-G fields, and user-defined sparse
+operators.  Latent fields and observation models can use Gaussian and
+non-Gaussian noise distributions, including normal inverse Gaussian, generalized
+asymmetric Laplace, and skew-t distributions.  Functions are included for
+simulation, likelihood-based estimation, prediction, cross-validation,
+convergence diagnostics, stochastic gradient optimization, batch-means
+confidence intervals, and posterior-like sampling.  The modeling framework is
+described in Bolin, Jin, Simas and Wallin (2026) \"A Unified and Computationally
+Efficient Non-Gaussian Statistical Modeling Framework\"
+<doi:10.48550/@code{arXiv.2602.23987>}.")
+    (license license:gpl3+)))
 
 (define-public r-nglviewer
   (package
@@ -21113,6 +21156,34 @@ including loops, branches, and control flow.")
 format defined by the North American Association of Central Cancer Registries
 (NAACCR).")
     (license license:expat)))
+
+(define-public r-n3d
+  (package
+    (name "r-n3d")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "n3d" version))
+       (sha256
+        (base32 "1h6z397g3glm0f9jrqvsmcy4jlkq80f9qg4fzc0kcy7rmn3whm49"))))
+    (properties `((upstream-name . "n3d")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-torch r-safetensors r-hfhub r-av))
+    (home-page "https://github.com/cornball-ai/n3d")
+    (synopsis "Speaker Diarization with 'Nemotron 3 Diarization' in R 'torch'")
+    (description
+     "Determines \"who spoke when\" in recorded or streaming audio with a native R torch
+implementation of the NVIDIA Nemotron 3 Diarization model
+<https://huggingface.co/nvidia/Nemotron-3-Diarization>, a Streaming Sortformer
+that tracks up to eight speakers in order of first arrival.  Log-mel feature
+extraction, the transformer encoder and the arrival-order speaker cache are
+implemented in R; weights are downloaded from Hugging Face with the hfhub
+package on request.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-n2h4
   (package

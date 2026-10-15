@@ -9718,13 +9718,13 @@ and CPU performance on different matrix operations.")
 (define-public r-gpuinfo
   (package
     (name "r-gpuinfo")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gpuinfo" version))
        (sha256
-        (base32 "0s3yy5q2cpd1zzh9vlb265g5lk86b748b02pd779jak4kj66d5d4"))))
+        (base32 "0qb1bxpq04kh04vjj6fsvifsjsz0dci8nygvby54lvfxrqxjn0ai"))))
     (properties `((upstream-name . "gpuinfo")))
     (build-system r-build-system)
     (arguments
@@ -9734,17 +9734,23 @@ and CPU performance on different matrix operations.")
     (home-page "https://github.com/tkcaccia/gpuinfo")
     (synopsis "Lightweight Hardware and GPU Compute Detection")
     (description
-     "Detects central processing unit and graphics processing unit hardware and
-reports the apparent availability of CUDA', Metal', ROCm', and @code{OpenCL}
-compute backends.  Detection uses operating-system information, documented
-platform interfaces, and optional command-line utilities, without requiring a
-GPU framework, Python', or a vendor software development kit.  Backend
-interpretation follows the official CUDA
-<https://docs.nvidia.com/cuda/cuda-driver-api/>, Metal
+     "Detects central processing unit topology, process-available cores, host and
+container memory, graphics processing unit hardware, and reports the apparent
+availability of CUDA', Metal', ROCm', and @code{OpenCL} compute backends, with a
+read-only shared-library inventory for the CUDA runtime, @code{cuBLAS}',
+@code{cuFFT}', @code{cuSOLVER}', @code{cuRAND}', and optional NCCL libraries.
+Detection uses operating-system information, documented platform interfaces, and
+optional command-line utilities, without requiring a GPU framework, Python', or
+a vendor software development kit.  Backend interpretation follows the official
+CUDA <https://docs.nvidia.com/cuda/cuda-driver-api/>, Metal
 <https://developer.apple.com/documentation/metal>, ROCm
 <https://rocm.docs.amd.com/>, and @code{OpenCL}
-<https://registry.khronos.org/@code{OpenCL/>} documentation.  Missing hardware,
-drivers, libraries, and utilities are handled safely.")
+<https://registry.khronos.org/@code{OpenCL/>} documentation.  NCCL version
+inspection follows its documented API
+<https://docs.nvidia.com/deeplearning/nccl/user-guide/docs/api/comms.html>.
+Process-level GPU memory samples, multi-device inventories, and versioned
+hardware manifests support reproducible benchmarks.  Missing hardware, drivers,
+libraries, and utilities are handled safely.")
     (license license:expat)))
 
 (define-public r-gptzeror
@@ -18633,13 +18639,13 @@ simple Beta or Kumaraswamy.")
 (define-public r-gkrreg
   (package
     (name "r-gkrreg")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gkrreg" version))
        (sha256
-        (base32 "0216lqi5vvscl966j9z0md6pgq2f99jbc00n1bd6yp6jq7yzl9mx"))))
+        (base32 "0zfl0ddxfyv205p0b5l2lr3s9yrh5d3dam2l1kh2yhr1m1wx231b"))))
     (properties `((upstream-name . "gkrreg")))
     (build-system r-build-system)
     (arguments
@@ -18656,13 +18662,16 @@ method proposed by De Carvalho, Lima Neto and Ferreira (2017)
 iteratively using the Gaussian kernel so that poorly-fitted observations
 (outliers, leverage points) receive small weights, yielding resistance to
 Y-space outliers, X-space outliers and leverage points.  Convergence is
-guaranteed by Propositions 4.1 and 4.2 of the original paper.  Three estimators
+guaranteed by Propositions 4.1 and 4.2 of the original paper.  Four estimators
 for the kernel width hyper-parameter are provided (S1: Caputo, S2: pairwise
-median, S3: residual variance).  Inference is provided via an analytic sandwich
-variance estimator (default) or via bootstrap (percentile, normal and BCa
-intervals with p-values) through @code{gkrr_boot()}.  Six real datasets from the
-robust regression literature are included to facilitate reproducible
-comparisons.")
+median, S3: residual variance, S4: corrected Akaike bandwidth), together with a
+data-driven selection rule.  Inference is provided by a sandwich variance
+estimator with a family of heteroskedasticity-consistent finite-sample
+corrections adapted to the weighted leverage of the method, or by a pairs
+bootstrap that re-estimates the kernel width on each replicate (percentile,
+normal and bias-corrected accelerated intervals with p-values).  Six real
+datasets from the robust regression literature are included to facilitate
+reproducible comparisons.")
     (license license:gpl3)))
 
 (define-public r-gkrls
@@ -25326,13 +25335,13 @@ PNG files, external resources, or as a list column containing raster image data.
 (define-public r-ggimage
   (package
     (name "r-ggimage")
-    (version "0.3.6")
+    (version "0.3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggimage" version))
        (sha256
-        (base32 "1z22bcqz91hsc6zc686jc2ngmppwia5mw03nkfass5fdjz7z1hsn"))))
+        (base32 "01lssb97cy3fgvd2dfpnbmbm2r9jqxgldqr02gcrmw7syyw8fgc4"))))
     (properties `((upstream-name . "ggimage")))
     (build-system r-build-system)
     (arguments
@@ -25351,11 +25360,15 @@ PNG files, external resources, or as a list column containing raster image data.
                              r-ggiraph
                              r-ggfun
                              r-digest))
+    (native-inputs (list r-quarto))
     (home-page "https://github.com/YuLab-SMU/ggimage")
-    (synopsis "Use Image in 'ggplot2'")
+    (synopsis "Use Images in 'ggplot2'")
     (description
      "Supports image files and graphic objects to be visualized in ggplot2 graphic
-system.")
+system.  Images can be drawn at data points, used as the background of a plot,
+or embedded as a sub-plot, and can be read from local files or downloaded from
+remote services such as Pokemon', @code{PhyloPic}', and emoji and icon
+collections.  An interactive geom is provided for HTML output.")
     (license license:artistic2.0)))
 
 (define-public r-ggicons
@@ -27858,6 +27871,34 @@ plot's elements.")
 ggplot2'.  Descriptions are produced by inspecting plot layers, labels, scales,
 and facets, with support for multiple languages and alternative text stored in
 plot metadata.")
+    (license license:expat)))
+
+(define-public r-ggaltdata
+  (package
+    (name "r-ggaltdata")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggaltdata" version))
+       (sha256
+        (base32 "0rc3i37kyvxx2axld2x7wcqh9ib4wsn28nih1781nswj35m0bp8n"))))
+    (properties `((upstream-name . "ggaltdata")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/fniniv/ggaltdata")
+    (synopsis
+     "Data-Driven Alternative Text and Data Tables for 'ggplot2' Charts")
+    (description
+     "Generates alternative text that states what a ggplot2 chart shows (highest and
+lowest values, rankings, trends, gaps between groups, overlap of intervals), a
+long description and the data table, computed from the data of the chart itself.
+ Output for R Markdown', Quarto', Word', saved images and Shiny', in English and
+Italian.")
     (license license:expat)))
 
 (define-public r-ggallin

@@ -5682,13 +5682,13 @@ tagging messages with a priority level and application type, as well as masking
 (define-public r-rsynthbio
   (package
     (name "r-rsynthbio")
-    (version "4.2.1")
+    (version "4.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rsynthbio" version))
        (sha256
-        (base32 "0r694awzxanyq3kygjrfcbap9pd5ghzq3l2s7b3fb73nx1y7s210"))))
+        (base32 "10frb2x6lyq7mvs781cqab61gn9wkq08l0mxsmpp34wqjds2p3cx"))))
     (properties `((upstream-name . "rsynthbio")))
     (build-system r-build-system)
     (arguments
@@ -16960,13 +16960,13 @@ rogue detection (Smith 2022) <doi:10.1093/sysbio/syab099>, and an interface to
 (define-public r-roger
   (package
     (name "r-roger")
-    (version "1.5-1")
+    (version "1.6-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "roger" version))
        (sha256
-        (base32 "1k00xbc0iprcfjx6lgg5y910y76is8f984mcp4g6711zi16ljf5j"))))
+        (base32 "1md4chnkxx1sdq5y8p8cf6d07y4xhhp0lyi3xp9yiazk6sj6cxzk"))))
     (properties `((upstream-name . "roger")))
     (build-system r-build-system)
     (arguments
@@ -36107,6 +36107,51 @@ labels, including missing values, and documenting the data transformations, with
 the help of comprehensive s3 classes.")
     (license license:gpl3)))
 
+(define-public r-retroglyph
+  (package
+    (name "r-retroglyph")
+    (version "0.0.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "retroglyph" version))
+       (sha256
+        (base32 "0s178vs30zvl157hb81lb81b3w9p3jsnhzr6sc8irrmsrbfvfl06"))))
+    (properties `((upstream-name . "retroglyph")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-tesseract
+                             r-survival
+                             r-shinychat
+                             r-shiny
+                             r-r6
+                             r-r-utils
+                             r-promises
+                             r-markdown
+                             r-magick
+                             r-later
+                             r-ipdfromkm
+                             r-igraph
+                             r-htmlwidgets
+                             r-htmltools
+                             r-ellmer
+                             r-dplyr
+                             r-diffviewer
+                             r-bslib
+                             r-base64enc))
+    (home-page "https://wlandau.github.io/retroglyph/")
+    (synopsis
+     "Trusted Mini-Agent to Reconstruct Individual Patient Data from Kaplan-Meier Images")
+    (description
+     "The enclosed agent reconstructs individual patient data from published
+Kaplan-Meier curve images.  Relative to other Kaplan-Meier reconstruction tools,
+it excels at untangling egregiously occluded Kaplan-Meier curves, and the
+digitization phase achieves a high level of pixel precision.")
+    (license license:expat)))
+
 (define-public r-retrodesign
   (package
     (name "r-retrodesign")
@@ -38211,13 +38256,13 @@ request.")
 (define-public r-rerddap
   (package
     (name "r-rerddap")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rerddap" version))
        (sha256
-        (base32 "044m3kavgbnvbx8ahdajxcdlscclflp4ljx1g7j7l5fqfr4bilk4"))))
+        (base32 "16fxcq80a2mspjkfz2fccr3ldfgv3sdxl9pasp5jjp5hfcg58kq6"))))
     (properties `((upstream-name . "rerddap")))
     (build-system r-build-system)
     (arguments
@@ -38233,7 +38278,8 @@ request.")
                              r-dplyr
                              r-digest
                              r-data-table
-                             r-crul))
+                             r-crul
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://docs.ropensci.org/rerddap/")
     (synopsis "General Purpose Client for 'ERDDAPâ¢' Servers")
@@ -48418,13 +48464,13 @@ datasets with @code{readDWD()}'.")
 (define-public r-rdune
   (package
     (name "r-rdune")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rdune" version))
        (sha256
-        (base32 "1q4jql23h4yk970dr6mk8ykjisdyn5lwrlhgjxgzwxrdkmrs92pj"))))
+        (base32 "0ifnxqk3spxbg20wfa3xm3g4m3k46f4li8hiixqm3f5w7rnqr2r4"))))
     (properties `((upstream-name . "Rdune")))
     (build-system r-build-system)
     (arguments
@@ -56195,6 +56241,39 @@ institution statistics, household financial data, New Zealand debt security
 information, and economic indicators.  This package provides a method to
 download those spreadsheets and read them directly into R.")
     (license license:expat)))
+
+(define-public r-rbmrb
+  (package
+    (name "r-rbmrb")
+    (version "3.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RBMRB" version))
+       (sha256
+        (base32 "03ji1f1b1pwpwbzdqh3bgmj7i1blzk0vp9f1a5ka8fva741n7w9p"))))
+    (properties `((upstream-name . "RBMRB")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-plotly r-jsonlite r-httr2 r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/bmrb-io/RBMRB")
+    (synopsis
+     "Interface to the Biological Magnetic Resonance Data Bank ('BMRB')")
+    (description
+     "This package provides a comprehensive interface to the Biological Magnetic
+Resonance Data Bank ('BMRB') <https://bmrb.io>, mirroring all functionality of
+the @code{PyBMRB} Python package (v3.0).  Provides four modules: (1)
+@code{ChemicalShift} for fetching per-entry chemical shift data from the BMRB
+REST API or local NMR-STAR files; (2) @code{ChemicalShiftStatistics} for
+database-wide statistical queries; (3) Spectra for simulating 1H-15N HSQC',
+1H-13C HSQC', 1H-1H TOCSY', and generic 2D NMR spectra as interactive plots; and
+(4) Histogram for chemical shift distribution visualizations with optional
+filtering by @code{pH}, temperature, and ambiguity code.  All interactive plots
+are rendered via plotly'.  Uses the BMRB REST API v2 <https://api.bmrb.io/v2/>.")
+    (license license:gpl3)))
 
 (define-public r-rbmn
   (package

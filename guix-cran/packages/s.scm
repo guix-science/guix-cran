@@ -3762,13 +3762,13 @@ updates, one for linear kernel and one for the nonlinear kernel.")
 (define-public r-svmf
   (package
     (name "r-svmf")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "svmf" version))
        (sha256
-        (base32 "0rjb6p8ga97ax034xdz4843kxicigbhrcx3g71r0ps4zhz7kf5wv"))))
+        (base32 "0p5xincaa9x3h0rbfwq8xqvghjvsa4jx23nmfjn2ds2f1zgikpf1"))))
     (properties `((upstream-name . "svmf")))
     (build-system r-build-system)
     (arguments
@@ -12477,13 +12477,13 @@ Computers & Geosciences, v.  51, no.  0, p.  193 - 205, <doi:
 (define-public r-stratifyr
   (package
     (name "r-stratifyr")
-    (version "2.0-1")
+    (version "2.0-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stratifyR" version))
        (sha256
-        (base32 "1qpnklnfb3qd7jrb8qj38jzki96cbax0m52klrp13g7wdjxv3jxg"))))
+        (base32 "03z9fqy47y077j8n23pqmsa8a658x6hjihncqdrz6gqrv01l86n0"))))
     (properties `((upstream-name . "stratifyR")))
     (build-system r-build-system)
     (arguments
@@ -12491,7 +12491,7 @@ Computers & Geosciences, v.  51, no.  0, p.  193 - 205, <doi:
       #:tests? #f))
     (propagated-inputs (list r-nloptr r-mc2d r-mass r-fitdistrplus r-actuar))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=stratifyR")
+    (home-page "https://github.com/karunaredz/stratifyR")
     (synopsis "Optimal Stratification of Univariate Populations")
     (description
      "Determines Optimum Strata Boundaries (OSB) and Optimum Sample Sizes (OSS) for
@@ -12500,18 +12500,19 @@ stratification variable is described by a best-fitting parametric distribution,
 selected automatically by AIC from a set of continuous families (normal,
 log-normal, gamma, Weibull, exponential, Cauchy, uniform, Pareto, triangular and
 right-triangular), and the optimum boundaries are obtained by minimising the
-Neyman objective.  Version 2.0 keeps the original globally optimal Dynamic
-Programming (DP) solver of Reddy and Khan (2020) as the default and adds two
-faster derivative-free alternatives for interactive and large-scale use: a
-multi-start COBYLA solver and a two-phase global solver that couples DIRECT-L
-with COBYLA refinement.  It also provides cost-constrained allocation with
-unequal per-stratum costs, a design-efficiency comparison (compare_designs),
-two- and three-dimensional and interactive visualisations, solution-quality
-diagnostics (a Cauchy-Schwarz optimality gap and KKT first-order residuals for
-the derivative-free solvers) and a self-contained shiny application, while
-remaining backward compatible with the @code{strata.data()} and
-@code{strata.distr()} interface of version 1.x.  The methodology follows Khan et
-al. (2008)
+Neyman objective.  Version 2.0 keeps the Dynamic Programming (DP) solver of
+Reddy and Khan (2020), which is globally optimal for the fitted distribution, as
+the default.  It adds two fast derivative-free solvers, a multi-start COBYLA
+solver and a two-phase global solver that couples DIRECT-L with BOBYQA
+refinement, and an exact solver that runs dynamic programming on the sorted data
+and returns the partition with the smallest empirical Neyman cost.  It also
+provides cost-constrained allocation with unequal per-stratum costs, a
+design-efficiency comparison (compare_designs), two- and three-dimensional and
+interactive visualisations, solution-quality diagnostics (a Cauchy-Schwarz
+optimality gap and KKT first-order residuals for the derivative-free solvers)
+and a self-contained shiny application, while remaining backward compatible with
+the @code{strata.data()} and @code{strata.distr()} interface of version 1.x.
+The methodology follows Khan et al. (2008)
 <https://www150.statcan.gc.ca/n1/pub/12-001-x/2008002/article/10761-eng.pdf>,
 Reddy and Khan (2018) <doi:10.1111/anzs.12244> and Reddy and Khan (2020)
 <doi:10.1111/anzs.12301>.")
@@ -38382,13 +38383,13 @@ collect the management data.")
 (define-public r-soilkey
   (package
     (name "r-soilkey")
-    (version "0.9.184")
+    (version "0.9.259")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "soilKey" version))
        (sha256
-        (base32 "1i5pxi23qz95a8r0d1awhxbr6rjxf6a9wc0vkg8wmy59fcjvd2v0"))))
+        (base32 "1h2lh9mh00wx4fbfsgnz35ajkzrdsd4xlqv4iziq2gs47296xssf"))))
     (properties `((upstream-name . "soilKey")))
     (build-system r-build-system)
     (arguments
@@ -44020,23 +44021,27 @@ and 4 for any number of treatments.")
 (define-public r-slpreselection
   (package
     (name "r-slpreselection")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SLPresElection" version))
        (sha256
-        (base32 "1i813q0m9h964nd61kwnvakci3n1bn06pvq9zvxb2clcch05qyfj"))))
+        (base32 "04cm1aghi7mnp8d2vd9hf6dyg3spcvz0s58fjhkwqlkpd5qc882k"))))
     (properties `((upstream-name . "SLPresElection")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/Amalan-ConStat/SLPresElection")
-    (synopsis "Presidential Election Data of \"Sri Lanka\" from 1982 to 2015")
+    (synopsis "Presidential Election Data of \"Sri Lanka\" from 1982 to 2019")
     (description
-     "Presidential Election data of \"Sri Lanka\"\" is stored in Pdf files, through Pdf
-scraping they are converted into data-frames and stored in this R package.")
+     "This package provides Sri Lankan presidential election results for 1982, 1988,
+1994, 1999, 2005, 2010, 2015, and 2019.  The datasets contain candidate vote
+counts, reported percentages, and summary statistics for polling divisions and
+district results, including postal and displaced votes where available.  Results
+were extracted from PDF documents and prepared in a consistent tabular format.")
     (license license:expat)))
 
 (define-public r-slowraker
@@ -50045,13 +50050,13 @@ enough for use in large-scale data analysis projects.")
 (define-public r-simple-regression
   (package
     (name "r-simple-regression")
-    (version "0.3.1")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SIMPLE.REGRESSION" version))
        (sha256
-        (base32 "0b6xlbs799bagy51nc37qgswra5ih4zv3hb4jsx3cii3ypf648ax"))))
+        (base32 "1x4pc3rhs9ijjjrb92kh02q05kn7n595m8przkwvsb9py8bk5305"))))
     (properties `((upstream-name . "SIMPLE.REGRESSION")))
     (build-system r-build-system)
     (arguments
@@ -66373,13 +66378,13 @@ measures analysis.")
 (define-public r-semnetdictionaries
   (package
     (name "r-semnetdictionaries")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SemNetDictionaries" version))
        (sha256
-        (base32 "0dak0haf61cff656j526xqs7n97qapjllm2n75gz9d6l79ags7jg"))))
+        (base32 "0b3d9bjz0wyll8rzk0fpchsr2658gmbnkv8wg8kbw5hnqj5cxdxy"))))
     (properties `((upstream-name . "SemNetDictionaries")))
     (build-system r-build-system)
     (arguments
@@ -66438,13 +66443,13 @@ process more accurate, efficient, and reproducible.")
 (define-public r-semnet
   (package
     (name "r-semnet")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SemNeT" version))
        (sha256
-        (base32 "1y7bp6sw1k54bj1074m5yl85wyrnxkwim2z4w5rsmw754pgd8bjs"))))
+        (base32 "1lg0mxp5cdaxgryx7507bm0axfqnp18i32ylk74pbajzj4ay673a"))))
     (properties `((upstream-name . "SemNeT")))
     (build-system r-build-system)
     (arguments
@@ -66464,8 +66469,9 @@ process more accurate, efficient, and reproducible.")
      "This package implements several functions for the analysis of semantic networks
 including different network estimation algorithms, partial node bootstrapping
 (Kenett, Anaki, & Faust, 2014 <doi:10.3389/fnhum.2014.00407>), random walk
-simulation (Kenett & Austerweil, 2016), and a function to compute global network
-measures.  Significance tests and plotting features are also implemented.")
+simulation, and a function to compute global network measures.  Significance
+tests, including permutation testing, and plotting features are also
+implemented.")
     (license license:gpl3+)))
 
 (define-public r-semnar
@@ -74510,6 +74516,44 @@ Single Cell Expression Atlas hosted at EBI, a compendium of datasets with
 curated ontology labels are great inputs to this package.")
     (license license:expat)))
 
+(define-public r-scnpm
+  (package
+    (name "r-scnpm")
+    (version "1.0.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "scNPM" version))
+       (sha256
+        (base32 "1lb33rrhjvdr0mxnf17a6frqdbbf491lryrva1i4dg5428jqlcd6"))))
+    (properties `((upstream-name . "scNPM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-scales
+                             r-rcppparallel
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-matrix
+                             r-igraph
+                             r-ggrepel
+                             r-ggplot2))
+    (home-page "https://github.com/taostat1/scNPM_R_package")
+    (synopsis "Single-Cell Network Propensity Matching")
+    (description
+     "Estimates and compares heterogeneous gene conditional-dependence networks from
+single-cell expression data.  A latent Gaussian mixture and probit observation
+mechanism represent cellular heterogeneity and zero observations.  Protein
+interaction information supplies edge-specific prior weights, while network
+propensity matching links cell clusters across conditions and guides adaptation.
+ Staged inference freezes stable matching, disables feedback, and retains
+baseline-model samples for posterior group and directional differential edge
+selection.  Functions assess balance, record criterion diagnostics, and
+visualize within-condition and differential networks.")
+    (license license:gpl3+)))
+
 (define-public r-scmspillover
   (package
     (name "r-scmspillover")
@@ -80366,6 +80410,31 @@ raw data can be downloaded.  See
 <https://sfwater.org/cfapps/lims/beachmain1.cfm>.")
     (license license:expat)))
 
+(define-public r-sandwichrand
+  (package
+    (name "r-sandwichrand")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sandwichrand" version))
+       (sha256
+        (base32 "1ldjbr6gb7r7w1z75ab5y5n8mqdq7h029j5qgahmizl1347al9qa"))))
+    (properties `((upstream-name . "sandwichrand")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/wangbshun/sandwichrand")
+    (synopsis
+     "Sandwich Mixed Randomization for Allocation Sequence Generation")
+    (description
+     "Generates allocation sequences for randomized controlled trials using the
+sandwich mixed randomization (SMR) scheme, together with verification,
+diagnostics, and release utilities.")
+    (license license:asl2.0)))
+
 (define-public r-sandbox
   (package
     (name "r-sandbox")
@@ -82445,13 +82514,13 @@ on safe contingency table tests.")
 (define-public r-saferdev
   (package
     (name "r-saferdev")
-    (version "1.0.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "saferDev" version))
        (sha256
-        (base32 "1x5s9jgykcn7m91dvlc9phgh38rypi98vrs275yixmhnxpsx3c2p"))))
+        (base32 "0pjqb12xj942m6x9cp90882pqc20bwhqsav5aivjbqbkdv1arw5r"))))
     (properties `((upstream-name . "saferDev")))
     (build-system r-build-system)
     (arguments

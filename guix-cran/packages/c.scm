@@ -58845,6 +58845,45 @@ they would be saved.  Then combine all plots generated into a gif to show the
 plot refinement over time.")
     (license license:expat)))
 
+(define-public r-cam2model
+  (package
+    (name "r-cam2model")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cam2model" version))
+       (sha256
+        (base32 "123z5lcsqbn58470581n842hwyqnjvljxsliz3nq0m6x972asm99"))))
+    (properties `((upstream-name . "cam2model")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-readr
+                             r-progressr
+                             r-lubridate
+                             r-ggplot2
+                             r-fs
+                             r-exifr
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=cam2model")
+    (synopsis "Preprocessing Trap Camera Data for Machine Learning Models")
+    (description
+     "This package provides tools for preprocessing camera trap image data to prepare
+it for training machine learning models.  It automates tasks such as extracting
+EXIF metadata, processing and analyzing image attributes, selecting relevant
+images (e.g., daytime photos), sampling subsets, and managing file organization.
+ These features streamline the workflow for ecological research and wildlife
+monitoring projects.  Additionally, the package includes tools for generating
+exploratory visualizations and creating annotation datasets.")
+    (license license:gpl3+)))
+
 (define-public r-calsim
   (package
     (name "r-calsim")

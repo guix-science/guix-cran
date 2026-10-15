@@ -691,6 +691,35 @@ details.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-quicopt
+  (package
+    (name "r-quicopt")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quicopt" version))
+       (sha256
+        (base32 "06hfg87pxzyy7ri1hxcnwq61pxpxqznwx938k0igpmz6ys2jfmfg"))))
+    (properties `((upstream-name . "quicopt")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://quicopt.github.io/quicopt-r/")
+    (synopsis "Client for the 'Quicopt' Optimization Service")
+    (description
+     "Author an optimization model â including a model under uncertainty, with
+random variables, expectations, conditional value at risk and chance constraints
+â in a native R interface, and solve it with the Quicopt service
+<https://quicopt.com>.  Models are encoded to the service's wire format and
+solved remotely; no solver is installed locally.  Random variables carry
+distributions or empirical scenario columns taken directly from a data frame, so
+observed history becomes a stochastic program in one call.")
+    (license license:asl2.0)))
+
 (define-public r-quicksentiment
   (package
     (name "r-quicksentiment")

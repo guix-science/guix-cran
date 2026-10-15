@@ -11123,29 +11123,6 @@ Ecology-focused introduction in Bachl, Lindgren, Borchers, and Illian (2019)
 <doi:10.1111/2041-210X.13168>.")
     (license license:gpl2+)))
 
-(define-public r-inlabma
-  (package
-    (name "r-inlabma")
-    (version "0.1-12")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "INLABMA" version))
-       (sha256
-        (base32 "0dkb5v08ws38cfv33r4asz6shik08zd3535sc71gsgcg6cnj2d3q"))))
-    (properties `((upstream-name . "INLABMA")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-spdep r-sp r-matrix))
-    (home-page "https://cran.r-project.org/package=INLABMA")
-    (synopsis "Bayesian Model Averaging with INLA")
-    (description
-     "Fit Spatial Econometrics models using Bayesian model averaging on models fitted
-with INLA. The INLA package can be obtained from <https://www.r-inla.org>.")
-    (license license:gpl2+)))
-
 (define-public r-inkar
   (package
     (name "r-inkar")
@@ -15133,18 +15110,19 @@ methodology derived from Tiruviluamala, N., Port, A., and Lewis, E. (2022)
 (define-public r-impectr
   (package
     (name "r-impectr")
-    (version "2.5.6")
+    (version "2.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "impectR" version))
        (sha256
-        (base32 "0bgpvwvgmjv8fvpxq68p4rsxls8mk5332pzkqsh7aiv7cdzyknzq"))))
+        (base32 "0yn70zcmf7ypwrsy8rjwwsx06z5q95idkzpb39d9qclrzavp6rln"))))
     (properties `((upstream-name . "impectR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (inputs (list))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-rlang
@@ -23222,13 +23200,13 @@ together with the AIC, BIC, AICc and extended BIC model selection criteria.")
 (define-public r-ibger
   (package
     (name "r-ibger")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ibger" version))
        (sha256
-        (base32 "12vd47ph9mpq48jq5hjjhkmylycphpm22ripzrcnz08v3xhqjrzw"))))
+        (base32 "0zsvncqy44yc24g9rs71jfam80z3sfa8gjv9hc00mw4yk7kh81ix"))))
     (properties `((upstream-name . "ibger")))
     (build-system r-build-system)
     (arguments
@@ -23240,9 +23218,10 @@ together with the AIC, BIC, AICc and extended BIC model selection criteria.")
                              r-httr2
                              r-glue
                              r-dplyr
+                             r-curl
                              r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/StrategicProjects/ibger")
+    (home-page "https://docs.ropensci.org/ibger/")
     (synopsis "Access the 'IBGE' Aggregate Data API from 'R'")
     (description
      "Tidyverse'-friendly interface to the Brazilian Institute of Geography and

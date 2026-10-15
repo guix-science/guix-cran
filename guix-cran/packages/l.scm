@@ -11703,13 +11703,13 @@ returns minimum distance estimator of parameter b in the model.")
 (define-public r-linearmodel
   (package
     (name "r-linearmodel")
-    (version "1.0.2")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "linearModel" version))
        (sha256
-        (base32 "032liplyjw7n0ylvpqv038pf8sbfbcz58zka5rr76cvh2xzf87vg"))))
+        (base32 "1jv9g0waq45wbaj2jyc55ayyyqb14pggbw6djczwwzh7xf2l1bg0"))))
     (properties `((upstream-name . "linearModel")))
     (build-system r-build-system)
     (arguments
