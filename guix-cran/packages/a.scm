@@ -11142,6 +11142,35 @@ Global Biodiversity Information Facility (GBIF; <https://www.gbif.org/>), and
 mapping.")
     (license license:gpl3)))
 
+(define-public r-aradr
+  (package
+    (name "r-aradr")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "aradR" version))
+       (sha256
+        (base32 "0xbj6pd9ncn7f94psgjd3p8rjd18bsglck5w5cl3wmqphhgqb9ri"))))
+    (properties `((upstream-name . "aradR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-readr r-httr2 r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://simonamalovana.com/aradR/")
+    (synopsis
+     "Modern R Client and Toolkit for the Czech National Bank ARAD API")
+    (description
+     "This package provides a reliability-first interface to the public Czech National
+Bank ARAD API for discovering indicators, browsing human-readable metadata,
+retrieving and validating time series, working with dimensions and snapshots,
+reshaping data, and building reproducible data workflows.  The package is
+designed for robust handling of long requests, parsing diagnostics, missing
+values, retries, caching, and automated tests.")
+    (license license:expat)))
+
 (define-public r-arabicstemr
   (package
     (name "r-arabicstemr")
@@ -12009,13 +12038,13 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
 (define-public r-approxot
   (package
     (name "r-approxot")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "approxOT" version))
        (sha256
-        (base32 "0hj6pb4ng11xppn1a3y7i9d93xfvz20p3nagd0hd1aa30fli4114"))))
+        (base32 "0linpaqzyc2p7hzj05chj8ms7hvx40l6a7ivb2dn20zsqdn9vyxb"))))
     (properties `((upstream-name . "approxOT")))
     (build-system r-build-system)
     (arguments

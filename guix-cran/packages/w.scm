@@ -1095,6 +1095,30 @@ sql query or a dataframe to a database table with modes such as create, append,
 insert, update, upsert, patch, delete, overwrite, overwrite_schema.")
     (license license:lgpl3+)))
 
+(define-public r-writelog
+  (package
+    (name "r-writelog")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "writeLog" version))
+       (sha256
+        (base32 "1r4awjy5nn42bh754f89qxj2c1pf5i2fjh072xq3fc8n8pm6c650"))))
+    (properties `((upstream-name . "writeLog")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/jeffzifanwu/writeLog")
+    (synopsis "Write Printed Output of R Objects to Log Files")
+    (description
+     "This package provides @code{writeLog()}, a small helper that writes the printed
+output of a named list of R objects to a text file in a log directory, one
+element after another, each preceded by its list name as a heading.  Supports
+versioned file names and appending to an existing log file.")
+    (license license:expat)))
+
 (define-public r-writealizer
   (package
     (name "r-writealizer")
@@ -6837,13 +6861,13 @@ Supporting Packages\" for instructions on how to install any optional package
 (define-public r-weightflow
   (package
     (name "r-weightflow")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "weightflow" version))
        (sha256
-        (base32 "1wrr6aghgwyayn6ajaq6pw9mwslm30kq0l8r42v3n05k5kiz7av1"))))
+        (base32 "19jjf23514xinmi5gj0vxby3ij1j6dvgnq47dhkh86x1d4ixmnkv"))))
     (properties `((upstream-name . "weightflow")))
     (build-system r-build-system)
     (arguments
@@ -6852,26 +6876,29 @@ Supporting Packages\" for instructions on how to install any optional package
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jpferreira33/weightflow")
     (synopsis
-     "Declarative Recipes for Staged Survey Weighting with Recipe-Aware Replicate Variances")
+     "Weighting Probability and Non-Probability Survey Samples with Recipe-Aware Replicate Variances")
     (description
      "Builds survey analysis weights by declaring the whole weighting process as an
-ordered recipe of explicit adjustments, estimated in a single call.  Steps cover
-within-cluster selection, subsampling for two-phase designs, nonresponse by
-weighting classes or response-propensity models (optionally machine-learning,
-with cross-fitting), calibration to known totals following Deville and Sarndal
-(1992) <doi:10.2307/2290268>, optionally model-assisted, non-probability samples
-by pseudo-weighting, mass imputation and doubly robust estimators, and
-range-restricted trimming.  Rotating and pure panels add panel-selection
-probabilities, attrition, longitudinal weights, gross flows and composite
-estimation.  Variances come from a recipe-aware bootstrap and jackknife that
-resample or delete primary sampling units and re-apply the entire cascade on
-each replicate, following Rao and Wu (1988)
-<doi:10.1080/01621459.1988.10478591>; panel replicates are coordinated across
-waves, so the sample overlap enters the variance of a net change as covariance,
-and two-phase variances split into first- and second-phase components (V = V1 +
-V2).  A self-contained HTML report documents each step, and the weights bridge
-to the survey and srvyr packages.  The methods, and the simulation evidence
-behind the variance estimators, are described in Ferreira (2026)
+ordered recipe of explicit adjustments, estimated in a single call: unknown
+eligibility, within-cluster selection, two-phase subsampling, nonresponse by
+weighting classes or response-propensity models, calibration and trimming.
+Calibration to known totals runs on linear, raking or logit distances, bounded,
+ridge-penalized, model-assisted or integrative with one weight per cluster; a
+calibrated trim bounds the weights while keeping the control totals exact.
+Non-probability samples are weighted against a probability reference sample by
+pseudo-weighting, mass imputation and doubly robust estimators that calibrate a
+single weight on the fitted values of several working models and on the
+population totals of the auxiliaries at once, so one multipurpose weight serves
+many variables.  Variances come from a recipe-aware bootstrap and jackknife that
+re-apply the entire cascade on each replicate, so every adjustment is inside the
+variance instead of being treated as fixed; across panel waves the replicates
+are coordinated by carrying forward the selection multiplicities of the sampling
+units, so the sample overlap enters the variance of a net change as covariance.
+Rotating and pure panels add attrition, longitudinal weights, gross flows and
+composite estimation, a self-contained HTML report documents each step, and the
+weights bridge to the survey and srvyr packages, which are optional: the package
+itself runs on base R. The methods, and the simulation evidence behind the
+variance estimators, are described in Ferreira (2026)
 <doi:10.1177/18747655261484262>.")
     (license license:expat)))
 

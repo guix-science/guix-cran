@@ -15,7 +15,7 @@
   #:use-module (gnu packages maths)
   #:use-module (gnu packages python-science)
   #:use-module (gnu packages web)
-  #:use-module (gnu packages containers)
+  #:use-module (gnu packages docker)
   #:use-module (gnu packages cmake)
   #:use-module (gnu packages finance)
   #:use-module (gnu packages java)
@@ -5248,13 +5248,13 @@ Regression models.")
 (define-public r-logr
   (package
     (name "r-logr")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "logr" version))
        (sha256
-        (base32 "1zyqcxgm4z2ikkpmxj7bvfwzhx1bn8wbaqn1qkqc7xvnv7fnsglc"))))
+        (base32 "07vhjbkgihhp5mvfpzdyy5qj5ammnk65rzfn6s3dhixzvn7886qd"))))
     (properties `((upstream-name . "logr")))
     (build-system r-build-system)
     (arguments
@@ -12183,6 +12183,35 @@ instruments, candlestick charts, fundamentals, news, events, models, and trading
 signals.  Authentication is managed through user-specific API tokens, which are
 securely handled via environment variables.")
     (license license:gpl3)))
+
+(define-public r-limestab
+  (package
+    (name "r-limestab")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "limestab" version))
+       (sha256
+        (base32 "03hx2m3cwrm9322il8z9gszg7bgq7qcch6lz2aac2fyspwk5sx77"))))
+    (properties `((upstream-name . "limestab")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=limestab")
+    (synopsis
+     "Stable Local Interpretable Model-Agnostic Explanations (LIME, OptiLIME, BayLIME, ALIME)")
+    (description
+     "This package provides four local explanation methods for tabular data: LIME,
+@code{OptiLIME}, @code{BayLIME}, and ALIME, together with the stability metrics
+used to compare them across repeated explanations of the same instance: the
+Coefficient Stability Index (CSI), the Variable Stability Index (VSI), Median
+Rank Matching Stability (MRMS), Point-Based Stability Index (PCSI), and Interval
+Coefficient Stability Index (ICSI).  The methodology accompanies Toparlak and
+Purutcuoglu, \"A Median-Based Framework for Assessing the Stability in XAI Tools\"
+(manuscript under revision); the citation will be updated upon publication.")
+    (license license:expat)))
 
 (define-public r-lime
   (package

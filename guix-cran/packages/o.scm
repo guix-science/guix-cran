@@ -618,13 +618,13 @@ publishable @code{LaTeX} code to present the sample information.")
 (define-public r-overturer
   (package
     (name "r-overturer")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "overtureR" version))
        (sha256
-        (base32 "01zl6prjz7bb6njqnzv5rpm37xiz8zl2v24nfzmy7wnn89ipnz0k"))))
+        (base32 "12fab0dmijhrcpbm2mhq9wsaxwn5spds016axiiw9xbv98vq1m0r"))))
     (properties `((upstream-name . "overtureR")))
     (build-system r-build-system)
     (arguments
@@ -13913,13 +13913,13 @@ The method is based on Jie Ding, Yu Xiang, Lu Shen, Vahid Tarokh (2017)
 (define-public r-officedown
   (package
     (name "r-officedown")
-    (version "0.4.1")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "officedown" version))
        (sha256
-        (base32 "12criqsjlbr9a21l1bkm6gjm6nygvc2023g6i0n7hz84bd30cxb5"))))
+        (base32 "0xipqrib74z7m1j0q0ln50hy30b5x3k2hmh8xpzvvv6fdpizksrz"))))
     (properties `((upstream-name . "officedown")))
     (build-system r-build-system)
     (arguments
@@ -15758,6 +15758,48 @@ Waterway, Port, Coastal, and Ocean Division, Vol 105, pp 457-459.")
      "This package provides functions for transforming and viewing 2-D and 3-D
 (oceanographic) data and model output.")
     (license license:gpl3+)))
+
+(define-public r-oceantracer
+  (package
+    (name "r-oceantracer")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OceanTracer" version))
+       (sha256
+        (base32 "04wzsb3dghdgwdq8x6mdlchycfwz0cz9nn3313jfiyc79vb5a386"))))
+    (properties `((upstream-name . "OceanTracer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-ternary
+                             r-scales
+                             r-reshape2
+                             r-plotly
+                             r-mixsiar
+                             r-mass
+                             r-magrittr
+                             r-klar
+                             r-gridextra
+                             r-ggplot2
+                             r-ggbiplot
+                             r-ggally
+                             r-dplyr
+                             r-crayon
+                             r-cluster))
+    (home-page "https://cran.r-project.org/package=OceanTracer")
+    (synopsis "Marine Source Unmixing Toolkit")
+    (description
+     "Reconstructs the provenance of particulate matter and marine sediments by
+unmixing isotopic and elemental signatures.  Provides a specialized toolkit for
+marine biogeochemistry, coastal tracing, and oceanographic sediment transport
+following the step-by-step procedure described in Cepeda et al. (2026)
+<doi:10.1002/lom3.70083>, which is tested using artificial mixtures.")
+    (license license:gpl2+)))
 
 (define-public r-oceanmap
   (package

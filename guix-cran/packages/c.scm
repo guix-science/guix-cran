@@ -17551,6 +17551,33 @@ coordinates.  Especially suited for large data sets.  The reference for the
 methodology is: Zizka et al. (2019) <doi:10.1111/2041-210X.13152>.")
     (license license:gpl3)))
 
+(define-public r-cooppostman
+  (package
+    (name "r-cooppostman")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CoopPostman" version))
+       (sha256
+        (base32 "00fx83987kpw1w2qy70hm56i2b4cx8z0mcxzk730n1g4jx5fpi0n"))))
+    (properties `((upstream-name . "CoopPostman")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-igraph))
+    (home-page "https://cran.r-project.org/package=CoopPostman")
+    (synopsis
+     "Optimal Routing and Cost Allocation for the Chinese Postman Game")
+    (description
+     "Solves the Chinese Postman Problem (CPP) using Dijkstra's algorithm for shortest
+paths, Edmonds Blossom algorithm (1965) for minimum weight perfect matching, and
+Fleury's algorithm for Eulerian circuit generation.  Additionally, computes the
+cooperative gamma-rule cost allocation proposed by Hamers, Klijn, Suijs, and
+Tijs (1999) <doi :10.1016/S0377-2217(98)00346-6> for weakly Eulerian networks.")
+    (license license:gpl3+)))
+
 (define-public r-coopgame
   (package
     (name "r-coopgame")
@@ -19065,6 +19092,43 @@ chance agreement, Aiken's V, and Lawshe's Content Validity Ratio (CVR).  Methods
 follow Lynn (1986) <doi:10.1097/00006199-198611000-00017>, Polit and Beck (2006)
 <doi:10.1002/nur.20147>, Aiken (1985) <doi:10.1177/0013164485451012>, and Lawshe
 (1975) <doi:10.1111/j.1744-6570.1975.tb01393.x>.")
+    (license license:expat)))
+
+(define-public r-contentiousr
+  (package
+    (name "r-contentiousr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "contentiousR" version))
+       (sha256
+        (base32 "16z8x99p01k5kalgddk5d6233sf62zj51w0fbx4yw3vxdiiyigvh"))))
+    (properties `((upstream-name . "contentiousR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-states r-readr r-dplyr r-countrycode))
+    (native-inputs (list r-knitr))
+    (home-page "https://rguseinov.github.io/contentiousR/")
+    (synopsis "Contentious Politics and Civil Conflict Research")
+    (description
+     "Constructs reproducible country-year panels for research on contentious politics
+and civil conflict, as described in Guseinov (2026) <doi:10.2139/ssrn.7506799>.
+Functions build state panels keyed by Correlates of War or Gleditsch-Ward
+country codes and join curated socioeconomic, leadership, democracy, conflict,
+protest, and revolutionary-episode data on that common key, with diagnostics and
+plots for comparing source coverage.  Bundled sources include Gapminder; the
+Nonviolent and Violent Campaigns and Outcomes (NAVCO) 2.1 data, Chenoweth and
+Shay (2019) <doi:10.7910/DVN/MHOXDV>; the Social Conflict Analysis Database,
+Salehyan et al. (2012) <doi:10.1080/03050629.2012.697426>; the Uppsala Conflict
+Data Program and Peace Research Institute Oslo (UCDP/PRIO) Armed Conflict
+Dataset, Gleditsch et al. (2002) <doi:10.1177/0022343302039005007>; and the
+Major Episodes of Contention data, Chenoweth and Kang (2026)
+<doi:10.1093/jopres/xjaf008>.  Varieties of Democracy (V-Dem) indicators require
+the optional vdemdata package, which is not on CRAN and can be installed from
+<https://github.com/vdeminstitute/vdemdata>.")
     (license license:expat)))
 
 (define-public r-contentid
@@ -21140,13 +21204,13 @@ references for the code are: Diquigiovanni, Fontana, and Vantini (2021)
 (define-public r-conformalforecast
   (package
     (name "r-conformalforecast")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "conformalForecast" version))
        (sha256
-        (base32 "0ivz3hdf5hcmwdg4qw1s2c65sblaf3sji2ls05kli1jg617iwq3h"))))
+        (base32 "0xs3ahp4fjbr1gqng3ba6h7a81jxiwmbx839fls86ylk4f5ifjk6"))))
     (properties `((upstream-name . "conformalForecast")))
     (build-system r-build-system)
     (arguments
@@ -27117,13 +27181,13 @@ examples of time-to-event data.")
 (define-public r-collegescorecard
   (package
     (name "r-collegescorecard")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "collegeScorecard" version))
        (sha256
-        (base32 "17jghps5i824v6c20rs2714fmq29fjd7bhf5r2phrx9q7vd46bvi"))))
+        (base32 "1p23a4f1yaygz5fanh9n2562gdr8j4gsv3ixa89yysmr32ghi7cs"))))
     (properties `((upstream-name . "collegeScorecard")))
     (build-system r-build-system)
     (arguments
@@ -42323,13 +42387,13 @@ environment of all GCMs as proposed in Esser et al. (2025)
 (define-public r-chomper
   (package
     (name "r-chomper")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chomper" version))
        (sha256
-        (base32 "0pmnpc86q1jsmi5mca0i05d4dv6ayixqdnf48lyqmp862xadzm1h"))))
+        (base32 "1lfybyr1w9lnq2xjr3bbk75p5z01v0ch1ngiis6x60pajx390mxn"))))
     (properties `((upstream-name . "chomper")))
     (build-system r-build-system)
     (arguments
@@ -48274,6 +48338,42 @@ visualization and an interactive shiny'-based explorer application.  Data are
 processed from IPUMS International (1971â2010) and the Population Census 2020
 (BPS Indonesia).")
     (license license:gpl3)))
+
+(define-public r-censusindia
+  (package
+    (name "r-censusindia")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "censusindia" version))
+       (sha256
+        (base32 "0a4diqmjnccccvrfwlrrsy9klsv35ld0z4xj0wpd16gcq7ma8myx"))))
+    (properties `((upstream-name . "censusindia")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-sf
+                             r-rlang
+                             r-dplyr
+                             r-cli))
+    (home-page "https://censusindia.saketlab.org/")
+    (synopsis
+     "Census of India Data, 1901-2011, with Boundaries and Projections")
+    (description
+     "Tables from every decennial Census of India from 1901 to 2011: population time
+series, Primary Census Abstracts at state, district and sub-district level,
+mother tongue tables, and Scheduled Caste and Scheduled Tribe populations,
+together with Ministry of Health and Family Welfare population projections to
+2036.  Historical series are drawn from Jolad and Singh (2026)
+<doi:10.7910/DVN/ON8CP8>.  Census variables can be returned with state or
+district boundaries of the matching census year attached for mapping.  Boundary
+files and the largest village-level tables are downloaded on first use and
+cached locally.")
+    (license license:expat)))
 
 (define-public r-censusapi
   (package
@@ -54844,13 +54944,13 @@ views).")
 (define-public r-catacode
   (package
     (name "r-catacode")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CATAcode" version))
        (sha256
-        (base32 "14mcsfi2g04c9aj13ys108ik3nw9rz5848fff8ggmahjv4n1rwgh"))))
+        (base32 "1pj9mpmn0dr8kzf88ydfwngph2y6q0d5af93wk8zr3815arng4yj"))))
     (properties `((upstream-name . "CATAcode")))
     (build-system r-build-system)
     (arguments
@@ -55587,6 +55687,50 @@ engineering, and prediction in cascade networks.  Jung, N., Bertrand, F.,
 Bahram, S., Vallat, L., and Maumy-Bertrand, M. (2014)
 <doi:10.1093/bioinformatics/btt705>.")
     (license license:gpl2+)))
+
+(define-public r-cas
+  (package
+    (name "r-cas")
+    (version "0.24-3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CAs" version))
+       (sha256
+        (base32 "0aki87i1scfrb7z7zhgs1z37bw50ykhq2fahfp36yg8ibadzbjhg"))))
+    (properties `((upstream-name . "CAs")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sfsmisc
+                             r-sets
+                             r-primes
+                             r-prepplot
+                             r-permutations
+                             r-lhs
+                             r-igraph
+                             r-gmp
+                             r-dplyr
+                             r-doe-base
+                             r-curl
+                             r-conf-design
+                             r-combinat
+                             r-caverify))
+    (home-page "https://github.com/ugroempi/CAs")
+    (synopsis "Creating Covering Arrays")
+    (description
+     "This package implements covering arrays, as proposed in Groemping (2025)
+<doi:10.1109/ICSTW64639.2025.10962463>.  Uniform and mixed-level covering arrays
+are created and can be assessed for their coverage properties.  The mathematical
+background of the constructions is provided in the technical reports Groemping
+(2026) <https://www1.bht-berlin.de/FB_II/reports/Report-2026-001.pdf> for the
+uniform arrays and Groemping (2025)
+<https://www1.bht-berlin.de/FB_II/reports/Report-2025-001.pdf> for the
+mixed-level constructions.  The post-processing method by Nayeri, Colbourn, and
+Konjevod (2013) <doi:10.1016/j.ejc.2012.07.017> is also provided.  In addition,
+there are preliminary tools for the creation of sequence covering arrays.")
+    (license license:gpl3)))
 
 (define-public r-carwatch
   (package

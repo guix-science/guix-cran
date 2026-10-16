@@ -6481,13 +6481,13 @@ GonzÃ¡lez-RodrÃ­guez et at (2023) <https://inria.hal.science/hal-04362876v1>
 (define-public r-evcgsampler
   (package
     (name "r-evcgsampler")
-    (version "1.1.2")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eVCGsampler" version))
        (sha256
-        (base32 "0mnmngxvflxy63mwr4arlpjawhq2s0hxmw4w3fi5nw9qr5n6k42d"))))
+        (base32 "17yfp7wgyyzmvwhd603x1mhyp9ljbqvi7krf6h97vhzw9l1086k7"))))
     (properties `((upstream-name . "eVCGsampler")))
     (build-system r-build-system)
     (arguments
@@ -7750,6 +7750,49 @@ relational database management system.")
      "Reliable and rapid ethnicity annotation from whole exome and targeted sequencing
 data.")
     (license license:gpl3)))
+
+(define-public r-ethnoecologyr
+  (package
+    (name "r-ethnoecologyr")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ethnoecologyR" version))
+       (sha256
+        (base32 "1cvgdhqpyys0zkav1ngizdmwlv0zsjdx99nqffbqa5h27iyf2i30"))))
+    (properties `((upstream-name . "ethnoecologyR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-rstan
+                             r-rlang
+                             r-reshape2
+                             r-magrittr
+                             r-ggplot2
+                             r-ggalluvial
+                             r-dplyr
+                             r-circlize
+                             r-boot))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ethnoecologyR")
+    (synopsis
+     "Quantitative Ethnoecology Analysis and Landscape Knowledge Modeling")
+    (description
+     "This package provides a comprehensive toolkit for quantitative ethnoecology
+analysis and landscape knowledge modeling.  Implements core indices including
+Landscape Use (LU), Cultural Importance in Ecology (CIE), Frequency of Citation
+(FC), Fidelity Level (FL), Number of Uses (NU), and Cultural Value of
+Ecolandscape (CVe).  Provides visualization tools for chord diagrams, alluvial
+plots, and radial plots, as well as Bayesian consensus modeling and bootstrap
+resampling to support reproducible research in Local Ecological Knowledge (LEK)
+and participatory land-use decision analysis.  Methods are based on TardÃ­o and
+Pardo-de-Santayana (2008) <doi:10.1007/s12231-007-9004-5>, Reyes-GarcÃ­a et al.
+(2006) <https://www.jstor.org/stable/4257061>, and Friedman et al. (1986)
+<doi:10.1037/0022-3514.51.6.1173>.")
+    (license license:gpl3+)))
 
 (define-public r-ethnobotanyr
   (package
@@ -11462,6 +11505,33 @@ between and within images\" shiny application which allow researchers without
 coding skills or expertise in image comparison algorithms to compare images.
 Gurusamy,K (2025)<doi:10.5281/zenodo.16994047>.")
     (license license:gpl3+)))
+
+(define-public r-eqty-sdk-r
+  (package
+    (name "r-eqty-sdk-r")
+    (version "0.9.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "eqty.sdk.r" version))
+       (sha256
+        (base32 "1nsnazwf0ch08d55028if6v8z60v1bs1qw57v0xbpr313gyqy9k7"))))
+    (properties `((upstream-name . "eqty.sdk.r")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list python))
+    (propagated-inputs (list r-reticulate))
+    (home-page "https://github.com/eqtylab/integrity-r")
+    (synopsis "Verifiable Provenance for 'R' Workflows")
+    (description
+     "This package provides an R interface for building verifiable manifests around
+data, models, prompts, agents, computations, and related lineage.  Exposes the
+public eqty-sdk Python package through types accessible from R for creating
+assets, connecting computation inputs and outputs by content identifier,
+grouping statements in contexts, and exporting manifest JSON files.")
+    (license license:asl2.0)))
 
 (define-public r-eqtesting
   (package
@@ -17869,6 +17939,32 @@ Bayesian models including linear, generalized linear, generalized linear mixed,
 generalized nonlinear, generalized nonlinear mixed, and logic regression models.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-emistatr
+  (package
+    (name "r-emistatr")
+    (version "1.2.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EmiStatR" version))
+       (sha256
+        (base32 "09ldlyr8qxdfnzlwg5mh0g0as31jb8gbl0f4bs1kld2lh3v71yhj"))))
+    (properties `((upstream-name . "EmiStatR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo r-xts r-lattice r-foreach r-doparallel))
+    (home-page "https://cran.r-project.org/package=EmiStatR")
+    (synopsis
+     "Simplified and Scalable Urban Water Quality Model for Simulation of Combined Sewer Overflows")
+    (description
+     "This package provides a fast and parallelised calculator to estimate combined
+sewage water emissions.  It supports the planning and design of urban drainage
+systems without extensive simulation tools.  The methods are described in
+Torres-Matallana et al. (2018) <doi:10.3390/w10060782>.")
+    (license license:gpl3+)))
+
 (define-public r-emissv
   (package
     (name "r-emissv")
@@ -18223,6 +18319,35 @@ forecasting.  For method details see (i) Choudhury (2019)
 <http://krishi.icar.gov.in/jspui/handle/123456789/43174>; (iii) Das (2023)
 <http://krishi.icar.gov.in/jspui/handle/123456789/77772>.")
     (license license:gpl3)))
+
+(define-public r-emdssaforecast
+  (package
+    (name "r-emdssaforecast")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EMDSSAForecast" version))
+       (sha256
+        (base32 "0cxdglj2vswhch0lc18213brp9sn0xyvid080f42bqv7zfkf5ws6"))))
+    (properties `((upstream-name . "EMDSSAForecast")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rssa r-rlibeemd r-neuralnet))
+    (home-page "https://cran.r-project.org/package=EMDSSAForecast")
+    (synopsis
+     "Hybrid EMD-SSA Forecasting with Artificial Neural Networks for Time Series")
+    (description
+     "This package implements a hybrid empirical mode decomposition, singular spectrum
+analysis, and artificial neural network forecasting framework for time series
+data.  The framework extracts the trend from the first intrinsic mode function
+using singular spectrum analysis, forecasts the extracted trend and remaining
+decomposition components using artificial neural networks, and combines the
+component forecasts to obtain the final forecast.  For methodological details,
+refer to Kumar et al. (2026) <doi:10.1007/s10791-026-10076-2>.")
+    (license license:expat)))
 
 (define-public r-emdi
   (package
@@ -24741,13 +24866,13 @@ divergence between organisms, species or populations.")
 (define-public r-ecr
   (package
     (name "r-ecr")
-    (version "2.1.1")
+    (version "2.1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecr" version))
        (sha256
-        (base32 "0abj88libbjimb512mvz7fa4ib7q84hn72digs5p3cd3pbx6zv0v"))))
+        (base32 "122z5abxpdvgb3221dx46d8r58hyn2fk8q995fzylvwi4z51040g"))))
     (properties `((upstream-name . "ecr")))
     (build-system r-build-system)
     (arguments

@@ -21,6 +21,7 @@
   #:use-module (gnu packages tbb)
   #:use-module (gnu packages version-control)
   #:use-module (gnu packages language)
+  #:use-module (gnu packages sqlite)
   #:use-module (gnu packages duckdb)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages perl)
@@ -2941,13 +2942,13 @@ as Kendall tau correlation or sensitivity.")
 (define-public r-gt
   (package
     (name "r-gt")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gt" version))
        (sha256
-        (base32 "0p1z6ba9044bpg9jdzm97h83g00wrnmwhzndgqa43zfizykk1rqh"))))
+        (base32 "1lrinrgdndj7ha7d3s7wjvkxpl57bsp0bzwlhfsbq5vdlb1244gw"))))
     (properties `((upstream-name . "gt")))
     (build-system r-build-system)
     (arguments
@@ -18088,6 +18089,39 @@ controlled correlations.  Technometrics, published online.  Important function
 in this package is \"GLHD_CC\".")
     (license license:lgpl3+)))
 
+(define-public r-glemb
+  (package
+    (name "r-glemb")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "glemb" version))
+       (sha256
+        (base32 "1irly02mxaarfbs2vnlrgzrkyri4qj0cpvci74b7ij1hnqm5q3f5"))))
+    (properties `((upstream-name . "glemb")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mix))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/pauldallison/glemb")
+    (synopsis
+     "Multiple Imputation Using the General Location Model with the EMB Algorithm")
+    (description
+     "This package provides multiple imputation for mixed continuous and categorical
+data using the General Location Model (Olkin and Tate (1961)
+<doi:10.1214/aoms/1177705052>; Little and Schluchter (1985)
+<doi:10.1093/biomet/72.3.497>) combined with the Expectation-Maximization with
+Bootstrapping (EMB) algorithm of Honaker, King and Blackwell (2011)
+<doi:10.18637/jss.v045.i07>.  Categorical variables are specified via the noms
+option; all other variables are treated as continuous.  The package wraps the EM
+implementation in the mix package and extends it with a bootstrap wrapper to
+produce proper multiple imputations in the sense of Rubin (1987,
+ISBN:978-0-471-08705-2).")
+    (license license:gpl3)))
+
 (define-public r-gleifr
   (package
     (name "r-gleifr")
@@ -22305,13 +22339,13 @@ added and tweaked using + and regular ggplot2 functions.")
 (define-public r-ggsem
   (package
     (name "r-ggsem")
-    (version "1.0.0.1")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggsem" version))
        (sha256
-        (base32 "0v3lz0z010rx86s824pif48h7mh36zpkyfm287jf5lji13vy28ig"))))
+        (base32 "1sdwy1l7wfv195yqjh31aa147pc00v9bfph0sagf0i80qlkglqlc"))))
     (properties `((upstream-name . "ggsem")))
     (build-system r-build-system)
     (arguments
@@ -22323,6 +22357,8 @@ added and tweaked using + and regular ggplot2 functions.")
                              r-tidyr
                              r-stringr
                              r-smplot2
+                             r-shinyjs
+                             r-shiny
                              r-semplot
                              r-rtsne
                              r-rlang
@@ -22330,11 +22366,14 @@ added and tweaked using + and regular ggplot2 functions.")
                              r-qgraph
                              r-purrr
                              r-network
+                             r-memoise
                              r-lavaan
                              r-igraph
                              r-ggplot2
+                             r-dt
                              r-dplyr
                              r-diagrammersvg
+                             r-colourpicker
                              r-blavaan))
     (home-page "https://smin95.github.io/ggsem/")
     (synopsis
@@ -27052,6 +27091,34 @@ the p-value is calculated by t-test (parametric) or Wilcoxon rank sum test
 (nonparametric).  For comparisons among more than two groups, the p-value is
 calculated by One-way ANOVA (parametric) or Kruskal-Wallis test (nonparametric).")
     (license license:artistic2.0)))
+
+(define-public r-ggcolonviz
+  (package
+    (name "r-ggcolonviz")
+    (version "0.0.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggcolonviz" version))
+       (sha256
+        (base32 "1rymi1mw5bfc4l28bchrhfyxxl2pgj4211ckh2cx6j13g0p5g259"))))
+    (properties `((upstream-name . "ggcolonviz")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list sqlite proj geos gdal))
+    (propagated-inputs (list r-sf r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Sanofi-Public/ggcolonviz")
+    (synopsis "'ggplot2' Extension for Visualizing the Colon")
+    (description
+     "This package provides a ggplot2 extension for creating clear, customizable
+visualizations of the colon.  Includes geometry and label layers for plotting
+colon anatomy and overlaying related data, along with helpers for converting
+colon segments to sf polygons and generating heatmap grids across the colon
+geometry.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-ggcleveland
   (package
@@ -33233,19 +33300,19 @@ Altay, John Paige, Andrea Riebler, Geir-Arne Fuglstad (2023)
 (define-public r-geoaddsae2
   (package
     (name "r-geoaddsae2")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geoaddSAE2" version))
        (sha256
-        (base32 "1kyvkz1s07h0vy550blj5j7b78zqknj2iffnbffhlpvrq0y4sq9m"))))
+        (base32 "1vqav7rbxkl0399k324gyf996a0a774hwp5zs0qzg54dblz2p2hp"))))
     (properties `((upstream-name . "geoaddSAE2")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sae r-mgcv))
+    (propagated-inputs (list r-mgcv))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=geoaddSAE2")
     (synopsis "Geoadditive Small Area Estimation for Area-Level Model")

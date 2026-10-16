@@ -23,7 +23,7 @@
   #:use-module (gnu packages perl)
   #:use-module (gnu packages tex)
   #:use-module (gnu packages tls)
-  #:use-module (gnu packages containers)
+  #:use-module (gnu packages docker)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages cmake)
   #:use-module (guix-cran packages z)
@@ -3905,6 +3905,35 @@ forecasting.")
 simulation of time series with state space model, based on the methodology in
 Kitagawa (2020, ISBN: 978-0-367-18733-0).")
     (license license:gpl2+)))
+
+(define-public r-tsspiral
+  (package
+    (name "r-tsspiral")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tsspiral" version))
+       (sha256
+        (base32 "0xlrqng1qjmnwz6801634dqdypi0dfhpn24h21j7bfbai8davvz2"))))
+    (properties `((upstream-name . "tsspiral")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-purrr
+                             r-lubridate
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://github.com/thiyangt/tsspiral")
+    (synopsis "Spiral Visualisation for Time Series")
+    (description
+     "This package provides a grammar of graphics geometry for visualising time series
+using spiral layouts, with each year represented as a separate ring.")
+    (license license:gpl3+)))
 
 (define-public r-tssmoothing
   (package
@@ -8336,6 +8365,36 @@ intention-to-treat and per-protocol populations, and participant-disposition
 summaries.  The methods are based on established principles for reporting
 participant flow and disposition in randomized trials; see Schulz et al. (2010)
 <doi:10.1136/bmj.c332>.")
+    (license license:expat)))
+
+(define-public r-trialfigs
+  (package
+    (name "r-trialfigs")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "trialfigs" version))
+       (sha256
+        (base32 "1p7g4a5lk61iy9i58vj87a97l4qmvz0b0vffskzy5d8rwd0bb4p3"))))
+    (properties `((upstream-name . "trialfigs")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr r-survival r-ggplot2))
+    (home-page "https://github.com/shekharchalwadigrepo-hub/trialfigs")
+    (synopsis "Efficacy and Safety Graphics for Clinical Review Packages")
+    (description
+     "Builds submission-style efficacy and safety figures used in clinical review
+packages, with one simulator for each therapeutic area.  Oncology figures
+include Kaplan-Meier curves, RECIST waterfalls, swimmer plots and spider plots.
+Cardiovascular, endocrine, immunology, infectious disease and neuroscience
+figures include time-to-event curves, mean change from baseline and responder
+rates.  Shared safety figures include an adverse-event dot plot, an @code{eDISH}
+liver plot, a laboratory shift plot and an exposure plot.  Reference lines
+follow RECIST 1.1 and the FDA drug-induced liver injury guidance.  This is not
+an FDA product and does not guarantee regulatory acceptance.")
     (license license:expat)))
 
 (define-public r-trialemulation
@@ -16077,13 +16136,13 @@ computed by in Algeri and van Dyk (2018) <@code{arXiv:1803.03858>}.")
 (define-public r-togglr
   (package
     (name "r-togglr")
-    (version "0.2.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "togglr" version))
        (sha256
-        (base32 "12fmj6h8vx8f46qhadgwcaq0cn55jwi8kvnci1hw7cld46f4s50l"))))
+        (base32 "1afzc8jjc13ggcsk0nba1rwq24c0xil0nwwr3lgn3nnx8zg2pzrn"))))
     (properties `((upstream-name . "togglr")))
     (build-system r-build-system)
     (arguments
@@ -16094,7 +16153,7 @@ computed by in Algeri and van Dyk (2018) <@code{arXiv:1803.03858>}.")
                              r-purrr
                              r-prettyunits
                              r-parsedate
-                             r-memoise
+                             r-openssl
                              r-magrittr
                              r-lubridate
                              r-keyring
@@ -16102,13 +16161,19 @@ computed by in Algeri and van Dyk (2018) <@code{arXiv:1803.03858>}.")
                              r-httr
                              r-glue
                              r-getpass
+                             r-filelock
                              r-dplyr
                              r-cachem
                              r-assertthat))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ThinkR-open/togglr")
-    (synopsis "'Toggl.com' Api for 'Rstudio'")
-    (description "Use the <https://toggl.com> time tracker api through R.")
+    (synopsis "Client for the 'Toggl Track' API")
+    (description
+     "Read and write time entries, projects and clients of the Toggl Track time
+tracker <https://toggl.com> from R, and download its reports.  Reads never
+return silently truncated or empty results: HTTP errors are raised, the hourly
+quota and rate limits are respected, and paginated reports are checked for
+completeness.")
     (license license:gpl3)))
 
 (define-public r-toeclim
@@ -20832,13 +20897,13 @@ get tidy data frames in response, and cache data in a local database.")
 (define-public r-tidyweather
   (package
     (name "r-tidyweather")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyweather" version))
        (sha256
-        (base32 "1zzlm4cpz6ynbzy7pqhwic27cznsc82xx429mihwxjgh7i7appk9"))))
+        (base32 "1lsc5s0l6gpbw82j8w4khmiag42m22hrz6acyar2lyv8zhkjafx7"))))
     (properties `((upstream-name . "tidyweather")))
     (build-system r-build-system)
     (arguments
@@ -38047,6 +38112,45 @@ tidyverse idiom of taking the dataframe as the first argument so they work
 within pipelines.  Equivalent functions that operate directly on vectors are
 also provided where it makes sense.  This package aims to make exploratory data
 analysis involving categorical variables quicker, simpler and more robust.")
+    (license license:expat)))
+
+(define-public r-tabby
+  (package
+    (name "r-tabby")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tabby" version))
+       (sha256
+        (base32 "1nl6vypx318rs8qmpggn7s5kz467sqds3if8i0wq8qpsgpd0niv3"))))
+    (properties `((upstream-name . "tabby")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-purrr
+                             r-parsnip
+                             r-hardhat
+                             r-generics
+                             r-dplyr
+                             r-dials
+                             r-cli))
+    (home-page "https://github.com/tidymodels/tabby")
+    (synopsis "Tidy Interfaces for Tabular Deep Learning")
+    (description
+     "Model definitions for fitting, tuning, and predicting with deep learning models
+for tabular data using the parsnip and tidymodels frameworks.  Supported models
+include the @code{TabPFN} foundation model of Hollmann et al. (2025)
+<doi:10.1038/s41586-024-08328-6>, @code{TabICL} by Qu et al. (2025)
+<doi:10.48550/@code{arXiv.2502.05564>}, SAINT by Somepalli et al. (2021)
+<doi:10.48550/@code{arXiv.2106.01342>}, and the tabular @code{ResNet} of
+Gorishniy et al. (2021) <doi:10.48550/@code{arXiv.2106.11959>}, among others.
+Helper functions are also included to create space-filling grids for tuning
+parameters that are defined on a per-layer basis.  These functions define the
+model interfaces; the computations are carried out by separate engine packages.")
     (license license:expat)))
 
 (define-public r-tabbitr

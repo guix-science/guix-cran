@@ -11680,6 +11680,40 @@ criteria outlined in Pourmohamad and Lee (2023) <doi:10.1002/sta4.645>, but more
 models and equivalence testing features may be added over time.")
     (license license:expat)))
 
+(define-public r-bmerl
+  (package
+    (name "r-bmerl")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BMeRL" version))
+       (sha256
+        (base32 "07f3pgb9w2sqrnzl4v8v61dd2icwkc7dbrmy3dg1a03jywqd71c3"))))
+    (properties `((upstream-name . "BMeRL")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=BMeRL")
+    (synopsis "Bivariate Median Residual Life Estimation")
+    (description
+     "Nonparametric estimation of the bivariate median residual life function of Kayid
+et al. (2020) for complete and right-censored paired lifetimes.
+Order-restricted estimation for two groups is also provided, following Khan and
+Ghebremichael (2026).  For censored data the bivariate survival function is
+estimated by the method of Lin and Ying (1993).  Simultaneous confidence
+intervals are obtained by the percentile bootstrap approach of Mandel and
+Betensky (2008), and the estimated functions can be drawn as surface plots.  See
+the accompanying vignette B@code{MeRL} for a detailed introduction.  Kayid, M.,
+Shafaei Noughabi, M., and Abouammoh, A. M. (2020)
+<doi:10.1007/s00357-018-9300-z>; Khan, R. A., and Ghebremichael, M. (2026)
+<doi:10.1002/bimj.70112>; Lin, D. Y., and Ying, Z. (1993)
+<doi:10.1093/biomet/80.3.573>; Mandel, M., and Betensky, R. A. (2008)
+<doi:10.1016/j.csda.2007.07.005>.")
+    (license license:gpl3)))
+
 (define-public r-bmemlavaan
   (package
     (name "r-bmemlavaan")
@@ -34344,13 +34378,13 @@ depicting species relationships.  Cardoso et al. (2015)
 (define-public r-basta
   (package
     (name "r-basta")
-    (version "2.0.2")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BaSTA" version))
        (sha256
-        (base32 "1rqn4iqb0whir68f700m9qz8xn8zjgy81hyn49v48zncsw0cxcyz"))))
+        (base32 "1qq6p16z7sspb2pwsrr7p29qwgc1bfp6df3baa5rzrnh8lgmg9pn"))))
     (properties `((upstream-name . "BaSTA")))
     (build-system r-build-system)
     (arguments
@@ -34361,8 +34395,8 @@ depicting species relationships.  Cardoso et al. (2015)
     (synopsis
      "Age-Specific Bayesian Survival Trajectory Analysis from Incomplete Census or Capture-Recapture/Recovery Data")
     (description
-     "Estimates survival and mortality with covariates from census or
-capture-recapture/recovery data in a Bayesian framework when many individuals
+     "Estimates survival and mortality with covariates and random effects from census
+or capture-recapture/recovery data in a Bayesian framework when many individuals
 are of unknown age.  It includes tools for data checking, model diagnostics and
 outputs such as life-tables and plots, as described in Colchero, Jones, and
 Rebke (2012) <doi:10.1111/j.2041-210X.2012.00186.x> and Colchero et al. (2021)

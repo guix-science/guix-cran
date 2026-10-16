@@ -15812,6 +15812,50 @@ Snijders, Tom A. B., and Christian E. G. Steglich (2015)
 <doi:10.1177/00811750231220950>.")
     (license license:gpl2+)))
 
+(define-public r-netmatchri
+  (package
+    (name "r-netmatchri")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "netmatchRI" version))
+       (sha256
+        (base32 "159rhv89bmfcbdq154klfilh06m224k1b80g9p0zsrk03jvhr984"))))
+    (properties `((upstream-name . "netmatchRI")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-slam
+                             r-rglpk
+                             r-optmatch
+                             r-mvtnorm
+                             r-matrix
+                             r-igraph
+                             r-highs
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/zhejiadong/netmatchRI")
+    (synopsis "Network-Constrained Matching and Randomization-Based Inference")
+    (description
+     "This package provides network-constrained matching and randomization-based
+inference for observational network data with dependence and interference.
+Dual-penalty matching minimizes total covariate dissimilarity while enforcing
+penalties on network proximity between and within treatment arms in matched
+sets.  Randomization-based inference combines evidence from correlated matched
+sets based on this design.  The package also provides covariate-balance and
+network-distance diagnostics, sensitivity analysis, and simulated example data.
+The open-source @code{HiGHS} solver is used by default to solve the matching
+problem.  An optional interface to the commercial Gurobi Optimizer is available.
+ Eligible academic users can request a free license at
+<https://www.gurobi.com/academics/>.  The optimizer can be downloaded from
+<https://www.gurobi.com/product/download-center>.  The associated gurobi R
+package is not available from CRAN; it is distributed with the optimizer and can
+be installed by following the official instructions at
+<https://docs.gurobi.com/projects/optimizer/en/current/reference/r/setup.html>.")
+    (license license:expat)))
+
 (define-public r-netmap
   (package
     (name "r-netmap")

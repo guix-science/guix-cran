@@ -435,6 +435,42 @@ convergence to ItÃ´ diffusion SDEs, numerical solutions for Fokker-Planck PDEs
 stationary Gibbs-Boltzmann densities, and Azuma-Hoeffding concentration bounds.")
     (license license:gpl3+)))
 
+(define-public r-fuzzysurvival
+  (package
+    (name "r-fuzzysurvival")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fuzzySurvival" version))
+       (sha256
+        (base32 "1q59yrbd029lxdpasb9sqmg1g9zwa05j0rsaj9s86yfzsl11wmrv"))))
+    (properties `((upstream-name . "fuzzySurvival")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=fuzzySurvival")
+    (synopsis
+     "Fuzzy Survival Analysis with Vague Event Times and Fuzzy Censoring")
+    (description
+     "Fuzzy survival analysis for data in which event times and/or failure indicators
+are vague, for instance when a failure is only known to have occurred during the
+second quarter of a year, or when it is uncertain whether a subject lost to
+follow-up had in fact failed.  Vague information is represented by fuzzy
+numbers.  The package provides a fuzzy product-limit estimator obtained from
+nested alpha-cuts of the fuzzy survival function, a fuzzy Cox proportional
+hazards model with fuzzy coefficient and hazard ratio estimates, and a fuzzy
+log-rank test.  Type-reduction utilities for summarizing fuzzy estimates by
+single numbers, a simulation engine for validation studies, plotting, print and
+summary methods, and alpha-cut based confidence bands are provided.  The bounds
+are computed at the alpha-cuts of the fuzzy event times, so the alpha-cut
+intervals returned for the survival function, the regression coefficients and
+the test statistic are nested by construction.")
+    (license license:expat)))
+
 (define-public r-fuzzysts
   (package
     (name "r-fuzzysts")
@@ -3231,6 +3267,38 @@ modifications.  This results in a full rank matrix that can be used as a design
 matrix in linear models.  The algorithm and some functions are inspired by Kuhn,
 M. (2008) <doi:10.18637/jss.v028.i05>.")
     (license license:expat)))
+
+(define-public r-fullmetaphone
+  (package
+    (name "r-fullmetaphone")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fullmetaphone" version))
+       (sha256
+        (base32 "05r1w8nqqimqcx9adqr2wz6npmf23019ywrs55d39cy8ah6q68zc"))))
+    (properties `((upstream-name . "fullmetaphone")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/anilyayavar/dblmetaphone")
+    (synopsis "Full-Length Metaphone and Double Metaphone Phonetic Codes")
+    (description
+     "Encodes names and words as phonetic codes, so that names which sound alike but
+are spelled differently can be matched.  Implements the Metaphone algorithm of
+Philips (1990, Computer Language, 7(12), 38-43) and the Double Metaphone
+algorithm of Philips (2000)
+<https://web.archive.org/web/20250702064845/https://drdobbs.com/the-double-metaphone-search-algorithm/184401251>,
+which gives a primary and an alternate code for names of many language origins.
+Unlike most implementations, including PGRdup', the codes are not cut to four
+characters, which keeps long and multi-part names apart.  Provides
+@code{metaphone()}, @code{double_metaphone()} and @code{sounds_like()} for
+record linkage, deduplication and name search, and includes a data set of common
+United States surnames.")
+    (license license:gpl3)))
 
 (define-public r-fullfact
   (package
@@ -13526,13 +13594,13 @@ based on homogeneity assumptions and computed from multivariate observations
 (define-public r-flocker
   (package
     (name "r-flocker")
-    (version "1.0-2")
+    (version "1.1-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flocker" version))
        (sha256
-        (base32 "0j7ggibwb9ip1lasj01cvhk5ml5n6dajz0n47jkzamk4awbhj3b5"))))
+        (base32 "1q0bjkn1jm4206ypqgc2fcklqwbjinx0q6h3vb21k4ap2ky6zd0n"))))
     (properties `((upstream-name . "flocker")))
     (build-system r-build-system)
     (arguments
@@ -21519,13 +21587,13 @@ Standard-errors can easily and flexibly be clustered and estimations exported.")
 (define-public r-feneu
   (package
     (name "r-feneu")
-    (version "3.0.2")
+    (version "3.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FeNEU" version))
        (sha256
-        (base32 "18xx5y9wa1bw5fnl3v1k62h9vyb2jp9d0n9cqi202xixrbr8z9b1"))))
+        (base32 "0h8h0svxx99n2zmgnb6qsx6p9bxw71jh0akvgf7nii8bk66y0xnm"))))
     (properties `((upstream-name . "FeNEU")))
     (build-system r-build-system)
     (arguments
@@ -25647,13 +25715,13 @@ Bojanowski, Matthijs Douze, Herve Jegou, Tomas Mikolov, 2016,
 (define-public r-fastsurvival
   (package
     (name "r-fastsurvival")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FastSurvival" version))
        (sha256
-        (base32 "120rx12773kmkr6aj0nzsn573a08r666xrh778qsrj7qbl0x0k71"))))
+        (base32 "1dnqfp4bw5s9pznvn280kfz8491czanr2n245y0ib3w892siznml"))))
     (properties `((upstream-name . "FastSurvival")))
     (build-system r-build-system)
     (arguments
@@ -25677,21 +25745,23 @@ max-combo test @code{(maxcombo_fast()}), the robust modestly-weighted log-rank
 test @code{(rmw_fast()}), the weighted Kaplan-Meier (Pepe-Fleming) test
 @code{(wkm_fast()}), the average hazard with survival weight
 @code{(ahsw_fast()}), and the Kalbfleisch-Prentice average hazard ratio
-@code{(ahr_fast()}).  The simulation layer generates individual patient data
-@code{(simdata_fast()}), determines the calendar time of each analysis from
-combined event and calendar-time rules @code{(cutoff_fast()}), performs interim
-or sequential analyses @code{(analysis_fast()}), compares several experimental
-arms with a shared control @code{(pairwise_fast()}), applies treatment switching
-at progression or after an interim analysis @code{(switch_fast()}), and
-aggregates operating characteristics @code{(simsummary_fast()}).  A
-visualization layer assembles design-stage scenarios
-@code{(gen_scenario_fast()}) and builds analysis-stage Kaplan-Meier curves
-@code{(kmcurve_fast()}), each with plot and print methods.  All functions are
-designed for repeated evaluation inside large simulation loops, such as adaptive
-sample-size re-estimation, probability-of-success calculations, and regional
-consistency evaluation in multi-regional trials.  Core computations are
-implemented in C++ via Rcpp for maximum performance.  Methodological background
-is described in Collett (2014, ISBN:9780429196294).")
+@code{(ahr_fast()}).  Besides vectors, these functions accept a model formula
+with a data frame, and their results can be returned as data frames.  The
+simulation layer generates individual patient data @code{(simdata_fast()}),
+determines the calendar time of each analysis from combined event and
+calendar-time rules @code{(cutoff_fast()}), performs interim or sequential
+analyses @code{(analysis_fast()}), compares several experimental arms with a
+shared control @code{(pairwise_fast()}), applies treatment switching at
+progression or after an interim analysis @code{(switch_fast()}), and aggregates
+operating characteristics @code{(simsummary_fast()}).  A visualization layer
+assembles design-stage scenarios @code{(gen_scenario_fast()}) and builds
+analysis-stage Kaplan-Meier curves @code{(kmcurve_fast()}), each with plot and
+print methods.  All functions are designed for repeated evaluation inside large
+simulation loops, such as adaptive sample-size re-estimation,
+probability-of-success calculations, and regional consistency evaluation in
+multi-regional trials.  Core computations are implemented in C++ via Rcpp for
+maximum performance.  Methodological background is described in Collett (2014,
+ISBN:9781439856789).")
     (license license:expat)))
 
 (define-public r-faststepgraph
@@ -28324,13 +28394,13 @@ Bogetoft & Otto (2011) <doi:10.1007/978-1-4419-7961-2>.")
 (define-public r-farr
   (package
     (name "r-farr")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "farr" version))
        (sha256
-        (base32 "1l524fas45xna3k72d01bh5l29s6ki21n91fgd71356y1xnsv72z"))))
+        (base32 "00i38kvnc4f1pym4mg9fyjsszi885730gh16avd66kndwjy9m919"))))
     (properties `((upstream-name . "farr")))
     (build-system r-build-system)
     (arguments
@@ -28350,9 +28420,12 @@ Bogetoft & Otto (2011) <doi:10.1007/978-1-4419-7961-2>.")
     (home-page "https://github.com/iangow/farr")
     (synopsis "Data and Code for Empirical Research in Accounting")
     (description
-     "Handy functions and data to support the course book Empirical Research in
-Accounting: Tools and Methods (1st ed.).  Chapman and Hall/CRC.
-<doi:10.1201/9781003456230> and <https://iangow.github.io/far_book/>.")
+     "Data sets and functions for empirical accounting research, including
+event-return calculations, panel-data simulations, classification performance
+measures, and Parquet file workflows using @code{DuckDB}'.  Supports methods
+described in \"Empirical Research in Accounting: Tools and Methods\" (2024)
+<doi:10.1201/9781003456230>.  The online companion is available at
+<https://iangow.github.io/far_book/>.")
     (license license:expat)))
 
 (define-public r-farmpartial

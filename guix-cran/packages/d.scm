@@ -17,7 +17,7 @@
   #:use-module (gnu packages compression)
   #:use-module (gnu packages python)
   #:use-module (gnu packages libreoffice)
-  #:use-module (gnu packages containers)
+  #:use-module (gnu packages docker)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages julia)
   #:use-module (gnu packages java)
@@ -25,6 +25,7 @@
   #:use-module (gnu packages sqlite)
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages version-control)
+  #:use-module (gnu packages python-science)
   #:use-module (gnu packages tcl)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -4426,13 +4427,13 @@ spline spaces.  These techniques are described in Tibshirani (2020)
 (define-public r-dsp
   (package
     (name "r-dsp")
-    (version "1.6.0")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dsp" version))
        (sha256
-        (base32 "1pjw0q5w1sw1xp5l2b69wdhnpsschllc782gjh2p4hj0gq6lch0j"))))
+        (base32 "0navc5xannz80kdj1d8cc6y3ks7fd285gyc6b6b1wa6kz70igx2k"))))
     (properties `((upstream-name . "dsp")))
     (build-system r-build-system)
     (arguments
@@ -4476,7 +4477,7 @@ Some support for heteroscedastic errors, outlier detection, and change point
 estimation.  Methods in this package are described in Kowal et al. (2019)
 <doi:10.1111/rssb.12325>, Wu et al. (2024) <doi:10.1080/07350015.2024.2362269>,
 Schafer and Matteson (2024) <doi:10.1080/00401706.2024.2407316>, and Cho and
-Matteson (2024) <doi:10.48550/@code{arXiv.2408.11315>}.")
+Matteson (2026) <doi:10.1080/07350015.2025.2602846>.")
     (license license:gpl3+)))
 
 (define-public r-dsos
@@ -5034,6 +5035,33 @@ implemented in the package include IPC (Independent Principal Component),'PPC
 related distributed PC methods.  The methodological background follows Guo G.
 (2023) <doi:10.1007/s00180-022-01270-z>.")
     (license license:expat)))
+
+(define-public r-dsfedate
+  (package
+    (name "r-dsfedate")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dsFedAte" version))
+       (sha256
+        (base32 "0dn9q30kzd237hjw91ywq3951vrvjmkdjk2zxw4qgd235rdmp8iv"))))
+    (properties `((upstream-name . "dsFedAte")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-dsbase r-cli))
+    (home-page "https://cran.r-project.org/package=dsFedAte")
+    (synopsis "Server-Side Treatment Effect Computation for Federated Studies")
+    (description
+     "Server-side @code{DataSHIELD} package that computes local average treatment
+effect (ATE) statistics from arm-specific regression coefficients provided by
+the analyst.  Implements the server-side component of the G-formula estimator
+from Federated Causal Inference: Multi-Study ATE Estimation beyond Meta-Analysis
+(R. Khellaf, A. Bellet and J. Josse, 2025), enforcing @code{DataSHIELD}
+disclosure controls throughout.")
+    (license license:agpl3+)))
 
 (define-public r-dsem
   (package
@@ -10619,6 +10647,38 @@ package.")
 models.")
     (license license:gpl3+)))
 
+(define-public r-dominoise
+  (package
+    (name "r-dominoise")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dominoise" version))
+       (sha256
+        (base32 "05mg06dm59lg5cbpsrb94aybch8plvqqhk98myfs7r9dwq2m2qhx"))))
+    (properties `((upstream-name . "dominoise")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-digest r-assertthat))
+    (home-page "https://github.com/InseeFrLab/dominoise")
+    (synopsis "Parsimonious Noise Perturbation for Magnitude Tables")
+    (description
+     "Protects magnitude tables, such as tables of enterprise turnover, by multiplying
+each total by a Gaussian noise combining a dominance-driven component and a
+general-purpose one, governed by three parameters only.  Information loss and
+disclosure risks for three attack scenarios (external inference, internal
+inference and differencing) are available in closed form, so that calibration
+requires neither simulation nor re-estimation on the data.  The package guides
+that calibration step by step, from the differencing noise to the dominance
+parameters, with decision tables and risk-utility plots, applies the mechanism
+to an aggregated table using SHA-512 hashed random keys for consistency over
+time, and reports the risk and utility actually achieved.  The method is
+described in Jamme (2027) <doi:10.1007/978-3-032-37883-5_9>.")
+    (license license:gpl3+)))
+
 (define-public r-dominodatar
   (package
     (name "r-dominodatar")
@@ -11707,13 +11767,13 @@ Regression Models, Journal of Computational and Graphical Statistics, 28:4,
 (define-public r-dnnsim
   (package
     (name "r-dnnsim")
-    (version "0.1.1")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DNNSIM" version))
        (sha256
-        (base32 "1lp9ly2l1hx31mrsnhgq36isy9iqgmj5g51xr7qsqkq3fgjp8mxs"))))
+        (base32 "041ml3lcrl4z3jb69239c31v2z85xqvacnpj5zh4k2995pblcjyv"))))
     (properties `((upstream-name . "DNNSIM")))
     (build-system r-build-system)
     (arguments
@@ -11726,8 +11786,8 @@ Regression Models, Journal of Computational and Graphical Statistics, 28:4,
      "This package provides a deep neural network model with a monotonic increasing
 single index function tailored for periodontal disease studies.  The residuals
 are assumed to follow a skewed T distribution, a skewed normal distribution, or
-a normal distribution.  More details can be found at Liu, Huang, and Bai (2024)
-<doi:10.1016/j.csda.2024.108012>.")
+a normal distribution.  More details can be found at Liu, Wang, Bai and
+Bandyopadhyay (2026) <doi:10.1093/biostatistics/kxag040>.")
     (license license:gpl3+)))
 
 (define-public r-dnn
@@ -36181,6 +36241,34 @@ cropping system model is described at J.W. Jones, G. Hoogenboomb, C.H. Porter,
 K.J. Boote, W.D. Batchelor, L.A. Hunt, P.W. Wilkens, U. Singh, A.J. Gijsman,
 J.T. Ritchie (2003) <doi:10.1016/S1161-0301(02)00107-7>.")
     (license license:gpl2+)))
+
+(define-public r-dasklyr
+  (package
+    (name "r-dasklyr")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dasklyr" version))
+       (sha256
+        (base32 "1l782pylf1v5f3cd91cwnskgjmd3m9474y41wpm6h2vc9jg3dj9m"))))
+    (properties `((upstream-name . "dasklyr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list python-pandas))
+    (propagated-inputs (list r-tidyselect r-tibble r-rlang r-reticulate
+                             r-dplyr))
+    (home-page "https://github.com/hebian1994/dasklyr")
+    (synopsis "R Interface to 'Dask'")
+    (description
+     "Run dplyr verbs on Dask data frames from R. Connect to a local Dask client or a
+remote scheduler, copy R data frames onto the cluster, read and write Parquet
+and CSV, and collect results as tibble objects.  Computation stays in Python
+workers through reticulate'; R only builds the graph.  A Python installation
+with the dask package is required.")
+    (license license:expat)))
 
 (define-public r-dashboardthemes
   (package

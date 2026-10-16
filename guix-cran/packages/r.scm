@@ -3624,6 +3624,39 @@ evapotranspiration in forest
 ecosystems.<https://github.com/@code{ShulanSun/rTRIPLEX_CW_Flux>}.")
     (license license:expat)))
 
+(define-public r-rtrino
+  (package
+    (name "r-rtrino")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RTrino" version))
+       (sha256
+        (base32 "1gd030whah8v8jmgyh9k0xb0xgh1xrsvj63icsyiqkfsz0bjszs8"))))
+    (properties `((upstream-name . "RTrino")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-jsonlite
+                             r-httr2
+                             r-dbi
+                             r-bit64))
+    (native-inputs (list r-knitr))
+    (home-page "https://angelcasasbl.github.io/RTrino/")
+    (synopsis "'DBI' Backend for 'Trino'")
+    (description
+     "This package provides a DBI compliant backend for Trino <https://trino.io>, the
+distributed SQL query engine (successor of @code{PrestoSQL}').  Connects to a
+Trino cluster over its HTTP REST API, executes queries with automatic
+pagination, maps Trino types to R types, and integrates with dplyr through
+dbplyr SQL dialects.  Supports basic, JSON Web Token (JWT) bearer and OAuth2
+client credentials authentication, as well as custom certificate authorities.")
+    (license license:bsd-3)))
+
 (define-public r-rtrim
   (package
     (name "r-rtrim")
@@ -26959,6 +26992,36 @@ easily linked to other packages for direct access to C++ functionality not
 implemented here.")
     (license (license:fsdg-compatible "BSL-1.0"))))
 
+(define-public r-rjsf
+  (package
+    (name "r-rjsf")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rjsf" version))
+       (sha256
+        (base32 "1cy5z4r30jar9yipjhjh5plq0k2r502vxb9p8r29kwhsgvzv7daq"))))
+    (properties `((upstream-name . "rjsf")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list python))
+    (propagated-inputs (list r-s7 r-reticulate))
+    (native-inputs (list r-quarto))
+    (home-page "https://olivervu25.github.io/rjsf/")
+    (synopsis "R Interface to Jump-Switch-Flow Simulation")
+    (description
+     "An R interface to Jump-Switch-Flow (JSF), a hybrid simulation framework for
+compartmental reaction models that combines stochastic jump dynamics at low
+population sizes with deterministic flow dynamics at high population sizes.
+Simulations are performed using the jsf backend for Python through reticulate',
+with structured R outputs for inspection, summary, and plotting.  The underlying
+methodology is described in Germano et al. (2026)
+<doi:10.1007/s00285-026-02409-y>.")
+    (license license:expat)))
+
 (define-public r-rjsdmx
   (package
     (name "r-rjsdmx")
@@ -35178,13 +35241,13 @@ formulations of Brown and Foster (1987) <doi:10.13031/2013.31957>,
 (define-public r-rfacebookstat
   (package
     (name "r-rfacebookstat")
-    (version "2.16.1")
+    (version "2.17.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rfacebookstat" version))
        (sha256
-        (base32 "0av2c01fyps6yk36xa34al6i4vc2zjkhsxlxkxaqhagyxsqiw7cz"))))
+        (base32 "0r7wjn80vjif4b5s3c6m21s0if46b5ql0d8cz3nv7s0gzl3dr25y"))))
     (properties `((upstream-name . "rfacebookstat")))
     (build-system r-build-system)
     (arguments
@@ -45276,6 +45339,83 @@ Rectangles are packed using the skyline heuristic as discussed in Lijun et al
 a good small-sized box for containing a given set of rectangles.")
     (license license:expat)))
 
+(define-public r-recruitlag
+  (package
+    (name "r-recruitlag")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "recruitlag" version))
+       (sha256
+        (base32 "1x0s57xgl46r1qrvssk11vzai56fc2px27iyk11ilnmr65fhs9zf"))))
+    (properties `((upstream-name . "recruitlag")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-rlang r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/RaymondLTremblay/recruitlag")
+    (synopsis
+     "Can Episodic Recruitment be a Delayed Consequence of Continuous Reproduction?")
+    (description
+     "Tests whether an episodic recruitment record can be the delayed consequence of a
+reproductive record, under any distributed lag.  A delay is a convolution, and a
+convolution is a weighted average, so the concentration in time of expected
+recruitment can never exceed that of reproduction: reproduction's own
+concentration is a ceiling.  The package computes that ceiling by searching
+families of lag weights (pure delays, windows, geometric decay and Dirichlet
+draws), calibrates the pooled comparison against negative-binomial counts to
+show what it can and cannot refute, and runs the host-level (replicate-unit)
+test in which the null is the lag hypothesis exactly as it is asserted: expected
+recruitment on each unit is that unit's own lagged reproduction, scaled to its
+own total.  Uncertainty on the exceedance comes by three routes, a cluster
+bootstrap over units, a Bayesian bootstrap (Rubin 1981
+<doi:10.1214/aos/1176345338>) and a negative-binomial model of the counts fitted
+with Stan through cmdstanr'; @code{recruit_triage()} asks whether a first
+sighting is a recruit or a plant returning from dormancy.  Plotting functions
+draw the ceiling strip, the lag profiles against the observed counts, the
+calibration and a forest plot of the intervals.  The census data on the
+epiphytic orchid Lepanthes eltoroensis analysed in the companion paper are
+included.")
+    (license license:expat)))
+
+(define-public r-recovermetricsr
+  (package
+    (name "r-recovermetricsr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RecoverMetricsR" version))
+       (sha256
+        (base32 "04d6v4vq91mbq3spsrhz4qx3rvr2wzgcl8yhj5xp6hbga9bi0n42"))))
+    (properties `((upstream-name . "RecoverMetricsR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra r-rlang r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=RecoverMetricsR")
+    (synopsis "Quantifying Post-Fire Spectral Recovery Metrics")
+    (description
+     "Computes pixel-wise metrics describing post-disturbance spectral recovery from a
+yearly spectral-index time series.  Metrics include disturbance magnitude (DM),
+an ordinary least squares (OLS) recovery slope, early- and late-period recovery
+rates, recovery-rate change, Relative Recovery Indicator (RRI), Ratio of Eighty
+Percent (R80P), and Year-on-Year recovery (@code{YrYr}).  The RRI, R80P, and
+@code{YrYr} metrics are based on approaches described by Frazier et al. (2018)
+<doi:10.1016/j.rse.2017.11.007>.  Threshold-based recovery-time approaches have
+been used to quantify post-fire vegetation recovery from spectral time series by
+Chompuchan and Lin (2017) <doi:10.1016/j.ecolind.2017.04.038>.  Exponential
+recovery formulations have also been applied to post-fire vegetation time series
+by Gouveia et al. (2010) <doi:10.5194/nhess-10-673-2010>.  Parametric recovery
+models, including exponential, logistic, and Gompertz formulations, are provided
+to characterize nonlinear post-disturbance recovery trajectories.")
+    (license license:gpl3)))
+
 (define-public r-recosystem
   (package
     (name "r-recosystem")
@@ -48145,6 +48285,33 @@ shiny reactivity by constructing a directed dependency graph of the
 application's reactive state at any time point in a reactive recording.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-reactives
+  (package
+    (name "r-reactives")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "reactives" version))
+       (sha256
+        (base32 "18yxxgw7j9r0snjmj9gbxffspz8xalb1phhc0zz3qjmsd3i50x60"))))
+    (properties `((upstream-name . "reactives")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://nbenn.github.io/reactives/")
+    (synopsis "Keyed Collections of 'shiny' Reactives")
+    (description
+     "Holds shiny reactive values and reactive expressions under keys that can be
+added, removed and reordered, with dependencies tracked per key.  The shiny
+package offers @code{reactiveValues()} for keyed stored values, but it can
+neither remove nor reorder keys, and it has no keyed collection of computed
+values.")
+    (license license:gpl3+)))
 
 (define-public r-reactcheckbox
   (package
@@ -56335,13 +56502,13 @@ analysis methods across imputations, and tidying results for reporting.")
 (define-public r-rbmi
   (package
     (name "r-rbmi")
-    (version "1.6.1")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rbmi" version))
        (sha256
-        (base32 "14svghhrxbjkmhlig5z5bmmr7v7sjd14whpdsk9ckr2phsqp2zjn"))))
+        (base32 "05r5814h79s7ibz26cvs8qvbdlc95yikns8ajkagapl99n8va2wx"))))
     (properties `((upstream-name . "rbmi")))
     (build-system r-build-system)
     (arguments

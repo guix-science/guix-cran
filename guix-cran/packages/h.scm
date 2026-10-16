@@ -18256,6 +18256,33 @@ extended F-score calculations, and various other metrics, aimed at improving
 model assessment.")
     (license license:expat)))
 
+(define-public r-h2oplyr
+  (package
+    (name "r-h2oplyr")
+    (version "0.2.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "h2oplyr" version))
+       (sha256
+        (base32 "1v9cak1zrfgyic5fxj76njyypk91iaxyvbkn6ir11a53qcn2ihi4"))))
+    (properties `((upstream-name . "h2oplyr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list openjdk))
+    (propagated-inputs (list r-h2o))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=h2oplyr")
+    (synopsis "Tidy Data Manipulation on Remote 'H2O' Frames")
+    (description
+     "This package provides selection, filtering, mutation, aggregation, joins,
+reshaping and window operations on remote H2O frames.  Data manipulation is
+delegated to H2O'; no local table backend is used.  Includes an English tutorial
+and reproducible examples using Palmer penguin measurements.")
+    (license license:expat)))
+
 (define-public r-h2o4gpu
   (package
     (name "r-h2o4gpu")

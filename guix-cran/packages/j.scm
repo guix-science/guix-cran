@@ -3616,13 +3616,13 @@ and longitudinal data in clinical research.")
 (define-public r-jmbayes2
   (package
     (name "r-jmbayes2")
-    (version "0.6-0")
+    (version "0.6-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JMbayes2" version))
        (sha256
-        (base32 "16098dh35ngaic0clc709isjdyhfcchqkiimwri3rg84r2h4lm1m"))))
+        (base32 "1j4h6qqx2v9ljgca9d0m5gq3gwjwym28hpq48bfy2y5wfb78ww5k"))))
     (properties `((upstream-name . "JMbayes2")))
     (build-system r-build-system)
     (arguments

@@ -11,8 +11,8 @@
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages pkg-config)
-  #:use-module (gnu packages algebra)
   #:use-module (gnu packages web)
+  #:use-module (gnu packages algebra)
   #:use-module (gnu packages curl)
   #:use-module (gnu packages ssh)
   #:use-module (gnu packages tls)
@@ -4271,6 +4271,55 @@ corrections, reshaping meta-analytic databases, computing multivariate
 corrections for range variation, and more.  Bugs can be reported to
 <https://github.com/psychmeta/psychmeta/issues> or <issues@@psychmeta.com>.")
     (license license:gpl3+)))
+
+(define-public r-psychds
+  (package
+    (name "r-psychds")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "psychds" version))
+       (sha256
+        (base32 "07jb758p13hsapppj7ink2np187iixpfvxphhvfh8q37909nzbha"))))
+    (properties `((upstream-name . "psychds")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:modules '((guix build r-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (inputs (list))
+    (propagated-inputs (list r-shiny r-rstudioapi r-jsonlite r-cli))
+    (native-inputs (list r-knitr esbuild))
+    (home-page "https://psych-ds.github.io/psychds-r/")
+    (synopsis "Creating and Validating 'Psych-DS' Datasets")
+    (description
+     "This package provides a Shiny application and helper functions for adopting
+Psych-DS (<https://psych-ds.github.io/>), a community data standard for
+organizing and documenting datasets in the psychological and behavioral sciences
+inspired by the Brain Imaging Data Structure ('BIDS').  A guided interface walks
+researchers through the dataset creation process, organizing tabular data files
+into proper Psych-DS directory structures, generating new, compliant,
+keyword-based filenames, and generating machine-readable JSON metadata.
+Additional tools support building and editing data dictionaries with
+variable-level descriptions, validating datasets against the full Psych-DS
+specification via a bundled @code{JavaScript} validator, and exploring dataset
+contents interactively.")
+    (license license:expat)))
 
 (define-public r-psyccleaning
   (package
@@ -13782,13 +13831,13 @@ estimate which reliability estimate is the most accurate for your model.")
 (define-public r-predpsych
   (package
     (name "r-predpsych")
-    (version "0.5")
+    (version "0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PredPsych" version))
        (sha256
-        (base32 "027m476a77dajckl5n5ikj5d1chd584gv3wmmad49k4sfl9yz0az"))))
+        (base32 "1620i6x34nn5vwjz4s14kjjb9q94jkvyb5bkqzldvss88g19l9l1"))))
     (properties `((upstream-name . "PredPsych")))
     (build-system r-build-system)
     (arguments
@@ -31647,6 +31696,41 @@ Lippe (2007, <doi:10.3726/978-3-653-01120-3>), and the CPI manual (2020,
 inspection plans based on risks.  It generates a diagram of pallets in a lot,
 highlights the units to be sampled, and documents them based on the selected
 sampling method (simple random or systematic sampling).")
+    (license license:gpl3)))
+
+(define-public r-phytoin
+  (package
+    (name "r-phytoin")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PhytoIn" version))
+       (sha256
+        (base32 "08inh7gmn1qzxgb3sm217bdy8iz04wsjyvccm7vj8rqz785bpb2q"))))
+    (properties `((upstream-name . "PhytoIn")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales r-packcircles r-ggplot2 r-biomass))
+    (home-page "https://github.com/PhytoIn/PhytoIn")
+    (synopsis "Vegetation Analysis and Forest Inventory")
+    (description
+     "This package provides functions and example datasets for phytosociological
+analysis, forest inventory, biomass and carbon estimation, and visualization of
+vegetation data.  Includes functions to compute structural parameters
+@code{[phytoparam()}, @code{summary.param()}, @code{stats()}], estimate
+above-ground biomass and carbon @code{[AGB()}], stratify wood volume by diameter
+at breast height (DBH) classes @code{[stratvol()}], generate collector and
+rarefaction curves @code{[collector.curve()}, @code{rarefaction()}], and
+visualize basal areas on quadrat maps @code{[BAplot()}, including rectangular
+plots and individual coordinates].  Several example datasets are provided to
+demonstrate the functionality of these tools.  For more details see FAO (1981,
+ISBN:92-5-101132-X) \"Manual of forest inventory\", IBGE (2012,
+ISBN:9788524042720) \"Manual tÃ©cnico da vegetaÃ§Ã£o brasileira\" and Heringer et
+al. (2020) \"Phytosociology in R: A routine to estimate phytosociological
+parameters\" <doi:10.22533/at.ed.3552009033>.")
     (license license:gpl3)))
 
 (define-public r-phytoclass

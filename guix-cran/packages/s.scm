@@ -20,7 +20,7 @@
   #:use-module (gnu packages compression)
   #:use-module (gnu packages video)
   #:use-module (gnu packages java)
-  #:use-module (gnu packages containers)
+  #:use-module (gnu packages docker)
   #:use-module (gnu packages duckdb)
   #:use-module (gnu packages tbb)
   #:use-module (gnu packages ghostscript)
@@ -25786,13 +25786,13 @@ Statistical Association, 109:505, 11-23, <doi:10.1080/01621459.2013.870904>.")
 (define-public r-spower
   (package
     (name "r-spower")
-    (version "0.6.4")
+    (version "0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Spower" version))
        (sha256
-        (base32 "0gp7c16dg685kpik36qrwd3zxmii0dlgjnd64sjz7ib9x2k6albf"))))
+        (base32 "0i6yjl7cgp4pidxddprwdqw4h1cj50bik7cm55pfc3gzr6mx5d5i"))))
     (properties `((upstream-name . "Spower")))
     (build-system r-build-system)
     (arguments
@@ -29846,6 +29846,32 @@ data are obtained through the Google Earth Engine service
 (<https://earthengine.google.com/>) and used as a source of spectral data.")
     (license license:gpl3)))
 
+(define-public r-spectralmm
+  (package
+    (name "r-spectralmm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SpectralMM" version))
+       (sha256
+        (base32 "1hk0m0f4ixd91xcvm9s9xvnkvx04fgmn9i6xi9c3f4hjn1bnx772"))))
+    (properties `((upstream-name . "SpectralMM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppeigen r-rcpp))
+    (home-page "https://github.com/Xunjian-Li/SpectralMM")
+    (synopsis "Spectral Majorization for Statistical Estimation")
+    (description
+     "Fits generalized linear, asymmetric and robust regression models using spectral
+majorization and iterative quadratic subproblem solvers.  A shared C++
+computational core supports dense and sparse designs, automatic intercepts,
+optional Wald inference and detailed iteration diagnostics.  Native code is
+compiled automatically during package installation.")
+    (license license:gpl3)))
+
 (define-public r-spectralgp
   (package
     (name "r-spectralgp")
@@ -30209,6 +30235,61 @@ multiverse analyses (Steegen, Tuerlinckx, Gelman & Vanpaemel, 2016, <doi:
 10.1177/1745691616658637>) including functions to setup, run, evaluate, and plot
 all specifications.")
     (license license:gpl3)))
+
+(define-public r-specproc
+  (package
+    (name "r-specproc")
+    (version "0.8.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "specProc" version))
+       (sha256
+        (base32 "19fs9jimpq3n50y5qapv4sabkcp5v5b54x5abrbynykz9ah7wk88"))))
+    (properties `((upstream-name . "specProc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-robustbase
+                             r-rlang
+                             r-rcppeigen
+                             r-rcpp
+                             r-pls
+                             r-moments
+                             r-minpack-lm
+                             r-mass
+                             r-magrittr
+                             r-lifecycle
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ChristianGoueguel/specProc")
+    (synopsis "Preprocessing Tools for Laser-Induced Breakdown Spectroscopy")
+    (description
+     "This package provides tools for exploring, preprocessing and modeling
+spectroscopic data, developed for laser-induced breakdown spectroscopy (LIBS)
+and also applicable to other techniques such as Raman, infrared, and inductively
+coupled plasma optical emission spectroscopy.  Covers the workflow from raw
+spectra to calibrated results: peak finding and fitting, wavelength calibration,
+baseline correction, normalization and scaling, orthogonal signal correction
+including orthogonal partial least squares (OPLS; Trygg and Wold (2002)
+<doi:10.1002/cem.695>), calibration transfer, calibration curves and figures of
+merit, and plasma diagnostics (Boltzmann and Saha-Boltzmann plots, Stark
+broadening).  Includes robust tools for outlier detection and exploration:
+robust principal component analysis (Hubert, Rousseeuw and Vanden Branden (2005)
+<doi:10.1198/004017004000000563>), detection of deviating cells (Rousseeuw and
+Van den Bossche (2018) <doi:10.1080/00401706.2017.1340909>), PCA with cellwise
+outliers and missing values (@code{MacroPCA}; Hubert, Rousseeuw and Van den
+Bossche (2019) <doi:10.1080/00401706.2018.1562989>), robust transformations to
+central normality (Raymaekers and Rousseeuw (2021)
+<doi:10.1007/s10994-021-05960-5>), and self-organizing maps (Kohonen (1982)
+<doi:10.1007/BF00337288>).  Preprocessing steps are also available as recipes
+steps for tidymodels workflows.  Computationally intensive steps are implemented
+in C++ via Rcpp and @code{RcppEigen}'.")
+    (license license:expat)))
 
 (define-public r-specmine-datasets
   (package
@@ -44287,13 +44368,13 @@ The slm package is described in the paper by E. Caron, J. Dedecker and B. Michel
 (define-public r-slimr
   (package
     (name "r-slimr")
-    (version "1.1.8")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SlimR" version))
        (sha256
-        (base32 "1nbqsa2wlfsbalz76pw0sj3fwy2amdx66h70ivvsb0gxcvafbkl7"))))
+        (base32 "13g9id12rbma4ax6v4sd9hc4k3gwbkqpra3a5m8x1b3qdn4abns7"))))
     (properties `((upstream-name . "SlimR")))
     (build-system r-build-system)
     (arguments
@@ -44304,6 +44385,7 @@ The slm package is described in the paper by E. Caron, J. Dedecker and B. Michel
                              r-seurat
                              r-scales
                              r-readxl
+                             r-rcolorbrewer
                              r-pheatmap
                              r-patchwork
                              r-gtools
@@ -44318,18 +44400,18 @@ The slm package is described in the paper by E. Caron, J. Dedecker and B. Michel
 context-matching marker datasets.  It creates a unified marker list
 (`Markers_list`) from multiple sources: built-in curated databases
 ('Cellmarker2', @code{PanglaoDB}', @code{ScType}', @code{CellTypist}',
-@code{scIBD}', T@code{CellSI}', PCTIT', PCTAM'), Seurat objects with cell
-labels, or user-provided Excel tables. @code{SlimR} first uses adaptive machine
-learning for parameter optimization, and then offers two automated annotation
-approaches: cluster-based and per-cell'.  Cluster-based annotation assigns one
-label per cluster, expression-based probability calculation, and AUC validation.
- Per-cell annotation assigns labels to individual cells using three scoring
-methods with adaptive thresholds and ratio-based confidence filtering, plus
-optional UMAP spatial smoothing, making it ideal for heterogeneous clusters and
-rare cell types.  The package also supports semi-automated workflows with
-heatmaps, feature plots, and combined visualizations for manual annotation.  For
-more information, see the package documentation at
-<https://github.com/zhaoqing-wang/@code{SlimR>}.")
+@code{scBaseCount}', @code{scIBD}', T@code{CellSI}', PCTIT', PCTAM'), Seurat
+objects with cell labels, or user-provided Excel tables. @code{SlimR} first uses
+adaptive machine learning for parameter optimization, and then offers two
+automated annotation approaches: cluster-based and per-cell'.  Cluster-based
+annotation assigns one label per cluster, expression-based probability
+calculation, and AUC validation.  Per-cell annotation assigns labels to
+individual cells using three scoring methods with adaptive thresholds and
+ratio-based confidence filtering, plus optional UMAP spatial smoothing, making
+it ideal for heterogeneous clusters and rare cell types.  The package also
+supports semi-automated workflows with heatmaps, feature plots, and combined
+visualizations for manual annotation.  For more information, see the package
+documentation at <https://github.com/zhaoqing-wang/@code{SlimR>}.")
     (license license:expat)))
 
 (define-public r-slim
@@ -48347,6 +48429,39 @@ details on choice experiments see Mariel et al. (2021)
      "This package provides a set of tools developed at Simularia for Simularia, to
 help preprocessing and post-processing of meteorological and air quality data.")
     (license license:gpl2+)))
+
+(define-public r-simulab
+  (package
+    (name "r-simulab")
+    (version "0.4.10")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "simulab" version))
+       (sha256
+        (base32 "1zsgsz9bqlh98n8sna3mszsi03kaz3zsd1wwy7mwqxil9kbg1ck7"))))
+    (properties `((upstream-name . "simulab")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://pak.dynasite.org/simulab/")
+    (synopsis
+     "Simulates a Wide Variety of Data Shapes, Sizes and Distributions")
+    (description
+     "Generates a wide variety of data, in different shapes, sample sizes,
+distributions and parameters.  The parameters are either drawn at random or set
+in advance, and in both cases they are stored with the data, so they are known
+and their recovery can be tested.  Generators cover declared variables with
+treatment assignment and missing values, correlated and clustered data, latent
+profile, latent class, factor and item response models, longitudinal and
+multilevel processes, survival times with competing risks, sequences of states,
+and static, bipartite, multiplex, temporal and transition networks.  Every
+generator returns batches of reproducible data sets for the evaluation of
+statistical methods, the testing of models and software, and teaching; simulated
+transition networks are native tna models.")
+    (license license:expat)))
 
 (define-public r-simukde
   (package
@@ -57577,13 +57692,13 @@ value for analytics workflows.")
 (define-public r-shinygovstyle
   (package
     (name "r-shinygovstyle")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyGovstyle" version))
        (sha256
-        (base32 "1xzx1sq1n5l7sbw7ng7r99cvpma65z35gr58b8gr1iays1dr3fhm"))))
+        (base32 "0kn893wqifqpip61cykbwak7mgin1960bm1fasvgbbzczg8n47hx"))))
     (properties `((upstream-name . "shinyGovstyle")))
     (build-system r-build-system)
     (arguments
@@ -57614,13 +57729,14 @@ value for analytics workflows.")
                              r-purrr
                              r-lifecycle
                              r-jsonlite
-                             r-htmltools))
+                             r-htmltools
+                             r-bslib))
     (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/dfe-analytical-services/shinyGovstyle")
     (synopsis "Custom Gov Style Inputs for Shiny")
     (description
-     "Collection of shiny application styling that are based on the GOV.UK Design
-System.  See <https://design-system.service.gov.uk/components/> for details.")
+     "This package provides shiny components styled using the GOV.UK Design System.
+See <https://design-system.service.gov.uk/components/> for component guidance.")
     (license license:gpl3+)))
 
 (define-public r-shinyglide
@@ -66328,13 +66444,13 @@ the functions to be chained by a pipe operator.")
 (define-public r-sempower
   (package
     (name "r-sempower")
-    (version "2.1.3")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "semPower" version))
        (sha256
-        (base32 "19r2c3awi65zi63fhm4mm7i3vj4xlhyblmh14c602ns4a2zmbbm0"))))
+        (base32 "10lzpfl2anbzz8apa1ywrnqnhd158pnpjwh649nwcqyb4lrvvviy"))))
     (properties `((upstream-name . "semPower")))
     (build-system r-build-system)
     (arguments
@@ -82388,6 +82504,35 @@ eleventh chapter is dedicated to an introduction to time series.  The twelfth
 chapter is dedicated to an introduction to probit and logit models.  Various
 example datasets are shipped with the package as well as some new functions.")
     (license license:gpl3)))
+
+(define-public r-sage
+  (package
+    (name "r-sage")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sage" version))
+       (sha256
+        (base32 "153lph2479k7d0zfc0xp6691660l08x75f3264zj5g9hpvl2n3w3"))))
+    (properties `((upstream-name . "sage")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-rlang r-dplyr r-arrow))
+    (home-page "https://github.com/noahdasanaike/sage")
+    (synopsis "Retrieve Slices of the Small-Area Global Elections Archive")
+    (description
+     "Downloads and subsets slices of the Small-Area Global Elections (SAGE) archive,
+a harmonized collection of polling-station and precinct-level election results,
+without having to read monolithic country-level files.  Reads partitioned
+Parquet from a public bucket (configurable through the SAGE_SOURCE environment
+variable, the @code{sage_set_source()} function, or a local copy of the archive)
+and exposes a sage_load(country, years, columns) function returning a tibble',
+plus helpers for the accompanying boundary polygons and candidate-level vote
+sidecars.  See <https://github.com/noahdasanaike/sage> for the archive itself.")
+    (license license:expat)))
 
 (define-public r-safuzzy
   (package

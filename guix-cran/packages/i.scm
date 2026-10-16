@@ -7409,6 +7409,47 @@ to the general user.  For a general overview of these methods, see Greenwell and
 Schubert Kabban (2014) <doi:10.32614/RJ-2014-009>.")
     (license license:gpl2+)))
 
+(define-public r-investlabr
+  (package
+    (name "r-investlabr")
+    (version "0.0.6.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "investlabr" version))
+       (sha256
+        (base32 "0zxmj68x6n82f9irhnqhl11vddz9bsc7knzkwz9ww5ld4jwp2h11"))))
+    (properties `((upstream-name . "investlabr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml
+                             r-scales
+                             r-rlang
+                             r-rcpp
+                             r-quadprog
+                             r-patchwork
+                             r-jsonlite
+                             r-gridextra
+                             r-ggrepel
+                             r-ggplot2
+                             r-data-table))
+    (home-page "https://github.com/OliverLDS/investlabr")
+    (synopsis "Research Workflows for Macro and Cross-Asset Analysis")
+    (description
+     "Reusable research workflows for macro-financial and cross-asset analysis.  The
+package sits on top of data packages such as investdatar and focuses on
+transforming existing market and macro data into analysis-ready research tables,
+factor and indicator constructions, event and regime overlays, sensitivity
+estimates, scenario comparisons, and research-grade visualization outputs.
+Portfolio risk-return comparisons use the mean-variance framework of Markowitz
+(1952) <doi:10.1111/j.1540-6261.1952.tb01525.x>.  Research-side volatility
+simulations include the generalized autoregressive conditional
+heteroskedasticity model of Bollerslev (1986)
+<doi:10.1016/0304-4076(86)90063-1>.")
+    (license license:expat)))
+
 (define-public r-investdatar
   (package
     (name "r-investdatar")
@@ -9185,6 +9226,66 @@ package is developed in C++.  The development of this software package and the
 associated statistical methods have been partially supported by an Innovative
 Research Award from Johnson Cancer Research Center, Kansas State University.")
     (license license:gpl2)))
+
+(define-public r-interconectar
+  (package
+    (name "r-interconectar")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "InterconectaR" version))
+       (sha256
+        (base32 "02jkjgdn8sdl0hag10xkf4qb5s5xd11cm68khvx7i4y6hfsra44s"))))
+    (properties `((upstream-name . "InterconectaR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-wesanderson
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-semplot
+                             r-scales
+                             r-rlang
+                             r-rcolorbrewer
+                             r-qgraph
+                             r-purrr
+                             r-progressr
+                             r-png
+                             r-patchwork
+                             r-networktools
+                             r-mgm
+                             r-magick
+                             r-lavaan
+                             r-gridextra
+                             r-ggplotify
+                             r-ggplot2
+                             r-ggforce
+                             r-future-apply
+                             r-future
+                             r-forcats
+                             r-eganet
+                             r-dplyr
+                             r-cowplot
+                             r-correlation
+                             r-cairo
+                             r-bootnet))
+    (home-page "https://github.com/jventural/InterconectaR")
+    (synopsis "Psychological Network Analysis and Psychometric Insights")
+    (description
+     "Estimates psychological networks by group for research in the social sciences
+and complements them with psychometric modeling.  It summarises centrality and
+bridge centrality indices, evaluates the stability of edges and centrality from
+bootstrap results, refines items by the stability of exploratory graph analysis
+(EGA), and plots networks with the variance explained of each node.  It also
+estimates an a priori sample size for EGA through Monte Carlo simulation and
+includes an interactive application to plan the sample size of a network study.
+Methods follow Epskamp, Borsboom and Fried (2018)
+<doi:10.3758/s13428-017-0862-1> and Golino and Epskamp (2017)
+<doi:10.1371/journal.pone.0174035>.")
+    (license license:gpl3+)))
 
 (define-public r-interca
   (package
@@ -11121,6 +11222,29 @@ multi-likelihood models.  A prediction method based on fast Monte Carlo sampling
 allows posterior prediction of general expressions of the latent variables.
 Ecology-focused introduction in Bachl, Lindgren, Borchers, and Illian (2019)
 <doi:10.1111/2041-210X.13168>.")
+    (license license:gpl2+)))
+
+(define-public r-inlabma
+  (package
+    (name "r-inlabma")
+    (version "0.1-12")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "INLABMA" version))
+       (sha256
+        (base32 "0dkb5v08ws38cfv33r4asz6shik08zd3535sc71gsgcg6cnj2d3q"))))
+    (properties `((upstream-name . "INLABMA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-spdep r-sp r-matrix))
+    (home-page "https://cran.r-project.org/package=INLABMA")
+    (synopsis "Bayesian Model Averaging with INLA")
+    (description
+     "Fit Spatial Econometrics models using Bayesian model averaging on models fitted
+with INLA. The INLA package can be obtained from <https://www.r-inla.org>.")
     (license license:gpl2+)))
 
 (define-public r-inkar
@@ -22175,13 +22299,13 @@ provides a unified decision workflow and supports all less common ICC variants."
 (define-public r-iccde
   (package
     (name "r-iccde")
-    (version "0.3.9")
+    (version "0.3.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iccde" version))
        (sha256
-        (base32 "1r1sm3aqx6i1404wdjb6z7afi4iqa0mfw1fgkqnswhkr8qp88x1r"))))
+        (base32 "0al38qz4wkpgjlrr7r62izq93rz7msl6as569zl7f01y8vxzmkax"))))
     (properties `((upstream-name . "iccde")))
     (build-system r-build-system)
     (arguments

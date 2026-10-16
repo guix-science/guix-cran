@@ -48086,38 +48086,6 @@ Vrugt (2008) <doi:10.1007/s11222-008-9104-9> and the stretch sampler from
 Goodman and Weare (2010) <doi:10.2140/camcos.2010.5.65>.")
     (license license:gpl2)))
 
-(define-public r-mcmcderive
-  (package
-    (name "r-mcmcderive")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mcmcderive" version))
-       (sha256
-        (base32 "0v89nyvr2d57zvjy9qq6drqb48s4n88hb65pima1gx4aqb479yfh"))))
-    (properties `((upstream-name . "mcmcderive")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-universals
-                             r-purrr
-                             r-nlist
-                             r-mcmcr
-                             r-extras
-                             r-chk
-                             r-abind))
-    (home-page "https://github.com/poissonconsulting/mcmcderive")
-    (synopsis "Derive MCMC Parameters")
-    (description
-     "Generates derived parameter(s) from Monte Carlo Markov Chain (MCMC) samples
-using R code.  This allows Bayesian models to be fitted without the inclusion of
-derived parameters which add unnecessary clutter and slow model fitting.  For
-more information on MCMC samples see Brooks et al. (2011)
-<isbn:978-1-4200-7941-8>.")
-    (license license:expat)))
-
 (define-public r-mcmc4extremes
   (package
     (name "r-mcmc4extremes")
@@ -55024,13 +54992,13 @@ parallelization, uncomment the relevant flags in src/MAKEVARS before compiling."
 (define-public r-maptiles
   (package
     (name "r-maptiles")
-    (version "0.12.0")
+    (version "0.13.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maptiles" version))
        (sha256
-        (base32 "0h69vyhrq7ikfdq6zqp6s1pyxgqbnpmc4pwyzfwan5c13055l4ha"))))
+        (base32 "0wslx9dwda3h669pc123aiprd50aafqn4hhqxa3q2rcdl7cxysfg"))))
     (properties `((upstream-name . "maptiles")))
     (build-system r-build-system)
     (arguments
