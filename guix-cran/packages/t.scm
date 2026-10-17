@@ -639,13 +639,13 @@ al. (2025) <doi:10.1002/sim.10297>.")
 (define-public r-twostepsdfm
   (package
     (name "r-twostepsdfm")
-    (version "0.2.2")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TwoStepSDFM" version))
        (sha256
-        (base32 "0dyz3ql1z5dii91vvb8c043arb5y19fni4vsg25l4icvxd9l50py"))))
+        (base32 "0r4mqghlsrnwc62vngdnb845g69mlna0qbhwn6b4xc6ccrb08khj"))))
     (properties `((upstream-name . "TwoStepSDFM")))
     (build-system r-build-system)
     (arguments
@@ -4508,34 +4508,26 @@ of Health.")
 (define-public r-tsmp
   (package
     (name "r-tsmp")
-    (version "0.4.16")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tsmp" version))
        (sha256
-        (base32 "1i7k5i11sxkaa9srwlq1psraxr04mc3b5pargbgr83idi2wc1bvr"))))
+        (base32 "1c0bkd39b474dfc9dybvbrpigmjx1figlzfg6ljy4hf2plrlhgc4"))))
     (properties `((upstream-name . "tsmp")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rjsonio
-                             r-rcppparallel
-                             r-rcpp
-                             r-progress
-                             r-magrittr
-                             r-foreach
-                             r-dosnow
-                             r-checkmate
-                             r-audio))
+    (propagated-inputs (list r-matrixprofiler r-magrittr r-glue r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/matrix-profile-foundation/tsmp")
     (synopsis "Time Series with Matrix Profile")
     (description
      "This package provides a toolkit implementing the Matrix Profile concept that was
 created by CS-UCR <http://www.cs.ucr.edu/~eamonn/@code{MatrixProfile.html>}.")
-    (license license:asl2.0)))
+    (license license:gpl3)))
 
 (define-public r-tsmodel
   (package
@@ -9225,13 +9217,13 @@ quantitative structure models (QSMs).")
 (define-public r-treetools
   (package
     (name "r-treetools")
-    (version "2.4.1")
+    (version "2.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TreeTools" version))
        (sha256
-        (base32 "05r3hczdj47fxx57fxdbz60j5gvj8s2i39wnf13w9wwnvrkba9pb"))))
+        (base32 "0bk04g1k2p7wqffy2f7jdv064ha3jy2h10zb1zn2vyp2p6lc0a4z"))))
     (properties `((upstream-name . "TreeTools")))
     (build-system r-build-system)
     (arguments
@@ -9819,6 +9811,34 @@ across the space of a hierarchical tree.")
     (synopsis "Draw Treemaps in 'ggplot2'")
     (description "This package provides ggplot2 geoms for drawing treemaps.")
     (license license:gpl3+)))
+
+(define-public r-treehunt
+  (package
+    (name "r-treehunt")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "treehunt" version))
+       (sha256
+        (base32 "10f0kj10zazyvvadx77dqbmwk8c688g2qwgk6s43i6vvw6sbjpla"))))
+    (properties `((upstream-name . "treehunt")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival r-rcpp r-jsonlite))
+    (home-page "https://github.com/JulesBa-Git/treehunt")
+    (synopsis "Evolutionary Search for Optimal Node Combinations in Trees")
+    (description
+     "This package provides Markov chain Monte Carlo (MCMC) sampling and genetic
+algorithms for searching combinations of nodes in hierarchical trees.  Includes
+scores for binary outcomes, continuous outcomes, and recurrent events, with
+applications to pharmacovigilance and hospital data.  Importance weighting
+estimates uniform combination score references from tempered MCMC samples and
+reports weight-based effective sample sizes.  Computational routines are
+implemented in C++ via Rcpp'.")
+    (license license:gpl3)))
 
 (define-public r-treeheatr
   (package
@@ -11798,42 +11818,44 @@ TRFLP profiles across species.")
 (define-public r-tramnet
   (package
     (name "r-tramnet")
-    (version "0.0-991")
+    (version "0.1-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tramnet" version))
        (sha256
-        (base32 "1ry618gzh66z54ha1hajc7i8rf3ws1a766dlgr38fkaf28ajnz9k"))))
+        (base32 "17nf2nl1fl6wnxgc0kqz6ll63psxg6sh9qapqgasb3xl1y4z6fs7"))))
     (properties `((upstream-name . "tramnet")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tram
-                             r-smoof
                              r-sandwich
-                             r-paramhelpers
+                             r-paradox
                              r-mlt
-                             r-mlrmbo
-                             r-mlr
+                             r-mlr3mbo
+                             r-mlr3learners
+                             r-mlr3
                              r-lhs
+                             r-lgr
                              r-cvxr
+                             r-bbotk
                              r-basefun))
     (native-inputs (list r-knitr))
-    (home-page "http://ctm.R-forge.R-project.org")
+    (home-page "https://codeberg.org/LucasKook/tramnet")
     (synopsis "Penalized Transformation Models")
     (description
      "Partially penalized versions of specific transformation models implemented in
 package mlt'.  Available models include a fully parametric version of the Cox
-model, other parametric survival models (Weibull, etc.), models for binary and
-ordered categorical variables, normal and transformed-normal (Box-Cox type)
-linear models, and continuous outcome logistic regression.  Hyperparameter
+model, other parametric survival models (Weibull, etc.), normal and
+transformed-normal (Box-Cox type) linear models, and continuous outcome logistic
+regression.  Models can be specified via a formula interface.  Hyperparameter
 tuning is facilitated through model-based optimization functionalities from
-package @code{mlrMBO}'.  The accompanying vignette describes the methodology
-used in tramnet in detail.  Transformation models and model-based optimization
-are described in Hothorn et al. (2019) <doi:10.1111/sjos.12291> and Bischl et
-al. (2016) <doi:10.48550/@code{arXiv.1703.03373>}, respectively.")
+package mlr3mbo'.  The accompanying vignette describes the methodology used in
+tramnet in detail.  Transformation models and model-based optimization are
+described in Hothorn et al. (2019) <doi:10.1111/sjos.12291> and Bischl et al.
+(2017) <doi:10.48550/@code{arXiv.1703.03373>}, respectively.")
     (license license:gpl2)))
 
 (define-public r-tramme
@@ -12437,39 +12459,6 @@ A. G. (2018) <doi:10.1201/9781315182780> and Penalized Logistic Regression
 Friedman, J. H., Hastie, T., & Tibshirani, R. (2010)
 <doi:10.18637/jss.v033.i01>.")
     (license license:gpl2+)))
-
-(define-public r-trafficcar
-  (package
-    (name "r-trafficcar")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "trafficCAR" version))
-       (sha256
-        (base32 "0x7g570k00i9q7c2k1iginwmp6mf2mdrjj576b1m0sipynvppwj8"))))
-    (properties `((upstream-name . "trafficCAR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-units
-                             r-sf
-                             r-rlang
-                             r-posterior
-                             r-matrix
-                             r-igraph
-                             r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=trafficCAR")
-    (synopsis "Bayesian CAR Models for Road-Segment Traffic")
-    (description
-     "This package provides tools for simulating and modeling traffic flow on road
-networks using spatial conditional autoregressive (CAR) models.  The package
-represents road systems as graphs derived from @code{OpenStreetMap} data
-<https://www.openstreetmap.org/> and supports network-based spatial dependence,
-basic preprocessing, and visualization for spatial traffic analysis.")
-    (license license:expat)))
 
 (define-public r-trafficbde
   (package
@@ -19892,13 +19881,13 @@ efficiency of data.table and speed of collapse'.")
 (define-public r-timeperiodsr
   (package
     (name "r-timeperiodsr")
-    (version "0.7.7")
+    (version "0.7.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "timeperiodsR" version))
        (sha256
-        (base32 "1mq55sw7c504ambr03834yy20xsf02swlsmf1zdq4id22vnq3m7a"))))
+        (base32 "1w3nxnk36i6ldpghncbs994skiwlm25j8zc9nh6867k2x6v8wgwb"))))
     (properties `((upstream-name . "timeperiodsR")))
     (build-system r-build-system)
     (arguments
@@ -20571,25 +20560,27 @@ river in Bahia, Brazil (2020-2024).")
 (define-public r-tigris
   (package
     (name "r-tigris")
-    (version "2.2.1")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tigris" version))
        (sha256
-        (base32 "1jk73hidz518c83frh588mc7nappilda5qplc0rzvb50qrvczd29"))))
+        (base32 "1f4x00z2rbfpikp3d9nmmqrnsadq15yxbhjkxcz2dqbd9bfjf5bj"))))
     (properties `((upstream-name . "tigris")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-uuid
+    (propagated-inputs (list r-zip
                              r-stringr
                              r-sf
+                             r-rlang
                              r-rappdirs
                              r-magrittr
-                             r-httr
-                             r-dplyr))
+                             r-httr2
+                             r-dplyr
+                             r-cli))
     (home-page "https://github.com/walkerke/tigris")
     (synopsis "Load Census TIGER/Line Shapefiles")
     (description
@@ -26400,13 +26391,13 @@ function.")
 (define-public r-therefdate
   (package
     (name "r-therefdate")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "theRefdate" version))
        (sha256
-        (base32 "1l77fpw5d7ss95fbl8r1vhkibipm72dx6piak8irqz2x1an9irrh"))))
+        (base32 "0fn60nhbrhy799viyk1c33wkwpq9dn275agrbbmfp20v2rc1lg68"))))
     (properties `((upstream-name . "theRefdate")))
     (build-system r-build-system)
     (arguments
@@ -26414,13 +26405,15 @@ function.")
       #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=theRefdate")
-    (synopsis
-     "Simple and Fast Date Manipulation on Character Strings in Format 'DD.MM.YYYY'")
+    (synopsis "Simple and Fast Date Manipulation on Character Strings")
     (description
      "This package provides simple and fast date manipulation functions operating on
-character strings in the format DD.MM.YYYY'.  Functions include extraction of
-day, month, and year components, computation of differences between two dates,
-and addition or subtraction of months.")
+character strings in one of three formats: DD.MM.YYYY (default), YYYY-MM-DD or
+YYYYMMDD'.  The format is chosen once per R session.  Functions include
+extraction of day, month, and year components, computation of differences
+between two dates, and addition or subtraction of months. \"DD\" is ignored in the
+calculations, therefore a date like 31.02.2026 is a valid in- or output.  That's
+why it is so fast.")
     (license license:lgpl3)))
 
 (define-public r-theorytools
@@ -34446,13 +34439,13 @@ argument for a character column xts conversion.")
 (define-public r-tbl-now
   (package
     (name "r-tbl-now")
-    (version "1.0.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tbl.now" version))
        (sha256
-        (base32 "03ihdpp786vglzlfplmbs22bwlbjycaja9bjqxfqc0hfdh5mipwn"))))
+        (base32 "1k6pcrra6gfb2jlbss4sim38s3w2dpnyrmhva305fqdpdclywf96"))))
     (properties `((upstream-name . "tbl.now")))
     (build-system r-build-system)
     (arguments
@@ -34477,11 +34470,12 @@ argument for a character column xts conversion.")
     (description
      "Defines tidy data structures and package-agnostic workflows for epidemiological
 nowcasting.  The tbl_now class records event, report, and revision dates
-alongside strata, covariates, censoring, and reporting-delay metadata while
-remaining compatible with dplyr'.  Tools support validation, manipulation,
-diagnostics, visualization, format conversion, retrospective evaluation, and
-multiple modelling engines.  The tbl_nowcast class standardizes probabilistic
-predictions for plotting, scoring, comparison, and ensembling.")
+alongside strata, covariates tagged by model component, censoring, and
+reporting-delay metadata while remaining compatible with dplyr'.  Tools support
+validation, manipulation, diagnostics, visualization, format conversion,
+retrospective evaluation, and multiple modelling engines.  The tbl_nowcast class
+standardizes probabilistic predictions for plotting, scoring, comparison, and
+ensembling.")
     (license license:expat)))
 
 (define-public r-tbfmultinomial

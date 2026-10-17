@@ -620,6 +620,51 @@ experiences.  Reference: Avanzi B, Taylor G, Wang M, Wong B (2020)
 <doi:10.48550/@code{arXiv.2008.05693>}.")
     (license license:gpl3)))
 
+(define-public r-synthesizerplus
+  (package
+    (name "r-synthesizerplus")
+    (version "0.2.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SynthesizerPlus" version))
+       (sha256
+        (base32 "1ljrwip5b7d24cp996i4k4jzvknyv8787h8yl9xmi9z9q7x4b6z0"))))
+    (properties `((upstream-name . "SynthesizerPlus")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/bogdanoancea/SynthesizerPlus")
+    (synopsis
+     "Synthetic Data Generation with Copulas, Evaluation and Multi-Format I/O")
+    (description
+     "Generates synthetic versions of numeric, categorical, mixed-type and time-series
+data.  Marginal distributions are modelled with interpolated empirical quantile
+functions and dependence with Gaussian or Student-t copulas (Sklar, 1959).
+Discrete and categorical variables enter the copula through the distributional
+transform (Ruschendorf, 2009, <doi:10.1016/j.jspi.2009.05.030>), and their
+latent correlations are estimated by maximum likelihood as polychoric (Olsson,
+1979, <doi:10.1007/BF02296207>) and polyserial (Olsson, Drasgow and Dorans,
+1982, <doi:10.1007/BF02294164>) correlations.  Missing values are modelled by
+missingness indicators inside the copula, so that missingness may depend on
+other variables.  Supports stratified models, a closeness parameter with
+calibration to a target distance or disclosure-risk level, chunked generation of
+very large data sets, copula vector-autoregressive and bootstrap time-series
+synthesis, augmentation of small training sets for machine learning, and random
+generation from multivariate distributions and elliptical and Archimedean
+copulas.  Fidelity, utility and disclosure risk are assessed with marginal
+distances, association matrices, propensity score mean-squared error (Snoke et
+al., 2018, <doi:10.1111/rssa.12358>), confidence-interval overlap, correct
+attribution probability and distance to closest record, with ggplot2
+visualisations.  Data can be read from and written to CSV, TSV, RDS, RData,
+Parquet, Feather, HDF5, JSON, NDJSON, Excel, SPSS, Stata, SAS and fst files.
+The empirical-quantile and copula approach builds on ideas of the synthesizer
+package by Mark van der Loo.")
+    (license (license:fsdg-compatible "EUPL (>= 1.2)"))))
+
 (define-public r-synthesizer
   (package
     (name "r-synthesizer")
@@ -7897,13 +7942,13 @@ Duan and Parast (2023) <doi:10.1002/sim.9986>.")
 (define-public r-surrogate
   (package
     (name "r-surrogate")
-    (version "3.4.2")
+    (version "3.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Surrogate" version))
        (sha256
-        (base32 "0s9wsxyw722k4w8jsny2n61k14a7bmgandxbc4yfdchs3a64vyyv"))))
+        (base32 "10wsbyljy4vzccxpfdaw89l41rqc00xqjs0fvr5xzf9m6awi4pck"))))
     (properties `((upstream-name . "Surrogate")))
     (build-system r-build-system)
     (arguments
@@ -30195,13 +30240,13 @@ deterministic configurations to further simplify the model building process.")
 (define-public r-specr
   (package
     (name "r-specr")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "specr" version))
        (sha256
-        (base32 "1y7d1x9rps0xkm8jghpnva8mmzwqa0c93mk6rf2dyrbyw850ddax"))))
+        (base32 "037799haz38vyx98pnwany7flf4i9s9dav7kvkl6a0523jqiwxr2"))))
     (properties `((upstream-name . "specr")))
     (build-system r-build-system)
     (arguments
@@ -30212,12 +30257,10 @@ deterministic configurations to further simplify the model building process.")
                              r-stringr
                              r-rlang
                              r-purrr
-                             r-parallelly
                              r-magrittr
                              r-lme4
                              r-lifecycle
                              r-igraph
-                             r-glue
                              r-ggraph
                              r-ggplot2
                              r-future
@@ -30230,10 +30273,11 @@ deterministic configurations to further simplify the model building process.")
     (synopsis "Conducting and Visualizing Specification Curve Analyses")
     (description
      "This package provides utilities for conducting specification curve analyses
-(Simonsohn, Simmons & Nelson (2020, <doi: 10.1038/s41562-020-0912-z>) or
-multiverse analyses (Steegen, Tuerlinckx, Gelman & Vanpaemel, 2016, <doi:
-10.1177/1745691616658637>) including functions to setup, run, evaluate, and plot
-all specifications.")
+(Simonsohn, Simmons & Nelson, 2020, <doi:10.1038/s41562-020-0912-z>) or
+multiverse analyses (Steegen, Tuerlinckx, Gelman & Vanpaemel, 2016,
+<doi:10.1177/1745691616658637>) including functions to setup, run, evaluate, and
+plot all specifications, as well as to conduct inference on the specification
+curve based on resampling under the null.")
     (license license:gpl3)))
 
 (define-public r-specproc
@@ -32244,13 +32288,13 @@ spatial error model, Journal of Statistical Computation and Simulation,
 (define-public r-spatialrisk
   (package
     (name "r-spatialrisk")
-    (version "0.8.3")
+    (version "0.8.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spatialrisk" version))
        (sha256
-        (base32 "0iibnk8r1hm3sqvxyfpdfx1m8pixc4cynrkr08hy60ikhqik3s5q"))))
+        (base32 "0swg5hbwh75hi12w6ji77xwzqz4craq2awvvwkz33kjhrqhn1446"))))
     (properties `((upstream-name . "spatialrisk")))
     (build-system r-build-system)
     (arguments
@@ -36237,13 +36281,13 @@ computational efficiency.")
 (define-public r-spaalign
   (package
     (name "r-spaalign")
-    (version "0.0.7")
+    (version "0.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spaAlign" version))
        (sha256
-        (base32 "0dd9ddmbv8h3gvwacj9a71hrnc89symqgvjchl4p5rrpys4va9g6"))))
+        (base32 "01pfl47ymqglh6yhq3x052ixpcd5pikfic4bbcf9k3r7c2nwdngz"))))
     (properties `((upstream-name . "spaAlign")))
     (build-system r-build-system)
     (arguments
@@ -45994,25 +46038,23 @@ skew-normal-Cauchy presented in Kahrari et al. (2020)
 (define-public r-skewlmm
   (package
     (name "r-skewlmm")
-    (version "1.1.3")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "skewlmm" version))
        (sha256
-        (base32 "00f59krywrvnkjii91kms6f7a9nal4kdk53vjwvhhyvc7dgm1sfk"))))
+        (base32 "18bcnsrq1vxxhyiqhbk5p25vkr8vvha8sdy4fdnd2x66pgvsfwma"))))
     (properties `((upstream-name . "skewlmm")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-truncatednormal
-                             r-purrr
+    (propagated-inputs (list r-purrr
                              r-optimparallel
                              r-numderiv
                              r-nlme
                              r-mvtnorm
-                             r-momtrunc
                              r-moments
                              r-matrixcalc
                              r-haven
@@ -51377,21 +51419,21 @@ register at <https://app.simfin.com/login>.")
 (define-public r-simfastboin
   (package
     (name "r-simfastboin")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simFastBOIN" version))
        (sha256
-        (base32 "1r42d4mjjdnbqg7s5sia36xacrnw9qk076ir13zhpfniias83igm"))))
+        (base32 "01bw7my6cvv7c6zlls1ifyq804yijqac8a6x3lyyx5chxbdrdcra"))))
     (properties `((upstream-name . "simFastBOIN")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpp))
+    (propagated-inputs (list r-rcpp r-iso))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/gosukehommaEX/simFastBOIN")
+    (home-page "https://gosukehommaex.github.io/simFastBOIN/")
     (synopsis
      "Fast Simulation of Bayesian Optimal Interval Designs for Phase I Trials")
     (description
@@ -51403,7 +51445,17 @@ select the maximum tolerated dose.  The simulation engine is written in C++ and
 draws one random variate per patient in enrollment order, which reproduces the
 reference implementation in the BOIN package trial by trial for a given seed.
 The traditional 3+3 design is provided as a comparator, with operating
-characteristics obtained in closed form rather than by simulation.")
+characteristics obtained in closed form rather than by simulation.  For toxicity
+that is observed late, the time-to-event BOIN design is provided with the two
+estimators of Yuan and colleagues (2018) <doi:10.1158/1078-0432.CCR-18-0246> and
+Lin and Yuan (2020) <doi:10.1093/biostatistics/kxz007>.  Patients who arrive
+while the dose escalation waits can be backfilled to lower doses with the
+designs of Zhao and colleagues (2024) <doi:10.1158/1078-0432.CCR-23-2585> and
+Chen and colleagues (2026) <doi:10.1007/s43441-026-00994-0>, the latter with the
+suspension rules of Chen and colleagues (2025)
+<doi:10.1158/1078-0432.CCR-24-3669>.  Trials of two drugs given together are
+handled by the drug-combination design of Lin and Yin (2017)
+<doi:10.1177/0962280215594494>.")
     (license license:expat)))
 
 (define-public r-simfam
@@ -51576,13 +51628,13 @@ projections.  A description of the model is given in Moritz et al. (2018)
 (define-public r-simet
   (package
     (name "r-simet")
-    (version "1.0.3")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simET" version))
        (sha256
-        (base32 "0l3mk2n1ik9xg660js97n03gix5im2f42q2r7hs9gvhs0g2552kp"))))
+        (base32 "0p962zf320zk2ddinsijxvmr29bdajmwafkvv1wacf0z8c94q7mp"))))
     (properties `((upstream-name . "simET")))
     (build-system r-build-system)
     (arguments
@@ -51606,9 +51658,9 @@ projections.  A description of the model is given in Moritz et al. (2018)
 research and reference crop evapotranspiration, and offers three models to
 simulate crop evapotranspiration and soil water balance in the field, including
 single crop coefficient and dual crop coefficient, as well as the
-Shuttleworth-Wallace model.  These calculations main refer to Allen et al.(1998,
-ISBN:92-5-104219-5), Teh (2006, ISBN:1-58-112-998-X), and Liu et al.(2006)
-<doi:10.1016/j.agwat.2006.01.018>.")
+Shuttleworth-Wallace model.  These calculations mainly refer to Allen et al.
+(1998, ISBN:92-5-104219-5), Teh (2006, ISBN:1-58-112-998-X), and Liu et al.
+(2006) <doi:10.1016/j.agwat.2006.01.018>.")
     (license license:gpl3+)))
 
 (define-public r-simest
@@ -54103,13 +54155,13 @@ execution, and monitoring of federal discretionary transfers in Brazil.")
 (define-public r-sicher
   (package
     (name "r-sicher")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sicher" version))
        (sha256
-        (base32 "0m5h9j0m1g5la84z4ng2xlqybca28fb71aar00wvfyfx61pdixrh"))))
+        (base32 "1rwh7jjaa04dyxq1zbi5djm8n6l4jf4aywrapsb024ixjxbqd00s"))))
     (properties `((upstream-name . "sicher")))
     (build-system r-build-system)
     (arguments
@@ -66523,13 +66575,13 @@ package by submitting user-defined dictionaries to
 (define-public r-semnetcleaner
   (package
     (name "r-semnetcleaner")
-    (version "1.3.7")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SemNetCleaner" version))
        (sha256
-        (base32 "1qwyf88zcmqqri7gnssp784wn1dm0h0mdpac79ap5y8dz2q6r49n"))))
+        (base32 "1h9by49zv8b5rhrx3zpljf1w2l24n3cnnl51x88w4m5cqlqikk5s"))))
     (properties `((upstream-name . "SemNetCleaner")))
     (build-system r-build-system)
     (arguments
@@ -66537,15 +66589,13 @@ package by submitting user-defined dictionaries to
       #:tests? #f))
     (propagated-inputs (list r-stringi
                              r-stringdist
-                             r-shiny
                              r-semnetdictionaries
                              r-searcher
-                             r-rstudioapi
-                             r-readxl
-                             r-r-matlab
-                             r-pbapply
-                             r-foreign))
-    (native-inputs (list r-knitr))
+                             r-progressr
+                             r-phonics
+                             r-hunspell
+                             r-future-apply
+                             r-future))
     (home-page "https://github.com/AlexChristensen/SemNetCleaner")
     (synopsis "An Automated Cleaning Tool for Semantic and Linguistic Data")
     (description
@@ -69580,13 +69630,13 @@ of variables.")
 (define-public r-see
   (package
     (name "r-see")
-    (version "0.14.2")
+    (version "0.15.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "see" version))
        (sha256
-        (base32 "08f091garmb4m1rnnkm9sxgyzf32ibgyakbihr0nb5ffly7by0ya"))))
+        (base32 "1wp59pqmc6f1qfczcfnxn39j5mw7asy12kj7h4dflpkziwinqy0h"))))
     (properties `((upstream-name . "see")))
     (build-system r-build-system)
     (arguments
@@ -69886,13 +69936,13 @@ packages, using public key cryptography.")
 (define-public r-secrdesign
   (package
     (name "r-secrdesign")
-    (version "2.10.1")
+    (version "2.10.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "secrdesign" version))
        (sha256
-        (base32 "0f07m31hq82zqy3s47q9wvv6nwbnd3if9yqa7h1lpmhblfybi5mw"))))
+        (base32 "1r4hy5s72xyr8a7aw5w3b8khx55crsdxcxlbj1bj6xwd1pk1lvpn"))))
     (properties `((upstream-name . "secrdesign")))
     (build-system r-build-system)
     (arguments
@@ -71437,19 +71487,20 @@ viewer pane during their execution.")
 (define-public r-sdmtmb
   (package
     (name "r-sdmtmb")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sdmTMB" version))
        (sha256
-        (base32 "1kq0y55gnp5fn7cxzhb9v168zvahva6nn2wnrmw3588vhnzhnrfp"))))
+        (base32 "1hgw4ik2l3x20pa5nwk8cs4nzacqy5knz3nrvaizj0z0s6q37694"))))
     (properties `((upstream-name . "sdmTMB")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tmb
+                             r-rtmb
                              r-rlang
                              r-reformulas
                              r-rcppeigen
@@ -76829,13 +76880,13 @@ clustering\", Multimedia Tools and Applications, 78 (23)
 (define-public r-sccs
   (package
     (name "r-sccs")
-    (version "1.7")
+    (version "1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SCCS" version))
        (sha256
-        (base32 "0cx7xw15pwkk2nza8ng4ic6mq07vgf5idcclkwdyp3ry5j3rqnvl"))))
+        (base32 "1pnrrfh1k90zlq0kgnj0qxspnvla7md3nszlmw97pwnn612xqahn"))))
     (properties `((upstream-name . "SCCS")))
     (build-system r-build-system)
     (arguments
@@ -76849,10 +76900,10 @@ clustering\", Multimedia Tools and Applications, 78 (23)
 between time-varying exposures such as vaccines or other drugs or non drug
 exposures and an adverse event can be fitted.  Detailed information on the
 self-controlled case series method and its extensions with more examples can be
-found in Farrington, P., Whitaker, H., and Ghebremichael Weldeselassie, Y.
+found in Farrington, P., Whitaker, H., and Ghebremichael-Weldeselassie, Y.
 (2018, ISBN: 978-1-4987-8159-6.  Self-controlled Case Series studies: A
 modelling Guide with R. Boca Raton: Chapman & Hall/CRC Press) and
-<https://sccs-studies.info/index.html>.")
+<https://sccs-studies.info>.")
     (license license:gpl2+)))
 
 (define-public r-sccr
@@ -77671,13 +77722,13 @@ and scan', Juergen Wilbert (2026) <https://jazznbass.github.io/scan-Book/>.")
 (define-public r-scam
   (package
     (name "r-scam")
-    (version "1.2-22")
+    (version "1.2-23")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scam" version))
        (sha256
-        (base32 "05i1arwxd4nqxa00sgj6zljizw08wgjcv5g6x0r0cwmvix3fg16p"))))
+        (base32 "09xwxd8w8dig135lykwfmddh9rk6afqa5jf9a1nxmf71m9g0rkz2"))))
     (properties `((upstream-name . "scam")))
     (build-system r-build-system)
     (arguments
@@ -84281,26 +84332,31 @@ symbol indices, discovers dependency graphs, and introspects installed packages.
 (define-public r-s7schema
   (package
     (name "r-s7schema")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "S7schema" version))
        (sha256
-        (base32 "1vnzgcysnzq8mq54kcn01zdjz3ckas26igf3kpdi0hg0l2s1cgqv"))))
+        (base32 "1akjfp7dibndc3p818mmbgba8yay61lim5y5ax7j53bjrznfb50n"))))
     (properties `((upstream-name . "S7schema")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-yaml r-v8 r-s7 r-rlang r-cli))
+    (propagated-inputs (list r-yaml
+                             r-s7
+                             r-rlang
+                             r-quickjsr
+                             r-jsonlite
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://novonordisk-opensource.github.io/S7schema/")
     (synopsis "'S7' Framework for Schema-Validated YAML Configuration")
     (description
      "This package provides a generic framework for working with YAML (YAML Ain't
 Markup Language) configuration files.  Uses ajv (Another JSON Schema Validator)
-via V8 to validate configurations against JSON Schema definitions.
+via @code{QuickJSR} to validate configurations against JSON Schema definitions.
 Configuration objects inherit from S7 classes and base lists, supporting
 downstream extension through custom classes and methods.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))

@@ -32919,13 +32919,13 @@ population of European Brown Hares settled in central Italy.")
 (define-public r-phsopendata
   (package
     (name "r-phsopendata")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phsopendata" version))
        (sha256
-        (base32 "17qd0pph6a539mdv5rg5kmgn0vbq2h0xnqr6i3vrqsdijqy6f9ly"))))
+        (base32 "1amfqih43wfsvk7vslz9b47yy46ngmfkzzzmlm89h73vkvk53adk"))))
     (properties `((upstream-name . "phsopendata")))
     (build-system r-build-system)
     (arguments
@@ -32936,7 +32936,6 @@ population of European Brown Hares settled in central Italy.")
                              r-rlang
                              r-readr
                              r-purrr
-                             r-magrittr
                              r-lifecycle
                              r-httr
                              r-dplyr
@@ -36301,13 +36300,13 @@ Linear Regression That's interpretable (FLIRTI) by James et al. (2009)
 (define-public r-pfim
   (package
     (name "r-pfim")
-    (version "8.0")
+    (version "8.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PFIM" version))
        (sha256
-        (base32 "1c4f9sa9gx5l096cply6im0v273lfczhakl2gg2m4s0p3fw8cq53"))))
+        (base32 "1b6m5szn05d370qa49fhwsawflh3z9y1n5n76p1xvhrz5g03w34v"))))
     (properties `((upstream-name . "PFIM")))
     (build-system r-build-system)
     (arguments
@@ -36329,15 +36328,15 @@ Linear Regression That's interpretable (FLIRTI) by James et al. (2009)
                              r-desolve
                              r-deriv))
     (native-inputs (list r-knitr))
-    (home-page "http://www.pfim.biostat.fr/")
+    (home-page "https://github.com/iame-researchCenter/PFIM")
     (synopsis "Population Fisher Information Matrix")
     (description
      "Evaluate or optimize designs for nonlinear mixed effects models using the Fisher
-Information matrix.  Supports population, individual, and Bayesian FIMs',
-covariates, inter-occasion variability, and D-optimal search ('Fedorov-Wynn',
-multiplicative, simplex, PSO', PGBO').")
-    (license (list license:gpl3
-                   (license:fsdg-compatible "file://LICENSE")))))
+Information matrix; see <doi:10.1093/biomet/84.2.429> and
+<doi:10.1016/S0169-2607(00)00117-6>.  Supports population, individual, and
+Bayesian FIMs', covariates, inter-occasion variability, and D-optimal search
+('Fedorov-Wynn', multiplicative, simplex, PSO', PGBO').")
+    (license license:gpl3)))
 
 (define-public r-pfica
   (package

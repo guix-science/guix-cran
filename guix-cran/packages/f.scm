@@ -349,6 +349,34 @@ applied to the data rather than resampling units from the data.  See Xu et al.
 (2020) <doi:10.1080/00031305.2020.1731599> for details.")
     (license license:gpl2+)))
 
+(define-public r-fvfmr
+  (package
+    (name "r-fvfmr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fvfmR" version))
+       (sha256
+        (base32 "0c0b15v9bp3sqn6s35c3m6qp4j5zy73gq8sadgwawv22dq9ybq92"))))
+    (properties `((upstream-name . "fvfmR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list python))
+    (propagated-inputs (list r-reticulate))
+    (home-page "https://github.com/garenj/fvfmR")
+    (synopsis "Chlorophyll Fluorescence (Fv/Fm) Analysis of Leaf Disc Images")
+    (description
+     "Semi-automated analysis of chlorophyll fluorescence images of leaf discs taken
+with a Walz IMAGING-PAM fluorometer.  Provides an R interface to the
+@code{fvfmPy} Python package, which detects leaf discs, assigns them to a grid
+of rows and columns, and computes the maximum quantum efficiency of photosystem
+II, Fv/Fm = (Fm - Fo) / Fm, for each disc.  The interactive @code{fvfmPy} window
+is launched from R and the results are returned to R as a data frame.")
+    (license license:expat)))
+
 (define-public r-fvddppkg
   (package
     (name "r-fvddppkg")

@@ -4331,13 +4331,13 @@ and obtain the matching confidence interval using a choice of methods.")
 (define-public r-dsrocrate
   (package
     (name "r-dsrocrate")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dsROCrate" version))
        (sha256
-        (base32 "0igg1va9hvh43s35c0dx06q7jm2nfvk735vj3i7r0j1llm31av30"))))
+        (base32 "0jw7zcdbc3s4jfyrbwy4zyf5c27yb0nv19m3gwf8ipnz642y9v16"))))
     (properties `((upstream-name . "dsROCrate")))
     (build-system r-build-system)
     (arguments
@@ -9605,6 +9605,36 @@ version has a @code{predict()} function.  For details see ter Braak et al.  2018
 piping operators of different precedence, and flexible syntaxes.")
     (license license:gpl3)))
 
+(define-public r-doubletrs
+  (package
+    (name "r-doubletrs")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "doubletrs" version))
+       (sha256
+        (base32 "1l5g5q58ra21f5y2i5nl8977z3fy9j2cn2n4wahpfs1075hiac19"))))
+    (properties `((upstream-name . "doubletrs")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-matrix r-kernsmooth))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mayankgandhi13/doublet-rs")
+    (synopsis
+     "Memory-Efficient Doublet Detection for Single-Cell RNA Sequencing")
+    (description
+     "Detects doublets in single-cell RNA sequencing data with the
+@code{DoubletFinder} method of @code{McGinnis}, Murrow and Gartner (2019)
+<doi:10.1016/j.cels.2019.03.003>, implemented in Rust to use less memory and
+time.  Provides artificial doublet simulation, exact nearest-neighbour search
+and @code{pANN} (proportion of artificial nearest neighbours) scoring, and
+reproduces @code{DoubletFinder} scores exactly.")
+    (license license:expat)))
+
 (define-public r-doubleml
   (package
     (name "r-doubleml")
@@ -10146,19 +10176,19 @@ and intervals from English-language prescriptions.  Based on Karystianis et al.
 (define-public r-dosefinding
   (package
     (name "r-dosefinding")
-    (version "1.4-1")
+    (version "1.4-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DoseFinding" version))
        (sha256
-        (base32 "0hir12c2f3vyfyw7vhcbkny62rghq6q6gkklfi9xad8rfgjq8m0n"))))
+        (base32 "1pb2qnkhqh0l0f6v7hb0m9vm9nml86xxx1f6ynwbwab2irq3viz0"))))
     (properties `((upstream-name . "DoseFinding")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-mvtnorm r-lattice r-ggplot2))
+    (propagated-inputs (list r-rdpack r-mvtnorm r-lattice r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/openpharma/DoseFinding")
     (synopsis "Planning and Analyzing Dose Finding Experiments")
@@ -28714,13 +28744,13 @@ with TAM or a built-in joint maximum likelihood estimator.")
 (define-public r-decisiondrift
   (package
     (name "r-decisiondrift")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DecisionDrift" version))
        (sha256
-        (base32 "0wyy6rxa67yvxxlngaicvqp4havdnzrmj8n7yka298qj73nndsg7"))))
+        (base32 "1qrcdy3a1w06w45nnzi4r3gxya7vfzj9q8lc4jvjbxf2w4jmd0hi"))))
     (properties `((upstream-name . "DecisionDrift")))
     (build-system r-build-system)
     (arguments
@@ -28728,26 +28758,24 @@ with TAM or a built-in joint maximum likelihood estimator.")
       #:tests? #f))
     (propagated-inputs (list r-tibble r-rlang r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/causalfragility-lab/DecisionDrift")
+    (home-page "https://github.com/subirhait/DecisionDrift")
     (synopsis
      "Detecting, Decomposing, and Stress-Testing Temporal Change in Repeated Decision Systems")
     (description
-     "This package provides tools for detecting, decomposing, and stress-testing
-temporal drift in repeated binary decision systems.  Complements the
-decisionpaths package by shifting focus from path construction to system-level
-change over time.  Implements five core analytic modules: (1) prevalence drift
-â did the overall decision rate change over time?; (2) transition drift â
-did the probability of switching or persisting change?; (3) entropy and
-stability trends â did path complexity evolve?; (4) group-differential drift
-â did the system drift differently across subgroups?; (5) change-point and
-regime-shift detection â did the system change abruptly after a policy or
-model update? Additionally provides a robustness module for testing stability of
-drift conclusions across analytic choices, and a sensitivity module for probing
-vulnerability to data problems including missingness, miscoding, and threshold
-shifts.  Defines four original drift indices: the Decision Drift Index (DDI),
-Transition Drift Index (TDI), Group Differential Drift (GDD), and Cumulative
-Drift Burden (CDB).  Applications include algorithmic audit, AI governance,
-education, health, and organisational research.")
+     "This package provides tools for detecting, decomposing, and testing temporal
+change in repeated binary decision systems.  Decomposes each change in the
+decision rate into inflow (uptake) and outflow (reversal) through the
+marginal-transition identity, separates net change from gross turnover, and
+splits aggregate change into within-group and composition components with a
+symmetric midpoint decomposition.  A unit-level cluster bootstrap gives
+intervals for every component and a global test of process stability with
+family-wise-adjusted contrasts and simultaneous confidence bands.  Also provides
+prevalence and transition drift summaries, entropy trends, group-differential
+drift, change-point diagnostics, robustness and sensitivity analyses, an
+integrated audit, and a simulator for stable, marginal, masked, abrupt,
+group-masked, and composition-change scenarios.  Complements the decisionpaths
+package.  Applications include algorithmic audit, AI governance, education,
+health, and organisational research.")
     (license license:expat)))
 
 (define-public r-decision

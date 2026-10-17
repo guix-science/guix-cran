@@ -8726,13 +8726,13 @@ Numbers proposed by Chao, Chiu and Jost (2014)
 (define-public r-hilldiv3
   (package
     (name "r-hilldiv3")
-    (version "3.0.0")
+    (version "3.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hilldiv3" version))
        (sha256
-        (base32 "14k1rspnyfrzd1fg86wp8kbk6k6q8wrmhk8j0zg8121ckrha11kl"))))
+        (base32 "1l555bza7gmwy7z9am04ap8q8gjaaxis7fs73sj4m4qmw10h3hgj"))))
     (properties `((upstream-name . "hilldiv3")))
     (build-system r-build-system)
     (arguments
@@ -8748,14 +8748,15 @@ operational taxonomic units (OTUs), amplicon sequence variants (ASVs) or
 metagenome-assembled genomes (MAGs)) based on Hill numbers, in a unified
 framework for neutral, phylogenetic and functional diversity measurement,
 diversity partitioning, (dis)similarity measurement, diversity profiles,
-evenness and redundancy.  The statistical framework encompasses richness,
-Shannon and Simpson diversity, Faith's phylogenetic diversity (PD), Rao's
-quadratic entropy and Sorensen- and @code{UniFrac-type} dissimilarities, all
-grounded in a single Hill-number framework.  Methods are described in Jost
-(2007) <doi:10.1890/06-1736.1>, Chao et al. (2010) <doi:10.1098/rstb.2010.0272>,
-Chiu et al. (2014) <doi:10.1890/12-0960.1> and reviewed in Alberdi & Gilbert
-(2019) <doi:10.1111/1755-0998.13014>.  Optional import adapters interoperate
-with the Bioconductor packages phyloseq', @code{SummarizedExperiment} and
+evenness, redundancy and attribution of Hill power-sum weight to taxa and sets.
+The statistical framework encompasses richness, Shannon and Simpson diversity,
+Faith's phylogenetic diversity (PD), Rao's quadratic entropy and Sorensen- and
+@code{UniFrac-type} dissimilarities, all grounded in a single Hill-number
+framework.  Methods are described in Jost (2007) <doi:10.1890/06-1736.1>, Chao
+et al. (2010) <doi:10.1098/rstb.2010.0272>, Chiu et al. (2014)
+<doi:10.1890/12-0960.1> and reviewed in Alberdi & Gilbert (2019)
+<doi:10.1111/1755-0998.13014>.  Optional import adapters interoperate with the
+Bioconductor packages phyloseq', @code{SummarizedExperiment} and
 @code{TreeSummarizedExperiment}', which are available from
 <https://bioconductor.org>.")
     (license license:gpl3)))

@@ -13529,13 +13529,13 @@ datasets, and so on.")
 (define-public r-mrf2d
   (package
     (name "r-mrf2d")
-    (version "1.0")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mrf2d" version))
        (sha256
-        (base32 "0fmxn178bkw77iz51bnjxala9xmhs44km57m8msvlw0k69sddyif"))))
+        (base32 "1ayg9fwc4hxs84mymxcc9fxn94fnydjs6gvvgpdgilmj0d6wjzh0"))))
     (properties `((upstream-name . "mrf2d")))
     (build-system r-build-system)
     (arguments
@@ -20783,6 +20783,33 @@ obtain predictions.  In this way, a user can easily go from linear to non-linear
 models within the same package.")
     (license license:gpl2)))
 
+(define-public r-modelname
+  (package
+    (name "r-modelname")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "modelname" version))
+       (sha256
+        (base32 "1rs95akb11jw7vbmd871n4cibf1ddh58mnjmn30s1vlbkcy895wq"))))
+    (properties `((upstream-name . "modelname")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://whizi.io/models/")
+    (synopsis "Parse AI Model Names into Vendor, Family and Version")
+    (description
+     "Splits the identifiers and display names that AI labs give their models, such as
+claude-opus-4-1-20250805', gpt-4.1-mini or Gemini 3.1 Pro Preview', into vendor,
+family, version, parameter size, release date and tags.  Old and new naming
+schemes from Anthropic', @code{OpenAI}', Google and @code{OpenRouter} land in
+the same family, so models can be compared and the newest one in a family picked
+from a list.  A port of the Go module modelname
+<https://pkg.go.dev/github.com/@code{BoNour/modelname>}.")
+    (license license:expat)))
+
 (define-public r-modelmatrixmodel
   (package
     (name "r-modelmatrixmodel")
@@ -21365,13 +21392,13 @@ policy of not spanning more than two child processes by default.")
 (define-public r-modalcens
   (package
     (name "r-modalcens")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ModalCens" version))
        (sha256
-        (base32 "0g00mw46ysbhm2qsdi8ckw0f3sz3l1hd49fycrrchraxna6hymd6"))))
+        (base32 "1ad0j6r26dmch1g85939vlbzxdf3g3z8x3lrc52zhqw2zg5h5xnv"))))
     (properties `((upstream-name . "ModalCens")))
     (build-system r-build-system)
     (arguments
@@ -21382,7 +21409,7 @@ policy of not spanning more than two child processes by default.")
     (description
      "This package implements parametric modal regression for continuous positive
 distributions of the exponential family and beyond (e.g., Log-Logistic,
-Birnbaum-Saunders) under right censoring.  Provides functions to link the
+Birnbaum-Saunders, Log-t) under right censoring.  Provides functions to link the
 conditional mode to a linear predictor using alternative parameterizations.
 Includes maximum likelihood estimation via numerical optimization, asymptotic
 inference based on the observed Fisher information matrix, and model diagnostics
@@ -37762,6 +37789,39 @@ analysis.")
      "Calculate different metrics based on aquatic macroinvertebrate density data
 (individuals per square meter) to assess water quality (Prat N et al.  2009).")
     (license license:gpl3+)))
+
+(define-public r-metrict
+  (package
+    (name "r-metrict")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "metricT" version))
+       (sha256
+        (base32 "1nd8kwjwa0d4g35axdz795c9j7iya1jj7zzdh9gkn7rdiq741d2z"))))
+    (properties `((upstream-name . "metricT")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/akimura753/metricT")
+    (synopsis "Directional Fragility Diagnostics for EEG Connectivity")
+    (description
+     "This package implements Metric-T, a permutation-based diagnostic that flags when
+the reported direction of a group difference in electroencephalography (EEG)
+functional connectivity depends on the choice of metric.  Direction consistency
+(DC) converts the weighted phase lag index (@code{wPLI}) and magnitude-squared
+coherence (MSC), both derived from the same cross-spectrum, into the percentage
+of channel-pair features for which one group exceeds the other; Metric-T is T =
+DC(@code{wPLI}) - DC(MSC).  Significance is assessed by aligned label
+permutation with marginal and Westfall-Young max-T multiplicity control.  For
+small samples the reference set is enumerated completely: exact two-group tests,
+the complete two-group labelling space (in which cut-points, exclusions and
+batches are located on one distribution), and a stratified exact test for a
+continuous covariate.  Core functions use base R only; a shiny graphical
+interface is included.  Method: Kimura (2026) <doi:10.1016/j.neuri.2026.100286>.")
+    (license license:expat)))
 
 (define-public r-metricsweighted
   (package

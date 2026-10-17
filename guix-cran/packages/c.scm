@@ -2746,13 +2746,13 @@ manage character vectors for nice display.")
 (define-public r-cudaverse
   (package
     (name "r-cudaverse")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cudaverse" version))
        (sha256
-        (base32 "0nsagzh5fdr508nz7c5gjpnnnl3l7h64xljzl0ndbsiq2dshafq2"))))
+        (base32 "1j84qqkjqzldnxbyhfawmbsf1jsx6q2kwsiv82815psn0l9nh6z3"))))
     (properties `((upstream-name . "cudaverse")))
     (build-system r-build-system)
     (arguments
@@ -5832,13 +5832,13 @@ Please refer to the article of Peter Ganz et al. (2016)
 (define-public r-csbewma
   (package
     (name "r-csbewma")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "csbewma" version))
        (sha256
-        (base32 "03r5qlv62rr2m85w4h15aix2hwy094gic36r18lxdbn5v1ibhck4"))))
+        (base32 "12p4jwj5nnjkip6gxa9phqfa1fgi6grq4dmlk9lh1nc6igsx49mh"))))
     (properties `((upstream-name . "csbewma")))
     (build-system r-build-system)
     (arguments
@@ -27653,13 +27653,13 @@ Cap <https://coinmarketcap.com/api/>.")
 (define-public r-coinclp
   (package
     (name "r-coinclp")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coinclp" version))
        (sha256
-        (base32 "0sncd2xga4blj2ipfg6qyv4k5859dcmjk7pqc5mgwlh14dayaq3a"))))
+        (base32 "042w9zq0b9dhc5jyqha16pz4irn3yjls82mn2gafd9kl9kli1css"))))
     (properties `((upstream-name . "coinclp")))
     (build-system r-build-system)
     (arguments
@@ -27678,7 +27678,7 @@ presolve options, basis access and MPS files.  A compatibility layer reproduces
 the interface of the archived @code{clpAPI} package so that existing code keeps
 working.  Clp itself is not bundled and must be installed on the system; the
 Rtools toolchain supplies it on Windows', from Rtools 4.3 on.")
-    (license (license:fsdg-compatible "EPL"))))
+    (license license:expat)))
 
 (define-public r-coimp
   (package
@@ -36694,6 +36694,40 @@ et al. (2026) <doi:10.5281/zenodo.14865904>, Jose et al. (2026)
 Brazil's National Institute of Meteorology (INMET)
 <https://portal.inmet.gov.br>.")
     (license license:expat)))
+
+(define-public r-climateanomaly
+  (package
+    (name "r-climateanomaly")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ClimateAnomaly" version))
+       (sha256
+        (base32 "0a7y6dabss7a6v603rv3fr99fq2a67lr8q3479r2wxhspj0pgx4j"))))
+    (properties `((upstream-name . "ClimateAnomaly")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-e1071))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ClimateAnomaly")
+    (synopsis "Rainfall and Temperature Anomaly Indices for Climate Analysis")
+    (description
+     "Computes rainfall anomaly indices and a standardised temperature anomaly from
+monthly or annual precipitation and temperature data supplied by the user.  The
+rainfall indices are the Rainfall Anomaly Index (RAI; Van Rooy, 1965), the
+Modified Rainfall Anomaly Index (MRAI) and the Standardized Rainfall Anomaly
+Index (SRAI) of Ekpetere (2025) <doi:10.1016/j.jenvman.2025.124160>, the
+Simplified Standardized Precipitation Index (SSPI) of Raziei (2021)
+<doi:10.1016/j.jhydrol.2021.126761>, and the Standardized Precipitation Index
+(SPI; @code{McKee} et al., 1993).  The temperature anomaly is a z-score computed
+within each calendar month.  All indices are computed group-wise, so the user
+can stratify by any combination of spatial units (state, district, grid cell)
+and calendar month, and each value can be classified into a descriptive severity
+class.")
+    (license license:gpl3)))
 
 (define-public r-climate
   (package
@@ -52788,13 +52822,13 @@ to fully nonparametric spline estimation.")
 (define-public r-causalslse
   (package
     (name "r-causalslse")
-    (version "0.4-1")
+    (version "0.4-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "causalSLSE" version))
        (sha256
-        (base32 "0yic7pg64yavngqasn6bzzgpx9figk0ani2i1z4jlklrmxvv05zc"))))
+        (base32 "136lrkm93q76wld89jkxp4jqyfwd2rbac2k6c4jsi1j82d78yykp"))))
     (properties `((upstream-name . "causalSLSE")))
     (build-system r-build-system)
     (arguments
@@ -52802,7 +52836,7 @@ to fully nonparametric spline estimation.")
       #:tests? #f))
     (propagated-inputs (list r-texreg r-sandwich))
     (native-inputs (list r-knitr gfortran))
-    (home-page "https://cran.r-project.org/package=causalSLSE")
+    (home-page "https://codeberg.org/pchausse/causalSLSE")
     (synopsis "Semiparametric Least Squares Inference for Causal Effects")
     (description
      "Several causal effects are measured using least squares regressions and basis

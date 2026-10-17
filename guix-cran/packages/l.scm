@@ -142,6 +142,35 @@ and are more general than the binary-character similarity coefficients of Sokal
 and Sneath (1963) that appear in other R packages.")
     (license license:expat)))
 
+(define-public r-lwqs
+  (package
+    (name "r-lwqs")
+    (version "0.5.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lwqs" version))
+       (sha256
+        (base32 "043m90bl53kjchxqj5l4s48dwg41vdbv6cp06rlfd5blvjrz8h5p"))))
+    (properties `((upstream-name . "lwqs")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-plyr
+                             r-gwqs
+                             r-gridextra
+                             r-ggplot2
+                             r-gamm4
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=lwqs")
+    (synopsis "Lagged Weighted Quantile Sum Regression")
+    (description
+     "Wrapper functions for the implementation of lagged weighted quantile sum
+regression, as per Gennings et al (2020) <doi:10.1016/j.envres.2020.109529>.")
+    (license license:gpl2+)))
+
 (define-public r-lwfbrook90r
   (package
     (name "r-lwfbrook90r")
@@ -1491,13 +1520,13 @@ tabulated data.")
 (define-public r-lt
   (package
     (name "r-lt")
-    (version "0.4")
+    (version "0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lt" version))
        (sha256
-        (base32 "096j54p3i4mq6vw7x97vi7bjzs6fcjfj867mc8xj236kgfpv0ax6"))))
+        (base32 "1r42676k1pc99jcsdqhi2brr9h3lnmcgv35pw3bcrjcgkdm9fz37"))))
     (properties `((upstream-name . "lt")))
     (build-system r-build-system)
     (arguments
@@ -1510,8 +1539,13 @@ tabulated data.")
      "This package provides a lightweight grammar of tables.  Build a table by
 declaring a JSON spec (titles, spanners, row groups, footnotes, formatting
 functions, etc.); a tiny vanilla @code{JavaScript} runtime builds the HTML table
-from the spec on page load.  No sass', no V8', no htmlwidgets â just base R
-and xfun ('htmltools is used only for the optional Shiny binding).")
+from the spec on page load.  Cells can hold inline plots (error bars, dot plots,
+mini line and bar charts) drawn as SVG in the browser from the numbers alone.
+Tables can optionally be made interactive (sorting, searching, filtering,
+pagination, column hiding, expandable row detail, and CSV download) via a
+separate extension loaded only when requested.  No sass', no V8', no htmlwidgets
+â just base R and xfun ('htmltools is used only for the optional Shiny binding
+and for embedding tables in other HTML output).")
     (license license:expat)))
 
 (define-public r-lsx
@@ -7087,6 +7121,43 @@ allows the implementation of the methodology and the replication of the results
 in ElÃ­as, A., JimÃ©nez, R. and Yukich, J. (2020) <@code{arXiv:2007.16059>}.")
     (license license:gpl3)))
 
+(define-public r-localdatasus
+  (package
+    (name "r-localdatasus")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "localdatasus" version))
+       (sha256
+        (base32 "0rfq0sjnl202z3d319z49i8v8ky5wy16jkrbi9x7zv16lww2w4si"))))
+    (properties `((upstream-name . "localdatasus")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-microdatasus r-jsonlite r-data-table r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Hendesson/localdatasus")
+    (synopsis "Neighborhood-Level Data from Brazil's Unified Health System")
+    (description
+     "Retrieves health data from Brazil's Unified Health System (Sistema Ãnico de
+SaÃºde, SUS) at the neighborhood level, with 2022 Census population, rates per
+10,000 inhabitants, coordinates and maps.  Simple functions return deaths, live
+births, notifiable diseases, hospital admissions, outpatient consultations,
+emergency (SAMU) calls and health facilities by neighborhood, choosing the data
+source automatically: microdata with the patient's postal code (CEP), downloaded
+with the microdatasus package of Saldanha, Bastos and Barcellos (2019)
+<doi:10.1590/0102-311x00032419>; files and open data published by health
+departments; and regional @code{TabNet} tabulators that tabulate by neighborhood
+or district.  Postal codes and neighborhood names are linked to the official
+neighborhoods of the Brazilian Institute of Geography and Statistics (IBGE)
+through the National Address Register for Statistical Purposes (CNEFE) and the
+2022 Census tracts, with quality rules for generic postal codes.  Function
+names, arguments, messages and documentation are in Portuguese, aimed at
+Brazilian health researchers.")
+    (license license:expat)))
+
 (define-public r-localcop
   (package
     (name "r-localcop")
@@ -12216,13 +12287,13 @@ Purutcuoglu, \"A Median-Based Framework for Assessing the Stability in XAI Tools
 (define-public r-lime
   (package
     (name "r-lime")
-    (version "0.5.4")
+    (version "0.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lime" version))
        (sha256
-        (base32 "1anas1f8vhhwgjhrlzz2x412nn7cbwp9ihab6awavm2lspg3nq21"))))
+        (base32 "06k8zwsspybl86nhznv9n6xycrqglxda4b8a23dp0rz383lzr89w"))))
     (properties `((upstream-name . "lime")))
     (build-system r-build-system)
     (arguments
@@ -12322,6 +12393,39 @@ addition, the package can be used to compare estimates from different
 populations, or to estimate confidence intervals.  Technical details of the
 method are available in Plana-Ripoll et al. (2020)
 <doi:10.1371/journal.pone.0228073> and Andersen (2017) <doi:10.1002/sim.7357>.")
+    (license license:expat)))
+
+(define-public r-lillardhaz
+  (package
+    (name "r-lillardhaz")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lillardhaz" version))
+       (sha256
+        (base32 "0lp5zb0f1c8q00ilbmd6hh15zh7dbfgnn9syc1r4wwg0fspmhjaz"))))
+    (properties `((upstream-name . "lillardhaz")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-pbivnorm r-maxlik))
+    (home-page "https://github.com/nobifukuda/lillardhaz")
+    (synopsis
+     "Simultaneous-Equations Hazard/Probit Models with a Gaussian-Copula Correlation")
+    (description
+     "Fits two-equation simultaneous models in the style of Lillard (1993)
+<doi:10.1016/0304-4076(93)90106-F>: a pair of processes, each either a binary
+probit outcome or a continuous-time hazard duration, linked through a single
+correlation parameter between their underlying error terms and estimated jointly
+by maximum likelihood via a Gaussian copula.  Equation 1 may be a probit, a
+log-normal accelerated-failure-time hazard, or a piecewise (linear-log-hazard)
+Gompertz hazard with an arbitrary, user-specified number of segments; equation 2
+is always a hazard, log-normal or piecewise Gompertz.  Models can also be fit
+under independence (correlation fixed at zero), which reduces exactly to two
+separate univariate fits.  See the package vignette/manual for the full
+likelihood derivation and a simulation-based verification.")
     (license license:expat)))
 
 (define-public r-lilikoi
@@ -19918,6 +20022,38 @@ Participants can be simulated using either fixed parameters or parameters drawn
 from a distribution.")
     (license license:gpl3+)))
 
+(define-public r-latents
+  (package
+    (name "r-latents")
+    (version "0.9.21")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "latents" version))
+       (sha256
+        (base32 "1dli19rqvws3bzl0dlaikgsky617rys8xh4gabsdnlmxiq6302gj"))))
+    (properties `((upstream-name . "latents")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://pak.dynasite.org/latents/")
+    (synopsis "Multilevel Latent Profile, Class and Transition Models")
+    (description
+     "This package provides functions for fitting multilevel latent profile analysis,
+latent class, and latent transition models for continuous, categorical, and
+mixed-type variables.  Models are estimated by expectation-maximization, handle
+missing data, and provide standard and robust standard errors.  Model selection
+is supported by information criteria, entropy, classification diagnostics, and a
+parametric bootstrap likelihood ratio test.  Covariates can be related to latent
+class membership using three-step methods with correction for classification
+error.  Latent transition models estimate transitions between latent profiles
+across ordered occasions and are compatible with the tna package for network and
+sequence analysis.  The multilevel mixture formulation follows Vermunt (2003)
+<doi:10.1111/j.0081-1750.2003.t01-1-00131.x>.")
+    (license license:gpl3)))
+
 (define-public r-latentnet
   (package
     (name "r-latentnet")
@@ -21278,6 +21414,43 @@ slope and for identifying broader landform types.")
      "This package provides functions to estimate survival and a treatment effect
 using a landmark estimation approach.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-lande
+  (package
+    (name "r-lande")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lande" version))
+       (sha256
+        (base32 "0halzcshbvli3hv5zwm3im5m3xw03c6s5j12rbp6hx5v8qykpwxq"))))
+    (properties `((upstream-name . "lande")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mgcv
+                             r-matrix
+                             r-mass
+                             r-ggplot2
+                             r-fields
+                             r-dplyr))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/Human-Augment-Analytics/lande")
+    (synopsis "Tools for Evolutionary Selection Analysis")
+    (description
+     "Estimates selection differentials and linear, quadratic and correlational
+selection gradients on relative fitness following Lande and Arnold (1983)
+<doi:10.1111/j.1558-5646.1983.tb00236.x>, with p-values from the logistic model
+for survival and from a Poisson or negative binomial model for counts.  Fits
+cubic spline fitness functions as in Schluter (1988)
+<doi:10.1111/j.1558-5646.1988.tb02507.x> and two-trait fitness surfaces drawn
+only where there are data, and computes adaptive landscapes of mean fitness
+against the population mean for one or two traits, by period and for several
+groups on one surface.  Includes bootstrap intervals, a combined results table
+and a Shiny app.")
+    (license license:expat)))
 
 (define-public r-landcomp
   (package

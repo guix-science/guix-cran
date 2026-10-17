@@ -4150,6 +4150,46 @@ Response Theory Models\"'.  Details are available at
 <https://www.cambridge.org/core/journals/american-political-science-review/article/measurement-that-matches-theory-theorydriven-identification-in-item-response-theory-models/395DA1DFE3DCD7B866DC053D7554A30B>.")
     (license license:expat)))
 
+(define-public r-irtlink
+  (package
+    (name "r-irtlink")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "irtlink" version))
+       (sha256
+        (base32 "06m275hv4ky4q8i0c22gp04vsw9xmy95p3han9scw689xzgkwlb4"))))
+    (properties `((upstream-name . "irtlink")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/oskarengels/irtlink")
+    (synopsis
+     "IRT Linking and Linking Error Estimation Across Time Points and Groups")
+    (description
+     "Estimation of trends in the mean and standard deviation of latent ability
+distributions across the time points of educational assessments, and of ability
+distribution differences across linked groups, for unidimensional item response
+theory (IRT) models (1PL, 2PL, 3PL, partial credit, and generalized partial
+credit).  Groups connected through common items, with independent or dependent
+person samples, are calibrated on an internal marginal maximum likelihood EM
+engine, separately, concurrently, with fixed item parameters, or with
+regularized calibration.  Linking methods include mean-mean and mean-geometric
+mean linking, Haberman linking (Haberman, 2009,
+<doi:10.1002/j.2333-8504.2009.tb02197.x>) with robust Lp loss and a pairwise
+variant (Robitzsch, 2025, <doi:10.3390/appliedmath5010007>), and the response
+function methods of Haebara and Stocking-Lord.  Under differential item
+functioning (DIF), the linked estimates depend on the selected common items, and
+the package estimates this linking error together with the standard error by
+jackknife and sandwich estimators, including bias-corrected variants (Robitzsch,
+2024, <doi:10.3390/stats7030036>).  RMSD and likelihood-ratio DIF diagnostics
+with iterative purification are included.")
+    (license license:gpl3+)))
+
 (define-public r-irtgui
   (package
     (name "r-irtgui")

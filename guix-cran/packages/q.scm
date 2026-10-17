@@ -5221,19 +5221,19 @@ values are described in: Livak & Schmittgen, (2001)
 (define-public r-qountstat
   (package
     (name "r-qountstat")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qountstat" version))
        (sha256
-        (base32 "19dmn45q0db2g4kcwdwhnlvxpp8q8i8bfzsdi6lly4hm672ki13y"))))
+        (base32 "1cqmrf0hnpbprl57g6mw35zin15s0w4kx6y90yi0yyvi04fiwnna"))))
     (properties `((upstream-name . "qountstat")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-multcomp))
+    (propagated-inputs (list r-multcomp r-mass))
     (home-page "https://cran.r-project.org/package=qountstat")
     (synopsis "Statistical Analysis of Count Data and Quantal Data")
     (description
@@ -5241,14 +5241,16 @@ values are described in: Livak & Schmittgen, (2001)
 data.  For the analysis of count data an implementation of the Closure Principle
 Computational Approach Test (\"CPCAT\") is provided (Lehmann, R et al. (2016)
 <doi:10.1007/s00477-015-1079-4>), as well as an implementation of a \"Dunnett
-GLM\" approach using a Quasi-Poisson regression (Hothorn, L, Kluxen, F (2020)
-<doi:10.1101/2020.01.15.907881>).  For the analysis of quantal data an
-implementation of the Closure Principle FisherâFreemanâHalton test
-(\"CPFISH\") is provided (Lehmann, R et al. (2018)
+GLM\" approach using either a Quasi-Poisson, a negative binomial or a Poisson
+regression (Hothorn, L, Kluxen, F (2020) <doi:10.1101/2020.01.15.907881>).  For
+the analysis of quantal data an implementation of the Closure Principle
+FisherâFreemanâHalton test (\"CPFISH\") is provided (Lehmann, R et al. (2018)
 <doi:10.1007/s00477-017-1392-1>).  P-values and no/lowest observed (adverse)
 effect concentration values are calculated.  All implemented methods include
 further functions to evaluate the power and the minimum detectable difference
-using a bootstrapping approach.")
+using a bootstrapping approach.  A model-agnostic, simulation-calibrated
+diagnostic for overdispersion in grouped count data is provided to support the
+choice between the implemented methods.")
     (license license:expat)))
 
 (define-public r-qolmiss

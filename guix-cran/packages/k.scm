@@ -2764,6 +2764,31 @@ from @code{file()}.  Useful when using knitr or rmarkdown', and you still want
 to see progress of calculations in the terminal.")
     (license license:expat)))
 
+(define-public r-knitroff
+  (package
+    (name "r-knitroff")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "knitroff" version))
+       (sha256
+        (base32 "0p72hvpqg25pw4fdzr8v2v3bhpk4qhkscd9krf3z4vsfiy4s8gmx"))))
+    (properties `((upstream-name . "knitroff")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-knitr))
+    (home-page "https://github.com/danielgccr/knitroff")
+    (synopsis "Dynamic Reports in 'troff' with 'knitr'")
+    (description
+     "Write reports in troff with the ms macros and R code chunks between .SS and
+.SE', the way eqn and tbl blocks sit in a document, and turn them into PDF,
+@code{PostScript} or a terminal draft with GNU groff'.  knitr runs the code, and
+its results can also be placed in the text.")
+    (license license:expat)))
+
 (define-public r-knitrdata
   (package
     (name "r-knitrdata")

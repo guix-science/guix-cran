@@ -5570,6 +5570,37 @@ interpret wind data and to calculate the potential energy production of wind
 turbines.")
     (license license:expat)))
 
+(define-public r-breedreliabr
+  (package
+    (name "r-breedreliabr")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BreedReliabR" version))
+       (sha256
+        (base32 "1p3m657z95sbwwf5xd6i2s5x05j6jw2nh20mlb72mf28czlwnh1c"))))
+    (properties `((upstream-name . "BreedReliabR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/annusawarkar-sys/BreedReliabR")
+    (synopsis
+     "Decision Reliability for Genotype Advancement under Prediction and Target Environment Uncertainty")
+    (description
+     "This package provides a model-agnostic research layer for genotype advancement
+decisions from externally fitted genomic prediction models.  It propagates full
+joint coefficient prediction-error covariance together with finite sampling from
+a specified target population of environments to calculate conditional
+advancement probabilities, expected selected-set reliability, and the relative
+contributions of prediction and target-environment uncertainty.  It also
+compares uncertainty formulations and reports geometric support diagnostics.
+Probabilities are conditional on supplied inputs and are not guaranteed to be
+calibrated in new populations or environments.")
+    (license license:expat)))
+
 (define-public r-breathteststan
   (package
     (name "r-breathteststan")
@@ -9814,6 +9845,33 @@ controls false discovery rates through controlling the expected number of false
 discoveries.")
     (license license:gpl2+)))
 
+(define-public r-bones
+  (package
+    (name "r-bones")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bones" version))
+       (sha256
+        (base32 "0q6svgaslbck8zv6nz0n6nmg2fj5d4jh5z4i1m473mnc6a2l0ar9"))))
+    (properties `((upstream-name . "bones")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-htmltools))
+    (home-page "https://github.com/tenmeh/bones")
+    (synopsis "Content-Shaped Loading Placeholders for 'shiny' Outputs")
+    (description
+     "Shows a grey placeholder in the shape of the content while a shiny output loads,
+in place of a spinner.  The user can thus see what is coming, and not only that
+something happens.  The shape comes from the type of the output.  The
+placeholder keeps the space of the content, so the page does not move when the
+content arrives.  When an output calculates again, the old content stays on the
+screen, dimmed, and a placeholder does not replace it.")
+    (license license:expat)))
+
 (define-public r-boneprofiler
   (package
     (name "r-boneprofiler")
@@ -11359,13 +11417,13 @@ Wu et al., (2022) <doi:10.1093/biostatistics/kxac050>.")
 (define-public r-bmm
   (package
     (name "r-bmm")
-    (version "1.3.2")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bmm" version))
        (sha256
-        (base32 "0659my8vhliyaail9xnmfqar42rirgasywsfjrrk0a4shnab8qik"))))
+        (base32 "14yyifbv63cc8fml93yd9csff8xc92cq7jclzp3yvvm2knq5qyiz"))))
     (properties `((upstream-name . "bmm")))
     (build-system r-build-system)
     (arguments
@@ -11374,6 +11432,8 @@ Wu et al., (2022) <doi:10.1093/biostatistics/kxac050>.")
     (propagated-inputs (list r-withr
                              r-rtdists
                              r-rlang
+                             r-posterior
+                             r-mvtnorm
                              r-matrixstats
                              r-glue
                              r-fs
@@ -25473,13 +25533,13 @@ available datasets and documentation.")
 (define-public r-bedrock
   (package
     (name "r-bedrock")
-    (version "0.1.16")
+    (version "0.1.20")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bedrock" version))
        (sha256
-        (base32 "05ssic11nlvhcjaki7wcvrbv00dwlmq49gangsaffa0gmbj12cnw"))))
+        (base32 "0w5v718jd1has2jxyj8zbx2dk1y53wvx43qyxv3wizwgnpxfza7s"))))
     (properties `((upstream-name . "bedrock")))
     (build-system r-build-system)
     (arguments
@@ -38435,13 +38495,13 @@ Bayesian phylogenetics easily and reproducibly from R'.")
 (define-public r-babelmixr2
   (package
     (name "r-babelmixr2")
-    (version "0.1.11")
+    (version "0.1.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "babelmixr2" version))
        (sha256
-        (base32 "0r9vxvidkkajyx2c0nq7lx8pz1sj0n3lgdzjp8mwbw9z0c94x3k0"))))
+        (base32 "1araizdxigklqxhbzm1mrwlpl8vadqz0ldd8v1sw11c7kra0x6yi"))))
     (properties `((upstream-name . "babelmixr2")))
     (build-system r-build-system)
     (arguments
@@ -38452,7 +38512,6 @@ Bayesian phylogenetics easily and reproducibly from R'.")
                              r-rcppeigen
                              r-rcpparmadillo
                              r-rcpp
-                             r-qs2
                              r-nonmem2rx
                              r-nlmixr2plot
                              r-nlmixr2extra
@@ -38470,8 +38529,10 @@ Bayesian phylogenetics easily and reproducibly from R'.")
     (description
      "Run other estimation and simulation software via the nlmixr2 (Fidler et al
 (2019) <doi:10.1002/psp4.12445>) interface including PKNCA', NONMEM and
-Monolix'.  While not required, you can get/install the @code{lixoftConnectors}
-package in the Monolix installation, as described at the following url
+Monolix'.  It also converts nlmixr2'/'rxode2 models to @code{PopED} optimal
+design databases (Fidler et al (2024) <doi:10.70534/XUMG6226>).  While not
+required, you can get/install the @code{lixoftConnectors} package in the Monolix
+installation, as described at the following url
 <https://monolixsuite.slp-software.com/r-functions/2024R1/installation-and-initialization>.
  When @code{lixoftConnectors} is available, Monolix can be run directly instead
 of setting up command line usage.")

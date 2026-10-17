@@ -3434,19 +3434,19 @@ be explored interactively without re-running R code.")
 (define-public r-vistributions
   (package
     (name "r-vistributions")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vistributions" version))
        (sha256
-        (base32 "012ccs5wy8mll0qnqp0qbcqbjmm7kw5d48yyi8xkxym5qffms9w3"))))
+        (base32 "122l4w27ll6zxzki6n5y8qlwyfyqfzncd23i63hh3l7fhjqa30h4"))))
     (properties `((upstream-name . "vistributions")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-magrittr r-ggplot2))
+    (propagated-inputs (list r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/rsquaredacademy/vistributions")
     (synopsis "Visualize Probability Distributions")
@@ -5852,13 +5852,13 @@ Factorization algorithms - Random generators of diferent types of integers.")
 (define-public r-vertexwiser
   (package
     (name "r-vertexwiser")
-    (version "1.5.4")
+    (version "1.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VertexWiseR" version))
        (sha256
-        (base32 "0c1z6iv4l1j17c07s58y0m399k7gh254jnif0ml50zfav22v3xdp"))))
+        (base32 "1bj3h1ghiawprk5pnpjjf4fjvf5s3jk4fl8ik6cp864qxnkmgj0z"))))
     (properties `((upstream-name . "VertexWiseR")))
     (build-system r-build-system)
     (arguments
@@ -7869,6 +7869,45 @@ Provides structured metadata, validation, inference, and HTML reporting.  For
 details on the specifications used see Danecek et al. (2021)
 <doi:10.1093/gigascience/giab008>.")
     (license license:gpl3)))
+
+(define-public r-vcfarrow
+  (package
+    (name "r-vcfarrow")
+    (version "0.9.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VCFArrow" version))
+       (sha256
+        (base32 "099rcvqis4hbs3r30b131bk7y8bsqg39b7r6i3d2plif14zr6zbm"))))
+    (properties `((upstream-name . "VCFArrow")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list zlib))
+    (propagated-inputs (list r-vctrs
+                             r-tibble
+                             r-stringr
+                             r-rcpp
+                             r-ggplot2
+                             r-dplyr
+                             r-cli
+                             r-arrow))
+    (native-inputs (list r-knitr))
+    (home-page "https://legallab.github.io/VCFArrow/")
+    (synopsis
+     "Fast and Memory-Efficient Manipulation and Conversion of VCF Files")
+    (description
+     "Reads Variant Call Format (VCF) files into an S4 object whose genotypes are
+stored on disk as an Apache Arrow dataset and loaded lazily, allowing large
+datasets to be processed with little memory.  Provides functions to filter
+variants and samples, subset and merge datasets, compute summary statistics and
+diagnostic plots, write VCF files, and convert data to input formats of
+population genetic and phylogenetic software such as STRUCTURE', ADMIXTURE',
+PLINK', EIGENSTRAT', Arlequin', GENEPOP', @code{BayeScan}', @code{TreeMix}',
+SNAPP and adegenet'.")
+    (license license:expat)))
 
 (define-public r-vcdextra
   (package

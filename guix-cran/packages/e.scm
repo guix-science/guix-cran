@@ -7369,13 +7369,13 @@ hand.")
 (define-public r-euclimatch
   (package
     (name "r-euclimatch")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Euclimatch" version))
        (sha256
-        (base32 "0n0vxhl2d8in0z67sn4xm9gjmjyn9a7vhkwnjsf3s5vw775dllfr"))))
+        (base32 "1s2715rz35pff5j3c3538y2ybx114sgsbml937jv0f0mz5dd3av5"))))
     (properties `((upstream-name . "Euclimatch")))
     (build-system r-build-system)
     (arguments
@@ -7797,13 +7797,13 @@ Pardo-de-Santayana (2008) <doi:10.1007/s12231-007-9004-5>, Reyes-GarcÃ­a et al
 (define-public r-ethnobotanyr
   (package
     (name "r-ethnobotanyr")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ethnobotanyR" version))
        (sha256
-        (base32 "0jpk8iwrnnpcxr74siqizk7gp5j85q1csn65ps7h5vqh3q47czsi"))))
+        (base32 "0hkbw7y4nrxaqhimf0liwx8sliiwi23nw6fdwbi6k4bahslkgqim"))))
     (properties `((upstream-name . "ethnobotanyR")))
     (build-system r-build-system)
     (arguments
@@ -9704,6 +9704,40 @@ Data repository, with support for both latest data and historical snapshots for
 reproducible analyses.")
     (license license:expat)))
 
+(define-public r-ertte
+  (package
+    (name "r-ertte")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ertte" version))
+       (sha256
+        (base32 "12llwsqwhk9mdiz4xlp1w09rlnlzgylnrimf0xw1ah44a886zpi8"))))
+    (properties `((upstream-name . "ertte")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-tibble
+                             r-survival
+                             r-rlang
+                             r-mvtnorm
+                             r-dplyr))
+    (home-page "https://github.com/djnavarro/ertte")
+    (synopsis "Exposure-Response Tools for Time-to-Event Models")
+    (description
+     "This package provides estimation tools for exposure-response models of
+time-to-event endpoints based on the survival package: parametric accelerated
+failure time model fitting and prediction with AIC-based distribution selection,
+stepwise covariate modelling, and simulation-based visual predictive checks.
+Tested and supported for the exponential, Weibull, log-normal, and log-logistic
+distributions.  For a model-agnostic mini-language to visualise
+exposure-response models (including those fitted with ertte'), see the companion
+package erplots'.")
+    (license license:expat)))
+
 (define-public r-ertg3d
   (package
     (name "r-ertg3d")
@@ -10650,13 +10684,13 @@ relationship between tables in a database.")
 (define-public r-ercv
   (package
     (name "r-ercv")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ercv" version))
        (sha256
-        (base32 "0rs4yhm9sjnqkrgqqy6b8wj9fgk910hxc8d7zi4qwql0v1gid27l"))))
+        (base32 "0ynddlvqgfr6b688fpmbq9pflb9j1v66rcw2rg16lcj0km2pvw33"))))
     (properties `((upstream-name . "ercv")))
     (build-system r-build-system)
     (arguments
@@ -13505,13 +13539,13 @@ on network and epidemic parameters, given epidemic data.")
 (define-public r-epimodel
   (package
     (name "r-epimodel")
-    (version "2.6.2")
+    (version "2.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EpiModel" version))
        (sha256
-        (base32 "1yi8p5c22qsll18267vsrji0lvf9bxmsr63s6psx65fa9h1z302z"))))
+        (base32 "1mdigbvxf4mn2c1b3k60rj54xlywq557k701qr8s3f7c4y89dlfv"))))
     (properties `((upstream-name . "EpiModel")))
     (build-system r-build-system)
     (arguments
@@ -15366,13 +15400,13 @@ functions pair to provide a robust alternative to @code{base::library()} and
 (define-public r-envipathr
   (package
     (name "r-envipathr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "enviPathR" version))
        (sha256
-        (base32 "1hb1yyhhmfmcwdqf5g8c4l93qwk8nqp6mn2aqa3ajksxys19lzdd"))))
+        (base32 "0y7snvkzd1m88xd60x3lgprmb716da8j78j3xqw8y7ks89zh7yxs"))))
     (properties `((upstream-name . "enviPathR")))
     (build-system r-build-system)
     (arguments
@@ -19310,6 +19344,48 @@ Guang-Bin Huang, Qin-Yu Zhu, Chee-Kheong Siew (2006), Elsevier B.V,
      "This package provides empirical likelihood-based methods for the inference of
 variance components in linear mixed-effects models.")
     (license license:gpl2+)))
+
+(define-public r-ellmercodex
+  (package
+    (name "r-ellmercodex")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ellmercodex" version))
+       (sha256
+        (base32 "16gai98b2qzi3zck72ji4k1g9bvgi5gwnd0d6ny4l8a60k8jk7fi"))))
+    (properties `((upstream-name . "ellmercodex")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-s7
+                             r-rlang
+                             r-promises
+                             r-openssl
+                             r-jsonlite
+                             r-jose
+                             r-httr2
+                             r-httpuv
+                             r-ellmer
+                             r-coro))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/simxnherrera/ellmercodex")
+    (synopsis "'ChatGPT' Plan Provider for 'ellmer'")
+    (description
+     "Connects ellmer chats to a @code{ChatGPT} subscription through @code{OpenAI''s}
+documented \"Sign in with @code{ChatGPT}\" flow for open-source, locally hosted
+apps <https://developers.openai.com/siwc/token-sharing-open-source>.  Provides a
+stable, explicitly bounded core of the public ellmer (>= 0.5.0) Chat object,
+including browser sign-in with dynamic client registration, package-scoped
+credential storage, redacted diagnostics, multi-turn text, streaming,
+structured-output, function-tool, asynchronous, cancellation, cloning, metadata,
+multimodal chat, account-specific model discovery, and reasoning-effort
+selection through the public Responses API. Parallel and batch helper functions
+are explicitly unsupported because @code{ChatGPT} plan usage is stream-only.
+This independent third-party integration is not endorsed by @code{OpenAI}'.")
+    (license license:expat)))
 
 (define-public r-ellmer
   (package

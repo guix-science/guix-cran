@@ -4881,6 +4881,33 @@ a global delta test (Monte Carlo p-values), simulation designs, and a naive
 pointwise band plot.")
     (license license:gpl3)))
 
+(define-public r-rtfboost
+  (package
+    (name "r-rtfboost")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RTFBoost" version))
+       (sha256
+        (base32 "0rf10fk7grxg1kwgryy2xpcl0449m29qh5fki0csdcqisskdi9hc"))))
+    (properties `((upstream-name . "RTFBoost")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rpart r-robstattm r-lme4))
+    (home-page "https://cran.r-project.org/package=RTFBoost")
+    (synopsis "Robust Tree-Based Boosting for Functional Regression")
+    (description
+     "This package implements a family of robust tree-based boosting methods for
+functional regression, including procedures based on least absolute deviation,
+M-estimation, and MM-estimation.  The package also includes a non-robust
+tree-based boosting method introduced in Ju X and Salibian-Barrera M. (2024)
+<doi:10.1007/s00180-023-01364-2>.  Functions are provided for model fitting and
+prediction in regression settings with functional predictors.")
+    (license license:gpl3+)))
+
 (define-public r-rtfa
   (package
     (name "r-rtfa")
@@ -26221,6 +26248,33 @@ of lakes including water density based based on temperature, thermal layers,
 thermocline depth, lake number, Wedderburn number, Schmidt stability and others.")
     (license license:gpl2+)))
 
+(define-public r-rladybugdb
+  (package
+    (name "r-rladybugdb")
+    (version "0.4.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rladybugdb" version))
+       (sha256
+        (base32 "1jybqmn2d806z0b7w11p6p299krb5v0q9fhpxnk6zr1h12r245dq"))))
+    (properties `((upstream-name . "rladybugdb")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list cmake))
+    (propagated-inputs (list r-rlang r-rcpp r-dbi))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/hadimaster65555/rladybugdb")
+    (synopsis "R Interface to the 'LadybugDB' Embedded Graph Database")
+    (description
+     "This package provides an R interface to @code{LadybugDB}', an embedded columnar
+graph database using the Cypher query language. @code{LadybugDB} was formerly
+known as Kuzu'.  This package uses native Rcpp bindings to the @code{LadybugDB}
+C library, requiring no Python runtime.")
+    (license license:expat)))
+
 (define-public r-rlabkey
   (package
     (name "r-rlabkey")
@@ -34495,28 +34549,25 @@ Bugs / comments / questions / collaboration of any kind are very welcomed.")
 (define-public r-rfm
   (package
     (name "r-rfm")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rfm" version))
        (sha256
-        (base32 "0l1rxb04izh8z1kbvbk3dn88mry5abhbs4x1sggp7bjczhni5kcg"))))
+        (base32 "0ksh84zafv4x9y65kd4imvjyarq9h7hls2x612pxdzach2r5qhyp"))))
     (properties `((upstream-name . "rfm")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xplorerr
-                             r-treemapify
-                             r-scales
+    (propagated-inputs (list r-scales
                              r-rlang
                              r-rcolorbrewer
-                             r-plotly
                              r-magrittr
                              r-ggplot2
-                             r-gganimate
-                             r-dplyr))
+                             r-dplyr
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/rsquaredacademy/rfm")
     (synopsis "Recency, Frequency and Monetary Value Analysis")
@@ -51775,13 +51826,13 @@ Further integration and extensions are planned.")
 (define-public r-rcppsimdjson
   (package
     (name "r-rcppsimdjson")
-    (version "0.1.16")
+    (version "0.1.17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppSimdJson" version))
        (sha256
-        (base32 "0s33fchrq77b8s05drkr476scyhr00j9a0idp2qflc2ai2v9p5k1"))))
+        (base32 "183yzg9sy3vh2rhk0sxgam6wi530i0iibnxg0iww8jvnyvyw1slw"))))
     (properties `((upstream-name . "RcppSimdJson")))
     (build-system r-build-system)
     (arguments
@@ -60171,13 +60222,13 @@ apply lupin model components.")
 (define-public r-rapsimng-lentil
   (package
     (name "r-rapsimng-lentil")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rapsimng.lentil" version))
        (sha256
-        (base32 "09hgrq71jl202fvfj6id855k0675qkc5zq86bny3i1znay5v38sl"))))
+        (base32 "0safw77bhg6avwm4jvrvmbhpp9wgmk6jjxssw31j4fz3ra575ypn"))))
     (properties `((upstream-name . "rapsimng.lentil")))
     (build-system r-build-system)
     (arguments
@@ -63189,6 +63240,44 @@ Priority Support.  See also <https://www.amcharts.com/about/> for more
 information about @code{AmCharts} company.")
     (license license:gpl2+)))
 
+(define-public r-rambur
+  (package
+    (name "r-rambur")
+    (version "0.5.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rambur" version))
+       (sha256
+        (base32 "1hhvhc0cr810554jkd27nbn4wnhmph8zrdfz2f0vzaagfzzili7a"))))
+    (properties `((upstream-name . "rambur")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-patchwork
+                             r-lubridate
+                             r-hms
+                             r-ggplot2
+                             r-dplyr
+                             r-cowplot))
+    (home-page "https://cran.r-project.org/package=rambur")
+    (synopsis "Design and Analysis of Intertidal Chamber Experiments")
+    (description
+     "Facilitates the design and analysis of intertidal chamber experiments as
+described in Pham & Sokolova (2026) <doi:10.64898/2026.09.28.754745>.  It
+supports generating experimental profiles for @code{ElectricBlue} intertidal
+chambers, reading log files, and checking actual chamber conditions against
+designed profiles.  It also helps read log files from @code{EnvLogger}
+robomussels (or temperature loggers) and Pulse V2 heart rate loggers, and
+provides an algorithm to extract heart rates from Pulse V2 records.  The acronym
+stands for Research Assistant in Marine Biology at the University of Rostock.")
+    (license license:gpl3+)))
+
 (define-public r-ramble
   (package
     (name "r-ramble")
@@ -65787,36 +65876,25 @@ r4subdata', and r4subprofile'.")
 (define-public r-r4ss
   (package
     (name "r-r4ss")
-    (version "1.44.0")
+    (version "1.44.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r4ss" version))
        (sha256
-        (base32 "1khcp386kxz2rwzfvx0a3bf3ws69dh9vqhjsnwh29gy6g238050d"))))
+        (base32 "05h7ppmfkckkcl9xk9w465yv7fzj5vvwcksqr44agj3iqfy9hlly"))))
     (properties `((upstream-name . "r4ss")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-lifecycle
-                             r-kableextra
-                             r-ggplot2
-                             r-forcats
-                             r-dplyr
-                             r-corpcor
-                             r-coda))
     (home-page "https://github.com/r4ss/r4ss")
-    (synopsis "R Code for Stock Synthesis")
+    (synopsis "Compatibility Notice for Stock Synthesis Tools")
     (description
-     "This package provides a collection of R functions for use with Stock Synthesis,
-a fisheries stock assessment modeling platform written in ADMB by Dr. Richard D.
-Methot at the NOAA Northwest Fisheries Science Center.  The functions include
-tools for summarizing and plotting results, manipulating files, visualizing
-model parameterizations, and various other common stock assessment tasks.  This
-version of {r4ss} is compatible with Stock Synthesis versions 3.24 through 3.30
-(specifically version 3.30.19.01, from April 2022).")
+     "This package provides a compatibility notice for users of the r4ss Stock
+Synthesis tools.  Active development and current releases are available from
+@code{GitHub} <https://github.com/r4ss/r4ss>.  This package supplies the
+canonical repository location and migration guidance.")
     (license license:gpl3)))
 
 (define-public r-r4pde

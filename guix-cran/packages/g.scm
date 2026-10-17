@@ -6968,19 +6968,20 @@ greenspace morphology metrics at patch and landscape levels.")
 (define-public r-greenreg
   (package
     (name "r-greenreg")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GREENREG" version))
        (sha256
-        (base32 "05fyzsrml5kbfsrgnkz5j32f70sjla8rg5aqrvvgprjk152rnylf"))))
+        (base32 "07qjmp3l89kismzwj1fpvjmmszdgdr80ilff0szyca1g1masrlgq"))))
     (properties `((upstream-name . "GREENREG")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-lmtest r-ggrepel r-ggplot2))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=GREENREG")
     (synopsis "Tool for Statistical and Environmental Analysis")
     (description
@@ -6997,8 +6998,9 @@ BuendÃ­a Espinoza (thesis advisor), with the participation of the thesis
 committee: Diego Ernesto Lira GonzÃ¡lez (secretary), Israel Lerma Serna
 (member), Juan Uriel Avelar Roblero (alternate), and Elisa del Carmen MartÃ­nez
 Ochoa (alternate).  Methods for regression and time series are based on
-Montgomery et al. (2021, ISBN:978-1119570141) and Box & Jenkins (1970,
-ISBN:978-0816211043).")
+Montgomery, Peck & Vining (2021, Introduction to Linear Regression Analysis, 6th
+ed., Wiley, ISBN:978-1119578727) and Box, Jenkins, Reinsel & Ljung (2015, Time
+Series Analysis: Forecasting and Control, 5th ed., Wiley, ISBN:978-1118675021).")
     (license license:gpl3)))
 
 (define-public r-greenr
@@ -16047,6 +16049,35 @@ described in SGAT (Wotherspoon et al. (2016)
 analysis under heterogeneity.")
     (license license:gpl3)))
 
+(define-public r-glpsol
+  (package
+    (name "r-glpsol")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "glpsol" version))
+       (sha256
+        (base32 "0jbw3gs9g10w9d81737vj1kcssc8g9348p6y4p7lj4xm8kd6pp1z"))))
+    (properties `((upstream-name . "glpsol")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list glpk))
+    (native-inputs (list pkg-config r-knitr))
+    (home-page "https://optimal2050.github.io/glpsol/")
+    (synopsis "Bundled 'GLPK' Solver for 'MathProg', 'LP' and 'MPS' Models")
+    (description
+     "Ships the glpsol stand-alone solver of the GNU Linear Programming Kit ('GLPK')
+with R and runs it as a separate process with a time limit and an optional live
+log.  glpsol reads @code{MathProg} ('GMPL') models with separate data files,
+CPLEX LP and MPS files, and solves them with the simplex, interior-point or
+branch-and-cut methods, writing the solution to a file.  Windows and
+@code{macOS} binary builds carry a static copy of GLPK'; other platforms link
+against the system library.")
+    (license license:gpl3)))
+
 (define-public r-glow
   (package
     (name "r-glow")
@@ -24877,13 +24908,13 @@ curve (Shorrocks 1983) <doi:10.2307/2554117>.")
 (define-public r-gglogger
   (package
     (name "r-gglogger")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gglogger" version))
        (sha256
-        (base32 "12qlgg4ckj1p1i2l5bglyki4mwyj7f45xmqhxg9ci8bxc8qj736r"))))
+        (base32 "1bwgzfy03xj8qzsv7n6pppmq32c9wqmw2qchjsf27vrkqgnbq20s"))))
     (properties `((upstream-name . "gglogger")))
     (build-system r-build-system)
     (arguments
@@ -25374,13 +25405,13 @@ PNG files, external resources, or as a list column containing raster image data.
 (define-public r-ggimage
   (package
     (name "r-ggimage")
-    (version "0.3.7")
+    (version "0.3.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggimage" version))
        (sha256
-        (base32 "01lssb97cy3fgvd2dfpnbmbm2r9jqxgldqr02gcrmw7syyw8fgc4"))))
+        (base32 "0yvsxa4fcrwkgfdv2k3h54l79dnx7ddgkma8j4w509119n2z3486"))))
     (properties `((upstream-name . "ggimage")))
     (build-system r-build-system)
     (arguments
@@ -26606,13 +26637,13 @@ projections of a latin hypercube design.")
 (define-public r-ggdnavis
   (package
     (name "r-ggdnavis")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggDNAvis" version))
        (sha256
-        (base32 "0crn3qvmck7n5k5xklzxvxql3qhrxbk7xqw339n571rgjafnygjy"))))
+        (base32 "1cly301njgi5knzl5f0lbribcmpsff677k0khd56227zj12nwcwa"))))
     (properties `((upstream-name . "ggDNAvis")))
     (build-system r-build-system)
     (arguments
@@ -31371,13 +31402,13 @@ in polar co-ordinates.")
 (define-public r-geomorphr
   (package
     (name "r-geomorphr")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geomorphR" version))
        (sha256
-        (base32 "0nf777wa37d98g4ndmwgwmwmrzss8hjksy57hq7y4jan470ysyh4"))))
+        (base32 "0sm1k7fp018zc7k39h7g0kln0vfqklh5amc9cmkjrakvlwydmq7a"))))
     (properties `((upstream-name . "geomorphR")))
     (build-system r-build-system)
     (arguments

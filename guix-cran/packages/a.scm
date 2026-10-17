@@ -12058,6 +12058,35 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
 methods can be linked to other R packages via their header files.")
     (license (license:fsdg-compatible "GPL (== 3.0)"))))
 
+(define-public r-approxop
+  (package
+    (name "r-approxop")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ApproxOp" version))
+       (sha256
+        (base32 "00s2jbvkrkjinw7r0h204r9vhl114ljw50k8p08qpqbdyjk8bxd0"))))
+    (properties `((upstream-name . "ApproxOp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/edmond-aliaga/ApproxOp")
+    (synopsis "Unified Framework for Positive Linear Approximation Operators")
+    (description
+     "This package provides a unified computational framework for defining,
+evaluating, analyzing, comparing, and visualizing positive linear approximation
+operators.  The package supports classical and generalized discrete operators,
+ordinary and central moments, numerical moment verification, approximation error
+analysis, convergence studies, parameter studies, and user-defined operators.
+The implemented framework is related to classical and generalized approximation
+operators described in SzÃ¡sz (1950) <doi:10.6028/JRES.045.024>, Sucu and Varma
+(2015) <doi:10.1016/j.amc.2015.08.077>, and Aliaga and Aslan (2026)
+<doi:10.1002/mma.70924>.")
+    (license license:gpl3)))
+
 (define-public r-approxmatch
   (package
     (name "r-approxmatch")
@@ -16809,13 +16838,13 @@ include negative tests.  The implementation is based on testthat'.")
 (define-public r-amr
   (package
     (name "r-amr")
-    (version "3.0.1")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AMR" version))
        (sha256
-        (base32 "0h5687c5yvbr7w20cjlclnwxxrmb3kfh2bfqi9k417w3pd32flb2"))))
+        (base32 "0nba5bdkyrnqn0nfpwqhvdmzfd1r19y9jyzxn2f7rrmwin1h6ilg"))))
     (properties `((upstream-name . "AMR")))
     (build-system r-build-system)
     (arguments
@@ -29509,6 +29538,47 @@ actigraph.sleepr package developed by Petkova (2021)
 <https://github.com/dipetkov/actigraph.sleepr/>.")
     (license license:gpl3+)))
 
+(define-public r-actisomni
+  (package
+    (name "r-actisomni")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "actisomni" version))
+       (sha256
+        (base32 "1rdjwz9ly8mlc33ivjfkibd9zizfaqpqllpx30gvpvpxmz5q75aw"))))
+    (properties `((upstream-name . "actisomni")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-sleeper
+                             r-lubridate
+                             r-dplyr
+                             r-assertthat
+                             r-asleep
+                             r-actiread
+                             r-actigraph-sleepr
+                             r-actibase))
+    (home-page "https://jhuwit.github.io/actisomni/")
+    (synopsis "Create Sleep Measures of Actigraphy and Activity Analysis")
+    (description
+     "Estimates sleep from wrist accelerometry and epoch-level activity data.
+Implements sleep-period-time guiders based on angle changes, posture,
+least-active periods, sustained inactivity, low activity, and diary or fixed
+time windows; combines guider windows with sustained-inactivity bouts to produce
+sleep/wake labels and consensus estimates.  Provides diary helpers and
+Tudor-Locke sleep-period summaries, and interfaces to the asleep and sleeper
+machine-learning estimators.  The angle-based and sustained-inactivity methods
+are described by van Hees et al. (2015) <doi:10.1371/journal.pone.0142533> and
+van Hees et al. (2018) <doi:10.1038/s41598-018-31266-z>; the sleep-period
+summary method by Tudor-Locke et al. (2014) <doi:10.1139/apnm-2013-0173>; and
+the model estimators by Yuan et al. (2024) <doi:10.1038/s41746-024-01065-0> and
+Sundararajan et al. (2021) <doi:10.1038/s41598-020-79217-x>.")
+    (license license:gpl3)))
+
 (define-public r-actisensorlog
   (package
     (name "r-actisensorlog")
@@ -29659,6 +29729,33 @@ data, relying on baseline functions from actibase'.  Reads data from Axivity CWA
      "This package provides functions mapping physical activity measures to normalized
 quantiles.  Currently, only maps the NHANES quantiles, but other quantiles will
 be integrated.")
+    (license license:gpl3)))
+
+(define-public r-actiplot
+  (package
+    (name "r-actiplot")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "actiplot" version))
+       (sha256
+        (base32 "1581q9l827ssg2s5sgaxcs64qadwcw0qwx45nnhbzkdc6kj3jvs0"))))
+    (properties `((upstream-name . "actiplot")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-hms r-ggplot2 r-actibase))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jhuwit/actiplot")
+    (synopsis "Plotting Minute-Level Activity Data")
+    (description
+     "This package provides ggplot2 plots for minute-level activity data, including
+step counts and activity counts.  Time series can be displayed over the full
+recording period or aligned by time of day and faceted into one row per date.
+Includes example activity data described by Chadwell et al. (2019)
+<doi:10.1038/s41597-019-0211-6>.")
     (license license:gpl3)))
 
 (define-public r-actinet
@@ -30128,13 +30225,13 @@ Goldfarb and Idnani (1983) <doi:10.1007/BF02591962> and Vanderbei et al. (1986)
 (define-public r-acr
   (package
     (name "r-acr")
-    (version "0.4.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "acR" version))
        (sha256
-        (base32 "1r1vjb16hypl9glbwqdw90jz9bsc4rzq75m5fdjdnrbmv6v4p1cf"))))
+        (base32 "0h00gg58idqjr5lqkbkdn6lf3y4raaw6d29h4p6bl34am64n7dl1"))))
     (properties `((upstream-name . "acR")))
     (build-system r-build-system)
     (arguments

@@ -9611,13 +9611,13 @@ outputs (e.g. R Markdown).")
 (define-public r-nlmixr2plot
   (package
     (name "r-nlmixr2plot")
-    (version "5.2.0")
+    (version "5.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmixr2plot" version))
        (sha256
-        (base32 "044ksm269gsdnz68bkpnkb6lq7k7gqljkqv59whhbpjxpya40ngl"))))
+        (base32 "0a2gqks73f6bwlzc56ihhrgnhcjw2jh9mp1sm7fq3x6igqbz4ay3"))))
     (properties `((upstream-name . "nlmixr2plot")))
     (build-system r-build-system)
     (arguments
@@ -12904,21 +12904,21 @@ Arabic, Turkish, Japanese and Chinese (Simplified and Traditional).")
 (define-public r-newscatcher
   (package
     (name "r-newscatcher")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "newscatcheR" version))
        (sha256
-        (base32 "18r9lmg9q6fj0ggnpqggqywsbycblsdc42mdcpc2abzp98dsvww9"))))
+        (base32 "0xmrpi3a5djb2p3pph5fglvcrk47qmp16ljbl8s40rsygm85hsgg"))))
     (properties `((upstream-name . "newscatcheR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyrss))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/discindo/newscatcheR/")
+    (native-inputs (list r-quarto))
+    (home-page "https://discindo.github.io/newscatcheR/")
     (synopsis
      "Programmatically Collect Normalized News from (Almost) Any Website")
     (description
@@ -14628,6 +14628,35 @@ for multigraphs, hypergraphs, or loops.")
 and Krause, 2010)<doi:10.1145/1835804.1835933>.  Given a set of events that
 spread between a set of nodes the algorithm infers the most likely stable
 diffusion network that is underlying the diffusion process.")
+    (license license:expat)))
+
+(define-public r-networkformat
+  (package
+    (name "r-networkformat")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "networkformat" version))
+       (sha256
+        (base32 "1zrmwx4jyvj41hmr39pba2vg3yj8vqrpski4bq74vilyr8fbn44n"))))
+    (properties `((upstream-name . "networkformat")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect r-rlang))
+    (native-inputs (list r-knitr))
+    (home-page "https://jessebrandtdata.github.io/networkformat/")
+    (synopsis "Convert R Objects to Network Edgelists and Nodelists")
+    (description
+     "Network analysis and plotting packages such as igraph', tidygraph', and ggraph
+expect the edges and nodes of a graph as flat tables.  Methods are provided to
+build those tables from data frames (column-pair edges chosen with tidyselect
+semantics), tree-based model objects ('@code{randomForest}', tree', rpart',
+xgboost', gbm'), lists (recursive parent-child edges), and atomic vectors
+(sequential edges).  Graphs can also be constructed in one step via
+@code{as.igraph()} and @code{as_tbl_graph()} methods for tree models.")
     (license license:expat)))
 
 (define-public r-networkextinction

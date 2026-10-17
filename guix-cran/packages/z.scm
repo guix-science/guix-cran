@@ -62,6 +62,36 @@ apart.  Input size, nesting depth and the number of values materialised are all
 bounded, which makes the parser usable on untrusted input.")
     (license license:expat)))
 
+(define-public r-zukomp
+  (package
+    (name "r-zukomp")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "zukomp" version))
+       (sha256
+        (base32 "1yfh0vdkhbp256jxqcz92bdsxviva8ymnrj1wydbipnsnhzp0kqi"))))
+    (properties `((upstream-name . "zukomp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/pedrobtz/zukomp")
+    (synopsis "Portable Byte Compression with a Pluggable Codec Registry")
+    (description
+     "Compresses and decompresses raw vectors through a single codec-neutral interface
+backed by a runtime registry, so the set of available codecs is discovered
+rather than fixed at compile time.  The DEFLATE family ('gzip', zlib', and
+headerless DEFLATE') is built in from vendored miniz sources, requiring no
+system compression library.  Decompression enforces configurable output-size and
+expansion-ratio limits and reports failures through structured conditions.  A
+registered C-callable interface lets other packages drive the codecs from C and
+register codecs of their own.  The formats are specified in Deutsch (1996)
+<doi:10.17487/RFC1951>, Deutsch and Gailly (1996) <doi:10.17487/RFC1950>, and
+Deutsch (1996) <doi:10.17487/RFC1952>.")
+    (license license:expat)))
+
 (define-public r-zujson
   (package
     (name "r-zujson")
@@ -118,6 +148,33 @@ and nodes convert to Markdown'.  Input is a string, raw bytes, a file, a URL or
 a connection, and raw input is decoded as browsers decode it, from a byte-order
 mark or a <meta> declaration.  Parsing is bounded by limits on input size,
 native memory and nesting depth.")
+    (license license:expat)))
+
+(define-public r-zucsv
+  (package
+    (name "r-zucsv")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "zucsv" version))
+       (sha256
+        (base32 "1h6gd089w9cz1x0lrpcnzhkdnn82ny01m7cn4m77q3k25ngq2n67"))))
+    (properties `((upstream-name . "zucsv")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/pedrobtz/zucsv")
+    (synopsis "Read CSV Files Using the 'zsv' Parser")
+    (description
+     "Reads comma-separated and other delimited text files into base R data frames
+using the zsv C parser <https://github.com/liquidaty/zsv> as its native backend.
+ Handles quoted fields, embedded delimiters and newlines, escaped quotes, and
+both LF and CRLF line endings, and infers logical, integer, double, and
+character column types.  Column types can also be given explicitly, in which
+case a value that cannot be converted is an error rather than a silently missing
+value.  The zsv sources are bundled, so there are no runtime dependencies.")
     (license license:expat)))
 
 (define-public r-ztils
@@ -1267,13 +1324,13 @@ to the Bootstrap\" Efron (1983) <0-412-04231-2>.")
 (define-public r-zephyr
   (package
     (name "r-zephyr")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "zephyr" version))
        (sha256
-        (base32 "0r7jrjprcii6rfq852gzd089hmgg70l60dzlc801hl9c6qpnqvc3"))))
+        (base32 "1p07pry0gfspq78yhn51cwhq3wajh1z2iagr1p3askmr9xxy4l46"))))
     (properties `((upstream-name . "zephyr")))
     (build-system r-build-system)
     (arguments

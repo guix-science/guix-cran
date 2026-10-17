@@ -1313,26 +1313,28 @@ and building ensemble imputations, and mapping results.")
 (define-public r-yahoofinancer
   (package
     (name "r-yahoofinancer")
-    (version "0.5.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "yahoofinancer" version))
        (sha256
-        (base32 "15162b4yrx20lh475z089kx1nbqlq510rk2vqk8fcmw7ajcm7wj1"))))
+        (base32 "0k2vgzy3z9xn9awidpfqxij0bqk6xgmmpmjg4sn3q2qcck30clqn"))))
     (properties `((upstream-name . "yahoofinancer")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-r6
+    (propagated-inputs (list r-tibble
+                             r-r6
                              r-purrr
                              r-magrittr
                              r-lubridate
                              r-jsonlite
-                             r-httr
+                             r-httr2
                              r-dplyr
                              r-curl))
+    (native-inputs (list r-knitr))
     (home-page "https://yahoofinancer.rsquaredacademy.com/")
     (synopsis "Fetch Data from Yahoo Finance API")
     (description
