@@ -7322,26 +7322,24 @@ anthracnose in a lupin field.")
 (define-public r-asciisetupreader
   (package
     (name "r-asciisetupreader")
-    (version "2.5.3")
+    (version "2.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "asciiSetupReader" version))
        (sha256
-        (base32 "1pl7jcj7b82z3p13b9fd6zcyif10jc859h62016xxvpfpriqj2y5"))))
+        (base32 "1j3xwzz9j2hk741hvk4k5bjh6dkpmn00bcdm433z703j5sd97aja"))))
     (properties `((upstream-name . "asciiSetupReader")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-zoo
-                             r-vroom
+    (propagated-inputs (list r-vroom
                              r-stringr
                              r-shiny
                              r-rstudioapi
                              r-readr
                              r-miniui
-                             r-haven
                              r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jacobkap/asciiSetupReader")
@@ -7481,19 +7479,19 @@ or pandoc syntax.  Package comes with a set of drivers for Sweave'.")
 (define-public r-ascent
   (package
     (name "r-ascent")
-    (version "0.1.1")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ascent" version))
        (sha256
-        (base32 "0cka5pzng4xmn713m80bdy1ad6wx37and62b6pk3zsx5bmzj6yhg"))))
+        (base32 "1157j2za0xbn20277qh4cqhg2bx1zjljjk8z44r6kxy4br76snjw"))))
     (properties `((upstream-name . "ascent")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-vegan r-ggplot2 r-geometry r-cluster))
+    (propagated-inputs (list r-withr r-ggplot2 r-geometry r-cluster))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/V3ndetta96/ascent")
     (synopsis
@@ -7502,11 +7500,13 @@ or pandoc syntax.  Package comes with a set of drivers for Sweave'.")
      "This package implements the ASC-CFD (Assemblage Shift Characterization -
 Community Functional Dynamics) framework for decomposing functional community
 restructuring into positional (centroid displacement), dispersive (functional
-dispersion), and boundary (convex hull volume) components.  Provides
-hierarchical null models (structural, quantitative, identity) to evaluate
-statistical significance and species-level leverage analysis to identify taxa
-driving functional shifts.  Supports both temporal (paired) and spatial
-(pairwise) comparisons.")
+dispersion), and boundary (convex hull volume) components.  Tests each component
+against two null models: a sampling null model (individuals or replicates
+reassigned between communities) and a stratified trait-permutation null model,
+with a single global test when many communities are compared.  Functional
+entities (species with similar traits) help detect replacement among similar
+species, and species-level leverage identifies the taxa driving functional
+shifts.  Supports both temporal (paired) and spatial (pairwise) comparisons.")
     (license license:expat)))
 
 (define-public r-asbio
@@ -17128,13 +17128,13 @@ Bennet et al., (1983) <doi:10.1002/sim.4780020223>, and Muse et al., (2022)
 (define-public r-amorem
   (package
     (name "r-amorem")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "amorem" version))
        (sha256
-        (base32 "18n38jq2hmliaqsh00wcy66vlpml6vd0lgvmz4js1y7mkz9dr6im"))))
+        (base32 "02jwn68siapn0j02mc6d7sfnw3d9bz0pks9xc1q6rhm4n40s513a"))))
     (properties `((upstream-name . "amorem")))
     (build-system r-build-system)
     (arguments
@@ -17145,10 +17145,25 @@ Bennet et al., (1983) <doi:10.1002/sim.4780020223>, and Muse et al., (2022)
     (home-page "https://franciscorichter.github.io/amorem/")
     (synopsis "Augmented Modelling of Relational Events")
     (description
-     "Utilities for simulating and prototyping relational event models, including
-helpers to generate dynamic event sequences and covariate processes for sender
-and receiver sets.  The endogenous-effect and case-control estimation machinery
-follows Juozaitiene and Wit (2024) <doi:10.1093/jrsssa/qnae132>.")
+     "An integrated workflow for relational event models, in which timestamped
+interactions among actors arrive in continuous time and the event rate depends
+on the history of the network itself.  Event streams are simulated by an exact
+Gillespie kernel or an approximate tau-leap kernel; non-events are drawn by
+case-control sampling in the manner of Lerner and Lomi (2020)
+<doi:10.1017/nws.2019.57>, or from a time-shifted copy of the process so that
+covariates shared by all dyads at a given time remain estimable (Lembo et al.
+2025, <doi:10.1093/jrsssc/qlaf058>); the timing- and closure-based endogenous
+statistics of Juozaitiene and Wit (2024) <doi:10.1093/jrsssa/qnae132> are
+computed from that history; and one front-end fits the resulting case-control
+data by conditional-logistic partial likelihood, by penalised regression on its
+degenerate one-control binomial form (which admits smooth, time-varying and
+actor random effects), or by stochastic gradient descent, including the
+additive-spline construction of Filippi-Mazzola and Wit (2024)
+<doi:10.1093/jrsssc/qlae023>.  Martingale-residual goodness-of-fit diagnostics
+are provided for the linear fit, together with simulation and statistic
+computation for relational hyper-events, a collection of documented event logs
+from published interaction networks, and a reconstructed El Nino index as a
+global covariate.")
     (license license:expat)))
 
 (define-public r-ammoniaconcentration

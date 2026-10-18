@@ -18105,30 +18105,28 @@ constrains, and variables restricted to be integers.")
 (define-public r-emhawkes
   (package
     (name "r-emhawkes")
-    (version "0.9.8")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "emhawkes" version))
        (sha256
-        (base32 "1fnmx0zp4hhpv1pqcxdspl8vr9xcgbhjkccwm1m50b3zm91xxv24"))))
+        (base32 "1z22axyql9c147ladz9j5n2qzabqgs59sfyqc1cq5vx43qq3ha47"))))
     (properties `((upstream-name . "emhawkes")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-maxlik))
+    (propagated-inputs (list r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ksublee/emhawkes")
     (synopsis "Exponential Multivariate Hawkes Model")
     (description
-     "Simulate and fitting exponential multivariate Hawkes model.  This package
-simulates a multivariate Hawkes model, introduced by Hawkes (1971)
-<doi:10.2307/2334319>, with an exponential kernel and fits the parameters from
-the data.  Models with the constant parameters, as well as complex dependent
-structures, can also be simulated and estimated.  The estimation is based on the
-maximum likelihood method, introduced by introduced by Ozaki (1979)
-<doi:10.1007/BF02480272>, with @code{maxLik} package.")
+     "Simulate and fit multivariate Hawkes models with exponential kernels, introduced
+by Hawkes (1971) <doi:10.2307/2334319>.  Includes marked, state-dependent, and
+multi-kernel specifications.  Parameter estimation uses maximum likelihood,
+following Ozaki (1979) <doi:10.1007/BF02480272>, through the optional
+@code{maxLik} package or the optimization functions supplied with R.")
     (license license:gpl2+)))
 
 (define-public r-emgcr

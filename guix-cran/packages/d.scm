@@ -17,7 +17,7 @@
   #:use-module (gnu packages compression)
   #:use-module (gnu packages python)
   #:use-module (gnu packages libreoffice)
-  #:use-module (gnu packages docker)
+  #:use-module (gnu packages containers)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages julia)
   #:use-module (gnu packages java)
@@ -34475,13 +34475,13 @@ website
 (define-public r-dataqualitydashboard
   (package
     (name "r-dataqualitydashboard")
-    (version "2.9.0")
+    (version "2.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DataQualityDashboard" version))
        (sha256
-        (base32 "17a5sd8k8xf4zv7yxnly8bj37kskrmbydrzppl6zpw50cz10ym1k"))))
+        (base32 "1svmwcslpgz9mimv750f51232kavrd1dzn78mdx10qfpxfl7lpfm"))))
     (properties `((upstream-name . "DataQualityDashboard")))
     (build-system r-build-system)
     (arguments

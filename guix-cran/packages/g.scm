@@ -23892,13 +23892,13 @@ framework Wickham (2016) <doi:10.1007/978-3-319-24277-4>.")
 (define-public r-ggpath
   (package
     (name "r-ggpath")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggpath" version))
        (sha256
-        (base32 "0sg9pja63pj66pvcvag5djqmm3iq9jdlyz0s37ciimbb357m8bxa"))))
+        (base32 "0j65nkmmk5mcjwbjnaz8hmvck102xwxzb9mh1kpjzdrv2ksh0fpq"))))
     (properties `((upstream-name . "ggpath")))
     (build-system r-build-system)
     (arguments
@@ -38309,13 +38309,13 @@ to quantify model sensitivities.")
 (define-public r-gcplyr
   (package
     (name "r-gcplyr")
-    (version "1.12.0")
+    (version "1.13.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gcplyr" version))
        (sha256
-        (base32 "1rpjj7mpfrd75f39nw7m3j5fsd9wksqd713mp3is50v7bg3fl5ag"))))
+        (base32 "0rx9bkzcf8dhvfp1v7qh6kwbsjr9cf6m26ywq0sl0m6nwxiafl5s"))))
     (properties `((upstream-name . "gcplyr")))
     (build-system r-build-system)
     (arguments
@@ -38326,13 +38326,17 @@ to quantify model sensitivities.")
     (home-page "https://mikeblazanin.github.io/gcplyr/")
     (synopsis "Wrangle and Analyze Growth Curve Data")
     (description
-     "Easy wrangling and model-free analysis of microbial growth curve data, as
-commonly output by plate readers.  Tools for reshaping common plate reader
-outputs into tidy formats and merging them with design information, making data
-easy to work with using gcplyr and other packages.  Also streamlines common
-growth curve processing steps, like smoothing and calculating derivatives, and
-facilitates model-free characterization and analysis of growth data.  See
-methods at <https://mikeblazanin.github.io/gcplyr/>.")
+     "Easy importing, wrangling, and model-free analysis of microbial growth curve
+data, as commonly output by plate readers.  Tools for flexibly importing all the
+common data formats output by plate readers and reshaping them into tidy formats
+for analyses.  Tools for importing experimental designs from files or generating
+them in R and merging design information with density data, making it easy to
+analyze with gcplyr and tidyverse or dplyr functions, and to plot with ggplot2'.
+ Streamlines extracting parameters like growth rate/doubling time, maximum
+density (carrying capacity), lag time, area under the curve, diauxic shifts,
+extinction, and more without fitting an equation for growth to your data.  Has
+several methods to deal with noise in growth curve data.  See methods at
+<https://mikeblazanin.github.io/gcplyr/>.")
     (license license:expat)))
 
 (define-public r-gcpca
@@ -40141,46 +40145,6 @@ Perform sensitivity analysis and visualize low-order effects, following
 Schonlau, M. and Welch, W.J. (2006), \"Screening the Input Variables to a
 Computer Model Via Analysis of Variance and Visualization\",
 <doi:10.1007/0-387-28014-6_14>.")
-    (license license:gpl3)))
-
-(define-public r-gasmodel
-  (package
-    (name "r-gasmodel")
-    (version "0.6.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gasmodel" version))
-       (sha256
-        (base32 "05klhv55fjdjmsmpdv9wflkmlv05c9r5234g2bjfp0vvhiia3rjx"))))
-    (properties `((upstream-name . "gasmodel")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-pracma
-                             r-numderiv
-                             r-nloptr
-                             r-mvnfast
-                             r-matrix
-                             r-ggplot2
-                             r-dplyr
-                             r-copula
-                             r-arrangements
-                             r-abind))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/vladimirholy/gasmodel")
-    (synopsis "Generalized Autoregressive Score Models")
-    (description
-     "Estimation, forecasting, and simulation of generalized autoregressive score
-(GAS) models of Creal, Koopman, and Lucas (2013) <doi:10.1002/jae.1279> and
-Harvey (2013) <doi:10.1017/cbo9781139540933>.  Model specification allows for
-various data types and distributions, different parametrizations, exogenous
-variables, joint and separate modeling of exogenous variables and dynamics,
-higher score and autoregressive orders, custom and unconditional initial values
-of time-varying parameters, fixed and bounded values of coefficients, and
-missing values.  Model estimation is performed by the maximum likelihood method.")
     (license license:gpl3)))
 
 (define-public r-gasfluxes

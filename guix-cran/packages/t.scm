@@ -23,7 +23,7 @@
   #:use-module (gnu packages perl)
   #:use-module (gnu packages tex)
   #:use-module (gnu packages tls)
-  #:use-module (gnu packages docker)
+  #:use-module (gnu packages containers)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages cmake)
   #:use-module (guix-cran packages z)
@@ -11759,13 +11759,13 @@ covariance matrices (uncommon sigma) for the mixture components.")
 (define-public r-tramvs
   (package
     (name "r-tramvs")
-    (version "0.0-9")
+    (version "0.0-10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tramvs" version))
        (sha256
-        (base32 "0545xb73mxywjplmfb5hsrnbyz78pp327ibjkv0sdsb5c07mpvwp"))))
+        (base32 "12ylxinaafc0ypnw90gx0hi691qm6rfjh12cfgc2w0lh139c1dl1"))))
     (properties `((upstream-name . "tramvs")))
     (build-system r-build-system)
     (arguments
@@ -11778,7 +11778,7 @@ covariance matrices (uncommon sigma) for the mixture components.")
                              r-future
                              r-cotram))
     (native-inputs (list r-knitr))
-    (home-page "http://ctm.R-forge.R-project.org")
+    (home-page "https://codeberg.org/LucasKook/tramvs")
     (synopsis "Optimal Subset Selection for Transformation Models")
     (description
      "Greedy optimal subset selection for transformation models (Hothorn et al., 2018,
@@ -11979,13 +11979,13 @@ found on the @code{TraMineR} web page.")
 (define-public r-tramicp
   (package
     (name "r-tramicp")
-    (version "0.1-0")
+    (version "0.1-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tramicp" version))
        (sha256
-        (base32 "0lhnfrii2dxb6wmp8pd6mxjh6a63i2bwrlpp4m13i4drqm3r4rjl"))))
+        (base32 "0bzx2z28mpf8h4zrjmn53g1ik40c0n46g5q91yisk3vvb936pix4"))))
     (properties `((upstream-name . "tramicp")))
     (build-system r-build-system)
     (arguments
@@ -20510,13 +20510,13 @@ be inserted into the output stream.")
 (define-public r-tikatuwq
   (package
     (name "r-tikatuwq")
-    (version "0.10.0")
+    (version "0.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tikatuwq" version))
        (sha256
-        (base32 "0g0zp65jcffbwvwdpsdrax4zkg19jlfc5fk6jywhs35798mslphp"))))
+        (base32 "0mlb9mva7iasmf5blg10jd5g59610963fl7d4rmj4b1jcxp0pq3n"))))
     (properties `((upstream-name . "tikatuwq")))
     (build-system r-build-system)
     (arguments
@@ -20542,8 +20542,11 @@ be inserted into the output stream.")
      "This package provides tools to import, clean, validate, and analyze freshwater
 quality data in Brazil.  Implements water quality indices including the Water
 Quality Index ('WQI'/'IQA') using the weighted geometric mean following CETESB
-methodology, the Trophic State Index ('TSI'/'IET') after Carlson (1977)
-<doi:10.4319/lo.1977.22.2.0361> and Lamparelli (2004)
+methodology, an independent engine reproducing the IQA of the Minas Gerais water
+agency IGAM (a documented reproduction, not endorsed by the agency), paired
+comparison of IQA engines with @code{compare_iqa()}, the Trophic State Index
+('TSI'/'IET') after Carlson (1977) <doi:10.4319/lo.1977.22.2.0361> and
+Lamparelli (2004)
 <https://teses.usp.br/teses/disponiveis/41/41134/tde-20032006-075813/publico/@code{TeseLamparelli2004.pdf>},
 and the National Sanitation Foundation Water Quality Index ('NSF WQI', Brown
 (1970)).  The package also checks compliance with Brazilian standard CONAMA
@@ -32168,13 +32171,13 @@ proposed in Wolf et al. (2022) <doi:10.1177/17407745221095855>.")
 (define-public r-teems
   (package
     (name "r-teems")
-    (version "0.1.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teems" version))
        (sha256
-        (base32 "13v0yjs8fp3f4100f7y95hhka5r12k8k0nwmg198hrkwm6yim7pj"))))
+        (base32 "18ahg1z02dj0p943mrrsbnnxph6ar0y05ik8czwsyvh6h5ib6q65"))))
     (properties `((upstream-name . "teems")))
     (build-system r-build-system)
     (arguments
@@ -32185,6 +32188,7 @@ proposed in Wolf et al. (2022) <doi:10.1177/17407745221095855>.")
                              r-rlang
                              r-r6
                              r-purrr
+                             r-jsonlite
                              r-data-table
                              r-cpp11
                              r-cli))

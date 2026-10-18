@@ -20,7 +20,7 @@
   #:use-module (gnu packages compression)
   #:use-module (gnu packages video)
   #:use-module (gnu packages java)
-  #:use-module (gnu packages docker)
+  #:use-module (gnu packages containers)
   #:use-module (gnu packages duckdb)
   #:use-module (gnu packages tbb)
   #:use-module (gnu packages ghostscript)
@@ -12522,13 +12522,13 @@ Computers & Geosciences, v.  51, no.  0, p.  193 - 205, <doi:
 (define-public r-stratifyr
   (package
     (name "r-stratifyr")
-    (version "2.0-2")
+    (version "2.0-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stratifyR" version))
        (sha256
-        (base32 "03z9fqy47y077j8n23pqmsa8a658x6hjihncqdrz6gqrv01l86n0"))))
+        (base32 "05f7a6q2nv9jpb1gplm3lb4ymns69ih7kvp1c5giyrilv59cadw4"))))
     (properties `((upstream-name . "stratifyR")))
     (build-system r-build-system)
     (arguments
@@ -15405,35 +15405,48 @@ details of the stepwise algorithm can be found in Romano and Wolf (2007)
 (define-public r-stepwedgepower
   (package
     (name "r-stepwedgepower")
-    (version "0.1.3")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stepwedgepower" version))
        (sha256
-        (base32 "1qi1x13mpd8qy3anl3c7i5k8m3lngd758md4yz74ysy16a28h2v3"))))
+        (base32 "02k6h4qmk5fj7i4h4mi7lbggqlcbyswv983f73jrpkg3icln7zv7"))))
     (properties `((upstream-name . "stepwedgepower")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-lme4))
-    (home-page "https://cran.r-project.org/package=stepwedgepower")
-    (synopsis "Stepped-Wedge Clinical Trial Analysis and Power Simulation")
+    (propagated-inputs (list r-lme4 r-lifecycle))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/AmandaLinLi/stepwedgepower")
+    (synopsis
+     "Simulation-Based Power Evaluation for Stepped-Wedge Cluster Randomized Trials")
     (description
-     "This package provides reusable functions for aggregated cluster-period data,
-mixed-effects analysis, and simulation-based power and type I error evaluation
-in stepped-wedge cluster randomized trials.  The design and mixed-effects
-analysis follow Hussey and Hughes (2007) <doi:10.1016/j.cct.2006.05.007>.
-Intraclass correlations for binary outcomes are converted to logistic-normal
-random-intercept standard deviations following Eldridge, Ukoumunne and Carlin
-(2009) <doi:10.1111/j.1751-5823.2009.00092.x>.  Monte Carlo uncertainty in
-estimated power is summarized using the exact binomial interval of Clopper and
-Pearson (1934) <doi:10.1093/biomet/26.4.404>.  The simulation engine supports
-sequence-specific baseline risks, cluster random effects, direct
-intraclass-correlation specification, Monte Carlo uncertainty intervals, and
-model-fitting diagnostics.  Applied physician and specialty helpers are retained
-for backward compatibility and for an example health-services workflow.")
+     "This package provides simulation-based power, type I error, and operating-
+characteristic evaluation for stepped-wedge cluster randomized trials.  General
+binary-outcome designs support arbitrary crossover schedules, unequal clusters
+per sequence, secular trends, flexible cluster-period sizes, reproducible
+parallel execution, sensitivity grids, and mixed-model diagnostics.  A
+component-based engine supports the four treatment states Control, A, B, and A+B
+under arbitrary asynchronous schedules, including structurally unobserved
+cluster-periods, withdrawal, reintroduction, wash-in delays, user-defined
+carryover decay, component main effects, an A-by-B interaction, estimability
+audits, multiplicity adjustment, conditional and failure-aware power, and
+explicit classification of hard model errors, nonconvergence, non-finite
+contrasts, singular fits, and successful fits.  A batch-aware interface
+represents classic and batched stepped-wedge designs with delayed cluster
+initiation, structurally unobserved cluster-periods, and calendar-time,
+time-on-trial, or separate batch-specific time effects, following Kasza, Bowden,
+Hooper and Forbes (2022) <doi:10.1002/sim.9438>.  The cumulative
+Control-to-A-to-A+B interface from earlier versions remains available.  The
+design and mixed-effects analysis follow Hussey and Hughes (2007)
+<doi:10.1016/j.cct.2006.05.007>.  Intraclass correlations for binary outcomes
+are converted to random-intercept standard deviations on the latent scale of the
+logistic-normal model, as reviewed by Eldridge, Ukoumunne and Carlin (2009)
+<doi:10.1111/j.1751-5823.2009.00092.x>.  Monte Carlo uncertainty is reported
+using exact intervals from Clopper and Pearson (1934)
+<doi:10.1093/biomet/26.4.404>.")
     (license license:expat)))
 
 (define-public r-stepssurvey

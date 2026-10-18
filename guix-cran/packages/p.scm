@@ -9391,13 +9391,13 @@ Gibbs Samplers for Bayesian credible intervals.")
 (define-public r-progressify
   (package
     (name "r-progressify")
-    (version "0.2.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "progressify" version))
        (sha256
-        (base32 "06cnzpqzjrv0k4f7mqn1vdcm3n00n4iqa5sgipzccd690axmlncn"))))
+        (base32 "02n9j04i9kdyckagl5yb4db54k2d6dm7gvpcd4g380l95klzv4sx"))))
     (properties `((upstream-name . "progressify")))
     (build-system r-build-system)
     (arguments
@@ -12452,13 +12452,13 @@ Larmarange et al. (2011) <doi:10.4000/cybergeo.24606>.")
 (define-public r-preventr
   (package
     (name "r-preventr")
-    (version "0.12.0")
+    (version "0.12.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "preventr" version))
        (sha256
-        (base32 "0nk3fxkx5nnmskc24z8b9rhsq179zjpc50nvmgd2m8gvzcv0m9cv"))))
+        (base32 "1z8q6x5j5zb63gc3gar1ijw8izxxi5wygy8dfrbd6l55c6s6yqc8"))))
     (properties `((upstream-name . "preventr")))
     (build-system r-build-system)
     (arguments

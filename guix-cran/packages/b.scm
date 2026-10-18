@@ -21308,13 +21308,13 @@ autoregressive parameters as described in Elbayoumi and Mostafa (2023)
 (define-public r-bifrost
   (package
     (name "r-bifrost")
-    (version "0.2.0")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bifrost" version))
        (sha256
-        (base32 "0ajhwk1sw031dpkpbbakdn1gkpzf2x08wnykh6c6ccw8n8ni8b7d"))))
+        (base32 "0r8kay1qym5cabwcn9fqr7qyvri6drymkgzzbpzkkhi8xh3cqp3z"))))
     (properties `((upstream-name . "bifrost")))
     (build-system r-build-system)
     (arguments
@@ -21323,6 +21323,7 @@ autoregressive parameters as described in Elbayoumi and Mostafa (2023)
     (propagated-inputs (list r-viridis
                              r-txtplot
                              r-rrphylo
+                             r-rhpcblasctl
                              r-progressr
                              r-plotrix
                              r-phytools
@@ -21331,6 +21332,7 @@ autoregressive parameters as described in Elbayoumi and Mostafa (2023)
                              r-future-apply
                              r-future
                              r-digest
+                             r-corpcor
                              r-cli
                              r-ape))
     (home-page "https://jakeberv.com/bifrost/")

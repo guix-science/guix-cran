@@ -47987,13 +47987,13 @@ estimates versus sample size.")
 (define-public r-mcmcsae
   (package
     (name "r-mcmcsae")
-    (version "0.8.1")
+    (version "0.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mcmcsae" version))
        (sha256
-        (base32 "1akq6fsf563kl7j2fs99ggbsq2458s0czffidpqlkwsrnwc19kjv"))))
+        (base32 "0jkjlsvj8ifllvj0d0pys3xh8rywsnm9cwhiwmjbzw1y48j0mdh3"))))
     (properties `((upstream-name . "mcmcsae")))
     (build-system r-build-system)
     (arguments
@@ -59277,30 +59277,6 @@ also for research purposes.  The new definition for MAFLD as per the
 International Consensus Statement is described by Eslam M et al (2020).
 <doi:10.1016/j.jhep.2020.03.039>.")
     (license license:gpl3+)))
-
-(define-public r-maeswrap
-  (package
-    (name "r-maeswrap")
-    (version "1.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Maeswrap" version))
-       (sha256
-        (base32 "0cnnr5zq7ax1j7dx7ira7iccqppc6qpdjghjarvdb2zj0lf69yyb"))))
-    (properties `((upstream-name . "Maeswrap")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr r-rgl r-lattice r-geometry))
-    (home-page "https://cran.r-project.org/package=Maeswrap")
-    (synopsis "Wrapper Functions for MAESTRA/MAESPA")
-    (description
-     "This package provides a bundle of functions for modifying MAESTRA/MAESPA input
-files,reading output files, and visualizing the stand in 3D. Handy for running
-sensitivity analyses, scenario analyses, etc.")
-    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-maestro
   (package

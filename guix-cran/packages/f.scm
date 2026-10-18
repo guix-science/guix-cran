@@ -27330,13 +27330,13 @@ regression line on a scatter plot with the equation as the main title.")
 (define-public r-fastgp
   (package
     (name "r-fastgp")
-    (version "1.4")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FastGP" version))
        (sha256
-        (base32 "19vvfn1h8399g0py8fnflfk9m8scmg05yxdpfva76a62x9v8h93b"))))
+        (base32 "0clmsh1x838qbbmb6xxmkh07isyvpp5ihv929d5avxrg6mydrkpd"))))
     (properties `((upstream-name . "FastGP")))
     (build-system r-build-system)
     (arguments

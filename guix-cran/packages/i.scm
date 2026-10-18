@@ -2459,13 +2459,13 @@ described in Kopf et al. (2021) <doi:10.21105/joss.02878>.")
 (define-public r-isoplotrgui
   (package
     (name "r-isoplotrgui")
-    (version "7.0")
+    (version "7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IsoplotRgui" version))
        (sha256
-        (base32 "02kg4r0a41r49nw0xphs7k6c3d5plh7iwzincvx8h5asrrf5vzji"))))
+        (base32 "01832fparig9fjvcirz4priwbjfrc3azqyaa3vnv8bf57n8wbibq"))))
     (properties `((upstream-name . "IsoplotRgui")))
     (build-system r-build-system)
     (arguments
@@ -2500,13 +2500,13 @@ either be used offline, or hosted on a server to provide online access to the
 (define-public r-isoplotr
   (package
     (name "r-isoplotr")
-    (version "7.0")
+    (version "7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IsoplotR" version))
        (sha256
-        (base32 "15lsw84a6ahf5yv7hqxs902g0kn06j9z7jcnfkz44nvg5raxf509"))))
+        (base32 "1fw87kaq38scsrr1mwxdjxdf1mq38zsnrq11rl8x1x7xyiizj93q"))))
     (properties `((upstream-name . "IsoplotR")))
     (build-system r-build-system)
     (arguments

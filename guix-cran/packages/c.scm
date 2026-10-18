@@ -21045,13 +21045,13 @@ Typen und Syndromen.  Zeitschrift fÃ¼r Klinische Psychologie und Psychotherapi
 (define-public r-confoundvis
   (package
     (name "r-confoundvis")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "confoundvis" version))
        (sha256
-        (base32 "1m2vxaf10gb6rfkw366j6ibwrwgrpz6imjvwyyl49mqymwm2zdf8"))))
+        (base32 "1nym3q8nla7q7rl6fpj4fwbjqln7q0vfqm9wnr1p5zb8am9dyzqn"))))
     (properties `((upstream-name . "confoundvis")))
     (build-system r-build-system)
     (arguments
@@ -21061,19 +21061,23 @@ Typen und Syndromen.  Zeitschrift fÃ¼r Klinische Psychologie und Psychotherapi
     (native-inputs (list r-knitr))
     (home-page "https://github.com/subirhait/confoundvis")
     (synopsis
-     "Visualization Tools for Sensitivity Analysis of Unmeasured Confounding")
+     "Common Interface for Visualizing and Reporting Sensitivity Analyses for Unmeasured Confounding")
     (description
-     "Visualization and reporting tools for sensitivity analysis to unmeasured
-confounding in observational studies.  A common confoundsens object stores a
-sensitivity path (the treatment effect as a function of hypothetical confounder
-strength) regardless of the framework that produced it, so the same robustness
-curves, contour plots, covariate benchmark (\"sensitivity Love\") plots, and
-plain-language reports can be drawn for impact threshold analysis (Frank, 2000,
-<doi:10.1177/0049124100029002001>), partial R-squared omitted-variable bias
-analysis (Cinelli and Hazlett, 2020, <doi:10.1111/rssb.12348>), and E-values
-(@code{VanderWeele} and Ding, 2017, <doi:10.7326/M16-2607>).  Paths can be
-computed directly from fitted linear models or converted from results produced
-by the sensemakr', konfound', and EValue packages.")
+     "This package provides a common interface to established sensitivity analyses for
+unmeasured confounding in observational studies.  Results of impact threshold
+and robustness of inference to replacement analysis (Frank, 2000,
+<doi:10.1177/0049124100029002001>; Frank et al., 2013,
+<doi:10.3102/0162373713493129>), partial R-squared omitted-variable bias
+analysis (Cinelli and Hazlett, 2020, <doi:10.1111/rssb.12348>), E-values
+(@code{VanderWeele} and Ding, 2017, <doi:10.7326/M16-2607>), and Rosenbaum
+bounds for matched pairs (Rosenbaum, 2002, <doi:10.1007/978-1-4757-3692-2>) are
+stored in one object that keeps each framework's own parameter.  Robustness
+curves, summary tables, and plain-language reports are available for every
+framework; two-parameter surfaces, the exact correlation contour, and
+observed-covariate benchmarks are provided where the corresponding framework
+defines them.  Results can be computed from fitted models or matched-pair
+differences, or converted from the sensemakr', konfound', and EValue packages,
+and agree with those packages.")
     (license license:gpl3)))
 
 (define-public r-conformalsmallest
@@ -25058,13 +25062,13 @@ packages, particularly vegan'.")
 (define-public r-command
   (package
     (name "r-command")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "command" version))
        (sha256
-        (base32 "1adc74670dlns3nn26sk9mdjpb9g4qkj9qhip2zgnarn7fkldm7w"))))
+        (base32 "1l1ykb8lvshvnws73qp3l3mvqaj2fn6kf2l9q7la76mjknfsrk12"))))
     (properties `((upstream-name . "command")))
     (build-system r-build-system)
     (arguments
@@ -25074,9 +25078,10 @@ packages, particularly vegan'.")
     (home-page "https://bayesiandemography.github.io/command/")
     (synopsis "Process Command Line Arguments")
     (description
-     "Process command line arguments, allowing scripts to behave like functions, with
-well-defined inputs and outputs.  Helps make data analysis workflows more
-modular, and therefore more transparent, flexible, and reliable.")
+     "Process command line arguments.  Processing includes checking, naming, and
+coercing to numeric, date, or logical.  By capturing assumptions about inputs
+and outputs, the command package can provide scripts with well defined
+interfaces, leading to safer, more modular data analysis pipelines.")
     (license license:expat)))
 
 (define-public r-commafree
@@ -25316,13 +25321,13 @@ only httr2 for HTTP requests and cli for console messages.")
 (define-public r-comets
   (package
     (name "r-comets")
-    (version "0.2-2")
+    (version "0.2-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "comets" version))
        (sha256
-        (base32 "0ndxdnxsg1kxhjgh8qp3xc2xv236lncqw2kzs9gpr3iqgg81qywh"))))
+        (base32 "1rza7akrc513vnxll6j7z3hh04xqda91s4wp088cw3y7mjpaax8r"))))
     (properties `((upstream-name . "comets")))
     (build-system r-build-system)
     (arguments
@@ -42788,13 +42793,13 @@ recoding approach builds on @code{sjmisc::rec()} from the sjmisc package
 (define-public r-chms
   (package
     (name "r-chms")
-    (version "7.1")
+    (version "7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chms" version))
        (sha256
-        (base32 "0865j885d9lxy6gf76fwhld7521jwql8f5ch9rr9kscyj93qm4q7"))))
+        (base32 "0wrhz5drpja40l2b5ym10k71d2667cbakan7kpprgyvcni49dpnb"))))
     (properties `((upstream-name . "chms")))
     (build-system r-build-system)
     (arguments
@@ -42809,7 +42814,6 @@ recoding approach builds on @code{sjmisc::rec()} from the sjmisc package
                              r-r6
                              r-purrr
                              r-parallelly
-                             r-mori
                              r-mirai
                              r-lubridate
                              r-knitr

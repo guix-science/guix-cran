@@ -3013,19 +3013,19 @@ This package fixes incorrect annotations in the original data sets.")
 (define-public r-ruido
   (package
     (name "r-ruido")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Ruido" version))
        (sha256
-        (base32 "0firsc11vnyjmxx5nrnsj1xmi9r3d285930q2v95vlx1lpjydn9r"))))
+        (base32 "07mz02sw9gcsj9ss8hccjsbkw88fvnfas38nrl6v9jsh6h687gj3"))))
     (properties `((upstream-name . "Ruido")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-wav r-tuner r-signal r-nortest))
+    (propagated-inputs (list r-wav r-tuner r-nortest r-matrixstats))
     (home-page "https://github.com/Arthurigorr/Ruido")
     (synopsis "Soundscape Spectral Metrics")
     (description
@@ -5742,13 +5742,13 @@ tagging messages with a priority level and application type, as well as masking
 (define-public r-rsynthbio
   (package
     (name "r-rsynthbio")
-    (version "4.2.2")
+    (version "4.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rsynthbio" version))
        (sha256
-        (base32 "10frb2x6lyq7mvs781cqab61gn9wkq08l0mxsmpp34wqjds2p3cx"))))
+        (base32 "0m0fm9wrkilnch5swsh1fj62czj9jnzk71qlijqgj64f06qwjgjw"))))
     (properties `((upstream-name . "rsynthbio")))
     (build-system r-build-system)
     (arguments
@@ -39413,13 +39413,13 @@ Also retrieve and process result sets as either a ragged or flattened tibble'.")
 (define-public r-reporter
   (package
     (name "r-reporter")
-    (version "1.4.9")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reporter" version))
        (sha256
-        (base32 "091lnw0kmihh9w0ksygsxcn22kmhibm5b20cviila9d8qz6cd5wk"))))
+        (base32 "1sdrvsz5jxhpf0hzifzx31351ss0g76iczsxshz77c7jyi7mgggr"))))
     (properties `((upstream-name . "reporter")))
     (build-system r-build-system)
     (arguments
