@@ -773,6 +773,37 @@ builds on the framework described in Wang, Duerr, and Gao(2025)
 style-sheet.")
     (license license:gpl2+)))
 
+(define-public r-xslmodels
+  (package
+    (name "r-xslmodels")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "XSLmodels" version))
+       (sha256
+        (base32 "07s13nd8ssfrljvij4bi72gwxpv0sk6pg84wzdg0r7d156p4avfr"))))
+    (properties `((upstream-name . "XSLmodels")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-purrr
+                             r-ggplot2
+                             r-dplyr
+                             r-deoptim))
+    (native-inputs (list r-knitr))
+    (home-page "https://www.kachergis.com/XSLmodels/")
+    (synopsis "Run and Optimize Cross-Situational Word Learning Models")
+    (description
+     "This package provides a collection of cognitive models of cross-situational word
+learning, together with methods and datasets for fitting and cross-validating
+them against experimental and corpus data, and for plotting the results.")
+    (license license:gpl3+)))
+
 (define-public r-xsdm
   (package
     (name "r-xsdm")

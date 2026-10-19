@@ -1256,13 +1256,13 @@ change, it gives identical results, and behaves exactly the same.")
 (define-public r-future-batchtools
   (package
     (name "r-future-batchtools")
-    (version "0.22.0")
+    (version "0.30.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "future.batchtools" version))
        (sha256
-        (base32 "0hmyb6fv4dz7qmx02w5vkj286ppyxfilj42wkcsxv45210ih5myv"))))
+        (base32 "0lrhfw5xx7vdjyd6cl3wsbdcwbwn85l79q4l9ri7s39kcxdg6zxd"))))
     (properties `((upstream-name . "future.batchtools")))
     (build-system r-build-system)
     (arguments
@@ -1284,8 +1284,8 @@ batchtools package.  This allows you to process futures, as defined by the
 future package, in parallel out of the box, not only on your local machine or
 ad-hoc cluster of machines, but also via high-performance compute ('HPC') job
 schedulers such as LSF', @code{OpenLava}', Slurm', SGE', and TORQUE / PBS', e.g.
-y <- future.apply::future_lapply(files, FUN = process)'.")
-    (license license:lgpl2.1+)))
+y <- lapply(files, FUN = process) |> @code{futurize::futurize()}'.")
+    (license license:lgpl3+)))
 
 (define-public r-futility
   (package
@@ -10283,6 +10283,59 @@ hierarchical or grouped time series) in cross-sectional, temporal, or
 cross-temporal frameworks.")
     (license license:gpl3)))
 
+(define-public r-forecastsuite
+  (package
+    (name "r-forecastsuite")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "forecastsuite" version))
+       (sha256
+        (base32 "0prsml5mvap8zhx5qlc0npvcvvp8v83w4dpsdpbxic05ayk1zpxh"))))
+    (properties `((upstream-name . "forecastsuite")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-shinyjs
+                             r-shinycssloaders
+                             r-shiny
+                             r-plotly
+                             r-lubridate
+                             r-forecast
+                             r-dt
+                             r-dplyr
+                             r-colourpicker))
+    (native-inputs (list r-knitr))
+    (home-page
+     "https://github.com/SpaRroW410/Forecast_dashboard/tree/main/forecastsuite")
+    (synopsis "Multi-Model Time Series Forecasting Toolkit and Local App")
+    (description
+     "Fits, compares and visualizes univariate time series forecasts through an
+extensible model registry built largely on the forecast package:
+@code{AutoRegressive} Integrated Moving Average (ARIMA) and Seasonal ARIMA
+(SARIMA) models (Hyndman and Khandakar (2008) <doi:10.18637/jss.v027.i03>),
+Error, Trend, Seasonal (ETS) exponential smoothing (Hyndman et al. (2002)
+<doi:10.1016/S0169-2070(01)00110-8>), Trigonometric seasonality, Box-Cox
+transformation, @code{AutoRegressive} Moving Average (ARMA) errors, Trend and
+Seasonal components (TBATS) models (De Livera, Hyndman and Snyder (2011)
+<doi:10.1198/jasa.2011.tm09771>), Neural Network @code{AutoRegression} (NNETAR)
+and Holt-Winters exponential smoothing (Winters (1960)
+<doi:10.1287/mnsc.6.3.324>), plus optional Prophet models via the prophet
+package (Taylor and Letham (2018) <doi:10.1080/00031305.2017.1380080>) and Long
+Short-Term Memory (LSTM) networks via the torch package (Hochreiter and
+Schmidhuber (1997) <doi:10.1162/neco.1997.9.8.1735>).  Also provides grouped
+series with bottom-up and top-down reconciliation, rolling-origin
+cross-validation, ensembles and residual diagnostics, following Hyndman and
+Athanasopoulos (2021) <https://otexts.com/fpp3/>, and a bundled local shiny
+application exposing every model.")
+    (license license:expat)))
+
 (define-public r-forecastlsw
   (package
     (name "r-forecastlsw")
@@ -13035,6 +13088,39 @@ Approximator.  For more details see the help files or the article by Hoefling
 measurement models.  Lee, Adam, Kang, & Whittaker (2023).
 <doi:10.1007/978-3-031-27781-8_25>.  This package is supported by the Institute
 of Education Sciences, U.S. Department of Education, through Grant R305D210036.")
+    (license license:gpl3)))
+
+(define-public r-flowz
+  (package
+    (name "r-flowz")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "flowz" version))
+       (sha256
+        (base32 "12ylgclghpl2g5zpk0fafzg46crc1j2p79hs3b1xmw9w4h32139b"))))
+    (properties `((upstream-name . "flowz")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-fracdiff r-forecast))
+    (home-page "https://rpubs.com/giancarlo_vercellino/flowz")
+    (synopsis "Local Latent Flow Forecasting with Empirical Calibration")
+    (description
+     "Fits conditional flow-matching models to univariate time series.  Combines a
+selectable exponentially weighted moving average (EWMA), autoregressive
+integrated moving average (ARIMA), autoregressive fractionally integrated moving
+average (ARFIMA), or structural time-series baseline with direct multi-step
+residual paths and a random-feature extreme learning machine (ELM) velocity
+field.  Spectral dispersion calibration uses a chronological calibration block,
+with a separate test block for forecast scoring.  Provides simulated forecast
+paths and smooth marginal distributions.  Methodological background is given by
+Lipman et al. (2023) <doi:10.48550/@code{arXiv.2210.02747>}, Huang et al. (2006)
+<doi:10.1016/j.neucom.2005.12.126>, Hyndman and Khandakar (2008)
+<doi:10.18637/jss.v027.i03>, and Haslett and Raftery (1989)
+<doi:10.2307/2347679>.")
     (license license:gpl3)))
 
 (define-public r-flowtracer

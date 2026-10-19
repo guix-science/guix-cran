@@ -1927,13 +1927,13 @@ easily.")
 (define-public r-issuetracker
   (package
     (name "r-issuetracker")
-    (version "1.5.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IssueTrackeR" version))
        (sha256
-        (base32 "1ps1pw54c2wjsf3g991pbqrsh13sqxmwpr9dw6mrv0wf4pkdhgz8"))))
+        (base32 "1acdi8ffjbissf1ly01n9svplm7z6pj2sac6jgsk8mdr7rj4w71j"))))
     (properties `((upstream-name . "IssueTrackeR")))
     (build-system r-build-system)
     (arguments
@@ -1942,10 +1942,12 @@ easily.")
     (propagated-inputs (list r-zoo
                              r-yaml
                              r-withr
+                             r-gitlabr
                              r-gh
                              r-crayon
                              r-cli
                              r-checkmate))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/TanguyBarthelemy/IssueTrackeR")
     (synopsis "List Things to Do")
     (description
@@ -3907,6 +3909,33 @@ using R\" by Elmore and Urbaczweski (2025).")
      "The ISA is a biclustering algorithm that finds modules in an input matrix.  A
 module or bicluster is a block of the reordered input matrix.")
     (license (license:fsdg-compatible "CC BY-NC-SA 4.0"))))
+
+(define-public r-irw
+  (package
+    (name "r-irw")
+    (version "1.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "irw" version))
+       (sha256
+        (base32 "1nwkm9j4v0a4541nii5hhval1l38djq4anzajlf1c8nsqfh3smr8"))))
+    (properties `((upstream-name . "irw")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-imv r-httr r-glue))
+    (home-page "https://itemresponsewarehouse.github.io/Rpkg/")
+    (synopsis "Access and Analyze Data from the Item Response Warehouse")
+    (description
+     "Find, download, and analyze datasets from the Item Response Warehouse, a
+harmonized collection of item response data from educational and psychological
+measurement described in Nadela et al. (2026) <doi:10.59863/cijg4549>.
+Functions search tables by metadata, fetch them in a common long format, reshape
+between long and wide layouts, simulate item response data, and compare the
+predictive accuracy of fitted models with the @code{InterModel} Vigorish.")
+    (license license:expat)))
 
 (define-public r-irtsim
   (package
@@ -18055,42 +18084,6 @@ of implemented metrics is summarized in Rodbard (2009)
 <doi:10.1089/dia.2009.0015>.  Additional visualization tools include time-series
 plots, lasagna plots and ambulatory glucose profile report.")
     (license license:gpl2)))
-
-(define-public r-iglm
-  (package
-    (name "r-iglm")
-    (version "1.2.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "iglm" version))
-       (sha256
-        (base32 "1hgb2g8fpdznfqizicmlamrv899i4fvv137wd7z9jyvi8xfva9jn"))))
-    (properties `((upstream-name . "iglm")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcppprogress
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-ragg
-                             r-r6
-                             r-matrix
-                             r-mass
-                             r-igraph
-                             r-coda))
-    (native-inputs (list r-knitr))
-    (home-page "https://corneliusfritz.github.io/iglm/")
-    (synopsis "Regression under Interference in Connected Populations")
-    (description
-     "An implementation of generalized linear models (GLMs) for studying relationships
-among attributes in connected populations, where responses of connected units
-can be dependent, as introduced by Fritz et al. (2025)
-<doi:10.1080/01621459.2025.2565851>.  iglm extends GLMs for independent
-responses to dependent responses and can be used for studying spillover in
-connected populations and other network-mediated phenomena.")
-    (license license:gpl3)))
 
 (define-public r-igfetchr
   (package

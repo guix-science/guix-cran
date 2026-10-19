@@ -18105,13 +18105,13 @@ constrains, and variables restricted to be integers.")
 (define-public r-emhawkes
   (package
     (name "r-emhawkes")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "emhawkes" version))
        (sha256
-        (base32 "1z22axyql9c147ladz9j5n2qzabqgs59sfyqc1cq5vx43qq3ha47"))))
+        (base32 "0qh6vvpdf5062fd5jiqrjwy40dagnn6gl81q3d9zycqs4ql9ifl1"))))
     (properties `((upstream-name . "emhawkes")))
     (build-system r-build-system)
     (arguments

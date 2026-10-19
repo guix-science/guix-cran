@@ -17,7 +17,7 @@
   #:use-module (gnu packages compression)
   #:use-module (gnu packages python)
   #:use-module (gnu packages libreoffice)
-  #:use-module (gnu packages containers)
+  #:use-module (gnu packages docker)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages julia)
   #:use-module (gnu packages java)
@@ -12333,6 +12333,45 @@ Mielniczuk, 2022.  Improving Lasso for model selection and prediction.
 Scandinavian Journal of Statistics, 49(2): 831â863. <doi:10.1111/sjos.12546>.")
     (license license:gpl2)))
 
+(define-public r-dmrfit
+  (package
+    (name "r-dmrfit")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dmrfit" version))
+       (sha256
+        (base32 "084lawrha3i4x4mmv7p2nq232adxb6c372hlrmpcaa95lrkbdnp7"))))
+    (properties `((upstream-name . "dmrfit")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppprogress r-rcpparmadillo r-rcpp r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://jupepis.github.io/dmrfit/")
+    (synopsis "Scalable Bayesian Inference for Discrete Markov Random Fields")
+    (description
+     "Estimation of discrete Markov random fields through the pseudo-likelihood, for
+both Ising models (Ising (1925) <doi:10.1007/BF02980577>) and ordinal Markov
+random fields (Marsman et al. (2025) <doi:10.1017/psy.2024.4>).  Point
+estimates, either maximum pseudo-likelihood or maximum a posteriori, are
+obtained through a trust region optimization algorithm, with robust standard
+errors from the Godambe-Huber-White (GHW, or sandwich) estimator, for both full
+and constrained network structures.  Bayesian inference corrects the
+pseudo-posterior through coordinate rescaling (Arena and Marsman (2026)
+<doi:10.48550/@code{arXiv.2601.17205>}), which matches its covariance to the GHW
+covariance, and samples from it with the Fisher adaptive Metropolis-adjusted
+Langevin algorithm (Titsias (2024) <doi:10.48550/@code{arXiv.2305.14442>}).  For
+comparison, the posterior based on the full likelihood can also be sampled,
+exactly for small networks or with the double Metropolis-Hastings algorithm
+(Liang (2010) <doi:10.1080/00949650902882162>).  Savage-Dickey Bayes factors
+test each pairwise interaction, computed either by sampling importance
+resampling (Skare et al. (2003) <doi:10.1111/1467-9469.00360>) or from the
+posterior draws.")
+    (license license:expat)))
+
 (define-public r-dmod
   (package
     (name "r-dmod")
@@ -13503,6 +13542,50 @@ represent species, while the cells represent communities.  Methods details can
 be found at Cardoso et al.  2022 <https://CRAN.R-project.org/package=BAT> and
 Heming et al.  2023 <https://CRAN.R-project.org/package=SESraster>.")
     (license license:gpl3+)))
+
+(define-public r-divorce
+  (package
+    (name "r-divorce")
+    (version "1.0-2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "divoRce" version))
+       (sha256
+        (base32 "0c9rl5y5af8hnqcnmiqiyvdfrbzs41ng0s48aa9r3mkl33f0fw57"))))
+    (properties `((upstream-name . "divoRce")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcdd))
+    (home-page "https://cran.r-project.org/package=divoRce")
+    (synopsis
+     "Diagnosing Separation Phenomena in Latent Polyhedral Categorical Response Models")
+    (description
+     "Utilities for checking and diagnosing separation phenomena (complete separation,
+quasi-complete separation, overlap) for latent polyhedral categorical response
+models including binary, nominal and ordinal data models with link construction
+as baseline-category, adjacent-category, cumulative, sequential
+(continuation-ratio), ordered stereotype and arbitrary link error distribution
+(including logit, probit, cauchit, cloglog, loglog, log amongst others) based on
+structure vectors as described in Sablica, Hornik, Rusch (2026)
+<doi:10.48550/@code{arXiv.2610.08100>} and Rusch, Sablica, Hornik (2026)
+<doi:10.48550/@code{arXiv.2610.09951>}.  The package functionality includes a
+check for separation and a check for overlap with a linear program, a quick
+check for overlap, a sequential and a parallel check for overlap based on
+subsamples, detailed separation diagnostics such as identification of columns in
+the design matrix/structure vector matrix that lead to separation,
+identification of design matrix/structure vector matrix rows that lead to
+separation, the dimension of the recession cone and the structure vectors that
+are linearities.  Calculations can be done with package rcdd to employ arbitrary
+precision and various other linear program solvers can also be used via package
+ROI'.  Implemented checks can be done before model fitting based on outcome and
+design matrix or structure vector matrix or via formula (pre-fit), or after
+model fitting for objects of class glm', multinom', polr', osm', clm', bracl',
+brmultinom'.  Wrappers for other classes can be easily constructed by third
+parties via pre-fit functions.")
+    (license (list license:gpl2 license:gpl3))))
 
 (define-public r-divo
   (package
@@ -15121,13 +15204,13 @@ metrics.")
 (define-public r-distancehd
   (package
     (name "r-distancehd")
-    (version "1.2")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "distanceHD" version))
        (sha256
-        (base32 "15b2nmi0w0xl6ni8zvck96jyd4ks3hgb80j2szv2nk2vwsch2prq"))))
+        (base32 "1q4d8i3ddl43nx0qcppx7am74wm120j25rxzc8i6vwf72xnvg4w5"))))
     (properties `((upstream-name . "distanceHD")))
     (build-system r-build-system)
     (arguments
@@ -15146,7 +15229,9 @@ The third metric is the maximal data piling distance, which computes the
 orthogonal distance between the affine spaces spanned by each class.  These
 three distances are asymptotically interconnected and are applicable in tasks
 such as discrimination, clustering, and outlier detection in high-dimensional
-settings.")
+settings.  The package also provides a distance-based outlier detection
+procedure for high-dimensional, low-sample-size data, as described in Ahn, Lee
+and Lee (2018).")
     (license license:gpl2+)))
 
 (define-public r-distance
@@ -25275,13 +25360,13 @@ functional principal component analysis.")
 (define-public r-densaftertransform
   (package
     (name "r-densaftertransform")
-    (version "0.1")
+    (version "1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DENSaftertransform" version))
        (sha256
-        (base32 "1bhmlaagacg1nnyq178gcrgimbqf73s88i4raz60wdj627vky4nf"))))
+        (base32 "1q4bmvw4wgck2p6rfpkpfyrbxm4hlh9g7s6lhnfbsjdzw5aglsis"))))
     (properties `((upstream-name . "DENSaftertransform")))
     (build-system r-build-system)
     (arguments
@@ -25291,13 +25376,21 @@ functional principal component analysis.")
     (synopsis
      "Estimating Density after Logarithmic or Power Transformation of Data")
     (description
-     "This package provides functions for computing: (1) the adaptive normal PI
-estimate for data after the logarithmic transformation; (2) single-bandwidth PI
-density estimate for data after the logarithmic transformation; (3) single
-bandwidth PI estimate for data after the power transformation.  See the
-articles: (1) Savchuk, O. (2026, under review).  Density estimation for
-log-transformed data; (2) Savchuk, O., Schick A. (2013).  Density estimation for
-power transformations.  Journal of Nonparametric Statistics, 25(3), 545-559
+     "This package provides functions for computing: (1) the adaptive normal
+plug-in(PI) density estimate for data after the logarithmic transformation; (2)
+the adaptive log-normal PI density estimate for data after the power
+transformation with an exponent ranging from zero to one; (3) the
+single-bandwidth PI density estimate for data after the logarithmic
+transformation; (4) the single-bandwidth PI density estimate for data after the
+power transformation; (5) the data-driven bandwidth for the single-bandwidth PI
+estimator for data after the logarithmic transformation; (6) the rule-of-thumb
+bandwidth for the single-bandwidth PI estimator for data after the power
+transformation.  For details, see the articles: (1) Savchuk, O. (2026)
+(submitted).  Adaptive log-normal plug-in density estimator for power
+transformations. (2) Savchuk, O. (2026).  Density estimation for log-transformed
+data.  Computational Statistics, 41(98) <doi:10.1007/s00180-026-01766-y>. (3)
+Savchuk, O., Schick A. (2013).  Density estimation for power transformations.
+Journal of Nonparametric Statistics, 25(3), 545-559
 <doi:10.1080/10485252.2013.811788>.")
     (license license:gpl2)))
 

@@ -255,13 +255,13 @@ information, see <https://github.com/Hirriririir/@code{MyoScore>}.")
 (define-public r-myman
   (package
     (name "r-myman")
-    (version "0.10.0")
+    (version "0.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "myman" version))
        (sha256
-        (base32 "1wabvj9nbayhwm2pk3hqxgdis8a4zjf6vd6s3nsafhm0qr7akg0z"))))
+        (base32 "06bw8w7sqzlksgsik76y2lwfjsgwbjflrj07i08q0f0imrccava0"))))
     (properties `((upstream-name . "myman")))
     (build-system r-build-system)
     (arguments
@@ -274,31 +274,14 @@ information, see <https://github.com/Hirriririir/@code{MyoScore>}.")
 array of @code{BlueSky} replies to an initial post of his featuring a certain
 government figure:
 <https://bsky.app/profile/did:plc:cnpe7qvcyjrhm6w7w7e4atur/post/3mqum4mxsuk2g>.
-This lasted a week and generated nearly seven hundred posts.  A second wave
-started on August 12, 2026, with this post:
-<https://bsky.app/profile/kevinmkruse.bsky.social/post/3mstvbjpagc2a>.  A third
-wave started on August 17, 2026, with
-<https://bsky.app/profile/kevinmkruse.bsky.social/post/3mtcpiw7gi22j>.  A fourth
-wave started on August 27, 2026, with
-<https://bsky.app/profile/kevinmkruse.bsky.social/post/3mu3pugs2yk2f>.  A fifth
-wave ran on August 30, 2026, beginning with
-<https://bsky.app/profile/kevinmkruse.bsky.social/post/3mudbzy5ksk25>.  A sixth
-wave started September 4, 2026, with
-<https://bsky.app/profile/kevinmkruse.bsky.social/post/3muparqtdkk2w>.  A
-seventh wave started September 12, 2026, with
-<https://bsky.app/profile/kevinmkruse.bsky.social/post/3mvdol6xu5k2s>.  An
-eighth wave started September 16, 2026, with
-<https://bsky.app/profile/kevinmkruse.bsky.social/post/3mvnmq23nw22y>.  A ninth
-wave started October 1, 2026 with
-<https://bsky.app/profile/kevinmkruse.bsky.social/post/3mwtx2jztkk2g>.  A tenth
-wave started October 4, 2026, with
-<https://bsky.app/profile/kevinmkruse.bsky.social/post/3mx333hlmdc2o>.  All of
-the over seventeen hundred posts from these series start with My man ...  and
-make for excellent input to a fortunes'-like package.  So this small package
-obliges and offers a random draw each time its @code{myman()} function is
-called.  The overall package structure follows package fortunes', and atrrr was
-used to (bulk-)retrieve posts.  Neither package is required to run this package
-to display random selections.")
+This lasted a week and generated nearly seven hundred posts.  Over the next few
+weeks, several more waves followed, each taking aim at a different prominent
+figure.  All of the by now over two thousand posts from these series start with
+My man ...  and make for excellent input to a fortunes'-like function.  So this
+small package obliges and offers a random draw each time its @code{myman()}
+function is called.  The overall package structure follows package fortunes',
+and atrrr was used to (bulk-)retrieve posts.  Neither package is required to run
+this package to display random selections.")
     (license license:gpl2+)))
 
 (define-public r-myis
@@ -7557,6 +7540,54 @@ by Shafie (2015) <doi:10.21307/joss-2019-011>, including methods to study local
 and global properties <doi:10.1080/0022250X.2016.1219732> and goodness of fit
 tests.")
     (license license:expat)))
+
+(define-public r-multigrain
+  (package
+    (name "r-multigrain")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "multigrain" version))
+       (sha256
+        (base32 "1wqpl40wmk8zvnsc1n87gl3qz3rszvgpc9fvk0mfdrllw5y5yz9v"))))
+    (properties `((upstream-name . "multigrain")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-vctrs
+                             r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-rcppparallel
+                             r-rcpp
+                             r-purrr
+                             r-nloptr
+                             r-mvtnorm
+                             r-igraph
+                             r-glue
+                             r-ggraph
+                             r-ggplot2
+                             r-ga
+                             r-dplyr
+                             r-cli))
+    (home-page "https://github.com/GSK-Biostatistics/multigrain")
+    (synopsis "Optimise Graphical Approaches to Multiple Testing Procedures")
+    (description
+     "Find the optimal graphical multiple testing procedure for confirmatory clinical
+trials that test several hypotheses across endpoints, doses, or subpopulations.
+Choose the graph maximising an explicit gain-function: a user-defined measure of
+trial success that scores each possible set of rejected hypotheses.  Given
+simulated p-values, search over hypothesis weights and transition weights to
+maximise expected trial success.  Conventional power criteria are recovered and
+the family-wise error rate is strongly controlled due to the search being
+confined to graphical procedures.  Described in Spiers, Grayling, Wheeler, and
+Mander (2026) \"Gain-function optimisation of graphical multiple testing
+procedures for confirmatory clinical trials\"
+<doi:10.48550/@code{arXiv.2609.19994>}.")
+    (license license:lgpl3+)))
 
 (define-public r-multiglarmavarsel
   (package
@@ -15388,13 +15419,13 @@ rate in data from ESM studies.")
 (define-public r-mpath
   (package
     (name "r-mpath")
-    (version "0.4-2.27")
+    (version "0.4-2.28")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mpath" version))
        (sha256
-        (base32 "0gkf5f37l010q5vj0gzr69zd2zj5wrnf44czay2mpadh7ly22c6v"))))
+        (base32 "0vxabg4g7g2yic0q4jwvms2kzs347w804v65m9lkn2qd9hcv5652"))))
     (properties `((upstream-name . "mpath")))
     (build-system r-build-system)
     (arguments
@@ -21270,13 +21301,13 @@ the model uncertainty of the fitted model based on BIC posterior probabilities
 (define-public r-modelbased
   (package
     (name "r-modelbased")
-    (version "0.17.0")
+    (version "0.18.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modelbased" version))
        (sha256
-        (base32 "13xbrrrkk1rylp00kylfix3ss40g2x3hsgqbd72aswy1k7pnfbj9"))))
+        (base32 "1v3fr3v9snhah5s0hwrd8nxd62jiypjjvqxqh856alc21808nrxa"))))
     (properties `((upstream-name . "modelbased")))
     (build-system r-build-system)
     (arguments

@@ -9354,19 +9354,18 @@ Buhlmann (2010) <doi:10.1111/j.1467-9868.2010.00740.x>.")
 (define-public r-gradient
   (package
     (name "r-gradient")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "graDiEnt" version))
        (sha256
-        (base32 "102nf21a410rsfxqs7dv88kxxr6ya76kyyj95bkjjkn4bz8dykyc"))))
+        (base32 "0swydjs0px5pxc5brhfg1phfvs6a84375hk4sxygk944s0vvhh37"))))
     (properties `((upstream-name . "graDiEnt")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-doparallel))
     (home-page "https://github.com/bmgaldo/graDiEnt")
     (synopsis "Stochastic Quasi-Gradient Differential Evolution Optimization")
     (description
@@ -31724,6 +31723,32 @@ Enablement (SWE) Common Data Model, the OGC GML Coverage Implementation Schema
 geographical resolution.")
     (license license:lgpl3)))
 
+(define-public r-geomattr
+  (package
+    (name "r-geomattr")
+    (version "0.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geomattR" version))
+       (sha256
+        (base32 "01amv74pdy84p2h167kp6dbwqgz20gxb3ygpq9lkxqd0x2hqxh9k"))))
+    (properties `((upstream-name . "geomattR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra r-rlang r-geosphere r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/gortegasolis/geomattR")
+    (synopsis "Calculate Geometric Attributes of Spatial Polygons")
+    (description
+     "Calculate geometric attributes of spatial polygons including area, perimeter,
+compactness, elongation, orientation (bearing), fractal dimension, and various
+shape indices.  The package relies heavily on terra methods and vector data
+objects <https://github.com/rspatial/terra>.")
+    (license license:expat)))
+
 (define-public r-geomaroc
   (package
     (name "r-geomaroc")
@@ -40145,6 +40170,46 @@ Perform sensitivity analysis and visualize low-order effects, following
 Schonlau, M. and Welch, W.J. (2006), \"Screening the Input Variables to a
 Computer Model Via Analysis of Variance and Visualization\",
 <doi:10.1007/0-387-28014-6_14>.")
+    (license license:gpl3)))
+
+(define-public r-gasmodel
+  (package
+    (name "r-gasmodel")
+    (version "0.6.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gasmodel" version))
+       (sha256
+        (base32 "05klhv55fjdjmsmpdv9wflkmlv05c9r5234g2bjfp0vvhiia3rjx"))))
+    (properties `((upstream-name . "gasmodel")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-pracma
+                             r-numderiv
+                             r-nloptr
+                             r-mvnfast
+                             r-matrix
+                             r-ggplot2
+                             r-dplyr
+                             r-copula
+                             r-arrangements
+                             r-abind))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/vladimirholy/gasmodel")
+    (synopsis "Generalized Autoregressive Score Models")
+    (description
+     "Estimation, forecasting, and simulation of generalized autoregressive score
+(GAS) models of Creal, Koopman, and Lucas (2013) <doi:10.1002/jae.1279> and
+Harvey (2013) <doi:10.1017/cbo9781139540933>.  Model specification allows for
+various data types and distributions, different parametrizations, exogenous
+variables, joint and separate modeling of exogenous variables and dynamics,
+higher score and autoregressive orders, custom and unconditional initial values
+of time-varying parameters, fixed and bounded values of coefficients, and
+missing values.  Model estimation is performed by the maximum likelihood method.")
     (license license:gpl3)))
 
 (define-public r-gasfluxes

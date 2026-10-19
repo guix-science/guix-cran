@@ -23459,6 +23459,45 @@ adapted for use with other model simulators by utilizing its extendable
 (inheritable) base classes.")
     (license license:gpl3)))
 
+(define-public r-poemed
+  (package
+    (name "r-poemed")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "POEMED" version))
+       (sha256
+        (base32 "095wwamyqkd9j7xrc10clvkw92v6jmnxwr2y5bfil9c7fnkijk8g"))))
+    (properties `((upstream-name . "POEMED")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr r-ncvreg r-glmnet r-generics))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/yelleKneK/POEMED")
+    (synopsis "Power Enhancement for High-Dimensional Mediation Analysis")
+    (description
+     "This package provides powerful global tests for high-dimensional mediation
+analysis with heterogeneous (and even contrasting) mediation effects, for
+continuous, binary, and count outcomes.  The power enhancement (PE) idea
+augments a Wald test on the total indirect effect with a component that captures
+marginal signals from individual mediators, so that active mediators are
+detected even when their individual indirect effects cancel and the total
+indirect effect is zero.  The package also identifies which individual mediators
+are active with familywise error rate or false discovery rate control.  The
+methods implement Yu and Kelley (in press), \"Power Enhancement in
+High-Dimensional Heterogeneous Mediation Analysis\" (Journal of the American
+Statistical Association); the package also simulates mediation data under the
+homogeneous, heterogeneous, and contrasting patterns that the article studies,
+ships its empirical health-expenditure data as a benchmark and reruns that
+empirical analysis, and runs the designs of its Monte Carlo size and power
+studies.  The name, POEMED', from POwer-Enhanced MEDiation, encodes the method.
+Every estimation and testing function returns a tidy data.frame that prints with
+sensible rounding and composes with the broader R ecosystem.")
+    (license license:gpl3+)))
+
 (define-public r-podbay
   (package
     (name "r-podbay")
@@ -26436,29 +26475,31 @@ given non negative random variables.")
 (define-public r-plotbb
   (package
     (name "r-plotbb")
-    (version "0.1.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plotbb" version))
        (sha256
-        (base32 "14db3z33qxm4i7prcc5x8si6b63dr6dk4ycvgzdmscy9640bzh6a"))))
+        (base32 "0d28381xf9mig45yyx6vfgca3mmryg69m2iaxfz07cp2ps04w256"))))
     (properties `((upstream-name . "plotbb")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-scales r-rlang r-magrittr))
+    (propagated-inputs (list r-scales r-rlang))
     (native-inputs (list r-quarto))
     (home-page "https://cran.r-project.org/package=plotbb")
-    (synopsis "Grammar of Graphics for 'base' Plot")
+    (synopsis "Grammar of Graphics on 'base' Graphics")
     (description
-     "This package provides a grammar of graphics framework built on base graphics.
-It provides a bbplot object and a + operator to incrementally compose plots from
-data, aesthetic mappings and layers, then render them using the base plotting
-system.  The package includes common geometric layers (points, lines, segments,
-bars, histograms, boxplots and tiles), scales for color and other aesthetics,
-legends, faceting, themes, and significance annotations.")
+     "This package implements a grammar of graphics on top of the base graphics
+system.  A bbplot object is built incrementally with a + operator from data,
+aesthetic mappings and layers, then rendered with base graphics, so plotbb
+layers can be mixed with ordinary base plotting calls.  The package provides
+layers for points, lines, bars, histograms, densities, boxplots, violins,
+ribbons, smooths, error bars and tiles, together with colour and other aesthetic
+scales, automatic legends, faceting, themes, coordinate flipping and
+significance annotations.")
     (license license:artistic2.0)))
 
 (define-public r-plotannotate
@@ -30992,13 +31033,13 @@ repositories.")
 (define-public r-pigauto
   (package
     (name "r-pigauto")
-    (version "0.10.0")
+    (version "0.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pigauto" version))
        (sha256
-        (base32 "0wnz14813iv464xd8zfjichsd041mmd73sd054siq6a41lng9mdd"))))
+        (base32 "1qi4qfdik50b0aksab3gv8w7l8ngzb3dxf7690bhh18rr95235jj"))))
     (properties `((upstream-name . "pigauto")))
     (build-system r-build-system)
     (arguments
@@ -31020,17 +31061,17 @@ similar traits), cross-trait correlations (observed traits inform missing ones),
 and optional environmental covariates (climate, habitat, geography).  Handles
 continuous measurements, counts, binary variables, ordered categories, unordered
 categories, bounded proportions, zero-inflated counts, and compositional
-multi-proportion data in a single call.  The method blends a phylogenetic
-baseline with a graph neural network correction; a per-trait gate calibrated on
-held-out data ensures the network only contributes when it improves on the
-baseline.  Provides conformal prediction intervals for continuous, count, and
-ordinal traits and an experimental analysis-aware multiple-imputation workflow
-for one missing continuous covariate in Gaussian linear, binomial-logit, and
-Gaussian random-intercept models, with Rubin pooling limited to fixed effects.
-Stochastic graph-network and posterior-tree completions are prediction
-diagnostics rather than validated inferential imputations.  Tested up to 10,000
-species.  Bundled datasets include 300-species and 9,993-species bird-trait
-subsets with matching example phylogenetic trees.  Rubin (1987,
+multi-proportion data in a single call.  The default method is a phylogenetic
+baseline calibrated on held-out data; an optional graph neural network
+correction, which is needed to use covariates, is blended in through a per-trait
+gate that retains a baseline fallback.  Provides conformal prediction intervals
+for continuous, count, ordinal, and proportion traits and an experimental
+analysis-aware multiple-imputation workflow for one missing continuous covariate
+in Gaussian linear, binomial-logit, and Gaussian random-intercept models, with
+Rubin pooling limited to fixed effects.  Stochastic graph-network and
+posterior-tree completions are prediction diagnostics rather than validated
+inferential imputations.  Bundled datasets include 300-species and 9,993-species
+bird-trait subsets with matching example phylogenetic trees.  Rubin (1987,
 ISBN:978-0-471-08705-2); Vovk et al. (2005, ISBN:978-0-387-25061-8); Nakagawa
 and de Villemereuil (2019) <doi:10.1093/sysbio/syy089>.")
     (license license:expat)))

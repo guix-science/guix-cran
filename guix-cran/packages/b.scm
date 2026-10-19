@@ -5397,13 +5397,13 @@ all LEGO since through the end of 2025.")
 (define-public r-brfssdata
   (package
     (name "r-brfssdata")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "brfssdata" version))
        (sha256
-        (base32 "08pwg67065x71m88rv7ymphc7i56b1lvhkkccg5xi0sb7pxdx49c"))))
+        (base32 "0aj1hbm7i4vd54s73v6h95bb5367ma72zazyn8p2w0mvksrrgman"))))
     (properties `((upstream-name . "brfssdata")))
     (build-system r-build-system)
     (arguments
@@ -11715,31 +11715,6 @@ estimation approach for this package is described in Rast et al. (2020)
 examined with rstan functions.")
     (license license:gpl3+)))
 
-(define-public r-bmet
-  (package
-    (name "r-bmet")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bmet" version))
-       (sha256
-        (base32 "128mnyq4jkigirf9xkpfrk4l4d8pivrj43wbaj5hizhfd84q1qzj"))))
-    (properties `((upstream-name . "bmet")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mcmcpack r-mass))
-    (home-page "https://cran.r-project.org/package=bmet")
-    (synopsis "Bayesian Multigroup Equivalence Testing")
-    (description
-     "Calculates the necessary quantities to perform Bayesian multigroup equivalence
-testing.  Currently the package includes the Bayesian models and equivalence
-criteria outlined in Pourmohamad and Lee (2023) <doi:10.1002/sta4.645>, but more
-models and equivalence testing features may be added over time.")
-    (license license:expat)))
-
 (define-public r-bmerl
   (package
     (name "r-bmerl")
@@ -18003,6 +17978,37 @@ provides access to some of the package functionality:
 <https://biotransformers.shinyapps.io/oba1/>.  The Standard BMP Methods website
 documents the calculations in detail: <https://www.dbfz.de/en/BMP>.")
     (license license:gpl2)))
+
+(define-public r-bioftf
+  (package
+    (name "r-bioftf")
+    (version "3.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BioFTF" version))
+       (sha256
+        (base32 "1a2ih3szqzxxil8llqbkz12id077niirpnrn22a4z1q7dcixlbxg"))))
+    (properties `((upstream-name . "BioFTF")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=BioFTF")
+    (synopsis "Biodiversity Assessment Using Hill-Number Functional Tools")
+    (description
+     "This package provides tools for biodiversity assessment through Hill-number
+diversity profiles treated as functions of the order q.  The package computes
+the profiles of Hill (1973) <doi:10.2307/1934352>, their analytical first and
+second derivatives, curvature, radius of curvature, arc length, cumulative
+integral functions, profile areas, area-based rankings and relative changes over
+time, together with static and interactive three-dimensional biodiversity
+surfaces.  The functional approach follows Di Battista, Fortuna and Maturo
+(2017) <doi:10.1016/j.ecolind.2016.10.032>, Maturo and Di Battista (2018)
+<doi:10.1016/j.ecolind.2017.08.016> and Maturo (2018)
+<doi:10.1016/j.ecolind.2018.03.013>.")
+    (license license:gpl2+)))
 
 (define-public r-biofetchr
   (package
@@ -26628,6 +26634,33 @@ al. (2017) <doi:10.1093/biostatistics/kxx002>.")
      "Interface to Local Data Bank ('Bank Danych Lokalnych - bdl') API
 <https://api.stat.gov.pl/Home/@code{BdlApi?lang=en>} with set of useful tools
 like quick plotting and map generating using data from bank.")
+    (license license:gpl3)))
+
+(define-public r-bdib
+  (package
+    (name "r-bdib")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BDIB" version))
+       (sha256
+        (base32 "1znbhv50hjn3yqnvxby8j8g30l3mpnbxkh9mz1j8178dnf6jwgc0"))))
+    (properties `((upstream-name . "BDIB")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rbest r-jagsui))
+    (home-page "https://cran.r-project.org/package=BDIB")
+    (synopsis
+     "Bayesian Dynamic Information Borrowing for Longitudinal Data with Informative Dropout")
+    (description
+     "This package implements BDIB (Bayesian dynamic information borrowing) for
+longitudinal outcomes with informative dropout.  The package provides the
+mixture prior for longitudinal data borrowing (MLB) and the self-adapting
+mixture prior for longitudinal data information borrowing (SLB).  Both methods
+use a shared-parameter model for outcomes and dropout.")
     (license license:gpl3)))
 
 (define-public r-bdf3

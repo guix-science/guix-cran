@@ -11830,52 +11830,6 @@ functions.  See the ompr website <https://dirkschumacher.github.io/ompr/> for
 more information, documentation and examples.")
     (license license:expat)))
 
-(define-public r-omopviewer
-  (package
-    (name "r-omopviewer")
-    (version "0.7.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "OmopViewer" version))
-       (sha256
-        (base32 "005nz95aa7vrzdqc04xa9m8hz8lzirr40as66c8ylp93hgm558ni"))))
-    (properties `((upstream-name . "OmopViewer")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-yaml
-                             r-visomopresults
-                             r-usethis
-                             r-tidyr
-                             r-styler
-                             r-stringr
-                             r-snakecase
-                             r-shiny
-                             r-rlang
-                             r-purrr
-                             r-omopgenerics
-                             r-markdown
-                             r-lifecycle
-                             r-gt
-                             r-glue
-                             r-dt
-                             r-dplyr
-                             r-cli
-                             r-bslib))
-    (native-inputs (list r-knitr))
-    (home-page "https://ohdsi.github.io/OmopViewer/")
-    (synopsis "Visualise OMOP Results using 'shiny' Applications")
-    (description
-     "Visualise results obtained from analysing data mapped to the Observational
-Medical Outcomes Partnership (OMOP) common data model using shiny applications.")
-    (license (license:fsdg-compatible "Apache License (>= 2)"))))
-
 (define-public r-omopstudybuilder
   (package
     (name "r-omopstudybuilder")
@@ -13515,33 +13469,6 @@ these state-specific distributions are then inferred.  Relevant for application
 to genomic sequences, time series, or any other sequence data with serial
 autocorrelation.")
     (license license:gpl3)))
-
-(define-public r-ohit
-  (package
-    (name "r-ohit")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Ohit" version))
-       (sha256
-        (base32 "132d4drc2phw9ppxnczb1ycdg3dv085k8p6bcaj3v866j0hfxjgb"))))
-    (properties `((upstream-name . "Ohit")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "http://mx.nthu.edu.tw/~cking/pdf/IngLai2011.pdf")
-    (synopsis "OGA+HDIC+Trim and High-Dimensional Linear Regression Models")
-    (description
-     "Ing and Lai (2011) <doi:10.5705/ss.2010.081> proposed a high-dimensional model
-selection procedure that comprises three steps: orthogonal greedy algorithm
-(OGA), high-dimensional information criterion (HDIC), and Trim.  The first two
-steps, OGA and HDIC, are used to sequentially select input variables and
-determine stopping rules, respectively.  The third step, Trim, is used to delete
-irrelevant variables remaining in the second step.  This package aims at fitting
-a high-dimensional linear regression model via OGA+HDIC+Trim.")
-    (license license:gpl2)))
 
 (define-public r-ohenery
   (package

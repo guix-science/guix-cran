@@ -20666,6 +20666,34 @@ matches between sample names in different data sets.  See Wang et al. (2010)
 <doi:10.4137/CIN.S5613>.")
     (license license:asl2.0)))
 
+(define-public r-namegender
+  (package
+    (name "r-namegender")
+    (version "0.7.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "namegender" version))
+       (sha256
+        (base32 "1w3k7r4ldcl54dz1mivyw96d9hws6cq5m11j7qnwnyhd2r2idji3"))))
+    (properties `((upstream-name . "namegender")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-openssl r-jsonlite r-httr2))
+    (home-page "https://namegender.com/docs")
+    (synopsis "Client for the 'NameGender' Name-to-Gender API")
+    (description
+     "Infer the likely gender of first names, email addresses and usernames, and the
+country distribution of a name, through the @code{NameGender} web API
+<https://namegender.com>.  Each answer carries the share and number of records
+behind it and the data version that produced it, so results can be reported and
+reproduced in research.  Also returns letter salutations, checks whether a name
+looks like a real person's name, runs CSV and XLSX files as file jobs, and
+verifies the signature of @code{NameGender} webhooks.  An API key is needed.")
+    (license license:expat)))
+
 (define-public r-nam
   (package
     (name "r-nam")

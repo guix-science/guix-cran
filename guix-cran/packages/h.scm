@@ -8212,13 +8212,13 @@ estimation method.")
 (define-public r-histdawass
   (package
     (name "r-histdawass")
-    (version "1.0.8")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HistDAWass" version))
        (sha256
-        (base32 "001ranvb4lfjh9lmh5d031g0k6r3yxzwaxvyacxh07hlf9fh7kvn"))))
+        (base32 "06ir49vxgaxsk9z4iiznn05xbf9bkki01gwvckjdqjibdf9lva77"))))
     (properties `((upstream-name . "HistDAWass")))
     (build-system r-build-system)
     (arguments
@@ -8231,7 +8231,7 @@ estimation method.")
                              r-ggplot2
                              r-factominer
                              r-class))
-    (home-page "https://cran.r-project.org/package=HistDAWass")
+    (home-page "https://github.com/Airpino/HistDAWass")
     (synopsis "Histogram-Valued Data Analysis")
     (description
      "In the framework of Symbolic Data Analysis, a relatively new approach to the

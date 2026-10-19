@@ -2629,6 +2629,40 @@ source.  Method described in Fellows Yates, J. A. et.  al. (2021) Proceedings of
 the National Academy of Sciences USA <doi:10.1073/pnas.2021655118>.")
     (license license:expat)))
 
+(define-public r-cunysports
+  (package
+    (name "r-cunysports")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CUNYsports" version))
+       (sha256
+        (base32 "0cn0jwd7iphy0m07bk0dscwmjpli1b61ypx53hw64v3k1y45731h"))))
+    (properties `((upstream-name . "CUNYsports")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-rsqlite
+                             r-rlang
+                             r-dplyr
+                             r-dbi))
+    (native-inputs (list r-knitr))
+    (home-page "https://nyc-open-data-lab.github.io/CUNYsports/")
+    (synopsis
+     "Accessible Collegiate Athletics Data from the City University of New York (CUNY)")
+    (description
+     "This package provides access to collegiate athletics data from the City
+University of New York (CUNY), the largest urban public university system in the
+United States.  Includes tools for discovering and retrieving sports data from
+an included SQLite database.  The data covers individual CUNY schools, players,
+games, seasons, and other aspects of CUNY athletics, providing accessible
+datasets for teaching, student learning, and sports analytics.")
+    (license license:expat)))
+
 (define-public r-cumulcalib
   (package
     (name "r-cumulcalib")
@@ -28865,13 +28899,13 @@ Hallett et al. (2016) <doi:10.1111/2041-210X.12569> and Avolio et al. (2019)
 (define-public r-codriver
   (package
     (name "r-codriver")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "codriver" version))
        (sha256
-        (base32 "0bc3n87n2i7j4z1px0q6m48j5xj0sv7k8yy6mm28b28frx4x1jww"))))
+        (base32 "03fs7r2315b478vh1hv655smp0awk9rchr2r13aipb90749iglpy"))))
     (properties `((upstream-name . "codriver")))
     (build-system r-build-system)
     (arguments
@@ -28891,9 +28925,10 @@ Hallett et al. (2016) <doi:10.1111/2041-210X.12569> and Avolio et al. (2019)
      "This package provides a context-aware AI assistant for RStudio that works
 directly in the source editor without switching context or opening a separate
 chat window.  Reads the cursor position and selection to automatically choose
-the right action - generate, complete, continue, edit, or comment.  Supports
-configuration of multiple large language model providers and can be invoked via
-the keyboard shortcut or Addins menu.")
+the right action - generate, complete, continue, edit, or comment.  Results are
+presented as ghost text or an in-place diff suggestion.  Supports configuration
+of multiple large language model providers and can be invoked via the keyboard
+shortcut or Addins menu.")
     (license license:expat)))
 
 (define-public r-codingmatrices
@@ -48380,13 +48415,13 @@ processed from IPUMS International (1971â2010) and the Population Census 20
 (define-public r-censusindia
   (package
     (name "r-censusindia")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "censusindia" version))
        (sha256
-        (base32 "0a4diqmjnccccvrfwlrrsy9klsv35ld0z4xj0wpd16gcq7ma8myx"))))
+        (base32 "0wvv91ca8jk661jh93gs657cdd1ksvlg3gdfdf44r6fhs67gjjm9"))))
     (properties `((upstream-name . "censusindia")))
     (build-system r-build-system)
     (arguments
@@ -48404,13 +48439,13 @@ processed from IPUMS International (1971â2010) and the Population Census 20
     (description
      "Tables from every decennial Census of India from 1901 to 2011: population time
 series, Primary Census Abstracts at state, district and sub-district level,
-mother tongue tables, and Scheduled Caste and Scheduled Tribe populations,
-together with Ministry of Health and Family Welfare population projections to
-2036.  Historical series are drawn from Jolad and Singh (2026)
-<doi:10.7910/DVN/ON8CP8>.  Census variables can be returned with state or
-district boundaries of the matching census year attached for mapping.  Boundary
-files and the largest village-level tables are downloaded on first use and
-cached locally.")
+mother tongue tables, Scheduled Caste and Scheduled Tribe populations, and the
+1931 caste tables by religion, together with Ministry of Health and Family
+Welfare population projections to 2036.  Historical series are drawn from Jolad
+and Singh (2026) <doi:10.7910/DVN/ON8CP8>.  Census variables can be returned
+with state or district boundaries of the matching census year attached for
+mapping.  Boundary files and the largest village-level tables are downloaded on
+first use and cached locally.")
     (license license:expat)))
 
 (define-public r-censusapi

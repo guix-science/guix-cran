@@ -15,7 +15,7 @@
   #:use-module (gnu packages maths)
   #:use-module (gnu packages python-science)
   #:use-module (gnu packages web)
-  #:use-module (gnu packages containers)
+  #:use-module (gnu packages docker)
   #:use-module (gnu packages cmake)
   #:use-module (gnu packages finance)
   #:use-module (gnu packages java)
@@ -170,6 +170,55 @@ and Sneath (1963) that appear in other R packages.")
      "Wrapper functions for the implementation of lagged weighted quantile sum
 regression, as per Gennings et al (2020) <doi:10.1016/j.envres.2020.109529>.")
     (license license:gpl2+)))
+
+(define-public r-lwpls
+  (package
+    (name "r-lwpls")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lwpls" version))
+       (sha256
+        (base32 "0kid5m5ag85gdl1p0bw1nh3xv2g8s437lcx7hjc19f61i5rddcq8"))))
+    (properties `((upstream-name . "lwpls")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yardstick
+                             r-vctrs
+                             r-tibble
+                             r-scales
+                             r-rlang
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-parsnip
+                             r-hardhat
+                             r-ggplot2
+                             r-generics
+                             r-dials
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ChristianGoueguel/lwpls")
+    (synopsis "Locally-Weighted Partial Least Squares for 'tidymodels'")
+    (description
+     "Locally-weighted partial least squares (LW-PLS) is a just-in-time learning
+method that builds a dedicated weighted partial least squares model around every
+new sample, where training samples are weighted by their similarity to that
+sample (Kim et al. (2011) <doi:10.1016/j.ijpharm.2011.10.007>).  Regression
+(single or multiple outcomes) and classification (locally weighted partial least
+squares-discriminant analysis; Bevilacqua and Marini (2014)
+<doi:10.1016/j.aca.2014.05.057>) are supported.  The local models can be robust
+to outliers, by partial robust M-regression (Serneels et al. (2005)
+<doi:10.1016/j.chemolab.2005.04.007>), and sparse (Hoffmann et al. (2015)
+<doi:10.1016/j.chemolab.2015.09.019>).  The prediction kernel is written in C++
+with @code{RcppArmadillo}', and the model is integrated with the parsnip',
+dials', tune and yardstick packages so it can be used within the tidymodels
+framework.  Diagnostics of the local models (prediction reliability, local
+regression vectors, robust weights and selected predictors) come with ggplot2
+plots designed for spectroscopic data.")
+    (license license:expat)))
 
 (define-public r-lwfbrook90r
   (package
@@ -8023,13 +8072,13 @@ values.")
 (define-public r-lmomco
   (package
     (name "r-lmomco")
-    (version "2.5.7")
+    (version "2.5.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lmomco" version))
        (sha256
-        (base32 "0azx13d5j046qm69064pr0d3f6xygsqhsjj0c4y7wh6791m8b64m"))))
+        (base32 "1215g89pc8n2cscyyaqcn3ycc8hkdxxzhchsv5ywmvkf9zs0idqk"))))
     (properties `((upstream-name . "lmomco")))
     (build-system r-build-system)
     (arguments

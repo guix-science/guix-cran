@@ -20,7 +20,7 @@
   #:use-module (gnu packages compression)
   #:use-module (gnu packages video)
   #:use-module (gnu packages java)
-  #:use-module (gnu packages containers)
+  #:use-module (gnu packages docker)
   #:use-module (gnu packages duckdb)
   #:use-module (gnu packages tbb)
   #:use-module (gnu packages ghostscript)
@@ -2783,13 +2783,13 @@ formats as well as other swatch file formats can be found at
 (define-public r-swash
   (package
     (name "r-swash")
-    (version "3.0.1")
+    (version "3.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "swash" version))
        (sha256
-        (base32 "0afni8gzx5gzz409i7wr8v560s8ram4nfhwsdjmbbzrmwf1yqw88"))))
+        (base32 "13g6issvp1m2z37p6acnncjfb6flx6k7ryibr0l5jgzmnra8g2rc"))))
     (properties `((upstream-name . "swash")))
     (build-system r-build-system)
     (arguments
@@ -9131,13 +9131,13 @@ Walters et al, 2018 <doi:10.1109/PVSC.2018.8548187>. [3] Guo, S. et al, 2016.
 (define-public r-sundialr
   (package
     (name "r-sundialr")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sundialr" version))
        (sha256
-        (base32 "14z0z63vswi4yi116chzixl0m7wb7vbzyl6m04a7gx22jlgz4i0i"))))
+        (base32 "0f4l460ifkc8hjkmqd0fjszijbi2x2h1ms18g6av2xm8s1acv0li"))))
     (properties `((upstream-name . "sundialr")))
     (build-system r-build-system)
     (arguments
@@ -9522,13 +9522,13 @@ estimating and projecting under-five mortality rates, described in Mercer et al.
 (define-public r-summata
   (package
     (name "r-summata")
-    (version "0.12.0")
+    (version "0.13.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "summata" version))
        (sha256
-        (base32 "0p2s9v3vj7a620kca46cb3wqx9vkqdp3x72fjqmmwzhbz282i8p1"))))
+        (base32 "10v94vi41y7z7z6818y0fia5n5kk1wdnhzkcp1aq62y6hfrvsc0d"))))
     (properties `((upstream-name . "summata")))
     (build-system r-build-system)
     (arguments
@@ -9536,7 +9536,7 @@ estimating and projecting under-five mortality rates, described in Mercer et al.
       #:tests? #f))
     (propagated-inputs (list r-survival r-ggplot2 r-data-table))
     (native-inputs (list r-knitr))
-    (home-page "https://phmcc.codeberg.page/summata/")
+    (home-page "https://phmcc.codefloe.page/summata/")
     (synopsis "Publication-Ready Summary Tables and Forest Plots")
     (description
      "This package provides a comprehensive framework for descriptive statistics and
@@ -29907,13 +29907,13 @@ data are obtained through the Google Earth Engine service
 (define-public r-spectralmm
   (package
     (name "r-spectralmm")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SpectralMM" version))
        (sha256
-        (base32 "1hk0m0f4ixd91xcvm9s9xvnkvx04fgmn9i6xi9c3f4hjn1bnx772"))))
+        (base32 "16f5z9zwlcrzcg84gdfcwwiq7dwxgz0fpfknympq2wxzsi6qjw4z"))))
     (properties `((upstream-name . "SpectralMM")))
     (build-system r-build-system)
     (arguments
@@ -65077,6 +65077,31 @@ reconstruction in planes defined by pairs of singular dimensions.  A synthetic
 Woodcock-Johnson IV look-alike dataset is provided for examples and testing.
 The method is described in Kim and Grochowalski (2019)
 <doi:10.1007/s00357-018-9277-7>.")
+    (license license:expat)))
+
+(define-public r-seowebchecker
+  (package
+    (name "r-seowebchecker")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "seowebchecker" version))
+       (sha256
+        (base32 "0lkc86rg1ka298c0mv88g9pqk7cr66zrsa54m9pz2nqqqmgqp7aq"))))
+    (properties `((upstream-name . "seowebchecker")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://seowebchecker.com/")
+    (synopsis
+     "Comprehensive Website Search Engine Optimization Audit and Analysis Tools")
+    (description
+     "This package provides a lightweight client software development kit and utility
+suite for automated website technical search engine optimization audits, meta
+tag validations, Core Web Vitals checks, and optimization scoring.  Official web
+audit portal and tools available at <https://seowebchecker.com/>.")
     (license license:expat)))
 
 (define-public r-seofm

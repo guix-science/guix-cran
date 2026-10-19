@@ -1034,6 +1034,34 @@ modeling.  Users can also use this package to create random covariance matrices.
      "This package provides a plug in for using @code{WinEdt} as an editor for R.")
     (license license:gpl2)))
 
+(define-public r-rwind
+  (package
+    (name "r-rwind")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rWind" version))
+       (sha256
+        (base32 "0x1hrvvmay1rb590z5h5fi7fr7xbmafldkp87qnn40r2d47im77g"))))
+    (properties `((upstream-name . "rWind")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra r-raster r-matrix r-lubridate r-gdistance))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jabiologo/rWind")
+    (synopsis
+     "Download, Edit and Include Wind and Sea Currents Data in Ecological and Evolutionary Analysis")
+    (description
+     "Downloads and processes surface wind data from the Global Forecast System
+<https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast> and
+sea-current data from Ocean Surface Current Analyses Real-time (OSCAR).
+Converts flow speed and direction into spatial rasters and directed movement
+costs and conductances for connectivity and least-cost path analyses.")
+    (license license:gpl3+)))
+
 (define-public r-rwildbook
   (package
     (name "r-rwildbook")
@@ -16823,13 +16851,13 @@ of LP, QP, QCP, IP.")
 (define-public r-roi-plugin-coinclp
   (package
     (name "r-roi-plugin-coinclp")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ROI.plugin.coinclp" version))
        (sha256
-        (base32 "04x52vidpvv7bhgl8aqzgqhkmk5skh37ah5ywg0xycqvm9nzg9k0"))))
+        (base32 "089crqg91qmpnyscp0hqk2dyx4r9qhc1ibnvddm8klmfk6n3hpa5"))))
     (properties `((upstream-name . "ROI.plugin.coinclp")))
     (build-system r-build-system)
     (arguments
@@ -16839,13 +16867,12 @@ of LP, QP, QCP, IP.")
     (home-page "https://github.com/SamLovick/ROI.plugin.coinclp")
     (synopsis "'COIN-OR' 'Clp' Plugin for the 'R' Optimization Infrastructure")
     (description
-     "Registers the COIN-OR Clp linear programming solver, through the coinclp
-package, with the R Optimization Infrastructure ('ROI').  Linear programs with
-continuous variables are then solved by ROI_solve(op, solver = \"coinclp\"),
-keeping sparse constraint matrices sparse all the way to the solver, and
-returning dual values, reduced costs and row activities alongside the primal
-solution.")
-    (license (license:fsdg-compatible "EPL"))))
+     "Registers the COIN-OR Clp linear programming solver with ROI', the R
+Optimization Infrastructure, through the coinclp package.  Linear programs with
+continuous variables are then solved by ROI with the coinclp solver, keeping
+sparse constraint matrices sparse all the way to the solver, and returning dual
+values, reduced costs and row activities alongside the primal solution.")
+    (license license:gpl3)))
 
 (define-public r-roi-plugin-clarabel
   (package

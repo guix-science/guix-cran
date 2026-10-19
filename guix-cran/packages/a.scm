@@ -17128,13 +17128,13 @@ Bennet et al., (1983) <doi:10.1002/sim.4780020223>, and Muse et al., (2022)
 (define-public r-amorem
   (package
     (name "r-amorem")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "amorem" version))
        (sha256
-        (base32 "02jwn68siapn0j02mc6d7sfnw3d9bz0pks9xc1q6rhm4n40s513a"))))
+        (base32 "0r2vkjm3ky4kl29c720y8f6zrrkxqil1lby4p6avbhzjkcfa06dl"))))
     (properties `((upstream-name . "amorem")))
     (build-system r-build-system)
     (arguments
@@ -22177,36 +22177,30 @@ Conditional Inference Trees are available.")
 (define-public r-ahtaudesign
   (package
     (name "r-ahtaudesign")
-    (version "0.1.0")
+    (version "1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AHTauDesign" version))
        (sha256
-        (base32 "069db0s5zhpw7i7zjkss1g6gj999li6h6iqhcgidycrqpbgw52xg"))))
+        (base32 "18rawfifn3hcg2vraqmg5lid0v4531s2g3m3v1ydfrpckdkmfcyq"))))
     (properties `((upstream-name . "AHTauDesign")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-survival))
+    (propagated-inputs (list r-survah))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=AHTauDesign")
-    (synopsis "Truncation Time Selection for Average Hazard Analyses")
+    (synopsis "Prospective Trial Planning for Average Hazard Estimands")
     (description
-     "This package implements a two-stage, design-informed framework for selecting the
-truncation time in time-to-event trials analyzed with the average hazard
-estimand, motivated by pediatric oncology settings with small samples, slow
-accrual, and limited follow-up.  Stage 1 validates a clinically proposed
-truncation time against the planned design using simulation-based diagnostics
-for risk-set support, follow-up coverage, estimability, and estimator stability,
-classifying it as Pass, Borderline, or Fail.  Stage 2 performs constrained
-optimization over a grid of candidate truncation times within a
-clinical-distance window, maximizing a utility subject to feasibility
-constraints, with an independent evaluation run to assess the selected time.
-Supports proportional-hazards, early-, and delayed-effect patterns, uniform
-accrual with administrative censoring, and calibrated exponential random
-censoring.")
+     "This package provides a simulation-based prospective planning workflow for
+average hazard estimands in two-arm time-to-event trials.  Supports calibration
+and freezing of design-specific information-support rules, assessment of
+clinically preferred truncation horizons, conditional selection of clinically
+acceptable alternative horizons, and reverse design over sample size and
+additional follow-up.  Separates information support from statistical power and
+supports auditable planning reports.")
     (license license:gpl3)))
 
 (define-public r-ahsurv
@@ -31019,13 +31013,13 @@ for screen reader users.")
 (define-public r-accessr
   (package
     (name "r-accessr")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "accessr" version))
        (sha256
-        (base32 "0dpr9fd3xh1c196s60cbcvq3pj4rm2f0fq5s1sk0gqd2iwzrhj5z"))))
+        (base32 "1250mj7mvqar8gz9swfl2b8zx6z27qzl624lymz37jljbsl0lns4"))))
     (properties `((upstream-name . "accessr")))
     (build-system r-build-system)
     (arguments
