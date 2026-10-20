@@ -17,7 +17,7 @@
   #:use-module (gnu packages compression)
   #:use-module (gnu packages python)
   #:use-module (gnu packages libreoffice)
-  #:use-module (gnu packages docker)
+  #:use-module (gnu packages containers)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages julia)
   #:use-module (gnu packages java)
@@ -10864,13 +10864,13 @@ and produces a new Word document with numbered references including DOIs.")
 (define-public r-dogoftest
   (package
     (name "r-dogoftest")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Dogoftest" version))
        (sha256
-        (base32 "1ilyi2czsglwzqwq41p82z88yghin65bklc17ihihdf12rd7h25d"))))
+        (base32 "10vyzhya3qm0jhdz27zcd8hlrvin3jiydiv1qbxg76gw5j41j693"))))
     (properties `((upstream-name . "Dogoftest")))
     (build-system r-build-system)
     (arguments
@@ -11286,13 +11286,13 @@ for functions provided by packages as well.")
 (define-public r-docovt
   (package
     (name "r-docovt")
-    (version "0.6")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Docovt" version))
        (sha256
-        (base32 "1qqrw8iiayzvascii3ygnyar9wbfabb55b93dzg84gka55vfs165"))))
+        (base32 "0hfx52wyhfps5wwggsjkc0nji68zfcv7clkzv8c9kh56pq7ly9ig"))))
     (properties `((upstream-name . "Docovt")))
     (build-system r-build-system)
     (arguments
@@ -11311,7 +11311,7 @@ statistical analysis, particularly in scenarios where data is dispersed across
 multiple nodes or sources.  This package is ideal for researchers and
 practitioners working with high-dimensional data, providing a flexible and
 efficient framework for covariance matrix estimation and hypothesis testing.
-The philosophy of Docovt is described in Guo G.(2025)
+The philosophy of Docovt is described in Guo G. (2025)
 <doi:10.1016/j.physa.2024.130308>.")
     (license license:expat)))
 
@@ -20675,13 +20675,13 @@ sampling type or other probability weighted samples.")
 (define-public r-diagfdr
   (package
     (name "r-diagfdr")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "diagFDR" version))
        (sha256
-        (base32 "0vhbv1mv115m52i5vrrajk7qr00wcffn59zqhnmzfnnmszw2hkiv"))))
+        (base32 "07qqp4dmgqyms4zh1gbc4d9ayfvgx1d2mj5kpb73aj67rq4pjayr"))))
     (properties `((upstream-name . "diagFDR")))
     (build-system r-build-system)
     (arguments
@@ -20700,16 +20700,18 @@ sampling type or other probability weighted samples.")
                              r-cp4p))
     (native-inputs (list r-knitr))
     (home-page "https://www.biorxiv.org/content/10.64898/2026.04.16.718468")
-    (synopsis "Verifiable FDR Diagnostics for Proteomics")
+    (synopsis "Assessing False Discovery Rate Claims in Proteomics")
     (description
-     "This package provides methods to compute verifiable false discovery rate (FDR)
-diagnostic checks for workflows based on target-decoy competition and related
-confidence measures.  Implements calibration, stability and tail diagnostics,
-including tail support, threshold elasticity, posterior error probability (PEP)
-reliability, and equal-chance checks.  If you used this package in your
-research, please cite the associated preprint <doi:10.64898/2026.04.16.718468>.
-Detailed examples of using this package can also be found on the @code{GitHub}
-repository (<https://github.com/Jacky11/@code{diagFDR>}).")
+     "This package provides scope, calibration and stability diagnostics to assess
+false discovery rate (FDR) claims in peptide and protein identification
+workflows based on target-decoy competition and related confidence measures.
+Includes the recomputed decoy ratio of the reported list, accepted decoy counts
+and local decoy support, threshold elasticity, posterior error probability (PEP)
+concordance with the decoys, equal-chance checks and p-value calibration, with
+an HTML report.  If you used this package in your research, please cite the
+associated preprint <doi:10.64898/2026.04.16.718468>.  Detailed examples of
+using this package can also be found on the @code{GitHub} repository
+(<https://github.com/Jacky11/@code{diagFDR>}).")
     (license license:gpl3)))
 
 (define-public r-diagcounts
@@ -29653,13 +29655,13 @@ Bayesian latent class analysis.  Reference: Li et al. (2023)
 (define-public r-ddst
   (package
     (name "r-ddst")
-    (version "1.6.11")
+    (version "1.6.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ddst" version))
        (sha256
-        (base32 "0m6cqp67wq5bdrcmjk9b2gxa9955sqn0a6ygs5a2350dc5kb38s2"))))
+        (base32 "1z0fsppq9yzy15vp4dn3vsbfrz1dlxqjjhf32s18g733k91pdj00"))))
     (properties `((upstream-name . "ddst")))
     (build-system r-build-system)
     (arguments

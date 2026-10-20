@@ -17268,13 +17268,13 @@ endosteal contours of each cross section.")
 (define-public r-morpheus
   (package
     (name "r-morpheus")
-    (version "1.0-5")
+    (version "1.0-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "morpheus" version))
        (sha256
-        (base32 "107q6449pbhfhq6w2jdvfrmmlcax6349y327y585grli3g3scsf2"))))
+        (base32 "1y9psm2hl55xvbg102ri5sbnp8kdd4g6paz4l21d3kxk7y4axw5w"))))
     (properties `((upstream-name . "morpheus")))
     (build-system r-build-system)
     (arguments
@@ -17288,7 +17288,7 @@ endosteal contours of each cross section.")
 methods.  The main methods take d-dimensional inputs and a vector of binary
 outputs, and return parameters according to the GLMs mixture model (General
 Linear Model).  For more details see chapter 3 in the @code{PhD} thesis of
-Mor-Absa Loum: <https://theses.fr/s156435>, available here
+Mor-Absa Loum: <https://theses.fr/2018SACLS299>, available here
 <https://theses.hal.science/tel-01877796/document>.")
     (license license:expat)))
 
@@ -46440,33 +46440,6 @@ using MDC-based statistics.  The methodology is described in Monroy-Castillo et
 al. (2025, manuscript submitted).")
     (license license:gpl3)))
 
-(define-public r-mdbx
-  (package
-    (name "r-mdbx")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mdbx" version))
-       (sha256
-        (base32 "0w1vh5k2idmw0spqqvz2sd296mq4v34l03g0bsb83asixr0fa5zm"))))
-    (properties `((upstream-name . "mdbx")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-cpp11))
-    (home-page "https://pedrobtz.github.io/mdbx/")
-    (synopsis "Bindings to the 'libmdbx' Embedded Key-Value Store")
-    (description
-     "This package provides low-level bindings to libmdbx', a compact and fast
-transactional key-value store built on memory-mapped files
-(<https://libmdbx.dqdkfa.ru/>).  Database environments, transactions, and
-byte-oriented read and write operations are exposed directly.  The libmdbx
-sources are bundled and compiled into the package, so no system library
-installation is required.")
-    (license license:expat)))
-
 (define-public r-mdbr
   (package
     (name "r-mdbr")
@@ -47075,13 +47048,13 @@ Social Research Methodology <doi:10.1080/13645579.2026.2666297>.")
 (define-public r-mcs
   (package
     (name "r-mcs")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MCS" version))
        (sha256
-        (base32 "1pf6j4l7rgv0lyzpsxgl2z907zpgbjwqa29w77l4k5ama91ph3h6"))))
+        (base32 "0fnsslyhc4wdwl88x28cszzg5xk573hfd7rcr82whhmn6n18bynl"))))
     (properties `((upstream-name . "MCS")))
     (build-system r-build-system)
     (arguments
@@ -47090,7 +47063,9 @@ Social Research Methodology <doi:10.1080/13645579.2026.2666297>.")
     (home-page "https://cran.r-project.org/package=MCS")
     (synopsis "Model Confidence Set Procedure")
     (description
-     "Perform the Model Confidence Set procedure of Hansen et.al (2011).")
+     "This package implements the Model Confidence Set procedure of Hansen, Lunde and
+Nason (2011) <doi:10.3982/ECTA5771> using bootstrap tests of equal predictive
+ability.  Includes loss functions for level, volatility and quantile forecasts.")
     (license license:gpl2)))
 
 (define-public r-mcrpioda
@@ -54743,19 +54718,19 @@ and vessel trajectory data.")
 (define-public r-marcxmlr
   (package
     (name "r-marcxmlr")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "marcxmlr" version))
        (sha256
-        (base32 "1gbjc68gjpm5q2vx6n2d6fkjrgx6bn8dgi713yscpmxq8m6171r8"))))
+        (base32 "1vm33vkcsamzjg9z01hm02qdqm5gc7f8cwvv12cwk0jmfb2ha65r"))))
     (properties `((upstream-name . "marcxmlr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (inputs (list zlib libxml2))
+    (inputs (list zlib libxml2 expat))
     (propagated-inputs (list r-xml2
                              r-tibble
                              r-rlang
@@ -54764,16 +54739,18 @@ and vessel trajectory data.")
                              r-future))
     (native-inputs (list pkg-config r-knitr))
     (home-page "https://github.com/larry77/marcxmlr")
-    (synopsis "Faithful and Scalable MARCXML Parsing")
+    (synopsis "Efficient MARCXML Processing and Record Querying")
     (description
      "Parses Machine-Readable Cataloging ('MARC 21') XML
 <https://www.loc.gov/standards/marcxml/> into a canonical tidy long
 representation while preserving leaders, control fields, data fields,
 indicators, repeated fields, repeated subfields, and source order.  Provides
-in-memory reading, bounded-memory conversion to Parquet', and reconstruction of
-MARCXML from canonical data.  Supports structural diagnostics for in-memory and
-Arrow'-backed representations, optional recovery from malformed MARC records,
-and local parallel processing.")
+in-memory reading, batched conversion to Parquet', and reconstruction of MARCXML
+from canonical data.  Supports MARC-aware selection of complete records before
+materialisation using native XML prefiltering, and after materialisation on
+canonical tables and Arrow datasets.  Includes structural diagnostics for
+in-memory and Arrow'-backed representations, optional recovery from malformed
+MARC records, and local parallel processing.")
     (license license:expat)))
 
 (define-public r-marcox

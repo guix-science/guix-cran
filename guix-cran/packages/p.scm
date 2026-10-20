@@ -24075,13 +24075,13 @@ for various modeling and simulation software platforms.")
 (define-public r-pmwr
   (package
     (name "r-pmwr")
-    (version "1.2-0")
+    (version "1.3-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PMwR" version))
        (sha256
-        (base32 "1whak2qrjyfsi9xcxpxmj1p2z4z42fcxzvygnnd7250mqwiblcb9"))))
+        (base32 "14zbxifj6vxh7jv43sggrqpyiqcabs5x7afbcnq71qks1g5gnpwm"))))
     (properties `((upstream-name . "PMwR")))
     (build-system r-build-system)
     (arguments

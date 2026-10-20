@@ -1119,13 +1119,13 @@ summarizing messages, warnings, errors, and returned values.")
 (define-public r-futurize
   (package
     (name "r-futurize")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "futurize" version))
        (sha256
-        (base32 "0d03c2kkfzrmz5535nd92sp7167i5jrk67riyywqzc1qsbmb94xf"))))
+        (base32 "078v18xbkkxx23lxij293yrsp30lflnzdf9m4wc15f5f6s53fxdp"))))
     (properties `((upstream-name . "futurize")))
     (build-system r-build-system)
     (arguments
@@ -1135,24 +1135,24 @@ summarizing messages, warnings, errors, and returned values.")
     (home-page "https://futurize.futureverse.org")
     (synopsis "Parallelize Common Functions via One Magic Function")
     (description
-     "The @code{futurize()} function turns sequential map-reduce functions such as
-@code{base::lapply()}, @code{purrr::map()}, @code{foreach::foreach()} %do% { ...
-} into concurrent alternatives, providing you with a simple, straightforward
-path to scalable parallel computing via the future ecosystem
-<doi:10.32614/RJ-2021-048>.  By combining this transpiler function with R's
-native pipe operator, you have a convenient way for speeding up iterative
-computations with minimal refactoring, e.g. lapply(xs, fcn) |>
-@code{futurize()}', purrr::map(xs, fcn) |> @code{futurize()}', and
-foreach::foreach(x = xs) %do% { fcn(x) } |> @code{futurize()}'.  Other
-map-reduce packages that can be \"futurized\" are @code{BiocParallel}', plyr',
-crossmap', pbapply packages.  There is also support for a growing set of
-domain-specific packages on CRAN (e.g. boot', caret', @code{DiceKriging}', ez',
-fgsea', fwb', gamlss', @code{glmmTMB}', glmnet', kernelshap', lme4', metafor',
-mgcv', modelsummary', parameters', partykit', pls', pvclust',
-@code{riskRegression}', rugarch', sandwich', seriation', shapr',
+     "The @code{futurize()} function <doi:10.48550/@code{arXiv.2601.17578>} turns
+sequential map-reduce functions such as @code{base::lapply()},
+@code{purrr::map()}, @code{foreach::foreach()} %do% { ... } into concurrent
+alternatives, providing you with a simple, straightforward path to scalable
+parallel computing via the future ecosystem <doi:10.32614/RJ-2021-048>.  By
+combining this transpiler function with R's native pipe operator, you have a
+convenient way for speeding up iterative computations with minimal refactoring,
+e.g. lapply(xs, fcn) |> @code{futurize()}', purrr::map(xs, fcn) |>
+@code{futurize()}', and foreach::foreach(x = xs) %do% { fcn(x) } |>
+@code{futurize()}'.  Other map-reduce packages that can be \"futurized\" are
+@code{BiocParallel}', plyr', crossmap', pbapply packages.  There is also support
+for a growing set of domain-specific packages on CRAN (e.g. boot', caret',
+@code{DiceKriging}', ez', fgsea', fwb', gamlss', @code{glmmTMB}', glmnet',
+kernelshap', lme4', metafor', mgcv', modelsummary', parameters', partykit',
+pls', pvclust', @code{riskRegression}', rugarch', sandwich', seriation', shapr',
 Sim.@code{DiffProc}', @code{SimDesign}', stars', strucchange',
-@code{SuperLearner}', tm', TSP', and vegan') and on Bioconductor (e.g. DESeq2',
-@code{GenomicAlignments}', GSVA', Rsamtools', scater', scuttle',
+@code{SuperLearner}', terra', tm', TSP', and vegan') and on Bioconductor (e.g.
+DESeq2', @code{GenomicAlignments}', GSVA', Rsamtools', scater', scuttle',
 @code{SingleCellExperiment}', and sva').")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
@@ -16756,13 +16756,13 @@ Approximate Maximum Likelihood and the Cross-Entropy methods.  See Bee, M.
 (define-public r-fitdistrbayes
   (package
     (name "r-fitdistrbayes")
-    (version "0.5.1")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fitdistrBayes" version))
        (sha256
-        (base32 "0v9fdpbm4njf048b1g6kajdyqbyj4d2gcnqx4anwl40l4g4wv3lf"))))
+        (base32 "1g8csyla4niln5n130cggbdwy7i3zszk6yzl8i41lzzq149gx8xh"))))
     (properties `((upstream-name . "fitdistrBayes")))
     (build-system r-build-system)
     (arguments
@@ -22755,13 +22755,13 @@ Mustapha, K. B. (2018).  Finite Element Computations in Mechanics with R. [ISBN
 (define-public r-fdx
   (package
     (name "r-fdx")
-    (version "2.0.2")
+    (version "2.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FDX" version))
        (sha256
-        (base32 "18z1fnqkqbrkcn0qmdaicvp8vm9q57bzqmca7xk4ckrll8zfcvq8"))))
+        (base32 "0gx6r4vbbhx85k3br2xvqa4mgrkfk88fhw2dz3r0di5fwdzn0n2c"))))
     (properties `((upstream-name . "FDX")))
     (build-system r-build-system)
     (arguments
@@ -27280,13 +27280,13 @@ computing to reduce overall processing time.")
 (define-public r-fastjm
   (package
     (name "r-fastjm")
-    (version "1.7.1")
+    (version "1.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FastJM" version))
        (sha256
-        (base32 "0vrjlqcq6k4gm7kc2wqsys4r4wlrfvxq1rq2vcr0a39l76xa0wk3"))))
+        (base32 "0smk6mc1i2y3lb39aybwc4nynz3krma4flrd9qhfqmsri1ww5kaz"))))
     (properties `((upstream-name . "FastJM")))
     (build-system r-build-system)
     (arguments
@@ -27316,18 +27316,17 @@ computing to reduce overall processing time.")
      "This package implements scalable joint models for large-scale competing risks
 time-to-event data with one or multiple longitudinal biomarkers using the
 efficient algorithms developed by Li et al. (2022) <doi:10.1155/2022/1362913>
-and <doi:10.48550/@code{arXiv.2506.12741>}.  The time-to-event process is
-modeled using a cause-specific Cox proportional hazards model with time-fixed
-covariates, while longitudinal biomarkers are modeled using linear mixed-effects
-models.  The association between the longitudinal and survival processes is
-captured through shared random effects.  The package enables analysis of
-large-scale biomedical data to model biomarker trajectories, estimate their
-effects on event risks, and perform dynamic prediction of future events based on
-patients longitudinal histories.  Functions for simulating survival and
-longitudinal data for multiple biomarkers are included, along with built-in
-example datasets.  The package also supports modeling a single biomarker with
-heterogeneous within-subject variability via functionality adapted from the JMH
-package.")
+and <doi:10.1214/26-AOAS2218>.  The time-to-event process is modeled using a
+cause-specific Cox proportional hazards model with time-fixed covariates, while
+longitudinal biomarkers are modeled using linear mixed-effects models.  The
+association between the longitudinal and survival processes is captured through
+shared random effects.  The package enables analysis of large-scale biomedical
+data to model biomarker trajectories, estimate their effects on event risks, and
+perform dynamic prediction of future events based on patients longitudinal
+histories.  Functions for simulating survival and longitudinal data for multiple
+biomarkers are included, along with built-in example datasets.  The package also
+supports modeling a single biomarker with heterogeneous within-subject
+variability via functionality adapted from the JMH package.")
     (license license:gpl3+)))
 
 (define-public r-fastimputation

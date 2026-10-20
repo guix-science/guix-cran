@@ -1645,19 +1645,24 @@ management and research.")
 (define-public r-hydrocan
   (package
     (name "r-hydrocan")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hydrocan" version))
        (sha256
-        (base32 "118ck2p3fhxgh7qd5bhjds291dlanplbz4s8mjja7gvk52iv2sjg"))))
+        (base32 "1warsrz3mcmjqyqnp9zjpskyyzg3wa3dz9gpl5a26cbhc0jfmv8b"))))
     (properties `((upstream-name . "hydrocan")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble r-httr2 r-dplyr r-cli))
+    (propagated-inputs (list r-tibble
+                             r-readr
+                             r-httr2
+                             r-glue
+                             r-dplyr
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/HakaiInstitute/hydrocan")
     (synopsis "Unified Access to Canadian Hydrometric Data")

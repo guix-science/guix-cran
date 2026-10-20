@@ -11300,13 +11300,13 @@ Griffing, B. (1956) <https://www.publish.csiro.au/bi/pdf/BI9560463>.")
 (define-public r-gpboost
   (package
     (name "r-gpboost")
-    (version "1.7.4")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gpboost" version))
        (sha256
-        (base32 "0qm1ya82zfjn411ygg945qa9f4wdgqn5jnfncfpmirx3dgv7vcrp"))))
+        (base32 "1s7fmjkw3jl5di4cbgplm0izp51niz22flva0wmdyzvqsip5l8m3"))))
     (properties `((upstream-name . "gpboost")))
     (build-system r-build-system)
     (arguments
@@ -32841,13 +32841,13 @@ terra package Hijmans (2025) <https://rspatial.github.io/terra/>.")
 (define-public r-geodeltaaudit
   (package
     (name "r-geodeltaaudit")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geoDeltaAudit" version))
        (sha256
-        (base32 "15wrn6dv8hb9ppfigyiyknbb2p0apwi6k79ksnrc96v2rjzcf9py"))))
+        (base32 "1gmwv3z70a6dwkrisq0gc76c8i1nncxpvrbb7xp1xr464ri0s1dd"))))
     (properties `((upstream-name . "geoDeltaAudit")))
     (build-system r-build-system)
     (arguments

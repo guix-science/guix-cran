@@ -1336,13 +1336,13 @@ data.")
 (define-public r-krippendorffsalpha
   (package
     (name "r-krippendorffsalpha")
-    (version "2.0")
+    (version "2.0-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "krippendorffsalpha" version))
        (sha256
-        (base32 "0zzhpdmmaiaqrg1xi9jg6lzrhzpav8wyrc8z38rf8x6kxmr2bx3m"))))
+        (base32 "1akc5dfj4rnqr45rmzglb0xza2zbmml55dcfffdrbrw49crby5ig"))))
     (properties `((upstream-name . "krippendorffsalpha")))
     (build-system r-build-system)
     (arguments
@@ -1353,11 +1353,11 @@ data.")
     (description
      "This package provides tools for applying Krippendorff's Alpha methodology
 <DOI:10.1080/19312450709336664>.  Both the customary methodology and Hughes
-methodology <DOI:10.48550/@code{arXiv.2210.13265>} are supported, the former
-being preferred for larger datasets, the latter for smaller datasets.  The
-framework supports common and user-defined distance functions, and can
-accommodate any number of units, any number of coders, and missingness.
-Interval estimation can be done in parallel for either methodology.")
+methodology <DOI:10.1016/j.jspi.2024.106170> are supported, the former being
+preferred for larger datasets, the latter for smaller datasets.  The framework
+supports common and user-defined distance functions, and can accommodate any
+number of units, any number of coders, and missingness.  Interval estimation can
+be done in parallel for either methodology.")
     (license license:gpl2+)))
 
 (define-public r-kriginv

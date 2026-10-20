@@ -11715,6 +11715,31 @@ estimation approach for this package is described in Rast et al. (2020)
 examined with rstan functions.")
     (license license:gpl3+)))
 
+(define-public r-bmet
+  (package
+    (name "r-bmet")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bmet" version))
+       (sha256
+        (base32 "128mnyq4jkigirf9xkpfrk4l4d8pivrj43wbaj5hizhfd84q1qzj"))))
+    (properties `((upstream-name . "bmet")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mcmcpack r-mass))
+    (home-page "https://cran.r-project.org/package=bmet")
+    (synopsis "Bayesian Multigroup Equivalence Testing")
+    (description
+     "Calculates the necessary quantities to perform Bayesian multigroup equivalence
+testing.  Currently the package includes the Bayesian models and equivalence
+criteria outlined in Pourmohamad and Lee (2023) <doi:10.1002/sta4.645>, but more
+models and equivalence testing features may be added over time.")
+    (license license:expat)))
+
 (define-public r-bmerl
   (package
     (name "r-bmerl")
@@ -24038,38 +24063,39 @@ generate confidence intervals effect sizes in regression.")
 (define-public r-betafunctions
   (package
     (name "r-betafunctions")
-    (version "1.9.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "betafunctions" version))
        (sha256
-        (base32 "1sm33z8nzbh4savzw3zc81bg9g0n83xfibmd5kklq02h3105d4v4"))))
+        (base32 "0w06hwgqmaphcwhx7clxh5116gsccj2ffq2jcxqmjr3v9qh5lwcn"))))
     (properties `((upstream-name . "betafunctions")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://cran.r-project.org/package=betafunctions")
+    (home-page "https://github.com/HaakonEidemHaakstad/betafunctions")
     (synopsis
-     "Functions for Working with Two- And Four-Parameter Beta Probability Distributions and Psychometric Analysis of Classifications")
+     "Two- And Four-Parameter Beta Distributions and Classification Accuracy and Consistency")
     (description
-     "Package providing a number of functions for working with Two- and Four-parameter
-Beta and closely related distributions (i.e., the Gamma- Binomial-, and
-Beta-Binomial distributions).  Includes, among other things: - d/p/q/r functions
-for Four-Parameter Beta distributions and Generalized \"Binomial\" (continuous)
-distributions, and d/p/r- functions for Beta- Binomial distributions. - d/p/q/r
-functions for Two- and Four-Parameter Beta distributions parameterized in terms
-of their means and variances rather than their shape-parameters. - Moment
-generating functions for Binomial distributions, Beta-Binomial distributions,
-and observed value distributions. - Functions for estimating classification
-accuracy and consistency, making use of the Classical Test-Theory based
-Livingston and Lewis (L&L) and Hanson and Brennan approaches.  A shiny app is
-available, providing a GUI for the L&L approach when used for binary
-classifications.  For url to the app, see documentation for the @code{LL.CA()}
-function.  Livingston and Lewis (1995) <doi:10.1111/j.1745-3984.1995.tb00462.x>.
- Lord (1965) <doi:10.1007/BF02289490>.  Hanson (1991)
-<https://files.eric.ed.gov/fulltext/ED344945.pdf>.")
+     "This package provides functions for working with two- and four-parameter Beta
+distributions and the closely related Beta-Binomial distribution, and for
+estimating the accuracy and consistency of test-based classifications.  Includes
+d/p/q/r functions for four-parameter Beta distributions, including
+parameterization by mean and variance; d/p/r functions for Beta-Binomial
+distributions and for Lord's two-term approximation to the compound Binomial
+distribution; moments of Beta, Binomial, Beta-Binomial, and observed-score
+distributions; and method-of-moments fitting of two- and four-parameter Beta
+true-score distributions.  Classification accuracy and consistency can be
+estimated with the Livingston and Lewis approach (Livingston and Lewis, 1995
+<doi:10.1111/j.1745-3984.1995.tb00462.x>), the Hanson and Brennan approach based
+on Lord's strong true-score theory (Lord, 1965 <doi:10.1007/BF02289490>; Hanson,
+1991 <https://files.eric.ed.gov/fulltext/ED344945.pdf>), and the multinomial and
+compound multinomial approach (Lee, 2007 <doi:10.1177/0146621606294206>; Lee,
+Brennan, and Wan, 2009 <doi:10.1177/0146621608321759>), for two or more
+categories, with ROC analysis, model-fit tests, and examinee- or score-level
+results.")
     (license license:cc0)))
 
 (define-public r-betadelta
@@ -32861,13 +32887,13 @@ to use and research on Bayesian Neural Networks.")
 (define-public r-bayesfbhborrow
   (package
     (name "r-bayesfbhborrow")
-    (version "2.0.14")
+    (version "2.0.20")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesFBHborrow" version))
        (sha256
-        (base32 "1nbqnjrabhhzp3c3pisfgdfwvaf454dlhxqd0zhpfw8nwrc7sxvv"))))
+        (base32 "18ma961qaay69hf28r8xyjddzpk7ps0ca8lixdkx1qw2j6whnrzg"))))
     (properties `((upstream-name . "BayesFBHborrow")))
     (build-system r-build-system)
     (arguments
@@ -32876,12 +32902,16 @@ to use and research on Bayesian Neural Networks.")
     (propagated-inputs (list r-survminer
                              r-survival
                              r-rlang
+                             r-progressr
                              r-patchwork
+                             r-parallelly
                              r-mvtnorm
                              r-magrittr
                              r-kableextra
                              r-invgamma
                              r-ggplot2
+                             r-future-apply
+                             r-future
                              r-extradistr
                              r-dplyr
                              r-checkmate

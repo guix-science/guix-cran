@@ -1632,24 +1632,19 @@ the software).")
 (define-public r-zcurve
   (package
     (name "r-zcurve")
-    (version "2.4.6")
+    (version "2.4.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "zcurve" version))
        (sha256
-        (base32 "1m8hzsjysdrp8mcgbncf6m1yvqdgqpcd7y39ghywiiiy5mph8ivd"))))
+        (base32 "04wdvr4fppgsjgabcij9rmiwkk5a3niq7fzp3kzb670m8lf1y420"))))
     (properties `((upstream-name . "zcurve")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang
-                             r-rdpack
-                             r-rcpp
-                             r-nleqslv
-                             r-ggplot2
-                             r-evmix))
+    (propagated-inputs (list r-rlang r-rdpack r-rcpp r-nleqslv r-ggplot2))
     (home-page "https://fbartos.github.io/zcurve/")
     (synopsis "An Implementation of Z-Curves")
     (description

@@ -7860,13 +7860,13 @@ high-performance C++ code through Rcpp package.")
 (define-public r-etdqualitizer
   (package
     (name "r-etdqualitizer")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ETDQualitizer" version))
        (sha256
-        (base32 "15z42yqg6c061xqz5wvcacgnavdr0q6zlmknrf600gw32qcfjipa"))))
+        (base32 "0pns8kbyi45wa8lb4abn942qanmdb709l1pxbjg99illwawxjb57"))))
     (properties `((upstream-name . "ETDQualitizer")))
     (build-system r-build-system)
     (arguments
@@ -23644,13 +23644,13 @@ Chen et al. (2021) <doi:10.1007/s11336-021-09750-9>, Yinyin Chen et al. (2020)
 (define-public r-edma
   (package
     (name "r-edma")
-    (version "1.5-4")
+    (version "1.5-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eDMA" version))
        (sha256
-        (base32 "1069i4sjd71yan00wqx8prb3fmbacbb0n878wmacaxk9prd61k7z"))))
+        (base32 "0zvdbfwvzdyb0sax5c5nphd1pr9f1ha7crfpbhajm80s0lbqygcg"))))
     (properties `((upstream-name . "eDMA")))
     (build-system r-build-system)
     (arguments
@@ -26131,50 +26131,6 @@ download selected datasets that are preprocessed by @code{EconDataverse}
 packages and publicly hosted on Hugging Face'.  Learn more about the
 @code{EconDataverse} at <https://www.econdataverse.org>.")
     (license license:expat)))
-
-(define-public r-econcausal
-  (package
-    (name "r-econcausal")
-    (version "1.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "EconCausal" version))
-       (sha256
-        (base32 "05cjhcsfdfa0sqgd2dmcmvv0769ccvjlsb1f97bzplar26wqg2mb"))))
-    (properties `((upstream-name . "EconCausal")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vars
-                             r-urca
-                             r-tseries
-                             r-tidyr
-                             r-tibble
-                             r-sandwich
-                             r-rlang
-                             r-readxl
-                             r-purrr
-                             r-progressr
-                             r-magrittr
-                             r-lmtest
-                             r-future-apply
-                             r-future
-                             r-earth
-                             r-dplyr
-                             r-brms))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/IsadoreNabi/EconCausal")
-    (synopsis
-     "Causal Analysis for Macroeconomic Time Series (ECM-MARS, BSTS, Bayesian GLM-AR(1))")
-    (description
-     "This package implements three complementary pipelines for causal analysis on
-macroeconomic time series: (1) Error-Correction Models with Multivariate
-Adaptive Regression Splines (ECM-MARS), (2) Bayesian Structural Time Series
-(BSTS), and (3) Bayesian GLM with AR(1) errors validated with Leave-Future-Out
-(LFO).  Heavy backends (Stan) are optional and never used in examples or tests.")
-    (license license:gpl3+)))
 
 (define-public r-econandprodefficiency
   (package

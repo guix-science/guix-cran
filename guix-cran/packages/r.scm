@@ -5326,38 +5326,43 @@ and to import annotations from @code{UniProt}', @code{AlphaFold}', PDBe',
 (define-public r-rtemis
   (package
     (name "r-rtemis")
-    (version "1.2.7")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtemis" version))
        (sha256
-        (base32 "1p6akby2ckbgh469gjf3xzpny21qv0fi0falpxqmqfk9g9k3vz9d"))))
+        (base32 "1fxjdjg463g9kpipffw52sfyls61gk26v1izhz3a7hjzhc5wqqqb"))))
     (properties `((upstream-name . "rtemis")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-s7
+                             r-rtemis-draw
                              r-rtemis-core
-                             r-htmltools
+                             r-parallelly
+                             r-openssl
+                             r-nanoparquet
                              r-future
-                             r-data-table
-                             r-cli))
+                             r-data-table))
     (home-page "https://www.rtemis.org")
-    (synopsis "Machine Learning and Visualization")
+    (synopsis "Schema-Driven Machine Learning and Visualization")
     (description
      "Machine learning and visualization package with an S7 backend featuring
-comprehensive type checking and validation, paired with an efficient functional
-user-facing API. @code{train()}, @code{cluster()}, and @code{decomp()} provide
-one-call access to supervised and unsupervised learning.  All configuration
-steps are performed using setup functions and validated.  A single call to
-@code{train()} handles preprocessing, hyperparameter tuning, and testing with
-nested resampling.  Supports data.frame', data.table', and tibble inputs,
-parallel execution, and interactive visualizations.  The package first appeared
-in E.D. Gennatas (2017)
+comprehensive type checking and validation, observable runs, and auditable
+outputs.  The functional API provides one-call access to supervised and
+unsupervised learning through @code{train()}, @code{cluster()}, and
+@code{decomp()}.  All configuration steps are performed using setup functions
+and validated.  A single call to @code{train()} can handle preprocessing,
+decomposition, hyperparameter tuning, model stacking, and testing with nested
+resampling.  Supports data.frame', data.table', and tibble inputs and parallel
+execution.  Plot methods for trained and resampled supervised models draw
+interactive figures through rtemis.draw'.  Includes native implementations of
+@code{SuperLearner}, @code{RuleFit}, and Linear Additive Trees, and supports
+conformal prediction.  The package first appeared in E.D. Gennatas (2017)
 <https://repository.upenn.edu/entities/publication/d81892ea-3087-4b71-a6f5-739c58626d64>.")
-    (license license:gpl3+)))
+    (license license:bsd-3)))
 
 (define-public r-rtde
   (package
@@ -46324,33 +46329,6 @@ distribution of lessons by day, aiming at homogenizing individual distributions
 (for each class and teacher).")
     (license license:expat)))
 
-(define-public r-recassorules
-  (package
-    (name "r-recassorules")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RecAssoRules" version))
-       (sha256
-        (base32 "0jvl9yl1rg69bqb1cimi8r0bry73jhsq73fxfyy33ljwym2cdgv6"))))
-    (properties `((upstream-name . "RecAssoRules")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://github.com/LouisRaimbault/RecAssoRules-R")
-    (synopsis
-     "Recursive Mining for Frequent Pattern and Confident Association Rules")
-    (description
-     "This package provides functions allowing the user to recursively extract
-frequent patterns and confident rules according to indicators of minimal support
-and minimal confidence.  These functions are described in \"Recursive Association
-Rule Mining\" Abdelkader Mokkadem, Mariane Pelletier, Louis Raimbault (2020)
-<@code{arXiv:2011.14195>}.")
-    (license license:gpl2+)))
-
 (define-public r-recapr
   (package
     (name "r-recapr")
@@ -54934,13 +54912,13 @@ standard data products from archival tagging data.")
 (define-public r-rchime
   (package
     (name "r-rchime")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rchime" version))
        (sha256
-        (base32 "0z5pc1nplx0mqmz9gsvgfr78kiy73gfwfg4pmgrgd66lh7g4yz5s"))))
+        (base32 "18mjx1qlnhajhpyzzck8w6x3385k91r9bvm0n2hmnzfrzagbhcqh"))))
     (properties `((upstream-name . "rchime")))
     (build-system r-build-system)
     (arguments

@@ -3457,13 +3457,13 @@ Thiebaut (2019) <doi: 10.1214/18-AOAS1209>.")
 (define-public r-npfd
   (package
     (name "r-npfd")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NPFD" version))
        (sha256
-        (base32 "0b090xvqa8qysp32k5vnx3w755shciq7dnajq9rgg8gc5pbxikd1"))))
+        (base32 "1insc7qgz2w6k7az9f6qqmqz34bxa7n4ry288ksnfqp076fk9cr5"))))
     (properties `((upstream-name . "NPFD")))
     (build-system r-build-system)
     (arguments
@@ -3474,11 +3474,13 @@ Thiebaut (2019) <doi: 10.1214/18-AOAS1209>.")
     (home-page "https://cran.r-project.org/package=NPFD")
     (synopsis "N-Power Fourier Deconvolution")
     (description
-     "This package provides tools for non-parametric Fourier deconvolution using the
-N-Power Fourier Deconvolution (NPFD) method.  This package includes methods for
-density estimation @code{(densprf()}) and sample generation
-@code{(createSample()}), enabling users to perform statistical analyses on mixed
-or replicated data sets.")
+     "This package implements the N-Power Fourier Deconvolution (NPFD) method for
+nonparametric density deconvolution when observations are available from a
+convolving distribution and the corresponding convolved distribution, but no
+direct observations are available from the target distribution.  Functions are
+provided for deconvolution, construction of samples from replicated mixed
+measurements, and spline-based density estimation.  The methodology is described
+in Anarat, Krutmann and Schwender (2026) <doi:10.1186/s12859-026-06408-0>.")
     (license license:gpl3)))
 
 (define-public r-npexact
@@ -12293,13 +12295,13 @@ Efficient Non-Gaussian Statistical Modeling Framework\"
 (define-public r-nglviewer
   (package
     (name "r-nglviewer")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NGLVieweR" version))
        (sha256
-        (base32 "032cdsqhsx9pwaz190j0ji8l5j94lv07217bymgfzsasd96lx8qy"))))
+        (base32 "1vjsrhdpwxq2kx0rs28c7niypgwsckrwd9ysdgzz413wiw87bmk9"))))
     (properties `((upstream-name . "NGLVieweR")))
     (build-system r-build-system)
     (arguments
@@ -12307,11 +12309,11 @@ Efficient Non-Gaussian Statistical Modeling Framework\"
       #:tests? #f))
     (propagated-inputs (list r-shiny r-magrittr r-htmlwidgets))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/nvelden/NGLVieweR")
+    (home-page "https://nvelden.github.io/NGLVieweR/")
     (synopsis "Interactive 3D Visualization of Molecular Structures")
     (description
      "This package provides an htmlwidgets <https://www.htmlwidgets.org/> interface to
-NGL.js <http://nglviewer.org/ngl/api/>.  NG@code{LvieweR} can be used to
+NGL.js <https://nglviewer.org/ngl/api/>.  NGL@code{VieweR} can be used to
 visualize and interact with protein databank ('PDB') and structural files in R
 and Shiny applications.  It includes a set of API functions to manipulate the
 viewer after creation in Shiny.")

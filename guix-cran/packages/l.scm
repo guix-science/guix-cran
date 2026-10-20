@@ -15,7 +15,7 @@
   #:use-module (gnu packages maths)
   #:use-module (gnu packages python-science)
   #:use-module (gnu packages web)
-  #:use-module (gnu packages docker)
+  #:use-module (gnu packages containers)
   #:use-module (gnu packages cmake)
   #:use-module (gnu packages finance)
   #:use-module (gnu packages java)
@@ -9174,13 +9174,13 @@ applications in the LLMR package family are assembled.")
 (define-public r-llmr
   (package
     (name "r-llmr")
-    (version "0.8.11")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LLMR" version))
        (sha256
-        (base32 "1yzsmb4slsrydg5vc9bj9pq217hmi8m2m2dwv7l64nn48ghn0myj"))))
+        (base32 "1v3h3n0hw6rawf5vbyplnjyjfssiabgz0n2kp6hwd9vczwy7xxnx"))))
     (properties `((upstream-name . "LLMR")))
     (build-system r-build-system)
     (arguments
@@ -9192,6 +9192,7 @@ applications in the LLMR package family are assembled.")
                              r-tibble
                              r-rlang
                              r-purrr
+                             r-processx
                              r-mime
                              r-memoise
                              r-jsonlite
@@ -9211,7 +9212,9 @@ applications in the LLMR package family are assembled.")
      "One interface to many large language model providers: a single configuration
 object and a single calling function serve chat and embedding models alike, so
 research code does not change when the provider does.  The same calls scale to
-multi-model and multi-condition studies.")
+multi-model and multi-condition studies.  Small open models can also run on the
+user's computer through llama.cpp', downloaded only on request, with access to
+next-token probabilities.")
     (license license:expat)))
 
 (define-public r-llmjson
@@ -20046,13 +20049,13 @@ non-human primates.")
 (define-public r-latentstate
   (package
     (name "r-latentstate")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "latentState" version))
        (sha256
-        (base32 "1askikd7ifbgm4bpg03hm1hkx9pa0r2rhs2b893ikfk0whqrhfxx"))))
+        (base32 "1wmyw439rjdhf3k8mpnlnll6if2yj7pv8qi74qgkbp41dx4nwa3z"))))
     (properties `((upstream-name . "latentState")))
     (build-system r-build-system)
     (arguments
@@ -21634,13 +21637,13 @@ observed variables and multiple	group models.")
 (define-public r-laminr
   (package
     (name "r-laminr")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "laminr" version))
        (sha256
-        (base32 "1waz42x5ha0asj1ffvsgd8mjcz59qff7acl4chsdbhrljhvhj0p5"))))
+        (base32 "0lskb13as6z7fn63fck8m3s0bpsrj5z100a9zfqk7mxscx67izgb"))))
     (properties `((upstream-name . "laminr")))
     (build-system r-build-system)
     (arguments

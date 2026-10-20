@@ -13500,19 +13500,23 @@ Generalized Hebbian Algorithm (GHA) based on Sanger (1989)
 (define-public r-apathe
   (package
     (name "r-apathe")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "apathe" version))
        (sha256
-        (base32 "0l5k3fwcg1mqxh24maipn6pirdl97zd8jgqf80xpji2cmrsnac3g"))))
+        (base32 "1l8773lg8qpgn3ag91vpwm4kap4kiwimcsaxb2bhchli0rrdykk4"))))
     (properties `((upstream-name . "apathe")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rmdfiltr r-rmarkdown r-papaja r-bookdown
+    (propagated-inputs (list r-rmdfiltr
+                             r-rmarkdown
+                             r-papaja
+                             r-bookdown
+                             r-bibtex
                              r-assertthat))
     (home-page "https://github.com/crsh/apathe")
     (synopsis
@@ -13998,13 +14002,13 @@ through integer programming.  Communications in Statistics - Theory and Methods
 (define-public r-aopdata
   (package
     (name "r-aopdata")
-    (version "1.1.2")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aopdata" version))
        (sha256
-        (base32 "08pm4nispnqi4didd92hh9ibjbm4qdal1lzkdv439f4cwcnm75i5"))))
+        (base32 "0w3cqqcr2rcgyrg94wdah7rc28qlmwl6rva3axb4sfph2rsj0631"))))
     (properties `((upstream-name . "aopdata")))
     (build-system r-build-system)
     (arguments
@@ -14012,12 +14016,13 @@ through integer programming.  Communications in Statistics - Theory and Methods
       #:tests? #f))
     (propagated-inputs (list r-sf
                              r-rlang
+                             r-httr2
                              r-data-table
                              r-curl
                              r-cli
                              r-checkmate))
     (native-inputs (list r-knitr))
-    (home-page "https://ipeagit.github.io/aopdata/")
+    (home-page "https://ipea.github.io/aopdata/")
     (synopsis "Data from the 'Access to Opportunities Project (AOP)'")
     (description
      "Download data from the Access to Opportunities Project (AOP)'.  The aopdata
@@ -20077,13 +20082,13 @@ regression.")
 (define-public r-aldex3
   (package
     (name "r-aldex3")
-    (version "1.3.1")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ALDEx3" version))
        (sha256
-        (base32 "12km3qxygi1p4w8sgl279j2p7hixww01sh7fslzwly2nmq45ij3w"))))
+        (base32 "1vxjinpfaya0lb2gcqsgi0lw4q39zgvdrkza0h3dvvpglnva339b"))))
     (properties `((upstream-name . "ALDEx3")))
     (build-system r-build-system)
     (arguments
@@ -30501,13 +30506,13 @@ conditions of use, and that you agree with their attribution requirements.")
 (define-public r-ackwards
   (package
     (name "r-ackwards")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ackwards" version))
        (sha256
-        (base32 "1ggk1iwsj71djyiyxncsmsm5j7fri4rprx70yjyqknmy12nx99fl"))))
+        (base32 "114m57j675bzyf592llm8danib7b19mbghmq58jw64p72ccg79c6"))))
     (properties `((upstream-name . "ackwards")))
     (build-system r-build-system)
     (arguments
@@ -30522,11 +30527,14 @@ conditions of use, and that you agree with their attribution requirements.")
 bass-ackwards method and modern descendants for hierarchical structural
 analysis.  Extracts solutions from 1 to k factors using principal component
 analysis (PCA), exploratory factor analysis (EFA), or exploratory structural
-equation modeling (ESEM) engines, then characterizes the hierarchy via
-between-level factor-score correlations computed via exact linear algebra
-(Waller, 2007, <doi:10.1016/j.jrp.2006.08.005>) or materialized scores.
-Includes the Forbes (2023) <doi:10.1037/met0000546> extension for redundancy
-pruning and all-levels cross-correlations.")
+equation modeling (ESEM) engines.  It then describes the hierarchy through the
+correlations between the factor scores of different levels.  It computes them
+with linear algebra from the scoring weights and the correlation matrix the fit
+uses, so they are exact for that matrix.  Waller (2007)
+<doi:10.1016/j.jrp.2006.08.005> showed, for principal components, that these
+correlations follow from the correlation matrix alone.  Includes the Forbes
+(2023) <doi:10.1037/met0000546> extension for redundancy pruning and all-levels
+cross-correlations.")
     (license license:expat)))
 
 (define-public r-achilles
@@ -32183,13 +32191,13 @@ and metapopulations.")
 (define-public r-a5r
   (package
     (name "r-a5r")
-    (version "0.6.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "a5R" version))
        (sha256
-        (base32 "0hsbfsn10x1jpmjpkm65q332zq7r4l64m33savsml29qy7bjprdg"))))
+        (base32 "1bkza20ni77ain0bk4qdg114gqfqxhl79g6xqyf9irfimkc15k1i"))))
     (properties `((upstream-name . "a5R")))
     (build-system r-build-system)
     (arguments

@@ -20,7 +20,7 @@
   #:use-module (gnu packages compression)
   #:use-module (gnu packages video)
   #:use-module (gnu packages java)
-  #:use-module (gnu packages docker)
+  #:use-module (gnu packages containers)
   #:use-module (gnu packages duckdb)
   #:use-module (gnu packages tbb)
   #:use-module (gnu packages ghostscript)
@@ -11466,13 +11466,13 @@ Modern Concepts, Methods and Applications, CRC Press.")
 (define-public r-strollur
   (package
     (name "r-strollur")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "strollur" version))
        (sha256
-        (base32 "1638i2mcwmc95qhjdk6jvmc4ai4h7sc70z41f4x902mxdz9qmxaw"))))
+        (base32 "1gkgg0pcrlb06cjin2a3x4zynsij6bd39wmdgaivmq0mxsa1rqjw"))))
     (properties `((upstream-name . "strollur")))
     (build-system r-build-system)
     (arguments
@@ -22200,19 +22200,19 @@ the method is described by Seitidis et al. (2023) <doi:10.1002/sim.9891>.")
 (define-public r-sshist
   (package
     (name "r-sshist")
-    (version "0.2.4")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sshist" version))
        (sha256
-        (base32 "0h2idf3ka0hczl6kmif4hwkvkn5dpla8367kh147xrvrvvgj0x5g"))))
+        (base32 "1h7kd3jaygp35fczqlz73fazvljnlz3vcrz7sr739icsdxzs1a49"))))
     (properties `((upstream-name . "sshist")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpp))
+    (propagated-inputs (list r-rcpp r-boot))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/celebithil/sshist")
     (synopsis "Optimal Density Estimation via Shimazaki-Shinomoto Method")
@@ -30707,13 +30707,13 @@ designed to bring reproducible phonetic research into R.")
 (define-public r-speakeasyr
   (package
     (name "r-speakeasyr")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "speakeasyR" version))
        (sha256
-        (base32 "03f51y6h8j5vxjgklw780b6y59nx12rfqfifslq3zhcrsmczy7zv"))))
+        (base32 "158ry099zhmnarwqjyidwvmzxkm09jah874p6s8chas3521hlyvr"))))
     (properties `((upstream-name . "speakeasyR")))
     (build-system r-build-system)
     (arguments
@@ -31087,20 +31087,20 @@ created by k-means.  See Walvoort et al. (2010)
 (define-public r-spconform
   (package
     (name "r-spconform")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spconform" version))
        (sha256
-        (base32 "1f2bzn4pygjh8jwszxry5xy73lhqaghnw1j0wwrj40agn5cf6zgy"))))
+        (base32 "0mnmz0ngzmh27961vv2s1cpfswqscb8hq7kqd53k1lipxc9l97lb"))))
     (properties `((upstream-name . "spconform")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=spconform")
+    (home-page "https://amjed-droid.github.io/spconform/")
     (synopsis
      "Conformal Prediction for Spatially and Spatio-Temporally Dependent Data")
     (description
@@ -74724,13 +74724,13 @@ curated ontology labels are great inputs to this package.")
 (define-public r-scnpm
   (package
     (name "r-scnpm")
-    (version "1.0.6")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scNPM" version))
        (sha256
-        (base32 "1lb33rrhjvdr0mxnf17a6frqdbbf491lryrva1i4dg5428jqlcd6"))))
+        (base32 "1d6x59v2vfrkz4qqwqlxdxz38qwwnh958q95sn3ndkh9iy8jp50c"))))
     (properties `((upstream-name . "scNPM")))
     (build-system r-build-system)
     (arguments
@@ -74753,8 +74753,9 @@ single-cell expression data.  A latent Gaussian mixture and probit observation
 mechanism represent cellular heterogeneity and zero observations.  Protein
 interaction information supplies edge-specific prior weights, while network
 propensity matching links cell clusters across conditions and guides adaptation.
- Staged inference freezes stable matching, disables feedback, and retains
-baseline-model samples for posterior group and directional differential edge
+ Staged inference fixes correspondence after adaptation, disables adaptation
+feedback, and jointly models matched network edges with a four-state
+spike-and-slab prior for posterior group and directional differential edge
 selection.  Functions assess balance, record criterion diagnostics, and
 visualize within-condition and differential networks.")
     (license license:gpl3+)))
@@ -76299,24 +76300,19 @@ components rather than silently reconstructing them.")
 (define-public r-scf
   (package
     (name "r-scf")
-    (version "1.0.10")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scf" version))
        (sha256
-        (base32 "1cfvp2lz1gpnqah9phr153dy1xyd4kjk6lpwmmpiwazi0i65wn27"))))
+        (base32 "045wm3yxklzfhzwlp1m4dpxv2z5i6cjh7jn8xlzgv423mx4jbcg8"))))
     (properties `((upstream-name . "scf")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-survey
-                             r-rlang
-                             r-quantreg
-                             r-httr
-                             r-haven
-                             r-ggplot2))
+    (propagated-inputs (list r-survey r-quantreg r-httr r-haven r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jncohen/scf")
     (synopsis "Analyzing the Survey of Consumer Finances")
@@ -77408,13 +77404,13 @@ Wickham.")
 (define-public r-scatools
   (package
     (name "r-scatools")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SCAtools" version))
        (sha256
-        (base32 "0jds3c6ax2xxxzagyls5z8607zqgdqakgnsn3g0qhcww1h5kaik1"))))
+        (base32 "1aip4mswwdbwgcdpjng0xjrmvaj2xq73binzirfnf981zbhnwx4l"))))
     (properties `((upstream-name . "SCAtools")))
     (build-system r-build-system)
     (arguments

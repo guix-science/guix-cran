@@ -6,11 +6,10 @@
                 #:prefix license:)
   #:use-module (gnu packages cran)
   #:use-module (gnu packages python-xyz)
-  #:use-module (gnu packages pkg-config)
-  #:use-module (gnu packages maths)
   #:use-module (gnu packages pcre)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages cmake)
+  #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages apparmor)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages web)
@@ -1802,53 +1801,6 @@ provides easy-to-use functions for calculating inter-rater reliability
 statistics and measuring the reliability of one coder compared to the rest of
 the team.")
     (license license:expat)))
-
-(define-public r-uqsa
-  (package
-    (name "r-uqsa")
-    (version "0.8.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "uqsa" version))
-       (sha256
-        (base32 "0an9r4225mil4a4qd8l5aacxf84vimgg4ijkxfzpnskdxadz1wm6"))))
-    (properties `((upstream-name . "uqsa")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list gsl))
-    (propagated-inputs (list r-vinecopula
-                             r-ryacas
-                             r-pracma
-                             r-mvtnorm
-                             r-mass
-                             r-errors
-                             r-digest
-                             r-colorspace
-                             r-cli))
-    (native-inputs (list pkg-config r-knitr))
-    (home-page "https://icpm-kth.github.io/uqsa/")
-    (synopsis "Uncertainty Quantification and Global Sensitivity Analysis")
-    (description
-     "In the field of systems biology, chemical reaction networks are modeled in
-various ways, two of those are: (i) stochastic simulations (e.g. Gillespie
-algorithm) and (ii) ordinary differential equations.  In this package we use a
-simple tabular model description of reaction systems and automatically generate
-C code for either solver type.  We use the ordinary differential equation
-solvers from the GNU Scientific Library and provide an interface that deals with
-lists of simulation experiments.  Each simulation experiment contains both the
-data, and instructions for the model to replicate the data.  We use approximate
-Bayesian computation methods (combined with Markov chain Monte Carlo and
-sequential Monte Carlo, particle filters) as well as classic methods such as
-Random Walk Metropolis (Gaussian transition kernel) and Simplified Manifold
-Metropolis adjusted Langevin algorithm for a Bayesian investigation of the
-modelÂ´s parameter space.  Experiments can be evaluated in a sequence;
-intermediate probability densities are modeled using the @code{VineCopula}
-package.  The package is also intended to be useful in an HPC environment, with
-some functions that use @code{pbdMPI} capabilities.")
-    (license license:gpl3+)))
 
 (define-public r-uptimerobot
   (package
@@ -5659,13 +5611,13 @@ scheme and identity standards.")
 (define-public r-uisapi
   (package
     (name "r-uisapi")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "uisapi" version))
        (sha256
-        (base32 "0sfk5lpsaamv02k0jxhvr2xn7qv833cjkwpsmbj8ikvb2xcdrkd8"))))
+        (base32 "07hxvljhhis5b7aj06953yrzsabmyqzsg5s53sm3yj9hhzr7vcw0"))))
     (properties `((upstream-name . "uisapi")))
     (build-system r-build-system)
     (arguments
@@ -5678,7 +5630,7 @@ scheme and identity standards.")
                              r-httr2
                              r-dplyr
                              r-cli))
-    (home-page "https://github.com/tidy-intelligence/r-uisapi")
+    (home-page "https://github.com/econdataverse/r-uisapi")
     (synopsis "Access the UNESCO Institute for Statistics API")
     (description
      "Retrieve data from the UNESCO Institute for Statistics (UIS) API

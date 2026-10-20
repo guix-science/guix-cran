@@ -373,13 +373,13 @@ and data on global economic and social issues.")
 (define-public r-owidapi
   (package
     (name "r-owidapi")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "owidapi" version))
        (sha256
-        (base32 "1yh8v43ld81j3xh9z0z0d5l9qss8wi9hag7xwscnz8x735v6jpps"))))
+        (base32 "0wb417q7ifvyhgkp2s1f5rrxbv27w7zyjvw3bjmapkfzcpwywvmk"))))
     (properties `((upstream-name . "owidapi")))
     (build-system r-build-system)
     (arguments
@@ -391,7 +391,7 @@ and data on global economic and social issues.")
                              r-jsonlite
                              r-httr2
                              r-cli))
-    (home-page "https://github.com/tidy-intelligence/r-owidapi")
+    (home-page "https://github.com/econdataverse/r-owidapi")
     (synopsis "Access the Our World in Data Chart API")
     (description
      "Retrieve data from the Our World in Data (OWID) Chart API
@@ -2353,13 +2353,13 @@ map projection.")
 (define-public r-osmnxr
   (package
     (name "r-osmnxr")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "osmnxr" version))
        (sha256
-        (base32 "1i8g1mvagjmy5bqjii51zb5hg15dd7wzgn4x7qvl7d85s89269mf"))))
+        (base32 "0ia5m1xbika9wbiwjlpbki6ngpmlxg1cs0m1qac7yaxh9ky4j3kn"))))
     (properties `((upstream-name . "osmnxr")))
     (build-system r-build-system)
     (arguments
@@ -3088,13 +3088,13 @@ infinity, with a T as low as 2.")
 (define-public r-orthomtl
   (package
     (name "r-orthomtl")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "orthoMTL" version))
        (sha256
-        (base32 "0il5l6l3plb3xyl7rh42rx414xjxv3kciy4mgjaaxcxwh6ydqzp0"))))
+        (base32 "0rijcvb7waj9blg7s87mxm3parjwp497n69bgil5wf26xvshzqqw"))))
     (properties `((upstream-name . "orthoMTL")))
     (build-system r-build-system)
     (arguments
@@ -3102,7 +3102,7 @@ infinity, with a T as low as 2.")
       #:tests? #f))
     (propagated-inputs (list r-rlang r-ggplot2 r-foreach r-doparallel))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=orthoMTL")
+    (home-page "https://github.com/Novartis/orthoMTL")
     (synopsis "Multi-Task Learning with Orthogonal Constraints")
     (description
      "Fits regularised multi-task learning models where relationships between tasks
@@ -13470,6 +13470,33 @@ to genomic sequences, time series, or any other sequence data with serial
 autocorrelation.")
     (license license:gpl3)))
 
+(define-public r-ohit
+  (package
+    (name "r-ohit")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Ohit" version))
+       (sha256
+        (base32 "132d4drc2phw9ppxnczb1ycdg3dv085k8p6bcaj3v866j0hfxjgb"))))
+    (properties `((upstream-name . "Ohit")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "http://mx.nthu.edu.tw/~cking/pdf/IngLai2011.pdf")
+    (synopsis "OGA+HDIC+Trim and High-Dimensional Linear Regression Models")
+    (description
+     "Ing and Lai (2011) <doi:10.5705/ss.2010.081> proposed a high-dimensional model
+selection procedure that comprises three steps: orthogonal greedy algorithm
+(OGA), high-dimensional information criterion (HDIC), and Trim.  The first two
+steps, OGA and HDIC, are used to sequentially select input variables and
+determine stopping rules, respectively.  The third step, Trim, is used to delete
+irrelevant variables remaining in the second step.  This package aims at fitting
+a high-dimensional linear regression model via OGA+HDIC+Trim.")
+    (license license:gpl2)))
+
 (define-public r-ohenery
   (package
     (name "r-ohenery")
@@ -14166,20 +14193,20 @@ KÃ¶ning, R., Wimmer, G. and WitkovskÃ½, V. (2014)
 (define-public r-oecdoda
   (package
     (name "r-oecdoda")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oecdoda" version))
        (sha256
-        (base32 "1abdffg2m8bj7yp2v3xgqmj6bqb37layg7h4bhknfp205bzmh3fd"))))
+        (base32 "0igma3l5da6ijccyazb0vzlyas4y9140j60xrknwmhbji3l1lvsj"))))
     (properties `((upstream-name . "oecdoda")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tibble r-httr2 r-cli))
-    (home-page "https://github.com/tidy-intelligence/r-oecdoda")
+    (home-page "https://github.com/econdataverse/r-oecdoda")
     (synopsis
      "Seamless Access to OECD Official Development Assistance (ODA) Data")
     (description

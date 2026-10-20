@@ -23,7 +23,7 @@
   #:use-module (gnu packages perl)
   #:use-module (gnu packages tex)
   #:use-module (gnu packages tls)
-  #:use-module (gnu packages docker)
+  #:use-module (gnu packages containers)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages cmake)
   #:use-module (guix-cran packages z)
@@ -2558,13 +2558,13 @@ engine but usable standalone for any spatial triangulation task.")
 (define-public r-tulpa
   (package
     (name "r-tulpa")
-    (version "0.6.0")
+    (version "0.7.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tulpa" version))
        (sha256
-        (base32 "1j0vxyqq604rf7y6s4hmg5wxxga294042jqn12fxv802fm51cz67"))))
+        (base32 "0rmgsd5xlkss33h8bzh4rvh9aqhgvkwd0vcm9pn52sch6x4psp91"))))
     (properties `((upstream-name . "tulpa")))
     (build-system r-build-system)
     (arguments
@@ -24452,13 +24452,13 @@ administrative data sources and pre-generated files in South Korea.")
 (define-public r-tidycensus
   (package
     (name "r-tidycensus")
-    (version "1.8.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidycensus" version))
        (sha256
-        (base32 "1s6sr8x3jl60qdgqwr4j73dmnyym8d35nzrrbhz37pa8686j7vnk"))))
+        (base32 "1gszl1zx845ipnin0iaaj9kiyb2cnhcy0yclkd5flhc58jv6zc68"))))
     (properties `((upstream-name . "tidycensus")))
     (build-system r-build-system)
     (arguments
@@ -24476,7 +24476,7 @@ administrative data sources and pre-generated files in South Korea.")
                              r-readr
                              r-purrr
                              r-jsonlite
-                             r-httr
+                             r-httr2
                              r-dplyr
                              r-crayon))
     (home-page "https://walker-data.com/tidycensus/")
@@ -33120,13 +33120,13 @@ quantiles from the accumulated distributions.")
 (define-public r-tdiagree
   (package
     (name "r-tdiagree")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TDIagree" version))
        (sha256
-        (base32 "05ix6n523w52dfk1n399xf04svgdrlr8vjyz7jnbl58fanvsh9z2"))))
+        (base32 "1hca4x0di0fx7ca7s9d55qd607q5wp4sdp964jizh5shj9w2hidm"))))
     (properties `((upstream-name . "TDIagree")))
     (build-system r-build-system)
     (arguments
@@ -33135,18 +33135,21 @@ quantiles from the accumulated distributions.")
     (propagated-inputs (list r-plotfunctions
                              r-nlme
                              r-multcomp
+                             r-knitr
                              r-katex
                              r-gt
                              r-furniture
                              r-boot))
-    (home-page "https://cran.r-project.org/package=TDIagree")
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/BiMaU-PCCB/TDIagree")
     (synopsis "Assessment of Agreement using the Total Deviation Index")
     (description
      "The total deviation index (TDI) is an unscaled statistical measure used to
 evaluate the deviation between paired quantitative measurements when assessing
 the extent of agreement between different raters.  It describes a boundary such
 that a large specified proportion of the differences in paired measurements are
-within the boundary (Lin, 2000) <https://pubmed.ncbi.nlm.nih.gov/10641028/>.
+within the boundary (Lin, 2000)
+<doi:10.1002/(SICI)1097-0258(20000130)19:2%3C255::AID-SIM293%3E3.0.CO;2-8>.
 This R package implements some methodologies existing in the literature for TDI
 estimation and inference in the case of two raters.")
     (license license:gpl2+)))

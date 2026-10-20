@@ -8168,43 +8168,6 @@ currently supports a univariate state-space model for intraday trading volume
 provided by Chen (2016) <doi:10.2139/ssrn.3101695>.")
     (license license:asl2.0)))
 
-(define-public r-intraclass
-  (package
-    (name "r-intraclass")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "intraclass" version))
-       (sha256
-        (base32 "1ccllb5nd9yskq2xdrqkkvwdlbm943ff8wr6fq01n4ap1clzvxsx"))))
-    (properties `((upstream-name . "intraclass")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-rlang
-                             r-lifecycle
-                             r-glmmtmb
-                             r-generics
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/jmgirard/intraclass")
-    (synopsis "Modern Intraclass Correlation Coefficients")
-    (description
-     "Estimates interrater-reliability intraclass correlation coefficients (ICCs)
-within the generalizability-theory framework using modern variance-component
-estimation (linear mixed models) rather than the classical analysis-of-variance
-mean-squares approach.  Provides the full ICC family (absolute agreement versus
-consistency, single versus average, fixed versus random raters, one-way versus
-two-way) with boundary-aware Monte-Carlo confidence intervals, support for
-imbalanced, incomplete, and multilevel (nested) designs, decision-study
-projection to other numbers of raters, and an interactive helper for choosing
-the correct coefficient.  Multilevel methods follow ten Hove, Jorgensen and van
-der Ark (2022) <doi:10.1037/met0000391>.")
-    (license license:expat)))
-
 (define-public r-intnmf
   (package
     (name "r-intnmf")
@@ -9745,13 +9708,13 @@ Testing functions are also provided.")
 (define-public r-integrity
   (package
     (name "r-integrity")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "integrity" version))
        (sha256
-        (base32 "1lz1zj0bh8his4fl6jb3xm3cr44x111xvywmvlh6k9gsfh22xrmf"))))
+        (base32 "09bl0bz693pm78y3bd616mcn7dysc5apa58flhg2cid0mngj0bpv"))))
     (properties `((upstream-name . "integrity")))
     (build-system r-build-system)
     (arguments
@@ -9764,6 +9727,7 @@ Testing functions are also provided.")
                              r-ggpubr
                              r-ggplot2
                              r-dplyr
+                             r-cardx
                              r-car))
     (native-inputs (list r-knitr))
     (home-page
@@ -9774,7 +9738,7 @@ Testing functions are also provided.")
      "The integrity package implements the IPD Integrity Tool, a structured and
 transparent framework for evaluating the integrity of individual participant
 data (IPD) from randomised trials (see Hunter et al. (2024)
-<doi:10.1002/jrsm.1738> and <doi:10.32614/RJ-2017-008>).  It supports users to
+<doi:10.1002/jrsm.1738> and <doi:10.1002/jrsm.1739>).  It supports users to
 identify potential issues, such as unusual data patterns, implausible values,
 lack of expected correlations, date violations, and inconsistencies.  The
 package provides reproducible workflows for screening, documenting and
