@@ -2478,13 +2478,13 @@ especially those that contain date-time columns.")
 (define-public r-funihc
   (package
     (name "r-funihc")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "funIHC" version))
        (sha256
-        (base32 "01475fw3sbw50jxsdwjaksjnhcxvy1ii9n1kky2ryzs7f4qy8d95"))))
+        (base32 "0gqnb8fc64ji8kwrgyjb8h563kp9azc0p59jfp7spbkz9p38ls0b"))))
     (properties `((upstream-name . "funIHC")))
     (build-system r-build-system)
     (arguments
@@ -5890,13 +5890,13 @@ computational efficiency.")
 (define-public r-freesurferformats
   (package
     (name "r-freesurferformats")
-    (version "1.1.0")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "freesurferformats" version))
        (sha256
-        (base32 "1nlc5im7h4k11afjh8br09fxm213hp0zz7xdra8jkravg71n76qa"))))
+        (base32 "027s2f4y96l5vsl26qi74vw5811rsq0wya2b7kcxsjj5wxqjvak0"))))
     (properties `((upstream-name . "freesurferformats")))
     (build-system r-build-system)
     (arguments
@@ -26608,20 +26608,20 @@ front-end and a fast back-end using collapse and cheapr'.")
 (define-public r-fastpls
   (package
     (name "r-fastpls")
-    (version "0.3")
+    (version "0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastPLS" version))
        (sha256
-        (base32 "07xmlyzwnacbmsr6vh37nzs5wcbb8gfcglr2wvc65wdsvhlfslp7"))))
+        (base32 "00bzdjjz40w4dlaina9s18x2k1ddnh43lh8i4yqjyjlh22d366ic"))))
     (properties `((upstream-name . "fastPLS")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list))
-    (propagated-inputs (list r-float))
+    (propagated-inputs (list r-gpuinfo r-float))
     (native-inputs (list pkg-config r-knitr))
     (home-page "https://github.com/tkcaccia/fastPLS")
     (synopsis "Fast Partial Least Squares for High-Dimensional Data")

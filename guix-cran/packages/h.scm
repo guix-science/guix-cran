@@ -4806,6 +4806,40 @@ found at
 for those with access.")
     (license license:expat)))
 
+(define-public r-hpsreg
+  (package
+    (name "r-hpsreg")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hpsreg" version))
+       (sha256
+        (base32 "1fcgch9iaamppp9apk55lqchbq0vssrx5v5y7d66rnvi8a9cw6wz"))))
+    (properties `((upstream-name . "hpsreg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-rcppeigen r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=hpsreg")
+    (synopsis
+     "Regression for Hierarchically Ordered Clinical Outcomes via Pairwise Comparisons (Bradley-Terry-Davidson Model)")
+    (description
+     "This package provides regression for hierarchically ordered clinical outcomes
+via pairwise comparisons, using a covariate-adjusted Davidson (Bradley-Terry
+with ties) model with U-statistic sandwich standard errors.  A hierarchy of
+outcomes (binary, ordinal, continuous, and time-to-event, with eligibility
+guards and tie margins) is defined; all pairs of subjects are scored
+lexicographically; and the resulting win / loss / tie data are analysed.
+Unadjusted win statistics (net benefit, win ratio, win odds), diagnostics, and a
+worked example based on outcomes after allogeneic stem cell transplant are also
+provided.  The computational engine is written in C++ using Rcpp and
+@code{RcppEigen}'.")
+    (license license:gpl3+)))
+
 (define-public r-hpir
   (package
     (name "r-hpir")
@@ -11341,6 +11375,44 @@ Inference to Live the Environmentâ, funded by the European Union â Nex
 Generation EU (Punzo).")
     (license license:gpl2)))
 
+(define-public r-hestia
+  (package
+    (name "r-hestia")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hestia" version))
+       (sha256
+        (base32 "114n5mcyap0fg6c7n857ca1iz95k76n2birybhnfljvcqxvnwdyl"))))
+    (properties `((upstream-name . "hestia")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-stanheaders
+                             r-rstantools
+                             r-rstan
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-posterior
+                             r-flexstanr
+                             r-dplyr
+                             r-checkmate
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://accidda.github.io/hestia/")
+    (synopsis
+     "Bayesian Compartmental Infection Models from Individual Outcomes")
+    (description
+     "Fit Bayesian compartmental infection models (such as
+susceptible-infected-recovered and multi-compartment hidden Markov variants)
+from individual-level outcome data.  Models are composed from infection-process
+and observation-process components and fit using Stan via rstan'.")
+    (license license:expat)))
+
 (define-public r-hessrna
   (package
     (name "r-hessrna")
@@ -16479,23 +16551,23 @@ for more information.")
 (define-public r-harrypotter
   (package
     (name "r-harrypotter")
-    (version "2.1.1")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "harrypotter" version))
        (sha256
-        (base32 "1j3sv0rpp4lcrf09j4a3an4lkwi2x1z18iv62fk6c2kpp9b14b8r"))))
+        (base32 "0s5cy21zqmy45zs989129lm0jcyqqn8jqqp2703yvbgk8v9d9i3m"))))
     (properties `((upstream-name . "harrypotter")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-gridextra r-ggplot2))
+    (propagated-inputs (list r-ggplot2))
     (home-page "https://github.com/aljrico/harrypotter")
     (synopsis "Palettes Generated from All \"Harry Potter\" Movies")
     (description
-     "Implementation of characteristic palettes inspired in the Wizarding World and
+     "Implementation of characteristic palettes inspired by the Wizarding World and
 the Harry Potter movie franchise.")
     (license license:expat)))
 

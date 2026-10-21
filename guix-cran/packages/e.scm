@@ -10861,6 +10861,46 @@ n'.  Designed to plug into ggplot2 workflows through standard manual and
 gradient scales.")
     (license license:cc0)))
 
+(define-public r-era5flux
+  (package
+    (name "r-era5flux")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ERA5Flux" version))
+       (sha256
+        (base32 "1cc4qq7iy5b0ylk32gis5083gyzh98ljkiy6n2qszbpmsyihr3cn"))))
+    (properties `((upstream-name . "ERA5Flux")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra
+                             r-readxl
+                             r-readr
+                             r-purrr
+                             r-ncdf4
+                             r-lutz
+                             r-lubridate
+                             r-ecmwfr
+                             r-dplyr
+                             r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Malone-Disturbance-Ecology-Lab/ERA5Flux")
+    (synopsis
+     "Improve the Utility of ERA5-Land Data at AmeriFlux Site Locations")
+    (description
+     "Collection of tools useful for workflows involving ERA5-Land and
+@code{AmeriFlux} data.  Includes functions for downloading ERA5-Land data based
+on @code{AmeriFlux} sites, formatting the downloaded data to match
+@code{AmeriFlux} standards, merging both datasets together to ensure consistent
+timestamps, and blending them to create a single gap-filled time series.  For
+more details, visit the Climate Data Store's catalogue entry for ERA5-Land at
+<https://cds.climate.copernicus.eu/datasets/reanalysis-era5-land> and the
+@code{AmeriFlux} homepage at <https://ameriflux.lbl.gov>.")
+    (license license:expat)))
+
 (define-public r-era
   (package
     (name "r-era")

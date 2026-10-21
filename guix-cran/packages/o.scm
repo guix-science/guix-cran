@@ -11830,6 +11830,52 @@ functions.  See the ompr website <https://dirkschumacher.github.io/ompr/> for
 more information, documentation and examples.")
     (license license:expat)))
 
+(define-public r-omopviewer
+  (package
+    (name "r-omopviewer")
+    (version "0.8.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OmopViewer" version))
+       (sha256
+        (base32 "0sbn88za7dxczz0jgqa0d66m8fjdayrgdx8pndk60xmpkcpnj7hi"))))
+    (properties `((upstream-name . "OmopViewer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
+    (propagated-inputs (list r-yaml
+                             r-visomopresults
+                             r-usethis
+                             r-tidyr
+                             r-styler
+                             r-stringr
+                             r-snakecase
+                             r-shiny
+                             r-rlang
+                             r-purrr
+                             r-omopgenerics
+                             r-markdown
+                             r-lifecycle
+                             r-gt
+                             r-glue
+                             r-dt
+                             r-dplyr
+                             r-cli
+                             r-bslib))
+    (native-inputs (list r-knitr))
+    (home-page "https://ohdsi.github.io/OmopViewer/")
+    (synopsis "Visualise OMOP Results using 'shiny' Applications")
+    (description
+     "Visualise results obtained from analysing data mapped to the Observational
+Medical Outcomes Partnership (OMOP) common data model using shiny applications.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-omopstudybuilder
   (package
     (name "r-omopstudybuilder")
@@ -14094,13 +14140,13 @@ and Chien (2022) <doi:10.18637/jss.v104.i06>.")
 (define-public r-oeli
   (package
     (name "r-oeli")
-    (version "0.7.8")
+    (version "0.7.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oeli" version))
        (sha256
-        (base32 "02qfpdcc7ivir8k2n20xgifzn0x7q2abrv3022swckgs7cqxrkn9"))))
+        (base32 "13wa7jyckda2il0iprqygarlqky3i8ahmk4bqb3kzq10agsb8z89"))))
     (properties `((upstream-name . "oeli")))
     (build-system r-build-system)
     (arguments
@@ -14114,9 +14160,7 @@ and Chien (2022) <doi:10.18637/jss.v104.i06>.")
                              r-r6
                              r-progressr
                              r-mvtnorm
-                             r-hexsticker
                              r-glue
-                             r-ggplot2
                              r-future-apply
                              r-future
                              r-dplyr

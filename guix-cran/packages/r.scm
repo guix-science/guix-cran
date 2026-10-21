@@ -3067,13 +3067,13 @@ reproducible methods, the package aims to support ecoacoustics studies.")
 (define-public r-ruhere
   (package
     (name "r-ruhere")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RuHere" version))
        (sha256
-        (base32 "0k175kxl1jsym2r9yv9ii5xv5gmdcaw0r1v35y6q2ahfk6lskk9y"))))
+        (base32 "0ri1fpa1gswris4wlbds7h75f5mysk8ajlx8wbm8km6apv6ja3pm"))))
     (properties `((upstream-name . "RuHere")))
     (build-system r-build-system)
     (arguments
@@ -24070,13 +24070,13 @@ useful for exploratory and probabilistic analysis.")
 (define-public r-rmet
   (package
     (name "r-rmet")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rmet" version))
        (sha256
-        (base32 "019y1blq2aap9sdb7hwszmzsx0d1z955b0cqrw8pa9a50nyf25g9"))))
+        (base32 "0l2czhgiahjfymvhd41nzm22jk419hvcaaadi3cf6m3fax10igaz"))))
     (properties `((upstream-name . "rmet")))
     (build-system r-build-system)
     (arguments
@@ -24087,13 +24087,16 @@ useful for exploratory and probabilistic analysis.")
     (home-page "https://github.com/rodrigosqrt3/rmet")
     (synopsis "Download and Read Brazilian Meteorological Data from INMET")
     (description
-     "Automates the download and processing of historical weather data from the
-Brazilian National Institute of Meteorology (INMET).  It provides a cached
-catalogue of automatic stations, resumable and validated downloads, and parsers
-for formatting inconsistencies in raw CSV files across different years.  It
-removes structural artifacts, standardizes column names, parses timestamps, and
-returns data frames ready for analysis.  Data are retrieved from
-<https://portal.inmet.gov.br/dadoshistoricos> and
+     "Automates the download and processing of historical hourly weather data from
+automatic stations of the Brazilian National Institute of Meteorology (INMET).
+It provides the official station catalogue with an offline snapshot and
+nearest-station search, validated and resumable downloads that detect updated
+archives, and a fast parser for the formatting and encoding inconsistencies of
+raw CSV files across years.  It returns analysis-ready data frames with
+standardized column names and UTC timestamps.  It flags implausible values with
+transparent quality-control checks, reports data completeness, and builds daily
+summaries in each station's local time with explicit rules for incomplete days.
+Data are retrieved from <https://portal.inmet.gov.br/dadoshistoricos> and
 <https://apitempo.inmet.gov.br/estacoes/T>.")
     (license license:gpl3+)))
 
@@ -29654,21 +29657,20 @@ with different implementations that represent different trade-offs.")
 (define-public r-rinet
   (package
     (name "r-rinet")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rinet" version))
        (sha256
-        (base32 "1grj3f5jcdsq9yq7nzaizqkf4j9k05rksszribzbbk711c5jhhlm"))))
+        (base32 "105h2sxdm07xqbdwi1xfv4xphvw7gkbj77kw5sg3rhvyf2wvq66k"))))
     (properties `((upstream-name . "rinet")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (inputs (list python-scikit-learn python))
-    (propagated-inputs (list r-reticulate))
-    (home-page "https://cran.r-project.org/package=rinet")
+    (propagated-inputs (list r-torch))
+    (home-page "https://github.com/jackgle/rinet_r_package")
     (synopsis
      "Clinical Reference Interval Estimation with Reference Interval Network (RINet)")
     (description
@@ -42137,6 +42139,36 @@ series more frequently? (doi below) for a full description of and motivation for
 the methodology.")
     (license license:gpl2)))
 
+(define-public r-regsensitivity
+  (package
+    (name "r-regsensitivity")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "regsensitivity" version))
+       (sha256
+        (base32 "08h2qc8h72w7v95kz1r2nfzzf9siivkrq7s2gzrw2rr5vigvyn03"))))
+    (properties `((upstream-name . "regsensitivity")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-nloptr r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mikenguyen13/regsensitivity")
+    (synopsis "Regression Sensitivity Analysis for Omitted Variable Bias")
+    (description
+     "Sensitivity analysis for linear regression coefficients in the presence of
+omitted variables.  Implements the identified-set and breakdown-point analyses
+of Diegert, Masten and Poirier (2026) <doi:10.48550/@code{arXiv.2206.02303>},
+Oster (2019) <doi:10.1080/07350015.2016.1227711> and Masten and Poirier (2026)
+<doi:10.1257/aer.20230242>.  Provides bounds on regression coefficients under
+relaxations of the no-omitted-variables assumption indexed by interpretable
+sensitivity parameters, the breakdown point of a hypothesis about the
+long-regression coefficient, and plotting helpers.")
+    (license license:expat)))
+
 (define-public r-regsdc
   (package
     (name "r-regsdc")
@@ -48763,13 +48795,13 @@ This project is not affiliated with the Arduino company,
 (define-public r-rduckhts
   (package
     (name "r-rduckhts")
-    (version "1.5.2-0.1.5")
+    (version "2.0.0.0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rduckhts" version))
        (sha256
-        (base32 "0nxsv55qk3f9apiv0i5fwg7znacn3l7c0657bczgnfr6jvcjpk2s"))))
+        (base32 "0fxpfh3i10nayx1h4aca2rfrs0dc90gikbpjxc76h7lfg2qlavpk"))))
     (properties `((upstream-name . "Rduckhts")))
     (build-system r-build-system)
     (arguments
@@ -48793,7 +48825,7 @@ Sequencing file formats with @code{DuckDB}'.  The @code{DuckDB} C extension API
 compiled from vendored sources during package installation.  James K Bonfield
 and co-authors (2021) <doi:10.1093/gigascience/giab007>. @code{VariantKey} /
 @code{RegionKey} support follows Nicola Asuni (2018) <doi:10.1101/473744>.")
-    (license license:gpl3)))
+    (license license:gpl2+)))
 
 (define-public r-rdtools
   (package
@@ -49024,13 +49056,13 @@ interior-point method.")
 (define-public r-rds
   (package
     (name "r-rds")
-    (version "0.9-10")
+    (version "0.9-11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RDS" version))
        (sha256
-        (base32 "0pba1pdc6mzm9463azp36c6rsl7x8b4c0hsp9h7i5z467z7yshj0"))))
+        (base32 "03vll8wjyazskdnip631dddcf2vq67mi33lx6idv9chny71mhiba"))))
     (properties `((upstream-name . "RDS")))
     (build-system r-build-system)
     (arguments
@@ -51491,13 +51523,13 @@ and will be transformed into a R data frame.")
 (define-public r-rcrisp
   (package
     (name "r-rcrisp")
-    (version "0.3.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rcrisp" version))
        (sha256
-        (base32 "1sarxrilwyqx1rsjhkijs57j8qh753mrw2pblagpiadb75dwy7gk"))))
+        (base32 "0jd2l4l5y8qf9vrkg3kp7l642bclxyq41m6dxr7cikqiskxs45s1"))))
     (properties `((upstream-name . "rcrisp")))
     (build-system r-build-system)
     (arguments
@@ -51518,6 +51550,7 @@ and will be transformed into a R data frame.")
                              r-lwgeom
                              r-dplyr
                              r-dbscan
+                             r-cli
                              r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://cityriverspaces.github.io/rcrisp/")

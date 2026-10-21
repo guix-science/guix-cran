@@ -5795,13 +5795,13 @@ prescriptions.  Based on Pye et al (2018) <doi:10.1002/pds.4440>.")
 (define-public r-drugexposurediagnostics
   (package
     (name "r-drugexposurediagnostics")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DrugExposureDiagnostics" version))
        (sha256
-        (base32 "1f9ky79w7s1k2rqkm4haj30mdm2hix301hpw90wqc085yy3k0d9x"))))
+        (base32 "16402q7vl926wz7gnnnz13q93ygb65klqlf5iljhjqpnvz57m4ya"))))
     (properties `((upstream-name . "DrugExposureDiagnostics")))
     (build-system r-build-system)
     (arguments
@@ -14512,6 +14512,41 @@ multivariate.  Functionality includes estimation of the (conditional)
 interventional mean and quantiles, as well as sampling from the fitted
 (conditional) interventional distribution.")
     (license license:expat)))
+
+(define-public r-distributionaldda
+  (package
+    (name "r-distributionaldda")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DistributionalDDA" version))
+       (sha256
+        (base32 "1yxxwi8j21wxqds09fh21qi7hnl843jjfwvf6j71q3g3grk3178f"))))
+    (properties `((upstream-name . "DistributionalDDA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang
+                             r-matrix
+                             r-mass
+                             r-fda
+                             r-digest
+                             r-compositions))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://cran.r-project.org/package=DistributionalDDA")
+    (synopsis "Distributional Data Analysis in Bayes Spaces")
+    (description
+     "Statistical analysis of data sets whose observations are whole probability
+distributions, using Bayes space calculus.  Distributions (provided as samples,
+histograms or density functions) are treated as elements of a Hilbert space, so
+that operations such as mean, variance, distance, principal component analysis
+and clustering carry over to densities.  Reference measures defining the
+geometry of the space can be chosen and combined.  The methodology was first
+published with peer review by van den Boogaart, Egozcue and Pawlowsky-Glahn
+(2014) <doi:10.1111/anzs.12074>.")
+    (license license:lgpl3)))
 
 (define-public r-distributacalcul
   (package
@@ -33990,13 +34025,13 @@ Ecological Metadata Language standards.")
 (define-public r-dataspacer
   (package
     (name "r-dataspacer")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DataSpaceR" version))
        (sha256
-        (base32 "1xlqx2qda6a70lh6n9lyka8kagbmn7lzcf58lv8yw3lh8gdvn0zm"))))
+        (base32 "12fd20x2xpyp91bhfcds8mk3h6ji6lk8vyk0gr76qqph14377zyc"))))
     (properties `((upstream-name . "DataSpaceR")))
     (build-system r-build-system)
     (arguments

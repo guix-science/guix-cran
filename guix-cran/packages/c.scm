@@ -6832,13 +6832,13 @@ the method.")
 (define-public r-crownsegmentr
   (package
     (name "r-crownsegmentr")
-    (version "1.1.1")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crownsegmentr" version))
        (sha256
-        (base32 "090s30dfd7lj8wql170yz72j67klvgg8nlxk6nzccps981wz3ymc"))))
+        (base32 "16dpf0ks0kwijbin6pw9rxqgpclmn16rphg0mvilmgg7ivd18mil"))))
     (properties `((upstream-name . "crownsegmentr")))
     (build-system r-build-system)
     (arguments
@@ -28554,6 +28554,31 @@ for large covariance matrix estimation.  The philosophy of the package is
 described in Guo G. (2023) <doi:10.1007/s00180-022-01270-z>.")
     (license license:expat)))
 
+(define-public r-cofid
+  (package
+    (name "r-cofid")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cofid" version))
+       (sha256
+        (base32 "0nmfs34339immz9vc79jvwvpx9fpp0qp4zvsm3i8c5v0la603xxz"))))
+    (properties `((upstream-name . "cofid")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "<https://alrobles.github.io/cofid/>")
+    (synopsis "Copepod Fish Interaction Database")
+    (description
+     "This package provides a curated list of copepod-fish ecological interaction
+records.  It contains the taxonomy of the copepod and the fish and the
+publication from which the information was obtained.  This database contains
+only marine and brackish water fish species.  It excludes fish species that
+inhabit only freshwater.")
+    (license license:gpl3+)))
+
 (define-public r-coffee
   (package
     (name "r-coffee")
@@ -36805,6 +36830,36 @@ Approaches described in Mingarro and Lobo (2018) <doi:10.32800/abc.2018.41.0333>
 and Mingarro and Lobo (2022) <doi:10.1017/S037689292100014X>.")
     (license license:expat)))
 
+(define-public r-climabr
+  (package
+    (name "r-climabr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "climabr" version))
+       (sha256
+        (base32 "1ylspahvlyypn1h5mxkgdhsvws096k98c39nfwd1zfcgj3nva0w3"))))
+    (properties `((upstream-name . "climabr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-stringi
+                             r-rvest
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-dplyr))
+    (home-page "https://github.com/jrz-s/climabr")
+    (synopsis "Interface for Accessing Weather Data from Climatempo")
+    (description
+     "This package provides functions for downloading meteorological data from the
+CLIMATEMPO (<https://www.climatempo.com.br/>) web platform through web scraping,
+designed for ecological and environmental analyses.")
+    (license license:expat)))
+
 (define-public r-clim4health
   (package
     (name "r-clim4health")
@@ -42643,13 +42698,13 @@ function of unit characteristics variables.")
 (define-public r-choicedata
   (package
     (name "r-choicedata")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "choicedata" version))
        (sha256
-        (base32 "0namqrqlpsbdd2ldwakplvjqi92d5vyk913bvixmbjxzlk1xqlj8"))))
+        (base32 "1igvz33bffx0w9kj5mzvyq4ls00yd3piv4l5nr4x914ldah6qqic"))))
     (properties `((upstream-name . "choicedata")))
     (build-system r-build-system)
     (arguments
@@ -44585,6 +44640,29 @@ students can solve some problems and check their work.  In contrast to the
 learnr package, the checkdown package works serverlessly without shiny'.")
     (license license:gpl2+)))
 
+(define-public r-checkdigit
+  (package
+    (name "r-checkdigit")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CheckDigit" version))
+       (sha256
+        (base32 "19apm7hr1k693w2ybv7vmaw5mxnhdjggpnr4m8phyvv8by345rxs"))))
+    (properties `((upstream-name . "CheckDigit")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://fascinatingfingers.gitlab.io/checkdigit")
+    (synopsis "Calculate and Verify Check Digits")
+    (description
+     "Check digits are used like file hashes to verify that a number has been
+transcribed accurately.  The functions provided by this package help to
+calculate and verify check digits according to various algorithms.")
+    (license license:gpl3+)))
+
 (define-public r-checkcli
   (package
     (name "r-checkcli")
@@ -46351,13 +46429,13 @@ variables with respect to this measure.")
 (define-public r-cgam
   (package
     (name "r-cgam")
-    (version "1.32")
+    (version "1.33")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cgam" version))
        (sha256
-        (base32 "0nblfvpnc3nmlvmwyl87wprf7zi3sbxcqsyy525b4913fzsh759v"))))
+        (base32 "15vqdwd0bnz16iwcghfaa1w6755fzf9y7bdlbnzaqm4l639bx9ca"))))
     (properties `((upstream-name . "cgam")))
     (build-system r-build-system)
     (arguments
@@ -57747,13 +57825,13 @@ schedules with irregular payments.")
 (define-public r-capesr
   (package
     (name "r-capesr")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "capesR" version))
        (sha256
-        (base32 "1jg20kvih4sgwy04vaz1hdkwy9i1j2pni82pzb5cc5fc7grzgkxx"))))
+        (base32 "0yh8s3fr066hc0w32hq1hslxx44gj9bm1z9v4k526jsij2kqy9gn"))))
     (properties `((upstream-name . "capesR")))
     (build-system r-build-system)
     (arguments
@@ -57761,7 +57839,7 @@ schedules with irregular payments.")
       #:tests? #f))
     (propagated-inputs (list r-stringr r-rlang r-magrittr r-dplyr r-arrow))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/milkway/capesR")
+    (home-page "https://github.com/StrategicProjects/capesR")
     (synopsis "Access to CAPES Data")
     (description
      "This package provides simplified access to the data from the Catalog of Theses

@@ -20682,13 +20682,13 @@ will automatically be reflected in the original expression.")
 (define-public r-aiuq
   (package
     (name "r-aiuq")
-    (version "0.5.5")
+    (version "0.5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AIUQ" version))
        (sha256
-        (base32 "08iy6qh4c78vw9fyzym8wbcsjd8fhk0gpcrqfmy7w4fimb3kgmrr"))))
+        (base32 "1dhg8p351046kfw284hylj7fdbzagk522snsi0c4fd3bfy8yvpyn"))))
     (properties `((upstream-name . "AIUQ")))
     (build-system r-build-system)
     (arguments
@@ -29804,13 +29804,13 @@ model based on self-supervised learning for wrist-worn accelerometer data.")
 (define-public r-actimetrics
   (package
     (name "r-actimetrics")
-    (version "0.4.0")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "actimetrics" version))
        (sha256
-        (base32 "0pmy8jzblymwq8h888vxvynmiaqyckw2igrb8ki06nx020qdn8ma"))))
+        (base32 "0gljvfhbynvihpacyj6zxb1l32lb45sz07kck92hw6randmy532y"))))
     (properties `((upstream-name . "actimetrics")))
     (build-system r-build-system)
     (arguments
@@ -29820,11 +29820,13 @@ model based on self-supervised learning for wrist-worn accelerometer data.")
                              r-tidyr
                              r-tibble
                              r-rlang
+                             r-readr
                              r-purrr
                              r-lubridate
                              r-dplyr
                              r-assertthat
                              r-actiread
+                             r-actigraph-sleepr
                              r-actibase))
     (native-inputs (list r-knitr))
     (home-page "https://jhuwit.github.io/actimetrics/")

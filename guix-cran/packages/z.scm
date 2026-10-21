@@ -201,6 +201,32 @@ density functions, cumulative distribution functions, Kolmogorov-Smirnov tests,
 principal component analysis plots, and prediction plots.")
     (license license:expat)))
 
+(define-public r-zstd
+  (package
+    (name "r-zstd")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "zstd" version))
+       (sha256
+        (base32 "1jcanl172k4d2jsmr24yl3rsxgkswxfdx95jj5cvdpv0cwjmla2y"))))
+    (properties `((upstream-name . "zstd")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/r-lib/zstd")
+    (synopsis "Zstandard Compression")
+    (description
+     "Compress and decompress data with the Zstandard algorithm
+<https://facebook.github.io/zstd/>, a fast lossless compression format.  Works
+on raw vectors in memory and on files, and can create and extract zstd
+compressed tar archives.  Supports compression levels, multithreaded
+compression, long distance matching, content checksums, and training
+dictionaries for better compression of small, similar inputs.")
+    (license license:expat)))
+
 (define-public r-zoter
   (package
     (name "r-zoter")

@@ -2045,13 +2045,13 @@ health research data to query Google Trends'.")
 (define-public r-gtregression
   (package
     (name "r-gtregression")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gtregression" version))
        (sha256
-        (base32 "17xc345794n17n3mdjl9sfvik7zzd44gzjvka4bja3r928r9hrk0"))))
+        (base32 "1gnsav8bzdp17820hiqbh4i4avnbl6z3pq351q24vc5cag5ai4am"))))
     (properties `((upstream-name . "gtregression")))
     (build-system r-build-system)
     (arguments
@@ -2065,31 +2065,39 @@ health research data to query Google Trends'.")
                              r-risks
                              r-purrr
                              r-patchwork
+                             r-ordinal
                              r-officer
+                             r-nnet
                              r-mass
                              r-logistf
                              r-lmtest
+                             r-lme4
                              r-gt
                              r-ggplot2
                              r-forestploter
                              r-flextable
                              r-dplyr
+                             r-cmprsk
                              r-broom-helpers
                              r-broom))
     (native-inputs (list r-knitr))
     (home-page "https://gtregression.thinkdenominator.com/")
     (synopsis "Tools for Creating Publication-Ready Regression Tables")
     (description
-     "Simplifies regression modeling in R by integrating multiple modeling and
-summarization tools into a cohesive, user-friendly interface.  Designed to be
-accessible for researchers, particularly those in Low- and Middle-Income
-Countries (LMIC).  Built upon widely accepted statistical methods, including
-logistic regression (Hosmer et al.  2013, ISBN:9781118548429), log-binomial
-regression (Spiegelman and Hertzmark 2005 <doi:10.1093/aje/kwi188>), Firth
-penalized logistic regression (Firth 1993 <doi:10.1093/biomet/80.1.27>), Poisson
-and robust Poisson regression (Zou 2004 <doi:10.1093/aje/kwh090>), negative
-binomial regression (Hilbe 2011, ISBN:9780521179515), Cox proportional hazards
-regression, parametric survival regression, causal mediation analysis, and
+     "Simplifies regression modelling in R by integrating modelling, diagnostics,
+visualisation, and summary tools into a cohesive, user-friendly interface.
+Designed to be accessible for researchers, particularly those in Low- and
+Middle-Income Countries (LMIC).  Supports logistic, linear, count, matched
+case-control, ordinal, multinomial, multilevel, Cox, parametric survival, and
+competing-risk regression, and absolute risk differences with the number needed
+to treat.  Built upon widely accepted statistical methods, including logistic
+regression (Hosmer et al.  2013, ISBN:9781118548429), log-binomial regression
+(Spiegelman and Hertzmark 2005 <doi:10.1093/aje/kwi188>), Firth penalized
+logistic regression (Firth 1993 <doi:10.1093/biomet/80.1.27>), Poisson and
+robust Poisson regression (Zou 2004 <doi:10.1093/aje/kwh090>), negative binomial
+regression (Hilbe 2011, ISBN:9780521179515), Cox proportional hazards
+regression, parametric survival regression, causal mediation analysis, risk
+differences (Miettinen and Nurminen 1985 <doi:10.1002/sim.4780040211>), and
 linear regression (Kutner et al.  2005, ISBN:9780071122214).  Leverages multiple
 dependencies to ensure high-quality output and generate reproducible,
 publication-ready tables in alignment with best practices in epidemiology and
@@ -6504,13 +6512,13 @@ details see Hsu, L. and Wang, C. (2007). <doi:10.1016/j.techfore.2006.02.005>.")
 (define-public r-greybox
   (package
     (name "r-greybox")
-    (version "2.0.9")
+    (version "2.0.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "greybox" version))
        (sha256
-        (base32 "1d90msjyvcf9rid47vhg72acnphy3822gyfjy8bp9gp8ghx7527l"))))
+        (base32 "05j19fdz8vlnr26prpj7603m71asigcnfqxfcjm6qh8k6j714b4v"))))
     (properties `((upstream-name . "greybox")))
     (build-system r-build-system)
     (arguments
@@ -17062,13 +17070,13 @@ restructuring.")
 (define-public r-glmmseq
   (package
     (name "r-glmmseq")
-    (version "0.5.7")
+    (version "0.5.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmmSeq" version))
        (sha256
-        (base32 "0gskfal5f2hmqi14v6qii5czpmwqzvxzp1v70c0l0dv7n6ncfyb5"))))
+        (base32 "06a61jzgs96xm2nl921dcyhd8qr2fp1vmss7sav2d43y9rqzz07r"))))
     (properties `((upstream-name . "glmmSeq")))
     (build-system r-build-system)
     (arguments
@@ -17082,7 +17090,6 @@ restructuring.")
                              r-lmertest
                              r-lme4
                              r-kableextra
-                             r-glmmtmb
                              r-ggpubr
                              r-ggplot2
                              r-emmeans
@@ -24535,13 +24542,13 @@ coefficients, and statistical inference (JankovÃ¡ and van de Geer, 2015)
 (define-public r-ggmlr
   (package
     (name "r-ggmlr")
-    (version "0.8.4")
+    (version "0.8.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggmlR" version))
        (sha256
-        (base32 "02jy3117wbbq1gp2771g8kq1vi5v26xddp78nb6ghpjy6v2bxwbq"))))
+        (base32 "15j2qsplrrzg11jvbvcwabqb4658k4jl416kg1r9yival7ncx03s"))))
     (properties `((upstream-name . "ggmlR")))
     (build-system r-build-system)
     (arguments
@@ -24634,6 +24641,31 @@ manipulated or extended.  Use ggmice to inspect missing data, develop imputation
 models, evaluate algorithmic convergence, or compare observed versus imputed
 data.")
     (license license:gpl3+)))
+
+(define-public r-ggmgrapheditor
+  (package
+    (name "r-ggmgrapheditor")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggmGraphEditor" version))
+       (sha256
+        (base32 "1fa8pr1p946h7p52mk2g830jhjrz363fm6mhg226rd6rqnb8bf2v"))))
+    (properties `((upstream-name . "ggmGraphEditor")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-visnetwork r-shiny r-igraph))
+    (home-page "https://github.com/StaThin/ggmGraphEditor")
+    (synopsis "Interactive Graph Layout Editor for Mixed Graphs")
+    (description
+     "This package provides an interactive interface to plot and layout mixed graphs
+based on the adjacency matrix defined in Sadeghi and Marchetti (2012)
+<doi:10.32614/RJ-2012-015>.  Uses shiny and @code{visNetwork} to allow dynamic
+node repositioning and coordinate extraction.")
+    (license license:gpl2)))
 
 (define-public r-ggmeta
   (package
@@ -34640,6 +34672,36 @@ Souliotis et al. (2022)<doi:10.3390/math10183350>.  They proposed a method for
 the construction of fuzzy numbers via a cumulative distribution function based
 on the possibility theory.")
     (license license:gpl3)))
+
+(define-public r-genevintage
+  (package
+    (name "r-genevintage")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "genevintage" version))
+       (sha256
+        (base32 "1p4n74a37gm2ixdr0wpb8256x338m255vv6p9z9phapxm9vvxdq4"))))
+    (properties `((upstream-name . "genevintage")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://genevintage.saketlab.org/R/")
+    (synopsis "Detect Annotation Releases and Repair Gene Names")
+    (description
+     "Detects the species and the Ensembl <https://www.ensembl.org> or GENCODE
+<https://www.gencodegenes.org> annotation release associated with a set of gene
+or transcript identifiers by scoring them against a bundled fingerprint of each
+release.  Identifiers are then converted to gene names using the matching
+release.  Gene symbols that spreadsheet software turned into dates or numbers
+('SEPT9 to 9-Sep') are restored to the spelling of the chosen release.  Also
+retrieves genes by class (mitochondrial, sex-linked, protein-coding, ribosomal,
+transfer RNA, long non-coding RNA), exon-union gene lengths, Entrez
+cross-references, and orthologs in another species from Ensembl Compara'.")
+    (license license:expat)))
 
 (define-public r-geneviewer
   (package

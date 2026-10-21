@@ -3269,13 +3269,13 @@ of the series.")
 (define-public r-mvar-pt
   (package
     (name "r-mvar-pt")
-    (version "2.3.1")
+    (version "2.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MVar.pt" version))
        (sha256
-        (base32 "1zp5p5qzckp1mbkh3qv6jacm950zdy7dasqar7dcgqifmlrzxgsz"))))
+        (base32 "1adchzwshkcgyi65kmzag3yx4zkigcqnq2zgs513qakk26sfq6sh"))))
     (properties `((upstream-name . "MVar.pt")))
     (build-system r-build-system)
     (arguments
@@ -3299,13 +3299,13 @@ multivariada.")
 (define-public r-mvar
   (package
     (name "r-mvar")
-    (version "2.3.1")
+    (version "2.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MVar" version))
        (sha256
-        (base32 "04rclw89xv92k3pxn8h3r04k877pndw26gylrpj885cpcm248vnz"))))
+        (base32 "0kprmcl5lhr9vmn54wfqnjabna6ky2pp8x1fs15jlfv5y4wv09c3"))))
     (properties `((upstream-name . "MVar")))
     (build-system r-build-system)
     (arguments
@@ -34358,13 +34358,13 @@ Fronius microinverters.")
 (define-public r-microeco
   (package
     (name "r-microeco")
-    (version "2.4.0")
+    (version "2.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "microeco" version))
        (sha256
-        (base32 "1hlf8kqgc7w3hk94j4rx659z9mld4frkm5k5yd9vs0rjnq2p8zfs"))))
+        (base32 "1ah9bd8wa2cm1lgsdn664nfjj461c64iijbhn39s3b60h0k48szg"))))
     (properties `((upstream-name . "microeco")))
     (build-system r-build-system)
     (arguments
@@ -47457,13 +47457,13 @@ MCP-Mod methodology will be done in the @code{DoseFinding} R-package.")
 (define-public r-mcplite
   (package
     (name "r-mcplite")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mcplite" version))
        (sha256
-        (base32 "05fzs2c0zsc0hmaiymmvbds2rbhih1a9bls63qx6w1v56laszmv8"))))
+        (base32 "0l7p9jq7al28iaan6adpn81bcswsnw75zjip40dhaa5aajwk6kyr"))))
     (properties `((upstream-name . "mcplite")))
     (build-system r-build-system)
     (arguments

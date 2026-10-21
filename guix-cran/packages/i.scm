@@ -8168,6 +8168,43 @@ currently supports a univariate state-space model for intraday trading volume
 provided by Chen (2016) <doi:10.2139/ssrn.3101695>.")
     (license license:asl2.0)))
 
+(define-public r-intraclass
+  (package
+    (name "r-intraclass")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "intraclass" version))
+       (sha256
+        (base32 "1qgj2kki54v3jf44w9ndaw5m0i96jz2hnj93h5ab58pq52ix89s5"))))
+    (properties `((upstream-name . "intraclass")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-lifecycle
+                             r-glmmtmb
+                             r-generics
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jmgirard/intraclass")
+    (synopsis "Modern Intraclass Correlation Coefficients")
+    (description
+     "Estimates interrater-reliability intraclass correlation coefficients (ICCs)
+within the generalizability-theory framework using modern variance-component
+estimation (linear mixed models) rather than the classical analysis-of-variance
+mean-squares approach.  Provides the full ICC family (absolute agreement versus
+consistency, single versus average, fixed versus random raters, one-way versus
+two-way) with boundary-aware Monte-Carlo confidence intervals, support for
+imbalanced, incomplete, and multilevel (nested) designs, decision-study
+projection to other numbers of raters, and an interactive helper for choosing
+the correct coefficient.  Multilevel methods follow ten Hove, Jorgensen and van
+der Ark (2022) <doi:10.1037/met0000391>.")
+    (license license:expat)))
+
 (define-public r-intnmf
   (package
     (name "r-intnmf")
@@ -9708,13 +9745,13 @@ Testing functions are also provided.")
 (define-public r-integrity
   (package
     (name "r-integrity")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "integrity" version))
        (sha256
-        (base32 "09bl0bz693pm78y3bd616mcn7dysc5apa58flhg2cid0mngj0bpv"))))
+        (base32 "1q291607mnsdlyi71pj9iwb4lbzikklc17k4jvzfazma7jlb2i0d"))))
     (properties `((upstream-name . "integrity")))
     (build-system r-build-system)
     (arguments
@@ -12687,13 +12724,13 @@ squared coefficient of variation is based on Garcia-Penalosa, C., & Orgiazzi, E.
 (define-public r-inedemogr
   (package
     (name "r-inedemogr")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inedemogR" version))
        (sha256
-        (base32 "1y0p3g9fgllyxkbzlxqnswgxb9qxjqb45w1rknv6fwacfibjfa3n"))))
+        (base32 "1dvn8rwc64rqavskfmcjlhjy6dr332wan631k5691n19v5hz18jg"))))
     (properties `((upstream-name . "inedemogR")))
     (build-system r-build-system)
     (arguments
@@ -12769,6 +12806,42 @@ Manrique-Ascencio et al (2024) <doi:10.1111/plb.13683>, Ruiz-Guerra et al(2017)
 <doi:10.1007/s10980-024-01809-z>, Papaqui-Bello et al (2024)
 <doi:10.13102/sociobiology.v71i2.10503>.")
     (license license:gpl3)))
+
+(define-public r-ineatlas
+  (package
+    (name "r-ineatlas")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ineAtlas" version))
+       (sha256
+        (base32 "1rkfzs1dav4q2x0478syyg39iiqwrjvc4b7r5ymgazy3a7if835h"))))
+    (properties `((upstream-name . "ineAtlas")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zip
+                             r-stringr
+                             r-sf
+                             r-readr
+                             r-httr
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/pablogguz/ineAtlas")
+    (synopsis "Access to Spanish Household Income Distribution Atlas Data")
+    (description
+     "This package provides access to granular socioeconomic indicators from the
+Spanish Statistical Office (INE) Household Income Distribution Atlas.  The
+package downloads and processes data from a companion @code{GitHub} repository
+(<https://github.com/pablogguz/@code{ineAtlas.data/>}) which contains processed
+versions of the official INE Atlas data.  Functions are provided to fetch data
+at multiple geographic levels (municipalities, districts, and census tracts),
+including income indicators, demographic characteristics, and inequality
+metrics.  The data repository is updated every year when new releases are
+published by INE.")
+    (license license:expat)))
 
 (define-public r-ineapir
   (package
@@ -18349,13 +18422,13 @@ that the series assumptions in the time series data are met.")
 (define-public r-ifo
   (package
     (name "r-ifo")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ifo" version))
        (sha256
-        (base32 "1qp7i9j0xhvlym732npr726fm92fwd6ns6g6jqmc6rr6221286nh"))))
+        (base32 "0ag5xh9vaqyf0ri191nzk1vywm6r229z5qpf49j7m22z075yinha"))))
     (properties `((upstream-name . "ifo")))
     (build-system r-build-system)
     (arguments
@@ -21456,19 +21529,19 @@ the Exploration of the Sea) DATRAS trawl survey database
 (define-public r-icesconnect
   (package
     (name "r-icesconnect")
-    (version "1.1.4")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "icesConnect" version))
        (sha256
-        (base32 "1hqpij0rzmcv87m4gqrrv478zk007clg0gm1433534q1zrds11rh"))))
+        (base32 "06mmg2nrps6ym8mbrqhcrvxv8bikkx2y4wr8shpjqa2jy5m3jsa3"))))
     (properties `((upstream-name . "icesConnect")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-jsonlite r-httr r-base64enc r-askpass))
+    (propagated-inputs (list r-jsonlite r-httr r-base64enc))
     (home-page "https://www.ices.dk/data/tools/Pages/WebServices.aspx")
     (synopsis "Provides User Tokens for Access to ICES Web Services")
     (description

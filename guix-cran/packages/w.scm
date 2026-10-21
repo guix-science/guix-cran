@@ -1098,13 +1098,13 @@ insert, update, upsert, patch, delete, overwrite, overwrite_schema.")
 (define-public r-writelog
   (package
     (name "r-writelog")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "writeLog" version))
        (sha256
-        (base32 "1r4awjy5nn42bh754f89qxj2c1pf5i2fjh072xq3fc8n8pm6c650"))))
+        (base32 "0hk942nb9j4w58a0ypk08fv5qhcx4dl6kl5966inmrv05w7b9s1g"))))
     (properties `((upstream-name . "writeLog")))
     (build-system r-build-system)
     (arguments
@@ -1761,13 +1761,13 @@ for investment purposes.  See Kumar and Padakandla(2022)
 (define-public r-wpproj
   (package
     (name "r-wpproj")
-    (version "0.3")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WpProj" version))
        (sha256
-        (base32 "0cwk1iq8qcrx33vl1hcnm0vlpjwyzgcmb6ih5fi6dfkv86mn5f9m"))))
+        (base32 "0cpwhbinwzmvid3k8qri2x73g35586s33s99fh66vlh2km3879ia"))))
     (properties `((upstream-name . "WpProj")))
     (build-system r-build-system)
     (arguments

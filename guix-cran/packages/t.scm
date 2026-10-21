@@ -307,13 +307,13 @@ data even when multiple processes access the queue simultaneously.")
 (define-public r-txshift
   (package
     (name "r-txshift")
-    (version "0.3.8")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "txshift" version))
        (sha256
-        (base32 "0lniwb7lijcasqmhs1zryb9wqf5xka13q4yb9m2j8dblb51y3i79"))))
+        (base32 "145w2myp6pzj8cxlaqfhj219cxhx8aaafw6grvzfq2ncmw6nxl5p"))))
     (properties `((upstream-name . "txshift")))
     (build-system r-build-system)
     (arguments
@@ -351,8 +351,8 @@ detailed in NS Hejazi, MJ van der Laan, HE Janes, PB Gilbert, and DC Benkeser
 (2020) <doi:10.1111/biom.13375>.  The software package implementation is
 described in NS Hejazi and DC Benkeser (2020) <doi:10.21105/joss.02447>.
 Estimation of nuisance parameters may be enhanced through the Super Learner
-ensemble model in sl3', available for download from @code{GitHub} using
-remotes::install_github(\"tlverse/sl3\")'.")
+ensemble model in sl3', available for download from
+<https://tlverse.r-universe.dev> or from @code{GitHub}.")
     (license license:expat)))
 
 (define-public r-txeffectssurvival
@@ -6842,13 +6842,13 @@ package additionally allows for a doubly truncated normal distribution.")
 (define-public r-truncexpfam
   (package
     (name "r-truncexpfam")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TruncExpFam" version))
        (sha256
-        (base32 "1vnw5b788jz8hjgp05i8rrsdag4rhs4zvvs0ynqisd4sp393qi6j"))))
+        (base32 "0h4k2943kmx20bmjwlq674203wcvbl24k0cwp8slpjayn7gfwr1p"))))
     (properties `((upstream-name . "TruncExpFam")))
     (build-system r-build-system)
     (arguments
@@ -17887,13 +17887,13 @@ CR2) can be handled using the @code{tkImg} package for Tcl/Tk'.")
 (define-public r-tkcat
   (package
     (name "r-tkcat")
-    (version "1.2.3")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TKCat" version))
        (sha256
-        (base32 "1dj7mxr1vxp1f7iscyb9pkx2vjhml6gn4i9nyxz2nbd9qh32152h"))))
+        (base32 "1igivf4xgi7lly2hmzkjrxrwgp7nlxszv3x6f73v3afa1f54869j"))))
     (properties `((upstream-name . "TKCat")))
     (build-system r-build-system)
     (arguments
@@ -17914,6 +17914,7 @@ CR2) can be handled using the @code{tkImg} package for Tcl/Tk'.")
                              r-markdown
                              r-jsonvalidate
                              r-jsonlite
+                             r-httpuv
                              r-htmltools
                              r-future
                              r-dt

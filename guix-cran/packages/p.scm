@@ -1932,13 +1932,13 @@ the topology of a membrane protein.  This package allows one to use
 (define-public r-puremoe
   (package
     (name "r-puremoe")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "puremoe" version))
        (sha256
-        (base32 "0ka4a8wrvwhk2ci0mbi8718miyd3awvnvq7mqpqd6fbh9099c9a8"))))
+        (base32 "0r6i4nn9j3xfih9wd4jq85qsf1wvm2l355m9rcyg1gw6hd4n8xmk"))))
     (properties `((upstream-name . "puremoe")))
     (build-system r-build-system)
     (arguments
@@ -12176,13 +12176,13 @@ available at Smolander and Tamminen, 2021; <doi:10.1101/2021.09.06.459073>.")
 (define-public r-pricingbandits
   (package
     (name "r-pricingbandits")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PricingBandits" version))
        (sha256
-        (base32 "1pkdp2fl7fcpaiqfhblzf6byvhmbi1nah9vamw4g5cfc7hhv6lj1"))))
+        (base32 "1xf4clm3bf4wjzg2bajdhznv352vf70nrkzpi215sc5xi27x3z7l"))))
     (properties `((upstream-name . "PricingBandits")))
     (build-system r-build-system)
     (arguments
@@ -12200,11 +12200,11 @@ available at Smolander and Tamminen, 2021; <doi:10.1101/2021.09.06.459073>.")
     (synopsis "Multi-Armed Bandit Approaches to Pricing Experiments")
     (description
      "This package implements multi-armed bandit approaches for pricing experiments
-with an unknown demand curve, as developed in Weaver, Kumar, and Jain,
+with an unknown demand curve, as developed in Weaver, Kumar, and Jain (2025)
 \"Nonparametric Pricing Bandits Leveraging Informational Externalities to Learn
 the Demand Curve\" <doi:10.1287/mksc.2022.0247>.  Includes Upper Confidence Bound
-(UCB) and Thompson Sampling (TS) baselines, Gaussian process variants ('GP-UCB',
-GP-TS'), monotonic Gaussian process variants that constrain demand to be weakly
+(UCB) and Thompson Sampling (TS) baselines, Gaussian process variants (GP-UCB,
+GP-TS), monotonic Gaussian process variants that constrain demand to be weakly
 decreasing in price, and heterogeneous-noise extensions.  The willingness-to-pay
 distribution is fully user-specified via a vector of consumer valuations, so any
 demand environment can be simulated or replayed.")
@@ -31327,20 +31327,19 @@ functions used in the book.")
 (define-public r-picreg
   (package
     (name "r-picreg")
-    (version "0.1.4")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "picreg" version))
        (sha256
-        (base32 "1shdr4iy17ldjkr8y9bfl02x3fa7pai6iipyd5b6fq2yakmvhcpv"))))
+        (base32 "15rv19sfl53abqa80qyyx7jmrmgq1mz01qwfqwi6vbg2g81iq279"))))
     (properties `((upstream-name . "picreg")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix r-future-apply
-                             r-future))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/VcMaxouuu/picreg")
     (synopsis "Variable Selection using the Pivotal Information Criterion")
@@ -40264,13 +40263,13 @@ Implementation for Normal Mixed Effects Models With Censored Response\"
 (define-public r-pecanr
   (package
     (name "r-pecanr")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pecanr" version))
        (sha256
-        (base32 "1m2dm32zlca6xvpdrjq7yk8kkfl75qiv0gi95lg72vxkvwd59j1i"))))
+        (base32 "009nvym95wfkz8k7rvn33qxmlj3865qn2xhwyy4isal0ijglfxmq"))))
     (properties `((upstream-name . "pecanr")))
     (build-system r-build-system)
     (arguments
@@ -40287,16 +40286,15 @@ models fitted with the lme4 package.  Supports crossed, nested, and mixed
 factors.  Mixed designs handle cases where grouping factors are simultaneously
 crossed with some variables and nested within others (e.g., photos nested within
 models, but both crossed with participants).  Factor predictors are supported
-directly, and a single factor-level (omnibus) effect size can be obtained for a
-multi-level factor or multi-df interaction.  Random slope variances are
-translated to the outcome scale using a variance decomposition approach,
-correctly accounting for predictor scaling and interaction terms.  Both general
-and operative effect sizes are provided, with optional parametric bootstrap
-confidence intervals.  For correlated predictors, per-predictor effect sizes use
-unique (semipartial) variance by default.  Methods are based on Correll,
-Mellinger, @code{McClelland}, and Judd (2020) <doi:10.1016/j.tics.2019.12.009>,
-Correll, Mellinger, and Pedersen (2022) <doi:10.3758/s13428-021-01687-2>, and
-Rights and Sterba (2019) <doi:10.1037/met0000184>.")
+directly.  Random slope variances are translated to the outcome scale using a
+variance decomposition approach, correctly accounting for predictor scaling and
+interaction terms.  Both general and operative effect sizes are provided, with
+optional parametric bootstrap confidence intervals.  For correlated predictors,
+per-predictor effect sizes use unique (semipartial) variance by default.
+Methods are based on Correll, Mellinger, @code{McClelland}, and Judd (2020)
+<doi:10.1016/j.tics.2019.12.009>, Correll, Mellinger, and Pedersen (2022)
+<doi:10.3758/s13428-021-01687-2>, and Rights and Sterba (2019)
+<doi:10.1037/met0000184>.")
     (license license:expat)))
 
 (define-public r-pecan
@@ -47079,26 +47077,26 @@ outsourced into a separate package.")
 (define-public r-parbayesianoptimization
   (package
     (name "r-parbayesianoptimization")
-    (version "1.3.0")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ParBayesianOptimization" version))
        (sha256
-        (base32 "00wi1vkkrmhi0lfyvnh33wzny6wpmcj8740f0aqj94zpgvgj2hfr"))))
+        (base32 "0izwnpbzzk04hgv32jvflmw461i59zp582xc2m8kphvad3xfwchv"))))
     (properties `((upstream-name . "ParBayesianOptimization")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-lhs
-                             r-ggpubr
+    (propagated-inputs (list r-patchwork
+                             r-lhs
                              r-ggplot2
                              r-foreach
                              r-dicekriging
                              r-dbscan
                              r-data-table
-                             r-crayon))
+                             r-cli))
     (native-inputs (list r-quarto))
     (home-page "https://github.com/novica/ParBayesianOptimization")
     (synopsis "Parallel Bayesian Optimization of Hyperparameters")
@@ -49263,6 +49261,43 @@ selection, publication-quality plots, and Geographic Information System (GIS)
 export via sf'.  Methods are described in Cocca (2026)
 <https://github.com/enzococca/palimpsestr>.")
     (license license:expat)))
+
+(define-public r-palettome
+  (package
+    (name "r-palettome")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "palettome" version))
+       (sha256
+        (base32 "071riwmcmwyld0ylv57m11zk8zb5vm7fjcyqrawibwylfcqbqyh9"))))
+    (properties `((upstream-name . "palettome")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite r-farver r-colorspace))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/thisishcb/Palettome")
+    (synopsis
+     "Hierarchy-Aware, Interactively Editable Color Palettes for Clusters")
+    (description
+     "Assigns perceptually-informed color palettes to clustered data (e.g.
+@code{scRNA-seq} clusters / cell subtypes from Seurat or plain UMAP coordinate
+tables), where clusters that belong to the same \"family\" (e.g. subtypes of T
+cells) can be colored either harmoniously (shared hue, varying shade) or with
+maximal contrast (with family membership encoded via a secondary channel).
+Families can be auto-detected from embedding-space hierarchical clustering or
+supplied explicitly, and every generated color remains individually overridable,
+with manual overrides preserved across regeneration.  Colors are constructed in
+the HCL space as in Zeileis et al. (2020) <doi:10.18637/jss.v096.i01>, separated
+using the CIEDE2000 color difference of Sharma, Wu and Dalal (2005)
+<doi:10.1002/col.20070>, and checked for color-vision deficiency using the
+simulation of Machado, Oliveira and Fernandes (2009)
+<doi:10.1109/TVCG.2009.113>.  Core algorithms have no UI dependencies; an
+optional interactive shiny UI is provided separately.")
+    (license license:asl2.0)))
 
 (define-public r-palettetown
   (package

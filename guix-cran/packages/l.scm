@@ -16286,6 +16286,39 @@ Language\" 1ed and 2ed by Pedro J. Aphalo.  ISBN 9780367182533 (pbk 1ed); ISBN
 9780367182557 (hbk 1ed); ISBN 9780429060342 (ebk 1ed).")
     (license license:gpl2+)))
 
+(define-public r-learnr2
+  (package
+    (name "r-learnr2")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "learnr2" version))
+       (sha256
+        (base32 "1pwkj4d7hk2vbg7bx6sqsl5n9mdwsa308563fcb48ck3prm7lb3b"))))
+    (properties `((upstream-name . "learnr2")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rmarkdown
+                             r-quarto
+                             r-knitr
+                             r-jsonlite
+                             r-httpuv
+                             r-htmltools
+                             r-fs))
+    (native-inputs (list r-quarto))
+    (home-page "https://github.com/PPBDS/learnr2")
+    (synopsis "Interactive Tutorials with 'Quarto' and 'WebR'")
+    (description
+     "Create interactive R tutorials that run entirely in the browser using Quarto
+<https://quarto.org> and @code{WebR} <https://docs.r-wasm.org/webr/latest/> via
+the quarto-live extension.  Provides learnr'-style authoring conveniences --
+scaffolding, exercises, hints, solutions, and quizzes -- without Shiny', R
+Markdown', or a server.")
+    (license license:expat)))
+
 (define-public r-learnpopgen
   (package
     (name "r-learnpopgen")
@@ -20504,6 +20537,38 @@ index models.")
 3@code{CoSE} algorithm, see Weber, Striaukas, Schumacher Binder (2018)
 <doi:10.2139/ssrn.3211163>.")
     (license license:gpl2+)))
+
+(define-public r-lassoinf
+  (package
+    (name "r-lassoinf")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lassoinf" version))
+       (sha256
+        (base32 "1m24g5mc47n9d6dfggsk7d9p4qsz6mx4h1xccff8v9bv5rjmhdfj"))))
+    (properties `((upstream-name . "lassoinf")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppeigen r-rcpp r-r6 r-mvtnorm))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jonathan-taylor/lassoinf")
+    (synopsis "Selective Inference for the Randomized Lasso")
+    (description
+     "Confidence intervals and p-values for parameters chosen by the (randomized)
+lasso, valid after selection.  Implements the polyhedral approach of Lee, Sun,
+Sun and Taylor (2016) <doi:10.1214/15-AOS1371>, the randomized response of Tian
+and Taylor (2018) <doi:10.1214/17-AOS1564> and the exact randomized inference of
+Panigrahi, Fry and Taylor (2024) <doi:10.1093/biomet/asae019>, with the
+truncated bivariate normal computations of Liu (2023)
+<doi:10.48550/@code{arXiv.2308.10346>}.  Includes inference for user-specified
+estimands, screening of inactive variables and problems fitted by glmnet'.
+Computations use a C++ backend with matrix-free linear operators for wide
+designs.")
+    (license license:bsd-3)))
 
 (define-public r-lassohidfastgibbs
   (package

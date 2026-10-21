@@ -9736,13 +9736,13 @@ formatting helpers for streamlined table styling workflows.")
 (define-public r-sumer
   (package
     (name "r-sumer")
-    (version "1.6.0")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sumer" version))
        (sha256
-        (base32 "1hfaxn4nkka7aacsd56kmlmmhym1vp86w56rk3ihamiwymzzgk7g"))))
+        (base32 "16xbil9if7b6xn652zp6zlj5g75a6x1xr31icyz8ffx8wx0s7xr0"))))
     (properties `((upstream-name . "sumer")))
     (build-system r-build-system)
     (arguments
@@ -21066,13 +21066,13 @@ Bechhofer, Santner, and Goldsman (1995, ISBN:978-0-471-57427-9).")
 (define-public r-sstvars
   (package
     (name "r-sstvars")
-    (version "1.2.5")
+    (version "1.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sstvars" version))
        (sha256
-        (base32 "0hy9zidqffpa812943j7w05wr91i6xpzkxdm3i7wdyfnccv2csrh"))))
+        (base32 "1d2xsk526w2zma6rix0spf87yjbb01sz65ck597gi8zva9s7wi3r"))))
     (properties `((upstream-name . "sstvars")))
     (build-system r-build-system)
     (arguments
@@ -30066,6 +30066,33 @@ data, perform principal component analysis (PCA), and assemble customizable
 image grids suitable for publication-quality scientific figures.")
     (license license:expat)))
 
+(define-public r-spectra2rgb
+  (package
+    (name "r-spectra2rgb")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spectra2rgb" version))
+       (sha256
+        (base32 "0fbljib7wybaxcijl1bjh7h15dyzrx19wlsgrp8bwfkch0fignhv"))))
+    (properties `((upstream-name . "spectra2rgb")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=spectra2rgb")
+    (synopsis
+     "Convert Spectral Signatures to sRGB and CIELAB Colour Coordinates")
+    (description
+     "Converts hyperspectral reflectance signatures to device- independent @code{sRGB}
+hex codes and CIE L*a*b* coordinates using the CIE 1931 2-degree standard
+observer and the D65 standard illuminant.  Includes bundled reference data so
+the package is self-contained.  Handles missing and non-finite reflectance
+values via a configurable policy.")
+    (license license:gpl3+)))
+
 (define-public r-spectr
   (package
     (name "r-spectr")
@@ -37860,6 +37887,39 @@ published monthly by the European Insurance and Occupational Pensions Authority
 the data, accessed via the official EIOPA feed at
 <https://www.eiopa.europa.eu/feed/53/rss_en>.")
     (license license:expat)))
+
+(define-public r-solvency2
+  (package
+    (name "r-solvency2")
+    (version "0.5.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "solvency2" version))
+       (sha256
+        (base32 "182c0q7pjh7dqvgv6j4hnhwfhf0nsgn7bfn9z2p6jwh0ffgfks7f"))))
+    (properties `((upstream-name . "solvency2")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2 r-rmpfr r-jsonlite r-gmp r-digest))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/rds0001/solvency2-r")
+    (synopsis "Offline Solvency II Calculations and Regulatory Parameters")
+    (description
+     "Native, offline components for insurance solvency calculations under Solvency
+II, including valuation, technical provisions, market and underwriting risks,
+capital aggregation, own funds, groups and archived reporting checks.  Provides
+explicit dated rule profiles, regulatory parameters, correlation matrices,
+synthetic reference cases, local discount curve adapters and traceable analyst
+overrides.  Implements components of Directive 2009/138/EC, European Parliament
+and Council (2009) <https://eur-lex.europa.eu/eli/dir/2009/138/oj>, and
+Delegated Regulation (EU) 2015/35, European Commission (2014)
+<https://eur-lex.europa.eu/eli/reg_del/2015/35/oj>.  Users provide portfolio
+inputs, market observations and model results; no network connection or Python
+runtime is required.")
+    (license license:gpl3+)))
 
 (define-public r-solvebio
   (package
@@ -58282,13 +58342,13 @@ simulations, animations, countdowns, or interactive visualizations.")
 (define-public r-shinyds
   (package
     (name "r-shinyds")
-    (version "0.6.0")
+    (version "0.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyds" version))
        (sha256
-        (base32 "0k1wz16rsbici4cjzr6hx8rb30x313n7xnlhhmz15ivd717l2q11"))))
+        (base32 "174drk45zn2jnx5z36vy021znsc2vq1yn4hmbvkaz4cj096b6rrq"))))
     (properties `((upstream-name . "shinyds")))
     (build-system r-build-system)
     (arguments
@@ -58297,7 +58357,7 @@ simulations, animations, countdowns, or interactive visualizations.")
     (propagated-inputs (list r-shiny r-htmltools))
     (native-inputs (list r-quarto))
     (home-page "https://github.com/novica/shinyds")
-    (synopsis "'Shiny' Bindings for Designsystemet Components")
+    (synopsis "'Shiny' Bindings for 'Designsystemet' Components")
     (description
      "This package provides R wrappers for the Designsystemet component library
 <https://designsystemet.no>, enabling use of Norwegian government design system

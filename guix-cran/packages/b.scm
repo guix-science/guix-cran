@@ -3073,13 +3073,13 @@ designed for Bootstrap 3.3.")
 (define-public r-bsplinequantreggui
   (package
     (name "r-bsplinequantreggui")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BsplineQuantRegGui" version))
        (sha256
-        (base32 "0h4gc7mmfvzycwcvl3jkka3im1qci55h20kj99ah35ylcgx1w67j"))))
+        (base32 "15f7250ib8falpg0m5ha0sqq7xqlr0y47bl5wxwn3w1v7irmg2lx"))))
     (properties `((upstream-name . "BsplineQuantRegGui")))
     (build-system r-build-system)
     (arguments
@@ -3094,6 +3094,7 @@ designed for Bootstrap 3.3.")
                              r-dt
                              r-colourpicker
                              r-bsplinequantreg))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=BsplineQuantRegGui")
     (synopsis "Interactive 'Shiny' Interface for 'BsplineQuantReg'")
     (description
@@ -3103,12 +3104,14 @@ with shape constraints, based on the method described in Abbes (2025).  Almost
 all parameters of the main function @code{quantile_spline()} can be tuned.
 Features include interactive knot placement, per-region constraint
 specification, CSV data import, direct demo access, reproducible R code
-generation, and solver selection.  The version 0.2.2 handles knots multiplicity,
-Bspline basis visualisation, mean-square regression, pp form visualisation under
-human readable form, in local or canonical bases, The GUI provides two modes,
-basic (compatible with @code{BsplineQuantReg} >= 0.2.2) and advanced (requires
-@code{BsplineQuantReg} >= 0.2.5 for stable multiplicity features).  This GUI an
-improved version of the Python Tk version of @code{BsplineQuantRegPy}'.")
+generation, and solver selection.  From version 0.2.2 it handles knots
+multiplicity, Bspline basis visualisation, mean-square regression, pp form
+visualisation under human readable form, in local or canonical bases, The
+version 0.2.3 allows regression with spline of any degree, with constraints
+implemented for degrees 0 to 5.  The GUI provides two modes, basic (compatible
+with @code{BsplineQuantReg} >= 0.2.2) and advanced (requires
+@code{BsplineQuantReg} >= 0.2.6 for stable multiplicity features).  This GUI is
+an R (improved) version of the Python Tk version of @code{BsplineQuantRegPy}'.")
     (license license:gpl3)))
 
 (define-public r-bsplinequantreg
@@ -3152,13 +3155,13 @@ Python package is available at
 (define-public r-bspline
   (package
     (name "r-bspline")
-    (version "2.5.1")
+    (version "2.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bspline" version))
        (sha256
-        (base32 "1382pd1077dw4rb7s2zha3fdig6i04mb3bj2d5872ncycznafwmz"))))
+        (base32 "0gm8y5c24mplm0y6k4hcmhly3rbv4vzf2sinjc7ainaf2dn5fc17"))))
     (properties `((upstream-name . "bspline")))
     (build-system r-build-system)
     (arguments
@@ -23108,13 +23111,13 @@ the bfsl solution.")
 (define-public r-bfs
   (package
     (name "r-bfs")
-    (version "0.7.2")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BFS" version))
        (sha256
-        (base32 "1g7rp22hw2qb3w4kllnjj19gb696kv7j7ni4i0p60lrh7gwvy0qw"))))
+        (base32 "1fxzmnyy1qlx3vqqv7jagfxp40by39shvlr3qrrj8153zq022gq2"))))
     (properties `((upstream-name . "BFS")))
     (build-system r-build-system)
     (arguments
@@ -23135,6 +23138,7 @@ the bfsl solution.")
                              r-fs
                              r-dplyr
                              r-curl))
+    (native-inputs (list r-knitr))
     (home-page "https://felixluginbuhl.com/BFS/")
     (synopsis "Get Data from the Swiss Federal Statistical Office")
     (description
@@ -28615,13 +28619,13 @@ Perez-Elizalde, S., Jarquin, D., and Crossa, J. (2011)
 (define-public r-bayprior
   (package
     (name "r-bayprior")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayprior" version))
        (sha256
-        (base32 "1nzcizdz648x32wk7446qhcrclqdp2b37v5ljlsinc54myjclxg7"))))
+        (base32 "18aydsxa5rxdw2fq8y7337pqfclk39bhnwnhdcx79pdwwgy0p4lp"))))
     (properties `((upstream-name . "bayprior")))
     (build-system r-build-system)
     (arguments
@@ -28652,8 +28656,8 @@ Bayesian priors in clinical trial settings.  Implements expert elicitation via
 quantile matching, the roulette method, and moment matching across six
 distribution families, linear and logarithmic expert pooling,
 meta-analytic-predictive (MAP) priors derived from historical trials, prior-data
-conflict diagnostics including the Box p-value (with an exact prior predictive
-option for selected prior and data combinations), an exploratory surprisal
+conflict diagnostics including the Box p-value (computed from the exact prior
+predictive distribution where one has a closed form), an exploratory surprisal
 (S-value) companion to it, surprise index, information divergence, and
 Mahalanobis distance, sensitivity analyses with tornado and influence heatmap
 plots, sceptical, robust, and power priors, and automated prior justification
@@ -35171,13 +35175,13 @@ it belongs.  This package depends on sf and only replaces the plot method.")
 (define-public r-baseverse
   (package
     (name "r-baseverse")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "baseverse" version))
        (sha256
-        (base32 "1z2i3m7cpqfyxyw5infrk6mllsamd9bv60hs9hk191cnysjlx020"))))
+        (base32 "1ll9xgvq85r21yl9jbq9mlav88l12m5g6k6xyh81m02w2v5hckyw"))))
     (properties `((upstream-name . "baseverse")))
     (build-system r-build-system)
     (arguments

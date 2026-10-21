@@ -7989,13 +7989,13 @@ Ernst (1969) <doi:10.1016/0022-2364(69)90003-1>, Liland et al. (2010)
 (define-public r-nmof
   (package
     (name "r-nmof")
-    (version "2.11-0")
+    (version "2.12-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMOF" version))
        (sha256
-        (base32 "1jh2ni5zw54mx8vrkqjqb4yk7lsa0rhmlwy4cgvv32nh8h0ss57i"))))
+        (base32 "1vzhlrmdjj15a3g3376v59g8ph7zx4vbzxqs387wasi9f1slri7p"))))
     (properties `((upstream-name . "NMOF")))
     (build-system r-build-system)
     (arguments
@@ -12588,13 +12588,13 @@ repositories of the nflverse project.")
 (define-public r-nflplotr
   (package
     (name "r-nflplotr")
-    (version "1.7.0")
+    (version "1.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nflplotR" version))
        (sha256
-        (base32 "1lv1wbfh1127g2a18jscmggvzzwmidnyrchdd6c3sn7003ihly35"))))
+        (base32 "1dm6r85kgzy6kcbgbywy7issvlmbbqhm2wchpcwyww39ixvhzfa4"))))
     (properties `((upstream-name . "nflplotR")))
     (build-system r-build-system)
     (arguments
