@@ -6955,6 +6955,32 @@ estimating causal effects.\" Statistica Sinica.
 <https://www.researchgate.net/publication/299013953_Kernel_Balancing_A_flexible_non-parametric_weighting_procedure_for_estimating_causal_effects>.")
     (license license:gpl2+)))
 
+(define-public r-kbaabb
+  (package
+    (name "r-kbaabb")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "kbaabb" version))
+       (sha256
+        (base32 "0n4imdj3h8dw5bvbnkpdis3l31iv111g317i5a4aahqziz9bp2qy"))))
+    (properties `((upstream-name . "kbaabb")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-fnn))
+    (home-page "https://cran.r-project.org/package=kbaabb")
+    (synopsis
+     "Generates an Artificial Population Based on the KBAABB Methodology")
+    (description
+     "This package provides tools for generating an artificial population based on a
+@code{kNN-based} approximation to the approximate Bayesian bootstrap (KBAABB).
+This methodology is described in White et al. (2025)
+<doi:10.1093/forestry/cpaf071>.")
+    (license license:cc0)))
+
 (define-public r-kazaam
   (package
     (name "r-kazaam")

@@ -8016,6 +8016,35 @@ but also can be integrated into other pipeline or simultaneously analyze
 multiple gene lists.")
     (license license:lgpl2.0+)))
 
+(define-public r-webformscore
+  (package
+    (name "r-webformscore")
+    (version "2.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "webformscore" version))
+       (sha256
+        (base32 "0jlfk38my4zqvcrsnnfam1065zrx01gsv8yvzi9mbd6h2cdymc8x"))))
+    (properties `((upstream-name . "webformscore")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-r6))
+    (home-page "https://cran.r-project.org/package=webformscore")
+    (synopsis "'WebForms Core'")
+    (description
+     "This package provides a stateless server-driven user interface technology for
+building web interfaces through server-side user interface manipulation.
+@code{WebForms} Core provides a common structure across multiple programming
+languages.  The server-side class acts as a commander that generates commands,
+while @code{WebFormsJS} serves as the client-side executor that applies them.
+Commands range from atomic operations, such as adding elements and modifying
+text and attributes, to higher-level operations such as iterative processing and
+render.  See <https://github.com/webforms-core>.")
+    (license license:expat)))
+
 (define-public r-webexercises
   (package
     (name "r-webexercises")
@@ -8541,13 +8570,13 @@ climate data (licensed under CC BY 4.0,
 (define-public r-wdsmatch
   (package
     (name "r-wdsmatch")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wdsmatch" version))
        (sha256
-        (base32 "08y14ihwqzd04dmgzrmshqlv1cyf8kpxzc0zzxbn9kxafkara6ag"))))
+        (base32 "1l3qqks7viigadspxdf01pnf5pfmr4z6rqn1qkgnfpx8053z3p56"))))
     (properties `((upstream-name . "wdsmatch")))
     (build-system r-build-system)
     (arguments
@@ -8570,7 +8599,9 @@ linearization-based multinomial replication variance estimates and centered
 normal Wald confidence intervals, retaining the original matching reuse
 coefficients without re-matching.  Supplied scores can be held fixed for
 inference conditional on those scores.  This weight-only interface does not
-encode survey strata, clusters, or design-specific replicate weights.")
+encode survey strata, clusters, or design-specific replicate weights.  The
+method is described by Zeng et al. (2026)
+<doi:10.48550/@code{arXiv.2610.25870>}.")
     (license license:gpl3)))
 
 (define-public r-wdpar

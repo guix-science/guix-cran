@@ -8,7 +8,6 @@
   #:use-module (gnu packages cran)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages compression)
-  #:use-module (gnu packages zig)
   #:use-module (gnu packages duckdb)
   #:use-module (gnu packages autotools)
   #:use-module (gnu packages java)
@@ -29,8 +28,8 @@
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages tbb)
   #:use-module (gnu packages curl)
-  #:use-module (gnu packages geo)
   #:use-module (gnu packages ssh)
+  #:use-module (gnu packages geo)
   #:use-module (gnu packages pcre)
   #:use-module (gnu packages sqlite)
   #:use-module (gnu packages package-management)
@@ -138,28 +137,32 @@ and kinship analyses is described in Forneris et al. (2025)
 (define-public r-rzig
   (package
     (name "r-rzig")
-    (version "0.2.3")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rzig" version))
        (sha256
-        (base32 "1mybngzyf32xlfjf2l94p74286sjg1ypmq5gmxp56yqyvbshf8cd"))))
+        (base32 "0srmgq2i1daa3ak2dd40f19wjz05z65gq0mhrk9ifs9qi52q18y5"))))
     (properties `((upstream-name . "rzig")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (inputs (list zig))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/MarekDejaUJ/rzig")
+    (home-page "https://marekdejauj.github.io/rzig/")
     (synopsis "Safe Zig Bindings")
     (description
      "Scaffolds packages backed by Zig and generates a safe native boundary for plain
 Zig functions.  The generated integration converts objects at the language
 boundary, registers native routines, propagates errors, and compiles across
-platforms without requiring C++.")
-    (license license:expat)))
+platforms without requiring C++.  Each step of the workflow is a function:
+locating a supported Zig compiler, scaffolding the package, scanning the Zig
+source for exported functions, rendering and writing the bindings, checking the
+package before compilation, and building it with the compiler errors reported by
+file and line.  The scan, the checks and the generated bindings are pure R; a
+Zig compiler is needed only to build a package created with the scaffold.")
+    (license license:gpl3)))
 
 (define-public r-rzentra
   (package
@@ -5531,6 +5534,49 @@ Markov chain that approximates in the sense of weak convergence a
 continuous-valued univariate Autoregressive process of first order is generated.
  It is a popular method used in economics and in finance.")
     (license license:gpl2+)))
+
+(define-public r-rtardis
+  (package
+    (name "r-rtardis")
+    (version "2.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rTARDIS" version))
+       (sha256
+        (base32 "1a8kd9hhcl9k77bkp4yhb219dm2764d3y6r240n6a6v3gp0wzclc"))))
+    (properties `((upstream-name . "rTARDIS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra
+                             r-sf
+                             r-scales
+                             r-rlemon
+                             r-rgl
+                             r-palaeoverse
+                             r-matrix
+                             r-igraph
+                             r-h3r
+                             r-h3jsr
+                             r-geosphere
+                             r-exactextractr
+                             r-cpprouting))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=rTARDIS")
+    (synopsis "Terrains and Routes Directed in Spacetime")
+    (description
+     "This package implements classes and methods for constructing and analysing graph
+representations of complex geographic spaces at local to global scales,
+particularly where accessible spaces are discontinuously distributed but retain
+connectivity (e.g., island systems where isolation is prevalent but not
+necessarily absolute), and where that distribution also changes through time
+(e.g., habitat patch fragmentation or plate tectonic drift).  The package
+(originally named TARDIS) was first described and published in:
+Flannery-Sutherland, J., Elsler, A., Farnsworth, A., Lunt, D., Benton, M. (2025)
+<doi:10.1038/s41559-025-02739-y>.")
+    (license license:gpl3+)))
 
 (define-public r-rtabulator
   (package
@@ -12000,13 +12046,13 @@ groups or related samples; Ruscio & Gera, 2013). <DOI:
 (define-public r-rprobitb
   (package
     (name "r-rprobitb")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RprobitB" version))
        (sha256
-        (base32 "12ckxlrihjr7vca0g66f6nikjhpf9302za4h73fmcz383prp8hgj"))))
+        (base32 "1cms1w0llwpdwbj2y3ws6mg99i2gnqzgsa35mzj39n8bpafwj5wh"))))
     (properties `((upstream-name . "RprobitB")))
     (build-system r-build-system)
     (arguments
@@ -12020,6 +12066,7 @@ groups or related samples; Ruscio & Gera, 2013). <DOI:
                              r-posterior
                              r-oeli
                              r-loo
+                             r-ggplot2
                              r-future-apply
                              r-formula
                              r-cli
@@ -12035,8 +12082,8 @@ groups or related samples; Ruscio & Gera, 2013). <DOI:
 in cross-sectional and panel data.  Correlated or uncorrelated normal and
 log-normal random coefficients, finite mixtures, sparse finite mixtures, and
 Dirichlet process mixtures describe preference heterogeneity.  Multiple Gibbs
-chains produce posterior draws for diagnostics and choice prediction.  Empirical
-model data can be supplied as a data frame or simulated from the requested
+chains produce posterior draws for diagnostics and choice prediction.  Choice
+data can be supplied as a data frame or simulated from the requested
 specification.  For an overarching treatment of the methodology, see
 Oelschlaeger (2026) <https://pub.uni-bielefeld.de/record/3014719>.  The
 latent-class model is described in Oelschlaeger and Bauer (2021)
@@ -16466,13 +16513,13 @@ time-series data.")
 (define-public r-rolescry
   (package
     (name "r-rolescry")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rolescry" version))
        (sha256
-        (base32 "10ai1mjl55lhb6ffk5l2dg8p6df41j3ybvvm77pibbwki2b0zv3i"))))
+        (base32 "1my6rb6sln7hgcmkdp0xsz5yhgb2j7bagnnbgx9hq06240dcwjvc"))))
     (properties `((upstream-name . "rolescry")))
     (build-system r-build-system)
     (arguments
@@ -16483,14 +16530,16 @@ time-series data.")
     (synopsis "Name-Blind Variable-Role Detection by Data Signature")
     (description
      "Deterministic, name-blind detection of variable roles (group, outcome, survival
-time and event, paired and agreement measurements, repeated measures, scale
-items, subject identifier, covariate) in tabular data.  Roles are assigned from
-each column's information-theoretic signature -- Shannon entropy, normalized
-mutual information, and distributional shape -- rather than from column names,
-so renaming columns to col_1', col_2', ...  does not change the result (\"Data
-inspice, non nomen\").  An optional, capped name-based hint and automatic
-header-row detection are also provided.  No large language models and no
-external data transmission.  Extracted from the MD@code{StatR} biostatistics
+or duration time and event, coupled binary-continuous pairs, calendar time
+index, paired and agreement measurements, repeated measures and panels, scale
+and rating items, subject or entity identifier, covariate) in tabular data from
+any domain -- clinical, financial, social, experimental.  Roles are assigned
+from each column's information-theoretic signature -- Shannon entropy,
+normalized mutual information, and distributional shape -- rather than from
+column names, so renaming columns to col_1', col_2', ...  does not change the
+result (\"Data inspice, non nomen\").  An optional, capped name-based hint and
+automatic header-row detection are also provided.  No large language models and
+no external data transmission.  Extracted from the MD@code{StatR} biostatistics
 engine; see Boynukara (2026) <doi:10.5281/zenodo.20707791>.")
     (license license:asl2.0)))
 
@@ -23132,21 +23181,22 @@ export helpers for exploratory workflows.")
 (define-public r-rmoriedata
   (package
     (name "r-rmoriedata")
-    (version "0.3.3")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rmoriedata" version))
        (sha256
-        (base32 "0fn85gy9jkaqjy9vwz3z05qb1d8cd1jlnw3i74csyk084c8x485r"))))
+        (base32 "0njxincvf5y9srdzfjxfsmbbm2cbwssl2mnrk075nrs5aixd8aa6"))))
     (properties `((upstream-name . "rmoriedata")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (inputs (list zlib))
     (propagated-inputs (list r-rmoriebricklayer))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/rootcoder007/rmoriedata")
+    (home-page "https://rootcoder007.github.io/rmoriedata/")
     (synopsis "Integrated Datasets for the 'rmorie' Package")
     (description
      "Integrated open data fixtures used by the rmorie package for examples,
@@ -23157,68 +23207,57 @@ open-data portals built on the Comprehensive Knowledge Archive Network ('CKAN',
 others), Statistics Canada Canadian Centre for Justice and Community Safety
 Statistics ('CCJS') tables, a multi-agent-reviewed corpus of Ontario Special
 Investigations Unit ('SIU', <https://www.siu.on.ca/>) director's reports, and
-synthetic fixtures for unit tests.  Also ships a small set of analyst-facing
-helpers for releasing aggregate statistics without re-identification risk:
-Laplace and Gaussian differential privacy mechanisms and k-anonymity,
-l-diversity, and cell suppression verifiers.")
+synthetic fixtures for unit tests.  Also ships a small set of disclosure-control
+helpers for aggregate releases: differential privacy (an exact discrete Laplace
+sampler for counts and the analytic Gaussian mechanism for means, drawing on the
+operating system's random source, with privacy-budget accounting), k-anonymity
+and l-diversity checks, and cell suppression audited for exact recovery from the
+margins.")
     (license license:agpl3+)))
 
 (define-public r-rmoriebricklayer
   (package
     (name "r-rmoriebricklayer")
-    (version "0.5.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rmoriebricklayer" version))
        (sha256
-        (base32 "00chlxhkpiy23i1m4cmfx5swgqx68rfl272hka3bx8hr8dlfr3mg"))))
+        (base32 "0dksx4j4df520pj87gyc82w7ma6snvri792xb6yqx7ysh389kxq9"))))
     (properties `((upstream-name . "rmoriebricklayer")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (inputs (list curl))
+    (inputs (list zlib openssl openssh curl))
     (native-inputs (list pkg-config r-knitr))
     (home-page "https://github.com/rootcoder007/rmorie-bricklayer")
     (synopsis "Reproducible Data Capsules with Provenance and Fallback")
     (description
-     "This package provides tools for building brick-proof, reproducible,
-self-contained data capsules.  Resolves open-data sources through the
-Comprehensive Knowledge Archive Network ('CKAN', <https://ckan.org/>)
-package_show and package_search endpoints, records and verifies provenance with
-Secure Hash Algorithm 256 ('SHA-256') digests and Internet Archive Wayback
-Machine (<https://web.archive.org/>) snapshots, validates downloaded data
-against a pinned schema, and falls back to schema-driven synthetic data when the
-real source is unreachable.  Run records are captured in a manifest plus a
-plain-language summary so any result can be traced back to its inputs.
-Distributional drift between a pinned capsule and a fresh fetch is tested with
-Kolmogorov-Smirnov, chi-square, population stability index, Jensen-Shannon
-divergence and Benford first-digit screens, because a re-released extract can be
-statistically identical yet differ byte-for-byte, and a column can keep its name
-and type while having been silently rescaled.  Manifests can be authenticated
-rather than only checksum-verified, with keyed digests ('HMAC-SHA-256', RFC
-2104) or post-quantum hash-based signatures ('Winternitz one-time signatures
-under a Merkle tree, RFC 8391), and pinned chunk-wise through a Merkle tree so a
-mismatch identifies which part of a capsule moved.  Also ships a compiled C++
-core (summary, robust and rank statistics, SHA-256', SHA-512 and CRC-32') that
-sibling packages in the rmorie ecosystem reach through @code{LinkingTo} for a
-single, shared numeric and provenance-hashing backend.  For the published
-administrative tables these capsules usually hold, it computes
-period-over-period change matched on the period rather than the row, with the
-exact conditional-binomial interval for a ratio of counts and with a
-percentage-point reading kept distinct from a percent change, rendered to
-Hypertext Markup Language ('HTML'), Portable Document Format ('PDF'), delimited
-text, @code{JavaScript} Object Notation ('JSON') or Markdown.  Interval
-categories such as \"2 to 5\" or \"50+\" are parsed to bounds and the dependence of
-any derived figure on the open top band is measured rather than assumed.
-Concentration is summarised by the Gini coefficient, the Lorenz curve and
-tail-index estimation by exact discrete maximum likelihood; trend in a series of
-a few periods by the Mann-Kendall test with Theil-Sen slopes, a permutation
-step-change scan and Poisson rate ratios; and region-coded counts by indirect
-standardisation, exact standardised incidence ratios, the empirical Bayes
-shrinkage of Clayton and Kaldor (1987) <doi:10.2307/2532003>, funnel-plot limits
-and Moran's I.")
+     "For analyzing published and unpublished tables, from open-data portals and
+statistical agencies to a researcher's own data, so that a result can be traced
+to the exact data behind it and checked again afterwards.  A capsule records
+where each source came from, its Secure Hash Algorithm 256 ('SHA-256') hash, the
+schema it should have and an archived copy in the Internet Archive Wayback
+Machine ('web.archive.org'); sources are found through the Comprehensive
+Knowledge Archive Network ('CKAN', ckan.org').  Run again, a capsule says
+whether each source still matches and, if it does not, how its distribution
+moved (Kolmogorov-Smirnov, chi-square, population stability index and Benford
+first-digit screens), and when a source cannot be reached it runs on
+schema-driven synthetic data that is marked as such.  Capsules can be signed
+with keyed hashes ('HMAC-SHA-256', RFC 2104) or with the post-quantum signature
+standards ML-DSA (FIPS 204), SLH-DSA (FIPS 205) and XMSS (RFC 8391), implemented
+from the standards with no system cryptography library and checked against
+@code{OpenSSL} 3.5 and the known-answer vectors of NIST (the US National
+Institute of Standards and Technology).  For the administrative tables these
+capsules usually hold, it computes period-over-period change with exact
+intervals, trends (Mann-Kendall with Theil-Sen slopes), rates, and the bounds
+that rounding and suppression in a release imply; small-area rates with the
+empirical Bayes shrinkage of Clayton and Kaldor (1987) DOI 10.2307/2532003;
+self-exciting event series as Hawkes processes; custodial populations by
+stock-and-flow measures; and the burden of air pollution from dispersion to
+attributable deaths.")
     (license license:agpl3)))
 
 (define-public r-rmopi
@@ -27576,6 +27615,36 @@ comparing workspaces.")
 and rjd3tramoseats').")
     (license (license:fsdg-compatible "EUPL"))))
 
+(define-public r-rjd3highfreq
+  (package
+    (name "r-rjd3highfreq")
+    (version "3.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rjd3highfreq" version))
+       (sha256
+        (base32 "176dyp01dql94lx5mm16wkdx3ixgg2k4z4rq5q0l121nrcnps8gv"))))
+    (properties `((upstream-name . "rjd3highfreq")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list openjdk))
+    (propagated-inputs (list r-rjd3xjars r-rjd3toolkit r-rjava))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/rjdverse/rjd3highfreq/")
+    (synopsis
+     "Seasonal Adjustment of High Frequency Data with 'JDemetra+ 3.x'")
+    (description
+     "R interface to JDemetra+ 3.x (<https://github.com/jdemetra>), the time series
+analysis software.  It provides functions for seasonal adjustment of
+higher-frequency data, including those with multiple or non-integer
+periodicities.  It includes pre-adjustment via the extended airline model and
+several seasonal decomposition methods: extended airline model based
+decomposition, extended X-11, and augmented STL.")
+    (license (license:fsdg-compatible "EUPL-1.2"))))
+
 (define-public r-rjd3filters
   (package
     (name "r-rjd3filters")
@@ -27606,6 +27675,37 @@ Bianconcini (2008) and the Fidelity-Smoothness-Timeliness approach of
 Grun-Rehomme, Guggemos, and Ladiray (2018).  It is based on Java libraries
 developed in JDemetra+ (<https://github.com/jdemetra>), time series analysis
 software.")
+    (license (license:fsdg-compatible "EUPL"))))
+
+(define-public r-rjd3bridge
+  (package
+    (name "r-rjd3bridge")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rjd3bridge" version))
+       (sha256
+        (base32 "0bmd4g0bxhyfxdah41xxjrzqknhfsx1r5srhq32qhy436rv3044j"))))
+    (properties `((upstream-name . "rjd3bridge")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list openjdk))
+    (propagated-inputs (list r-rjdemetra
+                             r-rjd3x13
+                             r-rjd3tramoseats
+                             r-rjd3toolkit
+                             r-rjd3jars
+                             r-rjava))
+    (home-page "https://github.com/AQLT/rjd3bridge")
+    (synopsis "Bridge Between 'RJDemetra' (V2) and 'rjd3' (V3)")
+    (description
+     "This package provides bidirectional tools to convert seasonal adjustment models
+and specifications between RJDemetra ('JDemetra+ v2) and the rjd3 ecosystem
+('JDemetra+ v3, packages rjd3x13 and rjd3tramoseats').  Facilitates workflow
+migration and backward compatibility analysis.")
     (license (license:fsdg-compatible "EUPL"))))
 
 (define-public r-rjd3bench
@@ -38946,13 +39046,13 @@ for academic submission or pharmaceutical QC workflows.  For more details see
 (define-public r-reproduciblerchunks
   (package
     (name "r-reproduciblerchunks")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reproducibleRchunks" version))
        (sha256
-        (base32 "12z9xbhdh5wg2zk294kdljvxx2ppkg1f6z6r0mdbyhybjvxggg9b"))))
+        (base32 "1wag7d4p8limpn68vnv5465jbwfmbwrhgwb0fkfzapzl1wi0cjs7"))))
     (properties `((upstream-name . "reproducibleRchunks")))
     (build-system r-build-system)
     (arguments
@@ -45757,6 +45857,45 @@ the data for commentary such as Sun, Rich, & Wei (2018)
 <doi:10.1056/NEJMc1808567>.  Please see the vignette for a quickstart guide.")
     (license license:gpl3)))
 
+(define-public r-reconf
+  (package
+    (name "r-reconf")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "reconf" version))
+       (sha256
+        (base32 "0p3zxrvgd6vn9kq3aassqvnsdy9npy4yf5f0b0zvxd3mg8knbill"))))
+    (properties `((upstream-name . "reconf")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-trust
+                             r-rcppeigen
+                             r-rcpp
+                             r-matrix
+                             r-lme4
+                             r-generics))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/koekvall/reconf")
+    (synopsis
+     "Confidence Intervals for Random Effect Parameters in Linear Mixed Models")
+    (description
+     "Computes score-based confidence intervals and hypothesis tests for variance and
+covariance parameters of random effects in linear mixed models fitted with
+lme4'.  The intervals invert a profile score statistic on the
+variance-covariance scale, with nuisance parameters estimated on an extended
+parameter set.  The intervals have near-nominal coverage uniformly in the
+parameter, including near the boundary of the parameter space, where Wald and
+likelihood ratio intervals can be unreliable.  The methods are described in
+Shedden and Ekvall (2026) <doi:10.48550/@code{arXiv.2610.04181>}, building on
+Ekvall and Bottai (2026) <doi:10.1093/biomet/asaf079>, Zhang, Ekvall, and
+Molstad (2025) <doi:10.1093/biomet/asaf010>, and Ekvall and Bottai (2022)
+<doi:10.1214/22-AOS2177>.")
+    (license license:expat)))
+
 (define-public r-recon
   (package
     (name "r-recon")
@@ -49195,13 +49334,13 @@ plots).")
 (define-public r-rdracor
   (package
     (name "r-rdracor")
-    (version "1.0.6")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rdracor" version))
        (sha256
-        (base32 "032zcxmxbwln1vmdbpvbf71w1qq4y9ncb95s5rssrxqi3h4bi33z"))))
+        (base32 "02ilmjb20w8v744bj6mm6xjndzdrlvp5im95w9vc1rx26sjh8kc0"))))
     (properties `((upstream-name . "rdracor")))
     (build-system r-build-system)
     (arguments
@@ -49498,6 +49637,41 @@ and Vazquez-Bare (2020)
 <https://rdpackages.github.io/references/Cattaneo-Titiunik-@code{VazquezBare_2020_Stata.pdf>}
 for further methodological details.")
     (license license:gpl3)))
+
+(define-public r-rdml7
+  (package
+    (name "r-rdml7")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RDML7" version))
+       (sha256
+        (base32 "176g2ziyipdsy3371bpjirnqy62nnvnazdq0ya6yry5lpbf6psi7"))))
+    (properties `((upstream-name . "RDML7")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-stringr
+                             r-s7
+                             r-readxl
+                             r-lubridate
+                             r-data-table
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/kablag/RDML7")
+    (synopsis
+     "Read, Write, Validate, and Analyze Real-Time PCR Data in the 'RDML' Format")
+    (description
+     "Reads, writes, validates, converts, and manipulates quantitative polymerase
+chain reaction (@code{qPCR}) data through the Real-Time PCR Data Markup Language
+('RDML') application programming interface (API), using S7 objects.  Includes an
+extensible file-format registry, vendor and tabular-data importers, RDES import
+and export, fluorescence-table helpers, semantic validation, and compatibility
+wrappers for the historical RDML API.")
+    (license license:expat)))
 
 (define-public r-rdml
   (package
@@ -50247,13 +50421,13 @@ version if the original data file is unavailable.  Works best for small datasets
 (define-public r-rddtools
   (package
     (name "r-rddtools")
-    (version "2.0.2")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rddtools" version))
        (sha256
-        (base32 "10hgkljba3n46i2kq795ghpm8jmngigapglg2c0bvlpyfd1azzxv"))))
+        (base32 "05rff5frw5hdlnd5ccb08ibxjl2xvbgg9j5cch9fdazcb6cjs6s3"))))
     (properties `((upstream-name . "rddtools")))
     (build-system r-build-system)
     (arguments
@@ -52774,13 +52948,13 @@ not found.")
 (define-public r-rcppad
   (package
     (name "r-rcppad")
-    (version "1.20260000.0-1")
+    (version "1.20260000.0-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RCppAD" version))
        (sha256
-        (base32 "09w7f2p8qvjv0k1866k75brakh4dq8300rrhmjn3a8aljm9b3shp"))))
+        (base32 "1yjlvydiggr45lhp1ajk9vh0b8xlx71rpgcbirpbq35jp59d0va2"))))
     (properties `((upstream-name . "RCppAD")))
     (build-system r-build-system)
     (arguments
@@ -57780,13 +57954,13 @@ bed files.  Further details are provided in: Border and Malik (2023)
 (define-public r-rbacon
   (package
     (name "r-rbacon")
-    (version "4.0.0")
+    (version "4.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rbacon" version))
        (sha256
-        (base32 "044jif6k2jl7392dxx90b05h29xkn5jzhanigjywccs0ib0jrdaq"))))
+        (base32 "0hmajn7ys0w7l0qq7waaysni1jl5h8ag3ybav3x7pphz85by115y"))))
     (properties `((upstream-name . "rbacon")))
     (build-system r-build-system)
     (arguments

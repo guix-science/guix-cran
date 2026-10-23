@@ -3800,13 +3800,13 @@ rxode2 and nlmixr2'.")
 (define-public r-lost
   (package
     (name "r-lost")
-    (version "2.1.4")
+    (version "2.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LOST" version))
        (sha256
-        (base32 "1nldgcvg7w0c55k9s1lnjzcvnq6dxjl8igwjz1ksll3nfn5i9iaz"))))
+        (base32 "11im4981xbcyal5w8pz6sr73kia0nnfs4j0civnhvvrfp4prclx4"))))
     (properties `((upstream-name . "LOST")))
     (build-system r-build-system)
     (arguments
@@ -6880,13 +6880,13 @@ functions.")
 (define-public r-locatexec
   (package
     (name "r-locatexec")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "locatexec" version))
        (sha256
-        (base32 "028a1rwfydriq0lbqkx0xlwygyw5azla6j2zpqydkgdwny2dbm0w"))))
+        (base32 "1xzlp9sh7v23l325nbdaidy3yg7p8cbdj58j7id05n0xrzygbvmm"))))
     (properties `((upstream-name . "locatexec")))
     (build-system r-build-system)
     (arguments
@@ -20344,6 +20344,49 @@ spillover effect.  The methods are developed by Hoshino and Yanagi (2023)
 <doi:10.48550/@code{arXiv.2108.07455>}.")
     (license license:expat)))
 
+(define-public r-latencya
+  (package
+    (name "r-latencya")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LatencyA" version))
+       (sha256
+        (base32 "0zz7lvlnqgz1ixhysp62x60n5q950x4ihzjgnky88xabpms5i9z1"))))
+    (properties `((upstream-name . "LatencyA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival
+                             r-stringr
+                             r-mass
+                             r-hmisc
+                             r-future
+                             r-furrr))
+    (home-page "https://cran.r-project.org/package=LatencyA")
+    (synopsis
+     "Latency Analysis in Epidemiological Studies Using Weighted Cumulative Exposures")
+    (description
+     "This package implements weighted cumulative exposure Cox proportional hazards
+models for latency analysis with repeatedly measured, time-varying exposures.
+Instead of entering every lagged exposure as a separate and highly correlated
+covariate, the lag-specific log hazard ratios are constrained to follow a smooth
+function of the time since exposure, parameterized by natural cubic splines or
+polynomials, so that the susceptible window of an exposure can be identified
+from the estimated lag-risk curve.  Functions are provided to fit models with a
+prespecified number of knots or polynomial degree, to select the number of knots
+by a grid search or the spline terms by a stepwise search using the Akaike or
+Bayesian information criterion, and to extract lag-specific log hazard ratios
+with their variances.  For the data-driven model selection procedures, inference
+is based on a cluster bootstrap that resamples subjects, which can be run
+sequentially or in parallel.  The methods are described in Guo, Qian, Wang,
+Wang, Rosner and Wang (2026) \"Taking Into Account the Susceptible Window for
+Exposures in Cox Proportional Hazards Model: A Way Using Splines to Model the
+Lag-Risk Relationship\" <doi:10.1002/sim.70755>.")
+    (license license:expat)))
+
 (define-public r-latdiag
   (package
     (name "r-latdiag")
@@ -21483,30 +21526,33 @@ code.")
 (define-public r-landform
   (package
     (name "r-landform")
-    (version "0.2")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "landform" version))
        (sha256
-        (base32 "0i99glylj0nz3r5i0p22ng9aygmjkh7q2ynw02z7jm3bfpw0wmv0"))))
+        (base32 "0h5qpsjyindh7j55vxf5bylamnlw03jzxcp8fviva6by7cv94x35"))))
     (properties `((upstream-name . "landform")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-terra))
-    (home-page "https://cran.r-project.org/package=landform")
+    (native-inputs (list r-knitr))
+    (home-page "https://gianmarcoalberti.github.io/landform/")
     (synopsis "Topographic Position Index-Based Landform Classification")
     (description
-     "This package provides a function for classifying a landscape into different
-categories based on the Topographic Position Index (TPI) and slope.  It offers
-two types of classifications: Slope Position Classification, and Landform
-Classification.  The function internally calculates the TPI for the given
-landscape and then uses it along with the slope to perform the classification.
-Optionally, descriptive statistics for every class are calculated and plotted.
-The classifications are useful for identifying the position of a location on a
-slope and for identifying broader landform types.")
+     "Classifies a landscape into slope-position and landform classes on the basis of
+the Topographic Position Index (TPI) and slope, following Weiss (2001) and
+Jenness (2006).  Two classifications are offered: a six-class Slope Position
+Classification, based on one TPI scale, and a ten-class Landform Classification,
+based on a small and a large TPI scale.  The TPI can be computed over square,
+circular or annular neighbourhoods, sized in cells or in map units, and
+standardised either over the whole grid (as in the original method) or locally.
+Results are returned as an object holding the classified raster, the TPI and
+slope surfaces, and per-class descriptive statistics, with methods for printing,
+summarising and plotting.")
     (license license:gpl2+)))
 
 (define-public r-landest
@@ -23328,6 +23374,37 @@ in Freyaldenhoven (2025) <doi:10.21799/frbp.wp.2020.25>.  Given a data matrix,
 find the rotation of the loading matrix with the smallest l1-norm and/or test
 for the presence of local factors with main function @code{local_factors()}.")
     (license license:expat)))
+
+(define-public r-l1pensvms
+  (package
+    (name "r-l1pensvms")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "l1penSVMs" version))
+       (sha256
+        (base32 "05g3nhvmz4hp24bzpp0by491pf3rppn9g0dd2dgszngyi8xyajr3"))))
+    (properties `((upstream-name . "l1penSVMs")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mass r-lpsolve r-fastdummies))
+    (home-page "https://cran.r-project.org/package=l1penSVMs")
+    (synopsis "Regularization Paths of L1-Penalized SVMs")
+    (description
+     "Computes regularization paths for L1-penalized support vector machine (SVM)
+models, including the standard SVM, receiver operating characteristic SVM
+(ROC-SVM), and fraud detection SVM (FD-SVM).  The package implements efficient
+path algorithms to obtain solutions over a wide range of regularization
+parameter values.  It also provides cross-validation for selecting an optimal
+regularization parameter, along with functions for prediction, visualization,
+and summarization of the fitted models.  For more details, see Zhu et al. (2003)
+<https://proceedings.neurips.cc/paper_files/paper/2003/file/49d4b2faeb4b7b9e745775793141e2b2-Paper.pdf>,
+Kim et al. (2021) <doi:10.1002/sta4.400>, Park et al. (2023)
+<doi:10.1007/s42952-023-00207-6>.")
+    (license license:gpl3)))
 
 (define-public r-l1pack
   (package

@@ -540,39 +540,6 @@ confidence interval for the population variance, and the function for
 calculating the population standard deviation are provided.")
     (license license:gpl3)))
 
-(define-public r-mycaas
-  (package
-    (name "r-mycaas")
-    (version "0.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mycaas" version))
-       (sha256
-        (base32 "1gjpn8mz8vp3410s6fbl3ndkasfzywzmyp33qzf5f29sirk2cn4m"))))
-    (properties `((upstream-name . "mycaas")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-shiny r-rpref r-rlang r-igraph r-ggplot2))
-    (home-page "https://cran.r-project.org/package=mycaas")
-    (synopsis "My Computerized Adaptive Assessment")
-    (description
-     "Implementation of adaptive assessment procedures based on Knowledge Space Theory
-(KST, Doignon & Falmagne, 1999 <ISBN:9783540645016>) and Formal Psychological
-Assessment (FPA, Spoto, Stefanutti & Vidotto, 2010 <doi:10.3758/BRM.42.1.342>)
-frameworks.  An adaptive assessment is a type of evaluation that adjusts the
-difficulty and nature of subsequent questions based on the test taker's
-responses to previous ones.  The package contains functions to perform and
-simulate an adaptive assessment.  Moreover, it is integrated with two Shiny
-interfaces, making it both accessible and user-friendly.  The package has been
-partially funded by the European Union - @code{NextGenerationEU} and by the
-Ministry of University and Research (MUR), National Recovery and Resilience Plan
-(NRRP), Mission 4, Component 2, Investment 1.5, project âRAISE - Robotics and
-AI for Socio-economic Empowermentâ (ECS00000035).")
-    (license license:expat)))
-
 (define-public r-my-stepwise
   (package
     (name "r-my-stepwise")
@@ -3583,13 +3550,13 @@ by Alexandrov LB et al (2013) <doi:10.1016/j.celrep.2012.12.008>.")
 (define-public r-mutator
   (package
     (name "r-mutator")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mutator" version))
        (sha256
-        (base32 "05b1hsn69knzk3mhnppsgs59wnmkyk956bn87na32mvqvsa2wv7d"))))
+        (base32 "02ywzwhlpfmg45kzbkvxn2d0p4wf3ix9a0g1zm9dc20p2k6gryb2"))))
     (properties `((upstream-name . "mutator")))
     (build-system r-build-system)
     (arguments
@@ -3823,13 +3790,13 @@ filter and smoother, with automatic component selection by information criteria.
 (define-public r-musclesynergies
   (package
     (name "r-musclesynergies")
-    (version "1.3.1")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "musclesyneRgies" version))
        (sha256
-        (base32 "1n1j04n3vsdsyy1v8icq1hpc351wqgz7hhq5lfxpqy21f7r2sqm1"))))
+        (base32 "0hgnq41iawbk02csl59s7saz2hj3gkzin65s6mnscjp68kb2jxm7"))))
     (properties `((upstream-name . "musclesyneRgies")))
     (build-system r-build-system)
     (arguments
@@ -3840,6 +3807,7 @@ filter and smoother, with automatic component selection by information criteria.
                              r-reshape2
                              r-proxy
                              r-plyr
+                             r-lifecycle
                              r-gridextra
                              r-ggplot2
                              r-fnn))
@@ -5853,6 +5821,35 @@ efficiency using single and two-phase approach.  In addition, it includes some
 datasets for calculating efficiency and cross efficiency.")
     (license license:lgpl2.0)))
 
+(define-public r-multiplesystemsestimation
+  (package
+    (name "r-multiplesystemsestimation")
+    (version "1.3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MultipleSystemsEstimation" version))
+       (sha256
+        (base32 "1jxz6glqxymnmq14x4vaw7nz9lzdc9ks3lfvw2x3dfp202hz44sn"))))
+    (properties `((upstream-name . "MultipleSystemsEstimation")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mcmcpack r-lpsolve))
+    (native-inputs (list r-knitr))
+    (home-page "https://bernardsilverman.github.io/MultipleSystemsEstimation/")
+    (synopsis "Methods for Multiple Systems Estimation")
+    (description
+     "This package provides methods for multiple systems estimation using Poisson
+log-linear models, with particular attention to sparse capture data, model
+selection and its associated uncertainty, and Bayesian thresholding of
+interaction effects.  The package implements and extends methodology from
+Silverman (2020) <doi:10.1111/rssa.12505>, Chan, Silverman and Vincent (2021)
+<doi:10.1080/01621459.2019.1708748>, and Silverman, Chan and Vincent (2024)
+<doi:10.1007/s11222-023-10346-9>.")
+    (license license:gpl2+)))
+
 (define-public r-multiplestressr
   (package
     (name "r-multiplestressr")
@@ -6961,13 +6958,13 @@ python'.")
 (define-public r-multilevlca
   (package
     (name "r-multilevlca")
-    (version "2.1.6")
+    (version "2.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multilevLCA" version))
        (sha256
-        (base32 "1hclzq75lgwq1m7msq582q46gpcz0lsr98gdvylwlpqw28ryn11y"))))
+        (base32 "1ji80s01556lbwpiziiq2qd6bs28narr8g8mdir56w997vbk6m3a"))))
     (properties `((upstream-name . "multilevLCA")))
     (build-system r-build-system)
     (arguments
@@ -16588,13 +16585,13 @@ behind MOSAlloc'.")
 (define-public r-mosaicluster
   (package
     (name "r-mosaicluster")
-    (version "0.1.1")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MosaiClusteR" version))
        (sha256
-        (base32 "1x2d94yaa24v4zs2447swg8sy0r0jxldwhy9d4k6iq5xbdw1w1g8"))))
+        (base32 "0zlqi3kmzbsdyp9jpqsyi3aayhqd1v2sj5n1fp2jlghypxj2jsml"))))
     (properties `((upstream-name . "MosaiClusteR")))
     (build-system r-build-system)
     (arguments
@@ -28986,13 +28983,13 @@ Gaussian copula model.  The methods are described in Yoon, Carroll and Gaynanova
 (define-public r-mixedbiastest
   (package
     (name "r-mixedbiastest")
-    (version "1.0.3")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mixedbiastest" version))
        (sha256
-        (base32 "0mxja2dlb6c9n9dbkr553c5amidfkxgcwjvshdafpmlk9bb87ip6"))))
+        (base32 "1aallcghxgj6zvfwsic1gxgvd6pqr3mkwi47xd2k7n40iaasybcb"))))
     (properties `((upstream-name . "mixedbiastest")))
     (build-system r-build-system)
     (arguments
@@ -29003,12 +29000,15 @@ Gaussian copula model.  The methods are described in Yoon, Carroll and Gaynanova
     (synopsis "Bias Diagnostic for Linear Mixed Models")
     (description
      "This package provides a function to perform bias diagnostics on linear mixed
-models fitted with @code{lmer()} from the lme4 package.  Implements permutation
-tests for assessing the bias of fixed effects, as described in Karl and
-Zimmerman (2021) <doi:10.1016/j.jspi.2020.06.004>.  Karl and Zimmerman (2020)
-<doi:10.17632/tmynggddfm.1> provide R code for implementing the test using
-@code{mvglmmRank} output.  Development of this package was assisted by GPT
-o1-preview for code structure and documentation.")
+models fitted with @code{lmer()} from the lme4 package.  Compares an internal
+random-effects alignment diagnostic with a fitted permutation reference
+distribution, following Karl and Zimmerman (2021)
+<doi:10.1016/j.jspi.2020.06.004>.  Conditional response-refit simulations
+separately record random-effects alignment and residual-weight contributions to
+estimation error.  Karl and Zimmerman (2020) <doi:10.17632/tmynggddfm.1> provide
+R code for implementing the test using @code{mvglmmRank} output.  Development
+and review were assisted by GPT o1-preview', GPT 5 Pro', and GPT6 Astra'; the
+author is responsible for the code and its interpretation.")
     (license license:gpl3)))
 
 (define-public r-mixedbayes
@@ -35290,22 +35290,22 @@ extraction for reporting purposes.")
 (define-public r-mic
   (package
     (name "r-mic")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MIC" version))
        (sha256
-        (base32 "1rrf4a0yj9276l63q5abw69r77ip7kd1qxlpc4a7pyg6shx3i21b"))))
+        (base32 "0965az5n8kc7w0ylfcazfkyry140rszng07axjvn9f9jcmgva8n0"))))
     (properties `((upstream-name . "MIC")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble
+    (propagated-inputs (list r-tidyselect
+                             r-tibble
                              r-stringr
                              r-rlang
-                             r-purrr
                              r-glue
                              r-ggplot2
                              r-ggh4x
@@ -37821,6 +37821,43 @@ analysis.")
 (individuals per square meter) to assess water quality (Prat N et al.  2009).")
     (license license:gpl3+)))
 
+(define-public r-metrictrails
+  (package
+    (name "r-metrictrails")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "metrictrails" version))
+       (sha256
+        (base32 "16wmpsxa9mq6dqhg1dmg9z1c5j7rrxczhpwivji2x9dkf2ws6dkz"))))
+    (properties `((upstream-name . "metrictrails")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-terra r-sf r-magrittr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/raimun2/metrictrails")
+    (synopsis "Processing of GNSS Streams from Sports Watches")
+    (description
+     "This package provides tools to read, clean and standardise GNSS (Global
+Navigation Satellite System) streams recorded by sports watches and similar
+devices, with a focus on trail and mountain running.  The pipeline reads GPX
+files, applies a naming convention, sanitises coordinates (Kalman, LOESS,
+Gaussian kernel or Savitzky-Golay smoothing, and red flags for implausible
+readings), resamples the trajectory to a uniform spatial resolution derived from
+the Nyquist criterion, and replaces elevation with values from a Digital
+Elevation Model.  Derived measures include speed, slope, elevation gain and
+kilometre-effort, Tobler hiking function parameters fitted by quantile
+regression, comparison between streams, detection of passes along a route and
+map matching to a known reference trail by dynamic programming.  Methods follow
+Sanchez and Villena (2020) <doi:10.1177/1754337120918975>, Sanchez et al. (2024)
+<doi:10.1109/ICECET61485.2024.10698606>, Sanchez et al. (2025)
+<doi:10.1177/17543371251341660> and Martinez, Sanchez and Diaz (2026)
+<doi:10.1109/ICECET65726.2026.11632531>.")
+    (license license:expat)))
+
 (define-public r-metrict
   (package
     (name "r-metrict")
@@ -40024,6 +40061,45 @@ metamorphr introduces a tidy (Wickham et al. (2019) <doi:10.21105/joss.01686>)
 format for metabolomics data and is designed to make it easier to build
 elaborate analysis workflows and to integrate them with tidyverse packages
 including dplyr and ggplot2'.")
+    (license license:expat)))
+
+(define-public r-metamixr
+  (package
+    (name "r-metamixr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "metamixr" version))
+       (sha256
+        (base32 "1y5cv7aqwg7qsc1rh4qcb41pw748izdnf3b00dlm76h74k6ilx7z"))))
+    (properties `((upstream-name . "metamixr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stanheaders
+                             r-rstantools
+                             r-rstan
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/MaxMaier42/metamix")
+    (synopsis "Bayesian Meta-Analytic Mixture Modelling")
+    (description
+     "Fits Bayesian random-effects meta-analytic mixture models in which the true
+study effects are drawn from a mixture of normal components with
+component-specific means and between-study heterogeneity.  The mixture model can
+be combined with step-function selection models (Vevea and Hedges, 1995,
+<doi:10.1007/BF02294384>) to adjust for publication bias, either with one
+selection model for all studies or with separate selection models for groups of
+studies.  Models are estimated by Hamiltonian Monte Carlo using rstan and
+returned as stanfit objects, so posterior summaries, posterior predictive checks
+and marginal likelihoods for model comparison (via bridgesampling') are readily
+available.  Also includes a data simulator and the nudging meta-analysis data of
+Mertens et al. (2022) <doi:10.1073/pnas.2107346118>.")
     (license license:expat)))
 
 (define-public r-metamisc
@@ -46658,13 +46734,13 @@ abstract syntax trees as well as translating and displaying the documents.")
 (define-public r-md2sample
   (package
     (name "r-md2sample")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MD2sample" version))
        (sha256
-        (base32 "01mn6xs6dl2gpnif479jbh344m5zamz7vwsr0a9aj9n5gzj51pqa"))))
+        (base32 "1mla7m4n1b27mk2ll3h95zd9m2g46bcn1infw908jrnkwp4mz2r2"))))
     (properties `((upstream-name . "MD2sample")))
     (build-system r-build-system)
     (arguments
@@ -54233,13 +54309,13 @@ maintained by Jordan Mark Barbone.")
 (define-public r-mariposa
   (package
     (name "r-mariposa")
-    (version "0.7.3")
+    (version "0.7.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mariposa" version))
        (sha256
-        (base32 "0cbfsl5j6sr6kfg0z48w843jqrbd1calylvkwk14m9wbfdx1y49j"))))
+        (base32 "0z24b9ai29d8ag27zj650h857mvmyhd3fa4c74dy99ixpb0zfc5i"))))
     (properties `((upstream-name . "mariposa")))
     (build-system r-build-system)
     (arguments
@@ -54265,14 +54341,13 @@ generation, hypothesis testing, correlation analysis, post-hoc comparisons,
 weighted statistics, scale analysis, regression, non-parametric tests, exact
 tests, factorial ANOVA, and ANCOVA. Every analysis offers compact @code{print()}
 and detailed @code{summary()} output with toggleable sections.  Statistical
-results are validated against SPSS version 29 within documented per-tier
-tolerances (see the compatibility vignette for per-function status).  Methods
-follow the published algorithms of IBM Corp. (2023, \"IBM SPSS Statistics
-Algorithms\"), the Lilliefors-corrected normality test of Dallal and Wilkinson
-(1986) <doi:10.1080/00031305.1986.10475419>, and the adjusted standardized
-residuals of Haberman (1973) <doi:10.2307/2529686>.  Designed for survey
-researchers, social scientists, and students working with complex survey
-designs.")
+results are checked against reference output of SPSS version 29 (see the
+compatibility vignette for the status of each function).  Methods follow the
+published algorithms of IBM Corp. (2023, \"IBM SPSS Statistics Algorithms\"), the
+Lilliefors-corrected normality test of Dallal and Wilkinson (1986)
+<doi:10.1080/00031305.1986.10475419>, and the adjusted standardized residuals of
+Haberman (1973) <doi:10.2307/2529686>.  Designed for survey researchers, social
+scientists, and students working with complex survey designs.")
     (license license:expat)))
 
 (define-public r-marinet
@@ -55715,13 +55790,13 @@ roads, secondary roads, railways, and water bodies.")
 (define-public r-mapnhanespa
   (package
     (name "r-mapnhanespa")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapnhanespa" version))
        (sha256
-        (base32 "17isxpkcli1k3y930mx78qxchaiwiavrfd94ilay8cha3znghqi6"))))
+        (base32 "1zwsdqnnmpmn1vxsinrf3ydqxzlhmz591wgvapywf3gymj3gyn15"))))
     (properties `((upstream-name . "mapnhanespa")))
     (build-system r-build-system)
     (arguments
@@ -55733,7 +55808,10 @@ roads, secondary roads, railways, and water bodies.")
     (synopsis "Map Quantiles for Physical Activity from 'NHANES'")
     (description
      "Maps physical activity from the National Health and Nutrition Examination Survey
-('NHANES') study into population-based quantiles.")
+('NHANES') study into population-based quantiles, using the NHANES 2011-2014
+step count and physical activity summaries described in Koffman, Crainiceanu,
+and Muschelli (2025) <doi:10.1249/MSS.0000000000003616>, with minute-level data
+from Koffman and Muschelli (2025) <doi:10.13026/9n0r-tv02>.")
     (license license:expat)))
 
 (define-public r-mapmixture

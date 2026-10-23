@@ -759,6 +759,33 @@ which randomly generate trapezoidal fuzzy numbers using some well-known
 statistical distributions.")
     (license license:gpl3)))
 
+(define-public r-fuzzyrandom
+  (package
+    (name "r-fuzzyrandom")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FuzzyRandom" version))
+       (sha256
+        (base32 "05yabagf15zihxbqq3yz03rqp0nssnk9lr6hfwwqf36jdb4yxyzr"))))
+    (properties `((upstream-name . "FuzzyRandom")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=FuzzyRandom")
+    (synopsis "Level-Wise Statistics for Fuzzy Random Variables")
+    (description
+     "Level-wise statistical methods for fuzzy random variables, implementing the
+Puri-Ralescu framework.  Provides level-wise empirical distribution functions,
+moments, covariance and correlation, a level-wise Kolmogorov-Smirnov
+goodness-of-fit test, an approximate fuzzy normal distribution with simulation,
+and level-wise central limit theorem and law of large numbers inference.  The
+package only depends on base R.")
+    (license license:gpl3)))
+
 (define-public r-fuzzyr
   (package
     (name "r-fuzzyr")
@@ -1031,13 +1058,13 @@ for further details.")
 (define-public r-fuzzyclass
   (package
     (name "r-fuzzyclass")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FuzzyClass" version))
        (sha256
-        (base32 "01q7lbpsn4gr6ka49h122z5kmw2ypqqmx101dxwgcni2fj7wb6yg"))))
+        (base32 "0cfhyvdzlglpb3yv558pcr9iqmys1kpqjwx5zgvj4ci7a33khp8j"))))
     (properties `((upstream-name . "FuzzyClass")))
     (build-system r-build-system)
     (arguments
@@ -1046,10 +1073,12 @@ for further details.")
     (propagated-inputs (list r-trapezoid
                              r-rootsolve
                              r-rdpack
+                             r-r6
                              r-mvtnorm
                              r-mass
                              r-envstats
                              r-e1071
+                             r-cli
                              r-catools))
     (native-inputs (list r-knitr))
     (home-page "https://leapigufpb.github.io/FuzzyClass/")
@@ -1063,7 +1092,9 @@ of Applied Statistics to Image Processing and Geoprocessing (LEAPIG) at Federal
 University of Paraiba, Brazil'.  They considered some statistical distributions
 and their papers were published in the scientific literature, as for instance,
 the Gaussian classifier using fuzzy parameters, proposed by Moraes, Ferreira and
-Machado (2021) <doi:10.1007/s40815-020-00936-4>.")
+Machado (2021) <doi:10.1007/s40815-020-00936-4>.  The classifiers are
+implemented as R6 classes and are also available as parsnip models, so they can
+be used within the tidymodels framework.")
     (license license:expat)))
 
 (define-public r-fuzzyahp
@@ -3607,13 +3638,13 @@ and Rice, Wirjanto, and Zhao (2020) <doi:10.1111/jtsa.12532>.")
 (define-public r-ftsa
   (package
     (name "r-ftsa")
-    (version "6.7")
+    (version "6.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ftsa" version))
        (sha256
-        (base32 "15qr28qhhhbj5dylf1iimsxqjnir0amkvzvykljzm856i5rsj3h7"))))
+        (base32 "1wb9rb0fbf0s60axm1nhixk560xqir41vrzh9xz4ijs2dsb08d8l"))))
     (properties `((upstream-name . "ftsa")))
     (build-system r-build-system)
     (arguments
@@ -3628,11 +3659,13 @@ and Rice, Wirjanto, and Zhao (2020) <doi:10.1111/jtsa.12532>.")
                              r-pdfcluster
                              r-pcapp
                              r-mass
+                             r-longmemo
                              r-laplacesdemon
                              r-kernsmooth
                              r-glue
                              r-forecast
                              r-fgarch
+                             r-fds
                              r-fdapace
                              r-fda
                              r-evgam
@@ -14623,6 +14656,35 @@ that make various assumptions regarding ordinality.  Using them within the
 flex-scheme allows for easy comparisons across methods.")
     (license license:gpl2)))
 
+(define-public r-flexor
+  (package
+    (name "r-flexor")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "flexOR" version))
+       (sha256
+        (base32 "1cwxxsq0lgs6vakyw5zrivykq435v7apvp04xzs8gnyd4ih4ss8k"))))
+    (properties `((upstream-name . "flexOR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mgcv r-gam))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/arturstat/flexOR")
+    (synopsis "Flexible Odds Ratio Curves")
+    (description
+     "This package provides flexible odds ratio curves that enable modeling non-linear
+relationships between continuous predictors and binary outcomes.  Facilitates a
+deeper understanding of the impact of each continuous predictor on the outcome
+by presenting results in terms of odds ratio (OR) curves based on splines.
+These curves allow for comparison against a specified reference value, aiding in
+the interpretation of the predictor's effect.  Methods are described in Azevedo
+et al. (2024) <doi:10.3390/app14093897>.")
+    (license license:gpl3)))
+
 (define-public r-flexoki
   (package
     (name "r-flexoki")
@@ -14704,6 +14766,33 @@ item response model to be build on any monotonic transformation of the latent
 trait metric, as described by Feuerstahler (2019)
 <doi:10.1007/s11336-018-9642-9>.")
     (license license:gpl3)))
+
+(define-public r-flexmatch
+  (package
+    (name "r-flexmatch")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "flexMatch" version))
+       (sha256
+        (base32 "1q9vzraj62xcwz7ivh7r9kpd56ingdsgvhpcbh1isqc0l81089xn"))))
+    (properties `((upstream-name . "flexMatch")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales r-matchit r-ggplot2 r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/avkazakovgit/flexMatch")
+    (synopsis "Flexible Matching for Stacked Difference-in-Differences")
+    (description
+     "This package provides tools for building stacked difference-in-differences
+samples in staggered-adoption settings.  The package labels valid treated and
+control candidates, performs cross-sectional matching, expands matched units
+into event-time stacks, and returns diagnostics for balance assessment and
+visualization.")
+    (license license:expat)))
 
 (define-public r-flexlsx
   (package
@@ -15685,6 +15774,35 @@ functionals of the projected density, or conditional density of a response given
 projected covariates.  The package is accompanied by an instructive paper in the
 Journal of Statistical Software <doi:10.18637/jss.v101.i03>.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-fkr
+  (package
+    (name "r-fkr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fkr" version))
+       (sha256
+        (base32 "0pmy6ksms84wsghjyfd6p58jh6m0p2wglh8f9lyh7dxfgipmkn53"))))
+    (properties `((upstream-name . "fkr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-psgc r-phscs))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/yng-me/fkr")
+    (synopsis "Realistic Fake Data Generator for the Philippines")
+    (description
+     "Generates realistic, locale-aware synthetic data for the Philippines, covering
+both personal data (names, ages, birthdays, contact details, addresses,
+government-ID-style numbers) and business data (company names, industries, job
+titles, products, prices, and permit numbers).  Every value, including anything
+formatted to resemble a government identifier, is drawn uniformly at random for
+software testing, prototyping, and teaching, and does not correspond to any real
+person, business, or record.")
+    (license license:expat)))
 
 (define-public r-fkml
   (package
@@ -19064,13 +19182,13 @@ computational finance.")
 (define-public r-finbif
   (package
     (name "r-finbif")
-    (version "0.10.0")
+    (version "0.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "finbif" version))
        (sha256
-        (base32 "114v4clfb271akxrycnipxr29j2mjdkb87dwn233wbhr65w601pi"))))
+        (base32 "1lkfd0z5mq776vhd8lvdpamvbzkyqd5cnw6prn1h98wlygiklrr8"))))
     (properties `((upstream-name . "finbif")))
     (build-system r-build-system)
     (arguments
@@ -20024,6 +20142,42 @@ Its core function generates plot errors that capture spatial trend, random error
 Phenotypes can be generated by combining the plot errors with simulated genetic
 values that capture genotype-by-environment (@code{GxE}) interaction using
 wrapper functions for the R package `@code{AlphaSimR`}.")
+    (license license:gpl3+)))
+
+(define-public r-fieldopt
+  (package
+    (name "r-fieldopt")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fieldopt" version))
+       (sha256
+        (base32 "05q65xd9mffb911yxfzpvfmbjnwzrvwhli4zrvm2850cszcyhc6h"))))
+    (properties `((upstream-name . "fieldopt")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list xz))
+    (propagated-inputs (list r-tibble r-rlang r-ggplot2 r-generics r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://castlaboratory.github.io/fieldopt/")
+    (synopsis "Area-Frame and Dual-Frame Survey Design under Real Field Cost")
+    (description
+     "Design of agricultural and other area-frame and dual-frame (area plus list)
+sample surveys that go to the field, with the real cost of field work (travel
+between sampling units plus interviews) next to the variance of the design-based
+estimator.  Travel matrices from coordinates or a road network; GRASP routing of
+the field work for one or several teams; stratified spatially balanced (local
+pivotal) or spatially ordered systematic selection of segments with
+interpenetrating replicates; points inside segments with multiplicity
+(expected-hits) estimation; closed, open and weighted segment estimators;
+Horvitz-Thompson estimation with local-mean or replicate variances; cost-aware
+allocation across strata, Hartley's dual-frame allocation with an overlap, and
+two-stage allocation with a cost function; and the cost-variance frontier of a
+design by simulation.  The computational engine is the Rust crate
+fieldopt-core'.")
     (license license:gpl3+)))
 
 (define-public r-fieldhub
@@ -21626,6 +21780,35 @@ the methodology can be found at
 <https://journal.r-project.org/articles/RJ-2021-105/index.html>.")
     (license license:expat)))
 
+(define-public r-fereg
+  (package
+    (name "r-fereg")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fereg" version))
+       (sha256
+        (base32 "1pljjyqpfmrwifc9sii15kr6navh8n6bdj9dvycf3vaawpn3kw7z"))))
+    (properties `((upstream-name . "fereg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (home-page "https://github.com/leoliu0/fereg")
+    (synopsis "Fast Fixed-Effects Estimation with the 'fixest' Interface")
+    (description
+     "Ordinary least squares, two-stage least squares, Poisson and logit regressions
+with any number of high-dimensional fixed effects, interactions of fixed
+effects, varying slopes, weights and iid, heteroskedasticity-robust (HC1, HC2,
+HC3), multiway-clustered, CRV3, Newey-West, Driscoll-Kraay or Conley standard
+errors.  The formula syntax, arguments, results and methods follow the fixest
+package and reproduce its estimates.  The computations run in a parallel Rust
+library that eliminates the largest fixed effect exactly and solves for the
+others by preconditioned conjugate gradient.")
+    (license license:expat)))
+
 (define-public r-fer
   (package
     (name "r-fer")
@@ -21673,6 +21856,30 @@ fixed effects model and an approximate expectation maximization (EM) algorithm
 for the logistic mixed effects model.  Based on He, K., Kalbfleisch, J.D., Li,
 Y. and Li, Y. (2013) <doi:10.1007/s10985-013-9264-6>.")
     (license license:gpl2)))
+
+(define-public r-feols-asv
+  (package
+    (name "r-feols-asv")
+    (version "0.0-1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "feols.asv" version))
+       (sha256
+        (base32 "1mhdk6lnlm268d1l4w1wn74diq37sr0wygk474hrwjnza5ghdi6m"))))
+    (properties `((upstream-name . "feols.asv")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vegan r-ggplot2 r-fixest))
+    (home-page "https://cran.r-project.org/package=feols.asv")
+    (synopsis
+     "Average Shared Variance (ASV) Decomposition for Multiple Fixed-Effects Models")
+    (description
+     "Conducts average shared variance to calculate individual contributions of
+predictors (groups) towards within R2 for Multiple Fixed-Effects Models.")
+    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-fenmlm
   (package
@@ -28507,13 +28714,13 @@ Bogetoft & Otto (2011) <doi:10.1007/978-1-4419-7961-2>.")
 (define-public r-farr
   (package
     (name "r-farr")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "farr" version))
        (sha256
-        (base32 "00i38kvnc4f1pym4mg9fyjsszi885730gh16avd66kndwjy9m919"))))
+        (base32 "16gaffvwjyzbk67njg14rg2w8608h7kd5sw67zxcdkz2jpblr7sc"))))
     (properties `((upstream-name . "farr")))
     (build-system r-build-system)
     (arguments
@@ -31372,26 +31579,28 @@ package relies on the fabricjs @code{JavaScript} library.  See
 (define-public r-fabricatr
   (package
     (name "r-fabricatr")
-    (version "1.0.2")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fabricatr" version))
        (sha256
-        (base32 "1hyi0idhf88sg4lx0yyss17qp57v5j1p1bq22wdf2fgg11hnl68x"))))
+        (base32 "0xpjn3dq8dhm01jld3m6ijii2jn303fsz7zbvv53n9b5ip1i4i88"))))
     (properties `((upstream-name . "fabricatr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang))
+    (propagated-inputs (list r-tibble r-rlang r-purrr r-dplyr))
+    (native-inputs (list r-knitr))
     (home-page "https://declaredesign.org/r/fabricatr/")
-    (synopsis "Imagine Your Data Before You Collect It")
+    (synopsis "Tidyverse-First Data Fabrication")
     (description
-     "Helps you imagine your data before you collect it.  Hierarchical data structures
-and correlated data can be easily simulated, either from random number
-generators or by resampling from existing data sources.  This package is faster
-with data.table and mvnfast installed.")
+     "Helps you imagine your data before you collect it.  Builds a data frame one
+column at a time, with hierarchical levels, cross-classified levels, potential
+outcomes, and draws with a target intra-cluster correlation, so that a research
+design can be simulated and diagnosed before any data exist.  Version 2.0 is a
+rewrite of the same public API on dplyr', tibble', purrr', and rlang'.")
     (license license:expat)))
 
 (define-public r-fabr

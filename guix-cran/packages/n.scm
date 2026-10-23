@@ -1537,6 +1537,33 @@ ISBN:9781906698003).  Homogeneity tests from Hosking and Wallis (1993)
 are available.")
     (license license:gpl2+)))
 
+(define-public r-nsr
+  (package
+    (name "r-nsr")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NSR" version))
+       (sha256
+        (base32 "0i7hwak2w3gzbzmh5gmb5ysi100zdqmf6d72z7gxk74qi6cxk5hr"))))
+    (properties `((upstream-name . "NSR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite r-httr))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://cran.r-project.org/package=NSR")
+    (synopsis "'Native Status Resolver'")
+    (description
+     "This package provides access to the Native Status Resolver (NSR)
+<https://github.com/ojalaquellueva/nsr> API through R. The user supplies plant
+taxonomic names and political divisions and the package returns information
+about their likely native status (e.g., native, non-native,endemic), along with
+information on how those decisions were made.")
+    (license license:expat)))
+
 (define-public r-nspmix
   (package
     (name "r-nspmix")
@@ -2108,6 +2135,45 @@ remote-sensing covariates at sample locations.  Applications include forest
 inventory, soil erosion monitoring, watershed studies, and ecological field
 surveys.")
     (license license:gpl3+)))
+
+(define-public r-nrmcmix
+  (package
+    (name "r-nrmcmix")
+    (version "0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nrMCmix" version))
+       (sha256
+        (base32 "02a2zz9l5j04x3w4lwlylfyh35jcixkqx5vwyf9my9gdbjp2k5ic"))))
+    (properties `((upstream-name . "nrMCmix")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-salso
+                             r-rdpack
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-ggplot2
+                             r-fields
+                             r-coda))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=nrMCmix")
+    (synopsis "Non-Reversible Markov Chains for Bayesian Mixture Models")
+    (description
+     "This package provides Bayesian inference for finite and infinite mixture models
+using Markov chain Monte Carlo (MCMC) methods.  Supports Gaussian, multivariate
+Gaussian, Poisson, Binomial, and multivariate Bernoulli mixture kernels with
+different covariance structures and flexible prior specifications.  Provides
+tools for data generation, posterior density evaluation, clustering and
+similarity analysis, and advanced MCMC sampling strategies, including reversible
+and non-reversible samplers: Ascolani et al. (2026)
+<doi:10.48550/@code{arXiv.2510.03226>}, informed proposals: Zanella (2020)
+<doi:10.1080/01621459.2019.1585255>, collapsed Gibbs sampling: Diebolt and
+Robert (1994) <doi:10.1111/j.2517-6161.1994.tb01985.x>, and split-and-merge
+samplers: Dahl and Newcomb (2021) <doi:10.1080/00949655.2021.1998502>.")
+    (license license:expat)))
 
 (define-public r-nrlr
   (package
@@ -5037,6 +5103,36 @@ mixtures via smart parametrization using the LDL (Cholesky) decomposition, see
 @code{McLachlan} and Peel (2000, ISBN:9780471006268), Celeux and Govaert (1995)
 <doi:10.1016/0031-3203(94)00125-6>.")
     (license license:gpl3+)))
+
+(define-public r-normgen
+  (package
+    (name "r-normgen")
+    (version "0.0.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NormGen" version))
+       (sha256
+        (base32 "0j4fwycngj731dvsi4i4325kkdx8gyxrdw3v1aklg5s9xvlcvmmy"))))
+    (properties `((upstream-name . "NormGen")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppparallel r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=NormGen")
+    (synopsis
+     "An Efficient and Precise Quantile Mapping for Normal Pseudo-Random Number Generation")
+    (description
+     "High-performance pseudo-normal random generator using an optimized quantile
+mapping algorithm.  It provides fast generation of normal pseudo-random numbers
+based on precise mathematical approximations.  The package features
+@code{Rnorm()} for efficient single-threaded generation and
+@code{parallel_Rnorm()}, a high-performance, multithreaded variant powered by
+@code{RcppParallel} and Intel TBB'.  Package compilation flags are optimized to
+support multi-core parallel processing.")
+    (license license:gpl3)))
 
 (define-public r-normfluodbf
   (package
@@ -8663,13 +8759,13 @@ additivity.")
 (define-public r-nltm
   (package
     (name "r-nltm")
-    (version "1.4.6")
+    (version "1.4.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nltm" version))
        (sha256
-        (base32 "0pf1pgsgvq5mjvhck4dr2mrs1g9iqih1cnjw1fmqi6ix6hprm8nh"))))
+        (base32 "1dgy0cmwrqs3c786xfcl2w68hrs2xjf6czy132hz2vqihla2hccd"))))
     (properties `((upstream-name . "nltm")))
     (build-system r-build-system)
     (arguments
@@ -16048,13 +16144,13 @@ and omnivory indices of food webs.")
 (define-public r-netify
   (package
     (name "r-netify")
-    (version "1.5.3")
+    (version "1.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "netify" version))
        (sha256
-        (base32 "05a7flwx090d2yhzy7dxd54ycq3rk34s94zazmiaqbn5zqyi94al"))))
+        (base32 "0ivvwcmbhf2c34zyxq3z4p2d8ynx7q3xsj7xpa5qpv56wh72cq5s"))))
     (properties `((upstream-name . "netify")))
     (build-system r-build-system)
     (arguments
@@ -16289,13 +16385,13 @@ of the fitted model and dose-response plots in a frequentist way.")
 (define-public r-netdiffuser
   (package
     (name "r-netdiffuser")
-    (version "1.25.0")
+    (version "1.25.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "netdiffuseR" version))
        (sha256
-        (base32 "18mmpc46bhm8q59sf37ghswjwp0wy5ncqsla007k057f6dpwklh8"))))
+        (base32 "12ja5x8sm6znfby1j9z34n450zwmnsqdhghf206xlkf8giab7l1h"))))
     (properties `((upstream-name . "netdiffuseR")))
     (build-system r-build-system)
     (arguments
@@ -18521,19 +18617,20 @@ data: large document collections, logfiles, and other text data.")
 (define-public r-ncmr
   (package
     (name "r-ncmr")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ncmR" version))
        (sha256
-        (base32 "03c01x2s0hqsqcf83v908hivdv2z5g7fj96f2akh7sbr269cigl2"))))
+        (base32 "1vpgk74hg4r8d50k1xri1aykn4qh8x0aa8vpwnpdpnfisp674aka"))))
     (properties `((upstream-name . "ncmR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-zip
+                             r-systemfonts
                              r-shinyjs
                              r-shiny
                              r-minpack-lm

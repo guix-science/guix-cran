@@ -7901,6 +7901,66 @@ walking, cycling, driving, or transit routes.  This package has been
 peer-reviewed by @code{rOpenSci} (v.  0.2.0.0).")
     (license license:gpl3)))
 
+(define-public r-opentimsr
+  (package
+    (name "r-opentimsr")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "opentimsr" version))
+       (sha256
+        (base32 "0wh4270rviqdysbiw046c6g1n3zr6ry9vfb3ih9w3v2mbnhp2yhv"))))
+    (properties `((upstream-name . "opentimsr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list zlib zstd))
+    (propagated-inputs (list r-rsqlite r-rcpp r-dbi))
+    (native-inputs (list pkg-config))
+    (home-page "https://github.com/michalsta/opentims")
+    (synopsis "An Open-Source Loader for Bruker's timsTOF Data Files")
+    (description
+     "Reads raw data from Bruker's @code{timsTOF} mass spectrometers, stored in
+analysis.tdf and analysis.tdf_bin files inside .d folders.  Frames can be
+selected by number or by retention time, and each peak is reported with its
+scan, time-of-flight index, intensity, mass-to-charge ratio and inverse ion
+mobility.  Mass-to-charge ratios and ion mobilities are computed with built-in
+open-source calibration, or optionally with Bruker's proprietary library.  See
+ÅÄcki et al. (2021) <doi:10.1021/acs.jproteome.0c00962>.")
+    (license license:expat)))
+
+(define-public r-openstudyval
+  (package
+    (name "r-openstudyval")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "openstudyval" version))
+       (sha256
+        (base32 "14s8sz95mrd8xdgc13l0mjycaz8464xhfvx5k5pf5rv4wg0w50p8"))))
+    (properties `((upstream-name . "openstudyval")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/shekharchalwadigrepo-hub/openstudyval")
+    (synopsis "Open Validator for FDA Study-Data Submissions")
+    (description
+     "Validates clinical and nonclinical study-data packages against publicly
+described FDA technical-rejection criteria, SAS XPORT constraints from the Study
+Data Technical Conformance Guide, and an extensible catalog of SDTM, SEND, and
+A@code{DaM} structural conformance checks.  Reads a study folder of CSV, RDS, or
+(when the suggested package haven is installed) SAS v5/v8 transport files,
+optionally checks define.xml, and writes a submission-style HTML and CSV
+validation report.  This package is an independent open-source implementation.
+It is not affiliated with, endorsed by, or a copy of Pinnacle 21, Certara, or
+the FDA.")
+    (license license:expat)))
+
 (define-public r-openstreetmap
   (package
     (name "r-openstreetmap")
@@ -8922,13 +8982,13 @@ in R.")
 (define-public r-openebgm
   (package
     (name "r-openebgm")
-    (version "0.10.0")
+    (version "0.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openEBGM" version))
        (sha256
-        (base32 "0msil02ngl3nwxiz6b91mykq2f9pka8hls29ya13l9igmm7vvhyk"))))
+        (base32 "1wlrvfcw9c9pwj2fz1nm38jy5vynb4j093a1dnx1vn8dpih6hhkh"))))
     (properties `((upstream-name . "openEBGM")))
     (build-system r-build-system)
     (arguments
@@ -10869,13 +10929,13 @@ Balakrishnan, and Chang (2009) <doi:10.1080/00949650802142592>.")
 (define-public r-onesamplemr
   (package
     (name "r-onesamplemr")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OneSampleMR" version))
        (sha256
-        (base32 "01xvgr104ds2j668wp8zf26s0fs73m7cmfy9vz4a2a4dbkkysg46"))))
+        (base32 "1fpjkm6wqw2ds18ly22p06dac6f0rx3pmrl90a573s69sw5wsf15"))))
     (properties `((upstream-name . "OneSampleMR")))
     (build-system r-build-system)
     (arguments
@@ -10896,9 +10956,11 @@ Balakrishnan, and Chang (2009) <doi:10.1080/00949650802142592>.")
 and instrumental variable analyses.  The package includes implementations of;
 the Sanderson and Windmeijer (2016) <doi:10.1016/j.jeconom.2015.06.004>
 conditional F-statistic, the multiplicative structural mean model HernÃ¡n and
-Robins (2006) <doi:10.1097/01.ede.0000222409.00878.37>, and two-stage predictor
-substitution and two-stage residual inclusion estimators explained by Terza et
-al. (2008) <doi:10.1016/j.jhealeco.2007.09.009>.")
+Robins (2006) <doi:10.1097/01.ede.0000222409.00878.37>, the logistic structural
+mean model Vansteelandt and Goetghebeur (2003)
+<doi:10.1046/j.1369-7412.2003.00417.x>, and two-stage predictor substitution and
+two-stage residual inclusion estimators explained by Terza et al. (2008)
+<doi:10.1016/j.jhealeco.2007.09.009>.")
     (license license:gpl3+)))
 
 (define-public r-onesamplelogranktest
@@ -14062,6 +14124,42 @@ simulation tools for numerical experiments.  Cai, Z., Li, R., & Zhu, L. (2020)
 <doi:10.48550/@code{arXiv.2002.02795>}.")
     (license license:expat)))
 
+(define-public r-oes
+  (package
+    (name "r-oes")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oes" version))
+       (sha256
+        (base32 "12lkhyhvrv1lsx9bjqkxra4w451l3h2c12nhc7cd6jbybalp2y5v"))))
+    (properties `((upstream-name . "oes")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rstatix r-rlang r-ggplot2 r-dplyr))
+    (home-page "https://cran.r-project.org/package=oes")
+    (synopsis "Optimal Effect-Size-Based Y-Axis Ranges")
+    (description
+     "Calculates effect-size-informed y-axis recommendations for visualizations of
+independent, repeated-measures, and mixed designs.  Summarizes selected error
+bars, estimates conditional standardized contrasts, and generalizes
+range-expansion rules using constants from single-factor, two-level studies of
+Cohen's d.  Recommendations beyond that studied setting have not been
+empirically validated.  Provides numerical results and ggplot2 visualizations,
+including summary plots and preservation of supplied plot layouts.
+Confidence-interval adjustment options follow the distinctions in Cousineau
+(2017) <doi:10.5709/acp-0214-z>, including difference adjustment and combined
+repeated-measures adjustment.  Within-subject base intervals use the
+normalization of Cousineau (2005) <doi:10.20982/tqmp.01.1.p042> with the bias
+correction of Morey (2008) <doi:10.20982/tqmp.04.2.p061>.  Correlation-only
+intervals and intervals with both adjustments are separate options.  These
+references support confidence-interval construction, not the range-expansion
+calibration.")
+    (license license:expat)))
+
 (define-public r-oenokpm
   (package
     (name "r-oenokpm")
@@ -14798,6 +14896,34 @@ boundary for the system's typical behaviour is updated periodically.  More
 details regarding the algorithm can be found in Talagala, P. D., Hyndman, R. J.,
 Smith-Miles, K., et al. (2019) <doi:10.1080/10618600.2019.1617160>.")
     (license license:gpl3)))
+
+(define-public r-oddsrelay
+  (package
+    (name "r-oddsrelay")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oddsrelay" version))
+       (sha256
+        (base32 "0b8sgwhfpla6dlxq14vknb3rwyms4i7yz264ypfy92v27gcl9ijl"))))
+    (properties `((upstream-name . "oddsrelay")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite r-httr2))
+    (home-page "https://github.com/oddsrelay/oddsrelay-r")
+    (synopsis "Client for the 'OddsRelay' Sports Odds API")
+    (description
+     "This package provides one function for each read endpoint of the
+@code{OddsRelay} web service <https://oddsrelay.io/docs>, which serves bookmaker
+and exchange odds for the UK and Ireland.  Requests ask for compressed replies,
+send entity tags so that unchanged data is not transferred again, wait as the
+service asks when it is busy, and signal refusals as classed conditions that
+carry the service's error code and request id.  Replies are returned as lists
+and data frames, with the token and rate limit headers attached as attributes.")
+    (license license:expat)))
 
 (define-public r-oddsratio
   (package

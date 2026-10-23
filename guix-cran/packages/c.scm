@@ -4419,13 +4419,13 @@ t-distribution approach to compute confidence intervals, similar to SPSS
 (define-public r-ct
   (package
     (name "r-ct")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ct" version))
        (sha256
-        (base32 "1yy2byngdp1vhh6vcannsdfla4jmshs6fc7ibqyhvhdalkppf1j0"))))
+        (base32 "14i5jxkrm9pamsrpsxsvjhz7z88jy21fab54il7mckyrjwmrka89"))))
     (properties `((upstream-name . "ct")))
     (build-system r-build-system)
     (arguments
@@ -4434,12 +4434,11 @@ t-distribution approach to compute confidence intervals, similar to SPSS
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
-                             r-terra
-                             r-sf
                              r-sbd
                              r-rlang
                              r-rcpp
                              r-overlap
+                             r-nloptr
                              r-magrittr
                              r-lubridate
                              r-ggplot2
@@ -4449,18 +4448,23 @@ t-distribution approach to compute confidence intervals, similar to SPSS
                              r-camtrapdp
                              r-activity))
     (home-page "https://stangandaho.github.io/ct/")
-    (synopsis "Integrated Camera-Trap Data Management and Analysis")
+    (synopsis
+     "Camera Trap Data Management and Multi-Method Ecological Analysis")
     (description
-     "An integrated, tidyverse-friendly workflow for camera trap data in wildlife
-monitoring and ecological research.  Reads and edits media metadata, filters
-independent detections, analyses activity patterns and species diversity, and
-estimates species density or abundance with several methods, including the
-random encounter model, camera-trap distance sampling, time-to-event,
-space-to-event, and the random encounter and staying-time model (see Rowcliffe
-et al. (2008) <doi:10.1111/j.1365-2664.2008.01473.x>, Howe et al. (2017)
-<doi:10.1111/2041-210X.12790>, Nakashima et al. (2018)
-<doi:10.1111/1365-2664.13059>, and Moeller et al. (2018)
-<doi:10.1002/ecs2.2331>).")
+     "This package provides tools for the complete camera trap data workflow in
+wildlife monitoring and ecological research.  Reads and edits media metadata,
+filters independent detections, and standardises records for analysis.  Measures
+diel activity and overlap (Ridout and Linkie (2009)
+<doi:10.1198/jabes.2009.08038>), directed short-term association between species
+with an encounter-response model (Hawkes (1971) <doi:10.1093/biomet/58.1.83>),
+seasonal shifts in activity, spatial coverage of detections, and species
+diversity.  Estimates density or abundance of unmarked populations with several
+methods, including the random encounter model, camera trap distance sampling,
+time-to-event, space-to-event, instantaneous sampling, and the random encounter
+and staying-time model (see Rowcliffe et al. (2008)
+<doi:10.1111/j.1365-2664.2008.01473.x>, Howe et al. (2017)
+<doi:10.1111/2041-210X.12790>, Moeller et al. (2018) <doi:10.1002/ecs2.2331>,
+and Nakashima et al. (2018) <doi:10.1111/1365-2664.13059>).")
     (license license:expat)))
 
 (define-public r-cswr
@@ -10828,13 +10832,13 @@ accommodates any replicate design.")
 (define-public r-cpge
   (package
     (name "r-cpge")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cpge" version))
        (sha256
-        (base32 "1dpz8bgphrqfh97yfhi23cj4cp7k7lipqwrn1gd2vffn17jpgpsl"))))
+        (base32 "146x60xz9ym0zjs42m5hgk8jj4zpcrbg2zh6gnxs7fkv9nmwjsr4"))))
     (properties `((upstream-name . "cpge")))
     (build-system r-build-system)
     (arguments
@@ -11312,6 +11316,31 @@ its basic form, where explanatory variables are time independent with one event
 per subject.  Method is based on a smooth modification of the partial
 likelihood.")
     (license license:gpl3)))
+
+(define-public r-coxrmstsimpson
+  (package
+    (name "r-coxrmstsimpson")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CoxRMSTSimpson" version))
+       (sha256
+        (base32 "1yidnzg3y92wl6sk4r70bd3p47liykyphs1bzhqxazbqx9x66f32"))))
+    (properties `((upstream-name . "CoxRMSTSimpson")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival))
+    (home-page "https://cran.r-project.org/package=CoxRMSTSimpson")
+    (synopsis "Restricted Mean Survival Time from Cox Models")
+    (description
+     "Calculates restricted mean survival time from predicted Cox proportional hazards
+survival curves using composite Simpson's rule and provides plots with shaded
+areas under the survival curves.  Includes simulated survival data for
+reproducible examples.")
+    (license license:expat)))
 
 (define-public r-coxplus
   (package
@@ -14488,13 +14517,13 @@ biomarker research.")
 (define-public r-corto
   (package
     (name "r-corto")
-    (version "1.3.1")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "corto" version))
        (sha256
-        (base32 "1wyzyxa8h20zfjp3fwdzv9iz1pbm4485kqv2s631d5566a5fsgjm"))))
+        (base32 "105aw506gja5bj6cdhgyph8bhb9ihym0y8dcplpxbz5if0q8q2dh"))))
     (properties `((upstream-name . "corto")))
     (build-system r-build-system)
     (arguments
@@ -14509,13 +14538,15 @@ biomarker research.")
 networks and visualize master regulators from gene expression data using DPI
 (Data Processing Inequality) and bootstrapping to recover edges.  An initial
 step is performed to calculate all significant edges between a list of source
-nodes (centroids) and target genes.  Then all triplets containing two centroids
-and one target are tested in a DPI step which removes edges.  A bootstrapping
-process then calculates the robustness of the network, eventually re-adding
-edges previously removed by DPI. The algorithm has been optimized to run outside
-a computing cluster, using a fast correlation implementation.  The package
-finally provides functions to calculate network enrichment analysis from RNA-Seq
-and ATAC-Seq signatures as described in the article by Giorgi lab (2020)
+nodes (centroids) and target genes.  Then a DPI step removes edges: by default,
+for each target only the edge from the centroid with the strongest correlation
+is kept; optionally, the ARACNe rule removes an edge only if it is the weakest
+in a triplet of two centroids and one target.  A bootstrapping process then
+calculates the robustness of the network, eventually re-adding edges previously
+removed by DPI. The algorithm has been optimized to run outside a computing
+cluster, using a fast correlation implementation.  The package finally provides
+functions to calculate network enrichment analysis from RNA-Seq and ATAC-Seq
+signatures as described in the article by Giorgi lab (2020)
 <doi:10.1093/bioinformatics/btaa223>.")
     (license license:lgpl3)))
 
@@ -14929,6 +14960,40 @@ as weighted Hochberg (Tamhane, A. C., & Liu, L., 2008)
 S., & Carter, R. E., 2012) <doi:10.1002/pst.1514> and a new correlation
 corrected weighted Hochberg for correlated endpoints.")
     (license license:gpl3+)))
+
+(define-public r-corridor
+  (package
+    (name "r-corridor")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "corridoR" version))
+       (sha256
+        (base32 "1k608j4n4zypi1l2ry6kq9hjhp8rbh5gsfw8a2dy4wk3v5qa33df"))))
+    (properties `((upstream-name . "corridoR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra r-sf r-raster r-gdistance))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/paulmaier/corridoR")
+    (synopsis
+     "Migration Corridors and Genetic Range Shifts from Landscape Genetic Data")
+    (description
+     "Models genetic connectivity along migration corridors and forecasts how it
+shifts under climate change, following Maier et al. (2022)
+<doi:10.1038/s41437-022-00561-x>.  Least cost corridors are built from
+accumulated cost surfaces and used as weights to summarize raw environmental
+layers between sites; each group of environmental features can choose its own
+corridor bandwidth; and pairwise predictions of differentiation and directional
+migration are mapped back onto the landscape as magnitude and net-direction
+surfaces.  Includes readers for common genotype formats (STRUCTURE, GENEPOP,
+VCF, @code{GenAlEx}, FSTAT and PLINK files, and adegenet objects), pairwise
+fixation indices, and the directional differentiation of Sundqvist et al. (2016)
+<doi:10.1002/ece3.2096>.")
+    (license license:expat)))
 
 (define-public r-corrgram
   (package
@@ -18035,6 +18100,41 @@ methods and measures as described in Stayton (2015) <DOI: 10.1111/evo.12729> and
 Grossnickle et al.  2023.  Also displays results in various ways.")
     (license license:gpl3)))
 
+(define-public r-convertxlsform
+  (package
+    (name "r-convertxlsform")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "convertxlsform" version))
+       (sha256
+        (base32 "1b1q48p9fcp4nsj8rkq1qgnawaifh2sfj80s1vr5855s101qcv50"))))
+    (properties `((upstream-name . "convertxlsform")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-zip
+                             r-rlang
+                             r-readxl
+                             r-officer
+                             r-magrittr
+                             r-flextable
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/masud90/convertxlsform")
+    (synopsis "Convert an 'XLSForm' to a 'Word' or PDF Document")
+    (description
+     "Converts XLSForm questionnaires, as used by Open Data Kit ('ODK') and
+@code{KoboToolbox}', into formatted paper versions for interviewing and review.
+See <https://xlsform.org> for the XLSForm standard.  Output is a Word document
+('.docx') or, optionally, a PDF produced from that Word document with
+@code{LibreOffice}'.  Supports multilingual forms, nested question numbering,
+skip logic display, and question and choice media.")
+    (license license:expat)))
+
 (define-public r-convertr
   (package
     (name "r-convertr")
@@ -19470,6 +19570,31 @@ shared on Zenodo.")
 <doi:10.1371/journal.pcbi.1009098>.  Provides easy access to contact data for
 177 countries, for use in epidemiological, demographic or social sciences
 research.")
+    (license license:expat)))
+
+(define-public r-constructive
+  (package
+    (name "r-constructive")
+    (version "1.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "constructive" version))
+       (sha256
+        (base32 "0gy9v93kvxjh5i55rcly3knsx72fm98rmr5z84h4bj7w4a8r1jln"))))
+    (properties `((upstream-name . "constructive")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-waldo r-rlang r-diffobj r-cli))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/cynkra/constructive")
+    (synopsis "Display Idiomatic Code to Construct Most R Objects")
+    (description
+     "Prints code that can be used to recreate R objects.  In a sense it is similar to
+@code{base::dput()} or @code{base::deparse()} but constructive strives to use
+idiomatic constructors.")
     (license license:expat)))
 
 (define-public r-construct
@@ -27297,13 +27422,13 @@ those side effects.")
 (define-public r-coldstart
   (package
     (name "r-coldstart")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coldstart" version))
        (sha256
-        (base32 "1ii0rm0bdih2jgck4i6gw22q0q36gcd4dq75psl3gpjfiqbswavv"))))
+        (base32 "1m63059jcc5nkyhvfbrbw3gf5aqss88vzvi82kwvv60x10alz3rr"))))
     (properties `((upstream-name . "coldstart")))
     (build-system r-build-system)
     (arguments
@@ -27845,13 +27970,13 @@ Common Data Model.")
 (define-public r-cohortsurvival
   (package
     (name "r-cohortsurvival")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortSurvival" version))
        (sha256
-        (base32 "1wk33ibcnsz5vxfjhhg2nq50mg1zmq35rh9425103zx1yknj920z"))))
+        (base32 "09gc9j991lpp8x8g090gvk9m2xv9myqxyph0d5yg7vwn8vgd0n4n"))))
     (properties `((upstream-name . "CohortSurvival")))
     (build-system r-build-system)
     (arguments
@@ -30999,6 +31124,38 @@ using CNEFE dwelling points as ancillary data.  Results can be produced on H3
 hexagonal grids or user-supplied polygons, and heavy operations leverage a
 @code{DuckDB} backend with extensions for fast, in-process execution.")
     (license license:expat)))
+
+(define-public r-cndplantanalysis
+  (package
+    (name "r-cndplantanalysis")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cndplantanalysis" version))
+       (sha256
+        (base32 "0g8i9r14ckxfknyrq8ikny9k4q0lhw60scxqwsaxiiz1sxyahia3"))))
+    (properties `((upstream-name . "cndplantanalysis")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2))
+    (home-page "https://cran.r-project.org/package=cndplantanalysis")
+    (synopsis "Compositional Nutrient Diagnosis for Plant Tissue Analysis")
+    (description
+     "This package provides an implementation of Compositional Nutrient Diagnosis
+(CND) for plant tissue tests.  Computes scale invariant simplex filling
+values(Rd), row-centered log-ratios (CLR), iterative database partitioning via
+Cate-Nelson procedures, cubic polynomial regression of cumulative variance ratio
+functions to determine inflection point yield cutoffs, critical CND nutrient
+imbalance thresholds (r^2) using the chi-square distribution, diagnostic
+standardized indices (Ix) and automated Cate Nelson scatter partitioning.
+Includes linear, non-linear, cumulative variance, chi-square and quadrant
+plotting functions.Methodology and theoretical frameworks are grounded in Parent
+and Dafir (1992) <doi:10.21273/JASHS.117.2.239> and Khiari et al. (2001)
+<doi:10.2134/agronj2001.934802x>.")
+    (license license:gpl3)))
 
 (define-public r-cnd
   (package
@@ -37721,6 +37878,36 @@ it provides smart guessing, but with user options to override anything if
 needed.")
     (license license:gpl2)))
 
+(define-public r-cldreducer
+  (package
+    (name "r-cldreducer")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cldreducer" version))
+       (sha256
+        (base32 "0la3h9i0q3lnjr7ncyvmvy4g6h1ir5lvnvqla6d6x5jwpq6zy07m"))))
+    (properties `((upstream-name . "cldreducer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrix r-highs))
+    (home-page "https://github.com/aigorahub/cld-reducer")
+    (synopsis "Reduce Compact Letter Displays")
+    (description
+     "Reduces compact letter displays (CLDs) of all pairwise comparisons.  A CLD gives
+two groups a common letter exactly when they are not significantly different.
+The package finds a display with the fewest letter assignments that keeps every
+one of these relationships.  This is the assignment-minimum clique covering
+problem of Ennis, Fayle, and Ennis (2012) <doi:10.1145/2133803.2275596>, solved
+as a mixed-integer linear program with @code{HiGHS}'.  Among the displays with
+the fewest assignments, it returns one fixed canonical display, so the result
+does not depend on the solver.  The package includes the wheat yield example of
+Piepho (2004) <doi:10.1198/1061860043515>.")
+    (license license:expat)))
+
 (define-public r-cldedgelister
   (package
     (name "r-cldedgelister")
@@ -41087,44 +41274,35 @@ documentation <https://et.water.ca.gov> for more information.")
 (define-public r-cimehr
   (package
     (name "r-cimehr")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CIMEHR" version))
        (sha256
-        (base32 "1xpqw80haj38yxw5c67j4rvcrvw3xjjxq5nqvr34rzbfq4qs1mi4"))))
+        (base32 "02d2wxcfd10fsm2nxjhbksfqgq55n9rh6q9c814gd6paipxn1wsl"))))
     (properties `((upstream-name . "CIMEHR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-slim
-                             r-rcpp
-                             r-pbivnorm
-                             r-numderiv
-                             r-nlme
-                             r-nleqslv
-                             r-mice
-                             r-mass
-                             r-data-table))
+    (propagated-inputs (list r-rcpp r-nlme))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ysph-dsde/CIMEHR")
     (synopsis
-     "Gaussian Clinically Informative Visiting and Observation Processes in Electronic Health Record (EHR) Data")
+     "Longitudinal EHR Analysis with Informative Visits and Recording")
     (description
-     "Fits semiparametric joint models for longitudinal electronic health record (EHR)
-data that addresses two-stage hierarchical missingness mechanism.  The first
-stage is the visiting process, and the second stage is the observation process.
-The core CIMEHR method (Clinical Informative Missingness for Electronic Health
-Records) uses a three-stage procedure: partial likelihood with log-normal
-frailty for visit intensity, probit regression with shared latent factor-linked
-random effects for observation, and weighted least squares with risk-set
-centering for the outcome.  These three stages are connected through a shared
-latent factor that induces dependence across all three processes.  A data
-simulator and implementations of common benchmark methods (linear mixed models,
-multiple imputation, and others) are included for comparative studies.  Detailed
-methods are described in Yang, Shi, and Mukherjee (2026)
+     "Longitudinal outcomes in electronic health records (EHR) are seen only when a
+patient visits and the outcome is recorded at that visit, and both processes can
+depend on the patient's latent health.  The package fits the CIMEHR estimator
+for this setting, a three-stage procedure linked by a shared latent factor: a
+frailty partial likelihood for the visiting process, a pairwise likelihood for
+the recording (observation) process, and an estimating equation for the outcome.
+ Spline and higher-order Laplace variants are included, together with comparison
+methods (summary statistics, linear mixed models, Lin-Ying, Liang, pairwise
+likelihood, joint models, inverse intensity rate ratio weighting and balancing,
+multiple imputation, linear increments and EHRJoint) behind one common
+interface.  Methods are described in Yang, Shi, and Mukherjee (2026)
 <doi:10.48550/@code{arXiv.2602.15374>}.")
     (license license:expat)))
 
@@ -49669,6 +49847,31 @@ package has been developed using concept of Shankar et al.
 (2022)<doi:10.3389/fsufs.2023.1208898>.")
     (license license:gpl3)))
 
+(define-public r-cdtr
+  (package
+    (name "r-cdtr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cdtr" version))
+       (sha256
+        (base32 "1vfmdmhvpi90232jxf9ixx0nfk9k0yph53fdk3ia1w7cczsgvznx"))))
+    (properties `((upstream-name . "cdtr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-cpp11))
+    (home-page "https://github.com/hypertidy/cdtr")
+    (synopsis "Constrained Delaunay Triangulation with Refinement")
+    (description
+     "Binding to the CDT header-only C++ library: constrained and conforming Delaunay
+triangulation, Ruppert refinement by area or minimum angle (Ruppert, 1995,
+<doi:10.1006/jagm.1995.1021>), resolution of crossing constraints, and
+topological region depth per triangle.  Aimed at replacing RTriangle in anglr'.")
+    (license license:expat)))
+
 (define-public r-cdtmbnma
   (package
     (name "r-cdtmbnma")
@@ -50824,6 +51027,42 @@ quantification using linear calibration curve.  In addition, a shiny App is
 provided, allowing users to analyze their data using an interactive graphical
 user interface, without any programming requirements.")
     (license license:gpl3)))
+
+(define-public r-ccva
+  (package
+    (name "r-ccva")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ccva" version))
+       (sha256
+        (base32 "01v1990dgahzz25ggsq1dxhw7f3c6lagmg68bf8586nxbx9qy8yf"))))
+    (properties `((upstream-name . "ccva")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-lavaan r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/DoostiH/ccva")
+    (synopsis
+     "Climate Change Vulnerability Assessment with Constrained Latent Models")
+    (description
+     "This package provides a general framework for climate change vulnerability
+assessment (CCVA) of any species and any dataset.  Variables are tagged as
+exposure, sensitivity or adaptive capacity; each component is computed from its
+own predictors by a chosen method; and the three components are combined into
+vulnerability.  Methods range from the conventional weighted index of Ofori et
+al. (2017) <doi:10.1038/s41598-017-13245-y> to shape-constrained additive models
+('scam'), latent-variable structural equation models ('lavaan') in which
+vulnerability is inferred from observable proxies, and penalised regression
+('glmnet') for high-dimensional predictors.  Ecological knowledge enters as
+explicit constraints on predictors, on each component's role and on the links
+between components.  Diagnostics, validation against observed outcomes,
+bootstrap and weight-based uncertainty, calibrated risk predictions and plots
+for every step are included.")
+    (license license:gpl3+)))
 
 (define-public r-cctools
   (package
@@ -58873,6 +59112,32 @@ dataset and desired simulation settings.  The package itself is licensed under
 the GPL (>= 3); the JSON schema files shipped in inst/extdata are licensed
 separately under the Creative Commons Attribution 4.0 International (CC BY 4.0).")
     (license license:gpl3+)))
+
+(define-public r-camplet
+  (package
+    (name "r-camplet")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "camplet" version))
+       (sha256
+        (base32 "1p7bqck17d7grhkaryri2v0blfcckwqs2dihrw6d3h9qyc4i8akr"))))
+    (properties `((upstream-name . "camplet")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://gitrepo.service.rug.nl/team-data-science/camplet-r")
+    (synopsis "Seasonal Adjustment via the CAMPLET Method")
+    (description
+     "Seasonal adjustment with CAMPLET (Abeln and Jacobs (2023)
+<doi:10.1007/978-3-031-22845-2>), a transparent, adaptive method that corrects
+for seasonality and outliers via arithmetic-progression updates, without model
+identification or optimisation, and without revising earlier adjusted values
+when new observations arrive.  A pure R port of the original Excel VBA
+implementation, validated against its output.")
+    (license license:gpl3)))
 
 (define-public r-campfin
   (package

@@ -11,6 +11,7 @@
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages pkg-config)
+  #:use-module (gnu packages java)
   #:use-module (gnu packages web)
   #:use-module (gnu packages algebra)
   #:use-module (gnu packages curl)
@@ -2691,6 +2692,41 @@ of overlap patterns.  Based on the method described in Becker et al. (2003)
 \"@code{PubMatrix}: a tool for multiplex literature mining\"
 <doi:10.1186/1471-2105-4-61>.")
     (license license:expat)))
+
+(define-public r-publishtc
+  (package
+    (name "r-publishtc")
+    (version "0.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "publishTC" version))
+       (sha256
+        (base32 "05n04kgbszl2q1z679d127clslncqgrq4fwgn4g77x218xh5wyvi"))))
+    (properties `((upstream-name . "publishTC")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list openjdk))
+    (propagated-inputs (list r-zoo
+                             r-rjd3x13
+                             r-rjd3jars
+                             r-rjd3filters
+                             r-rjava
+                             r-ggplot2))
+    (home-page "https://github.com/AQLT/publishTC")
+    (synopsis "Tools to Help to Publish the Trend-Cycle Component")
+    (description
+     "This package provides tools to facilitate the computation of the trend-cycle
+component of time series.  In particular, the computation can be performed
+using: the Cascade Linear Filter ('CLF', Dagum and Luati, 2008), classical
+Henderson symmetric filters with surrogate Musgrave asymmetric filters, local
+parameterizations of Musgrave filters (Quartier-la-Tente, 2024), and robust
+extensions taking into account additive outliers and level shifts
+(Quartier-la-Tente, 2025).  Computes confidence intervals and provides
+specialized plotting functions for publication.")
+    (license (license:fsdg-compatible "EUPL"))))
 
 (define-public r-publipha
   (package
@@ -9420,6 +9456,40 @@ domain-specific packages including boot', fwb', lme4', partykit', sandwich', and
 @code{SimDesign}', e.g. boot::boot(data, stat, R) |> @code{progressify()}'.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
+(define-public r-progme
+  (package
+    (name "r-progme")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "progme" version))
+       (sha256
+        (base32 "11d5h3h68ic51af8yk3kq2wk1xfr74fflxyd3q906abdf8gllfy6"))))
+    (properties `((upstream-name . "progme")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival r-nlme r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/MukulBijalwan/progme")
+    (synopsis "Extended Progression Models for Repeated Measures")
+    (description
+     "Extended progression models for repeated measures in progressive disease
+clinical trials.  Provides nonlinear mixed-effects progression models (linear,
+plateau, Emax, exponential decay), delayed treatment onset estimation by profile
+likelihood, joint longitudinal-survival models for informative dropout,
+competing-risks extensions, biomarker-informed adaptive dosing rules, and
+simulation-based power and sample-size calculation.  The progression-model view
+of treatment effects, in which effects are characterised on the underlying
+disease trajectory rather than as additive shifts on the outcome scale, follows
+Raket (2022) <doi:10.1002/sim.9581>.  The nonlinear mixed-effects machinery is
+built on the nlme implementation described by Pinheiro and Bates (2000, ISBN
+978-0-387-98957-0), and the joint modelling of longitudinal and time-to-event
+data follows Rizopoulos (2012, ISBN 978-1-4398-7286-4).")
+    (license license:gpl3+)))
+
 (define-public r-proftools
   (package
     (name "r-proftools")
@@ -11993,6 +12063,30 @@ component analysis with heterogeneous missingness. <@code{arXiv:1906.12125>}.")
      "Use Prime Factorization for simplifying computations, for instance for ratios of
 large factorials.")
     (license license:gpl3)))
+
+(define-public r-prime
+  (package
+    (name "r-prime")
+    (version "0.5.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "prime" version))
+       (sha256
+        (base32 "1q3pbkj35cshyqnmw65nm3q99ra4yjf7pnv8495hy2rh0ah38z6d"))))
+    (properties `((upstream-name . "prime")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-mass r-fnn))
+    (home-page "https://github.com/ChoYoungSeo/prime-importance-r")
+    (synopsis "Proportional Inclusive Marginal Effects")
+    (description
+     "This package implements a model-free variable importance measure based on
+proportional marginal effects estimated from noisy input-output data.  See Cho
+and Joseph (2026) <doi:10.48550/@code{arXiv.2610.17053>} for details.")
+    (license license:expat)))
 
 (define-public r-primate
   (package
@@ -16921,6 +17015,53 @@ Ziegler (2017) <doi:10.18637/jss.v077.i01>; Heidelberger and Welch (1983)
 <doi:10.1287/opre.31.6.1109>; Sen et al. (2016) <doi:10.22237/jmasm/1462076400>.")
     (license license:gpl3+)))
 
+(define-public r-powerutilities
+  (package
+    (name "r-powerutilities")
+    (version "0.7.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "powerutilities" version))
+       (sha256
+        (base32 "06lvjpl9wrcw9jcbnyj5s5c6f39ji69hpzlqi751nqr10314w0ia"))))
+    (properties `((upstream-name . "powerutilities")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang
+                             r-retrodesign
+                             r-reformulas
+                             r-pbkrtest
+                             r-glmmtmb
+                             r-emmeans
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/SimonShamusRiley/powerutilities/tree/main")
+    (synopsis "Power Analysis for Linear and Generalized Linear Mixed Models")
+    (description
+     "Prospective power analysis and design planning using the \"plug-in\" approach
+described by Piepho et al. (2022) <doi:10.1017/S0021859622000466> and Stroup,
+Ptukhina and Garai (2024) <doi:10.1201/9780429092060-24>.  Expected treatment
+means and the proposed experimental design are encoded in an artificial data
+set, and a model is \"fit\" to it with random effect variances, correlations and
+residual dispersion fixed at user-specified values rather than being estimated.
+The resulting standard errors are used to compute the power of F-tests and
+user-defined contrasts, as well as Type S (sign) and Type M (magnitude) error
+rates (Gelman and Carlin, 2014 <doi:10.1177/1745691614551642>).  Models are fit
+with @code{glmmTMB}', so the approach accommodates non-normal responses,
+heteroscedasticity, nested and crossed random effects, correlated random slopes,
+and structured covariances such as AR(1) and spatial correlation.  Helper
+functions convert standard deviations and correlations into the internal
+parameterization of @code{glmmTMB} and report the order in which random effect
+parameters must be supplied.  Denominator degrees of freedom can be computed by
+the Kenward-Roger, residual or asymptotic methods (or can be specified by
+users), and contrasts are specified through emmeans'.  Vignettes cover estimated
+marginal means, contrast specification, and worked examples for common
+agricultural designs.")
+    (license license:bsd-3)))
+
 (define-public r-powertost
   (package
     (name "r-powertost")
@@ -18861,6 +19002,35 @@ evaluation on ordinal data systems.  ANNALS OF OPERATIONS RESEARCH
 responses under product (consensus) or prioritized order.  Two-sample tests and
 multiplicative regression models are implemented (Mao, 2024, under revision).")
     (license (license:fsdg-compatible "CC BY 4.0"))))
+
+(define-public r-posc
+  (package
+    (name "r-posc")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "posc" version))
+       (sha256
+        (base32 "0cy2wsqayvnznwsr5g8gkfrj9wsss1afvrx6v655qvibmiv8abqp"))))
+    (properties `((upstream-name . "posc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2))
+    (home-page "https://matthewbjane.com/posc/")
+    (synopsis "Probability of Outcome Superiority Curves")
+    (description
+     "Computes, plots and compares probability of outcome superiority curves (POSCs).
+For two people who differ by a given amount on a continuous predictor, a POSC
+gives the probability that the person with the higher predictor score also has
+the higher outcome, a probabilistic and decision-oriented alternative to
+reporting a correlation coefficient.  Curves can be computed from a correlation
+under bivariate normality, from a correlation matrix for an optimally weighted
+composite of predictors, from a fitted linear model, or estimated directly from
+raw data with a flexible spline model and bootstrap confidence bands.")
+    (license license:expat)))
 
 (define-public r-portvine
   (package
@@ -32167,19 +32337,20 @@ Douglas and Bromham (2026) <doi:10.64898/2026.08.13.744736> for further details.
 (define-public r-phylotypr
   (package
     (name "r-phylotypr")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phylotypr" version))
        (sha256
-        (base32 "14d1y30cgfkmip0v29y1bn87q7b8dbq57z1pd31rkqhk4p1wlzdq"))))
+        (base32 "0yy0glb5k6861lkqk1jfcv2vwisr5696ja4phn5228l8yy55gd4f"))))
     (properties `((upstream-name . "phylotypr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringi r-rfast r-readr r-rcpp))
+    (propagated-inputs (list r-stringi r-readr r-rcppthread r-rcpp
+                             r-parallelly))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mothur/phylotypr")
     (synopsis "Classifying DNA Sequences to Taxonomic Groupings")
@@ -32242,13 +32413,13 @@ trees in NEXUS and Newick formats, while preserving annotations.")
 (define-public r-phylospatial
   (package
     (name "r-phylospatial")
-    (version "1.5.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phylospatial" version))
        (sha256
-        (base32 "0yp6zwq27b9khmnw805nsxsnvxq38vcvgfyhgcr6cabxrmjihxa5"))))
+        (base32 "00w6n0s74saa0xzmx8cbkc1qdj19kda259cdf1cf65nqvywll4ks"))))
     (properties `((upstream-name . "phylospatial")))
     (build-system r-build-system)
     (arguments
@@ -45075,13 +45246,13 @@ endpoints require the use of an API key which can be obtained at
 (define-public r-pathling
   (package
     (name "r-pathling")
-    (version "9.9.0")
+    (version "10.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pathling" version))
        (sha256
-        (base32 "18548srfgp2vjy15d94y03l56d8rw3gh9g65g5kf7cskjyxdmxv9"))))
+        (base32 "0p1sjqg8fwy7gg6zwx7zp3sy13sc7axg1axj505ihkqinf3ijfl2"))))
     (properties `((upstream-name . "pathling")))
     (build-system r-build-system)
     (arguments
@@ -49067,13 +49238,13 @@ ETRmax, Ik etc.  enables fast and reliable further processing of the data.")
 (define-public r-palsr
   (package
     (name "r-palsr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "palsr" version))
        (sha256
-        (base32 "092qzshga90sdf649a5xjb4a7c00lwmg02bjv4hkc4g9w5kmaszv"))))
+        (base32 "0ay4mzljhp8a09ndddchajjpsamyrix4a9bh2wvjw6pwm2l4mhk1"))))
     (properties `((upstream-name . "palsr")))
     (build-system r-build-system)
     (arguments

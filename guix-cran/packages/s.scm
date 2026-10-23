@@ -3198,13 +3198,13 @@ applied survey research.")
 (define-public r-svyroc
   (package
     (name "r-svyroc")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "svyROC" version))
        (sha256
-        (base32 "0kr7r17zx750f8ynqfl1fmg6a0q24gijd6vzav8891wggs88zian"))))
+        (base32 "1yq8vm0lbc2q90lj98a4s29w2zwv0fz05l6zi7z616wc9rz6vfnx"))))
     (properties `((upstream-name . "svyROC")))
     (build-system r-build-system)
     (arguments
@@ -5526,13 +5526,13 @@ Churpek M. M., Zeng D., and Fine J. P. (2015)
 (define-public r-survlab
   (package
     (name "r-survlab")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "survlab" version))
        (sha256
-        (base32 "18d2yxclf7wb99j9p0rkzvr12za1vkmddl2ni9hh1c660l0xrdk9"))))
+        (base32 "0q4q266nd85phi27zfgi4x0373wwvmrdp9l1w6nwqylnnhyx3f2p"))))
     (properties `((upstream-name . "survlab")))
     (build-system r-build-system)
     (arguments
@@ -6174,6 +6174,39 @@ probabilistic sensitivity analysis and can be used to export the output to an
 Excel file (e.g. for a Markov model, as often done by modellers and
 practitioners). <doi:10.18637/jss.v095.i14>.")
     (license license:gpl3+)))
+
+(define-public r-survhc
+  (package
+    (name "r-survhc")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "survHC" version))
+       (sha256
+        (base32 "1b2qgwc56w30gjvr2fnx02mkka0vrwmn1b7fk8accyv9abilqx2k"))))
+    (properties `((upstream-name . "survHC")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page
+     "https://github.com/alonkipnis/lifelines-hc/tree/main/R-package/survHC")
+    (synopsis "Higher Criticism Tests for Non-Proportional Hazard Deviations")
+    (description
+     "This package implements omnibus tests for comparing two right-censored survival
+samples that are powerful against sparse departures from equal hazards, where
+the hazard difference is concentrated in a small and a priori unknown subset of
+the follow-up.  Exact hypergeometric p-values are computed for each time
+interval and aggregated with the Higher Criticism statistic of Donoho and Jin
+(2004) <doi:10.1214/009053604000000265>, or alternatively with the Berk-Jones,
+Fisher or minimum-p statistics.  Global p-values are obtained by permuting group
+labels, and the intervals driving a detection can be recovered for diagnostic
+plotting.  Tests accept either two samples as vectors or the usual survival
+formula.  The method is described in Kipnis, Galili and Yakhini (2026)
+<doi:10.1093/biomet/asaf075>, and the companion application note is Kipnis,
+Galili and Yakhini (2026) <doi:10.48550/@code{arXiv.2610.07268>}.")
+    (license license:expat)))
 
 (define-public r-survgme
   (package
@@ -9126,6 +9159,33 @@ managed by Oak Ridge Associated Universities (ORAU) under DOE contract number
 DE-SC0014664. [1] Wang, M. et al, 2018. <doi:10.1109/PVSC.2018.8547772>. [2]
 Walters et al, 2018 <doi:10.1109/PVSC.2018.8548187>. [3] Guo, S. et al, 2016.
 <doi:10.1117/12.2236939>.")
+    (license license:bsd-3)))
+
+(define-public r-sundials
+  (package
+    (name "r-sundials")
+    (version "7.9.0-1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sundials" version))
+       (sha256
+        (base32 "1avs07almgavrd6im0xkp5ikva4p4a8nn4ra2aag38jjn18bs9ns"))))
+    (properties `((upstream-name . "sundials")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/Konrad1991/sundials")
+    (synopsis "Vendored 'SUNDIALS' Solver Suite for Linking by Other Packages")
+    (description
+     "Bundles the pure-C part of the SUNDIALS suite (CVODE, CVODES, ARKODE, IDA, IDAS
+and KINSOL with the serial vector and the dense, band and iterative linear
+solvers) and builds it into a static library.  Other packages use it by adding
+sundials to @code{LinkingTo} for the headers and calling
+@code{sundials::LdFlags()} from their Makevars to link the library.  No
+Fortran', MPI', GPU or external third-party-library modules are included.
+SUNDIALS is described in Hindmarsh et al. (2005) <doi:10.1145/1089014.1089020>.")
     (license license:bsd-3)))
 
 (define-public r-sundialr
@@ -14905,13 +14965,13 @@ package at a copy you already have with the STILES_LIB environment variable.")
 (define-public r-stihc
   (package
     (name "r-stihc")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stIHC" version))
        (sha256
-        (base32 "04wqz8j4g2hyz3i3dfqf52j6cayqaj7cl3mi5wsb8mzvb7kw0jh0"))))
+        (base32 "0ip886r5b0pn5vfq61awx8m2vcvbi35rp6kyvj9pqbjhvhs4n725"))))
     (properties `((upstream-name . "stIHC")))
     (build-system r-build-system)
     (arguments
@@ -19471,13 +19531,13 @@ linkage workflow.  Part of the aviary public health surveillance ecosystem.")
 (define-public r-stargazer2
   (package
     (name "r-stargazer2")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stargazer2" version))
        (sha256
-        (base32 "0hdwb2w473vr8smcqqf6awn88pmlbcqj6v61kh99xypnjzgb61n5"))))
+        (base32 "1qhj4ddf9rj76xlfs546fpkahj399qwakhjdg7q0zfc1wy60bcbw"))))
     (properties `((upstream-name . "stargazer2")))
     (build-system r-build-system)
     (arguments
@@ -21062,6 +21122,35 @@ non-inferiority of vaccines, the approach is based on Fleming, Powers, and Huang
 on Sobel and Huyett (1957) <doi:10.1002/j.1538-7305.1957.tb02411.x> and
 Bechhofer, Santner, and Goldsman (1995, ISBN:978-0-471-57427-9).")
     (license license:agpl3+)))
+
+(define-public r-ssurvdr
+  (package
+    (name "r-ssurvdr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ssurvdr" version))
+       (sha256
+        (base32 "1p1kw3v8d17b3kfywyi7myhbgr2zmzw850r07h1z84qgs6spavv8"))))
+    (properties `((upstream-name . "ssurvdr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival r-mass))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ilovemaths/ssurvdr")
+    (synopsis
+     "Sparse Survival Dimension Reduction for High-Dimensional Censored Data")
+    (description
+     "This package implements sparse survival sufficient dimension reduction methods
+for high-dimensional censored data, including covariance-stabilised SAVE,
+Maximum Entropy Covariance estimation, information-complexity-guided variable
+weighting, dual-space high-dimensional SAVE computation, row-wise
+post-estimation sparsification paths, and Cox proportional hazards model
+selection.")
+    (license license:expat)))
 
 (define-public r-sstvars
   (package
@@ -25844,13 +25933,13 @@ Statistical Association, 109:505, 11-23, <doi:10.1080/01621459.2013.870904>.")
 (define-public r-spower
   (package
     (name "r-spower")
-    (version "0.7")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Spower" version))
        (sha256
-        (base32 "0i6yjl7cgp4pidxddprwdqw4h1cj50bik7cm55pfc3gzr6mx5d5i"))))
+        (base32 "1ri16jbxvmb6fm5nbm1avaxppy11d3dfnwaajna3xi8may0118s6"))))
     (properties `((upstream-name . "Spower")))
     (build-system r-build-system)
     (arguments
@@ -28352,6 +28441,49 @@ models.  Uses a generalized elastic net for variable selection.")
 proportion of coarse vote-shares in the observed data relative to the null
 hypothesis of no fraud.")
     (license license:gpl2+)))
+
+(define-public r-spifa
+  (package
+    (name "r-spifa")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spifa" version))
+       (sha256
+        (base32 "0pqdhkl9228pdrv2g2hi1rnixv7ljfa1rxpam4hsggan4ylrpiql"))))
+    (properties `((upstream-name . "spifa")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-sf
+                             r-rcpptn
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-posterior
+                             r-patchwork
+                             r-ggridges
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ErickChacon/spifa")
+    (synopsis "Bayesian Spatial Item Factor Analysis")
+    (description
+     "Fits spatial item factor analysis models for binary responses, following
+ChacÃ³n-MontalvÃ¡n, E. A., Parry, L., Giorgi, E., Torres, P., Orellana, J. D.
+Y., Moraga, P., and Taylor, B. M. (2025) <doi:10.1214/25-AOAS2072>, using full
+Bayesian inference via adaptive Metropolis-Hastings within Gibbs sampling and
+auxiliary variables with a probit link function.  The latent factors are
+modelled as the sum of a predictor effect, a multivariate Gaussian process
+capturing spatial dependence, and a multivariate non-spatial term, allowing
+users to fit and predict spatially-referenced constructs such as food insecurity
+or socioeconomic indices.  Standard exploratory and confirmatory item factor
+analysis are supported as particular cases, simply by dropping the spatial
+structure.")
+    (license license:gpl3)))
 
 (define-public r-spidr
   (package
@@ -38883,6 +39015,61 @@ functions can be included.  This efforts to advance research in soil and water
 conservation, with fast and accurate results.")
     (license license:gpl3)))
 
+(define-public r-soilcnn
+  (package
+    (name "r-soilcnn")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "soilcnn" version))
+       (sha256
+        (base32 "1qwd1hjfxhvcg4agj60x0rys964nbrza9x16415gq4dy8hfhq5rh"))))
+    (properties `((upstream-name . "soilcnn")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-torch
+                             r-tibble
+                             r-terra
+                             r-readr
+                             r-purrr
+                             r-ps
+                             r-matrixstats
+                             r-janitor
+                             r-dplyr
+                             r-coro
+                             r-callr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/moquedace/soilcnn")
+    (synopsis "Convolutional Neural Networks for Digital Soil Mapping")
+    (description
+     "This package provides a framework, built on torch', for mapping a soil property
+from point observations and a stack of aligned rasters with a convolutional
+network that reads the neighbourhood of each point.  It extracts the patches;
+resamples by spatial blocks or by k-fold nearest neighbour distance matching,
+after Linnenbrink et al. (2024) <doi:10.5194/gmd-17-5897-2024>; tunes and
+selects under a noise floor and the one-standard-error rule; refits the selected
+configuration under several seeds; and predicts median, mean and interval maps
+over rasters of any extent.  The map's centre is the ensemble median over seeds;
+the mean corrects its back-transformation by smearing, after Duan (1983)
+<doi:10.1080/01621459.1983.10478017>.  The intervals are conformal, calibrated
+three ways and each checked on the test set: on the cross-validated residuals;
+on a calibration set held out of every fold, as split conformal, after Lei et
+al. (2018) <doi:10.1080/01621459.2017.1307116>; or with every fold's model at
+each pixel, as CV+, after Barber et al. (2021) <doi:10.1214/20-AOS1965> -- with
+points, or whole groups of them, weighing alike, after Dunn et al. (2023)
+<doi:10.1080/01621459.2022.2060112>.  The area of applicability of Meyer and
+Pebesma (2021) <doi:10.1111/2041-210X.13650> is mapped beside them.  What a
+model learned is read by permutation, by SHAP values from expected gradients,
+after Erion et al. (2021) <doi:10.1038/s42256-021-00343-w>, by SAGE, after
+Covert et al. (2020) <doi:10.48550/@code{arXiv.2004.00668>}, by accumulated
+local effects, after Apley and Zhu (2020) <doi:10.1111/rssb.12377>, and by
+refits without each variable.  Random forest and multilayer perceptron baselines
+run under the same folds.")
+    (license license:expat)))
+
 (define-public r-soilchemistry
   (package
     (name "r-soilchemistry")
@@ -40322,6 +40509,42 @@ genetic risk-allele score exact distributions are also possible to be estimated.
 10.1093/bioinformatics/btm025>.  This version includes internal copies of
 functions from the archived haplo.stats package to maintain functionality.")
     (license license:gpl2+)))
+
+(define-public r-snpassayr
+  (package
+    (name "r-snpassayr")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SNPAssayR" version))
+       (sha256
+        (base32 "179sddi02abg4hlg8c7kwglkillx0sir9ss7918kqr400ar7fwwk"))))
+    (properties `((upstream-name . "SNPAssayR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=SNPAssayR")
+    (synopsis "SNP Genotyping Assay Design and Visualization")
+    (description
+     "Designs cleaved amplified polymorphic sequence (CAPS), derived CAPS
+(@code{dCAPS}), conventional amplification refractory mutation system (ARMS) and
+tetra-primer ARMS assays for single-locus, biallelic single nucleotide
+polymorphisms.  Evaluates sequence-compatible primer binding, reconstructs ideal
+polymerase chain reaction products and computes theoretical complete restriction
+digestion and conditional genotype profiles.  Transparent preference ranking,
+scientific visualizations and reproducible exports retain assumptions, missing
+specificity evidence and bounded search limitations.  An optional offline shiny
+interface uses the independently available analysis functions.  Predictions do
+not establish experimental amplification, digestion efficiency or genome-wide
+specificity.  Implements perfect-match nearest-neighbor thermodynamics from
+@code{SantaLucia} (1998) <doi:10.1073/pnas.95.4.1460>, single-substitution
+site-creation @code{dCAPS} based on Neff et al. (1998)
+<doi:10.1046/j.1365-313X.1998.00124.x>, and conditional ARMS designs based on
+Newton et al. (1989) <doi:10.1093/nar/17.7.2503> and Ye et al. (2001)
+<doi:10.1093/nar/29.17.e88>.")
+    (license license:gpl3)))
 
 (define-public r-snpannotator
   (package
@@ -53465,13 +53688,13 @@ function, @code{SoftMax} preprocessing and inverse functions.")
 (define-public r-sigminer
   (package
     (name "r-sigminer")
-    (version "2.3.3")
+    (version "2.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sigminer" version))
        (sha256
-        (base32 "1d83bdl25d4s6npiiaqx05gb2hmj8kbpcbypnm51aqc3lmzww5md"))))
+        (base32 "1w6anpf31y1l6ca9rj7bsggph96yr9756pvp2f6ynq0922y150mh"))))
     (properties `((upstream-name . "sigminer")))
     (build-system r-build-system)
     (arguments
@@ -63519,13 +63742,13 @@ Schuurman, N.K. (2022) <doi: 10.31234/osf.io/ryg69>.")
 (define-public r-serrsbayes
   (package
     (name "r-serrsbayes")
-    (version "0.6-0")
+    (version "0.6-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "serrsBayes" version))
        (sha256
-        (base32 "0kdgyxlzxn1rifvkh62imm64i0smxjwl7jix7lgfvk6qqz1zlcl0"))))
+        (base32 "12i93y19v4iqgmb0jvqd0k4kby0016n8f416xgq369022q3r8fx5"))))
     (properties `((upstream-name . "serrsBayes")))
     (build-system r-build-system)
     (arguments
@@ -78653,6 +78876,38 @@ implementation of SBFC by Krakovna, Du and Liu (2015),
 <@code{arXiv:1506.02371>}.")
     (license license:gpl2+)))
 
+(define-public r-sbert
+  (package
+    (name "r-sbert")
+    (version "0.5.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sbert" version))
+       (sha256
+        (base32 "0d4zzy2vfsppbcdmsn4mdb54lrpfsfd1c8gqp171a0w1g949jxq7"))))
+    (properties `((upstream-name . "sbert")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tok r-onnxr r-digest))
+    (native-inputs (list r-knitr))
+    (home-page "https://sonsoles.me/sbert/")
+    (synopsis "Topic Modeling with 'Sentence-BERT' Embeddings")
+    (description
+     "Builds semantic topic models from Sentence-BERT embeddings (Reimers and
+Gurevych, 2019) <doi:10.18653/v1/D19-1410>.  Sentence embeddings are computed in
+several modes with models run on the Open Neural Network Exchange ('ONNX')
+Runtime, including multilingual and long-context encoders and a fast static
+model.  Topics are labeled with class-based term weighting that can be retuned
+without refitting.  Candidate topic counts and document granularities (whole
+documents, sentences, clauses, or phrases) can be compared side by side, and
+fitted models assign topics to new documents, give soft memberships and
+per-document topic mixtures.  The package offers coherence and diversity metrics
+and visualizations.")
+    (license license:expat)))
+
 (define-public r-sbdecomp
   (package
     (name "r-sbdecomp")
@@ -82223,13 +82478,13 @@ within the constrained space.")
 (define-public r-salso
   (package
     (name "r-salso")
-    (version "0.3.79")
+    (version "0.3.80")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "salso" version))
        (sha256
-        (base32 "1xc7drhj83bvhrz588r6319783qa5bm1q3gx29l6fmalz3xxnp89"))))
+        (base32 "1gh97whfk6iw7pw32p3b0szvz1ggz4scc5ys92jjrpqygvj9n49a"))))
     (properties `((upstream-name . "salso")))
     (build-system r-build-system)
     (arguments

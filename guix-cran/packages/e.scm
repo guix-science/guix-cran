@@ -668,13 +668,13 @@ Brain Foundation, and the American Academy of Neurology.")
 (define-public r-eyeprocess
   (package
     (name "r-eyeprocess")
-    (version "0.11.1")
+    (version "0.12.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eyeprocess" version))
        (sha256
-        (base32 "08581ns4rfxs8iihhiskklv02d4lvplivfi0g7qwcz1dr5wsk5xg"))))
+        (base32 "11sb76465al4ahxmv55728hlp7msi558bgd20zv7svlqjccsb65w"))))
     (properties `((upstream-name . "eyeprocess")))
     (build-system r-build-system)
     (arguments
@@ -710,9 +710,10 @@ reproducibility testing.  The measurement-intelligence programme adds
 probabilistic and compositional area of interest (AOI) analysis,
 measurement-uncertainty propagation, calibration and device-transportability
 audits, process reliability, phase-amplitude pupil registration,
-informative-missingness sensitivity, temporal and spatial process models,
-item-bank decision optimization, fairness monitoring, conditional process
-reference distributions, and evidence-provenance graphs.")
+informative-missingness sensitivity, right-censored gaze-latency survival
+analysis, temporal and spatial process models, item-bank decision optimization,
+fairness monitoring, conditional process reference distributions, and
+evidence-provenance graphs.")
     (license license:expat)))
 
 (define-public r-eyelinkreader
@@ -4583,6 +4584,45 @@ two survival curves.  Exact confidence interval for the hazard ratio can also be
 generated for the Cox model.")
     (license license:gpl3)))
 
+(define-public r-exactcond
+  (package
+    (name "r-exactcond")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "exactcond" version))
+       (sha256
+        (base32 "0kinm9gxb70ci7h7wadgddkl515qzrf6a5inbqwg657chn0aa9a4"))))
+    (properties `((upstream-name . "exactcond")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/mtloots/exactcond")
+    (synopsis
+     "Exact Conditional Reference Distributions for Tables and Selected Linear Models")
+    (description
+     "Reference distributions that are exact at every sample size, obtained by
+conditioning on a statistic sufficient for the nuisance parameter rather than by
+appealing to an asymptotic approximation.  Two forms of conditioning are
+supplied.  For a two-way table the row and column totals are sufficient for the
+marginal parameters, so conditioning on both margins leaves the Fisher-Yates
+law, sampled here exactly by random permutation of the column labels; statistics
+include Goodman's linear-by-linear association and, for nominal rows against an
+ordinal column, the dispersion of the row mean scores, whose components are the
+group contrasts themselves.  A two-table form conditions further on the total
+score to cancel a common association parameter, giving a nuisance-free test that
+two tables share it.  For a linear model under a null in which the tested
+structure is absent, a statistic invariant to the coefficients and the error
+scale depends on the data only through the residual direction, which is uniform
+on the sphere of the residual space; the reference stays exact when the
+statistic is maximised over candidate structures, and so remains valid after a
+spatial weight matrix has been chosen by fit.  Every replicate draws from its
+own stream, so results do not depend on the thread count.  The same C sources
+back the Python package exactcond'.")
+    (license license:gpl3)))
+
 (define-public r-exactcione
   (package
     (name "r-exactcione")
@@ -6075,6 +6115,61 @@ region.  Allows instrumental variables estimation following Freyaldenhoven et
 al. (2019) <doi:10.1257/aer.20180609>.")
     (license license:expat)))
 
+(define-public r-eventstudy
+  (package
+    (name "r-eventstudy")
+    (version "0.66.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EventStudy" version))
+       (sha256
+        (base32 "1fmbl3hffvj02ddmv402divsyyqyrvib9grhbj8b1kwc9injs216"))))
+    (properties `((upstream-name . "EventStudy")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-r6
+                             r-purrr
+                             r-plotly
+                             r-ggplot2
+                             r-dplyr
+                             r-distributional))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/sipemu/eventstudy")
+    (synopsis "Event Study Analysis")
+    (description
+     "Financial event study analysis.  Implements the classical event study
+methodology of @code{MacKinlay} (1997) <https://www.jstor.org/stable/2729691>
+with multiple return models: market model, market adjusted, comparison period
+mean adjusted, Fama and French three-factor (1993)
+<doi:10.1016/0304-405X(93)90023-5> and five-factor (2015)
+<doi:10.1016/j.jfineco.2014.10.010>, Carhart (1997) four-factor
+<doi:10.1111/j.1540-6261.1997.tb03808.x>, generalized autoregressive conditional
+heteroskedasticity (GARCH; Bollerslev, 1986) <doi:10.1016/0304-4076(86)90063-1>,
+rolling window, and dynamic conditional correlation GARCH (DCC-GARCH; Engle,
+2002) <doi:10.1198/073500102288618487>.  Provides parametric and non-parametric
+test statistics, including the standardized cross-sectional test of Boehmer,
+Musumeci and Poulsen (1991) <doi:10.1016/0304-405X(91)90032-F> and its
+cross-correlation adjustment by Kolari and Pynnonen (2010)
+<doi:10.1093/rfs/hhq072>; buy-and-hold abnormal returns (Barber and Lyon, 1997)
+<doi:10.1016/S0304-405X(96)00890-2>; volume and volatility event studies;
+cross-sectional regression; intraday event studies; panel
+difference-in-differences event studies with the estimators of Callaway and
+Sant'Anna (2021) <doi:10.1016/j.jeconom.2020.12.001>, de Chaisemartin and
+D'Haultfoeuille (2020) <doi:10.1257/aer.20181169>, and Borusyak, Jaravel and
+Spiess (2024) <doi:10.1093/restud/rdae007>; synthetic control methods (Abadie,
+Diamond and Hainmueller, 2010) <doi:10.1198/jasa.2009.ap08746>; wild bootstrap
+inference; multiple testing corrections; power analysis via simulation; data
+download helpers; automated reporting; and visualization tools.  Results can be
+exported to comma-separated values (CSV), Excel', or @code{LaTeX}'.")
+    (license license:agpl3)))
+
 (define-public r-eventstream
   (package
     (name "r-eventstream")
@@ -6502,43 +6597,6 @@ GonzÃ¡lez-RodrÃ­guez et at (2023) <https://inria.hal.science/hal-04362876v1>
 (VCG) using energy distance-based covariate balancing.  The package offers
 visualization tools to assess covariate balance and includes a permutation test
 to evaluate the statistical significance of observed deviations.")
-    (license license:expat)))
-
-(define-public r-evbsreg
-  (package
-    (name "r-evbsreg")
-    (version "1.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "evbsreg" version))
-       (sha256
-        (base32 "0xs82kzqbm3hxp5ywh4f3n91s7gg6x7xjpwlnzj47810cxn8lrkd"))))
-    (properties `((upstream-name . "evbsreg")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-spatialextremes r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/Raydonal/evbsreg")
-    (synopsis
-     "Local Influence Diagnostics for the Extreme-Value Birnbaum-Saunders Regression Model")
-    (description
-     "This package implements local influence diagnostics for the Extreme-Value
-Birnbaum-Saunders (EVBS) regression model: joint maximum likelihood estimation,
-conformal normal curvature diagnostics under three perturbation schemes
-(case-weight, response variable, and explanatory variable), randomized quantile
-residuals with simulation envelope, Monte Carlo simulation utilities, and
-publication-quality density and diagnostic plots.  Version 1.1.0 adds the
-density, distribution and quantile functions, the finite upper endpoint, return
-levels and expected shortfall, block bootstrap standard errors for serially
-dependent series, local influence diagnostics for the generalized extreme-value
-regression model, and a GAMLSS family allowing the tail-shape parameter to
-depend on covariates.  Version 1.2.0 adds a prospective control chart for
-endpoint identifiability.  The methods are described in Ospina, Lima, Barros,
-and Macedo (2026, submitted) and are applied to monthly maximum wind gust data
-from Itajai, Brazil.")
     (license license:expat)))
 
 (define-public r-evapotranspiration
@@ -7174,13 +7232,13 @@ function).")
 (define-public r-eurlex
   (package
     (name "r-eurlex")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eurlex" version))
        (sha256
-        (base32 "0q8wh349qil6r012slipdaf64hvl5js27k26ydmd5qpajxhhalm8"))))
+        (base32 "12k1xg00jk8aapf031202sp5vyjys5z7qj2gzdj4xi64ccy4c0gw"))))
     (properties `((upstream-name . "eurlex")))
     (build-system r-build-system)
     (arguments
@@ -8062,6 +8120,64 @@ descriptive statistics, with or without weighting the data.")
 Organization (FAO) Penman-Monteith method included as the standard reference for
 model comparison.  Includes statistical evaluation metrics, such as
 Nash-Sutcliffe efficiency (NSE), root mean square error (RMSE), mean absolute
+error (MAE), and mean bias error (MBE), and visualization tools (scatter plots
+and Taylor diagrams).  Based on Singh et al. (2026)
+<doi:10.1016/j.ejrh.2026.103925>.")
+    (license license:gpl3+)))
+
+(define-public r-et0radmodels
+  (package
+    (name "r-et0radmodels")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ET0RadModels" version))
+       (sha256
+        (base32 "1s4c31w48z92j1spa0krfcjyc6ymck0cl86a0h167spgsqvcm7bl"))))
+    (properties `((upstream-name . "ET0RadModels")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/samirigfri/ET0RadModels")
+    (synopsis "Evapotranspiration Estimation Using Radiation-Based Models")
+    (description
+     "This package provides functions to estimate daily reference evapotranspiration
+(ET0) using 10 radiation-based empirical models, with the Food and Agriculture
+Organization (FAO) Penman-Monteith method included as the standard reference for
+model comparison.  Includes statistical evaluation metrics, such as
+Nash-Sutcliffe efficiency (NSE), root mean square error (RMSE), mean absolute
+error (MAE), and mean bias error (MBE), and visualization tools (scatter plots
+and Taylor diagrams).  Based on Singh et al. (2026)
+<doi:10.1016/j.ejrh.2026.103925>.")
+    (license license:gpl3+)))
+
+(define-public r-et0massmodels
+  (package
+    (name "r-et0massmodels")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ET0MassModels" version))
+       (sha256
+        (base32 "1swr79nc66qmg7kirkhlsqr6n5ci3fysw6pyn762f8qw4dpcd13n"))))
+    (properties `((upstream-name . "ET0MassModels")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/samirigfri/ET0MassModels")
+    (synopsis "Evapotranspiration Estimation Using Mass Transfer-Based Models")
+    (description
+     "This package provides functions to estimate daily reference evapotranspiration
+(ET0) using 10 mass transfer-based empirical models, with the Food and
+Agriculture Organization (FAO) Penman-Monteith method included as the standard
+reference for model comparison.  Includes statistical evaluation metrics, such
+as Nash-Sutcliffe efficiency (NSE), root mean square error (RMSE), mean absolute
 error (MAE), and mean bias error (MBE), and visualization tools (scatter plots
 and Taylor diagrams).  Based on Singh et al. (2026)
 <doi:10.1016/j.ejrh.2026.103925>.")
@@ -11240,13 +11356,13 @@ corresponding @code{LaTeX} code for the model.")
 (define-public r-equatemultiple
   (package
     (name "r-equatemultiple")
-    (version "1.1.3")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "equateMultiple" version))
        (sha256
-        (base32 "0xmr43wgp8xi5ikh1w0lpaf0l7bigc0bhyasy43yik0d2s1jirj3"))))
+        (base32 "1mr80m2lcx95gxsk8lrbssb17k2cmshdya1lssnwqw8kbf6q8yl3"))))
     (properties `((upstream-name . "equateMultiple")))
     (build-system r-build-system)
     (arguments
@@ -11270,7 +11386,7 @@ Battauz (2025) <doi:10.18637/jss.v115.i11> for a detailed description of the
 package.  See Battauz M. (2017) <doi:10.1007/s11336-016-9517-x>, Battauz and
 Leoncio (2023) <doi:10.1177/01466216231151702> and Haberman S. J. (2009)
 <doi:10.1002/j.2333-8504.2009.tb02197.x>) for the methods to link multiple test
-forms.")
+forms.  See <doi:10.1111/bmsp.70023> for DIF detection across multiple groups.")
     (license license:gpl3)))
 
 (define-public r-equateirt
@@ -11701,13 +11817,13 @@ polynomials).")
 (define-public r-eq5dsuite
   (package
     (name "r-eq5dsuite")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eq5dsuite" version))
        (sha256
-        (base32 "1d6bd490rbkd0780bwja8n39q241rzvi89snsmldfqczvsj3injr"))))
+        (base32 "0k24ixmbikcgl3pz5zkp4dnsmzvizswj8f0p73pchq599q7m90cy"))))
     (properties `((upstream-name . "eq5dsuite")))
     (build-system r-build-system)
     (arguments
@@ -11721,10 +11837,10 @@ polynomials).")
                              r-ggplot2
                              r-curl))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=eq5dsuite")
-    (synopsis "Handling and Analysing EQ-5d Data")
+    (home-page "https://github.com/MathsInHealth/eq5dsuite-r")
+    (synopsis "Handling and Analysing 'EQ-5D' Data")
     (description
-     "The EQ-5D is a widely-used standarized instrument for measuring Health Related
+     "The EQ-5D is a widely-used standardised instrument for measuring Health Related
 Quality Of Life (HRQOL), developed by the @code{EuroQol} group
 <https://euroqol.org/>.  It assesses five dimensions; mobility, self-care, usual
 activities, pain/discomfort, and anxiety/depression, using either a three-level
@@ -11738,7 +11854,7 @@ using the original crosswalk developed by van Hout et al. (2012)
 values), or the recently developed reverse crosswalk by van Hout et al. (2021)
 <doi:10.1016/j.jval.2021.03.009> (mapping EQ-5D-3L responses to EQ-5D-5L index
 values).  Users are allowed to add and/or remove user-defined value sets.
-Additionally, the package provides tools to analyze EQ-5D data according to the
+Additionally, the package provides tools to analyse EQ-5D data according to the
 recommended guidelines outlined in \"Methods for Analyzing and Reporting EQ-5D
 data\" by Devlin et al. (2020) <doi:10.1007/978-3-030-47622-9>.")
     (license license:gpl2+)))
@@ -15269,6 +15385,50 @@ your environment, and paths to consistently set path objects across projects for
 input and output.  Both are implemented using a configuration file to allow
 easy, custom configurations that can be used for multiple or all projects.")
     (license license:asl2.0)))
+
+(define-public r-envrtype
+  (package
+    (name "r-envrtype")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EnvRtype" version))
+       (sha256
+        (base32 "0d7rg92z5fyiaq46gqa4wcn6hpm8vf8rjlsxydr1l3y798nga4gg"))))
+    (properties `((upstream-name . "EnvRtype")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-reshape2 r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/gcostaneto/EnvRtype")
+    (synopsis "Envirotyping for Quantitative Genetics and Plant Breeding")
+    (description
+     "An enviromics toolkit for genotype-by-environment analysis and
+envirotype-informed genomic prediction.  Collects worldwide daily and hourly
+weather from NASA POWER', soil profiles from @code{SoilGrids}', elevation and
+bioclimatic layers from @code{WorldClim}', agro-ecological zones from FAO GAEZ',
+and downscaled CMIP6 climate scenarios, with checkpointed retrieval that can
+resume after an interrupted run.  Derives agro-meteorological parameters (solar
+radiation, evapotranspiration, thermal time, atmospheric demand), runs a FAO-56
+single crop coefficient soil water balance, and maps daily weather onto crop
+developmental stages.  Builds environmental covariable matrices, envirotype
+typologies and frequency matrices, mega-environment clusters, historical risk
+profiles and target population of environments weights.  Reduces
+interval-resolved envirotypes by principal component analysis, delineates soil
+zones with Gaussian mixture models, and constructs linear, Gaussian and
+arc-cosine environmental relatedness kernels.  Fits Bayesian reaction-norm
+kernel models and predicts trained genotypes at untested locations and planting
+dates, with coverage diagnostics, spatial mapping and planting-window
+optimisation.  Simulation functions generate multi-environment trials and
+enviromes with known architecture for power analysis.  Methods are described in
+Costa-Neto, Galli, Carvalho, Crossa and Fritsche-Neto (2021)
+<doi:10.1093/g3journal/jkab040>, and build on the Bayesian
+genotype-by-environment kernel sampler of Granato, Cuevas, Luna-Vazquez, Crossa,
+Montesinos-Lopez, Burgueno and Fritsche-Neto (2018) <doi:10.1534/g3.118.200435>.")
+    (license license:gpl3)))
 
 (define-public r-envnj
   (package
@@ -21515,13 +21675,13 @@ the prototyping of packages.")
 (define-public r-ehdprep
   (package
     (name "r-ehdprep")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eHDPrep" version))
        (sha256
-        (base32 "1yk1ci5739a0g7l8fjzrfqid3dd5zpc4g5600phfxznand5hapj5"))))
+        (base32 "1yh6dy42yc0ihprawak4lg0ydkc8v7q4s35rlhzzv1x93g4miga8"))))
     (properties `((upstream-name . "eHDPrep")))
     (build-system r-build-system)
     (arguments
@@ -22071,13 +22231,13 @@ activities.")
 (define-public r-efred
   (package
     (name "r-efred")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eFRED" version))
        (sha256
-        (base32 "1sqhcwxbi2gxgznz0z3iyvllalq9qwm18bc60dr6y2wvcilagsiy"))))
+        (base32 "10yz76d5s0ghj8im8j9cwrsycbjzlhjqk3yvzscc7jmhj5zkxrs0"))))
     (properties `((upstream-name . "eFRED")))
     (build-system r-build-system)
     (arguments
@@ -24461,6 +24621,35 @@ across U.S. school districts.")
 R. Both EDF and EDF+ files are supported.  Discontinuous EDF+ files are not yet
 supported.")
     (license license:expat)))
+
+(define-public r-edetect
+  (package
+    (name "r-edetect")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "edetect" version))
+       (sha256
+        (base32 "0jmv990xfdypl6j83y0ajapkjpqsx7hrm8lcxkfah06inav6l0xk"))))
+    (properties `((upstream-name . "edetect")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-rlang r-ggplot2 r-generics r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://castlaboratory.github.io/edetect/")
+    (synopsis "Anytime-Valid Control Charts with E-Detectors")
+    (description
+     "Sequential change detection for process monitoring with e-detectors (Shin,
+Ramdas and Rinaldo, 2024, <doi:10.51387/23-NEJSDS51>): nonparametric,
+anytime-valid analogues of the CUSUM and Shiryaev-Roberts charts whose average
+run length to a false alarm is guaranteed for every distribution in a declared
+pre-change class (bounded, sub-Gaussian, Bernoulli or Poisson observations).
+Phase I/Phase II workflow, individual, p, c, u and regression charts, run-length
+simulation and auditable alarm reports.")
+    (license license:gpl3+)))
 
 (define-public r-edecob
   (package
@@ -26889,13 +27078,13 @@ described in Naderi et al. (2025) <doi:10.48550/@code{arXiv.2510.20617>}.")
 (define-public r-eclosure
   (package
     (name "r-eclosure")
-    (version "0.9.6")
+    (version "0.9.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eClosure" version))
        (sha256
-        (base32 "1ipgcp5x510cn97rcbpnclkj4zzzlb37rf5wyirfbdf1dvd1zc31"))))
+        (base32 "0f2w3p9a8cl0fbgmmzffvpdvbwz16vrjg9jz77bzl6fwfh9gp1qp"))))
     (properties `((upstream-name . "eClosure")))
     (build-system r-build-system)
     (arguments
@@ -26907,7 +27096,7 @@ described in Naderi et al. (2025) <doi:10.48550/@code{arXiv.2510.20617>}.")
     (description
      "This package implements several methods for False Discovery Rate control based
 on the e-Closure Principle, in particular the Closed Benjamini-Hochberg, Closed
-e-Benjamini-Hochberg and Closed Benjamini-Yekutieli procedures.")
+e-Benjamini-Hochberg, Closed Su and Closed Benjamini-Yekutieli procedures.")
     (license license:gpl3)))
 
 (define-public r-eclipseplot
@@ -27006,13 +27195,13 @@ event-study style for either individual periods or individual quantiles.")
 (define-public r-echos
   (package
     (name "r-echos")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "echos" version))
        (sha256
-        (base32 "00hwv3dy0z8fv9fkjz1ppjp1nji92ryrz66crspwmzb5napzs1yh"))))
+        (base32 "156f6n9sg2vnshk5jxm9c2kl0sy5x45z6v3z46j4ygwj97y350qy"))))
     (properties `((upstream-name . "echos")))
     (build-system r-build-system)
     (arguments

@@ -526,13 +526,13 @@ actions.")
 (define-public r-ivo-table
   (package
     (name "r-ivo-table")
-    (version "0.7.1")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ivo.table" version))
        (sha256
-        (base32 "0j3pmchcsin7wv83hr4r7lc3xrmnldfkchnpsdhgnml5mlcrmmcs"))))
+        (base32 "0djlagql89qkgr59vk2njmdha3858q5gk5vv6kz9dvvv9kdr1092"))))
     (properties `((upstream-name . "ivo.table")))
     (build-system r-build-system)
     (arguments
@@ -17420,27 +17420,29 @@ saved from @code{ImageJ} and write TIFF files than can be correctly read by
 (define-public r-ijse
   (package
     (name "r-ijse")
-    (version "0.1.2")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IJSE" version))
        (sha256
-        (base32 "1wz7rdnb1wr6pp17nx9rf9cp2ha6c593jj28i2a8g9fc4n88agkv"))))
+        (base32 "1ykkfnd51qrwm3ga60j0g2za861hna9nra53vyl05i1xy0q8jrks"))))
     (properties `((upstream-name . "IJSE")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-posterior r-brms))
+    (propagated-inputs (list r-posterior))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=IJSE")
     (synopsis "Infinitesimal Jackknife Standard Errors for 'brms' Models")
     (description
-     "This package provides a function to calculate infinite-jackknife-based standard
-errors for fixed effects parameters in brms models, handling both clustered and
-independent data.  References: Ji et al. (2024)
-<doi:10.48550/@code{arXiv.2407.09772>}; Giordano et al. (2024)
-<doi:10.48550/@code{arXiv.2305.06466>}.")
+     "Computes infinitesimal jackknife standard errors and covariance matrices for
+posterior expectations from brms models or matched posterior draws and pointwise
+log likelihoods.  Supports independent and clustered sampling units, transformed
+quantities, blockwise likelihood evaluation, and chain stability diagnostics.
+References: Ji et al. (2026) <doi:10.3102/10769986251379738>; Giordano and
+Broderick (2024) <doi:10.48550/@code{arXiv.2305.06466>}.")
     (license license:expat)))
 
 (define-public r-iivpredictor
@@ -18499,6 +18501,45 @@ scoring method to solve a quasi-likelihood equation.  See Guido Masarotto (2025)
 <doi:10.48550/@code{arXiv.2511.08180>} for the details of the algorithm and
 supporting results.")
     (license license:expat)))
+
+(define-public r-iffuzzystats
+  (package
+    (name "r-iffuzzystats")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IFFuzzyStats" version))
+       (sha256
+        (base32 "1dfa73c6znvw481xca7z9gfdg35y741h006shr0cpb8y36awp4p3"))))
+    (properties `((upstream-name . "IFFuzzyStats")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/MukulBijalwan/IFFuzzyStats")
+    (synopsis "Intuitionistic Fuzzy Statistics")
+    (description
+     "This package provides constructors and arithmetic for intuitionistic fuzzy
+values (intuitionistic fuzzy value, IFV) for intuitionistic fuzzy sets
+(Atanassov (1986) <doi:10.1016/S0165-0114(86)80034-3>), including aggregation
+operators of Xu (2007) <doi:10.1109/TFUZZ.2006.890678> and Xu and Yager (2006)
+<doi:10.1080/03081070600574353>: intuitionistic fuzzy weighted averaging (IFWA),
+intuitionistic fuzzy weighted geometric (IFWG), intuitionistic fuzzy ordered
+weighted averaging (IFOWA), intuitionistic fuzzy ordered weighted geometric
+(IFOWG), intuitionistic fuzzy hybrid averaging (IFHA), intuitionistic fuzzy
+hybrid geometric (IFHG), and Einstein operators; entropy (Szmidt and Kacprzyk
+(2000) <doi:10.1016/S0165-0114(98)00402-3>; Vlachos and Sergiadis (2007)
+<doi:10.1016/j.patrec.2006.07.004>) and distance and similarity measures,
+including Ye (2011) <doi:10.1016/j.mcm.2010.07.022> cosine similarity and
+Hamming, Euclidean and Hausdorff distances; intuitionistic fuzzy c-means and
+k-means clustering; approximate reasoning via compositional inference; and
+multi-criteria decision support via intuitionistic fuzzy Technique for Order of
+Preference by Similarity to Ideal Solution (IF-TOPSIS) (Boran et al. (2009)
+<doi:10.1016/j.eswa.2009.03.039>) and score ranking.  All computations use only
+base R with fully vectorised implementations.")
+    (license license:gpl3)))
 
 (define-public r-ife
   (package
@@ -22645,13 +22686,13 @@ to analyse the output and performance of models.")
 (define-public r-icarus
   (package
     (name "r-icarus")
-    (version "0.3.3")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "icarus" version))
        (sha256
-        (base32 "162ifi41z9gyi3dxq9f65clw5b93c062qjfckpsfvh8apszp5fcd"))))
+        (base32 "154g7p5bg952y59lb07qg1z26b4xh935m43swvr8xny4vcdl7pg2"))))
     (properties `((upstream-name . "icarus")))
     (build-system r-build-system)
     (arguments
@@ -24169,36 +24210,6 @@ can be applied to any black-box prediction model, and the null hypothesis of the
 test can be flexibly specified according to the research question of interest.
 Furthermore, the test is computationally fast to apply as the null distribution
 does not require resampling or refitting black-box prediction models.")
-    (license license:gpl3)))
-
-(define-public r-iadf
-  (package
-    (name "r-iadf")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "iadf" version))
-       (sha256
-        (base32 "1f2xlnnsy6cmn2lg18ibissczssvci00kvk3pxqzpva3mzykf4cz"))))
-    (properties `((upstream-name . "iadf")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-rlang
-                             r-manipulate
-                             r-dplyr
-                             r-dplr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/konradmayer/iadf")
-    (synopsis "Analysis of Intra Annual Density Fluctuations")
-    (description
-     "Calculate false ring proportions from data frames of intra annual density
-fluctuations.")
     (license license:gpl3)))
 
 (define-public r-iadapt

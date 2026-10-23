@@ -10,6 +10,7 @@
   #:use-module (gnu packages compression)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages gcc)
+  #:use-module (gnu packages python)
   #:use-module (gnu packages java)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages package-management)
@@ -17,7 +18,6 @@
   #:use-module (gnu packages tls)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages python)
   #:use-module (gnu packages duckdb)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages rust-apps)
@@ -1345,13 +1345,13 @@ information, documentation, and examples.  Data source: Haas Avocado Board
 (define-public r-avlm
   (package
     (name "r-avlm")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "avlm" version))
        (sha256
-        (base32 "000c2qlyrahqwg5kv19dzvzfm4xnlgmdyw7hb4qll94j2qvl5lc4"))))
+        (base32 "1vkqawz1lkdwcgq4nl9m56l75sq32vbp9s008jg2hmkinfphfiz0"))))
     (properties `((upstream-name . "avlm")))
     (build-system r-build-system)
     (arguments
@@ -1363,8 +1363,10 @@ information, documentation, and examples.  Data source: Haas Avocado Board
      "Anytime-valid inference for linear models, namely, sequential t-tests,
 sequential F-tests, and confidence sequences with time-uniform Type-I error and
 coverage guarantees.  This allows hypotheses to be continuously tested without
-sacrificing false positive guarantees.  It is based on the methods documented in
-Lindon et al. (2022) <doi:10.48550/@code{arXiv.2210.08589>}.")
+sacrificing false positive guarantees.  Heteroskedasticity-robust and
+cluster-robust versions are provided.  It is based on the methods documented in
+Lindon et al. (2026) <doi:10.1080/01621459.2026.2692052> and Lindon (2026)
+<doi:10.48550/@code{arXiv.2610.25613>}.")
     (license license:expat)))
 
 (define-public r-avirtualtwins
@@ -7034,22 +7036,23 @@ models; see Bischl et al. (2016) <doi:10.1016/j.artint.2016.04.003>.")
 (define-public r-asleep
   (package
     (name "r-asleep")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "asleep" version))
        (sha256
-        (base32 "0ld713w7if4b13yi8zkgyy0bgnivhlbj350x9lhfl2swcvxrz6bv"))))
+        (base32 "03fwmaggp3hv7klqc59665nsd8hf6gdwwxd80hmlcrrxxyb8fk15"))))
     (properties `((upstream-name . "asleep")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (inputs (list python))
     (propagated-inputs (list r-rlang
                              r-reticulate
                              r-readr
-                             r-lubridate
+                             r-dplyr
                              r-curl
                              r-assertthat))
     (home-page "https://github.com/jhuwit/asleep")
@@ -7322,13 +7325,13 @@ anthracnose in a lupin field.")
 (define-public r-asciisetupreader
   (package
     (name "r-asciisetupreader")
-    (version "2.6.0")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "asciiSetupReader" version))
        (sha256
-        (base32 "1j3xwzz9j2hk741hvk4k5bjh6dkpmn00bcdm433z703j5sd97aja"))))
+        (base32 "1zyd6grkk595l2ybkcivy0saw1yk1npnn5lgykwzsnn9pbv4khs6"))))
     (properties `((upstream-name . "asciiSetupReader")))
     (build-system r-build-system)
     (arguments
@@ -7342,7 +7345,7 @@ anthracnose in a lupin field.")
                              r-miniui
                              r-data-table))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/jacobkap/asciiSetupReader")
+    (home-page "https://jacobkap.github.io/asciiSetupReader/")
     (synopsis
      "Reads Fixed-Width ASCII Data Files (.txt or .dat) that Have Accompanying Setup Files (.sps or .sas)")
     (description
@@ -11250,6 +11253,60 @@ the API (<https://www.aquo.nl/index.php/Hoofdpagina>) to download domaintables
 of the Aquo Standard and use them in R.")
     (license license:expat)))
 
+(define-public r-aquats
+  (package
+    (name "r-aquats")
+    (version "1.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "aquats" version))
+       (sha256
+        (base32 "0r3q1wxb3pzwmxwkk0jsywrs2fw4bjhsnxps8lx6rf79m6ym46bq"))))
+    (properties `((upstream-name . "aquats")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vegan
+                             r-tidyr
+                             r-rlang
+                             r-rcolorbrewer
+                             r-multcomp
+                             r-mass
+                             r-ggrepel
+                             r-ggpubr
+                             r-ggplot2
+                             r-ggalluvial
+                             r-emmeans
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Ataher76/aquats")
+    (synopsis
+     "Robust Ecological and Fisheries Data Analysis and Visualization")
+    (description
+     "This package provides a comprehensive statistical and visualization toolkit
+tailored for observational data in fisheries science and aquatic ecology.
+Provides streamlined workflows for univariate and factorial analysis of variance
+(ANOVA), analysis of covariance (ANCOVA), multivariate analysis of variance
+(MANOVA), permutational multivariate analysis of variance (PERMANOVA),
+similarity percentages (SIMPER), generalized linear models, non-linear
+morphometric regressions, two-group hypothesis testing, and chi-square tests.
+Features multivariate ordination methods including non-metric multidimensional
+scaling (NMDS), principal component analysis (PCA), redundancy analysis (RDA),
+distance-based redundancy analysis (db-RDA), and hierarchical cluster
+dendrograms.  Computes alpha diversity metrics, species accumulation curves,
+water quality index (WQI) values, heavy metal ecotoxicological contamination
+indices, correlation heatmaps, and Mantel test network linkages.  Offers
+specialized environmental visualizations including Sankey diagrams, Likert
+plots, circular bar charts, and longitudinal time-series with uncertainty
+ribbons.  Methodological formulations for multivariate permutation tests follow
+Anderson (2001) <doi:10.1111/j.1442-9993.2001.01070.pp.x>.  Ecological community
+dissimilarity transformations follow Legendre and Gallagher (2001)
+<doi:10.1007/s004420100716>, and ecotoxicological contamination index models
+follow Tomlinson et al. (1980) <doi:10.1007/BF02414780>.")
+    (license license:expat)))
+
 (define-public r-aquaticlifehistory
   (package
     (name "r-aquaticlifehistory")
@@ -12283,6 +12340,33 @@ for each individual in accordance with the additive weighted sum of dosages
 model.  Methods are designed in reference to best practices described by
 Collister, Liu, and Clifton (2022) <doi:10.3389/fgene.2022.818574>.")
     (license license:gpl2)))
+
+(define-public r-applr
+  (package
+    (name "r-applr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Applr" version))
+       (sha256
+        (base32 "0g74l2qn4lsr7pmxv223rag8nylfkk3bn10pzcf8cncjjr3h1jjq"))))
+    (properties `((upstream-name . "Applr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-plotly r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://saundersg.github.io/Applr/")
+    (synopsis "Visualize and Explain Linear Models")
+    (description
+     "This package provides tools for visualizing and explaining linear models fit
+with @code{lm()}.  Draws 2D slices of higher-dimensional models in base graphics
+and as a ggplot2 layer, offers an interactive plotly 3D scatter with a fitted
+surface for two-predictor models, and renders model equations as plain text or
+@code{LaTeX}'.")
+    (license license:expat)))
 
 (define-public r-appliedpredictivemodeling
   (package
@@ -15000,6 +15084,34 @@ using rmarkdown and shiny packages.  Runtime examples are provided in the
 package function as well as at <https://tinyurl.com/ANOVA@code{StatsTool>}.")
     (license license:gpl2)))
 
+(define-public r-anothersas7bdat
+  (package
+    (name "r-anothersas7bdat")
+    (version "0.0.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "anotherSAS7bdat" version))
+       (sha256
+        (base32 "1ag9s2mkkqjff4hz54x3xh6bzs2vpk0iazz9rx6lsjvv889s6gqq"))))
+    (properties `((upstream-name . "anotherSAS7bdat")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-rcpp r-hms))
+    (home-page "https://github.com/Fred-Wu/anotherSAS7bdat")
+    (synopsis "Read 'SAS' Data in Chunks and Convert to 'Parquet'")
+    (description
+     "Reads SAS sas7bdat files through a persistent native reader.  Processes
+configurable chunks without reopening the input or restarting the parser between
+chunks.  Supports uncompressed, run-length encoded, and Ross Data Compression
+data through the bundled @code{ReadStat} library.  Also streams native decoded
+batches directly to Parquet through the Arrow C Data Interface and the optional
+arrow package, without constructing R data frames.")
+    (license license:expat)))
+
 (define-public r-anopa
   (package
     (name "r-anopa")
@@ -17544,13 +17656,13 @@ user interface that does not require users to know R.")
 (define-public r-amdconfigurations
   (package
     (name "r-amdconfigurations")
-    (version "0.2.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AMDconfigurations" version))
        (sha256
-        (base32 "13c0cgai2kaw30zhwx3h60pkcvhblqqg39pwg2njr60ysvkmq4kn"))))
+        (base32 "0zrcb67rg0717jibsznyh5sl34isdpabf2jg3yaykfjqw7mrvfnm"))))
     (properties `((upstream-name . "AMDconfigurations")))
     (build-system r-build-system)
     (arguments
@@ -21882,13 +21994,13 @@ certified by Anthropic'.")
 (define-public r-aidif
   (package
     (name "r-aidif")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aiDIF" version))
        (sha256
-        (base32 "1hd7wisqwy4wswdyrp0vnnar37f95qx6sjzrrsrv57wh6k221z0d"))))
+        (base32 "1ph43lfmfgypcd3vk6shrqaz3hk90n1js884dq14zbxxfpvflbhn"))))
     (properties `((upstream-name . "aiDIF")))
     (build-system r-build-system)
     (arguments
@@ -21896,19 +22008,22 @@ certified by Anthropic'.")
       #:tests? #f))
     (propagated-inputs (list r-matrix))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/causalfragility-lab/aiDIF")
+    (home-page "https://github.com/subirhait/aiDIF")
     (synopsis "Differential Item Functioning for AI-Scored Assessments")
     (description
      "Detects and quantifies differential item functioning (DIF) in AI-scored
 educational and psychological assessments.  Provides a fully self-contained
 robust DIF engine (M-estimation via iteratively re-weighted least squares with
-the bi-square loss) alongside the Differential AI Scoring Bias (DASB) test,
-which detects item-level scoring shifts that differ across subgroups when
-comparing human and AI scoring conditions.  Supports independent and paired
-scoring designs, robust linking of the cross-condition contrast, multiplicity
-control, conversion of fitted mirt models to package inputs, simulation
-utilities, anchor weight diagnostics, and an AI-effect classification framework.
- Methods follow Halpin (2024) <doi:10.1007/s11336-024-09957-6>.")
+the bi-square loss), cross-checked against the reference implementation in
+@code{robustDIF}', alongside the Differential AI Scoring Bias (DASB) test, which
+detects item-level scoring shifts that differ across subgroups when comparing
+human and AI scoring conditions.  Supports independent and paired scoring
+designs, including a bootstrap estimator of the cross-condition covariance that
+paired designs require, a one-call workflow from raw item scores through mirt
+calibration, robust linking of the cross-condition contrast, bootstrap standard
+errors, multiplicity control, simulation of paired human and AI item scores,
+anchor weight diagnostics, and an AI-effect classification framework.  Methods
+follow Halpin (2024) <doi:10.1007/s11336-024-09957-6>.")
     (license license:gpl3+)))
 
 (define-public r-aida
@@ -24143,13 +24258,13 @@ custom age distributions are desired given a vector of birth dates.")
 (define-public r-agecrypt
   (package
     (name "r-agecrypt")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "agecrypt" version))
        (sha256
-        (base32 "0z1xc6nfxl58zj9zqy3mzg8sg54w9qxdm5vvvx9rmklf6nnk7519"))))
+        (base32 "1chnrkljq5a4z5hgaf0z9ifx6myrhcircrz82r6fbjypibzyimy7"))))
     (properties `((upstream-name . "agecrypt")))
     (build-system r-build-system)
     (arguments
@@ -26984,6 +27099,45 @@ neighbourhood regression, from Nunes et al. (2006)
 <doi:10.1007/s11222-006-6560-y>.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-adlaplace
+  (package
+    (name "r-adlaplace")
+    (version "0.7.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "adlaplace" version))
+       (sha256
+        (base32 "0vfn3ds6xnkkdgi0kr5lxvbzjzfzsz905lbgms1bmhp8y4dvdgr3"))))
+    (properties `((upstream-name . "adlaplace")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-trustoptim
+                             r-rcppeigen
+                             r-rcppad
+                             r-rcpp
+                             r-matrix
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=adlaplace")
+    (synopsis "Laplace Approximations Using Automatic Differentiation")
+    (description
+     "Computes Laplace-approximate maximum likelihood for hierarchical and latent
+Gaussian models.  A formula interface specifies observation densities (e.g.
+Gaussian, negative Binomial), fixed effects, and random terms (independent
+effects, smoothing terms).  Customized response distributions and models for
+random effects can be specified through a low-level interface or by writing
+interoperable packages.  Derivatives are computed using automatic
+differentiation with @code{CppAD}', and used in trust region optimization to
+find modes of random effects.  Derivatives of the Laplace approximation of the
+log-likelihood are computed using third order contractions and is compatible
+with custom atomics.  The approach follows Kristensen, Nielsen, Berg, Skaug, and
+Bell (2016) <doi:10.18637/jss.v070.i05>.")
+    (license license:gpl2+)))
+
 (define-public r-adklakedata
   (package
     (name "r-adklakedata")
@@ -29596,21 +29750,19 @@ Sundararajan et al. (2021) <doi:10.1038/s41598-020-79217-x>.")
 (define-public r-actisensorlog
   (package
     (name "r-actisensorlog")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "actisensorlog" version))
        (sha256
-        (base32 "0h2sa80ndgs0r2r1rp27sirfrkvqzkw5g1af1m6czzsfx2qrcam6"))))
+        (base32 "0w2xk8sg4qgm24qk3v2yqgmf13khjmypjiph7d1skv4bqbg76mmx"))))
     (properties `((upstream-name . "actisensorlog")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyr
-                             r-readr
-                             r-purrr
                              r-lutz
                              r-lubridate
                              r-janitor
@@ -29912,13 +30064,13 @@ algorithm to detect sleep periods from asleep/awake states.")
 (define-public r-actibase
   (package
     (name "r-actibase")
-    (version "0.6.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "actibase" version))
        (sha256
-        (base32 "0mm4mjscdc3lznhch6mc386kqx98h65gwq3q1727324cpq7i9dki"))))
+        (base32 "0kf9glayvjw6ikvph2ihwr0vgl9i78839z6jkjgfj73dg3l8f04y"))))
     (properties `((upstream-name . "actibase")))
     (build-system r-build-system)
     (arguments
@@ -29928,10 +30080,10 @@ algorithm to detect sleep periods from asleep/awake states.")
                              r-tidyr
                              r-magrittr
                              r-lubridate
-                             r-janitor
                              r-hms
                              r-dplyr
                              r-assertthat))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/jhuwit/actibase")
     (synopsis
      "Baseline Functions for Actigraphy and Activity Processing and Analysis")
@@ -30843,6 +30995,37 @@ robust, consistent, and interpretable evaluation on a 0-100% scale, addressing
 limitations of conventional metrics like RMSE, MAE, and MAPE. The package
 integrates with caret', tidymodels', and common forecasting frameworks.  Based
 on Agustini, Fithriasari, and Prastyo (2026) <doi:10.1016/j.dajour.2025.100661>.")
+    (license license:gpl3)))
+
+(define-public r-accumulatr
+  (package
+    (name "r-accumulatr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AccumulatR" version))
+       (sha256
+        (base32 "1nsqmiibpx98sk77s76n2pc3f42944csjh24d10qlgq69001bvl5"))))
+    (properties `((upstream-name . "AccumulatR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/niekstevenson/AccumulatR")
+    (synopsis
+     "Simulation and Likelihood Tools for Evidence-Accumulation Models")
+    (description
+     "Toolbox for designing, simulating and fitting custom racing
+evidence-accumulation models to behavioral data.  Users define a model in terms
+of accumulators, pooled channels, logical response rules, and timing
+dependencies.  This allows more direct embedding of psychological hypotheses
+into the model.  With that model you can simulate decision-making data and
+evaluate the likelihood of observed responses under alternative parameter
+values.  The user-facing interface stays in R, while the simulation and
+likelihood calculations are handled in C++ for speed.")
     (license license:gpl3)))
 
 (define-public r-accumulate

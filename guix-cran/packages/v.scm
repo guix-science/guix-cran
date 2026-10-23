@@ -3995,13 +3995,13 @@ collinearity is most apparent.")
 (define-public r-visatc
   (package
     (name "r-visatc")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "visATC" version))
        (sha256
-        (base32 "0d61sbzfply40mk0mqi3azjidglcm7il7lx3v7ncp933psqd3g3b"))))
+        (base32 "1jwzkkvnj0ws388h5i1rlgk86f7l47rk1myx0vlj419vg1dp46di"))))
     (properties `((upstream-name . "visATC")))
     (build-system r-build-system)
     (arguments
@@ -4009,6 +4009,7 @@ collinearity is most apparent.")
       #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-rlang
+                             r-purrr
                              r-plotly
                              r-igraph
                              r-graphlayouts
@@ -8687,6 +8688,44 @@ for derivation.")
 distribution with the intent to make the lives of risk modelers easier.")
     (license license:gpl2+)))
 
+(define-public r-vasgbif
+  (package
+    (name "r-vasgbif")
+    (version "3.7.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VasGBIF" version))
+       (sha256
+        (base32 "1n2zdaawv0h8zx7dhmbppslj0a06rj53bc9rli7x83212gwh3l2p"))))
+    (properties `((upstream-name . "VasGBIF")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tnrs
+                             r-terra
+                             r-stringi
+                             r-mapview
+                             r-geohashtools
+                             r-foreach
+                             r-dplyr
+                             r-doparallel
+                             r-data-table
+                             r-coordinatecleaner
+                             r-bit64))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/wyx619/VasGBIF")
+    (synopsis
+     "Fast and Easy Compilation of Vascular Plants Occurrence Records from 'GBIF'")
+    (description
+     "GBIF <https://www.gbif.org/> hosts over 500 million occurrence records of
+tracheophyte (vascular plants).  However, dealing with them typically involves
+lots of workflows and time, posing significant challenges for researchers.  To
+address these limitations, we present @code{VasGBIF}', a fast and easy R package
+to parse and merge enormous tracheophyte records.")
+    (license license:gpl3+)))
+
 (define-public r-varycoef
   (package
     (name "r-varycoef")
@@ -11129,13 +11168,13 @@ cohesive plots that can highlight model misspecification.")
 (define-public r-vaccineff
   (package
     (name "r-vaccineff")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vaccineff" version))
        (sha256
-        (base32 "0hydm5byflwyrv3ang6dcrn61lqqm3vk30s9xqr93l9xvhs5qfy3"))))
+        (base32 "0zzdq01974xm3r2i6z8phqh540mqvn5jah1mjil3jh6kxjxkslz3"))))
     (properties `((upstream-name . "vaccineff")))
     (build-system r-build-system)
     (arguments

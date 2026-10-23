@@ -424,6 +424,37 @@ Autoregressive (VAR), VHAR, Bayesian VAR (BVAR), and Bayesian VHAR (BVHAR)
 models.")
     (license license:expat)))
 
+(define-public r-bvch
+  (package
+    (name "r-bvch")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BvCh" version))
+       (sha256
+        (base32 "19gd6j7gnvrn4bl4c4lz6ah2vdxmy8d5p4b8vg89ap8vc13vcbjl"))))
+    (properties `((upstream-name . "BvCh")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-reliar))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/puneetstat999/BvCh")
+    (synopsis
+     "Bivariate Chen Distribution: Density, Survival, Hazard, Plots and Estimates")
+    (description
+     "Probability density, survival and hazard functions, random generation, graphical
+displays and maximum likelihood estimation for bivariate Chen type models.
+Three constructions are covered: the Bivariate Chen distribution with a singular
+component on the diagonal, the Bivariate Extended Chen distribution, and the
+Bivariate Inverse copula Chen distribution obtained through an inverse copula
+with Chen marginals.  Univariate Chen density, distribution, quantile, survival,
+hazard and random generation routines are obtained from the @code{reliaR}
+package.")
+    (license license:gpl3)))
+
 (define-public r-bvarverse
   (package
     (name "r-bvarverse")
@@ -3117,13 +3148,13 @@ an R (improved) version of the Python Tk version of @code{BsplineQuantRegPy}'.")
 (define-public r-bsplinequantreg
   (package
     (name "r-bsplinequantreg")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BsplineQuantReg" version))
        (sha256
-        (base32 "1dq4j3rg4mn7b836g61f8dw2hiny06k39brikj6iybql0im81145"))))
+        (base32 "06arm5b8dxihydlxwhfxgr1kim8svm81sac1d1a404qisrphzvzk"))))
     (properties `((upstream-name . "BsplineQuantReg")))
     (build-system r-build-system)
     (arguments
@@ -3135,18 +3166,20 @@ an R (improved) version of the Python Tk version of @code{BsplineQuantRegPy}'.")
     (synopsis "'Constrained Quantile Regression with B-Splines'")
     (description
      "Quantile regression with B-splines under shape constraints.  The initial version
-with cubic splines is now augmented with splines of degree 1 to 4.  Constraints
-for degrees 3 (monotone) and 4 (monotone and convex) use the Karlin-Studden SOCP
-characterization for the sign of the polynomial, while other constraints applied
-at the knots are added as linear problems.  The method for cubic splines is
-described in Abbes (2026) <doi:10.5281/zenodo.17427913>.  Other formulations are
-simple consequences of the other given references.  All B-spline and polynomial
-functions have been rewritten for consistency.  This package provides an
+with cubic splines, augmented with splines of degree 1 to 4, is now able to
+handle all degrees (degree >= 6 without any constraint).  Constraints for
+degrees 3 (monotone), 4 (monotone and convex) and 5 (convex) use the
+Karlin-Studden SOCP characterization for the sign of the polynomial (Karlin and
+Studden, 1966; Papp and Alizadeh, 2014), while other constraints are added as
+linear problems.  The method for monotone constraints of cubic splines is
+described in Abbes (2025) <doi:10.5281/zenodo.17427913>.  For quartic splines,
+see other references given in the README. All B-spline and polynomial functions
+have been rewritten for consistency.  This package provides a fully independent
 original B-spline library for conversion between PP-form and B-spline
 representation, evaluation, differentiation, callable and non-callable objects,
-print human readable pp forms, view basis, all based on \"De Boor\\'s\" theory.  It
-also extends to multiple knots to catch up singularities.  This feature is
-robust in the package including for constrained regression.  This R
+human-readable PP forms, and basis visualization, all based on De Boor's theory.
+ It also extends to multiple knots to capture singularities.  This feature is
+robust in the package, including for constrained regression.  This R
 implementation is intended for demonstration and prototyping.  An equivalent
 Python package is available at
 <https://pypi.org/project/@code{BsplineQuantRegpy/>}.")
@@ -4858,13 +4891,13 @@ effects if necessary (see for example <doi:10.1186/s12874-015-0046-6> and
 (define-public r-brms-mmrm
   (package
     (name "r-brms-mmrm")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "brms.mmrm" version))
        (sha256
-        (base32 "0y0bhdkpfs5xx9a5dcs00a69bzwiarf90ap34j07ym0f19fsnj0n"))))
+        (base32 "0z8hi8ygk7yr8aas7mq22b76dy575vfz1lqf3kgzswrml44wq2n2"))))
     (properties `((upstream-name . "brms.mmrm")))
     (build-system r-build-system)
     (arguments
@@ -8006,6 +8039,35 @@ bounded Brownian motion.  Supports one-sided (lower bound only) and two-sided
 bounds, with automatic lag selection using the MAIC criterion of Ng and Perron
 (2001) <doi:10.1111/1468-0262.00256>.")
     (license license:gpl3)))
+
+(define-public r-boundedhill
+  (package
+    (name "r-boundedhill")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "boundedHill" version))
+       (sha256
+        (base32 "0rcq9r8bzj6hfxf58hfwg0pd1anf24fqhy29vs4aszvkk1i507n2"))))
+    (properties `((upstream-name . "boundedHill")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-posterior r-bayeslogit))
+    (home-page "https://cran.r-project.org/package=boundedHill")
+    (synopsis "Bayesian Logistic Regression with Lower and Upper Asymptotes")
+    (description
+     "Fits Bayesian logistic regression models in which the success probability rises
+or falls between a lower and an upper asymptote instead of between 0 and 1, for
+binomial outcomes including binary data.  The success probability equals the
+lower asymptote plus the difference between the two asymptotes multiplied by the
+logistic function of a linear predictor.  The lower and upper asymptotes can be
+either estimated or fixed.  With a single predictor such as log dose, this is
+the four-parameter logistic (Hill) model.  Posterior computation is a full Gibbs
+sampler that requires no tuning.")
+    (license license:gpl3+)))
 
 (define-public r-boundedgeworth
   (package
@@ -17238,13 +17300,13 @@ Rapid Bioassessment Protocols (Barbour et al.  1999)
 (define-public r-biomod2
   (package
     (name "r-biomod2")
-    (version "4.3-4-7")
+    (version "4.3-4-8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biomod2" version))
        (sha256
-        (base32 "1vy90jbp63cpq240vyzg2j2b7mm2fv420f0qkva9kxlrmji42bsd"))))
+        (base32 "0aq0qnz0r9kvz38l1a1qmss45252spzwbvs7qzrn7vc4zl1xg2rw"))))
     (properties `((upstream-name . "biomod2")))
     (build-system r-build-system)
     (arguments
@@ -22105,6 +22167,37 @@ scientific collaboration and co-word analysis.")
 analysis and visualization.")
     (license license:gpl3)))
 
+(define-public r-biasedmatch
+  (package
+    (name "r-biasedmatch")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BiasedMatch" version))
+       (sha256
+        (base32 "0sjml4f2kqr6zzlqshl7v7v2p5lnn9gyq8hmz7ckl8cryp5nslff"))))
+    (properties `((upstream-name . "BiasedMatch")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-nortest r-mvtnorm r-envstats r-coda r-biasedurn))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/andrebonfrer/BiasedMatch")
+    (synopsis "Biased Matching for Two-Urn Sampling Problems")
+    (description
+     "This package provides tools for the two-urn biased sampling problems of Puza and
+Bonfrer (2018) <doi:10.1080/03610926.2017.1300282>.  Two overlapping sets of
+items are sampled without replacement, with items common to both sets given a
+selection weight favouring their inclusion.  The package computes the
+probability mass function, mean and variance of the number of matching items
+using the univariate and bivariate Wallenius non-central hypergeometric
+distributions, performs maximum likelihood and Bayesian inference for the bias
+parameter, and provides Metropolis-Hastings algorithms for hierarchical
+extensions.")
+    (license license:expat)))
+
 (define-public r-biascorrector
   (package
     (name "r-biascorrector")
@@ -23880,20 +23973,19 @@ Cheung (2023) <doi:10.1080/00273171.2023.2201277>.")
 (define-public r-betaregscale
   (package
     (name "r-betaregscale")
-    (version "2.7.4")
+    (version "3.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "betaregscale" version))
        (sha256
-        (base32 "11nz6sxic3q1b6i7nqqcqgv0fw0f2pcba2dcgpkid8x7scf7gb0w"))))
+        (base32 "12qkp9p4xm8912cm5b9vgfm07xilgszmwlj535wvdqwf6b0z6xqz"))))
     (properties `((upstream-name . "betaregscale")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rlang
-                             r-rcppeigen
                              r-rcpparmadillo
                              r-rcpp
                              r-numderiv
@@ -23915,7 +24007,8 @@ the mean and precision components.  A compiled C++ backend (via Rcpp and
 log-likelihood evaluation.  Standard S3 methods @code{(print()},
 @code{summary()}, @code{coef()}, @code{fitted()}, @code{residuals()},
 @code{predict()}, @code{plot()}, @code{confint()}, @code{vcov()},
-@code{logLik()}, @code{AIC()}, @code{BIC()}) are available for fitted objects.")
+@code{logLik()}, @code{AIC()}, @code{BIC()}, @code{simulate()}) are available
+for fitted objects.")
     (license license:expat)))
 
 (define-public r-betaper
@@ -28332,13 +28425,13 @@ now can be used with Seurat seamlessly.")
 (define-public r-bbk
   (package
     (name "r-bbk")
-    (version "0.13.0")
+    (version "0.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bbk" version))
        (sha256
-        (base32 "0wcrx5q19msfgjg99qhzqwndqvvvpjj84li4bv711vnd4d7nk7y2"))))
+        (base32 "1ywc734q91kmfz2lf7k9cp3lllixwn88jxaah88rkprsh8j94m89"))))
     (properties `((upstream-name . "bbk")))
     (build-system r-build-system)
     (arguments
@@ -28359,9 +28452,9 @@ bank APIs including Banco Central do Brasil (BCB), Banco de EspaÃ±a
 for International Settlements (BIS), Bank of Canada (@code{BoC}), Bank of
 England (@code{BoE}), Bank of Israel (@code{BoI}), Bank of Japan (@code{BoJ}),
 Banque de France (@code{BdF}), Czech National Bank (CNB), Deutsche Bundesbank
-(BBk), European Central Bank (ECB), National Bank of Poland (NBP), Norges Bank
-(@code{NoB}), Oesterreichische Nationalbank (@code{OeNB}), Sveriges Riksbank
-(SRb), and Swiss National Bank (SNB).")
+(BBk), European Central Bank (ECB), National Bank of Belgium (NBB), National
+Bank of Poland (NBP), Norges Bank (@code{NoB}), Oesterreichische Nationalbank
+(@code{OeNB}), Sveriges Riksbank (SRb), and Swiss National Bank (SNB).")
     (license license:expat)))
 
 (define-public r-bbi
@@ -36065,13 +36158,13 @@ outcomes.  For more information see Sparapani, Spanbauer and @code{McCulloch}
 (define-public r-barry
   (package
     (name "r-barry")
-    (version "0.2.2")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "barry" version))
        (sha256
-        (base32 "18y433lii29sn374n09qa5cz3cd01b5nayrznk4agaa3qqf837z2"))))
+        (base32 "120y1jdsr52nzlcffh76mr0vy7xjkz012z791ikdpaxnv2hn2z3d"))))
     (properties `((upstream-name . "barry")))
     (build-system r-build-system)
     (arguments
@@ -38699,6 +38792,52 @@ Common base 64 alphabets are supported out of the box including the standard,
 URL-safe, bcrypt, crypt, @code{BinHex}', and IMAP-modified UTF-7 alphabets.
 Custom engines can be created to support unique base 64 encoding and decoding
 needs.")
+    (license license:expat)))
+
+(define-public r-b3gbi
+  (package
+    (name "r-b3gbi")
+    (version "1.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "b3gbi" version))
+       (sha256
+        (base32 "0h6n5c2kx21g8dhiq4mq6f4nb01yscgx6aldk0bw52hsgck69606"))))
+    (properties `((upstream-name . "b3gbi")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-units
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-sf
+                             r-scales
+                             r-rnaturalearth
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-magrittr
+                             r-inext
+                             r-ggplot2
+                             r-dplyr
+                             r-boot))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/b-cubed-eu/b3gbi")
+    (synopsis "General Biodiversity Indicators for Biodiversity Data Cubes")
+    (description
+     "Calculate general biodiversity indicators from species occurrence cubes, such as
+those produced by the GBIF (Global Biodiversity Information Facility) occurrence
+cube service <https://techdocs.gbif.org/en/data-use/data-cubes>.  Indicators
+include observed and coverage-based rarefied species richness and Hill numbers
+(via @code{iNEXT}'), evenness, rarity, taxonomic distinctness, occupancy,
+turnover and sample completeness, and can be calculated over time (time series)
+or space (maps), with bootstrap confidence intervals.  Cubes using the EEA
+reference grid, MGRS, the extended quarter-degree grid (EQDGC) or ISEA3H grids
+are supported.  For details see Dove (2026) <doi:10.21105/joss.10963>.")
     (license license:expat)))
 
 (define-public r-b32

@@ -850,6 +850,50 @@ supported.  Please see the associated references in the package documentation
 for full details of the algorithms that are supported.")
     (license license:gpl3)))
 
+(define-public r-twophasesens
+  (package
+    (name "r-twophasesens")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "twoPhaseSens" version))
+       (sha256
+        (base32 "05m6n2kkqxsfxjnw3lr1b7prgck77pxm5f8jgg3416i9jdwpd7r9"))))
+    (properties `((upstream-name . "twoPhaseSens")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-rlang
+                             r-mice
+                             r-jomo
+                             r-gtsummary
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://rophenceojiambo.github.io/twoPhaseSens/")
+    (synopsis
+     "Sensitivity Analysis for Covariates Observed in Two-Phase Samples")
+    (description
+     "This package provides a structured method-comparison sensitivity-analysis
+workflow for linear regression when important continuous adjustment covariates
+are observed only in a Phase-2 subsample.  Implements naive analysis,
+complete-case analysis, fully conditional specification multiple imputation,
+joint-model multiple imputation, inverse probability weighting, and augmented
+inverse probability weighting, with standardized tables, diagnostics, and
+publication-style forest plots.  Methodological background is provided by Little
+and Rubin (2019) <doi:10.1002/9781119482260> for general missing-data methods,
+White and Carlin (2010) <doi:10.1002/sim.3944> for complete-case analysis with
+missing covariates, White, Royston and Wood (2011) <doi:10.1002/sim.4067> and
+van Buuren and Groothuis-Oudshoorn (2011) <doi:10.18637/jss.v045.i03> for
+chained-equations multiple imputation, Quartagno, Grund and Carpenter (2019)
+<doi:10.32614/RJ-2019-028> for joint-model multiple imputation, Robins,
+Rotnitzky and Zhao (1994) <doi:10.1080/01621459.1994.10476818> for
+inverse-probability weighting with missing regressors, and Bang and Robins
+(2005) <doi:10.1111/j.1541-0420.2005.00377.x> for doubly robust estimation.")
+    (license license:expat)))
+
 (define-public r-twophasegas
   (package
     (name "r-twophasegas")
@@ -2187,19 +2231,19 @@ Austrian catchments, Hydrological Processes, 21, 435-446.")
 (define-public r-tuvalues
   (package
     (name "r-tuvalues")
-    (version "1.1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TUvalues" version))
        (sha256
-        (base32 "137yjvlm6wghk0zyivzah02bj8vbck6fxpqmdixc8v8kxkz8ir5g"))))
+        (base32 "11fkyfva3m5xk7cp3xnry7g9jy5y8n6lyvvhicf57gnrq1vxzbn7"))))
     (properties `((upstream-name . "TUvalues")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-roi-plugin-glpk r-roi r-gtools))
+    (propagated-inputs (list r-roi-plugin-glpk r-roi r-rcdd))
     (home-page "https://github.com/mariaguilleng/TUvalues")
     (synopsis
      "Tools for Calculating Allocations in Game Theory using Exact and Approximated Methods")
@@ -2214,7 +2258,7 @@ computational complexity of exact evaluation, the package offers both exact
 algorithms and linear approximation methods based on sampling, enabling the
 analysis of large-scale games.  Additionally, it supports core set-based
 solutions, allowing computation of the vertices and the centroid of the core.")
-    (license license:agpl3+)))
+    (license license:gpl2+)))
 
 (define-public r-tutorizer
   (package
@@ -5075,6 +5119,48 @@ genetic algorithm for feature selection, a set of trait specific gene set is
 obtained.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-tsgenerator
+  (package
+    (name "r-tsgenerator")
+    (version "2.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TSGenerator" version))
+       (sha256
+        (base32 "0mh9ryrh27waywpz28q9hkkhmnik4rznbh34s5qjqz8mqy9zi166"))))
+    (properties `((upstream-name . "TSGenerator")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra
+                             r-stringr
+                             r-shinyjs
+                             r-shinydashboard
+                             r-shinycssloaders
+                             r-shiny
+                             r-scales
+                             r-readr
+                             r-mgcv
+                             r-jsonlite
+                             r-hdar
+                             r-ggplot2
+                             r-dt))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/avalero92/TSGenerator")
+    (synopsis "'Copernicus' HR-VPP Vegetation Time-Series Processing")
+    (description
+     "This package provides tools for acquiring, extracting, quality-assessing, and
+analysing vegetation time series derived from Copernicus High Resolution
+Vegetation Phenology and Productivity (HR-VPP) products.  Supports Seasonal
+Trajectories (ST) and Vegetation Phenology and Productivity (VPP) products
+through native R access to W@code{EkEO}', geospatial processing, product-quality
+assessment, temporal completeness analysis, missingness modelling, and
+integrated graphical workflows.  Selected functions from TSGenerator 1.x are
+retained to support migration and legacy workflows.")
+    (license license:expat)))
+
 (define-public r-tsgc
   (package
     (name "r-tsgc")
@@ -5383,6 +5469,43 @@ Users can also define their own feature functions.")
 TSF algorithm by Papailias and Dias (2015)
 <doi:10.1016/j.ijforecast.2015.01.006>.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-tsexplorer
+  (package
+    (name "r-tsexplorer")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tsexplorer" version))
+       (sha256
+        (base32 "0jq3g2h1gmkq1apbmnl0v08pkrbaz8vf0qr5ywv7nwgaf06p6mp0"))))
+    (properties `((upstream-name . "tsexplorer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/djpedregal/tsexplorer")
+    (synopsis "Exploratory and Diagnostic Tools for Time Series and Forecasts")
+    (description
+     "Exploratory, descriptive and diagnostic tools for univariate and multivariate
+time series and tools to evaluate and compare forecasts: summary statistics and
+gaussianity tests; sample autocorrelation functions with the Ljung and Box
+(1978) <doi:10.1093/biomet/65.2.297> and Monti (1994) <doi:10.2307/2337080>
+tests; information criteria and Granger (1969) <doi:10.2307/1912791> causality;
+unit root tests of Dickey and Fuller (1979) <doi:10.1080/01621459.1979.10482531>
+and Phillips and Perron (1988) <doi:10.1093/biomet/75.2.335>; the cointegration
+test of Johansen (1988) <doi:10.1016/0165-1889(88)90041-3>; heteroskedasticity
+tests; non-linearity tests of @code{McLeod} and Li (1983)
+<doi:10.1111/j.1467-9892.1983.tb00373.x>, Tsay (1986)
+<doi:10.1093/biomet/73.2.461> and Brock, Dechert, Scheinkman and @code{LeBaron}
+(1996) <doi:10.1080/07474939608800353>; spectral analysis; and forecast accuracy
+measures with the Diebold and Mariano (1995)
+<doi:10.1080/07350015.1995.10524599>, sign and Wilcoxon tests.  Every tool is a
+pure function returning an object with print and plot methods; the graphical
+interfaces @code{tooltest()} and @code{toolforecast()} ('Tcl/Tk windows or shiny
+applications) give interactive access to all of them.")
+    (license license:gpl3)))
 
 (define-public r-tsewgt
   (package
@@ -6170,13 +6293,13 @@ used to detect data leakages in a collection of time series.")
 (define-public r-tscv
   (package
     (name "r-tscv")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tscv" version))
        (sha256
-        (base32 "11hpgv12jjkpfp9djyqw87n41pjb9hy2rwasyngad8fc1fnavrb7"))))
+        (base32 "1y48aw67vhyphzkbgql5w7rancxaa6q8sr353kv07wcsrz2gxfpx"))))
     (properties `((upstream-name . "tscv")))
     (build-system r-build-system)
     (arguments
@@ -11700,13 +11823,13 @@ included.")
 (define-public r-transdif
   (package
     (name "r-transdif")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "transDIF" version))
        (sha256
-        (base32 "1fbx6f5arns5yxyzc3svvjhvhcbr3mxhc22kaqqxf8sb508ynp5g"))))
+        (base32 "1xizq1mmdz303hmnyzvk9wy7pyvs2p082s1z3vsn5k1v2k0h244g"))))
     (properties `((upstream-name . "transDIF")))
     (build-system r-build-system)
     (arguments
@@ -16847,13 +16970,13 @@ errors, retries, safe query encoding, and automatic pagination.")
 (define-public r-tmcalculator
   (package
     (name "r-tmcalculator")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TmCalculator" version))
        (sha256
-        (base32 "1dj1apznyhhm1d8q4xl3vaqb76i63ds557hyqsdq5pfa78yfrlzj"))))
+        (base32 "0z7gpw6mxv4qfl2dn56qzlk4hgn93i4vv7ydc7f135cm434lnbmz"))))
     (properties `((upstream-name . "TmCalculator")))
     (build-system r-build-system)
     (arguments
@@ -16868,7 +16991,7 @@ errors, retries, safe query encoding, and automatic pagination.")
                              r-biocparallel
                              r-biocgenerics))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=TmCalculator")
+    (home-page "https://github.com/JunhuiLi1017/TmCalculator")
     (synopsis
      "Genome-Wide Nucleic Acid Melting Temperature Profiling and Multi-Omics Integration")
     (description
@@ -30515,6 +30638,35 @@ builds on geepack <doi:10.18637/jss.v015.i02> (HÃ¸jsgaard, Halekoh and Yan,
 trials.")
     (license license:asl2.0)))
 
+(define-public r-termr
+  (package
+    (name "r-termr")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "termr" version))
+       (sha256
+        (base32 "0gfg7d4r0g1nrpabg6m81j0jipl49irs6sbk2b0l9zblgz90af1v"))))
+    (properties `((upstream-name . "termr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-r6 r-ps r-processx r-codetools))
+    (home-page "https://github.com/41929424/termr")
+    (synopsis "Modern Reactive Terminal Applications with Data Workflows")
+    (description
+     "Build modern reactive terminal applications for data workflows in R using
+reusable widgets, layouts, events, focus management and themes.  A virtual
+screen buffer and incremental rendering update changed cells, while a headless
+driver supports deterministic application tests.  Includes data tables that
+render visible rows on demand, lazy table sources, data inspection, SQL editing
+and background R workers with progress and streamed output.  Optional database
+support and static text, Markdown, HTML, SVG and JSON exports support analytical
+tools and reports without requiring an interactive terminal for static output.")
+    (license license:expat)))
+
 (define-public r-terminalgraphics
   (package
     (name "r-terminalgraphics")
@@ -32172,13 +32324,13 @@ proposed in Wolf et al. (2022) <doi:10.1177/17407745221095855>.")
 (define-public r-teems
   (package
     (name "r-teems")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teems" version))
        (sha256
-        (base32 "18ahg1z02dj0p943mrrsbnnxph6ar0y05ik8czwsyvh6h5ib6q65"))))
+        (base32 "13m0rdahfnmlfwg2rzr1g1b8hwzqdiydpc203iyajhlb1d0mprqa"))))
     (properties `((upstream-name . "teems")))
     (build-system r-build-system)
     (arguments
@@ -35566,6 +35718,34 @@ amount of bicycle rental in 2015 by using @code{predict_bike_rental()}.")
 Various visualizations are provided.")
     (license license:gpl2)))
 
+(define-public r-taruwind
+  (package
+    (name "r-taruwind")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "taruwind" version))
+       (sha256
+        (base32 "0qi7x2kk78gbpbll86wh2zqcp05bcil2j10vhgdvar219s01jygl"))))
+    (properties `((upstream-name . "taruwind")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-rcpp r-jsonlite r-curl))
+    (home-page "https://cran.r-project.org/package=taruwind")
+    (synopsis "Reduced-Mode Terrain and Surface Wind Downscaling")
+    (description
+     "Constructs reusable local wind responses using a neutral terrain-following
+reduced-vertical-mode adjustment and exact raster-ray integration of
+finite-fetch surface memory.  Explicit metric-grid inputs separate terrain,
+target aerodynamic roughness and the effective source profile.  Prepared
+responses can be applied to wind-component time series without target-site wind
+calibration.  This diagnostic approximation does not resolve turbulence or
+guarantee conservation of the final field.")
+    (license license:expat)))
+
 (define-public r-tarpolyglot
   (package
     (name "r-tarpolyglot")
@@ -35955,13 +36135,13 @@ J., Kaendler, G. (2013) <doi:10.1007/s10342-013-0715-0>.")
 (define-public r-tantivyr
   (package
     (name "r-tantivyr")
-    (version "0.1.1")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tantivyr" version))
        (sha256
-        (base32 "18flsli9s7j56ljxihfxpd9z4kpk0dd8fq71nfypcwjsxd2191s3"))))
+        (base32 "0zywf7k2g1j7crfj0kf33bjjbxp65zxbwh914vwb3wcfcwc4052z"))))
     (properties `((upstream-name . "tantivyr")))
     (build-system r-build-system)
     (arguments
@@ -36167,6 +36347,51 @@ shaded contour lines.  In this simplified implementation of the method,
 north-west white contours represent illuminated topography and south-east black
 contours represent shaded topography.  See Tanaka (1950) <doi:10.2307/211219>.")
     (license license:gpl3)))
+
+(define-public r-tampabayopendata
+  (package
+    (name "r-tampabayopendata")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tampaBayOpenData" version))
+       (sha256
+        (base32 "0iy33i0dxscxfg55vfc3c6bhxrrs1i9qbd7cqbksf4c8if3vhd5s"))))
+    (properties `((upstream-name . "tampaBayOpenData")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-jsonlite r-httr2))
+    (native-inputs (list r-knitr))
+    (home-page "https://jaclenga.github.io/tampaBayOpenData/")
+    (synopsis "An R Interface to Tampa Bay Public Open Data")
+    (description
+     "This package provides a lightweight R interface for discovering and retrieving
+public @code{ArcGIS} datasets across the Tampa Bay region.  Search civic
+datasets and load records directly into R without manually navigating separate
+portals, constructing REST API requests, or handling pagination.  Supports
+public data published by the City of Tampa, City of St.  Petersburg, City of
+Clearwater, Hillsborough County, Pinellas County, and Tampa Bay Regional
+Planning Council.  Discover layers in these and other public @code{ArcGIS}
+portals and retrieve them by their REST URLs.  A publisher registry configures
+discovery, while a separate dataset registry identifies layers checked by
+package maintainers.  Filter catalogs by source, geometry, topic, category, and
+modification date.  Retrieve queryable layers with validated pagination, bounded
+previews, server-side filtering, typed tabular results, optional spatial
+objects, and source provenance.  Save large downloads as local chunks that can
+be validated and resumed.  Designed for analysts, researchers, students,
+journalists, and civic technologists who work across separate public data
+portals.  Public source pages are the City of Tampa @code{GeoHub}
+<https://city-tampa.opendata.arcgis.com/>, St.  Petersburg @code{ArcGIS} portal
+<https://csp.maps.arcgis.com/home/index.html>, Clearwater @code{ArcGIS} portal
+<https://cityofclearwater.maps.arcgis.com/home/index.html>, Hillsborough County
+@code{GeoHub} <https://hcfl.gov/about-hillsborough/open-data-and-gis/geohub>,
+Pinellas County Enterprise GIS <https://new-pinellas-egis.opendata.arcgis.com/>,
+and Tampa Bay Regional Planning Council @code{GeoHub}
+<https://opendata-tbrpc.hub.arcgis.com/>.")
+    (license license:expat)))
 
 (define-public r-tame
   (package
@@ -36537,37 +36762,6 @@ points with the Identical Distribution hypothesis of the tail.  For more details
 see Manau (2025)<doi:10.4230/LIPIcs.ECRTS.2025.20>.")
     (license license:gpl3+)))
 
-(define-public r-taildepfun
-  (package
-    (name "r-taildepfun")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tailDepFun" version))
-       (sha256
-        (base32 "0rrjg4ky3pjbfwppmnwyijvlzq3c3nf33rl0w4vly52v1ramp5c6"))))
-    (properties `((upstream-name . "tailDepFun")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-spatialextremes r-mvtnorm r-cubature r-copula))
-    (native-inputs (list r-r-rsp))
-    (home-page "https://cran.r-project.org/package=tailDepFun")
-    (synopsis "Minimum Distance Estimation of Tail Dependence Models")
-    (description
-     "This package provides functions implementing minimal distance estimation methods
-for parametric tail dependence models, as proposed in Einmahl, J.H.J.,
-Kiriliouk, A., Krajina, A., and Segers, J. (2016) <doi:10.1111/rssb.12114> and
-Einmahl, J.H.J., Kiriliouk, A., and Segers, J. (2018)
-<doi:10.1007/s10687-017-0303-7>.")
-    (license license:gpl3)))
-
 (define-public r-tailclassifier
   (package
     (name "r-tailclassifier")
@@ -36836,32 +37030,6 @@ distributions by assessing (i) the RÂ², (ii) the Y-intercept, (iii) the slope,
 specific distribution families (i.e., the distance from the skew-uniform family
 a limit to the highest degree of evenness: TADeve).")
     (license license:bsd-3)))
-
-(define-public r-tactile
-  (package
-    (name "r-tactile")
-    (version "0.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tactile" version))
-       (sha256
-        (base32 "1smb0zm7sn8clnppljc4d9a54frimjbx09p7i31b76g7k4mys0pr"))))
-    (properties `((upstream-name . "tactile")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcolorbrewer r-mass r-latticeextra r-lattice
-                             r-gridextra))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/jolars/tactile")
-    (synopsis
-     "New and Extended Plots, Methods, and Panel Functions for 'lattice'")
-    (description
-     "Extensions to lattice', providing new high-level functions, methods for existing
-functions, panel functions, and a theme.")
-    (license license:gpl3)))
 
 (define-public r-tacmagic
   (package

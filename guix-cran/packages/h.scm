@@ -2066,6 +2066,41 @@ tolerated dose (MTD) due to its ability to calibrate for an intermediate dose.
 More details can be found in Liao et al.  2022 <doi:10.1002/ijc.34203>.")
     (license license:gpl3)))
 
+(define-public r-hybridclock
+  (package
+    (name "r-hybridclock")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hybridclock" version))
+       (sha256
+        (base32 "0asmpnvmx3yffa0yp858jp4ivnmmiqhvnpaz2hbrzkgib1ym31kn"))))
+    (properties `((upstream-name . "hybridclock")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ranger r-cubist))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/paulmaier/hybridclock")
+    (synopsis
+     "How Long Have Hybrids Been Forming? Hybrid Population Histories from Diagnostic Markers")
+    (description
+     "Estimates the history of hybrid populations from diagnostic markers, with or
+without a genetic map: the average age of the hybrids, how long ago the rarer
+species ancestry entered, the number of backcrosses, and whether pure animals of
+the rarer species are still arriving.  Population samples of hybrid index and
+interspecies heterozygosity, as defined by Fitzpatrick (2012)
+<doi:10.1186/1471-2148-12-131>, are compared with forward simulations that
+include drift, small breeding groups, sibling mating and separate breeding
+pools, so that inbreeding is not mistaken for age.  Estimates come from Cubist
+models with split-conformal intervals.  Recent hybrids are also classified
+individually, and the number of markers needed to detect backcrossed hybrids
+follows Boecklen and Howard (1997)
+<doi:10.1890/0012-9658(1997)078[2611:GAOHZN]2.0.CO;2>.")
+    (license license:expat)))
+
 (define-public r-hwwntest
   (package
     (name "r-hwwntest")
@@ -4032,6 +4067,40 @@ linkage disequilibrium in half-sibs\" <doi:10.3389/fgene.2018.00186>.  Gomez-Ray
 (2012) \"Maximum likelihood estimation of linkage disequilibrium in half-sib
 families\" <doi:10.1534/genetics.111.137521>.")
     (license license:gpl2+)))
+
+(define-public r-hsquared
+  (package
+    (name "r-hsquared")
+    (version "0.9.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hsquared" version))
+       (sha256
+        (base32 "0l7lcwvw08m9h1rlvz1krqlrgyvkpmgjv0qd3n3kcmpga1jilkbs"))))
+    (properties `((upstream-name . "hsquared")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrix r-lifecycle r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://itchyshin.github.io/hsquared/")
+    (synopsis "'R' Interface for 'Julia'-Backed Quantitative-Genetic Models")
+    (description
+     "This package provides an interface for quantitative-genetic models in R', backed
+by the HSquared.jl engine for Julia'.  Fits Gaussian pedigree animal models by
+restricted maximum likelihood, using average-information restricted maximum
+likelihood (AI-REML; Gilmour et al. (1995) <doi:10.2307/2533274>) for the
+univariate model.  Returns heritability, variance components, breeding values,
+and covariance and correlation matrices for multivariate models.  Formula and
+pedigree validation can run without Julia'.  Model fitting requires a local
+Julia and HSquared.jl'; use hs_control(engine = \"validate\") to preview the model
+contract without fitting.  What you may report is listed on the package article
+Can I fit and report this?', not in @code{validation_status()}, which is a
+developer evidence table.  Model-specific restrictions are documented in that
+article.  Uncertainty intervals are not coverage-calibrated.")
+    (license license:expat)))
 
 (define-public r-hspor
   (package

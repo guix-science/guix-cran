@@ -150,6 +150,91 @@ mark or a <meta> declaration.  Parsing is bounded by limits on input size,
 native memory and nesting depth.")
     (license license:expat)))
 
+(define-public r-zufft
+  (package
+    (name "r-zufft")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "zufft" version))
+       (sha256
+        (base32 "1ykphfh0ishgi55kxnarbn9ima5szl8qn1xi7bxib9z963q4zvkh"))))
+    (properties `((upstream-name . "zufft")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/pedrobtz/zufft")
+    (synopsis "Fast Fourier, Cosine and Sine Transforms")
+    (description
+     "Computes discrete Fourier transforms (complex, real-to-complex and
+complex-to-real) and discrete cosine and sine transforms of types one to four
+over any axes of an array, with the fast Fourier transform (FFT) code of ducc0
+(<https://github.com/mreineck/ducc>) bundled in the BSD-licensed subset that
+@code{SciPy} uses.  Transforms of any length run in O(n log n) time, real input
+uses true real transforms, and several threads can share one transform.")
+    (license license:expat)))
+
+(define-public r-zufast
+  (package
+    (name "r-zufast")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "zufast" version))
+       (sha256
+        (base32 "1h7560ym3mala97a2lkndgdmwfp15kyyzw3dncnlfkq2wa696pa6"))))
+    (properties `((upstream-name . "zufast")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://pedrobtz.github.io/zufast/")
+    (synopsis "Fast Portable 'C' Primitives for Parsing and Formatting Data")
+    (description
+     "This package provides a header-only library of small, fast, portable C99
+primitives for converting external text and bytes into native values and back:
+correctly rounded number parsing (from fast_float', through its C port ffc.h'),
+shortest round-trip number formatting (from Ryu'), ISO 8601 dates and
+timestamps, booleans, universally unique identifiers (UUIDs), hexadecimal and
+Base64, XXH3 hashing (from @code{xxHash}'), half-precision floats, endian
+helpers and UTF-8 validation.  Other packages use it through @code{LinkingTo}
+alone; the R functions exist to test, benchmark and demonstrate the C layer.")
+    (license license:expat)))
+
+(define-public r-zuexact
+  (package
+    (name "r-zuexact")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "zuexact" version))
+       (sha256
+        (base32 "1ry91ssdchhm5raay6lil2gr1lwdjd9s1phy8b1mqzl4gpql0xms"))))
+    (properties `((upstream-name . "zuexact")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://pedrobtz.github.io/zuexact/")
+    (synopsis "Exactly Rounded Sums, Means and Dot Products")
+    (description
+     "Sums of double-precision numbers computed exactly and rounded once, so the
+result is the correctly rounded true sum and does not depend on the order of the
+elements, the platform, or whether R was built with long doubles.  Built on the
+small and large superaccumulators of Neal (2015)
+<doi:10.48550/@code{arXiv.1505.05571>}.  Provides exactly rounded sums, means,
+cumulative sums, dot products and norms, row, column and grouped sums,
+accumulators that can be built in pieces and merged across processes, and a
+registered C interface for other packages.")
+    (license license:expat)))
+
 (define-public r-zucsv
   (package
     (name "r-zucsv")
@@ -175,6 +260,35 @@ both LF and CRLF line endings, and infers logical, integer, double, and
 character column types.  Column types can also be given explicitly, in which
 case a value that cannot be converted is an error rather than a silently missing
 value.  The zsv sources are bundled, so there are no runtime dependencies.")
+    (license license:expat)))
+
+(define-public r-zucbor
+  (package
+    (name "r-zucbor")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "zucbor" version))
+       (sha256
+        (base32 "0x7fdppn94n1xsb88nwjx4gaz4sq4qw4kw0gsk8y6r1l287gwq76"))))
+    (properties `((upstream-name . "zucbor")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/pedrobtz/zucbor")
+    (synopsis "Deterministic and Secure CBOR Encoding and Decoding")
+    (description
+     "Encodes R values as Concise Binary Object Representation (CBOR, RFC 8949;
+Bormann and Hoffman (2020) <doi:10.17487/RFC8949>) and decodes CBOR into
+ordinary R vectors and lists.  Decoding checks the whole input against
+configurable depth, size and item limits before any R object is built, so
+untrusted input from network peers and devices cannot drive large allocations.
+Encoding is deterministic: identical R objects always produce identical bytes.
+Uses a bundled copy of the @code{TinyCBOR} library
+(<https://github.com/intel/tinycbor>), so no system library is required.")
     (license license:expat)))
 
 (define-public r-ztils
@@ -952,6 +1066,39 @@ accommodating four different scenarios: the general scenario, the scenario with
 measurement error in responses, the external validation scenario, and the
 internal validation scenario.")
     (license license:gpl2+)))
+
+(define-public r-zinbcdpmm
+  (package
+    (name "r-zinbcdpmm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "zinbcdpmm" version))
+       (sha256
+        (base32 "14hsm79qci31by4y8v01bhxq4qyq4bi721gqz3z2m21n211f7m4f"))))
+    (properties `((upstream-name . "zinbcdpmm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-truncnorm r-mvtnorm r-mcmcpack r-loo
+                             r-bayeslogit))
+    (home-page "https://github.com/Liang-ShuQing/zinb-ordinal-cdpmm-code")
+    (synopsis "Bayesian ZINB-Ordinal Joint Model with CDPMM Random Effects")
+    (description
+     "Fits a Bayesian joint model for longitudinal zero-inflated negative binomial
+(ZINB) and ordinal outcomes with shared random effects under a centered
+Dirichlet process mixture model (CDPMM) prior.  Provides a blocked Gibbs sampler
+with Polya-Gamma (PG) and Chinese restaurant table data augmentation, plus
+helpers for simulation and posterior summaries based on the deviance information
+criterion (DIC), the widely applicable information criterion (WAIC) and the
+leave-one-out information criterion (LOOIC).  The PG augmentation follows
+Polson, Scott and Windle (2013) <doi:10.1080/01621459.2013.829001>, the
+zero-inflated negative binomial construction follows Neelon (2019)
+<doi:10.1214/18-BA1132>, and the centered Dirichlet process mixture prior
+follows Tang, Tang and Pan (2014) <doi:10.1016/j.csda.2014.02.015>.")
+    (license license:expat)))
 
 (define-public r-zinb-gp
   (package

@@ -2391,13 +2391,13 @@ vector data.")
 (define-public r-duckplyr
   (package
     (name "r-duckplyr")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "duckplyr" version))
        (sha256
-        (base32 "00040x3j5xpfbxrj387rx84xxfpi573m5k2s9iaqksiac1khkbkw"))))
+        (base32 "0ca753awcrfiwpy1ixhzw5b63nkgwkgyfp2qf8f8fah2gn5mr1z6"))))
     (properties `((upstream-name . "duckplyr")))
     (build-system r-build-system)
     (arguments
@@ -3206,6 +3206,33 @@ Linked Data) format to make it machine readable.")
 way through a data set, dtrackr seamlessly keeps track of your data flow and
 makes publication ready documentation of a data pipeline simple.")
     (license license:expat)))
+
+(define-public r-dtptite
+  (package
+    (name "r-dtptite")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dtptite" version))
+       (sha256
+        (base32 "00dhcjbg7fld0pxr8siybsxqx8jbmsqhsgn0zlgdy4r4lwph84wy"))))
+    (properties `((upstream-name . "dtptite")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-escalation r-dplyr r-boin))
+    (home-page "https://github.com/ICR-EPAT/dtptite")
+    (synopsis
+     "Dose Transition Pathways for Time-to-Event Dose-Finding Designs")
+    (description
+     "This package implements the Dose Transition Pathways (DTP) look-ahead strategy
+for time-to-event phase I dose-finding clinical trials with delayed or pending
+toxicity outcomes.  Provides a DTP decorator for the escalation framework,
+supporting both TITE-CRM (model-based) and TITE-BOIN (model-assisted) base
+designs.")
+    (license license:gpl3+)))
 
 (define-public r-dtpcrm
   (package
@@ -7230,13 +7257,13 @@ to the software and explicitly not to the included data.")
 (define-public r-drdid
   (package
     (name "r-drdid")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DRDID" version))
        (sha256
-        (base32 "1psv3bjxg4wxbp1fyh4y58ssx17qzlhgqfsqvzy1crmb5xgi1h0y"))))
+        (base32 "0zqqrhab3zb856jshnrmkv4c25iwxbrsfpbsjixni2w81490px7j"))))
     (properties `((upstream-name . "DRDID")))
     (build-system r-build-system)
     (arguments
@@ -11341,13 +11368,13 @@ handing functions and I/O support routines.")
 (define-public r-docorator
   (package
     (name "r-docorator")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "docorator" version))
        (sha256
-        (base32 "00ghmmqplxgvchgadmlacr4hm4pdl0ifb9qcjq7vw4982v1dn630"))))
+        (base32 "1n7q2zxg2j9g1gz1ppzsbaxgfj800gxynkyki9mw7c0xd5zb5jjv"))))
     (properties `((upstream-name . "docorator")))
     (build-system r-build-system)
     (arguments
@@ -11368,9 +11395,12 @@ handing functions and I/O support routines.")
                              r-officer
                              r-lifecycle
                              r-knitr
+                             r-htmltools
                              r-gt
                              r-dplyr
-                             r-cli))
+                             r-cli
+                             r-chromote
+                             r-base64enc))
     (native-inputs (list r-knitr))
     (home-page "https://GSK-Biostatistics.github.io/docorator/")
     (synopsis "Docorate (Decorate + Output) Displays")
@@ -11410,32 +11440,36 @@ tools for common low-level tasks.")
 (define-public r-doconv
   (package
     (name "r-doconv")
-    (version "0.4.0")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "doconv" version))
        (sha256
-        (base32 "08484li5ghyf4jsscr8rclznzawhbwqvvvv2blsch031pqbkp9h8"))))
+        (base32 "075dhd0lyjbl2lsb9as3b23f67ly9cyps9s4g8krldfbj58km12y"))))
     (properties `((upstream-name . "doconv")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list libreoffice))
-    (propagated-inputs (list r-processx r-pdftools r-magick r-locatexec
-                             r-gdtools))
+    (propagated-inputs (list r-processx
+                             r-pdftools
+                             r-magick
+                             r-locatexec
+                             r-gdtools
+                             r-filelock))
     (home-page "https://cran.r-project.org/package=doconv")
     (synopsis "Document Conversion to 'PDF', Thumbnails and Visual Testing")
     (description
      "This package provides the ability to generate images from documents of different
 types.  Three main features are provided: generating document thumbnails,
 performing visual tests of documents, and updating fields and tables of contents
-of a Microsoft Word or RTF document.  Microsoft Word and/or @code{LibreOffice}
-must be installed on the machine.  If Microsoft Word is available, it can
-produce PDF documents or images identical to the originals; otherwise
-@code{LibreOffice} is used and the rendering may sometimes differ from the
-original documents.")
+of a Microsoft Word or RTF document.  Microsoft Office ('Word',
+@code{PowerPoint}', Excel') and/or @code{LibreOffice} must be installed on the
+machine.  If Microsoft Office is available, it can produce PDF documents or
+images identical to the originals; otherwise @code{LibreOffice} is used and the
+rendering may sometimes differ from the original documents.")
     (license license:expat)))
 
 (define-public r-doclisting
@@ -12336,13 +12370,13 @@ Scandinavian Journal of Statistics, 49(2): 831â863. <doi:10.1111/sjos.12546
 (define-public r-dmrfit
   (package
     (name "r-dmrfit")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dmrfit" version))
        (sha256
-        (base32 "084lawrha3i4x4mmv7p2nq232adxb6c372hlrmpcaa95lrkbdnp7"))))
+        (base32 "0r6c53fp32acviks91zagqy6famnfpnq8qy5kmppqmilibkbqrwg"))))
     (properties `((upstream-name . "dmrfit")))
     (build-system r-build-system)
     (arguments
@@ -22874,6 +22908,34 @@ differential-expression analysis uses Love, Huber, and Anders (2014)
 <doi:10.1186/s13059-014-0550-8>.")
     (license license:expat)))
 
+(define-public r-detectoutlier
+  (package
+    (name "r-detectoutlier")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DetectOutlier" version))
+       (sha256
+        (base32 "1psl2rghafnhqyjpn3z3449p6pqjh1d6vfhi5547qxnj66mhax21"))))
+    (properties `((upstream-name . "DetectOutlier")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-openxlsx))
+    (home-page "https://cran.r-project.org/package=DetectOutlier")
+    (synopsis "Detect Outliers in Data Frames and Export Results")
+    (description
+     "Identifies potential outliers in numeric columns of a data frame using the
+interquartile range (IQR), defined as the difference between the third and first
+quartiles.  Values below the first quartile minus 1.5 times the IQR or above the
+third quartile plus 1.5 times the IQR are flagged as potential outliers.  The
+package can export rows containing outliers to comma-separated values (CSV)
+files and create Excel workbooks with outlier values highlighted and a summary
+of outlier counts.")
+    (license license:gpl3)))
+
 (define-public r-detectors
   (package
     (name "r-detectors")
@@ -27362,28 +27424,6 @@ cast, long options or short options, input splitters and callbacks that define
 how options should be specified and how input values are supplied.")
     (license license:gpl3+)))
 
-(define-public r-default
-  (package
-    (name "r-default")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "default" version))
-       (sha256
-        (base32 "0hzxgp9la9kll5cw3m4gd02rii571xsn1v53kz407k7k6rfg5mda"))))
-    (properties `((upstream-name . "default")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=default")
-    (synopsis "Change the Default Arguments in R Functions")
-    (description
-     "This package provides a simple syntax to change the default values for function
-arguments, whether they are in packages or defined locally.")
-    (license license:expat)))
-
 (define-public r-deevd
   (package
     (name "r-deevd")
@@ -28843,13 +28883,13 @@ include education, policy, health, and organisational research.")
 (define-public r-decisionfacets
   (package
     (name "r-decisionfacets")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "decisionfacets" version))
        (sha256
-        (base32 "1f7gsa8yzm8rvgb3g2ylj20bkc2iwkjdf9jw3frqwaiwi8p586jc"))))
+        (base32 "1hlbsmridfvjk14p0rfrjfsrm045x6mcds040ckffgq1llj1sdij"))))
     (properties `((upstream-name . "decisionfacets")))
     (build-system r-build-system)
     (arguments
@@ -28867,8 +28907,11 @@ counterfactual pass probabilities under the observed, an average-severity and a
 random rater panel, under an explicit decision rule (raw total, fair average or
 measure), and splits expected misclassification into measurement error and rater
 assignment, extending item response theory classification accuracy (Lee, 2010,
-<doi:10.1111/j.1745-3984.2009.00096.x>) to rater effects.  Models can be fitted
-with TAM or a built-in joint maximum likelihood estimator.")
+<doi:10.1111/j.1745-3984.2009.00096.x>) to rater effects.  Supports panels in
+which every rater scores every task and designs in which each case is scored by
+a different examiner, with rating categories or continuous scores such as 0-100
+(through a linear many-facet model).  Models can be fitted with TAM or built-in
+estimators.")
     (license license:expat)))
 
 (define-public r-decisiondrift
@@ -34198,13 +34241,13 @@ in some case studies throughout the text.")
 (define-public r-datasetjson
   (package
     (name "r-datasetjson")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datasetjson" version))
        (sha256
-        (base32 "0zmdcz09ajzxrsn9ahnf1v9dpi0qqm93i8lf339ivhccfh5p47y0"))))
+        (base32 "1sa92qjdyjg6fscc3kapxx4nz3zjgrb4v0rbij69rmzl9afg6z26"))))
     (properties `((upstream-name . "datasetjson")))
     (build-system r-build-system)
     (arguments

@@ -98,6 +98,33 @@ the functions within qwraps2 <https://github.com/dewittpe/qwraps2/> is
 fundamentally different from qwraps'.")
     (license license:gpl3+)))
 
+(define-public r-qwdap
+  (package
+    (name "r-qwdap")
+    (version "1.1.22")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QWDAP" version))
+       (sha256
+        (base32 "0dxi500290db7a2qac069spr0lwz6c2xl2ivi4w1sl0c4d0642zr"))))
+    (properties `((upstream-name . "QWDAP")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppeigen r-rcpp r-pls))
+    (home-page "https://cran.r-project.org/package=QWDAP")
+    (synopsis "Quantum Walk-Based Data Analysis and Prediction")
+    (description
+     "The modeling and prediction of graph-associated time series(GATS) based on
+continuous time quantum walk.  This software is mainly used for feature
+extraction, modeling, prediction and result evaluation of GATS, including
+continuous time quantum walk simulation, feature selection, regression analysis,
+time series prediction, and series fit calculation.  A paper is attached to the
+package for reference.")
+    (license license:gpl2)))
+
 (define-public r-qwalkr
   (package
     (name "r-qwalkr")
@@ -1304,50 +1331,6 @@ columns of a data.frame.")
     (description
      "Translate SQL SELECT statements into lists of R expressions.")
     (license license:asl2.0)))
-
-(define-public r-querychat
-  (package
-    (name "r-querychat")
-    (version "0.4.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "querychat" version))
-       (sha256
-        (base32 "0jld3p7lg0knap6nrjv39rbjvg8cvvhb690v2v1h17p22idj2prd"))))
-    (properties `((upstream-name . "querychat")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zip
-                             r-yaml
-                             r-whisker
-                             r-shinychat
-                             r-shiny
-                             r-s7
-                             r-rlang
-                             r-r6
-                             r-promises
-                             r-lifecycle
-                             r-jsonlite
-                             r-htmltools
-                             r-ellmer
-                             r-dbi
-                             r-coro
-                             r-cli
-                             r-bslib
-                             r-bsicons))
-    (native-inputs (list r-knitr))
-    (home-page "https://posit-dev.github.io/querychat/r/")
-    (synopsis
-     "Filter and Query Data Frames in 'shiny' Using an LLM Chat Interface")
-    (description
-     "Adds an LLM-powered chatbot to your shiny app, that can turn your users natural
-language questions into SQL queries that run against your data, and return the
-result as a reactive data frame.  Use it to drive reactive calculations,
-visualizations, downloads, and more.")
-    (license license:expat)))
 
 (define-public r-querybuilder
   (package
@@ -2670,19 +2653,20 @@ scores following Sokolova and Lapalme (2009 <doi:10.1016/j.ipm.2009.03.002>).")
 (define-public r-quallmer
   (package
     (name "r-quallmer")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quallmer" version))
        (sha256
-        (base32 "0i92cpyh31287pfm79raxk89zq2gbandc2f37nbv4wahh45z0vhw"))))
+        (base32 "1i5azyjk630gwm11zi6rlhvh7ngrmhraajc29n64qcpj5mqm71cc"))))
     (properties `((upstream-name . "quallmer")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-vctrs
+    (propagated-inputs (list r-xml2
+                             r-vctrs
                              r-tibble
                              r-rlang
                              r-lifecycle
@@ -2700,12 +2684,14 @@ scores following Sokolova and Lapalme (2009 <doi:10.1016/j.ipm.2009.03.002>).")
 language models ('LLMs') via the ellmer package, supporting providers including
 @code{OpenAI}', Anthropic', Google', Azure', and local models via Ollama'.
 Provides a codebook'-based workflow for defining coding instructions and
-applying them to texts, images, audio recordings, and other data.  Includes
-built-in codebooks for common applications such as sentiment analysis and policy
-coding, and functions for creating custom codebooks for specific research
-questions.  Supports systematic replication across models and settings,
-computing inter-coder reliability statistics including Krippendorff's alpha
-(Krippendorff 2019, <doi:10.4135/9781071878781>) and Fleiss kappa (Fleiss 1971,
+applying them to texts, images, audio recordings, and other data, with optional
+transcription of audio and translation of texts before coding through
+@code{DeepL}', Google', Qwen-MT', or a chat model.  Includes built-in codebooks
+for common applications such as sentiment analysis and policy coding, and
+functions for creating custom codebooks for specific research questions.
+Supports systematic replication across models and settings, computing
+inter-coder reliability statistics including Krippendorff's alpha (Krippendorff
+2019, <doi:10.4135/9781071878781>) and Fleiss kappa (Fleiss 1971,
 <doi:10.1037/h0031619>), as well as gold-standard validation metrics including
 accuracy, precision, recall, and F1 scores following Sokolova and Lapalme (2009,
 <doi:10.1016/j.ipm.2009.03.002>).  Provides audit trail functionality for
@@ -4034,13 +4020,13 @@ allow to construct spherical curves.  References: Barry and Goldman
 (define-public r-qslice
   (package
     (name "r-qslice")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qslice" version))
        (sha256
-        (base32 "0df8988pr0kcz8xdi8sgl99mifs8djzjrannx52n42yck58g5hky"))))
+        (base32 "0f6if4vgg4ib5lg7vp3s42ci9m76r8hqmwwlzmqgvcrwq77zvygv"))))
     (properties `((upstream-name . "qslice")))
     (build-system r-build-system)
     (arguments
@@ -4050,15 +4036,16 @@ allow to construct spherical curves.  References: Barry and Goldman
     (home-page "https://cran.r-project.org/package=qslice")
     (synopsis "Implementations of Various Slice Samplers")
     (description
-     "Implementations of the quantile slice sampler of Heiner et al. (2024+, in
-preparation) as well as other popular slice samplers are provided.  Helper
-functions for specifying pseudo-target distributions are included, both for
-diagnostics and for tuning the quantile slice sampler.  Other implemented
-methods include the generalized elliptical slice sampler of Nishihara et al.
-(2014)<https://jmlr.org/papers/v15/nishihara14a.html}, latent slice sampler of
-Li and Walker (2023)<doi:10.1016/j.csda.2022.107652>, and stepping-out slice
-sampler of Neal (2003)<doi:10.1214/aos/1056562461>, and independence
-Metropolis-Hastings sampler.")
+     "Implementations of the quantile slice sampler of Heiner et al. (2026+, in
+preparation) <doi:10.48550/@code{arXiv.2407.12608>} as well as other popular
+slice samplers are provided.  Helper functions for specifying pseudo-target
+distributions are included, both for diagnostics and for tuning the quantile
+slice sampler.  Other implemented methods include the generalized elliptical
+slice sampler of Nishihara et al. (2014)
+<https://jmlr.org/papers/v15/nishihara14a.html>, latent slice sampler of Li and
+Walker (2023) <doi:10.1016/j.csda.2022.107652>, and stepping-out slice sampler
+of Neal (2003) <doi:10.1214/aos/1056562461>, as well as independence
+Metropolis-Hastings and random-walk Metropolis samplers.")
     (license (list license:expat license:asl2.0))))
 
 (define-public r-qsimulatr
@@ -6497,13 +6484,13 @@ Fechnerian distances can be computed.")
 (define-public r-qdfauction
   (package
     (name "r-qdfauction")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qdfauction" version))
        (sha256
-        (base32 "1qj6y23lq8l37y66z23kn4ylzif9686avm3rmyh3v1s5zzlmazfl"))))
+        (base32 "00qjd2q4q53qqss3g3jmidp7pli1lcw1lq3p99gnbwnkz2wclm0i"))))
     (properties `((upstream-name . "qdfauction")))
     (build-system r-build-system)
     (arguments

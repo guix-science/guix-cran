@@ -3842,13 +3842,13 @@ processing is described in Bengtsson (2021) <doi:10.32614/RJ-2021-048>.")
 (define-public r-gsdesignnb
   (package
     (name "r-gsdesignnb")
-    (version "0.3.2")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gsDesignNB" version))
        (sha256
-        (base32 "13liajhqfgkzayqb28jdb08pfigbvqwhrslx0fb6igd7qs9324hn"))))
+        (base32 "1djhvbcrxczhdpi9zfqna83kwji6icwxr16m9xhqmxq8xc14rqsz"))))
     (properties `((upstream-name . "gsDesignNB")))
     (build-system r-build-system)
     (arguments
@@ -9655,13 +9655,13 @@ and @code{MaxMin} ordering proposed in Guinness (2018)
 (define-public r-gpvam
   (package
     (name "r-gpvam")
-    (version "3.3-0")
+    (version "3.4-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GPvam" version))
        (sha256
-        (base32 "1bawvdad4fvlfwayyybqk7q8bb3ksmsznzjgzspkynz4il00kf48"))))
+        (base32 "1cs0l1zs0l2y8fc2bz3b9jjnkhs5k7gjq1qfzl6waywxwl1f1acd"))))
     (properties `((upstream-name . "GPvam")))
     (build-system r-build-system)
     (arguments
@@ -11338,28 +11338,33 @@ methodology.")
 (define-public r-gpbiometrics
   (package
     (name "r-gpbiometrics")
-    (version "0.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gpbiometrics" version))
        (sha256
-        (base32 "0ngzb4zslixp3kgz1xbdnb0vhy0dxwv0ah1iq360dflfgab7przj"))))
+        (base32 "1vqa3qb3jrbiw165q0pd3xzxv475lnmgc50v42lpz3hvzrgh6hir"))))
     (properties `((upstream-name . "gpbiometrics")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=gpbiometrics")
+    (home-page "https://github.com/stefanosbalaskas/gpbiometrics")
     (synopsis "Process and Report Gazepoint Biometrics Data")
     (description
-     "Imports, validates, quality-checks, preprocesses, summarises, synchronises,
-models, plots, and reports Gazepoint Biometrics exports.  The package focuses on
-Gazepoint-specific biometric channels such as GSR/EDA, heart rate, interbeat
-intervals, pulse signals, engagement dial, TTL markers, and synchronisation
-fields that can be combined with Gazepoint GP3 and GP3 HD eye-tracking
-workflows.")
+     "Gazepoint-native tools for reproducible analysis and reporting of Gazepoint
+Biometrics and GP3-derived physiological, gaze, pupil, fixation, AOI, marker,
+and event-level exports.  The package supports import, validation,
+preprocessing, missing-value imputation, EDA/GSR, SCR epoching, IBI/RR/HRV,
+PPG/pulse workflows, pupil blink detection and cleaning, gaze filtering,
+fixation summaries, engagement-dial indices, multimodal trial regressors,
+quality reports, exclusion and QC recommendations, synthetic eye-data
+generation, and interoperability or workflow-inspired helpers for common
+psychophysiology toolchains.  The package is designed for transparent,
+CRAN-safe, scriptable analysis rather than as a full clone of external
+commercial or open-source toolboxes.")
     (license license:expat)))
 
 (define-public r-gpbayes
@@ -11533,13 +11538,13 @@ generalised to combine variations of visualisations from the same datasets (i.e.
 (define-public r-gp3tools
   (package
     (name "r-gp3tools")
-    (version "2.3.0")
+    (version "2.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gp3tools" version))
        (sha256
-        (base32 "0yvkascp7pkzafnwqnw3yik7nnnirycvljd6l88qjbmhp13cpc9q"))))
+        (base32 "0rx17c7minx8y71hmix8r7ypwhahqlg6vi11w9mi4g7x2jk1797k"))))
     (properties `((upstream-name . "gp3tools")))
     (build-system r-build-system)
     (arguments
@@ -11567,13 +11572,13 @@ peer-reviewed software paper <doi:10.3390/jemr19040076>.")
 (define-public r-gp3sequences
   (package
     (name "r-gp3sequences")
-    (version "0.3.0")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gp3sequences" version))
        (sha256
-        (base32 "13avpw1z2sclpnn397dfw7wj90lbhi0hzpcvzj954dxx5vbs2b0x"))))
+        (base32 "03m5lzlsm704cgqm07wj4xw4a6f9ivw9vxpzgwn4dzsyzpgynnik"))))
     (properties `((upstream-name . "gp3sequences")))
     (build-system r-build-system)
     (arguments
@@ -11597,13 +11602,13 @@ audits, and guarded adapters to specialist sequence-analysis packages.")
 (define-public r-gp3ml
   (package
     (name "r-gp3ml")
-    (version "0.3.0")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gp3ml" version))
        (sha256
-        (base32 "1g47r6rj5zkbypsrdyq0ajhrqabgws16pi0rxhirzjffyysvxh02"))))
+        (base32 "0yz55cc4qbssj7s5cvq4h1lvlnwj39apdkd8gdh07qzq8frmlj4s"))))
     (properties `((upstream-name . "gp3ml")))
     (build-system r-build-system)
     (arguments
@@ -11633,13 +11638,13 @@ deception, cognition, comprehension, intent, or other mental states.")
 (define-public r-gp3bayes
   (package
     (name "r-gp3bayes")
-    (version "0.5.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gp3bayes" version))
        (sha256
-        (base32 "12nxwmf8j2ldjggvp77sxi8pjnb4y1k408zqsv0vrqcxjigv0zjk"))))
+        (base32 "0c6yyiphs229qrq54fk5li8mciqr5p5jamrgyj2r1marp95pk1am"))))
     (properties `((upstream-name . "gp3bayes")))
     (build-system r-build-system)
     (arguments
@@ -11665,7 +11670,11 @@ governed robust and distributional dynamic pupillometry, bounded ARMA residual
 structures, Gaussian-process trajectories, explicit measurement uncertainty and
 missing-data models, joint binocular analysis, predictive model comparison,
 functional posterior estimands, and experimental nonlinear response-shape models
-while preserving explicit scientific and computational governance boundaries.")
+while preserving explicit scientific and computational governance boundaries.
+Version 0.6 adds retention-first Bayesian SCR responsivity accountability and
+governed trial-level multilevel gaze mediation with explicit within- and
+between-participant estimands, serial and moderated extensions, convergence
+gating, and observation-aligned predictive model comparison.")
     (license license:expat)))
 
 (define-public r-gp
@@ -15468,25 +15477,25 @@ Zhang (2012) <doi:10.1080/01621459.2012.710509>.")
 (define-public r-gmapsdistance
   (package
     (name "r-gmapsdistance")
-    (version "4.0.5")
+    (version "4.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gmapsdistance" version))
        (sha256
-        (base32 "0glpbvv2sk3zrd08mqzsy2knc0dp98hrm2ww6gc2mka3ff45xbfr"))))
+        (base32 "0c71limghqqc5ppz4cvy80qrx12j6a23hy47lkqsgm7vas2xmh8g"))))
     (properties `((upstream-name . "gmapsdistance")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xml r-rcurl))
+    (propagated-inputs (list r-xml r-rcurl r-jsonlite r-httr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jlacko/gmapsdistance")
     (synopsis "Distance and Travel Time Between Two Points from Google Maps")
     (description
-     "Get distance and travel time between two points from Google Maps.  Four possible
-modes of transportation (bicycling, walking, driving and public transportation).")
+     "Get distance and travel time between two points from Google Maps.  Supports both
+the legacy Distance Matrix API (XML endpoint) and the newer Routes API (REST).")
     (license license:gpl3+)))
 
 (define-public r-gmailr
@@ -15585,13 +15594,13 @@ R Markdown documents, and R Jupyter Notebooks'.  Internally, uses
 (define-public r-glyrepr
   (package
     (name "r-glyrepr")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glyrepr" version))
        (sha256
-        (base32 "1vja3pgabj09ll0aksapxwqab1mz02qxrfqxrch3k6ll7wsahmjb"))))
+        (base32 "0gbnmcsyck9rfsah7l1spmd5pdp4r7r1m3sm3x2fv0wc6h57ir9k"))))
     (properties `((upstream-name . "glyrepr")))
     (build-system r-build-system)
     (arguments
@@ -15605,7 +15614,6 @@ R Markdown documents, and R Jupyter Notebooks'.  Internally, uses
                              r-rcpp
                              r-purrr
                              r-pillar
-                             r-magrittr
                              r-igraph
                              r-glue
                              r-dplyr
@@ -15628,13 +15636,13 @@ glycoproteomics analysis workflows.")
 (define-public r-glyph
   (package
     (name "r-glyph")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glyph" version))
        (sha256
-        (base32 "08dvscyfy7cpcbxg38idg111i08isj0gghcm5693zhqcqq71vl8v"))))
+        (base32 "05rgrz0bacj4y4jxpbwxhnw7nw6122wfm8pbjh1bnjcs6w15qscn"))))
     (properties `((upstream-name . "glyph")))
     (build-system r-build-system)
     (arguments
@@ -15658,15 +15666,14 @@ glycoproteomics analysis workflows.")
     (propagated-inputs (list r-rlang r-jsonlite r-htmlwidgets r-cli))
     (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/josh45-source/glyph")
-    (synopsis "Next-Generation Grammar of Interactive Graphics")
+    (synopsis "Grammar of Interactive Graphics")
     (description
-     "This package provides a modern visualization grammar that treats interactivity,
-animation, and composable layouts as first-class concepts rather than
-afterthoughts.  Designed to address key limitations of existing grammars: native
-hover, click, and zoom events, @code{WebGL'-accelerated} rendering for large
-datasets, built-in multi-plot composition, and a token-based theming system.
-Renders to interactive HTML widgets via D3.js or static SVG from a single
-declarative specification.")
+     "Builds interactive graphics from a declarative specification.  Marks, scales,
+tooltips, zoom, brushing, linked selections, animated transitions and multi-plot
+layouts are declared in one pipeline and stored as a plain R list that can be
+inspected, saved as JSON or converted to Vega-Lite'.  Plots are drawn in the
+browser with D3.js and work at the console, in R Markdown and Quarto documents,
+and in Shiny apps, where brushed selections are returned to R.")
     (license license:expat)))
 
 (define-public r-glyparse
@@ -15708,13 +15715,13 @@ the format and parse the structure string.")
 (define-public r-glymotif
   (package
     (name "r-glymotif")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glymotif" version))
        (sha256
-        (base32 "0va5fjqj9yx1sxfx8v61smnp1jqr4xjsyqs34m1n42zx0h7rvh7n"))))
+        (base32 "0llags3fvx4dgxxaawdmz386a6vrycnfl3hqwgrccdy9zay9jijz"))))
     (properties `((upstream-name . "glymotif")))
     (build-system r-build-system)
     (arguments
@@ -19281,13 +19288,13 @@ changes in their source code, in relation to features requests.")
 (define-public r-gitai
   (package
     (name "r-gitai")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GitAI" version))
        (sha256
-        (base32 "07qdkjdlx36b38v8180phnlibbnqg260kc5awx8pb1likx9nyb9b"))))
+        (base32 "0acpgxha2z1dqzcaiybjh6nrfq5lzcw2h7raks0br2bdfx03sz7v"))))
     (properties `((upstream-name . "GitAI")))
     (build-system r-build-system)
     (arguments
@@ -24542,13 +24549,13 @@ coefficients, and statistical inference (JankovÃ¡ and van de Geer, 2015)
 (define-public r-ggmlr
   (package
     (name "r-ggmlr")
-    (version "0.8.8")
+    (version "0.8.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggmlR" version))
        (sha256
-        (base32 "15j2qsplrrzg11jvbvcwabqb4658k4jl416kg1r9yival7ncx03s"))))
+        (base32 "0j6g6vx1wyqmglz4mi6lazgs7ldmjirdh1rv23vp256bjj8nfc8n"))))
     (properties `((upstream-name . "ggmlR")))
     (build-system r-build-system)
     (arguments
@@ -25948,6 +25955,35 @@ ggplot2 package and its extensions, along with other graphic elements such as
 guides and theme elements.  The filters are applied at render time and thus uses
 the exact pixel dimensions needed.")
     (license license:expat)))
+
+(define-public r-ggfourfold
+  (package
+    (name "r-ggfourfold")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggfourfold" version))
+       (sha256
+        (base32 "16qawprjvvlccwdg5nxqqman0pzv52ypbdnb8lh0j30i8ksbxkmb"))))
+    (properties `((upstream-name . "ggfourfold")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://gavinklorfine.com/ggfourfold/")
+    (synopsis "Fourfold Displays for 'ggplot2'")
+    (description
+     "Draws fourfold displays of 2 x 2 (x k) contingency tables as a ggplot2 layer,
+following Friendly (1994) <https://datavis.ca/papers/4fold/4fold.pdf> and
+Friendly and Meyer (2016) <doi:10.1201/9781315374413>.  Cell frequencies are
+shown as quarter-circles or squares of proportional area, with confidence rings
+for the odds ratio and shading for the direction and strength of association.
+Stratified tables are shown with ggplot2 faceting and a corresponding ggplot2
+theme is provided.")
+    (license license:gpl2+)))
 
 (define-public r-ggfoundry
   (package
@@ -31136,6 +31172,61 @@ methods.  Software companion for Diggle and Ribeiro (2007)
 <doi:10.1007/978-0-387-48536-2>.")
     (license license:gpl2+)))
 
+(define-public r-geopytorch
+  (package
+    (name "r-geopytorch")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geopytorch" version))
+       (sha256
+        (base32 "1a9fmiy1w9y17w5r56wszkwxfgz2s6mm8iylggrm7bdpwkzif2v6"))))
+    (properties `((upstream-name . "geopytorch")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list python))
+    (propagated-inputs (list r-reticulate))
+    (home-page "https://github.com/dbtnc/geopytorch")
+    (synopsis "R Interface to 'GeoPyTorch'")
+    (description
+     "Fits ordinary kriging and spatial linear models through reticulate with the
+@code{GeoPyTorch} Python package, which is built on G@code{PyTorch} and
+@code{PyTorch}'.  Covariance parameters can be fixed or estimated by maximum
+likelihood or restricted maximum likelihood, and predictions include their
+variances.  Python and the required packages are installed on first use by
+reticulate'.")
+    (license license:expat)))
+
+(define-public r-geopt
+  (package
+    (name "r-geopt")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geopt" version))
+       (sha256
+        (base32 "01hxnarix5h0a89kwzddmqks9g0hzxdzfif5r5gr1ih5im75qkc5"))))
+    (properties `((upstream-name . "geopt")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sf r-r6 r-httr2 r-geojsonsf r-digest))
+    (native-inputs (list r-knitr))
+    (home-page "https://c-matos.github.io/geopt/")
+    (synopsis "Tools to Access and Map Spatial Datasets of Portugal")
+    (description
+     "This package provides tools to download, process, and visualize official spatial
+datasets for Portugal.  Get administrative boundaries at all levels and other
+geographic data ready for mapping.  Data from Statistics Portugal (INE), for
+example retrieved with the ineptr2 package, can be joined to the boundaries by
+place name or code, including names from earlier boundary reforms.")
+    (license license:expat)))
+
 (define-public r-geopsych
   (package
     (name "r-geopsych")
@@ -31655,13 +31746,13 @@ performing high-dimensional Bayesian variable selection.")
 (define-public r-geometricmorphometricsmix
   (package
     (name "r-geometricmorphometricsmix")
-    (version "0.6.1.1")
+    (version "0.6.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeometricMorphometricsMix" version))
        (sha256
-        (base32 "11bb2iq2m0mwpwa8i3jszfdbss9x5ad25rz23151fz2m2xg6g7al"))))
+        (base32 "1zb1gzlxrf03188c215gq0zx3ismwwhi57m5k88z8lxkzrm0nix6"))))
     (properties `((upstream-name . "GeometricMorphometricsMix")))
     (build-system r-build-system)
     (arguments
@@ -32635,6 +32726,42 @@ orientation.")
      "Visualizes two-dimensional geoelectric resistivity measurement profiles in three
 dimensions.")
     (license license:gpl2+)))
+
+(define-public r-geoecu
+  (package
+    (name "r-geoecu")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geoecu" version))
+       (sha256
+        (base32 "0hagb5haa0sqapi31fjrqqq8af575xawp4vir69q5gbchwv4swsf"))))
+    (properties `((upstream-name . "geoecu")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sf))
+    (home-page "https://f-slg.github.io/geoecu/")
+    (synopsis
+     "Maps of the Provinces, Cantons and Parishes of Ecuador (Mapas de Provincias, Cantones y Parroquias del Ecuador)")
+    (description
+     "This package provides the boundaries of the provinces, cantons and parishes of
+Ecuador as sf objects, identified by the codes of the national
+political-administrative division (DPA, \"DivisiÃ³n PolÃ­tico-Administrativa\"),
+ready to be mapped and joined with health, epidemiological surveillance or other
+data.  The three levels nest exactly and are offered in two resolutions: a light
+one for maps and dashboards and a detailed one for spatial analysis.  The layers
+are derived from the open data of the Territorial Organization of the State
+published by the National Committee of Internal Boundaries (CONALI, Ministry of
+Government of Ecuador) under a CC BY licence
+<https://www.datosabiertos.gob.ec/>, and are downloaded on first use as
+@code{GeoPackage} files, verified and cached locally.  Includes a catalogue of
+DPA codes, a table to update codes from earlier versions, helpers to clean codes
+and place names, and tools to relocate the Galapagos Islands in national maps.
+Documentation is in Spanish.")
+    (license license:expat)))
 
 (define-public r-geodregr
   (package
@@ -35749,13 +35876,13 @@ GENEActiv device.")
 (define-public r-geneacore
   (package
     (name "r-geneacore")
-    (version "1.2.0")
+    (version "1.3.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GENEAcore" version))
        (sha256
-        (base32 "140xxhg04n68lg41m4giy1xhj3asiapzag3qxhq0wwrz18i0rhh0"))))
+        (base32 "0zl8pmvis9kpb5y3sqk66a65x64ffmcq1crj0pbqnap8vz9cjqs4"))))
     (properties `((upstream-name . "GENEAcore")))
     (build-system r-build-system)
     (arguments
@@ -35769,7 +35896,7 @@ GENEActiv device.")
      "Analytics to read in and segment raw GENEActiv accelerometer data into epochs
 and events.  For more details on the GENEActiv device, see
 <https://activinsights.com/resources/geneactiv-support-1-2/>.")
-    (license license:gpl2+)))
+    (license license:gpl3+)))
 
 (define-public r-geneaclassify
   (package
@@ -37467,13 +37594,13 @@ al.  By the way, J. G. Kemeny is a co-inventor of the computer language BASIC.")
 (define-public r-gdxtools
   (package
     (name "r-gdxtools")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gdxtools" version))
        (sha256
-        (base32 "1qv13bhigra7s8rlla0ga7n05b93k8zh5jagv1p9zlbd2lpham6c"))))
+        (base32 "1c6d93qyb6pl6w1gfxfy2lwxg7ypb5fb8if06waqanza83hhflly"))))
     (properties `((upstream-name . "gdxtools")))
     (build-system r-build-system)
     (arguments
@@ -39865,6 +39992,35 @@ the polynomials.")
 predict values from fits, and produce plots of predicted data via either ggplot2
 or base R plotting.")
     (license license:gpl3)))
+
+(define-public r-gaussianprocesses
+  (package
+    (name "r-gaussianprocesses")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gaussianprocesses" version))
+       (sha256
+        (base32 "0hy3qhmai9d45wah6pv9559dbmpm3pf9szf9zmmikmk2k6sxb9g8"))))
+    (properties `((upstream-name . "gaussianprocesses")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://gaussian-processes-r-12efed.gitlab.io/")
+    (synopsis "Gaussian Processes from First Principles")
+    (description
+     "Gaussian process regression, classification, and count models with explicit
+covariance kernels, exact Gaussian inference, Laplace approximations for
+non-Gaussian likelihoods, sparse approximations, marginal-likelihood
+optimization, derivatives, posterior sampling, calibration diagnostics, and
+time-series workflows.  The implementation follows the core methodology of
+Rasmussen and Williams (2006) <doi:10.7551/mitpress/3206.001.0001> and
+emphasizes numerical stability, transparent assumptions, and reproducible
+statistical workflows.")
+    (license license:expat)))
 
 (define-public r-gaussianhmm1d
   (package
