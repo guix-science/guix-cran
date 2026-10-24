@@ -13472,13 +13472,13 @@ way.")
 (define-public r-flow
   (package
     (name "r-flow")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flow" version))
        (sha256
-        (base32 "171csdpp445lxhh7ph59h7xxqxdpjlkf35nrjy74282m9xmqdlz9"))))
+        (base32 "1qq0x2bwzbv9ni6ipbxsn9c2jj7l2qlvixsb8lijk9i201wk75g6"))))
     (properties `((upstream-name . "flow")))
     (build-system r-build-system)
     (arguments
@@ -13488,7 +13488,7 @@ way.")
                   (add-after 'unpack 'set-HOME
                     (lambda _
                       (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-webshot
+    (propagated-inputs (list r-webshot2
                              r-styler
                              r-rstudioapi
                              r-nomnoml
@@ -24662,13 +24662,13 @@ validity and visualizing fuzzy clustering results.")
 (define-public r-fcl
   (package
     (name "r-fcl")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fcl" version))
        (sha256
-        (base32 "018fiy6by0fhahwm4pmf3mrdmskni4a27dhqpf22q2wird21wpzn"))))
+        (base32 "1sxbdjrz40qscdfwbxf31c41w0vk60rrhcpkypxcn3kj8xb5ff0q"))))
     (properties `((upstream-name . "fcl")))
     (build-system r-build-system)
     (arguments

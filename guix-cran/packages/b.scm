@@ -743,33 +743,6 @@ minimal importance difference, stratification, non-prioritized endpoints (O
 Brien test), and can handle right-censoring and competing-risks.")
     (license license:gpl3)))
 
-(define-public r-buttr
-  (package
-    (name "r-buttr")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ButtR" version))
-       (sha256
-        (base32 "05ybbxncaz6l760aq365i4f5blqdm5ky64km67xwv8fd7166jmwc"))))
-    (properties `((upstream-name . "ButtR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-jsonlite r-httr))
-    (home-page "https://cran.r-project.org/package=ButtR")
-    (synopsis "Download and Extract Data from the 'OzButterflies' Database")
-    (description
-     "This package provides tools to download and extract data from the
-@code{OzButterflies} Database <doi:10.5281/zenodo.19019034>, which contains
-reflectance spectra, calibrated photographs, and cytochrome c oxidase subunit I
-(COI) sequences of Australian butterflies.  The main function
-@code{get_Oz_butterflies()} downloads the database and extracts selected files
-to a specified directory using user-defined filters.")
-    (license license:expat)))
-
 (define-public r-butterflyoptions
   (package
     (name "r-butterflyoptions")
@@ -21248,13 +21221,13 @@ specified.  A direct base to base converter is included.")
 (define-public r-bigbang
   (package
     (name "r-bigbang")
-    (version "0.5.1")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bigbang" version))
        (sha256
-        (base32 "0v21zigv6ps8ixpis8mdr4wd9dasaqql2lfrd950q3vkcxaa0jyv"))))
+        (base32 "1adm2vgm75qb4zhl0rp23247bl2biyd6krxmvrigyw40vn866yjw"))))
     (properties `((upstream-name . "bigbang")))
     (build-system r-build-system)
     (arguments
@@ -38446,13 +38419,13 @@ Reference: Nan Chen and J. Jack Lee (2019) <doi:10.1002/bimj.201700275>.")
 (define-public r-bacenr
   (package
     (name "r-bacenr")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bacenR" version))
        (sha256
-        (base32 "06684j19x8qid0s9krcwlpmqaf7gzj1n2qak03bdm0m8qi7zsciv"))))
+        (base32 "1gr6ndpgyq5xm3m5iw5w3vrb9fi8zpall2n29axvik595gr74p60"))))
     (properties `((upstream-name . "bacenR")))
     (build-system r-build-system)
     (arguments

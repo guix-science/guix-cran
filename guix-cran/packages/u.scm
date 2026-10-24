@@ -2915,19 +2915,19 @@ nlist package implements many of the methods for its nlist class.")
 (define-public r-universalcvi
   (package
     (name "r-universalcvi")
-    (version "1.4.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "UniversalCVI" version))
        (sha256
-        (base32 "002n8zaz1gbgzppk5g0zkzja9hqv4zysgdwy2xazjsqnnl5w64ks"))))
+        (base32 "1dpnm0dhcxjyi2whcm27s0maggya3ipsz8ps6l7c1ygqpi6mn6h5"))))
     (properties `((upstream-name . "UniversalCVI")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-mclust r-e1071))
+    (propagated-inputs (list r-mclust r-e1071 r-clue))
     (home-page "https://cran.r-project.org/package=UniversalCVI")
     (synopsis "Hard and Soft Cluster Validity Indices")
     (description

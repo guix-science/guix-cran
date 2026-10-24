@@ -262,6 +262,37 @@ case a value that cannot be converted is an error rather than a silently missing
 value.  The zsv sources are bundled, so there are no runtime dependencies.")
     (license license:expat)))
 
+(define-public r-zucrypt
+  (package
+    (name "r-zucrypt")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "zucrypt" version))
+       (sha256
+        (base32 "0b02ijrbdqnx7xpfjd2mf7i2pzc0dasvh23avnwf0q1zx9hmgby5"))))
+    (properties `((upstream-name . "zucrypt")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/pedrobtz/zucrypt")
+    (synopsis "Cryptography Without System Dependencies")
+    (description
+     "Cryptographic functions over raw vectors, including message digests of in-memory
+data, files and connections, keyed-hash message authentication codes (HMAC),
+Advanced Encryption Standard (AES) encryption, constant-time comparison and
+hexadecimal encoding, backed by a bundled and pinned copy of the Mbed TLS
+project's cryptography library, TF-PSA-Crypto
+(<https://github.com/Mbed-TLS/TF-PSA-Crypto>).  No system cryptographic library,
+Java or Python is required at install or run time.  Algorithm names are matched
+exactly, and failures are reported as structured conditions.  The same
+primitives, and secure erasure of native buffers, are published to other
+packages as a static archive and as a registered C interface, so that a package
+can call them from C without going through R.")
+    (license license:expat)))
+
 (define-public r-zucbor
   (package
     (name "r-zucbor")
@@ -1862,13 +1893,13 @@ ZIP Code Tabulation Areas (ZCTAs).")
 (define-public r-zarr
   (package
     (name "r-zarr")
-    (version "0.5.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "zarr" version))
        (sha256
-        (base32 "17d3lbprcrgrj1php3jva9rfmvmpbj7ywnp9r0aq64xahm6s9p1d"))))
+        (base32 "08d4dq54ik3chl368sdx5n00zs8j0zzgxsqaywsiplj5n2pnmi0g"))))
     (properties `((upstream-name . "zarr")))
     (build-system r-build-system)
     (arguments

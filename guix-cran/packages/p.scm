@@ -4169,13 +4169,13 @@ or without concomitant variables.  See Frick et al. (2012)
 (define-public r-psychomatic
   (package
     (name "r-psychomatic")
-    (version "0.3.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PsychoMatic" version))
        (sha256
-        (base32 "0caa25k64ic001s83xcw3yy16532i5mrd0fm7bk520kkwicmfgyv"))))
+        (base32 "1alsp0lwhi6zdskpw28wkawpqyw9f63nkr7ym26cp55cnb2wldrz"))))
     (properties `((upstream-name . "PsychoMatic")))
     (build-system r-build-system)
     (arguments
@@ -4188,7 +4188,8 @@ or without concomitant variables.  See Frick et al. (2012)
     (description
      "Automates common psychometric workflows for applied researchers, including item
 descriptives, inter-item correlations, exploratory and confirmatory factor
-analysis, reliability, multi-group measurement invariance, and alignment
+analysis, exploratory structural equation measurement models, reliability,
+psychometric network analysis, multi-group measurement invariance, and alignment
 optimization.  Decision heuristics are informed by procedures such as parallel
 analysis (Horn, 1965, <doi:10.1007/BF02289447>), multivariate normality
 diagnostics (Mardia, 1970, <doi:10.1093/biomet/57.3.519>),
@@ -4197,7 +4198,7 @@ measurement-invariance fit-change rules (Chen, 2007,
 Muthen, 2014, <doi:10.1080/10705511.2014.919210>), among others.  Results can be
 returned as structured R objects and exported as bilingual reports for
 transparent analytical documentation.")
-    (license license:expat)))
+    (license license:gpl3+)))
 
 (define-public r-psycho
   (package
@@ -9218,13 +9219,13 @@ observing the project already carried out.")
 (define-public r-projectlsa
   (package
     (name "r-projectlsa")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "projectLSA" version))
        (sha256
-        (base32 "0irgwj2jxy2623bbj950745187iyr5gqqnddmfxsf75bcff100v5"))))
+        (base32 "099v34vzckjw6qb9mv7dijvahr09p9a3w99xrrawjj4rqqkwabcn"))))
     (properties `((upstream-name . "projectLSA")))
     (build-system r-build-system)
     (arguments
@@ -9252,6 +9253,7 @@ observing the project already carried out.")
                              r-polca
                              r-plotly
                              r-officer
+                             r-nnet
                              r-mirt
                              r-mclust
                              r-magick
@@ -9259,7 +9261,6 @@ observing the project already carried out.")
                              r-knitr
                              r-kableextra
                              r-jsonlite
-                             r-httr
                              r-haven
                              r-glca
                              r-ggplot2
@@ -9268,6 +9269,7 @@ observing the project already carried out.")
                              r-dt
                              r-dplyr
                              r-data-table
+                             r-curl
                              r-colourpicker))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/hdmeasure/projectLSA")
@@ -9286,12 +9288,15 @@ LPA is supported through @code{tidyLPA} (Rosenberg et al., 2018)
 <doi:10.18637/jss.v048.i06>, and EFA via psych (Revelle, 2025).  SEM and CFA
 functionalities build upon the lavaan framework (Rosseel, 2012)
 <doi:10.18637/jss.v048.i02>.  The CFA/SEM module additionally supports
-multi-group invariance testing, latent growth modelling, modification indices,
-and path diagram visualisation.  Every module can save and restore an analysis
-session, export an R Markdown HTML report, and consult an optional AI assistant
-that interprets the current results through a user-supplied large language model
-API key.  Users can upload datasets or use built-in examples, fit models,
-compare fit indices, visualize results, and export outputs without programming.")
+multi-group invariance testing, latent growth modelling, ordinal indicators
+estimated from polychoric correlations, modification indices, and path diagram
+visualisation.  Every module can save and restore an analysis session and export
+an R Markdown HTML report whose sections can be drafted with an optional AI
+assistant.  The assistant interprets the current results through one or several
+large language models reached with user-supplied API keys, including providers
+with a free tier.  The application runs in a responsive HTML interface.  Users
+can upload datasets or use built-in examples, fit models, compare fit indices,
+visualize results, and export outputs without programming.")
     (license license:expat)))
 
 (define-public r-projections
@@ -16906,13 +16911,13 @@ a new sample of persons.")
 (define-public r-powrpriori
   (package
     (name "r-powrpriori")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PowRPriori" version))
        (sha256
-        (base32 "0yi0jpgrmr6pd4vxczqgyd8dixmw75gfx7cd160yi58bjvww3b5s"))))
+        (base32 "1m4qddc9w4h7x25yy0ij6pmcyx3s8bmc9fdvanpryb7m7s3ls73p"))))
     (properties `((upstream-name . "PowRPriori")))
     (build-system r-build-system)
     (arguments
@@ -16922,6 +16927,7 @@ a new sample of persons.")
                              r-tidyr
                              r-scales
                              r-rlang
+                             r-reformulas
                              r-purrr
                              r-mass
                              r-magrittr
@@ -31321,13 +31327,13 @@ more.")
 (define-public r-piecepackr
   (package
     (name "r-piecepackr")
-    (version "1.16.1")
+    (version "1.17.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "piecepackr" version))
        (sha256
-        (base32 "1jczdlafkxha6x3qv269xyndlim4jx7v3wd1hbjchbsiiihlg9n2"))))
+        (base32 "09ns1cgfw7nmk8hmmcswraqiv4zwfw7b6m331n6m775wk29fgg5q"))))
     (properties `((upstream-name . "piecepackr")))
     (build-system r-build-system)
     (arguments

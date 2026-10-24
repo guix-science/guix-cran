@@ -20,7 +20,7 @@
   #:use-module (gnu packages compression)
   #:use-module (gnu packages video)
   #:use-module (gnu packages java)
-  #:use-module (gnu packages containers)
+  #:use-module (gnu packages docker)
   #:use-module (gnu packages duckdb)
   #:use-module (gnu packages tbb)
   #:use-module (gnu packages ghostscript)
@@ -2590,13 +2590,13 @@ data frames with sw_sweep'.")
 (define-public r-sweater
   (package
     (name "r-sweater")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sweater" version))
        (sha256
-        (base32 "045cyhdsnrhkcpgpgv7s209wn2pa9plj7pnlmmnfiz7dy67ikkr3"))))
+        (base32 "0b0amjnrvklp13p99fgwnvnnfbq7p8jnkcz18cszj7aaq6rjgq70"))))
     (properties `((upstream-name . "sweater")))
     (build-system r-build-system)
     (arguments
@@ -2617,10 +2617,10 @@ data frames with sw_sweep'.")
 Embedding Association Test (Caliskan et al., 2017),
 <doi:10.1126/science.aal4230>, Relative Norm Distance (Garg et al., 2018),
 <doi:10.1073/pnas.1720347115>, Mean Average Cosine Similarity (Mazini et al.,
-2019) <@code{arXiv:1904.04047>}, @code{SemAxis} (An et al., 2018)
-<@code{arXiv:1806.05521>}, Relative Negative Sentiment Bias (Sweeney & Najafian,
-2019) <doi:10.18653/v1/P19-1162>, and Embedding Coherence Test (Dev & Phillips,
-2019) <@code{arXiv:1901.07656>}.")
+2019) <doi:10.48550/@code{arXiv.1904.04047>}, @code{SemAxis} (An et al., 2018)
+<doi:10.48550/@code{arXiv.1806.05521>}, Relative Negative Sentiment Bias
+(Sweeney & Najafian, 2019) <doi:10.18653/v1/P19-1162>, and Embedding Coherence
+Test (Dev & Phillips, 2019) <doi:10.48550/@code{arXiv.1901.07656>}.")
     (license license:gpl3+)))
 
 (define-public r-swdpwr
@@ -11204,20 +11204,24 @@ or different hypothesized distributions.")
 (define-public r-sts
   (package
     (name "r-sts")
-    (version "1.4")
+    (version "1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sts" version))
        (sha256
-        (base32 "0p1qh5mjymm67kr1x6v2di50b0s171hyy8b5arvk99669vkmngfz"))))
+        (base32 "1sjyxb76r2jxcsaq157b8s1kva6z1h5j2wjmc57a8bzk97k4dd30"))))
     (properties `((upstream-name . "sts")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-tm
-                             r-stm
+                             r-snowballc
                              r-slam
                              r-rcpparmadillo
                              r-rcpp
@@ -11228,8 +11232,8 @@ or different hypothesized distributions.")
                              r-ggplot2
                              r-foreach
                              r-doparallel))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=sts")
+    (native-inputs (list r-r-rsp))
+    (home-page "https://github.com/mankad-research/sts_r")
     (synopsis
      "Estimation of the Structural Topic and Sentiment-Discourse Model for Text Analysis")
     (description
@@ -11240,7 +11244,7 @@ document-level latent variable for each topic that modulates the word frequency
 within a topic.  These latent topic sentiment-discourse variables are controlled
 by the document-level metadata.  The STS model can be useful for regression
 analysis with text data in addition to topic modelingâs traditional use of
-descriptive analysis.  The method was developed in Chen and Mankad (2024)
+descriptive analysis.  The method was developed in Chen and Mankad (2025)
 <doi:10.1287/mnsc.2022.00261>.")
     (license license:expat)))
 
@@ -12204,6 +12208,39 @@ stream networks as directed acyclic graphs: The R-package @code{streamDAG}\" (Ah
 et al., 2023) <doi:10.1016/j.envsoft.2023.105775>, and in the introductory
 package vignette.")
     (license license:gpl2+)))
+
+(define-public r-streamconnect
+  (package
+    (name "r-streamconnect")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "streamConnect" version))
+       (sha256
+        (base32 "123zx7npj64mnl2nhn0fq5vvkcb4y71kpzi46f30ca2dn4kqyn0l"))))
+    (properties `((upstream-name . "streamConnect")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-stream
+                             r-readr
+                             r-plumber
+                             r-jsonlite
+                             r-httr
+                             r-callr))
+    (native-inputs (list r-knitr))
+    (home-page "https://michael.hahsler.net/streamConnect/")
+    (synopsis
+     "Connecting Stream Mining Components Using Sockets and Web Services")
+    (description
+     "Adds functionality to connect stream mining components from the stream package
+using sockets and Web services.  The package can be used to create distributed
+workflows and plumber-based Web services that can be deployed on most common
+cloud services.")
+    (license license:gpl3)))
 
 (define-public r-streamcattools
   (package
@@ -16310,13 +16347,13 @@ Includes tools for isochrones construction and tracks interpolation.")
 (define-public r-stelfi
   (package
     (name "r-stelfi")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stelfi" version))
        (sha256
-        (base32 "0ksiq03pr9fr0h3g88lpagr83vijbs2zs732mshllf3470mwyzkk"))))
+        (base32 "0zw817khh2by1p01472n4w0xqccvi3qyq711jvg1x6x2xapsfrag"))))
     (properties `((upstream-name . "stelfi")))
     (build-system r-build-system)
     (arguments
@@ -37656,13 +37693,13 @@ For more details see: <doi:10.5281/zenodo.10137768>.")
 (define-public r-sommer
   (package
     (name "r-sommer")
-    (version "4.4.87")
+    (version "4.5.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sommer" version))
        (sha256
-        (base32 "0s0wja1xccb14wbml1svdpll6piz7wqjik82whgva3mw54n63q2k"))))
+        (base32 "16k17s563gvpv3i83wy12vhdh6ric8jmmmikxz1ikm4xfqd6xjvi"))))
     (properties `((upstream-name . "sommer")))
     (build-system r-build-system)
     (arguments
@@ -45600,13 +45637,13 @@ a model checking plot to help assess the adequacy of the fitted model.")
 (define-public r-slca
   (package
     (name "r-slca")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "slca" version))
        (sha256
-        (base32 "09l9wxvazkmncx20gk842j4haxxar346kcw80knh5cl49fhnznd2"))))
+        (base32 "1y4936cry01r6qiwy2b55v6wqq1xp5yqpba9jjd5m8xzygy92bi6"))))
     (properties `((upstream-name . "slca")))
     (build-system r-build-system)
     (arguments
@@ -61893,13 +61930,13 @@ ISBN:978-0-387-98140-6 ).")
 (define-public r-sgmean
   (package
     (name "r-sgmean")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sgmean" version))
        (sha256
-        (base32 "0yyrdh2kkwjkjcp62bzmyi99zv30lggff6pgqy33a8n0bibk3kbh"))))
+        (base32 "0rjhsnrbkpidahpzyrzf59h96m6sf5cbzrk0w9xr61q28d9fa0iy"))))
     (properties `((upstream-name . "sgmean")))
     (build-system r-build-system)
     (arguments

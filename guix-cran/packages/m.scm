@@ -540,6 +540,39 @@ confidence interval for the population variance, and the function for
 calculating the population standard deviation are provided.")
     (license license:gpl3)))
 
+(define-public r-mycaas
+  (package
+    (name "r-mycaas")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mycaas" version))
+       (sha256
+        (base32 "1gjpn8mz8vp3410s6fbl3ndkasfzywzmyp33qzf5f29sirk2cn4m"))))
+    (properties `((upstream-name . "mycaas")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny r-rpref r-rlang r-igraph r-ggplot2))
+    (home-page "https://cran.r-project.org/package=mycaas")
+    (synopsis "My Computerized Adaptive Assessment")
+    (description
+     "Implementation of adaptive assessment procedures based on Knowledge Space Theory
+(KST, Doignon & Falmagne, 1999 <ISBN:9783540645016>) and Formal Psychological
+Assessment (FPA, Spoto, Stefanutti & Vidotto, 2010 <doi:10.3758/BRM.42.1.342>)
+frameworks.  An adaptive assessment is a type of evaluation that adjusts the
+difficulty and nature of subsequent questions based on the test taker's
+responses to previous ones.  The package contains functions to perform and
+simulate an adaptive assessment.  Moreover, it is integrated with two Shiny
+interfaces, making it both accessible and user-friendly.  The package has been
+partially funded by the European Union - @code{NextGenerationEU} and by the
+Ministry of University and Research (MUR), National Recovery and Resilience Plan
+(NRRP), Mission 4, Component 2, Investment 1.5, project âRAISE - Robotics and
+AI for Socio-economic Empowermentâ (ECS00000035).")
+    (license license:expat)))
+
 (define-public r-my-stepwise
   (package
     (name "r-my-stepwise")
@@ -24115,13 +24148,13 @@ classification evaluation metrics based on confusion matrix.")
 (define-public r-mlt-docreg
   (package
     (name "r-mlt-docreg")
-    (version "1.1-14")
+    (version "1.1-15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlt.docreg" version))
        (sha256
-        (base32 "1jga5lfhxazsmw6ynwqhagyzwlb624i90mkcyyi7ky2jj3zywrni"))))
+        (base32 "017rrqs3356x464cqvkrhvr7gwgkxqbv72rp02fbrdmkijar5s8h"))))
     (properties `((upstream-name . "mlt.docreg")))
     (build-system r-build-system)
     (arguments
@@ -35664,20 +35697,20 @@ in linear regression models, which were proposed by Johndrow et al. (2020)
 (define-public r-mhn
   (package
     (name "r-mhn")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mhn" version))
        (sha256
-        (base32 "148yvjqyd1fvskm08glxvx95xin2qkmlywfwc28ikbsa0r1q6mhg"))))
+        (base32 "0wi8ggnp8my2805dfqxjdilx0gwh4pj9gkwls1j8ggpqmlwqw0x5"))))
     (properties `((upstream-name . "mhn")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rcpp r-bh))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/t-momozaki/mhn")
     (synopsis "The Modified Half-Normal Distribution")
     (description
@@ -35686,10 +35719,11 @@ functions for the Modified Half-Normal (MHN) distribution, along with moments
 and mode; the Fox-Wright Psi normalizing constant is evaluated internally.  The
 MHN distribution arises as a conditional posterior in Bayesian Markov chain
 Monte Carlo and generalizes the half-normal, truncated normal, and square-root
-gamma distributions.  Implements efficient sampling via the Sun, Kong & Pal
-(2023) <doi:10.1080/03610926.2021.1934700> algorithms and the Gao & Wang (2025)
-<doi:10.1080/03610918.2025.2524551> relaxed transformed density rejection
-method.")
+gamma distributions.  Implements efficient sampling via Algorithms 1 and 3 of
+Sun, Kong & Pal (2023) <doi:10.1080/03610926.2021.1934700>, the relaxed
+transformed density rejection method of Gao & Wang (2025)
+<doi:10.1080/03610918.2025.2524551>, and, for the truncated normal special case,
+the sampler of Robert (1995) <doi:10.1007/BF00143942>.")
     (license license:expat)))
 
 (define-public r-mhmmbayes
@@ -45273,13 +45307,13 @@ were programed by several mlr developers.")
 (define-public r-measurer
   (package
     (name "r-measurer")
-    (version "0.0.5")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "measureR" version))
        (sha256
-        (base32 "059ip1myzmplnnpvdn7cm952q0jf29252wjrzfwa704h0wfgkxra"))))
+        (base32 "0b0mqnsz55zdjlan6bvjazz5hj5qsfr462cqjik4vwj9z2mb8rpq"))))
     (properties `((upstream-name . "measureR")))
     (build-system r-build-system)
     (arguments
@@ -45304,6 +45338,7 @@ were programed by several mlr developers.")
                              r-readr
                              r-purrr
                              r-psych
+                             r-plotly
                              r-pdftools
                              r-officer
                              r-mirt
@@ -45314,12 +45349,14 @@ were programed by several mlr developers.")
                              r-jsonlite
                              r-irr
                              r-httr
+                             r-htmltools
                              r-haven
                              r-ggplot2
                              r-flextable
                              r-dt
                              r-dplyr
                              r-data-table
+                             r-curl
                              r-ctt
                              r-colourpicker))
     (native-inputs (list r-knitr))
@@ -45335,11 +45372,12 @@ package (Willse, 2018) <doi:10.32614/CRAN.package.CTT>.  Item Response Theory
 psych (Revelle, 2025), while Confirmatory Factor Analysis (CFA) and Structural
 Equation Modeling (SEM) are based on the lavaan framework (Rosseel, 2012)
 <doi:10.18637/jss.v048.i02>.  The CFA/SEM module features interactive model
-specification, automatic model comparison, modification indices, comprehensive
-fit diagnostics, path diagram visualization, and HTML report generation.  The
-application allows users to upload data, evaluate statistical models, visualize
-results, and export outputs through an intuitive graphical interface without
-requiring programming experience.")
+specification, ordinal indicators estimated from polychoric correlations,
+automatic model comparison, modification indices, comprehensive fit diagnostics,
+path diagram visualization, and HTML report generation.  The application allows
+users to upload data, evaluate statistical models, visualize results, and export
+outputs through an intuitive graphical interface without requiring programming
+experience.")
     (license license:expat)))
 
 (define-public r-measurementprotocol
@@ -46515,6 +46553,33 @@ test for evaluating covariate effects on the cure rate in mixture cure models,
 using MDC-based statistics.  The methodology is described in Monroy-Castillo et
 al. (2025, manuscript submitted).")
     (license license:gpl3)))
+
+(define-public r-mdbx
+  (package
+    (name "r-mdbx")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mdbx" version))
+       (sha256
+        (base32 "05lfx9lb1saqa885g856lxc6w4lyifvday3zmjprhxcd89xvwhj1"))))
+    (properties `((upstream-name . "mdbx")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-cpp11))
+    (home-page "https://pedrobtz.github.io/mdbx/")
+    (synopsis "Bindings to the 'libmdbx' Embedded Key-Value Store")
+    (description
+     "This package provides low-level bindings to libmdbx', a compact and fast
+transactional key-value store built on memory-mapped files
+(<https://libmdbx.dqdkfa.ru/>).  Database environments, transactions, and
+byte-oriented read and write operations are exposed directly.  The libmdbx
+sources are bundled and compiled into the package, so no system library
+installation is required.")
+    (license license:expat)))
 
 (define-public r-mdbr
   (package
@@ -54609,13 +54674,13 @@ a conditional risk model.")
 (define-public r-margevt
   (package
     (name "r-margevt")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "margEVT" version))
        (sha256
-        (base32 "119f5mhzv6xijzp0p1shpzc59pr0gmys7nsrx07ndh1v4v4dh52v"))))
+        (base32 "0933mx80gimyqy2gk6dhg9jiz41pfjzrcm6ywb0ywysbyfmpya6x"))))
     (properties `((upstream-name . "margEVT")))
     (build-system r-build-system)
     (arguments
@@ -54628,14 +54693,14 @@ a conditional risk model.")
     (description
      "This package implements a non-stationary extreme value analysis framework by
 coupling a covariate-driven non-homogeneous Poisson process (NHPP) with
-(adaptive) elastic-net regularization and analytical gradients.  Provides
-methods for estimating conditional return levels and unconditional
-(marginalized) return levels via parametric stochastic integration over stable
-vector autoregressive VAR(p) covariate trajectories, or non-parametric
-annual-block resampling.  Supports block-specific penalty controls, BIC
-selection along a regularization path, Karush-Kuhn-Tucker convergence checks,
-time-rescaling residual diagnostics, conditional parametric bootstrap inference,
-and walk-forward assessment.")
+(adaptive) elastic-net regularization, analytical gradients and a lower bound on
+the shape parameter.  Provides methods for estimating conditional return levels
+and unconditional (marginalized) return levels via parametric stochastic
+integration over stable vector autoregressive VAR(p) covariate trajectories, or
+non-parametric annual-block resampling.  Supports block-specific penalty
+controls, BIC selection along a regularization path, Karush-Kuhn-Tucker
+convergence checks, time-rescaling residual diagnostics, conditional parametric
+bootstrap inference, and walk-forward assessment.")
     (license license:gpl3+)))
 
 (define-public r-margaret

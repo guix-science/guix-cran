@@ -17,7 +17,7 @@
   #:use-module (gnu packages compression)
   #:use-module (gnu packages python)
   #:use-module (gnu packages libreoffice)
-  #:use-module (gnu packages containers)
+  #:use-module (gnu packages docker)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages julia)
   #:use-module (gnu packages java)
@@ -27424,6 +27424,28 @@ cast, long options or short options, input splitters and callbacks that define
 how options should be specified and how input values are supplied.")
     (license license:gpl3+)))
 
+(define-public r-default
+  (package
+    (name "r-default")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "default" version))
+       (sha256
+        (base32 "0hzxgp9la9kll5cw3m4gd02rii571xsn1v53kz407k7k6rfg5mda"))))
+    (properties `((upstream-name . "default")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=default")
+    (synopsis "Change the Default Arguments in R Functions")
+    (description
+     "This package provides a simple syntax to change the default values for function
+arguments, whether they are in packages or defined locally.")
+    (license license:expat)))
+
 (define-public r-deevd
   (package
     (name "r-deevd")
@@ -31823,13 +31845,13 @@ computed from observed predictors.")
 (define-public r-dbspatial
   (package
     (name "r-dbspatial")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dbSpatial" version))
        (sha256
-        (base32 "1h2q68pn9rl2mp3bn3f0agq82xrhjj8kb5bm5zmknf46lrd5rp6y"))))
+        (base32 "0w28abdmh5xj62xfwacjrw7i8bmkk4lnplmbz1m67ss7jv9wwwbk"))))
     (properties `((upstream-name . "dbSpatial")))
     (build-system r-build-system)
     (arguments
@@ -31937,13 +31959,13 @@ using a Gibbs wrapper around univariate slice sampler (Neal (2003)
 (define-public r-dbproject
   (package
     (name "r-dbproject")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dbProject" version))
        (sha256
-        (base32 "0bf94rxybpafbhwxqnpgs0rw237rp1667d1rqjzl8fkyanqf5j2s"))))
+        (base32 "0rjvl0mmm388yy19khlf0wzgl1q3zk3vkffqbdwracjh8r3bwj88"))))
     (properties `((upstream-name . "dbProject")))
     (build-system r-build-system)
     (arguments
@@ -32224,13 +32246,13 @@ and provides confidence intervals for entries of interest.  See: by Chen et al.
 (define-public r-dbmatrix
   (package
     (name "r-dbmatrix")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dbMatrix" version))
        (sha256
-        (base32 "0d6a0dff8y7xyg3i3pns74a0dv73aj7fhz3yd1idmlc00xz84xd5"))))
+        (base32 "0ligjx96h89pa9jcwf6na28q6k6172yll6gi5iyjwc9maidcn1dk"))))
     (properties `((upstream-name . "dbMatrix")))
     (build-system r-build-system)
     (arguments

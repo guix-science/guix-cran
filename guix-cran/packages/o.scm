@@ -10007,13 +10007,13 @@ dimensions, for example, for hyperparameter tuning.")
 (define-public r-oolong
   (package
     (name "r-oolong")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oolong" version))
        (sha256
-        (base32 "152iz6vmzw8fr0vsam2swhfyyghlq4i0i1cr6dy4if5bf431lads"))))
+        (base32 "1ffl7d3wbwqp8628fzpjgywzjwaazaghacanzgjy4m5nclmr8d6s"))))
     (properties `((upstream-name . "oolong")))
     (build-system r-build-system)
     (arguments
@@ -16663,13 +16663,13 @@ defining enumerated types, as well as other bounded types, as S4 classes.")
 (define-public r-obic
   (package
     (name "r-obic")
-    (version "4.3.0")
+    (version "4.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OBIC" version))
        (sha256
-        (base32 "11wp5vlvdr065h7dr4dz7x7wk6kc9jpjz1fl7iycscb0hgqkmxlv"))))
+        (base32 "0yr3lnf0dzcnwcqfpnkqnr9p9c8kswxk65ghcsj4bc8jkk3miijp"))))
     (properties `((upstream-name . "OBIC")))
     (build-system r-build-system)
     (arguments

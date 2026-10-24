@@ -5227,13 +5227,13 @@ package and the implemented models.")
 (define-public r-evophylo
   (package
     (name "r-evophylo")
-    (version "0.3.5")
+    (version "0.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EvoPhylo" version))
        (sha256
-        (base32 "0c0j0nx6f0mz26yzqycfi32qgnif1kcrla5lhrxac35y8ybsqxw7"))))
+        (base32 "0xx9fisvlzmqicd8xvnxxw7i6mmsa2xhawhlqngim0b02nfbvff7"))))
     (properties `((upstream-name . "EvoPhylo")))
     (build-system r-build-system)
     (arguments
@@ -10126,13 +10126,13 @@ Graph Models (ERGM) for networks.")
 (define-public r-erplots
   (package
     (name "r-erplots")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "erplots" version))
        (sha256
-        (base32 "11dazpdpqs3l1brnhiyj97a6jk0577bhiqlgwlrw1g8x7zxw2whd"))))
+        (base32 "04s0lgxaih5w47f2jrw81ab19gadrdv9d1bga170vkdpdv1r4abs"))))
     (properties `((upstream-name . "erplots")))
     (build-system r-build-system)
     (arguments

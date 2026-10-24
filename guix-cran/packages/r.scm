@@ -3044,13 +3044,13 @@ This package fixes incorrect annotations in the original data sets.")
 (define-public r-ruido
   (package
     (name "r-ruido")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Ruido" version))
        (sha256
-        (base32 "07mz02sw9gcsj9ss8hccjsbkw88fvnfas38nrl6v9jsh6h687gj3"))))
+        (base32 "03ac2cq2dwqw583vnbawdcdvaga345kxi42y74n36ly8lpprrsin"))))
     (properties `((upstream-name . "Ruido")))
     (build-system r-build-system)
     (arguments
@@ -13230,13 +13230,13 @@ Han et al.  2014.  This program can run in R version 3.2.2 and above.")
 (define-public r-rpesto
   (package
     (name "r-rpesto")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RPesto" version))
        (sha256
-        (base32 "16m5a3fg344359gi6kqmn83phlc6kfx4nmz4vfwj7x801hf6pri1"))))
+        (base32 "0l2ks05a0s6bczc7w4bn37qr23qjpd1iv13227biwzzlk10ln6z3"))))
     (properties `((upstream-name . "RPesto")))
     (build-system r-build-system)
     (arguments
@@ -23181,13 +23181,13 @@ export helpers for exploratory workflows.")
 (define-public r-rmoriedata
   (package
     (name "r-rmoriedata")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rmoriedata" version))
        (sha256
-        (base32 "0njxincvf5y9srdzfjxfsmbbm2cbwssl2mnrk075nrs5aixd8aa6"))))
+        (base32 "1bj0ajy4rwma5h9zyib6652yxidl1d4r253mn1rash4xgwwzb9sz"))))
     (properties `((upstream-name . "rmoriedata")))
     (build-system r-build-system)
     (arguments
@@ -28747,13 +28747,13 @@ Kunihiro M et al (2022) <doi:10.1093/eurjpc/zwac176>.")
 (define-public r-riskscores
   (package
     (name "r-riskscores")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "riskscores" version))
        (sha256
-        (base32 "0b63f7rcn385hnrwim63ksipvra7xy9q8aix7z7hykz04ww649sr"))))
+        (base32 "1d2araf963zga6n9m0c5fyp1czhas6is7x08ahwf8znfldzpjc3m"))))
     (properties `((upstream-name . "riskscores")))
     (build-system r-build-system)
     (arguments

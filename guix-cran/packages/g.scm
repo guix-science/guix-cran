@@ -22339,19 +22339,20 @@ to get a steampunk style.")
 (define-public r-ggseqplot
   (package
     (name "r-ggseqplot")
-    (version "0.8.9")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggseqplot" version))
        (sha256
-        (base32 "1jkm7fg408vdxvy05aaq62wlkwyngp66dask942xhv022n163v2q"))))
+        (base32 "1ylpjnvsxkj08pqrga43wp3x2i33pdmaz153qpjg55ggafp0fkw8"))))
     (properties `((upstream-name . "ggseqplot")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-traminer
+    (propagated-inputs (list r-traminerextras
+                             r-traminer
                              r-tidyr
                              r-rlang
                              r-rdpack
@@ -22371,13 +22372,16 @@ to get a steampunk style.")
     (home-page "https://maraab23.github.io/ggseqplot/")
     (synopsis "Render Sequence Plots using 'ggplot2'")
     (description
-     "This package provides a set of wrapper functions that mainly re-produces most of
-the sequence plots rendered with @code{TraMineR::seqplot()}.  Whereas
-@code{TraMineR} uses base R to produce the plots this library draws on ggplot2'.
- The plots are produced on the basis of a sequence object defined with
-@code{TraMineR::seqdef()}.  The package automates the reshaping and plotting of
-sequence data.  Resulting plots are of class ggplot', i.e.  components can be
-added and tweaked using + and regular ggplot2 functions.")
+     "This package provides a set of wrapper functions that reproduces most of the
+sequence plots rendered with @code{TraMineR::seqplot()} and several related
+plots from @code{TraMineR} and @code{TraMineRextras} (Gabadinho et al.  2011,
+<doi:10.18637/jss.v040.i04>).  Whereas @code{TraMineR} uses base R graphics to
+produce the plots, this library draws on ggplot2'.  The plots are produced on
+the basis of state sequence objects defined with @code{TraMineR::seqdef()} and,
+for some functions, event sequence objects or regression trees of sequences.
+The package automates the reshaping and plotting of sequence data.  Resulting
+plots are of class ggplot', i.e., components can be added and tweaked using +
+and regular ggplot2 functions.")
     (license license:gpl3+)))
 
 (define-public r-ggsem
@@ -29068,13 +29072,13 @@ reduces the need for this package.")
 (define-public r-gettddata
   (package
     (name "r-gettddata")
-    (version "1.7.1")
+    (version "1.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GetTDData" version))
        (sha256
-        (base32 "17n41zw3iihchq5jxsh1h58grci8ba89kz4qg1q70h7q5b0vndcn"))))
+        (base32 "1nnpm484f2xx97km89kpcdb9y513xyihhhp8amgql9hyr6wq6gz5"))))
     (properties `((upstream-name . "GetTDData")))
     (build-system r-build-system)
     (arguments
@@ -41568,13 +41572,13 @@ Kumar, Pandey, Saha, and Bagariya (2022) <https://ijsreg.com/>.")
 (define-public r-gamma
   (package
     (name "r-gamma")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gamma" version))
        (sha256
-        (base32 "0wsxy97kdfmlvrflp9l3fqn5ckdraxb7lbjpq1znqgj304g0j45n"))))
+        (base32 "0a463zagv3gpgyi8cnllcqvmgbmry4z09jlyp1fgavdyww0jiwyf"))))
     (properties `((upstream-name . "gamma")))
     (build-system r-build-system)
     (arguments
@@ -42738,13 +42742,13 @@ graphic parameters.")
 (define-public r-gaawr2
   (package
     (name "r-gaawr2")
-    (version "0.0.8")
+    (version "0.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gaawr2" version))
        (sha256
-        (base32 "0c31j104994hg47ackzgjl99c0hw2hihich8mpadafx17xrxv97i"))))
+        (base32 "08c1lja1h2q52ih6q0k5ab9r5wn8n4xd7msk4z502xsa7irqggq5"))))
     (properties `((upstream-name . "gaawr2")))
     (build-system r-build-system)
     (arguments
@@ -42756,7 +42760,7 @@ graphic parameters.")
                              r-gap-datasets
                              r-gap
                              r-dplyr))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr r-bookdown))
     (home-page "https://jinghuazhao.github.io/gaawr2/")
     (synopsis "Genetic Association Analysis")
     (description

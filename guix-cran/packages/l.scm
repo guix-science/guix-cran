@@ -15,7 +15,7 @@
   #:use-module (gnu packages maths)
   #:use-module (gnu packages python-science)
   #:use-module (gnu packages web)
-  #:use-module (gnu packages containers)
+  #:use-module (gnu packages docker)
   #:use-module (gnu packages cmake)
   #:use-module (gnu packages finance)
   #:use-module (gnu packages java)
@@ -17730,33 +17730,27 @@ follows closely the book: \"Hidden Markov Models for Time Series\", by Zucchini,
 (define-public r-lddmm
   (package
     (name "r-lddmm")
-    (version "0.4.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lddmm" version))
        (sha256
-        (base32 "1xnqmhhv9yqkjbwbpz5s25bvzjy99zs6hmy1grbx6f324k3bapq7"))))
+        (base32 "1h24217cyhrn82vrjqypw9n9mryi9ddjbsddfala5d1cb1ylsdp6"))))
     (properties `((upstream-name . "lddmm")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyr
-                             r-rgen
                              r-reshape2
-                             r-rcppprogress
                              r-rcpparmadillo
                              r-rcpp
-                             r-rcolorbrewer
-                             r-plyr
                              r-latex2exp
-                             r-laplacesdemon
-                             r-gtools
                              r-ggplot2
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=lddmm")
+    (home-page "https://github.com/giorgiopaulon/LDDMM")
     (synopsis "Longitudinal Drift-Diffusion Mixed Models (LDDMM)")
     (description
      "Implementation of the drift-diffusion mixed model for category learning as

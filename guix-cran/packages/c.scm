@@ -13611,41 +13611,6 @@ pipelines, reducing manual review while applying consistent suppression rules
 across data sharing workflows.")
     (license (license:fsdg-compatible "MPL-2.0"))))
 
-(define-public r-countland
-  (package
-    (name "r-countland")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "countland" version))
-       (sha256
-        (base32 "1nlnri7l8v2h35r7ps8byv8mmwnir1pyimaa937wr73f1mk9m0l9"))))
-    (properties `((upstream-name . "countland")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rlang r-matrix r-ggplot2))
-    (home-page "https://github.com/shchurch/countland")
-    (synopsis
-     "Analysis of Biological Count Data, Especially from Single-Cell RNA-Seq")
-    (description
-     "This package provides a set of functions for applying a restricted linear
-algebra to the analysis of count-based data.  See the accompanying preprint
-manuscript: \"Normalizing need not be the norm: count-based math for analyzing
-single-cell data\" Church et al (2022) <doi:10.1101/2022.06.01.494334> This tool
-is specifically designed to analyze count matrices from single cell RNA
-sequencing assays.  The tools implement several count-based approaches for
-standard steps in single-cell RNA-seq analysis, including scoring genes and
-cells, comparing cells and clustering, calculating differential gene expression,
-and several methods for rank reduction.  There are many opportunities for
-further optimization that may prove useful in the analysis of other data.  We
-provide the source code freely available at
-<https://github.com/shchurch/countland> and encourage users and developers to
-fork the code for their own purposes.")
-    (license license:expat)))
-
 (define-public r-counthmm
   (package
     (name "r-counthmm")
@@ -51031,13 +50996,13 @@ user interface, without any programming requirements.")
 (define-public r-ccva
   (package
     (name "r-ccva")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ccva" version))
        (sha256
-        (base32 "01v1990dgahzz25ggsq1dxhw7f3c6lagmg68bf8586nxbx9qy8yf"))))
+        (base32 "0gh2hxa0gm9rzj6qlicw1z5vy52041kzvqf9bs6c3c3xr31nsz25"))))
     (properties `((upstream-name . "ccva")))
     (build-system r-build-system)
     (arguments
@@ -51053,15 +51018,17 @@ user interface, without any programming requirements.")
 assessment (CCVA) of any species and any dataset.  Variables are tagged as
 exposure, sensitivity or adaptive capacity; each component is computed from its
 own predictors by a chosen method; and the three components are combined into
-vulnerability.  Methods range from the conventional weighted index of Ofori et
-al. (2017) <doi:10.1038/s41598-017-13245-y> to shape-constrained additive models
-('scam'), latent-variable structural equation models ('lavaan') in which
-vulnerability is inferred from observable proxies, and penalised regression
-('glmnet') for high-dimensional predictors.  Ecological knowledge enters as
-explicit constraints on predictors, on each component's role and on the links
-between components.  Diagnostics, validation against observed outcomes,
-bootstrap and weight-based uncertainty, calibrated risk predictions and plots
-for every step are included.")
+vulnerability.  Methods range from the rule-based framework of Foden et al.
+(2013) <doi:10.1371/journal.pone.0065427> and the conventional weighted index of
+Ofori et al. (2017) <doi:10.1038/s41598-017-13245-y> to shape-constrained
+additive models ('scam'), latent-variable structural equation models ('lavaan')
+in which vulnerability is inferred from observable proxies, and penalised
+regression ('glmnet') for high-dimensional predictors.  Missing traits and
+outcomes are handled by full-information maximum likelihood.  Ecological
+knowledge enters as explicit constraints on predictors, on each component's role
+and on the links between components.  Diagnostics, validation against observed
+outcomes, bootstrap and weight-based uncertainty, calibrated risk predictions
+and plots for every step are included.")
     (license license:gpl3+)))
 
 (define-public r-cctools
@@ -56033,13 +56000,13 @@ Bahram, S., Vallat, L., and Maumy-Bertrand, M. (2014)
 (define-public r-cas
   (package
     (name "r-cas")
-    (version "0.24-3")
+    (version "0.24-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CAs" version))
        (sha256
-        (base32 "0aki87i1scfrb7z7zhgs1z37bw50ykhq2fahfp36yg8ibadzbjhg"))))
+        (base32 "0qc7i8bk4ihdq6qyhib01nwhij1zzb60jwcyxlc7n6dk768s5lzp"))))
     (properties `((upstream-name . "CAs")))
     (build-system r-build-system)
     (arguments
@@ -58893,13 +58860,13 @@ reproducibility while maintaining flexibility for different study designs.")
 (define-public r-camtrapdp
   (package
     (name "r-camtrapdp")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "camtrapdp" version))
        (sha256
-        (base32 "0m41a0npfxbi0snis41jclanb2aw1r9lx68nx5kfxikyi5ywxahg"))))
+        (base32 "17y6jjlfpjm9m5v5iq45ik0sbfgqgr34qzdh1y99w7d9mzgsqcfp"))))
     (properties `((upstream-name . "camtrapdp")))
     (build-system r-build-system)
     (arguments

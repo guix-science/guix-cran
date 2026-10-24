@@ -44,13 +44,13 @@
 (define-public r-hzip
   (package
     (name "r-hzip")
-    (version "0.1.3")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HZIP" version))
        (sha256
-        (base32 "053n1i9hqanh8sxahc2xzks76znx0jyjg3higqjjx00qj0a1zps6"))))
+        (base32 "0fdn6xjk84nz7l47qgl1qqm7s66mgc2hr72h5k2xw6l7lhk1kyzk"))))
     (properties `((upstream-name . "HZIP")))
     (build-system r-build-system)
     (arguments
@@ -10764,19 +10764,19 @@ screenshot in PNG format using a headless browser.")
 (define-public r-hexify
   (package
     (name "r-hexify")
-    (version "0.8.2")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hexify" version))
        (sha256
-        (base32 "0rw5lw7qw8znjnihg594apzjv50l81w75lsvw99xyf0ask3yq5r6"))))
+        (base32 "1559984vqjacibm9ickkp2cndiididq5832w7msm3dhr9rldw2r8"))))
     (properties `((upstream-name . "hexify")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sf r-rlang r-rcpp))
+    (propagated-inputs (list r-sf r-rlang r-rcpp r-bit64))
     (native-inputs (list r-knitr))
     (home-page "https://gillescolling.com/hexify/")
     (synopsis "Equal-Area Hex Grids on the Snyder ISEA Icosahedron")
@@ -10785,11 +10785,12 @@ screenshot in PNG format using a headless browser.")
 using the Icosahedral Snyder Equal Area ('ISEA') projection (Snyder 1992
 <doi:10.3138/27H7-8K88-4882-1752>) and the H3 hierarchical hexagonal system
 (Uber Technologies).  Implements the ISEA discrete global grid system (Sahr,
-White and Kimerling 2003 <doi:10.1559/152304003100011090>).  Includes a fast C++
-core for ISEA projection and aperture quantization, an included H3 v4.4.1 C
-library for native H3 grid operations, and sf'/'terra'-compatible R wrappers for
-grid generation and coordinate assignment.  Output is compatible with
-@code{dggridR} for interoperability.")
+White and Kimerling 2003 <doi:10.1559/152304003100011090>) and the Hex9
+octahedral grid (Griffin 2026 <doi:10.48550/@code{arXiv.2608.00022>}).  Includes
+a fast C++ core for ISEA projection and aperture quantization, an included H3
+v4.4.1 C library for native H3 grid operations, and sf'/'terra'-compatible R
+wrappers for grid generation and coordinate assignment.  Output is compatible
+with @code{dggridR} for interoperability.")
     (license license:expat)))
 
 (define-public r-hexfont

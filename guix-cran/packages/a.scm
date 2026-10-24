@@ -5083,13 +5083,13 @@ More information available at <https://shahlab.stanford.edu/start>.")
 (define-public r-atime
   (package
     (name "r-atime")
-    (version "2026.9.17")
+    (version "2026.10.22")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "atime" version))
        (sha256
-        (base32 "1zsscnccj7i5hnkc5p3yc1ip77ikkbpnn5gpnbq97z6ac4n794fh"))))
+        (base32 "1k04cab9hmgddhj2s0rbczqq8clb1glbxi2avdb1wz4k2mkbfb7s"))))
     (properties `((upstream-name . "atime")))
     (build-system r-build-system)
     (arguments
@@ -9329,13 +9329,13 @@ for system behavior analysis.")
 (define-public r-argofloats
   (package
     (name "r-argofloats")
-    (version "1.0.9")
+    (version "1.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "argoFloats" version))
        (sha256
-        (base32 "0pfspb03hzm3pi55wdj1cl5r1k51zazdzdvsqid0c5q6y0d2zp3a"))))
+        (base32 "06424bmsxcji90qwz05pgvhsksqcdsi325crrnwm0w60392mprsf"))))
     (properties `((upstream-name . "argoFloats")))
     (build-system r-build-system)
     (arguments
@@ -11115,13 +11115,13 @@ in: Manuel Rubio-SÃ¡nchez, Alberto Sanchez, and Dirk J. Lehmann (2017)
 (define-public r-arakno
   (package
     (name "r-arakno")
-    (version "1.3.3")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arakno" version))
        (sha256
-        (base32 "031l3l3kflan4v6xmpkgwvcwh2lda9rfw81xlqvq56dy724svwfi"))))
+        (base32 "16rds9dh1l8pj7iing447sd23qvnvzzks24j11cyx7vfsyi8ksc9"))))
     (properties `((upstream-name . "arakno")))
     (build-system r-build-system)
     (arguments
@@ -11139,10 +11139,10 @@ in: Manuel Rubio-SÃ¡nchez, Alberto Sanchez, and Dirk J. Lehmann (2017)
     (description
      "Allows the user to connect with the World Spider Catalogue (WSC;
 <https://wsc.nmbe.ch/>) and the World Spider Trait (WST;
-<https://spidertraits.sci.muni.cz/>) databases.  Also performs several basic
-functions such as checking names validity, retrieving coordinate data from the
-Global Biodiversity Information Facility (GBIF; <https://www.gbif.org/>), and
-mapping.")
+<https://arachnidatraits.sci.muni.cz/araneae/) databases.  Also performs several
+basic functions such as checking names validity, retrieving coordinate data from
+the Global Biodiversity Information Facility (GBIF; <https://www.gbif.org/>),
+and mapping.")
     (license license:gpl3)))
 
 (define-public r-aradr

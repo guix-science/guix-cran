@@ -23,7 +23,7 @@
   #:use-module (gnu packages perl)
   #:use-module (gnu packages tex)
   #:use-module (gnu packages tls)
-  #:use-module (gnu packages containers)
+  #:use-module (gnu packages docker)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages cmake)
   #:use-module (guix-cran packages z)
@@ -1990,13 +1990,13 @@ Mathematics with Canadian Applications,â 2020, ISBN: 9780135285015).")
 (define-public r-tvgarchkf
   (package
     (name "r-tvgarchkf")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tvGarchKF" version))
        (sha256
-        (base32 "0vz37kr78dyh2yxfkl4ax4fb7cxy086v2a55dk6n188ixlf4ldmj"))))
+        (base32 "0z34ihm4l2y1imzvsclh2m55vh9609jspcw3l7i2rxwkwxla8ng8"))))
     (properties `((upstream-name . "tvGarchKF")))
     (build-system r-build-system)
     (arguments
@@ -4843,13 +4843,13 @@ that specialize in particular languages and file formats.")
 (define-public r-tsissm
   (package
     (name "r-tsissm")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tsissm" version))
        (sha256
-        (base32 "1wv9v5gp6vm2jv8jn44k821x67pmrmp3s98czqrr6f48zkgypwx1"))))
+        (base32 "01wx0jnb9rwnciq4gwh13nnsadlmccc6hj9jv4ai89fhyfdv3ldz"))))
     (properties `((upstream-name . "tsissm")))
     (build-system r-build-system)
     (arguments
@@ -5817,13 +5817,13 @@ Work-Conference on Artificial Neural Networks.  Springer, 2017
 (define-public r-tselca
   (package
     (name "r-tselca")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tseLCA" version))
        (sha256
-        (base32 "0wri2gbggcbx5nzza111i9zrg48gqrkr8pwrdymgpbd2nvi9rac1"))))
+        (base32 "16sda1hlnjshq61qqi1f2dl4w46iyn9ppyqqs41b19im4i1zf17l"))))
     (properties `((upstream-name . "tseLCA")))
     (build-system r-build-system)
     (arguments
@@ -37030,6 +37030,32 @@ distributions by assessing (i) the RÂ², (ii) the Y-intercept, (iii) the slope,
 specific distribution families (i.e., the distance from the skew-uniform family
 a limit to the highest degree of evenness: TADeve).")
     (license license:bsd-3)))
+
+(define-public r-tactile
+  (package
+    (name "r-tactile")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tactile" version))
+       (sha256
+        (base32 "1smb0zm7sn8clnppljc4d9a54frimjbx09p7i31b76g7k4mys0pr"))))
+    (properties `((upstream-name . "tactile")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcolorbrewer r-mass r-latticeextra r-lattice
+                             r-gridextra))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jolars/tactile")
+    (synopsis
+     "New and Extended Plots, Methods, and Panel Functions for 'lattice'")
+    (description
+     "Extensions to lattice', providing new high-level functions, methods for existing
+functions, panel functions, and a theme.")
+    (license license:gpl3)))
 
 (define-public r-tacmagic
   (package

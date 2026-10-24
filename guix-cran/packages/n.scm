@@ -16206,13 +16206,13 @@ clones.The model is based on the estimation result from Andrew Roth (2014)
 (define-public r-nethist
   (package
     (name "r-nethist")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nethist" version))
        (sha256
-        (base32 "12m7nskas35n810l87zc3hhhvjlhmvai2drjr02swyvc5lwnpkih"))))
+        (base32 "1qdyifj4jkd5j02ayvz0c19v3a7mi3b2cmp34xc9xjgfl8wzvni3"))))
     (properties `((upstream-name . "nethist")))
     (build-system r-build-system)
     (arguments
@@ -16238,7 +16238,7 @@ multilayer networks.  Implements graphon estimation methods including the
 profile-likelihood method of Olhede and Wolfe (2014)
 <doi:10.1073/pnas.1400374111> and the least-squares method of Gao, Lu, and Zhou
 (2015) <doi:10.1214/15-AOS1354> for single-layer networks, and the multilayer
-extension of Song and Olhede (2026) <doi:10.48550/@code{arXiv.2608.14536>}.")
+extension of Song and Olhede (2026) <doi:10.1093/comnet/cnag042>.")
     (license license:expat)))
 
 (define-public r-netgwas
