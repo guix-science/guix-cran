@@ -650,13 +650,13 @@ statistics.  See the vignette \"vtable\" for a package overview.")
 (define-public r-vsusp
   (package
     (name "r-vsusp")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VsusP" version))
        (sha256
-        (base32 "1nrs94gyxc2ldihnn28wijigfs13ipigcvkycnxnzd60hg5j8c7i"))))
+        (base32 "0v2awhmfqys96gvc3slgzb3lsk6wvx7aj13z4aiywfha6bb21gxh"))))
     (properties `((upstream-name . "VsusP")))
     (build-system r-build-system)
     (arguments
@@ -666,26 +666,33 @@ statistics.  See the vignette \"vtable\" for a package overview.")
     (native-inputs (list r-knitr))
     (home-page
      "https://github.com/nilson01/VsusP-variable-selection-using-shrinkage-priors")
-    (synopsis "Variable Selection using Shrinkage Priors")
+    (synopsis "Variable Selection Using Shrinkage Priors")
     (description
-     "Bayesian variable selection using shrinkage priors to identify significant
-variables in high-dimensional datasets.  The package includes methods for
-determining the number of significant variables through innovative clustering
-techniques of posterior distributions, specifically utilizing the 2-Means and
-Sequential 2-Means (S2M) approaches.  The package aims to simplify the variable
-selection process with minimal tuning required in statistical analysis.")
+     "Select variables from shrinkage-prior posterior coefficient draws using
+sequential two-means clustering from Li and Pati (2017)
+<doi:10.1016/j.csda.2016.10.008>.  Estimate a signal count at each tuning
+threshold and rank coefficients by posterior median absolute magnitude.  Accept
+supplied coefficient draws or fit Gaussian shrinkage regression through bayesreg
+or native ridge, horseshoe and spike-and-slab samplers.  Retain chain identities
+for diagnostics, prediction and posterior plots.  Also provide the signal
+adaptive variable selector of Ray and Bhattacharya (2018)
+<doi:10.48550/@code{arXiv.1810.09004>}, decoupled shrinkage and selection with
+the adaptive-L1 approximation of Hahn and Carvalho (2015)
+<doi:10.1080/01621459.2014.993077>, optional exact two-cluster fitting, basic
+two-means selection, exact-zero spike-and-slab inclusion summaries and tuning
+sensitivity summaries.")
     (license license:gpl3+)))
 
 (define-public r-vsurf
   (package
     (name "r-vsurf")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VSURF" version))
        (sha256
-        (base32 "13vld70d6g370cb8sai6m815faikq54w06ydva5fcry13kassv53"))))
+        (base32 "1ib8f1dr8zwx6hnldq5w35nzzy3493wh7v3nbvhw97niwgnhrcn3"))))
     (properties `((upstream-name . "VSURF")))
     (build-system r-build-system)
     (arguments
@@ -2594,6 +2601,41 @@ also provided.  Includes a multi-panel figure builder app for arranging multiple
 modules together in a free-form layout.")
     (license license:expat)))
 
+(define-public r-vizintel
+  (package
+    (name "r-vizintel")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vizintel" version))
+       (sha256
+        (base32 "0prjrj4zj76fjyhnwsddxxra9ggh340vciwcfv9zd9i3narib4b1"))))
+    (properties `((upstream-name . "vizintel")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-gridextra r-ggplot2 r-e1071 r-dplyr))
+    (home-page "https://cran.r-project.org/package=vizintel")
+    (synopsis "Visualization Intelligence Toolkit")
+    (description
+     "This package provides automated data profiling and visualization recommendation
+tools for exploratory data analysis (EDA).  The package inspects a data frame,
+classifies each variable as numeric, categorical, or datetime, and computes
+distributional statistics including skewness, excess kurtosis, Shapiro-Wilk
+normality test p-values (Royston 1995) <doi:10.2307/2986146>, and cardinality.
+Based on these profiles, the package scores and ranks candidate chart types
+(histogram, density, boxplot, violin, bar, lollipop, scatter, hexbin, line,
+heatmap) using an internal taxonomy that accounts for variable types, analysis
+goal, skewness, cardinality, and data size.  Additional functions audit existing
+ggplot objects for common visualization integrity problems such as truncated
+axes, lie factors, overplotting, and dual y-axes following principles described
+in Tufte (1983, ISBN:0961392142) and Wilke (2019)
+<https://clauswilke.com/dataviz/>.  The package also checks visualizations for
+accessibility issues and suggests alternative chart types for a given plot.")
+    (license license:expat)))
+
 (define-public r-vizdraws
   (package
     (name "r-vizdraws")
@@ -2944,13 +2986,13 @@ of mortality models.")
 (define-public r-vital
   (package
     (name "r-vital")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vital" version))
        (sha256
-        (base32 "1fs88s7skn22d4srsiscb7mndlzff2v9xippq7rfg0msg1pp1xvq"))))
+        (base32 "1s2n6dqirm7626k8shnpnms703fx722lqzpyrxivjl04bi20f5w0"))))
     (properties `((upstream-name . "vital")))
     (build-system r-build-system)
     (arguments
@@ -5059,13 +5101,13 @@ select steps in a convenient way.")
 (define-public r-vietnameseconverter
   (package
     (name "r-vietnameseconverter")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vietnameseConverter" version))
        (sha256
-        (base32 "1bnscv1yz4hr6cvpavdj2gjn6dqy96rbagxl9280a2xxav09mps3"))))
+        (base32 "0742kyvm1fifzy5f99p60swbpij3izn0dlyf3b38nwqls9983ip9"))))
     (properties `((upstream-name . "vietnameseConverter")))
     (build-system r-build-system)
     (arguments
@@ -5077,7 +5119,7 @@ select steps in a convenient way.")
                       (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-utf8 r-sf r-gsubfn))
     (native-inputs (list r-r-rsp))
-    (home-page "https://github.com/jniedballa/vietnameseConverter")
+    (home-page "https://github.com/EcoDynIZW/vietnameseConverter")
     (synopsis "Convert Vietnamese Encodings")
     (description
      "Conversion of characters from unsupported Vietnamese character encodings to
@@ -5090,13 +5132,13 @@ with the correct Unicode characters (with or without diacritics).")
 (define-public r-videogameinsightsr
   (package
     (name "r-videogameinsightsr")
-    (version "0.1.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "videogameinsightsR" version))
        (sha256
-        (base32 "1ismzwccwic05m0zx73gmdd45z27ah8qv1fw90zq5qkq9ll5wy6z"))))
+        (base32 "1lyfl1mdsi94grknqf1gxb3m3jlvrksy0w0swj2naj7m3l34in9w"))))
     (properties `((upstream-name . "videogameinsightsR")))
     (build-system r-build-system)
     (arguments
@@ -5106,7 +5148,6 @@ with the correct Unicode characters (with or without diacritics).")
                              r-tibble
                              r-rvest
                              r-rlang
-                             r-purrr
                              r-magrittr
                              r-jsonlite
                              r-httr2
@@ -5116,16 +5157,13 @@ with the correct Unicode characters (with or without diacritics).")
     (synopsis
      "Interface to 'Video Game Insights' API for Gaming Market Analytics")
     (description
-     "Interface to the Video Game Insights API <https://app.sensortower.com/vgi/> for
-video game market analytics and intelligence.  Provides functions to retrieve
-game metadata, developer and publisher information, player statistics
-(concurrent players, daily and monthly active users), revenue and sales data,
-review analytics, wish-list tracking, and platform-specific rankings.  The
-package includes data processing utilities to analyze player demographics, track
-pricing history, calculate player overlap between games, and monitor market
-trends.  Supports analysis across multiple gaming platforms including Steam',
-@code{PlayStation}', Xbox', and Nintendo with unified data structures for
-cross-platform comparison.")
+     "Interface to the Video Game Insights API v4 <https://app.sensortower.com/vgi/>
+for video game market analytics.  Retrieves game metadata, developer and
+publisher information, player statistics (concurrent players, daily and monthly
+active users), revenue and units, reviews, wishlists, followers, price history,
+player overlap and player demographics for games on Steam', @code{PlayStation}
+and Xbox', as tidy tibbles with VGI and Steam identifiers for cross-platform
+comparison.")
     (license license:expat)))
 
 (define-public r-video
@@ -6558,13 +6596,13 @@ across a variety of Earth system domains.")
 (define-public r-vegperiod
   (package
     (name "r-vegperiod")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vegperiod" version))
        (sha256
-        (base32 "0m10m85cf0qk2q2ln1qziqicv79rbjqqi9py18r412j7m43pn013"))))
+        (base32 "0ym388bsjgg9yqwvfga20hzvgahjmb5pxxplzak0lawh1swh83wm"))))
     (properties `((upstream-name . "vegperiod")))
     (build-system r-build-system)
     (arguments
@@ -6949,13 +6987,13 @@ Yashunin (2018) <doi:10.1109/TPAMI.2018.2889473>.")
 (define-public r-vectra
   (package
     (name "r-vectra")
-    (version "0.13.0")
+    (version "0.14.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vectra" version))
        (sha256
-        (base32 "1ppjg4wqyjm2sv07jwwla6drff1ld6yqx0sg4wqpmlirv1rb4v7v"))))
+        (base32 "1n90667knpc507dk6ga535xdzqkdjlipr926rljhijjixpnsvcq3"))))
     (properties `((upstream-name . "vectra")))
     (build-system r-build-system)
     (arguments
@@ -8416,6 +8454,43 @@ repeated-measures designs.  For more details see @code{MacCoun} and Perlmutter
 <doi:10.1007/s11229-019-02456-7>.")
     (license license:expat)))
 
+(define-public r-vayuayan
+  (package
+    (name "r-vayuayan")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vayuayan" version))
+       (sha256
+        (base32 "0k90p0jbjxwgwa55npjib3wncsp0pba16zavw64bmca9rzjmki5k"))))
+    (properties `((upstream-name . "vayuayan")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra
+                             r-sf
+                             r-readxl
+                             r-jsonlite
+                             r-httr
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://vayuayan.saketlab.org/R/")
+    (synopsis
+     "Air Quality Data from Indian Monitoring Networks and Satellites")
+    (description
+     "Downloads and examines air quality data from three sources.  The Central
+Pollution Control Board (CPCB) of India operates more than 600 monitoring
+stations.  Open Air Quality (OAQ) <https://oaq.notf.in> collects data from
+low-cost sensor networks in India.  The Atmospheric Composition Analysis Group
+at Washington University in St.  Louis gives satellite estimates of fine
+particulate matter (PM2.5) for all areas of the Earth <https://www.satpm.org>.
+The package calculates the CPCB National Air Quality Index and the mean PM2.5 in
+an area.")
+    (license license:expat)))
+
 (define-public r-vayr
   (package
     (name "r-vayr")
@@ -8764,6 +8839,53 @@ random effects (Dambon et al. (2021b) <doi:10.1080/13658816.2022.2097684>).  The
 package and its capabilities are described in (Dambon et al. (2021c)
 <doi:10.48550/@code{arXiv.2106.02364>}).")
     (license license:gpl2)))
+
+(define-public r-varunayan
+  (package
+    (name "r-varunayan")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "varunayan" version))
+       (sha256
+        (base32 "06vdgxfyq99177hcsjflcfkcamg2m24gmpfs3qr50jpf64j0xprv"))))
+    (properties `((upstream-name . "varunayan")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra
+                             r-stars
+                             r-sf
+                             r-rlang
+                             r-ncdf4
+                             r-magrittr
+                             r-lubridate
+                             r-jsonlite
+                             r-httr
+                             r-ecmwfr
+                             r-dplyr
+                             r-digest
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://varunayan.saketlab.org/R/")
+    (synopsis "Download and Process 'ERA5', IMD, 'HadEX3' and 'CRU TS' Data")
+    (description
+     "Download climate data for a bounding box, polygon or point and return tidy
+tables.  Sources are the ERA5 reanalysis (Hersbach et al. (2020)
+<doi:10.1002/qj.3803>) from the Copernicus Climate Data Store
+<https://cds.climate.copernicus.eu/>, India Meteorological Department (IMD)
+gridded rainfall and temperature (Pai et al. (2014)
+<doi:10.54302/mausam.v65i1.851>), @code{HadEX3} climate extremes (Dunn et al.
+(2020) <doi:10.1029/2019JD032263>) and CRU TS (Harris et al. (2020)
+<doi:10.1038/s41597-020-0453-3>).  Computes heat stress indices, including
+wet-bulb globe temperature (Liljegren et al. (2008)
+<doi:10.1080/15459620802310770>) and the Universal Thermal Climate Index (BrÃ¶de
+et al. (2012) <doi:10.1007/s00484-011-0454-1>), and heatwave indicators,
+including the Excess Heat Factor (Nairn and Fawcett (2015)
+<doi:10.3390/ijerph120100227>).")
+    (license license:expat)))
 
 (define-public r-vartests
   (package

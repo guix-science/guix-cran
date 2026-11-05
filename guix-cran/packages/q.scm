@@ -1332,6 +1332,50 @@ columns of a data.frame.")
      "Translate SQL SELECT statements into lists of R expressions.")
     (license license:asl2.0)))
 
+(define-public r-querychat
+  (package
+    (name "r-querychat")
+    (version "0.4.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "querychat" version))
+       (sha256
+        (base32 "0ldf8d31qk54643ci4aab5d6hymcb1nqz5a9nnkdm4sx5bhjmnfa"))))
+    (properties `((upstream-name . "querychat")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zip
+                             r-yaml
+                             r-whisker
+                             r-shinychat
+                             r-shiny
+                             r-s7
+                             r-rlang
+                             r-r6
+                             r-promises
+                             r-lifecycle
+                             r-jsonlite
+                             r-htmltools
+                             r-ellmer
+                             r-dbi
+                             r-coro
+                             r-cli
+                             r-bslib
+                             r-bsicons))
+    (native-inputs (list r-knitr))
+    (home-page "https://posit-dev.github.io/querychat/r/")
+    (synopsis
+     "Filter and Query Data Frames in 'shiny' Using an LLM Chat Interface")
+    (description
+     "Adds an LLM-powered chatbot to your shiny app, that can turn your users natural
+language questions into SQL queries that run against your data, and return the
+result as a reactive data frame.  Use it to drive reactive calculations,
+visualizations, downloads, and more.")
+    (license license:expat)))
+
 (define-public r-querybuilder
   (package
     (name "r-querybuilder")
@@ -1460,6 +1504,39 @@ rank-score.  The method is described in De Santis, et al., (2026),
 document.  It allows the user to create section headers, tabsets, divs, and
 spans, and formats these objects into Quarto syntax when printed into a
 document.")
+    (license license:expat)))
+
+(define-public r-quartodown
+  (package
+    (name "r-quartodown")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quartodown" version))
+       (sha256
+        (base32 "0d5xfkx612acw3gh0lbxihw6l8d0sn6pbciycmla8phhdakv7p0c"))))
+    (properties `((upstream-name . "quartodown")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml
+                             r-xml2
+                             r-quarto
+                             r-fs
+                             r-fansi
+                             r-downlit
+                             r-desc
+                             r-cli))
+    (native-inputs (list r-quarto))
+    (home-page "https://bjarkehautop.github.io/quartodown/")
+    (synopsis "Package Websites Built Entirely with 'Quarto'")
+    (description
+     "Builds package websites with Quarto'.  The whole site, help pages and vignettes
+included, is rendered by Quarto', so every Quarto feature works, from callouts
+to code annotations.  Functions mentioned in code link to their help pages, with
+hover tooltips.")
     (license license:expat)))
 
 (define-public r-quartify
@@ -1955,24 +2032,28 @@ Econometrics, 193(1), 251-270 <doi:10.1016/j.jeconom.2016.03.001>.")
 (define-public r-quantilepeer
   (package
     (name "r-quantilepeer")
-    (version "0.0.1")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "QuantilePeer" version))
        (sha256
-        (base32 "0zrg37x5wgvys76xzz84gjidhjbqsx2dywrrs851g3ha1qnjcpfp"))))
+        (base32 "14g8lpj6slndan1hjbzn4pf9xdxg06c4ifsc8h418rvnas7dnq9b"))))
     (properties `((upstream-name . "QuantilePeer")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcppnumerical
+    (propagated-inputs (list r-xgboost
+                             r-rcppprogress
+                             r-rcppnumerical
                              r-rcppeigen
                              r-rcpparmadillo
                              r-rcpp
+                             r-ranger
                              r-matrix
                              r-mass
+                             r-glmnet
                              r-formula-tools))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ahoundetoungan/QuantilePeer")
@@ -2755,13 +2836,13 @@ control.")
 (define-public r-quak
   (package
     (name "r-quak")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quak" version))
        (sha256
-        (base32 "04pkaw3vrvyi7a4zn4rpc8vg8lnrh9gf6m2kbzg4pih8xhcqr8x3"))))
+        (base32 "1q903aphq3x2937nbkw2pr91l66xrkr51gkqps96z4xxf910xd50"))))
     (properties `((upstream-name . "quak")))
     (build-system r-build-system)
     (arguments
@@ -4461,36 +4542,6 @@ The @code{QRI_plot()} is used to plot QRI and generate the normative curves for
 individual measurements.")
     (license license:gpl2+)))
 
-(define-public r-qrfactor
-  (package
-    (name "r-qrfactor")
-    (version "1.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "qrfactor" version))
-       (sha256
-        (base32 "0pzx3gh0hh290i7dxgjc3cyk6z0j79qgjbfzzhg4cvqksmbcjnzk"))))
-    (properties `((upstream-name . "qrfactor")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sp r-pvclust r-mvoutlier r-cluster))
-    (home-page "https://gowusu.github.io/qrfactor/")
-    (synopsis
-     "Simultaneous Q-Mode and R-Mode Factor Analysis for Spatial Data")
-    (description
-     "This package performs Q-mode and R-mode factor analysis simultaneously on
-spatial and non-spatial data.  A single function, @code{qrfactor()}, carries out
-principal component analysis, R-mode factor analysis, Q-mode factor analysis,
-simultaneous R- and Q-mode factor analysis, principal coordinate analysis and
-multidimensional scaling.  Loadings and scores are returned from the fitted
-object, and the @code{plot()} method provides annotated biplots for combinations
-of eigenvectors, loadings and scores.  Input may be supplied as an ESRI
-shapefile, a delimited text file or a data frame.")
-    (license license:gpl2)))
-
 (define-public r-qreport
   (package
     (name "r-qreport")
@@ -4607,26 +4658,34 @@ friendly QR codes.")
 (define-public r-qrcmnp
   (package
     (name "r-qrcmnp")
-    (version "0.2.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qrcmNP" version))
        (sha256
-        (base32 "0637mmg3vvvpblx2ghxi5jis9qiaywkj91n1gcgm2g778p6lric0"))))
+        (base32 "1phnw33cqnd8y3dp69jfrbnxicplm92ziydq0grarliw3mswim7m"))))
     (properties `((upstream-name . "qrcmNP")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-survival r-qrcm))
-    (home-page "https://cran.r-project.org/package=qrcmNP")
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/gianluca-sottile/qrcmNP")
     (synopsis
      "Nonlinear and Penalized Quantile Regression Coefficients Modeling")
     (description
-     "Nonlinear and Penalized parametric modeling of quantile regression coefficient
-functions.  Sottile G, Frumento P, Chiodi M and Bottai M (2020)
-<doi:10.1177/1471082X19825523>.")
+     "Penalized and nonlinear parametric modeling of quantile regression coefficient
+functions.  The penalized integrated loss minimization estimator (lasso and
+group lasso penalties) of Sottile, Frumento, Chiodi and Bottai (2020)
+<doi:10.1177/1471082X19825523> performs covariate selection using the
+information on all quantiles simultaneously.  Nonlinear parametric quantile
+models, in which the conditional quantile function can be a nonlinear function
+of the parameters, of the covariates or both, are estimated by integrated loss
+minimization as in Bottai and Cilluffo (2020) <doi:10.1177/0962280220941159>.
+Both approaches extend the quantile regression coefficients modeling framework
+of Frumento and Bottai (2016) <doi:10.1111/biom.12410> implemented in qrcm'.")
     (license license:gpl2)))
 
 (define-public r-qrcm
@@ -5148,13 +5207,13 @@ frequencies (BAF), z-scores, and identifies copy number variation patterns.")
 (define-public r-qpcrtools
   (package
     (name "r-qpcrtools")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qPCRtools" version))
        (sha256
-        (base32 "1m9niwqva1b7spkk8xn4n6f7xnfv9zmh1ardahaq10wr7c0x11sy"))))
+        (base32 "08glfrajc19dww50qcrdh375j67qvb83c2ifq82cqf0p1qf8zwgp"))))
     (properties `((upstream-name . "qPCRtools")))
     (build-system r-build-system)
     (arguments
@@ -5173,7 +5232,11 @@ frequencies (BAF), z-scores, and identifies copy number variation patterns.")
                              r-broom))
     (home-page "https://github.com/lixiang117423/qPCRtools")
     (synopsis "Tools for qPCR")
-    (description "PKG_DESC.")
+    (description
+     "This package provides tools for quantitative PCR (@code{qPCR}) data analysis,
+including standard curve calculation with amplification efficiency, relative
+expression calculation by the 2-'@code{dCt}', 2-'@code{ddCt}', standard curve
+and @code{RqPCR} methods, and RNA volume calculation for reverse transcription.")
     (license license:expat)))
 
 (define-public r-qpcrhelper
@@ -5271,13 +5334,13 @@ original data set.")
 (define-public r-qol
   (package
     (name "r-qol")
-    (version "1.3.5")
+    (version "1.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qol" version))
        (sha256
-        (base32 "0k36k0cr6wq6qc31vk5bb4scnsylc1gyv09szlg9fwxscw3ysfss"))))
+        (base32 "09bd1a8wzwayx0zkqs6rf7mximfy96rcbizx0bsy40z6vvk1rwcl"))))
     (properties `((upstream-name . "qol")))
     (build-system r-build-system)
     (arguments
@@ -6393,29 +6456,30 @@ algorithm based on the numerical inversion of Mellin transforms.")
 (define-public r-qest
   (package
     (name "r-qest")
-    (version "1.0.2")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Qest" version))
        (sha256
-        (base32 "18qx2vn8gl83hfvvcm20z57yj972pd8c8dxq0ksf7jbr2lf6jw3b"))))
+        (base32 "07nsq49cxzz64wfwif2l1kypm7hllpa7v32m2g5pcfbq8i9da6p2"))))
     (properties `((upstream-name . "Qest")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-survival r-pch r-matrixstats))
-    (native-inputs (list gfortran))
-    (home-page
-     "https://www.sciencedirect.com/science/article/abs/pii/S0167947322000512")
-    (synopsis "Quantile-Based Estimator")
+    (propagated-inputs (list r-survival r-matrixstats))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/gianluca-sottile/Qest")
+    (synopsis "Quantile-Based Estimators")
     (description
-     "Quantile-based estimators (Q-estimators) can be used to fit any parametric
-distribution, using its quantile function.  Q-estimators are usually more robust
-than standard maximum likelihood estimators.  The method is described in:
-Sottile G. and Frumento P. (2022).  Robust estimation and regression with
-parametric quantile functions. <doi:10.1016/j.csda.2022.107471>.")
+     "Quantile-based estimators (Q-estimators) fit any parametric distribution through
+its quantile function, by minimizing the integrated loss of quantile regression.
+ They are usually more robust than maximum likelihood estimators, and allow for
+censored and truncated data.  The package implements user-defined quantile
+functions, built-in families (normal, gamma, continuous Poisson, uniform),
+linear models and proportional hazards models.  The method is described in
+Sottile and Frumento (2022) <doi:10.1016/j.csda.2022.107471>.")
     (license license:gpl2+)))
 
 (define-public r-qeml
@@ -7511,13 +7575,13 @@ details, see Novo and Sanchez-Sellero (2025)
 (define-public r-qardlr
   (package
     (name "r-qardlr")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qardlr" version))
        (sha256
-        (base32 "0jm11673nd05a1zwp37rinn0hd3nzxwcrighzd0myq8l3ax0353z"))))
+        (base32 "12nvp6hzawnnzjvbmvnxr61zbwd75x8aijibzpk33yykwc38fz41"))))
     (properties `((upstream-name . "qardlr")))
     (build-system r-build-system)
     (arguments

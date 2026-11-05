@@ -794,39 +794,41 @@ effects with efficient instruments and machine learning\"
 (define-public r-ivdiag
   (package
     (name "r-ivdiag")
-    (version "1.0.6")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ivDiag" version))
        (sha256
-        (base32 "17rwdn6svbb93winnjsfx815mhg3sw21csi3khsn66kjgnxisqi7"))))
+        (base32 "06kdl0b04z04gjxjx8rpf4cw0pgwqm6w1jd0d1d6naiqnb63aww7"))))
     (properties `((upstream-name . "ivDiag")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-wcorr
-                             r-testthat
                              r-patchwork
+                             r-parallelly
                              r-lfe
                              r-haven
-                             r-glue
                              r-ggplot2
                              r-ggfortify
-                             r-future
                              r-foreach
-                             r-fixest
+                             r-dorng
                              r-doparallel))
     (home-page "https://yiqingxu.org/packages/ivDiag/")
     (synopsis
      "Estimation and Diagnostic Tools for Instrumental Variables Designs")
     (description
-     "Estimation and diagnostic tools for instrumental variables designs, which
-implements the guidelines proposed in Lal et al. (2023)
-<@code{arXiv:2303.11399>}, including bootstrapped confidence intervals,
-effective F-statistic, Anderson-Rubin test, valid-t ratio test, and
-local-to-zero tests.")
+     "Estimation and diagnostic tools for instrumental variables designs with one
+endogenous treatment, implementing the guidelines in Lal, Lockhart, Xu, and Zu
+(2024) <doi:10.1017/pan.2024.2>.  The package reports ordinary least squares and
+two-stage least squares estimates with analytic and bootstrapped confidence
+intervals, several first-stage F statistics including the effective F statistic,
+the Anderson-Rubin test and its confidence set, the @code{tF} procedure of Lee,
+@code{McCrary}, Moreira, and Porter (2022) <doi:10.1257/aer.20211063>, and
+local-to-zero sensitivity tests.  It also supports fuzzy regression
+discontinuity designs.")
     (license license:expat)))
 
 (define-public r-ivdesc
@@ -1527,24 +1529,19 @@ this package uses Cyclops for an efficient implementation.")
 (define-public r-itensor
   (package
     (name "r-itensor")
-    (version "1.0.6")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iTensor" version))
        (sha256
-        (base32 "0cvny1yca18ch7463ad9yakz2lv8nsbrh7i7d29jfn2cgm7ndwm0"))))
+        (base32 "0jbjxvj0ymzgs81mmkm6kccnq9gq6w378yb5a595p8hjwkpc0hw9"))))
     (properties `((upstream-name . "iTensor")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rtensor
-                             r-mixomics
-                             r-mgcv
-                             r-mass
-                             r-jointdiag
-                             r-einsum))
+    (propagated-inputs (list r-rtensor r-mgcv r-mass r-jointdiag r-einsum))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/rikenbit/iTensor")
     (synopsis "ICA-Based Matrix/Tensor Decomposition")
@@ -1782,41 +1779,6 @@ diversityâstability and diversityâsynchrony relationships.  All measur
 applicable in both temporal and spatial contexts.  The theoretical and
 methodological background is detailed in Chao et al. (2025)
 <doi:10.1101/2025.08.20.671203>.")
-    (license license:gpl3+)))
-
-(define-public r-istats
-  (package
-    (name "r-istats")
-    (version "1.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "iSTATS" version))
-       (sha256
-        (base32 "1k2zm96l79kkj50yagw3fbqvga6qkchb98cxi6x6dlxsr4si215l"))))
-    (properties `((upstream-name . "iSTATS")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-shinywidgets
-                             r-shinybs
-                             r-shiny
-                             r-gtools
-                             r-ggplot2
-                             r-data-table))
-    (home-page "https://cran.r-project.org/package=iSTATS")
-    (synopsis "Graphical Interface to Perform STOCSY Analyses on NMR Data")
-    (description
-     "Launches a shiny based application for Nuclear Magnetic Resonance (NMR) data
-importation and Statistical TOtal Correlation @code{SpectroscopY} (STOCSY)
-analyses in a full interactive approach.  The theoretical background and
-applications of the STOCSY method are described by Cloarec, O., Dumas, M. E.,
-Craig, A., Barton, R. H., Trygg, J., Hudson, J., Blancher, C., Gauguier, D.,
-Lindon, J. C., Holmes, E. & Nicholson, J. (2005) <doi:10.1021/ac048630x>.
-Spectral alignment follows the interval correlation optimized shifting method of
-Savorani, F., Tomasi, G. & Engelsen, S. B. (2010)
-<doi:10.1016/j.jmr.2009.11.012>.")
     (license license:gpl3+)))
 
 (define-public r-istatr
@@ -3913,19 +3875,19 @@ module or bicluster is a block of the reordered input matrix.")
 (define-public r-irw
   (package
     (name "r-irw")
-    (version "1.3.1")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "irw" version))
        (sha256
-        (base32 "1nwkm9j4v0a4541nii5hhval1l38djq4anzajlf1c8nsqfh3smr8"))))
+        (base32 "0xsf3r4j1gkcawd8i3hp7270dwpd20xvgzkbfg2zfvld9kh62r4v"))))
     (properties `((upstream-name . "irw")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble r-imv r-httr r-glue))
+    (propagated-inputs (list r-tibble r-jsonlite r-imv r-httr r-glue))
     (home-page "https://itemresponsewarehouse.github.io/Rpkg/")
     (synopsis "Access and Analyze Data from the Item Response Warehouse")
     (description
@@ -5279,13 +5241,13 @@ multivariate cases.")
 (define-public r-iq
   (package
     (name "r-iq")
-    (version "2.0.1")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iq" version))
        (sha256
-        (base32 "0sqar68qr2izxvp69sv3a441543v9bbi8igzhr12i0l7sb6fygyh"))))
+        (base32 "1gasckjhbjscmnqk8pp1blqrxfx3i8xwwsfaflvs28ayfg9b7503"))))
     (properties `((upstream-name . "iq")))
     (build-system r-build-system)
     (arguments
@@ -5397,13 +5359,13 @@ marginal quantiles based on the Inverse Probability Weighting method.")
 (define-public r-ipw
   (package
     (name "r-ipw")
-    (version "1.3.0")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ipw" version))
        (sha256
-        (base32 "1bj08rbi7l2dav0zgk4bwq48qd1bhwp5vdc7m84xxpja9asqjc32"))))
+        (base32 "0s4vqi5q6isyp0pd4dx4mm3l5ll6ipfkliqzqyp6sdd4ny1irs69"))))
     (properties `((upstream-name . "ipw")))
     (build-system r-build-system)
     (arguments
@@ -7066,13 +7028,13 @@ Output Areas) across England.")
 (define-public r-iobr
   (package
     (name "r-iobr")
-    (version "2.2.3")
+    (version "2.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IOBR" version))
        (sha256
-        (base32 "13xg0wwc87vl2i6mab4wyw5fr69nplc6y4fdr09gfisq777cfphb"))))
+        (base32 "0ma6mq1a7c2nf4vd72cqs3wzf9my3y6d1mz5v20n06hxqz157vaz"))))
     (properties `((upstream-name . "IOBR")))
     (build-system r-build-system)
     (arguments
@@ -9745,13 +9707,13 @@ Testing functions are also provided.")
 (define-public r-integrity
   (package
     (name "r-integrity")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "integrity" version))
        (sha256
-        (base32 "1q291607mnsdlyi71pj9iwb4lbzikklc17k4jvzfazma7jlb2i0d"))))
+        (base32 "07ha2z38a50y9hl5y7zk187p7527ir4q1xr3vzhbfki01xypy1hh"))))
     (properties `((upstream-name . "integrity")))
     (build-system r-build-system)
     (arguments
@@ -11086,13 +11048,13 @@ Geological Survey (USGS) Idaho National Laboratory Project Office.")
 (define-public r-inlavaan
   (package
     (name "r-inlavaan")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "INLAvaan" version))
        (sha256
-        (base32 "1sv348ay9g0lqdgfq4g08i8xlx1wla43dsggcga7m4xbm5zz1l61"))))
+        (base32 "1nkjhpaxbp8k5kqpv590qqfajawg0rjks5rhgj1v8cwllnd5c3c5"))))
     (properties `((upstream-name . "INLAvaan")))
     (build-system r-build-system)
     (arguments
@@ -11181,6 +11143,35 @@ proposed in Lindgren et.  al. (2024)
 the available vignettes and from the URL bellow.")
     (license license:gpl2+)))
 
+(define-public r-inlaops
+  (package
+    (name "r-inlaops")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "inlaops" version))
+       (sha256
+        (base32 "0in986hwykmn4g27mlsxgxw3i45pjn33qph17zf73k3i1467wgqn"))))
+    (properties `((upstream-name . "inlaops")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-rlang r-inlabru r-dplyr))
+    (native-inputs (list r-quarto))
+    (home-page "https://github.com/novica/inlaops")
+    (synopsis "Deployment, Versioning and Scoring Tools for 'inlabru' Models")
+    (description
+     "Serves Bayesian spatial and latent Gaussian models fit with inlabru as versioned
+Representational State Transfer (REST) application programming interfaces
+(APIs).  Includes a vetiver bridge (versioning, REST API serving with posterior
+uncertainty, Docker packaging) for bru objects, a parsnip model constructor
+scoped to fixed-effects models, and predictive scoring helpers (continuous
+ranked probability, log, squared-error and Dawid-Sebastiani scores) computed
+from @code{inlabru::generate()} posterior samples via @code{scoringRules}'.")
+    (license license:gpl3+)))
+
 (define-public r-inlamemi
   (package
     (name "r-inlamemi")
@@ -11248,6 +11239,37 @@ function (accessible via ?joint in the R console) and the vignette associated to
 the @code{joint()} function (accessible via vignette(\"INLAjoint\") in the R
 console).")
     (license license:gpl3)))
+
+(define-public r-inlacircular
+  (package
+    (name "r-inlacircular")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "INLAcircular" version))
+       (sha256
+        (base32 "1bj42w4z284pmjcybi105xwxdi3j5jzn97mdcizqx1armfsj2b1y"))))
+    (properties `((upstream-name . "INLAcircular")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-dplyr))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/XiangYEstats/INLAcircular")
+    (synopsis "Bayesian Joint Circular Regression Using 'INLA'")
+    (description
+     "This package provides a Bayesian regression framework for joint models with
+circular responses and covariates using integrated nested Laplace
+approximations, following Ye, Van Niekerk and Rue (2026)
+<doi:10.48550/@code{arXiv.2602.08413>}.  The package supports link-adjusted von
+Mises likelihoods, shared latent predictors, structured latent effects, and
+optional LKJ-based multivariate covariance models.  It also provides compiled
+circular densities and d/p/q/r penalized-complexity priors for von Mises,
+cardioid, and wrapped Cauchy concentration parameters as developed by Ye, Van
+Niekerk and Rue (2026) <doi:10.1177/1471082X261453677>.")
+    (license license:gpl3+)))
 
 (define-public r-inlabru
   (package
@@ -11320,13 +11342,13 @@ with INLA. The INLA package can be obtained from <https://www.r-inla.org>.")
 (define-public r-inkar
   (package
     (name "r-inkar")
-    (version "0.6.6")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inkaR" version))
        (sha256
-        (base32 "0c4byzzk8d3ffhg77spz948vcl5h24p1c1mkz96hrhjv7ya4vqs1"))))
+        (base32 "0aqj7pnsmpmqmpvdm21w8hhh7afqvlksli84ys48nvfn4lf1svrk"))))
     (properties `((upstream-name . "inkaR")))
     (build-system r-build-system)
     (arguments
@@ -11348,7 +11370,9 @@ development indicators from the BBSR INKAR (Indicators and Maps for Spatial and
 Urban Development) database.  Features a bilingual interactive wizard, fuzzy and
 normalized indicator search, multi-indicator downloads with automatic tidy
 merging (long/wide), guaranteed consistent output schema, robust disk caching
-with automatic retry, and ggplot2 themes for regional mapping.")
+with automatic retry, and ggplot2 themes for regional mapping.  Map boundaries
+come from Eurostat GISCO <https://ec.europa.eu/eurostat/web/gisco> and match the
+territorial status used by INKAR'.")
     (license license:expat)))
 
 (define-public r-injurytools
@@ -12003,30 +12027,29 @@ Christopoulos, DT (2016) <doi:10.2139/ssrn.3043076> .")
 (define-public r-inflationkit
   (package
     (name "r-inflationkit")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inflationkit" version))
        (sha256
-        (base32 "03wsgd7xm5yski0nfs22bayyhkdjxic2fddwnsjcna55d545y6bc"))))
+        (base32 "0likf0jf1rmi0wj8q1dm0b01zgb6fv6k4g91ckp7yimqgqfghcnd"))))
     (properties `((upstream-name . "inflationkit")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-cli))
-    (home-page "https://github.com/charlescoverdale/inflationkit")
+    (home-page "https://charlescoverdale.github.io/inflationkit/")
     (synopsis "Inflation Decomposition, Core Measures, and Trend Estimation")
     (description
      "This package provides tools for analysing inflation dynamics.  Computes weighted
 contributions of price index components, core inflation measures (trimmed mean,
-weighted median, exclusion-based) following Bryan and Cecchetti (1994)
-<doi:10.1016/0304-3932(94)90030-2>, inflation persistence via
-sum-of-AR-coefficients, diffusion indices, Phillips curve estimation, breakeven
-inflation, and trend inflation using the Beveridge-Nelson decomposition and
-Hodrick-Prescott filter.  All functions are pure computation and work with price
-data from any source.")
+weighted median, exclusion-based) following Bryan and Cecchetti (1994),
+inflation persistence via sum-of-AR-coefficients, diffusion indices, Phillips
+curve estimation, breakeven inflation, and trend inflation using the
+Beveridge-Nelson decomposition and Hodrick-Prescott filter.  All functions are
+pure computation and work with price data from any source.")
     (license license:expat)))
 
 (define-public r-inflation
@@ -12057,13 +12080,13 @@ Ferreira et al. (2016) <https://goo.gl/UYLhcj>.")
 (define-public r-inflater
   (package
     (name "r-inflater")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inflateR" version))
        (sha256
-        (base32 "1spszkni12f406fih9gcn87pdmrms1aym3c68a3wfl9szpanb0pp"))))
+        (base32 "05qfmn5xjj68dj4yyw5mlh2qf4aqqdgn53vsnfwxav2jl4hs1vj0"))))
     (properties `((upstream-name . "inflateR")))
     (build-system r-build-system)
     (arguments
@@ -12242,13 +12265,13 @@ tests, Levene's test, @code{McNemar} Test, Cochran's Q test and Runs test.")
 (define-public r-infermm
   (package
     (name "r-infermm")
-    (version "0.0.3")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inferMM" version))
        (sha256
-        (base32 "04qjj6ia61bqpm1w9qznlk6wy195xc4q7shwcq9mc9mh94038bkp"))))
+        (base32 "05jrakqy0sw0sxb8v9l0hvdagf95ywafp34lzb8awwdjxypmfg4h"))))
     (properties `((upstream-name . "inferMM")))
     (build-system r-build-system)
     (arguments
@@ -12260,12 +12283,15 @@ tests, Levene's test, @code{McNemar} Test, Cochran's Q test and Runs test.")
     (description
      "Variance-aware Michaelis-Menten estimation, model screening, grouped
 enzyme-kinetic analyses, and clustered repeated-measurement workflows.  The
-package implements profile-score estimators under working variance functions,
-together with a lightweight cluster-aware working-covariance extension, Wald and
-bootstrap confidence intervals, prediction utilities, and simulation helpers.
-Related methodology is discussed by Kim and Ma (2012)
-<doi:10.1007/s10463-011-0332-y>, Kim (2023) <doi:10.1002/sta4.606>, and Ma and
-Genton (2010) <doi:10.1111/j.1467-9868.2010.00741.x>.")
+package implements profile-score estimators under built-in or user-defined fixed
+working variance functions for single curves, optional higher-moment estimating
+equations for independent observations with asymmetric errors, and a lightweight
+cluster-aware working-covariance extension with optional conditional projected
+scores for an unspecified random-effect density, Wald and bootstrap confidence
+intervals, prediction utilities, and simulation helpers.  Related methodology is
+discussed by Kim and Ma (2012) <doi:10.1007/s10463-011-0332-y>, Kim (2023)
+<doi:10.1002/sta4.606>, and Ma and Genton (2010)
+<doi:10.1111/j.1467-9868.2010.00741.x>.")
     (license license:gpl3)))
 
 (define-public r-inferference
@@ -12611,13 +12637,13 @@ details.")
 (define-public r-inequality
   (package
     (name "r-inequality")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inequality" version))
        (sha256
-        (base32 "0ah008zy0nkjdz63nfrjhyg59j4hkw0cavgzxn5nl6717gc9ib6x"))))
+        (base32 "1vd96153d5bkfydzrjnynz7v039cn5xk7l1gcls84yjlq5pxpxj5"))))
     (properties `((upstream-name . "inequality")))
     (build-system r-build-system)
     (arguments
@@ -14180,6 +14206,34 @@ these algorithms, a number of functions based on some traditional and novel
 initialization techniques are also available in the package inaparc'.")
     (license license:gpl2+)))
 
+(define-public r-imw
+  (package
+    (name "r-imw")
+    (version "1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IMW" version))
+       (sha256
+        (base32 "10kgxy475964c1sl4fjbiq6fgz2rlv1ri6fscbcscnwl5nkphr54"))))
+    (properties `((upstream-name . "IMW")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://cran.r-project.org/package=IMW")
+    (synopsis "Incremental Moment Windows")
+    (description
+     "Computes rolling statistics, including the mean, variance, skewness, and
+kurtosis, over moving windows.  The package uses incremental algorithms to
+efficiently update statistics as new observations arrive, supporting both online
+computation and batch processing for time-series analysis and streaming data
+applications.  Implemented in C++, the package provides a high-performance,
+header-only implementation that facilitates direct integration into other
+packages.")
+    (license license:expat)))
+
 (define-public r-imvol
   (package
     (name "r-imvol")
@@ -15340,13 +15394,13 @@ methodology derived from Tiruviluamala, N., Port, A., and Lewis, E. (2022)
 (define-public r-impectr
   (package
     (name "r-impectr")
-    (version "2.6.0")
+    (version "2.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "impectR" version))
        (sha256
-        (base32 "0yn70zcmf7ypwrsy8rjwwsx06z5q95idkzpb39d9qclrzavp6rln"))))
+        (base32 "1rxd61lhqb715aiwm08f4sw9qpj8m0213wjki529wlnpfmqd6pb6"))))
     (properties `((upstream-name . "impectR")))
     (build-system r-build-system)
     (arguments
@@ -16288,6 +16342,36 @@ macroeconomic data from the International Monetary Fund's SDMX 3.0 IMF Data API
 Statistical Data and Metadata @code{eXchange} ('SDMX') 3.0 API, available at
 <https://data.imf.org/>, and a concise workflow for discovering datasets,
 inspecting dimensions, and downloading observations as tidy data frames.")
+    (license license:expat)))
+
+(define-public r-imedr
+  (package
+    (name "r-imedr")
+    (version "0.3.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "imedR" version))
+       (sha256
+        (base32 "13v0dhb18fs5rz0z1di68szgfp4vnklzamnqvabq67x5c0s3z6bn"))))
+    (properties `((upstream-name . "imedR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-rlang r-readr r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ChanikyaNaiduCN7/imedR")
+    (synopsis
+     "Guarded Evidence Synthesis for the Indian Microplastics Evidence Database")
+    (description
+     "This package provides a research-grade, guardrail-first interface to the Indian
+Microplastics Evidence Database (IMED).  It provides release-data access,
+relational and scientific validation, comparability-aware filtering, descriptive
+and inferential statistics, evidence-synthesis eligibility, meta-analysis
+helpers, publication figures, mapping, provenance and citation retrieval, and
+manuscript-oriented outputs.  Unsafe pooling across incompatible matrices,
+denominators, mass bases and comparability classes is blocked by default.")
     (license license:expat)))
 
 (define-public r-imediate
@@ -18690,6 +18774,34 @@ for a list of copyright holders and authors.")
      "Tools, tutorials, and demos of Item Factor Analysis using @code{OpenMx}'.  This
 software is described in Pritikin & Falk (2020) <doi:10.1177/0146621620929431>.")
     (license license:agpl3+)))
+
+(define-public r-ifarima
+  (package
+    (name "r-ifarima")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IFARIMA" version))
+       (sha256
+        (base32 "1j2jxyhkb7vm8sn87wq20dy1k5nryfp91may08hn7v1kr01c2hri"))))
+    (properties `((upstream-name . "IFARIMA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-forecast))
+    (home-page "https://cran.r-project.org/package=IFARIMA")
+    (synopsis
+     "Intuitionistic Fuzzy Autoregressive Integrated Moving Average Model")
+    (description
+     "The Intuitionistic Fuzzy Autoregressive Integrated Moving Average model offers
+advanced time series forecasting by integrating intuitionistic fuzzy sets with
+ARIMA. It enhances prediction accuracy by handling uncertainties and hesitations
+more effectively than traditional models, making it ideal for complex,
+real-world data applications.  The package has been developed using the
+algorithm of Yolcu and Yolcu (2023) <doi:10.1016/j.eswa.2022.119336>.")
+    (license license:gpl3)))
 
 (define-public r-ieugwasr
   (package
@@ -22097,13 +22209,13 @@ Iceberg are trademarks of The Apache Software Foundation.")
 (define-public r-icdpicr2
   (package
     (name "r-icdpicr2")
-    (version "2.1.0")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "icdpicr2" version))
        (sha256
-        (base32 "0jry59h5mv38570nxsi1py9wx7a94nbxmgw336nnf29f5bx9lai8"))))
+        (base32 "0xs8d04q23jfs6jqkngcalqf9v8xjgs9i0z6xf3i250gbka9l51a"))))
     (properties `((upstream-name . "icdpicr2")))
     (build-system r-build-system)
     (arguments
@@ -24007,13 +24119,13 @@ ISBN:978-1-84821-222-0).")
 (define-public r-iar
   (package
     (name "r-iar")
-    (version "1.3.4")
+    (version "1.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iAR" version))
        (sha256
-        (base32 "06pcp6np38li6nz318590kv0r2cyqxmy7igzjg0c87darwkg88vx"))))
+        (base32 "1bi7hidrz5ic539xyh72cad0cxdpn16dapv0f36v7dyf51ksk23b"))))
     (properties `((upstream-name . "iAR")))
     (build-system r-build-system)
     (arguments
@@ -24026,16 +24138,17 @@ ISBN:978-1-84821-222-0).")
                              r-rcpp
                              r-ggplot2))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/felipeelorrieta")
+    (home-page "https://felipeelorrieta.github.io/iAR-package/")
     (synopsis "Irregularly Observed Autoregressive Models")
     (description
-     "Data sets, functions and scripts with examples to implement autoregressive
-models for irregularly observed time series.  The models available in this
-package are the irregular autoregressive model (Eyheramendy et al.(2018)
-<doi:10.1093/mnras/sty2487>), the complex irregular autoregressive model
-(Elorrieta et al.(2019) <doi:10.1051/0004-6361/201935560>) and the bivariate
-irregular autoregressive model (Elorrieta et al.(2021)
-<doi:10.1093/mnras/stab1216>).")
+     "Data sets and functions for implementing discrete-time autoregressive models for
+irregularly observed time series.  The models implemented include the irregular
+autoregressive (@code{iAR}) model (Eyheramendy et al. (2018)
+<doi:10.1093/mnras/sty2487>), the complex irregular autoregressive (@code{CiAR})
+model (Elorrieta et al. (2019) <doi:10.1051/0004-6361/201935560>), and the
+bivariate irregular autoregressive (@code{BiAR}) model (Elorrieta et al. (2021)
+<doi:10.1093/mnras/stab1216>).  For a comprehensive description of the package
+and its applications, see Elorrieta et al. (2026) <doi:10.32614/RJ-2026-036>.")
     (license license:gpl2)))
 
 (define-public r-iapws95

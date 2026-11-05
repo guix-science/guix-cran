@@ -407,13 +407,13 @@ main reference is @code{DePaolis} at al (2022) <doi:10.1007/s41109-022-00519-2>.
 (define-public r-xtpqardl
   (package
     (name "r-xtpqardl")
-    (version "1.0.3")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xtpqardl" version))
        (sha256
-        (base32 "1g88j7r6sgiya6rq007g4g84smahhkzxmcd9hk4xhmxxr3jljp7h"))))
+        (base32 "14fdkha080g7fljnyygxm175p2yc9gkpxi1jf90m58nx5xshv9yj"))))
     (properties `((upstream-name . "xtpqardl")))
     (build-system r-build-system)
     (arguments
@@ -589,13 +589,13 @@ mlr3 ecosystem.")
 (define-public r-xtdhcoint
   (package
     (name "r-xtdhcoint")
-    (version "1.0.3")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xtdhcoint" version))
        (sha256
-        (base32 "1wc92rwz3aybhd8gshnhcbfb9y9gvsgrxak8svkkpi2vj1pxhw75"))))
+        (base32 "0cx9gh53krb6f723x0ymnr1m4rlz3zz41qpq3sfr5wrzcixv076a"))))
     (properties `((upstream-name . "xtdhcoint")))
     (build-system r-build-system)
     (arguments
@@ -1173,13 +1173,13 @@ graphics for data exploration and model diagnostics.")
 (define-public r-xportr
   (package
     (name "r-xportr")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xportr" version))
        (sha256
-        (base32 "1mvi5pnj614ffgrm8h11p7ji69wjba7gi3cv52gnbpv33yjg7kp2"))))
+        (base32 "03lgb4af4kvmm44gawdn092xrys3jahvvzsmnxsz640awm53ppd5"))))
     (properties `((upstream-name . "xportr")))
     (build-system r-build-system)
     (arguments
@@ -1898,6 +1898,32 @@ classification into data indexed using the target classification codes.
 Documentation about the Crossmaps framework is provided in the included
 vignettes and in Huang (2024, <doi:10.48550/@code{arXiv.2406.14163>}).")
     (license license:expat)))
+
+(define-public r-xlum
+  (package
+    (name "r-xlum")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "xlum" version))
+       (sha256
+        (base32 "170mbi8xb6hmlbyrk9l6zj3cjyv7lxayy9lhf6z69dfj2i9hcqic"))))
+    (properties `((upstream-name . "xlum")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2 r-luminescence r-base64enc))
+    (home-page "https://r-lum.github.io/xlum/")
+    (synopsis "Read, Write, and Convert XLUM Data")
+    (description
+     "Support for the XLUM file format (Kreutzer et al. (2023)
+<doi:10.5194/gchron-5-271-2023>) for exchange and long-term preservation of
+luminescence data.  The package facilitates the import and export of XLUM files
+and the conversion from other ASCII and binary formats commonly used to store
+luminescence (dating) data.")
+    (license license:gpl3)))
 
 (define-public r-xlsxjars
   (package

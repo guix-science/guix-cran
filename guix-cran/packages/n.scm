@@ -1963,13 +1963,13 @@ and Sigg et al. (2007) <doi:10.1109/MLSP.2007.4414315> for more details.")
 (define-public r-nsca
   (package
     (name "r-nsca")
-    (version "0.4.5")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NSCA" version))
        (sha256
-        (base32 "14q1869si1pkmb20v5vli92dxf8mcmx45cc6cax1n0qjpals2df6"))))
+        (base32 "15s2fmzx8ls5p8hvqqg3cvs5bvna31warbiqxf5z0r9r23szb5b7"))))
     (properties `((upstream-name . "NSCA")))
     (build-system r-build-system)
     (arguments
@@ -1979,24 +1979,21 @@ and Sigg et al. (2007) <doi:10.1109/MLSP.2007.4414315> for more details.")
     (home-page "https://github.com/youngchanresearcher/NSCA")
     (synopsis "Necessary and Sufficient Condition Analysis")
     (description
-     "Tests and quantifies bivariate statements in which a condition is both necessary
-and sufficient for an outcome.  Necessity and sufficiency are estimated as two
-empty-space frontiers on diagonally opposite corners of the same scatter plot,
-using the NCA package of Dul (2016) <doi:10.1177/1094428115584005> for the
-necessity side and SCAtools for the sufficiency side.  The two empty zones and
-the region between them tile the analytic scope, which yields the reported areas
-as one identity rather than as separate definitions: a weakest-component effect,
-a normalised geometric mean of the two components, the share of the scope the
-claims jointly rule out, and the data zone they still admit.  The conjunction is
-decided by an intersection-union combination of the two directional permutation
-tests, optionally driven by a single shared permutation sequence so that a
-statistic of both components can also be tested.  These are random-pairing
-screens rather than direct tests of a causal necessary-and-sufficient relation,
-no magnitude benchmarks are asserted for the joint indices, and a dual-threshold
-table separates outcome levels that are out of reach, admitted, or guaranteed.
-An ordinary least-squares line can be drawn alongside the two frontiers as a
-central-tendency reference; it is an average-effect summary and is never treated
-as a component of either claim.")
+     "Tests whether a condition is both necessary and sufficient for an outcome, that
+is, whether the outcome cannot be reached without the condition and is
+guaranteed in its presence.  Such a claim implies that two diagonally opposite
+corners of the condition-outcome scatter plot contain no observations.  The
+package estimates both boundaries with the same data, scope and frontier
+technique, reports the effect size and permutation test of each, and indicates
+joint support only when both components are supported.  The two components are
+summarized by the weaker effect, a balanced combination and the proportion of
+the scope that the two claims jointly rule out.  A dual-threshold table gives,
+for each outcome level, the condition level it requires, the level sufficient
+for it, and the interval between them.  Results can be compared with regression
+slopes.  The package also provides plots, influential-case diagnostics,
+scope-sensitivity and resampling checks, and simulation and power analysis for
+planning studies.  The two sides are estimated with the NCA and SCAtools
+packages.")
     (license license:gpl3+)))
 
 (define-public r-nsc
@@ -2340,13 +2337,13 @@ provide an overview of the methods implemented in this package.")
 (define-public r-nquack
   (package
     (name "r-nquack")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nQuack" version))
        (sha256
-        (base32 "1m6psaxkzxl33pwpbv2i2xd7cbgk4s6y1wls4b8wc0ghl0hndk2p"))))
+        (base32 "1ysd4f4rv2w95ff0zvil2qphkb6ywbc83b2krvkaldvnb6ad7yaa"))))
     (properties `((upstream-name . "nQuack")))
     (build-system r-build-system)
     (arguments
@@ -2869,23 +2866,26 @@ methodologies used in the package can be found in Sharma, A., Mehrotra, R.
 (define-public r-nprcgenekeepr
   (package
     (name "r-nprcgenekeepr")
-    (version "2.0.0")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nprcgenekeepr" version))
        (sha256
-        (base32 "0dqbfvj087l7xnqc6gp37bkzwz1sabyaxrga3qcphy3sc8k4hzma"))))
+        (base32 "1jn4hxmva0pga3gkklzy0m5gpzlkqgk74dwd0kl7icw7h8ya1sc2"))))
     (properties `((upstream-name . "nprcgenekeepr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringi
+    (propagated-inputs (list r-visnetwork
+                             r-stringi
+                             r-shinybs
                              r-shiny
                              r-sessioninfo
                              r-rlabkey
                              r-readxl
+                             r-quadprog
                              r-plotrix
                              r-openxlsx
                              r-matrix
@@ -2902,19 +2902,21 @@ methodologies used in the package can be found in Sharma, A., Mehrotra, R.
     (home-page "https://rmsharp.github.io/nprcgenekeepr/")
     (synopsis "Genetic Tools for Colony Management")
     (description
-     "This package provides genetic tools for colony management and is a derivation of
-the work in Amanda Vinson and Michael J Raboin (2015)
+     "This package provides genetic tools for colony management and implements a
+derivation of the work in Amanda Vinson and Michael J Raboin (2015)
 <https://pmc.ncbi.nlm.nih.gov/articles/PMC4671785/> \"A Practical Approach for
 Designing Breeding Groups to Maximize Genetic Diversity in a Large Colony of
 Captive Rhesus Macaques ('Macaca mulatta')\".  It provides a Shiny application
-with an exposed API. The application supports five groups of functions: (1)
-Quality control of studbooks contained in text files or Excel workbooks and of
-pedigrees within @code{LabKey} Electronic Health Records (EHR); (2) Creation of
-pedigrees from a list of animals using the @code{LabKey} EHR integration; (3)
+with an exposed API. The application supports these main groups of functions:
+(1) Quality control of studbooks contained in text files or Excel workbooks and
+of pedigrees within @code{LabKey} Electronic Health Records (EHR); (2) Creation
+of pedigrees from a list of animals using the @code{LabKey} EHR integration; (3)
 Creation and display of an age by sex pyramid plot of the living animals within
 the designated pedigree; (4) Generation of genetic value analysis reports; and
 (5) Creation of potential breeding groups with and without proscribed sex ratios
-and defined maximum kinships.")
+and defined maximum kinships.  Further tabs cover mate pair analysis, genetic
+diversity, marker genetics, potential parents, cross-center identity mapping,
+de-identified export, and genetic-health trends.")
     (license license:expat)))
 
 (define-public r-npphen
@@ -4989,25 +4991,26 @@ model.")
 (define-public r-norstr
   (package
     (name "r-norstr")
-    (version "0.2.1")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "norSTR" version))
        (sha256
-        (base32 "0245xfcsvgaxz0sv063y42kicb98mwrkkvrdq50hq64l9hgillhf"))))
+        (base32 "1nb82bdimv7lbi11xlb3irn1lgm4lbi1vmfvv6a476snhs6bd2ap"))))
     (properties `((upstream-name . "norSTR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (home-page "https://github.com/magnusdv/norSTR")
-    (synopsis "Allele Frequencies for 50 Forensic STR Markers")
+    (synopsis "Forensic STR Map and Allele Frequencies")
     (description
-     "Allele frequency databases for 50 forensic short tandem repeat (STR) markers,
-covering Norway and several broader regional populations: Europe, Africa, South
-America, West Asia, Middle Asia, and East Asia.  Developed and maintained for
-use at the Department of Forensic Sciences, Oslo, Norway.")
+     "This package provides a marker map for 51 forensic short tandem repeat (STR)
+markers, and allele frequency databases for Norway and several broader regional
+populations: Europe, Africa, South America, West Asia, Middle Asia, and East
+Asia.  Developed and maintained for use at the Department of Forensic Sciences,
+Oslo, Norway.")
     (license license:expat)))
 
 (define-public r-normref
@@ -5107,13 +5110,13 @@ mixtures via smart parametrization using the LDL (Cholesky) decomposition, see
 (define-public r-normgen
   (package
     (name "r-normgen")
-    (version "0.0.6")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NormGen" version))
        (sha256
-        (base32 "0j4fwycngj731dvsi4i4325kkdx8gyxrdw3v1aklg5s9xvlcvmmy"))))
+        (base32 "1sbnj26yrsaxx85w94c6zx0i5gi49sax6r3x5ds50q698c2ww1v1"))))
     (properties `((upstream-name . "NormGen")))
     (build-system r-build-system)
     (arguments
@@ -5131,7 +5134,8 @@ based on precise mathematical approximations.  The package features
 @code{Rnorm()} for efficient single-threaded generation and
 @code{parallel_Rnorm()}, a high-performance, multithreaded variant powered by
 @code{RcppParallel} and Intel TBB'.  Package compilation flags are optimized to
-support multi-core parallel processing.")
+support multi-core parallel processing.  Renamed @code{parallel_Rnorm()} to
+@code{PRnorm()} for brevity.")
     (license license:gpl3)))
 
 (define-public r-normfluodbf
@@ -7409,13 +7413,13 @@ and De Jong (1997)<doi:10.1002/(SICI)1099-128X(199709/10)11:53.0.CO;2-L>.")
 (define-public r-nns
   (package
     (name "r-nns")
-    (version "13.2")
+    (version "13.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NNS" version))
        (sha256
-        (base32 "0yisv7p6cz1d2m27ifydqhysa4f73sj4acd2pppfcg72cyaw2fm5"))))
+        (base32 "1i961kr1dkcr4a9g5zwpf3kr41i0rpcgc3rv61nqypd8z3cqw9gr"))))
     (properties `((upstream-name . "NNS")))
     (build-system r-build-system)
     (arguments
@@ -8243,13 +8247,13 @@ projects.")
 (define-public r-nmfkc
   (package
     (name "r-nmfkc")
-    (version "0.9.8")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nmfkc" version))
        (sha256
-        (base32 "1swa24crgdh2kpidpv9bdg54ymaihzf0yv5cfdmxifhwap8c2s4r"))))
+        (base32 "065757m8l35jcskyk4vw49gpb3ka7jd89wywnsqzwlk60n5kfsjx"))))
     (properties `((upstream-name . "nmfkc")))
     (build-system r-build-system)
     (arguments
@@ -8265,8 +8269,8 @@ both a basis matrix and a parameter matrix.  Notably, if the kernel matrix is an
 identity matrix, the method simplifies to standard NMF. Also provides NMF with
 Random Effects (NMF-RE) via @code{nmfre()}, which estimates a mixed-effects
 model combining covariate-driven scores with unit-specific random effects
-together with wild bootstrap inference, and NMF-based Structural Equation
-Modeling (NMF-SEM) via @code{nmf.sem()}, which fits a two-block input-output
+together with wild bootstrap inference, and NMF with feed-forward and feedback
+structure (NMF-FFB) via @code{nmf.ffb()}, which fits a two-block input-output
 model for blind source separation and path analysis.  References: Satoh (2025)
 <doi:10.48550/@code{arXiv.2403.05359>}; Satoh (2026)
 <doi:10.1007/s42081-026-00349-x>; Satoh (2025)
@@ -9270,13 +9274,13 @@ and non-local prior mixtures as described in Sanyal (2025)
 (define-public r-nlpsem
   (package
     (name "r-nlpsem")
-    (version "0.4")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlpsem" version))
        (sha256
-        (base32 "0rb101pwv7drynwnzzjkb7r9v921fh1g1myqgwn0ixwxqh8lhdif"))))
+        (base32 "0x6c0s22sbzx5ld2q6l92nvql1z4p6j7jaq9dzfsf6xl564rd100"))))
     (properties `((upstream-name . "nlpsem")))
     (build-system r-build-system)
     (arguments
@@ -9284,7 +9288,7 @@ and non-local prior mixtures as described in Sanyal (2025)
       #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
-                             r-readr
+                             r-rlang
                              r-openmx
                              r-nnet
                              r-matrix
@@ -9299,12 +9303,13 @@ particular the intrinsically nonlinear models, in four scenarios: (1) univariate
 longitudinal processes with growth factors, with or without covariates including
 time-invariant covariates (TICs) and time-varying covariates (TVCs); (2)
 multivariate longitudinal processes that facilitate the assessment of
-correlation or causation between multiple longitudinal variables; (3)
-multiple-group models for scenarios (1) and (2) to evaluate differences among
-manifested groups, and (4) longitudinal mixture models for scenarios (1) and
-(2), with an assumption that trajectories are from multiple latent classes.  The
-methods implemented are introduced in Liu (2025)
-<doi:10.3758/s13428-025-02596-4>.")
+associations and directional relationships between multiple longitudinal
+variables; (3) multiple-group models for scenarios (1) and (2) to evaluate
+differences among manifested groups, and (4) longitudinal mixture models for
+scenarios (1) and (2), with an assumption that trajectories are from multiple
+latent classes.  Data can also be simulated from these models with the
+generating parameter values attached.  The methods implemented are introduced in
+Liu (2025) <doi:10.3758/s13428-025-02596-4>.")
     (license license:gpl3+)))
 
 (define-public r-nlpembeds
@@ -10374,13 +10379,13 @@ For more details visit <https://www.nixtla.io/docs>.")
 (define-public r-nixmass
   (package
     (name "r-nixmass")
-    (version "1.3.1")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nixmass" version))
        (sha256
-        (base32 "1bl7b4whqwrpp8y2arvksb5w2ysd9xq9w6ki5qbbf24gqylyxlqx"))))
+        (base32 "1h65ad182k17i6pdlywpw6rrmjnj4as0swvghg1cbbzr4k9cl4h4"))))
     (properties `((upstream-name . "nixmass")))
     (build-system r-build-system)
     (arguments
@@ -13057,50 +13062,31 @@ of the <https://github.com/kotartemiy/newscatcher> Python module.")
 (define-public r-newmark
   (package
     (name "r-newmark")
-    (version "1.3.0")
+    (version "1.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "newmark" version))
        (sha256
-        (base32 "1xqm35wz48pkyw30hwdynblcfah18905crjjildrm3ir0xvd9s80"))))
+        (base32 "0xcn4ssd01zxsqf6lymgra36pd8b078ciinjmq04sip09gw0s9l0"))))
     (properties `((upstream-name . "newmark")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-triangle
-                             r-stringr
-                             r-rpart
-                             r-readxl
-                             r-randomforest
-                             r-mvtnorm
-                             r-hmisc
-                             r-digest
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://averriK.github.io/newmark/")
+    (propagated-inputs (list r-mvtnorm r-jsonlite r-data-table))
+    (home-page "https://kanameishi.github.io/newmark/")
     (synopsis "Uncertainty Analysis in Dynamic Site and Slope Response")
     (description
-     "This package implements a four-stage pipeline for probabilistic seismic
-performance analysis of slopes and embankments.  The package takes a
-uniform-hazard spectrum at multiple return periods as input (any source) and
-produces: (1) synthetic soil profile generation and fundamental period
-estimation from USCS classification via Ishihara's small-strain shear-modulus
-model and the inhomogeneous truncated shear-beam theory of Gazetas and Dakoulas;
-(2) nonlinear site amplification using the NGA-East ergodic site-response models
-(Stewart et al. (2020) <doi:10.1177/8755293019878185> and Hashash et al. (2020)
-<doi:10.1177/8755293019878193>, with the 2017 PEER-report generation retained as
-an option), with inter-period correlation via Baker & Jayaram (2008)
-<doi:10.1193/1.2857544>; (3) Monte Carlo ensemble of six empirical Newmark
-sliding-block displacement models (Ambraseys & Menu (1988)
-<doi:10.1002/eqe.4290160704>, Jibson (2007) <doi:10.1016/j.enggeo.2007.01.013>,
-Saygili & Rathje (2008) <doi:10.1061/(ASCE)1090-0241(2008)134:6(790)>, Bray &
-Travasarou (2007) <doi:10.1061/(ASCE)1090-0241(2007)133:4(381)>, Bray & Macedo
-(2017) <doi:10.1016/j.soildyn.2017.05.024>, and the Bray and Macedo
-shallow-crustal update) with coherent correlated draws; (4) log-log inversion to
-the performance-based seismic coefficient kmax at user-specified displacement
-targets.  All outputs are data.table objects.")
+     "Estimates the seismic response of sites and slopes from the results of a seismic
+hazard analysis.  For a site, it computes the fundamental period of the soil
+profile and the amplification of spectral acceleration.  For a slope, it
+computes the fundamental period, the earthquake-induced displacement, and the
+pseudostatic coefficient that keeps a selected quantile of the displacement
+within a given limit.  Uncertainty in the soil profile and in the ground motion
+is represented by Monte Carlo samples.  Every result is reported with its
+representative value, its applicable quantiles or dispersion, and the population
+or conditioning to which it refers.")
     (license license:expat)))
 
 (define-public r-newmanomics
@@ -14454,13 +14440,13 @@ MDS, PCA, & eigenmodel network plotting.")
 (define-public r-networktoolbox
   (package
     (name "r-networktoolbox")
-    (version "1.4.4")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NetworkToolbox" version))
        (sha256
-        (base32 "1iycnx8hp6jhpl2nb411l2n60havz0xqbanmqalp9kk9j8p4d4vl"))))
+        (base32 "0b1mwq9dd8z0d1y1hjz4nqwwnnckhqplmwh18x9bvz4s1mq97zmm"))))
     (properties `((upstream-name . "NetworkToolbox")))
     (build-system r-build-system)
     (arguments
@@ -14490,7 +14476,9 @@ Tumminello, Madi, Gur-Gershgoren, Mantegna, & Ben-Jacob, 2010
 <doi:10.1371/journal.pone.0015032>), Information Filtering Networks (Barfuss,
 Massara, Di Matteo, & Aste, 2016 <doi:10.1103/@code{PhysRevE.94.062306>}), and
 Efficiency-Cost Optimization (Fallani, Latora, & Chavez, 2017
-<doi:10.1371/journal.pcbi.1005305>).  Brain methods include the recently
+<doi:10.1371/journal.pcbi.1005305>).  Several network measures are translated
+from the Brain Connectivity Toolbox (Rubinov & Sporns, 2010
+<doi:10.1016/j.neuroimage.2009.10.003>).  Brain methods include the recently
 developed Connectome Predictive Modeling (see references in package).  Also
 implements several network measures including local network characteristics
 (e.g., centrality), community-level network characteristics (e.g., community
@@ -15295,13 +15283,13 @@ website (2017)
 (define-public r-netsimr
   (package
     (name "r-netsimr")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NetSimR" version))
        (sha256
-        (base32 "1iwp096k3pxpia9lza703cnbkbhk72vq0lqy5cj6kqy67sqqvfg4"))))
+        (base32 "1p5qngrhvygdkri9rmcnmfhh5shhjjm4xan9rjdz4hy342rb6bh4"))))
     (properties `((upstream-name . "NetSimR")))
     (build-system r-build-system)
     (arguments
@@ -16206,13 +16194,13 @@ clones.The model is based on the estimation result from Andrew Roth (2014)
 (define-public r-nethist
   (package
     (name "r-nethist")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nethist" version))
        (sha256
-        (base32 "1qdyifj4jkd5j02ayvz0c19v3a7mi3b2cmp34xc9xjgfl8wzvni3"))))
+        (base32 "0117hdh9wgqf0k8g45k41shjnmv4j25c43gpima0qi2zszrvhq16"))))
     (properties `((upstream-name . "nethist")))
     (build-system r-build-system)
     (arguments
@@ -16862,6 +16850,44 @@ regression.")
     (license (list license:gpl2
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-nestedscales
+  (package
+    (name "r-nestedscales")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nestedscales" version))
+       (sha256
+        (base32 "01rml0njbw1xzfczfb7d4nppzgzrq77sy4yy4w9fcz60q5filv2i"))))
+    (properties `((upstream-name . "nestedscales")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-s7 r-rlang r-jsonlite r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://optimal2050.github.io/nestedscales/r/")
+    (synopsis "Nested Scales and Multi-Dimensional Indexes for Modeling")
+    (description
+     "This package provides multi-level discrete representations of data dimensions
+for modeling, data processing and visualization.  A nested scale records its
+finest units (atoms) and their membership in coarser levels (frames), including
+nested, cross-cutting and partially covered relationships.  Recasts tabular data
+between levels using explicit, direction-aware rules for sums, means, standard
+deviations, copying and within-parent shares.  Also supports labeling,
+subsetting, combining scales into multi-dimensional indexes, clustering units
+and storing data with its scale metadata.  Members may carry attributes (a
+calorific value, an emission factor) and aliases, resolved along the hierarchy
+and applied row by row, and a scale is exchanged as a language-neutral
+definition file: a JSON header with inline, Arrow or CSV tables ('YAML
+accepted), with a catalogue of the definitions installed packages ship.  Forms
+the dimension-agnostic core of timescales
+<https://github.com/optimal2050/timescales> (calendars) and geoscales
+<https://github.com/optimal2050/geoscales> (regions), designed for optimization
+and simulation models.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-nestedpp
   (package
     (name "r-nestedpp")
@@ -17045,6 +17071,80 @@ bottom-up rollup aggregation, and CSS-variable-based theming.  Works in Shiny
 applications, R Markdown, Quarto', and the RStudio Viewer.")
     (license license:gpl3+)))
 
+(define-public r-nesstarr
+  (package
+    (name "r-nesstarr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nesstarR" version))
+       (sha256
+        (base32 "0xgpssylz000w3vvkk9b76k0qlf42h32kwvh7gik1kzzwl2jdsz0"))))
+    (properties `((upstream-name . "nesstarR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://nesstarr.saketlab.org")
+    (synopsis "Read and Export 'Nesstar' Binary Files")
+    (description
+     "Reads .Nesstar binary files into data frames. .Nesstar is the file format of
+Nesstar Publisher', survey documentation software from the International
+Household Survey Network <https://www.ihsn.org/node/557>.  Statistical agencies,
+for example the Ministry of Statistics and Programme Implementation
+('@code{MoSPI}', India), publish survey microdata in this format.")
+    (license license:expat)))
+
+(define-public r-nerfplus
+  (package
+    (name "r-nerfplus")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nerfplus" version))
+       (sha256
+        (base32 "1yqndwd2z5hs7x616vzqnx4g089ry1qz11kqi7cgdmqzr8kbvm3h"))))
+    (properties `((upstream-name . "nerfplus")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yardstick
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-ranger
+                             r-purrr
+                             r-matrix
+                             r-irlba
+                             r-glmnet
+                             r-furrr
+                             r-dplyr
+                             r-caret
+                             r-abind))
+    (home-page "https://tiffanymtang.github.io/nerfplus/")
+    (synopsis "Network-Assisted Random Forest+ (NeRF+)")
+    (description
+     "Network-assisted Random Forest+ (@code{NeRF+}) is a flexible and interpretable
+machine learning model for incorporating network data alongside node-level
+covariate information.  Briefly, @code{NeRF+} extends a generalization of random
+forests (RF) called RF+ to the network-assisted regression setting by
+incorporating both a network cohesion penalty and network embeddings as
+additional covariates.  Using this approach, @code{NeRF+} inherits both the
+flexibility and interpretability of RFs while allowing researchers to easily
+incorporate network information in their model to further improve predictive
+performance.  This package provides tools to fit and interpret @code{NeRF+}
+models, as detailed in Tang, Levina, and Zhu (2025)
+<doi:10.48550/@code{arXiv.2509.15611>}.")
+    (license license:expat)))
+
 (define-public r-neptune
   (package
     (name "r-neptune")
@@ -17134,13 +17234,13 @@ nephrology.")
 (define-public r-neotoma2
   (package
     (name "r-neotoma2")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "neotoma2" version))
        (sha256
-        (base32 "0w16835gzyhydjplnw5qcdsnz5w5hqw6dv8lycb9dkljkbr2ixq7"))))
+        (base32 "178dhsyckr5wm8z6a1k6d99c3syxj35g687wlydyz2n4p83c5j31"))))
     (properties `((upstream-name . "neotoma2")))
     (build-system r-build-system)
     (arguments
@@ -19682,6 +19782,39 @@ applies to either continuous or integer data.  Correlation between variables are
 allowed, while samples are assumed to be independent.")
     (license license:gpl2+)))
 
+(define-public r-naxp
+  (package
+    (name "r-naxp")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "naxp" version))
+       (sha256
+        (base32 "0iymphkhmrykmf9p6x1k5apnkq3y6f6bzdhfhbbyacc2npahcrdx"))))
+    (properties `((upstream-name . "naxp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-cpp11))
+    (native-inputs (list r-knitr))
+    (home-page "https://naxp.org/")
+    (synopsis "Encoded ASCII Expressions")
+    (description
+     "Converts alphanumeric codes such as postcodes to whole numbers and back again,
+following the naxp standard <https://naxp.org/spec/>.  A naxp ('encoded ASCII
+expression') is a pattern, defined using a similar syntax to regular
+expressions, that maps each text it accepts to a number from 1 to a fixed
+maximum, and any other text to 0.  The same pattern maps text to numbers
+identically across all naxp libraries in all languages on all platforms (subject
+only to the availability of types able to store large enough integers).
+Standard naxps are defined for common code systems and are built into all naxp
+libraries.  Two naxps can be compared to determine, among other things, whether
+stored values keep their meaning when one replaces the other.  Wraps the naxp
+C++ library <https://naxp.org/api/#cpp>.")
+    (license license:asl2.0)))
+
 (define-public r-nawtilus
   (package
     (name "r-nawtilus")
@@ -20824,19 +20957,18 @@ variance components through likelihood and Bayesian methods.")
 (define-public r-nakagami
   (package
     (name "r-nakagami")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nakagami" version))
        (sha256
-        (base32 "0bxsg5k51x7qrw34l16da79ck212drkgvzgn9d5zanx5dwv5asl2"))))
+        (base32 "1g2f4dsg3jprqa5alnq2xdr1ypiajg7y5w7hrdvygrzyzwxzr90s"))))
     (properties `((upstream-name . "nakagami")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-assertthat))
     (home-page "https://github.com/JonasMoss/nakagami")
     (synopsis "Functions for the Nakagami Distribution")
     (description
@@ -21230,28 +21362,33 @@ NADA and adds new functionality.")
 (define-public r-nacho
   (package
     (name "r-nacho")
-    (version "2.0.8")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NACHO" version))
        (sha256
-        (base32 "133g2ninm3dsm33rixga8lx6xwcz1wj6ymv58ljda7kp7nm5w0p7"))))
+        (base32 "1z1qzlklciypj7rpn1f3iykjx8x5a7b7nacn71b8k63k6nc22rl8"))))
     (properties `((upstream-name . "NACHO")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list pandoc))
-    (propagated-inputs (list r-shinywidgets
+    (propagated-inputs (list r-yaml
                              r-shiny
                              r-scales
-                             r-rmarkdown
-                             r-knitr
+                             r-s7
+                             r-rlang
+                             r-promises
+                             r-htmltools
                              r-ggrepel
                              r-ggplot2
                              r-ggforce
-                             r-data-table))
+                             r-data-table
+                             r-cli
+                             r-bslib
+                             r-brand-yml))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mcanouil/NACHO/")
     (synopsis "NanoString Quality Control Dashboard")
@@ -21309,13 +21446,13 @@ clustering (CAclustering) and semidefinite programming (SDP).")
 (define-public r-nabla
   (package
     (name "r-nabla")
-    (version "0.7.1")
+    (version "0.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nabla" version))
        (sha256
-        (base32 "1xzggs93nqmc02rbhl43ncg3qglsqj7ifir78cyqzg48cdmny5xl"))))
+        (base32 "13kansw93640dzahs57qg6pd49yc4gwyg02k7dgg9i5z12870jam"))))
     (properties `((upstream-name . "nabla")))
     (build-system r-build-system)
     (arguments
@@ -21325,12 +21462,14 @@ clustering (CAclustering) and semidefinite programming (SDP).")
     (home-page "https://github.com/queelius/nabla")
     (synopsis "Exact Derivatives via Automatic Differentiation")
     (description
-     "Exact automatic differentiation for R functions.  Provides a composable
-derivative operator D that computes gradients, Hessians, Jacobians, and
-arbitrary-order derivative tensors at machine precision.  D(D(f)) gives
-Hessians, D(D(D(f))) gives third-order tensors for skewness of maximum
-likelihood estimators, and so on to any order.  Works through any R code
-including loops, branches, and control flow.")
+     "Automatic differentiation for R functions written with supported scalar
+arithmetic and mathematical operations.  Provides a composable derivative
+operator D that computes gradients, Hessians, Jacobians, and arbitrary-order
+derivative tensors at machine precision.  D(D(f)) gives Hessians, D(D(D(f)))
+gives third-order tensors for skewness of maximum likelihood estimators, and so
+on to higher orders.  Supports loops and executed branches composed of supported
+operations.  Uses nested dual numbers without finite difference truncation
+error; floating-point rounding and conditioning still affect results.")
     (license license:expat)))
 
 (define-public r-naaccr

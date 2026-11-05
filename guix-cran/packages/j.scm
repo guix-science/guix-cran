@@ -283,28 +283,33 @@ algorithms for both listings and tables.")
 (define-public r-jumps
   (package
     (name "r-jumps")
-    (version "1.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jumps" version))
        (sha256
-        (base32 "14gczjxfs7m3kn4smxl8l66c1m4iz9d710hx8gn167g0hr1kijv6"))))
+        (base32 "1s5rz6inc0wdp91d2vvg7f41w19fmbf073dca9l54h79wrfjdkk9"))))
     (properties `((upstream-name . "jumps")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpp r-nloptr))
+    (propagated-inputs (list r-rcppeigen r-rcpp r-nloptr))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=jumps")
-    (synopsis "Hodrick-Prescott Filter with Jumps")
+    (home-page "https://github.com/matteopelagatti/jumps")
+    (synopsis "Hodrick-Prescott Filter and Spline Smoothing with Jumps")
     (description
      "This package provides a set of functions to compute the Hodrick-Prescott (HP)
-filter with automatically selected jumps.  The original HP filter extracts a
-smooth trend from a time series, and our version allows for a small number of
-automatically identified jumps.  See Maranzano and Pelagatti (2024)
-<doi:10.2139/ssrn.4896170> for details.")
+filter and spline smoothing with automatically selected jumps.  The original HP
+filter and spline smoothing extract a smooth signal, and our version allows for
+a small number of automatically identified jumps.  Smoothing splines with
+discontinuities are obtained either by time warping, or by the
+dynamic-programming algorithm of Storath and Weinmann (2024)
+<doi:10.1080/10618600.2023.2262000>.  See Pelagatti, Maranzano and Gatto
+Ronchieri (2026) <doi:10.48550/@code{arXiv.2610.33137>} for details on the
+smoothing splines with discontinuities, and Maranzano and Pelagatti (2025)
+<doi:10.1016/j.econmod.2025.107132> for details on the HP filter with jumps.")
     (license license:gpl3)))
 
 (define-public r-jumpdiffsim
@@ -3134,13 +3139,13 @@ and continuous moderators.  Allows correcting for phylogenetic relatedness.")
 (define-public r-jmvreadwrite
   (package
     (name "r-jmvreadwrite")
-    (version "0.4.14")
+    (version "0.4.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jmvReadWrite" version))
        (sha256
-        (base32 "18f431dnqmyq6lbm8263qman4fl8slmy3cdfl4vr2plj8dcq7vw5"))))
+        (base32 "0m15nhndaxsvyqann13v31gxsr6z5sqbiwwz5b5851vhy93k4wfs"))))
     (properties `((upstream-name . "jmvReadWrite")))
     (build-system r-build-system)
     (arguments
@@ -3545,13 +3550,13 @@ algebra and @code{RcppArmadillo} glue.")
 (define-public r-jmbig
   (package
     (name "r-jmbig")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jmBIG" version))
        (sha256
-        (base32 "0kxs0mi9yyj1hf2896ph7c6q8ji2bbraak7bvfxfn6im98w2g63i"))))
+        (base32 "1dp1z1yvm80krqjxqdkh1w0r5rmg92dw51s5gw5i3fssh87m12jx"))))
     (properties `((upstream-name . "jmBIG")))
     (build-system r-build-system)
     (arguments
@@ -4201,13 +4206,13 @@ procedures for computing the investment performance indices of Bacon (2004)
 (define-public r-jfa
   (package
     (name "r-jfa")
-    (version "0.7.4")
+    (version "0.7.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jfa" version))
        (sha256
-        (base32 "0fyl2jqv6iywb1w504l1v9pbmmh7m35ba1ln1ypyhprzfagrlk03"))))
+        (base32 "0lz899p04x6vkkmbxd0cwp0abfphb663q58y0d8ghvh99zy9kcwq"))))
     (properties `((upstream-name . "jfa")))
     (build-system r-build-system)
     (arguments
@@ -4238,9 +4243,9 @@ values.  Finally, the package includes methods for auditing algorithms on the
 aspect of fairness and bias.  Next to classical statistical methodology, the
 package implements Bayesian equivalents of these methods whose statistical
 underpinnings are described in Derks et al. (2021) <doi:10.1111/ijau.12240>,
-Derks et al. (2024) <doi:10.2308/AJPT-2021-086>, Derks et al. (2022)
-<doi:10.31234/osf.io/8nf3e> Derks et al. (2024) <doi:10.31234/osf.io/tgq5z>, and
-Derks et al. (2025) <doi:10.31234/osf.io/b8tu2>.")
+Derks et al. (2024) <doi:10.2308/AJPT-2021-086>, Derks et al. (2026)
+<doi:10.1504/IJADS.2027.10078699> Derks et al. (2026) <doi:10.1111/ijau.70027>,
+and Derks et al. (2025) <doi:10.31234/osf.io/b8tu2>.")
     (license license:gpl3+)))
 
 (define-public r-jewel

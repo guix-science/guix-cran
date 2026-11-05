@@ -1256,13 +1256,13 @@ Integration (CI) pipelines.")
 (define-public r-future-mirai
   (package
     (name "r-future-mirai")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "future.mirai" version))
        (sha256
-        (base32 "0a44gfx96y7gknv1kp209hildjls1a25jzaqvzkcsxyczw31q4iv"))))
+        (base32 "1xjkwk1wp9fm4ljbpx0sfp6dr14j7i8bqlsrwd6rga9pvls8r1xk"))))
     (properties `((upstream-name . "future.mirai")))
     (build-system r-build-system)
     (arguments
@@ -1287,13 +1287,13 @@ change, it gives identical results, and behaves exactly the same.")
 (define-public r-future-batchtools
   (package
     (name "r-future-batchtools")
-    (version "0.30.0")
+    (version "0.31.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "future.batchtools" version))
        (sha256
-        (base32 "0lrhfw5xx7vdjyd6cl3wsbdcwbwn85l79q4l9ri7s39kcxdg6zxd"))))
+        (base32 "01z9ha6mqb2x3phrr0vipqipk4d1y6cyapjjkgcvrm5gd567114y"))))
     (properties `((upstream-name . "future.batchtools")))
     (build-system r-build-system)
     (arguments
@@ -1418,19 +1418,20 @@ selection.  Package is based on Xin Gao, Raymond J. Carroll (2017)
 (define-public r-fusionforests
   (package
     (name "r-fusionforests")
-    (version "1.0.1")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FusionForests" version))
        (sha256
-        (base32 "0yzxs72b7662zn2x9jj1mb5r5if549ggz0mji4mh6bqj8m9cl4j4"))))
+        (base32 "1y8jfvrghy2sqnzgv256l05yf4p0ccz29ba0yvxj4x6z727anf3r"))))
     (properties `((upstream-name . "FusionForests")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-shrinkagetrees r-rcpp))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/tijn-jacobs/FusionForests")
     (synopsis "Bayesian Tree Ensembles for Data Fusion and Causal Inference")
     (description
@@ -2799,27 +2800,30 @@ that have executable code and function definitions only functions are sourced.")
 (define-public r-functionals
   (package
     (name "r-functionals")
-    (version "0.5.1")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "functionals" version))
        (sha256
-        (base32 "0yb9nk553d1yvyrrpblj8nhnn6v3xfjyj7g08h152q6z5a03czrw"))))
+        (base32 "0k29cx0p5vv0gb412mqj6id2mi9jy654zaxi12xd1iv0r422c24z"))))
     (properties `((upstream-name . "functionals")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (native-inputs (list r-knitr))
     (home-page "https://CRAN.R-project.org/package=functionals")
     (synopsis "Functional Programming with Parallelism and Progress Tracking")
     (description
      "This package provides functional tools such as @code{fmap()}, @code{fwalk()},
 and @code{fapply()} to iterate over vectors, data frames, or grouped data with
-optional parallelism and real-time progress tracking.  Progress updates now
-reflect completed tasks across sequential, multicore, and cluster-backed
-execution.  Designed for readable and reproducible workflows, including support
-for Monte Carlo simulations and benchmarking.")
+optional parallelism and real-time progress tracking.  Progress updates reflect
+completed tasks across sequential, multicore, and cluster-backed execution.  A
+uniform error policy keeps a run going when individual tasks fail, and optional
+per-task L'Ecuyer-CMRG random-number streams make parallel Monte Carlo work
+reproducible regardless of the number of cores.  Designed for readable and
+reproducible workflows, including simulation and benchmarking.")
     (license license:expat)))
 
 (define-public r-functionalcalibration
@@ -5121,13 +5125,13 @@ may depend on packages with priority base').")
 (define-public r-fritools
   (package
     (name "r-fritools")
-    (version "4.6.0")
+    (version "4.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fritools" version))
        (sha256
-        (base32 "0wjdflgnsi0xy5pvkjcrv5xz4d3gn9bf1zwlv0bqinjsg775d8pa"))))
+        (base32 "1b4r7yfbvwmwfg3bahw114hfgzha31dzn2nsdhaqvjh0d3g6ghip"))))
     (properties `((upstream-name . "fritools")))
     (build-system r-build-system)
     (arguments
@@ -5194,13 +5198,13 @@ floating-point vectors provided by the bignum package.")
 (define-public r-frictionless
   (package
     (name "r-frictionless")
-    (version "1.3.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "frictionless" version))
        (sha256
-        (base32 "04dzq6249d5h6fgl98iqjmgld1i2sp2rgh76ia50fhpirj024xgn"))))
+        (base32 "12gprmry774gdz820h2gcvslq1vb78g8ilz1rpv4wsl4039iqhrh"))))
     (properties `((upstream-name . "frictionless")))
     (build-system r-build-system)
     (arguments
@@ -5220,10 +5224,10 @@ floating-point vectors provided by the bignum package.")
     (synopsis "Read and Write Frictionless Data Packages")
     (description
      "Read and write Frictionless Data Packages.  A Data Package
-(<https://specs.frictionlessdata.io/data-package/>) is a simple container format
-and standard to describe and package a collection of (tabular) data.  It is
-typically used to publish FAIR (<https://www.go-fair.org/fair-principles/>) and
-open datasets.")
+(<https://datapackage.org/>) is a simple container format and standard to
+describe and package a collection of (tabular) data.  It is typically used to
+publish FAIR (<https://www.gofair.foundation/fair-principles>) and open
+datasets.")
     (license license:expat)))
 
 (define-public r-fri
@@ -6139,19 +6143,18 @@ in publications please use Hankin (2022) <doi:10.48550/ARXIV.2211.04002>.")
 (define-public r-free1way-docreg
   (package
     (name "r-free1way-docreg")
-    (version "1.0-3")
+    (version "1.1-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "free1way.docreg" version))
        (sha256
-        (base32 "00f4596j5vs18ndzq1ang69z2z7ls687cksjnc4bcl6bacvrvwfh"))))
+        (base32 "14l7jj71ibmmr3srkrfhbbmgffrvgym3frk1716sqxba4v2gbd2c"))))
     (properties `((upstream-name . "free1way.docreg")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-bibtex))
     (home-page "https://codeberg.org/thothorn/coin/")
     (synopsis
      "Additional Documentation and Regression Tests for 'stats::free1way()'")
@@ -6216,13 +6219,13 @@ time series and other data from FRED'.")
 (define-public r-fred
   (package
     (name "r-fred")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fred" version))
        (sha256
-        (base32 "0miljqfn43zq2m6wn32axzqfm0paxz92s6y0bdzc1gw8fl8vv9mx"))))
+        (base32 "09pkbq7bmf4b6nnwqmaaz5i1nkg99ykv3vsysqbzi6x8z3nyyd9s"))))
     (properties `((upstream-name . "fred")))
     (build-system r-build-system)
     (arguments
@@ -6550,13 +6553,13 @@ spoken by more than one million speakers.  Franc is a port of the
 (define-public r-framework
   (package
     (name "r-framework")
-    (version "1.0.2")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "framework" version))
        (sha256
-        (base32 "0g1l4alydwi478g8hgpb6sn3zwjfzww7w7pvf97fy47is582i1fy"))))
+        (base32 "0ak7r1jqz4m310slcnwwg3yq4p8jlzbgzkl0xkp5jh89f5qhrhvf"))))
     (properties `((upstream-name . "framework")))
     (build-system r-build-system)
     (arguments
@@ -6565,7 +6568,6 @@ spoken by more than one million speakers.  Franc is a port of the
     (propagated-inputs (list r-yaml
                              r-rsqlite
                              r-readr
-                             r-plumber
                              r-openssl
                              r-lubridate
                              r-jsonlite
@@ -6734,16 +6736,74 @@ correlated right-censored time-to-event data.  See Beyene and Chen (2024)
 <doi:10.1177/09622802231220496>.")
     (license license:gpl2+)))
 
+(define-public r-frailtypackplus
+  (package
+    (name "r-frailtypackplus")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FrailtyPackPlus" version))
+       (sha256
+        (base32 "1kh1f0ak72fady6ypb8mmw9x468zn40hh6vnyy1xvvf2ygwi0k87"))))
+    (properties `((upstream-name . "FrailtyPackPlus")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival r-numderiv r-mass))
+    (home-page "https://cran.r-project.org/package=FrailtyPackPlus")
+    (synopsis "Shared, Correlated, Additive, and Zero-Inflated Frailty Models")
+    (description
+     "Fits and compares shared, correlated, additive, zero-inflated promotion
+cure-rate, and k-out-of-M one-shot device frailty survival models under Bayesian
+Markov chain Monte Carlo (MCMC) and Maximum Likelihood Estimation (MLE)
+frameworks.  Supports ten baseline hazard distributions (Weibull, Exponential,
+Generalized Exponential, Exponential Power, Linear Failure Rate, Generalized
+Log-Logistic, Generalized Weibull, Generalized Rayleigh, Weighted Exponential,
+Extended Weibull) and eight frailty distributions (Gamma, Inverse Gaussian,
+Positive Stable, Compound Poisson, Compound Negative Binomial, Generalized
+Lindley, Weighted Lindley, Mixture of Inverse Gaussians).  Implements reversed
+hazard rate (RHR) models for bivariate left-censored survival data, additive
+shared frailty models under random right censoring, and one-shot device
+reliability analysis.  Provides goodness-of-fit testing, information criteria
+(AIC, BIC, AICc, HQIC, DIC, EAIC, EBIC, LPML), convergence diagnostics (Geweke,
+Gelman-Rubin, Heidelberger-Welch), Bayes factors, residual analyses, and
+diagnostic visualizations.  Methodologies are based on Hanagal and Dabade (2013)
+<doi:10.1016/j.spl.2013.07.015>, Hanagal and Dabade (2013)
+<doi:10.1080/03610918.2012.661909>, Hanagal and Dabade (2015)
+<doi:10.1080/03610926.2013.804561>, Hanagal and Bhambure (2015)
+<doi:10.3233/MAS-140308>, Hanagal and Bhambure (2016)
+<doi:10.1080/03610926.2014.901380>, Hanagal, Pandey, and Ganguly (2017)
+<doi:10.1080/03610918.2015.1085559>, Hanagal and Pandey (2018)
+<doi:10.1080/03610926.2018.1549256>, Hanagal (2020)
+<doi:10.1080/03610926.2020.1736305>, Tyagi et al. (2021)
+<doi:10.1007/s40314-021-01666-5>, Pandey, Hanagal, Tyagi, and Gupta (2021)
+<doi:10.1142/S0218539321500406>, Tyagi, Pandey, and Chesneau (2022)
+<doi:10.1007/s42519-021-00241-9>, Pandey, Hanagal, and Tyagi (2022)
+<doi:10.2478/stattrans-2022-0048>, Tyagi, Pandey, and Chesneau (2022)
+<doi:10.1007/s13571-022-00278-1>, Tyagi, Pandey, Hanagal, and Chesneau (2024)
+<doi:10.1080/03610918.2024.2391874>, Kiprotich et al. (2025)
+<doi:10.1080/02664763.2025.2560510>, Assuncao et al. (2026)
+<doi:10.1002/bimj.70162>, Chen et al. (1999)
+<doi:10.1080/01621459.1999.10474198>, Dunn and Smyth (1996)
+<doi:10.1080/10618600.1996.10474708>, Ling et al. (2021)
+<doi:10.3390/math9233032>, Yu, So, and Balakrishnan (2025)
+<doi:10.1016/B978-0-44-331694-4.00006-2>, Balakrishnan, Ling, and So (2021,
+ISBN:978-1-119-77795-3), and @code{McGilchrist} and Aisbett (1991)
+<doi:10.2307/2532138>.")
+    (license license:gpl3+)))
+
 (define-public r-frailtypack
   (package
     (name "r-frailtypack")
-    (version "3.8.1")
+    (version "3.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "frailtypack" version))
        (sha256
-        (base32 "0lfszamjsagd9za622c4j3vsnkwvajy0cxni7bz5v09hwg77f9mr"))))
+        (base32 "0v8gal6jzjbbq8qkcyh3qs2iph82x8arfynklygrxji5rn1ar1p4"))))
     (properties `((upstream-name . "frailtypack")))
     (build-system r-build-system)
     (arguments
@@ -6763,7 +6823,7 @@ correlated right-censored time-to-event data.  See Beyene and Chen (2024)
                              r-doby
                              r-boot))
     (native-inputs (list r-knitr gfortran))
-    (home-page "https://cran.r-project.org/package=frailtypack")
+    (home-page "https://github.com/vrondeau/frailtypack")
     (synopsis
      "Shared, Joint (Generalized) Frailty Models; Surrogate Endpoints")
     (description
@@ -6872,13 +6932,13 @@ frailty models including competing-risk models and joint models.")
 (define-public r-frailtyem
   (package
     (name "r-frailtyem")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "frailtyEM" version))
        (sha256
-        (base32 "0ajqmn8353va8k3idsl90xsrhpdqarfmvg84d4kwayxlqy6dmbb0"))))
+        (base32 "0q8ckngjllpj7av0fqd8hcp6j3mgk1gx79bpkv2x5vyqcxjizrin"))))
     (properties `((upstream-name . "frailtyEM")))
     (build-system r-build-system)
     (arguments
@@ -7833,6 +7893,41 @@ differences for general ANOVA models.  This program is documented in the paper
 of A. Baharev, S. Kemeny, On the computation of the noncentral F and noncentral
 beta distribution; Statistics and Computing, 2008, 18 (3), 333-340.")
     (license license:cc0)))
+
+(define-public r-fpovalue
+  (package
+    (name "r-fpovalue")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fpoValue" version))
+       (sha256
+        (base32 "03rlbimj6h0y3ji9v9n6f1zzx7wg7dq3l6037md02f0c1k28v46y"))))
+    (properties `((upstream-name . "fpoValue")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=fpoValue")
+    (synopsis
+     "Farmer Producer Organisation Economics and Member Benefit Accounting")
+    (description
+     "This package provides tools to determine when collective marketing, aggregation,
+grading and bulk input procurement through farmer producer organisations (FPOs)
+and agricultural cooperatives improve member-farmer returns.  The package
+provides channel-level transaction cost accounting (transport, commissions,
+market fees, time, rejection and payment-delay costs), estimation of scale
+economies from consolidated transport, tiered bulk input discounts and grading
+premiums, break-even throughput and procurement-price analysis, and comparison
+of individual and collective marketing scenarios.  Its core is a member-level
+distributional accounting framework that separates the total surplus generated
+by an FPO from the benefits actually received by farmers through prices,
+transaction cost savings, input savings and dividends, and summarises their
+distribution across members with Gini and concentration indices and farm-size
+group shares.")
+    (license license:gpl3+)))
 
 (define-public r-fportfolio
   (package
@@ -8963,13 +9058,13 @@ to guide an investigation of the data.")
 (define-public r-formshare
   (package
     (name "r-formshare")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FormShare" version))
        (sha256
-        (base32 "17wdqjymc33r7r17h3fwi0ixlbpl77k1fm9a6r3gjwxixz8kicx3"))))
+        (base32 "109xs6yp2208y99hgk4ygsaifc67pbsshhn8s41vzqhkx8y3p2k6"))))
     (properties `((upstream-name . "FormShare")))
     (build-system r-build-system)
     (arguments
@@ -8980,10 +9075,10 @@ to guide an investigation of the data.")
     (synopsis
      "Simple Connection Between the 'FormShare App' and 'R' for Advanced Analytics")
     (description
-     "This package provides analytics directly from R'.  It requires: @code{FormShare}
-App': <https://github.com/qlands/@code{FormShare} >= 2.22.0> .  Analytics
-plugin: <https://github.com/qlands/formshare_analytics_plugin> .  Remote SQL
-plugin: <https://github.com/qlands/formshare_sql_plugin> .")
+     "This package provides analytics directly from R'.  It requires a
+@code{FormShare} App (version 2.22.0 or later)
+<https://github.com/qlands/@code{FormShare>} with its Analytics and Remote SQL
+plugins installed.")
     (license license:gpl3)))
 
 (define-public r-formr
@@ -10319,13 +10414,13 @@ cross-temporal frameworks.")
 (define-public r-forecastsuite
   (package
     (name "r-forecastsuite")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "forecastsuite" version))
        (sha256
-        (base32 "0prsml5mvap8zhx5qlc0npvcvvp8v83w4dpsdpbxic05ayk1zpxh"))))
+        (base32 "11ff8r9jin1p3684fb0mm9b2npmg0gpxxdilvbqlinylhlbdhlc2"))))
     (properties `((upstream-name . "forecastsuite")))
     (build-system r-build-system)
     (arguments
@@ -10536,13 +10631,13 @@ Brockwell, P.J. and R.A.Davis (1991) <doi:10.1007/978-1-4419-0320-4>.")
 (define-public r-forecastdom
   (package
     (name "r-forecastdom")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "forecastdom" version))
        (sha256
-        (base32 "1rq358p6c8q09fldmk19rbdm4fam6488l13w9g9dwjh7kvjmmzm0"))))
+        (base32 "1cy21fvqwbvq74kf8mwjg1xns3yqdx34pl8ysxk2wf0z7pic9alk"))))
     (properties `((upstream-name . "forecastdom")))
     (build-system r-build-system)
     (arguments
@@ -10551,20 +10646,20 @@ Brockwell, P.J. and R.A.Davis (1991) <doi:10.1007/978-1-4419-0320-4>.")
     (propagated-inputs (list r-rcpp r-mass r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://gabbocg.github.io/forecastdom/")
-    (synopsis "Tools for (Un)Conditional Forecast Dominance")
+    (synopsis "(Un)Conditional Forecast Dominance")
     (description
      "This package provides a unified toolkit for out-of-sample forecast dominance
 testing.  Covers unconditional and conditional equal and superior predictive
 ability, encompassing, and nested-model comparison.  Implements the
 Diebold-Mariano test with the Harvey, Leybourne, and Newbold (1997)
-<doi:10.1016/S0169-2070(96)00719-4> small-sample correction; the Clark-West
-MSFE-adjusted statistic (Clark and West, 2007)
+<doi:10.1016/S0169-2070(96)00719-4> small-sample correction; the Clark-West mean
+squared forecast error (MSFE) adjusted statistic (Clark and West, 2007)
 <doi:10.1016/j.jeconom.2006.05.023>; the ENC-NEW encompassing test of Clark and
 @code{McCracken} (2001) <doi:10.1016/S0304-4076(01)00071-9>; the Giacomini-White
 conditional equal predictive ability test (Giacomini and White, 2006)
 <doi:10.1111/j.1468-0262.2006.00718.x>; Hansen's superior predictive ability
-test (Hansen, 2005) <doi:10.1198/073500105000000063>; the conditional superior
-predictive ability test of Li, Liao, and Quaedvlieg (2022)
+(SPA) test (Hansen, 2005) <doi:10.1198/073500105000000063>; the conditional
+superior predictive ability test of Li, Liao, and Quaedvlieg (2022)
 <doi:10.1093/restud/rdab039>; and the uniform and average multi-horizon SPA
 tests of Quaedvlieg (2021) <doi:10.1080/07350015.2019.1620074>.")
     (license license:expat)))
@@ -11440,13 +11535,13 @@ queue in your R terminal.")
 (define-public r-focusgroup
   (package
     (name "r-focusgroup")
-    (version "0.5.2")
+    (version "0.5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FocusGroup" version))
        (sha256
-        (base32 "0fgy4lq9hg1fxi03064i3nixd6s10jv74xvb8fw8nzdxk5h2r3j0"))))
+        (base32 "08192kfw57w4f9a2wzvnc3d367c7f43gwi80ydiml0cjh13xx1iy"))))
     (properties `((upstream-name . "FocusGroup")))
     (build-system r-build-system)
     (arguments
@@ -11457,13 +11552,14 @@ queue in your R terminal.")
                              r-rlang
                              r-r6
                              r-llmr
+                             r-jsonlite
                              r-haven
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/asanaei/FocusGroup")
     (synopsis "Focus Group Simulation Using LLM Agents")
     (description
-     "Moderated focus group discussions simulated with large language models.
+     "Moderated focus group discussions simulated with large language models (LLMs).
 Participants carry personas built from respondent records or labeled survey
 files.  A session runs under a specified turn-taking rule, and one turn can be
 experimentally manipulated to measure its effect on the next.")
@@ -13536,13 +13632,13 @@ visualization platform <https://developers.flourish.studio/api/introduction/>.")
 (define-public r-floral
   (package
     (name "r-floral")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FLORAL" version))
        (sha256
-        (base32 "1q701qhazk19ppjbxyjmjl07svik6spqnhcr77n7rv9dg0w0n7p1"))))
+        (base32 "0cwyf46kq3bfkk4iwsxhqha050v76hcr5901ifkqk20gr5jp82qb"))))
     (properties `((upstream-name . "FLORAL")))
     (build-system r-build-system)
     (arguments
@@ -14445,6 +14541,54 @@ sections before the first headline featuring navigation menu attributes.  This
 package is experimental and maybe replaced by a solution inside flexdashboard'.")
     (license license:bsd-2)))
 
+(define-public r-flexsdm
+  (package
+    (name "r-flexsdm")
+    (version "1.4.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "flexsdm" version))
+       (sha256
+        (base32 "0awq78p8i67zr285ig6ajndcsa77j93ik87h8y31gmacjh3dhacc"))))
+    (properties `((upstream-name . "flexsdm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra
+                             r-spthin
+                             r-rcpp
+                             r-randomforest
+                             r-patchwork
+                             r-nnet
+                             r-mgcv
+                             r-maxnet
+                             r-kernlab
+                             r-ggplot2
+                             r-gbm
+                             r-foreach
+                             r-dplyr
+                             r-doparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://sjevelazco.github.io/flexsdm/")
+    (synopsis "Flexible Species Distribution Modeling Workflow")
+    (description
+     "This package provides a flexible and comprehensive workflow for species
+distribution modeling, from data preparation (occurrence filtering, calibration
+areas, pseudo-absence and background sampling, data partitioning, and
+collinearity reduction) to model fitting, tuning, evaluation, prediction,
+ensemble modeling, and post-processing.  The package is described in Velazco et
+al. (2022) <doi:10.1111/2041-210X.13874>.  Implemented methods include the Shape
+metric to measure model extrapolation of Velazco et al. (2023)
+<doi:10.1111/ecog.06992>, ensembles of small models of Breiner et al. (2015)
+<doi:10.1111/2041-210X.12403> and Breiner et al. (2018)
+<doi:10.1111/2041-210X.12957>, Gaussian process models of Golding and Purse
+(2016) <doi:10.1111/2041-210X.12523>, and occurrence-based constraints for
+post-processing predictions of Mendes et al. (2020)
+<doi:10.1016/j.ecolmodel.2020.109180>.")
+    (license license:gpl3+)))
+
 (define-public r-flexscan
   (package
     (name "r-flexscan")
@@ -14877,13 +15021,13 @@ be linked against the @code{FlexiBLAS} wrapper library
 (define-public r-flexhaz
   (package
     (name "r-flexhaz")
-    (version "0.5.2")
+    (version "0.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flexhaz" version))
        (sha256
-        (base32 "1c5l9j56fganm5cpih3p1hi44n11z8wsjdzw7cd7wrr8qvlaxz4a"))))
+        (base32 "1pialkw5k7f103ab1qd2q7ii9wdd1v75vqnascp2p2k1fc9j0xbp"))))
     (properties `((upstream-name . "flexhaz")))
     (build-system r-build-system)
     (arguments
@@ -17189,19 +17333,19 @@ especially for simulating a physical or biological system.")
 (define-public r-fishtree
   (package
     (name "r-fishtree")
-    (version "0.3.4")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fishtree" version))
        (sha256
-        (base32 "00g8p885z5xcqp2chncb177s0l6lab2f069szj861z9dyf93xx4z"))))
+        (base32 "14qji50qqisd27bdaa3vfh2ci677zn9wi3pf75vqm8wramhk8qgd"))))
     (properties `((upstream-name . "fishtree")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang r-memoise r-jsonlite r-ape))
+    (propagated-inputs (list r-rlang r-memoise r-lifecycle r-jsonlite r-ape))
     (native-inputs (list r-knitr))
     (home-page "https://fishtreeoflife.org/")
     (synopsis "Interface to the Fish Tree of Life API")
@@ -19863,30 +20007,31 @@ package and is necessary for the downstream microbial community data analysis.")
 (define-public r-figsr
   (package
     (name "r-figsr")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "figsr" version))
        (sha256
-        (base32 "0bqnhgkjilb9bqin23phz822vrvahjkn1q5c5dwnk442xv2kjcfv"))))
+        (base32 "0z8ry8fh2xxi0gcjmgysgvz9qznzw0kyp3y79vqiqlch0wya3g3p"))))
     (properties `((upstream-name . "figsr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble r-rlang r-parsnip r-dials))
+    (propagated-inputs (list r-tibble r-rlang r-parsnip r-ggplot2 r-dials))
     (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://github.com/bonijoao/figsr")
+    (home-page "https://bonijoao.github.io/figsr/")
     (synopsis "Fast Interpretable Greedy-Tree Sums for Tree Ensembles")
     (description
      "Flexible, interpretable machine learning algorithm for additive tree sums
 (FIGS).  Fits a sum of shallow classification and regression trees (CART) by
 greedily minimizing residual impurity, growing a new tree or deepening an
 existing one at each step, whichever reduces the residuals most.  Supports
-regression and two-class classification, variable importance, bootstrap
-ensembling and seamless integration with parsnip and tidymodels workflows.  The
-method is described in Tan et al. (2023) <doi:10.1073/pnas.2310151122>.")
+regression and two-class classification, variable importance, ggplot2 graphics,
+bootstrap ensembling and seamless integration with parsnip and tidymodels
+workflows.  The method is described in Tan et al. (2023)
+<doi:10.1073/pnas.2310151122>.")
     (license license:expat)))
 
 (define-public r-figpatch
@@ -20224,13 +20369,13 @@ sciences.")
 (define-public r-fido
   (package
     (name "r-fido")
-    (version "1.1.2")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fido" version))
        (sha256
-        (base32 "1i6hdzg0vlyphv7zy9alccwvlpg9nj0ckddb36qamqfvcap8xzdv"))))
+        (base32 "06cp5ifag947zfwpzb80j0zwqavfiv6h9d13d47jdwpgrwm2v9wl"))))
     (properties `((upstream-name . "fido")))
     (build-system r-build-system)
     (arguments
@@ -20247,7 +20392,7 @@ sciences.")
                              r-ggplot2
                              r-dplyr
                              r-bh))
-    (native-inputs (list r-knitr))
+    (native-inputs (list pkg-config r-knitr))
     (home-page "https://jsilve24.github.io/fido/")
     (synopsis "Bayesian Multinomial Logistic Normal Regression")
     (description
@@ -20727,37 +20872,6 @@ Ensembl and phenotypes association graph prepared from GWAScatalog are included.
 wide range of genomic studies, including the identification of genetic variants,
 exploration of genomic features, and post-GWAS functional analysis.")
     (license license:gpl3)))
-
-(define-public r-fgmutils
-  (package
-    (name "r-fgmutils")
-    (version "0.9.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Fgmutils" version))
-       (sha256
-        (base32 "05n8lvx3cs1ckliaj7ni2rbfcrdl7d0pzf9bkwlyd1779h684cxz"))))
-    (properties `((upstream-name . "Fgmutils")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-sqldf
-                             r-png
-                             r-plyr
-                             r-gridextra
-                             r-ggplot2
-                             r-devemf
-                             r-data-table))
-    (home-page "https://cran.r-project.org/package=Fgmutils")
-    (synopsis "Forest Growth Model Utilities")
-    (description
-     "Growth models and forest production require existing data manipulation and the
-creation of new data, structured from basic forest inventory data.  The purpose
-of this package is provide functions to support these activities.")
-    (license license:gpl2)))
 
 (define-public r-fglsnet
   (package
@@ -22264,13 +22378,13 @@ explore them.")
 (define-public r-fedstatapir
   (package
     (name "r-fedstatapir")
-    (version "1.1.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fedstatAPIr" version))
        (sha256
-        (base32 "0920fljakgsijl3bqj2ym4xylkx7n34kss9057jhs02k6g3qbhqb"))))
+        (base32 "1f0kbhbbxcwczx69ab1igzwc6pgfhbz28iq5gilw0l4hn52jz4p1"))))
     (properties `((upstream-name . "fedstatAPIr")))
     (build-system r-build-system)
     (arguments
@@ -22286,8 +22400,10 @@ explore them.")
     (synopsis
      "Unofficial API for Fedstat (Rosstat EMISS System) for Automatic and Efficient Data Queries")
     (description
-     "An API for automatic data queries to the fedstat <https://www.fedstat.ru>, using
-a small set of functions with a common interface.")
+     "Downloads indicator data from Fedstat (EMISS), the Russian official statistics
+portal <https://www.fedstat.ru>.  Large selections are downloaded in small,
+paced parts that are saved to disk and resume after interruptions.  Also lists
+the filters and the code dictionaries of indicators.")
     (license license:expat)))
 
 (define-public r-fedmatch
@@ -23187,32 +23303,6 @@ from the permuted data.  Also included are options for an analog parametric
 approach.")
     (license license:artistic2.0)))
 
-(define-public r-fdq
-  (package
-    (name "r-fdq")
-    (version "0.12")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fdq" version))
-       (sha256
-        (base32 "198nsyzv0ni2mjx12wik58c7z5vrc1mfk80k3iv94dz1iq9fprqf"))))
-    (properties `((upstream-name . "fdq")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sqldf r-randomcolor r-ggplot2 r-fgmutils
-                             r-data-table))
-    (home-page "https://cran.r-project.org/package=fdq")
-    (synopsis "Forest Data Quality")
-    (description
-     "Forest data quality is a package containing nine methods of analysis for forest
-databases, from databases containing inventory data and growth models, the focus
-of the analyzes is related to the quality of the data present in the database
-with a focus on consistency , punctuality and completeness of data.")
-    (license license:gpl3)))
-
 (define-public r-fdp
   (package
     (name "r-fdp")
@@ -23652,13 +23742,13 @@ the plot of the functional data.")
 (define-public r-fdasrvf
   (package
     (name "r-fdasrvf")
-    (version "2.5.0")
+    (version "2.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fdasrvf" version))
        (sha256
-        (base32 "1dvj0ykxmp71frgd5n6rl1nx8r5b1mijsnif9z1w9xmgijqddg8m"))))
+        (base32 "0pqh215x6lm4s7fx36bn64ws34gwqhsqwya3jqswhqcbj9f7hmxz"))))
     (properties `((upstream-name . "fdasrvf")))
     (build-system r-build-system)
     (arguments
@@ -24296,13 +24386,13 @@ examples is available on the Webpage
 (define-public r-fcusum
   (package
     (name "r-fcusum")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FCUSUM" version))
        (sha256
-        (base32 "0zy9077ic8j6zfvbdivh1h71dbpf0hy9r08i3z24q2dn4wfxvxkw"))))
+        (base32 "1j781ynzwsqpz160kns8z1yn71bv6ryaqvlf0a40i1afsi61xl80"))))
     (properties `((upstream-name . "FCUSUM")))
     (build-system r-build-system)
     (arguments
@@ -24311,13 +24401,14 @@ examples is available on the Webpage
     (home-page "https://cran.r-project.org/package=FCUSUM")
     (synopsis "Fourier CUSUM Cointegration Test")
     (description
-     "This package implements the Fourier cumulative sum (CUSUM) cointegration test
-for detecting cointegration relationships in time series data with structural
-breaks.  The test uses Fourier approximations to capture smooth structural
-changes and CUSUM statistics to test for cointegration stability.  Based on
-methodology described in Zaghdoudi (2025) <doi:10.46557/001c.144076>.  The
-corrected Akaike Information Criterion (AICc) is used for optimal frequency
-selection.")
+     "This package implements a Fourier CUSUM test for the null hypothesis of
+cointegration in the presence of smooth structural change.  The cointegrating
+regression is estimated by dynamic OLS with a Fourier pair at a fractional or
+integer frequency, and the residual CUSUM statistic of Xiao and Phillips (2002)
+<doi:10.1016/S0304-4076(01)00103-8> is scaled by a Bartlett long-run variance
+estimate.  A sup-F pre-test decides whether the Fourier terms are needed, and
+bootstrap critical values that replicate the frequency search give correct size
+when a break is present.")
     (license license:gpl3)))
 
 (define-public r-fcuk
@@ -26308,13 +26399,13 @@ n is the number of nodes.")
 (define-public r-fastret
   (package
     (name "r-fastret")
-    (version "1.3.0")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FastRet" version))
        (sha256
-        (base32 "1v8f58klb01bdf2048hncc2z6daxl66wgi0xvylzdv53vm3dkdmb"))))
+        (base32 "1ws7jpgndbmlv79lgp69yl7pp2c5h7ylnnlaqs208c9brrlia4ab"))))
     (properties `((upstream-name . "FastRet")))
     (build-system r-build-system)
     (arguments
@@ -26325,6 +26416,7 @@ n is the number of nodes.")
                              r-shinyjs
                              r-shinyhelper
                              r-shiny
+                             r-rsqlite
                              r-rlang
                              r-rcdk
                              r-promises
@@ -26334,6 +26426,7 @@ n is the number of nodes.")
                              r-ggplot2
                              r-future
                              r-dt
+                             r-dbi
                              r-data-table
                              r-cluster
                              r-bslib))
@@ -26345,8 +26438,8 @@ chromatography.  Users can train custom models for specific chromatography
 columns, predict retention times using existing models, or adjust existing
 models to account for altered experimental conditions.  The provided
 functionalities can be accessed either via the R console or via a graphical user
-interface.  Related work: Bonini et al. (2020)
-<doi:10.1021/acs.analchem.9b05765>.")
+interface.  For details see Fadil et al. (2026) <doi:10.1021/acs.jcim.6c01344>.
+Related work: Bonini et al. (2020) <doi:10.1021/acs.analchem.9b05765>.")
     (license license:gpl3)))
 
 (define-public r-fastrerandomize
@@ -26843,6 +26936,44 @@ prediction and memory-aware numerical routes support analyses with large
 predictor or multivariate-response matrices.")
     (license license:expat)))
 
+(define-public r-fastphylosig
+  (package
+    (name "r-fastphylosig")
+    (version "0.3.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fastphylosig" version))
+       (sha256
+        (base32 "1w1hbm7bym66gj12rfg7wghr2ijw945918yn131xp98sz13hij4b"))))
+    (properties `((upstream-name . "fastphylosig")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-ape))
+    (home-page "https://github.com/yinwen-ecology/fastphylosig")
+    (synopsis "Fast Phylogenetic Signal Statistics")
+    (description
+     "This package provides one-command and method-specific workflows for phylogenetic
+signal in continuous, binary, and categorical traits.  Compiled tree-pruning
+algorithms implement Blomberg's K and Pagel's lambda without constructing a
+dense phylogenetic covariance matrix in production.  Fritz and Purvis D retains
+separate random and Brownian null models, while categorical Delta combines
+discrete ancestral-state likelihoods with MCMC and permutation diagnostics.  The
+package also provides reusable prepared trees, explicit tree/data matching,
+trait-wise missing-value handling, conservative tree diagnostics, bounded
+simulation memory, and structured timing and Monte Carlo uncertainty metadata.
+Clade scans describe local and overall signal in continuous, binary and
+multistate traits, with optional model-reference tests of signal dispersion or
+deviation.  Methods follow Blomberg, Garland and Ives (2003)
+<doi:10.1111/j.0014-3820.2003.tb00285.x> for K, Pagel (1999) <doi:10.1038/44766>
+for lambda, Fritz and Purvis (2010) <doi:10.1111/j.1523-1739.2010.01455.x> for
+D, and Borges et al. (2019) <doi:10.1093/bioinformatics/bty800> for categorical
+Delta.")
+    (license license:expat)))
+
 (define-public r-fastpcs
   (package
     (name "r-fastpcs")
@@ -27311,13 +27442,13 @@ Records <doi:10.1017/S0003055418000783> and is available at
 (define-public r-fastkrr
   (package
     (name "r-fastkrr")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FastKRR" version))
        (sha256
-        (base32 "0ndgg9zz3b24yznvnzq5pbydfx3xkg1byir33j5kxsniv8m78p6i"))))
+        (base32 "1nk1isgfncq5mlzq66qa2p6i3rz5kdk6s3wfcz555f5yvikvp27i"))))
     (properties `((upstream-name . "FastKRR")))
     (build-system r-build-system)
     (arguments
@@ -27742,13 +27873,13 @@ applications such as shiny or web APIs to transfer data to client-side
 (define-public r-fastgbm
   (package
     (name "r-fastgbm")
-    (version "0.6.1")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastgbm" version))
        (sha256
-        (base32 "1p28lmm85l27pprwnf9fjdlh0n5rw2r23yka67qh1fnxkf0xbzxw"))))
+        (base32 "041q9r10s34h4g5nsqhmkl9vblrh72h62bsy3cbfkc2i7ygs9gna"))))
     (properties `((upstream-name . "fastgbm")))
     (build-system r-build-system)
     (arguments
@@ -27764,7 +27895,10 @@ applications such as shiny or web APIs to transfer data to client-side
 with one interface: regression (squared error), binary and multiclass
 classification (logistic and one-vs-rest), and right-censored survival analysis
 via Cox (Breslow ties), accelerated failure time (normal location-scale), or
-piecewise-exponential objectives.  Provides native missing-value routing,
+piecewise-exponential objectives, and competing risks via Fine-Gray
+subdistribution hazards, cause-specific hazards, or coupled cause-specific
+hazards, following @code{CoxBoost} (Binder et al.  2009)
+<doi:10.1093/bioinformatics/btp088>.  Provides native missing-value routing,
 baseline-hazard estimation and survival-probability prediction for the survival
 objectives, and deterministic multi-threaded training via @code{RcppParallel}'.
 Methods are described in Friedman (2001) <doi:10.1214/aos/1013203451>.")
@@ -28778,6 +28912,49 @@ International Maize and Wheat Improvement Center (1988, ISBN: 968-6127-19-4) for
 farm-management, extension, and on-farm research.")
     (license license:expat)))
 
+(define-public r-farm-eval
+  (package
+    (name "r-farm-eval")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FARM.eval" version))
+       (sha256
+        (base32 "0frdix2y7rfihmaiyknycfk8jy5498646jb4bcrvnswgwbb500bp"))))
+    (properties `((upstream-name . "FARM.eval")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tsmp
+                             r-tidyr
+                             r-shape
+                             r-reticulate
+                             r-readr
+                             r-purrr
+                             r-plotrix
+                             r-optparse
+                             r-nanoparquet
+                             r-magrittr
+                             r-lubridate
+                             r-future-apply
+                             r-farm
+                             r-dtwbi
+                             r-dtw
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=FARM.eval")
+    (synopsis "FARM Algorithm Evaluation")
+    (description
+     "Providing data sets and functions used for evaluating the FARM (Forward
+Alignment Relevance Measure) algorithm.  Datasets include energy consumption
+series from a university research cube in combination with two and four
+exogenous series consisting 768 and 62840 samples, respectively.  To run
+particular functions from terminal: Rscript $(R -e
+cat(system.file(\"scripts\",\"FARM.eval.R\",package = \"FARM.eval\"))') --fexecute
+get.global.rel.meas --parworkers 1 --parobjsize 500.")
+    (license license:gpl3)))
+
 (define-public r-farm
   (package
     (name "r-farm")
@@ -29480,13 +29657,13 @@ tests.  Methods for visualizing output are provided.")
 (define-public r-familia
   (package
     (name "r-familia")
-    (version "2.0.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Familia" version))
        (sha256
-        (base32 "075zlnv18b0fn0mcimj4l2r28b2k0wfmxkkbscf0smfdmaans3ri"))))
+        (base32 "123d39yanwzgs6pixy0mv8zrskhnvlasn6w8ymxbcl8pjsa3wlmw"))))
     (properties `((upstream-name . "Familia")))
     (build-system r-build-system)
     (arguments
@@ -29514,6 +29691,7 @@ tests.  Methods for visualizing output are provided.")
                              r-config
                              r-bs4dash
                              r-bigpopa))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/Breeding-Insight/Familia")
     (synopsis
      "'shiny' Application for Population Structure and Ancestry Assessments")
@@ -29526,7 +29704,8 @@ relationships through an accessible, web-based interface without requiring
 command-line tools.  Pedigree validation, Mendelian error analysis and parentage
 assignment build on the BI@code{GpopA} package
 (<https://CRAN.R-project.org/package=BI@code{GpopA>}) and support diploid and
-polyploid data.  Ancestry estimation uses the sparse non-negative matrix
+polyploid data.  Genotypes can be uploaded as dosage tables, VCF files, or PLINK
+.ped files.  Ancestry estimation uses the sparse non-negative matrix
 factorization method of Frichot et al. (2014) <doi:10.1534/genetics.113.160572>
 as implemented in the LEA package by Frichot and Francois (2015)
 <doi:10.1111/2041-210X.12382>.  Line and breed composition are estimated using
@@ -30128,13 +30307,13 @@ for depression by Iniesta, Stahl, and @code{McGuffin} (2016)
 (define-public r-fairgate
   (package
     (name "r-fairgate")
-    (version "0.1.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fairGATE" version))
        (sha256
-        (base32 "0nmaj7bkdjjzvkqjxbrjkp0glpv0vs3mfm2i0fgn4igz0apk4axr"))))
+        (base32 "12vdpsqs7b7qb4lrza49zccswacrb810kbl9rfvqmzh5pxyns53a"))))
     (properties `((upstream-name . "fairGATE")))
     (build-system r-build-system)
     (arguments
@@ -30155,13 +30334,23 @@ for depression by Iniesta, Stahl, and @code{McGuffin} (2016)
     (home-page "https://github.com/rhysholland/FairGATE")
     (synopsis "Fair Gated Algorithm for Targeted Equity")
     (description
-     "This package provides tools for training and analysing fairness-aware gated
-neural networks for subgroup-aware prediction and interpretation in clinical
-datasets.  Methods draw on prior work in mixture-of-experts neural networks by
-Jordan and Jacobs (1994) <doi:10.1007/978-1-4471-2097-1_113>, fairness-aware
-learning by Hardt, Price, and Srebro (2016)
-<doi:10.48550/@code{arXiv.1610.02413>}, and personalised treatment prediction
-for depression by Iniesta, Stahl, and @code{McGuffin} (2016)
+     "Fairness-aware correction of a prediction model for binary and continuous
+outcomes with two or more protected groups and their intersections.  A
+cross-fitted base learner (gradient-boosted trees or a neural network) is fitted
+without the protected attribute, and a gated mixture of neural experts learns a
+per-person correction to its score under a fairness penalty (a random-effects or
+variance penalty on outcome-stratified group means, or a thresholded worst-group
+penalty on error rates), with a cross-fitted disparity signal, an intervention
+cost, smoothed early stopping, a per-person export of adjustments with bootstrap
+stability intervals, and routing analyses of which expert corrects whom.
+Methods draw on mixture-of-experts neural networks by Jordan and Jacobs (1994)
+<doi:10.1007/978-1-4471-2097-1_113>, gradient boosting by Chen and Guestrin
+(2016) <doi:10.1145/2939672.2939785>, cross-fitting by Chernozhukov and
+co-authors (2018) <doi:10.1111/ectj.12097>, equalised odds by Hardt, Price and
+Srebro (2016) <doi:10.48550/@code{arXiv.1610.02413>}, the random-effects
+variance estimator of @code{DerSimonian} and Laird (1986)
+<doi:10.1016/0197-2456(86)90046-2>, and personalised treatment prediction for
+depression by Iniesta, Stahl and @code{McGuffin} (2016)
 <doi:10.1016/j.jpsychires.2016.03.016>.")
     (license license:expat)))
 
@@ -30706,13 +30895,13 @@ factor model (Cunha, Heckman, and Schennach (2010) <doi:10.3982/ECTA6551>).")
 (define-public r-factorhet
   (package
     (name "r-factorhet")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FactorHet" version))
        (sha256
-        (base32 "0is84j57hsnlsd17hl1xjr637yjijzvpanr76jl4k6kasj4bpfaz"))))
+        (base32 "0063235mgp24j1ihkrzb8rnhxr73hfrkwm1i1m1a3by5f7c0j850"))))
     (properties `((upstream-name . "FactorHet")))
     (build-system r-build-system)
     (arguments
@@ -30736,7 +30925,7 @@ methodology employs a Bayesian finite mixture of regularized logistic
 regressions, where moderators can affect each observation's probability of group
 membership and a sparsity-inducing prior fuses together levels of each factor
 while respecting ANOVA-style sum-to-zero constraints.  Goplerud, Imai, and
-Pashley (2024) <doi:10.48550/ARXIV.2201.01357> provide further details.")
+Pashley (2025) <doi:10.1214/24-AOAS1994> provide further details.")
     (license license:gpl2+)))
 
 (define-public r-factorh
@@ -32132,6 +32321,35 @@ designed for development and testing purposes.  For production deployment to
 cloud @code{FaaS} platforms, use the main @code{FaaSr} package available at
 <https://faasr.io/>.")
     (license license:expat)))
+
+(define-public r-f2adonis2
+  (package
+    (name "r-f2adonis2")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "F2Adonis2" version))
+       (sha256
+        (base32 "000qj2jn1wkb40d5hhqyslplfgc6a366bmd3300si0qf4vk6b4vy"))))
+    (properties `((upstream-name . "F2Adonis2")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vegan))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/LakviruPerera/F2Adonis2")
+    (synopsis "PERMANOVA using the F2 Statistic")
+    (description
+     "This package implements the F2 statistic of Anderson et al. (2017)
+<doi:10.1111/anzs.12176> for permutational multivariate analysis of variance
+(PERMANOVA) on dissimilarity matrices.  The F2 statistic uses group-specific
+dispersion estimates, so group centroids can be compared when dispersions differ
+and group sizes are unequal.  P-values are obtained by permutation, bootstrap,
+or bias-adjusted bootstrap.  The formula interface follows @code{adonis2()} in
+the vegan package.")
+    (license license:gpl2)))
 
 (define-public r-f1pits
   (package

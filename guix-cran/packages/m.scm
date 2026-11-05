@@ -255,13 +255,13 @@ information, see <https://github.com/Hirriririir/@code{MyoScore>}.")
 (define-public r-myman
   (package
     (name "r-myman")
-    (version "0.12.0")
+    (version "0.13.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "myman" version))
        (sha256
-        (base32 "06bw8w7sqzlksgsik76y2lwfjsgwbjflrj07i08q0f0imrccava0"))))
+        (base32 "0lsr2n4cpfzqjs3f55gpjcpypdmiqb5w21xmmhy3a00wakrjpmzk"))))
     (properties `((upstream-name . "myman")))
     (build-system r-build-system)
     (arguments
@@ -695,76 +695,6 @@ Data.  Journal of Open Source Software, 7(71), 4180, <doi:10.21105/joss.04180>."
 Estabrook's (2015) <doi:10.1037/a0034523> Measurement Model of Derivatives
 (MMOD).")
     (license license:asl2.0)))
-
-(define-public r-mxm
-  (package
-    (name "r-mxm")
-    (version "1.5.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MXM" version))
-       (sha256
-        (base32 "0k8v6x1fln12wkzsrhy0cxhzg5dyj8arn6h5bcvad6ydqr4x39zc"))))
-    (properties `((upstream-name . "MXM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-visnetwork
-                             r-survival
-                             r-rfast2
-                             r-rfast
-                             r-relations
-                             r-quantreg
-                             r-ordinal
-                             r-nnet
-                             r-mass
-                             r-lme4
-                             r-hmisc
-                             r-geepack
-                             r-foreach
-                             r-energy
-                             r-dplyr
-                             r-doparallel
-                             r-coxme
-                             r-bigmemory))
-    (native-inputs (list r-r-rsp r-knitr))
-    (home-page "https://cran.r-project.org/package=MXM")
-    (synopsis
-     "Feature Selection (Including Multiple Solutions) and Bayesian Networks")
-    (description
-     "Many feature selection methods for a wide range of response variables, including
-minimal, statistically-equivalent and equally-predictive feature subsets.
-Bayesian network algorithms and related functions are also included.  The
-package name MXM stands for \"Mens @code{eX} Machina\", meaning \"Mind from the
-Machine\" in Latin.  References: a) Lagani, V. and Athineou, G. and Farcomeni, A.
-and Tsagris, M. and Tsamardinos, I. (2017). \"Feature Selection with the R
-Package MXM: Discovering Statistically Equivalent Feature Subsets\".  Journal of
-Statistical Software, 80(7). <doi:10.18637/jss.v080.i07>.  b) Tsagris, M.,
-Lagani, V. and Tsamardinos, I. (2018). \"Feature selection for high-dimensional
-temporal data\".  BMC Bioinformatics, 19:17. <doi:10.1186/s12859-018-2023-7>.  c)
-Tsagris, M., Borboudakis, G., Lagani, V. and Tsamardinos, I. (2018).
-\"Constraint-based causal discovery with mixed data\".  International Journal of
-Data Science and Analytics, 6(1): 19-30. <doi:10.1007/s41060-018-0097-y>.  d)
-Tsagris, M., Papadovasilakis, Z., Lakiotaki, K. and Tsamardinos, I. (2018).
-\"Efficient feature selection on gene expression data: Which algorithm to use?\"
-@code{BioRxiv}. <doi:10.1101/431734>.  e) Tsagris, M. (2019). \"Bayesian Network
-Learning with the PC Algorithm: An Improved and Correct Variation\".  Applied
-Artificial Intelligence, 33(2):101-123. <doi:10.1080/08839514.2018.1526760>.  f)
-Tsagris, M. and Tsamardinos, I. (2019). \"Feature selection with the R package
-MXM\".  F1000Research 7: 1505. <doi:10.12688/f1000research.16216.2>.  g)
-Borboudakis, G. and Tsamardinos, I. (2019). \"Forward-Backward Selection with
-Early Dropping\".  Journal of Machine Learning Research 20: 1-39.  h) Tsagris,
-M., Papadovasilakis, Z., Lakiotaki, K. and Tsamardinos, I. (2022). \"The
-gamma-OMP algorithm for feature selection with application to gene expression
-data\".  IEEE/ACM Transactions on Computational Biology and Bioinformatics 19(2):
-1214-1224. <doi:10.1109/TCBB.2020.3029952>.")
-    (license license:gpl2)))
 
 (define-public r-mxkssd
   (package
@@ -5707,13 +5637,13 @@ will also calculate several measures of overlap.  See Keyel and Wiegand (2016)
 (define-public r-multirfm
   (package
     (name "r-multirfm")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MultiRFM" version))
        (sha256
-        (base32 "02fks2bc06z1avp9h6wvdy2yv9qf15d0ji6lp1zlxy2kd791zcb3"))))
+        (base32 "04f3z484lyqfggv22gxw0lhacvxmvqv71wp8572l7v40bgi8nlk1"))))
     (properties `((upstream-name . "MultiRFM")))
     (build-system r-build-system)
     (arguments
@@ -6157,6 +6087,37 @@ breakpoints.  In addition, it provides a graphical illustration of the result.")
 multiple phenotypes (separately or in joint model).")
     (license license:gpl2)))
 
+(define-public r-multipathaic
+  (package
+    (name "r-multipathaic")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "multipathaic" version))
+       (sha256
+        (base32 "1ds1mvcwr67010cac6si56g7n5znxcr1lv7fa4lv30i2mw06yvni"))))
+    (properties `((upstream-name . "multipathaic")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mobuobi/multipathaic")
+    (synopsis "Multi-Path Stepwise Selection with AIC")
+    (description
+     "This package implements a multi-path forward selection algorithm using the
+Akaike Information Criterion (AIC) for both linear (Gaussian) and logistic
+(binomial) regression models.  Unlike traditional stepwise methods that follow a
+single path, this approach explores multiple competitive model paths
+simultaneously by retaining near-optimal models at each step.  The package
+includes stability estimation via bootstrap resampling and identifies plausible
+models based on AIC tolerance and variable stability thresholds.  The
+information criterion is described by Akaike (1974)
+<doi:10.1109/TAC.1974.1100705>, and bootstrap resampling by Efron (1979)
+<doi:10.1214/aos/1176344552>.")
+    (license license:expat)))
+
 (define-public r-multipanelfigure
   (package
     (name "r-multipanelfigure")
@@ -6437,6 +6398,38 @@ suitably post-processed in order to undo label switching using the Equivalence
 Classes Representatives (ECR) algorithm, as described in Papastamoulis (2016)
 <DOI:10.18637/jss.v069.c01>.")
     (license license:gpl2)))
+
+(define-public r-multinomfourier
+  (package
+    (name "r-multinomfourier")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MultinomFourier" version))
+       (sha256
+        (base32 "09wsyp5jyg5z20xhcppk6xvmlgiwgvi6xjh85vjfwwhd77xzz7nh"))))
+    (properties `((upstream-name . "MultinomFourier")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=MultinomFourier")
+    (synopsis
+     "p-Values of Multinomial Goodness-of-Fit Tests by Fourier Series Inversion")
+    (description
+     "Computes p-values of multinomial goodness-of-fit tests based on an additive
+statistic: the log-likelihood ratio, Pearson's chi-squared, the Cressie-Read
+power divergence, and the exact multinomial test.  The main function,
+@code{pval_fourier()}, writes the p-value as a Fourier series in the
+moment-generating function of the statistic and sums it until an adaptive
+stopping rule is met, which makes small p-values of large instances
+computationally feasible.  The function @code{pval_exact()} computes the exact
+p-value by branch pruning with bounds from a dynamic program, and
+@code{pval_flexible()} chooses between the two according to the size of the
+instance.")
+    (license license:gpl2+)))
 
 (define-public r-multinmix
   (package
@@ -7750,19 +7743,20 @@ diagnostic and survival plotting suite.")
 (define-public r-multiflexscan
   (package
     (name "r-multiflexscan")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multiflexscan" version))
        (sha256
-        (base32 "06kmisghv3a2p9q5ibr43xw2bviqa1hp9cc6xc9bq2q52xwglgv8"))))
+        (base32 "171wh4ykv496na43mscrxhdm3sfzz05gfcqcm5cr9p26vkc0k747"))))
     (properties `((upstream-name . "multiflexscan")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rflexscan r-igraph r-foreach r-dosnow r-dorng))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/tkhrotn/multiflexscan")
     (synopsis
      "Information Criterion and Scan Statistic Approach for Detecting Multiple Disease Clusters")
@@ -9027,13 +9021,13 @@ help of each procedure.")
 (define-public r-multanova
   (package
     (name "r-multanova")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MultANOVA" version))
        (sha256
-        (base32 "0jyj3s6q2g6vgb82ap07y4wmp1jnd66brmw0r13w6yvhkvbnf0ld"))))
+        (base32 "13kxyfhak65riv1k0mkyr1dg3llbsfx92yviafi17i24qa9wd32f"))))
     (properties `((upstream-name . "MultANOVA")))
     (build-system r-build-system)
     (arguments
@@ -11588,20 +11582,19 @@ Graphics''.")
 (define-public r-msetool
   (package
     (name "r-msetool")
-    (version "3.7.5")
+    (version "3.7.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MSEtool" version))
        (sha256
-        (base32 "1706sc657kam71fg6iacakq389ilsaw30cpw9i5pxk0nqrf8c24d"))))
+        (base32 "0smi8akshds52907hiw9lvnvnyzyqqwsw87pk73fl2dwd2n4x7i5"))))
     (properties `((upstream-name . "MSEtool")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-snowfall
-                             r-rcpparmadillo
+    (propagated-inputs (list r-rcpparmadillo
                              r-rcpp
                              r-ggplot2
                              r-dplyr
@@ -12619,19 +12612,20 @@ contrasts.  See Fang et al. (2025) <doi:10.48550/@code{arXiv.2507.17190>}.")
 (define-public r-mrstdcrt
   (package
     (name "r-mrstdcrt")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MRStdCRT" version))
        (sha256
-        (base32 "1l84kk0rb62cpsrhj76nd4gfqiri7phlrzgspvzd5rcy5a7bmwkj"))))
+        (base32 "08d9p6k0r8z1zpljvfzi5cd5sy0idqngl3lr2nrjgr2rc9b064gv"))))
     (properties `((upstream-name . "MRStdCRT")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang
+    (propagated-inputs (list r-wemix
+                             r-rlang
                              r-nlme
                              r-magrittr
                              r-lme4
@@ -12646,7 +12640,15 @@ trials (CRTs).  Provides functions that standardize user-specified regression
 models to estimate marginal treatment effects.  The targets include the
 cluster-average and individual-average treatment effects, with utilities for
 variance estimation and example simulation datasets.  Methods are described in
-Li, Tong, Fang, Cheng, Kahan, and Wang (2025) <doi:10.1002/sim.70270>.")
+Li, Tong, Fang, Cheng, Kahan, and Wang (2025) <doi:10.1002/sim.70270>.
+Inverse-cluster-size weighted outcome models are available for generalized
+estimating equations and linear or generalized linear mixed models.  The outcome
+models can use common fitting weights for both estimands or inverse-cluster-size
+weights for the cluster-average effect and no weights for the individual-average
+effect.  Inference retains the original standardization framework and paired
+cluster jackknife.  Related cluster-size saturated models are described in the
+@code{arXiv} preprint by Lee, Harhay, and Li (2026)
+<doi:10.48550/@code{arXiv.2608.28943>}.")
     (license license:gpl3)))
 
 (define-public r-mrs
@@ -15921,13 +15923,13 @@ Silva et al. (2023) <doi:10.1111/2041-210X.14153>.")
 (define-public r-movecost
   (package
     (name "r-movecost")
-    (version "3.0.0")
+    (version "3.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "movecost" version))
        (sha256
-        (base32 "11njk5cp819gl2s82vrzrb9i4ahdpgsj1gw59vl3yxlbqh3hkl6g"))))
+        (base32 "04xbrgzk57mzp7mzf7f4f0p8av79aqfx704gfsnwxxcg9gk6lbk5"))))
     (properties `((upstream-name . "movecost")))
     (build-system r-build-system)
     (arguments
@@ -15943,12 +15945,14 @@ Silva et al. (2023) <doi:10.1111/2041-210X.14153>.")
 surfaces, least-cost paths, least-cost corridors, least-cost networks, ranked
 alternative paths, cost allocation and cost boundaries, using a number of
 human-movement-related cost functions that can be selected by the user.  The
-package is built around a compute-once design: a single cost surface object is
-created first and then reused by every analysis function, avoiding redundant
-computation.  Visualisation is fully decoupled from computation and is provided
-through ggplot2 methods that can be invoked, customised, and re-invoked at any
-time without re-running any analysis.  It just requires a Digital Terrain Model,
-a start location and (optionally) destination locations.  See Alberti (2019)
+terrain factor can be set as a single value or vary across the landscape via a
+raster of terrain factors or terrain classes.  The package is built around a
+compute-once design: a single cost surface object is created first and then
+reused by every analysis function, avoiding redundant computation.
+Visualisation is fully decoupled from computation and is provided through
+ggplot2 methods that can be invoked, customised, and re-invoked at any time
+without re-running any analysis.  It just requires a Digital Terrain Model, a
+start location and (optionally) destination locations.  See Alberti (2019)
 <doi:10.1016/j.softx.2019.100331>.")
     (license license:gpl2+)))
 
@@ -16526,6 +16530,33 @@ effect size, or required sample size of a factorial or fractional factorial
 experiment, for main effects or interactions, given several possible choices of
 effect size metric, and allowing pretests and clustering.")
     (license license:gpl2+)))
+
+(define-public r-mospir
+  (package
+    (name "r-mospir")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mospiR" version))
+       (sha256
+        (base32 "0rx7hz1ykh5d2w27nc43dm4swgxzlc7ngk3p9ngzxf0cr2nqfllj"))))
+    (properties `((upstream-name . "mospiR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-httr2))
+    (native-inputs (list r-knitr))
+    (home-page "https://mospir.saketlab.org")
+    (synopsis "Client for the 'MoSPI' Microdata Portal")
+    (description
+     "Download unit-level survey microdata from the Ministry of Statistics and
+Programme Implementation ('@code{MoSPI}', Government of India) Microdata Portal
+<https://microdata.gov.in>.  Provides functions to list datasets, list files
+within a dataset, and download individual files or entire datasets through the
+portal's NADA API.")
+    (license license:expat)))
 
 (define-public r-mosemiind
   (package
@@ -17708,13 +17739,13 @@ Roustant (2015) <doi:10.1016/j.ejor.2014.07.032>, among others.")
 (define-public r-moonshiner
   (package
     (name "r-moonshiner")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MoonShineR" version))
        (sha256
-        (base32 "18s34skhniiz9hs2hp5p07jyli01nrjgh7cmzxndk56yk8m5901h"))))
+        (base32 "11kav63dgnfdpbp9p0kk5d2bnibb8yv8pjl8dg7ra9889vw3hrc4"))))
     (properties `((upstream-name . "MoonShineR")))
     (build-system r-build-system)
     (arguments
@@ -17727,7 +17758,7 @@ Roustant (2015) <doi:10.1016/j.ejor.2014.07.032>, among others.")
                              r-lubridate
                              r-ggplot2
                              r-dplyr))
-    (home-page "https://cran.r-project.org/package=MoonShineR")
+    (home-page "https://lokpoon.github.io/MoonShine_manual/overview.html")
     (synopsis
      "Predict Moonlight, Sunlight, and/or Twilight Ground Illuminance")
     (description
@@ -18610,13 +18641,13 @@ the database.")
 (define-public r-mongolstats
   (package
     (name "r-mongolstats")
-    (version "0.2.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mongolstats" version))
        (sha256
-        (base32 "1z7bp1wn443dslj4wbh76svciyrj41cicp62cmbw884s6lq2xc29"))))
+        (base32 "0p9smppxmwy0n70936gjlvq5v1yn1ys7ya5fsl1wnq6gbd2hrpdp"))))
     (properties `((upstream-name . "mongolstats")))
     (build-system r-build-system)
     (arguments
@@ -18625,35 +18656,43 @@ the database.")
     (propagated-inputs (list r-tibble
                              r-stringr
                              r-stringi
-                             r-sf
                              r-rlang
                              r-purrr
+                             r-lifecycle
                              r-jsonlite
                              r-httr2
+                             r-filelock
                              r-dplyr
+                             r-digest
                              r-curl
                              r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://temuulene.github.io/mongolstats/")
-    (synopsis "Mongolian 'NSO' 'PXWeb' Data and Boundaries (Tidy Client)")
+    (synopsis "Tidy Access to Mongolian Official Statistics and Metadata")
     (description
-     "This package provides a tidyverse'-friendly client for the National Statistics
-Office of Mongolia PXWeb API <https://data.1212.mn/> with helpers to discover
-tables, variables, and fetch statistical data.  Also includes utilities to
-retrieve Mongolia administrative boundaries (ADM0-ADM2) as sf objects from open
-sources for mapping and spatial analysis.")
+     "This package provides a tidyverse'-friendly client for the public statistical
+services of the National Statistics Office of Mongolia <https://data.1212.mn/>.
+Discover tables and their dimensions, and fetch statistical data as tibble data
+frames with English or Mongolian labels.  Periods are reported by their labels
+and can be selected in any of the office's period formats, tables that have
+moved within the catalogue are found automatically, and large requests are split
+to stay within the server's limits.  Source provenance and raw observation
+symbols support reproducible exports.  Experimental clients provide access to
+the public data and metadata portals, including official definitions, collection
+forms, classifications, and reviewed indicator queries.  Maps and joins by
+statistical code are provided by the companion package mongolmaps'.")
     (license license:expat)))
 
 (define-public r-mongolmaps
   (package
     (name "r-mongolmaps")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mongolmaps" version))
        (sha256
-        (base32 "141yg7011z0k70gkaprnsjibsahzsz2fqwrpx8qnmsm9784rycqy"))))
+        (base32 "1af49fyizqaqwg6zlmqb1ifn8krkz8jrz3c5xy3i9vrwmvyr5c4l"))))
     (properties `((upstream-name . "mongolmaps")))
     (build-system r-build-system)
     (arguments
@@ -19316,33 +19355,47 @@ numerical method for maximum likelihood estimation is provided.")
 (define-public r-mofat
   (package
     (name "r-mofat")
-    (version "1.0")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MOFAT" version))
        (sha256
-        (base32 "00b9ss777zr5ysh98yllyicqwgnzccmjf20g7w20zvn2blhs2np0"))))
+        (base32 "0iqj8rrh3418v52qc5i12w21gvdqgmrv9ccc2rbl76b9ccilykwx"))))
     (properties `((upstream-name . "MOFAT")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-slhd))
+    (propagated-inputs (list r-withr
+                             r-spacefillr
+                             r-slhd
+                             r-sfdesign
+                             r-scales
+                             r-rcpphungarian
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-maxpro
+                             r-gtools))
     (home-page "https://cran.r-project.org/package=MOFAT")
     (synopsis "Maximum One-Factor-at-a-Time Designs")
     (description
      "Identifying important factors from a large number of potentially important
-factors of a highly nonlinear and computationally expensive black box model is a
+factors in a highly nonlinear and computationally expensive black-box model is a
 difficult problem.  Xiao, Joseph, and Ray (2022)
 <doi:10.1080/00401706.2022.2141897> proposed Maximum One-Factor-at-a-Time
-(MOFAT) designs for doing this.  A MOFAT design can be viewed as an improvement
-to the random one-factor-at-a-time (OFAT) design proposed by Morris (1991)
-<doi:10.1080/00401706.1991.10484804>.  The improvement is achieved by exploiting
-the connection between Morris screening designs and Monte Carlo-based Sobol
-designs, and optimizing the design using a space-filling criterion.  This work
-is supported by a U.S. National Science Foundation (NSF) grant CMMI-1921646
-<https://www.nsf.gov/awardsearch/@code{showAward?AWD_ID=1921646>}.")
+(MOFAT) designs for this purpose.  A MOFAT design is a collection of
+one-factor-at-a-time (OFAT) designs constructed to achieve maximal screening
+capability.  Song and Joseph (2026) <doi:10.48550/@code{arXiv.2609.02087>}
+extended the MOFAT framework to incorporate nominal and discrete numeric
+factors.  The resulting designs are implemented in the @code{mofatQQ} function.
+Yu and Joseph (2026) <doi:10.48550/@code{arXiv.2606.02533>} proposed
+Space-Filling One-Factor-at-a-Time (SOFT) designs, which achieve optimal
+space-filling properties while retaining the screening capability.  Therefore,
+SOFT designs are useful for both factor screening and surrogate modeling.  The
+work on MOFAT is supported by a U.S. National Science Foundation (NSF) grant
+CMMI-1921646 <https://www.nsf.gov/awardsearch/show-award/?AWD_ID=1921646>, and
+the work on MOFATQQ and SOFT is supported by a U.S. NSF grant DMS-2310637.")
     (license license:gpl2+)))
 
 (define-public r-moewishart
@@ -19632,13 +19685,13 @@ instance on pokemon, world of warcraft, house tasks or food nutrition analyses."
 (define-public r-modsem
   (package
     (name "r-modsem")
-    (version "1.0.23")
+    (version "1.0.24")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modsem" version))
        (sha256
-        (base32 "1l3gqcdapmv5qc8iclzlz9rnbxxkfricxas86dbjdisiadhsd492"))))
+        (base32 "0jrkyb18v4bwmz69n315p0561zx9x6zggxdb095nrihb88511442"))))
     (properties `((upstream-name . "modsem")))
     (build-system r-build-system)
     (arguments
@@ -20220,13 +20273,13 @@ schools effectiveness.  The standard value-added model is also an option.")
 (define-public r-moderndive
   (package
     (name "r-moderndive")
-    (version "0.8.0")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "moderndive" version))
        (sha256
-        (base32 "1sqialbgfip8hd3wp2bjqy21k9rpzzf2b21axlvc3l5b24pjpd5d"))))
+        (base32 "0xzgmhqzzlxws5w3m1qq4kqhi7ccl4a27ac3g4444809hviqzaaw"))))
     (properties `((upstream-name . "moderndive")))
     (build-system r-build-system)
     (arguments
@@ -21387,6 +21440,43 @@ procedure is a compromise between adding Gamma or not, having intermediate power
 properties.  The latter is again asymptotically equivalent to the first and was
 introduced in Rufibach and Walther (2010).")
     (license license:gpl2+)))
+
+(define-public r-modalnet
+  (package
+    (name "r-modalnet")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ModalNet" version))
+       (sha256
+        (base32 "0bhfkgz5rkxd7p890hcmanffndcjh20h3ymkdzqq7gmz8vbmpfdq"))))
+    (properties `((upstream-name . "ModalNet")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-glmnet))
+    (home-page "https://github.com/chedgala/ModalNet")
+    (synopsis
+     "Regularized Parametric Modal Regression: Lasso, Elastic Net and Ridge")
+    (description
+     "Variable selection and estimation for parametric modal regression with
+continuous positive responses (Gamma, Weibull and Lognormal families) under
+Lasso, elastic-net, ridge and adaptive-Lasso penalties.  The conditional mode is
+linked to a linear predictor through a logarithmic link using the mode
+reparameterization of Galarza and Lachos (2026)
+<doi:10.48550/@code{arXiv.2603.07099>}.  The penalized log-likelihood is
+maximized with a proximal Newton algorithm (iteratively reweighted penalized
+least squares): at each iteration the modal log-likelihood is replaced by a
+local quadratic surrogate in the linear predictor, which yields a
+pseudo-response and a working weight in closed form, and the resulting weighted
+penalized least-squares subproblem is solved by the coordinate-descent solver of
+glmnet (Friedman, Hastie and Tibshirani, 2010, <doi:10.18637/jss.v033.i01>).
+The regularization parameter is chosen along a warm-started path by the extended
+Bayesian information criterion of Chen and Chen (2008)
+<doi:10.1093/biomet/asn034>.")
+    (license license:gpl3)))
 
 (define-public r-modalforecast
   (package
@@ -23113,6 +23203,35 @@ Wesolowska Janczarek (1984) <doi:10.1002/bimj.4710260613>.")
      "Fit multivariate mixture of normal distribution using covariance structure.")
     (license license:gpl3)))
 
+(define-public r-mmefm
+  (package
+    (name "r-mmefm")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MMEFM" version))
+       (sha256
+        (base32 "1ypqxgbq42pbh342a529hb7yi91fxs83lpbh66bn50ny8zgnxpnx"))))
+    (properties `((upstream-name . "MMEFM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/kx-liu/MMEFM")
+    (synopsis "Multilevel Main Effects Matrix Factor Model Tools")
+    (description
+     "This package provides estimation, rank selection, and simulation for grouped
+matrix-valued time series using the Multilevel Main Effects Matrix Factor Model.
+ The model separates global and local grand means, row and column main effects,
+and bilinear interaction components, allowing nonstationary main effects under
+suitable conditions.  A circular-shift bootstrap is used to detect a shared
+global common component and screen participating groups on a stationary segment.
+ The underlying methodology is developed in Liu, Lam and Cen (2026)
+<doi:10.48550/@code{arXiv.2610.18335>}.")
+    (license license:expat)))
+
 (define-public r-mme
   (package
     (name "r-mme")
@@ -24408,13 +24527,13 @@ outcomes and inform evidence-based interventions.")
 (define-public r-mlsp
   (package
     (name "r-mlsp")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MLSP" version))
        (sha256
-        (base32 "0dgy9za13x6h93j8ijbya6dgwcbaip74ml1hn4is6j3x0fd6lv5d"))))
+        (base32 "1gwlbypxkfphlx1xr0y2l4i4vi49haxfzafs0pcw8cz4pij3lf98"))))
     (properties `((upstream-name . "MLSP")))
     (build-system r-build-system)
     (arguments
@@ -24422,12 +24541,29 @@ outcomes and inform evidence-based interventions.")
       #:tests? #f))
     (propagated-inputs (list r-randomforest r-pls r-gsignal r-glmnet r-cubist))
     (home-page "https://cran.r-project.org/package=MLSP")
-    (synopsis "Machine Learning Models for Soil Properties")
+    (synopsis "Machine Learning Models for Soil Properties from Spectroscopy")
     (description
-     "This package creates a spectroscopy guideline with a highly accurate prediction
-model for soil properties using machine learning or deep learning algorithms
-such as LASSO, Random Forest, Cubist, etc., and decide which algorithm generates
-the best model for different soil types.")
+     "Soil spectroscopy studies use many different combinations of spectral
+preprocessing and calibration methods, which makes results difficult to compare
+or generalize across studies.  For visible and near-infrared (VNIR) spectra
+(350-2500 nm), runs every combination of preprocessing and calibration methods
+on identical repeated calibration and validation splits.  The 26 preprocessing
+methods are raw reflectance, standard normal variate, pseudo-absorbance, and 23
+Savitzky-Golay smoothers, first derivatives, and second derivatives with linear,
+quadratic, or cubic polynomials and 3- to 11-point windows, excluding settings
+that give mathematically identical filters.  The calibration methods are
+principal component regression (PCR), partial least squares regression (PLSR),
+least absolute shrinkage and selection operator (LASSO), Cubist', and random
+forest.  Model complexity is tuned by cross-validation within each calibration
+set, and combinations are ranked by the coefficient of determination (R2), root
+mean squared error (RMSE), ratio of performance to interquartile distance
+(RPIQ), or bias, reporting the top 10 by default.  The methods are those most
+commonly used in published soil spectroscopy studies, following Savitzky and
+Golay (1964) <doi:10.1021/ac60214a047>, Barnes et al. (1989)
+<doi:10.1366/0003702894202201>, Rinnan et al. (2009)
+<doi:10.1016/j.trac.2009.07.007>, Bellon-Maurel et al. (2010)
+<doi:10.1016/j.trac.2010.05.006>, and Clingensmith et al. (2019)
+<doi:10.1111/ejss.12753>.")
     (license license:gpl2)))
 
 (define-public r-mlsjunkgen
@@ -24650,13 +24786,13 @@ composed to form preprocessing pipelines.")
 (define-public r-mlr3torch
   (package
     (name "r-mlr3torch")
-    (version "0.3.3")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3torch" version))
        (sha256
-        (base32 "1d4wrfsx6bi713c4biiwl2z8mz3ilz4xn2jnls3z97r0w7zyr625"))))
+        (base32 "1kyk07wlqsdnh8rav5x4qdx0p6gf3pj00z2g2wsn2yd5qvpshi05"))))
     (properties `((upstream-name . "mlr3torch")))
     (build-system r-build-system)
     (arguments
@@ -24671,6 +24807,7 @@ composed to form preprocessing pipelines.")
                              r-mlr3
                              r-lgr
                              r-data-table
+                             r-coro
                              r-cli
                              r-checkmate
                              r-backports))
@@ -24678,7 +24815,7 @@ composed to form preprocessing pipelines.")
     (synopsis "Deep Learning with 'mlr3'")
     (description
      "Deep Learning library that extends the mlr3 framework by building upon the torch
-package.  It allows to conveniently build, train, and evaluate deep learning
+package.  It makes it convenient to build, train, and evaluate deep learning
 models without having to worry about low level details.  Custom architectures
 can be created using the graph language defined in mlr3pipelines'.")
     (license license:lgpl3+)))
@@ -24969,13 +25106,13 @@ multi-step strategies.")
 (define-public r-mlr3fda
   (package
     (name "r-mlr3fda")
-    (version "0.7.2")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3fda" version))
        (sha256
-        (base32 "0q47p4xi8690aziqnddpcyhqca80hxggqvjc5iry2fjxswxrzzzs"))))
+        (base32 "0di6chc38lgh9q8akzw55agdkiaq7181223mszfcqdsf7r2my0m9"))))
     (properties `((upstream-name . "mlr3fda")))
     (build-system r-build-system)
     (arguments
@@ -25045,13 +25182,13 @@ joint tuning of machine learning algorithms and debiasing methods.")
 (define-public r-mlr3db
   (package
     (name "r-mlr3db")
-    (version "0.7.2")
+    (version "0.7.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3db" version))
        (sha256
-        (base32 "1i5lnyg9g0lkrbph5myaidw8k0gpm0cwpv6g7yi2b0h91771znhg"))))
+        (base32 "1x6ih4yg7aiffwk0a3ay69wjwfqg8pxvc57blyw9my61k03pxnj5"))))
     (properties `((upstream-name . "mlr3db")))
     (build-system r-build-system)
     (arguments
@@ -25728,13 +25865,13 @@ parallel sampling of levels is provided built-in.")
 (define-public r-mlma
   (package
     (name "r-mlma")
-    (version "6.3-1")
+    (version "6.4-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlma" version))
        (sha256
-        (base32 "16v3rwdc7kzn2k84ghkss14p1kqx86md9k1xv2k2x187f5lncamh"))))
+        (base32 "033s50gbmjhfgdw7gyya1kvwi501yc26qg6sxjszga0ndkbjiddr"))))
     (properties `((upstream-name . "mlma")))
     (build-system r-build-system)
     (arguments
@@ -26363,13 +26500,13 @@ corresponding MLEs.  Further details and explanations of MLEces can be found in.
 (define-public r-mle
   (package
     (name "r-mle")
-    (version "1.9")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MLE" version))
        (sha256
-        (base32 "14fwmv9wswjl3a0642dr5lq6aq5hbrn4pwqawrl47hzyzg598w9n"))))
+        (base32 "1d3kd4gs7zkcjk6d7aiqmqh61cg2fdqzzwsxk0qr27fcnkz1i828"))))
     (properties `((upstream-name . "MLE")))
     (build-system r-build-system)
     (arguments
@@ -26379,11 +26516,14 @@ corresponding MLEs.  Further details and explanations of MLEces can be found in.
                              r-svmf
                              r-rfast2
                              r-rfast
+                             r-mobius
                              r-mn
                              r-gp
                              r-geppe
                              r-foldedt
                              r-directional
+                             r-compositionalzerocens
+                             r-compositionalcln
                              r-compositional
                              r-compoissonreg
                              r-ccd
@@ -27290,29 +27430,34 @@ Volkmann, Umlauf, Greven (2023) <@code{arXiv:2311.06409>}.")
 (define-public r-mizu
   (package
     (name "r-mizu")
-    (version "0.0.1")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mizu" version))
        (sha256
-        (base32 "0bndpzm6898cssszid92jpdlcx1wa9swcv09gbmadz0zd49iv0i5"))))
+        (base32 "0m64vzsdnikqwnfvspv4780f7y9ywkbpr4i0v8zm2nwdxj8p1rgg"))))
     (properties `((upstream-name . "mizu")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://github.com/shikokuchuo/mizu-r")
-    (synopsis "Single-Producer Single-Consumer Channels")
+    (native-inputs (list r-quarto))
+    (home-page "https://shikokuchuo.net/mizu/")
+    (synopsis "Thread-Speed 'Async' and Parallel R over Shared Memory")
     (description
-     "This package provides a single-producer single-consumer channel with bounded
-capacity, optional timeouts on receives, and sentinel return values for full,
-timeout, and closed states.  The ring buffer is implemented in C: sends and
-receives are constant-time operations, values are delivered in first-in
-first-out order, and a closed channel drains its buffered values before
-reporting the closed state.  The transport is in-process: both ends of a channel
-live in the calling R process, which suits the channel to prototyping producer
-and consumer designs and to testing channel-based logic.")
+     "Parallel computation and data exchange between R processes on the same machine:
+lock-free channels, work-stealing task pools, and a parallel map over POSIX
+shared memory (Linux, @code{macOS}) or Win32 file mappings (Windows), with the
+hot path entirely in user space.  Communication is cheap enough that work can be
+divided as finely as with threads.  Vectors and data frames transfer zero-copy,
+received as ALTREP views over the shared pages, and Apache Arrow tables and
+record batches travel as a single frame with zero-copy conversion in both
+directions.  Receives and task results integrate with later and promises for
+non-blocking, event-driven applications such as shiny'.  Channels, pools, and
+maps interoperate with pymizu', so a peer or worker can equally be a Python
+process.  It complements mirai', and its payloads interoperate with mori shared
+objects.")
     (license license:expat)))
 
 (define-public r-mizer
@@ -27357,20 +27502,20 @@ focused on the marine environment.")
 (define-public r-mize
   (package
     (name "r-mize")
-    (version "0.2.5")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mize" version))
        (sha256
-        (base32 "19bz04llsds70khrs9792r6924fvrx6avlk222kkjhfwfpx5gdab"))))
+        (base32 "1hvg93jlrj73cxlddrkb44l5dqfdiagp8zqv9yiaz890qlrh66v6"))))
     (properties `((upstream-name . "mize")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/jlmelville/mize")
+    (home-page "https://jlmelville.github.io/mize/")
     (synopsis "Unconstrained Numerical Optimization Algorithms")
     (description
      "Optimization algorithms implemented in R, including conjugate gradient (CG),
@@ -28951,6 +29096,36 @@ efficiencies.  The output includes the generated design, finite-field metadata,
 confounding summaries, OFS diagnostics, and efficiency results.")
     (license license:gpl3)))
 
+(define-public r-mixeddiversityanalysis
+  (package
+    (name "r-mixeddiversityanalysis")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MixedDiversityAnalysis" version))
+       (sha256
+        (base32 "1w5y1682p5valyiwfxf86khx9ld2a1z7sby6sam9cnfyccim144q"))))
+    (properties `((upstream-name . "MixedDiversityAnalysis")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-cluster))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=MixedDiversityAnalysis")
+    (synopsis "Analysis and Visualization of Mixed-Trait Dissimilarity")
+    (description
+     "This package provides methods for analysing datasets containing quantitative,
+qualitative, binary, and ordinal traits.  Computes mixed-trait dissimilarities
+and performs hierarchical clustering using multiple linkage methods.  Supports
+principal coordinates analysis (P@code{CoA}), cluster evaluation, trait
+contribution analysis, and graphical visualization.  The package facilitates
+mixed-trait diversity assessment and characterization of crop germplasm.  For
+more detail see Gower (1971) <doi:10.2307/2528823> and Jukanti et al. (2026)
+<doi:10.1007/s44187-025-00715-w>.")
+    (license license:gpl3+)))
+
 (define-public r-mixedclust
   (package
     (name "r-mixedclust")
@@ -30122,13 +30297,13 @@ mechanism as described in Marbach (2021) <@code{arXiv:2107.05427>}.")
 (define-public r-missdeaths
   (package
     (name "r-missdeaths")
-    (version "2.8")
+    (version "2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "missDeaths" version))
        (sha256
-        (base32 "1qwrzb5nhbigyg7ivhsh3yqhrp0qaq3abgfffy808fry5rkz6sj6"))))
+        (base32 "1ynzxvxm2hqgqbh03p1fsm6ggmyb7fmmdsgv538l3rp3wjxywwwp"))))
     (properties `((upstream-name . "missDeaths")))
     (build-system r-build-system)
     (arguments
@@ -30360,6 +30535,42 @@ For methodological details see Marsico et al. (2023)
 <doi:10.1016/j.fsigen.2023.102891> and Marsico, Vigeland et al. (2021)
 <doi:10.1016/j.fsigen.2021.102519>.")
     (license license:gpl3+)))
+
+(define-public r-misocialr
+  (package
+    (name "r-misocialr")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "misocialr" version))
+       (sha256
+        (base32 "1hjw2a41m8xlclcqg5xrz254fb43rp45wnn717h11cl7qsl5ynss"))))
+    (properties `((upstream-name . "misocialr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-purrr
+                             r-httr2
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://strategicprojects.github.io/misocial/")
+    (synopsis
+     "Access the Brazilian 'MDS' Social Information Matrix ('MI Social') API from 'R'")
+    (description
+     "Tidyverse'-friendly interface to the MI Social API of the Brazilian Ministry of
+Development and Social Assistance ('MDS', SAGI')
+<https://aplicacoes.mds.gov.br/sagi/servicos/misocial>.  Retrieves monthly
+municipal series of the Cadastro Unico (registered families and people by income
+bracket), the Bolsa Familia programme (beneficiary families, benefits and
+transfers), the BPC benefit, the social assistance network ('CRAS', CREAS and
+other units), SUAS funding, Bolsa Familia conditionality monitoring and food
+security programmes as tidy long-format tibbles'.")
+    (license license:expat)))
 
 (define-public r-misl
   (package
@@ -30769,6 +30980,35 @@ of a @code{microRNA} set that co-regulate to a pathway , which reflects the
 degree to which a given pathway is associated with the specific phenotype. (4)
 This package can provide the visualization of the results.")
     (license license:gpl2+)))
+
+(define-public r-mirrorslope
+  (package
+    (name "r-mirrorslope")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mirrorslope" version))
+       (sha256
+        (base32 "1l7nflzvjaw9g174ldf7g8fs29vqf88409wcbzcdy8rfxr9nbhwp"))))
+    (properties `((upstream-name . "mirrorslope")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Sullivanstatistics/mirrorslope")
+    (synopsis "Mirror Slope Plots for Two-Arm Clinical Trial Data")
+    (description
+     "This package creates mirrored slope plots comparing two treatment arms over a
+single observation interval.  Both arms share a common x-axis and converge at a
+central endpoint, making the between-arm gap the primary visual quantity.
+Returns standard ggplot2 objects for full extensibility.  The display was
+designed by Kati Maharry and is described in Maharry and Sullivan (2026,
+manuscript in preparation); it was first used in the supplementary appendix of
+@code{McDonald} and colleagues (2026) <doi:10.1016/S0140-6736(26)01385-1>.")
+    (license license:expat)))
 
 (define-public r-mirrorselect
   (package
@@ -32484,13 +32724,13 @@ Tubo, B.F. (2024) <doi:10.24412/1932-2321-2024-278-115-123>].")
 (define-public r-mimar
   (package
     (name "r-mimar")
-    (version "1.0.0")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mimar" version))
        (sha256
-        (base32 "10xy7zgc7vn6gizs96hlsw57l0w19hkkx5q0fp18i1fhy6fs1vcy"))))
+        (base32 "1hl0zavb754cy7gsnsrq0dqaj80w3n3v8g4n48gxyqi8s68dkxy2"))))
     (properties `((upstream-name . "mimar")))
     (build-system r-build-system)
     (arguments
@@ -32504,11 +32744,11 @@ Tubo, B.F. (2024) <doi:10.24412/1932-2321-2024-278-115-123>].")
                              r-missknn
                              r-glmnet
                              r-ggplot2
-                             r-gbm
                              r-functionals
+                             r-fastgbm
                              r-e1071
                              r-densemlp
-                             r-data-table
+                             r-basetable
                              r-bart))
     (native-inputs (list r-knitr))
     (home-page "https://CRAN.R-project.org/package=mimar")
@@ -33019,20 +33259,19 @@ tidygraph objects, and on one-mode and two-mode (bipartite) networks.")
 (define-public r-mighty-metadata
   (package
     (name "r-mighty-metadata")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mighty.metadata" version))
        (sha256
-        (base32 "1ayyk0jkjp561iym0vzk12ijiv8f98a648pga0sbxdfa2lihdkmk"))))
+        (base32 "1ixx77x5yhjrdyxdm1lw6lh96ss8mvkm9cyf5b7z3ppg7xrgfdby"))))
     (properties `((upstream-name . "mighty.metadata")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-zephyr
-                             r-yaml
                              r-tibble
                              r-s7schema
                              r-s7
@@ -36770,13 +37009,13 @@ functional principal component analysis for data observed on different
 (define-public r-mfrmr
   (package
     (name "r-mfrmr")
-    (version "0.2.3.1")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mfrmr" version))
        (sha256
-        (base32 "0ymnfxx2wjm6kh3y0c0f1r3s7ckhnrp21mdbvw3q9ggw703b1lnk"))))
+        (base32 "0p911chpj1iixz4nkz00cy363ywgskwgh6nvhfdb2q4pj2jaibry"))))
     (properties `((upstream-name . "mfrmr")))
     (build-system r-build-system)
     (arguments
@@ -36797,14 +37036,21 @@ functional principal component analysis for data observed on different
     (home-page "https://ryuya-dot-com.github.io/mfrmr/")
     (synopsis "Estimation and Diagnostics for Many-Facet Measurement Models")
     (description
-     "Native R implementation of many-facet ordered-response measurement models with
-arbitrary facet counts, rating-scale and partial-credit parameterizations, a
-bounded generalized partial-credit extension, and both marginal and joint
-maximum likelihood estimation.  The package provides a fit / diagnose / report
-pipeline covering anchoring, linking, bias and differential-functioning
-screening, and publication-oriented reporting summaries, with reproducibility
-manifests for replay.  See Andrich (1978) <doi:10.1007/BF02293814>, Masters
-(1982) <doi:10.1007/BF02296272>, and Muraki (1992)
+     "Estimates many-facet ordered-response measurement models with arbitrary facet
+counts, rating-scale and partial-credit parameterizations, a generalized
+partial-credit extension with discrimination varying across levels of one
+selected facet.  Marginal maximum likelihood permits a different facet to own
+category steps; joint maximum likelihood requires the same facet for both roles.
+ Conditional maximum likelihood fits many-facet rating-scale and partial-credit
+models by conditioning on person totals, with structural contrast intervals and
+no assumed ability distribution.  Experimental two-family estimation and
+conditional scoring retain explicit uncertainty limitations.  The fit, diagnose
+and report workflow covers anchoring, linking, bias and differential-functioning
+screening, with saved results for replay.  Observed-score generalizability and
+decision studies support assessment planning under declared rating designs.
+Agreement, rater feedback and conditional classification summaries connect
+analysis to assessment decisions.  See Andrich (1978) <doi:10.1007/BF02293814>,
+Masters (1982) <doi:10.1007/BF02296272>, and Muraki (1992)
 <doi:10.1177/014662169201600206> for the underlying ordered-response models.")
     (license license:expat)))
 
@@ -36916,32 +37162,41 @@ general concepts of both packages and a case study, see Happ-Kurz (2020)
 (define-public r-mfp2
   (package
     (name "r-mfp2")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mfp2" version))
        (sha256
-        (base32 "08s5jhds83kl6j4wbkas7mb79jwr6hzpc5fxkybsfr9wf9bakz7a"))))
+        (base32 "0m4q4ps6fvb6svrv4dc7an3izh1nymciv91i2mid4gvfcy1qr4ib"))))
     (properties `((upstream-name . "mfp2")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-survival r-ggplot2))
+    (propagated-inputs (list r-survival r-rcpp r-nnet))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/EdwinKipruto/mfp2")
     (synopsis "Multivariable Fractional Polynomial Models with Extensions")
     (description
-     "Multivariable fractional polynomial algorithm simultaneously selects variables
-and functional forms in both generalized linear models and Cox proportional
-hazard models.  Key references are Royston and Altman (1994)
-<doi:10.2307/2986270> and Royston and Sauerbrei (2008, ISBN:978-0-470-02842-1).
-In addition, it can model a sigmoid relationship between variable x and an
-outcome variable y using the approximate cumulative distribution transformation
-proposed by Royston (2014) <doi:10.1177/1536867X1401400206>.  This feature
-distinguishes it from a standard fractional polynomial function, which lacks the
-ability to achieve such modeling.")
+     "Fits multivariable fractional polynomial models with selection of predictors and
+functional forms.  The @code{mfp2()} function supports generalized linear
+models, including Gamma and inverse-Gaussian regression; negative-binomial,
+multinomial and ordinal regression; generalized estimating equations for
+clustered data; Cox and parametric survival models; and Fine-Gray
+competing-risks models.  Extensions include approximate cumulative distribution
+transformations for sigmoid-shaped associations and spike-at-zero modelling for
+semi-continuous covariates.  The @code{mfpi()} function assesses interactions
+between a categorical grouping variable and continuous, binary, or categorical
+predictors.  Fractional polynomial modelling is described by Royston and Altman
+(1994) <doi:10.2307/2986270> and Royston and Sauerbrei (2008,
+ISBN:978-0-470-02842-1).  The approximate cumulative distribution extension
+follows Royston (2014) <doi:10.1177/1536867X1401400206> and Royston and
+Sauerbrei (2016) <doi:10.1177/1536867X1601600109>.  Spike-at-zero modelling
+follows Becher et al. (2012) <doi:10.1002/bimj.201100263>.  Interaction analyses
+follow Royston and Sauerbrei (2004) <doi:10.1002/sim.1815>, Royston and
+Sauerbrei (2013) <doi:10.1002/sim.5813>, and Royston and Sauerbrei (2014)
+<doi:10.1002/sim.6308>.")
     (license license:gpl3)))
 
 (define-public r-mfp
@@ -38765,13 +39020,13 @@ Fisher, David J., et al. (2017) <DOI:10.1136/bmj.j573>) and model visualization.
 (define-public r-metaweave
   (package
     (name "r-metaweave")
-    (version "0.4.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metaweave" version))
        (sha256
-        (base32 "035glaqyiwh9xdy6k67aqjwncbdgr6ibrw4ad24gkywz3b32q243"))))
+        (base32 "1j5mfwvnmgab3pjsmm731qmlcb7jk8bywnmfzgad0mqrjbndcfcf"))))
     (properties `((upstream-name . "metaweave")))
     (build-system r-build-system)
     (arguments
@@ -38970,13 +39225,13 @@ metadata associated columns.")
 (define-public r-metathis
   (package
     (name "r-metathis")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metathis" version))
        (sha256
-        (base32 "1hlmz9yh6nxyi24plg1z4ln003vb1ja5flgyql8wfl1pzsc1sf28"))))
+        (base32 "0mxqg9m1s65qmxxivn5655dq8a6dd4bksirj80wq0i5mwpprw4l2"))))
     (properties `((upstream-name . "metathis")))
     (build-system r-build-system)
     (arguments
@@ -40473,19 +40728,19 @@ meta-regression models.")
 (define-public r-metalcor
   (package
     (name "r-metalcor")
-    (version "1.0.2")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metalcor" version))
        (sha256
-        (base32 "0nizzcglhgwn3p1v1dwsy1vhkw86f9sq6fnisvqymvz6zs8ysaxs"))))
+        (base32 "0h6yfai0xwdv2xmf3802ql7a1386hldairpdysdmzhchhcdsr77h"))))
     (properties `((upstream-name . "metalcor")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyselect r-tibble r-dplyr))
+    (propagated-inputs (list r-tidyselect r-tibble r-rlang r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/OchoaLab/metalcor")
     (synopsis "Meta-Analysis of Correlated Genetic Association Studies")
@@ -41159,13 +41414,13 @@ Zanobetti (2000) and Crippa et al. (2018) <doi:10.6000/1929-6029.2018.07.02.1>."
 (define-public r-metafrontier
   (package
     (name "r-metafrontier")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metafrontier" version))
        (sha256
-        (base32 "0r15whrx913sn62dzjc10v8ih8azbslcw8wd5a3hv8r0v08a8g35"))))
+        (base32 "1zxmly3x4r8xan10vd8k9mqcjnxl67343d5l7mi8r3fam8xrfrw0"))))
     (properties `((upstream-name . "metafrontier")))
     (build-system r-build-system)
     (arguments
@@ -41188,13 +41443,17 @@ metafrontier of Huang, Huang, and Liu (2014) <doi:10.1007/s11123-014-0402-2>,
 and the metafrontier Malmquist productivity index of O'Donnell, Rao, and Battese
 (2008) <doi:10.1007/s00181-007-0119-4>.  The deterministic metafrontier can be
 identified by either the minimum sum of absolute deviations (LP) or the minimum
-sum of squared deviations (QP) criterion.  Additional features include panel SFA
-with time-varying inefficiency, bootstrap confidence intervals for technology
-gap ratios, a DEA poolability permutation test, latent class metafrontier
-estimation via the EM algorithm, Murphy-Topel corrected standard errors,
-convergence diagnostics, import of pre-fitted models from external estimation
-engines ('@code{sfaR}', frontier', Benchmarking'), and ggplot2 visualisation
-methods.")
+sum of squared deviations (QP) criterion.  Group frontiers can be production or
+cost frontiers, corrected for sample selection following Greene (2010)
+<doi:10.1007/s11123-009-0159-1>, or spatial-autoregressive stochastic frontiers.
+ Transitive Fare-Primont and Lowe productivity indexes (O'Donnell, 2012
+<doi:10.1093/ajae/aas023>) are decomposed against group technologies and the
+metatechnology.  Additional features include panel SFA with time-varying
+inefficiency, bootstrap confidence intervals for technology gap ratios, a DEA
+poolability permutation test, latent class metafrontier estimation via the EM
+algorithm, Murphy-Topel corrected standard errors, convergence diagnostics,
+import of pre-fitted models from external estimation engines ('@code{sfaR}',
+frontier', Benchmarking'), and ggplot2 visualisation methods.")
     (license license:gpl3+)))
 
 (define-public r-metaforest
@@ -42085,13 +42344,13 @@ components models to metabolomic spectral data.")
 (define-public r-metabodeconplus
   (package
     (name "r-metabodeconplus")
-    (version "0.22.0")
+    (version "0.22.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metabodeconplus" version))
        (sha256
-        (base32 "0vf92fhs7j16n2j1zcvyirvimvqmjcsbsgnc7kkps1a7pip8hqln"))))
+        (base32 "022pig6dfkjg2hqcdh5ca0jkychnwlfdycf8gijf29yaqayi381h"))))
     (properties `((upstream-name . "metabodeconplus")))
     (build-system r-build-system)
     (arguments
@@ -42111,9 +42370,10 @@ part is based on functions from the speaq package, described in Beirnaert et al.
 (2018) <doi:10.1371/journal.pcbi.1006018> and Vu et al. (2011)
 <doi:10.1186/1471-2105-12-405>.  A detailed description and evaluation of an
 early version of the package can be found in Haeckl et al. (2021)
-<doi:10.3390/metabo11070452>.  metabodeconplus is the actively developed
-successor to the metabodecon package and introduces backwards-incompatible API
-changes.")
+<doi:10.3390/metabo11070452>.  The current package, including the model fitting
+workflow, is described in Schmidt et al. (2026) <doi:10.3390/metabo16090604>.
+metabodeconplus is the actively developed successor to the metabodecon package
+and introduces backwards-incompatible API changes.")
     (license license:gpl3+)))
 
 (define-public r-metabodecon
@@ -44792,13 +45052,13 @@ including spatial processes such as lateral water transfer and seed dispersal.")
 (define-public r-medfate
   (package
     (name "r-medfate")
-    (version "5.1.0")
+    (version "5.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "medfate" version))
        (sha256
-        (base32 "1jd6jy3yrx0kdgg7gfbxmgnx24lp24lkrjfsdfp4z4zdq1ql5vvk"))))
+        (base32 "1acg73yadadfvds8h0avs511s8cgvzh55q56vkcrxvgn2lhkq33w"))))
     (properties `((upstream-name . "medfate")))
     (build-system r-build-system)
     (arguments
@@ -46275,16 +46535,59 @@ approach are calculated.  Ditzhaus, M. and Friedrich, S. (2018)
 <@code{arXiv:1808.05627>}.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-mdiharmonize
+  (package
+    (name "r-mdiharmonize")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mdiharmonize" version))
+       (sha256
+        (base32 "0ykgidjpiccawg4xbnzk9xh1aa8kcjx464j283sh8zdf84gspxx7"))))
+    (properties `((upstream-name . "mdiharmonize")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-openxlsx
+                             r-mditools
+                             r-igraph
+                             r-haven
+                             r-dplyr
+                             r-data-table))
+    (home-page "https://github.com/Secretariat-CompNet/mdiharmonize")
+    (synopsis
+     "Harmonize Confidential Firm-Level Microdata into a Common Format")
+    (description
+     "Harmonizes confidential firm-level microdata held at national statistical
+institutes into one common structure, so that the same analysis code runs
+unchanged in every country.  Metadata tables describe each institute's raw files
+and map their variables to the common ones; the functions read the raw files,
+apply the mapping (revaluing, recoding, reclassifying, redefining and
+remapping), make industry, product and regional classifications consistent over
+time, switch between enterprise, firm and plant identifiers, and add capital
+stocks computed with the perpetual inventory method.  Quality checks on the
+harmonized data report duplicate keys, type conversion losses, breaks in yearly
+statistics and jumps in missing values, and outputs pass statistical disclosure
+control before they leave the institute.  Builds on the analysis tools in
+mditools'.  Capital stocks via the perpetual inventory method follow OECD (2009)
+<doi:10.1787/9789264068476-en>; disclosure control applies the minimum-frequency
+and dominance rules with secondary suppression described in Hundepool et al.
+(2012) <doi:10.1002/9781118348239>.")
+    (license license:gpl3)))
+
 (define-public r-mdgof
   (package
     (name "r-mdgof")
-    (version "1.2.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MDgof" version))
        (sha256
-        (base32 "1df0w98gq22fya7r31vj9mxnm738fv3pcw4r1fq3ps9da9rvvhhi"))))
+        (base32 "0zxhzx3ldm5l36gkgdf0aq9fwjj3gi8dfxqjs3k1vqz40qyj4zyh"))))
     (properties `((upstream-name . "MDgof")))
     (build-system r-build-system)
     (arguments
@@ -46799,13 +47102,13 @@ abstract syntax trees as well as translating and displaying the documents.")
 (define-public r-md2sample
   (package
     (name "r-md2sample")
-    (version "1.4.2")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MD2sample" version))
        (sha256
-        (base32 "1mla7m4n1b27mk2ll3h95zd9m2g46bcn1infw908jrnkwp4mz2r2"))))
+        (base32 "1a3m0ydjam5zhzxkrq75gn0rd3ca88hxq3p0kfr1f6xgizh8jrjb"))))
     (properties `((upstream-name . "MD2sample")))
     (build-system r-build-system)
     (arguments
@@ -47680,33 +47983,35 @@ Gaussian data.")
 (define-public r-mcp
   (package
     (name "r-mcp")
-    (version "0.3.4")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mcp" version))
        (sha256
-        (base32 "1va2h974wl9kmc3y82a5wjxli4r2spka6chgrzn7v2w2ir1qckq7"))))
+        (base32 "1byrjhm47v2n5c7f84nfi8sqy2053p2ik6g8hlmvaflxd3i289z0"))))
     (properties `((upstream-name . "mcp")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-tidybayes
+    (inputs (list jags))
+    (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
                              r-rlang
                              r-rjags
+                             r-posterior
                              r-patchwork
-                             r-magrittr
+                             r-nlme
                              r-loo
+                             r-lifecycle
                              r-ggplot2
                              r-future-apply
                              r-future
                              r-dplyr
                              r-coda
+                             r-checkmate
                              r-bayesplot))
     (home-page "https://lindeloev.github.io/mcp/")
     (synopsis "Regression with Multiple Change Points")
@@ -47714,13 +48019,12 @@ Gaussian data.")
      "Flexible and informed regression with Multiple Change Points.  mcp can infer
 change points in means, variances, autocorrelation structure, and any
 combination of these, as well as the parameters of the segments in between.  All
-parameters are estimated with uncertainty and prediction intervals are supported
-- also near the change points.  mcp supports hypothesis testing via
-Savage-Dickey density ratio, posterior contrasts, and cross-validation.  mcp is
-described in LindelÃ¸v (submitted) <doi:10.31219/osf.io/fzqxv> and generalizes
-the approach described in Carlin, Gelfand, & Smith (1992) <doi:10.2307/2347570>
-and Stephens (1994) <doi:10.2307/2986119>.")
-    (license license:gpl2)))
+parameters are estimated with uncertainty and posterior predictive intervals are
+supported - also near the change points.  mcp supports hypothesis testing via
+Savage-Dickey density ratio, posterior contrasts, and PSIS-LOO model comparison.
+ The mcp framework is introduced in LindelÃ¸v (2020)
+<doi:10.31219/osf.io/fzqxv>.")
+    (license license:gpl2+)))
 
 (define-public r-mcount
   (package
@@ -48353,13 +48657,13 @@ results.  The detailed tutorial is available here:
 (define-public r-mcmapper
   (package
     (name "r-mcmapper")
-    (version "0.0.11")
+    (version "0.0.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mcmapper" version))
        (sha256
-        (base32 "083s6dj8qfpnarplia571r782i3ncq4qjw9fbdl5wryi0310sjvm"))))
+        (base32 "0vskhmfb8ll51ksm9l298pnjqr0xsh2x9i2ca6m1i43rjy8kbbp7"))))
     (properties `((upstream-name . "mcmapper")))
     (build-system r-build-system)
     (arguments
@@ -48977,13 +49281,13 @@ the posterior similarity matrix or a relabelling algorithm.")
 (define-public r-mccca
   (package
     (name "r-mccca")
-    (version "2.4")
+    (version "2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mccca" version))
        (sha256
-        (base32 "07wjfdva7cpbqmqy3scb793n8gbbwsqbnzkf4fbk3p0k7h3yvr91"))))
+        (base32 "0ci6hmyb5csakyhylglk8038vhbywn6h94092l08a7p33y3yq0dc"))))
     (properties `((upstream-name . "mccca")))
     (build-system r-build-system)
     (arguments
@@ -48995,12 +49299,12 @@ the posterior similarity matrix or a relabelling algorithm.")
                              r-rcpp
                              r-rcolorbrewer
                              r-mass
-                             r-magic
                              r-gridextra
                              r-ggplot2
                              r-colorspace
                              r-clustersim))
-    (home-page "https://cran.r-project.org/package=mccca")
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mtakagishi0/mccca")
     (synopsis
      "Visualizing Class Specific Heterogeneous Tendencies in Categorical Data")
     (description
@@ -50608,6 +50912,32 @@ methodology can be found in the papers Iurii Nagornov (2024)
 <doi:10.1007/978-3-031-29168-5_18>.")
     (license license:gpl3+)))
 
+(define-public r-maxtwin
+  (package
+    (name "r-maxtwin")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "maxtwin" version))
+       (sha256
+        (base32 "0byn0nlixy4c0g5h90zfl764358aijbi0xb5hx6rqif3n1bli9lg"))))
+    (properties `((upstream-name . "maxtwin")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-twinning r-fnn))
+    (home-page "https://cran.r-project.org/package=maxtwin")
+    (synopsis "Robust Deterministic Data Splitting Method")
+    (description
+     "This package provides a deterministic method for splitting data into training
+and testing sets that maximizes the distance between training and testing points
+while preserving their distributions.  See Joseph and Cho (2026)
+<doi:10.1080/10618600.2026.2754089> for details.  This work is supported by U.S.
+National Science Foundation grant DMS-2310637.")
+    (license license:gpl3+)))
+
 (define-public r-maxstablepca
   (package
     (name "r-maxstablepca")
@@ -51171,6 +51501,35 @@ metrics implemented in this package refer to Khamis, H. J., & Roche, A. F.
 <https://pubmed.ncbi.nlm.nih.gov/11932580/> and Cumming, Sean P. et al., (2017)
 <doi:10.1519/SSC.0000000000000281>.")
     (license license:expat)))
+
+(define-public r-mattransmix
+  (package
+    (name "r-mattransmix")
+    (version "0.1.19")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MatTransMix" version))
+       (sha256
+        (base32 "05plbw1r37vkj176f4d5sbqljrimwq226jl3xla108p4lms21xx8"))))
+    (properties `((upstream-name . "MatTransMix")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mvtnorm))
+    (home-page "https://cran.r-project.org/package=MatTransMix")
+    (synopsis
+     "Clustering with Matrix Gaussian and Matrix Transformation Mixture Models")
+    (description
+     "This package provides matrix Gaussian mixture models, matrix transformation
+mixture models and their model-based clustering results.  The parsimonious
+models of the mean matrices and variance covariance matrices are implemented
+with a total of 196 variations.  For more information, please check: Xuwen Zhu,
+Shuchismita Sarkar, and Volodymyr Melnykov (2021), \"@code{MatTransMix}: an R
+package for matrix model-based clustering and parsimonious mixture modeling\",
+<doi:10.1007/s00357-021-09401-9>.")
+    (license license:gpl2+)))
 
 (define-public r-matspace
   (package
@@ -52136,6 +52495,30 @@ that image, and pastes it into a (e.g. an rmarkdown') document.  See
 and use of the API is subject to their terms and conditions.")
     (license license:gpl3+)))
 
+(define-public r-mathml
+  (package
+    (name "r-mathml")
+    (version "1.10")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mathml" version))
+       (sha256
+        (base32 "09lj1cvkjry5snxxn3l71pvhaw5agilh7fqq6as4y2zcv7ipnkqk"))))
+    (properties `((upstream-name . "mathml")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xfun r-rolog r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/mgondan/mathml")
+    (synopsis "Translate R Expressions to 'MathML' and 'LaTeX'/'MathJax'")
+    (description
+     "Translate R expressions to @code{MathML} or @code{MathJax'/'LaTeX} so that they
+can be rendered in R markdown documents and shiny apps.")
+    (license (license:fsdg-compatible "FreeBSD"))))
+
 (define-public r-mates
   (package
     (name "r-mates")
@@ -52457,13 +52840,13 @@ matching and linear regression for causal inference in observational studies.")
 (define-public r-matchit
   (package
     (name "r-matchit")
-    (version "4.8.1")
+    (version "4.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MatchIt" version))
        (sha256
-        (base32 "0ga3k95kxng3jvfwim95yqqr9gw94zjynqqqm6gc2lfg79nj2k0f"))))
+        (base32 "12kcv83q2vlkgc5qnxw471f8ijg2s8c4xd5hcllhl9f1sj7588vy"))))
     (properties `((upstream-name . "MatchIt")))
     (build-system r-build-system)
     (arguments
@@ -52677,13 +53060,13 @@ multi-index assignment problems with decomposable costs\".")
 (define-public r-matchednull
   (package
     (name "r-matchednull")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "matchednull" version))
        (sha256
-        (base32 "1xwnj34cmbd4iqsygvha3w1zaj31461mlmw2ifnsr48mjxjan8gn"))))
+        (base32 "0zclmqpj99a7dpnn1sr54cwy3ymmqcdidsnjw51cxdkch4mh69k8"))))
     (properties `((upstream-name . "matchednull")))
     (build-system r-build-system)
     (arguments
@@ -52694,14 +53077,15 @@ multi-index assignment problems with decomposable costs\".")
     (synopsis "Matched-Null Tests for Cluster-Count Claims")
     (description
      "Builds matched nulls for cluster-count claims: synthetic twins of a dataset that
-preserve every marginal distribution and the full correlation matrix while
-containing no cluster structure by construction.  A reported number of clusters
-or \"types\" can then be tested against what the data's own margins and covariance
-already produce, using any clustering pipeline.  A t-copula option adds tail
-dependence to the null, so that an apparent excess of clusters can be checked
-against a heavier-tailed alternative before it is read as evidence of types.
-Implements the matched-null procedure of Meng (2026) \"Types Without Taxa\"
-<doi:10.17605/OSF.IO/2EKCG>.")
+preserve every marginal distribution exactly and the correlation matrix
+approximately, while containing no cluster structure by construction.  A
+reported number of clusters or \"types\" can then be tested against what the
+data's own margins and covariance already produce, using any clustering
+pipeline.  A t-copula option is a sensitivity check that adds tail dependence to
+the reference, so an apparent excess of clusters can be rerun against a
+heavier-tailed reference; neither outcome of that rerun establishes that types
+exist.  Implements the matched-null procedure of Meng (2026) \"Types Without
+Taxa\" <doi:10.17605/OSF.IO/2EKCG>.")
     (license license:expat)))
 
 (define-public r-matchedcc
@@ -56161,13 +56545,13 @@ codes.")
 (define-public r-mapi
   (package
     (name "r-mapi")
-    (version "1.1.5")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapi" version))
        (sha256
-        (base32 "0wsad6pa03ddbzrjchnalcsim77z3qg50dmps1zxk57svqsl2kqn"))))
+        (base32 "1c07va3dd0qxn3jw97ihhsm3110rwmi1qpkkbzvb0nzlgz0880zz"))))
     (properties `((upstream-name . "mapi")))
     (build-system r-build-system)
     (arguments
@@ -56245,6 +56629,42 @@ heatmaps', and three-dimensional graphics; and customize map styles and views.
 The package also includes utilities to use Mapbox and @code{MapLibre} maps in
 Shiny web applications.")
     (license license:expat)))
+
+(define-public r-mapgam
+  (package
+    (name "r-mapgam")
+    (version "1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MapGAM" version))
+       (sha256
+        (base32 "1zyqvw1nrddhvw5vrazi0nhyp4j8j7lpnn7dw459qysqgkddb24k"))))
+    (properties `((upstream-name . "MapGAM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival
+                             r-sp
+                             r-sf
+                             r-pbsmapping
+                             r-gam
+                             r-colorspace))
+    (home-page "https://cran.r-project.org/package=MapGAM")
+    (synopsis "Mapping Smoothed Effect Estimates from Individual-Level Data")
+    (description
+     "This package contains functions for mapping odds ratios, hazard ratios, or other
+effect estimates using individual-level data such as case-control study data,
+using generalized additive models (GAMs) or Cox models for smoothing with a
+two-dimensional predictor (e.g., geolocation or exposure to chemical mixtures)
+while adjusting linearly for confounding variables, using methods described by
+Kelsall and Diggle (1998), Webster at al. (2006), and Bai et al. (2020).
+Includes convenient functions for mapping point estimates and confidence
+intervals, efficient control sampling, and permutation tests for the null
+hypothesis that the two-dimensional predictor is not associated with the outcome
+variable (adjusting for confounders).")
+    (license license:gpl3)))
 
 (define-public r-mapfit
   (package
@@ -57397,13 +57817,13 @@ backward model selection procedures.")
 (define-public r-manifoldoptim
   (package
     (name "r-manifoldoptim")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ManifoldOptim" version))
        (sha256
-        (base32 "07br5zr1q4p60mpw8nyrkygv6m510xbp5mi4swcahdlkikh43s73"))))
+        (base32 "0bqxf8vg6xr4infdq0s2njblfd6h098wvya3qhnsyrdsk4whpj5f"))))
     (properties `((upstream-name . "ManifoldOptim")))
     (build-system r-build-system)
     (arguments
@@ -58678,13 +59098,13 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
 (define-public r-maihda
   (package
     (name "r-maihda")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MAIHDA" version))
        (sha256
-        (base32 "1hpgsn97akdwvlz4glr8jk371p39mrrx5qq1hd4cmfm3c4zb31h4"))))
+        (base32 "13rxdm929a7km5a1mcw5hw3cx536cncfdh2jhpmy8dn98wp5rb4h"))))
     (properties `((upstream-name . "MAIHDA")))
     (build-system r-build-system)
     (arguments
@@ -58696,6 +59116,7 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
                              r-rlang
                              r-reformulas
                              r-patchwork
+                             r-matrix
                              r-lme4
                              r-ggrepel
                              r-ggplot2
@@ -60296,6 +60717,35 @@ performance of large language models.  It simplifies the process of setting up
 experiments and data collection via language modelsâ API, facilitating a
 smooth workflow for researchers in the field of machine behaviour.")
     (license license:lgpl3)))
+
+(define-public r-mac-address
+  (package
+    (name "r-mac-address")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MAC.address" version))
+       (sha256
+        (base32 "0apcv40v1286p6n8qdffln7gs2w9rhf1wbvdiy2pfdz3jpvfzvnw"))))
+    (properties `((upstream-name . "MAC.address")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/EnriquePH/mac-address")
+    (synopsis "Find, Validate and Identify Device MAC Addresses")
+    (description
+     "This package provides tools to work with MAC (Media Access Control) addresses:
+list the MAC addresses of the local network interfaces and of the neighbors in
+the ARP cache on Linux, @code{macOS} and Windows, extract MAC addresses from
+free text, validate and normalize their notation, check the multicast and
+locally administered bits, generate random addresses, derive IPv6 interface
+identifiers (modified EUI-64), and identify the manufacturer using the public
+IEEE (Institute of Electrical and Electronics Engineers) MA-L, MA-M and MA-S
+registries
+<https://regauth.standards.ieee.org/standards-ra-web/pub/view.html#registries>.")
+    (license license:expat)))
 
 (define-public r-mable
   (package

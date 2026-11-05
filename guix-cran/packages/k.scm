@@ -259,13 +259,13 @@ error handling, and usage tracking.")
 (define-public r-kvh
   (package
     (name "r-kvh")
-    (version "1.5.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kvh" version))
        (sha256
-        (base32 "0limi6pn056s9id6dfanqaxsl33qsn5zd2ghsfq5wn0d5p4ka0ii"))))
+        (base32 "0vh6fz8kildi4s3b956zv7bnhfq76ss0kazzaswp1ym899lawgn0"))))
     (properties `((upstream-name . "kvh")))
     (build-system r-build-system)
     (arguments
@@ -1525,6 +1525,34 @@ initial cluster centers shows that KQM is almost always getting clustering
 results with smaller total sum squares of distances.")
     (license license:gpl2)))
 
+(define-public r-kpqc
+  (package
+    (name "r-kpqc")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "kpqc" version))
+       (sha256
+        (base32 "0h34xysx9dq3y6cz89bk33icb8gf2gkg27ydcwbh9m8pc5m142pl"))))
+    (properties `((upstream-name . "kpqc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (home-page "https://github.com/KpqC/kpqc-r")
+    (synopsis "Korean Post-Quantum Cryptography Algorithms")
+    (description
+     "This package provides synchronous interfaces to four algorithms for post-quantum
+cryptography: AIMer', a digital-signature algorithm based on symmetric
+primitives; HAETAE', a module-lattice-based digital-signature algorithm; and
+NTRU+ and SMAUG-T', lattice-based key-encapsulation algorithms.  These
+algorithms were selected by the Korean Post-Quantum Cryptography competition.
+Native reference implementations are compiled into the package and use
+operating-system entropy for key generation, signing, and encapsulation.")
+    (license license:expat)))
+
 (define-public r-kpp2019
   (package
     (name "r-kpp2019")
@@ -2007,13 +2035,13 @@ published study and multiple studies respectively.")
 (define-public r-komaletter
   (package
     (name "r-komaletter")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "komaletter" version))
        (sha256
-        (base32 "1wk1bhn699295pjj0ap6qkh11khdbx0nfxih74w1in53k4d3dajg"))))
+        (base32 "03vqa6hlr1qk405l2g3jqz6jjfj4frqkc4fmzx6lsjgjbrmr3b6d"))))
     (properties `((upstream-name . "komaletter")))
     (build-system r-build-system)
     (arguments
@@ -3394,32 +3422,6 @@ principal component plots in R'.  The plots make visualizing k-means or other
 clusters simple and informative.")
     (license license:gpl3+)))
 
-(define-public r-klsh
-  (package
-    (name "r-klsh")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "klsh" version))
-       (sha256
-        (base32 "1r354fd5da6mp7v3048ii09hnghhfwdg6pvmx2ib0cr88ql431sy"))))
-    (properties `((upstream-name . "klsh")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringi r-snowballc r-rcpp r-plyr r-blink))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=klsh")
-    (synopsis "Blocking for Record Linkage")
-    (description
-     "An implementation of the blocking algorithm KLSH in Steorts, Ventura, Sadinle,
-Fienberg (2014) <DOI:10.1007/978-3-319-11257-2_20>, which is a k-means variant
-of locality sensitive hashing.  The method is illustrated with examples and a
-vignette.")
-    (license license:gpl3)))
-
 (define-public r-klovan
   (package
     (name "r-klovan")
@@ -3475,13 +3477,13 @@ National Nuclear Security Administration under Award Number DE-NA0004104.")
 (define-public r-klink
   (package
     (name "r-klink")
-    (version "1.2.2")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "KLINK" version))
        (sha256
-        (base32 "0qh841c4fy02y0qhxx0np1bbbpvjywr44b06aqc0v88phjaj57kl"))))
+        (base32 "13abja4fxj6m41q54rzfrxgnzvkb6i8w8y50g5wvd8i8g7z7mr8w"))))
     (properties `((upstream-name . "KLINK")))
     (build-system r-build-system)
     (arguments
@@ -4303,13 +4305,13 @@ specifications, workflows, recipes, and tuning tools.")
 (define-public r-kindisperse
   (package
     (name "r-kindisperse")
-    (version "0.10.2")
+    (version "0.10.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kindisperse" version))
        (sha256
-        (base32 "0f2i2j1mwk6bwsc42xkkf18nyffp1983bbarwvscjj7saibhfpyj"))))
+        (base32 "1sqp5jcr8hf00f22xalm1r0q1gz27r6h6phxn7w3lbirjca350ws"))))
     (properties `((upstream-name . "kindisperse")))
     (build-system r-build-system)
     (arguments
@@ -4322,13 +4324,11 @@ specifications, workflows, recipes, and tuning tools.")
                              r-shiny
                              r-rlang
                              r-readr
-                             r-plotly
                              r-magrittr
                              r-laplacesdemon
                              r-here
                              r-ggrepel
                              r-ggplot2
-                             r-fitdistrplus
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/moshejasper/kindisperse")
@@ -6462,25 +6462,37 @@ subscripting.")
 (define-public r-kedd
   (package
     (name "r-kedd")
-    (version "1.0.4")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kedd" version))
        (sha256
-        (base32 "09jvqh97ifcincvfy9d73h5705kczyh3isfx7fxj5zqwls4l755v"))))
+        (base32 "00wb04r7bj286p8nams883xzyc026rr9hm8cjw8rsqjmy786qfg8"))))
     (properties `((upstream-name . "kedd")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://gitlab.com/iagogv/kedd")
+    (propagated-inputs (list r-rcpp r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ac-guidoum/kedd")
     (synopsis
      "Kernel Estimator and Bandwidth Selection for Density and Its Derivatives")
     (description
-     "Smoothing techniques and computing bandwidth selectors of the nth derivative of
-a probability density for one-dimensional data (described in Arsalane Chouaib
-Guidoum (2020) <@code{arXiv:2012.06102>} [stat.CO]).")
+     "Kernel estimation of a univariate probability density and of its derivatives of
+any order r, with data-driven bandwidth selection.  Provides the kernel
+estimator of the derivative of order r, the kernels, their derivatives and
+convolutions, and eight bandwidth selectors: the asymptotic MISE rule (AMISE),
+and unbiased (UCV), biased (BCV1, BCV2), complete (CCV), modified (MCV), trimmed
+(TCV), smoothed (SCV) and maximum-likelihood (MLCV) cross-validation.  Supports
+ten named kernels (Gaussian, Epanechnikov, uniform, triangular, biweight,
+triweight, tricube, cosine, Silverman, logistic) and the power family Pow(s,t),
+c(1-|x|^s)^t on [-1,1].  Results are S4 objects with ggplot2 graphics; the
+O(n^2) criteria are computed in C++ ('Rcpp') with @code{OpenMP} parallelism.
+Includes five example samples from Marron and Wand (1992) normal mixtures, a
+vignette and demos.  Companion to Guidoum (2020)
+<doi:10.48550/@code{arXiv.2012.06102>}.")
     (license license:gpl2+)))
 
 (define-public r-kdry
@@ -6636,19 +6648,19 @@ high-dimensional applications.")
 (define-public r-kdensity
   (package
     (name "r-kdensity")
-    (version "1.2.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kdensity" version))
        (sha256
-        (base32 "01jgv0c1qpl26bhp7mlhvc5x34mwj6gchq0888lzghnb7k1lk1qr"))))
+        (base32 "01ypkcy2sr6qwn3v0fjph6hk8mbqa3845nb1bnv8g7bp0yv3as68"))))
     (properties `((upstream-name . "kdensity")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-univariateml))
+    (propagated-inputs (list r-univariateml r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/JonasMoss/kdensity")
     (synopsis

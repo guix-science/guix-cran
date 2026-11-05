@@ -731,13 +731,13 @@ a null model of random rotation, as explained in De la Cruz et al. (2017)
 (define-public r-overlapping
   (package
     (name "r-overlapping")
-    (version "2.5")
+    (version "2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "overlapping" version))
        (sha256
-        (base32 "1xayp2x0hzc2r553bqgdi7g99rc7mgfs2nwgk04wkvp76rdym0y0"))))
+        (base32 "1sq7n7j0hshpri3ji0x2wdavlnwrp3dxwp3f99j0sbkpk1s579r0"))))
     (properties `((upstream-name . "overlapping")))
     (build-system r-build-system)
     (arguments
@@ -2704,32 +2704,6 @@ Representatives (OSDR), as defined by D.Gale (1968)
 <doi:10.1016/S0021-9800(68)80039-0>.")
     (license license:gpl3)))
 
-(define-public r-osdesign
-  (package
-    (name "r-osdesign")
-    (version "1.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "osDesign" version))
-       (sha256
-        (base32 "0l5dq8rj4rg4v324610kj2j5nv7py6z1jcplhb6br1gvldj7ng1d"))))
-    (properties `((upstream-name . "osDesign")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=osDesign")
-    (synopsis "Design, Planning and Analysis of Observational Studies")
-    (description
-     "This package provides a suite of functions for the design of case-control and
-two-phase studies, and the analysis of data that arise from them.  Functions in
-this packages provides Monte Carlo based evaluation of operating characteristics
-such as powers for estimators of the components of a logistic regression model.
-For additional detail see: Haneuse S, Saegusa T and Lumley T
-(2011)<doi:10.18637/jss.v043.i11>.")
-    (license license:gpl3+)))
-
 (define-public r-osdc
   (package
     (name "r-osdc")
@@ -3679,13 +3653,13 @@ filter, organize and further analyze those ordinal relations.")
 (define-public r-origin
   (package
     (name "r-origin")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "origin" version))
        (sha256
-        (base32 "1c1gczc82lf3kmr95hw5sl7fp8acbrfn4wxrhzi8ci9xqgjabpq1"))))
+        (base32 "1624f5mxq0yd6i3hrcck2jq6c7qcdigvdr01brp1lkhv96wzmpm9"))))
     (properties `((upstream-name . "origin")))
     (build-system r-build-system)
     (arguments
@@ -5343,13 +5317,13 @@ ISBN:0-521-43272-3).")
 (define-public r-orbital
   (package
     (name "r-orbital")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "orbital" version))
        (sha256
-        (base32 "0d2j5m1b61p3bwzb6x0nvvd8qmdkmgjqswfys4jk1kg8ppxyk5b1"))))
+        (base32 "1f3a8axr72mi59mnwdvhvb07skdlvdf9ihgrjarijlhd7s1k7hf9"))))
     (properties `((upstream-name . "orbital")))
     (build-system r-build-system)
     (arguments
@@ -6775,6 +6749,49 @@ paper on this package was published in the Journal of Statistical Software
 <doi:10.18637/jss.v114.i10>.")
     (license license:gpl3)))
 
+(define-public r-optimalfactor
+  (package
+    (name "r-optimalfactor")
+    (version "1.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OptimalFactor" version))
+       (sha256
+        (base32 "1ly2ndgvzdkrddsnr2a599yfa68h4az4pnfzkcdapippjrd0jsg8"))))
+    (properties `((upstream-name . "OptimalFactor")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-psych
+                             r-lavaan
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jventural/OptimalFactor")
+    (synopsis
+     "Item Selection in Factor Analysis by Boosting and Specification Search")
+    (description
+     "This package provides an iterative optimization algorithm for exploratory and
+confirmatory factor analysis that follows a boosting approach inspired by
+machine learning.  It uses a composite fit index whose weights adapt to the
+degrees of freedom and the sample size, following Kenny and @code{McCoach}
+(2003) <doi:10.1207/S15328007SEM1003_1> and Shi, Lee and Maydeu-Olivares (2019)
+<doi:10.1177/0013164418783530>.  It detects and removes problematic items
+(Heywood cases, cross-loadings, low loadings) with greedy or global search
+strategies, checks interfactor correlations, and supports ordinal data with
+WLSMV estimation and several rotation methods.  A heuristic specification search
+for confirmatory models (@code{MacCallum}, 1986
+<doi:10.1037/0033-2909.100.1.107>) explores move, drop and covariance operations
+across seed configurations.  It also evaluates the resampling stability of the
+item selection, the recovery of a known or theoretical structure, and offers an
+optional conceptual analysis of removed items through a large language model
+service.")
+    (license license:gpl3+)))
+
 (define-public r-optimaldesign
   (package
     (name "r-optimaldesign")
@@ -7904,13 +7921,13 @@ peer-reviewed by @code{rOpenSci} (v.  0.2.0.0).")
 (define-public r-opentimsr
   (package
     (name "r-opentimsr")
-    (version "1.2.0")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "opentimsr" version))
        (sha256
-        (base32 "0wh4270rviqdysbiw046c6g1n3zr6ry9vfb3ih9w3v2mbnhp2yhv"))))
+        (base32 "0n4lrza6r8m0agz5hgnxgmyz9j22spdvx4y20rs4781l5mi8irj7"))))
     (properties `((upstream-name . "opentimsr")))
     (build-system r-build-system)
     (arguments
@@ -8038,31 +8055,27 @@ online at <https://www.openanalysis.org/@code{OpenSpecyV2/>}.")
 (define-public r-opensourceap-downloadr
   (package
     (name "r-opensourceap-downloadr")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OpenSourceAP.DownloadR" version))
        (sha256
-        (base32 "1fflwhq0jfk3m8qqnlgllfdfvgbczgn6akjhd37628ccbrx8p3by"))))
+        (base32 "0mksji8p4cr30h1fmsc356zl7f9dv6ncczzgl45za8d2y8qrn99y"))))
     (properties `((upstream-name . "OpenSourceAP.DownloadR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-withr
-                             r-stringr
-                             r-rvest
-                             r-rpostgres
+    (propagated-inputs (list r-rpostgres
                              r-r6
-                             r-magrittr
-                             r-lubridate
+                             r-nanoparquet
                              r-jsonlite
                              r-httr
                              r-getpass
                              r-dplyr
                              r-dbi
-                             r-data-table))
+                             r-curl))
     (home-page "https://cran.r-project.org/package=OpenSourceAP.DownloadR")
     (synopsis "Download Open Source Asset Pricing (OpenAP) Data Directly")
     (description
@@ -8074,7 +8087,10 @@ replicated from the academic asset pricing literature).  Center for Research in
 Security Prices (CRSP)-based variables such as Price, Size, and Short-term
 Reversal can be downloaded with a Wharton Research Data Services (WRDS,
 <https://wrds-www.wharton.upenn.edu/>) subscription.  For a full list of what is
-available, see <https://www.openassetpricing.com/>.")
+available, see <https://www.openassetpricing.com/>.  Data are read from the
+@code{OpenAP} Hugging Face dataset
+<https://huggingface.co/datasets/@code{OpenSourceAP/CrossSection>}, which holds
+data releases from 2020 onward.")
     (license license:expat)))
 
 (define-public r-openskies
@@ -8294,13 +8310,13 @@ part of the The package is part of the <https://openrepgrid.org/> project.")
 (define-public r-openrange
   (package
     (name "r-openrange")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OpenRange" version))
        (sha256
-        (base32 "1806mz2np5slx41vzwmr6h775vjz9madvwwvf1bv06zj2r0pnn74"))))
+        (base32 "0hbrdgsmml9lrp5jvg965swvn1v7z6mymbqs9kkdjinabh1q3vfa"))))
     (properties `((upstream-name . "OpenRange")))
     (build-system r-build-system)
     (arguments
@@ -9359,13 +9375,13 @@ et al. (2025) <doi:10.1101/2025.11.10.687509>.")
 (define-public r-opencage
   (package
     (name "r-opencage")
-    (version "0.2.2")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "opencage" version))
        (sha256
-        (base32 "1sjkpp6cj6ivd68p6ql6vwgdvy0fwfkjv84wgwgb4i7f4mnxgnff"))))
+        (base32 "08w249yn1lsjsry6jxp1zp9xbiksn9z7s6jrp558qdxhjbsmxxln"))))
     (properties `((upstream-name . "opencage")))
     (build-system r-build-system)
     (arguments
@@ -9389,7 +9405,7 @@ et al. (2025) <doi:10.1101/2025.11.10.687509>.")
     (description
      "Geocode with the @code{OpenCage} API, either from place name to longitude and
 latitude (forward geocoding) or from longitude and latitude to the name and
-address of a location (reverse geocoding), see <https://opencagedata.com/>.")
+address of a location (reverse geocoding), see <https://opencagedata.com>.")
     (license license:gpl2+)))
 
 (define-public r-openblender
@@ -10316,13 +10332,13 @@ with new theme and colors.")
 (define-public r-ons
   (package
     (name "r-ons")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ons" version))
        (sha256
-        (base32 "0dzhsv11bzrsimbndarb2x4527wzwmx4li64mqrizghr30rbi4gg"))))
+        (base32 "0fxg7hk99qj0asf2q892xgk5gwwhf6anj8l5lkmbwrh29gbvxh34"))))
     (properties `((upstream-name . "ons")))
     (build-system r-build-system)
     (arguments
@@ -12040,13 +12056,13 @@ functionality is supported.")
 (define-public r-omopindices
   (package
     (name "r-omopindices")
-    (version "0.1.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OmopIndices" version))
        (sha256
-        (base32 "03gw2sfjladg21j96kj9l0a6gyyc3rnv2dp3ijp60fzdvm16snyl"))))
+        (base32 "1n24fdilickyr0w33g8gbbnmjpi8bnsq5qf5qdcvk9cakvd8445k"))))
     (properties `((upstream-name . "OmopIndices")))
     (build-system r-build-system)
     (arguments
@@ -12056,6 +12072,8 @@ functionality is supported.")
                              r-purrr
                              r-patientprofiles
                              r-omopgenerics
+                             r-omopconstructor
+                             r-lifecycle
                              r-dplyr
                              r-clock
                              r-cli))
@@ -12306,61 +12324,41 @@ cell-type-specific epigenome-wide and transcriptome association study\".")
 (define-public r-omicstools
   (package
     (name "r-omicstools")
-    (version "1.1.7")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "omicsTools" version))
        (sha256
-        (base32 "051kfnwl0f6qlfrlkxq71486sp53dhp62znz6r32qbjs1lb4p180"))))
+        (base32 "0b9aq4sbjz17d314fx8d361wmvhhafljn33l8nilvlrpv650l9gx"))))
     (properties `((upstream-name . "omicsTools")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-viridis
-                             r-tidyr
+    (propagated-inputs (list r-tidyr
                              r-tibble
-                             r-stringr
-                             r-shinywidgets
-                             r-shinycssloaders
                              r-shiny
                              r-rlang
-                             r-readxl
                              r-readr
-                             r-rcolorbrewer
-                             r-purrr
-                             r-pheatmap
-                             r-outliers
-                             r-moments
-                             r-matrixstats
-                             r-magrittr
-                             r-janitor
-                             r-golem
-                             r-ggvenn
-                             r-ggsci
-                             r-ggrepel
-                             r-ggpubr
+                             r-jsonlite
+                             r-htmltools
                              r-ggplot2
-                             r-forcats
                              r-dt
                              r-dplyr
-                             r-dbscan
-                             r-config
                              r-cli
                              r-bs4dash))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=omicsTools")
-    (synopsis "Omics Data Process Toolbox")
+    (home-page "https://github.com/cheemalab/omicsTools")
+    (synopsis "Omics Data Processing Toolbox")
     (description
-     "Processing and analyzing omics data from genomics, transcriptomics, proteomics,
-and metabolomics platforms.  It provides functions for preprocessing,
-normalization, visualization, and statistical analysis, as well as machine
-learning algorithms for predictive modeling. @code{omicsTools} is an essential
-tool for researchers working with high-throughput omics data in fields such as
-biology, bioinformatics, and medicine.The QC-RLSC (quality controlâbased
-robust LOESS signal correction) algorithm is used for normalization.  Dunn et
-al. (2011) <doi:10.1038/nprot.2011.335>.")
+     "This package provides tools for processing and analyzing omics data from
+genomics, transcriptomics, proteomics, and metabolomics platforms.  Includes
+data import, filtering, imputation, normalization, targeted calibration,
+spectrum export, visualization, statistical comparisons, and reproducible QC
+reports.  The QC-RLSC (quality control-based robust LOESS signal correction)
+algorithm is used for normalization.  Dunn et al. (2011)
+<doi:10.1038/nprot.2011.335>.")
     (license license:agpl3+)))
 
 (define-public r-omicsqc
@@ -14357,6 +14355,38 @@ KÃ¶ning, R., Wimmer, G. and WitkovskÃ½, V. (2014)
  ODA data includes sovereign-level aid data such as key aggregates (DAC1),
 geographical distributions (DAC2A), project-level data (CRS), and multilateral
 contributions (Multisystem).")
+    (license license:expat)))
+
+(define-public r-oecddata
+  (package
+    (name "r-oecddata")
+    (version "0.3.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OECDdata" version))
+       (sha256
+        (base32 "1cz4hi9cn9dfwavz3zdikpxx0fw1cjlwzkg2p5fnkigsrw23w3dp"))))
+    (properties `((upstream-name . "OECDdata")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list libxml2))
+    (propagated-inputs (list r-xml2 r-magrittr r-digest r-data-table r-curl))
+    (native-inputs (list r-rmarkdown pkg-config r-knitr))
+    (home-page "https://github.com/alekrutkowski/OECDdata")
+    (synopsis "Fast and Friendly Access to OECD Data")
+    (description
+     "Discover, describe, compare and import statistical datasets from the
+Organisation for Economic Co-operation and Development (OECD) via its public
+Statistical Data and Metadata @code{eXchange} (SDMX) Representational State
+Transfer (REST) API <https://sdmx.oecd.org/public/>.  Adapts the discovery
+workflow of eurodata to OECD-native names, catalogue-resolved short codes and
+dataset-scoped metadata.  Uses SDMX REST version 2 by default, streamed
+downloads, native data.table parsing, defensive bulk C XML extraction, indexed
+structural metadata resolution, caching and bounded HTTP retries.  Includes an
+explicit version 1 transport for interoperability.")
     (license license:expat)))
 
 (define-public r-oecd
@@ -16405,13 +16435,13 @@ using a closed formula.")
 (define-public r-obrasgovr
   (package
     (name "r-obrasgovr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "obrasgovr" version))
        (sha256
-        (base32 "1y52b4vwzlzqmxp6v3cldw0mnsfc1dlwz29s5bwfw65mgc4gyp0j"))))
+        (base32 "1395dws60l33f7jhr1f4a47ixpi17zkmpdnibmij1nhkr3cv5g4y"))))
     (properties `((upstream-name . "obrasgovr")))
     (build-system r-build-system)
     (arguments
@@ -16434,13 +16464,13 @@ metadata, and optional multi-page collection.")
 (define-public r-obr
   (package
     (name "r-obr")
-    (version "0.6.2")
+    (version "0.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "obr" version))
        (sha256
-        (base32 "0xwcglrz19h080d93gckpg4171x3midzdjhm5l3j0ms137406lam"))))
+        (base32 "1r6zbma1qxvmgwpdd9al0y2a3vsfd21ax9i1lgzcl2d5yqy1zpd0"))))
     (properties `((upstream-name . "obr")))
     (build-system r-build-system)
     (arguments

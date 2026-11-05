@@ -667,29 +667,6 @@ can also be called using \"usshraw\", as described in: Ussher, J. (1658)
 <https://archive.org/stream/@code{AnnalsOfTheWorld/Annals_djvu.txt>}.")
     (license license:expat)))
 
-(define-public r-usportsr
-  (package
-    (name "r-usportsr")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "usportsR" version))
-       (sha256
-        (base32 "0x9m0pn9ihr1j6z5iwgm13v6z7v5da46ikd6yygf8f9wm9605xyp"))))
-    (properties `((upstream-name . "usportsR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble r-magrittr r-dplyr))
-    (home-page "https://github.com/uwaggs/usportsR")
-    (synopsis "Access U SPORTS Data")
-    (description
-     "This package provides tools package to extract and analyze data from U SPORTS,
-the governing body of university sport in Canada.")
-    (license license:expat)))
-
 (define-public r-uspopulationsampler
   (package
     (name "r-uspopulationsampler")
@@ -2705,13 +2682,13 @@ method is described in Helgeson, Vock, and Bair (2021) <doi:10.1111/biom.13376>.
 (define-public r-uno
   (package
     (name "r-uno")
-    (version "2.7.4-1")
+    (version "2.9.2-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Uno" version))
        (sha256
-        (base32 "14aga37djf4fbr3xf920iqz9b75zfcyx0q099c0q17n40pzgrrkw"))))
+        (base32 "1c9s86k7df2wm8lw7ccyf1spwaiy9n1kh0lk5y8wf414k30bwi0z"))))
     (properties `((upstream-name . "Uno")))
     (build-system r-build-system)
     (arguments
@@ -2730,7 +2707,7 @@ decomposing them into interacting building blocks (constraint-relaxation,
 inequality-handling, Hessian, and globalization strategies) that can be freely
 combined, either through options or through presets that reproduce established
 solvers such as @code{filterSQP} and IPOPT'.  The framework is described in
-Vanaret and Leyffer (2024) <doi:10.48550/@code{arXiv.2406.13454>}.")
+Vanaret and Leyffer (2026) <doi:10.1007/s12532-026-00310-9>.")
     (license license:expat)))
 
 (define-public r-unnest
@@ -4294,13 +4271,13 @@ detection.")
 (define-public r-undomanager
   (package
     (name "r-undomanager")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "undomanager" version))
        (sha256
-        (base32 "15qz243hqzna01jgspcfd1r4bb68h1a08rm6cr5rx3w382y97wr1"))))
+        (base32 "1x6k0n88503s76h23jlsx6lh5rdw212jwaddqn50rfj20sh2kbm9"))))
     (properties `((upstream-name . "undomanager")))
     (build-system r-build-system)
     (arguments
@@ -4348,13 +4325,13 @@ inference procedure described in @code{MacKinnon} and Webb (2020)
 (define-public r-underdisp
   (package
     (name "r-underdisp")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "underdisp" version))
        (sha256
-        (base32 "058cwiy9ls31jwm61v8sdl3lshqx1nam4h2briwizb1bv5kr684q"))))
+        (base32 "1r29ff2z7rs3bqgga0c1l9qwhkicnj37vbdbsfvpl25cka5n6w4v"))))
     (properties `((upstream-name . "underdisp")))
     (build-system r-build-system)
     (arguments
@@ -4375,13 +4352,14 @@ continuous parameter binomial (CPB) and generalized event count (Katz)
 regressions with zero-truncated, hurdle, and zero-inflated forms and
 high-dimensional fixed effects with a split-panel jackknife bias correction;
 matched Poisson, negative binomial, COM-Poisson (rate- and mean-parameterized),
-generalized Poisson, gamma-count, and double Poisson regressions through the
-same interface, with frequency weights, offsets, and analytic, robust, and
-cluster-robust standard errors; bootstrap and profile-likelihood inference;
-proper scoring rules, rootograms, PIT histograms, and simulation methods; and
-quantities of interest including predicted distributions, the implied ceiling,
-rate ratios, and first differences with an extensive/intensive decomposition.
-The likelihoods are implemented in C++.")
+generalized Poisson, gamma-count, double Poisson, hyper-Poisson, and
+exponentially weighted Poisson regressions through the same interface, with
+frequency weights, offsets, and analytic, robust, and cluster-robust standard
+errors; bootstrap and profile-likelihood inference; proper scoring rules,
+rootograms, PIT histograms, and simulation methods; and quantities of interest
+including predicted distributions, the implied ceiling, rate ratios, and first
+differences with an extensive/intensive decomposition.  The likelihoods are
+implemented in C++.")
     (license license:gpl3)))
 
 (define-public r-uncover
@@ -4470,6 +4448,37 @@ described in Meucci, Attilio (2013) <doi:10.2139/ssrn.2276632>.")
      "Dataset contains select attributes for each match result since 1949-1950 season
 for UNC men's basketball team.")
     (license license:cc0)))
+
+(define-public r-uncertr
+  (package
+    (name "r-uncertr")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "uncertR" version))
+       (sha256
+        (base32 "03z0v7b6qmp9qxdgzqrqrk1nk3z1jrb2091lgpzsm8cga5myj2h6"))))
+    (properties `((upstream-name . "uncertR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-glmnet r-future-apply))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=uncertR")
+    (synopsis
+     "Bootstrap Prediction Uncertainty and Its Biological Drivers in Gene-Expression Models")
+    (description
+     "Fits bootstrap ensembles of penalized regression models on bulk gene-expression
+data, derives per-sample uncertainty scores from out-of-bag predictions, and
+tests whether technical covariates explain that uncertainty.  The bootstrap
+method is described by Efron and Tibshirani (1993, ISBN:9780412042317), and
+elastic-net regression follows Friedman, Hastie, and Tibshirani (2010)
+<doi:10.18637/jss.v033.i01>.  The optional immunedeconv package, used for
+immune-cell deconvolution, is available from @code{GitHub}
+<https://github.com/omnideconv/immunedeconv>.")
+    (license license:expat)))
 
 (define-public r-uncertainucdp
   (package
@@ -5274,31 +5283,30 @@ information on the API, see
 (define-public r-ukhousing
   (package
     (name "r-ukhousing")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ukhousing" version))
        (sha256
-        (base32 "0rzl1qmj8xxiwyhmhcimvsvk7343x6ll7zc6d4dmy39p5q8iql8p"))))
+        (base32 "0kjp74b0dhvzg39v4kx2yg3rmxmx1xch36p8w65ff2b9lz64n2m4"))))
     (properties `((upstream-name . "ukhousing")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-jsonlite r-httr2 r-cli))
-    (home-page "https://github.com/charlescoverdale/ukhousing")
-    (synopsis "Access UK Housing Data from Land Registry, EPC, and Planning")
+    (home-page "https://charlescoverdale.github.io/ukhousing/")
+    (synopsis "Access UK Housing Data from Land Registry, Planning, and 'ONS'")
     (description
      "Fetch UK housing data from official sources.  Access the UK House Price Index
 and Price Paid Data from HM Land Registry <https://landregistry.data.gov.uk/>,
-domestic and non-domestic Energy Performance Certificates from the MHCLG Open
-Data service <https://epc.opendatacommunities.org/>, and planning application,
-brownfield land, and local plan data from planning.data.gov.uk
-<https://www.planning.data.gov.uk/>.  Data covers all 441 UK local authorities
-from 1995 to the present.  Functions accept flexible filters (postcode, local
-authority, property type, date range) and return tidy data frames.  Downloaded
-data is cached locally for subsequent calls.")
+planning application, brownfield land, and local plan data from
+planning.data.gov.uk <https://www.planning.data.gov.uk/>, and the Price Index of
+Private Rents from the Office for National Statistics'.  Data covers all 441 UK
+local authorities from 1995 to the present.  Functions accept flexible filters
+(postcode, local authority, property type, date range) and return tidy data
+frames.  Downloaded data is cached locally for subsequent calls.")
     (license license:expat)))
 
 (define-public r-ukgrid
@@ -5807,6 +5815,54 @@ function of the Unit-Garima distribution based on Ayuyuen, S., & Bodhisuwan, W.
 (2024)<doi:10.18187/pjsor.v20i1.4307>.")
     (license license:gpl3)))
 
+(define-public r-ufs
+  (package
+    (name "r-ufs")
+    (version "26.11.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ufs" version))
+       (sha256
+        (base32 "0gg48z9r656gdpg3a63dkr7njs17y06m083hnivgp0k9i8v3pj3x"))))
+    (properties `((upstream-name . "ufs")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-suppdists
+                             r-scales
+                             r-rmdpartials
+                             r-pwr
+                             r-plyr
+                             r-pander
+                             r-knitr
+                             r-kableextra
+                             r-htmltools
+                             r-gtable
+                             r-gridextra
+                             r-gparotation
+                             r-ggridges
+                             r-ggrepel
+                             r-ggplot2
+                             r-dplyr
+                             r-diptest
+                             r-digest))
+    (home-page "https://ufs.opens.science")
+    (synopsis "Collection of Utilities")
+    (description
+     "This is a new version of the userfriendlyscience package, which has grown a bit
+unwieldy.  Therefore, distinct functionalities are being consciously uncoupled
+into different packages.  This package contains the general-purpose tools and
+utilities (see the behaviorchange package, the rosetta package, and the
+soon-to-be-released scd package for other functionality), and is the most direct
+successor of the original userfriendlyscience package.  For example, this
+package contains a number of basic functions to create higher level plots, such
+as diamond plots, to easily plot sampling distributions, to generate confidence
+intervals, to plan study sample sizes for confidence intervals, and to do some
+basic operations such as (dis)attenuate effect size estimates.")
+    (license license:gpl3+)))
+
 (define-public r-ufrisk
   (package
     (name "r-ufrisk")
@@ -6246,13 +6302,13 @@ capture much of the structure of the original data.")
 (define-public r-uci
   (package
     (name "r-uci")
-    (version "0.3.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "uci" version))
        (sha256
-        (base32 "0prgjw1j6x9cwh3zl29x35yyr81g9zv40znxljx69v3yqkl75zga"))))
+        (base32 "0cbbqb8wgih2fdqgikcnyan9cxg5vx40zr359imx08hx0by0l6vd"))))
     (properties `((upstream-name . "uci")))
     (build-system r-build-system)
     (arguments
@@ -6260,15 +6316,14 @@ capture much of the structure of the original data.")
       #:tests? #f))
     (propagated-inputs (list r-spdep
                              r-sf
-                             r-pbapply
-                             r-future
-                             r-furrr
+                             r-rlang
                              r-fields
                              r-data-table
                              r-cpprouting
+                             r-cli
                              r-checkmate))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/ipeaGIT/uci")
+    (home-page "https://github.com/ipea/uci")
     (synopsis "Urban Centrality Index")
     (description
      "Calculates the Urban Centrality Index (UCI) as in Pereira et al., (2013)

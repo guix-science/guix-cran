@@ -1351,13 +1351,13 @@ biological habitat quality or species occurrence.")
 (define-public r-hydroloom
   (package
     (name "r-hydroloom")
-    (version "1.2.2")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hydroloom" version))
        (sha256
-        (base32 "01q410b0srfc45a4d5qk3py9bnsin8fl0na4kqxggbv73hai15ci"))))
+        (base32 "0lq1hmvc19linfglnwpwg8nnxg9krjjprgv66lbn80h6qhn9akw8"))))
     (properties `((upstream-name . "hydroloom")))
     (build-system r-build-system)
     (arguments
@@ -1415,13 +1415,13 @@ welcomed.")
 (define-public r-hydrogeofetch
   (package
     (name "r-hydrogeofetch")
-    (version "2.0.4")
+    (version "2.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hydrogeofetch" version))
        (sha256
-        (base32 "1kzhfz0ifvhbnkqk98rv3rqzjqzlj3mc8ikv4rl16wqq5c0icjh1"))))
+        (base32 "0543dk3bni21q58m3q09k7ggq69wm99shkw0c5mvkknsg23qmgm4"))))
     (properties `((upstream-name . "hydrogeofetch")))
     (build-system r-build-system)
     (arguments
@@ -2689,13 +2689,13 @@ Learn more about the inkaverse project at <https://inkaverse.com/>.")
 (define-public r-huggingfacer
   (package
     (name "r-huggingfacer")
-    (version "2.3.0")
+    (version "2.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "huggingfaceR" version))
        (sha256
-        (base32 "0wjl1gxnnnaq75l75y06k72mh4wpaylcykqqwy5qa1bn2lwm5xxm"))))
+        (base32 "14nzqzvvlhzb7134bwk6qj52zx4iahz8m269hgavl7nas3g24a8r"))))
     (properties `((upstream-name . "huggingfaceR")))
     (build-system r-build-system)
     (arguments
@@ -2779,19 +2779,20 @@ and Urban Development <https://www.huduser.gov/portal/dataset/fmr-api.html>.")
 (define-public r-hubutils
   (package
     (name "r-hubutils")
-    (version "1.2.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hubUtils" version))
        (sha256
-        (base32 "0vzkmlwb7mcs526mxv7p6wbnn9ik6j6gaw8mndsxl2q9bb0mq3f0"))))
+        (base32 "0d53xd05q4935hjpwl5yn9a3rpchzfavs4q6w8c4asyajixsmp72"))))
     (properties `((upstream-name . "hubUtils")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble
+    (propagated-inputs (list r-yaml
+                             r-tibble
                              r-stringr
                              r-rlang
                              r-purrr
@@ -4814,13 +4815,13 @@ stratified sample of 80 talkers of Dutch.")
 (define-public r-hqm
   (package
     (name "r-hqm")
-    (version "2.1")
+    (version "2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HQM" version))
        (sha256
-        (base32 "1wwvfg06f8gqcdxyqpx2psyvfjx7rm458z4qbhkir14k04i3zqsv"))))
+        (base32 "145f3kbmmp0z3ym2yvyahhiqk919kq9151mys56h0snhlnnpfbs2"))))
     (properties `((upstream-name . "HQM")))
     (build-system r-build-system)
     (arguments
@@ -4878,13 +4879,13 @@ for those with access.")
 (define-public r-hpsreg
   (package
     (name "r-hpsreg")
-    (version "1.0.0")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hpsreg" version))
        (sha256
-        (base32 "1fcgch9iaamppp9apk55lqchbq0vssrx5v5y7d66rnvi8a9cw6wz"))))
+        (base32 "0s6gwp3qb0jn14s8xcnnngpim3bq0v5c2m8fx2ssyqn6niihyrm1"))))
     (properties `((upstream-name . "hpsreg")))
     (build-system r-build-system)
     (arguments
@@ -5629,13 +5630,13 @@ of squares.")
 (define-public r-hopkins
   (package
     (name "r-hopkins")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hopkins" version))
        (sha256
-        (base32 "1gzpmfdmplgzal90l7yri455dhlvhkazvag6i6ggw4cq34bx6g76"))))
+        (base32 "198cm3q92q052jblxvn95m8lzn08r5gwpcjkc1fdj7zncqbqxwzl"))))
     (properties `((upstream-name . "hopkins")))
     (build-system r-build-system)
     (arguments
@@ -6892,13 +6893,13 @@ et al. (2020) <doi:10.1111/2041-210X.13345>).")
 (define-public r-hmrc
   (package
     (name "r-hmrc")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hmrc" version))
        (sha256
-        (base32 "0p3q883xfjdsl1lvzlk4cvpa9vw092zm2cf2fxcpx9a1sh2maw58"))))
+        (base32 "18h4nn243js5cjwwsqm9wfnbmma8b36daca963jcl7n3xk2armj1"))))
     (properties `((upstream-name . "hmrc")))
     (build-system r-build-system)
     (arguments
@@ -6911,15 +6912,16 @@ et al. (2020) <doi:10.1111/2041-210X.13345>).")
     (description
      "This package provides functions to download, parse, and tidy statistical data
 published by HM Revenue and Customs ('HMRC') on GOV.UK'.  Returns annotated
-hmrc_tbl data frames with provenance metadata (source URL, fetch time, vintage,
-cell methods) for reproducible fiscal research.  Covers monthly tax receipts (41
-tax heads from 2008), VAT (from 1973), fuel duties (from 1990), tobacco duties
-(from 1991), annual Corporation Tax receipts, stamp duty, research and
-development tax credit statistics (from 2000), tax gap estimates, Income Tax
-liabilities by income range, and monthly property transaction counts.  File URLs
-are resolved at runtime via the GOV.UK Content API
-<https://www.gov.uk/api/content>, so data is always current without hardcoded
-URLs.  Files are cached locally between sessions.")
+hmrc_tbl data frames with provenance metadata (source URL, publication date,
+fetch time, cell methods) for reproducible fiscal research.  Covers monthly tax
+receipts (42 series), VAT (from 1973), fuel duties (from 1990), tobacco duties
+(from 1991), Corporation Tax receipts, stamp duty, research and development tax
+credits (from 2000), tax gap estimates (from 2005), Income Tax liabilities by
+income range, Capital Gains Tax, Inheritance Tax, the Patent Box, creative
+industries reliefs, and monthly property transaction counts.  File URLs are
+resolved at runtime via the GOV.UK Content API <https://www.gov.uk/api/content>,
+so data is always current without hardcoded URLs.  Files are cached locally
+between sessions.")
     (license license:expat)))
 
 (define-public r-hmr
@@ -7008,6 +7010,49 @@ approach for HMMs is based on Hsu, Kakade, and Zhang (2012)
 Kuang, Yun, and Park (2015) <doi:10.1007/s10898-014-0247-2>.  The Tensor-Train
 decomposition is described in Oseledets (2011) <doi:10.1137/090752286>.")
     (license license:expat)))
+
+(define-public r-hmmscpg
+  (package
+    (name "r-hmmscpg")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HMMscpg" version))
+       (sha256
+        (base32 "0w2kg1ydmdjwrxz7rsnhhgzkv7lyyp9hv0frqsgiyasxy7b10bx0"))))
+    (properties `((upstream-name . "HMMscpg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rdpack r-rcpparmadillo r-rcpp r-bessel))
+    (home-page "https://cran.r-project.org/package=HMMscpg")
+    (synopsis
+     "Hidden Markov Models and Shifted Compound Poisson-Gamma Renewal Process")
+    (description
+     "This package provides functions to define, simulate and fit hidden Markov
+models, hidden semi-Markov models, and their time-varying versions, to
+incompletely observed point process records.  Such data arise when some events
+of an underlying point process are not recorded or are otherwise missing.  The
+models treat the number of missing events between each pair of consecutively
+observed events of a point process record as a hidden process.  The number of
+missing events may be fixed or modelled as a random variable whose distribution
+can vary over time.  When the number of missing events is fixed, the observed
+event times can be modelled as a compound gamma renewal process.  When it is
+random, the observed process is represented by a shifted compound Poisson-gamma
+renewal process, which may also depend on time, leading to a time-dependent
+shifted compound Poisson-gamma renewal process.  These modelling frameworks are
+described in detail in Shahzadi, Wang, Parry and Bebbington (2023)
+<doi:10.1007/s10463-022-00843-5> and Shahzadi, Wang, Parry and Bebbington (2026)
+<doi:10.1007/s11634-025-00632-x>.  The model parameters are estimated through
+direct nonlinear numerical optimization of the corresponding likelihood
+function, and each fit reports whether the change points of its time-dependent
+components are identified by the data.  The package also provides methods for
+assessing model adequacy through residual analysis.  In addition, it calculates
+and plots the most probable sequences of hidden states, allowing users to
+examine changes in the underlying missing-event process over time.")
+    (license license:gpl3)))
 
 (define-public r-hmmrel
   (package
@@ -8320,13 +8365,13 @@ estimation method.")
 (define-public r-histdawass
   (package
     (name "r-histdawass")
-    (version "1.0.9")
+    (version "1.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HistDAWass" version))
        (sha256
-        (base32 "06ir49vxgaxsk9z4iiznn05xbf9bkki01gwvckjdqjibdf9lva77"))))
+        (base32 "0zvblc7hjj3ihwlzc3h3iz08rhspfq63z2829pns50dazxvlhyz1"))))
     (properties `((upstream-name . "HistDAWass")))
     (build-system r-build-system)
     (arguments
@@ -8339,6 +8384,7 @@ estimation method.")
                              r-ggplot2
                              r-factominer
                              r-class))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/Airpino/HistDAWass")
     (synopsis "Histogram-Valued Data Analysis")
     (description
@@ -8449,19 +8495,19 @@ dependent rates of diversification.  Beaulieu and O'Meara (2016)
 (define-public r-hirt
   (package
     (name "r-hirt")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hIRT" version))
        (sha256
-        (base32 "133ndlknd271ywgi5qgvr8lbmfragd751sdqbgschp1cqhramdcb"))))
+        (base32 "13373rvz8df43a3f9svi6wachg4r5jzcsh2wjkiygif2rrmzmfkp"))))
     (properties `((upstream-name . "hIRT")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rms r-matrix r-ltm))
+    (propagated-inputs (list r-rms r-rcpparmadillo r-rcpp r-matrix r-ltm))
     (home-page "https://github.com/xiangzhou09/hIRT")
     (synopsis "Hierarchical Item Response Theory Models")
     (description
@@ -11179,13 +11225,13 @@ are provided, and notably fast update functions when adding new observations.")
 (define-public r-heterotests
   (package
     (name "r-heterotests")
-    (version "0.11.2")
+    (version "0.17.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "heteroTests" version))
        (sha256
-        (base32 "0f3m35xk38rjnf7421rci7d53icmjiblz7xpaig5xnvhdlqncrby"))))
+        (base32 "0v8aq9rmaa7bs8q5srwpjdk3a05vrypmks8qdyrqaacrv6qyjz8h"))))
     (properties `((upstream-name . "heteroTests")))
     (build-system r-build-system)
     (arguments
@@ -12709,29 +12755,32 @@ the htmlwidgets R package.")
 (define-public r-heatstressr
   (package
     (name "r-heatstressr")
-    (version "2.4.0")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HeatStressR" version))
        (sha256
-        (base32 "152bqk3s4736zr9nl4wr4z189f971b465427icli786lsvzb4kl0"))))
+        (base32 "1gpq4dvhaw0n6ad4bx20fqjqmryyvjrshxf6i6avdv0w6lhabxfa"))))
     (properties `((upstream-name . "HeatStressR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-assertthat))
+    (propagated-inputs (list r-heatindex))
     (home-page "https://github.com/zyf0717/HeatStressR")
     (synopsis "Calculate Heat Stress Indices")
     (description
-     "Calculates heat-stress indices from meteorological observations, including the
-physically based wet-bulb globe temperature model described by Liljegren et al.
-(2008) <doi:10.1080/15459620802310770>.  The package provides an independently
-maintained R implementation with row-level diagnostics, configurable physical
-controls, and batch processing for the Liljegren method; it is not a
-bitwise-compatible port of the original program, and cross-implementation
-differences are expected.")
+     "Calculates heat-stress indices from meteorological observations using shared
+psychrometric calculations and consistent method-specific input handling.
+Methods include the physically based outdoor wet-bulb globe temperature model
+described by Liljegren et al. (2008) <doi:10.1080/15459620802310770>, wet-bulb
+temperature and heat-index calculations, and established closed-form heat-stress
+indices.  Provides row-level diagnostics, configurable physical controls,
+vectorized batch processing, and optional parallel execution for the Liljegren
+method.  It is an independently maintained fork of @code{HeatStress}'; its
+Liljegren implementation is not a bitwise-compatible port of the original
+program.")
     (license license:gpl3)))
 
 (define-public r-heatmapr
@@ -14634,13 +14683,13 @@ al. (2025) <doi:10.1080/07350015.2025.2526424>.")
 (define-public r-hdf5lib
   (package
     (name "r-hdf5lib")
-    (version "2.2.0.0")
+    (version "2.2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hdf5lib" version))
        (sha256
-        (base32 "1nrhpz5rf38b0iaj1m3h0rfy266djsbp28r0p0vri6shvd36a02s"))))
+        (base32 "1q2cp7lfkw8q9h19shrgayf081alfyx8mmy35k05p3h8fc2n5dzm"))))
     (properties `((upstream-name . "hdf5lib")))
     (build-system r-build-system)
     (arguments
@@ -14746,13 +14795,13 @@ a non-hierarchical setting the package produces a single derivative curve.")
 (define-public r-hdcuremodels
   (package
     (name "r-hdcuremodels")
-    (version "0.0.8")
+    (version "0.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hdcuremodels" version))
        (sha256
-        (base32 "1malsa6b3wv7bcc0489qjgkh5cm5ba8gxgykxwm54r63nz2kxq8g"))))
+        (base32 "1z4l0j4p3i3z6hj1bm5fmhn3hmhmvsipy86kfqaam2l1hc99b9lm"))))
     (properties `((upstream-name . "hdcuremodels")))
     (build-system r-build-system)
     (arguments
@@ -14771,7 +14820,7 @@ a non-hierarchical setting the package produces a single derivative curve.")
                              r-flexsurv
                              r-doparallel))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/ropensci/hdcuremodels")
+    (home-page "https://github.com/kelliejarcher/hdcuremodels")
     (synopsis "High-Dimensional Cure Models")
     (description
      "This package provides functions for fitting various penalized parametric and
@@ -17833,6 +17882,38 @@ those credentials to make GET requests to the Hakai API server.  Usage
 instructions are documented at <https://hakaiinstitute.github.io/hakai-api/>.")
     (license license:expat)))
 
+(define-public r-hairline
+  (package
+    (name "r-hairline")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hairline" version))
+       (sha256
+        (base32 "12p43yazgbgsvsigrd9p7q4flnmh8m3ljl0awcyz0gqx5nndjpnj"))))
+    (properties `((upstream-name . "hairline")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml
+                             r-textshaping
+                             r-systemfonts
+                             r-s7
+                             r-rlang
+                             r-ragg
+                             r-jsonlite
+                             r-ggplot2))
+    (home-page "https://github.com/schradern/hairline")
+    (synopsis "Clean, Predictable Figures for Medical and Data Science")
+    (description
+     "This package provides a design system for ggplot2 figures: one frame for titles,
+legends, panels and captions, a fixed spacing and type scale, colour-vision
+checked palettes, brand files in the brand.yml format, and print-ready export.
+Produces output matching the hairline Python package.")
+    (license license:expat)))
+
 (define-public r-hagis
   (package
     (name "r-hagis")
@@ -18179,13 +18260,13 @@ and Graphical Statistics, 13, 621-638. <doi:10.1198/106186004X2697>.")
 (define-public r-h5lite
   (package
     (name "r-h5lite")
-    (version "2.1.1.1")
+    (version "2.2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "h5lite" version))
        (sha256
-        (base32 "1fn9yyzi3hdffl8lcfhhxmhn9gvm36si3fnycy8hqyz22w2rx63v"))))
+        (base32 "1nhvyh584xjamd0a4p48jl2644xly7bgix8mcx8yy9bx7n73wrmk"))))
     (properties `((upstream-name . "h5lite")))
     (build-system r-build-system)
     (arguments

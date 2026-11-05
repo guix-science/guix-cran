@@ -193,6 +193,33 @@ simulations are returned as a tibble', and from that the results can be
 processed using dplyr and ggplot2'.  The package has been tested using python3'.")
     (license license:expat)))
 
+(define-public r-pyrt
+  (package
+    (name "r-pyrt")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pyrt" version))
+       (sha256
+        (base32 "0vj7f53071x8998mbdwk4kbmx5yryp8zsczk5grcgl3w03ymsdik"))))
+    (properties `((upstream-name . "pyrt")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-r6 r-gmp))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lauyeehow1986-hub/r_python_converter")
+    (synopsis "Runtime Support for Converted 'Python' Packages")
+    (description
+     "This package provides the Python runtime semantics required by R packages
+generated with pyport', including reference-semantics containers, class and
+method-resolution-order dispatch, exception hierarchies, iteration and slicing
+helpers, arbitrary-precision integer arithmetic, and bit-exact random number
+generation.")
+    (license license:expat)))
+
 (define-public r-pyramid
   (package
     (name "r-pyramid")
@@ -473,13 +500,13 @@ dissemination.")
 (define-public r-pxmake
   (package
     (name "r-pxmake")
-    (version "0.21.0")
+    (version "0.22.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pxmake" version))
        (sha256
-        (base32 "02056v2prfk8j38yj2gq0hvqyi6n3qm42kknz7sq7z0w213lkf9f"))))
+        (base32 "0vjaf00539skkmkvrh5vhb15czzjkjhkgi48ig3blzhlkckdnp0j"))))
     (properties `((upstream-name . "pxmake")))
     (build-system r-build-system)
     (arguments
@@ -495,9 +522,7 @@ dissemination.")
                              r-purrr
                              r-openxlsx
                              r-magrittr
-                             r-furrr
-                             r-dplyr
-                             r-arrow))
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/StatisticsGreenland/pxmake")
     (synopsis "Make PX-Files in R")
@@ -2946,13 +2971,13 @@ CTN-0030 (<https://ctnlibrary.org/protocol/ctn0030/>), and CTN-0051
 (define-public r-pubh
   (package
     (name "r-pubh")
-    (version "3.0.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pubh" version))
        (sha256
-        (base32 "12viwmbi1sxr5wdf8ykw1ks9kyhilswaqafqxjn7173jxqfg4vnc"))))
+        (base32 "0jzsqs0mvcd1m1v5n0zyxvyc26f0xfscl06gyblb3g33k59sby0g"))))
     (properties `((upstream-name . "pubh")))
     (build-system r-build-system)
     (arguments
@@ -2970,7 +2995,6 @@ CTN-0030 (<https://ctnlibrary.org/protocol/ctn0030/>), and CTN-0051
                              r-huxtable
                              r-gtsummary
                              r-ggplot2
-                             r-epitools
                              r-epi
                              r-emmeans
                              r-dplyr
@@ -2991,13 +3015,13 @@ is for educational purposes only.")
 (define-public r-pubformat
   (package
     (name "r-pubformat")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pubformat" version))
        (sha256
-        (base32 "0qdrbka51xqfjnk1hy0i51v19n8r093zxd07ghrrc6aywjv7ypy3"))))
+        (base32 "08xqwih0gy9sybabhpk5qzvj9gjpxqgvlinrk14hzirx75rzzs1v"))))
     (properties `((upstream-name . "pubformat")))
     (build-system r-build-system)
     (arguments
@@ -3007,12 +3031,14 @@ is for educational purposes only.")
     (home-page "https://github.com/Reynolds826/pubformat")
     (synopsis "Publication-Ready Formatting for Statistical Results")
     (description
-     "This package provides tools for converting statistical results into consistent,
-publication-ready character output.  Current functionality includes formatting
-p-values, confidence intervals, and correlation coefficients using
-publication-friendly conventions.  The package emphasizes consistent reporting
-while preserving the underlying statistical results and statistical
-decision-making.")
+     "This package provides tools for converting already-computed statistical results
+into consistent, publication-ready character output.  Supports p-values,
+confidence intervals, correlation coefficients, percentages, test statistics,
+and commonly reported effect sizes, with optional confidence intervals and
+multiple output styles for selected statistical symbols.  The package emphasizes
+separation of statistical calculation, interpretation, and publication
+formatting so that reporting choices do not alter the underlying numeric results
+or inferential decisions.")
     (license license:expat)))
 
 (define-public r-pubchemr
@@ -3545,6 +3571,39 @@ computing properties of the Power Topp Leone Exponential Negative Kies Burr
 (PTLENKBurr).  See AtchadÃ© M, Otodji T, and Djibril A (2024)
 <doi:10.1063/5.0179458> and AtchadÃ© M, Otodji T, Djibril A, and N'boukÃ© M
 (2023) <doi:10.1515/phys-2023-0151> for details.")
+    (license license:gpl2)))
+
+(define-public r-ptlasso
+  (package
+    (name "r-ptlasso")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ptLasso" version))
+       (sha256
+        (base32 "1jm4minfq219ry0s4xxa9myclfikwqbi06xdv2q7b5fhm58rkp56"))))
+    (properties `((upstream-name . "ptLasso")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrix r-gridextra r-glmnet r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://erincr.github.io/ptLasso/")
+    (synopsis "Pretraining the Lasso")
+    (description
+     "This package implements lasso pretraining for generalized linear models for data
+with grouped observations; data without grouped observations, but with
+multinomial responses; data with multiple Gaussian responses; and data with
+repeated measurements over time.  The method fits a lasso model to an initial
+dataset and then uses its support and coefficient values to guide model fitting
+for a related task, which can improve performance by leveraging larger datasets
+and preserve interpretability by identifying features which are generally
+shared, and which are task specific.  See Craig et al. (2026)
+<doi:10.1093/jrsssb/qkaf050> for details.  Model fitting in this package is done
+with @code{cv.glmnet()} from the glmnet package, and syntax closely follows that
+of glmnet (Friedman, Hastie and Tibshirani (2010) <doi:10.18637/jss.v033.i01>).")
     (license license:gpl2)))
 
 (define-public r-ptitan2
@@ -4169,13 +4228,13 @@ or without concomitant variables.  See Frick et al. (2012)
 (define-public r-psychomatic
   (package
     (name "r-psychomatic")
-    (version "1.0.0")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PsychoMatic" version))
        (sha256
-        (base32 "1alsp0lwhi6zdskpw28wkawpqyw9f63nkr7ym26cp55cnb2wldrz"))))
+        (base32 "126n9aydgwb5dxkcfid202ah1dgkxy0cn48g9r6vpcd355wssk6y"))))
     (properties `((upstream-name . "PsychoMatic")))
     (build-system r-build-system)
     (arguments
@@ -5477,13 +5536,13 @@ efficiency and fit\".  Applied Health Economics and Health Policy.")
 (define-public r-pslr
   (package
     (name "r-pslr")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pslr" version))
        (sha256
-        (base32 "0f2cwcbbddss1vccp0y2m6gr8xa1x4srm94shd65dhdlh6ry53bj"))))
+        (base32 "07cq04p9dmcydn88x2ckf5c2bdwdlhmh1y7172kr3zqxmfzjfcmm"))))
     (properties `((upstream-name . "pslr")))
     (build-system r-build-system)
     (arguments
@@ -6137,13 +6196,13 @@ assess covariate effects and embedded in the variable selection procedure.")
 (define-public r-pseudobiber
   (package
     (name "r-pseudobiber")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pseudobibeR" version))
        (sha256
-        (base32 "1a6n9a46n8k3ycxlqhlxi26m2yqjc97yxhz2m9vdyzfi0881x44c"))))
+        (base32 "0jfadpddcw6w54r0a8g275ysnl7g7x1zv1a40mhyn6njnlfr7ixn"))))
     (properties `((upstream-name . "pseudobibeR")))
     (build-system r-build-system)
     (arguments
@@ -6257,6 +6316,38 @@ presented.  For details on this method see: Sulewski (2019)
 family of probability dis-tributions: properties and application\">, Sulewski,
 Volodin (2022) <doi:10.1134/S1995080222110270>, Sulewski (2023)
 <doi:10.17713/ajs.v52i3.1434>.")
+    (license license:gpl3)))
+
+(define-public r-psdea
+  (package
+    (name "r-psdea")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "psdea" version))
+       (sha256
+        (base32 "1i3wpx96k7md94dz2pm3ln935wf6i2lvdg253n1gjrznafhpngyw"))))
+    (properties `((upstream-name . "psdea")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=psdea")
+    (synopsis
+     "Data Envelopment Analysis with User-Defined and Learned Reference Sets")
+    (description
+     "Slacks-based data envelopment analysis for panel data in which the reference set
+is an explicit argument.  A user-supplied weight matrix, or a matrix learned
+from the data by penalised non-negative reconstruction, selects the units that
+may enter each decision-making unit's frontier.  The package reports the
+unrestricted and the restricted score, the ratio of the two and an exact
+decomposition of the shortfall into the part the restricted technology can
+remove and the part it cannot.  Moran's I and local indicators of spatial
+association are provided as diagnostics.  All linear programs are solved by a
+two-phase simplex with Bland's rule implemented in R, so the package needs no
+compiler.")
     (license license:gpl3)))
 
 (define-public r-psd
@@ -6990,13 +7081,13 @@ based on MS1 or MS2 signal distributions.")
 (define-public r-proxymix
   (package
     (name "r-proxymix")
-    (version "0.16.0")
+    (version "0.17.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "proxymix" version))
        (sha256
-        (base32 "16syfhqv3dxrv0pdlik2js537v82m16rq9pyyjn305dlw46mfcnb"))))
+        (base32 "1a2pihfwdjs8hgb67za85d3l3ckk9lfarcqcwv0sri6nyp9dwqfc"))))
     (properties `((upstream-name . "proxymix")))
     (build-system r-build-system)
     (arguments
@@ -7011,19 +7102,22 @@ based on MS1 or MS2 signal distributions.")
     (native-inputs (list r-knitr))
     (home-page "https://github.com/max578/proxymix")
     (synopsis
-     "Kullback-Leibler Optimal Gaussian Mixture Proxies for Target Densities")
+     "Gaussian Mixture Proxies for Densities and Characteristic Functions")
     (description
-     "Fits multivariate Gaussian-mixture proxies that are Kullback-Leibler optimal to
-user-supplied target densities on real Euclidean space.  Three fitting regimes
-are unified under one verb: (i) closed-form moment matching for a single
-component, (ii) classical expectation-maximisation when independent samples are
-available, and (iii) importance-sampled expectation-maximisation that minimises
-the Kullback-Leibler divergence when the target can be evaluated point-wise but
-not (cheaply) sampled.  Closed-form Gaussian-mixture operators (density,
-sampling, marginalisation, conditioning, divergence) round out the toolkit.  The
-conditioning operator drives multiple imputation of data missing at random,
-covering the multimodal and heteroscedastic cases a single-Gaussian model cannot
-represent.  Implements the regime hierarchy of van der Hoek and Elliott (2024)
+     "Fits multivariate Gaussian-mixture proxies to target distributions on real
+Euclidean space, given by a density, by samples, or by a characteristic
+function.  Four fitting regimes are unified under one verb: (i) closed-form
+moment matching for a single component, (ii) classical expectation-maximisation
+when independent samples are available, (iii) importance-sampled
+expectation-maximisation that minimises the Kullback-Leibler divergence when the
+target can be evaluated point-wise but not (cheaply) sampled, and (iv) a
+least-squares fit to the characteristic function when only that is known, with
+numerical bounds on the Kolmogorov distance along one-dimensional projections.
+Closed-form Gaussian-mixture operators (density, sampling, marginalisation,
+conditioning, divergence) round out the toolkit.  The conditioning operator
+drives multiple imputation of data missing at random, covering the multimodal
+and heteroscedastic cases a single-Gaussian model cannot represent.  Implements
+the regime hierarchy of van der Hoek and Elliott (2024)
 <doi:10.1080/07362994.2024.2372605>.")
     (license license:expat)))
 
@@ -8412,13 +8506,13 @@ genes that correctly classify the maximum number of the given tissue samples
 (define-public r-proporz
   (package
     (name "r-proporz")
-    (version "1.5.3")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "proporz" version))
        (sha256
-        (base32 "19mmhssjxcs1fq8il4sg5cq4wqibgagh7r91gcb4zlvmnfjb9g1p"))))
+        (base32 "1d4lvgf3v2rcb7wwx0v9xi7jlg0wdpsms22f4fxf2k1qws1zllh2"))))
     (properties `((upstream-name . "proporz")))
     (build-system r-build-system)
     (arguments
@@ -10104,13 +10198,13 @@ can be found in \"Elements of Statistical Learning (2nd Edition)\" in Section
 (define-public r-procs
   (package
     (name "r-procs")
-    (version "1.0.9")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "procs" version))
        (sha256
-        (base32 "1j1zm5cgfjl82kb48d3zkyi8yhb93spwnq05gd3k5ffcjfh5hxa5"))))
+        (base32 "1facs3f5618z7461b0808zw014vkf2wzl34rpghjjsxkfdvnn41p"))))
     (properties `((upstream-name . "procs")))
     (build-system r-build-system)
     (arguments
@@ -11236,6 +11330,31 @@ game of Rock, Paper, Scissors.  4.  Choose n number of card(s) from a pack of 52
 playing cards (Joker optional).")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-prismr
+  (package
+    (name "r-prismr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PrismR" version))
+       (sha256
+        (base32 "1gs1jvf1nps8jvsnx9y6clky8pbqy0ik9avhzkgg7xhpp8p45n5q"))))
+    (properties `((upstream-name . "PrismR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggrepel r-ggplot2 r-e1071))
+    (home-page "https://arshit-dv.github.io/PrismR/")
+    (synopsis "Pre-Modeling Statistical Audit Framework")
+    (description
+     "Introduces a statistical validation layer between data preprocessing and
+predictive modeling.  Evaluates the statistical readiness of tabular datasets
+through data quality assessment, leakage detection, transformation analysis, and
+feature stability.")
+    (license license:expat)))
+
 (define-public r-prismjs
   (package
     (name "r-prismjs")
@@ -11654,13 +11773,13 @@ binomial experiment.")
 (define-public r-priorcon
   (package
     (name "r-priorcon")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "priorCON" version))
        (sha256
-        (base32 "0rrqlj0r1ihgk091x0jrjwqf5bijk4d1jfjvqrc7lgp28j70yhsp"))))
+        (base32 "0m446kxkbazrp1rzrmjdgc7gkr2x1z6yv4imln313i35a8v9shak"))))
     (properties `((upstream-name . "priorCON")))
     (build-system r-build-system)
     (arguments
@@ -11692,13 +11811,13 @@ problems.")
 (define-public r-prior3d
   (package
     (name "r-prior3d")
-    (version "0.1.6")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "prior3D" version))
        (sha256
-        (base32 "0rwm9fc9arqhsxzd8yk0gr9vmalq6la3b9hqgm5gzr3xmrh1bnmm"))))
+        (base32 "1xlljnhsmh6wv5sbr7r09b6sq3wlaqjd21wwbkhq26g62khbxl15"))))
     (properties `((upstream-name . "prior3D")))
     (build-system r-build-system)
     (arguments
@@ -12551,13 +12670,13 @@ Larmarange et al. (2011) <doi:10.4000/cybergeo.24606>.")
 (define-public r-preventr
   (package
     (name "r-preventr")
-    (version "0.12.1")
+    (version "0.12.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "preventr" version))
        (sha256
-        (base32 "1z8q6x5j5zb63gc3gar1ijw8izxxi5wygy8dfrbd6l55c6s6yqc8"))))
+        (base32 "0qsx1dydaywpkpg5j93psa1qhhghqk9kz1lj7kqriqwk24xk2xb9"))))
     (properties `((upstream-name . "preventr")))
     (build-system r-build-system)
     (arguments
@@ -17068,6 +17187,61 @@ marginal means, contrast specification, and worked examples for common
 agricultural designs.")
     (license license:bsd-3)))
 
+(define-public r-powerup
+  (package
+    (name "r-powerup")
+    (version "0.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "powerup" version))
+       (sha256
+        (base32 "16las5win0kbxhwjpklymngfpqx2lri3ig471gh8gy09ffa30agz"))))
+    (properties `((upstream-name . "powerup")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:modules '((guix build r-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (propagated-inputs (list r-xml2
+                             r-tibble
+                             r-shiny
+                             r-rlang
+                             r-purrr
+                             r-polish
+                             r-officer
+                             r-htmltools
+                             r-glue
+                             r-ggplot2
+                             r-dplyr
+                             r-cli
+                             r-base64enc))
+    (native-inputs (list r-knitr esbuild))
+    (home-page "https://gsk-biostatistics.github.io/powerup/")
+    (synopsis "Power Up Your PowerPoint Presentations")
+    (description
+     "Programmatically interact with new or existing Microsoft @code{PowerPoint}
+documents, by adding new slides, updating existing slides, and inserting
+displays into specific locations in slides.  Users can also add transition
+effects to slides, and add displays to specific locations in slides by pointing
+to specific placeholders or creating new ones.  Preview the slides in a local
+viewer.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-powertost
   (package
     (name "r-powertost")
@@ -17430,13 +17604,13 @@ assumption to narrow the bounds, and to incorporate covariate adjustment.")
 (define-public r-powerjoin
   (package
     (name "r-powerjoin")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "powerjoin" version))
        (sha256
-        (base32 "19b7y7aqf5159x2fi5nrx179nc673qqzkv9c8kgw85hmmjzjgnb3"))))
+        (base32 "0f7yl336kvayi2rk1k49xdgr1idb2wf40bcgl00fpw96nwzpb5p3"))))
     (properties `((upstream-name . "powerjoin")))
     (build-system r-build-system)
     (arguments
@@ -18299,13 +18473,13 @@ environmental studies.")
 (define-public r-postshock
   (package
     (name "r-postshock")
-    (version "0.2.1")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "postshock" version))
        (sha256
-        (base32 "1dq5qslkivx0lh40wyv7xm4a4xb0vpa7i2v8dr24ww53q0mcdqbd"))))
+        (base32 "1azswcydxijr75x7k0clcjlqfn3xq54plqbb6zh21iyk4azb4nwi"))))
     (properties `((upstream-name . "postshock")))
     (build-system r-build-system)
     (arguments
@@ -19132,6 +19306,34 @@ examples, testing versions, and more details from:
 objects.  The relative portion size and the way the portion is selected can be
 chosen.")
     (license license:gpl3+)))
+
+(define-public r-portinaricolors
+  (package
+    (name "r-portinaricolors")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PortinariColors" version))
+       (sha256
+        (base32 "1z0shp7hk12yn92ay47ab2n4bwm5pc7xkrvdcvijfi9pacczrmb2"))))
+    (properties `((upstream-name . "PortinariColors")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2))
+    (home-page "https://rafalopespx.github.io/PortinariColors/")
+    (synopsis "Color Palettes Inspired by the Paintings of Candido Portinari")
+    (description
+     "Color palettes inspired by paintings of Candido Portinari held by the Sao Paulo
+Museum of Art (MASP) and by his Guerra (War) and Paz (Peace) panels at the
+United Nations Headquarters.  Provides qualitative, diverging and sequential
+palettes for discrete and continuous data, ready-made ggplot2 color and fill
+scales, and a colorblind-safety check that simulates protanopia, deuteranopia
+and tritanopia following Machado, Oliveira and Fernandes (2009)
+<doi:10.1109/TVCG.2009.113>.")
+    (license license:expat)))
 
 (define-public r-portfoliotester
   (package
@@ -20981,13 +21183,13 @@ ISBN:3540262393).")
 (define-public r-pomp
   (package
     (name "r-pomp")
-    (version "6.4")
+    (version "6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pomp" version))
        (sha256
-        (base32 "0mx765wvryzh8dfzmclmbpaig0f4d42l9pasi4cydggdq9sbimw7"))))
+        (base32 "18zj184168ijrhnaziv25v8fyk55b1l93zwc3nwvdr0kdnzq71x2"))))
     (properties `((upstream-name . "pomp")))
     (build-system r-build-system)
     (arguments
@@ -21244,6 +21446,32 @@ overall average effect size in meta-analysis of dependent effect sizes.")
      "Routines for flexible functional form estimation via basis regression, with
 model selection via the adaptive LASSO or SCAD to prevent overfitting.")
     (license license:gpl2+)))
+
+(define-public r-polytrend
+  (package
+    (name "r-polytrend")
+    (version "1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PolyTrend" version))
+       (sha256
+        (base32 "18aamjd3zfybvrrhnnpvkpk4gjsafjcwly42b4n1qlran5bpdz2z"))))
+    (properties `((upstream-name . "PolyTrend")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=PolyTrend")
+    (synopsis "Trend Classification Algorithm")
+    (description
+     "Classifies trends as linear, quadratic, cubic, concealed, or no-trend.
+Concealed trends have a quadratic or cubic form, but their net change between
+the beginning and end of the time period is not statistically significant.  The
+no-trend category includes linear trends with a statistically insignificant
+slope.  The method is described in Jamali et al. (2014)
+<doi:10.1016/j.rse.2013.10.019>.")
+    (license license:gpl2)))
 
 (define-public r-polytree
   (package
@@ -22035,6 +22263,37 @@ tibbles (simple data frames).  This package conveniently handles labelled data,
 such as that commonly used by Stata and SPSS. Complex survey design is not
 supported at this time.")
     (license license:cc0)))
+
+(define-public r-pollimetry
+  (package
+    (name "r-pollimetry")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pollimetry" version))
+       (sha256
+        (base32 "0zxjgrqv8qyzhc51lza4prwbxqd827ydym71q7mq2n3synp99zfx"))))
+    (properties `((upstream-name . "pollimetry")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-lifecycle r-brms))
+    (home-page "https://github.com/liamkendall/pollimetry")
+    (synopsis "Estimate Pollinator Body Size and Co-Varying Ecological Traits")
+    (description
+     "This package provides tools to estimate pollinator body size and co-varying
+traits.  This package contains Bayesian predictive models of pollinator body
+size (for bees and hoverflies) and bee foraging range, as well as preexisting
+predictive models for pollinator body size (currently implemented for ants,
+bees, butterflies, flies, moths and wasps), bee tongue length, foraging range,
+total field nectar loads and wing loading.  An additional @code{GitHub}
+repository <https://github.com/liamkendall/pollimetrydata> provides model
+objects to use the bodysize and foraging.range functions internally.  The
+Bayesian models are described in Kendall et al. (2019) <doi:10.1002/ece3.4835> &
+Kendall et al. (2022) <doi:10.1002/ecy.3809>.")
+    (license license:gpl2+)))
 
 (define-public r-pollen
   (package
@@ -23638,13 +23897,13 @@ adapted for use with other model simulators by utilizing its extendable
 (define-public r-poemed
   (package
     (name "r-poemed")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "POEMED" version))
        (sha256
-        (base32 "095wwamyqkd9j7xrc10clvkw92v6jmnxwr2y5bfil9c7fnkijk8g"))))
+        (base32 "00w3qlmsxpq70cxwxxd88j778z1yr3ydfb26im13phhnj82lfamn"))))
     (properties `((upstream-name . "POEMED")))
     (build-system r-build-system)
     (arguments
@@ -23663,15 +23922,15 @@ marginal signals from individual mediators, so that active mediators are
 detected even when their individual indirect effects cancel and the total
 indirect effect is zero.  The package also identifies which individual mediators
 are active with familywise error rate or false discovery rate control.  The
-methods implement Yu and Kelley (in press), \"Power Enhancement in
-High-Dimensional Heterogeneous Mediation Analysis\" (Journal of the American
-Statistical Association); the package also simulates mediation data under the
-homogeneous, heterogeneous, and contrasting patterns that the article studies,
-ships its empirical health-expenditure data as a benchmark and reruns that
-empirical analysis, and runs the designs of its Monte Carlo size and power
-studies.  The name, POEMED', from POwer-Enhanced MEDiation, encodes the method.
-Every estimation and testing function returns a tidy data.frame that prints with
-sensible rounding and composes with the broader R ecosystem.")
+methods implement Yu and Kelley (2026) \"Power Enhancement in High-Dimensional
+Heterogeneous Mediation Analysis\" <doi:10.1080/01621459.2026.2739445>; the
+package also simulates mediation data under the homogeneous, heterogeneous, and
+contrasting patterns that the article studies, ships its empirical
+health-expenditure data as a benchmark and reruns that empirical analysis, and
+runs the designs of its Monte Carlo size and power studies.  The name, POEMED',
+from POwer-Enhanced MEDiation, encodes the method.  Every estimation and testing
+function returns a tidy data.frame that prints with sensible rounding and
+composes with the broader R ecosystem.")
     (license license:gpl3+)))
 
 (define-public r-podbay
@@ -24564,13 +24823,13 @@ See Schoenbachler and Hughey (2021) <doi:10.7717/peerj.11071>.")
 (define-public r-pmlsp
   (package
     (name "r-pmlsp")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pmlsp" version))
        (sha256
-        (base32 "03drbcxc95m0274q7gx5rkwjsgivf2mpfvvcrq3dkwzsa20fd6q8"))))
+        (base32 "1a3sl1rc1m1x4wqcxxz93yinvrkp36zyrchsv8nbck6g03qyvpp1"))))
     (properties `((upstream-name . "pmlsp")))
     (build-system r-build-system)
     (arguments
@@ -25525,13 +25784,13 @@ based on Tenenhaus, Esposito Vinzi, Chatelin & Lauro (2005)
 (define-public r-plssem
   (package
     (name "r-plssem")
-    (version "0.1.5")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plssem" version))
        (sha256
-        (base32 "1mbhqsfskd1r5s9pkfw7vvc1kxrn1acaa9xsa34czccb2rbyjs0m"))))
+        (base32 "1p3dpvvwdpl2fmdm4w3cri8jcjd4pckcvy26qxich672lqhjr513"))))
     (properties `((upstream-name . "plssem")))
     (build-system r-build-system)
     (arguments
@@ -25539,7 +25798,6 @@ based on Tenenhaus, Esposito Vinzi, Chatelin & Lauro (2005)
       #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-rfast
-                             r-reformulas
                              r-rcpparmadillo
                              r-rcpp
                              r-progressr
@@ -29824,13 +30082,13 @@ V2 (2024) <doi:10.5281/zenodo.11320255>.")
 (define-public r-pixr
   (package
     (name "r-pixr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pixr" version))
        (sha256
-        (base32 "0a73pkrnk3xmgl37h7sc56pwkdn2dqhsgmljcj6jwdpvqkdx1ssr"))))
+        (base32 "0kzrjsihzvy4mp78xazhzhwd9cwk3i9xrf3kym8vkpxsp7w21s0v"))))
     (properties `((upstream-name . "pixr")))
     (build-system r-build-system)
     (arguments
@@ -30558,13 +30816,13 @@ shiny app.  See Banker, R.; Charnes, A.; Cooper, W.W. (1984)
 (define-public r-pintervals
   (package
     (name "r-pintervals")
-    (version "1.1.1")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pintervals" version))
        (sha256
-        (base32 "0ba1jny291r0f77m5s1j1mwhb8xi1qpvsd5ryn1fms02a7cni568"))))
+        (base32 "0mxk3w5amrwwbr8hmd31za8lxlq2n21lg8mblcwj7d1fixd37q4b"))))
     (properties `((upstream-name . "pintervals")))
     (build-system r-build-system)
     (arguments
@@ -31014,13 +31272,13 @@ IEEE-754 standard does not fix.")
 (define-public r-pikchr
   (package
     (name "r-pikchr")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pikchr" version))
        (sha256
-        (base32 "0wk07kykqfqggwyj0sd1l2zj14xpqcjdy7c3ma3hm9ma192vwjfg"))))
+        (base32 "125x4hdsjxarl3j0h6y6zi280srwn61an11y0h3yq8bkxani0na4"))))
     (properties `((upstream-name . "pikchr")))
     (build-system r-build-system)
     (arguments
@@ -32277,13 +32535,13 @@ analysis.")
 (define-public r-phylter
   (package
     (name "r-phylter")
-    (version "0.9.12")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phylter" version))
        (sha256
-        (base32 "1x96j5wj9hgs6d9zg03cim7l6ja3y27zv3893i8h7k27bz7rai7m"))))
+        (base32 "16ig8j5m7my2qck7mbwvd9qddarvrvwwkik4dd8yvkca3w47pv4w"))))
     (properties `((upstream-name . "phylter")))
     (build-system r-build-system)
     (arguments
@@ -34186,13 +34444,13 @@ Also see the alternative approach by Vasicek, O. A. (1998)
 (define-public r-phevis
   (package
     (name "r-phevis")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PheVis" version))
        (sha256
-        (base32 "1anj079vdpfbkilbvk0b2b78qk87gc7lmivzl8syq6lb3dxkja2l"))))
+        (base32 "1mhg4p62c81qxxkp4fv3k1parxmk3iwpkilrv0xmzvfs4dn9qklc"))))
     (properties `((upstream-name . "PheVis")))
     (build-system r-build-system)
     (arguments
@@ -34203,7 +34461,6 @@ Also see the alternative approach by Vasicek, O. A. (1998)
                              r-tidyr
                              r-rcpp
                              r-randomforest
-                             r-purrr
                              r-lme4
                              r-knitr
                              r-glmnet
@@ -34225,9 +34482,45 @@ unsupervised fashion.  It can be used for chronic or acute diseases.  An example
 of how to use @code{PheVis} is available in the vignette.  Basically there are
 two functions that are to be used: @code{`train_phevis()}` which trains the
 algorithm and @code{`test_phevis()}` which get the predicted probabilities.  The
-detailed method is described in preprint by FertÃ© et al. (2020)
-<doi:10.1101/2020.06.15.20131458>.")
+detailed method is described in FertÃ© et al. (2021)
+<doi:10.1016/j.jbi.2021.103746>.")
     (license license:gpl2+)))
+
+(define-public r-phevaluator
+  (package
+    (name "r-phevaluator")
+    (version "2.2.19")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PheValuator" version))
+       (sha256
+        (base32 "1m8rydy11x7gx4cbw72746f3f7vy3lw0dyz3f31z4pcq0hfjl8vh"))))
+    (properties `((upstream-name . "PheValuator")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-sqlrender
+                             r-patientlevelprediction
+                             r-parallellogger
+                             r-featureextraction
+                             r-dplyr
+                             r-databaseconnector))
+    (native-inputs (list r-knitr))
+    (home-page "https://ohdsi.github.io/PheValuator/")
+    (synopsis "Rapid Phenotype Evaluation")
+    (description
+     "Evaluates phenotype algorithms by developing a diagnostic prediction model using
+a set of noisy positives and noisy negatives.  It can then apply the model to a
+large cohort to create a set of subjects each with a predicted probability for
+the health outcome of interest.  This cohort can then be used to evaluate
+phenotype algorithms through the calculation of the necessary performance
+characteristics - sensitivity, specificity, and positive and negative predictive
+value.  Based on work by Swerdel (2022) <doi:10.1016/j.jbi.2022.104177> and
+Swerdel (2019) <doi:10.1016/j.jbi.2019.103258>.")
+    (license license:asl2.0)))
 
 (define-public r-pheval
   (package
@@ -43389,13 +43682,13 @@ cycles nor interfering v-structures, following Derumigny, Horsman and Kurowicka
 (define-public r-pcatsapiclientr
   (package
     (name "r-pcatsapiclientr")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pcatsAPIclientR" version))
        (sha256
-        (base32 "16h6vf7b1zjs02whkkxf8j93p55q7bfyxq0vgs5h0pw26c6p4qxp"))))
+        (base32 "13gp2516mw620gz29hsbac6v5lp8n4rm90av36v7ib3m8059g6gw"))))
     (properties `((upstream-name . "pcatsAPIclientR")))
     (build-system r-build-system)
     (arguments
@@ -47010,6 +47303,41 @@ lognormal, log-skew-normal, and loglogistic.  Possible Frailty distributions:
 gamma, positive stable, inverse Gaussian and lognormal.")
     (license license:gpl2)))
 
+(define-public r-paretoinfer
+  (package
+    (name "r-paretoinfer")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "paretoinfer" version))
+       (sha256
+        (base32 "0r0ybs5vmfzy42l3x11x1c72nj12rfys91x5yqd5gfd54f60nngc"))))
+    (properties `((upstream-name . "paretoinfer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-seqbench
+                             r-rlang
+                             r-ggplot2
+                             r-generics
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://castlaboratory.github.io/paretoinfer/")
+    (synopsis
+     "Sequential Identification of Approximately Pareto-Optimal Alternatives under Noise")
+    (description
+     "Sequential identification of epsilon-Pareto-optimal alternatives among a finite
+set with noisy, possibly correlated objectives.  Simultaneous anytime-valid
+confidence sequences for every objective of every alternative (Waudby-Smith and
+Ramdas, 2024, <doi:10.1093/jrsssb/qkad009>) certify, at any time, which
+alternatives are epsilon-dominated and which are not, report the estimated
+frontier, the plausible Pareto set and the certified-dominated set, propose the
+next alternative to evaluate, and record an auditable result contract.")
+    (license license:gpl3+)))
+
 (define-public r-pareto
   (package
     (name "r-pareto")
@@ -47477,13 +47805,13 @@ for creating, manipulating and plotting pedigrees with or without marker data
 (define-public r-paramix
   (package
     (name "r-paramix")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "paramix" version))
        (sha256
-        (base32 "084i5xy88mr1cn7cjh1l82f56v1qk046jlz7syk6bcivvdf98wca"))))
+        (base32 "0idk5czhmm4vmjl45ckafpakdjhrag7iqgnkp80y20mlzwvl0833"))))
     (properties `((upstream-name . "paramix")))
     (build-system r-build-system)
     (arguments
@@ -47491,7 +47819,7 @@ for creating, manipulating and plotting pedigrees with or without marker data
       #:tests? #f))
     (propagated-inputs (list r-data-table))
     (native-inputs (list r-knitr))
-    (home-page "https://cmmid.github.io/paramix/")
+    (home-page "https://accidda.github.io/paramix/")
     (synopsis
      "Aggregate and Disaggregate Continuous Parameters for Compartmental Models")
     (description
@@ -47500,7 +47828,8 @@ continuously varying parameters (for example, case fatality ratio, with age) for
 proper parametrization of lower-resolution compartmental models (for example,
 with broad age categories) and subsequent upscaling of model outputs to high
 resolution (for example, as needed when calculating age-sensitive measures like
-years-life-lost).")
+years-life-lost).  Methods and application to calculating years of life lost are
+described in Goodfellow et al. (2025) <doi:10.1371/journal.pcbi.1013420>.")
     (license license:expat)))
 
 (define-public r-paramhetero
@@ -48127,31 +48456,38 @@ psycholinguistics, computational linguistics, and natural language processing
 (define-public r-panglm
   (package
     (name "r-panglm")
-    (version "1.1.4")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "panglm" version))
        (sha256
-        (base32 "0rw1q6x5clf1h1llsbc07xgaywp6sygpf80mvyamj79s6gz82qkk"))))
+        (base32 "1v4hbr4zvg428i0fk76hgybg67kiqq950n3jnirrrh6rzam4056k"))))
     (properties `((upstream-name . "panglm")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcppparallel r-rcpparmadillo r-rcpp
-                             r-data-table))
+    (propagated-inputs (list r-rcppparallel r-rcpparmadillo r-rcpp))
     (native-inputs (list r-knitr))
-    (home-page "https://CRAN.R-project.org/package=panglm")
+    (home-page "https://elbadisyimad.com/panglm/")
     (synopsis "Generalized Linear Models for Panel Data")
     (description
      "This package provides generalized linear models for panel data, including
-pooled, fixed-effects, and random-effects estimators for continuous, binary, and
-count outcomes.  Offers a unified interface for fitting and analysing panel
-regression models, with efficient computation for large datasets.  Estimators
-and tests follow standard panel-data references, including Hausman (1978)
-<doi:10.2307/1913827>, Chamberlain (1980) <doi:10.2307/2297110>, Allison and
-Waterman (2002) <doi:10.1111/1467-9531.00117>, and Croissant and Millo (2008)
+pooled, fixed-effects, and random-effects estimators for continuous, binary,
+count, ordinal, positive (gamma), and bounded (beta) outcomes, with the
+fixed-effects ordered logit of Baetschmann, Staub and Winkelmann (2015)
+<doi:10.1111/rssa.12090> and beta regression (Ferrari and Cribari-Neto 2004)
+<doi:10.1080/0266476042000214501>.  Also offers correlated random effects
+(Mundlak 1978) <doi:10.2307/1913646>, dynamic models with the Wooldridge (2005)
+<doi:10.1002/jae.770> initial conditions solution, observation weights, average
+partial effects, regression-spline curves and linearity tests,
+difference-in-differences and event studies, and two-part models for costs (Duan
+et al.  1983) <doi:10.1080/07350015.1983.10509330>, including correlated random
+intercepts (Van Ourti 2004) <doi:10.1002/hec.920>.  Estimators and tests follow
+standard panel-data references, including Hausman (1978) <doi:10.2307/1913827>,
+Chamberlain (1980) <doi:10.2307/2297110>, Allison and Waterman (2002)
+<doi:10.1111/1467-9531.00117>, and Croissant and Millo (2008)
 <doi:10.18637/jss.v027.i02>.  Core numerical routines are implemented using
 Rcpp', @code{RcppArmadillo}', and @code{RcppParallel}'.")
     (license license:expat)))
@@ -48310,13 +48646,13 @@ Record harmonization.")
 (define-public r-paneltm
   (package
     (name "r-paneltm")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PanelTM" version))
        (sha256
-        (base32 "0wajbkmnx8c17blbiwnp2vw2aciqsjnl25dlljgb7hs4shjspja0"))))
+        (base32 "0labip3yfm7s5hrr4qabq7laymy5n3hafjgnbl2va6nqxiy6r7rv"))))
     (properties `((upstream-name . "PanelTM")))
     (build-system r-build-system)
     (arguments
@@ -48327,25 +48663,29 @@ Record harmonization.")
     (synopsis
      "Two- And Three-Way Dynamic Panel Threshold Regression Model for Change Point Detection")
     (description
-     "Estimation of two- and three-way dynamic panel threshold regression models (Di
-Lascio and Perazzini (2024) <https://repec.unibz.it/bemps104.pdf>; Di Lascio and
-Perazzini (2022, ISBN:978-88-9193-231-0); Seo and Shin (2016)
-<doi:10.1016/j.jeconom.2016.03.005>) through the generalized method of moments
-based on the first difference transformation and the use of instrumental
-variables.  The models can be used to find a change point detection in the time
-series.  In addition, random number generation is also implemented.")
+     "Estimation of two-way and three-way dynamic panel threshold regression models
+using the first-differenced instrumental-variable generalized method of moments
+(FD-IV-GMM) estimator.  The implementation builds on Seo and Shin (2016)
+<doi:10.1016/j.jeconom.2016.03.005> and Di Lascio and Perazzini (2026)
+<doi:10.1007/s10260-026-00842-3>.  The models accommodate time-varying exogenous
+and endogenous regressors and allow the lagged dependent variable to serve as
+the threshold variable.  The package includes a bootstrap-based test for
+threshold effects, a procedure for identifying change points in individual time
+series, functions for simulating two-way and three-way panel data with regime
+changes, and tools for evaluating estimator performance through bias and root
+mean squared error measures.")
     (license license:gpl2+)))
 
 (define-public r-paneltests
   (package
     (name "r-paneltests")
-    (version "1.0.6")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "paneltests" version))
        (sha256
-        (base32 "1sysjdkvpx3jmqdbzjz32b1pvnqdwsf9hw3ixpxy94hzzk2jyyr6"))))
+        (base32 "0hz3g2vbgji6zg610y8xfb3y1s2qpi137sb0sxl1jm51afh4l5ar"))))
     (properties `((upstream-name . "paneltests")))
     (build-system r-build-system)
     (arguments
@@ -48438,36 +48778,26 @@ variable without external manipulation.")
 (define-public r-panelselect
   (package
     (name "r-panelselect")
-    (version "1.0.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PanelSelect" version))
        (sha256
-        (base32 "159axi8536l6widgzwkpsvqmzknsnl0rdpb6mzr8qxb2n7sj0chn"))))
+        (base32 "15v0ii1xdppwhj7m9q4lvp40sslbmwg3nw29sz8rpw1zfn8pqa5w"))))
     (properties `((upstream-name . "PanelSelect")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-statmod
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-pbv
-                             r-pbivnorm
-                             r-panelcount
-                             r-maxlik
-                             r-mass
-                             r-data-table))
+    (propagated-inputs (list r-statmod r-rcpparmadillo r-rcpp r-pbivnorm))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=PanelSelect")
     (synopsis "Panel Sample Selection Models")
     (description
-     "Extends the Heckman selection framework to panel data with individual random
-effects.  The first stage models participation via a panel Probit specification,
-while the second stage can take a panel linear, Probit, Poisson, or Poisson
-log-normal form.  Model details are provided in Bailey and Peng (2025)
-<doi:10.2139/ssrn.5475626> and Peng and Van den Bulte (2024)
+     "Fits sample selection models with continuous, binary, and count outcomes in
+panel and cross-sectional data.  Model details are provided in Bailey and Peng
+(2025) <doi:10.2139/ssrn.5475626> and Peng and Van den Bulte (2024)
 <doi:10.1287/mnsc.2019.01897>.")
     (license license:gpl3+)))
 
@@ -49181,6 +49511,58 @@ documentation for more references.  Clustered data is plotted as a split heatmap
 allowing visualisation of representative \"group-clusters\" (medoids) in the data
 as separated fractions of the graph while those \"sub-clusters\" are visualised as
 a traditional heatmap based on hierarchical clustering.")
+    (license license:gpl3)))
+
+(define-public r-pameasures
+  (package
+    (name "r-pameasures")
+    (version "2.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PAmeasures" version))
+       (sha256
+        (base32 "0kp07m8sfi16428y0nz17n6kwqalrbb3lw4wwgvjjcq824amdym1"))))
+    (properties `((upstream-name . "PAmeasures")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yardstick
+                             r-tidyr
+                             r-tibble
+                             r-tdroc
+                             r-survivalroc
+                             r-survival
+                             r-purrr
+                             r-prodlim
+                             r-pmcalibration
+                             r-pec
+                             r-patchwork
+                             r-magrittr
+                             r-hmisc
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://github.com/Larryzza/PAmeasures")
+    (synopsis "Performance Assessment for Continuous and Survival Outcomes")
+    (description
+     "Evaluates prediction accuracy for continuous outcomes and the predictive
+performance of survival models in a unified framework.  Implements the
+R-squared, L-squared, pseudo R-squared and related explained variation measures
+of Li and Wang (2019) <doi:10.1080/01621459.2018.1515079>, the concordance
+indices of Harrell et al. (1982) <doi:10.1001/jama.1982.03320430047030> and Uno
+et al. (2011) <doi:10.1002/sim.4154>, the time-dependent area under the receiver
+operating characteristic curve (AUC) of Heagerty, Lumley and Pepe (2000)
+<doi:10.1111/j.0006-341X.2000.00337.x>, and the Brier score of Graf et al.
+(1999)
+<doi:10.1002/(SICI)1097-0258(19990915/30)18:17/18%3C2529::AID-SIM274%3E3.0.CO;2-5>.
+ Supports right-censored data; competing risks, following Wolbers et al. (2014)
+<doi:10.1093/biostatistics/kxt059>, Wu and Li (2018) <doi:10.1002/sim.7806> and
+Zhuang et al. (2025) <doi:10.48550/@code{arXiv.2507.15040>}; and two-phase
+sampling designs such as case-cohort and nested case-control studies, following
+Lee, Zeleniuch-Jacquotte and Liu (2021) <doi:10.1080/02664763.2020.1861225>.
+Revives and expands the original PAmeasures package with a unified interface for
+survival prediction assessment.")
     (license license:gpl3)))
 
 (define-public r-pambinaries
@@ -50350,13 +50732,13 @@ further factors.  CI are not adjusted for multiplicity.")
 (define-public r-pairwise
   (package
     (name "r-pairwise")
-    (version "0.6.2-0")
+    (version "0.6.4-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pairwise" version))
        (sha256
-        (base32 "1hb95rb47vnihcw8d05kasg33y5gil558rx0n4fb9vxl9lglb33z"))))
+        (base32 "1xbm7rw5xfligdgz1lf97sfpx4cy9g4sj183qzp0hvs815v571dm"))))
     (properties `((upstream-name . "pairwise")))
     (build-system r-build-system)
     (arguments
@@ -51833,6 +52215,34 @@ probabilities, estimating semi-parametric regression models and for implementing
 nonparametric estimators for other quantities.  See Meira-Machado and
 Roca-PardiÃ±as (2011) <doi:10.18637/jss.v038.i03>.")
     (license license:gpl3)))
+
+(define-public r-p3d
+  (package
+    (name "r-p3d")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "p3d" version))
+       (sha256
+        (base32 "0j2sas8p2djbkf263y6xpln28xzhdlmigmz32fbgkrw10qn2fxh9"))))
+    (properties `((upstream-name . "p3d")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ahmetkutuk1/p3d")
+    (synopsis "Interactive 3D Visualization of p-Value Surfaces")
+    (description
+     "This package provides interactive three-dimensional visualization of p-value
+surfaces for single-sample t-tests.  Enables simultaneous exploration of effect
+size, sample size, and significance level, making the continuous nature of
+p-values and the moderating effect of sample size visually apparent.  Includes
+both interactive ('rgl', plotly') and static @code{(persp()}) rendering options.
+ The p-value surface is based on the approach of Infanger and Schmidt-TrucksÃ¤ss
+(2019) <doi:10.1002/sim.8293>.")
+    (license license:gpl3+)))
 
 (define-public r-p2oncology
   (package

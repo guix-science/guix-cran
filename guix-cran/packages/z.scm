@@ -5,6 +5,7 @@
   #:use-module ((guix licenses)
                 #:prefix license:)
   #:use-module (gnu packages cran)
+  #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages compression)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -60,6 +61,36 @@ beyond double precision are preserved rather than silently rounded.  A stream of
 documents and a sequence are different things, and the interface keeps them
 apart.  Input size, nesting depth and the number of values materialised are all
 bounded, which makes the parser usable on untrusted input.")
+    (license license:expat)))
+
+(define-public r-zuxml
+  (package
+    (name "r-zuxml")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "zuxml" version))
+       (sha256
+        (base32 "166anvlcxvw6101qks4hhb6ihvphz7jxp0xxfcb5zv5nwbrqb67r"))))
+    (properties `((upstream-name . "zuxml")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/pedrobtz/zuxml")
+    (synopsis "Small XML Parser and Document Tree")
+    (description
+     "Reads, navigates, and writes XML documents using a bundled copy of the Expat
+parser (<https://libexpat.github.io/>), so that no system XML library is
+required.  Documents are parsed into a faithful immutable tree exposed through a
+small vectorized navigation interface.  Parsing is strict by default: document
+type declarations are rejected, external entity resolution is not compiled in,
+and configurable limits bound nesting depth and memory use.  A registered C
+interface allows other packages to parse XML without linking against the parser
+themselves, and to feed it incrementally so that a large document need not be
+held in memory all at once.")
     (license license:expat)))
 
 (define-public r-zukomp
@@ -349,27 +380,29 @@ principal component analysis plots, and prediction plots.")
 (define-public r-zstd
   (package
     (name "r-zstd")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "zstd" version))
        (sha256
-        (base32 "1jcanl172k4d2jsmr24yl3rsxgkswxfdx95jj5cvdpv0cwjmla2y"))))
+        (base32 "0p6bwb5hqgs7qlv6086vch0s8xvjf7xirsij1n099j342qzsqn0w"))))
     (properties `((upstream-name . "zstd")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (inputs (list zlib))
+    (native-inputs (list pkg-config))
     (home-page "https://github.com/r-lib/zstd")
     (synopsis "Zstandard Compression")
     (description
      "Compress and decompress data with the Zstandard algorithm
-<https://facebook.github.io/zstd/>, a fast lossless compression format.  Works
-on raw vectors in memory and on files, and can create and extract zstd
-compressed tar archives.  Supports compression levels, multithreaded
-compression, long distance matching, content checksums, and training
-dictionaries for better compression of small, similar inputs.")
+<https://meta.github.io/zstd/>, a fast lossless compression format.  Works on
+raw vectors in memory and on files, and can create and extract zstd compressed
+tar archives.  Supports compression levels, multithreaded compression, long
+distance matching, content checksums, and training dictionaries for better
+compression of small, similar inputs.")
     (license license:expat)))
 
 (define-public r-zoter
@@ -401,13 +434,13 @@ bibliography files.  Includes an RStudio addin for interactive use.")
 (define-public r-zot
   (package
     (name "r-zot")
-    (version "0.1.2")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "zot" version))
        (sha256
-        (base32 "1hq9ih4ldx6k3rjhrbqkkk2r0yaz33mm0ph87qdi12iyihsz55bd"))))
+        (base32 "0yywp99ixcdbdp3vr4pdq9f6z30pbshilvlmmak10zsgpkca4bxl"))))
     (properties `((upstream-name . "zot")))
     (build-system r-build-system)
     (arguments
@@ -420,14 +453,13 @@ bibliography files.  Includes an RStudio addin for interactive use.")
                              r-dbi
                              r-data-table))
     (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://averriK.github.io/zot/")
+    (home-page "https://kanameishi.github.io/zot/")
     (synopsis "Access 'Zotero' Libraries")
     (description
      "Interface to the Zotero reference manager <https://www.zotero.org> through its
 public web API and local client database.  Provides paginated reads, versioned
 writes, read-only local queries, batch plans and resumable ledgers,
-bibliographic comparison, metadata mapping, file attachment, and optional
-semantic-index queries.")
+bibliographic comparison, metadata mapping, and file attachment.")
     (license license:expat)))
 
 (define-public r-zoorisk
@@ -732,13 +764,13 @@ non-finite values.")
 (define-public r-zmctp
   (package
     (name "r-zmctp")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "zmctp" version))
        (sha256
-        (base32 "0w5cc6p3ilyp75ihza4n3dycd430z0bf1ni5rww2nlq4na618gi0"))))
+        (base32 "0sx1lzrlbasy92zcbvqcxgqvx6k2qn41rai0kzrcf8cif97y8f1a"))))
     (properties `((upstream-name . "zmctp")))
     (build-system r-build-system)
     (arguments
@@ -749,12 +781,12 @@ non-finite values.")
     (synopsis
      "Zero-Modified Complex 'Tri-Parametric' Pearson Distribution for Overdispersed Count Data")
     (description
-     "This package implements zero-modified versions of the Complex Tri-Parametric
-Pearson distribution for overdispersed count data.  The package addresses
-limitations of existing implementations when the parameter b approaches zero.
-It provides distribution functions, maximum likelihood estimation, and
-diagnostic tools for modeling count data with excess zeros.  The methodology is
-based on Rodriguez-Avi and coauthors (2003) <doi:10.1007/s00362-002-0134-7>.")
+     "This package provides probability, distribution, quantile and random-generation
+functions for the complex three-parameter Pearson distribution and its
+zero-inflated extension.  Maximum likelihood fitting uses analytic profiling of
+the mixing probability, multiple starting points and numerical boundary
+diagnostics.  The parent family is described in the 2003 study
+<doi:10.1007/s00362-002-0134-7>.")
     (license license:gpl3)))
 
 (define-public r-zlib
@@ -1279,6 +1311,32 @@ and Hurdle INAR(1) (H-INAR(1)) models using Stan'.  It allows users to simulate
 time series data for these models, estimate parameters, and evaluate model fit
 using various criteria.  Functions include model estimation, simulation, and
 likelihood-based metrics.")
+    (license license:gpl3)))
+
+(define-public r-zigimports
+  (package
+    (name "r-zigimports")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "zigimports" version))
+       (sha256
+        (base32 "1xf8hfkrljkycszy30wdn52niqxk4fpdjzly91g34m0nkxizsn63"))))
+    (properties `((upstream-name . "zigimports")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/lokop5116/zigimports")
+    (synopsis "Call 'Zig' Code from R")
+    (description
+     "Loads shared libraries compiled from Zig ('.so files on Linux, .dll files on
+Windows) and binds their exported functions to R functions.  Arguments are
+passed by value using the native calling convention, so functions with mixed
+integer, double, logical, string and vector arguments and with return values can
+be called.  Also compiles and runs Zig code directly from R. Compiling code
+requires the Zig compiler.")
     (license license:gpl3)))
 
 (define-public r-zidw

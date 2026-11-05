@@ -185,13 +185,13 @@ channel including geography, traffic sources, time period, etc.")
 (define-public r-yrnd
   (package
     (name "r-yrnd")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "yrnd" version))
        (sha256
-        (base32 "1wqp2c8a8qjg37falmn2h6561nsbqk35faxnj48hda0bxvzh2x05"))))
+        (base32 "19v24mmny0bn8xcw04aqwvb99rd9l861805gbx5xjx55g7f1286w"))))
     (properties `((upstream-name . "yrnd")))
     (build-system r-build-system)
     (arguments
@@ -213,7 +213,7 @@ channel including geography, traffic sources, time period, etc.")
      "Extracts Risk Neutral Densities of Prices, Money Market Rates and Government Bond Yields from Interest Rates Futures Options Prices")
     (description
      "This package provides with parametric Risk Neutral Densities (RNDs) and
-cumulative densities of futures prices on fixed-income products.  It relies on
+cumulative densities of futures prices on fixed-income products, relying on
 options on Short Term Interest Rate futures or options on government bond
 futures.  It models the futures price at options maturity as a mixture of
 lognormal densities.  Leveraging on this, the package provides with the RNDs and
@@ -225,11 +225,12 @@ and the RND of the ctd bond yield at options maturity.  The package also
 provides with the probability attached to each bond in the delivery basket of a
 government bond futures to be the cheapest at options maturity from an
 examination of either the implied repo rate or the net basis of bonds in the
-delivery basket.  At last, the package provides with the non parametric
-distribution of the spread between two bond yields, using two RNDs based on
-options on bond futures of the same maturity.  The package leverages on the
-works of Melick, W. R. and Thomas, C. P. (1997) <doi:10.2307/2331318> and B.
-Bahra (1998) <doi:10.2139/ssrn.77429>.")
+delivery basket, as well as the value of the quality option embedded in the
+futures contract.  At last, the package provides with the non parametric
+distribution of the spread between either two bond yields or two bond repo
+rates, using two RNDs based on options on bond futures of the same maturity.
+The package leverages on the works of Melick, W. R. and Thomas, C. P. (1997)
+<doi:10.2307/2331318> and B. Bahra (1998) <doi:10.2139/ssrn.77429>.")
     (license license:gpl3)))
 
 (define-public r-ypr
@@ -1165,13 +1166,13 @@ packages taxlist and vegtable'.")
 (define-public r-yamlet
   (package
     (name "r-yamlet")
-    (version "1.3.4")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "yamlet" version))
        (sha256
-        (base32 "1l7iasb19vd78hgkciwqab1p0m8x651i2fdvzjy1kc27pallmn1x"))))
+        (base32 "065qdjx9ha6qin21v6v1x9r09dl15frw8r8qp9qdv57m638ln99w"))))
     (properties `((upstream-name . "yamlet")))
     (build-system r-build-system)
     (arguments

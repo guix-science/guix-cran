@@ -1729,13 +1729,13 @@ RÂ².")
 (define-public r-bufferscape
   (package
     (name "r-bufferscape")
-    (version "1.0.3")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bufferscape" version))
        (sha256
-        (base32 "0cz3waggsjx2xi4pwcb78hrcigfp8n1kzrppiiadjyvccx8zn7mi"))))
+        (base32 "13bl0gn41n2kdpzwxwjm7rr61hqg27qng1swrm5whb41hipql1zz"))))
     (properties `((upstream-name . "bufferscape")))
     (build-system r-build-system)
     (arguments
@@ -4189,6 +4189,33 @@ score variance and beta=error variance (Tanzer & Harlow, 2020)
 <doi:10.1080/00273171.2020.1854082>.")
     (license license:expat)))
 
+(define-public r-brvmr
+  (package
+    (name "r-brvmr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "brvmr" version))
+       (sha256
+        (base32 "0l6a1siyrkdrslsfyhmggsf7sf0claq0b8f9iwvq62809ijb19zl"))))
+    (properties `((upstream-name . "brvmr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite))
+    (home-page "https://github.com/harzat/brvmr")
+    (synopsis "Free Access to BRVM Stock Market Data")
+    (description
+     "Light client to read prices, indices and dividends of the Bourse Regionale des
+Valeurs Mobilieres (BRVM, West African stock exchange) from the public mirror
+harzat/brvm-data-public of BRVMetrics.  The package ships no data: it is
+downloaded at call time.  Data remain the property of their sources (BRVM,
+@code{SikaFinance}, @code{RicheBourse}), with no guarantee of accuracy.  This is
+not investment advice.")
+    (license license:expat)))
+
 (define-public r-bruno
   (package
     (name "r-bruno")
@@ -6223,13 +6250,13 @@ to reach typical significance levels: @code{brQCA()}.  Data included come from
 (define-public r-brapir2
   (package
     (name "r-brapir2")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "brapiR2" version))
        (sha256
-        (base32 "1ygbp98bycznahradiql9d8vrin79p9sqrkx51dw8sj28v48n5yc"))))
+        (base32 "1bj7fzs0xnj7xh573q6n6b0y8aqdlfmhj1iqdyif4nx92jznw36j"))))
     (properties `((upstream-name . "brapiR2")))
     (build-system r-build-system)
     (arguments
@@ -9249,26 +9276,19 @@ clustering method.")
 (define-public r-boot-pval
   (package
     (name "r-boot-pval")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "boot.pval" version))
        (sha256
-        (base32 "18b2d3ckspmgdy0li48c83q5kgdgril7q18ssgn1mhkhsapm6pcw"))))
+        (base32 "0wzjlsra2zyxw9k76k0cd2jspl70yrxby2821zgpgc2py4hkqd10"))))
     (properties `((upstream-name . "boot.pval")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-survival
-                             r-rms
-                             r-rdpack
-                             r-lme4
-                             r-gt
-                             r-flextable
-                             r-car
-                             r-boot))
+    (propagated-inputs (list r-rdpack r-car r-boot))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mthulin/boot.pval")
     (synopsis "Bootstrap p-Values")
@@ -10038,6 +10058,35 @@ Return.  CFA Institute (\"CFA Program Curriculum 2020 Level I Volumes 1-6. (Vol.
 (\"Handbook of Finance: Financial Markets and Instruments\", 2008, ISBN:
 9780470078143).  Frank J. Fabozzi (\"Fixed Income Analysis\", 2007, ISBN:
 9780470052211).")
+    (license license:gpl3)))
+
+(define-public r-boltzrosen
+  (package
+    (name "r-boltzrosen")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "boltzrosen" version))
+       (sha256
+        (base32 "0pzhxzpxhhgc9mhzhf3dwz0fgrbinlmxb7x59vm4x2hr50nzw21f"))))
+    (properties `((upstream-name . "boltzrosen")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=boltzrosen")
+    (synopsis "Boltzmann-Rosenbrock Distribution and Associated Copula")
+    (description
+     "This package provides the probability density function, cumulative distribution
+function, quantile function, and random sample generation for the
+Boltzmann-Rosenbrock distribution.  The package also includes functions for the
+marginal distributions of X and Y, the mutual information between the two
+components, and the copula associated with the distribution, including its
+density, distribution function, and sampling routines.  The use of Boltzmann
+distribution in objective functions, such as the Rosenbrock function, is
+described in Segovia-DomÃ­nguez, I., Valdez, S.I. and HernÃ¡ndez-Aguirre, A.
+(2014) <doi:10.5220/0005079902510258>.")
     (license license:gpl3)))
 
 (define-public r-boltzmm
@@ -11751,6 +11800,38 @@ The BEKK parameterization follows Engle and Kroner (1995)
 estimation approach for this package is described in Rast et al. (2020)
 <doi:10.31234/osf.io/j57pk>.  The fitted models contain rstan objects and can be
 examined with rstan functions.")
+    (license license:gpl3+)))
+
+(define-public r-bmetapred
+  (package
+    (name "r-bmetapred")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bmetapred" version))
+       (sha256
+        (base32 "01pckz36xzav46fz487k01kvqliw8mzh2mjanx4qgn850afh5cli"))))
+    (properties `((upstream-name . "bmetapred")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-loo r-future-apply r-future r-brms))
+    (home-page "https://cran.r-project.org/package=bmetapred")
+    (synopsis "Bayesian Meta-Prediction in the Presence of Prediction Error")
+    (description
+     "Fits pseudo-Bayesian Model Averaging (@code{pBMA}) and Bayesian Stacking
+ensembles of linear meta-models while explicitly accounting for the prediction
+errors of the individual models, building on the Bayesian Stacking of predictive
+distributions framework of Yao et al. (2018) <doi:10.1214/17-BA1091>.  When
+native uncertainty estimates are unavailable, it provides tools to estimate
+heteroscedastic errors via Local Polynomial Regression (LOESS).  The meta-model
+space is explored using exhaustive search, a Markov Chain Monte Carlo Model
+Composition (MC3) algorithm following Madigan and Raftery (1994)
+<doi:10.1080/01621459.1994.10476894> when @code{pBMA} is selected, or a
+tabu-guided heuristic search with parallel tempering when bayesian stacking is
+selected, all powered by brms (BÃ¼rkner, 2017 <doi:10.18637/jss.v080.i01>).")
     (license license:gpl3+)))
 
 (define-public r-bmet
@@ -13692,13 +13773,13 @@ is also available.  Grollemund P-M., Abraham C., Baragatti M., Pudlo P. (2019)
 (define-public r-blisa
   (package
     (name "r-blisa")
-    (version "1.0.0")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "blisa" version))
        (sha256
-        (base32 "1b6cjfdjpk6yan3yjf9cm6m7c91p9p08bi9pwa6gnv8nvij4n83q"))))
+        (base32 "14i6ygpdbiawddc283q12rv7hwgwcnhnqb97jpvljffkq3kwybb2"))))
     (properties `((upstream-name . "blisa")))
     (build-system r-build-system)
     (arguments
@@ -13722,35 +13803,6 @@ using bivariate Local Moran's I statistics on hexagonally binned cells.
 Provides functions for spatial weighting, ligand-receptor pair filtering,
 hotspot detection, and visualisation of sender-receiver cell-type interactions.")
     (license license:gpl3+)))
-
-(define-public r-blink
-  (package
-    (name "r-blink")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "blink" version))
-       (sha256
-        (base32 "053nw592sglzh6fgz7hj8ra6q7lqs83hhv14kcgs67b56q8a3crb"))))
-    (properties `((upstream-name . "blink")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringdist r-plyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=blink")
-    (synopsis "Record Linkage for Empirically Motivated Priors")
-    (description
-     "An implementation of the model in Steorts (2015) <DOI:10.1214/15-BA965SI>, which
-performs Bayesian entity resolution for categorical and text data, for any
-distance function defined by the user.  In addition, the precision and recall
-are in the package to allow one to compare to any other comparable method such
-as logistic regression, Bayesian additive regression trees (BART), or random
-forests.  The experiments are reproducible and illustrated using a simple
-vignette.  LICENSE: GPL-3 + file license.")
-    (license license:gpl3)))
 
 (define-public r-blindspiker
   (package
@@ -14676,13 +14728,13 @@ high-contrast colour system.")
 (define-public r-bjm
   (package
     (name "r-bjm")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BJM" version))
        (sha256
-        (base32 "0piizy8dm3fmpipdxg7c1iacnxdr7j017rc1hiyn4m1s2z2xiqqc"))))
+        (base32 "01pxpxijdb64374357pl6splqyz4wrs9zi7arvyv9canf6f9dfjr"))))
     (properties `((upstream-name . "BJM")))
     (build-system r-build-system)
     (arguments
@@ -14690,7 +14742,7 @@ high-contrast colour system.")
       #:tests? #f))
     (propagated-inputs (list r-survival r-nlme r-mvtnorm r-matrix r-ggplot2))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=BJM")
+    (home-page "https://wenhaoli18.github.io/BJM/")
     (synopsis
      "Backward Joint Model for the Dynamic Prediction of Both Time-to-Event and Longitudinal Outcomes")
     (description
@@ -14700,7 +14752,10 @@ prediction of both future time-to-event outcomes and future longitudinal
 outcomes conditional on survival.  The models accommodate irregularly measured
 longitudinal data and competing risks outcomes.  The use of the backward joint
 model enables fast and efficient computation, especially for applications with
-large sample sizes and many longitudinal variables.")
+large sample sizes and many longitudinal variables.  Methods without competing
+risks are described in Shen and Li (2021) <doi:10.1002/sim.9037>, and their
+extension to competing risks is described in Li et al. (2026)
+<doi:10.1007/s10985-026-09725-x>.")
     (license license:expat)))
 
 (define-public r-bizicount
@@ -14746,13 +14801,13 @@ DMS-1925119 and DMS-212324.")
 (define-public r-bizdays
   (package
     (name "r-bizdays")
-    (version "1.0.17")
+    (version "1.0.18")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bizdays" version))
        (sha256
-        (base32 "10jfzqpmvx82glkvkjb6qr6v9dc1gjnngycy78krsrd0afpwfv3z"))))
+        (base32 "11xmwjsr73w271by0kyybynp6rq49id2cjxmwx1n5dbxl63xy9wz"))))
     (properties `((upstream-name . "bizdays")))
     (build-system r-build-system)
     (arguments
@@ -14760,7 +14815,7 @@ DMS-1925119 and DMS-212324.")
       #:tests? #f))
     (propagated-inputs (list r-jsonlite))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/wilsonfreitas/R-bizdays")
+    (home-page "http://wilsonfreitas.github.io/R-bizdays/")
     (synopsis "Business Days Calculations and Utilities")
     (description
      "Business days calculations based on a list of holidays and nonworking weekdays.
@@ -15648,13 +15703,13 @@ curve under the two-parameter logistic model.")
 (define-public r-birp
   (package
     (name "r-birp")
-    (version "0.9.0")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "birp" version))
        (sha256
-        (base32 "024jq8gb4s8lr9dlid7d6n2s1sn2f4ba40kl517765s5cm0ccp68"))))
+        (base32 "0hl17vkkqanqqnisrzfbv70f4hx6l2q65zg5m6b1azr64mzk40rw"))))
     (properties `((upstream-name . "birp")))
     (build-system r-build-system)
     (arguments
@@ -17938,32 +17993,6 @@ on predictive microbiology (See Perez-Rodriguez and Valero (2012,
 ISBN:978-1-4614-5519-6)).")
     (license license:gpl3)))
 
-(define-public r-biogram
-  (package
-    (name "r-biogram")
-    (version "1.6.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "biogram" version))
-       (sha256
-        (base32 "1y7yaa6xwv11b6a4qf4qb3d7rsz0yiiq1k5mb0dbm3avydnl9c4b"))))
-    (properties `((upstream-name . "biogram")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-slam r-partitions r-entropy r-combinat))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/michbur/biogram")
-    (synopsis "N-Gram Analysis of Biological Sequences")
-    (description
-     "This package provides tools for extraction and analysis of various n-grams
-(k-mers) derived from biological sequences (proteins or nucleic acids).
-Contains @code{QuiPT} (quick permutation test) for fast feature-filtering of the
-n-gram data.")
-    (license license:gpl3)))
-
 (define-public r-biogeom
   (package
     (name "r-biogeom")
@@ -18164,30 +18193,31 @@ ISBN:978-0-387-95364-9).")
 (define-public r-biodry
   (package
     (name "r-biodry")
-    (version "0.9.1")
+    (version "0.9.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BIOdry" version))
        (sha256
-        (base32 "1mgq1xl5nm9ciciacic881i1p32h21mzqs8fc441khsccb44fw89"))))
+        (base32 "0mdvqv0fmx661a0bampwciskv4b8i49w2g80ik3qpaxjf8xkl1m1"))))
     (properties `((upstream-name . "BIOdry")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-nlme r-ecodist))
+    (propagated-inputs (list r-nlme r-lattice r-ecodist))
     (home-page "https://cran.r-project.org/package=BIOdry")
     (synopsis "Multilevel Modeling of Dendroclimatical Fluctuations")
     (description
-     "Multilevel ecological data series (MEDS) are sequences of observations ordered
-according to temporal/spatial hierarchies that are defined by sample designs,
-with sample variability confined to ecological factors.  Dendroclimatic MEDS of
-tree rings and climate are modeled into normalized fluctuations of tree growth
-and aridity.  Modeled fluctuations (model frames) are compared with Mantel
-correlograms on multiple levels defined by sample design.  Package
-implementation can be understood by running examples in @code{modelFrame()}, and
-@code{muleMan()} functions.")
+     "Processes multilevel ecological data series (MEDS) arranged in temporal or
+spatial hierarchies defined by sampling designs.  The package recursively
+applies one-level stage functions to long-format tree-ring and climate data,
+then optionally fits a terminal model to the processed series.  Terminal fits
+currently include mixed-effects detrending through nlme and Friedman
+supersmoother detrending through @code{supsmu()} of stats'.  The package also
+supports post-detrending comparison and inference tools for multilevel
+dendroclimatic analyses.  The method is described in Lara et al. (2018)
+<doi:10.1371/journal.pone.0196923>.")
     (license license:gpl3)))
 
 (define-public r-biodiversityr
@@ -19956,26 +19986,26 @@ and forecast, optimal control, by A. Luciani (2022)
 (define-public r-bimaumisc
   (package
     (name "r-bimaumisc")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BiMaUmisc" version))
        (sha256
-        (base32 "1v0dd1ifcrv5xlvmp17i3i1p03k9xcphl9j2h4m8lzx0l9hi5r97"))))
+        (base32 "1spq61539j89hrqi4kbbbkczxp7kb2svzlfydv5xgxpshkmf6pxn"))))
     (properties `((upstream-name . "BiMaUmisc")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-survival r-plotfunctions r-latex2exp r-exams))
-    (home-page "https://cran.r-project.org/package=BiMaUmisc")
+    (home-page "https://github.com/BiMaU-PCCB/BiMaUmisc")
     (synopsis "BiMaU Miscellaneous")
     (description
      "This package contains a function to plot publication-ready survival curves using
 the Kaplan-Meier method (1958) <doi:10.2307/2281868>, a function to format
 p-values, and a function to automatically select statistical tests for comparing
-continuous variables between groups, which are useful for repetitive analyses.
+quantitative variables between groups, which are useful for repetitive analyses.
 @code{BiMaU} stands for the Biostatistics and Mathematics Research Unit at the
 Sant Joan de DÃ©u - Pediatric Cancer Center Barcelona
 <https://github.com/@code{BiMaU-PCCB>}.")
@@ -20538,13 +20568,13 @@ for dense or sparse matrices.")
 (define-public r-bigpopa
   (package
     (name "r-bigpopa")
-    (version "2.2.0")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BIGpopA" version))
        (sha256
-        (base32 "0z6w7a5nvi6zhw7gm163dw7hsl034f0h31i8rqpd2pl699zs5dsf"))))
+        (base32 "1xyjkjjavglhgzy3b7jd98565f4dk5d2r46m2xcr8krnr1jx26ib"))))
     (properties `((upstream-name . "BIGpopA")))
     (build-system r-build-system)
     (arguments
@@ -21254,6 +21284,51 @@ firewalls.  Generates the complete meta-package scaffold, including installation
 helpers, vignettes and documentation.")
     (license license:gpl3+)))
 
+(define-public r-bigarx
+  (package
+    (name "r-bigarx")
+    (version "0.5.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BiGaRx" version))
+       (sha256
+        (base32 "1n5l170gzl2gzf5d7qgw967v19m39v0nfbq79yzdj197sdiwwgy0"))))
+    (properties `((upstream-name . "BiGaRx")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=BiGaRx")
+    (synopsis "Unified Classical and Canonical Biplots")
+    (description
+     "Classical and canonical biplots computed from a single singular value
+decomposition (SVD) engine.  Includes the two biplots of Gabriel (1971)
+<doi:10.1093/biomet/58.3.453>: the GH-biplot, named after its row markers G and
+column markers H, which preserves the column metric (covariances and
+correlations between variables), and the JK-biplot, named after its row markers
+J and column markers K, which preserves the row metric (distances between
+individuals).  Also includes the HJ-biplot of Galindo (1986)
+<https://upcommons.upc.edu/entities/publication/e17797dd-e20b-4fe5-b34a-f4cde41695ed>,
+which combines the row markers J and the column markers H so that rows and
+columns are both represented with maximum quality.  Options include configurable
+preprocessing, supplementary rows and columns, quality of representation,
+contributions, goodness of fit, bootstrap confidence intervals following Nieto,
+Galindo, Leiva and Vicente-Galindo (2014) <doi:10.15446/rce.v37n2spe.47944>, and
+imputation of missing values by iterative low-rank approximation following
+Gabriel and Zamir (1979) <doi:10.1080/00401706.1979.10489819>.  The canonical
+biplot, also known as the multivariate analysis of variance (MANOVA) biplot,
+follows Amaro, Vicente-Villardon and Galindo (2004)
+<https://www.redalyc.org/pdf/339/33908807.pdf>.  It is available for one-way
+designs and for two-way designs with total, row, column and interaction biplots.
+ It comes with multivariate tests, pairwise comparisons with Hotelling's
+T-squared statistic, log-ratio transformations for compositional data and
+confidence regions for the group means.  The regions are circles or the ellipses
+of Krzanowski (1989) <doi:10.1093/biomet/76.1.107>, computed consistently in the
+scale of the within-groups covariance matrix.  Plots use base graphics or
+ggplot2'.")
+    (license license:gpl3+)))
+
 (define-public r-bigannoy
   (package
     (name "r-bigannoy")
@@ -21462,13 +21537,13 @@ School System; Salzburg, Austria).")
 (define-public r-bifactory
   (package
     (name "r-bifactory")
-    (version "0.6.0")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bifactory" version))
        (sha256
-        (base32 "06rnvxxcnjghbfh9kx0byv2ybn5v95wafn9inppqg0xxjjn2y7f4"))))
+        (base32 "16xs3rk0wckd5nxzzxb1l9liymirnsr4lly3vyjsbml812wlhvlr"))))
     (properties `((upstream-name . "bifactory")))
     (build-system r-build-system)
     (arguments
@@ -21489,7 +21564,7 @@ analysis (CFA), for continuous and ordinal data.  Continuous models use lavaan
 native @code{efa()} blocks with robust maximum likelihood (MLR) estimation.
 Ordinal ESEM defaults to the lavaan weighted least squares mean- and
 variance-adjusted (WLSMV) estimator; ordinal B-ESEM uses a custom diagonally
-weighted least squares (DWLS) path with polychoric correlations from psych',
+weighted least squares (DWLS) path with polychoric correlations from lavaan',
 rotation-delta standard errors via @code{numDeriv}', and a mean- and
 variance-adjusted chi-square.  Target, geomin, and oblimin rotations use
 GPArotation'; the bifactor ESEM approach follows Morin, Arens and Marsh (2016)
@@ -21573,13 +21648,13 @@ dictionary.  Works with both shiny applications and Quarto dashboards.")
 (define-public r-bidsr
   (package
     (name "r-bidsr")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bidsr" version))
        (sha256
-        (base32 "0nk1yqh4zkrzx18amjxhgp3amwicyk1inq178sppdgplqzxwkvkg"))))
+        (base32 "0yc0x7xagasn33rv3ynssjqbqkv2nic7jliljqnw6in1z35hwvin"))))
     (properties `((upstream-name . "bidsr")))
     (build-system r-build-system)
     (arguments
@@ -21976,20 +22051,24 @@ Song. (2021) <doi:10.1016/j.jclepro.2021.126943>.")
 (define-public r-biblionetwork
   (package
     (name "r-biblionetwork")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biblionetwork" version))
        (sha256
-        (base32 "0nhx9bk7r5l0bvj98clnmwf53ihghf48zai4nj6pcgr2rb69fvjj"))))
+        (base32 "1hd94pfsipsc6b5zjpm7xp5xmk0pa919dswwla6k448760rr60qc"))))
     (properties `((upstream-name . "biblionetwork")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rdpack r-data-table))
-    (native-inputs (list r-knitr))
+    (propagated-inputs (list r-rlang
+                             r-rdpack
+                             r-matrix
+                             r-lifecycle
+                             r-data-table
+                             r-cli))
     (home-page "https://github.com/agoutsmedt/biblionetwork")
     (synopsis "Create Different Types of Bibliometric Networks")
     (description
@@ -22001,10 +22080,11 @@ analyse.  These functions are optimized to be be used on large dataset.  The
 package contains functions inspired by: Leydesdorff, Loet and Park, Han Woo
 (2017) <doi:10.1016/j.joi.2016.11.007>; Perianes-Rodriguez, Antonio, Ludo
 Waltman, and Nees Jan Van Eck (2016) <doi:10.1016/j.joi.2016.10.006>; Sen, Subir
-K. and Shymal K. Gan (1983) <http://nopr.niscair.res.in/handle/123456789/28008>;
-Shen, Si, Zhu, Danhao, Rousseau, Ronald, Su, Xinning and Wang, Dongbo (2019)
-<doi:10.1016/j.joi.2019.01.012>; Zhao, Dangzhi and Strotmann, Andreas (2008)
-<doi:10.1002/meet.2008.1450450292>.")
+K. and Shymal K. Gan (1983) \"A mathematical extension of the idea of
+bibliographic coupling and its applications\", Annals of Library Science and
+Documentation 30(2); Shen, Si, Zhu, Danhao, Rousseau, Ronald, Su, Xinning and
+Wang, Dongbo (2019) <doi:10.1016/j.joi.2019.01.012>; Zhao, Dangzhi and
+Strotmann, Andreas (2008) <doi:10.1002/meet.2008.1450450292>.")
     (license license:expat)))
 
 (define-public r-bibliometrixdata
@@ -23241,13 +23321,13 @@ power and sample size calculations as described in Pawel and Held (2025)
 (define-public r-bfpack
   (package
     (name "r-bfpack")
-    (version "1.6.1")
+    (version "1.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BFpack" version))
        (sha256
-        (base32 "1qx1ii6d6khh013x5ky3y9qm7n783h5qhgf6xvdq30zcj7fznwx2"))))
+        (base32 "0q5ng1b08lzdj1kv9d944psnbh3d4ardfcdid5zlls3wki12ppkw"))))
     (properties `((upstream-name . "BFpack")))
     (build-system r-build-system)
     (arguments
@@ -23353,13 +23433,13 @@ methodological framework is detailed in Guo G. (2023)
 (define-public r-bfi
   (package
     (name "r-bfi")
-    (version "3.2.0")
+    (version "3.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BFI" version))
        (sha256
-        (base32 "03s9bjjk8lj35nn5l4lykkwy6rx398wrbsjmq8dayknmmrw6fh0r"))))
+        (base32 "1bn7rily9qxy0synhynns81wj2c8cdjx9wzgn19vxvmq9agmnaw0"))))
     (properties `((upstream-name . "BFI")))
     (build-system r-build-system)
     (arguments
@@ -23504,13 +23584,13 @@ Back Filling Design for dose escalation in early-phase oncology trials.")
 (define-public r-bfbin2arm
   (package
     (name "r-bfbin2arm")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bfbin2arm" version))
        (sha256
-        (base32 "1brr1afw73gk0cihhjxq8aa93qrdz92j40fzbkh9nskgr0ixdrp5"))))
+        (base32 "1rjv3f709rbdfx551q6wfrfzqqncq40zn1v7ikl4aa0nc11wm68s"))))
     (properties `((upstream-name . "bfbin2arm")))
     (build-system r-build-system)
     (arguments
@@ -23520,18 +23600,19 @@ Back Filling Design for dose escalation in early-phase oncology trials.")
                              r-statmod
                              r-rlang
                              r-patchwork
+                             r-gridextra
                              r-ggplot2
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://rikokelter.github.io/bfbin2arm/")
     (synopsis "Bayes Factor Design for Two-Arm Binomial Trials")
     (description
-     "Design and analysis of one- and two-stage binomial clinical phase II trials
-using Bayes factors.  Implements Bayes factors for point-null and directional
-hypotheses, predictive densities under different hypotheses, and power and
-sample size calibration.  Both one-arm trials with only a single treatment arm
-and two-arm trials with treatment and control arm are implemented for the one-
-and two-stage designs.")
+     "Design and analysis of one- and two-stage clinical trials using Bayes factors.
+Implements methods for binomial and continuous endpoints, including point-null
+and directional hypotheses, power calculations, and sample size calibration.
+Supports one-arm trials with a single treatment arm and two-arm trials with
+treatment and control arms.  Includes methods for equivalence, non-inferiority,
+and superiority designs.")
     (license license:gpl3)))
 
 (define-public r-bfast
@@ -24819,33 +24900,28 @@ the purpose of the package and the specific algorithms used in the package at
 (define-public r-bergm
   (package
     (name "r-bergm")
-    (version "5.0.7")
+    (version "6.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Bergm" version))
        (sha256
-        (base32 "13wdkbjnqj3dk8fpk8vblkf4z79j87gdszjdzwysq9i10l6yl6ir"))))
+        (base32 "1hnq65apn0jnkk6yy0a04ci0mb43mgwf0p0s21d2s3qzlrv2b2yn"))))
     (properties `((upstream-name . "Bergm")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-statnet-common
-                             r-rglpk
-                             r-network
-                             r-mvtnorm
-                             r-mcmcpack
-                             r-matrixcalc
-                             r-matrix
-                             r-ergm
-                             r-coda))
+    (propagated-inputs (list r-rcpp r-network r-mice r-ergm r-coda))
     (home-page "https://acaimo.github.io/Bergm/")
     (synopsis "Bayesian Exponential Random Graph Models")
     (description
      "Bayesian analysis for exponential random graph models using advanced
-computational algorithms.  More information can be found at:
-<https://acaimo.github.io/Bergm/>.")
+computational algorithms: the approximate exchange algorithm with adaptive
+direction sampling (optionally adaptive, delayed-acceptance and parallel),
+calibrated pseudo-posteriors, Bayesian data augmentation for missing network
+data, and Bayesian goodness-of-fit diagnostics.  More information can be found
+at: <https://acaimo.github.io/Bergm/>.")
     (license license:gpl2+)))
 
 (define-public r-bequt
@@ -28214,13 +28290,13 @@ every sweep.  The MCMC cores are written in Fortran and called from R.")
 (define-public r-bbni
   (package
     (name "r-bbni")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BBNI" version))
        (sha256
-        (base32 "1vkybgzw3c3a1q7pb9sr30vhi2yz2azl0pbx2kfy7i49mrsiszzc"))))
+        (base32 "04d5rrvfmsfqv43l9rw09gnxkw9fnqvn6igv66sb4mrrdqrcaghj"))))
     (properties `((upstream-name . "BBNI")))
     (build-system r-build-system)
     (arguments
@@ -28302,13 +28378,13 @@ beta-binomial mixture model for accurate genotyping from RNA-sequencing.\".")
 (define-public r-bbmbc
   (package
     (name "r-bbmbc")
-    (version "0.1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BBMBC" version))
        (sha256
-        (base32 "1ab25y6i5qsvfia8y4a6nfrkcfzib8x57rxjfzfvdiyf013lsvd1"))))
+        (base32 "1qv10v301xiicwqv2gg4dc2987hh0419w78rzabg7w2s7mik5dy7"))))
     (properties `((upstream-name . "BBMBC")))
     (build-system r-build-system)
     (arguments
@@ -28317,18 +28393,18 @@ beta-binomial mixture model for accurate genotyping from RNA-sequencing.\".")
     (propagated-inputs (list r-glmmtmb r-foreach r-doparallel))
     (home-page "https://cran.r-project.org/package=BBMBC")
     (synopsis
-     "Beta-Binomial Models for Vaccine-Specific Memory B Cell Frequency and Power Calculations")
+     "Beta-Binomial Models for Immune Cell Frequencies and Power Calculations")
     (description
-     "This package provides tools to model overdispersed vaccine-specific memory B
-cell frequencies using Beta-Binomial generalized linear models, specifically
-designed for analyzing vaccine-induced cellular immune responses.  Includes
+     "This package provides tools to model overdispersed immune cell frequencies using
+Beta-Binomial generalized linear models.  Originally designed for memory B
+cells, the framework generalizes to evaluate rare cellular immune responses
+across vaccinology, immuno-oncology, and related fields.  Includes
 method-of-moments dispersion estimation, likelihood ratio testing across
-experimental arms, and Monte Carlo simulation frameworks to calculate
-statistical power and Type I error rates.  The methodologies are directly
-motivated by the analysis of immunology data in Vaccination with
-@code{mRNA-encoded} membrane-anchored HIV envelope trimers elicited tier 2
-neutralizing antibodies in a phase 1 clinical trial (Parks et al.  2025)
-<doi:10.1126/scitranslmed.ady6831>.")
+experimental arms, and Monte Carlo simulation to calculate statistical power and
+Type I error rates.  The methodologies are directly motivated by the analysis of
+immunology data in \"Vaccination with @code{mRNA-encoded} membrane-anchored HIV
+envelope trimers elicited tier 2 neutralizing antibodies in a phase 1 clinical
+trial\" (Parks et al.  2025) <doi:10.1126/scitranslmed.ady6831>.")
     (license license:expat)))
 
 (define-public r-bbl
@@ -29281,26 +29357,28 @@ Chipman, George, @code{McCulloch} (2010).")
 (define-public r-bayestools
   (package
     (name "r-bayestools")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesTools" version))
        (sha256
-        (base32 "0hirqmmqq8ass6xfhby9kvh5hvma4za7k3791hj3kv6pgb7wghff"))))
+        (base32 "1hcd8xyyb0acp32hn186xiky26i4n8wr7if2bxyzcdji8ps7lzdx"))))
     (properties `((upstream-name . "BayesTools")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (inputs (list jags))
     (propagated-inputs (list r-rlang
+                             r-reformulas
                              r-rdpack
                              r-mvtnorm
                              r-ggplot2
                              r-extradistr
                              r-coda
                              r-bridgesampling))
-    (native-inputs (list r-knitr))
+    (native-inputs (list pkg-config r-knitr))
     (home-page "https://fbartos.github.io/BayesTools/")
     (synopsis "Tools for Bayesian Analyses")
     (description
@@ -29648,13 +29726,13 @@ and maintained trends drawing from Schotman and van Dijk (1991)
 (define-public r-bayessim
   (package
     (name "r-bayessim")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesSIM" version))
        (sha256
-        (base32 "1qprzcx77cmz0l244sdad0rva30fa7fhhy58ais2i2wbgb00amrv"))))
+        (base32 "18al1xcwnsdizhsq728wx97xhhsxzi5ljhj3prnl9fc9421vmzf4"))))
     (properties `((upstream-name . "BayesSIM")))
     (build-system r-build-system)
     (arguments
@@ -31212,13 +31290,13 @@ available at <doi:10.18637/jss.v113.i09>.")
 (define-public r-bayesmofo
   (package
     (name "r-bayesmofo")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesMoFo" version))
        (sha256
-        (base32 "1bh8yy1plpkzrd3dphhspn9lliadh9rylrfyxd78p18gcnhcfr63"))))
+        (base32 "056bgikfl3ha897k83qfawkafhsni8kylqky5ixw61q4jkzpdr60"))))
     (properties `((upstream-name . "BayesMoFo")))
     (build-system r-build-system)
     (arguments
@@ -31247,8 +31325,9 @@ dimensions p Ã A Ã T (strata Ã age Ã year).  Stratification can repr
 factors such as cause of death, country, deprivation level, sex, geographic
 region, insurance product, marital status, socioeconomic group, or smoking
 behavior.  While the primary focus is on analysing stratified data (p > 1), the
-package can also handle mortality data that are not stratified (p = 1).  Model
-selection via the Deviance Information Criterion (DIC) is supported.")
+package can also handle mortality data that are not stratified (p = 1),
+including demogdata and @code{StMoMoData} objects.  Model selection via the
+Deviance Information Criterion (DIC) is supported.")
     (license license:gpl2+)))
 
 (define-public r-bayesmlogit
@@ -31999,47 +32078,44 @@ the importance of their understanding <doi:10.3389/fpsyg.2015.01327>.")
 (define-public r-bayesianqdm
   (package
     (name "r-bayesianqdm")
-    (version "0.1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesianQDM" version))
        (sha256
-        (base32 "0hfwn41ja76xsb7bqwwkb49vbffxgxnpdiskrpbm592l3aycc2sv"))))
+        (base32 "156v4qw6g80d323pqyq56vqb52f7kh5jn4v2c2hhqg6xrxiaps5g"))))
     (properties `((upstream-name . "BayesianQDM")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-mvtnorm r-gridextra r-ggplot2))
+    (propagated-inputs (list r-rcpp r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://gosukehommaEX.github.io/BayesianQDM/")
     (synopsis
-     "Bayesian Quantitative Decision-Making Framework for Binary and Continuous Endpoints")
+     "Bayesian Quantitative Decision-Making Framework for Binary, Continuous and Time-to-Event Endpoints")
     (description
-     "This package provides comprehensive methods to calculate posterior
-probabilities, posterior predictive probabilities, and Go/@code{NoGo/Gray}
-decision probabilities for quantitative decision-making under a Bayesian
-paradigm in clinical trials.  The package supports both single and two-endpoint
-analyses for binary and continuous outcomes, with controlled, uncontrolled, and
-external designs.  For single continuous endpoints, three calculation methods
-are available: numerical integration (NI), Monte Carlo simulation (MC), and
-Moment-Matching approximation (MM).  For two continuous endpoints, a bivariate
-Normal-Inverse-Wishart conjugate model is implemented with MC and MM methods.
-For two binary endpoints, a Dirichlet-multinomial model is implemented.
-External designs incorporate historical data through power priors using exact
-conjugate representations (Normal-Inverse-Chi-squared for single continuous,
-Normal-Inverse-Wishart for two continuous, and Dirichlet for binary endpoints),
-enabling closed-form posterior computation without Markov chain Monte Carlo
-(MCMC) sampling.  This approach significantly reduces computational burden while
-preserving complete Bayesian rigor.  The package also provides grid-search
-functions to find optimal Go and @code{NoGo} thresholds that satisfy
-user-specified operating characteristic criteria for all supported endpoint
-types and study designs.  S3 @code{print()} and @code{plot()} methods are
-provided for all decision probability classes, enabling formatted display and
-visualisation of Go/@code{NoGo/Gray} operating characteristics across treatment
-scenarios.  See Kang, Yamaguchi, and Han (2026)
-<doi:10.1080/10543406.2026.2655410> for the methodological framework.")
+     "Bayesian quantitative decision-making for proof-of-concept clinical trials with
+Go, @code{NoGo} and Gray decisions.  A study is specified by its sample sizes,
+conjugate prior distributions, external data borrowed through power priors, a
+concurrent, external, hypothetical or fixed control group, and a decision
+criterion based on the posterior or posterior predictive probability of the
+treatment effect.  The package computes the decision for observed data, the
+operating characteristics of a design under scenarios for the true parameters,
+the decision thresholds that control the probabilities of false Go and false
+@code{NoGo} decisions, and the observed data that lead to each decision.  One or
+two binary endpoints (Beta-binomial and Dirichlet-multinomial models), one or
+two continuous endpoints (Normal-Inverse-chi-squared and Normal-Inverse-Wishart
+models) and one time-to-event endpoint evaluated by the milestone survival
+probability or the hazard ratio (exponential model with Gamma priors) are
+supported, with larger or smaller effects as favorable.  The posterior
+distributions have closed forms, so Markov chain Monte Carlo (MCMC) sampling is
+not needed; the probabilities are computed from closed-form distribution
+functions, by exact summation, numerical integration, a moment-matching
+approximation or Monte Carlo simulation, with the main computations in C++.  See
+Kang, Yamaguchi, and Han (2026) <doi:10.1080/10543406.2026.2655410> for the
+methodological framework.")
     (license license:gpl2+)))
 
 (define-public r-bayesianpower
@@ -32957,13 +33033,13 @@ to use and research on Bayesian Neural Networks.")
 (define-public r-bayesfbhborrow
   (package
     (name "r-bayesfbhborrow")
-    (version "2.0.20")
+    (version "2.0.22")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesFBHborrow" version))
        (sha256
-        (base32 "18ma961qaay69hf28r8xyjddzpk7ps0ca8lixdkx1qw2j6whnrzg"))))
+        (base32 "1dznzf6nxfamcl1ldcnp6zgfjcwns15ldfwxqjbqcm1gs9jbmnrm"))))
     (properties `((upstream-name . "BayesFBHborrow")))
     (build-system r-build-system)
     (arguments
@@ -33934,6 +34010,39 @@ multiplicative interaction (AMMI) model.  The method is explained in Crossa, J.,
 Perez-Elizalde, S., Jarquin, D., Cotes, J.M., Viele, K., Liu, G. and Cornelius,
 P.L. (2011) (<doi:10.2135/cropsci2010.06.0343>).")
     (license license:gpl2)))
+
+(define-public r-bayesaiken
+  (package
+    (name "r-bayesaiken")
+    (version "2.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BayesAiken" version))
+       (sha256
+        (base32 "0ipdzsg6m63xva418zpxnpn0r0qzq9qpmdhsxq3ddnp1dacj5n6f"))))
+    (properties `((upstream-name . "BayesAiken")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/jventural/BayesAiken")
+    (synopsis
+     "Bayesian Content Validity Coefficients with Credibility Intervals")
+    (description
+     "Bayesian inference for the six rating coefficients proposed by Aiken (1985)
+<doi:10.1177/0013164485451012> and Aiken (1989) <doi:10.1177/0013164489492003>:
+V (content validity), H (homogeneity), C (congruence), R (repeatability), A
+(rater agreement) and I (item coherence).  All six are expressed as functionals
+of the population distribution of rating categories, so a single
+Dirichlet-Multinomial model yields their full posterior by push-forward.  This
+treats each judge as one categorical observation and avoids the
+pseudo-replication of Beta-Binomial formulations.  R is modelled on the c-by-c
+joint table because it is not a functional of the marginal distribution.
+Provides classical estimates with the correct parity correction, highest density
+and equal-tailed credibility intervals, posterior threshold probabilities, prior
+sensitivity analysis and a friendly step-by-step verbose report.")
+    (license license:expat)))
 
 (define-public r-bayes4psy
   (package
@@ -35241,13 +35350,13 @@ it belongs.  This package depends on sf and only replaces the plot method.")
 (define-public r-baseverse
   (package
     (name "r-baseverse")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "baseverse" version))
        (sha256
-        (base32 "1ll9xgvq85r21yl9jbq9mlav88l12m5g6k6xyh81m02w2v5hckyw"))))
+        (base32 "0gbknd5syk216dyqd357w845pjw38538hhhfdkp1pri6y9ryhk79"))))
     (properties `((upstream-name . "baseverse")))
     (build-system r-build-system)
     (arguments
@@ -35262,8 +35371,7 @@ functions for existing base-R functions, supporting native piping.  Other
 functions are wrapper functions for core base-R features, including bracket
 notation and dollar-sign notation. @code{base_match()} and @code{base_when()}
 mimic @code{case_match()} and @code{case_when()} from dplyr but return a factor
-by default with levels ordered according to user input. @code{et()} mimics
-@code{count()} from dplyr'.")
+by default with levels ordered according to user input.")
     (license license:expat)))
 
 (define-public r-basetheme
@@ -35596,13 +35704,13 @@ Love plots.")
 (define-public r-baselinenowcast
   (package
     (name "r-baselinenowcast")
-    (version "0.2.0")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "baselinenowcast" version))
        (sha256
-        (base32 "00xvhwn34ya9rxfzfxw6ifni4gjb0wppb88mwnkladk5f9vksn05"))))
+        (base32 "1nq1nbrd7nry75crbz3d2lsly4a49lmh0kz7km9qk9qmkx9aqqjq"))))
     (properties `((upstream-name . "baselinenowcast")))
     (build-system r-build-system)
     (arguments
@@ -35620,7 +35728,7 @@ on using empirical delay distributions and uncertainty from past performance.
 It is also designed to be used as a baseline method for developers of new
 nowcasting methods.  For more details on the performance of the method(s) in
 this package applied to case studies of COVID-19 and norovirus, see our recent
-paper at <https://wellcomeopenresearch.org/articles/10-614>.  The package
+paper Johnson (2025) <doi:10.12688/wellcomeopenres.25027.2>.  The package
 supports standard data frame inputs with reference date, report date, and count
 columns, as well as the direct use of reporting triangles, and is compatible
 with epinowcast objects.  Alongside an opinionated default workflow, it has a
@@ -36045,6 +36153,48 @@ package without @code{bartMachine}.")
      "An advanced implementation of Bayesian Additive Regression Trees with expanded
 features for data analysis and visualization.")
     (license license:gpl3)))
+
+(define-public r-bartisan
+  (package
+    (name "r-bartisan")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bartisan" version))
+       (sha256
+        (base32 "09qz6v2ry5x7qab264n63qanc1rmngfx15q9av9m1lkrgml1h94s"))))
+    (properties `((upstream-name . "bartisan")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang
+                             r-reformulas
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-matrix
+                             r-ggplot2
+                             r-cli
+                             r-arg))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/ngreifer/bartisan")
+    (synopsis "Generalized Bayesian Additive Regression Trees")
+    (description
+     "Fits Bayesian additive regression trees (BART) models for likelihoods outside
+the conditionally conjugate Gaussian case, using the Laplace-approximation
+reversible-jump sampler of Linero (2025) <doi:10.1080/01621459.2024.2337156>.
+Supported response families include Gaussian, binomial, Poisson, negative
+binomial, gamma, beta, ordered beta, ordinal (cumulative link), multinomial,
+zero-inflated counts, a Tweedie compound Poisson for a non-negative response
+with a point mass at zero, accelerated failure time and proportional hazards
+models for right-censored survival data, location-scale regression, and a
+Dirichlet process mixture for the error distribution.  Decision rules may be
+hard, as in standard BART, or soft, as in the @code{SoftBart} model of Linero
+and Yang (2018) <doi:10.1111/rssb.12293>, which yields smoother fits.  The
+interface follows that of @code{glm()}, so that a model is specified with a
+formula, a data frame, and a family.")
+    (license license:gpl2)))
 
 (define-public r-bartcs
   (package
@@ -36511,13 +36661,13 @@ downloading and ordering the data conveniently.")
 (define-public r-banter
   (package
     (name "r-banter")
-    (version "0.9.8")
+    (version "0.9.81")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "banter" version))
        (sha256
-        (base32 "0pn19zkkw29xiidv19l05c8ildn9p5lx0hhp0v95ipqa8nhha71c"))))
+        (base32 "1qz811p2z2in6hf54108kjq87fk649lz4qm40wqkbgxky84imxx1"))))
     (properties `((upstream-name . "banter")))
     (build-system r-build-system)
     (arguments
@@ -36662,47 +36812,6 @@ conjugate hierarchical models are available: beta-binomial, gamma-Poisson and a
 1-way analysis of variance (ANOVA).")
     (license license:gpl2+)))
 
-(define-public r-banffit
-  (package
-    (name "r-banffit")
-    (version "2.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "banffIT" version))
-       (sha256
-        (base32 "0kk4byvn870c85apnz2ff733fpkxzi007sm6ai2r36arh6nl9v64"))))
-    (properties `((upstream-name . "banffIT")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-stringr
-                             r-rlang
-                             r-madshapr
-                             r-lubridate
-                             r-fs
-                             r-fabr
-                             r-dplyr
-                             r-crayon))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/PersonalizedTransplantCare/banffIT")
-    (synopsis "Automated Standardized Assignment of the Banff Classification")
-    (description
-     "Assigns standardized diagnoses using the Banff Classification (Category 1 to 6
-diagnoses, including Acute and Chronic active T-cell mediated rejection as well
-as Active, Chronic active, and Chronic antibody mediated rejection).  The main
-function considers a minimal dataset containing biopsies information in a
-specific format (described by a data dictionary), verifies its content and
-format (based on the data dictionary), assigns diagnoses, and creates a summary
-report.  The package is developed on the reference guide to the Banff
-classification of renal allograft pathology Roufosse C, Simmonds N, Clahsen-van
-Groningen M, et al.  A (2018) <doi:10.1097/TP.0000000000002366>.  The full
-description of the Banff classification is available at
-<https://banfffoundation.org/>.")
-    (license license:gpl3)))
-
 (define-public r-bandsfdp
   (package
     (name "r-bandsfdp")
@@ -36841,13 +36950,13 @@ method resolution order.")
 (define-public r-banam
   (package
     (name "r-banam")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BANAM" version))
        (sha256
-        (base32 "0mwvnqpcmsdwxrhm87r0k8yaq9fbjqpwva3a7pixcrcdmggqlb9j"))))
+        (base32 "08ifzvn7zckiyzdibid8lwvxf5sr5fi6d9av3v6r6c64gf8k26zc"))))
     (properties `((upstream-name . "BANAM")))
     (build-system r-build-system)
     (arguments
@@ -37293,6 +37402,43 @@ Likelihood-based LInear model (BALLI).  Based on likelihood ratio test, it
 provides comparisons for effect of one or more variables.  See Kyungtaek Park
 (2018) <doi:10.1101/344929> for more information.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-ballast
+  (package
+    (name "r-ballast")
+    (version "0.7.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ballast" version))
+       (sha256
+        (base32 "0643517zh55wpv7871qlz2b3srgsaf7n50wpn7q0libqn5ya0lnm"))))
+    (properties `((upstream-name . "ballast")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mmrm))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Sullivanstatistics/ballast")
+    (synopsis "Stress-Test a Pre-Specified Mixed Model for Repeated Measures")
+    (description
+     "Refits one pre-specified mixed model for repeated measures (MMRM) under families
+of data and analytic perturbations (covariance structure, degrees-of-freedom
+method and variance estimator, covariate set, analysis population, alternative
+analysis data sets, leave-one-out deletions, crossed specification grids,
+re-randomisation tests, delta-adjusted and reference-based multiple imputation,
+and alternative estimators) and judges every refit against the pre-specified
+estimate, confidence interval and p-value.  Classifies the result as robust,
+sensitive or fragile, with a separate flag for marginal significance, and
+estimates by simulation the probability that a planned design gives a
+significant and robust result.  Fitting uses mmrm (Sabanes Bove et al., 2024,
+<https://openpharma.github.io/mmrm/>) with SAS PROC MIXED conventions for the
+least-squares-mean contrast, Kenward-Roger adjustment and the corrected Akaike
+criterion.  Reference-based multiple imputation follows Carpenter, Roger and
+Kenward (2013) <doi:10.1080/10543406.2013.834911> and was checked against rbmi
+(Gower-Page, Noci and Wolbers, 2022) <doi:10.21105/joss.04251>.")
+    (license license:expat)))
 
 (define-public r-ball
   (package
@@ -37811,45 +37957,6 @@ reduce the model objects size and speed.")
      "The BA@code{GofT} assesses the goodness-of-fit of binary classifiers.  Details
 can be found in Zhang, Ding and Yang (2021) <@code{arXiv:1911.03063v2>}.")
     (license license:gpl3)))
-
-(define-public r-baggr
-  (package
-    (name "r-baggr")
-    (version "0.8.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "baggr" version))
-       (sha256
-        (base32 "0vabypy3cc9vdz144zg6sm03m8wfxi2dxjm9g5i444srazzgd397"))))
-    (properties `((upstream-name . "baggr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stanheaders
-                             r-rstantools
-                             r-rstan
-                             r-rcppparallel
-                             r-rcppeigen
-                             r-rcpp
-                             r-gridextra
-                             r-ggrepel
-                             r-ggplotify
-                             r-ggplot2
-                             r-forestplot
-                             r-crayon
-                             r-bh
-                             r-bayesplot))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/wwiecek/baggr")
-    (synopsis "Bayesian Aggregate Treatment Effects")
-    (description
-     "Running and comparing meta-analyses of data with hierarchical Bayesian models in
-Stan, including convenience functions for formatting data, plotting and pooling
-measures specific to meta-analysis.  This implements many models from Meager
-(2019) <doi:10.1257/app.20170299>.")
-    (license license:gpl3+)))
 
 (define-public r-baggingbwsel
   (package

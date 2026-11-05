@@ -543,6 +543,35 @@ Welch-Satterthwaite approach described in Welch (1947)
 deviation, covariance, correlation, quantiles).")
     (license license:expat)))
 
+(define-public r-wssmod
+  (package
+    (name "r-wssmod")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "WSSmod" version))
+       (sha256
+        (base32 "10s8cgba4xdhfh44gd9ws2m15azqzlzv0kcmrn867sm0fjvrjk1p"))))
+    (properties `((upstream-name . "WSSmod")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Longo-Lab/WSSmod")
+    (synopsis "Weighted Sum Scores for Protein Network Modules")
+    (description
+     "Computes Weighted Sum Score (WSS) module-level summaries from proteomic data.
+Protein-level values are sign-aligned to their association with core biomarkers
+and combined within STRING network modules, weighted by network connectivity and
+association strength.  Bundled reference modules and a fitted joinet model also
+allow all module scores to be predicted from age, sex and a small panel of
+plasma biomarkers, without measuring the full proteomic panel.  The method is
+described in Butler et al. (2026) <doi:10.64898/2026.08.14.26360394>.")
+    (license license:expat)))
+
 (define-public r-wsrf
   (package
     (name "r-wsrf")
@@ -647,13 +676,13 @@ associated with multiple phenotypes.")
 (define-public r-wsmed
   (package
     (name "r-wsmed")
-    (version "1.1.0")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wsMed" version))
        (sha256
-        (base32 "0zmmkpqygfvlbjkz6jpjgvcb3qhrn9p0gx7y2damb72h7sj0akqg"))))
+        (base32 "1ih67ayd2f9d27p6bclp8rdp7n1cac1ccal6jj963r3rn1x8mr7r"))))
     (properties `((upstream-name . "wsMed")))
     (build-system r-build-system)
     (arguments
@@ -1704,13 +1733,13 @@ install wmtsa from this archive if they prefer to use wmtsa based decomposition.
 (define-public r-wql
   (package
     (name "r-wql")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wql" version))
        (sha256
-        (base32 "1629crl2704ycxpnkxzd4zzwvgi33w8lp2gymr6mbyc3vqlip3b5"))))
+        (base32 "1p2s19ds080g2vldjazlfk8gi965cd2kv3z06zn4g82z1bdz3wr9"))))
     (properties `((upstream-name . "wql")))
     (build-system r-build-system)
     (arguments
@@ -1718,7 +1747,7 @@ install wmtsa from this archive if they prefer to use wmtsa based decomposition.
       #:tests? #f))
     (propagated-inputs (list r-zoo r-reshape2 r-ggplot2))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/jsta/wql")
+    (home-page "https://codeberg.org/jsta/wql")
     (synopsis "Exploring Water Quality Monitoring Data")
     (description
      "This package provides functions to assist in the processing and exploration of
@@ -2532,13 +2561,13 @@ results.")
 (define-public r-wordvector
   (package
     (name "r-wordvector")
-    (version "0.6.5")
+    (version "0.6.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wordvector" version))
        (sha256
-        (base32 "02ipkj60rq6y1z55hcfxmx1aik3yp9sl0dcc2w8jcbhzv2yq14jc"))))
+        (base32 "0p05li49vk0ypfqn16qgj2q7g1796d3awwl0gj2y4h1x2kir7a2m"))))
     (properties `((upstream-name . "wordvector")))
     (build-system r-build-system)
     (arguments
@@ -4555,13 +4584,13 @@ distribution of inequality measures enabling significance tests.")
 (define-public r-windsorair
   (package
     (name "r-windsorair")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "windsoraiR" version))
        (sha256
-        (base32 "1smd3zw5ra1fba6mds3diadcmbw59jlvmrvfzzi4fss91wv50jql"))))
+        (base32 "01kz04y1928p65brdxmb1ymyd454rfbcbg4vkg2f6x0k55xigxrg"))))
     (properties `((upstream-name . "windsoraiR")))
     (build-system r-build-system)
     (arguments
@@ -4574,7 +4603,46 @@ distribution of inequality measures enabling significance tests.")
     (description
      "Collect multichannel marketing data from sources such as Google analytics,
 Facebook Ads, and many others using the Windsor.ai API
-<https://www.windsor.ai/api-fields/>.")
+<https://windsor.ai/api-documentation/>.")
+    (license license:expat)))
+
+(define-public r-windscape
+  (package
+    (name "r-windscape")
+    (version "2.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "windscape" version))
+       (sha256
+        (base32 "0z3fpzp8dhpsfv43fy871v51mghfxkgas3hqw8qbks0pk8l73nr5"))))
+    (properties `((upstream-name . "windscape")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra
+                             r-rcpp
+                             r-raster
+                             r-matrix
+                             r-magrittr
+                             r-igraph
+                             r-ggplot2
+                             r-geosphere
+                             r-gdistance))
+    (native-inputs (list r-knitr))
+    (home-page "https://matthewkling.github.io/windscape/")
+    (synopsis "Model Landscape Connectivity by Wind")
+    (description
+     "Model landscape connectivity by wind for ecological and evolutionary analyses.
+Summarize long time series of gridded wind data, downloaded from reanalyses or
+supplied by the user, into wind roses describing directional conductance between
+neighboring grid cells.  Model dispersal through them with least-cost path and
+random walk algorithms, to map windsheds around sites and estimate pairwise
+connectivity among them, test hypotheses relating wind to ecological data, and
+visualize wind and connectivity with ggplot2'.  The approach builds on Kling and
+Ackerly (2020) <doi:10.1038/s41558-020-0848-3> and Kling and Ackerly (2021)
+<doi:10.1073/pnas.2017317118>.")
     (license license:expat)))
 
 (define-public r-windows-pls
@@ -5439,13 +5507,13 @@ covering more than seventy countries from all continents.")
 (define-public r-whoriskcalculator
   (package
     (name "r-whoriskcalculator")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WHORiskCalculator" version))
        (sha256
-        (base32 "0km1bqnrc8i8g143mb5h27sy13nhnkdksn91nhnsjff0kryzx1za"))))
+        (base32 "0kxqgvpp6kqwmcdiraqz8p7rm7q5p0w6gsnkb535s9ijgzi1bzw6"))))
     (properties `((upstream-name . "WHORiskCalculator")))
     (build-system r-build-system)
     (arguments
@@ -5462,11 +5530,12 @@ infarction and stroke): a laboratory-based model using age, sex, systolic blood
 pressure, total cholesterol, smoking status, and diabetes history; and a
 non-laboratory-based model substituting body mass index (BMI) for cholesterol
 and diabetes, suitable for resource-limited settings.  Risk estimates are
-recalibrated to 21 Global Burden of Disease regions using region-specific
-incidence rates and risk factor distributions derived from the Emerging Risk
-Factors Collaboration.  Functions are fully vectorized for efficient batch
-calculations and support automatic country-to-region mapping via ISO 3166-1
-alpha-3 country codes.")
+recalibrated to 21 Global Burden of Disease regions (or to individual countries)
+using the authors recalibration parameters, fitted to Global Burden of Disease
+2017 incidence rates and Non-Communicable Disease Risk Factor Collaboration risk
+factor levels.  Functions are fully vectorized for efficient batch calculations
+and support automatic country-to-region mapping via ISO 3166-1 alpha-3 country
+codes.")
     (license license:expat)))
 
 (define-public r-whomds
@@ -5983,6 +6052,36 @@ in the context of the \"Who Has Eaten the Planet\" (WHEP) project, funded by the
 European Research Council (ERC).  For more details on multi-regional
 inputâoutput model \"Food and Agriculture Biomass InputâOutput\" (FABIO) see
 Bruckner et al. (2019) <doi:10.1021/acs.est.9b03554>.")
+    (license license:expat)))
+
+(define-public r-whence
+  (package
+    (name "r-whence")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "whence" version))
+       (sha256
+        (base32 "0m8g1hmpbr19lj23irky75jwrcd23adqrcp9zjgs1cmjllss5ghz"))))
+    (properties `((upstream-name . "whence")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny r-rlang r-htmltools))
+    (home-page "https://github.com/tenmeh/whence")
+    (synopsis "Explain Where a Number Came from in 'shiny' Apps")
+    (description
+     "Lets the viewer of a shiny dashboard click a number, a row of a summary table or
+a bar of a ggplot2 plot, and see where it came from.  The pipeline that makes
+the result is split into its steps.  Each step is run in turn, and the number of
+rows after each step is recorded.  The result is an attrition waterfall that
+shows how many rows each step removed, and what share of the rows that was,
+together with code that reproduces the result.  The steps are found from the
+expression alone, so the pipeline does not need to be rewritten.  The rows that
+contribute to a result, and the rows that a step removed, are found only when
+the viewer asks for them.")
     (license license:expat)))
 
 (define-public r-when
@@ -8160,13 +8259,13 @@ to web development.")
 (define-public r-webdav
   (package
     (name "r-webdav")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "webdav" version))
        (sha256
-        (base32 "1a14hsc2zfj78xnx97f6wb956myfibxpd7sl7ka73ra10mxh9x41"))))
+        (base32 "0sqig6sz79mq2knbsp05cwyplq08v1xdm95zkkx1iywg39bg8pyj"))))
     (properties `((upstream-name . "webdav")))
     (build-system r-build-system)
     (arguments
@@ -8184,7 +8283,7 @@ to web development.")
                              r-curl
                              r-cli))
     (native-inputs (list r-knitr))
-    (home-page "<https://github.com/StrategicProjects/webdav>")
+    (home-page "https://github.com/StrategicProjects/webdav")
     (synopsis "Simple Interface for Interacting with 'WebDAV' Servers")
     (description
      "An easy-to-use interface for interacting with @code{WebDAV} servers, including
@@ -8838,23 +8937,19 @@ indicators.")
 (define-public r-wdata
   (package
     (name "r-wdata")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WData" version))
        (sha256
-        (base32 "0h1xsif6pyy9aam4w1pdh9v4qa1p8mhpc9rfg9b6y248dm9zkf1x"))))
+        (base32 "1zcln6whbl6b0s87y07640yvk7bwq7xqr2v2ikxzra03vxgjh9fq"))))
     (properties `((upstream-name . "WData")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rdpack
-                             r-rcpp
-                             r-progress
-                             r-kscorrect
-                             r-evmix
+    (propagated-inputs (list r-rdpack r-rcpp r-progress r-kscorrect
                              r-bayesmeta))
     (home-page "https://github.com/noeliasanchmrt/WData")
     (synopsis "Statistical Inference for Weighted Data")
@@ -9475,20 +9570,19 @@ and bootstrap methods (Efron and Narasimhan, 2020
 (define-public r-wbcorr
   (package
     (name "r-wbcorr")
-    (version "0.3.2")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wbCorr" version))
        (sha256
-        (base32 "03zvhqc395bck4lp1nbqywp8acr5ngqhda8d71xs3zcbxc1c2lav"))))
+        (base32 "1myardx23377jnbbnyjyqjj19xqrfqcr58x355n84qvhrx6sq4z6"))))
     (properties `((upstream-name . "wbCorr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-writexl))
-    (native-inputs (list r-knitr))
     (home-page "https://pascal-kueng.github.io/wbCorr/")
     (synopsis "Bivariate Within- and Between-Cluster Correlations")
     (description
@@ -10377,6 +10471,33 @@ The @code{WaveD} Transform in R, Journal of Statistical Software Volume 21, No.
 3, 2007.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-wavecov
+  (package
+    (name "r-wavecov")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "wavecov" version))
+       (sha256
+        (base32 "1y6wb81yq57m3g3z7fwhd0rkhs730miiznszg4zlnxvw8hgzmp02"))))
+    (properties `((upstream-name . "wavecov")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=wavecov")
+    (synopsis "Overlap-Aware Workforce Wave Comparisons")
+    (description
+     "This package provides tools for comparing workforce metric distributions between
+panel waves using linked stayers, reliability assumptions, or Cauchy bounds.
+Its purpose is to provide a low-latency alternative to traditional hierarchical
+or latent-growth modeling that is better-able to scale in cloud based
+architectures.  The mathematics is an extension of rotating panel formulae from
+the official statistics literature.")
+    (license license:gpl3)))
+
 (define-public r-waveband
   (package
     (name "r-waveband")
@@ -10738,13 +10859,13 @@ Z., Sharma, A., & Johnson, F. (2021) <doi:10.1016/J.JHYDROL.2021.126816>.")
 (define-public r-washr
   (package
     (name "r-washr")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "washr" version))
        (sha256
-        (base32 "0brk79dwrnl0ipcpzbf7kzkcghr2dbqf7ays831y5jkjz4qqfzfg"))))
+        (base32 "01kv0jaxwm0n2pdwsvdgky7g7kv1a05m9h48phr8q168i97d1m04"))))
     (properties `((upstream-name . "washr")))
     (build-system r-build-system)
     (arguments
@@ -10757,6 +10878,7 @@ Z., Sharma, A., & Johnson, F. (2021) <doi:10.1016/J.JHYDROL.2021.126816>.")
                              r-lifecycle
                              r-jsonlite
                              r-desc
+                             r-cli
                              r-cffr))
     (native-inputs (list r-knitr))
     (home-page "https://openwashdata.github.io/washr/")

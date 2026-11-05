@@ -118,6 +118,53 @@ telemetry points to summaries, interactive maps, and home range estimates.  It
 is designed to be beginner-friendly and requires minimal data wrangling.")
     (license license:expat)))
 
+(define-public r-ezrsurvey
+  (package
+    (name "r-ezrsurvey")
+    (version "0.7.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ezrsurvey" version))
+       (sha256
+        (base32 "0vkv0lv2ikw9fyavxfs3rmj5jcifpcqx1f47vqrfhv1p0aan8cw0"))))
+    (properties `((upstream-name . "ezrsurvey")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://mashud37.github.io/ezr-research/ezr-survey/")
+    (synopsis "Single-Line Helpers for Consumer Survey Analysis")
+    (description
+     "Simplifies the day-to-day work of research and insights professionals who
+analyse consumer and customer survey data but have limited coding experience.
+Wraps common tidyverse patterns into single-line functions for the tasks these
+teams repeat constantly: loading and combining survey exports, turning questions
+into percentages and summaries, recoding rating and Net Promoter scales,
+deriving demographics such as age cohorts and regions, modelling the drivers of
+satisfaction, checking sampling precision, selecting illustrative open-text
+comments, and producing presentation-ready charts and reports.  A simulated
+consumer-survey dataset is included for learning and examples.  Weighting rakes
+to target margins as in Deming and Stephan (1940) <doi:10.1214/aoms/1177731829>
+and reports the design effect of Kish (1965, ISBN:978-0-471-10949-5); driver
+models use the relative weights of Johnson (2000)
+<doi:10.1207/S15327906MBR3501_1> or the random forests of Breiman (2001)
+<doi:10.1023/A:1010933404324>; the Net Promoter Score follows Reichheld (2003)
+<https://hbr.org/2003/12/the-one-number-you-need-to-grow>; and diverse comments
+are chosen by maximal marginal relevance as in Carbonell and Goldstein (1998)
+<doi:10.1145/290941.291025>.")
+    (license license:expat)))
+
 (define-public r-ezrshiny
   (package
     (name "r-ezrshiny")
@@ -1410,6 +1457,37 @@ that may be considered in the model are interaction, measure correlation,
 non-normal and unbalanced designs distributions.")
     (license license:expat)))
 
+(define-public r-extrasteps
+  (package
+    (name "r-extrasteps")
+    (version "0.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "extrasteps" version))
+       (sha256
+        (base32 "19ls9645nil5bhkgc13yb7hhfh7w9iy69vzkjcc0qydgl59a5xlv"))))
+    (properties `((upstream-name . "extrasteps")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs
+                             r-tibble
+                             r-rlang
+                             r-recipes
+                             r-purrr
+                             r-magrittr
+                             r-generics
+                             r-dplyr))
+    (home-page "https://github.com/EmilHvitfeldt/extrasteps")
+    (synopsis "More Miscellaneous Steps for the 'recipes' Package")
+    (description
+     "This package contains additional miscellaneous steps for the recipes package.
+These steps are useful, but doesn't have a good home in other recipes packages
+or its extensions.")
+    (license license:expat)))
+
 (define-public r-extras
   (package
     (name "r-extras")
@@ -2522,13 +2600,13 @@ networks.")
 (define-public r-explainer
   (package
     (name "r-explainer")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "explainer" version))
        (sha256
-        (base32 "0zv7miyii983ang9vr23gdrghr7ki6dpll231m1sfpcm0plfrvnd"))))
+        (base32 "0ljlmdpyhdbqa64jnfifsa2cmhzj16xhqc2w7l8kfvpsjzdbc8gh"))))
     (properties `((upstream-name . "explainer")))
     (build-system r-build-system)
     (arguments
@@ -2542,7 +2620,6 @@ networks.")
                              r-magrittr
                              r-gridextra
                              r-ggpubr
-                             r-ggpmisc
                              r-ggplot2
                              r-egg
                              r-dplyr
@@ -3343,13 +3420,13 @@ reports.  Launch the application with @code{run_app()}.")
 (define-public r-exiftoolr
   (package
     (name "r-exiftoolr")
-    (version "0.2.8")
+    (version "0.2.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "exiftoolr" version))
        (sha256
-        (base32 "1jkrdp3yz5jajhp3i0myf85d6hpc0qy48l0awbq79qj1k1khvh0c"))))
+        (base32 "0wpr72v9ghgqa50jj4n53a9364xy1mlhv4f908vd8gimy1zb4y2q"))))
     (properties `((upstream-name . "exiftoolr")))
     (build-system r-build-system)
     (arguments
@@ -3364,9 +3441,9 @@ reports.  Launch the application with @code{run_app()}.")
 <https://exiftool.org/>, returning read results as a data frame. @code{ExifTool}
 supports many different metadata formats including EXIF, GPS, IPTC, XMP, JFIF,
 @code{GeoTIFF}, ICC Profile, Photoshop IRB, @code{FlashPix}, AFCP and ID3,
-Lyrics3, as well as the maker notes of many digital cameras by Canon, Casio,
-DJI, FLIR, @code{FujiFilm}, GE, @code{GoPro}, HP, JVC/Victor, Kodak, Leaf,
-Minolta/Konica-Minolta, Motorola, Nikon, Nintendo, Olympus/Epson,
+Lyrics3, as well as the maker notes of many digital cameras by Apple, Canon,
+Casio, DJI, FLIR, @code{FujiFilm}, GE, Google, @code{GoPro}, HP, JVC/Victor,
+Kodak, Leaf, Minolta/Konica-Minolta, Motorola, Nikon, Nintendo, Olympus/Epson,
 Panasonic/Leica, Pentax/Asahi, Phase One, Reconyx, Ricoh, Samsung, Sanyo,
 Sigma/Foveon and Sony.")
     (license license:gpl2)))
@@ -4367,13 +4444,13 @@ ISBN:978-0132892314).")
 (define-public r-exametrika
   (package
     (name "r-exametrika")
-    (version "2.1.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "exametrika" version))
        (sha256
-        (base32 "0ap0rk9d0bwpb1r2xc1qbyc5bhb7j523r2mxp941fab4fdwpsyzi"))))
+        (base32 "055sydjg725vbl6ri4rqhnh66b2nrk9r2rygijqi77z6rmavbvgb"))))
     (properties `((upstream-name . "exametrika")))
     (build-system r-build-system)
     (arguments
@@ -5960,6 +6037,38 @@ of time, ideally per day, and issues an early warning when the volatility change
 rate exceeds a threshold.")
     (license license:gpl3+)))
 
+(define-public r-evgmrf
+  (package
+    (name "r-evgmrf")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "evgmrf" version))
+       (sha256
+        (base32 "0n50b7jrf7vw1zmwrg8skv7ank7gybwhy2cq3ncyb44ci91xj59z"))))
+    (properties `((upstream-name . "evgmrf")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sparseinv
+                             r-rcppeigen
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-matrix
+                             r-lattice
+                             r-gridextra))
+    (home-page "https://cran.r-project.org/package=evgmrf")
+    (synopsis "Gaussian Markov Random Field Models for Extreme Values")
+    (description
+     "Fitting extreme value distributions with parameters that vary according to
+Gaussian Markov random fields (GMRFs).  For details of distributions see Coles,
+S.G. (2001) <doi:10.1007/978-1-4471-3675-0>, GMRFs see Rue, H., & Held, L.
+(2005) <doi:10.1201/9780203492024>, and the fitting approach see Wood, S.N.,
+Pya, N. & Safken, B. (2016) <doi:10.1080/01621459.2016.1180986>.")
+    (license license:gpl3)))
+
 (define-public r-evgam
   (package
     (name "r-evgam")
@@ -6118,13 +6227,13 @@ al. (2019) <doi:10.1257/aer.20180609>.")
 (define-public r-eventstudy
   (package
     (name "r-eventstudy")
-    (version "0.66.0")
+    (version "0.70")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EventStudy" version))
        (sha256
-        (base32 "1fmbl3hffvj02ddmv402divsyyqyrvib9grhbj8b1kwc9injs216"))))
+        (base32 "05bb98h5v2lr82h5xhx8r9prddvi0j6fmmcspwdkrdjxq3cf6pha"))))
     (properties `((upstream-name . "EventStudy")))
     (build-system r-build-system)
     (arguments
@@ -6599,6 +6708,41 @@ visualization tools to assess covariate balance and includes a permutation test
 to evaluate the statistical significance of observed deviations.")
     (license license:expat)))
 
+(define-public r-evbsreg
+  (package
+    (name "r-evbsreg")
+    (version "1.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "evbsreg" version))
+       (sha256
+        (base32 "0228ndxhhpcykyiyys6bi8754dq8jq4g5ga8kd37fy1sgvqsx2bk"))))
+    (properties `((upstream-name . "evbsreg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Raydonal/evbsreg")
+    (synopsis
+     "Local Influence Diagnostics for the Extreme-Value Birnbaum-Saunders Regression Model")
+    (description
+     "Local influence diagnostics for the Extreme-Value Birnbaum-Saunders (EVBS)
+regression model of Ferreira, Gomes and Leiva (2012): joint maximum likelihood
+estimation, conformal normal curvature diagnostics under case-weight, response
+and explanatory-variable perturbation, randomized quantile residuals with
+simulation envelope, the density, distribution and quantile functions, the
+finite upper endpoint, return levels and expected shortfall, moving-block
+bootstrap standard errors, a prospective index of endpoint identifiability, the
+same diagnostics for generalized extreme-value regression, and a gamlss family
+allowing the tail-shape parameter to depend on covariates.  The methods are
+described in Lima, Ospina, Barros and Macedo (2025)
+<doi:10.48550/@code{arXiv.2507.22967>} and are applied to monthly maximum wind
+gusts from Itajai, Brazil.")
+    (license license:expat)))
+
 (define-public r-evapotranspiration
   (package
     (name "r-evapotranspiration")
@@ -6917,22 +7061,21 @@ Imai and Li (2023) <doi:10.1080/01621459.2021.1923511>.")
 (define-public r-evalhte
   (package
     (name "r-evalhte")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "evalHTE" version))
        (sha256
-        (base32 "0jyv749h60lxakw61l4l91h8c7xsyn5rfrddma6f8w78ql59234c"))))
+        (base32 "1hqpms6klpkf526vz9bayb5g6rbl102sp938cc7lj9vkwb0vyc3x"))))
     (properties `((upstream-name . "evalHTE")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-zoo
-                             r-tidyr
-                             r-scales
+    (propagated-inputs (list r-scales
                              r-rlang
+                             r-rcpp
                              r-purrr
                              r-ggthemes
                              r-ggplot2
@@ -9294,6 +9437,39 @@ variance are estimated from the posterior predictive distribution.  See Keller
 and Rice (2017) <doi:10.1093/aje/kwx225> for more details.")
     (license license:gpl2+)))
 
+(define-public r-esgcalc
+  (package
+    (name "r-esgcalc")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "esgcalc" version))
+       (sha256
+        (base32 "1sq5b2b9iyvdm4rkq8bzl8axrrifvw2rxg83lg977bfrxnp3cm77"))))
+    (properties `((upstream-name . "esgcalc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite r-digest))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=esgcalc")
+    (synopsis "Offline Environmental, Social and Governance Calculations")
+    (description
+     "Native, deterministic calculations for selected environmental, social and
+governance metrics.  Provides granular taxonomy criteria, non-financial taxonomy
+indicators, principal adverse impact components, portfolio calculations and
+configurable performance ratings.  Versioned local resources, explicit
+assumptions and structured results support reproducible offline use.  Does not
+determine legal applicability or provide a complete regulatory reporting system.
+ Selected methods reference EU Regulations 2020/852, 2022/1288 and 2023/2772;
+exact editions and provision locators are supplied in the bundled source
+contracts.  For background on the taxonomy framework, see the European
+Commission
+<https://finance.ec.europa.eu/sustainable-finance/tools-and-standards/eu-taxonomy-sustainable-activities_en>.")
+    (license license:gpl3+)))
+
 (define-public r-esg
   (package
     (name "r-esg")
@@ -9323,13 +9499,13 @@ is to set all needed parameters in a Scenarios object, use the
 (define-public r-esemifar
   (package
     (name "r-esemifar")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "esemifar" version))
        (sha256
-        (base32 "1ypylcyyq516d9w1s920m92h7a6c6yb837720hbmx37vjjz6l4dm"))))
+        (base32 "096vnf6588rf31pl8ndycs4aazwwd1af88i3x6fz4vczmn82zp2k"))))
     (properties `((upstream-name . "esemifar")))
     (build-system r-build-system)
     (arguments
@@ -9342,7 +9518,7 @@ is to set all needed parameters in a Scenarios object, use the
                              r-future
                              r-furrr
                              r-fracdiff))
-    (home-page "https://wiwi.uni-paderborn.de/en/dep4/feng/")
+    (home-page "https://cran.r-project.org/package=esemifar")
     (synopsis "Smoothing Long-Memory Time Series")
     (description
      "The nonparametric trend and its derivatives in equidistant time series (TS) with
@@ -9960,13 +10136,13 @@ model (@code{ErRUM}) described by Culpepper and Chen (2018)
 (define-public r-errortracer
   (package
     (name "r-errortracer")
-    (version "1.3.1")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ErrorTracer" version))
        (sha256
-        (base32 "06ja8qfwsnmhi34jzg2z0rn20znnz13cfxasgqgidnvkcm3kd4ki"))))
+        (base32 "11ihavmk7sx48mg3y4c08158ryasv1v2x8m2b54ig4fb6r4rwjl9"))))
     (properties `((upstream-name . "ErrorTracer")))
     (build-system r-build-system)
     (arguments
@@ -9995,13 +10171,13 @@ Gabry (2017) <doi:10.1007/s11222-016-9696-4> for leave-one-out cross-validation.
 (define-public r-errors
   (package
     (name "r-errors")
-    (version "0.4.4")
+    (version "0.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "errors" version))
        (sha256
-        (base32 "0gm5f1ji7xa6kv93wy050dqhbh9picyc73zj0cfc106skq8m7hwx"))))
+        (base32 "03vwg6nbs2nsmz4276sh4mlcss21cxfqafzq25m09yvwkqzw9khr"))))
     (properties `((upstream-name . "errors")))
     (build-system r-build-system)
     (arguments
@@ -12262,41 +12438,6 @@ expression or with other conditions (e.g. if object is numeric), using one
 function call.")
     (license license:expat)))
 
-(define-public r-epoch
-  (package
-    (name "r-epoch")
-    (version "1.0.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Epoch" version))
-       (sha256
-        (base32 "0ff74ww2nnadabdrap3s1swj2c2k5a9yskrz27mc3v8x8136d4f5"))))
-    (properties `((upstream-name . "Epoch")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tablecontainer
-                             r-rlang
-                             r-ramify
-                             r-osfr
-                             r-jsonlite
-                             r-gsignal
-                             r-glue
-                             r-ggtext
-                             r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=Epoch")
-    (synopsis "IEEG (Intracranial Electroencephalography) Epoch Data Tools")
-    (description
-     "This package provides tools for working with @code{iEEG} matrix data, including
-downloading curated @code{iEEG} data from OSF (The Open Science Framework
-<https://osf.io/>) @code{(EpochDownloader()}), making new objects
-@code{(Epoch()}), processing @code{(crop()} and @code{resample()}), and
-visualizing the data @code{(plot()}).")
-    (license license:gpl3+)))
-
 (define-public r-epocakir
   (package
     (name "r-epocakir")
@@ -12505,13 +12646,13 @@ to do parametric simulations and analysis.")
 (define-public r-eplsim
   (package
     (name "r-eplsim")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EPLSIM" version))
        (sha256
-        (base32 "0si84ra62vvw0wdaf8mld68klfx04wad3jwrnw6hsq3ffvmbz56i"))))
+        (base32 "0v7lwr9z7ainy3i0vy3i7qxz19whpffp1pgg1x16jvmdwiimqww2"))))
     (properties `((upstream-name . "EPLSIM")))
     (build-system r-build-system)
     (arguments
@@ -13346,13 +13487,13 @@ vignette.")
 (define-public r-epiquestionr
   (package
     (name "r-epiquestionr")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EpiQuestionR" version))
        (sha256
-        (base32 "0ikcrsn16swvbby7x9axxk47ig97krsd8vfvbcwd93ixcd6msl2b"))))
+        (base32 "1w6v3jf9l66yyb4hnv9ns1y037zsxqnp6brs63j1m8p32jlnvc4i"))))
     (properties `((upstream-name . "EpiQuestionR")))
     (build-system r-build-system)
     (arguments
@@ -14833,13 +14974,13 @@ on the algorithm by Panja, et al. (2022) and Panja, et al. (2023)
 (define-public r-epibyhand
   (package
     (name "r-epibyhand")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epibyhand" version))
        (sha256
-        (base32 "1zyflardmhs5s6487vsaa9xj2afaqnbmllzlyzaghcm8iryhxpah"))))
+        (base32 "1p85bq63x7sqq4a8l2m3vk5lg2mcald19rzgd6861g242b4xm6kf"))))
     (properties `((upstream-name . "epibyhand")))
     (build-system r-build-system)
     (arguments
@@ -15600,13 +15741,13 @@ functions pair to provide a robust alternative to @code{base::library()} and
 (define-public r-envipathr
   (package
     (name "r-envipathr")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "enviPathR" version))
        (sha256
-        (base32 "0y7snvkzd1m88xd60x3lgprmb716da8j78j3xqw8y7ks89zh7yxs"))))
+        (base32 "1qs8a176rs5ch5fgwy1i6vyx8zmn7yvia3ap03yp62r45mqircp9"))))
     (properties `((upstream-name . "enviPathR")))
     (build-system r-build-system)
     (arguments
@@ -15927,38 +16068,41 @@ exponentially fast.")
 (define-public r-entropicstatistics
   (package
     (name "r-entropicstatistics")
-    (version "0.1.3")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EntropicStatistics" version))
        (sha256
-        (base32 "0y8fd80k8sj9smh9l331z7qfhavcim66nfnhbks7nvwlhzizaval"))))
+        (base32 "0zwp3l7jsxy7pw8lvgnrbljhyld4jwmzbqjvlmyk9jzkccnfli2j"))))
     (properties `((upstream-name . "EntropicStatistics")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr r-tibble r-rlang r-ggplot2 r-dplyr))
+    (propagated-inputs (list r-rlang r-ggplot2))
     (home-page "https://cran.r-project.org/package=EntropicStatistics")
     (synopsis "Functions Based on Entropic Statistics")
     (description
-     "This package provides methods for data analysis from an entropic perspective.
-These methods are nonparametric and perform well on non-ordinal data.  Currently
-includes @code{HeatMap()} for visualizing distributional characteristics among
-multiple populations (groups).")
+     "Nonparametric tools for comparing discrete distributions through generalized
+Shannon entropy profiles, following Zhang and Shi (2024)
+<doi:10.1016/j.spl.2024.110070>. @code{HeatMap()} visualizes these profiles
+across entropy orders. @code{HeatMapOrder()} provides hierarchical clustering,
+reference similarity ranking, and other row orderings, with accessible profiles
+and position tables.  Comparisons are invariant to category permutations and
+describe distributional shape rather than dependence between variables.")
     (license license:gpl3)))
 
 (define-public r-entropic-scree
   (package
     (name "r-entropic-scree")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Entropic.Scree" version))
        (sha256
-        (base32 "1ddh99yj080wrc06fw7i8bl1x69q1hnq7if49czmgv4niw30zvqw"))))
+        (base32 "1bkyxxps6zjw4hgx7n38vvqvdx2gnp14rdyy1ka4b5kw55vgs4zq"))))
     (properties `((upstream-name . "Entropic.Scree")))
     (build-system r-build-system)
     (arguments
@@ -15966,14 +16110,19 @@ multiple populations (groups).")
       #:tests? #f))
     (propagated-inputs (list r-rcpp r-patchwork r-infotheo r-ggplot2
                              r-data-table))
-    (home-page "https://zenodo.org/records/22028087")
-    (synopsis "Information-Theoretic Dimensionality Estimation")
+    (home-page "https://doi.org/10.5281/zenodo.22028086")
+    (synopsis "Information-Theoretic Measurement Mapping and Rank Estimation")
     (description
-     "An information-theoretic diagnostic technique for estimating the intrinsic
-dimensionality of tabular datasets.  Evaluates shared probability mass via a
-transformed mutual information metric.  Aims to extract the Intrinsic Generative
-Rank (r) and structural topology.  For full methodological details, see the
-preprint by Lee-St.  John (2026) <https://zenodo.org/records/22028087>.")
+     "Maps relationships among measurements using a double-centered,
+joint-entropy-normalized mutual information matrix.  Provides informational-axis
+loadings, primary and extended spectral-boundary diagnostics, and
+spectral-volume and informational-gravity summaries for discrete and discretized
+tabular data.  The selected Primary Informational Rank is a candidate
+information-spectrum boundary, not an identified generating dimension.
+Optional, explicitly recorded missing-data preparation supports categorical
+missing states and numeric median fills with protected missingness indicators.
+For methodological details, see Lee-St.  John (2026)
+<doi:10.5281/zenodo.22028086>.")
     (license license:asl2.0)))
 
 (define-public r-entropart
@@ -16260,13 +16409,13 @@ forecasts and weather observations
 (define-public r-enrollcast
   (package
     (name "r-enrollcast")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "enrollcast" version))
        (sha256
-        (base32 "06rw5wjy47miab1wy22bq36qpmlzghkak8w6faxh1qm54p8f1hhb"))))
+        (base32 "0zivf09p7dv8608d4i9iw36qk7q3y45i9g6qdx452lgj09nnhf4q"))))
     (properties `((upstream-name . "enrollcast")))
     (build-system r-build-system)
     (arguments
@@ -16274,7 +16423,7 @@ forecasts and weather observations
       #:tests? #f))
     (propagated-inputs (list r-rlang r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://rorylawless.r-universe.dev/enrollcast")
+    (home-page "https://localopen.github.io/enrollcast/")
     (synopsis "Project School Enrollment with Grade Progression Ratios")
     (description
      "Projects school enrollment using the cohort survival / grade progression ratio
@@ -16556,6 +16705,41 @@ overlayed, reduced rank, and reduced model matrices together with multiple data
 sets to practice the use of these models.  For more details see
 Covarrubias-Pazaran (2016) <doi:10.1371/journal.pone.0156744>.")
     (license license:gpl2+)))
+
+(define-public r-enhancedttest
+  (package
+    (name "r-enhancedttest")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "enhancedTtest" version))
+       (sha256
+        (base32 "095hc6mx2firf8cwngh8zfjqwjnwiv8jkgfsvgdcagmj10inndk1"))))
+    (properties `((upstream-name . "enhancedTtest")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang
+                             r-officer
+                             r-nortest
+                             r-htmltools
+                             r-flextable
+                             r-dplyr
+                             r-car))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=enhancedTtest")
+    (synopsis "Enhanced T-Test with Automatic Selection and APA Formatting")
+    (description
+     "This package provides enhanced t-test functionality with automatic assumption
+checking, non-parametric fallbacks, effect size calculation, and APA-formatted
+tables that can be exported to Word documents.  Supports one-sample, two-sample,
+and paired t-tests with intelligent test selection.  Effect size interpretations
+follow Cohen (1988) <doi:10.4324/9780203771587> and APA formatting follows the
+Publication Manual of the American Psychological Association, 7th edition (2020)
+<doi:10.1037/0000165-000>.")
+    (license license:gpl3)))
 
 (define-public r-engrexpt
   (package
@@ -17084,13 +17268,13 @@ factor.")
 (define-public r-encharter
   (package
     (name "r-encharter")
-    (version "0.12")
+    (version "0.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "encharter" version))
        (sha256
-        (base32 "1qf5ak2brkifnb1416mcxaww7fcwhlcjaqjj5xmagb1jj26xs2gp"))))
+        (base32 "0j51x5p0ccfcqws4az1zm1428alavypsnl35a5gw8jbrw8kxl0zk"))))
     (properties `((upstream-name . "encharter")))
     (build-system r-build-system)
     (arguments
@@ -18305,13 +18489,13 @@ constrains, and variables restricted to be integers.")
 (define-public r-emhawkes
   (package
     (name "r-emhawkes")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "emhawkes" version))
        (sha256
-        (base32 "0qh6vvpdf5062fd5jiqrjwy40dagnn6gl81q3d9zycqs4ql9ifl1"))))
+        (base32 "1s84nwm09717j4faw6jwqp5ywivdb2nky7by66x6a62rs2189s30"))))
     (properties `((upstream-name . "emhawkes")))
     (build-system r-build-system)
     (arguments
@@ -24469,13 +24653,13 @@ associated metadata.")
 (define-public r-edgarfundamentals
   (package
     (name "r-edgarfundamentals")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "edgarfundamentals" version))
        (sha256
-        (base32 "1vfj4x2dpj970fm2acym132gm5bf4p3bsqmn08ahxdzbmawnv28y"))))
+        (base32 "0d7k2fll6halxay07qcgkzg2b5iw8iaf5nbf169gs35dkn7k94la"))))
     (properties `((upstream-name . "edgarfundamentals")))
     (build-system r-build-system)
     (arguments
@@ -24724,13 +24908,13 @@ package @code{bupaR}'.")
 (define-public r-ede
   (package
     (name "r-ede")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EDE" version))
        (sha256
-        (base32 "15zdm631xra9ycgday0jcyklvmwj86b59mgvvrbzpjz0253ng3lb"))))
+        (base32 "1pdd15g1z1fgydf8r03pim11axrdi99p2g40gspm3r33b7r6y6bg"))))
     (properties `((upstream-name . "EDE")))
     (build-system r-build-system)
     (arguments
@@ -24740,22 +24924,20 @@ package @code{bupaR}'.")
     (home-page "https://github.com/rodrigosqrt3/EDE")
     (synopsis "Extinction Date Estimation from Sighting Records")
     (description
-     "Estimates the historic date of extinction of a species from a time-ordered
-record of sighting events.  Given a table of sighting counts per year, computes
-extinction date estimators from the sighting-record literature: optimal linear
-estimation and its Weibull extreme-value persistence test (Roberts & Solow,
-2003; Solow, 2005), constant-rate and declining-rate persistence tests (Solow,
-1993), a sighting-rate persistence test comparable across records with different
-observation periods (@code{McInerny}, Roberts, Davy & Cribb, 2006), a classical
-confidence interval on the end of a temporal range (Strauss & Sadler, 1989), a
-truncation-point extrapolation (Robson & Whitlock, 1964), and a combinatorial
-persistence test based on inclusion-exclusion over sighting-gap occupancy
-(Burgman, Grimson & Ferson, 1995).  Also implements a nonparametric endpoint
-test (Solow & Roberts, 2003), a sighting-interval trend index (JariÄ &
-Ebenhard, 2010), and reliability-adjusted inference for uncertain records
-(JariÄ & Roberts, 2014).  Every estimator is built on a validated input object
-and returns a common result class with, where defined, a point estimate, a
-confidence interval, or a full p-value curve.")
+     "This package infers the extinction of a species from a time-ordered record of
+sightings, collecting methods from the sighting-record and stratigraphic-range
+literature under one interface.  Includes endpoint estimators (Robson &
+Whitlock, 1964; Strauss & Sadler, 1989; Roberts & Solow, 2003), frequentist
+persistence tests (Solow, 1993a, 1993b; Burgman, Grimson & Ferson, 1995; Solow &
+Roberts, 2003; Solow, 2005; @code{McInerny}, Roberts, Davy & Cribb, 2006; JariÄ
+& Ebenhard, 2010), Bayesian models (Rout, Salomon & @code{McCarthy}, 2009; Caley
+& Barry, 2014), methods for sightings of uncertain reliability (Thompson et al.,
+2013; JariÄ & Roberts, 2014; Lee et al., 2014; Brook, Buettel & JariÄ, 2019;
+Kodikara et al., 2020, 2021), models combining records and surveys (Thompson et
+al., 2017, 2019), and confidence intervals on the end-points of fossil ranges
+(Marshall, 1994, 1997; Weiss & Marshall, 1999).  Every method is tested against
+the published examples of its source paper and returns a common result class;
+persistence tests are inverted to give one-sided upper confidence bounds.")
     (license license:gpl3+)))
 
 (define-public r-eddington
@@ -27102,13 +27284,13 @@ e-Benjamini-Hochberg, Closed Su and Closed Benjamini-Yekutieli procedures.")
 (define-public r-eclipseplot
   (package
     (name "r-eclipseplot")
-    (version "0.9.7")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eclipseplot" version))
        (sha256
-        (base32 "0p4zc3zr1n6ndf6b3r27wxg20rxzqk6dm0agxay8gfnsifsac2y2"))))
+        (base32 "1x4v5yxbhkp20ljskcj04g91mp5yah3pkkbq08jqirsvism6r7nz"))))
     (properties `((upstream-name . "eclipseplot")))
     (build-system r-build-system)
     (arguments
@@ -27116,19 +27298,16 @@ e-Benjamini-Hochberg, Closed Su and Closed Benjamini-Yekutieli procedures.")
       #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-readxl
-                             r-magrittr
                              r-ggplot2
                              r-ggforce
                              r-dplyr
                              r-cowplot))
-    (home-page "https://github.com/pevid-sci/eclipseplot")
+    (home-page "https://cran.r-project.org/package=eclipseplot")
     (synopsis
-     "Graphical Visualizations for ROBUST-RCT Risk of Bias Assessments")
+     "Eclipse Plot: A Graphical Visualization for Risk of Bias Assessments with ROBUST")
     (description
-     "This package provides visual representations of risk-of-bias assessments using
-the ROBUST-RCT framework, as described in Wang et al. (2025)
-<doi:10.1136/bmj-2024-081199>.  The graphical visualization displays both
-factual evaluation (Step 1) and judgment (Step 2).")
+     "This package provides a novel visualization tool for the ROBUST framework,
+displaying both factual evaluation (Step 1) and judgment (Step 2).")
     (license license:gpl3)))
 
 (define-public r-ecipex
@@ -28030,13 +28209,13 @@ rank-loss functions are also given.")
 (define-public r-ebrahim-gof
   (package
     (name "r-ebrahim-gof")
-    (version "2.10.0")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ebrahim.gof" version))
        (sha256
-        (base32 "0k4g0zwz5a6i5cpzy4qklvhs2rbb8d3jg5xw597qnlkvn2h265m5"))))
+        (base32 "0zaawzfwh6d9hv462kb1l2ccl9sns6wv71vb3xxzglhl5d6amjvk"))))
     (properties `((upstream-name . "ebrahim.gof")))
     (build-system r-build-system)
     (arguments
@@ -30254,31 +30433,38 @@ coupled-to-MCMC schemes are implemented.")
 (define-public r-easy-glmnet
   (package
     (name "r-easy-glmnet")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "easy.glmnet" version))
        (sha256
-        (base32 "1zf30ihhb8pmiwrsnf8fm44xncczd80jwv9rwkpv6cj8vw1cw01j"))))
+        (base32 "056k5ssvm5hmkgc9jzlc7lljz8yq5yanpmqkvx72kxq7h25vc6p2"))))
     (properties `((upstream-name . "easy.glmnet")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-survival r-glmnet r-foreach r-doparallel))
+    (propagated-inputs (list r-survival
+                             r-proc
+                             r-multisite-accuracy
+                             r-glmnet
+                             r-foreach
+                             r-doparallel
+                             r-cocor))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=easy.glmnet")
     (synopsis "Functions to Simplify the Use of 'glmnet' for Machine Learning")
     (description
-     "This package provides several functions to simplify using the glmnet package:
+     "This package provides several functions to simplify using the glmnet package: a)
 converting data frames into matrices ready for glmnet'; b) imputing missing
 variables multiple times; c) fitting and applying prediction models
 straightforwardly; d) assigning observations to folds in a balanced way; e)
-cross-validate the models; f) selecting the most representative model across
-imputations and folds; and g) getting the relevance of the model regressors; as
-described in several publications: Solanes et al. (2022)
-<doi:10.1038/s41537-022-00309-w>, Palau et al. (2023)
-<doi:10.1016/j.rpsm.2023.01.001>, Salazar de Pablo et al. (2025)
+cross-validate the models and estimating the accuracy and calibration; f)
+selecting the most representative model across imputations and folds; and g)
+getting the count and relevance of the model regressors; as described in several
+publications: Solanes et al. (2022) <doi:10.1038/s41537-022-00309-w>, Palau et
+al. (2023) <doi:10.1016/j.rpsm.2023.01.001>, Salazar de Pablo et al. (2025)
 <doi:10.1038/s41380-025-03244-1>.")
     (license license:gpl3)))
 
