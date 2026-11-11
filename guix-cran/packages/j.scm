@@ -652,13 +652,13 @@ cycles, optimal interest rate, and recession forecasts.")
 (define-public r-jtools
   (package
     (name "r-jtools")
-    (version "2.3.1")
+    (version "2.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jtools" version))
        (sha256
-        (base32 "05bh9rjqnvqczxi35lsyjy4j6caw7s0yjafc2nl19rz89z1hpfzc"))))
+        (base32 "0jjqqrkryw8k4cs46mffljgzyj71bqjzb0f3ijvrxbayk683pdjh"))))
     (properties `((upstream-name . "jtools")))
     (build-system r-build-system)
     (arguments
@@ -667,6 +667,7 @@ cycles, optimal interest rate, and recession forecasts.")
     (propagated-inputs (list r-tibble
                              r-sandwich
                              r-rlang
+                             r-reformulas
                              r-pkgconfig
                              r-pander
                              r-magrittr

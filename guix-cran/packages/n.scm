@@ -114,13 +114,13 @@ al. (2021) <doi:10.1016/j.wocn.2021.101096> and Wilson Black et al. (2023)
 (define-public r-nzilbb-labbcat
   (package
     (name "r-nzilbb-labbcat")
-    (version "1.5-1")
+    (version "1.6-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nzilbb.labbcat" version))
        (sha256
-        (base32 "0c4v595yj3maw41jpk23w194a60pvd4b0f4p7ckzd2fflrh6m1ln"))))
+        (base32 "0jj1zndpi7m6zg10alnp8dygi9rxb5wzafkg8ad7sw1drpp6i7kp"))))
     (properties `((upstream-name . "nzilbb.labbcat")))
     (build-system r-build-system)
     (arguments
@@ -134,7 +134,7 @@ al. (2021) <doi:10.1016/j.wocn.2021.101096> and Wilson Black et al. (2023)
 the New Zealand Institute of Language, Brain and Behaviour (NZILBB) - see
 <https://labbcat.canterbury.ac.nz>.  This package defines functions for
 accessing corpus data in a @code{LaBB-CAT} instance.  You must have at least
-version 20230818.1400 of @code{LaBB-CAT} to use this package.  For more
+version 20250430.1502 of @code{LaBB-CAT} to use this package.  For more
 information about @code{LaBB-CAT}', see Robert Fromont and Jennifer Hay (2008)
 <doi:10.3366/E1749503208000142> or Robert Fromont (2017)
 <doi:10.1016/j.csl.2017.01.004>.")
@@ -547,6 +547,43 @@ variables for continuous data, discrete data and mixed discrete-continuous data.
  The package is based on the copula graphical model in Behrouzi and Wit (2017)
 <doi:10.1111/rssc.12287>.")
     (license license:gpl3)))
+
+(define-public r-nutrigon
+  (package
+    (name "r-nutrigon")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nutrigon" version))
+       (sha256
+        (base32 "19dl2zbg9wndq46h6kbzyg08zmgsglxd3s02h1ajnqfzcgmdkzyj"))))
+    (properties `((upstream-name . "nutrigon")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jmor2753/nutrigon")
+    (synopsis "Angular Separation Between Nutritional Optima")
+    (description
+     "Fits response surfaces (ordinary least squares, generalized linear models with
+any family including quasi-families, or linear mixed-effects models) to trait
+data collected under the Geometric Framework for Nutrition and computes the
+angular separation (theta) between the nutritional optima of two traits, with
+percentile bootstrap confidence intervals that propagate surface-estimation
+uncertainty (case or stratified resampling; paired or unpaired).  Provides a
+design-matched coverage check that simulates validation configurations on the
+user's own design and at the signal-to-noise ratio of the fitted surfaces, an
+equivalence test for alignment of optima, local Gaussian and mean curvature, and
+a surface-area ratio.  Includes the Drosophila lifespan and fecundity dataset of
+Lee et al. (2008) \"Lifespan and reproduction in Drosophila: new insights from
+nutritional geometry\" <doi:10.1073/pnas.0710787105> as a worked example.  The
+angular approach was introduced in Morimoto (2023) \"Nutrigonometry I: using
+right-angle triangles to quantify nutritional trade-offs in performance
+landscapes\" <doi:10.1086/723599>.")
+    (license license:expat)))
 
 (define-public r-nutrientracker
   (package
@@ -4237,13 +4274,13 @@ Kiefel and Bathke (2022) <doi:10.1515/stat-2022-0112>.")
 (define-public r-nparld
   (package
     (name "r-nparld")
-    (version "2.3.3")
+    (version "2.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nparLD" version))
        (sha256
-        (base32 "0ydd4azzb7w4pq2lb17mwdlijcdnda7ngmxk4yk6ywgwccgxwzjj"))))
+        (base32 "1wf2p3fmzjw6232kj2jdwy3p1bmkxv0x1vw4hma4cj3avwy9d22j"))))
     (properties `((upstream-name . "nparLD")))
     (build-system r-build-system)
     (arguments
@@ -5110,13 +5147,13 @@ mixtures via smart parametrization using the LDL (Cholesky) decomposition, see
 (define-public r-normgen
   (package
     (name "r-normgen")
-    (version "0.0.7")
+    (version "0.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NormGen" version))
        (sha256
-        (base32 "1sbnj26yrsaxx85w94c6zx0i5gi49sax6r3x5ds50q698c2ww1v1"))))
+        (base32 "0zzs1h4jx8rbnkahzkb2nrmnanwj85gwd7vjz14spqh9czxinhxb"))))
     (properties `((upstream-name . "NormGen")))
     (build-system r-build-system)
     (arguments
@@ -5131,11 +5168,10 @@ mixtures via smart parametrization using the LDL (Cholesky) decomposition, see
      "High-performance pseudo-normal random generator using an optimized quantile
 mapping algorithm.  It provides fast generation of normal pseudo-random numbers
 based on precise mathematical approximations.  The package features
-@code{Rnorm()} for efficient single-threaded generation and
-@code{parallel_Rnorm()}, a high-performance, multithreaded variant powered by
-@code{RcppParallel} and Intel TBB'.  Package compilation flags are optimized to
-support multi-core parallel processing.  Renamed @code{parallel_Rnorm()} to
-@code{PRnorm()} for brevity.")
+@code{Rnorm()} for efficient single-threaded generation and @code{PRnorm()}, a
+high-performance, multithreaded variant powered by @code{RcppParallel} and Intel
+TBB'.  Package compilation flags are optimized to support multi-core parallel
+processing.")
     (license license:gpl3)))
 
 (define-public r-normfluodbf
@@ -7472,6 +7508,31 @@ described by Rafi, Padgett, and Nakarmi (2024)
 polynomials, transcendental-function approximations, multidimensional maximum
 convolution, and vectorized batch realization.")
     (license license:gpl3)))
+
+(define-public r-nnpreg
+  (package
+    (name "r-nnpreg")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NNPreg" version))
+       (sha256
+        (base32 "0wr0nyxsikk0fhgm0r53ykg0jny963ylf1rfhrajkdjxjsdnmray"))))
+    (properties `((upstream-name . "NNPreg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=NNPreg")
+    (synopsis "Nuclear Norm Penalized Regression")
+    (description
+     "Fits nuclear norm penalized multivariate linear regression models using the fast
+iterative shrinkage-thresholding algorithm (FISTA) of Beck and Teboulle (2009)
+<doi:10.1137/080716542>.  Provides fixed-penalty estimation, regularization
+paths, K-fold cross-validation, prediction, coefficient extraction, and
+diagnostic plots.")
+    (license license:expat)))
 
 (define-public r-nnmomo
   (package
@@ -13092,13 +13153,13 @@ or conditioning to which it refers.")
 (define-public r-newmanomics
   (package
     (name "r-newmanomics")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NewmanOmics" version))
        (sha256
-        (base32 "0fx7c0yzqvvi3d56s20klwb0l6d55v37hryng6npnnwzs70m0qpz"))))
+        (base32 "0sj0y8n3xn5lqiy185v4n7g8dhmk3zvaa862ivim2dg1m37xdaww"))))
     (properties `((upstream-name . "NewmanOmics")))
     (build-system r-build-system)
     (arguments
@@ -13204,6 +13265,42 @@ distributions, geometric exponential Poisson G distributions,
 truncated-exponential skew-symmetric G distributions, modified beta G
 distributions, and exponentiated exponential Poisson G distributions.")
     (license license:gpl2+)))
+
+(define-public r-newdata
+  (package
+    (name "r-newdata")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "newdata" version))
+       (sha256
+        (base32 "1pc47jpvzi691n2r3cj3j4qca14vzgd87nvvc9b1kk8mm8n35nh5"))))
+    (properties `((upstream-name . "newdata")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs
+                             r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-lifecycle
+                             r-hms
+                             r-dplyr
+                             r-chk))
+    (home-page "https://poissonconsulting.github.io/newdata/")
+    (synopsis "Generate New Data Frames for Prediction")
+    (description
+     "Generates new data frames for predictive purposes.  By default, all specified
+variables vary across their range while all other variables are held constant at
+the default reference value.  Types, classes, factor levels and time zones are
+always preserved.  The user can specify the length of each sequence, require
+that only observed values and combinations are used and add new variables.  The
+result is intended to be passed to the prediction method of a fitted model
+object to visualize the effect of one or more variables while controlling for
+the others.")
+    (license license:expat)))
 
 (define-public r-new-dist
   (package
@@ -18169,13 +18266,13 @@ Guarino (2022) <doi:10.48550/@code{arXiv.2208.06855>}.")
 (define-public r-nebula
   (package
     (name "r-nebula")
-    (version "1.5.8")
+    (version "1.5.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nebula" version))
        (sha256
-        (base32 "1gvv94029l1m1l5p51mblnk4gx1khq4bk0533hkmxq080h50sjha"))))
+        (base32 "0krss9p1v7f3z9qcqxvgv7cwsi2c4aqx2d7a97l8z1np18ial1hl"))))
     (properties `((upstream-name . "nebula")))
     (build-system r-build-system)
     (arguments
@@ -18528,37 +18625,36 @@ disparity.")
 (define-public r-nda
   (package
     (name "r-nda")
-    (version "0.2.5")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nda" version))
        (sha256
-        (base32 "1shnki70bx9y5ji2spcnnwrxj538j7019cqd0x8nkblqi56abkkb"))))
+        (base32 "0yyyn8lgvlfslyp90ddrpd93c9acd09xp0vkn25lqdgvc4ijdihz"))))
     (properties `((upstream-name . "nda")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-visnetwork
-                             r-rfast
                              r-psych
                              r-ppcor
-                             r-metrics
                              r-mco
                              r-matrix
                              r-mass
-                             r-lm-beta
-                             r-leidenalg
                              r-igraph
                              r-energy))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/kzst/nda")
     (synopsis
      "Generalized Network-Based Dimensionality Reduction and Analysis")
     (description
-     "Non-parametric dimensionality reduction function.  Reduction with and without
-feature selection.  Plot functions.  Automated feature selections.  Kosztyan et.
- al. (2024) <doi:10.1016/j.eswa.2023.121779>.")
+     "Constructs interpretable latent variables from communities in
+squared-association networks.  Supports full, partial, and semipartial
+associations, feature selection, sparse networks, inference, prediction,
+visualization, and supervised regression.  The generalized method is described
+in Kosztyan et al. (2024) <doi:10.1016/j.eswa.2023.121779>.")
     (license license:gpl2+)))
 
 (define-public r-ncvreg
@@ -19576,13 +19672,13 @@ functions for making tables that compare observed and theoretical statistics.")
 (define-public r-nbdctools
   (package
     (name "r-nbdctools")
-    (version "1.1.0")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NBDCtools" version))
        (sha256
-        (base32 "0lq3ysxjbfn7q2h0mz7afiwx9aq60z64dj0yws7d0pzjj5q5vb7y"))))
+        (base32 "1a7wimdnzg9clgahzmdh52ppvn37ibhkw6ryg1lx1zxapskxs0za"))))
     (properties `((upstream-name . "NBDCtools")))
     (build-system r-build-system)
     (arguments
@@ -21108,13 +21204,13 @@ provides a name to the latent variable.")
 (define-public r-naijr
   (package
     (name "r-naijr")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "naijR" version))
        (sha256
-        (base32 "0ryyx28khbgmyspr0pp7i2qjzcyirs74hzj3lcykyp0yybbq6cja"))))
+        (base32 "0dvwg1x18lj32d65prj69wjrzy0qr8455k9wfcv295bwjx61pn54"))))
     (properties `((upstream-name . "naijR")))
     (build-system r-build-system)
     (arguments
@@ -21298,31 +21394,31 @@ originally described in van der Laan et al. (2007)
 (define-public r-nadaverse
   (package
     (name "r-nadaverse")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nadaverse" version))
        (sha256
-        (base32 "08bhf7ld9i245dd0c2sbxqwy0grnfws2sj5rbr90nh7j3mhl8pi6"))))
+        (base32 "0qif4q3g10r9a7gdgw5hdaxza5ghzc77sy7q0igwhi7hbfhsgc4m"))))
     (properties `((upstream-name . "nadaverse")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-httr2 r-cli))
-    (home-page "https://github.com/guturago/nadaverse")
+    (native-inputs (list r-knitr))
+    (home-page "https://guturago.github.io/nadaverse/")
     (synopsis "Browse Microdata Catalogs Using 'NADA' REST API")
     (description
      "This package provides a unified, programmatic interface for searching, browsing,
-and retrieving metadata from various international organization data
-repositories that use the National Data Archive ('NADA') software, such as the
-World Bank, FAO', and the International Household Survey Network ('IHSN').
-Functions allow users to discover available data collections, country codes, and
-access types, perform complex searches using keyword and spatial/temporal
-filters, and retrieve detailed study information, including file lists and
-variable-level data dictionaries.  It simplifies access to microdata for
-researchers and policy analysts globally.")
+and retrieving metadata from data repositories that use the National Data
+Archive ('NADA') software, such as the World Bank, FAO', the International
+Household Survey Network ('IHSN'), UNHCR', the World Health Organization, and
+the statistics offices of Kenya and Zambia.  Functions discover available data
+collections, country codes, and access types, search by keyword, country, and
+year, and retrieve study metadata, file lists, and variable-level data
+dictionaries.")
     (license license:expat)))
 
 (define-public r-nada2

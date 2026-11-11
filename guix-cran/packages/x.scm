@@ -776,13 +776,13 @@ style-sheet.")
 (define-public r-xslmodels
   (package
     (name "r-xslmodels")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "XSLmodels" version))
        (sha256
-        (base32 "07s13nd8ssfrljvij4bi72gwxpv0sk6pg84wzdg0r7d156p4avfr"))))
+        (base32 "0lmpbh1p8kwsn2fj5lkgkz28x74rpqyfrkh7zr8c02skhg2jlac6"))))
     (properties `((upstream-name . "XSLmodels")))
     (build-system r-build-system)
     (arguments
@@ -2599,6 +2599,45 @@ sharing event data (see
      "Datasets and definitions of generic functions used in dependencies of the xergm
 package.")
     (license license:gpl2+)))
+
+(define-public r-xemd
+  (package
+    (name "r-xemd")
+    (version "0.1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "xemd" version))
+       (sha256
+        (base32 "0j40rwxrmj6lzjshq1ryra71z0gamkf59pgd9i1s1mb2hv0awghn"))))
+    (properties `((upstream-name . "xemd")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-pracma r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://kanameishi.github.io/xemd/")
+    (synopsis "eXtended Empirical Mode Decomposition")
+    (description
+     "Signals are decomposed into oscillatory modes by empirical mode decomposition
+and its ensemble, complementary ensemble, complete ensemble, masked, bivariate
+and multivariate variants, by variational mode decomposition and its
+multivariate and successive variants, and by local mean decomposition, iterative
+filtering, time varying filter empirical mode decomposition and the empirical
+wavelet transform; the synchrosqueezed wavelet transform is also provided.
+Empirical mode decomposition is due to Huang et al. (1998)
+<doi:10.1098/rspa.1998.0193>, its ensemble variant to Wu and Huang (2009)
+<doi:10.1142/S1793536909000047> and variational mode decomposition to
+Dragomiretskiy and Zosso (2014) <doi:10.1109/TSP.2013.2288675>.  The modes can
+be described by their instantaneous amplitude and frequency and their Hilbert
+spectrum, tested as intrinsic mode functions or against white noise, selected by
+energy and compared through orthogonality, mode splitting, reconstruction
+quality, ensemble dispersion and similarity measures.  Acceleration, velocity
+and displacement records stored as a long table of time, value, quantity and
+component are decomposed for every record and quantity in one call, with a
+warning and a regularization of the time grid when it is not uniform.")
+    (license license:gpl3)))
 
 (define-public r-xegaselectgene
   (package

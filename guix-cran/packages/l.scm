@@ -610,6 +610,50 @@ visualize the UTC offset over a year and when daylight savings times are in
 effect.")
     (license license:expat)))
 
+(define-public r-lupa
+  (package
+    (name "r-lupa")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lupa" version))
+       (sha256
+        (base32 "1y00wj5qmhvm4ya7mnzbsizgivfrc2gp4044h1h2rgl7hnrdxrnj"))))
+    (properties `((upstream-name . "lupa")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-data-table r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/sebollin/lupa")
+    (synopsis "Data Profiling and Quality Measurement")
+    (description
+     "Profiles tabular data and measures its quality.  Discovers structural patterns,
+implicit types, mixed date formats and reusable findings about potential data
+issues; defines quality frameworks with user-declared dimensions, reusable
+metrics with explicit granularity and typed aggregation; keeps versioned
+histories and detects structural drift; writes self-contained @code{HyperText}
+Markup Language reports; and produces editable cleaning plans that apply only
+the actions the user selects, with an audit log.  The general model follows
+Batini and Scannapieco (2016) <doi:10.1007/978-3-319-24106-7>.  The package
+implements version 1.6 of the data quality management framework for digital
+government of the Uruguayan Agency for Electronic Government and Information and
+Knowledge Society, AGESIC (2020)
+<https://www.gub.uy/agencia-gobierno-electronico-sociedad-informacion-conocimiento/comunicacion/publicaciones/marco-trabajo-para-gestion-calidad-datos>;
+an optional taxonomy of the fifteen characteristics of the standard 25012 of the
+International Organization for Standardization and the International
+Electrotechnical Commission, ISO/IEC (2008)
+<https://www.iso.org/standard/35736.html>; and the four levels and nineteen
+principles of the national quality assurance framework of the United Nations
+(2019) <https://unstats.un.org/unsd/methodology/dataquality/>, as adapted for
+Latin America and the Caribbean by the Statistical Conference of the Americas of
+the Economic Commission for Latin America and the Caribbean, CEA-CEPAL (2022)
+<https://repositorio.cepal.org/handle/11362/47464>.  AGESIC, CEA and CEPAL are
+the Spanish acronyms of these institutions.")
+    (license license:gpl3)))
+
 (define-public r-lunar
   (package
     (name "r-lunar")
@@ -4110,13 +4154,13 @@ results with geometric correspondence analysis visualisations.")
 (define-public r-lorax
   (package
     (name "r-lorax")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lorax" version))
        (sha256
-        (base32 "0ak3085wym18il06vjpn4qw14clj93zlgwjw2pdmyw5msjk8bvbf"))))
+        (base32 "1byj6dqppbfqldlsw5g7zy2q7b49h4fkblhr5kfnm4dwblgq4ghc"))))
     (properties `((upstream-name . "lorax")))
     (build-system r-build-system)
     (arguments
@@ -4126,6 +4170,7 @@ results with geometric correspondence analysis visualisations.")
                              r-rlang
                              r-purrr
                              r-partykit
+                             r-hardhat
                              r-generics
                              r-dplyr
                              r-cli))
@@ -9594,13 +9639,13 @@ by the Python package langagent'.")
 (define-public r-llm-api
   (package
     (name "r-llm-api")
-    (version "0.1.9")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "llm.api" version))
        (sha256
-        (base32 "1334v32kml2djzyz6cxlpdbsis7b7ni28lla217l7i9dn4vszgnn"))))
+        (base32 "0zpdjppd0320aj9sb3h891ys37v8j5r7qd6j1hzf6qqbpp5mjcd0"))))
     (properties `((upstream-name . "llm.api")))
     (build-system r-build-system)
     (arguments
@@ -9612,10 +9657,11 @@ by the Python package langagent'.")
     (description
      "This package provides a minimal-dependency client for Large Language Model chat
 APIs.  Supports @code{OpenAI} <https://openai.com/>, Anthropic Claude
-<https://claude.com/>, Moonshot Kimi <https://www.moonshot.ai/>, @code{OpenAI}
-Codex subscription endpoints, Ollama <https://ollama.com/>, and other
-@code{OpenAI'-compatible} endpoints.  Includes an agent loop with tool use and a
-Model Context Protocol client <https://modelcontextprotocol.io/>.  API design is
+<https://claude.com/>, Moonshot Kimi <https://www.moonshot.ai/>, Google Gemini
+<https://ai.google.dev/>, @code{OpenAI} Codex subscription endpoints, Ollama
+<https://ollama.com/>, and other @code{OpenAI'-compatible} endpoints.  Supports
+streaming and image input.  Includes an agent loop with tool use and a Model
+Context Protocol client <https://modelcontextprotocol.io/>.  API design is
 derived from the ellmer package, reimplemented with only base R, curl',
 jsonlite', and tinyoauth'.")
     (license license:expat)))
@@ -10121,13 +10167,13 @@ supported in the update, nor is data of class gwaa.data (R package
 (define-public r-liteq
   (package
     (name "r-liteq")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "liteq" version))
        (sha256
-        (base32 "0w3w9f6374qwvlrqknavqh9b38n5q1r6aw5zmz5lahvadalwdbwi"))))
+        (base32 "1jsvi8d37vzcszaj4j7jkj269ss5myw4sfm4lhrg5qvklgh8s95r"))))
     (properties `((upstream-name . "liteq")))
     (build-system r-build-system)
     (arguments
@@ -11555,13 +11601,13 @@ code of Moneta et al.
 (define-public r-linf
   (package
     (name "r-linf")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "linf" version))
        (sha256
-        (base32 "14635ynk3ffrrv8fid4wl5qcsqrs33g3r1wq3q2cgd93iiyrph1y"))))
+        (base32 "00wf08mpfv12y2zb6zhnk19bk58a7bymn4knbhrfr1iy6ffca3a5"))))
     (properties `((upstream-name . "linf")))
     (build-system r-build-system)
     (arguments
@@ -11574,8 +11620,9 @@ code of Moneta et al.
     (description
      "This package implements L-infinity normalization for compositional matrices,
 assigns samples to dominant features, constructs truncated and hierarchically
-refined dominant community state types, and computes representative landmark
-profiles.  The methods are described in the accompanying publication
+refined dominant community state types, constructs unordered dominance sets with
+support-based sample filtering, and computes representative landmark profiles.
+The methods are described by Gajer and Ravel (2025)
 <doi:10.48550/@code{arXiv.2503.21543>}.  Bundled vaginal and gut microbiome data
 support reproducible demonstrations of the package interface; phenotype fields
 in the stratified gut subset are illustrative and are not suitable for
@@ -13910,13 +13957,13 @@ load EXR images.")
 (define-public r-liblinear
   (package
     (name "r-liblinear")
-    (version "2.10-26")
+    (version "2.50-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LiblineaR" version))
        (sha256
-        (base32 "00ibjahzrpjgxi94cy4sba9ahzy7i7kw563zli4zkw4nbx5247zw"))))
+        (base32 "1zjmasapsvlgp0vhcj4w22f9gp5g88aqs24dxsspbr0gmi1ry8m3"))))
     (properties `((upstream-name . "LiblineaR")))
     (build-system r-build-system)
     (arguments
@@ -13932,12 +13979,13 @@ LIBLINEAR is a simple library for solving large-scale regularized linear
 classification and regression.  It currently supports L2-regularized
 classification (such as logistic regression, L2-loss linear SVM and L1-loss
 linear SVM) as well as L1-regularized classification (such as L2-loss linear SVM
-and logistic regression) and L2-regularized support vector regression (with L1-
-or L2-loss).  The main features of @code{LiblineaR} include multi-class
-classification (one-vs-the rest, and Crammer & Singer method), cross validation
-for model selection, probability estimates (logistic regression only) or weights
-for unbalanced data.  The estimation of the models is particularly fast as
-compared to other libraries.")
+and logistic regression), L2-regularized support vector regression (with L1- or
+L2-loss), and one-class support vector machines for outlier/novelty detection.
+The main features of @code{LiblineaR} include multi-class classification
+(one-vs-the rest, and Crammer & Singer method), cross validation for model
+selection, probability estimates (logistic regression only) or weights for
+unbalanced data.  The estimation of the models is particularly fast as compared
+to other libraries.")
     (license license:gpl2)))
 
 (define-public r-libipldr
@@ -21849,13 +21897,13 @@ coordinates.")
 (define-public r-land4health
   (package
     (name "r-land4health")
-    (version "0.3.0")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "land4health" version))
        (sha256
-        (base32 "0snd3pc2id6wsxxjg7gpcd9xcmp34jf2vwff63jdgkmx2q6zz6h2"))))
+        (base32 "1bqfl4c3aglfadrmnyi6i83h9xvpvljq2pnbag8nll5gr9187q3d"))))
     (properties `((upstream-name . "land4health")))
     (build-system r-build-system)
     (arguments
@@ -21984,13 +22032,13 @@ for biology.  This package allows you to query and download data from
 (define-public r-lame
   (package
     (name "r-lame")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lame" version))
        (sha256
-        (base32 "0wsqgn1mncpyriiqn2cpj1ibdr939fsrcnxn5dy9fw66kllzs9sp"))))
+        (base32 "0nmznwkby51jlxv4db1lx3jk1x07v7360all489rs6q2rgjwivin"))))
     (properties `((upstream-name . "lame")))
     (build-system r-build-system)
     (arguments
@@ -22123,13 +22171,13 @@ underlying method is described in Hammes (2026) <doi:10.5281/zenodo.22962377>.")
 (define-public r-lama
   (package
     (name "r-lama")
-    (version "3.0.0")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LaMa" version))
        (sha256
-        (base32 "1b974zjw7lxvrlzlr3brigvnf6xdssldihwaf37b9cl4z5q7jml7"))))
+        (base32 "0js8bb3fx5cv7nj019x55yrpizp6iiqzmsvhnymc7j2xvx3xfyqj"))))
     (properties `((upstream-name . "LaMa")))
     (build-system r-build-system)
     (arguments

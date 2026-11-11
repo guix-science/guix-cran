@@ -6886,13 +6886,13 @@ regression analysis on social network data.")
 (define-public r-asml
   (package
     (name "r-asml")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ASML" version))
        (sha256
-        (base32 "1im3b2k7a18gr5m6vpzfs7k5vb9vy9myn8n4g77kl28wbqaskm2n"))))
+        (base32 "1b4ac4j1zvppd4khl5qf7qnis9vkcipgjbafcr7qvp9mai590mjm"))))
     (properties `((upstream-name . "ASML")))
     (build-system r-build-system)
     (arguments
@@ -7246,6 +7246,35 @@ Graubard, 2023 <doi:10.48550/@code{arXiv.2205.13494>}).  The focus is on
 hypothesis tests that have compatible confidence intervals, but some functions
 only have confidence intervals (e.g., @code{prevSeSp}).")
     (license license:gpl3)))
+
+(define-public r-asharechips
+  (package
+    (name "r-asharechips")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "asharechips" version))
+       (sha256
+        (base32 "0d5jlif6123rznbymq2fxbknj1f5k1yy7f60c2hr0i66wh98mynm"))))
+    (properties `((upstream-name . "asharechips")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=asharechips")
+    (synopsis "Estimate Holding Cost Distributions for Chinese Equities")
+    (description
+     "Estimates holding-cost distributions of mainland Chinese A-share equities from
+daily price, volume, amount and turnover data.  Implements the linear
+turnover-based cost-distribution recurrence of Liu and Wang (2018)
+<doi:10.1016/j.physa.2017.11.154>, and adds a package-specific
+exponential-retention alternative and price-allocation choices.  Provides
+optional adjustment factors and initial distributions, offline preparation of
+Tushare tables, weighted cost summaries and diagnostics for reproducible
+sensitivity analysis.")
+    (license license:expat)))
 
 (define-public r-ashapesampler
   (package
@@ -8986,6 +9015,36 @@ arity'.  Format R source text or individual files using a style based on the
 tidyverse R style guide.")
     (license license:expat)))
 
+(define-public r-arise
+  (package
+    (name "r-arise")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ARISE" version))
+       (sha256
+        (base32 "141z3a0cdjklmaz78s3z4k9klihphxcs90hs5gq870n3g1vjwf1d"))))
+    (properties `((upstream-name . "ARISE")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-randomforest r-matrixstats r-e1071))
+    (home-page "https://cran.r-project.org/package=ARISE")
+    (synopsis
+     "Adaptive Residual-Informed Stability Ensemble Feature Selection")
+    (description
+     "This package provides the Adaptive Residual-Informed Stability Ensemble
+('ARISE') method for supervised feature selection in small-sample biomedical
+omics.  The method combines complementary relevance components, class-balanced
+subsample stability, residual-informed redundancy control, multiclass pair
+coverage, nested profile racing, and soft consensus.  The main function returns
+only the column indices of the top-ranked features.  Method details are
+described by Zardad Khan, Amjad Ali, Naz Gul, and Saeed Aldahmani (2026)
+<doi:10.48550/@code{arXiv.2608.14866>}.")
+    (license license:gpl3)))
+
 (define-public r-arinfolstm
   (package
     (name "r-arinfolstm")
@@ -9152,44 +9211,50 @@ can be obtained from Paul and Garai (2022) <doi:10.1007/s41096-022-00128-3>.")
 (define-public r-aridagri
   (package
     (name "r-aridagri")
-    (version "2.0.4")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aridagri" version))
        (sha256
-        (base32 "0xdfy87yv02s1jr9q408rmbnxjrnxz2z3fmgjnnzagzvgq5vinxl"))))
+        (base32 "1z15ah7ahqwicnw7j4l89ik8nl6lsa4vlcijc202xnhl0h8i1s7q"))))
     (properties `((upstream-name . "aridagri")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-nlme))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/lalitrolaniya/aridagri")
     (synopsis "Comprehensive Statistical Tools for Agricultural Research")
     (description
-     "This package provides a comprehensive suite of statistical and analytical tools
-for agricultural research.  Includes complete analysis of variance (ANOVA)
-functions for all experimental designs: Completely Randomized Design (CRD),
-Randomized Block Design (RBD), Pooled RBD, Split Plot with all variations,
-Split-Split Plot, Strip Plot, Latin Square, Factorial, Augmented, and Alpha
-Lattice, with proper error terms and comprehensive Standard Error (SE) and
-Critical Difference (CD) calculations.  Features multiple post-hoc tests: Least
-Significant Difference (LSD), Duncan Multiple Range Test (DMRT), Tukey Honestly
-Significant Difference (HSD), Student-Newman-Keuls (SNK), Scheffe, Bonferroni,
-and Dunnett, along with assumption checking and publication-ready output.
-Advanced methods include stability analysis using Eberhart-Russell regression,
-Additive Main Effects and Multiplicative Interaction (AMMI), Finlay-Wilkinson
-regression, Shukla stability variance, Wricke ecovalence, Coefficient of
-Variation (CV), and Cultivar Superiority Index as described in Eberhart and
-Russell (1966) <doi:10.2135/cropsci1966.0011183X000600010011x>.  Thermal indices
-include Growing Degree Days (GDD), Heliothermal Units (HTU), Photothermal Units
-(PTU), and Heat Use Efficiency (HUE).  Crop growth analysis covers Crop Growth
-Rate (CGR), Relative Growth Rate (RGR), Net Assimilation Rate (NAR), and Leaf
-Area Index (LAI).  Also provides harvest index, yield gap analysis, economic
-efficiency indices (Benefit-Cost ratio), nutrient use efficiency calculations,
-correlation matrix, Principal Component Analysis (PCA), path analysis, and
-Structural Equation Modeling (SEM).  Statistical methods follow Gomez and Gomez
-(1984, ISBN:0471870927) and Panse and Sukhatme (1985, ISBN:8170271169).")
+     "Analysis of variance for the experimental designs used in agricultural research,
+with the correct error term for every stratum, standard error of mean (SEm),
+standard error of difference (SEd), critical difference (CD), coefficient of
+variation (CV) and letter groupings: completely randomized design (CRD),
+randomized complete block design (RCBD) with missing plots, Latin square, two-
+and three-factor factorials, split-plot designs (including factorial main or
+sub-plots), split-split-plot and strip-plot designs, and combined analysis over
+environments.  Also covers the augmented randomized complete block design with
+adjusted means and genetic parameters (Federer, 1961 <doi:10.2307/2527837>),
+alpha lattice designs with intra-block or residual maximum likelihood (REML)
+analysis (Patterson and Williams, 1976 <doi:10.1093/biomet/63.1.83>) and
+repeated measures with Greenhouse-Geisser and Huynh-Feldt corrections and
+covariance structure models.  Mean comparisons (least significant difference,
+Duncan, Tukey, Student-Newman-Keuls, Scheffe, Bonferroni and Dunnett) follow
+Gomez and Gomez (1984, ISBN:0471870927), with letters assigned by the algorithm
+of Piepho (2004) <doi:10.1198/1061860043515>.  Stability analysis includes
+Eberhart and Russell (1966) <doi:10.2135/cropsci1966.0011183X000600010011x>
+regression, additive main effects and multiplicative interaction (AMMI),
+Finlay-Wilkinson, Shukla, Wricke, coefficient of variation and Lin-Binns
+methods, and genotype plus genotype-by-environment (GGE) biplots (Yan et al.,
+2000 <doi:10.2135/cropsci2000.403597x>).  Further tools compute growing degree
+days, helio-thermal and photo-thermal units, crop growth rate, relative growth
+rate, net assimilation rate, leaf area index and leaf area duration, harvest
+index, yield gaps with the technology index, nutrient use efficiency, quadratic,
+plateau and Mitscherlich response curves with the economic optimum dose,
+benefit-cost ratio, correlation, principal component, path and structural
+equation analysis, publication tables for many traits and figures.")
     (license license:gpl3)))
 
 (define-public r-aribrain
@@ -13757,6 +13822,38 @@ tables for several types of analyses.  Using this package minimizes
 transcription errors and reduces the number commands needed by the user.")
     (license (license:fsdg-compatible "MIT License + file LICENSE"))))
 
+(define-public r-apastats2
+  (package
+    (name "r-apastats2")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "apastats2" version))
+       (sha256
+        (base32 "1sn6499mpyzjw6nqg66i8v46dghdvrxwzrz539fdp4ngfc8c2zqs"))))
+    (properties `((upstream-name . "apastats2")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-scales
+                             r-plyr
+                             r-labeling
+                             r-hmisc
+                             r-ggplot2
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://achetverikov.github.io/APAstats/")
+    (synopsis "Statistical Results in APA Style")
+    (description
+     "Proper formatting of statistical results in accordance with the American
+Psychological Association (APA) Manual (sixth edition), along with convenient
+helpers for summaries, confidence intervals, and plotting.  Development
+repository: <https://github.com/achetverikov/APAstats>.")
+    (license license:gpl3)))
+
 (define-public r-apackoftheclones
   (package
     (name "r-apackoftheclones")
@@ -15173,13 +15270,13 @@ package function as well as at <https://tinyurl.com/ANOVA@code{StatsTool>}.")
 (define-public r-anothersas7bdat
   (package
     (name "r-anothersas7bdat")
-    (version "0.0.7")
+    (version "0.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "anotherSAS7bdat" version))
        (sha256
-        (base32 "1ag9s2mkkqjff4hz54x3xh6bzs2vpk0iazz9rx6lsjvv889s6gqq"))))
+        (base32 "1yavvzbwzwjxjjn0rcz42cpp51v61jkm4cgvw1y120ys8rvwmm7d"))))
     (properties `((upstream-name . "anotherSAS7bdat")))
     (build-system r-build-system)
     (arguments
@@ -15706,13 +15803,13 @@ implementation that facilitates fast training through mini-batch learning.")
 (define-public r-anmc
   (package
     (name "r-anmc")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "anMC" version))
        (sha256
-        (base32 "0xrby8qyfd3dgi64kllspvalz9yrxjdj5qd1fqjdl6qwb3h6rkga"))))
+        (base32 "119swsqgh9ga7p3lkyzigmb5y4aanxmznsw1b25awc8x0xjw4ybv"))))
     (properties `((upstream-name . "anMC")))
     (build-system r-build-system)
     (arguments
@@ -18008,6 +18105,29 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
      "Collect your data on digital marketing campaigns from Amazon S3 using the
 Windsor.ai API <https://windsor.ai/api-fields/>.")
     (license license:gpl3)))
+
+(define-public r-amazonasdatahub
+  (package
+    (name "r-amazonasdatahub")
+    (version "1.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "amazonasdatahub" version))
+       (sha256
+        (base32 "1hpw0ybc58q976k0xwijyrxkwywqy8svc053v3dicda7ik5s626q"))))
+    (properties `((upstream-name . "amazonasdatahub")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2 r-dplyr))
+    (home-page "https://onelsoncarvalho.github.io/amazonasdatahub/")
+    (synopsis "Integrating Data, Research, and Education")
+    (description
+     "Various datasets from the state of Amazonas (AM), Brazil, to apply Deep Learning
+and statistical methods.")
+    (license license:expat)))
 
 (define-public r-amazonadsr
   (package
@@ -21437,13 +21557,13 @@ hydrographs and models internal variables.")
 (define-public r-airgriwrm
   (package
     (name "r-airgriwrm")
-    (version "0.7.0")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "airGRiwrm" version))
        (sha256
-        (base32 "1vb8s0jylrn9prc4s2a8427xw7jc9v8axsid0f1ckwflp1mpm40g"))))
+        (base32 "0r5j9l17cxx569dg7302izzms5ly6ggrakz9972fp5plk0m9vwjg"))))
     (properties `((upstream-name . "airGRiwrm")))
     (build-system r-build-system)
     (arguments
@@ -23714,13 +23834,13 @@ documented in LICENSES_DETAILS.md.")
 (define-public r-agridat
   (package
     (name "r-agridat")
-    (version "1.26")
+    (version "1.27")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "agridat" version))
        (sha256
-        (base32 "0r7041izld4b12hypns44f96j5wjcvpasw2jl35rjy0mlp27pw75"))))
+        (base32 "05v0phz1snfwpkki0f1fm8pc8psvgc8nxv8fq5q8vh1nvb1nsbjp"))))
     (properties `((upstream-name . "agridat")))
     (build-system r-build-system)
     (arguments
@@ -28282,43 +28402,6 @@ range.")
 complete re-implementation of the functions available in the ade4 package.")
     (license license:gpl2+)))
 
-(define-public r-adea
-  (package
-    (name "r-adea")
-    (version "1.5.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "adea" version))
-       (sha256
-        (base32 "0n5n9wbc46iksa66pbw1lxh4yyhgprqgy3l4cs6p406swiyyn32a"))))
-    (properties `((upstream-name . "adea")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-slam
-                             r-roi-plugin-symphony
-                             r-roi-plugin-lpsolve
-                             r-roi-plugin-glpk
-                             r-roi
-                             r-rmarkdown
-                             r-parallelly
-                             r-lpsolveapi
-                             r-knitr
-                             r-combinat))
-    (native-inputs (list r-knitr))
-    (home-page "http://knuth.uca.es/dea/")
-    (synopsis "Alternate DEA Package")
-    (description
-     "The meaning of adea is \"alternate DEA\".  This package is devoted to provide the
-alternative method of DEA described in the paper entitled \"Stepwise Selection of
-Variables in DEA Using Contribution Load\", by F. Fernandez-Palacin, M. A.
-Lopez-Sanchez and M. Munoz-Marquez.  Pesquisa Operacional 38 (1), pg.  1-24,
-2018. <doi:10.1590/0101-7438.2018.038.01.0031>.  A full functional on-line and
-interactive version is available at <https://knuth.uca.es/shiny/DEA/>.")
-    (license license:gpl3+)))
-
 (define-public r-ade4tkgui
   (package
     (name "r-ade4tkgui")
@@ -30587,13 +30670,13 @@ arbitrary text input.")
 (define-public r-acro
   (package
     (name "r-acro")
-    (version "1.0.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "acro" version))
        (sha256
-        (base32 "15mdqwlxbs54jvfz2gdrvafmj8rabhpzf4sqng0f1lr3y6d02jjk"))))
+        (base32 "17bxq7i7ga8nd588qn5cl1ffxp6cxv86ck9cqi0g6ysdnb1c30qm"))))
     (properties `((upstream-name . "acro")))
     (build-system r-build-system)
     (arguments
@@ -30661,13 +30744,13 @@ Goldfarb and Idnani (1983) <doi:10.1007/BF02591962> and Vanderbei et al. (1986)
 (define-public r-acr
   (package
     (name "r-acr")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "acR" version))
        (sha256
-        (base32 "0h00gg58idqjr5lqkbkdn6lf3y4raaw6d29h4p6bl34am64n7dl1"))))
+        (base32 "0kc9y7lwmjvn4r9rf5g0bpmcvaldldqv79d8niji3mali6xnn4vj"))))
     (properties `((upstream-name . "acR")))
     (build-system r-build-system)
     (arguments
@@ -31883,6 +31966,40 @@ also to compute the survival probabilities of the lactation of dairy animal.
 This package has been developed using algorithm of Klein and Moeschberger (2003)
 <doi:10.1007/b97377>.")
     (license license:gpl3)))
+
+(define-public r-abstractextractr
+  (package
+    (name "r-abstractextractr")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "abstractExtractR" version))
+       (sha256
+        (base32 "1hp496k191xylp80jp363a1xjf00mxqqkr67y32b4inm8jxak45r"))))
+    (properties `((upstream-name . "abstractExtractR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-openssl r-jsonlite r-httr2))
+    (home-page "https://cran.r-project.org/package=abstractExtractR")
+    (synopsis "Retrieve and Audit Scholarly Metadata from Multiple Sources")
+    (description
+     "Retrieves and normalizes scholarly article metadata and abstracts from the
+Crossref REST API
+<https://www.crossref.org/documentation/retrieve-metadata/rest-api/>, the
+@code{OpenAlex} API <https://help.openalex.org/> and the Scopus Search API
+<https://dev.elsevier.com/sc_apis.html>.  Provides bibliographic searches,
+cursor pagination, publication date and author filtering, abstract retrieval by
+Digital Object Identifier (DOI), cached batch enrichment, merging of duplicate
+records, metadata-quality audits, reproducible search snapshots, local archives
+with integrity verification, and export to comma-separated values (CSV),
+@code{BibTeX} and RIS citation files.  Network requests support configurable
+timeouts and test callbacks.  Scopus searches require an Elsevier API key;
+Crossref queries do not. @code{OpenAlex} supports limited keyless searches and
+authenticated pagination.")
+    (license license:expat)))
 
 (define-public r-abstr
   (package

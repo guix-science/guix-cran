@@ -51,13 +51,13 @@
 (define-public r-fz
   (package
     (name "r-fz")
-    (version "1.2.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fz" version))
        (sha256
-        (base32 "00sq7a0x6w6jh2qi6fq426n12nybhz0bjvn547w5avs35waiymz1"))))
+        (base32 "10iy143d8wxyr78b5gh3b6qn1ifxqcmk99rsn5gsxx0hxnn2j1qx"))))
     (properties `((upstream-name . "fz")))
     (build-system r-build-system)
     (arguments
@@ -2916,20 +2916,19 @@ Wilson, Joan E. Bailey-Wilson, and Momiao Xiong (2013)
 (define-public r-funcml
   (package
     (name "r-funcml")
-    (version "0.9.0")
+    (version "0.9.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "funcml" version))
        (sha256
-        (base32 "02qryj6wfdcmasjjvixbdp9rabkrl0z4lhwaa79bblk2a9m9s9mg"))))
+        (base32 "0rknkai40w2zd4jfj463wfidf7j3k5lnalnaz3zshdiglsw01pf2"))))
     (properties `((upstream-name . "funcml")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-xgboost
-                             r-torch
                              r-rpart
                              r-ranger
                              r-randomforest
@@ -2946,12 +2945,13 @@ Wilson, Joan E. Bailey-Wilson, and Momiao Xiong (2013)
                              r-ggplot2
                              r-gbm
                              r-functionals
+                             r-fastgbm
                              r-earth
                              r-e1071
                              r-densemlp
                              r-dbarts
-                             r-data-table
                              r-c50
+                             r-basetable
                              r-ada))
     (native-inputs (list r-knitr))
     (home-page "https://CRAN.R-project.org/package=funcml")
@@ -3073,13 +3073,13 @@ unused packages.")
 (define-public r-funcharts
   (package
     (name "r-funcharts")
-    (version "1.8.1")
+    (version "1.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "funcharts" version))
        (sha256
-        (base32 "1i2fx0rx53488yi0d28w4yrjwmqx03gh9zgk5gpanma0chfhch2g"))))
+        (base32 "0jk9mvv07rbmy76ikj243z18lc4lp7xqx0j645pivl327bc396cx"))))
     (properties `((upstream-name . "funcharts")))
     (build-system r-build-system)
     (arguments
@@ -4927,13 +4927,13 @@ are directly influenced by a number of variables (Battese and Coelli, 1995,
 (define-public r-fromo
   (package
     (name "r-fromo")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fromo" version))
        (sha256
-        (base32 "0idrmspxh3shzp6w90sg8cvadwfmgwlgq1nnmg0zfslk5khp14nd"))))
+        (base32 "02w55zhdsi4dbb0d6lgn9xwjjkcl5ny3xmnmm36x141nwz0lailk"))))
     (properties `((upstream-name . "fromo")))
     (build-system r-build-system)
     (arguments
@@ -4980,13 +4980,13 @@ repositories, and more.  File paths are specified with function arguments, or
 (define-public r-frogger
   (package
     (name "r-frogger")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "froggeR" version))
        (sha256
-        (base32 "1yy9wy6cfzmgz45528rzh39kwis7gdxlq87bl6qdcbrmz50yy1hf"))))
+        (base32 "0ssdyaa2imqm37ssm2lzpd77vvj9snqs3x5ds3w5p7fn8ry836lm"))))
     (properties `((upstream-name . "froggeR")))
     (build-system r-build-system)
     (arguments
@@ -5000,7 +5000,7 @@ repositories, and more.  File paths are specified with function arguments, or
                              r-fs
                              r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://www.kyleGrealis.com/froggeR/")
+    (home-page "https://kylegrealis.github.io/froggeR/")
     (synopsis "Project Scaffolding for R and 'Quarto'")
     (description
      "This package creates structured R and Quarto projects with a consistent
@@ -6553,13 +6553,13 @@ spoken by more than one million speakers.  Franc is a port of the
 (define-public r-framework
   (package
     (name "r-framework")
-    (version "1.1.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "framework" version))
        (sha256
-        (base32 "0ak7r1jqz4m310slcnwwg3yq4p8jlzbgzkl0xkp5jh89f5qhrhvf"))))
+        (base32 "01anybdjpw8fjggnc2dpwkmzc684w333s6s0yvlwnrcq0z339y11"))))
     (properties `((upstream-name . "framework")))
     (build-system r-build-system)
     (arguments
@@ -6572,7 +6572,7 @@ spoken by more than one million speakers.  Franc is a port of the
                              r-lubridate
                              r-jsonlite
                              r-fs
-                             r-dotenv
+                             r-digest
                              r-dbi
                              r-checkmate))
     (home-page "https://framework.table1.org")
@@ -7554,13 +7554,13 @@ and read tabular-data-resources to and from disk.")
 (define-public r-fqardl
   (package
     (name "r-fqardl")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fqardl" version))
        (sha256
-        (base32 "1d48x90m0mkcn3bc5pqgxd1aiphspc8yc9qwzjai49rdpdwfvzm8"))))
+        (base32 "0r0qap0axppvlpwcz1ml8hlzrvzy3hn38g84gp5w2lpd34ca2dla"))))
     (properties `((upstream-name . "fqardl")))
     (build-system r-build-system)
     (arguments
@@ -7993,13 +7993,13 @@ and the capsushe package.")
 (define-public r-fpod
   (package
     (name "r-fpod")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fpod" version))
        (sha256
-        (base32 "1vkqzhjvgwaqrz8pgz43qmdz0y3aa7yylbjlm2wniwlgpqk70jb7"))))
+        (base32 "1q7ca71cf9s4lyvhdaziadgnrqkyr01ibbd1z40cqynvv4qw81hl"))))
     (properties `((upstream-name . "fpod")))
     (build-system r-build-system)
     (arguments
@@ -8334,13 +8334,13 @@ supportive functions which visualize the eye fixation patterns.")
 (define-public r-fozziejoin
   (package
     (name "r-fozziejoin")
-    (version "0.0.16")
+    (version "0.0.17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fozziejoin" version))
        (sha256
-        (base32 "18mq11ajm6l058mq0dyx0yk0lz70mi7alz89f7vbqrk3ib6swsfc"))))
+        (base32 "079vy0dl1ziydvx669zszrr3anvblsyrph3wf5zfiyla157ji27h"))))
     (properties `((upstream-name . "fozziejoin")))
     (build-system r-build-system)
     (arguments
@@ -9244,6 +9244,33 @@ single numbers in inline R code chunks and for rendering columns in tables.")
      "Format @code{BibTeX} entries and files in an opinionated way.")
     (license license:gpl3+)))
 
+(define-public r-form-model
+  (package
+    (name "r-form-model")
+    (version "0.6.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "form.model" version))
+       (sha256
+        (base32 "0jwbr1ja36p03vh06x7dph0jd90csqac1saxl6ihzqr8x1fcl6pk"))))
+    (properties `((upstream-name . "form.model")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml))
+    (native-inputs (list r-knitr))
+    (home-page "https://ultreia-io.github.io/form.model/")
+    (synopsis "Neutral Versioned Form Definitions and Workbook Layouts")
+    (description
+     "Loads explicit YAML resources describing versioned forms, fields, declarative
+constraints, reference requirements, and workbook layouts.  Checks model
+definitions against an installed YAML schema and consistency rules, and provides
+value-like inspection APIs.  Does not validate submitted data or connect to
+external services.")
+    (license license:lgpl2.1)))
+
 (define-public r-forlion
   (package
     (name "r-forlion")
@@ -10073,13 +10100,13 @@ feature selection.")
 (define-public r-forestbalance
   (package
     (name "r-forestbalance")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "forestBalance" version))
        (sha256
-        (base32 "073jlddcv1f0n2s9brmbshbmw5nq9i8c26spb2sp3f7wzkn1g1jj"))))
+        (base32 "00j2q4fclnaj4vx4qdwlsrwwn9wv1l3c5pqr184ps8ngagfirx0g"))))
     (properties `((upstream-name . "forestBalance")))
     (build-system r-build-system)
     (arguments
@@ -13347,13 +13374,13 @@ regulation by dams based on GarcÃ­a de JalÃ³n et al. (2017)
 (define-public r-flownet
   (package
     (name "r-flownet")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flownet" version))
        (sha256
-        (base32 "0v51b6628mzzi1kmjcgx0nj5yxdh2cnvmihnsbsna3n0w2y8npsj"))))
+        (base32 "0g5g9dl4i47856vp9f2yy02jzikrgcxdcc2gzvpi1yi51arfqyiv"))))
     (properties `((upstream-name . "flownet")))
     (build-system r-build-system)
     (arguments
@@ -14653,30 +14680,19 @@ proportional and non linear effects are described in Remontet, L. et al. (2007)
 (define-public r-flexrl
   (package
     (name "r-flexrl")
-    (version "1.0.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FlexRL" version))
        (sha256
-        (base32 "16haw4dc53bcavkyabav1pmh921vdpln20lhfxyy0kh6j7l5mmqc"))))
+        (base32 "09iqqvmf4i4702bx0v65whmd2fwzwkmp3kvjs2iw57c34qw4bzq2"))))
     (properties `((upstream-name . "FlexRL")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-synthpop
-                             r-reclin2
-                             r-rcpp
-                             r-multilink
-                             r-mice
-                             r-matrix
-                             r-fedmatch
-                             r-fastlink
-                             r-diyar
-                             r-cli
-                             r-brl
-                             r-arf))
+    (propagated-inputs (list r-rcpp r-matrix r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/robachowyk/FlexRL")
     (synopsis "Flexible Record Linkage and Linked Data Quality Assessment")
@@ -17018,20 +17034,21 @@ Approximate Maximum Likelihood and the Cross-Entropy methods.  See Bee, M.
 (define-public r-fitdistrbayes
   (package
     (name "r-fitdistrbayes")
-    (version "0.6.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fitdistrBayes" version))
        (sha256
-        (base32 "1g8csyla4niln5n130cggbdwy7i3zszk6yzl8i41lzzq149gx8xh"))))
+        (base32 "10di65mrq5mdhqf5744hb5xfyvjac9yvgn9ccwa6jip1z7kqdy0y"))))
     (properties `((upstream-name . "fitdistrBayes")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-survival))
     (home-page "https://cran.r-project.org/package=fitdistrBayes")
-    (synopsis "Objective Bayesian Distribution Fitting")
+    (synopsis "Objective Bayesian Distribution Fitting and AFT Regression")
     (description
      "Fits common univariate distributions using registered objective Bayesian priors,
 including Jeffreys, reference, and maximal data information priors, and supports
@@ -17044,8 +17061,13 @@ log-likelihood evaluation.  A separate interface fits independently
 right-censored observations using the registered complete-data priors,
 observed-data likelihood sampling or data augmentation, with sufficient
 posterior-propriety checks.  Optional post-processing provides WAIC, PSIS-LOO,
-and DIC for observed-data likelihoods.  The reference-prior framework follows
-Bernardo (1979) <doi:10.1111/j.2517-6161.1979.tb01066.x>.")
+and DIC for observed-data likelihoods.  Formula-based accelerated failure time
+regression is available for nine lifetime families with complete or
+right-censored data, including gamma and Prentice generalized gamma models,
+fixed objective priors, survival prediction, and time ratios.  Model-specific
+sufficient propriety and moment conditions guard the reported summaries and
+predictive comparisons.  The reference-prior framework follows Bernardo (1979)
+<doi:10.1111/j.2517-6161.1979.tb01066.x>.")
     (license license:gpl3)))
 
 (define-public r-fitdistcp
@@ -17652,13 +17674,13 @@ Fisher-EM algorithm is also provided.")
 (define-public r-fishdiver
   (package
     (name "r-fishdiver")
-    (version "1.1.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FishDiveR" version))
        (sha256
-        (base32 "1s1y86cxs5xiy6v2dki31nf5bhnk7b366vd9armcz19hk4vfp7am"))))
+        (base32 "1f9yj9l1dl90yj7n4lmbgnlfi38qxn8im63jsls6ph7cr047c7ys"))))
     (properties `((upstream-name . "FishDiveR")))
     (build-system r-build-system)
     (arguments
@@ -17683,7 +17705,8 @@ Fisher-EM algorithm is also provided.")
                              r-cowplot
                              r-colorspace
                              r-cluster))
-    (home-page "https://github.com/calvinsbeale/FishDiveR")
+    (native-inputs (list r-knitr))
+    (home-page "https://calvinsbeale.github.io/FishDiveR/")
     (synopsis "Classify Aquatic Animal Behaviours from Vertical Movement Data")
     (description
      "Quantitatively analyse depth time-series data from pop-up satellite archival
@@ -17696,9 +17719,9 @@ combine with daily and diel depth statistics.  Classify depth time-series with
 unsupervised k-means clustering into 24-hour periods of vertical movement
 behaviour with distinct patterns of vertical movement.  Plot example days from
 each behaviour cluster, and plot the TDR coloured by cluster.  Based on
-principals of combining CWT with k-means first developed by Sakamoto (2009)
-<doi:10.1371/journal.pone.0005379> and redeveloped by Beale (2026)
-<doi:10.21203/rs.3.rs-6907076/v1>.")
+principles of combining CWT with k-means first developed by Sakamoto et al.
+(2009) <doi:10.1371/journal.pone.0005379> and redeveloped by Beale et al. (2026)
+<doi:10.1186/s40462-025-00622-w>.")
     (license license:gpl3+)))
 
 (define-public r-fishdata
@@ -20903,6 +20926,41 @@ exploration of genomic features, and post-GWAS functional analysis.")
 dependence.")
     (license license:gpl3)))
 
+(define-public r-fgls
+  (package
+    (name "r-fgls")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fgls" version))
+       (sha256
+        (base32 "1j4rvr2bv4bgjczsgkzgf0wnbfk076k101rnn56fsfinzkf816md"))))
+    (properties `((upstream-name . "fgls")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-glmnet))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/emiliogcs/fgls")
+    (synopsis "Feasible GLS for Serial Correlation and Heteroskedasticity")
+    (description
+     "Feasible generalized least squares (FGLS) estimators for linear regressions
+whose errors are serially correlated, heteroskedastic of unknown form, or both.
+Serial correlation is handled by the autoregressive filter of Perron and
+GonzÃ¡lez-Coya (2026) <doi:10.1016/j.jeconom.2026.106346>, estimated from a
+Durbin regression whose order is chosen by an information criterion, with a
+variance estimator that stays valid when the regressors are only pre-determined
+rather than strictly exogenous.  Heteroskedasticity is handled by the adaptive
+Lasso estimate of the skedastic function of GonzÃ¡lez-Coya and Perron (2024)
+<doi:10.1515/jem-2023-0007>, with a bias-corrected sandwich variance.  Both
+corrections can be combined.  Benchmark estimators (ordinary least squares with
+heteroskedasticity and autocorrelation consistent standard errors,
+Cochrane-Orcutt, infeasible GLS) and the simulation designs of both papers are
+included.")
+    (license license:expat)))
+
 (define-public r-fglmtrunc
   (package
     (name "r-fglmtrunc")
@@ -22893,13 +22951,13 @@ coefficient, Intraclass correlation and Cramer's V.")
 (define-public r-featr
   (package
     (name "r-featr")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "featR" version))
        (sha256
-        (base32 "1jylnpkfdmxb9jh5wjyjswk3w4q9kr9ms2zap7samc02p86hc8np"))))
+        (base32 "1dhqr35zfssyvy5ix497l9v1q1ryada8b90a1akxw6i2pnras2ry"))))
     (properties `((upstream-name . "featR")))
     (build-system r-build-system)
     (arguments
@@ -22911,13 +22969,14 @@ coefficient, Intraclass correlation and Cramer's V.")
     (synopsis "Unified Toolkit for Feature Selection")
     (description
      "Filter, wrapper, and embedded feature-selection methods behind a consistent set
-of functions that share one calling convention and one return type: correlation
-and chi-squared filters, information gain, LASSO and elastic net, Bayesian model
-comparison, Boruta, recursive feature elimination, random forest importance,
-multivariate adaptive regression splines, support vector machine recursive
-feature elimination, stepwise selection, and principal component / singular
-value decomposition helpers.  The implemented methods follow Tibshirani (1996)
-<doi:10.1111/j.2517-6161.1996.tb02080.x>, Zou and Hastie (2005)
+of functions that share one calling convention and one return type: univariate
+threshold filters, correlation and chi-squared filters, information gain, the
+least absolute shrinkage and selection operator (LASSO) and elastic net,
+Bayesian model comparison, Boruta, recursive feature elimination, random forest
+importance, multivariate adaptive regression splines, support vector machine
+recursive feature elimination, stepwise selection, and principal component /
+singular value decomposition helpers.  The implemented methods follow Tibshirani
+(1996) <doi:10.1111/j.2517-6161.1996.tb02080.x>, Zou and Hastie (2005)
 <doi:10.1111/j.1467-9868.2005.00503.x>, Friedman (1991)
 <doi:10.1214/aos/1176347963>, Breiman (2001) <doi:10.1023/A:1010933404324>,
 Guyon, Weston, Barnhill and Vapnik (2002) <doi:10.1023/A:1012487302797>, Kursa
@@ -25775,13 +25834,13 @@ under 2-locus and 1-locus models defined by some design matrix.")
 (define-public r-fastymd
   (package
     (name "r-fastymd")
-    (version "0.1.5")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastymd" version))
        (sha256
-        (base32 "07xkl0b3j0v62kwni36gslpm1zjlw7iagix7hiszz4i46dnvi6sl"))))
+        (base32 "0a7nxq6kpsxl8xisd357ils16x3jdx3jdfmh5vivj9qz6kqs03bl"))))
     (properties `((upstream-name . "fastymd")))
     (build-system r-build-system)
     (arguments
@@ -26690,13 +26749,13 @@ in cross-sectional data.  For more details, see Arellano and Bonhomme (2017)
 (define-public r-fastqr
   (package
     (name "r-fastqr")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastQR" version))
        (sha256
-        (base32 "0pc0dw00lxzkz6x8n5s3rxzd036awrg9bf0h58nzn5s5g7mi0gwi"))))
+        (base32 "0rjiimnycmjwbvv1xfig2frszyd5hnl32dngnay0phk25aafz24a"))))
     (properties `((upstream-name . "fastQR")))
     (build-system r-build-system)
     (arguments
@@ -28985,6 +29044,49 @@ method is introduced in: Christen et al. (2023)
 <doi:10.48550/@code{arXiv.2304.11028>}.")
     (license license:gpl3)))
 
+(define-public r-farfima
+  (package
+    (name "r-farfima")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "farfima" version))
+       (sha256
+        (base32 "1bzkq4xjljr9rbmjpa50jdlsvvzqgzhjl4bjwgyyrfakfdawyri3"))))
+    (properties `((upstream-name . "farfima")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-wwntests
+                             r-withr
+                             r-vars
+                             r-sde
+                             r-rainbow
+                             r-longmemo
+                             r-ftsa
+                             r-fcvar
+                             r-far))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=farfima")
+    (synopsis
+     "Order Selection and Forecasting in Long-Memory Functional Time Series")
+    (description
+     "This package provides tools for modelling, forecasting and visualising
+long-memory functional time series with the functional autoregressive
+fractionally integrated moving-average model.  The model is fitted in three
+steps, each of which can also be used on its own.  First, the memory parameter
+is estimated from the leading principal component scores, for example by local
+Whittle or by bias-corrected local polynomial Whittle with noise.  Second, the
+autoregressive and moving-average orders of the fractionally differenced curves
+are selected by a functional information criterion, functional Box-Jenkins or
+cross-validation.  Third, the operators are estimated.  The point forecasts come
+with conformal prediction bands that quantify their uncertainty.  Visualisation
+tools include improved rainbow plots and plots of the fitted model and its
+forecasts.")
+    (license license:gpl2)))
+
 (define-public r-farff
   (package
     (name "r-farff")
@@ -30393,13 +30495,13 @@ see <doi:10.18637/jss.v110.i04>.")
 (define-public r-fahb
   (package
     (name "r-fahb")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fahb" version))
        (sha256
-        (base32 "1d81h2c9zfhwmk1czcljx0dsjfilr9qfcr8v324hz1kkcb6q9i10"))))
+        (base32 "0l042cb119n63cipxl4zng1nc2g6ais0prfi09bd7vjf20sd63bb"))))
     (properties `((upstream-name . "fahb")))
     (build-system r-build-system)
     (arguments

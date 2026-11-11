@@ -1913,13 +1913,13 @@ multivariate data using these limiting distributions and binning.")
 (define-public r-otelsdk
   (package
     (name "r-otelsdk")
-    (version "0.2.4")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "otelsdk" version))
        (sha256
-        (base32 "1f7sixdapvs0xwfm6k9hddxl810cl13ddn31inf4z4yxygv9p0z4"))))
+        (base32 "0rv0jfkyncndma8bcb1p002649n760hfbwlvyf0w3j6zpjldfa3j"))))
     (properties `((upstream-name . "otelsdk")))
     (build-system r-build-system)
     (arguments
@@ -2619,6 +2619,37 @@ incremental learning of online algorithms to efficiently handle periodic
 streaming data.  Cai, Z., Li, R., & Zhu, L. (2020)
 <doi:10.48550/@code{arXiv.2002.02795>}.")
     (license license:expat)))
+
+(define-public r-osirad
+  (package
+    (name "r-osirad")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "osirad" version))
+       (sha256
+        (base32 "1ira1kxi4saifxww5qnn8w2giairyjndms54svmlzzqc1fqzil78"))))
+    (properties `((upstream-name . "osirad")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2 r-oro-dicom))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/tao-lan/osirad")
+    (synopsis "PET Voxels and Radiomics from 'OsiriX' Regions of Interest")
+    (description
+     "Reads regions of interest (ROIs) drawn in the @code{OsiriX} medical image viewer
+and exported as XML files, and recovers the exact voxels of each ROI on the
+positron emission tomography (PET) series stored as Digital Imaging and
+Communications in Medicine (DICOM) files.  The voxels are found by matching the
+voxel values stored in the XML file to the standardised uptake values (SUV)
+computed from the DICOM header.  The resulting voxel table (positions in pixels
+and millimetres, and SUV) can be passed to the Python library @code{PyRadiomics}
+(van Griethuysen et al. (2017) <doi:10.1158/0008-5472.CAN-17-0339>) through
+reticulate to compute radiomics features.")
+    (license license:gpl3+)))
 
 (define-public r-osfr
   (package
@@ -7810,13 +7841,13 @@ manipulation.")
 (define-public r-openxlsx2
   (package
     (name "r-openxlsx2")
-    (version "1.30")
+    (version "1.31")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openxlsx2" version))
        (sha256
-        (base32 "1dssz881390hx8ric4q1zw17fqy5wnd4a40lfwizsl4jmicvi1b9"))))
+        (base32 "0zzcsf2xf6k7vv47csy6k3qxb3f5isbb3zmxdk092rg0xl8d92di"))))
     (properties `((upstream-name . "openxlsx2")))
     (build-system r-build-system)
     (arguments
@@ -10509,26 +10540,28 @@ Public Health Ontario website:
 (define-public r-onls
   (package
     (name "r-onls")
-    (version "0.2")
+    (version "0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "onls" version))
        (sha256
-        (base32 "0ckc988f2c6p7vk8wp883svh5b8i3m0nb60l7imx17fnb416f4jm"))))
+        (base32 "0a0mi53gi4gj31d8iwq4kyyk8fc8dh49s3dl9nm1ykixgkbxdffh"))))
     (properties `((upstream-name . "onls")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rgl r-minpack-lm))
+    (propagated-inputs (list r-minpack-lm))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=onls")
     (synopsis "Orthogonal Nonlinear Least-Squares Regression")
     (description
      "Fits n-dimensional data by means of orthogonal nonlinear least-squares using
-Levenberg-Marquardt minimization and provides functionality for fit diagnostics
-and plotting.  Delivers the same results as the ODRPACK Fortran implementation
+Levenberg-Marquardt minimization, with a solver that exploits the block
+structure of the problem as ODRPACK does, so that its cost grows linearly with
+the number of observations, and provides functionality for fit diagnostics and
+plotting.  Delivers the same results as the ODRPACK Fortran implementation
 described in Boggs et al. (1989) <doi:10.1145/76909.76913>, but is implemented
 in pure R.")
     (license license:gpl2+)))
@@ -11907,6 +11940,35 @@ different solvers.  It currently only supports linear constraints and objective
 functions.  See the ompr website <https://dirkschumacher.github.io/ompr/> for
 more information, documentation and examples.")
     (license license:expat)))
+
+(define-public r-omphc
+  (package
+    (name "r-omphc")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "omphc" version))
+       (sha256
+        (base32 "1qvzyc84nw6vp4as3ksyp55b8jlli5sg74jc11bnw6gihzcl4yp7"))))
+    (properties `((upstream-name . "omphc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rfast r-rcpparmadillo r-rcpp r-pchc r-bnlearn))
+    (home-page "https://cran.r-project.org/package=omphc")
+    (synopsis "Bayesian Network Learning Using the OMP Algorithm")
+    (description
+     "Bayesian network learning using the orthogonal matching pursuit to perform
+variable selection and then application of the Hill-Climbing greedy search or
+the TABU search to orient the edges.  Some relevant papers are Tsagris M. and
+Adam C. (2026) <doi:10.13140/RG.2.2.26278.28489>, Tsagris M. (2021)
+<doi:10.1007/s10614-020-10065-7>, Tsagris M. (2022) <doi:10.3390/math10152604>,
+Tsagris et al. (2022) <doi:10.1109/TCBB.2020.3029952>, Tsamardinos I., Brown
+L.E. and Aliferis C.F. (2006) <doi:10.1007/s10994-006-6889-7>, Mallat S. G. and
+Zhang Z. (1993) <doi:10.1109/78.258082>.")
+    (license license:gpl2+)))
 
 (define-public r-omopviewer
   (package
@@ -14199,13 +14261,13 @@ production: Use of methodology for modeling\". <doi:10.1016/j.lwt.2020.109660>."
 (define-public r-oem
   (package
     (name "r-oem")
-    (version "2.0.12")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oem" version))
        (sha256
-        (base32 "1a12d4fnrkrawb5f7rfidjixjl1v5qznqdyv8a5s1bp37pf1gh89"))))
+        (base32 "1n7q0piw7bkx5hp4ls481xd7wp13r39qshr2binsrx221fs6pc5d"))))
     (properties `((upstream-name . "oem")))
     (build-system r-build-system)
     (arguments
@@ -15064,13 +15126,13 @@ analysis.")
 (define-public r-oddsapiio
   (package
     (name "r-oddsapiio")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oddsapiio" version))
        (sha256
-        (base32 "1ky8yy61d2w4k09qyqy1s2s6y5nd9rvgrch27dsp8kfsivgs0zz0"))))
+        (base32 "1i06phbmwdqa3vyysfh8g0hpb52cda0485rrc33sag2cxh0m7sa2"))))
     (properties `((upstream-name . "oddsapiio")))
     (build-system r-build-system)
     (arguments
@@ -15081,9 +15143,12 @@ analysis.")
     (synopsis "Client for the 'Odds-API.io' Sports Betting Odds API")
     (description
      "Query live and upcoming sports betting odds from the Odds-API.io REST API
-<https://docs.odds-api.io>.  Covers sports, bookmakers, leagues, events,
-per-event odds, value bets and arbitrage bets across 265+ bookmakers, returned
-as tidy data frames.  An API key is required; a free tier is available.")
+<https://docs.odds-api.io>.  Covers sports, markets, bookmakers, leagues,
+participants, events, per-event and multi-event odds, odds deltas, odds
+movements, odds summaries, value bets, arbitrage bets, dropping odds, historical
+events, odds and closing lines, bet settlement and grading, outright (futures)
+odds and results, and bookmaker id mappings across 450+ bookmakers, returned as
+tidy data frames.  An API key from a paid plan is required.")
     (license license:expat)))
 
 (define-public r-odds-n-ends
@@ -16693,13 +16758,13 @@ defining enumerated types, as well as other bounded types, as S4 classes.")
 (define-public r-obic
   (package
     (name "r-obic")
-    (version "4.4.1")
+    (version "4.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OBIC" version))
        (sha256
-        (base32 "0yr3lnf0dzcnwcqfpnkqnr9p9c8kswxk65ghcsj4bc8jkk3miijp"))))
+        (base32 "0y4g2szpys1cn86s92vvzq1wkv246gxcvdabjaryq3bpr3d20wdr"))))
     (properties `((upstream-name . "OBIC")))
     (build-system r-build-system)
     (arguments

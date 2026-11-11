@@ -1833,13 +1833,13 @@ Civil Registry Service.")
 (define-public r-gtxlsx
   (package
     (name "r-gtxlsx")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gtxlsx" version))
        (sha256
-        (base32 "1x8jh484zmn8xwq8shy33165za4mk5pk32jsznhb0blp70spn6hk"))))
+        (base32 "0y846q1nrj1vlk22zr25pbyxxxcjbj0b4fcf48zcrf16knk3wz2a"))))
     (properties `((upstream-name . "gtxlsx")))
     (build-system r-build-system)
     (arguments
@@ -2310,13 +2310,13 @@ Vuchic (2007, ISBN:978-0-471-75823-5), Cascetta (2009)
 (define-public r-gtfstools
   (package
     (name "r-gtfstools")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gtfstools" version))
        (sha256
-        (base32 "0ffnxa45npjmvp4s2lysnd6d5v6xkbfpmm9jbaqj60zbf6ywbbzg"))))
+        (base32 "16dk7g6g78csdfyqva2qkzk1yf50sqwwfjfinx7ya9jd76sfc0yd"))))
     (properties `((upstream-name . "gtfstools")))
     (build-system r-build-system)
     (arguments
@@ -2428,13 +2428,13 @@ objects.")
 (define-public r-gtfshift
   (package
     (name "r-gtfshift")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GTFShift" version))
        (sha256
-        (base32 "0n8qvd3pbv4ssznqql2lq8crnkc1qi1dcvlq66dfdnl0873w45ih"))))
+        (base32 "1bzz5r333mki9zvrsdq431q5d94wj72zm3n2aqg5h47fpyyv7d0g"))))
     (properties `((upstream-name . "GTFShift")))
     (build-system r-build-system)
     (arguments
@@ -2442,6 +2442,7 @@ objects.")
       #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-withr
+                             r-units
                              r-tidytransit
                              r-tidyselect
                              r-tidyr
@@ -3163,6 +3164,60 @@ detection for high-dimensional and non-Euclidean data <@code{arXiv:1810.05973>}.
      "Multivariate time series analysis based on Generalized Space-Time Autoregressive
 Model by Ruchjana et al.(2012) <doi:10.1063/1.4724118>.")
     (license (list license:gpl2 license:gpl3))))
+
+(define-public r-gst
+  (package
+    (name "r-gst")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gst" version))
+       (sha256
+        (base32 "1pahc5xyd1ymwh5vizckiszd4xzraqvh76hx5307ykwx7hbf6pj7"))))
+    (properties `((upstream-name . "gst")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-sortable
+                             r-shinywidgets
+                             r-shiny
+                             r-rlang
+                             r-rhandsontable
+                             r-readr
+                             r-reactable
+                             r-rclipboard
+                             r-pwr
+                             r-purrr
+                             r-plotly
+                             r-mvtnorm
+                             r-multcomp
+                             r-mass
+                             r-magrittr
+                             r-htmltools
+                             r-ggplot2
+                             r-forestploter
+                             r-dt
+                             r-dplyr
+                             r-datapasta
+                             r-bslib
+                             r-bsicons))
+    (native-inputs (list r-knitr))
+    (home-page "https://xni7.github.io/gst/")
+    (synopsis "Global Statistical Tests for Multiple Endpoints")
+    (description
+     "Design and evaluate global statistical tests (GST) that combine several
+endpoints into one test, including O'Brien's ordinary and generalized least
+squares tests (O'Brien (1984) <doi:10.2307/2531158>), power and sample size
+calculations, and an O'Brien-based truncated closed testing procedure (Luo et
+al. (2025) <doi:10.1002/pst.70010>).  Two shiny applications support interactive
+power calculation and the creation of forest plots for multiple endpoints from
+summary statistics.")
+    (license license:asl2.0)))
 
 (define-public r-gsstda
   (package
@@ -4980,34 +5035,37 @@ contact us at models@@dfci.harvard.edu with any questions.")
 (define-public r-growthcleanr
   (package
     (name "r-growthcleanr")
-    (version "2.2.3")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "growthcleanr" version))
        (sha256
-        (base32 "168pj32mzlxwhdz5w3ggy1l1yckwzngzhqfhvip7n49skw4lzxw6"))))
+        (base32 "1qdig3h2siayw1nmdcj0yl7px5vkyj4cvc43llwasilq1gr3c1aa"))))
     (properties `((upstream-name . "growthcleanr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-rlang
+    (propagated-inputs (list r-shinyjs
+                             r-shinyfiles
+                             r-shiny
                              r-r-utils
-                             r-plyr
-                             r-magrittr
-                             r-labelled
+                             r-lubridate
                              r-foreach
-                             r-dplyr
+                             r-dt
                              r-doparallel
                              r-data-table))
-    (home-page "https://carriedaymont.github.io/growthcleanr/index.html")
+    (native-inputs (list r-knitr))
+    (home-page "https://growthcleanr.org/")
     (synopsis "Data Cleaner for Anthropometric Measurements")
     (description
-     "Identifies implausible anthropometric (e.g., height, weight) measurements in
-irregularly spaced longitudinal datasets, such as those from electronic health
-records.")
+     "Flags implausible anthropometric (weight, height, and head circumference)
+measurements in longitudinal pediatric and adult datasets, such as those from
+electronic health records.  Identifies other measurements that should often be
+excluded from analyses.  The main function is @code{cleangrowth()}.  Implements
+a modified version of the algorithm described in Daymont et al. (2017)
+<doi:10.1093/jamia/ocx037>.")
     (license license:expat)))
 
 (define-public r-growr
@@ -5865,13 +5923,13 @@ Chris (2015) \"Bayesian A/B Testing at VWO\"
 (define-public r-grip
   (package
     (name "r-grip")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grip" version))
        (sha256
-        (base32 "1a1imyngfk5m428x79wkmhvmscilb4gncv3pwq1g9l8ci7pfrfjz"))))
+        (base32 "1sd3d3bldmxjvnvnxmg9b9qcylhp297cwvv4k4gkmw30bzgnp1h4"))))
     (properties `((upstream-name . "grip")))
     (build-system r-build-system)
     (arguments
@@ -5888,7 +5946,9 @@ Provides layout scoring, candidate comparison, multiscale trace diagnostics,
 synthetic graph families, and advanced experimental geodesic-KK utilities for
 weighted-layout evaluation and polish.  Based on Gajer and Kobourov (2002)
 <doi:10.7155/jgaa.00052> and Gajer, Goodrich and Kobourov (2004)
-<doi:10.1016/j.comgeo.2004.03.014>.")
+<doi:10.1016/j.comgeo.2004.03.014>.  Includes derived graph datasets from the
+@code{SuiteSparse} Matrix Collection, with source attribution and transformation
+metadata.")
     (license license:gpl3+)))
 
 (define-public r-grin2
@@ -8108,13 +8168,13 @@ grouped date classes.")
 (define-public r-grateful
   (package
     (name "r-grateful")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grateful" version))
        (sha256
-        (base32 "1rhhw999yijkfqalxddiwddk7vvfhdwqskgf1mcsjrr2pgdfnmgi"))))
+        (base32 "1nsx2kikjxbhrm2432r2ckn0ngn167lpk66grm7rsi21svl3jr2m"))))
     (properties `((upstream-name . "grateful")))
     (build-system r-build-system)
     (arguments
@@ -10184,6 +10244,30 @@ are given in Wang H, Dwyer-Lindgren L, Lofgren KT, et al. (2012)
 et al. (2017) <doi:10.1016/S2214-109X(17)30105-5>.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-gpqyouden
+  (package
+    (name "r-gpqyouden")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gpqyouden" version))
+       (sha256
+        (base32 "1fc6lqdgiwbdx9rcnn0h1yj047yvir6z8lvd4i7qq60hzdl4pz7p"))))
+    (properties `((upstream-name . "gpqyouden")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-kableextra r-dplyr))
+    (home-page "https://github.com/jolmedilla/gpqyouden")
+    (synopsis "Generalized Pivotal Quantity Inference for the Youden Index")
+    (description
+     "Monte Carlo simulation study of generalized pivotal quantity (GPQ) based
+confidence intervals for the Youden index and its optimal cut-point, following
+Lai, Tian and Schisterman (2012) <doi:10.1016/j.csda.2010.11.023>.")
+    (license license:expat)))
+
 (define-public r-gppenalty
   (package
     (name "r-gppenalty")
@@ -10273,6 +10357,34 @@ Defi @code{InFiNiTi} (CNRS) and PNTS are also acknowledged (projects
 Crops'IChaos and Musc & @code{SlowFast}).  The method is described in the
 article : Mangiarotti S. and Huc M. (2019) <doi:10.1063/1.5081448>.")
     (license (license:fsdg-compatible "CeCILL-2"))))
+
+(define-public r-gpmapr
+  (package
+    (name "r-gpmapr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gpmapr" version))
+       (sha256
+        (base32 "0mwyyw7vxskb9fgrp34nvm0jydgfh3l1wn3qaxhf30hfddjirmpn"))))
+    (properties `((upstream-name . "gpmapr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-readr r-jsonlite r-httr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/MRCIEU/gpmapr")
+    (synopsis "Query the 'OpenGWAS' Genotype-Phenotype Map")
+    (description
+     "Client for the @code{OpenGWAS} genotype-phenotype map ('GPMap') API
+<https://gpmap.opengwas.io>, which brings together colocalisation, rare variant
+and molecular QTL results across thousands of traits.  Functions retrieve
+traits, genes, variants and genomic regions with their colocalising studies,
+associations, linkage disequilibrium and pleiotropy summaries, search the map by
+name or variant, and upload GWAS summary statistics for analysis against it.")
+    (license license:expat)))
 
 (define-public r-gpmap
   (package
@@ -19710,13 +19822,13 @@ that the data are optimally primed for precise and thorough analysis.")
 (define-public r-giscor
   (package
     (name "r-giscor")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "giscoR" version))
        (sha256
-        (base32 "0xyfalikwya8aba2zb7v942y2sx8mmw8fmiplg2wnxvz35f54gnp"))))
+        (base32 "0r2ian90nz50304x9myggz60lqbnwis62vbbqcmclssggrlpazkf"))))
     (properties `((upstream-name . "giscoR")))
     (build-system r-build-system)
     (arguments
@@ -19806,13 +19918,13 @@ KoÅodziejek (2025) <doi:10.18637/jss.v112.i07>.")
 (define-public r-gips
   (package
     (name "r-gips")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gips" version))
        (sha256
-        (base32 "0l79kmkcx987r08ldy6pkzg43i5vsg31y0yzdy80kdrzpgrk2ni3"))))
+        (base32 "0k2jnp51dma0ra3w8p1vmj6i43m24z6r74jn12sdppi4rgxgqkbr"))))
     (properties `((upstream-name . "gips")))
     (build-system r-build-system)
     (arguments
@@ -20866,13 +20978,13 @@ O'Reilly et al. (2021) <doi:10.1016/S2542-5196(20)30292-8>.")
 (define-public r-ghrexplore
   (package
     (name "r-ghrexplore")
-    (version "0.2.2")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GHRexplore" version))
        (sha256
-        (base32 "1ypa6c4jz8mjlq8d5pafcvmvyam45wv9jici842j15j9ra63wh42"))))
+        (base32 "1z3jbhirbkvpmkqqqa2pwjx3il7wppj2wmvfwbad7d95n6vksvgp"))))
     (properties `((upstream-name . "GHRexplore")))
     (build-system r-build-system)
     (arguments
@@ -21695,13 +21807,13 @@ crossed designs (each lightness level appears across hues).")
 (define-public r-ggtime
   (package
     (name "r-ggtime")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggtime" version))
        (sha256
-        (base32 "04cq0zscaflzlqhlynx7lyfnvabwp9x782lwid63pbvj38yif3bf"))))
+        (base32 "0s3l3airkz6lp6gr53kfvi3nzfr2py3n77glm337sp6w20x1f08v"))))
     (properties `((upstream-name . "ggtime")))
     (build-system r-build-system)
     (arguments
@@ -23501,6 +23613,37 @@ all the data to calculate the quantiles, but thins it out in a way that focuses
 on points near zero before plotting to speed up plotting and decrease file size,
 when vector graphics are stored.")
     (license license:gpl3)))
+
+(define-public r-ggpyramid
+  (package
+    (name "r-ggpyramid")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggpyramid" version))
+       (sha256
+        (base32 "1ccs5bysf7isk817wksz0bss13ky5wg4c0rcffx1sfkrrb3lskmg"))))
+    (properties `((upstream-name . "ggpyramid")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs r-scales r-rlang r-ggplot2 r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/matanhakim/ggpyramid")
+    (synopsis "Population Pyramids with 'ggplot2'")
+    (description
+     "Build population pyramids, the back-to-back bar charts of a population by age
+group and sex, as layers of a ggplot2 plot.  A position adjustment mirrors one
+side and stacks subgroups within each side, so bars, labels and lines from any
+layer land on the correct side while the plot can still be faceted, themed and
+extended as usual.  A coordinate system labels both sides with absolute values,
+gives them one shared scale, and places the age axis on either side or in a gap
+at the centre.  Further layers count individual records or sum aggregated
+values, show proportions, label the bars, and draw a second population as a
+stepped outline for comparison.")
+    (license license:expat)))
 
 (define-public r-ggpval
   (package
@@ -25421,13 +25564,13 @@ ggiraph'.")
 (define-public r-ggir
   (package
     (name "r-ggir")
-    (version "3.3-9")
+    (version "3.4-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GGIR" version))
        (sha256
-        (base32 "0w30yp7k1r7s2swk7mk1q09bgapbz38gl29b30121gd543394asp"))))
+        (base32 "0k6gjghdbv5pympvaxwz4i096biawlgvg8qhgjd72xzbimsqwczi"))))
     (properties `((upstream-name . "GGIR")))
     (build-system r-build-system)
     (arguments
@@ -25436,6 +25579,7 @@ ggiraph'.")
     (propagated-inputs (list r-zoo
                              r-unisensr
                              r-signal
+                             r-readxl
                              r-read-gt3x
                              r-psych
                              r-lubridate
@@ -25446,6 +25590,7 @@ ggiraph'.")
                              r-doparallel
                              r-data-table
                              r-arrow
+                             r-actilifecounts
                              r-actcr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/wadpac/GGIR/")
@@ -25595,13 +25740,13 @@ test for association/correlation between paired samples.")
 (define-public r-ggindex
   (package
     (name "r-ggindex")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggindex" version))
        (sha256
-        (base32 "0z0pvjxyy183x1lf68kvbwb8hzwkgwz6gfmirg1r1aq0jlc53q2n"))))
+        (base32 "0anz05yq3vxdrb26sm6lpfy5x26k9y6ykqva1j96gbhkpgx429yn"))))
     (properties `((upstream-name . "ggindex")))
     (build-system r-build-system)
     (arguments
@@ -25610,11 +25755,12 @@ test for association/correlation between paired samples.")
     (propagated-inputs (list r-scales r-ggplot2))
     (native-inputs (list r-quarto))
     (home-page "https://github.com/discindo/ggindex")
-    (synopsis "Numbered Focus Points for 'ggplot2' Scatter Plots")
+    (synopsis "Numbered Focus Points for 'ggplot2' Plots")
     (description
-     "This package provides a ggplot2 geom that highlights selected points of a
-scatter plot with numbered markers and lists their descriptions in a legend
-keyed by the same numbers, as on an annotated map.")
+     "This package provides a ggplot2 geom that highlights selected observations of a
+plot, such as points of a scatter plot, events on a line chart or features on a
+map, with numbered markers and lists their descriptions in a legend keyed by the
+same numbers, as on an annotated map.")
     (license license:expat)))
 
 (define-public r-ggincerta
@@ -27635,19 +27781,19 @@ procedural graphics in R.")
 (define-public r-ggcheysson
   (package
     (name "r-ggcheysson")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggCheysson" version))
        (sha256
-        (base32 "1r6n9xlfalqjvc70czqn03982cw1ymna4qv28hzd50vdhkim2xcy"))))
+        (base32 "19x8mrbqnffczsmfafdjjqsn5plsisrq8izj5hd3f8zj6b9n4s83"))))
     (properties `((upstream-name . "ggCheysson")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-ggplot2))
+    (propagated-inputs (list r-rlang r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/friendly/ggCheysson")
     (synopsis "Graphic Styles of Emile Cheysson for 'ggplot2'")
@@ -27717,13 +27863,13 @@ interface to create plots using ggplot2'.")
 (define-public r-ggchangepoint
   (package
     (name "r-ggchangepoint")
-    (version "0.5.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggchangepoint" version))
        (sha256
-        (base32 "1w6b201wiip9j3593j4gx8v6x3dy68hl7p4bbx09amqiwix149ds"))))
+        (base32 "1kr24lffc79sn3h2qzrffmm44cqqbf3cm7vscg4dz9rcrxg50xx5"))))
     (properties `((upstream-name . "ggchangepoint")))
     (build-system r-build-system)
     (arguments
@@ -27743,26 +27889,33 @@ interface to create plots using ggplot2'.")
     (synopsis "Combines Changepoint Analysis with 'ggplot2'")
     (description
      "This package provides a unified, tidy, ggplot2'-native interface to changepoint
-detection in R. Provides the ggcpt S3 result class with broom'-style
-tidy/glance/augment methods, @code{autoplot()} (with confidence intervals,
-significance regions, detector statistics, solution paths, scale space, and
-multivariate facets), composable geoms @code{('geom_changepoint()}',
-@code{geom_cpt_segment()}', @code{geom_cpt_ci()}', @code{geom_cpt_region()}',
-@code{geom_cpt_label()}', @code{geom_cpt_event()}', @code{stat_changepoint()}'),
-and a @code{cpt_detect()} dispatcher covering fifty methods with introspection
-via @code{cpt_methods()}': penalised/optimal partitioning, multiscale and search
-methods, nonparametric and kernel methods, Bayesian methods, high-dimensional,
-functional, covariance and network methods, regression breaks, seasonal-trend
-decomposition, the classical single-change tests, and robust detection under
-drift and autocorrelation.  Adds inference (Narrowest Significance Pursuit
-regions, a unified @code{cpt_confint()}', post-detection tests), selection of
-the number of changes, influence and sensitivity diagnostics, supervised
-detection with learned penalties, consensus and method recommendation, event
-annotation and reproducible reports, benchmarks against the Turing Change Point
-Dataset, sequential monitoring with detection-delay accounting, power and study
-design, and an extension mechanism @code{('as_ggcpt()}',
-@code{cpt_register_method()}') that brings external and non-CRAN detectors into
-the same grammar.")
+detection in R. A @code{cpt_detect()} dispatcher covers 51 methods (penalised
+and optimal partitioning, multiscale and search methods, nonparametric and
+kernel methods, Bayesian methods, high-dimensional, functional, covariance and
+network methods, regression breaks through a formula interface, seasonal-trend
+decomposition, the classical single-change tests, and anomalous stretches that
+return to a baseline), with distribution families for counts, binary outcomes
+and waiting times, missing-value handling, grouped data, and constraints on
+locations and segment lengths.  Every result is the same ggcpt object, in one
+verified location convention, with broom'-style tidy/glance/augment methods,
+@code{autoplot()} and composable ggproto layers.  Around detection: which
+coordinates of a multivariate series changed, certified with family-wise error
+control; distribution-free confidence sets for each location; effect sizes and
+what the series would have done without each change; a test for a change at a
+date fixed in advance, tests for a change anywhere, and screening of many series
+with false discovery rate control; a check of whether a change was abrupt or
+gradual; weights over the number of changes; assumption checks and goodness of
+fit, robustness to the noise model, stability, consensus and influence
+diagnostics, supervised detection, sequential monitoring including
+cumulative-sum and exponentially weighted moving-average control charts, power
+and study design, benchmarks, reports and an export under a documented JSON
+schema.  What each engine does (its runtime, whether its answer survives a
+change of units or a reversal of time, its false positives by noise regime and
+data type, its false alarms on pure noise) and the calibration of the package's
+own intervals, tests and monitors are measured and shipped as data, and
+@code{cpt_recommend()} chooses from those measurements.
+@code{cpt_register_method()} brings external and non-CRAN detectors into the
+same grammar.")
     (license license:gpl3+)))
 
 (define-public r-ggbuildr
@@ -30315,13 +30468,13 @@ format.  Massimo Aria, Corrado Cuccurullo. (2017)
 (define-public r-gerda
   (package
     (name "r-gerda")
-    (version "0.8.1")
+    (version "0.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gerda" version))
        (sha256
-        (base32 "1rvavzgr6bhhz7a82arch2bnrqqrjf2cqhpr7bm0qiy4d3wwxmwz"))))
+        (base32 "0dndaasmfxlff64kyqvfd3xjihwgna25ksmksid6lwhxxwmcwcpm"))))
     (properties `((upstream-name . "gerda")))
     (build-system r-build-system)
     (arguments
@@ -30333,14 +30486,14 @@ format.  Massimo Aria, Corrado Cuccurullo. (2017)
     (synopsis "German Election Database (GERDA)")
     (description
      "This package provides tools to download datasets of German elections covering
-local, state, federal, mayoral, European Parliament, and county (Kreistag)
-elections, with federal county-level coverage from 1953 and other families
-extending through 2025.  The package supplies turnout, vote shares, and derived
-indicators at the municipal and county level, including geographically
-harmonized datasets that account for changes in municipal boundaries over time
-and incorporate mail-in voting districts.  Bundled data includes county-level
-INKAR covariates (1995-2022) and municipality-level Zensus 2022 indicators.
-Data is sourced from <https://github.com/awiedem/german_election_data>.")
+local, state, federal, mayoral, Landrat', European Parliament, and county
+(Kreistag) elections from 1945 to 2026; coverage varies by election type.  The
+package supplies turnout, vote shares, and derived indicators at the municipal
+and county level, including geographically harmonized datasets that account for
+changes in municipal boundaries over time and incorporate mail-in voting
+districts.  Bundled data includes county-level INKAR covariates (1995-2023) and
+municipality-level Zensus 2022 indicators.  Data is sourced from
+<https://github.com/awiedem/german_election_data>.")
     (license license:expat)))
 
 (define-public r-gerbil
@@ -30842,13 +30995,13 @@ Elseberg et al. (2012) <https://hdl.handle.net/10446/86202>.")
 (define-public r-geotech
   (package
     (name "r-geotech")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geotech" version))
        (sha256
-        (base32 "1a78w899kjqxw6yk64zdphlw15rnsjxic8m7as8yaba4yipl3wj6"))))
+        (base32 "1nwy9zffg64l85q5fy74wf346gw3lry268q7q9rjg8d8g99qk36j"))))
     (properties `((upstream-name . "geotech")))
     (build-system r-build-system)
     (arguments
@@ -31114,13 +31267,13 @@ simple features access like sf but running on Spark distributed system.")
 (define-public r-geosmooth
   (package
     (name "r-geosmooth")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geosmooth" version))
        (sha256
-        (base32 "0ghh9an7lzshnkwlp6b5y86b6gqf1ljyfpn7a0r5k56cs2lv1v8r"))))
+        (base32 "13hdng9qcjfdgkigmqff6arv3cgcn1qyxs6894l28sn4wdnynxml"))))
     (properties `((upstream-name . "geosmooth")))
     (build-system r-build-system)
     (arguments
@@ -31133,16 +31286,18 @@ simple features access like sf but running on Spark distributed system.")
                              r-digest
                              r-dgraphs))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/pgajer/geosmooth")
-    (synopsis "Geometric Smoothing and Conditional Expectation Methods")
+    (home-page "https://pgajer.github.io/geosmooth/")
+    (synopsis
+     "Geometric Methods for Nonparametric Regression and Density Estimation")
     (description
      "This package provides geometric methods for nonparametric regression and density
 estimation on data represented as coordinate matrices or weighted graphs.
 Methods include local polynomial smoothing, model-averaged local polynomial
 smoothing, local polynomial lifting trend filtering, synchronized local
-polynomial lifting trend filtering, graph low-pass filtering, and Hessian-energy
-regression.  Methodological references include Gajer and Ravel (2025) \"Adaptive
-Geometric Regression for High-Dimensional Structured Data\"
+polynomial lifting trend filtering, order-2 Gaussian and logistic trend
+filtering, graph low-pass filtering, and Hessian-energy regression.
+Methodological references include Gajer and Ravel (2025) \"Adaptive Geometric
+Regression for High-Dimensional Structured Data\"
 <doi:10.48550/@code{arXiv.2511.03817>}, Fan and Gijbels (1996,
 ISBN:9780412983214), Wang et al. (2016) \"Trend Filtering on Graphs\"
 <https://www.jmlr.org/papers/v17/15-147.html>, and Kim et al. (2009)
@@ -31370,32 +31525,6 @@ references is included.")
 municipalities, localities, settlements, census units, streets and educational
 institutions, normalizing addresses and performing reverse geocoding.  Results
 are returned as data frames, and batch queries can be sent in a single request.")
-    (license license:gpl3)))
-
-(define-public r-georange
-  (package
-    (name "r-georange")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GeoRange" version))
-       (sha256
-        (base32 "0krj9570wkhdvpaqkq3nf0maglqd44mpwn4v1bymvgpk1i1wf5p3"))))
-    (properties `((upstream-name . "GeoRange")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-velociraptr r-sp r-raster r-proj4 r-moments))
-    (home-page "https://cran.r-project.org/package=GeoRange")
-    (synopsis "Calculating Geographic Range from Occurrence Data")
-    (description
-     "Calculates and analyzes six measures of geographic range from a set of
-longitudinal and latitudinal occurrence data.  Measures included are minimum
-convex hull area, minimum spanning tree distance, longitudinal range,
-latitudinal range, maximum pairwise great circle distance, and number of X by X
-degree cells occupied.")
     (license license:gpl3)))
 
 (define-public r-geor
@@ -31807,13 +31936,13 @@ processing using future for larger feature-extraction jobs.")
 (define-public r-geomorph
   (package
     (name "r-geomorph")
-    (version "4.1.1")
+    (version "4.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geomorph" version))
        (sha256
-        (base32 "0vb8g38jcw2h6krjdm3f5brqq0w61ly48x2rc3gzlbl2c9hcsmm0"))))
+        (base32 "1c6wbg35mkpdyvhn3xa14sspd8bs6mids36m5nrgx6r41l0671wx"))))
     (properties `((upstream-name . "geomorph")))
     (build-system r-build-system)
     (arguments

@@ -750,13 +750,13 @@ observed history becomes a stochastic program in one call.")
 (define-public r-quicksentiment
   (package
     (name "r-quicksentiment")
-    (version "0.3.6")
+    (version "0.3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quickSentiment" version))
        (sha256
-        (base32 "1gjf28ksjm7f1c9qdkng0w9vzjikgmzs2ds19p3wm2f4ph75ng6h"))))
+        (base32 "0rf20bixbrxsxsjklpxfij2jrq55ki6sdnv4da903l2yvnmpmjyr"))))
     (properties `((upstream-name . "quickSentiment")))
     (build-system r-build-system)
     (arguments
@@ -1965,13 +1965,13 @@ ability to automatically perform leave-one-out cross validation.")
 (define-public r-quantities
   (package
     (name "r-quantities")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quantities" version))
        (sha256
-        (base32 "1hvfabq11ji6llwh6kp2yvl0cfppf7k9fgm7bb30csqimbs188x1"))))
+        (base32 "0ifh9c2qky3kapygqbpafkzrsax6g1d9wzfzf3gs3s7fkm67xwha"))))
     (properties `((upstream-name . "quantities")))
     (build-system r-build-system)
     (arguments
@@ -2532,13 +2532,13 @@ tunes the quantile level to reflect class imbalance.")
 (define-public r-qualypso
   (package
     (name "r-qualypso")
-    (version "3.1")
+    (version "3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "QUALYPSO" version))
        (sha256
-        (base32 "1a45hj0nvc57jrx9q2n3g7p4j1ydsgjs3dm3vfp6n8n8y5rb4n1p"))))
+        (base32 "1xry1p8br7zwd88xx0c59741xwcja5b66plc7acbxv98pvjz8844"))))
     (properties `((upstream-name . "QUALYPSO")))
     (build-system r-build-system)
     (arguments
@@ -2550,15 +2550,17 @@ tunes the quantile level to reflect class imbalance.")
                              r-gamlss-dist
                              r-gamlss
                              r-expm))
-    (home-page "https://cran.r-project.org/package=QUALYPSO")
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/guillaumeevin/QUALYPSO")
     (synopsis
      "Partitioning Uncertainty Components of an Incomplete Ensemble of Climate Projections")
     (description
      "These functions apply an analysis of variance to incomplete ensembles of climate
 projections.  It provides estimates of climate change responses of all
-simulation chains and of all uncertainty variables.  It has been applied to
-different ensembles of projections simulated to study the impact of climate
-change: for climate indicators in Evin et al. (2019)
+simulation chains and of all uncertainty variables.  The current notations
+correspond to Evin et al. (2026) <doi:10.5194/hess-30-1023-2026>.  QUALYPSO has
+been applied to different ensembles of projections simulated to study the impact
+of climate change: for climate indicators in Evin et al. (2019)
 <doi:10.1175/JCLI-D-18-0606.1>; seasonal precipitation and temperature in Evin,
 Somot and Hingray (2021) <doi:10.5194/esd-12-1543-2021>; hydrological variables
 in Evin et al. (2026) <doi:10.5194/hess-30-1023-2026>; photovoltaic energy in
@@ -2942,13 +2944,13 @@ purpose (information criteria, cross-validation, stability selection).")
 (define-public r-quadroot
   (package
     (name "r-quadroot")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "QuadRoot" version))
        (sha256
-        (base32 "1ixh4ikp8pqa7py4di9fgmi5rhjgsvh57j2f59g6xdcyl068c3g6"))))
+        (base32 "09h814rvcj15wmz75gnvygijrn33fig4p5s59zsdz32s0zild82k"))))
     (properties `((upstream-name . "QuadRoot")))
     (build-system r-build-system)
     (arguments
@@ -6548,13 +6550,13 @@ Fechnerian distances can be computed.")
 (define-public r-qdfauction
   (package
     (name "r-qdfauction")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qdfauction" version))
        (sha256
-        (base32 "00qjd2q4q53qqss3g3jmidp7pli1lcw1lq3p99gnbwnkz2wclm0i"))))
+        (base32 "125czp84kqm3s6j4akrg5vmfy67vqvam4sayvqkzck4z7h8clbgf"))))
     (properties `((upstream-name . "qdfauction")))
     (build-system r-build-system)
     (arguments

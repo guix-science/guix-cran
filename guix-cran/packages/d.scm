@@ -1253,13 +1253,13 @@ interface @code{dynafluxr::gui()}.")
 (define-public r-dyn4cast
   (package
     (name "r-dyn4cast")
-    (version "11.11.26")
+    (version "11.11.28")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Dyn4cast" version))
        (sha256
-        (base32 "0szql0r9h5kj882zzwb2kv7g1n77bb69h2x511waqsqzjg86wwsa"))))
+        (base32 "1wh38xy1i6rchima81v0392rcbakqr885khy1h7rndxswrb0ngc1"))))
     (properties `((upstream-name . "Dyn4cast")))
     (build-system r-build-system)
     (arguments
@@ -1296,7 +1296,7 @@ interface @code{dynafluxr::gui()}.")
                              r-formattable
                              r-dplyr
                              r-corrplot))
-    (native-inputs (list r-knitr esbuild))
+    (native-inputs (list r-rmarkdown r-knitr esbuild))
     (home-page "https://github.com/JobNmadu/Dyn4cast")
     (synopsis "Dynamic Modeling and Machine Learning Environment")
     (description
@@ -7335,13 +7335,13 @@ to the software and explicitly not to the included data.")
 (define-public r-drdid
   (package
     (name "r-drdid")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DRDID" version))
        (sha256
-        (base32 "0zqqrhab3zb856jshnrmkv4c25iwxbrsfpbsjixni2w81490px7j"))))
+        (base32 "1zyqpr7kfmb0q3j9j206hyrmr2ryij4q1rrfhr39hmv7zasqzzhh"))))
     (properties `((upstream-name . "DRDID")))
     (build-system r-build-system)
     (arguments
@@ -7732,6 +7732,39 @@ editing space called canvas to allow users immediately edit the screenshot(s)
 within the same document.  Users can quickly combine, compare different
 screenshots, upload their own images and maybe make a scientific figure.")
     (license license:gpl3+)))
+
+(define-public r-drasr
+  (package
+    (name "r-drasr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "drasR" version))
+       (sha256
+        (base32 "0yc0qp4aa3fyv001l6694px4d7x9mkmms0dcz3nj68mp8dmrx7wi"))))
+    (properties `((upstream-name . "drasR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/zerish12/drasR")
+    (synopsis "Drift-Aware Risk-Guaranteed Acceptance Sampling")
+    (description
+     "This package implements drift-aware risk-guaranteed acceptance sampling methods
+for adaptive lot disposition.  The package provides tools for classical
+acceptance sampling, producer-risk and consumer-risk assessment, exponentially
+weighted moving average drift monitoring, adaptive tightening policies, decision
+fragility analysis, and safety-cost Pareto frontier construction.  Classical
+binomial acceptance-plan design is described in the NIST/SEMATECH e-Handbook of
+Statistical Methods
+<https://www.itl.nist.gov/div898/handbook/pmc/section2/pmc232.htm>.
+Exponentially weighted moving averages follow Roberts (1959)
+<doi:10.1080/00401706.1959.10489860>.  The methods are intended for simulation
+studies, supplier quality monitoring, and audit-oriented inspection decision
+support.")
+    (license license:expat)))
 
 (define-public r-drape
   (package
@@ -8630,13 +8663,13 @@ Mueller, Telesca (2016) <doi:10.1111/biom.12482>.")
 (define-public r-dppca
   (package
     (name "r-dppca")
-    (version "0.1.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dppca" version))
        (sha256
-        (base32 "1j1l2ay85i9iikjfdj8rh8g21w9spcqzdg5zaps6wkb7isy35pn6"))))
+        (base32 "07c9z0xb65r239f5x4ndn6nyzn8g6bz7ifzxvdmcg7b5y2c28jpq"))))
     (properties `((upstream-name . "dppca")))
     (build-system r-build-system)
     (arguments
@@ -8645,30 +8678,32 @@ Mueller, Telesca (2016) <doi:10.1111/biom.12482>.")
     (propagated-inputs (list r-vgam
                              r-rlang
                              r-rdpack
-                             r-rarpack
+                             r-rcpp
                              r-patchwork
-                             r-ggplot2
-                             r-dplyr))
+                             r-ggrepel
+                             r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/yejinjo0220/dppca")
     (synopsis
-     "Differentially Private Principal Component Analysis Visualization")
+     "Differentially Private Principal Component Analysis and Visualization")
     (description
      "This package provides tools for differentially private principal component
-analysis (PCA) visualization.  It includes functions for estimating private
-principal component directions, constructing private scree and proportion of
-variance explained summaries, and visualizing two-dimensional PCA score
-summaries using additive and sparse histogram mechanisms.  Group-wise score
-visualizations and an interactive shiny app are also provided.  Private
-principal component directions are based on Kim and Jung (2025)
-<doi:10.1002/sam.70053>.  Private scree summaries use mechanisms motivated by
-Dwork and Roth (2014) <doi:10.1561/0400000042>, Ramsay and Spicker (2025)
+analysis (PCA) and visualization.  Includes private principal component
+directions, scree and proportion of variance explained (PVE) estimates, and
+two-dimensional private score histograms with synthetic sampled points.
+Supports additive and sparse histogram mechanisms, group-wise score
+visualizations, and optional non-private comparisons.  An integrated workflow
+produces loading plots, scree plots, score plots, variable plots, and biplots
+from shared private PCA estimates.  An interactive shiny application is also
+provided.  Private direction estimation is based on Kim and Jung (2025)
+<doi:10.1002/sam.70053>.  Private scree estimation draws on Dwork and Roth
+(2014) <doi:10.1561/0400000042>, Ramsay and Spicker (2025)
 <doi:10.48550/@code{arXiv.2501.14095>}, and Yu, Ren and Zhou (2024)
-<doi:10.3150/23-BEJ1706>.  Private score plot frames use smooth sensitivity
-quantiles from Nissim, Raskhodnikova and Smith (2007)
-<doi:10.1145/1250790.1250803>.  Private score histograms use additive and sparse
-histogram ideas from Wasserman and Zhou (2010) <doi:10.1198/jasa.2009.tm08651>
-and Karwa and Vadhan (2018) <doi:10.4230/LIPIcs.ITCS.2018.44>.")
+<doi:10.3150/23-BEJ1706>.  Private score frames use unbounded quantile
+mechanisms from Durfee (2023) <doi:10.52202/075280-3394>.  Private score
+histograms use methods related to Wasserman and Zhou (2010)
+<doi:10.1198/jasa.2009.tm08651> and Karwa and Vadhan (2018)
+<doi:10.4230/LIPIcs.ITCS.2018.44>.")
     (license license:expat)))
 
 (define-public r-dppack
@@ -9644,13 +9679,13 @@ or @code{LaTeX} table ready to paste into a paper.")
 (define-public r-douconca
   (package
     (name "r-douconca")
-    (version "1.2.6")
+    (version "1.2.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "douconca" version))
        (sha256
-        (base32 "1hxynjxna9wpv25ylxr3afvf1k8717znrhiq9jddwy0apkxvl80l"))))
+        (base32 "1i47px369pbrvhcl3h8cm7fpdpgndwbykc8hykbnlj2i5wh7y5bq"))))
     (properties `((upstream-name . "douconca")))
     (build-system r-build-system)
     (arguments
@@ -11970,13 +12005,13 @@ Bandyopadhyay (2026) <doi:10.1093/biostatistics/kxag040>.")
 (define-public r-dnn
   (package
     (name "r-dnn")
-    (version "0.0.7")
+    (version "0.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dnn" version))
        (sha256
-        (base32 "1ni65n83xj65r84pffad8x1gaapg2mcyasif2qa0ngydyrhhr3sc"))))
+        (base32 "0dh6hw4vf6d9c1rvjfsafrrgyqsrm009fcagpzb4yka3ywkylxjy"))))
     (properties `((upstream-name . "dnn")))
     (build-system r-build-system)
     (arguments
@@ -12802,29 +12837,38 @@ of critical values not available elsewhere.")
 (define-public r-dmai
   (package
     (name "r-dmai")
-    (version "0.5.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dmai" version))
        (sha256
-        (base32 "0fdcvy524cc0gmr04mn82023y4xvfx0477l3h41sjbwk1qrfpdk4"))))
+        (base32 "03cm3gj6lgydrm773y2vzqz4m04m49yrz5ms94kgn4r0qy3y3myq"))))
     (properties `((upstream-name . "dmai")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-magrittr
-                             r-ggplot2
-                             r-dplyr))
-    (home-page "https://github.com/myaseen208/dmai/")
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
+    (propagated-inputs (list r-scales r-ggplot2 r-data-table))
+    (native-inputs (list r-r-rsp r-quarto))
+    (home-page "https://myaseen208.com/dmai/")
     (synopsis "Divisia Monetary Aggregates Index")
     (description
-     "This package provides functions to calculate Divisia monetary aggregates index
-as given in Barnett, W. A. (1980) (<DOI:10.1016/0304-4076(80)90070-6>).")
+     "Builds monetary aggregates from their components by the methods of index number
+theory.  The Divisia index of Barnett (1980) <doi:10.1016/0304-4076(80)90070-6>
+weights every component (currency, demand deposits, savings and time deposits,
+...) by its share in the expenditure on monetary services, priced by its user
+cost (Barnett 1978) <doi:10.1016/0165-1765(78)90051-4>.  Also gives the Fisher
+ideal index, a variant with simple growth rates, the simple-sum aggregate, the
+currency equivalent index of Rotemberg, Driscoll and Poterba (1995), the dual
+user-cost price index and the Divisia second moments of Barnett and Serletis
+(1990) <doi:10.1016/0304-4076(90)90104-2>; benchmark rates given or taken from
+the components (upper envelope); ggplot2 graphics, a plain-language
+interpretation of every result and a built-in shiny application.")
     (license license:gpl2)))
 
 (define-public r-dma
@@ -13548,13 +13592,13 @@ removed or further analyses as required.")
 (define-public r-diy-sem-plot
   (package
     (name "r-diy-sem-plot")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "diy.sem.plot" version))
        (sha256
-        (base32 "0xkd9d84g6i5ysp8ma1c4xmpyi28yy5fvnkx9nlc91fs3vvak5fl"))))
+        (base32 "038cmxnhdmwz0m8xgxqkpqjzlzg3k2jggv0l9wgj8sill6yzhkrk"))))
     (properties `((upstream-name . "diy.sem.plot")))
     (build-system r-build-system)
     (arguments
@@ -13990,13 +14034,13 @@ and installs all these related packages in a single step.")
 (define-public r-divent
   (package
     (name "r-divent")
-    (version "0.5-4")
+    (version "0.6-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "divent" version))
        (sha256
-        (base32 "1ywhc3kps8368vccx7zh34hhxdr2cgisxnrirzhg3p6jjbsr24j5"))))
+        (base32 "15mxhzh6kqvrdwf2rwrbv0c7zgnfd8wza69r7gkk4dbci89v59y1"))))
     (properties `((upstream-name . "divent")))
     (build-system r-build-system)
     (arguments
@@ -15958,13 +16002,13 @@ of attributes, calculate dissimilarity between each pair of objects.")
 (define-public r-diseasystore
   (package
     (name "r-diseasystore")
-    (version "0.3.3")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "diseasystore" version))
        (sha256
-        (base32 "0hrvghapp1139f3ar54asjxgzw14rvw1ranp3lzwl33x50zrp4qm"))))
+        (base32 "0jdx474hvn47fh413wr45psm09cnn6gpas1qccy70fljyap580fj"))))
     (properties `((upstream-name . "diseasystore")))
     (build-system r-build-system)
     (arguments
@@ -19653,6 +19697,41 @@ outputs.  Based on diagnostic index expectation maximization as described in
 Baird et al. (2023) <doi:10.1111/2041-210X.14010>.")
     (license license:gpl3+)))
 
+(define-public r-dielectricwaterr
+  (package
+    (name "r-dielectricwaterr")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DielectricWaterR" version))
+       (sha256
+        (base32 "1wbxi8h4kmwmm700v9b7yichzny4q6yf94z92xplcxn7fh3kv29b"))))
+    (properties `((upstream-name . "DielectricWaterR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-rlang r-readxl r-ggplot2 r-dplyr))
+    (home-page "https://cran.r-project.org/package=DielectricWaterR")
+    (synopsis "Auditing and Exploring Dielectric Measurements of Water")
+    (description
+     "Imports, audits, compares and visualises dielectric measurements of water under
+fuel contamination and ageing.  Provides descriptive summaries,
+frequency-response comparisons, confidence intervals based on physical-unit
+means, and training and testing splits that keep observations from the same
+experimental unit together.  Experimental-unit safeguards address
+pseudoreplication concerns discussed by Hurlbert (1984) <doi:10.2307/1942661>.
+Grouped splitting is consistent with the structured-data validation principles
+discussed by Roberts et al. (2017) <doi:10.1111/ecog.02881>.  Student t
+confidence intervals use the standard mean-interval formula described in the
+NIST/SEMATECH e-Handbook of Statistical Methods
+<https://www.itl.nist.gov/div898/handbook/eda/section3/eda352.htm>.
+Experimental-unit identifiers are supplied by the user and are not inferred from
+material labels.  This research prototype does not provide validated contaminant
+prediction or causal inference.")
+    (license license:expat)))
+
 (define-public r-diegr
   (package
     (name "r-diegr")
@@ -20571,28 +20650,44 @@ libphonenumber java library, <https://github.com/google/libphonenumber>.")
 (define-public r-diallelanalysisr
   (package
     (name "r-diallelanalysisr")
-    (version "0.6.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DiallelAnalysisR" version))
        (sha256
-        (base32 "042i84pxm3gy59r94m0pk7gb04kxl9l8w43b9h7g70dyxi6hf89x"))))
+        (base32 "0lwccg1a49qm93zp5qjailwwd0bxvnwslkgjwh4sm13w35myg2h5"))))
     (properties `((upstream-name . "DiallelAnalysisR")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
-    (propagated-inputs (list r-ggplot2))
-    (home-page "https://cran.r-project.org/package=DiallelAnalysisR")
-    (synopsis "Diallel Analysis with R")
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
+    (propagated-inputs (list r-scales r-ggplot2 r-data-table))
+    (native-inputs (list r-r-rsp r-quarto))
+    (home-page "https://myaseen208.com/DiallelAnalysisR/")
+    (synopsis "Diallel Analysis, Heterosis and Related Mating Designs")
     (description
-     "This package performs Diallel Analysis with R using Griffing's and Hayman's
-approaches.  Four different Methods (1: Method-I (Parents + F1's + reciprocals);
-2: Method-II (Parents and one set of F1's); 3: Method-III (One set of F1's and
-reciprocals); 4: Method-IV (One set of F1's only)) and two Models (1: Fixed
-Effects Model; 2: Random Effects Model) can be applied using Griffing's
-approach.")
+     "Analysis of diallel crosses and related mating designs in plant breeding, from
+the plot data of randomized complete block experiments: Griffing's four methods
+and two models (Griffing, 1956 <doi:10.1071/BI9560463>), from plot data, from a
+published table of means or over several environments, with gca by environment
+and sca by environment interactions and a split of reciprocal effects into
+maternal and non-maternal parts (Cockerham and Weir, 1977); Hayman's analysis
+with the Wr-Vr graph and the components of variation (Hayman, 1954
+<doi:10.1093/genetics/39.6.789>); mid-parent, better-parent and standard
+heterosis with t tests; Gardner and Eberhart's (1966) Analyses II and III; the
+partial diallel (Kempthorne and Curnow, 1961 <doi:10.2307/2527989>); line by
+tester analysis with proportional contributions; and the North Carolina designs
+I, II and III (Comstock and Robinson, 1948).  Missing plots are handled by
+least-squares means.  Results include analyses of variance, effects with
+standard errors, variance components and genetic ratios, plots of the effects
+and a biplot of the crosses, tables for papers in Word, @code{LaTeX}, HTML or
+Markdown, simulation of diallel data and the power of the tests for planning the
+number of replicates, and an interactive shiny application.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-diagrammersvg
@@ -21242,29 +21337,37 @@ described in Tang and Prado (2026) <doi:10.1016/j.csda.2026.108368>.")
 (define-public r-dgraphs
   (package
     (name "r-dgraphs")
-    (version "0.2.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dgraphs" version))
        (sha256
-        (base32 "0xb0n6x9c7m4gka57rj7an774fa430bkl3p8j0sjz3z1kx4ljkyh"))))
+        (base32 "045gyy5sivdyhai1ww63dnripahzcw6iq6f27bmxalidnsy539kf"))))
     (properties `((upstream-name . "dgraphs")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcppeigen r-rcpp r-igraph r-fnn))
+    (propagated-inputs (list r-rcppeigen
+                             r-rcpp
+                             r-nloptr
+                             r-igraph
+                             r-fnn
+                             r-bh))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/pgajer/dgraphs")
+    (home-page "https://pgajer.github.io/dgraphs/")
     (synopsis "Data-Derived Graph Construction Utilities")
     (description
      "Constructs data-derived graphs from numerical observations using mutual,
-shared-neighbor, intersection, geodesic, radius, adaptive-radius, and
-minimum-spanning-tree completion methods.  Provides graph conversion, pruning,
-diagnostics, spectral embedding, endpoint detection, and path utilities.  The
-implemented graph constructions include methods described by Jarvis and Patrick
-(1973) <doi:10.1109/T-C.1973.223640>, Brito et al. (1997)
+shared-neighbor, intersection, geodesic, radius, adaptive-radius,
+minimum-spanning-tree completion, Fermat-distance, and optional iterated
+adaptive neighborhood methods.  Provides graph conversion, pruning, diagnostics,
+spectral embedding, endpoint detection, and path utilities, including intrinsic
+Euclidean distances on the max-normalized compositional simplex.  Includes
+reproducible synthetic geometries, point sampling, and an optional interactive
+graph explorer.  The graph constructions include methods described by Jarvis and
+Patrick (1973) <doi:10.1109/T-C.1973.223640>, Brito et al. (1997)
 <doi:10.1016/S0167-7152(96)00213-1>, Berry and Sauer (2019)
 <doi:10.3934/fods.2019001>, and Gower and Ross (1969) <doi:10.2307/2346439>.")
     (license license:expat)))
@@ -26369,13 +26472,13 @@ probabilistic population projections for all countries\"
 (define-public r-demofit
   (package
     (name "r-demofit")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "demofit" version))
        (sha256
-        (base32 "1bnm0bqx59n1drqr65dz5ii4bmf2h0zr5rw1v0d6ak28hswb325n"))))
+        (base32 "0vz2zdimc3v2fw8k8g6g0xix2svziqzzh2k3s7xxzhfn8ms5knb5"))))
     (properties `((upstream-name . "demofit")))
     (build-system r-build-system)
     (arguments
@@ -28887,13 +28990,13 @@ rewrite of the package on tidyverse conventions.")
 (define-public r-declared
   (package
     (name "r-declared")
-    (version "0.27")
+    (version "0.28")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "declared" version))
        (sha256
-        (base32 "18psdhqsyz5bjsilrwq1rydmn3sxzh3ylk8735vyjzz562bvx11l"))))
+        (base32 "0qxabiz08iykmmysvcz1idlly8k6zfl06976hpgnjlc1jji0p9i5"))))
     (properties `((upstream-name . "declared")))
     (build-system r-build-system)
     (arguments
@@ -29088,6 +29191,50 @@ calculated as well as Individual Expected Value of Perfect Information.  The
 probabilistic calculations are done via Monte Carlo simulations.  This Monte
 Carlo functionality can be used on its own.")
     (license license:gpl3)))
+
+(define-public r-decisions
+  (package
+    (name "r-decisions")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "decisions" version))
+       (sha256
+        (base32 "1hi5iqfdwxvy6b0hpv4jn2fpxprjqi1w7my5aps86dh7pi9jzsns"))))
+    (properties `((upstream-name . "decisions")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-stringi
+                             r-s7
+                             r-rlang
+                             r-purrr
+                             r-jsonlite
+                             r-httr2
+                             r-cli))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/fmegahed/decisions")
+    (synopsis "Typed Decisions from Decision Models")
+    (description
+     "Sends texts and images to decision models: hosted or local models that return a
+probability for each allowed answer to a typed question (true or false, a
+choice, or an ordered score).  Supports the web services of @code{TypeSafe}
+<https://docs.typesafe.ai/introduction>, @code{OpenAI}
+<https://platform.openai.com>, @code{OpenRouter} <https://openrouter.ai> and
+Microsoft Foundry <https://ai.azure.com>, which need an API (application
+programming interface) key and can charge for each call, and any local or hosted
+server that uses the @code{SystemOne} request format.  Returns one row for each
+input in the tidymodels style, saves and scores a complete decision setup, and
+applies a calibrator fitted with probably'.  Includes injury reports from the
+Severe Injury Reports of the U.S. Occupational Safety and Health Administration
+<https://www.osha.gov/severe-injury-reports>, food recall reports of the U.S.
+Food and Drug Administration <https://open.fda.gov/apis/food/enforcement/>, and
+simulated textile images made with spc4sts', Bui and Apley (2021)
+<doi:10.1080/00224065.2019.1707730>.")
+    (license license:expat)))
 
 (define-public r-decisionpaths
   (package
@@ -30271,13 +30418,13 @@ in <@code{arXiv:2004.03758>}.")
 (define-public r-ddiwr
   (package
     (name "r-ddiwr")
-    (version "0.22")
+    (version "0.24")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DDIwR" version))
        (sha256
-        (base32 "1r8kpx0sm0clxyijdf6dj1xnkq154ci07nbh0pyrdazk7rkyybxr"))))
+        (base32 "0778d98zmrwr7l2smjb4dds69svl0vh04zlzzqzp551661i97b33"))))
     (properties `((upstream-name . "DDIwR")))
     (build-system r-build-system)
     (arguments
@@ -31099,13 +31246,13 @@ endpoints (Edelmann, et al. (2021) <doi:10.1111/biom.13470>) are also included."
 (define-public r-dcorbss
   (package
     (name "r-dcorbss")
-    (version "1.0-0")
+    (version "1.0-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dcorBSS" version))
        (sha256
-        (base32 "18rjafhv59iwjny4swgz73bc1bj961fpjzijshgy9sxkhcr9kix8"))))
+        (base32 "1m04msmlh1hpn4ybi2pxz3fxp41yzn76rvjnknskam0s12435n05"))))
     (properties `((upstream-name . "dcorBSS")))
     (build-system r-build-system)
     (arguments
@@ -31452,6 +31599,35 @@ Challenge in 2020.  References: Gong et al. (2021)
 under the Double Chain Ladder framework by Martinez-Miranda, Nielsen and Verrall
 (2012).")
     (license license:gpl2)))
+
+(define-public r-dcii1
+  (package
+    (name "r-dcii1")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DCIi1" version))
+       (sha256
+        (base32 "1szffghvzasz79bm00csi4hca9dyjmrzl7xbgrqyw4p2fm61dqm7"))))
+    (properties `((upstream-name . "DCIi1")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=DCIi1")
+    (synopsis "I1 Mean-Change Testing and DCI Candidate Detection")
+    (description
+     "Computes the I1 statistic for mean changes and generates multiple candidate
+change locations using adaptive contrasts and local interquartile scaling.
+Provides empirical I1 p-values for independent Gaussian series of length 100
+with full-window parameter 22, statistic-only analysis for other settings, and
+weighted and unweighted segmentation covering scores.  DCI candidate detection
+is descriptive and does not assign significance to selected segments.  Based on
+the methodology of Waychal, Laha and Sinha (2026)
+<doi:10.48550/@code{arXiv.2610.23476>}.")
+    (license license:gpl3)))
 
 (define-public r-dcifer
   (package
@@ -32280,13 +32456,13 @@ calculate bins.")
 (define-public r-dbparser
   (package
     (name "r-dbparser")
-    (version "2.2.1")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dbparser" version))
        (sha256
-        (base32 "0nc6l35axj5k6hf59ixvj81fbx5gvah651z2nf4mbidfkpqava99"))))
+        (base32 "1wcd1izwcv3179bbwk7hnzbfw8ag290019jhp6lwc6vdgpgrj3qa"))))
     (properties `((upstream-name . "dbparser")))
     (build-system r-build-system)
     (arguments
@@ -32296,15 +32472,20 @@ calculate bins.")
                              r-tibble
                              r-purrr
                              r-progress
+                             r-jsonlite
                              r-dplyr
                              r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://docs.ropensci.org/dbparser/")
     (synopsis "Drugs Databases Parser")
     (description
-     "This tool is for parsing public drug databases such as @code{DrugBank} XML
-database <https://go.drugbank.com/>.  The parsed data are then returned in a
-proper R object called dvobject'.")
+     "Parses drug and gene databases from their downloaded files: the @code{DrugBank}
+XML database <https://go.drugbank.com/>, the @code{OnSIDES} and TWOSIDES adverse
+drug event databases, Human Phenotype Ontology ('HPO') gene-phenotype
+associations, the HGNC gene nomenclature files, Health Canada's Drug Product
+Database ('DPD') data extract, and the @code{openFDA} Drugs@@FDA and NDC
+directory downloads.  The parsed tables are returned in an R object called
+dvobject', which records the source release, licence and file hashes.")
     (license license:expat)))
 
 (define-public r-dbnr
@@ -34305,13 +34486,13 @@ based on Rattanalertnusorn, A. (2024)
 (define-public r-dataspice
   (package
     (name "r-dataspice")
-    (version "1.1.1")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dataspice" version))
        (sha256
-        (base32 "1vw5dzvzq897691iphgvckki194k820ar4521nyhwb09jc9k8y9p"))))
+        (base32 "0zkd7lm5xr2i0sbcvdbvma9kmmzk7b65aj8lxx9mvzb5dmp2b3iw"))))
     (properties `((upstream-name . "dataspice")))
     (build-system r-build-system)
     (arguments
@@ -34606,13 +34787,13 @@ API and imported as a data.frame or ts object.")
 (define-public r-datasda
   (package
     (name "r-datasda")
-    (version "0.2.7")
+    (version "0.2.7.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dataSDA" version))
        (sha256
-        (base32 "0k108n280n3n9zwl17fw63wd72ffg0sxppwxszgw0a7fkzyssvz7"))))
+        (base32 "1wk8nk42n2b5lfydla5720wk16kvpqcc5knkqha3bsglivyv12bs"))))
     (properties `((upstream-name . "dataSDA")))
     (build-system r-build-system)
     (arguments
@@ -38663,13 +38844,13 @@ cluster analysis, discriminant analysis...) for such probability densities.")
 (define-public r-dact
   (package
     (name "r-dact")
-    (version "1.0.0")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DACT" version))
        (sha256
-        (base32 "0fas2a6s4gq421l9n9mr94mg67qbrk9qvgq5h1k26gws6kdqhj19"))))
+        (base32 "1wbgp5yy3rqgyryk9fcc239v4qgk0b851rbn93s006dmziljc84q"))))
     (properties `((upstream-name . "DACT")))
     (build-system r-build-system)
     (arguments
@@ -38731,13 +38912,13 @@ from Aitkin (1964) <doi:10.1007/BF02289723> and Liu & Wang (2021)
 (define-public r-dacc
   (package
     (name "r-dacc")
-    (version "0.0-7")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dacc" version))
        (sha256
-        (base32 "0a95hsl0gb0c25smxrj3sb6ax6dziijk2n67aym8402pi53kaj2h"))))
+        (base32 "1q4aqrpdirj4cc4jbhixzz5syk0l9kl4c11pybkwqsppbvwjr25k"))))
     (properties `((upstream-name . "dacc")))
     (build-system r-build-system)
     (arguments
@@ -38754,13 +38935,19 @@ from Aitkin (1964) <doi:10.1007/BF02289723> and Liu & Wang (2021)
     (home-page "https://github.com/LiYanStat/dacc")
     (synopsis "Detection and Attribution Analysis of Climate Change")
     (description
-     "Detection and attribution of climate change using methods including optimal
-fingerprinting via generalized total least squares or an estimating equation
-approach (Li et al., 2025, <doi:10.1175/JCLI-D-24-0193.1>; Ma et al., 2023,
-<doi:10.1175/JCLI-D-22-0681.1>).  Provides shrinkage estimators for the
-covariance matrix following Ledoit and Wolf (2004,
-<doi:10.1016/S0047-259X(03)00096-4>) and Ledoit and Wolf (2017,
-<doi:10.2139/ssrn.2383361>).")
+     "Detection and attribution analysis of climate change using errors-in-variables
+regression.  Implements the polynomial shrinkage framework under variance
+heterogeneity proposed by Li and Li (2026)
+<doi:10.48550/@code{arXiv.2608.12496>} and the latent factor framework proposed
+by Li and Li (2026) <doi:10.48550/@code{arXiv.2609.13488>}.  Estimates forcing
+scaling factors and variance inflation coefficients for forced simulations and
+control runs relative to observations.  Selects polynomial covariance weights or
+bias-corrected spiked precision weights by minimizing estimated total asymptotic
+scaling factor variance, and provides asymptotic confidence intervals and
+residual diagnostics.  Also retains earlier total least squares and estimating
+equation procedures (Li et al., 2025, <doi:10.1175/JCLI-D-24-0193.1>; Ma et al.,
+2023, <doi:10.1175/JCLI-D-22-0681.1>) for comparison and reproducibility,
+together with covariance shrinkage estimators.")
     (license license:gpl3+)))
 
 (define-public r-dabr

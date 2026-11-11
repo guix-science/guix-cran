@@ -438,13 +438,13 @@ method are (1).  Kuiper, N. H. (1960). <DOI:10.1016/S1385-7258(60)50006-0> and
 (define-public r-kuenm2
   (package
     (name "r-kuenm2")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kuenm2" version))
        (sha256
-        (base32 "0n0k3w1p4q2akdcmwgsij5wrzwvarpzvadqrhvj2rxa5qcf8z13z"))))
+        (base32 "15dbb6qx7xn8kmrgc84wwqfgkmv5wfb6nm8ym3yfsacdwkwawpdd"))))
     (properties `((upstream-name . "kuenm2")))
     (build-system r-build-system)
     (arguments
@@ -471,11 +471,11 @@ combinations.  Handy options for producing final models with transfers are
 included.  Other tools to assess extrapolation risks and variability in model
 transfers are also available.  Methodological and theoretical basis for the
 methods implemented here can be found in: Peterson et al. (2011)
-<https://www.degruyter.com/princetonup/view/title/506966>, Radosavljevic and
-Anderson (2014) <doi:10.1111/jbi.12227>, Peterson et al. (2018)
-<doi:10.1111/nyas.13873>, Cobos et al. (2019) <doi:10.7717/peerj.6281>, Alkishe
-et al. (2020) <doi:10.1016/j.pecon.2020.03.002>, Machado-Stredel et al. (2021)
-<doi:10.21425/F5FBG48814>, Arias-Giraldo and Cobos (2024)
+<https://academic.oup.com/princeton-scholarship-online/book/16160?login=true>,
+Radosavljevic and Anderson (2014) <doi:10.1111/jbi.12227>, Peterson et al.
+(2018) <doi:10.1111/nyas.13873>, Cobos et al. (2019) <doi:10.7717/peerj.6281>,
+Alkishe et al. (2020) <doi:10.1016/j.pecon.2020.03.002>, Machado-Stredel et al.
+(2021) <doi:10.21425/F5FBG48814>, Arias-Giraldo and Cobos (2024)
 <doi:10.17161/bi.v18i.21742>, Cobos et al. (2024) <doi:10.17161/bi.v18i.21742>.")
     (license license:gpl3+)))
 
@@ -599,13 +599,13 @@ and Zamar (2019) <arxiv:1906.08198>).")
 (define-public r-kstmatrix
   (package
     (name "r-kstmatrix")
-    (version "3.0-0")
+    (version "3.0-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kstMatrix" version))
        (sha256
-        (base32 "1f26c2rg9q1x3ci8b4lp72q23wp22xib7xx6vxna4ijwwxzn1kiq"))))
+        (base32 "0fyzn57bzysdkxpyva9n58nw85p102yfsnfjlfmh9splvjkvwvm8"))))
     (properties `((upstream-name . "kstMatrix")))
     (build-system r-build-system)
     (arguments

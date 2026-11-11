@@ -301,13 +301,13 @@ Magdalinos and Stamatogiannis (2015) <doi:10.1093/rfs/hhu139>.")
 (define-public r-ivue
   (package
     (name "r-ivue")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ivue" version))
        (sha256
-        (base32 "18jpncjxmp4wi7569smrw4h02cyphph6l182c2rvp26whr58d097"))))
+        (base32 "16ls83kpc04f8rg2d2qymd11h52m16c6shvm1z718zpfia79r36s"))))
     (properties `((upstream-name . "ivue")))
     (build-system r-build-system)
     (arguments
@@ -1781,6 +1781,41 @@ methodological background is detailed in Chao et al. (2025)
 <doi:10.1101/2025.08.20.671203>.")
     (license license:gpl3+)))
 
+(define-public r-istats
+  (package
+    (name "r-istats")
+    (version "1.8.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iSTATS" version))
+       (sha256
+        (base32 "0n2m8v027m23hwrn0ibbpkfh49l5wv0jxbrm79vy6f6n9zr6x3vp"))))
+    (properties `((upstream-name . "iSTATS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shinywidgets
+                             r-shinybs
+                             r-shiny
+                             r-gtools
+                             r-ggplot2
+                             r-data-table))
+    (home-page "https://cran.r-project.org/package=iSTATS")
+    (synopsis "Graphical Interface to Perform STOCSY Analyses on NMR Data")
+    (description
+     "Launches a shiny based application for Nuclear Magnetic Resonance (NMR) data
+importation and Statistical TOtal Correlation @code{SpectroscopY} (STOCSY)
+analyses in a full interactive approach.  The theoretical background and
+applications of the STOCSY method are described by Cloarec, O., Dumas, M. E.,
+Craig, A., Barton, R. H., Trygg, J., Hudson, J., Blancher, C., Gauguier, D.,
+Lindon, J. C., Holmes, E. & Nicholson, J. (2005) <doi:10.1021/ac048630x>.
+Spectral alignment follows the interval correlation optimized shifting method of
+Savorani, F., Tomasi, G. & Engelsen, S. B. (2010)
+<doi:10.1016/j.jmr.2009.11.012>.")
+    (license license:gpl3+)))
+
 (define-public r-istatr
   (package
     (name "r-istatr")
@@ -2379,13 +2414,13 @@ Chemistry.  See: Lacki, Valkenborg, Startek (2020)
 (define-public r-isoreader2
   (package
     (name "r-isoreader2")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "isoreader2" version))
        (sha256
-        (base32 "0nvx7kvdiwf9gmbwkppicxmwksbzydf7g7kjq1lm81f0rn5wsasn"))))
+        (base32 "0ms2i2kjy0jb64dvdkqxzzh275i8mm5hf9hhm7knzb4jzs27yhvf"))))
     (properties `((upstream-name . "isoreader2")))
     (build-system r-build-system)
     (arguments
@@ -5241,31 +5276,32 @@ multivariate cases.")
 (define-public r-iq
   (package
     (name "r-iq")
-    (version "2.1.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iq" version))
        (sha256
-        (base32 "1gasckjhbjscmnqk8pp1blqrxfx3i8xwwsfaflvs28ayfg9b7503"))))
+        (base32 "1252rrbf06546np08a2gxq4s7k02m6ygn0fab7b9izifx5g6w2ww"))))
     (properties `((upstream-name . "iq")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcppeigen r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/tvpham/iq")
     (synopsis "Protein Quantification in Mass Spectrometry-Based Proteomics")
     (description
      "An implementation of the @code{MaxLFQ} algorithm by Cox et al. (2014)
-<doi:10.1074/mcp.M113.031591> in a comprehensive pipeline for processing
-proteomics data in data-independent acquisition mode (Pham et al.  2020
-<doi:10.1093/bioinformatics/btz961>; Pham et al.  2026
+<doi:10.1074/mcp.M113.031591> using least-squares analysis in a comprehensive
+pipeline for processing proteomics data in data-independent acquisition mode
+(Pham et al.  2020 <doi:10.1093/bioinformatics/btz961>, and a new algorithm
+using the conjugate gradient method Pham et al.  2026
 <doi:10.1021/acs.jproteome.5c01038>).  It offers additional options for protein
 quantification using the N most intense fragment ions, using all fragment ions,
-the median polish algorithm by Tukey (1977, ISBN:0201076160), and a robust
-linear model.  In general, the tool can be used to integrate multiple
+the median polish algorithm by Tukey (1977, ISBN:0201076160), a robust linear
+model, and fragment weighting.  A new iq format enables the processing of
+large-scale datasets.  In general, the tool can be used to integrate multiple
 proportional observations into a single quantitative value.")
     (license license:bsd-3)))
 
@@ -9407,13 +9443,13 @@ interaction terms.")
 (define-public r-interactions
   (package
     (name "r-interactions")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "interactions" version))
        (sha256
-        (base32 "1j4bb3xjdw2xs82nv3l1va2gfk5blzqdz6db1zb31yanhrvv7j9y"))))
+        (base32 "0689gmhmla7gp1xxgl9rmxzqar8q4i1p7c82rzib856jpn6jb72q"))))
     (properties `((upstream-name . "interactions")))
     (build-system r-build-system)
     (arguments
@@ -11714,6 +11750,36 @@ and province level, format them and import them to the R environment.  Data are
 provided by the Spanish Ministry of the Interior
 (<https://infoelectoral.interior.gob.es/es/inicio/>).")
     (license license:gpl2)))
+
+(define-public r-infocentroid
+  (package
+    (name "r-infocentroid")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "infocentroid" version))
+       (sha256
+        (base32 "1jxmqy9hrk920ir475dkdpazw4xj2kw7q3hp0j59vsbwxlzasipj"))))
+    (properties `((upstream-name . "infocentroid")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2 r-ggfx))
+    (home-page "https://github.com/ahmetkutuk1/infocentroid")
+    (synopsis "Information-Dense Centroid Metrics")
+    (description
+     "Traditional central tendency and dispersion measures such as the mean and
+standard deviation can be misleading for multimodal or outlier-contaminated
+data.  This package implements information-theoretic alternatives that weight
+observations by their local probability density, focusing on the region
+containing the bulk of the data.  The core functions include @code{ic_weights()}
+for kernel density or histogram based entropy weighting, @code{ic_center()} and
+@code{ic_dispersion()} for weighted location and spread, @code{ic_combined()}
+for a single information density score between zero and one, and
+@code{ic_plot()} for visualization.")
+    (license license:expat)))
 
 (define-public r-infocausality
   (package
@@ -18208,6 +18274,42 @@ of implemented metrics is summarized in Rodbard (2009)
 plots, lasagna plots and ambulatory glucose profile report.")
     (license license:gpl2)))
 
+(define-public r-iglm
+  (package
+    (name "r-iglm")
+    (version "1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iglm" version))
+       (sha256
+        (base32 "1hjns65a8w053q7mbv5ipi0gk4p5pcyycj8pw048qkmmps1ajlrq"))))
+    (properties `((upstream-name . "iglm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppprogress
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-ragg
+                             r-r6
+                             r-matrix
+                             r-mass
+                             r-igraph
+                             r-coda))
+    (native-inputs (list r-knitr))
+    (home-page "https://corneliusfritz.github.io/iglm/")
+    (synopsis "Regression under Interference in Connected Populations")
+    (description
+     "An implementation of generalized linear models (GLMs) for studying relationships
+among attributes in connected populations, where responses of connected units
+can be dependent, as introduced by Fritz et al. (2025)
+<doi:10.1080/01621459.2025.2565851>.  iglm extends GLMs for independent
+responses to dependent responses and can be used for studying spillover in
+connected populations and other network-mediated phenomena.")
+    (license license:gpl3)))
+
 (define-public r-igfetchr
   (package
     (name "r-igfetchr")
@@ -18806,13 +18908,13 @@ algorithm of Yolcu and Yolcu (2023) <doi:10.1016/j.eswa.2022.119336>.")
 (define-public r-ieugwasr
   (package
     (name "r-ieugwasr")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ieugwasr" version))
        (sha256
-        (base32 "0yv5h1mb7jadagcxw8r08qfignsflh9mlpj1dbg2s3iwwlcr3mbg"))))
+        (base32 "1iajpbdr8syjkr0nyp846hqfkin45g1ml5fp1x53ndpr9p8lrxp0"))))
     (properties `((upstream-name . "ieugwasr")))
     (build-system r-build-system)
     (arguments
@@ -18948,13 +19050,13 @@ the reference sources, respectively.")
 (define-public r-ieegio
   (package
     (name "r-ieegio")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ieegio" version))
        (sha256
-        (base32 "1kqh4w1hh1dya6qpxg2p463h2ggml000vsacvv5gpyrbd2hn4asy"))))
+        (base32 "04ifljkxvyzpbwl4vpm202g77fkgqpc1yxnb70ixrwz2nbbkd95l"))))
     (properties `((upstream-name . "ieegio")))
     (build-system r-build-system)
     (arguments
@@ -20810,13 +20912,13 @@ only a small percentage of outliers.")
 (define-public r-icsnp
   (package
     (name "r-icsnp")
-    (version "1.1-3")
+    (version "1.2-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ICSNP" version))
        (sha256
-        (base32 "0b6lzhjip4mv6hla2lb84xcx2wgb9gkj4h7dfk96grsbgbpq3hpf"))))
+        (base32 "02sincnmr4p1gdnkf2zag3x0yk0fj0xrm73yygsknmnxl949lbkr"))))
     (properties `((upstream-name . "ICSNP")))
     (build-system r-build-system)
     (arguments
@@ -20826,9 +20928,15 @@ only a small percentage of outliers.")
     (home-page "https://cran.r-project.org/package=ICSNP")
     (synopsis "Tools for Multivariate Nonparametrics")
     (description
-     "This package provides tools for multivariate nonparametrics, as location tests
-based on marginal ranks, spatial median and spatial signs computation,
-Hotelling's T-test, estimates of shape are implemented.")
+     "Classical multivariate methods such as Hotelling's T-test are based on the
+sample mean vector and the sample covariance matrix, which makes them sensitive
+to outliers and heavy-tailed distributions.  The package provides nonparametric
+alternatives based on marginal ranks, spatial signs and spatial ranks, as
+reviewed for example in Nordhausen and Oja (2018)
+<doi:10.1146/annurev-statistics-031017-100247>.  It contains tests for location
+and independence, Hotelling's T-test as a parametric reference, the spatial
+median and other location estimates, and several estimates of shape.  The tests
+can also be applied to invariant coordinates obtained with the package ICS'.")
     (license license:gpl2+)))
 
 (define-public r-icskat
@@ -23375,33 +23483,6 @@ also a higher level function to actually run the transitions for the number of
 timesteps that users specify.  Additional functions will follow for changing
 attributes on demographic, health belief and movement.")
     (license license:expat)))
-
-(define-public r-ibmacousticr
-  (package
-    (name "r-ibmacousticr")
-    (version "0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ibmAcousticR" version))
-       (sha256
-        (base32 "1hrd2273n9fgi3hgjissjn4syw914mxm4wr98ij819yahsi9aj42"))))
-    (properties `((upstream-name . "ibmAcousticR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml r-jsonlite r-httr))
-    (home-page "https://cran.r-project.org/package=ibmAcousticR")
-    (synopsis "Connect to Your 'IBM Acoustic' Data")
-    (description
-     "Authentication can be the most difficult part about working with a new API.
-@code{ibmAcousticR} facilitates making a connection to the IBM Acoustic email
-campaign management API and executing various queries.  The IBM Acoustic API
-documentation is available at
-<https://developer.ibm.com/customer-engagement/docs/>.  This package is not
-supported by IBM'.")
-    (license license:cc0)))
 
 (define-public r-ibm
   (package

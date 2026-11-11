@@ -1609,13 +1609,13 @@ based on: Yilmaz et al., (2008) <DOI:10.1029/2007WR006716>.")
 (define-public r-hydrochem
   (package
     (name "r-hydrochem")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hydrochem" version))
        (sha256
-        (base32 "1i5ry30hzspz5f735qd2xh9a4md5wlkzyb5q17b9fw9a2d25g2jn"))))
+        (base32 "0c19hrj972pa8g18czk668226zdsfkrl02zslyc4s5gmhz78nk9v"))))
     (properties `((upstream-name . "hydrochem")))
     (build-system r-build-system)
     (arguments
@@ -6949,13 +6949,13 @@ estimation.")
 (define-public r-hmmtmb
   (package
     (name "r-hmmtmb")
-    (version "1.1.2")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hmmTMB" version))
        (sha256
-        (base32 "10rbwhi7zisb9r5nn6hkr3spdcbn8jisb9w80m95fmd988wsjr64"))))
+        (base32 "1acc7al9qxwmyw1v7lcjaxji3lwb12rja6z9bryppy7j9r9pv1wg"))))
     (properties `((upstream-name . "hmmTMB")))
     (build-system r-build-system)
     (arguments
@@ -6969,7 +6969,8 @@ estimation.")
                              r-mgcv
                              r-matrix
                              r-mass
-                             r-ggplot2))
+                             r-ggplot2
+                             r-fmesher))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/TheoMichelot/hmmTMB")
     (synopsis "Fit Hidden Markov Models using Template Model Builder")
@@ -8880,13 +8881,13 @@ Numbers proposed by Chao, Chiu and Jost (2014)
 (define-public r-hilldiv3
   (package
     (name "r-hilldiv3")
-    (version "3.1.1")
+    (version "3.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hilldiv3" version))
        (sha256
-        (base32 "1l555bza7gmwy7z9am04ap8q8gjaaxis7fs73sj4m4qmw10h3hgj"))))
+        (base32 "1ldgr5dmni68l727arvbhm3finc3plcr398lswvz70q4awinx4hw"))))
     (properties `((upstream-name . "hilldiv3")))
     (build-system r-build-system)
     (arguments
@@ -8902,15 +8903,15 @@ operational taxonomic units (OTUs), amplicon sequence variants (ASVs) or
 metagenome-assembled genomes (MAGs)) based on Hill numbers, in a unified
 framework for neutral, phylogenetic and functional diversity measurement,
 diversity partitioning, (dis)similarity measurement, diversity profiles,
-evenness, redundancy and attribution of Hill power-sum weight to taxa and sets.
-The statistical framework encompasses richness, Shannon and Simpson diversity,
-Faith's phylogenetic diversity (PD), Rao's quadratic entropy and Sorensen- and
-@code{UniFrac-type} dissimilarities, all grounded in a single Hill-number
-framework.  Methods are described in Jost (2007) <doi:10.1890/06-1736.1>, Chao
-et al. (2010) <doi:10.1098/rstb.2010.0272>, Chiu et al. (2014)
-<doi:10.1890/12-0960.1> and reviewed in Alberdi & Gilbert (2019)
-<doi:10.1111/1755-0998.13014>.  Optional import adapters interoperate with the
-Bioconductor packages phyloseq', @code{SummarizedExperiment} and
+evenness, redundancy and attribution of Hill power-sum weight and beta
+dissimilarity to taxa and sets.  The statistical framework encompasses richness,
+Shannon and Simpson diversity, Faith's phylogenetic diversity (PD), Rao's
+quadratic entropy and Sorensen- and @code{UniFrac-type} dissimilarities, all
+grounded in a single Hill-number framework.  Methods are described in Jost
+(2007) <doi:10.1890/06-1736.1>, Chao et al. (2010) <doi:10.1098/rstb.2010.0272>,
+Chiu et al. (2014) <doi:10.1890/12-0960.1> and reviewed in Alberdi & Gilbert
+(2019) <doi:10.1111/1755-0998.13014>.  Optional import adapters interoperate
+with the Bioconductor packages phyloseq', @code{SummarizedExperiment} and
 @code{TreeSummarizedExperiment}', which are available from
 <https://bioconductor.org>.")
     (license license:gpl3)))
@@ -10810,13 +10811,13 @@ screenshot in PNG format using a headless browser.")
 (define-public r-hexify
   (package
     (name "r-hexify")
-    (version "0.9.0")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hexify" version))
        (sha256
-        (base32 "1559984vqjacibm9ickkp2cndiididq5832w7msm3dhr9rldw2r8"))))
+        (base32 "1875b0w2yf9vjc31kjkvgsda5yxg0f22dmlh31kwvmljfkm9f9f0"))))
     (properties `((upstream-name . "hexify")))
     (build-system r-build-system)
     (arguments
@@ -11190,6 +11191,39 @@ fields.  Functions to generate the required polynomials (using polynom'), with
 various distributions of coefficients are provided.  Additionally, functions to
 generate and take coefficient modulo are provided.")
     (license license:expat)))
+
+(define-public r-hetnsc
+  (package
+    (name "r-hetnsc")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hetNSC" version))
+       (sha256
+        (base32 "0llgvy6ds5ip4gn2f6qsjk6qmkml7xm7l1lpvmrqak39qfv7hz1p"))))
+    (properties `((upstream-name . "hetNSC")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mass))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=hetNSC")
+    (synopsis "Heteroscedastic Nearest Shrunken Centroid Classification")
+    (description
+     "Nearest shrunken centroid (NSC) classifiers for high-dimensional,
+low-sample-size data such as gene expression.  Implements the original
+homoscedastic NSC with soft thresholding (Prediction Analysis of Microarrays;
+Tibshirani et al.  2002 <doi:10.1073/pnas.082099299>), its hard- and
+order-thresholding versions (Sahtout, Wang and Ghimire 2024
+<doi:10.1080/03610918.2022.2047201>), and the heteroscedastic extension of
+Sahtout and Wang that uses class-specific variances in both the test statistic
+and the discriminant function (methods STh3, HTh3 and OTh3).  The thresholding
+parameter is selected by a refined (\"deep\") cross-validation search.  Also
+provides the simulation design, per-class performance metrics and the
+relative-heterogeneity diagnostic used in the paper.")
+    (license license:gpl2)))
 
 (define-public r-hetgp
   (package
@@ -15145,13 +15179,13 @@ during installation using the instantiate package.")
 (define-public r-hdar
   (package
     (name "r-hdar")
-    (version "1.0.7")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hdar" version))
        (sha256
-        (base32 "0b53xhxrghcg7nwzy6pzvmh18g187lm4nfby2bys2fdrsgfz9lj5"))))
+        (base32 "1q5lmr2gxrr3xh1j1ddihm2cik3j65znv7l5ycl22r0aracy4kx1"))))
     (properties `((upstream-name . "hdar")))
     (build-system r-build-system)
     (arguments

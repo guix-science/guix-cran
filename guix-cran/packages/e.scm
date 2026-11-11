@@ -2292,13 +2292,13 @@ well as matrices and data frames and many more...")
 (define-public r-expoquimr
   (package
     (name "r-expoquimr")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "expoquimR" version))
        (sha256
-        (base32 "1zkwkni96xhvb9g2pgy0lm5ygn36ji3z4c5j0n989418m6ppbfhd"))))
+        (base32 "0k2zaxfb8rmmbcxnnf76c4l9dbzy5012dm62far29s8p7ic7v12v"))))
     (properties `((upstream-name . "expoquimR")))
     (build-system r-build-system)
     (arguments
@@ -2324,9 +2324,12 @@ applications provide a guided, interactive workflow for occupational hygienists
 and health and safety practitioners who prefer not to write code.  References:
 UK Health and Safety Executive (2003)
 <https://www.hse.gov.uk/coshh/essentials/index.htm>; Mallet, Pilorget and Berne
-(2013, ISBN:978-2-7389-2166-2) \"Evaluation du risque chimique\" INRS ED 6084;
-European Committee for Standardisation (2018)
-<https://www.en-standard.eu/bs-en-689-2018-workplace-exposure-measurement-of-exposure-by-inhalation-to-chemical-agents-strategy-for-testing-compliance-with-occupational-exposure-limit-values/>.")
+(2013, ISBN:978-2-7389-2166-2) \"MÃ©thodologie d'Ã©valuation simplifiÃ©e du
+risque chimique: un outil d'aide Ã  la dÃ©cision\" INRS ND 2233; European
+Committee for Standardisation (2018)
+<https://www.en-standard.eu/bs-en-689-2018-workplace-exposure-measurement-of-exposure-by-inhalation-to-chemical-agents-strategy-for-testing-compliance-with-occupational-exposure-limit-values/>;
+Lorenzale Algarra, Sanchez-Toledo, Guillen Riquelme, Agun-Gonzalez and
+Aguilar-Elena (2026) <doi:10.1080/10803548.2025.2575603>.")
     (license license:expat)))
 
 (define-public r-explorethedata
@@ -7649,6 +7652,34 @@ clicking the respective buttons.  If the mean is chosen incorrectly, the user is
 asked to correct it.")
     (license license:gpl3)))
 
+(define-public r-euaiact
+  (package
+    (name "r-euaiact")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "euaiact" version))
+       (sha256
+        (base32 "0h1mw2fjhh6hrn9cslj9p9al92srap76n1vynq0g1izjy2m53wdx"))))
+    (properties `((upstream-name . "euaiact")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite))
+    (home-page "https://github.com/rds0001/euaiact-r")
+    (synopsis
+     "Offline Calculation and Logic Rules for the EU Artificial Intelligence Act")
+    (description
+     "Native offline evaluation of explicit calculation and logic rules for documented
+versions of the EU Artificial Intelligence Act.  Supports German identifiers,
+unknown facts and traceable decisions.  Explicitly bounded rule catalogue based
+on European Parliament and Council (2024)
+<https://eur-lex.europa.eu/eli/reg/2024/1689/oj>; evaluation of a factual
+condition is not a conformity assessment.")
+    (license license:asl2.0)))
+
 (define-public r-etwfe
   (package
     (name "r-etwfe")
@@ -7955,23 +7986,26 @@ data.")
 (define-public r-ethnoecologyr
   (package
     (name "r-ethnoecologyr")
-    (version "0.1.4")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ethnoecologyR" version))
        (sha256
-        (base32 "1cvgdhqpyys0zkav1ngizdmwlv0zsjdx99nqffbqa5h27iyf2i30"))))
+        (base32 "161zy881l2b3y6j6cf7bs9lc7rmwylywx34fw107jww9yabi216h"))))
     (properties `((upstream-name . "ethnoecologyR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tidygraph
                              r-rstan
                              r-rlang
                              r-reshape2
                              r-magrittr
+                             r-ggraph
                              r-ggplot2
                              r-ggalluvial
                              r-dplyr
@@ -7987,11 +8021,12 @@ analysis and landscape knowledge modeling.  Implements core indices including
 Landscape Use (LU), Cultural Importance in Ecology (CIE), Frequency of Citation
 (FC), Fidelity Level (FL), Number of Uses (NU), and Cultural Value of
 Ecolandscape (CVe).  Provides visualization tools for chord diagrams, alluvial
-plots, and radial plots, as well as Bayesian consensus modeling and bootstrap
-resampling to support reproducible research in Local Ecological Knowledge (LEK)
-and participatory land-use decision analysis.  Methods are based on TardÃ­o and
-Pardo-de-Santayana (2008) <doi:10.1007/s12231-007-9004-5>, Reyes-GarcÃ­a et al.
-(2006) <https://www.jstor.org/stable/4257061>, and Friedman et al. (1986)
+plots, radial plots, and bipartite networks, as well as Bayesian consensus
+modeling and bootstrap resampling to support reproducible research in Local
+Ecological Knowledge (LEK) and participatory land-use decision analysis.
+Methods are based on TardÃ­o and Pardo-de-Santayana (2008)
+<doi:10.1007/s12231-007-9004-5>, Reyes-GarcÃ­a et al. (2006)
+<https://www.jstor.org/stable/4257061>, and Friedman et al. (1986)
 <doi:10.1037/0022-3514.51.6.1173>.")
     (license license:gpl3+)))
 
@@ -9165,20 +9200,20 @@ ESS algorithm is used for model selection in decomposable graphical models.")
 (define-public r-esreg
   (package
     (name "r-esreg")
-    (version "0.6.2")
+    (version "0.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "esreg" version))
        (sha256
-        (base32 "1djyx8cc1pfza5n5ipg990jwwc1fjlsiz817iifwv9iw8g9vkda4"))))
+        (base32 "0x67b08jz1ayc37rq44hzk3d65kisn1r7r7xj1j39avrp4qw0kl4"))))
     (properties `((upstream-name . "esreg")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-quantreg r-formula))
-    (home-page "https://cran.r-project.org/package=esreg")
+    (home-page "https://github.com/BayerSe/esreg")
     (synopsis "Joint Quantile and Expected Shortfall Regression")
     (description
      "Simultaneous modeling of the quantile and the expected shortfall of a response
@@ -10136,13 +10171,13 @@ model (@code{ErRUM}) described by Culpepper and Chen (2018)
 (define-public r-errortracer
   (package
     (name "r-errortracer")
-    (version "1.4.1")
+    (version "1.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ErrorTracer" version))
        (sha256
-        (base32 "11ihavmk7sx48mg3y4c08158ryasv1v2x8m2b54ig4fb6r4rwjl9"))))
+        (base32 "0cxlzrgn0wvl3yb2krq5bkkw5azhw6z72g6s38977vmaa57smy00"))))
     (properties `((upstream-name . "ErrorTracer")))
     (build-system r-build-system)
     (arguments
@@ -10156,16 +10191,19 @@ model (@code{ErRUM}) described by Culpepper and Chen (2018)
     (description
      "This package provides a full pipeline from regularized or standard regression
 models (elastic net, linear models, generalized linear models, random forests)
-to informed Bayesian priors, structured forecast uncertainty decomposition
-(parameter / environmental / residual, plus a temporal component when the model
-carries an autocorrelation term), and forecast shelf life analysis (the
-quantification of when a forecast becomes uninformative).  Designed for
-ecological and genomic forecasting with climate or environmental covariates.
-Methods build on BÃ¼rkner (2017) <doi:10.18637/jss.v080.i01> for Bayesian
-regression via Stan', Friedman, Hastie, and Tibshirani (2010)
-<doi:10.18637/jss.v033.i01> for elastic net regularization, Wright and Ziegler
-(2017) <doi:10.18637/jss.v077.i01> for random forests, and Vehtari, Gelman, and
-Gabry (2017) <doi:10.1007/s11222-016-9696-4> for leave-one-out cross-validation.")
+to informed Bayesian priors, or accepts an existing brms fit directly, for
+structured forecast uncertainty decomposition (parameter / environmental /
+residual, plus group-level variance for new random-effect levels and a temporal
+component under autocorrelation, alongside global Sobol indices), forecast shelf
+life analysis (quantifying when a forecast becomes uninformative, with
+Kaplan-Meier pooling across forecast origins), null-model skill scoring, and
+calibration diagnostics.  Designed for ecological and genomic forecasting with
+climate or environmental covariates.  Methods build on BÃ¼rkner (2017)
+<doi:10.18637/jss.v080.i01> for Bayesian regression via Stan', Friedman, Hastie,
+and Tibshirani (2010) <doi:10.18637/jss.v033.i01> for elastic net
+regularization, Wright and Ziegler (2017) <doi:10.18637/jss.v077.i01> for random
+forests, and Vehtari, Gelman, and Gabry (2017) <doi:10.1007/s11222-016-9696-4>
+for leave-one-out cross-validation.")
     (license license:expat)))
 
 (define-public r-errors
@@ -11627,13 +11665,13 @@ estimation are also provided.")
 (define-public r-equatags
   (package
     (name "r-equatags")
-    (version "0.2.2")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "equatags" version))
        (sha256
-        (base32 "0il0gs0cwnjwgqkkqxbxs0xsm7ndnsqfmvigjm6gy7k4rvz6d8jd"))))
+        (base32 "07ihzfmn6h1g065vvhg98wcmsw58q5gyimrvx88sra55pc2sd4lc"))))
     (properties `((upstream-name . "equatags")))
     (build-system r-build-system)
     (arguments
@@ -14340,6 +14378,46 @@ epidemics, and produce ggplot2'-based visualizations.  Also includes an
 experimental powdery mildew dataset for reproducible teaching and research
 workflows.  See Madden, Hughes, and van den Bosch (2007)
 <doi:10.1094/9780890545058> for background on the epidemiological methods.")
+    (license license:expat)))
+
+(define-public r-epiexposure
+  (package
+    (name "r-epiexposure")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EpiExposure" version))
+       (sha256
+        (base32 "11md42y5a2fg6jn12qab20nbb9nklhb3l1zvw2hvv5jp7nsp3y4i"))))
+    (properties `((upstream-name . "EpiExposure")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-spamm
+                             r-scales
+                             r-rlang
+                             r-nlme
+                             r-mgcv
+                             r-glmmtmb
+                             r-ggplot2
+                             r-dlnm
+                             r-brms))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/tomazrg/EpiExposure")
+    (synopsis "Exposure-Lag-Response Modeling for Plant Disease Epidemiology")
+    (description
+     "Supports modeling and interpretation of environmental exposure-lag-response
+relationships in plant disease epidemiology using distributed lag non-linear
+models (DLNMs).  Provides functions for defining complete exposure profiles,
+evaluating model identifiability, summarizing lag-specific and period-specific
+effects, performing sensitivity analyses, simulating environmental exposure
+scenarios, predicting plant disease outcomes, quantifying yield and economic
+losses, and evaluating individual and ensemble models.  Supports harmonized
+frequentist and Bayesian modeling workflows.  Builds on the framework
+implemented in the dlnm package and described by Gasparrini (2011)
+<doi:10.18637/jss.v043.i08>.")
     (license license:expat)))
 
 (define-public r-epiestim
@@ -19730,13 +19808,13 @@ variance components in linear mixed-effects models.")
 (define-public r-ellmercodex
   (package
     (name "r-ellmercodex")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ellmercodex" version))
        (sha256
-        (base32 "16gai98b2qzi3zck72ji4k1g9bvgi5gwnd0d6ny4l8a60k8jk7fi"))))
+        (base32 "1yp1nmjs0p184jwjfhg18b24hydm0dbs8g1hx37pl2mxz9mda1ha"))))
     (properties `((upstream-name . "ellmercodex")))
     (build-system r-build-system)
     (arguments
@@ -19753,13 +19831,13 @@ variance components in linear mixed-effects models.")
                              r-ellmer
                              r-coro))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/simxnherrera/ellmercodex")
+    (home-page "https://simxnherrera.github.io/ellmercodex/")
     (synopsis "'ChatGPT' Plan Provider for 'ellmer'")
     (description
      "Connects ellmer chats to a @code{ChatGPT} subscription through @code{OpenAI''s}
 documented \"Sign in with @code{ChatGPT}\" flow for open-source, locally hosted
 apps <https://developers.openai.com/siwc/token-sharing-open-source>.  Provides a
-stable, explicitly bounded core of the public ellmer (>= 0.5.0) Chat object,
+stable, explicitly bounded core of the public ellmer (>= 0.5.1) Chat object,
 including browser sign-in with dynamic client registration, package-scoped
 credential storage, redacted diagnostics, multi-turn text, streaming,
 structured-output, function-tool, asynchronous, cancellation, cloning, metadata,
@@ -19772,13 +19850,13 @@ This independent third-party integration is not endorsed by @code{OpenAI}'.")
 (define-public r-ellmer
   (package
     (name "r-ellmer")
-    (version "0.5.0")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ellmer" version))
        (sha256
-        (base32 "0qp07xmj64g62irr1n61hgf26l0qw5diq2bwjar66cghv0pcqn8r"))))
+        (base32 "18bhz2119vv1sb0wia1qz7zfzg7h88irc28sc5ad4y09xdl005az"))))
     (properties `((upstream-name . "ellmer")))
     (build-system r-build-system)
     (arguments
@@ -23042,13 +23120,13 @@ lower bound calculation.")
 (define-public r-efa-dimensions
   (package
     (name "r-efa-dimensions")
-    (version "0.1.9.2")
+    (version "0.1.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EFA.dimensions" version))
        (sha256
-        (base32 "0ffrj8iq9y4znxpzpqcn45y0a7jcwzbv49xfb24rxs7x0xr16ww1"))))
+        (base32 "0ck650chkn20cm2v5m9vzkiqs5fbdjmynbklxd6qiasg423pk02l"))))
     (properties `((upstream-name . "EFA.dimensions")))
     (build-system r-build-system)
     (arguments
@@ -23061,7 +23139,7 @@ lower bound calculation.")
                              r-lavaan
                              r-gparotation
                              r-efatools))
-    (home-page "https://cran.r-project.org/package=EFA.dimensions")
+    (home-page "https://github.com/bpoconnor/EFA.dimensions")
     (synopsis
      "Exploratory Factor Analysis Functions for Assessing Dimensionality")
     (description
@@ -23639,13 +23717,13 @@ Data API <https://educationdata.urban.org/> into a data.frame for analysis.")
 (define-public r-educabr
   (package
     (name "r-educabr")
-    (version "1.2.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "educabR" version))
        (sha256
-        (base32 "1zbqszwi4x3xdrm2yr6ldbk1jvjms8savzzflsi29nxqi9d0wddz"))))
+        (base32 "1nnirhjyw745ycqzpijfddqzaizl1hdr13iync653mw9n6hbgvyg"))))
     (properties `((upstream-name . "educabR")))
     (build-system r-build-system)
     (arguments
@@ -27939,13 +28017,13 @@ more easily understand the pronunciation of the Chinese character.")
 (define-public r-ecb
   (package
     (name "r-ecb")
-    (version "0.4.3")
+    (version "0.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecb" version))
        (sha256
-        (base32 "0i8n4khzjn8lfc29m63syfdnwalk6h02q156gq3niqvca6lakbzc"))))
+        (base32 "16ws8h0dm2spc8s87pbzdqv9dfm9x2vi26kaafclr46fwzxnanqb"))))
     (properties `((upstream-name . "ecb")))
     (build-system r-build-system)
     (arguments
@@ -28209,13 +28287,13 @@ rank-loss functions are also given.")
 (define-public r-ebrahim-gof
   (package
     (name "r-ebrahim-gof")
-    (version "3.0.0")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ebrahim.gof" version))
        (sha256
-        (base32 "0zaawzfwh6d9hv462kb1l2ccl9sns6wv71vb3xxzglhl5d6amjvk"))))
+        (base32 "1g5x6i1282swjb5r6ca35jdfw3d4q19p4bkpjdj6ch0870vwa3b1"))))
     (properties `((upstream-name . "ebrahim.gof")))
     (build-system r-build-system)
     (arguments
@@ -28251,10 +28329,16 @@ elsewhere, @code{run.all.external()} tests frozen predictions on validation
 data, and @code{edge.stream()} updates the EDGE test as validation records
 arrive. @code{localize.gof()} and @code{localize.external()} name which part of
 the model is wrong (the intercept, the slope, the link or the covariates) with
-familywise error control.  For comparison, the projection test of Liu et al.  is
+familywise error control; @code{localize.update()} tests each part against the
+model already updated for the simpler parts, and @code{localize.size()} gives
+the size of each part.  For comparison, the projection test of Liu et al.  is
 implemented as @code{projection.gof()} and a fast implementation of the
-adaptive-partition test BA@code{GofT} as @code{bagoft.fast()}'.  For more
-details see Hosmer (1980) <doi:10.1080/03610928008827941> and Farrington (1996)
+adaptive-partition test BA@code{GofT} as @code{bagoft.fast()}'.  For Gaussian
+graphical models, @code{ridge_pcor()}', @code{effective_penalty()}',
+@code{extrapolated_ridge()} and @code{mps_select()} extract networks from the
+ridge estimator of a precision matrix and estimate the effective penalty that
+says which graph such a network estimates.  For more details see Hosmer (1980)
+<doi:10.1080/03610928008827941> and Farrington (1996)
 <doi:10.1111/j.2517-6161.1996.tb02086.x>.")
     (license license:gpl3)))
 
@@ -29478,13 +29562,13 @@ interface for batch processing.")
 (define-public r-easyraschbayes
   (package
     (name "r-easyraschbayes")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "easyRaschBayes" version))
        (sha256
-        (base32 "0675gnzj0w80clb0sqlsn0ax72c8lijdchclnmpm70lgl7smd61h"))))
+        (base32 "1z4cc6ynfmvra3rcpflzghxwlnwg7wlb2smil4yim0md52jz7igp"))))
     (properties `((upstream-name . "easyRaschBayes")))
     (build-system r-build-system)
     (arguments
@@ -29492,7 +29576,9 @@ interface for batch processing.")
       #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
+                             r-scales
                              r-rlang
+                             r-posterior
                              r-ggplot2
                              r-ggdist
                              r-forcats
@@ -29505,14 +29591,14 @@ interface for batch processing.")
      "Reproduces classic Rasch psychometric analysis features using Bayesian item
 response theory models fitted with brms following BÃ¼rkner (2021)
 <doi:10.18637/jss.v100.i05> and BÃ¼rkner (2020)
-<doi:10.3390/jintelligence8010005>.  Supports both dichotomous and polytomous
-Rasch models.  Features include posterior predictive item fit, conditional
-infit, item-restscore associations, person fit, differential item functioning,
-local dependence assessment via Q3 residual correlations, dimensionality
-assessment with residual principal components analysis, person-item targeting
-plots, item category probability curves, and reliability using relative
-measurement uncertainty following Bignardi et al. (2025)
-<doi:10.31234/osf.io/h54k8_v1>.")
+<doi:10.3390/jintelligence8010005>.  Supports dichotomous and polytomous Rasch
+models, and a hurdle partial credit model.  Features include posterior
+predictive item fit, including infit and item-restscore associations conditional
+on the total score, person fit, differential item functioning, local dependence
+assessment via Q3 residual correlations, dimensionality assessment with residual
+principal components analysis, person-item targeting plots, item category
+probability curves, and reliability using relative measurement uncertainty
+following Bignardi et al. (2025) <doi:10.31234/osf.io/h54k8_v1>.")
     (license license:gpl3+)))
 
 (define-public r-easyrasch2

@@ -178,32 +178,6 @@ radiation (UV) data from the TEMIS database, based on date and geographical
 location.")
     (license license:gpl3)))
 
-(define-public r-uuidx
-  (package
-    (name "r-uuidx")
-    (version "0.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "uuidx" version))
-       (sha256
-        (base32 "1a51lch9p3k6xiia1k2n0x9xsm0qy3gc2h0n5p0qxs7vxhfginq7"))))
-    (properties `((upstream-name . "uuidx")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list))
-    (home-page "https://cran.r-project.org/package=uuidx")
-    (synopsis "Modern UUIDs for R with a Rust Backend")
-    (description
-     "Generate, parse, and validate RFC 9562 UUIDs from R using the Rust uuid crate
-via extendr'.  Developed by Thomas Bryce Kelly at Icy Seas Co-Laboratory LLC.
-Version 7 UUIDs are the default for new identifiers, while versions 4, 5, 6, and
-legacy version 1 are also supported.  Functions return character vectors by
-default and can also expose 16-byte raw representations for low-level workflows.")
-    (license license:expat)))
-
 (define-public r-utsf
   (package
     (name "r-utsf")
@@ -1107,34 +1081,39 @@ Based on the framework described by Da Re et al. (2023)
 (define-public r-usdt
   (package
     (name "r-usdt")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "uSDT" version))
        (sha256
-        (base32 "1s8yx07dscbli1kc2wqp1w6v65kix20gigijz8mal2crn1022y0c"))))
+        (base32 "0wgi0ss8kn1hx8q183g1b9wbbaqnkfynckk7mf8j4ishp4x46qxn"))))
     (properties `((upstream-name . "uSDT")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang r-lme4 r-ggplot2))
+    (propagated-inputs (list r-withr
+                             r-rlang
+                             r-posterior
+                             r-logspline
+                             r-lme4
+                             r-gtable
+                             r-ggplot2
+                             r-cli
+                             r-callr
+                             r-brms))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/RicardoReySaez/uSDT")
     (synopsis
      "Hierarchical Signal Detection Theory Models for Unconscious Processing")
     (description
-     "Fits hierarchical signal detection theory (SDT) models to paired direct and
-indirect measures, the design used to test for unconscious processing.
-Continuous indirect measures (typically response times) are dichotomized with
-the within-subject median split of Meyen et al. (2022) <doi:10.1037/xge0001065>
-so that both tasks are placed on a common sensitivity scale.  The package
-estimates a binomial probit mixed model in which the two sensitivities are
-correlated random effects, and tests the three hypotheses of interest: the
-group-level difference between sensitivities, their latent correlation, and the
-latent regression of the indirect on the direct measure, whose intercept is the
-test for unconscious processing.  Frequentist estimation uses lme4'.")
+     "Fits hierarchical signal detection theory (SDT) models to paired awareness and
+influence measures in research on unconscious processing.  Estimates mean
+sensitivities, their latent correlation and influence sensitivity at zero
+awareness sensitivity, using maximum likelihood with lme4 or Bayesian inference
+with brms'.  Provides Bayes factors, equivalence tests, reliability estimates
+and study planning for power, precision and cost.")
     (license license:gpl3)))
 
 (define-public r-usdoj

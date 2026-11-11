@@ -85,6 +85,45 @@ provide functions for cases with exposure-mediator interactions with four-way
 decomposition of total effect.")
     (license license:expat)))
 
+(define-public r-mzimp
+  (package
+    (name "r-mzimp")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mzimp" version))
+       (sha256
+        (base32 "0bhsfb0b4awwh5gjsnwkgw45xqzs5d15ajj3a1bbf6l7lwrb1dc8"))))
+    (properties `((upstream-name . "mzimp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vinecopula
+                             r-statmod
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-randtoolbox
+                             r-ps
+                             r-pkgload
+                             r-pbivnorm
+                             r-numderiv
+                             r-mvtnorm
+                             r-mass
+                             r-codetools))
+    (home-page "https://cran.r-project.org/package=mzimp")
+    (synopsis
+     "Zero-Inflated Mixed Poisson Regression for Multivariate Count Data")
+    (description
+     "Fits and selects zero-inflated mixed Poisson models for multivariate count
+regression.  Supports multiple mixing distributions and variance specifications
+for flexible marginal modeling, while allowing dependence in the structural-zero
+components and latent mixing intensities to be modeled separately through
+copulas.  The methodology is described in Nguyen (2026)
+<doi:10.48550/@code{arXiv.2608.12732>}.")
+    (license license:gpl3+)))
+
 (define-public r-mziln
   (package
     (name "r-mziln")
@@ -476,13 +515,13 @@ of this package.")
 (define-public r-myclim
   (package
     (name "r-myclim")
-    (version "1.5.1")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "myClim" version))
        (sha256
-        (base32 "1p1kf7cy1ny87swb8ay79r1lgghzfzrd7fzx7nc7wqw4zb15akbj"))))
+        (base32 "1zfnf3mjnhcl9rh0k8b3wp1qpp0yfc49bzc5ld4rxg1nbqy0ac6b"))))
     (properties `((upstream-name . "myClim")))
     (build-system r-build-system)
     (arguments
@@ -494,6 +533,7 @@ of this package.")
                              r-tidyr
                              r-tibble
                              r-stringr
+                             r-rlang
                              r-purrr
                              r-progress
                              r-plotly
@@ -796,13 +836,13 @@ characteristics.")
 (define-public r-mx-crypto
   (package
     (name "r-mx-crypto")
-    (version "0.2.2")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mx.crypto" version))
        (sha256
-        (base32 "17sqb4iasdspzfbzd1x84fii7jrwiyylfr46s9j7j7rgyx0jl441"))))
+        (base32 "11s908axm3pab6zf5vw8z79klgm48i1z50742bs732hg0p7ilzwm"))))
     (properties `((upstream-name . "mx.crypto")))
     (build-system r-build-system)
     (arguments
@@ -822,13 +862,13 @@ sessions.  Pairs with the mx.api package, which handles Matrix HTTP transport.")
 (define-public r-mx-client
   (package
     (name "r-mx-client")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mx.client" version))
        (sha256
-        (base32 "16fjyfdzpxp90sjqbw6nng1690iwz3j99fdhwgqq2gb6c4fqp5lv"))))
+        (base32 "1k5pzmgddv9r8icr1mpwx2b21xwnw293h2am9cf7kyklfqfyy3wz"))))
     (properties `((upstream-name . "mx.client")))
     (build-system r-build-system)
     (arguments
@@ -850,13 +890,13 @@ the optional mx.crypto package.")
 (define-public r-mx-api
   (package
     (name "r-mx-api")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mx.api" version))
        (sha256
-        (base32 "1qyigjysv8ddvr0ay0rnawqh0frbpq5a1z2nicr6yh9lzlrzfj1w"))))
+        (base32 "01pnqra4gicdqkng1xhwlxl2bw9rlqfdl7kxvwz8h5gqfbzm5a0m"))))
     (properties `((upstream-name . "mx.api")))
     (build-system r-build-system)
     (arguments
@@ -4034,13 +4074,13 @@ ISBN:978-3-319-24277-4).")
 (define-public r-munch
   (package
     (name "r-munch")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "munch" version))
        (sha256
-        (base32 "1p2frbnc74idp2dps95g33kqwcw2s818bgqnc1vmk43vs06j3ml3"))))
+        (base32 "0w1i4snvcsxmd07jn87qp5q56i46m8dd24wm4almwrva1d0319zn"))))
     (properties `((upstream-name . "munch")))
     (build-system r-build-system)
     (arguments
@@ -4049,6 +4089,7 @@ ISBN:978-3-319-24277-4).")
     (propagated-inputs (list r-xml2
                              r-systemfonts
                              r-patchwork
+                             r-officer
                              r-ggplot2
                              r-gdtools
                              r-flextable
@@ -11189,20 +11230,20 @@ A.P. 2013.  Methods of Statistical Model Estimation.  Chapman & Hall / CRC.")
 (define-public r-msma
   (package
     (name "r-msma")
-    (version "4.0")
+    (version "5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "msma" version))
        (sha256
-        (base32 "1ghmww2h2m4fcanzj2rajwwhzzcq63s734v03kra54cxi5azm4a0"))))
+        (base32 "0lddb686pfiijwgrqbibf7zfhc0dh6554a393ampbhnld674h8np"))))
     (properties `((upstream-name . "msma")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=msma")
+    (home-page "https://github.com/kawa-a/msma")
     (synopsis "Multiblock Sparse Multivariable Analysis")
     (description
      "Several functions can be used to analyze multiblock multivariable data.  If the
@@ -12800,13 +12841,13 @@ treatment noncompliance.  The methods are based on Cheng et al. (2026)
 (define-public r-mrpostman
   (package
     (name "r-mrpostman")
-    (version "3.0.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mRpostman" version))
        (sha256
-        (base32 "16pbqpb79q2m1driapp0zmnfpsy73wb3rpkx9wqvsgkavr3hnykm"))))
+        (base32 "0bq3yjhkgk46j06chc6cw9rx56y3la4dlj21iv97sj9nw07s395b"))))
     (properties `((upstream-name . "mRpostman")))
     (build-system r-build-system)
     (arguments
@@ -14128,45 +14169,41 @@ independence (FOCI) algorithm of Azadkia and Chatterjee (2021)
 (define-public r-mr-rgm
   (package
     (name "r-mr-rgm")
-    (version "0.1.1")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MR.RGM" version))
        (sha256
-        (base32 "0n4ry1avclsmlmrrwx3ajibxg1nrb7yk46dbpb3jx75vg8mjhbf6"))))
+        (base32 "1119y3cgpxngz9dm1hvxsspx7dzs7ppj1zvpq9j2vadqdfidmihg"))))
     (properties `((upstream-name . "MR.RGM")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcppdist r-rcpparmadillo r-rcpp r-igraph
-                             r-gigrvg))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-igraph r-gigrvg))
     (home-page "https://github.com/bitansa/MR.RGM")
-    (synopsis
-     "Fitting Multivariate Bidirectional Mendelian Randomization Networks Using Bayesian Directed Cyclic Graphical Models")
+    (synopsis "Bayesian Multivariable Bidirectional Mendelian Randomization")
     (description
-     "Addressing a central challenge encountered in Mendelian randomization (MR)
-studies, where MR primarily focuses on discerning the effects of individual
-exposures on specific outcomes and establishes causal links between them.  Using
-a network-based methodology, the intricacy involving interdependent outcomes due
-to numerous factors has been tackled through this routine.  Based on Ni et al.
-(2018) <doi:10.1214/17-BA1087>, MR.RGM extends to a broader exploration of the
-causal landscape by leveraging on network structures and involves the
-construction of causal graphs that capture interactions between response
-variables and consequently between responses and instrument variables.  The
-resulting Graph visually represents these causal connections, showing directed
-edges with effect sizes labeled.  MR.RGM facilitates the navigation of various
-data availability scenarios effectively by accommodating three input formats,
-i.e., individual-level data and two types of summary-level data.  The method
-also optionally incorporates measured covariates (when available) and allows
-flexible modeling of the error variance structure, including correlated errors
-that may reflect unmeasured confounding among responses.  In the process, causal
-effects, adjacency matrices, and other essential parameters of the complex
-biological networks, are estimated.  Besides, MR.RGM provides uncertainty
-quantification for specific network structures among response variables.  Parts
-of the Inverse Wishart sampler are adapted from the econ722 repository by
-@code{DiTraglia} (GPL-2.0).")
+     "Fits multivariable bidirectional Mendelian randomization networks with Bayesian
+directed cyclic graphical models (reciprocal graphical models; Ni, Ji and
+Mueller (2018) <doi:10.1214/17-BA1087>), an earlier version of which is
+described in Sarkar and Ni (2025) <doi:10.1093/bioinformatics/btaf130>.  The
+causal effects among the responses, which may form directed cycles, are
+estimated with spike-and-slab or threshold priors, and posterior probabilities
+of network motifs are provided.  With a known instrument-response map the
+instrument effects obey the exclusion restrictions; with an unrestricted map
+they are selected by a spike-and-slab prior, which allows invalid instruments
+(horizontal pleiotropy).  The input can be individual-level data, the
+second-moment matrices of one sample, or marginal instrument-response
+regressions, with optional measured covariates.  The error covariance can be
+diagonal, inverse-Wishart, or a stochastic search structure learning prior (Wang
+(2015) <doi:10.1214/14-BA916>) whose inclusion indicators describe unmeasured
+confounding among the responses.  Inference is by Markov chain Monte Carlo with
+exact Gibbs updates of the instrument effects and adaptive random-walk
+Metropolis updates of the causal effects (Roberts and Rosenthal (2009)
+<doi:10.1198/jcgs.2009.06134>); the fitting function reports diagnostics of weak
+instruments, weak identification and convergence.")
     (license license:gpl3+)))
 
 (define-public r-mr-pivw
@@ -14548,13 +14585,13 @@ over discrete, often discontinuous depth intervals.")
 (define-public r-mpshock
   (package
     (name "r-mpshock")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mpshock" version))
        (sha256
-        (base32 "03lndzw6amn0x0hn876b51f2yyyzayj3rq83hb5mnay0r673w3gm"))))
+        (base32 "007igdcvndnz5dcb5bxsfi10p26fqr4m6l6hh364md18vx3lwil2"))))
     (properties `((upstream-name . "mpshock")))
     (build-system r-build-system)
     (arguments
@@ -17651,19 +17688,19 @@ Austin, Texas.")
 (define-public r-mop
   (package
     (name "r-mop")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mop" version))
        (sha256
-        (base32 "0r9sxrn5hm0vs70lla6xd54l78n2211q0n7hxf1bhn0rr6489k0s"))))
+        (base32 "0njr2gvrj7rb0bdncdwsgyjrwrsabkkxz0z928v9ijs995aclhvn"))))
     (properties `((upstream-name . "mop")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-terra r-snow r-rcpp r-foreach r-dosnow))
+    (propagated-inputs (list r-terra r-rcpp r-pbapply))
     (home-page "https://github.com/marlonecobos/mop")
     (synopsis "Mobility Oriented-Parity Metric")
     (description
@@ -18320,13 +18357,13 @@ and student-t errors (from Geweke) is also provided.")
 (define-public r-monolix2rx
   (package
     (name "r-monolix2rx")
-    (version "0.0.6")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "monolix2rx" version))
        (sha256
-        (base32 "1agz9hw61rwq1kdd5a1vsmv6i7x7y3xw7q07iljznnknkvmcfwg3"))))
+        (base32 "0y9bwdgwhhdvavrb2aln62d7z9skx449zjyg0v2m2y8wx5mjwmgf"))))
     (properties `((upstream-name . "monolix2rx")))
     (build-system r-build-system)
     (arguments
@@ -18336,7 +18373,6 @@ and student-t errors (from Geweke) is also provided.")
                              r-stringi
                              r-rxode2
                              r-rcpp
-                             r-magrittr
                              r-lotri
                              r-ggplot2
                              r-ggforce
@@ -26881,6 +26917,52 @@ graphics.")
 models with covariates generated by AI or machine learning.")
     (license license:expat)))
 
+(define-public r-mlaewma
+  (package
+    (name "r-mlaewma")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mlAEWMA" version))
+       (sha256
+        (base32 "026j4klfsynrg2gsmf2ksqfybg6w1jh0xfrvcvk5mycc8qmhwbij"))))
+    (properties `((upstream-name . "mlAEWMA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rpart
+                             r-qrnn
+                             r-nnet
+                             r-kernlab
+                             r-gbm
+                             r-e1071))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=mlAEWMA")
+    (synopsis
+     "Machine Learning Based Adaptive EWMA Control Charts for Process Dispersion")
+    (description
+     "Monitors the variance of a process with adaptive exponentially weighted moving
+average (AEWMA) control charts whose smoothing weight is predicted by a
+regression model fitted to the transformed subgroup variance.  The subgroup
+variance is transformed as in Castagliola (2005) <doi:10.1002/qre.686>; the
+smoothing weight is predicted by one of nine pre-fitted models from four
+families (neural networks, support vector machines, regression trees and
+boosting, and a quantile regression with lagged inputs), following the
+parameter-free approach of Noor-ul-Amin et al. (2024)
+<doi:10.1038/s41598-024-82699-8>, related work on support vector regression
+based adaptive EWMA charts by Kazmi and Noor-ul-Amin (2024)
+<doi:10.1002/qre.3603>, and the adaptive EWMA idea of Capizzi and Masarotto
+(2003) <doi:10.1198/004017003000000023>.  The comparison of the models is
+described in Atar, PurutÃ§uoÄlu and BursalÄ± (2026), accepted at the 3rd
+International Congress on Data Science and Information Technologies (INFTEC
+2026).  Control limits are calibrated by Monte Carlo simulation to a common
+in-control average run length of 370 for subgroups of size five.  Functions are
+provided to run a chart on data, to compare all nine charts, and to estimate
+average run lengths by simulation.")
+    (license license:gpl2+)))
+
 (define-public r-ml2pvae
   (package
     (name "r-ml2pvae")
@@ -27430,13 +27512,13 @@ Volkmann, Umlauf, Greven (2023) <@code{arXiv:2311.06409>}.")
 (define-public r-mizu
   (package
     (name "r-mizu")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mizu" version))
        (sha256
-        (base32 "0m64vzsdnikqwnfvspv4780f7y9ywkbpr4i0v8zm2nwdxj8p1rgg"))))
+        (base32 "0czh8spl9v0kw5lp165zapy9l9gmjxaxjbd6p1r2wxqajgl8vdkf"))))
     (properties `((upstream-name . "mizu")))
     (build-system r-build-system)
     (arguments
@@ -27444,7 +27526,7 @@ Volkmann, Umlauf, Greven (2023) <@code{arXiv:2311.06409>}.")
       #:tests? #f))
     (native-inputs (list r-quarto))
     (home-page "https://shikokuchuo.net/mizu/")
-    (synopsis "Thread-Speed 'Async' and Parallel R over Shared Memory")
+    (synopsis "Thread-Speed Async and Parallel R over Shared Memory")
     (description
      "Parallel computation and data exchange between R processes on the same machine:
 lock-free channels, work-stealing task pools, and a parallel map over POSIX
@@ -30094,26 +30176,29 @@ imputation with and in PCA or MCA.")
 (define-public r-missknn
   (package
     (name "r-missknn")
-    (version "1.1.2")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "missknn" version))
        (sha256
-        (base32 "0zhmpx4pl8g798cd9da440apswlr4ql2icp5basbcp4rbs05zi82"))))
+        (base32 "1fnrfp6ivh2f6jaddgqcbbxahznnk22jsqjkiwyxl7a3bx54hbr0"))))
     (properties `((upstream-name . "missknn")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list tbb))
-    (propagated-inputs (list r-rcppparallel r-rcpp r-data-table))
+    (propagated-inputs (list r-rcppparallel r-rcpp r-basetable))
     (native-inputs (list r-knitr))
     (home-page "https://CRAN.R-project.org/package=missknn")
     (synopsis "Fast Masked K-Nearest Neighbor Imputation")
     (description
-     "Fast masked KNN imputation for tabular data with support for single and multiple
-imputation.")
+     "Fast masked k-nearest neighbor imputation for mixed-type tabular data.
+Distances are computed only on the variables jointly observed by the receiver
+and the donor, and missing values are filled by local regression (numeric) or
+weighted vote (categorical) over the nearest donors.  Returns completed data for
+single imputation or a list of completed data sets for multiple imputation.")
     (license license:expat)))
 
 (define-public r-missingplotrbd
@@ -31285,13 +31370,13 @@ distributions.")
 (define-public r-mintyr
   (package
     (name "r-mintyr")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mintyr" version))
        (sha256
-        (base32 "1f42kr6jwhxgx2ix1hkghan60gxvbz0xcslna6m61wfd634plmvy"))))
+        (base32 "0zz1b81rm5a9p2gpa7ndh80pn7s8j1jqgba386x1cgmdfsdsjybw"))))
     (properties `((upstream-name . "mintyr")))
     (build-system r-build-system)
     (arguments
@@ -35871,41 +35956,43 @@ more details see van Krugten et al.(2022) <doi:10.1007/s11136-021-02935-w>.")
 (define-public r-mhpfilter
   (package
     (name "r-mhpfilter")
-    (version "0.1.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mhpfilter" version))
        (sha256
-        (base32 "060p4y8bjsbq6i7i1ixfddjmn19rscyxah8g44zkmr10ccmqkvqa"))))
+        (base32 "1w9i33knclf2cdccrflgmdn3c8qvfb5ifbw64zwrcik48gvnrqdc"))))
     (properties `((upstream-name . "mhpfilter")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-ggplot2 r-data-table
-                             r-collapse))
-    (native-inputs (list r-knitr))
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
+    (propagated-inputs (list r-scales r-rcpparmadillo r-rcpp r-ggplot2
+                             r-data-table))
+    (native-inputs (list r-r-rsp r-quarto))
     (home-page "https://myaseen208.com/mhpfilter/")
-    (synopsis
-     "Modified Hodrick-Prescott Filter with Optimal Smoothing Parameter Selection")
+    (synopsis "Modified and Fully Modified Hodrick-Prescott Filters")
     (description
-     "High-performance implementation of the Modified Hodrick-Prescott (HP) Filter for
-decomposing macroeconomic time series into trend and cyclical components.  Based
-on the methodology of Choudhary, Hanif and Iqbal (2014)
-<doi:10.1080/00036846.2014.894631> \"On smoothing macroeconomic time series using
-the modified HP filter\", which uses generalized cross-validation (GCV) to
-automatically select the optimal smoothing parameter lambda, following
-@code{McDermott} (1997) \"An automatic method for choosing the smoothing
-parameter in the HP filter\" (as described in Coe and @code{McDermott} (1997)
-<doi:10.2307/3867497>).  Unlike the standard HP filter that uses fixed lambda
-values (1600 for quarterly, 100 for annual data), this package estimates
-series-specific lambda values that minimize the GCV criterion.  Implements
-efficient C++ routines via @code{RcppArmadillo} for fast computation, supports
-batch processing of multiple series, and provides comprehensive visualization
-tools using ggplot2'.  Particularly useful for cross-country macroeconomic
-comparisons, business cycle analysis, and when the appropriate smoothing
-parameter is uncertain.")
+     "Decomposes macroeconomic time series into trend and cycle with the
+Hodrick-Prescott (HP) filter and two data-driven versions of it.  The modified
+HP filter of @code{McDermott} (1997), assessed by Choudhary, Hanif and Iqbal
+(2014) <doi:10.1080/00036846.2014.894631>, chooses the smoothing parameter of
+every series by generalised cross-validation (as described in Coe and
+@code{McDermott} (1997) <doi:10.2307/3867497>).  The fully modified HP filter of
+Hanif, Iqbal and Choudhary (2017, State Bank of Pakistan Working Paper 88) also
+reduces the end-point bias of the HP filter: it raises the smoothing parameter
+at the first and last observations, with linear or quadratic weights chosen to
+minimise the loss of Bloechl (2014, University of Munich Discussion Paper
+2014-1).  Every filter is a banded linear solve, so the searches are fast; batch
+processing of many series, comparisons of the filters, the filter weights, gain
+functions and end-point loss, simulation of trend-plus-cycle series and the
+power comparison of the paper, ggplot2 graphics, a plain-language interpretation
+of every result and a built-in shiny application.")
     (license license:expat)))
 
 (define-public r-mhorseshoe
@@ -36190,13 +36277,13 @@ Zhao, S. (2019, ISBN: 978-1-4822-5657-4), CRC Press.")
 (define-public r-mgwrsar
   (package
     (name "r-mgwrsar")
-    (version "1.4.1")
+    (version "1.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mgwrsar" version))
        (sha256
-        (base32 "0f2p9ns9bbw5a7jhq8im0s70aa0v2q327d39w1mz2jysniww2lfa"))))
+        (base32 "04ldwfyx58h400xs65x5q12h7ahhx6ijkgmlsbqjmv9bl9wnzfi4"))))
     (properties `((upstream-name . "mgwrsar")))
     (build-system r-build-system)
     (arguments
@@ -38254,13 +38341,13 @@ utilize metricminer'.")
 (define-public r-metricgraph
   (package
     (name "r-metricgraph")
-    (version "1.6.0")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MetricGraph" version))
        (sha256
-        (base32 "14id3f4k7fhwzs2r4w1pbz4ww0wy27aann3xzcgm3rhwkx30y5lx"))))
+        (base32 "16ng0d3yp7v48wk4wxlk2vds1ksqphx7dpbijx42v88mcn69fflj"))))
     (properties `((upstream-name . "MetricGraph")))
     (build-system r-build-system)
     (arguments
@@ -39673,13 +39760,13 @@ sensitivity.  Journal of Mathematical Psychology, 94.
 (define-public r-metarvm
   (package
     (name "r-metarvm")
-    (version "2.1.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MetaRVM" version))
        (sha256
-        (base32 "0vgndw6x39ybfy722ragqyvbs8zm5h95jpr7jp0iia0y18i2b82w"))))
+        (base32 "02qidpnaws7kxn5idmz8dk6y666k344dp6xh4ajs3pwa0m803fn8"))))
     (properties `((upstream-name . "MetaRVM")))
     (build-system r-build-system)
     (arguments
@@ -42376,43 +42463,6 @@ metabodeconplus is the actively developed successor to the metabodecon package
 and introduces backwards-incompatible API changes.")
     (license license:gpl3+)))
 
-(define-public r-metabodecon
-  (package
-    (name "r-metabodecon")
-    (version "1.6.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "metabodecon" version))
-       (sha256
-        (base32 "0anxsyyrwv5qr1md4js0jbiryq98g45ar0n469gv9245r3zp4v2v"))))
-    (properties `((upstream-name . "metabodecon")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-withr
-                             r-toscutil
-                             r-speaq
-                             r-readjdx
-                             r-mathjaxr
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/spang-lab/metabodecon/")
-    (synopsis "Deconvolution and Alignment of 1d NMR Spectra")
-    (description
-     "This package provides a framework for deconvolution, alignment and
-postprocessing of 1-dimensional (1d) nuclear magnetic resonance (NMR) spectra,
-resulting in a data matrix of aligned signal integrals.  The deconvolution part
-uses the algorithm described in Koh et al. (2009)
-<doi:10.1016/j.jmr.2009.09.003>.  The alignment part is based on functions from
-the speaq package, described in Beirnaert et al. (2018)
-<doi:10.1371/journal.pcbi.1006018> and Vu et al. (2011)
-<doi:10.1186/1471-2105-12-405>.  A detailed description and evaluation of an
-early version of the package, @code{MetaboDecon1D} v0.2.2', can be found in
-Haeckl et al. (2021) <doi:10.3390/metabo11070452>.")
-    (license license:gpl3+)))
-
 (define-public r-metabodata
   (package
     (name "r-metabodata")
@@ -43413,6 +43463,46 @@ Vermeiren, Kruis, Bolsinova, van der Maas and Hofman (2025)
 <doi:10.1016/j.caeai.2025.100376>.")
     (license license:expat)))
 
+(define-public r-menstrualcycler
+  (package
+    (name "r-menstrualcycler")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "menstrualcycleR" version))
+       (sha256
+        (base32 "1k0wj3idscqn530m1067kisj50c452ibgll033wjba84wz03axrb"))))
+    (properties `((upstream-name . "menstrualcycleR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-viridis
+                             r-tidyr
+                             r-shiny
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-glue
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://menstrualcycler.clearlabresearch.com/")
+    (synopsis
+     "Phase-Aligned Cycle Time Scaling (PACTS) and Menstrual Cycle Analysis")
+    (description
+     "This package implements Phase-Aligned Cycle Time Scaling (PACTS) for menstrual
+cycle data, placing observations from cycles of differing length onto a common
+continuous timeline that accounts for variability in ovulation timing.  Provides
+cycle time variables anchored on either menses onset or ovulation, summaries of
+how ovulation was determined in each cycle, and plotting functions for
+cycle-aligned outcomes.  Methods are described in Nagpal et al. (2025)
+<doi:10.1016/j.psyneuen.2025.107584>.")
+    (license license:gpl3+)))
+
 (define-public r-mendelianrandomization
   (package
     (name "r-mendelianrandomization")
@@ -44001,13 +44091,13 @@ Foundation under Grants No.  SES-1921523 and DMS-2015552.")
 (define-public r-melodi
   (package
     (name "r-melodi")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "melodi" version))
        (sha256
-        (base32 "16d9ig7xz0imldwqgkpx3l61h2q2g4j9qgpcxcskq5amv2ndb9f6"))))
+        (base32 "19n5ynv47h8gw9axj9v5z5y19sq3d99n53c0qsrgjy840452k5x0"))))
     (properties `((upstream-name . "melodi")))
     (build-system r-build-system)
     (arguments
@@ -47339,28 +47429,31 @@ indicates which regressors may be the reason of collinearity among regressors.")
 (define-public r-mcstatsim
   (package
     (name "r-mcstatsim")
-    (version "0.5.1")
+    (version "0.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mcstatsim" version))
        (sha256
-        (base32 "0b8qnlbpwn9ynrrb1kbdgbh2rbm3cqhmxwywqd15v50w97mgy3br"))))
+        (base32 "1hky09043yn9b4xg3dzhmbinxp5pz79k3hlvzsbrrnsj0wbvx9x4"))))
     (properties `((upstream-name . "mcstatsim")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-functionals))
+    (native-inputs (list r-knitr))
     (home-page "https://CRAN.R-project.org/package=mcstatsim")
     (synopsis
      "Monte Carlo Statistical Simulation Tools Using a Functional Approach")
     (description
-     "This package provides a lightweight package designed to facilitate statistical
-simulations through functional programming.  It centralizes the simulation
-process into a single higher-order function, enhancing manageability and
-usability.  The package includes ready-to-use functions for common simulation
-targets.")
+     "This package provides a lightweight toolkit for Monte Carlo simulation studies
+built around a higher-order, functional-style interface: the simulation is
+expressed as a function of its parameters and mapped over a grid of conditions
+by a single driver function, which handles iteration, parallelism, reproducible
+per-replication random-number streams, error capture and result assembly.  Also
+provides ready-to-use performance measures with Monte Carlo standard errors, a
+summary layer, and diagnostic plots.")
     (license license:agpl3+)))
 
 (define-public r-mcstats
@@ -56239,13 +56332,13 @@ roads, secondary roads, railways, and water bodies.")
 (define-public r-mapnhanespa
   (package
     (name "r-mapnhanespa")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapnhanespa" version))
        (sha256
-        (base32 "1zwsdqnnmpmn1vxsinrf3ydqxzlhmz591wgvapywf3gymj3gyn15"))))
+        (base32 "15cjvxbjwvbz66mg8b0j2iy5icbaha3vjjxqsir40i9fnfhz39qd"))))
     (properties `((upstream-name . "mapnhanespa")))
     (build-system r-build-system)
     (arguments
@@ -56986,13 +57079,13 @@ published in Olofsson et al. (2014) <doi:10.1016/j.rse.2014.02.015> and Stehman
 (define-public r-mapa
   (package
     (name "r-mapa")
-    (version "2.0.7")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MAPA" version))
        (sha256
-        (base32 "1f50fkxsdisndxh03ylzqipwh2kr51dai6z8xjhiv28h9ymgz9br"))))
+        (base32 "0xvz0bqqd20b5k8p7ps0g6by889s1gvvn046a71lhn152xhrdaqd"))))
     (properties `((upstream-name . "MAPA")))
     (build-system r-build-system)
     (arguments
@@ -57263,13 +57356,13 @@ attributes, and describing networks with sensible defaults.")
 (define-public r-manymome
   (package
     (name "r-manymome")
-    (version "0.3.7")
+    (version "0.3.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "manymome" version))
        (sha256
-        (base32 "1gv73ikyy4g8iwkk3jwcnpvnzkmiv21r0f0jzzjj1qygh4aay30w"))))
+        (base32 "1rj0dcvyisczsrfhcc143vdaq1mn6j77l5w8ycwj08bdk3ij9bdl"))))
     (properties `((upstream-name . "manymome")))
     (build-system r-build-system)
     (arguments

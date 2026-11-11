@@ -2284,13 +2284,13 @@ synonyms, as well as fetching taxonomic children and taxonomic classification.")
 (define-public r-worldmet
   (package
     (name "r-worldmet")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "worldmet" version))
        (sha256
-        (base32 "087x792qh339ziy9wcfqawjc9yb66zc0vidmpf6k0g0f77vzw2f5"))))
+        (base32 "0yr87ppkxqycqxfy9dka0gim9rqlp6yykvwjz1vab3i6fjw9rw7j"))))
     (properties `((upstream-name . "worldmet")))
     (build-system r-build-system)
     (arguments
@@ -4458,13 +4458,13 @@ package winning'.  Performances are times: lowest wins.")
 (define-public r-winn
   (package
     (name "r-winn")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "winn" version))
        (sha256
-        (base32 "0a2i57cmb5ssa1hxng9jzasxkwxvvafh5v84d8ig57d315jg0j8w"))))
+        (base32 "07pffsifahmhyb7v9i7r0a1xmlq6ccgxq32ga3j433xs36s1dvif"))))
     (properties `((upstream-name . "winn")))
     (build-system r-build-system)
     (arguments
@@ -5019,13 +5019,13 @@ and Doksum (1973, ISBN:013850363X).")
 (define-public r-wikkitidy
   (package
     (name "r-wikkitidy")
-    (version "0.1.14")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wikkitidy" version))
        (sha256
-        (base32 "0arnz67spxpxn7zaysx1wdc21p68apqyrfwg9m0kflc7r3h1iyxv"))))
+        (base32 "1xd6ni0gw9ms8dr6ig3z1vxdkimhg9kvghap4805drmzwpg1wjad"))))
     (properties `((upstream-name . "wikkitidy")))
     (build-system r-build-system)
     (arguments
@@ -5058,13 +5058,13 @@ correct, and receive results in tidy tibbles.")
 (define-public r-wikitools
   (package
     (name "r-wikitools")
-    (version "1.2.26")
+    (version "1.2.27")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wikiTools" version))
        (sha256
-        (base32 "1fmp0g5q7s8f1m9d27gpcf5hla1mjak8523h71n4dzcf9z7jcir9"))))
+        (base32 "0jjgdmib6avd6gyq8zrsv16m4h3xiw7xq95ibnn90ahvzxzp6kl8"))))
     (properties `((upstream-name . "wikiTools")))
     (build-system r-build-system)
     (arguments
@@ -7634,13 +7634,13 @@ A., Faurby, S. & Antonelli, A. (2020) <doi:10.1101/2020.01.17.910299>.")
 (define-public r-wefnexus
   (package
     (name "r-wefnexus")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wefnexus" version))
        (sha256
-        (base32 "1j36g6g7yqi5ndk53yncmgg49bq61rhhawj7il15m178dskgk9vv"))))
+        (base32 "1q36fzy7df7fqpr1f6y90na5yjpqzqmap5fjzd3cr5abd69410qm"))))
     (properties `((upstream-name . "wefnexus")))
     (build-system r-build-system)
     (arguments
@@ -7674,7 +7674,13 @@ agricultural treatments.  Supports conservation agriculture (CA), irrigated and
 rain-fed systems, and arid and semi-arid production environments.  Methods
 follow Lal (2004) <doi:10.1016/j.envint.2004.03.005> for carbon emissions from
 farm operations, and Hoover et al. (2023) <doi:10.1016/j.scitotenv.2022.160992>
-for water use efficiency indicators.")
+for water use efficiency indicators.  Version 1.1.0 adds a one-call workflow for
+replicated field trials, analysis of variance with standard error of mean (SEm),
+critical difference (CD) and coefficient of variation (CV), objective indicator
+weights by the entropy, CRITIC (Diakoulaki et al. (1995)
+<doi:10.1016/0305-0548(94)00059-H>) and principal component methods, TOPSIS
+ranking of treatments (Hwang and Yoon, 1981), and energy budgeting from physical
+input quantities with an editable table of energy equivalents.")
     (license license:gpl3+)))
 
 (define-public r-weed
@@ -8322,6 +8328,62 @@ protocol.")
      "This package provides Apache and IIS log analytics for transaction performance,
 client populations and workload definitions.")
     (license license:gpl3)))
+
+(define-public r-weavedraft
+  (package
+    (name "r-weavedraft")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "weaveDraft" version))
+       (sha256
+        (base32 "06n652gmrvb0ggxlb5ckn10xza8xnkcqazcziiksn3zsr452d6vl"))))
+    (properties `((upstream-name . "weaveDraft")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=weaveDraft")
+    (synopsis "Structural Analysis of Woven Textile Drafts from WIF Files")
+    (description
+     "Imports weaving drafts stored in the Weaving Information File (WIF) interchange
+format, reconstructs the binary warp and weft drawdown from either a liftplan or
+a tie-up with treadling, and computes structural descriptors of the cloth: float
+length distributions, interlacement frequency, weave repeat size, a directional
+float ratio, and thread colour sequences.  A flat-colour simulation of the
+fabric face helps to separate patterns carried by the interlacement structure
+from patterns carried by the thread colours.  Intended for computational
+analysis and documentation of handloom and other multi-shaft textiles.")
+    (license license:expat)))
+
+(define-public r-weavecompare
+  (package
+    (name "r-weavecompare")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "weaveCompare" version))
+       (sha256
+        (base32 "02irpj16ll7d8lynhqg2gj6raq8ckik5aw715y30d6aff2skjpxi"))))
+    (properties `((upstream-name . "weaveCompare")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=weaveCompare")
+    (synopsis "Equivalence and Alignment of Periodic Binary Weaving Drawdowns")
+    (description
+     "Compares periodic binary weaving drawdowns using cyclic alignment, primitive
+rectangular repeats, exact canonical representations and Hamming distance on a
+common periodic domain.  Optional reflections, axis exchange and face inversion
+define explicit equivalence rules.  Supports collection distance matrices and
+duplicate grouping without requiring weaving design software.  Comparisons
+describe binary interlacements, not fabric mechanics or cultural provenance.")
+    (license license:expat)))
 
 (define-public r-weathr
   (package
@@ -10731,13 +10793,13 @@ irrigation information.  For more details see Piernicke et al. (2025)
 (define-public r-watcher
   (package
     (name "r-watcher")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "watcher" version))
        (sha256
-        (base32 "0xba24ibknzsj78j3ahwbci1kpi0r5kjhjzviblym2j91man054i"))))
+        (base32 "025av0vw5w0b5z0xdpnw9pjsz7i392bzqc7qkg1jr45kpfmbk020"))))
     (properties `((upstream-name . "watcher")))
     (build-system r-build-system)
     (arguments

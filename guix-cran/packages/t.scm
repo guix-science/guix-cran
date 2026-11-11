@@ -9,6 +9,7 @@
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages bioconductor)
+  #:use-module (gnu packages algebra)
   #:use-module (gnu packages duckdb)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages statistics)
@@ -639,13 +640,13 @@ al. (2025) <doi:10.1002/sim.10297>.")
 (define-public r-twostepsdfm
   (package
     (name "r-twostepsdfm")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TwoStepSDFM" version))
        (sha256
-        (base32 "0r4mqghlsrnwc62vngdnb845g69mlna0qbhwn6b4xc6ccrb08khj"))))
+        (base32 "0wxibsk3rbsgrsdmafcxhbicpdrmh1lfz0ln9nayja61bwz7sl06"))))
     (properties `((upstream-name . "TwoStepSDFM")))
     (build-system r-build-system)
     (arguments
@@ -811,6 +812,32 @@ that test statistic, and non-standard uses of the package (parallel for big N,
 weighted observations, one sample tests, etc).  We also include the permutation
 scheme to make test building simple for others.")
     (license license:gpl2+)))
+
+(define-public r-twosamplecalimpute
+  (package
+    (name "r-twosamplecalimpute")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TwoSampleCalImpute" version))
+       (sha256
+        (base32 "1r59i6q4x9mfvvvmbrb0q9ms4n69nwwk1w7pjwan6smh1wi7c4jp"))))
+    (properties `((upstream-name . "TwoSampleCalImpute")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/Kamun2026/TwoSampleCalImpute")
+    (synopsis "Two-Sample Calibrated Imputation for Survey Data")
+    (description
+     "This package provides utilities for preparing, validating, summarising, and
+documenting survey data from primary and auxiliary samples, and for specifying
+and checking survey-design information.  The package supports data-management
+and design-specification steps in two-sample calibrated imputation workflows.
+For background on survey calibration, see Deville and SÃ¤rndal (1992)
+<doi:10.1080/01621459.1992.10475217>.")
+    (license license:gpl3+)))
 
 (define-public r-tworegression
   (package
@@ -1785,13 +1812,13 @@ restricted mean survival time methodology, see Royston and Parmar (2013)
 (define-public r-tvreg
   (package
     (name "r-tvreg")
-    (version "0.5.11")
+    (version "0.5.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tvReg" version))
        (sha256
-        (base32 "04lclwqzq41njhhddwjj9wdr5rxdlb0mfgl93hjwrd45dzlln0nl"))))
+        (base32 "0b3ipz53wi7gra37kqj88bm9f70g4ca80yr5rlg916jbnnvih78m"))))
     (properties `((upstream-name . "tvReg")))
     (build-system r-build-system)
     (arguments
@@ -2231,13 +2258,13 @@ Austrian catchments, Hydrological Processes, 21, 435-446.")
 (define-public r-tuvalues
   (package
     (name "r-tuvalues")
-    (version "1.2")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TUvalues" version))
        (sha256
-        (base32 "11fkyfva3m5xk7cp3xnry7g9jy5y8n6lyvvhicf57gnrq1vxzbn7"))))
+        (base32 "0zy0367vkpx3fdyzy9xa7m4vn5y04zky542id81mbkx5kqv6hyjw"))))
     (properties `((upstream-name . "TUvalues")))
     (build-system r-build-system)
     (arguments
@@ -2255,9 +2282,12 @@ rules, alongside their extensions for structured games: the Owen value and
 Banzhaf-Owen value for games with a priori unions, and the Myerson value for
 communication games on networks.  To address the inherent exponential
 computational complexity of exact evaluation, the package offers both exact
-algorithms and linear approximation methods based on sampling, enabling the
-analysis of large-scale games.  Additionally, it supports core set-based
-solutions, allowing computation of the vertices and the centroid of the core.")
+algorithms and sampling-based approximation methods, enabling the analysis of
+large-scale games.  The characteristic function can be supplied as a vector or
+as an R function, so that coalition values are evaluated only when required.
+Additionally, it supports core set-based solutions, allowing computation of the
+vertices and the centroid of the core and checking whether an allocation belongs
+to it.")
     (license license:gpl2+)))
 
 (define-public r-tutorizer
@@ -2951,13 +2981,13 @@ documentation.")
 (define-public r-tuber
   (package
     (name "r-tuber")
-    (version "2.0.0")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tuber" version))
        (sha256
-        (base32 "0mkr3dns4nkss3v88pwpl0dck7g22gqrc92xjpc7axcw9g20bxqc"))))
+        (base32 "00fz05r84392ypbkcnqk1gphdyw2naxwbrbyr0b38gzrvl0d982d"))))
     (properties `((upstream-name . "tuber")))
     (build-system r-build-system)
     (arguments
@@ -2966,14 +2996,11 @@ documentation.")
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
+                             r-stringi
                              r-rlang
-                             r-purrr
                              r-mime
-                             r-magrittr
                              r-jsonlite
                              r-httr2
-                             r-httr
-                             r-hms
                              r-dplyr
                              r-digest
                              r-checkmate
@@ -3784,13 +3811,13 @@ they are present.")
 (define-public r-tsutils
   (package
     (name "r-tsutils")
-    (version "0.9.4")
+    (version "0.9.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tsutils" version))
        (sha256
-        (base32 "1jf37asxg4nfm1jhf6q6fjs8dljlqs1r57kr4q38dnz11hz1jsm4"))))
+        (base32 "1wmvbis803dr0j0wq8q17zsq7gqb7cnvznf2xxywdi88h42plr4g"))))
     (properties `((upstream-name . "tsutils")))
     (build-system r-build-system)
     (arguments
@@ -4197,6 +4224,40 @@ an instrumental variable and therefore can recover causal estimand in the
 presence of unmeasured confounding under some assumptions.  A.Ying, R. Xu and J.
 Murphy. (2019) <doi:10.1002/sim.8071>.")
     (license license:lgpl2.0+)))
+
+(define-public r-tsrepr
+  (package
+    (name "r-tsrepr")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TSrepr" version))
+       (sha256
+        (base32 "147z5g9bw12hgiwm6igqxfqy3dj3x81gs5bxib2clfcskb1gk54y"))))
+    (properties `((upstream-name . "TSrepr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-wavelets
+                             r-rcpp
+                             r-quantreg
+                             r-mgcv
+                             r-mass
+                             r-dtt))
+    (native-inputs (list r-knitr))
+    (home-page "https://petolau.github.io/package/")
+    (synopsis "Time Series Representations")
+    (description
+     "This package provides methods for representations (i.e.  dimensionality
+reduction, preprocessing, feature extraction) of time series to help more
+accurate and effective time series data mining.  Non-data adaptive, data
+adaptive, model-based and data dictated (clipped) representation methods are
+implemented.  Also various normalisation methods (min-max, z-score, Box-Cox,
+Yeo-Johnson), and forecasting accuracy measures are implemented.")
+    (license (list license:gpl3
+                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-tsqr
   (package
@@ -6955,24 +7016,25 @@ introduced by Karlsson (2006) <doi:10.1007/s00184-005-0023-x>.")
 (define-public r-truncreg
   (package
     (name "r-truncreg")
-    (version "0.2-5")
+    (version "0.3-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "truncreg" version))
        (sha256
-        (base32 "1scbjh5k1b8cjjavax08grlxdfs75s63dss0ifpz4d0axc4nm3iy"))))
+        (base32 "1l3n8ff3z3mp1rfhqj855534w34kr21ajlqh7a3lb99lq0k8l57x"))))
     (properties `((upstream-name . "truncreg")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-maxlik))
-    (home-page "http://R-Forge.R-project.org/projects/truncreg/")
+    (home-page "https://zeileis.codeberg.page/truncreg/")
     (synopsis "Truncated Gaussian Regression Models")
     (description
-     "Estimation of models for truncated Gaussian variables by maximum likelihood.")
-    (license license:gpl2+)))
+     "Estimation of regression models for truncated Gaussian variables by maximum
+likelihood.")
+    (license (list license:gpl2 license:gpl3))))
 
 (define-public r-truncproxy
   (package
@@ -7541,6 +7603,47 @@ isotope data.  Trophic position models are derived by using equations from Post
 Vadeboncoeur (2002) <doi:10.1890/0012-9658(2002)083[2152:FAIOBA]2.0.CO;2>, and
 Heuvel et al. (2024) <doi:10.1139/cjfas-2024-0028>.")
     (license license:cc0)))
+
+(define-public r-trowel
+  (package
+    (name "r-trowel")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tRowel" version))
+       (sha256
+        (base32 "1drlxp68ar6n00cm5xchgkm3dkgm06jrp3w683z9rpbrn9x0gg2r"))))
+    (properties `((upstream-name . "tRowel")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-rlang
+                             r-png
+                             r-patchwork
+                             r-munsellinterpol
+                             r-magrittr
+                             r-jpeg
+                             r-ggplot2
+                             r-gawdis
+                             r-factoextra
+                             r-dplyr
+                             r-cluster
+                             r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/gwenolivier/tRowel")
+    (synopsis "Cluster and Plot Soil, Sediment, and Paleoenvironmental Data")
+    (description
+     "This package provides functions to help geoarchaeologists, paleoenvironmental
+scientists, and geoscientists create clear, publication-ready figures of soil
+data without the need for additional licensed software.  Functions allow users
+to cluster and visualize across multiple soil profiles, allowing
+geoarchaeologists to recognize and compare geomorphological and
+paleoenvironmental trends across entire landscapes.")
+    (license license:gpl2+)))
 
 (define-public r-troublemaker
   (package
@@ -8859,34 +8962,33 @@ parameter restrictions.")
 (define-public r-trexselector
   (package
     (name "r-trexselector")
-    (version "1.0.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TRexSelector" version))
        (sha256
-        (base32 "1jxf4zxlhyinfa7w5h5zby7wy3bxbpcran5jy9byysgq5k8bqb5w"))))
+        (base32 "1ymcxzxl1f4rcqk00k1cgrwfpfnjbga5ns506l37jwwq0skl6hvd"))))
     (properties `((upstream-name . "TRexSelector")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tlars
-                             r-mass
-                             r-glmnet
-                             r-foreach
-                             r-dorng
-                             r-doparallel
-                             r-boot))
+    (inputs (list))
+    (propagated-inputs (list r-rcppeigen r-rcpp r-rcereal r-r6 r-bh))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/jasinmachkour/TRexSelector")
+    (home-page "https://github.com/trexselector/TRexSelector")
     (synopsis
      "T-Rex Selector: High-Dimensional Variable Selection & FDR Control")
     (description
-     "This package performs fast variable selection in high-dimensional settings while
-controlling the false discovery rate (FDR) at a user-defined target level.  The
-package is based on the paper Machkour, Muma, and Palomar (2022)
-<@code{arXiv:2110.06048>}.")
+     "Variable selection for regression and classification in high-dimensional
+settings with control of the false discovery rate (FDR) at a user-specified
+target level.  The implementations are primarily based on the T-Rex selector of
+Machkour, Muma and Palomar (2025) <doi:10.1016/j.sigpro.2025.109894> and its
+dependency-aware extension for correlated variables by Machkour, Muma and
+Palomar (2025) <doi:10.1016/j.sigpro.2025.109990>.  Since version 2.0.0 the
+package comes as R bindings to the T@code{RexSelector} C++ library, which
+replaces the pure-R implementation of the 1.x releases.")
     (license license:gpl3+)))
 
 (define-public r-trendyy
@@ -20076,6 +20178,44 @@ series functionality from packages including dplyr', stats', xts', forecast',
 slider', padr', recipes', and rsample'.")
     (license license:gpl3+)))
 
+(define-public r-timesift
+  (package
+    (name "r-timesift")
+    (version "0.6.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "timesift" version))
+       (sha256
+        (base32 "0bmk7dvylg3jkk78d2j6a87cqi2f8qj8bvyjian4pwi74bpx3bxc"))))
+    (properties `((upstream-name . "timesift")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect r-rlang r-cpp11))
+    (native-inputs (list r-knitr))
+    (home-page "https://gillescolling.com/timesift/")
+    (synopsis "Learn Predictive Representations of Time-Varying Data")
+    (description
+     "Fits and compares representations of time-varying data against a prediction
+target.  Given a table of targets and a table of time-stamped series belonging
+to them, it builds each candidate representation, from the record unreduced
+through a calendar grain such as a week or a month to a lookback anchored on
+each target, fits the requested learners on each, scores every candidate on one
+set of held-out folds, and stacks the out-of-fold predictions into an ensemble.
+Calendar-aware binning keeps a bin a real week or month rather than a fixed
+block of hours.  Learners, response heads and metrics are registered rather than
+hard-coded, so adding one is a registration and not a fork of the fitting code.
+The penalised baseline is an elastic net fitted by cyclic coordinate descent
+along a warm-started path, following Friedman, Hastie and Tibshirani (2010)
+<doi:10.18637/jss.v033.i01>.  The shipped default is presence-absence with a
+joint multi-label head, the setting used for species distribution modelling from
+microclimate loggers, scored by the area under the receiver operating
+characteristic (ROC) curve with the true skill statistic of Allouche, Tsoar and
+Kadmon (2006) <doi:10.1111/j.1365-2664.2006.01214.x> beside it.")
+    (license license:expat)))
+
 (define-public r-timeseriesdatasets
   (package
     (name "r-timeseriesdatasets")
@@ -21186,13 +21326,13 @@ get tidy data frames in response, and cache data in a local database.")
 (define-public r-tidyweather
   (package
     (name "r-tidyweather")
-    (version "0.3.3")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyweather" version))
        (sha256
-        (base32 "1lsc5s0l6gpbw82j8w4khmiag42m22hrz6acyar2lyv8zhkjafx7"))))
+        (base32 "1iph0mzar8nvwgbk0srvawyvv7749zygbz1df8w6ydsgz7s28lwv"))))
     (properties `((upstream-name . "tidyweather")))
     (build-system r-build-system)
     (arguments
@@ -21555,13 +21695,13 @@ cases.")
 (define-public r-tidyterra
   (package
     (name "r-tidyterra")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyterra" version))
        (sha256
-        (base32 "1c88d2fkpw04rfzakb8gk26zkz3pqp2cb1d5j2r7sqzj2q5kvi7h"))))
+        (base32 "1yr5ggqjd9j6srs59qzq5xd1s8dljrfvaghjgr5za5wa7zcx647h"))))
     (properties `((upstream-name . "tidyterra")))
     (build-system r-build-system)
     (arguments
@@ -22494,13 +22634,13 @@ releases and cached locally for reuse.")
 (define-public r-tidypopgen
   (package
     (name "r-tidypopgen")
-    (version "0.4.4")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidypopgen" version))
        (sha256
-        (base32 "0pxzan1s3nrqrhjz85bqvb604ns3vqq024n04smxa0gi6lhyym9a"))))
+        (base32 "0hrm4xd25293fcd6fdabjj5y3z3rhc86lawpxcrk4ihkj934xa4m"))))
     (properties `((upstream-name . "tidypopgen")))
     (build-system r-build-system)
     (arguments
@@ -22519,10 +22659,12 @@ releases and cached locally for reuse.")
                              r-rcpp
                              r-patchwork
                              r-mass
+                             r-gtable
                              r-ggplot2
                              r-generics
                              r-foreach
                              r-dplyr
+                             r-data-table
                              r-bigstatsr
                              r-bigsnpr
                              r-bigparallelr))
@@ -22757,19 +22899,20 @@ OMOP vocabulary schema without requiring @code{CirceR}'.")
 (define-public r-tidynorm
   (package
     (name "r-tidynorm")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidynorm" version))
        (sha256
-        (base32 "1kb4s97rw68r028lpj3rgs7viw126q7w12mq4h1g6n9066iqrbb0"))))
+        (base32 "00rvr4psxka2rjf8q62x04l6mcbbn9mpx7h2zp1h9hvz5kr778l7"))))
     (properties `((upstream-name . "tidynorm")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyselect
+    (propagated-inputs (list r-withr
+                             r-tidyselect
                              r-tidyr
                              r-stringr
                              r-rlang
@@ -22781,7 +22924,7 @@ OMOP vocabulary schema without requiring @code{CirceR}'.")
                              r-dplyr
                              r-cli
                              r-checkmate))
-    (native-inputs (list r-quarto))
+    (native-inputs (list r-quarto r-knitr))
     (home-page "https://jofrhwld.github.io/tidynorm/")
     (synopsis "Tools for Tidy Vowel Normalization")
     (description
@@ -23991,13 +24134,13 @@ ESTIMATE (2013) <doi:10.1038/ncomms3612>.")
 (define-public r-tidyemoji
   (package
     (name "r-tidyemoji")
-    (version "0.4.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyEmoji" version))
        (sha256
-        (base32 "0igd7fbfgqkjkhb9ysvwp2mwyyrbkph5k4azv86zbrkss4010x1i"))))
+        (base32 "1pw3c48533xgs4vq7a4vhlbd6blh56yca8rp3s7i803wd2kj2rgp"))))
     (properties `((upstream-name . "tidyEmoji")))
     (build-system r-build-system)
     (arguments
@@ -24005,6 +24148,7 @@ ESTIMATE (2013) <doi:10.1038/ncomms3612>.")
       #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
+                             r-stringi
                              r-rlang
                              r-lifecycle
                              r-emoji
@@ -24028,8 +24172,11 @@ data frames that slot straight into a tidyverse workflow.  It also quantifies
 how much annotators disagreed about an emoji (interpretation risk), extracts the
 words around each emoji, tracks emoji use over time, measures text-emoji
 sentiment mismatch, and applies explicit emoji-preprocessing policies for
-language-model pipelines.  The bundled emoji sentiment lexicon is from the Emoji
-Sentiment Ranking of Kralj Novak et al. (2015)
+language-model pipelines.  Its emoji catalogue is the Unicode emoji test data,
+bundled and current to Emoji 18.0, so it can also say what a glyph is, map flag
+emoji to ISO 3166 codes, report how much of a corpus each lexicon can score, and
+read reaction tallies as well as text.  The bundled emoji sentiment lexicon is
+from the Emoji Sentiment Ranking of Kralj Novak et al. (2015)
 <doi:10.1371/journal.pone.0144296>, released under CC BY-SA 4.0; the emotion
 lexicon is from @code{EmoTag1200} of Shoeb & de Melo (2020)
 <https://aclanthology.org/2020.emnlp-main.720/>, released under the MIT licence.")
@@ -25154,13 +25301,13 @@ for regression and classification problems with a simple verb framework.")
 (define-public r-tidyactuarial
   (package
     (name "r-tidyactuarial")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyactuarial" version))
        (sha256
-        (base32 "0f8m85dhw90ay7qxaazjmdxx3dgy1l4n7ai2bsl44g707zig76pd"))))
+        (base32 "06axq8lm9zp6vcsg234ssin31cz30844gaw64722vq2y77nrggwh"))))
     (properties `((upstream-name . "tidyactuarial")))
     (build-system r-build-system)
     (arguments
@@ -29772,6 +29919,32 @@ taxa, and includes an omnibus test that bypasses the need to specify the type of
 relationship for each pair of taxa.")
     (license license:gpl2+)))
 
+(define-public r-testmath
+  (package
+    (name "r-testmath")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "testmath" version))
+       (sha256
+        (base32 "1wgq2jrfmq4ykn755wnj3a6hyhkjk8scxv7drw7av0fvskkx532s"))))
+    (properties `((upstream-name . "testmath")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-waldo r-testthat r-rlang))
+    (home-page "https://cran.r-project.org/package=testmath")
+    (synopsis "Unit Tests for Mathematical Properties")
+    (description
+     "Inspired by testthat', testmath aims to provide some functions for unit tests of
+mathematical properties in a readable manner.  At the moment, these functions
+cover a few aspects of two distinct areas - unit tests for matrices and
+functions.  Failure should provide detailed information for what condition led
+to the test failing.")
+    (license license:expat)))
+
 (define-public r-testingsimilarity
   (package
     (name "r-testingsimilarity")
@@ -30936,20 +31109,20 @@ trials.")
 (define-public r-termr
   (package
     (name "r-termr")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "termr" version))
        (sha256
-        (base32 "0gfg7d4r0g1nrpabg6m81j0jipl49irs6sbk2b0l9zblgz90af1v"))))
+        (base32 "0cilhmqwqvq7grpbdamvp5p8p8922a0pvs9rf1xnq2gi8r6rfikq"))))
     (properties `((upstream-name . "termr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-r6 r-ps r-processx r-codetools))
-    (home-page "https://github.com/41929424/termr")
+    (home-page "https://github.com/menshikovs/termr")
     (synopsis "Modern Reactive Terminal Applications with Data Workflows")
     (description
      "Build modern reactive terminal applications for data workflows in R using
@@ -31821,13 +31994,13 @@ et al. (2013) <doi:10.1371/journal.pone.0071218>, and Li and Zhang (2024)
 (define-public r-temporalhazard
   (package
     (name "r-temporalhazard")
-    (version "1.1.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TemporalHazard" version))
        (sha256
-        (base32 "0s9lra8mpg2gzrk58f7pgdbwpdg8kfr6pfh0ylqx8cy0kbsv61gl"))))
+        (base32 "0h4s9d0xw7aafqhs375cpyb8gs74bh13jx2lsbrn9fnvsk7dcapn"))))
     (properties `((upstream-name . "TemporalHazard")))
     (build-system r-build-system)
     (arguments
@@ -31835,7 +32008,7 @@ et al. (2013) <doi:10.1371/journal.pone.0071218>, and Li and Zhang (2024)
       #:tests? #f))
     (propagated-inputs (list r-survival))
     (native-inputs (list r-quarto))
-    (home-page "https://ehrlinger.github.io/temporal_hazard/")
+    (home-page "https://ehrlinger.github.io/TemporalHazard/")
     (synopsis "Temporal Parametric Hazard Modeling")
     (description
      "This package provides native R implementations of the multiphase parametric
@@ -31850,7 +32023,7 @@ decomposition family extends to longitudinal mixed-effects settings (Rajeswaran
 et al.  2018 <doi:10.1177/0962280215623583>).  The package is intentionally
 implemented in pure R first; performance-critical paths may later be accelerated
 with Rcpp without changing the public interface.")
-    (license license:expat)))
+    (license license:gpl2+)))
 
 (define-public r-temporalgssa
   (package
@@ -35201,19 +35374,24 @@ and local taxonomic assignment.")
 (define-public r-taxodist
   (package
     (name "r-taxodist")
-    (version "0.9.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "taxodist" version))
        (sha256
-        (base32 "13y3pg473gnjdrramj9g3dannnc2vfaf87a9ppqhl1152ybky3x6"))))
+        (base32 "0xpwf3pj6hsayak8jjhm8n0gmbz1ykc0ypkwzdx8iqyasz0xdlq4"))))
     (properties `((upstream-name . "taxodist")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr r-rvest r-jsonlite r-httr r-cli))
+    (propagated-inputs (list r-xml2
+                             r-stringr
+                             r-rvest
+                             r-jsonlite
+                             r-httr
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/rodrigosqrt3/taxodist")
     (synopsis "Taxonomic Hierarchy Distances and Lineage Analysis")
@@ -35222,14 +35400,17 @@ and local taxonomic assignment.")
 retrieved from The Taxonomicon <http://taxonomicon.taxonomy.nl>.  For distinct
 nodes, distance is defined as the reciprocal of the depth of their most recent
 common ancestor; identical nodes have distance zero.  This definition yields an
-ultrametric within each connected hierarchy.  Functions are provided for
-auditable name resolution, online or user-supplied lineage analysis, clade
-membership, pairwise, matrix, and cross-set distance calculation, classification
-trees with named clades, hierarchical clustering, principal coordinates
-analysis, portable and comparable JSON analysis bundles, and cache management.
-Distance matrices are returned as base R dist objects.  The distances represent
-classification depth rather than evolutionary time or phylogenetic branch
-length.")
+ultrametric within each connected hierarchy.  Path length, Wu-Palmer, and
+rank-based distances are also available, together with the taxonomic diversity
+and distinctness indices of Clarke and Warwick (1998)
+<doi:10.1046/j.1365-2664.1998.3540523.x> and their randomization test.
+Functions are provided for auditable name resolution, online or user-supplied
+lineage analysis, node ranks, clade membership, pairwise, matrix, and cross-set
+distance calculation, classification trees with named clades, hierarchical
+clustering, principal coordinates analysis, portable and comparable JSON
+analysis bundles, and cache management.  Distance matrices are returned as base
+R dist objects.  The distances represent classification depth rather than
+evolutionary time or phylogenetic branch length.")
     (license license:gpl3+)))
 
 (define-public r-taxnames

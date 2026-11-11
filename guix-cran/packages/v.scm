@@ -480,6 +480,30 @@ and application examples, see Hill, T.D. and S.C. Anisfeld (2021)
 <doi:10.1016/j.ecss.2015.06.004>.")
     (license license:gpl3)))
 
+(define-public r-vulnr
+  (package
+    (name "r-vulnr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vulnr" version))
+       (sha256
+        (base32 "0qhrs23kg627ss8n8x90fzv0wbrrmkp3959hqxq5hvsbvc53whnn"))))
+    (properties `((upstream-name . "vulnr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite r-httr r-data-table))
+    (home-page "https://github.com/Dschaykib/vulnr")
+    (synopsis "Scan R Packages for Vulnerabilities")
+    (description
+     "Scan R package dependencies for known security vulnerabilities using the OSV
+database, with support for renv.lock, installed libraries, and user-supplied
+package versions.")
+    (license license:expat)))
+
 (define-public r-vuer
   (package
     (name "r-vuer")
@@ -986,13 +1010,13 @@ test (Kim, 2009) <doi:10.1016/j.frl.2009.04.003>.")
 (define-public r-vrpr
   (package
     (name "r-vrpr")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vrpr" version))
        (sha256
-        (base32 "0ah8lgslcg6vm7br827mlgaqbzqhxc0bxsmy9lfb46xd9z20v42v"))))
+        (base32 "017ijx98myxi6wrl0vqs547bb6bvhq3037waqi5fxlbg9j2gv7n6"))))
     (properties `((upstream-name . "vrpr")))
     (build-system r-build-system)
     (arguments
@@ -2555,13 +2579,13 @@ pairwise tests as suggested by Armstrong and Poirier (2025)
 (define-public r-vizmodules
   (package
     (name "r-vizmodules")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VizModules" version))
        (sha256
-        (base32 "0ldl92f9v807sbndnzkarqf1j79bxd75gkgd79j5g0zdwc6fc8dp"))))
+        (base32 "0y583ls1shm41ghc5khnmnyiar3nmm05np172z11zg30spcilg1l"))))
     (properties `((upstream-name . "VizModules")))
     (build-system r-build-system)
     (arguments
@@ -2574,7 +2598,7 @@ pairwise tests as suggested by Armstrong and Poirier (2025)
                              r-shinybs
                              r-shiny
                              r-scales
-                             r-roclang
+                             r-rlang
                              r-readxl
                              r-plotthis
                              r-plotly
@@ -2926,13 +2950,13 @@ methodology of Mack (1993) <doi:10.2143/AST.23.2.2005092>.")
 (define-public r-vitals
   (package
     (name "r-vitals")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vitals" version))
        (sha256
-        (base32 "0bqy7i8iyh2j22ppp32hpkqzi0vj6frjgfb30w827nqsj2fcazg5"))))
+        (base32 "0i8sybjgj1n0jvm93hbjcgnf8lzy3my61kap9zrknzmvm6y7zfa9"))))
     (properties `((upstream-name . "vitals")))
     (build-system r-build-system)
     (arguments
@@ -4161,13 +4185,13 @@ results of analysis in the ggplot2 style.")
 (define-public r-virustotal
   (package
     (name "r-virustotal")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "virustotal" version))
        (sha256
-        (base32 "1513b6ydxs015kzmddrj0fkaqlxw09rnp4glal0qcsfafsj78c9y"))))
+        (base32 "158avnmlw03lxg59ya5bssjpy79p2pfgddkpmyr7pl9arq1nvfya"))))
     (properties `((upstream-name . "virustotal")))
     (build-system r-build-system)
     (arguments
@@ -4178,6 +4202,7 @@ results of analysis in the ggplot2 style.")
                              r-jsonlite
                              r-httr2
                              r-curl
+                             r-checkstring
                              r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/themains/virustotal")
@@ -5508,19 +5533,20 @@ models.  Implement several methods for visualization of codon usage as
 (define-public r-vglmer
   (package
     (name "r-vglmer")
-    (version "1.0.6")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vglmer" version))
        (sha256
-        (base32 "1xcz1h6wr0ipvhny5ay2kxqh75fdd8k1xv6aywn1jfbyf1mcw20q"))))
+        (base32 "1yh88zwpqib837h4wd9l1fcxsgq1mkyfdg6x10rwwpp6kl3w0ar1"))))
     (properties `((upstream-name . "vglmer")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcppeigen
+    (propagated-inputs (list r-reformulas
+                             r-rcppeigen
                              r-rcpp
                              r-mvtnorm
                              r-mgcv
@@ -5891,13 +5917,13 @@ Factorization algorithms - Random generators of diferent types of integers.")
 (define-public r-vertexwiser
   (package
     (name "r-vertexwiser")
-    (version "1.5.5")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VertexWiseR" version))
        (sha256
-        (base32 "1bj3h1ghiawprk5pnpjjf4fjvf5s3jk4fl8ik6cp864qxnkmgj0z"))))
+        (base32 "0d648blwx8ancxwd9h7f7bppqgskxsl8faxzcghlfxzsi7xjlzji"))))
     (properties `((upstream-name . "VertexWiseR")))
     (build-system r-build-system)
     (arguments
@@ -5914,6 +5940,7 @@ Factorization algorithms - Random generators of diferent types of integers.")
                              r-rappdirs
                              r-png
                              r-plotly
+                             r-mori
                              r-igraph
                              r-gifti
                              r-fs
@@ -6448,6 +6475,44 @@ against the published Python package).  Integrates with ggplot2', tidygraph',
 and broom'.")
     (license license:expat)))
 
+(define-public r-vennabers
+  (package
+    (name "r-vennabers")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vennabers" version))
+       (sha256
+        (base32 "1n9gz4sxfjijm6rvlris227mrwjiq0fppbxqr7792zrv2nnlw90l"))))
+    (properties `((upstream-name . "vennabers")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://rmkruse.github.io/vennabers/")
+    (synopsis "Venn-Abers Classification and Regression Calibration")
+    (description
+     "Calibrates the predictions of classification and regression models with
+Venn-Abers predictors.  A Venn-Abers predictor turns the score of any model into
+a pair of probabilities that contains a calibrated value when the observations
+are independent and identically distributed (Vovk and Petej, 2014,
+<doi:10.48550/@code{arXiv.1211.0025>}); Inductive and Cross Venn-Abers
+predictors make this practical for large data sets (Vovk, Petej and Fedorova,
+2015, <doi:10.48550/@code{arXiv.1511.00213>}).  The package serves analysts and
+researchers who need calibrated probabilities or prediction bounds for binary
+classification, multiclass classification by one-vs-one coupling (Manokhin,
+2017, <https://proceedings.mlr.press/v60/manokhin17a.html>) or one-vs-rest, and
+regression (Petej and Vovk, 2026, <doi:10.48550/@code{arXiv.2605.06646>}).
+Predictions of an existing model can be calibrated directly, or optional
+tidymodels workflows fit the model, create the calibration splits and tune the
+complete procedure.  Diagnostics include the Brier score, log loss, plots of
+fitted calibration maps and reliability diagrams with the CORP (consistent,
+optimally binned, reproducible and pool-adjacent-violators based) method of
+Dimitriadis, Gneiting and Jordan (2021) <doi:10.1073/pnas.2016191118>.")
+    (license license:expat)))
+
 (define-public r-vembedr
   (package
     (name "r-vembedr")
@@ -6477,30 +6542,6 @@ and broom'.")
      "This package provides a set of functions for generating HTML to embed hosted
 video in your R Markdown documents or Shiny applications.")
     (license license:expat)))
-
-(define-public r-velociraptr
-  (package
-    (name "r-velociraptr")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "velociraptr" version))
-       (sha256
-        (base32 "0a67vmv05cxc9f27aqzr6nkgy2mj3fhykwj5nb23qwfqa669a5hi"))))
-    (properties `((upstream-name . "velociraptr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sf))
-    (home-page "https://cran.r-project.org/package=velociraptr")
-    (synopsis "Fossil Analysis")
-    (description
-     "This package provides functions for downloading, reshaping, culling, cleaning,
-and analyzing fossil data from the Paleobiology Database
-<https://paleobiodb.org>.")
-    (license license:gpl3)))
 
 (define-public r-vek
   (package
@@ -7101,34 +7142,78 @@ Additionally provides functions for analysis and visualization.")
 (define-public r-vectorialcalculus
   (package
     (name "r-vectorialcalculus")
-    (version "1.0.5")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vectorialcalculus" version))
        (sha256
-        (base32 "1crdc0yg96097nzrgkmr83v26sc20pbfbsags3zk8ngd256m46dh"))))
+        (base32 "0k069x8acv0vbh9qc929zdlkq5jnj9vr4dqlbs398vawjpnnkcj3"))))
     (properties `((upstream-name . "vectorialcalculus")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble))
     (home-page "https://github.com/JulianFajardo1908/vectorialcalculus")
-    (synopsis "Vector Calculus Tools for Visualization and Analysis")
+    (synopsis "Numerical Tools for University Calculus")
     (description
-     "This package provides pedagogical tools for visualization and numerical
-computation in vector calculus.  Includes functions for parametric curves,
-scalar and vector fields, gradients, divergences, curls, line and surface
-integrals, and dynamic 2D/3D graphical analysis to support teaching and
-learning.  The implemented methods follow standard treatments in vector calculus
-and multivariable analysis as presented in Marsden and Tromba (2011)
-<ISBN:9781429215084>, Stewart (2015) <ISBN:9781285741550>, Thomas, Weir and Hass
-(2018) <ISBN:9780134438986>, Larson and Edwards (2016) <ISBN:9781285255869>,
-Apostol (1969) <ISBN:9780471000051>, Spivak (1971) <ISBN:9780805390216>, Schey
-(2005) <ISBN:9780071369080>, Colley (2019) <ISBN:9780321982384>, Lizarazo Osorio
-(2020) <ISBN:9789585450103>, Sievert (2020) <ISBN:9780367180165>, and Borowko
-(2013) <ISBN:9781439870791>.")
+     "Independent reconstruction of numerical tools for teaching university calculus.
+Provides finite difference derivative approximations with numerical sensitivity
+diagnostics and local linear models.  Optional interactive graphics illustrate
+secants, tangents, differentials and numerical Taylor polynomials of orders one
+and two.  Includes finite limit probes, critical-point and concavity analysis,
+and Newton iteration with explicit numerical diagnostics.  Provides signed
+Riemann sums, partition refinement, fixed and adaptive quadrature with error
+diagnostics, and optional interactive illustrations of numerical integration.
+Evaluates accumulation functions and compares their numerical derivatives with
+integrands while retaining quadrature and sensitivity diagnostics.  Computes
+geometric areas, graph lengths, revolution volumes and surface areas, with
+separate interactive region and solid illustrations.  Approximates coordinate
+partials, gradients and line-restriction directional derivatives without
+inferring total differentiability from finite coordinate probes.  Provides
+candidate affine models and total differentials with actual-change comparisons
+and separate plane, section and tangent illustrations.  Supports rectangular
+Jacobians, direct Hessian stencils and matrix refinement views with entry-level
+numerical sensitivity and roundoff diagnostics.  Searches for multivariable
+stationary candidates with explicit starts, retained evaluation histories and
+conditional second derivative classifications.  Solves square nonlinear systems
+with Newton iteration, Jacobian diagnostics, optional step damping and
+independent zero-contour playback.  Assesses equality-constrained candidates
+using Lagrange multipliers, numerical rank and conditional tangent-space
+curvature diagnostics.  Integrates Cartesian type I and II regions with nested
+fixed quadrature, retained inner diagnostics and independent sampled-domain
+graphics.  Supports polar regions with a radial Jacobian and Cartesian domain
+views.  Integrates nested Cartesian solids in six coordinate orders, retaining
+slice diagnostics with independent fiber and base-projection displays.  Supports
+cylindrical-coordinate solids with a radial Jacobian and separate Cartesian
+fiber and polar-base views.  Spherical regions use explicit azimuth, polar angle
+and radius with their volume Jacobian and an independent Cartesian radial-fiber
+display.  Assesses implicit related rates with feasibility, differentiability
+hypotheses, denominator sensitivity diagnostics and a separate local velocity
+display.  Provides product partitions, signed double Riemann sample rules,
+sampled cell statistics, explicit domain indicators, refinement tables and prism
+views.  Samples standalone planar regions with reusable strip grids and separate
+filled-domain or horizontal-plate displays.  Samples six faces of nested
+Cartesian solids with shared endpoints and independent face/wireframe displays,
+without coupling geometric sampling to quadrature.  Maps stored cylindrical
+parameter patches into Cartesian walls, caps and angular cuts with explicit seam
+and axis-degeneracy limitations.  Samples spherical radial shells and angular
+cuts with explicit pole/origin degeneracies and separate stored-face displays.
+Shows stored stationary candidates on sampled scalar graphs without rerunning
+search or classification.  Samples spatial parametric curves, displays stored
+samples, and integrates speed using supplied velocities or numerical Jacobians.
+Computes spatial Frenet directions, curvature and signed torsion with derivative
+diagnostics and displays stored results.  Samples osculating circles and ribbons
+with explicit geometry gaps and separate interactive views.  Samples spatial
+vector fields, estimates divergence and curl, and integrates streamlines or
+time-dependent pathlines with fixed-step Runge-Kutta.  Computes signed scalar
+line integrals and oriented vector work in two and three dimensions, with
+separate quadrature and derivative diagnostics.  Samples parametric and ruled
+surfaces and integrates scalar densities, area and oriented flux over
+rectangular parameter domains.  Compares the two integrals in Green's
+circulation theorem over a planar strip and in Stokes theorem over a rectangular
+parameter patch.  Compares outward flux and integrated divergence over a
+Cartesian box.")
     (license license:expat)))
 
 (define-public r-vectorforgeml
@@ -8804,27 +8889,19 @@ to parse and merge enormous tracheophyte records.")
 (define-public r-varycoef
   (package
     (name "r-varycoef")
-    (version "0.3.6")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "varycoef" version))
        (sha256
-        (base32 "1xldwxx20vvfl9nsk2fr8ql58idd1rwmbmb85zwbbrfn80qis1z2"))))
+        (base32 "09ijrdcgi52si3hlhldk57h1cs6lq224i0h2rk8zajd9205n425w"))))
     (properties `((upstream-name . "varycoef")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-spam
-                             r-smoof
-                             r-pbapply
-                             r-paramhelpers
-                             r-optimparallel
-                             r-mlrmbo
-                             r-mlr
-                             r-lhs
-                             r-glmnet))
+    (propagated-inputs (list r-spam r-pbapply))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jakobdambon/varycoef")
     (synopsis "Modeling Spatially Varying Coefficients")

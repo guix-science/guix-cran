@@ -93,6 +93,36 @@ themselves, and to feed it incrementally so that a large document need not be
 held in memory all at once.")
     (license license:expat)))
 
+(define-public r-zutoml
+  (package
+    (name "r-zutoml")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "zutoml" version))
+       (sha256
+        (base32 "0j2cyrxr8027dbam1ajh9c8z7nyvqbzdrhz1k74hizv1b5gnqls9"))))
+    (properties `((upstream-name . "zutoml")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zufast))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/pedrobtz/zutoml")
+    (synopsis "Read and Write 'TOML' Documents")
+    (description
+     "Parses TOML (Tom's Obvious Minimal Language) documents, versions 1.0.0 and 1.1.0
+<https://toml.io/en/v1.1.0>, into ordinary R values, and writes R values as
+TOML'.  Every TOML type maps to one R type, including the four date and time
+types, and strings are never reinterpreted.  Invalid documents are refused with
+the line and column at fault, under configurable size, depth, item and string
+limits, and output is deterministic.  Both directions pass the toml-test
+conformance suite <https://github.com/toml-lang/toml-test>.  The parser and
+writer are written in C, with no system library required.")
+    (license license:expat)))
+
 (define-public r-zukomp
   (package
     (name "r-zukomp")
@@ -1282,13 +1312,13 @@ Epidemiology 46(1):73-86 <doi:10.1002/gepi.22438>.")
 (define-public r-zihinar1
   (package
     (name "r-zihinar1")
-    (version "0.2.1")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ZIHINAR1" version))
        (sha256
-        (base32 "11ily7wvwxc3fp98fr7vxj2slgspz4q15mw6m2l0ynbc5p6kpbrv"))))
+        (base32 "0zwypl7y0lzcfdni6prnva9x58cjlxyizkbvwig077cd2rkan890"))))
     (properties `((upstream-name . "ZIHINAR1")))
     (build-system r-build-system)
     (arguments
@@ -1301,6 +1331,7 @@ Epidemiology 46(1):73-86 <doi:10.1002/gepi.22438>.")
                              r-hmmpa
                              r-gridextra
                              r-ggplot2
+                             r-compoissonreg
                              r-coda
                              r-actuar))
     (home-page "https://cran.r-project.org/package=ZIHINAR1")
@@ -1310,7 +1341,9 @@ Epidemiology 46(1):73-86 <doi:10.1002/gepi.22438>.")
 and Hurdle INAR(1) (H-INAR(1)) models using Stan'.  It allows users to simulate
 time series data for these models, estimate parameters, and evaluate model fit
 using various criteria.  Functions include model estimation, simulation, and
-likelihood-based metrics.")
+likelihood-based metrics.  The zero-inflated and hurdle INAR(1) methods are
+described by Yang et al. (2025) <doi:10.1214/25-BJPS646>.  Zero-inflated models
+also support Conway-Maxwell-Poisson innovations.")
     (license license:gpl3)))
 
 (define-public r-zigimports
@@ -1636,13 +1669,13 @@ Extension Principle (see de Barros, L.C., Bassanezi, R.C., Lodwick, W.A. (2017)
 (define-public r-zentrar
   (package
     (name "r-zentrar")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "zentraR" version))
        (sha256
-        (base32 "18aianzn3w6hp4bvgmgh85skhbc5zyc1zzhzdjb8i6wx7y05k6l6"))))
+        (base32 "0ybkk037qiz4qpv3h0y864s6s2pcp9lcqa1a1snqzkxfmnrpb6mx"))))
     (properties `((upstream-name . "zentraR")))
     (build-system r-build-system)
     (arguments
@@ -1894,13 +1927,13 @@ the software).")
 (define-public r-zcurve
   (package
     (name "r-zcurve")
-    (version "2.4.7")
+    (version "2.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "zcurve" version))
        (sha256
-        (base32 "04wdvr4fppgsjgabcij9rmiwkk5a3niq7fzp3kzb670m8lf1y420"))))
+        (base32 "03kngl6akavsb8qzcha340iwhfpca0n0vrv5vw5q008sn2pmhax6"))))
     (properties `((upstream-name . "zcurve")))
     (build-system r-build-system)
     (arguments
@@ -1951,13 +1984,13 @@ ZIP Code Tabulation Areas (ZCTAs).")
 (define-public r-zarr
   (package
     (name "r-zarr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "zarr" version))
        (sha256
-        (base32 "08d4dq54ik3chl368sdx5n00zs8j0zzgxsqaywsiplj5n2pnmi0g"))))
+        (base32 "198i49v9kpfvdx712gfpif20jbqzz21nl9w2wasj3bz34rln5lkk"))))
     (properties `((upstream-name . "zarr")))
     (build-system r-build-system)
     (arguments
@@ -2001,13 +2034,13 @@ under selective pressure.  See Jacobs, Sluckin and Kivisild (2016)
 (define-public r-z22
   (package
     (name "r-z22")
-    (version "1.1.4")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "z22" version))
        (sha256
-        (base32 "1p3zz00npa45zllpm47v0lzz1r31y2jz7nc3y1qc7pf79dnyjbph"))))
+        (base32 "075da87xq1v0waiijiffl9yqzqim0a94cw1agz9m6kj6ljfvmqsa"))))
     (properties `((upstream-name . "z22")))
     (build-system r-build-system)
     (arguments
@@ -2016,7 +2049,7 @@ under selective pressure.  See Jacobs, Sluckin and Kivisild (2016)
     (propagated-inputs (list r-httr2 r-dplyr r-cli r-arrow))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jslth/z22/")
-    (synopsis "Official Gridded Data from the German Census 2022")
+    (synopsis "Official Gridded Data from the German Census")
     (description
      "This package provides fast and easy access to German census grid data from the
 2011 and 2022 censuses <https://www.zensus2022.de/>, including a wide range of
